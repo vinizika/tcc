@@ -1,0 +1,28 @@
+AnimalName,symptoms1,symptoms2,symptoms3,symptoms4,symptoms5,Dangerous,Source
+Dog,Eye Discharge,Nasal Discharge,Skin Lesions,,,No,llm_data_augmentation
+Dog,Eye Discharge,Nasal Discharge,Sneezing,,,No,llm_data_augmentation
+Dog,Eye Discharge,Nasal Discharge,Lameness,,,No,llm_data_augmentation
+Dog,Eye Discharge,Skin Lesions,Sneezing,,,No,llm_data_augmentation
+Dog,Eye Discharge,Skin Lesions,Lameness,,,No,llm_data_augmentation
+Dog,Eye Discharge,Sneezing,Lameness,,,No,llm_data_augmentation
+Dog,Nasal Discharge,Skin Lesions,Lameness,,,No,llm_data_augmentation
+Dog,Nasal Discharge,Sneezing,Lameness,,,No,llm_data_augmentation
+Dog,Skin Lesions,Sneezing,Lameness,,,No,llm_data_augmentation
+Dog,Eye Discharge,Nasal Discharge,Skin Lesions,Lameness,,No,llm_data_augmentation
+Dog,Eye Discharge,Nasal Discharge,Sneezing,Lameness,,No,llm_data_augmentation
+Dog,Eye Discharge,Skin Lesions,Sneezing,Lameness,,No,llm_data_augmentation
+Dog,Nasal Discharge,Skin Lesions,Sneezing,Lameness,,No,llm_data_augmentation
+Dog,Eye Discharge,Nasal Discharge,Skin Lesions,Sneezing,Lameness,No,llm_data_augmentation
+Cat,Eye Discharge,Nasal Discharge,Sneezing,,,No,llm_data_augmentation
+Cat,Eye Discharge,Nasal Discharge,Lameness,,,No,llm_data_augmentation
+Cat,Eye Discharge,Skin Lesions,Sneezing,,,No,llm_data_augmentation
+Cat,Eye Discharge,Skin Lesions,Lameness,,,No,llm_data_augmentation
+Cat,Eye Discharge,Sneezing,Lameness,,,No,llm_data_augmentation
+Cat,Nasal Discharge,Skin Lesions,Lameness,,,No,llm_data_augmentation
+Cat,Nasal Discharge,Sneezing,Lameness,,,No,llm_data_augmentation
+Cat,Skin Lesions,Sneezing,Lameness,,,No,llm_data_augmentation
+Cat,Eye Discharge,Nasal Discharge,Skin Lesions,Sneezing,,No,llm_data_augmentation
+Cat,Eye Discharge,Nasal Discharge,Skin Lesions,Lameness,,No,llm_data_augmentation
+Cat,Eye Discharge,Nasal Discharge,Sneezing,Lameness,,No,llm_data_augmentation
+Cat,Eye Discharge,Skin Lesions,Sneezing,Lameness,,No,llm_data_augmentation
+Cat,Nasal Discharge,Skin Lesions,Sneezing,Lameness,,No,llm_data_augmentation

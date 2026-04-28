@@ -1,0 +1,867 @@
+AnimalName,symptoms1,symptoms2,symptoms3,symptoms4,symptoms5,Dangerous,Source
+Dog,Fever,Diarrhea,Vomiting,Weight Loss,Dehydration,Yes,original
+Dog,Fever,Diarrhea,Coughing,Tiredness,Pain,Yes,original
+Dog,Fever,Diarrhea,Coughing,Vomiting,Appetite Loss,Yes,original
+Dog,Fever,Breathing Difficulty,Coughing,Lethargy,Sneezing,Yes,original
+Dog,Fever,Diarrhea,Coughing,Lethargy,Blue Eye,Yes,original
+Dog,Fever,Respiratory Distress,Seizuers,Hyperesthesia,Sudden Death,Yes,original
+Dog,Ulcers,Diarrhea,Poor Appetite,Tarry Stool,Enlarged Lymph Nodes,Yes,original
+Dog,Facial Swelling,Bloody Drool,Foul Breath,Unable To Eat,Lossened Teeth,Yes,original
+Dog,Fever,Breathing Difficulty,Thrist And Urination,Weight Loss,Enlarged Lymph Nodes Or Swelling,Yes,original
+Dog,Swelling On Leg,Painfull,Nasal Discharge,Broken Bones,Nasal Discharge,Yes,original
+Dog,Short Term Lethargy,Appetite Loss,Weekness In The Back Legs,Rapid Heart Rate,Week Pulse,Yes,original
+Dog,Swollen Lymph Nodes,Difficulty Walking,Back Pain,Lethargy,Vaginal Discharge,Yes,original
+Dog,Fever,Diarrhea,Abdominal Pain,Stiffness,Severe Weekness And Depression,Yes,original
+Dog,Fever,Appetite Loss,Reduce Energy,Lameness,Swelling Of Joints,Yes,original
+Dog,Fever,Chronic Eye Inflamation,Poor Appetite,Lethargy,Neurologic Abnormalities,Yes,original
+Dog,Fever,Swelling Of Face Or Leg,Poor Appetite,Depression,Pain,Yes,original
+Dog,Diarrhea With Muscus,Tensemus,Watery Stool,Flatulence,Pain,Yes,original
+Dog,Strong Cough,Runny Nose,Sneezing,Lethargy,Loss Of Appettite,Yes,original
+Dog,Fever,Inflammed Eye,Coughing,Depression,Limping,Yes,original
+Dog,Fever,Breathing Difficulty,Coughing,Eye And Skin Change,Unable To Exercise,Yes,original
+Dog,Fever,Appetite Loss,Coughing,Lethargy,Joint Pain,Yes,original
+Dog,Lesions In The Nasal Cavity,Lesions On Nose,Nose Bleeds,Noisy Breathing,Lesions On Nose,Yes,original
+Dog,Hair Loss,Dandruff,Darkened Skin,Crusting Of The Skin,Ulcerated Skin,Yes,original
+Dog,Greenish Yellow Nasal Discharge,Lack Of Pigmentation,Sneezing,Lethargy,Pain On Face,Yes,original
+Dog,Fever,Diarrhea,Poor Appetite,Weight Loss,Vomiting,Yes,original
+Dog,Jaundice,Pneumonia,Lession On The Skin,Pain,Vomiting,Yes,original
+Dog,Poor Coat Apperence,Diarrhea,Vomiting,Weight Loss,Dehydration,Yes,original
+Dog,Watering,No Appp,Vomiting,Lethargy,Dehydration,Yes,original
+Dog,Straining,Diarrhea,Vomiting,Weight Loss,Blindness,Yes,original
+Dog,Upset Stomach,Diarrhea,Vomiting,Muscle Pain,Muscle Stiffness,Yes,original
+Dog,Upset Stomach,Diarrhea,Coughing,Weight Loss,Anaemia,Yes,original
+Dog,Allergic Reaction,Poor Appetite,Coughing,Weight Loss,Distended Chest,Yes,original
+Dog,Fever,Anoxeria,Weight Loss,Lethargy,Pain,Yes,original
+Dog,Limping,Willnot Run To Jump,Swelling,Week Legs,Pain On Leg,Yes,original
+Cat,Fever,Eye Ulcer,Congestion,Depression,Pink Eye,Yes,original
+Cat,Pnemonia,Appetite Loss,Eye Disharge,Lameness,Arthritis,Yes,original
+Cat,Fever,Seizures,Hydrophobia,Jaw Is Dropped,Shyness Or Aggression,Yes,original
+Cat,Bloody Urine,Diffculty Breathing,Vomiting,Weight Loss,Appetite Loss,Yes,original
+Cat,Loss Of Eat,Difficulty In Breathing,Swelling,Lameness,Neurologic Abnormalities,Yes,original
+Cat,Dark Or Black Face,Diarrhea,Vomiting,Blood In Faces,Pain,Yes,original
+Cat,Jaundice,Difficulty In Breathing,Seizuers,Lethargy,Pale Gums,Yes,original
+Cat,Appetite Varies,Diarrhea,Vomiting,Weight Loss,Pain,Yes,original
+Cat,Loss Of Eat,Fell Unwell,Lethargy,Weight Loss,Skin Issue,Yes,original
+Cat,Sickness,Appetite Loss,Vomiting,Weight Loss,Raised Growth Or Bump,Yes,original
+Cat,Nasal Bleeding,Diffulty Chewing,Swelling,Weight Loss,Appetite Loss,Yes,original
+Cat,Ulcers,Lesions,Scabs,Lumps,"Bumps(Black,Grey Or Red)",Yes,original
+Cat,Gasc,Appetite Loss,Blood In Stool,Stomach Growling,Black Stool,Yes,original
+Cat,Shaking Head,Scartching Ear,Black On Ear,Bad Smell,Red And Inflammation Ear,Yes,original
+Cat,Attacks,Appetite Loss,Coughing,Weight Loss,Periodic Vommiting,Yes,original
+Cat,Blood Stool,Diarrhea,Coughing,Weight Loss,Anemia,Yes,original
+Cat,Nasal Discharge,Nosebleeds,Inflamed Nostrils,Sneezing,Lound Breathing,Yes,original
+Cat,Polyuria,Appetite Loss,Vomiting,Weight Loss,Polydipsa,Yes,original
+Cat,Exessive Urination,Change In Gait,Vomiting,Weight Loss,Inability To Jump,Yes,original
+Cat,Convulsion,Loss Of Consciousness,Chewing,Twitching,Salivating,Yes,original
+Cat,Wheezing,Rapid Breathing,Coughing,Swallowing,Effort To Breath,Yes,original
+Cat,Jaundice,Weekness,Lethargy,Weight Loss,Appetite Loss,Yes,original
+Cat,Lession On Cat Skin,Dandruff In Cat Coat,Red Patches,Hair Loss,Skin Issue,Yes,original
+Cat,Lethargy,Diarrhea,Vomiting,Discharge From Eye,Appetite Loss,Yes,original
+Cat,Skin Irritation,Scartching,Lethargy,Hair Loss,Excessive Grooming,Yes,original
+Cat,Floopy Muscle,Speech Delay,Intellectual Disability,Walking Problem,Eye Movements,Yes,original
+Cat,Sensitivity To Bright Light,Disharge From Affected Eye,Inflammation,Clouded Cornea,Rubbing Eye,Yes,original
+Cat,Fever,Diarrhea,Vomiting,Cramps,Dehydration,Yes,original
+Cat,Tenderness,Erythema,Swelling,Scartch,Pain,Yes,original
+Cat,Fever,Diarrhea,Vomiting,Salivation,Decrease Appetite,Yes,original
+Cat,Scaly Patches Of Skin,Sore,Scabs,Scartch,Hair Loss,Yes,original
+Cat,Fatty Stool,Diarrhea,Vomiting,Weight Loss,Pain,Yes,original
+Cat,Nausea,Appetite Loss,Vomiting,Firm,Distended Stomach,Yes,original
+Cat,Fever,Swelling In The Bite Area,Lethargy,Limp,Pain,Yes,original
+Cat,Fever,Appetite Loss,Eyeproblem,Liver Disease,Nuerological,Yes,original
+Cat,Fever,Mild Sneezing,Coughing,Nasal,Ocular Discharge,Yes,original
+Rabbit,Most Often None,Sneezing,Nasal Discharge,Dyspnea,Pain,Yes,original
+Rabbit,Fever,Diarrhea,Vomiting,Blood From Mouth,Shock,Yes,original
+Rabbit,Discomfort,Diarrhea,Dry Or Dull Hair,Grinding Teeth,Pain,Yes,original
+Rabbit,Appetite Loss,Swelling,Nasal Discharge,Blindness,Lethargy,Yes,original
+Rabbit,Rhinitis,Pneumonia,Abscessess,Torticollis,Septicemia,Yes,original
+Rabbit,Fever,Diarrhea,Enteritis,Weight Loss,Stomach Cramps,Yes,original
+Rabbit,Immediate Death,Difficulty In Breathing,Blue Colored Lip,Bloody Discharge,Neurologic Abnormalities,Yes,original
+Rabbit,Fever,Pox Lession On Skin,Skin Reashes,Nasal Discharge,Mortality Varies,Yes,original
+Rabbit,Red On Affected Area,Horny Growth,Wart Like Growth,Red Skin,Lesions On Ear,Yes,original
+Rabbit,Fever,Chills,Skin Ulcer,Exhaustion,Swollen And Painfull,Yes,original
+Rabbit,Watering Diarrhea,Depression,Emaciation,Ruffled Coat,Lethargy,Yes,original
+Cattle,Loss In Weight,Emaciation,Appetite Loss,Weakness,Diarrhea,Yes,original
+Chicken,Appetite Loss,Diarrhea,Swollen Purple Wattle,Swollen Comb,Lameness,Yes,original
+Chicken,Appetite Loss,Diarrhea,Ruffled Feathers,Weight Loss,Inability To Absorb Nutrients,Yes,original
+Chicken,Egg Production Decreases,Stunted Growth,Blindness,Distinctive Bumps,Facial Swelling,Yes,original
+Chicken,Appetite Loss,Thirst,Ruffled Feathers,Closed Eyes,Diarrhea,Yes,original
+Cattle,Fever,Weakened Legs,Los Of The Ability To Walk,Mammary Glads,Fluif Filled Blisters,Yes,original
+Cattle,Fever,Weakened Legs,Los Of The Ability To Walk,Weight Loss,Lameness,Yes,original
+Cattle,Abortion At The End Of Gestation,Fatigue,Weak Calves,Join Pains,Swelling Of Internal Organs,Yes,original
+Mammal,Swollen,Red Colored,Hot Udder,Milk Getting Out More Watery,Milk Getting Out More Thick,Yes,original
+Cattle,Fever,Distress,Trembling,Staggering,Convulsion,Yes,original
+Cattle,Fever,Animal Become Lame,Prostrat,Painfull Swalling,Lameness,Yes,original
+Cattle,Fever,Difficulty In Breathing,Dribbling Of Saliva,Inability Of Swalllon Feeding,Moist And Painfull,Yes,original
+Cattle,Fluif Faeces On Blood And Muscle,Sudden Death,Blooody Fluid,Red Diarrhea,Faeces Are Streake With Blood,Yes,original
+Cattle,Fever,Pneumonia,Stand With Head Droping,Weight Loss,Abnormal Behaviour,Yes,original
+Cattle,Fever,Slightly Swollen,Lession On The Skin,Milky Hard,Papules Appear On Teats Anad Udder,Yes,original
+Cattle,Fever,Dull,Hind Quarted Soil,Animal Stop Feed,Decrease In Milk Production,Yes,original
+Cattle,Severe,Diarrhea,Blood On Faces,Appetite,Milk Reduce,Yes,original
+Cattle,Fever,Depression,Relunctance To Move,Salivation,Nasal Discharge,Yes,original
+Cattle,Normal Appetite,Diarrhea,Swelling May Occur Under Jaw,Weight Loss,Drop In Milk Production,Yes,original
+Cattle,Swelling On Leg,Heat,Hardness,Redness,Pain,Yes,original
+Cattle,Inability To Stand,Diarrhea,Bottle Jaw,Pot Belly,Dry Hair Coat,Yes,original
+Cattle,Excitability,Nervousness,Appetite Loss,Hyper Sensitivity,Weakness,Yes,original
+Cattle,Fever,Depression,Attack,Bite Other Animals,Pain,Yes,original
+Cattle,Fever,Difficulty In Breathing,Coughing,Painfull,Eye Become Dull,Yes,original
+Cattle,Fever,Ulcer On Gum,Red Eye,Yellowish Discharge,Bloody Diarrhea,Yes,original
+Cattle,Fever,Diarrhea,Coughing,Consistency Of Milk,Pain,Yes,original
+Cattle,Animal Gets Uneasy,Difficulty In Breathing,Difficult In Respiration,Excessive Production,Stamping And Pedding Of Hind Eye,Yes,original
+Horse,Fever,Chills,Severe Colic,Weakness,Appetite Loss,Yes,original
+Horse,Fever,Body Stiffness,Lethargy,Severe Inflammation,Pain,Yes,original
+Horse,Sickness,Diarrhea,Weight Loss,Nausea,Dehydration,Yes,original
+Horse,Sudden Death,Trouble Walking,Paralysis,Depression,Convulsion,Yes,original
+Horse,Fever,Abortion,Kidney Failure,Inflammation Of Eye,Eye Redness,Yes,original
+Horse,Small Red Bumps,Pneumonia,Septic Arthritis,Skin Infection,Pain,Yes,original
+Horse,Fever,Ataxia,Aggressiveness,Depression,Obscure Lameness,Yes,original
+Horse,Ring Shaped Lesion,Round Patches,Dry Skin,Size Of Lesions Vary,Pain,Yes,original
+Horse,Fever,Diarrhea,Appetite Loss,Colic,Weakness,Yes,original
+Horse,Fever,Depression,Appetite Loss,Stumbling,Ataxia,Yes,original
+Turtle,Bubbles In The Mouth,Wheezing,Appetite Loss,Lethargy,Nasal Discharge,Yes,original
+Turtle,Changes In Outer Layer Skin,Swelling Of Eye,Appetite Loss,Lethargy,Respiratory Infection,Yes,original
+Turtle,Red Tinge,Slim Over The Shell,Bad Smell,Easily Damage Shell,Flaking Of The Scutes,Yes,original
+Turtle,Passing Of Undigested Food,Diarrhea,Vomiting,Gas Or Bloating,Dehydration,Yes,original
+Hamster,Smell,Diarrhea,Appetite Loss,Excess Sleeping,Folded Ears,Yes,original
+Hamster,Loss Of Activity,Rough Coat,Appetite Loss,Weight Loss,Eventually Death,Yes,original
+Hamster,Fever,Diarrhea,Vomiting,Dehydration,Pain,Yes,original
+Hamster,Bald Patches,Hair Loss,Crusty,Flaky,Red Lesion From Bald Patches,Yes,original
+Hamster,Poor Condition,Enlarged Lymph Nodes,Diarrhea,Weight Loss,Pain,Yes,original
+Hamster,Fever,Chills,Coughing,Progressive Weakness,Joint Pain,Yes,original
+Hamster,Heavy Infection,Diarrhea,Vitamin And Minerals Defiency,Weight Loss,Pain,Yes,original
+Lion,Fever,Diarrhea,Muscle Weakness,Muscle Pain,Abdonormal Discomfort,Yes,original
+Lion,Fever,Chills,Headache,Nausea,Pain,Yes,original
+Lion,Thicked Skin,Hair Tining,Hair Loss,Scabbing,Itchiness,Yes,original
+Lion,Facial Edema,Loss Of Earing,Vomiting,Head Ache,Throat And Ear Pain,Yes,original
+Lion,General Malaise,Hepatic Failure,Vomiting,Weight Loss,Abdonormal Pain,Yes,original
+Lion,Upset Stomach,Appetite Loss,Nause,Weight Loss,Abdonormal Pain,Yes,original
+Lion,Fever,Muscle Loss,Skeleten Pain,Weight Loss,Wasting,Yes,original
+Lion,Oedema,Swelling Of Face Or Leg,Swelling Of Neck,Weight Loss,Pain,Yes,original
+Lion,Poor Growth,Short Stature,Enlargement Of Bones,Lameness,Weigth Bearing Long Bones,Yes,original
+Lion,Fever,Chills,Sweat,Head Ache,Fatique,Yes,original
+Lion,Fever,Appetite Loss,Weakness,Weight Loss,Vomiting,Yes,original
+Lion,Dullness,Lacrimation,Coughing,Diarrhea,Seizures,Yes,original
+Lion,Vomiting,Bloody Diarrhea,Lethargy,Dehydration,Appetite Loss,Yes,original
+Lion,Fever,Uncharacteristic Hiding,Depression,Dehydration,Stopped Eat,Yes,original
+Lion,Fever,Poor Coat Condition,Infection Of The Skin,Weight Loss,Fatique,Yes,original
+Lion,Weakness,Stiffness,Trembling,White Mark On The Muscle,Loss Of Vitamin E,Yes,original
+Fox,Partial Paralysis,Staggering As Drunk,Self Mutilation,Acting Aggressive,Acting Unnaturally Tame,Yes,original
+Fox,Fever,Tiredness,Headache,Skin Rashes,Pain,Yes,original
+Fox,Thick Crusting,Itchiness,Hair Loss,Watery Eye,Pain,Yes,original
+Fox,Constant Pacing,Facial Muscle Twitching,Abnormalalities,Blindness,Muscle Pain,Yes,original
+Fox,Loss Od Appetite,Wheezing,Seizuers,Skin Rashes,Fatique,Yes,original
+Fox,Indigestion,Abdminal Pain,Constipation,Diarrhea,Nausea,Yes,original
+Fox,Blood In Urine,Diarrhea,Vomiting,Lethargy,Bleeding In Eye And Skin,Yes,original
+Goat,Fever,Malaise,Weakness,Weight Loss,Pain,Yes,original
+Goat,Fever,Diarrhea,Vomiting,Stomach Cramps,Nausea,Yes,original
+Goat,Fever,Lack Of Coordination,Depression,Salivation,Facial Paralysis,Yes,original
+Goat,Sores On Lip,Infection,Sores On Lower Leg And Teats,Lesion,Pain,Yes,original
+Goat,Abortion On Late Pregancy,Stillbirth,Retained Placenda,Endomeritis,Decrease Appetite,Yes,original
+Goat,Paresis,Paralysis,Weakness,Stomach Cramps,Diarrhea,Yes,original
+Goat,Fever,Diarrhea,Swelling,Weight Loss,Pain,Yes,original
+Goat,Fever,Hemolytic Anemia,Hemoglobinuria,Pulmonary Congestion,Jaundice,Yes,original
+Goat,Abortion,Mummification,Stillbirth,Weak Kids,Pain,Yes,original
+Goat,Runny Nose,Difficulty In Breathing,Coughing,Weakness,Loss Of Appettite,Yes,original
+Goat,Fever,Nasal Discharge,Respiratory Distress,Pox Lesion,Pain,Yes,original
+Goat,Fever,Dark Colored Bloody,Incoordination,Difficulty In Breathing,Terminal Convulsion,Yes,original
+Goat,Fever,Dysentery,Swelling,Immediate Death,Pain,Yes,original
+Goat,Fever,Respiratory Distress,Mucous Discharge,Reduce Feed,Weight Gain,Yes,original
+Goat,Decreased Milk,Holding Limbs Off The Ground,Weight Loss,Lameness,Wool Production,Yes,original
+Goat,Swelling Of Udder,Change In Milk,Swollen,Tender To Touch,Pain,Yes,original
+Goat,Fever,Respiratory Distress,Occular Discharge,Mouth Lesion,Nasal Discharge,Yes,original
+Goat,Fever,Wound Lesion,Excess Salivary,Difficult In Walking,Pain,Yes,original
+Goat,Emaciation,Edema In Lower Jaw,Coughing,Shivering,Anemia,Yes,original
+Goat,Fever,Reduce Growth,Kid Moratality,Weakness,Dullness,Yes,original
+Goat,Fever,Reduce Growth,Edema In Lower Jaw,Weight Loss,Anemia,Yes,original
+Goat,Emaciation,Diarrhea,Kid Moratality,Weakness,Anemia,Yes,original
+Goat,Skinallergy,Reduce Growth,Wound,Head Ache,Dizziness,Yes,original
+Goat,Watering Of Eyes,Redness Of White Of The Eye,Swelling Of Eyelid,Cornea Become Cloudy,Tear Production,Yes,original
+Goat,Berberi,Wasting,Nervous,Weight Loss,Appetite Loss,Yes,original
+Goat,Gastritis,Morbidity,Bloody,Mortality,Anemia,Yes,original
+Deer,Fever,Severe Headache,Vomiting,Coughing,Fatique,Yes,original
+Deer,Fever,Tiredness,Swollen Kidney,Hematuria,Muscle Aches,Yes,original
+Deer,Fever,Diarrhea,Decreased Appetite,Vomiting,Bloody,Yes,original
+Deer,Gas,Diarrhea,Abdominal Discomfort,Vomiting,Nausea,Yes,original
+Deer,Drooping Ears,Lack Of Coordination,Drooling,Wasting,Listlessness,Yes,original
+Chicken,Edema,Diarrhea,Nasal Discharge,Decresed Egg Production,Sneezing,Yes,original
+Chicken,Drooping Wings,Depression,Nasal Discharge,Coughing,Greenish Diarrhea,No,original
+Chicken,Weakness,Yellow Or Green Dropping,Purplish Combs,Wattles,Drop On Egg Production,No,original
+Chicken,Neck Paralysis,Diarrhea,Ruffled Feathers,Labored Breathing,Weakness,No,original
+Chicken,Facial Swelling,Lacrimation,Diarrhea,Appetite Loss,Nasal Discharge,No,original
+Chicken,Appetite Loss,Depression,Paralyzed Leg,Weight Loss,Anemia,No,original
+Chicken,Dejection,Appetite Loss,Slow Growth,Diarrhea,Lesion,No,original
+Chicken,Severe Swellimg,Heavy Breathing,Diarrhea,Weight Loss,Pain,No,original
+Chicken,Weakness,Diarrhea,High Moratality,Dehydration,Appetite Loss,No,original
+Monkey,Fever,Hepatitis,Skin Rashes,Weight Loss,Pain,No,original
+Monkey,Sneezing,Epistaxis,Coughing,Difficulty In Breathing,Nasal Discharge,No,original
+Monkey,Sneezing,Unilateral Nasal Discharge,Gagging,Retching,Weight Loss,Yes,original
+Monkey,Fever,Depression,Coughing,Weight Loss,Appetite Loss,Yes,original
+Monkey,Shallow Breathing,Halitosis,Coughing,Lethargy,Nasal Discharge,Yes,original
+Monkey,Dyspnea,Sneezing,Coughing,Difficulty In Breathing,Infection,Yes,original
+Monkey,Dyspnea,Sneezing,Coughing,Difficulty In Breathing,Pain,Yes,original
+Monkey,Fever,Rhinorrhea,Coughing,Sneezing,Dehydration,Yes,original
+Monkey,Fever,Rhinorrhea,Coughing,Facial Edema,Dyspnea,Yes,original
+Monkey,Fever,Rhinorrhea,Coughing,Sneezing,Nasal Discharge,Yes,original
+Monkey,Mortality,Painfull,Coughing,Weight Loss,Nasal Discharge,Yes,original
+Monkey,Skin Rashes,Diarrhea,Death,Facial Edema,Pain,Yes,original
+Monkey,Fever,Dyspnea,Coughing,Lethargy,Weightloss,Yes,original
+Monkey,Fever,Dyspnea,Coughing,Weakness,Appetite Loss,Yes,original
+Monkey,Facial Edema,Dyspnea,Conjuctivtis,Weakness,Pharyngitis,Yes,original
+Monkey,Fever,Pneumonia,Congestion,Lethargy,Nasal Discharge,Yes,original
+Monkey,Fever,Death,Coughing,Weight Loss,Nasal Discharge,Yes,original
+Monkey,Sneezing,Convulsion,Seizuers,Weight Loss,Nasal Discharge,Yes,original
+Monkey,Fever,Death,Coughing,Dyspnea,Appetite Loss,Yes,original
+Monkey,Dyspnea,Difficulty In Breathing,Coughing,Lethargy,Nasal Discharge,Yes,original
+Monkey,Air Sacculitis,Halitosis,Coughing,Enteritis,Weight Loss,Yes,original
+Monkey,Fever,Convulsion,Sudden Death,Urine Retention,Weight Loss,Yes,original
+Monkey,Dyspnea,Neurologic Sign,Coughing,Depression,Appetite Loss,Yes,original
+Monkey,Fever,Dyspnea,Coughing,Lethargy,Appetite Loss,Yes,original
+Monkey,Labored Breathing,Dyspnea,Coughing,Depression,Appetite Loss,Yes,original
+Monkey,Blood From Mouth,Diarrhea,Coughing,Lethargy,Weight Loss,Yes,original
+Monkey,Hemopytsis,Diarrhea,Asymptomatic,Death,Epistaxis,Yes,original
+Monkey,Restlessness,Weakness,Blue Straws,Death,Pain,Yes,original
+Birds,Stripped Remiges,Less Feather Growth,Ruffled Feathers,Defienciency In Vitamin,Diarrhea,Yes,original
+Birds,Apathy,Depression,Dilation Of Duodenum,Cloacal Pasting,Congestion,Yes,original
+Birds,Lepatomegaly,Splenomegaly,Vomiting,Swollen,Shaking Oh Head,Yes,original
+Birds,Balance Problem,Abdominal Destention,Neck Paralysis,Weight Loss,Pain,Yes,original
+Birds,Legness,Paresis,Coughing,Weight Loss,Shortness Of Breath,Yes,original
+Birds,Fever,Sour Throat,Mortality,Muscle Aches,Abnormalities,Yes,original
+Birds,Difficulty In Feeding,Preening,Weakness,Beak Overgrowth,Anemia,Yes,original
+Birds,Fever,Appetite Loss,Ear Infection,Depression,Nasal Discharge,Yes,original
+Birds,Forthy Eye,Torticollis,Weakness,Swelling,Emaciation,Yes,original
+Birds,Inappentence,Diarrhea,Tremors Of The Head,Dehydration,Weight Loss,Yes,original
+Birds,Lack Of Walking,Lack Of Flying,Roughened,Dehydration,Pain,Yes,original
+Birds,Skin Rashes,Small And Yellow Bumps,Swelling,Dry Scabs,Lameness,Yes,original
+Birds,Scabs On Feet,Redness,Trachea,Thickening Of Skin,Pain,Yes,original
+Birds,Enlarged Thymus,Obstructed Lungs,Lethargy,Skin Rashes,Weight Loss,Yes,original
+Birds,Fluffed Feather,Appetite Loss,Coughing,Vomiting,Snoring,Yes,original
+Birds,Fever,Difficultty In Breathing,Yellow Eye,Sneezing,Diphtherictic,Yes,original
+Birds,Heavy Breathing,Yellow In Beak,Tail Bobbing,Weakness,Sleeping Excessively,Yes,original
+Birds,Puffed Up Feather,Less Eat,Headache,Half Closed Eye,Seizures,Yes,original
+Birds,Fever,Diarrhea,Swollen Abdomen,Vomiting,Difficulty In Breathing,Yes,original
+Birds,Tail Wagging,Straining,Lethargy,Weakness,Diarrhea,Yes,original
+Birds,Overweight,Appetite Loss,Ruffled Feathers,Depression,Diarrhea,Yes,original
+Birds,Dejection,Appetite Loss,Stress,Coughing,Pain,Yes,original
+Birds,Skin Infection,Secondary Infection,Coughing,Depression,Shaking Oh Head,Yes,original
+Birds,Discharge From Eyes,Lethargy,Coughing,Sneezing,Fatique,Yes,original
+Birds,Fever,Chills,Retarded Growth,Chest Pain,Chest Pain,Yes,original
+Birds,Pale Comb,Lame,Death,Swolling Of Joint,Eye Closed,Yes,original
+Birds,Lethargy,Appetite Loss,Difficulty In Swallowing,Weakness,Vision Problem,Yes,original
+Birds,Emaciation,Difficulty In Breathing,Vomiting,Weakness,Diarrhea,Yes,original
+Birds,Liquid Dropping,Exhaustion,Ataxia,Lethargy,Seizures,Yes,original
+Birds,Undigested In Their Feces,Appetite Loss,Loss Of Pigment,Weakness,Bloody In Feather,Yes,original
+Birds,Sharp Feather,Clubbed Feather,Eye Disharge,Loss Of Powder Down,Diarrhea,Yes,original
+Birds,Ruffled Appearance,Appetite Loss,Vomiting,Green Dropping,Nasal Discharge,Yes,original
+Birds,Sinuses,Swollen Eyelids,Skin Rashes,Sneezing,Misshapen Beak,Yes,original
+Birds,Feather Loss,Feather Plucking,Coughing,Itching,Nasal Discharge,Yes,original
+Birds,Watery Eyes,Eye Closed,Weight Loss,Sneezing,Nervous Issue,Yes,original
+Birds,Bony Lesion,Skin Rashes,Ataxia,Appetite Loss,Weakness,Yes,original
+Birds,Tremor Of Head And Neck,Blindness,Kicking At The Belly,Exercise In Tolerance,Pain,Yes,original
+Sheep,Swollen Belly,Dullness,Discharge,Urination,Lying Down,Yes,original
+Sheep,Fever,Dullness,Depression,Weight Loss,Appetite Loss,Yes,original
+Sheep,Fever,Succumb,Spread Of Infection,Weight Loss,Appetite Loss,Yes,original
+Sheep,Signs In Rams,Signs In Ewe,Underdeveloped Muscles,Semen Examination,Reduce Lamp Marking,Yes,original
+Sheep,Spines,Unusally Thin,Weakness,Enlarged Skulls,Weakness,Yes,original
+Sheep,Discharge,Sudden Abortion,Hemoglobinuria,Death Of Lamb,Weight Loss,Yes,original
+Sheep,Fever,Hemolytic Anemia,Sweats,Congestion,Jaundice,Yes,original
+Sheep,Fever,Tiredness,Appetite Loss,Muscle Aches,Chest Pain,Yes,original
+Sheep,Excess Salivation,Diarrhea,Depression,Nasal Discharge,Weakness,Yes,original
+Sheep,Fever,Diarrhea,Incoordination,Abortion,Blood Poisioning,Yes,original
+Sheep,Fever,Wasting,Dehydration,Deability,Weakness,Yes,original
+Sheep,Fever,Diarrhea,Muscle Twiching,Lameness,Weight Loss,Yes,original
+Sheep,Fever,Depression,Lying Down,Weak Pulse,Colic,Yes,original
+Sheep,Swelling,Lameness,Hyperaestesia,Hock Joint,Weight Loss,Yes,original
+Sheep,Head Tilt,Circling,Muscles Ache,Blindness,Seizures,Yes,original
+Sheep,Decreased Growth Of Bone,Depression,Grunting,Lameness,Weight Loss,Yes,original
+Sheep,Swollen Left Abdomen,Lying Down,Staggering,Urination,Extension Of Neck,Yes,original
+Sheep,Cessation Of Eructation,Difficulty In Breathing,Depression,Appetite Loss,Colic,Yes,original
+Sheep,Fever,Excession Salivation,Abnormal Conformation,Ulcerated Muscle,Ulcerated Ear,Yes,original
+Sheep,Barren Ewes,Abortion,Poor Conformation,Hairy Fleeces,Weight Loss,Yes,original
+Sheep,Tremor,Viability,Coughing,Appetite Loss,Weight Loss,Yes,original
+Sheep,Fever,Tachypea,Swelling Of Head And Neck,Appetite Loss,Nasal Discharge,Yes,original
+Sheep,Lllthrift,Skin Lesion,Lameness,Swelling On Thebody,Weight Loss,Yes,original
+Sheep,Swelling,Heat,Flank,Pain,Nasal Discharge,Yes,original
+Sheep,Fever,Appetite Loss,Lameness,Rump,Weight Loss,Yes,original
+Sheep,Fever,Swelling,Appetite Loss,Appetite Loss,Weight Loss,Yes,original
+Sheep,Fever,Diarrhea,Bloody Droping,Abdominal Discomfort,Lethargy,Yes,original
+Sheep,Fever,Depression,Small Intestines,Death,Flock Moratality,Yes,original
+Sheep,Haemorrhage,Straw Colored,Abdominal Pain,Death,Carcass Decomposes,Yes,original
+Sheep,Bloody Diarhhea,Depression,Dullness,Death,Weakness,Yes,original
+Sheep,Reluctant Move,Appetite Loss,Lameness,Death,Weakness,Yes,original
+Sheep,Fever,Depression,Appetite Loss,Appetite Loss,Pain,Yes,original
+Sheep,Fever,Difficulty In Breathing,Lethargy,Death,Pain,Yes,original
+Sheep,Poor Wool,Appetite Loss,Lameness,Small Size,Poor Body Condition,Yes,original
+Sheep,Poor Immune Function,Achomotrica,Dehydration,Death,Pain,Yes,original
+Sheep,Abdominal Pain,Diarrhea,Malpresentation,Shock,Appetite Loss,Yes,original
+Sheep,Fetopelvic Dispropotion,Uteria Inertia,Despression,Death,Pain,Yes,original
+Sheep,Watery Diarrhea Dispropotion,Sick,Corneal Ulceration,Appetite Loss,Death,Yes,original
+Sheep,Severe Kerititis,Conjunctive,Discharge,Iris Prolapse,Loss Of Eye,Yes,original
+Sheep,Swollen,Testical Pain,Itches,Bloody Discharge,Tenderness,Yes,original
+Sheep,Fever,Diarrhea,Depression,Scratches,Weight Loss,Yes,original
+Sheep,Foul Smelling,Dullness,Dirty,Stained Wool,Tail Shaking,Yes,original
+Sheep,Sheep Often Bites,Fleece Become Thin,Loss Of Wool,Death,Pain,Yes,original
+Sheep,Fever,Dullness,Dullness,Skin Rashes,Pain,Yes,original
+Sheep,Fever,Difficulty In Breathing,Rub,Coughing,Sneezing,Yes,original
+Sheep,Restlessness,Kick,Lethargy,Nible At Their Wool,Scratching,Yes,original
+Sheep,Jaundice,Appetite Loss,Rough Hair Coat,Coughing,Death,Yes,original
+Sheep,Fever,Reduce Reproductive Potential,Agalactia,Loss Of Milk Production,Sloughing Of The Tail,Yes,original
+Sheep,Pyrexia,Oral Lesion,Swelling,Lameness,Death,Yes,original
+Sheep,Red Skin,Appetite Loss,Moist,Lameness,Pain,Yes,original
+Sheep,Limping,Skin Colour Change,Flabby,Raw,Sensitive To Touch,Yes,original
+Sheep,Groosly Enlarged,Skin May Thicken,Convulsion,Edematous,Pain,Yes,original
+Sheep,Hyperexcitability,Muscular Spasms,Gums,Death,Pain,Yes,original
+Sheep,Decreased Eyelid,Very Cold Skin,Lethargy,Lip,Fever,Yes,original
+Sheep,Fever,Diarrhea,Muscus,Weight Loss,Death,Yes,original
+Sheep,Foul Smelling,Diarrhea,Colic,Bloody Discharge,Blood Clots,Yes,original
+Sheep,Inability To Digest,Diarrhea,Dehydration,Weight Loss,Anemia,Yes,original
+Sheep,Fever,Diarrhea,Pot Belly,Death,Loss Of Appettite,Yes,original
+Sheep,Emaciation,Diarrhea,Coughing,Weight Loss,Death,Yes,original
+Sheep,Respiratory Distress,Diarrhea,Death,Reduce Milk,Weight Loss,Yes,original
+Sheep,Lllthrift,Bottle Jaw,Strange Behaviour,Aneamia,Jaundice,Yes,original
+Sheep,Fever,Lameness,Wasting,Blindness,Staggering,Yes,original
+Sheep,Fever,Diarrhea,Clearly Unthrifty,Weight Loss,Good Appetite,Yes,original
+Sheep,Fever,Dullness,Relunctance To Walk,Infected Navels,Pain,Yes,original
+Sheep,Tenderness,Foot Hot,Facial Paralysis,Weight Loss,Pain,Yes,original
+Sheep,Fever,Lack Of Coordination,Painfull To Touch,Circling,Depression,Yes,original
+Sheep,Swollen,Warm,Constipation,Depression,Bloody,Yes,original
+Sheep,Fever,Appetite Loss,Stumbling,Restlessness,Pain,Yes,original
+Sheep,Unsteady Gait,Twitching,Blindness,Swelling On Joints,Pain,Yes,original
+Sheep,Fever,Ulcer,Scabs,Discharge From Eye,Pain,Yes,original
+Sheep,Smell Of Ammonia,Ulcer,Depression,Swelling,Pain,Yes,original
+Sheep,Fever,Lethargy,Blindness,Inappentence,Increased In Breathing,Yes,original
+Sheep,Wandering,Circling,Blindness,Head Pressing,Recumbency,Yes,original
+Sheep,Tremors,Lying On The Side,Difficulty In Swallowing,Death,Not Eating,Yes,original
+Sheep,Fever,Difficulty In Breathing,Coughing,Sneezing,Seizures,Yes,original
+Sheep,Swelling,Appetite Loss,Wool Loss,Tears,Death,Yes,original
+Sheep,Wool Is Clumped,Feels Stiff,Staggering,Skin Rashes,Pain,Yes,original
+Sheep,Swaying,Behaviour Change,Tremor,Jerky Limb Movements,Pain,Yes,original
+Sheep,Cell Damage,Behaviour Change,Weight Loss,Pruritis,Death,Yes,original
+Sheep,Swelling,Discomfort,Difficulty In Rising,Death,Pain,Yes,original
+Sheep,Swollen,Hot Joints,Pustulses,Difficulty In Walk,Pain,Yes,original
+Sheep,Formation Of Vesicles,Nostrils,Abnormally Long Leg,Scabs On Lip,Pain,Yes,original
+Sheep,Skeleten Abnormalities,Facial Defects,Hair Loss,Flat Ribs,Underdeveloped Muscles,Yes,original
+Sheep,Wether Restless,Kicking,Normal Appetite,Attempt To Urinate,Pain,Yes,original
+Sheep,Inability To Stand,Pains To Walk,Depression,Weakness,Stiffness,Yes,original
+Sheep,Fever,Succumb,Sluggish,Appetite Loss,Pain,Yes,original
+Sheep,Listless,Bottle Jaw,Malpresentation,Death,Oxygen Defiency,Yes,original
+Sheep,Fever,Swelling,Bloody,Death,Anemia,Yes,original
+Sheep,Thivk Skin,Crusty,Scaly Skin,Lesion,Pain,Yes,original
+Sheep,Fever,Abortion,Vomiting,Weight Loss,Appetite Loss,Yes,original
+Sheep,Dizzines,Anemia,Vomiting,Head Ache,Nausea,Yes,original
+Sheep,Fever,Wool Loss,Swelling,Weight Loss,Pain,Yes,original
+Sheep,Tear Production,Anversion To Light,Bluish White Opacity,Blindness,Pain,Yes,original
+Sheep,Fever,Swelling,Lameness,Heat,Pain,Yes,original
+Sheep,Skin Color Change,Crusty,Scaly Skin,Irritation,Blister,Yes,original
+Sheep,Radip Onset,Stiff,Muscle Trembling,Weakness,Death,Yes,original
+Sheep,Head Shking,Discharge From Ear,Scartching Ear,Odor To Ear,Redness On Ear,Yes,original
+Sheep,Discharge From Eyes,Redness Of Eye,Blindness,Scartches,Pain,Yes,original
+Sheep,Fever,Appetite Loss,Scartches,Death,Pain,Yes,original
+Sheep,Discomfort,Appetite Loss,Bloody Diarrhea,Profuse,Pain,Yes,original
+Sheep,Swelling,Larynx,Swelling On Jaw,Hoarseness,Neck Vein Swelling,Yes,original
+Sheep,Inflammation,Discomfort,Kicking At The Belly,Urine Infection,Pain,Yes,original
+Sheep,Isolation From Flock,Stealing,Nesting Behaviour,Pawing At Bedding,Pain,Yes,original
+Sheep,Listless,Difficulty In Walking,Grinding Of Teeth,Blindness,Ataxia,Yes,original
+Sheep,Bluish White Opacity,Aversion To Light,Tear Produce,Blindness,Weakness,Yes,original
+Sheep,Head Tossing,Wool Loss,Fast Breathing,Bleeding Wounds,Skin Issue,Yes,original
+Pig,Coughing,Panting,"Facial Swelling,",Production Of Mucus,Fatigue,Yes,original
+Fowl,Cough,Sneeze,Droopy Wings,Twisted Neck,Droopy Wings,Yes,original
+Duck,Shortness Of Breath.,Fatigue,Chirping,Appetite Loss,Swollen Abdomen,Yes,original
+Other Birds,Gasping,Coughing,Mild Weakness,Droopy Wings,Twisted Neck,Yes,original
+Pig,Excessive Blood Loss,Dizziness And Fainting,Blurry Vision,Watery Eyes,Slow Growth,Yes,original
+Fowl,Nosebleed,Trauma,Mild Weakness,Nose Picking,Dry Air,Yes,original
+Duck,Bleeding From Other Parts Of The Body,Confusion,Nasal Discharge,Loss Of Alertness,Dizziness And Fainting,Yes,original
+Other Birds,Bad Breath,Pawing At The Face Or Nose,Cough,Sneezing,Bleeding From The Nose,Yes,original
+Fowl,Extending Its Neck,Gasping For Air,Gasping For Breath,Difficulty Swallowing,Gasping For Breath,Yes,original
+Duck,Difficulty Swallowing,Cough,Difficulty Swallowing,Gasping For Air,Extending Its Neck,Yes,original
+Other Birds,Cough,Gasping For Air,Weight Loss,Gasping For Breath,Extending Its Neck,Yes,original
+Pig,Weakness,Decreased Stool Production,Distended Stomach,Heavy Breathing,Restless Movement,Yes,original
+Fowl,Eye Redness,Frequent Eye Infections,Crusty Eye Lashes And Matting Of Eyelashes,Foul Smelling Stools,Increased Passing Gas,Yes,original
+Duck,Excessive Eye Watering,Eye Redness,Weakness,Mucus Discharge From The Eye,Frequent Eye Infections,Yes,original
+Other Birds,Sudden Death,Appetite Loss,Rapid Heartbeats,Fluffed Feathers,Lack Of Vocalizations,Yes,original
+Fowl,Unable To Urinate,Lightheadedness,Droopiness,Rectal Bleeding,Swollen Abdomen,Yes,original
+Duck,Extreme Thirst,Bloody Discharge,Appetite Loss,Inability To Fly,Loss Of Wariness,Yes,original
+Other Birds,Egg Production Stops,Broody Behavior,Appetite Loss,Weight Loss,Constipation,Yes,original
+Fowl,Nausea,Vomiting,Appetite Loss,Experiencing Changes In Weight,Pain And Bloating,Yes,original
+Duck,Burning Ache Or Pain,Vomiting,Appetite Loss,Experiencing Changes In Weight,Pain And Bloating,Yes,original
+Other Birds,Continuous Loss Of Weight,Regurgitation Of Food,Wheezing,Excessive Food Intake,Undigested Seeds,Yes,original
+Snake,Appetite Loss,Lathargy,Abortion,Gurgling Sound,Depression,Yes,original
+Horse,Fever,Mild Colic,Loss Of Tail Tone,Appetite Loss,Depression,Yes,original
+Horse,Head Tilt,Lathargy,Lathargy,Urine Dribbling,Inability To Rise,Yes,original
+Horse,Fever,Appetite Loss,Respiratory Noise,Weight Loss,Depression,Yes,original
+Horse,Fever,Nasal Discharge,Muscular Stiffness,Swollen Lymph Nodes,Depression,Yes,original
+Horse,Sweating,Muscular Spasms,Thirst,Weight Loss,Difficulty Moving And Eating,Yes,original
+Duck,Appetite Loss,High Body Temperaure,Appetite Loss,Diarrhea,Sudden Death,Yes,original
+Donkey,Sweating,Dry Or Tacky Gums,Reduced Appetite,Lying Down,Dull Ness,Yes,original
+Donkey,Outstretched Neck,Dull Ness,Inappetence,Noisy Breathing,Coughing,Yes,original
+Donkey,Weight Loss,Dull Ness,Inappetence,Self Isolation,Recumbency,Yes,original
+Mules,Weight Loss,Dull Ness,Muscles Problem,Self Isolation,Recumbency,Yes,original
+Elephant,Changed Gait,Dull Ness,Muscles Problem,Pain,Pain,Yes,original
+Elephant,Changed Gait,Dull Ness,Diffuse,Difficulty Diagnosis,Anemia,Yes,original
+Elephant,Difficulty In Breathing,Swelling Problem,Bleeding From Wounds,Frequent Yawning,Appetite Loss,Yes,original
+Elephant,Undernutrition,Drinking Polluted Water,Listlessness,Staggering,Appetite Loss,Yes,original
+Deer,Wasting,Stumbling,Listlessness,Drooling,Drooping Ears,Yes,original
+Elk,Wasting,Stumbling,Listlessness,Drooling,Urination Problem,Yes,original
+Wapiti,Wasting,Stumbling,Listlessness,Drooling,Urination Problem,Yes,original
+Deer,Wasting,Stumbling,Listlessness,Drooling,Urination Problem,Yes,original
+Mule Deer,Wasting,Stumbling,Listlessness,Drooling,Urination Problem,Yes,original
+Black Tailed Deer,Wasting,Stumbling,Listlessness,Drooling,Urination Problem,Yes,original
+Sika Deer,Wasting,Stumbling,Listlessness,Drooling,Urination Problem,Yes,original
+White Tailed Deer,Wasting,Stumbling,Listlessness,Drooling,Drooping Ears,Yes,original
+Reindeer,Wasting,Stumbling,Listlessness,Drooling,Drooping Ears,Yes,original
+Moos,Wasting,Stumbling,Fever,Drooling,Drooping Ears,Yes,original
+Tiger,Feline Infections,Lymphosarcoma,Difficulty Breating,Stomatitis,Anaemia,Yes,original
+Deer,Sudden Death,Fever,Difficulty Breating,Weight Loss,Trembling,Yes,original
+Cattle,Sudden Death,Fever,Difficulty Breating,Aneamia,Trembling,Yes,original
+Goat,Sudden Death,Fever,Difficulty Breating,Staggering,Trembling,Yes,original
+Sheep,Sudden Death,Fever,Rapid Pulse And Heart Rates,Depression,Trembling,Yes,original
+Buffalo,Fever,Appetite Loss,Rapid Pulse And Heart Rates,Lameness In Affected Leg,Depression,Yes,original
+Sheep,Fever,Appetite Loss,Rapid Pulse And Heart Rates,Lameness In Affected Leg,Depression,Yes,original
+Goat,Fever,Appetite Loss,Rapid Pulse And Heart Rates,Lameness In Affected Leg,Depression,Yes,original
+Cattle,Fever,Appetite Loss,Swollen Teats,Lameness In Affected Leg,Depression,Yes,original
+Cattle,Swelling,Nasal Discharge,Drooling,Tiredness,Fever,Yes,original
+Sheep,Eye Discharges,Nasal Discharge,Change Their Normal Behaviour,High Body Temperature,Lameness,Yes,original
+Dog,Stop Eating,Stop Drinking,Change Their Normal Behaviour,Lameness,Pain,Yes,original
+Fox,Stop Eating,Stop Drinking,Change Their Normal Behaviour,Weight Loss,Pain,Yes,original
+Wolves,Stop Eating,Stop Drinking,Change Their Normal Behaviour,Depression,Pain,Yes,original
+Hyaenas,Stop Eating,Stop Drinking,Change Their Normal Behaviour,Diarrhea,Pain,Yes,original
+Duck,Fever,Diffulty Swallowing,Excessive Drooling,Staggering,Seizures,Yes,original
+Duck,Fever,Diarrhea,Vomiting,Weight Loss,Dehydration,Yes,original
+Duck,Fever,Diarrhea,Coughing,Tiredness,Pain,Yes,original
+Duck,Fever,Diarrhea,Coughing,Vomiting,Appetite Loss,Yes,original
+Duck,Fever,Breathing Difficulty,Coughing,Lethargy,Sneezing,Yes,original
+Duck,Fever,Diarrhea,Coughing,Lethargy,Blue Eye,Yes,original
+Duck,Fever,Respiratory Distress,Seizuers,Hyperesthesia,Sudden Death,Yes,original
+Duck,Ulcers,Diarrhea,Poor Appetite,Tarry Stool,Enlarged Lymph Nodes,Yes,original
+Duck,Facial Swelling,Bloody Drool,Foul Breath,Unable To Eat,Lossened Teeth,Yes,original
+Duck,Fever,Breathing Difficulty,Thrist And Urination,Weight Loss,Enlarged Lymph Nodes Or Swelling,Yes,original
+Duck,Swelling On Leg,Painfull,Nasal Discharge,Broken Bones,Nasal Discharge,Yes,original
+Duck,Short Term Lethargy,Appetite Loss,Weekness In The Back Legs,Rapid Heart Rate,Week Pulse,Yes,original
+Duck,Swollen Lymph Nodes,Difficulty Walking,Back Pain,Lethargy,Vaginal Discharge,Yes,original
+Duck,Fever,Diarrhea,Abdominal Pain,Stiffness,Severe Weekness And Depression,Yes,original
+Duck,Fever,Appetite Loss,Reduce Energy,Lameness,Swelling Of Joints,Yes,original
+Duck,Fever,Chronic Eye Inflamation,Poor Appetite,Lethargy,Neurologic Abnormalities,Yes,original
+Duck,Fever,Swelling Of Face Or Leg,Poor Appetite,Depression,Pain,Yes,original
+Duck,Diarrhea With Muscus,Tensemus,Watery Stool,Flatulence,Pain,Yes,original
+Duck,Strong Cough,Runny Nose,Sneezing,Lethargy,Loss Of Appettite,Yes,original
+Duck,Fever,Inflammed Eye,Coughing,Depression,Limping,Yes,original
+Duck,Fever,Breathing Difficulty,Coughing,Eye And Skin Change,Unable To Exercise,Yes,original
+Duck,Fever,Appetite Loss,Coughing,Lethargy,Joint Pain,Yes,original
+Duck,Lesions In The Nasal Cavity,Lesions On Nose,Nose Bleeds,Noisy Breathing,Lesions On Nose,Yes,original
+Duck,Hair Loss,Dandruff,Darkened Skin,Crusting Of The Skin,Ulcerated Skin,Yes,original
+Duck,Greenish Yellow Nasal Discharge,Lack Of Pigmentation,Sneezing,Lethargy,Pain On Face,Yes,original
+Duck,Fever,Diarrhea,Poor Appetite,Weight Loss,Vomiting,Yes,original
+Duck,Jaundice,Pneumonia,Lession On The Skin,Pain,Vomiting,Yes,original
+Duck,Poor Coat Apperence,Diarrhea,Vomiting,Weight Loss,Dehydration,Yes,original
+Duck,Watering,No Appp,Vomiting,Lethargy,Dehydration,Yes,original
+Duck,Straining,Diarrhea,Vomiting,Weight Loss,Blindness,Yes,original
+Duck,Upset Stomach,Diarrhea,Vomiting,Muscle Pain,Muscle Stiffness,Yes,original
+Duck,Upset Stomach,Diarrhea,Coughing,Weight Loss,Anaemia,Yes,original
+Duck,Allergic Reaction,Poor Appetite,Coughing,Weight Loss,Distended Chest,Yes,original
+Duck,Fever,Anoxeria,Weight Loss,Lethargy,Pain,Yes,original
+Duck,Limping,Willnot Run To Jump,Swelling,Week Legs,Pain On Leg,Yes,original
+Duck,Fever,Eye Ulcer,Congestion,Depression,Pink Eye,Yes,original
+Duck,Pnemonia,Appetite Loss,Eye Disharge,Lameness,Arthritis,Yes,original
+Duck,Fever,Seizures,Hydrophobia,Jaw Is Dropped,Shyness Or Aggression,Yes,original
+Duck,Bloody Urine,Diffculty Breathing,Vomiting,Weight Loss,Appetite Loss,Yes,original
+Duck,Loss Of Eat,Difficulty In Breathing,Swelling,Lameness,Neurologic Abnormalities,Yes,original
+Duck,Dark Or Black Face,Diarrhea,Vomiting,Blood In Faces,Pain,Yes,original
+Duck,Jaundice,Difficulty In Breathing,Seizuers,Lethargy,Pale Gums,Yes,original
+Duck,Appetite Varies,Diarrhea,Vomiting,Weight Loss,Pain,Yes,original
+Duck,Loss Of Eat,Fell Unwell,Lethargy,Weight Loss,Skin Issue,Yes,original
+Duck,Sickness,Appetite Loss,Vomiting,Weight Loss,Raised Growth Or Bump,Yes,original
+Duck,Nasal Bleeding,Diffulty Chewing,Swelling,Weight Loss,Appetite Loss,Yes,original
+Duck,Ulcers,Lesions,Scabs,Lumps,"Bumps(Black,Grey Or Red)",Yes,original
+Duck,Gasc,Appetite Loss,Blood In Stool,Stomach Growling,Black Stool,Yes,original
+Duck,Shaking Head,Scartching Ear,Black On Ear,Bad Smell,Red And Inflammation Ear,Yes,original
+Duck,Attacks,Appetite Loss,Coughing,Weight Loss,Periodic Vommiting,Yes,original
+Elephant,Blood Stool,Diarrhea,Coughing,Weight Loss,Anemia,Yes,original
+Elephant,Nasal Discharge,Nosebleeds,Inflamed Nostrils,Sneezing,Lound Breathing,Yes,original
+Elephant,Polyuria,Appetite Loss,Vomiting,Weight Loss,Polydipsa,Yes,original
+Elephant,Exessive Urination,Change In Gait,Vomiting,Weight Loss,Inability To Jump,Yes,original
+Elephant,Convulsion,Loss Of Consciousness,Chewing,Twitching,Salivating,Yes,original
+Elephant,Wheezing,Rapid Breathing,Coughing,Swallowing,Effort To Breath,Yes,original
+Elephant,Jaundice,Weekness,Lethargy,Weight Loss,Appetite Loss,Yes,original
+Elephant,Lession On Cat Skin,Dandruff In Cat Coat,Red Patches,Hair Loss,Skin Issue,Yes,original
+Elephant,Lethargy,Diarrhea,Vomiting,Discharge From Eye,Appetite Loss,Yes,original
+Elephant,Skin Irritation,Scartching,Lethargy,Hair Loss,Excessive Grooming,Yes,original
+Elephant,Floopy Muscle,Speech Delay,Intellectual Disability,Walking Problem,Eye Movements,Yes,original
+Elephant,Sensitivity To Bright Light,Disharge From Affected Eye,Inflammation,Clouded Cornea,Rubbing Eye,Yes,original
+Elephant,Fever,Diarrhea,Vomiting,Cramps,Dehydration,Yes,original
+Elephant,Tenderness,Erythema,Swelling,Scartch,Pain,Yes,original
+Elephant,Fever,Diarrhea,Vomiting,Salivation,Decrease Appetite,Yes,original
+Elephant,Scaly Patches Of Skin,Sore,Scabs,Scartch,Hair Loss,Yes,original
+Elephant,Fatty Stool,Diarrhea,Vomiting,Weight Loss,Pain,Yes,original
+Elephant,Nausea,Appetite Loss,Vomiting,Firm,Distended Stomach,Yes,original
+Elephant,Fever,Swelling In The Bite Area,Lethargy,Limp,Pain,Yes,original
+Elephant,Fever,Appetite Loss,Eyeproblem,Liver Disease,Nuerological,Yes,original
+Elephant,Fever,Mild Sneezing,Coughing,Nasal,Ocular Discharge,Yes,original
+Elephant,Most Often None,Sneezing,Nasal Discharge,Dyspnea,Pain,Yes,original
+Elephant,Fever,Diarrhea,Vomiting,Blood From Mouth,Shock,Yes,original
+Elephant,Discomfort,Diarrhea,Dry Or Dull Hair,Grinding Teeth,Pain,Yes,original
+Elephant,Appetite Loss,Swelling,Nasal Discharge,Blindness,Lethargy,Yes,original
+Elephant,Rhinitis,Pneumonia,Abscessess,Torticollis,Septicemia,Yes,original
+Elephant,Fever,Diarrhea,Enteritis,Weight Loss,Stomach Cramps,Yes,original
+Elephant,Immediate Death,Difficulty In Breathing,Blue Colored Lip,Bloody Discharge,Neurologic Abnormalities,Yes,original
+Elephant,Fever,Pox Lession On Skin,Skin Reashes,Nasal Discharge,Mortality Varies,Yes,original
+Elephant,Red On Affected Area,Horny Growth,Wart Like Growth,Red Skin,Lesions On Ear,Yes,original
+Elephant,Fever,Chills,Skin Ulcer,Exhaustion,Swollen And Painfull,Yes,original
+Elephant,Watering Diarrhea,Depression,Emaciation,Ruffled Coat,Lethargy,Yes,original
+Elephant,Loss In Weight,Emaciation,Appetite Loss,Weakness,Diarrhea,Yes,original
+Elephant,Appetite Loss,Diarrhea,Swollen Purple Wattle,Swollen Comb,Lameness,Yes,original
+Elephant,Appetite Loss,Diarrhea,Ruffled Feathers,Weight Loss,Inability To Absorb Nutrients,Yes,original
+Elephant,Egg Production Decreases,Stunted Growth,Blindness,Distinctive Bumps,Facial Swelling,Yes,original
+Elephant,Appetite Loss,Thirst,Ruffled Feathers,Closed Eyes,Diarrhea,Yes,original
+Elephant,Fever,Weakened Legs,Los Of The Ability To Walk,Mammary Glads,Fluif Filled Blisters,Yes,original
+Elephant,Fever,Weakened Legs,Los Of The Ability To Walk,Weight Loss,Lameness,Yes,original
+Elephant,Abortion At The End Of Gestation,Fatigue,Weak Calves,Join Pains,Swelling Of Internal Organs,Yes,original
+Elephant,Swollen,Red Colored,Hot Udder,Milk Getting Out More Watery,Milk Getting Out More Thick,Yes,original
+Elephant,Fever,Distress,Trembling,Staggering,Convulsion,Yes,original
+Elephant,Fever,Animal Become Lame,Prostrat,Painfull Swalling,Lameness,Yes,original
+Elephant,Fever,Difficulty In Breathing,Dribbling Of Saliva,Inability Of Swalllon Feeding,Moist And Painfull,Yes,original
+Elephant,Fluif Faeces On Blood And Muscle,Sudden Death,Blooody Fluid,Red Diarrhea,Faeces Are Streake With Blood,Yes,original
+Elephant,Fever,Pneumonia,Stand With Head Droping,Weight Loss,Abnormal Behaviour,Yes,original
+Elephant,Fever,Slightly Swollen,Lession On The Skin,Milky Hard,Papules Appear On Teats Anad Udder,Yes,original
+Elephant,Fever,Dull,Hind Quarted Soil,Animal Stop Feed,Decrease In Milk Production,Yes,original
+Elephant,Severe,Diarrhea,Blood On Faces,Appetite,Milk Reduce,Yes,original
+Elephant,Fever,Depression,Relunctance To Move,Salivation,Nasal Discharge,Yes,original
+Elephant,Normal Appetite,Diarrhea,Swelling May Occur Under Jaw,Weight Loss,Drop In Milk Production,Yes,original
+Elephant,Swelling On Leg,Heat,Hardness,Redness,Pain,Yes,original
+Elephant,Inability To Stand,Diarrhea,Bottle Jaw,Pot Belly,Dry Hair Coat,Yes,original
+Elephant,Excitability,Nervousness,Appetite Loss,Hyper Sensitivity,Weakness,Yes,original
+Elephant,Fever,Depression,Attack,Bite Other Animals,Pain,Yes,original
+Hamster,Fever,Difficulty In Breathing,Coughing,Painfull,Eye Become Dull,Yes,original
+Hamster,Fever,Ulcer On Gum,Red Eye,Yellowish Discharge,Bloody Diarrhea,Yes,original
+Hamster,Fever,Diarrhea,Coughing,Consistency Of Milk,Pain,Yes,original
+Hamster,Animal Gets Uneasy,Difficulty In Breathing,Difficult In Respiration,Excessive Production,Stamping And Pedding Of Hind Eye,Yes,original
+Hamster,Fever,Chills,Severe Colic,Weakness,Appetite Loss,Yes,original
+Hamster,Fever,Body Stiffness,Lethargy,Severe Inflammation,Pain,Yes,original
+Hamster,Sickness,Diarrhea,Weight Loss,Nausea,Dehydration,Yes,original
+Hamster,Sudden Death,Trouble Walking,Paralysis,Depression,Convulsion,Yes,original
+Hamster,Fever,Abortion,Kidney Failure,Inflammation Of Eye,Eye Redness,Yes,original
+Hamster,Small Red Bumps,Pneumonia,Septic Arthritis,Skin Infection,Pain,Yes,original
+Hamster,Fever,Ataxia,Aggressiveness,Depression,Obscure Lameness,Yes,original
+Fowl,Ring Shaped Lesion,Round Patches,Dry Skin,Size Of Lesions Vary,Pain,Yes,original
+Fowl,Fever,Diarrhea,Appetite Loss,Colic,Weakness,Yes,original
+Fowl,Fever,Depression,Appetite Loss,Stumbling,Ataxia,Yes,original
+Fowl,Bubbles In The Mouth,Wheezing,Appetite Loss,Lethargy,Nasal Discharge,Yes,original
+Fowl,Changes In Outer Layer Skin,Swelling Of Eye,Appetite Loss,Lethargy,Respiratory Infection,Yes,original
+Fowl,Red Tinge,Slim Over The Shell,Bad Smell,Easily Damage Shell,Flaking Of The Scutes,Yes,original
+Fowl,Passing Of Undigested Food,Diarrhea,Vomiting,Gas Or Bloating,Dehydration,Yes,original
+Fowl,Smell,Diarrhea,Appetite Loss,Excess Sleeping,Folded Ears,Yes,original
+Fowl,Loss Of Activity,Rough Coat,Appetite Loss,Weight Loss,Eventually Death,Yes,original
+Fowl,Fever,Diarrhea,Vomiting,Dehydration,Pain,Yes,original
+Fowl,Bald Patches,Hair Loss,Crusty,Flaky,Red Lesion From Bald Patches,Yes,original
+Fowl,Poor Condition,Enlarged Lymph Nodes,Diarrhea,Weight Loss,Pain,Yes,original
+Fowl,Fever,Chills,Coughing,Progressive Weakness,Joint Pain,Yes,original
+Fowl,Heavy Infection,Diarrhea,Vitamin And Minerals Defiency,Weight Loss,Pain,Yes,original
+Fowl,Fever,Diarrhea,Muscle Weakness,Muscle Pain,Abdonormal Discomfort,Yes,original
+Fowl,Fever,Chills,Headache,Nausea,Pain,Yes,original
+Fowl,Thicked Skin,Hair Tining,Hair Loss,Scabbing,Itchiness,Yes,original
+Fowl,Facial Edema,Loss Of Earing,Vomiting,Head Ache,Throat And Ear Pain,Yes,original
+Fowl,General Malaise,Hepatic Failure,Vomiting,Weight Loss,Abdonormal Pain,Yes,original
+Fowl,Upset Stomach,Appetite Loss,Nause,Weight Loss,Abdonormal Pain,Yes,original
+Fowl,Fever,Muscle Loss,Skeleten Pain,Weight Loss,Wasting,Yes,original
+Fowl,Oedema,Swelling Of Face Or Leg,Swelling Of Neck,Weight Loss,Pain,Yes,original
+Fowl,Poor Growth,Short Stature,Enlargement Of Bones,Lameness,Weigth Bearing Long Bones,Yes,original
+Fowl,Fever,Chills,Sweat,Head Ache,Fatique,Yes,original
+Fowl,Fever,Appetite Loss,Weakness,Weight Loss,Vomiting,Yes,original
+Fowl,Dullness,Lacrimation,Coughing,Diarrhea,Seizures,Yes,original
+Fowl,Vomiting,Bloody Diarrhea,Lethargy,Dehydration,Appetite Loss,Yes,original
+Fowl,Fever,Uncharacteristic Hiding,Depression,Dehydration,Stopped Eat,Yes,original
+Fowl,Fever,Poor Coat Condition,Infection Of The Skin,Weight Loss,Fatique,Yes,original
+Fowl,Weakness,Stiffness,Trembling,White Mark On The Muscle,Loss Of Vitamin E,Yes,original
+Fowl,Partial Paralysis,Staggering As Drunk,Self Mutilation,Acting Aggressive,Acting Unnaturally Tame,Yes,original
+Fowl,Fever,Tiredness,Headache,Skin Rashes,Pain,Yes,original
+Fowl,Thick Crusting,Itchiness,Hair Loss,Watery Eye,Pain,Yes,original
+Fowl,Constant Pacing,Facial Muscle Twitching,Abnormalalities,Blindness,Muscle Pain,Yes,original
+Fowl,Loss Od Appetite,Wheezing,Seizuers,Skin Rashes,Fatique,Yes,original
+Fowl,Indigestion,Abdminal Pain,Constipation,Diarrhea,Nausea,Yes,original
+Fowl,Blood In Urine,Diarrhea,Vomiting,Lethargy,Bleeding In Eye And Skin,Yes,original
+Fowl,Fever,Malaise,Weakness,Weight Loss,Pain,Yes,original
+Fowl,Fever,Diarrhea,Vomiting,Stomach Cramps,Nausea,Yes,original
+Fowl,Fever,Lack Of Coordination,Depression,Salivation,Facial Paralysis,Yes,original
+Fowl,Sores On Lip,Infection,Sores On Lower Leg And Teats,Lesion,Pain,Yes,original
+Fowl,Abortion On Late Pregancy,Stillbirth,Retained Placenda,Endomeritis,Decrease Appetite,Yes,original
+Fowl,Paresis,Paralysis,Weakness,Stomach Cramps,Diarrhea,Yes,original
+Fowl,Fever,Diarrhea,Swelling,Weight Loss,Pain,Yes,original
+Fowl,Fever,Hemolytic Anemia,Hemoglobinuria,Pulmonary Congestion,Jaundice,Yes,original
+Fowl,Abortion,Mummification,Stillbirth,Weak Kids,Pain,Yes,original
+Fowl,Runny Nose,Difficulty In Breathing,Coughing,Weakness,Loss Of Appettite,Yes,original
+Fowl,Fever,Nasal Discharge,Respiratory Distress,Pox Lesion,Pain,Yes,original
+Fowl,Fever,Dark Colored Bloody,Incoordination,Difficulty In Breathing,Terminal Convulsion,Yes,original
+Fowl,Fever,Dysentery,Swelling,Immediate Death,Pain,Yes,original
+Fowl,Fever,Respiratory Distress,Mucous Discharge,Reduce Feed,Weight Gain,Yes,original
+Fowl,Decreased Milk,Holding Limbs Off The Ground,Weight Loss,Lameness,Wool Production,Yes,original
+Fowl,Swelling Of Udder,Change In Milk,Swollen,Tender To Touch,Pain,Yes,original
+Fowl,Fever,Respiratory Distress,Occular Discharge,Mouth Lesion,Nasal Discharge,Yes,original
+Fowl,Fever,Wound Lesion,Excess Salivary,Difficult In Walking,Pain,Yes,original
+Fowl,Emaciation,Edema In Lower Jaw,Coughing,Shivering,Anemia,Yes,original
+Buffalo,Fever,Reduce Growth,Kid Moratality,Weakness,Dullness,Yes,original
+Buffalo,Fever,Reduce Growth,Edema In Lower Jaw,Weight Loss,Anemia,Yes,original
+Buffalo,Emaciation,Diarrhea,Kid Moratality,Weakness,Anemia,Yes,original
+Buffalo,Skinallergy,Reduce Growth,Wound,Head Ache,Dizziness,Yes,original
+Buffalo,Watering Of Eyes,Redness Of White Of The Eye,Swelling Of Eyelid,Cornea Become Cloudy,Tear Production,Yes,original
+Buffalo,Berberi,Wasting,Nervous,Weight Loss,Appetite Loss,Yes,original
+Buffalo,Gastritis,Morbidity,Bloody,Mortality,Anemia,Yes,original
+Buffalo,Fever,Severe Headache,Vomiting,Coughing,Fatique,Yes,original
+Buffalo,Fever,Tiredness,Swollen Kidney,Hematuria,Muscle Aches,Yes,original
+Buffalo,Fever,Diarrhea,Decreased Appetite,Vomiting,Bloody,Yes,original
+Buffalo,Gas,Diarrhea,Abdominal Discomfort,Vomiting,Nausea,Yes,original
+Buffalo,Drooping Ears,Lack Of Coordination,Drooling,Wasting,Listlessness,Yes,original
+Buffalo,Edema,Diarrhea,Nasal Discharge,Decresed Egg Production,Sneezing,Yes,original
+Buffalo,Drooping Wings,Depression,Nasal Discharge,Coughing,Greenish Diarrhea,No,original
+Buffalo,Weakness,Yellow Or Green Dropping,Purplish Combs,Wattles,Drop On Egg Production,No,original
+Buffalo,Neck Paralysis,Diarrhea,Ruffled Feathers,Labored Breathing,Weakness,No,original
+Buffalo,Facial Swelling,Lacrimation,Diarrhea,Appetite Loss,Nasal Discharge,No,original
+Buffalo,Appetite Loss,Depression,Paralyzed Leg,Weight Loss,Anemia,No,original
+Buffalo,Dejection,Appetite Loss,Slow Growth,Diarrhea,Lesion,No,original
+Buffalo,Severe Swellimg,Heavy Breathing,Diarrhea,Weight Loss,Pain,No,original
+Buffalo,Weakness,Diarrhea,High Moratality,Dehydration,Appetite Loss,No,original
+Buffalo,Fever,Hepatitis,Skin Rashes,Weight Loss,Pain,No,original
+Buffalo,Sneezing,Epistaxis,Coughing,Difficulty In Breathing,Nasal Discharge,No,original
+Buffalo,Sneezing,Unilateral Nasal Discharge,Gagging,Retching,Weight Loss,Yes,original
+Buffalo,Fever,Depression,Coughing,Weight Loss,Appetite Loss,Yes,original
+Buffalo,Shallow Breathing,Halitosis,Coughing,Lethargy,Nasal Discharge,Yes,original
+Buffalo,Dyspnea,Sneezing,Coughing,Difficulty In Breathing,Infection,Yes,original
+Buffalo,Dyspnea,Sneezing,Coughing,Difficulty In Breathing,Pain,Yes,original
+Buffalo,Fever,Rhinorrhea,Coughing,Sneezing,Dehydration,Yes,original
+Buffalo,Fever,Rhinorrhea,Coughing,Facial Edema,Dyspnea,Yes,original
+Buffalo,Fever,Rhinorrhea,Coughing,Sneezing,Nasal Discharge,Yes,original
+Buffalo,Mortality,Painfull,Coughing,Weight Loss,Nasal Discharge,Yes,original
+Buffalo,Skin Rashes,Diarrhea,Death,Facial Edema,Pain,Yes,original
+Buffalo,Fever,Dyspnea,Coughing,Lethargy,Weightloss,Yes,original
+Buffalo,Fever,Dyspnea,Coughing,Weakness,Appetite Loss,Yes,original
+Buffalo,Facial Edema,Dyspnea,Conjuctivtis,Weakness,Pharyngitis,Yes,original
+Buffalo,Fever,Pneumonia,Congestion,Lethargy,Nasal Discharge,Yes,original
+Buffalo,Fever,Death,Coughing,Weight Loss,Nasal Discharge,Yes,original
+Buffalo,Sneezing,Convulsion,Seizuers,Weight Loss,Nasal Discharge,Yes,original
+Buffalo,Fever,Death,Coughing,Dyspnea,Appetite Loss,Yes,original
+Buffalo,Dyspnea,Difficulty In Breathing,Coughing,Lethargy,Nasal Discharge,Yes,original
+Buffalo,Air Sacculitis,Halitosis,Coughing,Enteritis,Weight Loss,Yes,original
+Buffalo,Fever,Convulsion,Sudden Death,Urine Retention,Weight Loss,Yes,original
+Buffalo,Dyspnea,Neurologic Sign,Coughing,Depression,Appetite Loss,Yes,original
+Buffalo,Fever,Dyspnea,Coughing,Lethargy,Appetite Loss,Yes,original
+Buffalo,Labored Breathing,Dyspnea,Coughing,Depression,Appetite Loss,Yes,original
+Buffalo,Blood From Mouth,Diarrhea,Coughing,Lethargy,Weight Loss,Yes,original
+Buffalo,Hemopytsis,Diarrhea,Asymptomatic,Death,Epistaxis,Yes,original
+Buffalo,Restlessness,Weakness,Blue Straws,Death,Pain,Yes,original
+Buffalo,Stripped Remiges,Less Feather Growth,Ruffled Feathers,Defienciency In Vitamin,Diarrhea,Yes,original
+Buffalo,Apathy,Depression,Dilation Of Duodenum,Cloacal Pasting,Congestion,Yes,original
+Buffalo,Lepatomegaly,Splenomegaly,Vomiting,Swollen,Shaking Oh Head,Yes,original
+Buffalo,Balance Problem,Abdominal Destention,Neck Paralysis,Weight Loss,Pain,Yes,original
+Buffalo,Legness,Paresis,Coughing,Weight Loss,Shortness Of Breath,Yes,original
+Buffalo,Fever,Sour Throat,Mortality,Muscle Aches,Abnormalities,Yes,original
+Buffalo,Difficulty In Feeding,Preening,Weakness,Beak Overgrowth,Anemia,Yes,original
+Buffalo,Fever,Appetite Loss,Ear Infection,Depression,Nasal Discharge,Yes,original
+Buffalo,Forthy Eye,Torticollis,Weakness,Swelling,Emaciation,Yes,original
+Buffalo,Inappentence,Diarrhea,Tremors Of The Head,Dehydration,Weight Loss,Yes,original
+Buffalo,Lack Of Walking,Lack Of Flying,Roughened,Dehydration,Pain,Yes,original
+Buffalo,Skin Rashes,Small And Yellow Bumps,Swelling,Dry Scabs,Lameness,Yes,original
+Buffalo,Scabs On Feet,Redness,Trachea,Thickening Of Skin,Pain,Yes,original
+Buffalo,Enlarged Thymus,Obstructed Lungs,Lethargy,Skin Rashes,Weight Loss,Yes,original
+Buffalo,Fluffed Feather,Appetite Loss,Coughing,Vomiting,Snoring,Yes,original
+Buffalo,Fever,Difficultty In Breathing,Yellow Eye,Sneezing,Diphtherictic,Yes,original
+Buffalo,Heavy Breathing,Yellow In Beak,Tail Bobbing,Weakness,Sleeping Excessively,Yes,original
+Buffalo,Puffed Up Feather,Less Eat,Headache,Half Closed Eye,Seizures,Yes,original
+Buffalo,Fever,Diarrhea,Swollen Abdomen,Vomiting,Difficulty In Breathing,Yes,original
+Buffalo,Tail Wagging,Straining,Lethargy,Weakness,Diarrhea,Yes,original
+Buffalo,Overweight,Appetite Loss,Ruffled Feathers,Depression,Diarrhea,Yes,original
+Buffalo,Dejection,Appetite Loss,Stress,Coughing,Pain,Yes,original
+Buffalo,Skin Infection,Secondary Infection,Coughing,Depression,Shaking Oh Head,Yes,original
+Buffalo,Discharge From Eyes,Lethargy,Coughing,Sneezing,Fatique,Yes,original
+Buffalo,Fever,Chills,Retarded Growth,Chest Pain,Chest Pain,Yes,original
+Buffalo,Pale Comb,Lame,Death,Swolling Of Joint,Eye Closed,Yes,original
+Buffalo,Lethargy,Appetite Loss,Difficulty In Swallowing,Weakness,Vision Problem,Yes,original
+Buffalo,Emaciation,Difficulty In Breathing,Vomiting,Weakness,Diarrhea,Yes,original
+Buffalo,Liquid Dropping,Exhaustion,Ataxia,Lethargy,Seizures,Yes,original
+Buffalo,Undigested In Their Feces,Appetite Loss,Loss Of Pigment,Weakness,Bloody In Feather,Yes,original
+Buffalo,Sharp Feather,Clubbed Feather,Eye Disharge,Loss Of Powder Down,Diarrhea,Yes,original
+Buffalo,Ruffled Appearance,Appetite Loss,Vomiting,Green Dropping,Nasal Discharge,Yes,original
+Buffalo,Sinuses,Swollen Eyelids,Skin Rashes,Sneezing,Misshapen Beak,Yes,original
+Buffalo,Feather Loss,Feather Plucking,Coughing,Itching,Nasal Discharge,Yes,original
+Buffalo,Watery Eyes,Eye Closed,Weight Loss,Sneezing,Nervous Issue,Yes,original
+Buffalo,Bony Lesion,Skin Rashes,Ataxia,Appetite Loss,Weakness,Yes,original
+Buffalo,Tremor Of Head And Neck,Blindness,Kicking At The Belly,Exercise In Tolerance,Pain,Yes,original
+Buffalo,Swollen Belly,Dullness,Discharge,Urination,Lying Down,Yes,original
+Buffalo,Fever,Dullness,Depression,Weight Loss,Appetite Loss,Yes,original
+Buffalo,Fever,Succumb,Spread Of Infection,Weight Loss,Appetite Loss,Yes,original
+Buffalo,Signs In Rams,Signs In Ewe,Underdeveloped Muscles,Semen Examination,Reduce Lamp Marking,Yes,original
+Buffalo,Spines,Unusally Thin,Weakness,Enlarged Skulls,Weakness,Yes,original
+Buffalo,Discharge,Sudden Abortion,Hemoglobinuria,Death Of Lamb,Weight Loss,Yes,original
+Buffalo,Fever,Hemolytic Anemia,Sweats,Congestion,Jaundice,Yes,original
+Buffalo,Fever,Tiredness,Appetite Loss,Muscle Aches,Chest Pain,Yes,original
+Buffalo,Excess Salivation,Diarrhea,Depression,Nasal Discharge,Weakness,Yes,original
+Buffalo,Fever,Diarrhea,Incoordination,Abortion,Blood Poisioning,Yes,original
+Buffalo,Fever,Wasting,Dehydration,Deability,Weakness,Yes,original
+Buffalo,Fever,Diarrhea,Muscle Twiching,Lameness,Weight Loss,Yes,original
+Buffalo,Fever,Depression,Lying Down,Weak Pulse,Colic,Yes,original
+Buffalo,Swelling,Lameness,Hyperaestesia,Hock Joint,Weight Loss,Yes,original
+Buffalo,Head Tilt,Circling,Muscles Ache,Blindness,Seizures,Yes,original
+Buffalo,Decreased Growth Of Bone,Depression,Grunting,Lameness,Weight Loss,Yes,original
+Buffalo,Swollen Left Abdomen,Lying Down,Staggering,Urination,Extension Of Neck,Yes,original
+Buffalo,Cessation Of Eructation,Difficulty In Breathing,Depression,Appetite Loss,Colic,Yes,original
+Buffalo,Fever,Excession Salivation,Abnormal Conformation,Ulcerated Muscle,Ulcerated Ear,Yes,original
+Buffalo,Barren Ewes,Abortion,Poor Conformation,Hairy Fleeces,Weight Loss,Yes,original
+Pig,Tremor,Viability,Coughing,Appetite Loss,Weight Loss,Yes,original
+Pig,Fever,Tachypea,Swelling Of Head And Neck,Appetite Loss,Nasal Discharge,Yes,original
+Pig,Lllthrift,Skin Lesion,Lameness,Swelling On Thebody,Weight Loss,Yes,original
+Pig,Swelling,Heat,Flank,Pain,Nasal Discharge,Yes,original
+Pig,Fever,Appetite Loss,Lameness,Rump,Weight Loss,Yes,original
+Pig,Fever,Swelling,Appetite Loss,Appetite Loss,Weight Loss,Yes,original
+Pig,Fever,Diarrhea,Bloody Droping,Abdominal Discomfort,Lethargy,Yes,original
+Pig,Fever,Depression,Small Intestines,Death,Flock Moratality,Yes,original
+Pig,Haemorrhage,Straw Colored,Abdominal Pain,Death,Carcass Decomposes,Yes,original
+Pig,Bloody Diarhhea,Depression,Dullness,Death,Weakness,Yes,original
+Pig,Reluctant Move,Appetite Loss,Lameness,Death,Weakness,Yes,original
+Pig,Fever,Depression,Appetite Loss,Appetite Loss,Pain,Yes,original
+Pig,Fever,Difficulty In Breathing,Lethargy,Death,Pain,Yes,original
+Pig,Poor Wool,Appetite Loss,Lameness,Small Size,Poor Body Condition,Yes,original
+Pig,Poor Immune Function,Achomotrica,Dehydration,Death,Pain,Yes,original
+Pig,Abdominal Pain,Diarrhea,Malpresentation,Shock,Appetite Loss,Yes,original
+Pig,Fetopelvic Dispropotion,Uteria Inertia,Despression,Death,Pain,Yes,original
+Pig,Watery Diarrhea Dispropotion,Sick,Corneal Ulceration,Appetite Loss,Death,Yes,original
+Pig,Severe Kerititis,Conjunctive,Discharge,Iris Prolapse,Loss Of Eye,Yes,original
+Pig,Swollen,Testical Pain,Itches,Bloody Discharge,Tenderness,Yes,original
+Pig,Fever,Diarrhea,Depression,Scratches,Weight Loss,Yes,original
+Pig,Foul Smelling,Dullness,Dirty,Stained Wool,Tail Shaking,Yes,original
+Pig,Sheep Often Bites,Fleece Become Thin,Loss Of Wool,Death,Pain,Yes,original
+Pig,Fever,Dullness,Dullness,Skin Rashes,Pain,Yes,original
+Pig,Fever,Difficulty In Breathing,Rub,Coughing,Sneezing,Yes,original
+Pig,Restlessness,Kick,Lethargy,Nible At Their Wool,Scratching,Yes,original
+Pig,Jaundice,Appetite Loss,Rough Hair Coat,Coughing,Death,Yes,original
+Pig,Fever,Reduce Reproductive Potential,Agalactia,Loss Of Milk Production,Sloughing Of The Tail,Yes,original
+Pig,Pyrexia,Oral Lesion,Swelling,Lameness,Death,Yes,original
+Pig,Red Skin,Appetite Loss,Moist,Lameness,Pain,Yes,original
+Pig,Limping,Skin Colour Change,Flabby,Raw,Sensitive To Touch,Yes,original
+Pig,Groosly Enlarged,Skin May Thicken,Convulsion,Edematous,Pain,Yes,original
+Pig,Hyperexcitability,Muscular Spasms,Gums,Death,Pain,Yes,original
+Pig,Decreased Eyelid,Very Cold Skin,Lethargy,Lip,Fever,Yes,original
+Pig,Fever,Diarrhea,Muscus,Weight Loss,Death,Yes,original
+Pig,Foul Smelling,Diarrhea,Colic,Bloody Discharge,Blood Clots,Yes,original
+Pig,Inability To Digest,Diarrhea,Dehydration,Weight Loss,Anemia,Yes,original
+Pig,Fever,Diarrhea,Pot Belly,Death,Loss Of Appettite,Yes,original
+Pig,Emaciation,Diarrhea,Coughing,Weight Loss,Death,Yes,original
+Pig,Respiratory Distress,Diarrhea,Death,Reduce Milk,Weight Loss,Yes,original
+Pig,Lllthrift,Bottle Jaw,Strange Behaviour,Aneamia,Jaundice,Yes,original
+Pig,Fever,Lameness,Wasting,Blindness,Staggering,Yes,original
+Pig,Fever,Diarrhea,Clearly Unthrifty,Weight Loss,Good Appetite,Yes,original
+Pig,Fever,Dullness,Relunctance To Walk,Infected Navels,Pain,Yes,original
+Pig,Tenderness,Foot Hot,Facial Paralysis,Weight Loss,Pain,Yes,original
+Pig,Fever,Lack Of Coordination,Painfull To Touch,Circling,Depression,Yes,original
+Pig,Swollen,Warm,Constipation,Depression,Bloody,Yes,original
+Pig,Fever,Appetite Loss,Stumbling,Restlessness,Pain,Yes,original
+Pig,Unsteady Gait,Twitching,Blindness,Swelling On Joints,Pain,Yes,original
+Pig,Fever,Ulcer,Scabs,Discharge From Eye,Pain,Yes,original
+Pig,Smell Of Ammonia,Ulcer,Depression,Swelling,Pain,Yes,original
+Pig,Fever,Lethargy,Blindness,Inappentence,Increased In Breathing,Yes,original
+Pig,Wandering,Circling,Blindness,Head Pressing,Recumbency,Yes,original
+Pig,Tremors,Lying On The Side,Difficulty In Swallowing,Death,Not Eating,Yes,original
+Pig,Fever,Difficulty In Breathing,Coughing,Sneezing,Seizures,Yes,original
+Pig,Swelling,Appetite Loss,Wool Loss,Tears,Death,Yes,original
+Pig,Wool Is Clumped,Feels Stiff,Staggering,Skin Rashes,Pain,Yes,original
+Pig,Swaying,Behaviour Change,Tremor,Jerky Limb Movements,Pain,Yes,original
+Pig,Cell Damage,Behaviour Change,Weight Loss,Pruritis,Death,Yes,original
+Pig,Swelling,Discomfort,Difficulty In Rising,Death,Pain,Yes,original
+Pig,Swollen,Hot Joints,Pustulses,Difficulty In Walk,Pain,Yes,original
+Pig,Formation Of Vesicles,Nostrils,Abnormally Long Leg,Scabs On Lip,Pain,Yes,original
+Pig,Skeleten Abnormalities,Facial Defects,Hair Loss,Flat Ribs,Underdeveloped Muscles,Yes,original
+Tiger,Wether Restless,Kicking,Normal Appetite,Attempt To Urinate,Pain,Yes,original
+Tiger,Inability To Stand,Pains To Walk,Depression,Weakness,Stiffness,Yes,original
+Tiger,Fever,Succumb,Sluggish,Appetite Loss,Pain,Yes,original
+Tiger,Listless,Bottle Jaw,Malpresentation,Death,Oxygen Defiency,Yes,original
+Tiger,Fetopelvic Dispropotion,Uteria Inertia,Malpresentation,Death,Pain,Yes,original
+Donkey,Fetopelvic Dispropotion,Uteria Inertia,Malpresentation,Death,Pain,Yes,original
+Donkey,Fetopelvic Dispropotion,Uteria Inertia,Fast Breathing,Death,Pain,Yes,original
+Donkey,Coughing,Panting,"Facial Swelling,",Production Of Mucus,Fatigue,Yes,original
+Donkey,Cough,Sneeze,Droopy Wings,Twisted Neck,Droopy Wings,Yes,original
+Donkey,Shortness Of Breath.,Fatigue,Chirping,Appetite Loss,Swollen Abdomen,Yes,original
+Donkey,Gasping,Coughing,Mild Weakness,Droopy Wings,Twisted Neck,Yes,original
+Donkey,Excessive Blood Loss,Dizziness And Fainting,Blurry Vision,Watery Eyes,Slow Growth,Yes,original
+Donkey,Nosebleed,Trauma,Mild Weakness,Nose Picking,Dry Air,Yes,original
+Donkey,Bleeding From Other Parts Of The Body,Confusion,Nasal Discharge,Loss Of Alertness,Dizziness And Fainting,Yes,original
+Donkey,Bad Breath,Pawing At The Face Or Nose,Cough,Sneezing,Bleeding From The Nose,Yes,original
+Donkey,Extending Its Neck,Gasping For Air,Gasping For Breath,Difficulty Swallowing,Gasping For Breath,Yes,original
+Donkey,Difficulty Swallowing,Cough,Difficulty Swallowing,Gasping For Air,Extending Its Neck,Yes,original
+Donkey,Cough,Gasping For Air,Weight Loss,Gasping For Breath,Extending Its Neck,Yes,original
+Donkey,Weakness,Decreased Stool Production,Distended Stomach,Heavy Breathing,Restless Movement,Yes,original
+Donkey,Eye Redness,Frequent Eye Infections,Crusty Eye Lashes And Matting Of Eyelashes,Foul Smelling Stools,Increased Passing Gas,Yes,original
+Donkey,Excessive Eye Watering,Eye Redness,Weakness,Mucus Discharge From The Eye,Frequent Eye Infections,Yes,original
+Donkey,Sudden Death,Appetite Loss,Rapid Heartbeats,Fluffed Feathers,Lack Of Vocalizations,Yes,original
+Donkey,Unable To Urinate,Lightheadedness,Droopiness,Rectal Bleeding,Swollen Abdomen,Yes,original
+Donkey,Extreme Thirst,Bloody Discharge,Appetite Loss,Inability To Fly,Loss Of Wariness,Yes,original
+Donkey,Egg Production Stops,Broody Behavior,Appetite Loss,Weight Loss,Constipation,Yes,original
+Donkey,Nausea,Vomiting,Appetite Loss,Experiencing Changes In Weight,Pain And Bloating,Yes,original
+Donkey,Burning Ache Or Pain,Vomiting,Appetite Loss,Experiencing Changes In Weight,Pain And Bloating,Yes,original
+Donkey,Continuous Loss Of Weight,Regurgitation Of Food,Wheezing,Excessive Food Intake,Undigested Seeds,Yes,original
+Donkey,Appetite Loss,Lathargy,Abortion,Gurgling Sound,Depression,Yes,original
+Donkey,Fever,Mild Colic,Loss Of Tail Tone,Appetite Loss,Depression,Yes,original
+Donkey,Head Tilt,Lathargy,Lathargy,Urine Dribbling,Inability To Rise,Yes,original
+Donkey,Fever,Appetite Loss,Respiratory Noise,Weight Loss,Depression,Yes,original
+Donkey,Fever,Nasal Discharge,Muscular Stiffness,Swollen Lymph Nodes,Depression,Yes,original
+Donkey,Sweating,Muscular Spasms,Thirst,Weight Loss,Difficulty Moving And Eating,Yes,original
+Donkey,Appetite Loss,High Body Temperaure,Appetite Loss,Diarrhea,Sudden Death,Yes,original
+Deer,Weight Loss,Dull Ness,Inappetence,Self Isolation,Recumbency,Yes,original
+Deer,Weight Loss,Dull Ness,Muscles Problem,Self Isolation,Recumbency,Yes,original
+Deer,Changed Gait,Dull Ness,Muscles Problem,Pain,Pain,Yes,original
+Deer,Changed Gait,Dull Ness,Diffuse,Difficulty Diagnosis,Anemia,Yes,original
+Deer,Difficulty In Breathing,Swelling Problem,Bleeding From Wounds,Frequent Yawning,Appetite Loss,Yes,original
+Deer,Undernutrition,Drinking Polluted Water,Listlessness,Staggering,Appetite Loss,Yes,original
+Deer,Wasting,Stumbling,Fever,Drooling,Drooping Ears,Yes,original
+Deer,Feline Infections,Lymphosarcoma,Difficulty Breating,Stomatitis,Anaemia,Yes,original
+Deer,Sudden Death,Fever,Difficulty Breating,Aneamia,Trembling,Yes,original
+Deer,Sudden Death,Fever,Difficulty Breating,Staggering,Trembling,Yes,original
+Deer,Sudden Death,Fever,Rapid Pulse And Heart Rates,Depression,Trembling,Yes,original
+Deer,Fever,Appetite Loss,Rapid Pulse And Heart Rates,Lameness In Affected Leg,Depression,Yes,original
+Deer,Fever,Appetite Loss,Swollen Teats,Lameness In Affected Leg,Depression,Yes,original
+Deer,Swelling,Nasal Discharge,Drooling,Tiredness,Fever,Yes,original
+Deer,Eye Discharges,Nasal Discharge,Change Their Normal Behaviour,High Body Temperature,Lameness,Yes,original
+Deer,Stop Eating,Stop Drinking,Change Their Normal Behaviour,Lameness,Pain,Yes,original
+Deer,Stop Eating,Stop Drinking,Change Their Normal Behaviour,Weight Loss,Pain,Yes,original
+Deer,Stop Eating,Stop Drinking,Change Their Normal Behaviour,Depression,Pain,Yes,original
+Buffalo,Fever,Breathing Difficulty,Thrist And Urination,Lethargy,Sneezing,Yes,original
+Buffalo,Fever,Diarrhea,Nasal Discharge,Lethargy,Blue Eye,Yes,original
+Buffalo,Fever,Respiratory Distress,Weekness In The Back Legs,Hyperesthesia,Sudden Death,Yes,original
+Buffalo,Ulcers,Diarrhea,Back Pain,Tarry Stool,Enlarged Lymph Nodes,Yes,original
+Buffalo,Facial Swelling,Bloody Drool,Abdominal Pain,Unable To Eat,Lossened Teeth,Yes,original
+Buffalo,Fever,Breathing Difficulty,Reduce Energy,Weight Loss,Enlarged Lymph Nodes Or Swelling,Yes,original
+Buffalo,Swelling On Leg,Painfull,Poor Appetite,Broken Bones,Nasal Discharge,Yes,original
+Buffalo,Short Term Lethargy,Appetite Loss,Poor Appetite,Rapid Heart Rate,Week Pulse,Yes,original
+Buffalo,Swollen Lymph Nodes,Difficulty Walking,Watery Stool,Lethargy,Vaginal Discharge,Yes,original
+Buffalo,Fever,Diarrhea,Sneezing,Stiffness,Severe Weekness And Depression,Yes,original
+Buffalo,Fever,Appetite Loss,Coughing,Lameness,Swelling Of Joints,Yes,original
+Buffalo,Fever,Chronic Eye Inflamation,Coughing,Lethargy,Neurologic Abnormalities,Yes,original
+Buffalo,Fever,Swelling Of Face Or Leg,Coughing,Depression,Pain,Yes,original
+Buffalo,Diarrhea With Muscus,Tensemus,Nose Bleeds,Flatulence,Pain,Yes,original
+Buffalo,Strong Cough,Runny Nose,Darkened Skin,Lethargy,Loss Of Appettite,Yes,original
+Buffalo,Fever,Inflammed Eye,Sneezing,Depression,Limping,Yes,original
+Buffalo,Fever,Breathing Difficulty,Poor Appetite,Eye And Skin Change,Unable To Exercise,Yes,original
+Buffalo,Fever,Appetite Loss,Lession On The Skin,Lethargy,Joint Pain,Yes,original
+Buffalo,Lesions In The Nasal Cavity,Lesions On Nose,Vomiting,Noisy Breathing,Lesions On Nose,Yes,original
+Buffalo,Hair Loss,Dandruff,Vomiting,Crusting Of The Skin,Ulcerated Skin,Yes,original
+Buffalo,Greenish Yellow Nasal Discharge,Lack Of Pigmentation,Vomiting,Lethargy,Pain On Face,Yes,original
+Dog,Eye Discharge,Nasal Discharge,Skin Lesions,,,No,llm_data_augmentation
+Dog,Eye Discharge,Nasal Discharge,Sneezing,,,No,llm_data_augmentation
+Dog,Eye Discharge,Nasal Discharge,Lameness,,,No,llm_data_augmentation
+Dog,Eye Discharge,Skin Lesions,Sneezing,,,No,llm_data_augmentation
+Dog,Eye Discharge,Skin Lesions,Lameness,,,No,llm_data_augmentation
+Dog,Eye Discharge,Sneezing,Lameness,,,No,llm_data_augmentation
+Dog,Nasal Discharge,Skin Lesions,Lameness,,,No,llm_data_augmentation
+Dog,Nasal Discharge,Sneezing,Lameness,,,No,llm_data_augmentation
+Dog,Skin Lesions,Sneezing,Lameness,,,No,llm_data_augmentation
+Dog,Eye Discharge,Nasal Discharge,Skin Lesions,Lameness,,No,llm_data_augmentation
+Dog,Eye Discharge,Nasal Discharge,Sneezing,Lameness,,No,llm_data_augmentation
+Dog,Eye Discharge,Skin Lesions,Sneezing,Lameness,,No,llm_data_augmentation
+Dog,Nasal Discharge,Skin Lesions,Sneezing,Lameness,,No,llm_data_augmentation
+Dog,Eye Discharge,Nasal Discharge,Skin Lesions,Sneezing,Lameness,No,llm_data_augmentation
+Cat,Eye Discharge,Nasal Discharge,Sneezing,,,No,llm_data_augmentation
+Cat,Eye Discharge,Nasal Discharge,Lameness,,,No,llm_data_augmentation
+Cat,Eye Discharge,Skin Lesions,Sneezing,,,No,llm_data_augmentation
+Cat,Eye Discharge,Skin Lesions,Lameness,,,No,llm_data_augmentation
+Cat,Eye Discharge,Sneezing,Lameness,,,No,llm_data_augmentation
+Cat,Nasal Discharge,Skin Lesions,Lameness,,,No,llm_data_augmentation
+Cat,Nasal Discharge,Sneezing,Lameness,,,No,llm_data_augmentation
+Cat,Skin Lesions,Sneezing,Lameness,,,No,llm_data_augmentation
+Cat,Eye Discharge,Nasal Discharge,Skin Lesions,Sneezing,,No,llm_data_augmentation
+Cat,Eye Discharge,Nasal Discharge,Skin Lesions,Lameness,,No,llm_data_augmentation
+Cat,Eye Discharge,Nasal Discharge,Sneezing,Lameness,,No,llm_data_augmentation
+Cat,Eye Discharge,Skin Lesions,Sneezing,Lameness,,No,llm_data_augmentation
+Cat,Nasal Discharge,Skin Lesions,Sneezing,Lameness,,No,llm_data_augmentation

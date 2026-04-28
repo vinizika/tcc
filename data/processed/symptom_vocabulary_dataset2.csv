@@ -1,0 +1,25 @@
+symptom,count,source_columns
+Appetite Loss,702,"Appetite_Loss, Symptom_1, Symptom_2, Symptom_3, Symptom_4"
+Coughing,467,"Coughing, Symptom_1, Symptom_2, Symptom_3, Symptom_4"
+Vomiting,347,"Symptom_1, Symptom_2, Symptom_3, Symptom_4, Vomiting"
+Nasal Discharge,319,"Nasal_Discharge, Symptom_1, Symptom_2, Symptom_3, Symptom_4"
+Lameness,303,"Lameness, Symptom_1, Symptom_2, Symptom_4"
+Fever,293,"Symptom_1, Symptom_2, Symptom_3, Symptom_4"
+Diarrhea,283,"Diarrhea, Symptom_1, Symptom_2, Symptom_3, Symptom_4"
+Lethargy,278,"Symptom_1, Symptom_2, Symptom_3, Symptom_4"
+Labored Breathing,260,"Labored_Breathing, Symptom_1, Symptom_2, Symptom_3, Symptom_4"
+Eye Discharge,248,"Eye_Discharge, Symptom_1, Symptom_2, Symptom_3, Symptom_4"
+Skin Lesions,244,"Skin_Lesions, Symptom_1, Symptom_3, Symptom_4"
+Sneezing,50,"Symptom_1, Symptom_2, Symptom_3, Symptom_4"
+Swollen Legs,38,"Symptom_2, Symptom_3, Symptom_4"
+Weight Loss,35,"Symptom_1, Symptom_2, Symptom_3, Symptom_4"
+Swollen Joints,26,"Symptom_1, Symptom_2, Symptom_3, Symptom_4"
+Dehydration,19,"Symptom_2, Symptom_3, Symptom_4"
+Decreased Milk Yield,9,"Symptom_1, Symptom_2, Symptom_3, Symptom_4"
+Reduced Appetite,6,"Symptom_3, Symptom_4"
+Reduced Milk Production,3,"Symptom_2, Symptom_4"
+No,2,Symptom_4
+Reduced Mobility,1,Symptom_4
+Reduced Wool Growth,1,Symptom_4
+Reduced Wool Production,1,Symptom_2
+Swelling,1,Symptom_2

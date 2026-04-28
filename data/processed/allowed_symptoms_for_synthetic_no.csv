@@ -1,0 +1,6 @@
+symptom,allowed_for_synthetic_no,reason
+Eye Discharge,Yes,Sintoma considerado leve para geração controlada de casos não urgentes
+Nasal Discharge,Yes,Sintoma considerado leve para geração controlada de casos não urgentes
+Skin Lesions,Yes,Sintoma considerado leve para geração controlada de casos não urgentes
+Sneezing,Yes,Sintoma considerado leve para geração controlada de casos não urgentes
+Lameness,Yes,"Sintoma aceito para geração controlada, considerando ausência de sinais críticos associados"
