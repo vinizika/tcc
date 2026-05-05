@@ -268,9 +268,9 @@ A matriz de confusão mostrou que, após a aplicação do parâmetro format=json
 Por enquanto temos essas métricas:
 1. Acurácia
 2. Matriz de confusão
-3. Precision
-4. Recall
-5. F1-score
+3. Precision (Quando o modelo disse EMERGENCIA, quantas vezes ele estava certo?)
+4. Recall (De todos os casos que eram emergência, quantos o modelo encontrou?)
+5. F1-score (F1-score combina precision e recall.)
 6. Taxa de JSON inválido/válido
 7. Taxa de casos INCERTO
 8. Taxa de falso não urgente
@@ -294,4 +294,15 @@ Estrutura da resposta:
 - taxa de JSON inválido
 
 Desempenho:
-- tempo médio de predição
+- tempo médio de predição -- isso é importante para avaliar 
+
+matriz de confusao é a ultima etapa
+
+podemos mudar o tamanho de modelo e o tipo de modelo
+mudando o tipo de modelo usar a mesma quantidade de parametros para comparar
+
+para entrega final de TCC2 fazer uma comparação com diferentes modelos pequenos, pois isso rodaria em um celular
+
+- nao fugir acima de modelos de 16GB
+
+## design of experiments: tabela com diferentes modelos e testes
