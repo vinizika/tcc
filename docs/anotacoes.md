@@ -137,3 +137,161 @@ linhas_sinteticas_rejeitadas: 5
 839 linhas originais
 + 27 linhas sintéticas aprovadas
 = 866 linhas totais
+
+escrever detalhes do data augmentation, baseado em estudos, precisa estar bem detalhado os 5 sintomas (a escolha com base na Bia - conhecimento de especialista) e tambem pelo fato de estarmos inserindo dados sinteticos em um dataset
+
+para o dev, usar pydantic para fazer validação de entrada (tenho uma saida, e nessa saida so posso ter essas palavras especificas) - boa integracao com o langchain
+
+next step: criar fluxos mais completos, passando contexto e etc... (usar o banco nao relacional ja para armazenar o historico e etc...)
+
+## Dia 04/05/2026
+## Métricas de avaliação
+
+Estou iniciando com acurácia, interpretando o que o modelo consegue identificar como Emergencia ou Nao Emergencia. Além disso, quero identificar também a sua capacidade de me devolver JSONs válidos antes de usar pydantic e o campo format na chamada da ollama.
+
+Para o primeiro teste obtivemos esse resultado:
+Avaliação concluída.
+total_avaliado: 98
+total_acertos: 1
+total_erros: 97
+json_invalidos: 97
+acuracia: 0.0102
+acuracia_percentual: 1.02%
+
+percebe-se que a LLM está retornando MUITOS JSONs invalidos. com isso vou implementar a técnica de pydantic + campo format na propria requisicao do ollama e espero ver uma diminuicao no campo json_invalidos:
+criei a classe TriagemLLMResponse no pydantic para definir o contrato e mudei o prompt para dizer claramente que quero um JSON. se precisar posteriormente, no proximo teste, posso passar o proprio schema TriagemLLMResponse como format na requisicao do ollama.
+
+essa classe do pydantic que eu criei estava retornando um erro pois o JSON que a LLM devolve esta recorrentemente errado (provavelmente acentuando o recomendação). removi por enquanto e deixei apenas o format: json na requisicao da ollama.
+Avaliação concluída.
+total_avaliado: 98
+total_acertos: 69
+total_erros: 29
+json_invalidos: 0
+acuracia: 0.7041
+acuracia_percentual: 70.41%
+
+isso nao necessiariamente é bom pois, no teste filtrado para dog/cat temos 71 YES e 27 NO. ou seja, um modelo que sempre chutasse YES teria 72% de acuracia. isso quer dizer que, por enquanto, o modelo esta abaixo de um baseline ingenuo que sempre chuta YES.
+
+pra nao deixar essa acuracia sozinha, vamos impementar a matriz de confusao:
+Quantos Yes ele acertou?
+Quantos No ele acertou?
+Ele está classificando muitos No como emergência?
+Ele está classificando algum caso urgente como não urgente?
+
+segue abaixo a amtriz de confusao:
+Matriz de confusão
+
+previsto        EMERGENCIA  NAO_EMERGENCIA  INCERTO  INVALID_JSON
+real                                                             
+EMERGENCIA              65               4        2             0
+NAO_EMERGENCIA          19               4        4             0
+
+Resumo
+total_avaliado: 98
+emergencia_real: 71
+nao_emergencia_real: 27
+acertos_emergencia: 65
+acertos_nao_emergencia: 4
+falsos_nao_urgentes: 4
+falsos_urgentes: 19
+casos_incertos: 6
+json_invalidos: 0
+
+Métricas da classe EMERGENCIA
+true_positive: 65
+false_positive: 19
+false_negative: 6
+precision: 0.7738 (Quando o modelo disse EMERGENCIA, quantas vezes ele estava certo?)
+precision_percentual: 77.38%
+recall: 0.9155 (De todos os casos que eram emergência, quantos o modelo encontrou?)
+recall_percentual: 91.55%
+f1_score: 0.8387 (F1-score combina precision e recall.)
+f1_score_percentual: 83.87%
+
+Métricas da classe NAO_EMERGENCIA
+true_positive: 4
+false_positive: 4
+false_negative: 23
+precision: 0.5000
+precision_percentual: 50.00%
+recall: 0.1481
+recall_percentual: 14.81%
+f1_score: 0.2286
+f1_score_percentual: 22.86%
+
+ela significa que:
+71 casos reais de emergência
+65 foram classificados corretamente como EMERGENCIA
+4 foram classificados como NAO_EMERGENCIA (ESSE é O MAIS CRITICO)
+2 foram classificados como INCERTO
+0 retornaram JSON inválido
+
+65 acertos em 71 casos
+recall_emergencia = 65 / 71 = 91,55%
+
+********************************************
+
+27 casos reais de não emergência
+19 foram classificados como EMERGENCIA
+4 foram classificados corretamente como NAO_EMERGENCIA
+4 foram classificados como INCERTO
+0 retornaram JSON inválido
+
+4 acertos em 27 casos
+recall_nao_emergencia = 4 / 27 = 14,81%
+
+Isso significa que o modelo está muito ruim em detectar não emergências, o que é bom no ponto de vista conservador de não deixar emergências passarem mas ruim pois não ataca a motivação do projeto que é reduzir o gargalo nas clínicas.
+
+Principais números:
+Total avaliado: 98
+
+Acertos totais:
+65 + 4 = 69
+
+Acurácia:
+69 / 98 = 70,41%
+
+Falsos não urgentes:
+4
+
+Falsos urgentes:
+19
+
+Casos incertos:
+2 + 4 = 6
+
+JSON inválidos:
+0
+
+A matriz de confusão mostrou que, após a aplicação do parâmetro format=json, o modelo passou a retornar respostas estruturadas de forma consistente, sem ocorrência de JSON inválido. No entanto, a análise por classe revelou que a acurácia global de 70,41% esconde um comportamento assimétrico. Dos 71 casos reais de emergência, o modelo classificou corretamente 65, resultando em bom desempenho na identificação de casos urgentes. Por outro lado, entre os 27 casos reais de não emergência, apenas 4 foram classificados corretamente, enquanto 19 foram classificados como emergência e 4 como incertos. Isso indica que o modelo adota uma postura conservadora, priorizando a detecção de emergências, mas ainda apresenta baixa capacidade de reconhecer casos não urgentes.
+
+Por enquanto temos essas métricas:
+1. Acurácia
+2. Matriz de confusão
+3. Precision
+4. Recall
+5. F1-score
+6. Taxa de JSON inválido/válido
+7. Taxa de casos INCERTO
+8. Taxa de falso não urgente
+9. Taxa de falso urgente
+
+Amanhã espero concluir o dia com essas métricas:
+Classificação:
+- acurácia
+- matriz de confusão
+- precision
+- recall
+- F1-score
+
+Segurança:
+- taxa de falso não urgente
+- taxa de falso urgente
+- taxa de casos incertos
+
+Estrutura da resposta:
+- taxa de JSON válido
+- taxa de JSON inválido
+
+Desempenho:
+- tempo médio de predição

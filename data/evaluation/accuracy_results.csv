@@ -1,0 +1,482 @@
+index,animal,relato,expected,predicted,correct,json_valid,source,raw_response
+0,Dog,"Animal: Dog. Sintomas observados: Fever, Diarrhea, Vomiting, Weight Loss, Dehydration.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O animal apresenta sintomas graves como febre, diarreia, vômito e perda de peso, além de sinais de desidratação, o que indica uma condição médica grave e urgente."",
+  ""sinais_de_alerta"": [""Fever"", ""Diarrhea"", ""Vomiting"", ""Weight Loss"", ""Dehydration""],
+  ""recomendacao"": ""Levar imediatamente ao veterinário para avaliação e tratamento.""}"
+1,Dog,"Animal: Dog. Sintomas observados: Fever, Diarrhea, Coughing, Tiredness, Pain.",EMERGENCIA,INCERTO,False,True,original,"{""classificacao"": ""INCERTO"", ""justificativa"": ""Falta de informações sobre a espécie e idade do animal, o que dificulta a classificação"", ""sinais_de_alerta"": [""Fever"", ""Diarrhea"", ""Coughing"", ""Tiredness"", ""Pain""], ""recomendacao"": ""Obter mais informações sobre a espécie e idade do animal antes de tomar qualquer medida""}"
+2,Dog,"Animal: Dog. Sintomas observados: Fever, Diarrhea, Coughing, Vomiting, Appetite Loss.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+    ""classificacao"": ""EMERGENCIA"",
+    ""justificativa"": ""O animal apresenta sintomas graves como febre e perda de apetite, indicando uma condição médica grave que requer atenção imediata."",
+    ""sinais_de_alerta"": [""Fever"", ""Perda de apetite""],
+    ""recomendacao"": ""Levar o animal a um veterinário o mais rápido possível para avaliação e tratamento.""}"
+3,Dog,"Animal: Dog. Sintomas observados: Fever, Breathing Difficulty, Coughing, Lethargy, Sneezing.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O relato do tutor apresenta sintomas graves como dificuldade respiratória e leite, que podem indicar uma condição médica séria, requerendo atenção veterinária imediata."",
+  ""sinais_de_alerta"": [""Fever"", ""Breathing Difficulty"", ""Coughing"", ""Lethargy"", ""Sneezing""],
+  ""recomendacao"": ""Ligar para um centro veterinário de emergência ou buscar atendimento médico veterinário imediatamente.""
+}"
+4,Dog,"Animal: Dog. Sintomas observados: Fever, Diarrhea, Coughing, Lethargy, Blue Eye.",EMERGENCIA,EMERGENCIA,True,True,original,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""O animal apresenta sintomas graves como febre, diarreia e tosse, além de letargia e olho azul, indicando possíveis problemas respiratórios sérios ou infecções graves. Além disso, a presença de uma condição grave pode ser potencialmente fatais se não receberem o tratamento médico imediato"", ""sinais_de_alerta"": [""Fever"", ""Diarreia"", ""Coughing"", ""Lethargy"", ""Blue Eye""], ""recomendacao"": ""Levar o animal ao veterinário ou clínica mais próximo assim que possível.""}"
+5,Dog,"Animal: Dog. Sintomas observados: Fever, Respiratory Distress, Seizuers, Hyperesthesia, Sudden Death.",EMERGENCIA,EMERGENCIA,True,True,original,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""Sintomas graves como respiratória distresse, convulsões e morte repentina indicam uma situação de emergência veterinária imediata."", ""sinais_de_alerta"": [""Respiratory Distress"", ""Seizurers"", ""Morte Súbita""], ""recomendacao"": ""Levar o animal a um centro veterinário especializado assim que possível.""}"
+6,Dog,"Animal: Dog. Sintomas observados: Ulcers, Diarrhea, Poor Appetite, Tarry Stool, Enlarged Lymph Nodes.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""A presença de ulcerações, diarreia, falta de apetite, fezes cinzas e linfonodos enrugados indica uma condição grave que pode ser causada por várias doenças graves como a pancreatite aguda ou malnutrição. O animal precisa de atenção médica imediata."",
+  ""sinais_de_alerta"": [""Ulcers"", ""Diarrhea"", ""Poor Appetite"", ""Tarry Stool"", ""Enlarged Lymph Nodes""],
+  ""recomendacao"": ""Leve o animal ao veterinário o mais rápido possível""
+}"
+7,Dog,"Animal: Dog. Sintomas observados: Facial Swelling, Bloody Drool, Foul Breath, Unable To Eat, Lossened Teeth.",EMERGENCIA,EMERGENCIA,True,True,original,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""Sintomas graves e possíveis causa de vida ameaçada ao animal."", ""sinais_de_alerta"": [""Facial Swelling"", ""Bloody Drool"", ""Foul Breath"", ""Unable To Eat"", ""Lossened Teeth""], ""recomendacao"": ""Levar imediatamente o animal a um veterinário especializado em emergências.""}"
+8,Dog,"Animal: Dog. Sintomas observados: Fever, Breathing Difficulty, Thrist And Urination, Weight Loss, Enlarged Lymph Nodes Or Swelling.",EMERGENCIA,EMERGENCIA,True,True,original,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""O relato inclui sintomas graves como dificuldade de respirar e enjoo, o que sugere uma condição médica grave. Além disso, a presença de linfadenite ou hiperplasia dos glândulos linfáticos pode indicar um problema de saúde sério."", ""sinais_de_alerta"": [""Dificuldade respiratória"", ""Linfinenidade"", ""Perda de peso"", ""Desidrata\u00e7\u00e3o""], ""recomendacao"": ""Ligar para um veterinário imediatamente e levantar o animal ao hospital veterinário.""}"
+9,Dog,"Animal: Dog. Sintomas observados: Swelling On Leg, Painfull, Nasal Discharge, Broken Bones, Nasal Discharge.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""Orelha ou lesão óssea são sintomas graves que podem indicar uma emergência veterinária."",
+  ""sinais_de_alerta"": [
+    ""Lesao ossea"",
+    ""Dor""
+  ],
+  ""recomendacao"": ""Leve o animal a um veterinario imediatamente.""
+}"
+10,Dog,"Animal: Dog. Sintomas observados: Short Term Lethargy, Appetite Loss, Weekness In The Back Legs, Rapid Heart Rate, Week Pulse.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O relato do tutor apresenta sintomas graves e agudos como letargia curta, perda de apetite, fraqueza nos membros traseiros, taquicardia e taquopnea, indicando uma situação médica grave que requer atenção veterinária imediata."",
+  ""sinais_de_alerta"": [
+    ""Lethargy"",
+    ""Loss of Appetite"",
+    ""Weakness in the back legs"",
+    ""Rapid Heart Rate"",
+    ""Weak Pulse""
+  ],
+  ""recomendacao"": ""Levar o animal ao veterinário o mais rápido possível para avaliação e tratamento adequados.""
+}"
+11,Dog,"Animal: Dog. Sintomas observados: Swollen Lymph Nodes, Difficulty Walking, Back Pain, Lethargy, Vaginal Discharge.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+    ""classificacao"": ""EMERGENCIA"",
+    ""justificativa"": ""Observação de sintomas graves como dor de costas e letargia, combinados com outras condições como linfadenomegalia e secreção vaginal, que podem indicar problemas sérios de saúde."",
+    ""sinais_de_alerta"": [""Dor de costas"", ""Letargia"", ""Linfadenomegalia"", ""Secreção vaginal""],
+    ""recomendacao"": ""Consulte um veterinário especializado o mais rápido possível para avaliar a situação e tomar medidas necessárias.""
+}"
+12,Dog,"Animal: Dog. Sintomas observados: Fever, Diarrhea, Abdominal Pain, Stiffness, Severe Weekness And Depression.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O animal apresenta sintomas graves como febre, diarreia, dor abdominal e rigidez muscular, além de fraqueza extrema e depressão. Esses sintomas indicam uma condição médica grave que requer imediata atenção veterinária."",
+  ""sinais_de_alerta"": [""Fever"", ""Diarrhea"", ""Abdominal Pain"", ""Stiffness"", ""Severe Weakness And Depression""],
+  ""recomendacao"": ""Levar o animal ao centro de triagem veterinária o mais rápido possível para avaliação e tratamento adequados.""}"
+13,Dog,"Animal: Dog. Sintomas observados: Fever, Appetite Loss, Reduce Energy, Lameness, Swelling Of Joints.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O animal apresenta sintomas graves como febre, perda de apetite, redução da energia e lamessura, além de inchaço nos joelhos, o que indica uma condição médica séria que requer atenção veterinária imediata."",
+  ""sinais_de_alerta"": [""Fever"", ""Perda de apetite"", ""Redução da energia"", ""Lamessura"", ""Inchaço nos joelhos""],
+  ""recomendacao"": ""Levar o animal ao veterinário o mais rápido possível para avaliação e tratamento adequados.""
+}"
+14,Dog,"Animal: Dog. Sintomas observados: Fever, Chronic Eye Inflamation, Poor Appetite, Lethargy, Neurologic Abnormalities.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""Sintomas graves e possíveis complicações que requerem atenção veterinária imediata."",
+  ""sinais_de_alerta"": [
+    ""Fever"",
+    ""Inflamação ocular crônica"",
+    ""Péssima apetite"",
+    ""Lethargia"",
+    ""Anormalidades neurológicas""
+  ],
+  ""recomendacao"": ""Avise um veterinário imediatamente para avaliação e tratamento adequados.""
+}"
+15,Dog,"Animal: Dog. Sintomas observados: Fever, Swelling Of Face Or Leg, Poor Appetite, Depression, Pain.",EMERGENCIA,EMERGENCIA,True,True,original,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""Sintomas graves observados em um cão, incluindo febre, inchaço facial e pericial, falta de apetite e depressao. Isso sugere uma condi\u00e7\u00e3o grave que requer imediata aten\u00cd\u00e3o veterinária."", ""sinais_de_alerta"": [""Fever"", ""Swelling Of Face Or Leg"", ""Poor Appetite"", ""Depression""], ""recomendacao"": ""Levar o animal ao veterinário o mais rápido possível para avalia\u00c3\u00e3o e tratamento adequados.""}"
+16,Dog,"Animal: Dog. Sintomas observados: Diarrhea With Muscus, Tensemus, Watery Stool, Flatulence, Pain.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O relato apresenta sintomas graves e imediatos que podem indicar uma condição grave como gastroenterite aguda ou doença intestinal, exigindo atenção veterinária imediata."",
+  ""sinais_de_alerta"": [""Diarrhea"", ""Tensemus"", ""Flatulence""],
+  ""recomendacao"": ""Ligue imediatamente para um serviço de emergência veterinária ou leve o animal ao hospital veterinário mais próximo""
+}"
+17,Dog,"Animal: Dog. Sintomas observados: Strong Cough, Runny Nose, Sneezing, Lethargy, Loss Of Appettite.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+    ""classificacao"": ""EMERGENCIA"",
+    ""justificativa"": ""O animal apresenta sintomas graves como tosse severa, nariz arrugada e falta de apetite, indicando uma condição potencialmente grave."",
+    ""sinais_de_alerta"": [""Cofeita forte"", ""Nariz úmida"", ""Sneezing"", ""Lethargy"", ""Péssima Appetite""],
+    ""recomendacao"": ""Levar o animal a um veterinário imediatamente para avaliação e tratamento.""
+}"
+18,Dog,"Animal: Dog. Sintomas observados: Fever, Inflammed Eye, Coughing, Depression, Limping.",EMERGENCIA,EMERGENCIA,True,True,original,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""O animal apresenta sintomas graves como febre, olho inflamado e tosse, além de sinais de depressao e incapacidade de mover-se (limpeza). Isso pode indicar uma condição grave que requer intervencao imediata."", ""sinais_de_alerta"": [""febre"", ""olho inflamado"", ""tosse"", ""depressao"", ""incapacidade de mover-se""], ""recomendacao"": ""Levar o animal a um veterinario especializado o mais rápido possível.""}"
+19,Dog,"Animal: Dog. Sintomas observados: Fever, Breathing Difficulty, Coughing, Eye And Skin Change, Unable To Exercise.",EMERGENCIA,EMERGENCIA,True,True,original,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""O relato inclui sintomas graves como dificuldade respiratória e febre, o que sugere uma condição médica grave que requer atenção imediata. Além disso, a presença de mudanças nos olhos e pele também é preocupante."", ""sinais_de_alerta"": [""Dificuldade respiratória"", ""Fever""], ""recomendacao"": ""Ligue para um serviço de emergência veterinária ou leve o animal ao hospital veterinário mais próximo.""}"
+20,Dog,"Animal: Dog. Sintomas observados: Fever, Appetite Loss, Coughing, Lethargy, Joint Pain.",EMERGENCIA,NAO_EMERGENCIA,False,True,original,"{
+    ""classificacao"": ""NAO_EMERGENCIA"",
+    ""justificativa"": ""O animal apresenta sintomas como febre, perda de apetite, tosse e letargia, que são comuns em muitas condições, mas não há informações suficientes para determinar a gravidade ou a necessidade imediata de atendimento veterinário."",
+    ""sinais_de_alerta"": [""Fever"", ""Appetite Loss"", ""Coughing"", ""Lethargy"", ""Joint Pain""],
+    ""recomendacao"": ""Aveia digestiva e medicamentos para dor. Follow-up com o veterinário.""
+}"
+21,Dog,"Animal: Dog. Sintomas observados: Lesions In The Nasal Cavity, Lesions On Nose, Nose Bleeds, Noisy Breathing, Lesions On Nose.",EMERGENCIA,EMERGENCIA,True,True,original,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""Sintomas como les\u00eas nas cavidades do nariz, sangramento nasal e respira\u00e7\u00f3es ru\u00eddas indicam uma situa\u00e7\u00e3o de emerg\u00eancia."", ""sinais_de_alerta"": [""Les\u00eas nas cavidades do nariz"", ""Sangramento nasal"", ""Respira\u00e7\u00f3es ru\u00eddas""], ""recomendacao"": ""Levar o animal a um hospital veterinário o mais rápido possível.""}"
+22,Dog,"Animal: Dog. Sintomas observados: Hair Loss, Dandruff, Darkened Skin, Crusting Of The Skin, Ulcerated Skin.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+    ""classificacao"": ""EMERGENCIA"",
+    ""justificativa"": ""O animal apresenta sintomas graves e potencialmente mortais, como ulceração da pele e crustação, o que requer atenção imediata."",
+    ""sinais_de_alerta"": [""Ulcerated Skin"", ""Crusting Of The Skin""],
+    ""recomendacao"": ""Transporte imediato ao veterinário para avaliação e tratamento.""
+}"
+23,Dog,"Animal: Dog. Sintomas observados: Greenish Yellow Nasal Discharge, Lack Of Pigmentation, Sneezing, Lethargy, Pain On Face.",EMERGENCIA,EMERGENCIA,True,True,original,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""Sintomas como descarga nasal amarelada-verdosa e falta de pigmentação podem indicar uma condição grave, como uma infecção fúngica ou um tumor. Além disso, a presença de dor no rosto e letargia pode ser um sinal de desconforto intenso ou distúrbio neurológico. Diagnóstico preciso requer exame físico, historial médico detalhado e possíveis exames complementares."", ""sinais_de_alerta"": [""Descarga nasal amarelada-verdosa"", ""Falta de pigmentação"", ""Dor no rosto"", ""Lethargy""], ""recomendacao"": ""Acompanhamento imediato com um veterinário especializado para avaliação e tratamento adequados.""}"
+24,Dog,"Animal: Dog. Sintomas observados: Fever, Diarrhea, Poor Appetite, Weight Loss, Vomiting.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O animal apresenta sintomas graves como febre, diarreia, falta de apetite, perda de peso e vômitos, indicando uma condição médica urgente que requer atenção veterinária imediata."",
+  ""sinais_de_alerta"": [""Fever"", ""Diarrhea"", ""Poor Appetite"", ""Weight Loss"", ""Vomiting""],
+  ""recomendacao"": ""Levar o animal ao veterinário o mais rápido possível para avaliação e tratamento adequados.""
+}"
+25,Dog,"Animal: Dog. Sintomas observados: Jaundice, Pneumonia, Lession On The Skin, Pain, Vomiting.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O animal apresenta sintomas graves como jaundice, pneumonia, lesão na pele e dor, o que indica uma condição médica urgente que requer atenção veterinária imediata."",
+  ""sinais_de_alerta"": [
+    ""Jaundice"",
+    ""Pneumonia"",
+    ""Lesão na pele"",
+    ""Dor""
+  ],
+  ""recomendacao"": ""Levar o animal ao hospital veterinário o mais rápido possível para avaliação e tratamento.""
+}"
+26,Dog,"Animal: Dog. Sintomas observados: Poor Coat Apperence, Diarrhea, Vomiting, Weight Loss, Dehydration.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O animal apresenta sintomas graves como diarreia, vômito e perda de peso, além de sinais de desidratação, o que pode indicar uma condição séria que requer atenção médica imediata."",
+  ""sinais_de_alerta"": [
+    ""Diarrhea"",
+    ""Vomiting"",
+    ""Weight Loss"",
+    ""Dehydration""
+  ],
+  ""recomendacao"": ""Levar o animal ao veterinário o mais rápido possível para avaliação e tratamento.""
+}"
+27,Dog,"Animal: Dog. Sintomas observados: Watering, No Appp, Vomiting, Lethargy, Dehydration.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""Observação de sintomas graves como vômito e letargia, combinados com sinais de desidratação, indicam uma situação potencialmente crítica que requer atenção imediata."",
+  ""sinais_de_alerta"": [""Vômito"", ""Letargia"", ""Desidratação""],
+  ""recomendacao"": ""Levar o animal a um centro veterinário o mais rápido possível para avaliação e tratamento.""
+}"
+28,Dog,"Animal: Dog. Sintomas observados: Straining, Diarrhea, Vomiting, Weight Loss, Blindness.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+    ""classificacao"": ""EMERGENCIA"",
+    ""justificativa"": ""Sintomas apresentados como Straining, Diarrhea, Vomiting, Weight Loss e Blindness indicam um estado de saúde crítico que requer atenção médica imediata."",
+    ""sinais_de_alerta"": [""Straining"", ""Diarrhea"", ""Vomiting"", ""Weight Loss"", ""Blindness""],
+    ""recomendacao"": ""Leve o animal ao veterinário o mais rápido possível para uma avaliação e tratamento adequados.""
+}"
+29,Dog,"Animal: Dog. Sintomas observados: Upset Stomach, Diarrhea, Vomiting, Muscle Pain, Muscle Stiffness.",EMERGENCIA,EMERGENCIA,True,True,original,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""Sintomas como diarreia, vômito e dor muscular indicam uma condição potencialmente grave que requer atenção médica veterinária imediata."", ""sinais_de_alerta"": [""Diarreia"", ""Vômito""], ""recomendacao"": ""Fazer exame físico completo com medicação para aliviar os sintomas e orientar o dono sobre a alimentação adequada.""}"
+30,Dog,"Animal: Dog. Sintomas observados: Upset Stomach, Diarrhea, Coughing, Weight Loss, Anaemia.",EMERGENCIA,EMERGENCIA,True,True,original,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""O animal apresenta uma variedade de sintomas graves, incluindo dor abdominal, diarreia, tosse e perda de peso, o que pode indicar uma condição médica séria. Além disso, a presença de anemia sugere uma possível desidratação ou perda de sangue"", ""sinais_de_alerta"": [""Dor abdominal"", ""Diarrhea"", ""Tose"", ""Perda de peso"", ""Anemia""], ""recomendacao"": ""Levar o animal a um veterinário especializado imediatamente.""}"
+31,Dog,"Animal: Dog. Sintomas observados: Allergic Reaction, Poor Appetite, Coughing, Weight Loss, Distended Chest.",EMERGENCIA,EMERGENCIA,True,True,original,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""Sintomas como Reac\u00e7\u00e3o Al\u00e9rgica, Perda de Apetite, Tosse e Perda de Peso indicam uma situação de emergência. Alm\u00f4 ao mais, a Distens\u00e1o do T\u00eastigues sugere uma possibilidade de problema respirat\u00f3rio grave."", ""sinais_de_alerta"": [""Reac\u00e7\u00e3o Al\u00e9rgica"", ""Distens\u00e2o do T\u00eastigues""], ""recomendacao"": ""Levar o animal ao hospital veterinário o mais rápido possível.""}"
+32,Dog,"Animal: Dog. Sintomas observados: Fever, Anoxeria, Weight Loss, Lethargy, Pain.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""Observaram sintomas graves como anoxia e perda de peso significativa, que podem indicar condições médicas sérias."",
+  ""sinais_de_alerta"": [
+    ""Anoxeria"",
+    ""Pain"",
+    ""Fever"",
+    ""Lethargy"",
+    ""Weight Loss""
+  ],
+  ""recomendacao"": ""Ir ao hospital veterinário imediatamente para avaliação e tratamento.""
+}"
+33,Dog,"Animal: Dog. Sintomas observados: Limping, Willnot Run To Jump, Swelling, Week Legs, Pain On Leg.",EMERGENCIA,EMERGENCIA,True,True,original,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""O animal apresenta sintomas graves e potencialmente fatais, como limpimento, incapacidade de saltar, inchaço e dor no membro afetado. Isso requer atenção imediata veterinária."", ""sinais_de_alerta"": [""Limping"", ""Incapacidade de saltar"", ""Inchaço"", ""Dor""], ""recomendacao"": ""Levar o animal ao veterinário o mais rápido possível para avaliação e tratamento.""}"
+34,Cat,"Animal: Cat. Sintomas observados: Fever, Eye Ulcer, Congestion, Depression, Pink Eye.",EMERGENCIA,EMERGENCIA,True,True,original,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""O animal apresenta sintomas graves como febre, úlceras oculares e conjuntivite, além de depressão. Esses sintomas podem indicar uma condição grave que requer atenção veterinária imediata."", ""sinais_de_alerta"": [""Fever"", ""Eye Ulcer"", ""Congestion"", ""Depression""], ""recomendacao"": ""Levar o animal a um veterinário especializado o mais rápido possível para diagnóstico e tratamento.""}"
+35,Cat,"Animal: Cat. Sintomas observados: Pnemonia, Appetite Loss, Eye Disharge, Lameness, Arthritis.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+    ""classificacao"": ""EMERGENCIA"",
+    ""justificativa"": ""O animal apresenta sintomas graves e agudos que indicam uma condição médica séria, como pneumonia, perda de apetite, hemorragia ocular e dor na perna e nas articulações."",
+    ""sinais_de_alerta"": [
+        ""Pnemonia"",
+        ""Perda de apetite"",
+        ""Hemorragia ocular"",
+        ""Dor na perna"",
+        ""Artrite""
+    ],
+    ""recomendacao"": ""Encaminhar o animal para um veterinário especializado assim que possível.""
+}"
+36,Cat,"Animal: Cat. Sintomas observados: Fever, Seizures, Hydrophobia, Jaw Is Dropped, Shyness Or Aggression.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O relato do tutor inclui sintomas graves e alarmantes como febre, convulsões, hidrofobia e agitação extrema, o que sugere uma situação de emergência veterinária."",
+  ""sinais_de_alerta"": [""Fever"", ""Seizures"", ""Hydrophobia""],
+  ""recomendacao"": ""Urgente avaliação e tratamento veterinário, possivelmente com intervenção em casa para minimizar risco de lesão ao animal.""
+}"
+37,Cat,"Animal: Cat. Sintomas observados: Bloody Urine, Diffculty Breathing, Vomiting, Weight Loss, Appetite Loss.",EMERGENCIA,EMERGENCIA,True,True,original,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""Sintomas como Bloody Urine e Difficulty Breathing indicam problemas graves que precisam de atenção médica imediata."", ""sinais_de_alerta"": [""Bloody Urine"", ""Difficulty Breathing""], ""recomendacao"": ""Levar o animal a um veterinário especializado assim que possível.""}"
+38,Cat,"Animal: Cat. Sintomas observados: Loss Of Eat, Difficulty In Breathing, Swelling, Lameness, Neurologic Abnormalities.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""Sintomas observados indicam uma condição grave e potencialmente perigosa para a vida do animal, como dificuldade respiratória e paralisia neurológica."",
+  ""sinais_de_alerta"": [""Dificuldade de respiração"", ""Paralisia neurológica""],
+  ""recomendacao"": ""Leve o animal ao veterinário imediatamente para avaliação e tratamento.""
+}"
+39,Cat,"Animal: Cat. Sintomas observados: Dark Or Black Face, Diarrhea, Vomiting, Blood In Faces, Pain.",EMERGENCIA,EMERGENCIA,True,True,original,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""Sintomas graves e possíveis complica\u00e7\u00f5es potenciais para a vida do animal, como diarreia, vômito e sangramento nas vias faciais. Recomenda-se imediata aten\u00ea\u00f3 ao veterinário."", ""sinais_de_alerta"": [""Diarrhea"", ""Vomiting"", ""Sangramento nas vias faciais""], ""recomendacao"": ""Leve o animal a um veterinário o mais breve possível.""}"
+40,Cat,"Animal: Cat. Sintomas observados: Jaundice, Difficulty In Breathing, Seizuers, Lethargy, Pale Gums.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O relato inclui sintomas graves e potencialmente fatais para o cat, como jaundice, dificuldade de respirar, convulsões, letargia e palidez das gengivas."",
+  ""sinais_de_alerta"": [""Jaundice"", ""Difficulty In Breathing"", ""Seizuers"", ""Lethargy"", ""Pale Gums""],
+  ""recomendacao"": ""Leve o cat a um veterinário imediatamente.""
+}"
+41,Cat,"Animal: Cat. Sintomas observados: Appetite Varies, Diarrhea, Vomiting, Weight Loss, Pain.",EMERGENCIA,EMERGENCIA,True,True,original,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""O animal apresenta sintomas graves como vômitos e perda de peso, indicando uma condição grave que requer atenção veterinária imediata."", ""sinais_de_alerta"": [""Vômitos"", ""Perda de peso""], ""recomendacao"": ""Levar o animal ao veterinário o mais rápido possível.""}"
+42,Cat,"Animal: Cat. Sintomas observados: Loss Of Eat, Fell Unwell, Lethargy, Weight Loss, Skin Issue.",EMERGENCIA,EMERGENCIA,True,True,original,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""Sintomas graves e potencialmente leves para uma doen\u00e7\u00f3 grave, como desidrata\u00e7\u00e3o ou insuficiência hep\u00e1tica."", ""sinais_de_alerta"": [""Loss Of Eat"", ""Fell Unwell"", ""Lethargy""], ""recomendacao"": ""Acompanhamento imediato em clínica veterinária e tratamento adequado.""}"
+43,Cat,"Animal: Cat. Sintomas observados: Sickness, Appetite Loss, Vomiting, Weight Loss, Raised Growth Or Bump.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O animal apresenta sintomas graves como perda de apetite e vômitos, o que pode indicar uma condição médica grave."",
+  ""sinais_de_alerta"": [""Perda de apetite"", ""Vômitos""],
+  ""recomendacao"": ""Levar o animal a um clínico veterinário imediatamente.""
+}"
+44,Cat,"Animal: Cat. Sintomas observados: Nasal Bleeding, Diffulty Chewing, Swelling, Weight Loss, Appetite Loss.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O relato do tutor apresenta sintomas graves e potencialmente vitais como nasal bleeding, dificuldade de mordisco, inchaço e perda de peso e apetite, que indicam uma condição médica grave que requer atenção imediata."",
+  ""sinais_de_alerta"": [""Nasal Bleeding"", ""Dificuldade Chewing"", ""Swelling"", ""Weight Loss"", ""Appetite Loss""],
+  ""recomendacao"": ""Levar o animal a um veterinário especializado o mais rápido possível""
+}"
+45,Cat,"Animal: Cat. Sintomas observados: Ulcers, Lesions, Scabs, Lumps, Bumps(Black,Grey Or Red).",EMERGENCIA,EMERGENCIA,True,True,original,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""Sintomas como lesoes, ulceros e bocas que sejam sangrantes ou infectadas representam um risco imediato para a vida do animal. Além disso, a presença de lesions cutaneas pode indicar uma infecao grave."", ""sinais_de_alerta"": [""Lesões"", ""Ulceros"", ""Bocas que sangram""], ""recomendacao"": ""Leve o animal ao veterinario mais rápido possível para avaliacao e tratamento.""}"
+46,Cat,"Animal: Cat. Sintomas observados: Gasc, Appetite Loss, Blood In Stool, Stomach Growling, Black Stool.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""Sintomas como gas, perda de apetite, sangue no estômago e fezes pretas podem indicar uma condição grave, como paroníria ou enterite inflamatória, que requer atenção veterinária imediata."",
+  ""sinais_de_alerta"": [""Gasc"", ""Perda de apetite"", ""Sangue no estômago"", ""Fezes pretas""],
+  ""recomendacao"": ""Levar o animal ao veterinário assim que possível""
+}"
+47,Cat,"Animal: Cat. Sintomas observados: Shaking Head, Scartching Ear, Black On Ear, Bad Smell, Red And Inflammation Ear.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""Sinais de alerta presentes: shaking head, esgar de dor no ouvido, cheiro desagradável e inflamação nos ouvidos. Esses sintomas indicam uma condição grave que requer atenção veterinária imediata."",
+  ""sinais_de_alerta"": [""Shaking Head"", ""Esgar de dor no ouvido"", ""Cheiro desagradável"", ""Inflamação nos ouvidos""],
+  ""recomendaacao"": ""Leve o animal ao veterinário mais próximo assim que possível""
+}"
+48,Cat,"Animal: Cat. Sintomas observados: Attacks, Appetite Loss, Coughing, Weight Loss, Periodic Vommiting.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O animal apresenta sintomas graves e potencialmente perigosos, como ataques, perda de apetite, tosse e perda de peso, o que pode indicar uma condição médica séria que requer imediata atenção veterinária."",
+  ""sinais_de_alerta"": [""Ataques"", ""Perda de apetite"", ""Tosse"", ""Perda de peso""],
+  ""recomendacao"": ""Aveces um consulta imediatamente com o veterinario.""}"
+49,Cat,"Animal: Cat. Sintomas observados: Blood Stool, Diarrhea, Coughing, Weight Loss, Anemia.",EMERGENCIA,EMERGENCIA,True,True,original,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""Sintomas como sangue no estômago e perda de peso podem indicar problemas graves como câncer ou doenças crônicas. É necessário um avaliação imediata pelo veterinário."", ""sinais_de_alerta"": [""Blood Stool"", ""Weight Loss"", ""Anemia""], ""recomendacao"": ""Lembre-se de levar seu animal ao veterinário o mais rápido possível.""}"
+50,Cat,"Animal: Cat. Sintomas observados: Nasal Discharge, Nosebleeds, Inflamed Nostrils, Sneezing, Lound Breathing.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O animal apresenta sintomas graves e imediatamente indicativos de uma condição grave que pode afetar a vida do animal."",
+  ""sinais_de_alerta"": [
+    ""Nasal Discharge"",
+    ""Nosebleeds"",
+    ""Inflamed Nostrils"",
+    ""Sneezing"",
+    ""Lound Breathing""
+  ],
+  ""recomendacao"": ""Levar o animal a um veterinário especializado assim que possível.""
+}"
+51,Cat,"Animal: Cat. Sintomas observados: Polyuria, Appetite Loss, Vomiting, Weight Loss, Polydipsa.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""Sinais de alerta incluem polyuria, appetite loss, vomiting, weight loss e polydipsa, indicando uma condição grave que requer atenção veterinária imediata."",
+  ""sinais_de_alerta"": [
+    ""Polyuria"",
+    ""Appetite Loss"",
+    ""Vomiting"",
+    ""Weight Loss"",
+    ""Polydipsa""
+  ],
+  ""recomendacao"": ""Devolver o animal ao veterinário o mais rápido possível para um exame e tratamento adequados.""
+}"
+52,Cat,"Animal: Cat. Sintomas observados: Exessive Urination, Change In Gait, Vomiting, Weight Loss, Inability To Jump.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""Orelha ou pele ulcerada pode indicar doença fúngica grave como a dermatofitose e/ou o leishmaniose, ambas altamente potencialmente mortais."",
+  ""sinais_de_alerta"": [
+    ""Exessive Urination"",
+    ""Change In Gait"",
+    ""Vomiting"",
+    ""Weight Loss"",
+    ""Inability To Jump""
+  ],
+  ""recomendacao"": ""Fazer uma consulta veterinária imediatamente, para obter orientações médicas adequadas.""
+}"
+53,Cat,"Animal: Cat. Sintomas observados: Convulsion, Loss Of Consciousness, Chewing, Twitching, Salivating.",EMERGENCIA,EMERGENCIA,True,True,original,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""Sintomas como convuls\u00f3es, perda de consci\u00e7ncia, mastigamento e tremores podem indicar uma condi\u00e7\u00e3o grave que requer imediata aten\u00cd\u00e3o veterinária"", ""sinais_de_alerta"": [""Convuls\u00f3es"", ""Perda de consci\u00e7ncia"", ""Mastigamento"", ""Twitching"", ""Salivatio""], ""recomendacao"": ""Leve ao veterinário o mais rápido possível e realize um exame fisico completo, incluindo a observação da respirat\u00f3ria, frequ\u00eana cardiorrespirat\u00f3ria e press\u00e2o arterial.""}"
+54,Cat,"Animal: Cat. Sintomas observados: Wheezing, Rapid Breathing, Coughing, Swallowing, Effort To Breath.",EMERGENCIA,EMERGENCIA,True,True,original,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""Sinais de alerta presentes: respir\u00e3rio anormal (Wheezing), dificuldade para respirar (Rapid Breathing) e tosse (Coughing). O comportamento do animal \u00e7 pode indicar uma condi\u00fa aguda necessitando atendimento veterin\u00e1rio imediato."", ""sinais_de_alerta"": [""Respira\u00c3rio anormal"", ""Dificuldade para respirar"", ""Tosse""], ""recomendacao"": ""Levar o animal ao vetern\u00fario o mais breve possível.""}"
+55,Cat,"Animal: Cat. Sintomas observados: Jaundice, Weekness, Lethargy, Weight Loss, Appetite Loss.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O animal apresenta sintomas graves como jaundice, weekness, lethargy, weight loss e appetite loss, o que indica uma condição médica grave e potencialmente life-amendamento."",
+  ""sinais_de_alerta"": [""Jaundice"", ""Weekness"", ""Lethargy"", ""Weight Loss"", ""Appetite Loss""],
+  ""recomendacao"": ""Leve o animal a um veterinário o mais rápido possível.""
+}"
+56,Cat,"Animal: Cat. Sintomas observados: Lession On Cat Skin, Dandruff In Cat Coat, Red Patches, Hair Loss, Skin Issue.",EMERGENCIA,NAO_EMERGENCIA,False,True,original,"{
+  ""classificacao"": ""NAO_EMERGENCIA"",
+  ""justificativa"": ""A descrição dos sintomas apresentados pelo cat não indica um estado de emergência imediata. Os problemas observados incluem lesões na pele, dandruff, marcas vermelhas e perda de pelo, que podem ser tratados com medicamentos veterinários ou conselhos de cuidado."",
+  ""sinais_de_alerta"": [
+    ""Lesão na pele"",
+    ""Dandruff""
+  ],
+  ""recomendacao"": ""Aconselhar o proprietário a levar o cat ao veterinário para avaliação e tratamento adequados.""
+}"
+57,Cat,"Animal: Cat. Sintomas observados: Lethargy, Diarrhea, Vomiting, Discharge From Eye, Appetite Loss.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""Sintomas como letargia, diarreia, vômito e secreção de lágrima podem indicar uma infecção grave ou doença subaguda que requer atenção veterinária imediata."",
+  ""sinais_de_alerta"": [
+    ""Lethargy"",
+    ""Diarrhea"",
+    ""Vomiting"",
+    ""Discharge From Eye"",
+    ""Appetite Loss""
+  ],
+  ""recomendacao"": ""Consulte um veterinário o mais rápido possível para avaliar e tratar esses sintomas.""
+}"
+58,Cat,"Animal: Cat. Sintomas observados: Skin Irritation, Scartching, Lethargy, Hair Loss, Excessive Grooming.",EMERGENCIA,NAO_EMERGENCIA,False,True,original,"{
+  ""classificacao"": ""NAO_EMERGENCIA"",
+  ""justificativa"": ""O animal apresenta sintomas como irritação cutânea, escarafateamento, letargia, perda de pelo e excessive grooming. Não há informações sobre lesões graves ou sinais de doença grave que necessitem atenção médica imediata."",
+  ""sinais_de_alerta"": [""Skin Irritation"", ""Escarafateamento""],
+  ""recomendaacao"": ""Marcar consulta veterinária para avaliar e tratar os sintomas observados"" }"
+59,Cat,"Animal: Cat. Sintomas observados: Floopy Muscle, Speech Delay, Intellectual Disability, Walking Problem, Eye Movements.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O relato apresenta uma lista extensa de sintomas graves e potencialmente life-threatening (como problemas musculares, atraso no desenvolvimento linguístico, deficiência intelectual, problemas ao andar e movimentos oculares anormais), que requerem atenção imediata e avaliação veterinária especializada."",
+  ""sinais_de_alerta"": [
+    ""Problema muscular"",
+    ""Atraso no desenvolvimento linguístico"",
+    ""Deficiência intelectual"",
+    ""Problema ao andar"",
+    ""Movimentos oculares anormais""
+  ],
+  ""recomendacao"": ""Ligue para o serviço de emergência veterinária imediatamente e aguarde orientação.""
+}"
+60,Cat,"Animal: Cat. Sintomas observados: Sensitivity To Bright Light, Disharge From Affected Eye, Inflammation, Clouded Cornea, Rubbing Eye.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O animal apresenta sintomas graves como dispensibilidade a luz brilhante, derrame de olho afetado, inflamação e claridade turva do globo ocular, além de rubor nos olhos. Isso sugere uma condição médica grave que requer atenção veterinária imediata."",
+  ""sinais_de_alerta"": [
+    ""Dispensibilidade a luz brilhante"",
+    ""Derrame de olho afetado"",
+    ""Inflamação"",
+    ""Claridade turva do globo ocular"",
+    ""Rubor nos olhos""
+  ],
+  ""recomendacao"": ""Leve o animal ao veterinário o mais rápido possível para avaliação e tratamento adequados.""
+}"
+61,Cat,"Animal: Cat. Sintomas observados: Fever, Diarrhea, Vomiting, Cramps, Dehydration.",EMERGENCIA,EMERGENCIA,True,True,original,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""Observou-se uma lista extensa de sintomas que podem indicar uma condição grave ou emergencial para o animal. A presença de febre, diarreia, vômito, dor e desidratação sugere uma situação potencialmente crítica."", ""sinais_de_alerta"": [""Fever"", ""Diarrhea"", ""Vomiting"", ""Cramps"", ""Dehydration""], ""recomendacao"": ""Observar o animal em isolamento imediato, fornecer líquidos para reidratação e considerar a administração de antibióticos ou antieméticos, dependendo da avaliação do veterinário.""}"
+62,Cat,"Animal: Cat. Sintomas observados: Tenderness, Erythema, Swelling, Scartch, Pain.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O animal apresenta sintomas graves como dor, vermelhidão e inchaço, o que indica uma condição médica grave que precisa ser avaliada imediatamente."",
+  ""sinais_de_alerta"": [""Dor"", ""Vermelhidão"", ""Inchaço""],
+  ""recomendacao"": ""Leve o animal ao veterinário mais próximo imediatamente para avaliação e tratamento adequados""
+}"
+63,Cat,"Animal: Cat. Sintomas observados: Fever, Diarrhea, Vomiting, Salivation, Decrease Appetite.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O animal apresenta sintomas graves como febre, diarreia, vômitos e salivação, indicando uma possibilidade de infecção grave."",
+  ""sinais_de_alerta"": [""Fever"", ""Diarrhea"", ""Vomiting"", ""Salivation""],
+  ""recomendacao"": ""Levar o animal ao veterinário imediatamente para avaliação e tratamento.""
+}"
+64,Cat,"Animal: Cat. Sintomas observados: Scaly Patches Of Skin, Sore, Scabs, Scartch, Hair Loss.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O relato do tutor inclui sintomas graves como scartch e hair loss, que podem indicar infecção grave ou doença crônica."",
+  ""sinais_de_alerta"": [
+    ""Scartch"",
+    ""Hair Loss""
+  ],
+  ""recomendacao"": ""Referir imediatamente ao veterinário para avaliação e tratamento.""
+}"
+65,Cat,"Animal: Cat. Sintomas observados: Fatty Stool, Diarrhea, Vomiting, Weight Loss, Pain.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O relato do tutor inclui sintomas graves como vômito e perda de peso, o que sugere uma condição médica grave que requer imediata atenção veterinária."",
+  ""sinais_de_alerta"": [""Vômito"", ""Perda de peso""],
+  ""recomendacao"": ""Devolver o animal ao veterinário ou a um centro de triagem veterinária imediatamente""
+}"
+66,Cat,"Animal: Cat. Sintomas observados: Nausea, Appetite Loss, Vomiting, Firm, Distended Stomach.",EMERGENCIA,INCERTO,False,True,original,"{""classificacao"": ""INCERTO"", ""justificativa"": ""A falta de informações sobre a espécie e idade do animal torna difícil avaliar a gravidade dos sintomas. Além disso, a descrição física não fornece detalhes suficientes para determinar se o caso é uma emergência ou não."", ""sinais_de_alerta"": [""Perda de apetite"", ""Vômito"", ""Estômago firmado e distendido""], ""recomendacao"": ""Reúna mais informações sobre a espécie, idade do animal e sua história médica antes de tomar qualquer decisão.""}"
+67,Cat,"Animal: Cat. Sintomas observados: Fever, Swelling In The Bite Area, Lethargy, Limp, Pain.",EMERGENCIA,EMERGENCIA,True,True,original,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""Orelha inchada (Swelling In The Bite Area) pode indicar infec\u00e7\u00e3o ou les\u00e3o grave. O paciente apresenta febre, letargia, dificuldade para caminhar (Limp), dor e sintomas de infecção."", ""sinais_de_alerta"": ""[\""Fever\"", \""Swelling In The Bite Area\"", \""Lethargy\"", \""Limp\"", \""Pain\""]"", ""recomendacao"": ""Leve o animal ao veterinário imediatamente para avalia\u00f4 e tratamento.""}"
+68,Cat,"Animal: Cat. Sintomas observados: Fever, Appetite Loss, Eyeproblem, Liver Disease, Nuerological.",EMERGENCIA,EMERGENCIA,True,True,original,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""Sintomas como febre, perda de apetite, problema nos olhos e doen\u00ba hepatica sugerem uma situa\u00e7\u00e3o grave que requer ateno\u00fco imediato."", ""sinais_de_alerta"": [""Fever"", ""Appetite Loss"", ""Eyeproblem"", ""Liver Disease"", ""Nuerological""], ""recomendacao"": ""Levar o animal ao veterinário o mais rápido poss\u00edvel e observar os sintomas ao longo do tempo para determinar a melhor abordagem de tratamento.""}"
+69,Cat,"Animal: Cat. Sintomas observados: Fever, Mild Sneezing, Coughing, Nasal, Ocular Discharge.",EMERGENCIA,NAO_EMERGENCIA,False,True,original,"{""classificacao"": ""NAO_EMERGENCIA"", ""justificativa"": ""O animal apresenta sintomas comuns de infeção viral, como febre e secreção nasal. Não há sinais de gravidade aguda que justifiquem uma classificação como EMERGENCIA."", ""sinais_de_alerta"": [""Fever"", ""Sneezing"", ""Coughing""], ""recomendacao"": ""Acompanhar o caso com monitoramento regular e observar a evolução dos sintomas para ajuste da terapia como necessário.""}"
+420,Dog,"Animal: Dog. Sintomas observados: Stop Eating, Stop Drinking, Change Their Normal Behaviour, Lameness, Pain.",EMERGENCIA,EMERGENCIA,True,True,original,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O animal apresenta sintomas graves como parada do apetite e da ingestão de água, mudanças no comportamento normal, dor e perda de mobilidade, indicativos de uma condição médica grave que requer imediata atenção veterinária."",
+  ""sinais_de_alerta"": [
+    ""Parada do apetite"",
+    ""Parada da ingestão de água"",
+    ""Mudanças no comportamento normal"",
+    ""Dor"",
+    ""Perda de mobilidade""
+  ],
+  ""recomendacao"": ""Devem ser priorizados os procedimentos médicos veterinários para avaliar e tratar a condição do animal, se possível, em um consultório veterinário o mais próximo."" }"
+839,Dog,"Animal: Dog. Sintomas observados: Eye Discharge, Nasal Discharge, Skin Lesions.",NAO_EMERGENCIA,NAO_EMERGENCIA,True,True,llm_data_augmentation,"{
+  ""classificacao"": ""NAO_EMERGENCIA"",
+  ""justificativa"": ""O animal apresenta sintomas que podem ser causados por uma infecção viral comum em cães, como a herpesviral canina. É necessário realizar exames complementares e avaliação para determinar a causa exata dos sintomas."",
+  ""sinais_de_alerta"": [""Eye Discharge"", ""Nasal Discharge"", ""Skin Lesions""],
+  ""recomendacao"": ""Realizar exame físico completo, coletar amostras de secreções oculares e nasal para exames laboratoriais, e consultar um veterinário especializado em dermatologia""
+}"
+840,Dog,"Animal: Dog. Sintomas observados: Eye Discharge, Nasal Discharge, Sneezing.",NAO_EMERGENCIA,NAO_EMERGENCIA,True,True,llm_data_augmentation,"{
+  ""classificacao"": ""NAO_EMERGENCIA"",
+  ""justificativa"": ""Sintomas como secreção ocular e nasal e espirros podem ser causados por várias condições comuns em cães, não necessitando de intervenção imediata."",
+  ""sinais_de_alerta"": [""Secreção ocular"", ""Secreção nasal"", ""Espirro""],
+  ""recomendacao"": ""Consulta veterinária para avaliação e tratamento adequado"" }"
+841,Dog,"Animal: Dog. Sintomas observados: Eye Discharge, Nasal Discharge, Lameness.",NAO_EMERGENCIA,EMERGENCIA,False,True,llm_data_augmentation,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O animal apresenta sintomas de infecção ocular e nasal, que podem ser indicativos de uma condição grave. Além disso, a lamessia pode ser um sinal de dor ou desconforto, o que é preocupante."",
+  ""sinais_de_alerta"": [""Eye Discharge"", ""Nasal Discharge"", ""Lameness""],
+  ""recomendacao"": ""O animal deve ser levado a um veterinário especializado imediatamente para avaliação e tratamento adequados.""
+}"
+842,Dog,"Animal: Dog. Sintomas observados: Eye Discharge, Skin Lesions, Sneezing.",NAO_EMERGENCIA,INCERTO,False,True,llm_data_augmentation,"{""classificacao"": ""INCERTO"", ""justificativa"": ""A falta de informações sobre a espécie e idade do animal torna difícil determinar a gravidade dos sintomas. Além disso, os sintomas observados são genéricos e podem ser causados por diversas condições diferentes."", ""sinais_de_alerta"": [""Eye Discharge"", ""Skin Lesions"", ""Sneezing""], ""recomendacao"": """"}"
+843,Dog,"Animal: Dog. Sintomas observados: Eye Discharge, Skin Lesions, Lameness.",NAO_EMERGENCIA,EMERGENCIA,False,True,llm_data_augmentation,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""Sintomas como Discharge ocular e Lesoes cutaneas podem indicar doen\u00e7as graves ou infec\u00f3es que requerem intervenção veterinária imediata."", ""sinais_de_alerta"": [""Discharge ocular"", ""Lesoes cutaneas"", ""Lamenes""], ""recomendacao"": ""Encaminhar o animal a um veterinario para avaliacao e tratamento adequados.""}"
+844,Dog,"Animal: Dog. Sintomas observados: Eye Discharge, Sneezing, Lameness.",NAO_EMERGENCIA,INCERTO,False,True,llm_data_augmentation,"{
+  ""classificacao"": ""INCERTO"",
+  ""justificativa"": ""Falta de informações sobre a espécie e idade do animal para avaliar a gravidade dos sintomas."",
+  ""sinais_de_alerta"": [""Eye Discharge"", ""Sneezing"", ""Lameness""],
+  ""recomendacao"": ""Obter mais informações sobre o animal, como sua raça, tamanho e histórico médico, para avaliar a situação corretamente.""
+}"
+845,Dog,"Animal: Dog. Sintomas observados: Nasal Discharge, Skin Lesions, Lameness.",NAO_EMERGENCIA,NAO_EMERGENCIA,True,True,llm_data_augmentation,"{
+  ""classificacao"": ""NAO_EMERGENCIA"",
+  ""justificativa"": ""Os sintomas apresentados são preocupantes, mas não são tão graves ou imediatos que justifiquem a classificação como EMERGENCIA. O animal pode precisar de atenção veterinária, mas não há indicativos de uma situação crítica."",
+  ""sinais_de_alerta"": [
+    ""Nasal Discharge"",
+    ""Skin Lesions"",
+    ""Lameness""
+  ],
+  ""recomendacao"": ""Marque o animal para um agendamento com o veterinário o mais rápido possível.""}"
+846,Dog,"Animal: Dog. Sintomas observados: Nasal Discharge, Sneezing, Lameness.",NAO_EMERGENCIA,EMERGENCIA,False,True,llm_data_augmentation,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""Sintomas como nasal discharge e lamess e podem indicar problemas respiratorios ou articulares graves que requerem atenção veterinaria imediata."",
+  ""sinais_de_alerta"": [""Nasal Discharge"", ""Lameness""],
+  ""recomendacao"": ""Especialista veterinario deve ser procurado imediatamente.""
+}"
+847,Dog,"Animal: Dog. Sintomas observados: Skin Lesions, Sneezing, Lameness.",NAO_EMERGENCIA,EMERGENCIA,False,True,llm_data_augmentation,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""Sintomas como les\u00e3o de pele e dor ao andar podem indicar infec\u00e7\u00f5es ou lesões mais serias, como rabia ou osteog\u00e9s. Recomendacao: Avalia\u00fa imediatamente o animal.""}"
+848,Dog,"Animal: Dog. Sintomas observados: Eye Discharge, Nasal Discharge, Skin Lesions, Lameness.",NAO_EMERGENCIA,EMERGENCIA,False,True,llm_data_augmentation,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""O animal apresenta sintomas graves como discharge ocular e nasal, les\u00e3o da pele e lamenes, o que indica uma condição potencialmente grave e requerida imediata aten\u00fa\u00f4. Além disso, a presen\u00fa de sintomas como limpeza ocular e nasal pode indicar infecção ou inflama\u00e7\u00e3o"", ""sinais_de_alerta"": [""Discharge ocular"", ""Nasal Discharge"", ""Lamenes"", ""Les\u00e3o da pele""], ""recomendacao"": ""Fazer exame veterin\u00e1rio o mais rápido possível para avalia\u00fao e tratamento adequados.""}"
+849,Dog,"Animal: Dog. Sintomas observados: Eye Discharge, Nasal Discharge, Sneezing, Lameness.",NAO_EMERGENCIA,NAO_EMERGENCIA,True,True,llm_data_augmentation,"{
+    ""classificacao"": ""NAO_EMERGENCIA"",
+    ""justificativa"": ""O animal apresenta sintomas como discharge ocular e nasal, sneezing e lamess, que podem ser causados por várias condições, como infecções alérgicas ou outras patologias. Não há informações suficientes para determinar a gravidade da situação."",
+    ""sinais_de_alerta"": [
+        ""Eye Discharge"",
+        ""Nasal Discharge""
+    ],
+    ""recomendacao"": ""Fazer uma consulta veterinária para avaliar os sintomas e realizar exames adequados.""
+}"
+850,Dog,"Animal: Dog. Sintomas observados: Eye Discharge, Skin Lesions, Sneezing, Lameness.",NAO_EMERGENCIA,EMERGENCIA,False,True,llm_data_augmentation,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""Sintomas como Dis discharge ocular, Lesiones cutaneas, Dor nasal (sneezing) e Hiperestesia (lameza), indicam problemas de saúde grave que requerem atenção veterinaria imediata."", ""sinais_de_alerta"": [""Discharge ocular"", ""Lesões cutâneas"", ""Sneezing"", ""Lameza""], ""recomendacao"": ""Consulte um veterinário o mais rápido possível""}"
+851,Dog,"Animal: Dog. Sintomas observados: Nasal Discharge, Skin Lesions, Sneezing, Lameness.",NAO_EMERGENCIA,EMERGENCIA,False,True,llm_data_augmentation,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O animal apresenta sintomas graves como nasal discharge e lamenes, que podem indicar uma infecção grave ou doença crônica. Além disso, a presença de lesões cutâneas também é um sinal de alerta."",
+  ""sinais_de_alerta"": [""Nasal Discharge"", ""Skin Lesions"", ""Lameness""],
+  ""recomendacao"": ""Levar o animal ao veterinário o mais rápido possível para avaliação e tratamento.""
+}"
+852,Dog,"Animal: Dog. Sintomas observados: Eye Discharge, Nasal Discharge, Skin Lesions, Sneezing, Lameness.",NAO_EMERGENCIA,EMERGENCIA,False,True,llm_data_augmentation,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O relato inclui sintomas graves como Discharge ocular e nasal, Lesões na pele e deformidade articular (Lamenes), indicando uma condição potencialmente séria que requer imediata atenção veterinária."",
+  ""sinais_de_alerta"": [""Eye Discharge"", ""Nasal Discharge"", ""Skin Lesions"", ""Lameness""],
+  ""recomendacao"": ""Imediatamente levar o animal a um especialista veterinário para avaliação e tratamento adequados.""
+}"
+853,Cat,"Animal: Cat. Sintomas observados: Eye Discharge, Nasal Discharge, Sneezing.",NAO_EMERGENCIA,EMERGENCIA,False,True,llm_data_augmentation,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""Sintomas como eye discharge e nasal discharge podem ser indicativos de uma infecção viral ou bacteriana grave que pode afetar a saúde do animal. Além disso, sneezing pode ser um sinal de dor ou desconforto. Devem ser agendadas as consultas veterinárias o mais rápido possível"", ""sinais_de_alerta"": [""Eye Discharge"", ""Nasal Discharge"", ""Sneezing""], ""recomendaacao"": ""Agendar consulta veterinária imediatamente.""}"
+854,Cat,"Animal: Cat. Sintomas observados: Eye Discharge, Nasal Discharge, Lameness.",NAO_EMERGENCIA,EMERGENCIA,False,True,llm_data_augmentation,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""Sintomas como descongestao ocular e nasal, junto a dor no membro podem indicar uma infeco grave."", ""sinais_de_alerta"": [""Eye Discharge"", ""Nasal Discharge"", ""Lameness""], ""recomendacao"": ""Observar o animal imediatamente, levando para um veterinario especializado.""}"
+855,Cat,"Animal: Cat. Sintomas observados: Eye Discharge, Skin Lesions, Sneezing.",NAO_EMERGENCIA,EMERGENCIA,False,True,llm_data_augmentation,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O animal apresenta sintomas graves como secreção ocular e lesões na pele, o que indica uma condição potencialmente grave e necessita de atenção médica imediata."",
+  ""sinais_de_alerta"": [
+    ""Secreção ocular"",
+    ""Lesões na pele"",
+    ""Sneezing""
+  ],
+  ""recomendacao"": ""Leve o animal ao veterinário o mais rápido possível.""
+}"
+856,Cat,"Animal: Cat. Sintomas observados: Eye Discharge, Skin Lesions, Lameness.",NAO_EMERGENCIA,EMERGENCIA,False,True,llm_data_augmentation,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O animal apresenta sintomas graves como descarga ocular e lesões cutâneas, além de lamessura, o que indica uma condição médica urgente que requer imediata atenção veterinária."",
+  ""sinais_de_alerta"": [
+    ""Descarga ocular"",
+    ""Lesões cutâneas"",
+    ""Lamessura""
+  ],
+  ""recomendacao"": ""Precisa ser levado a um hospital veterinário ou clínica de emergência o mais rápido possível.""
+}"
+857,Cat,"Animal: Cat. Sintomas observados: Eye Discharge, Sneezing, Lameness.",NAO_EMERGENCIA,EMERGENCIA,False,True,llm_data_augmentation,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""Sinais de alerta: Eye Discharge e Lameness podem indicar problemas graves como infecção ou lesao oculares e articular. Além disso, a presenca de sneezing pode sugerir alergia ou inflamacao"", ""sinais_de_alerta"": [""Eye Discharge"", ""Lameness"", ""Sneezing""], ""recomendacao"": ""Especialista veterinario deveria ser consultado imediatamente.""}"
+858,Cat,"Animal: Cat. Sintomas observados: Nasal Discharge, Skin Lesions, Lameness.",NAO_EMERGENCIA,EMERGENCIA,False,True,llm_data_augmentation,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""O animal apresenta sintomas que indicam uma condição grave e potencialmente perigosa, como nasal discharges que podem ser sinal de infec\u00e7\u00f3es graves ou doen\u00c1s infecciosas, les\u00e3os na pele que podem estar associados a infec\u00e7\u00f3es ou parasit\u00e9rias, e lamess, que pode indicar dor e dificuldade de movimento. Isso requer uma avaliação imediata por um profissional veterin\u00e1rio para determinar a causa subjacente e iniciar o tratamento adequado."", ""sinais_de_alerta"": [""Nasal Discharge"", ""Skin Lesions"", ""Lameness""], ""recomendacao"": ""Devolver o animal ao profissional veterinário imediatamente.""}"
+859,Cat,"Animal: Cat. Sintomas observados: Nasal Discharge, Sneezing, Lameness.",NAO_EMERGENCIA,INCERTO,False,True,llm_data_augmentation,"{""classificacao"": ""INCERTO"", ""justificativa"": ""A classificação como EMERGENCIA ou NAO_EMERGENCIA requer mais informações sobre a condição específica do animal e seus sintomas. O Nasal Discharge e o Sneezing podem ser indicativos de uma infeção viral, enquanto o Lameness pode estar relacionado a uma lesão ou dor muscular. Sem mais detalhes, é difícil determinar a gravidade da situação."", ""sinais_de_alerta"": [""Nasal Discharge"", ""Sneezing"", ""Lameness""], ""recomendacao"": ""É necessário obter mais informações sobre o caso para uma classificação precisa.""}"
+860,Cat,"Animal: Cat. Sintomas observados: Skin Lesions, Sneezing, Lameness.",NAO_EMERGENCIA,EMERGENCIA,False,True,llm_data_augmentation,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""Orelha ferida (skin lesões) pode indicar infecção ou lesão grave, e a lamessia (falhas de caminhar) pode indicar dor crônica ou dor aguda. O sneezing (espirro) pode ser um sintoma de alergia, infeção viral ou bacteriana, mas no caso da falta de informação sobre a espécie e idade, é preciso agir com cautela e procurar orientação veterinária imediatamente."",
+  ""sinais_de_alerta"": [
+    ""Orelha ferida"",
+    ""Lamessia"",
+    ""Sneezing""
+  ],
+  ""recomendacao"": ""Leve o animal ao veterinário mais próximo, pois a natureza dos sintomas é preocupante e requer avaliação veterinária imediata.""
+}"
+861,Cat,"Animal: Cat. Sintomas observados: Eye Discharge, Nasal Discharge, Skin Lesions, Sneezing.",NAO_EMERGENCIA,EMERGENCIA,False,True,llm_data_augmentation,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""Sintomas como eye discharge e nasal discharge podem indicar infec\u00fao f\u00e7ial ou respirat\u00f3ria, enquanto les\u00eas na pele podem ser um sinal de alergia ou reac-\u00e7\u00e3o cutan\u00e9a. Esses sintomas devem ser avaliados imediatamente por um veterin\u00e1rio para evitar complica\u00casses graves."", ""sinais_de_alerta"": [""Eye Discharge"", ""Nasal Discharge"", ""Skin Lesions"", ""Sneezing""], ""recomendacao"": ""Leve o animal a um veterin\u00e1rio o mais breve poss\u00e1vel.""}"
+862,Cat,"Animal: Cat. Sintomas observados: Eye Discharge, Nasal Discharge, Skin Lesions, Lameness.",NAO_EMERGENCIA,EMERGENCIA,False,True,llm_data_augmentation,"{""classificacao"": ""EMERGENCIA"", ""justificativa"": ""Sintomas como despejo ocular e nasal, lesões cutâneas e mobilidade reduzida em um animal de identificação não fornecida sugerem uma situação de saúde grave que requer imediata atenção veterinária."", ""sinais_de_alerta"": [""Despejo ocular"", ""Nasal Discharge"", ""Lesões Cutâneas"", ""Lameness""], ""recomendaacao"": ""Levar o animal a um clinicador veterinário o mais rápido possível.""}"
+863,Cat,"Animal: Cat. Sintomas observados: Eye Discharge, Nasal Discharge, Sneezing, Lameness.",NAO_EMERGENCIA,EMERGENCIA,False,True,llm_data_augmentation,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""Sinal de descarga nos olhos e nariz, alongamento da patinha indicam a necessidade imediata de avaliação veterinária."",
+  ""sinais_de_alerta"": [""Descarga ocular"", ""Descarga nasal"", ""Lamessura"", ""Rinite""],
+  ""recomendacao"": ""Urgente avaliação veterinaria para identificar causa e iniciar tratamento adequado.""}"
+864,Cat,"Animal: Cat. Sintomas observados: Eye Discharge, Skin Lesions, Sneezing, Lameness.",NAO_EMERGENCIA,INCERTO,False,True,llm_data_augmentation,"{""classificacao"": ""INCERTO"", ""justificativa"": ""A classificação como emergência requer informações adicionais sobre o animal, como sinais vitais ou agravamento dos sintomas. Além disso, a falta de informação sobre a idade e espécie do cateto torna difícil avaliar a gravidade da situação."", ""sinais_de_alerta"": [""Eye Discharge"", ""Skin Lesions""], ""recomendacao"": ""Consulte um veterinário especializado em dermatologia ou oftalmologia para uma avaliação mais detalhada.""}"
+865,Cat,"Animal: Cat. Sintomas observados: Nasal Discharge, Skin Lesions, Sneezing, Lameness.",NAO_EMERGENCIA,EMERGENCIA,False,True,llm_data_augmentation,"{
+  ""classificacao"": ""EMERGENCIA"",
+  ""justificativa"": ""O animal apresenta sinais de infecção respiratória (Nasal Discharge) e lesões cutâneas, o que pode indicar uma condição grave ou infecciosa."",
+  ""sinais_de_alerta"": [
+    ""Nasal Discharge"",
+    ""Skin Lesions""
+  ],
+  ""recomendacao"": ""Fazer exames laboratoriais e radiográficos imediatamente e considerar tratamento antimicrobiano e anti-inflamatório.""
+}"

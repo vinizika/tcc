@@ -16,15 +16,28 @@ Sua tarefa é analisar o relato do tutor e classificar o caso como:
 - NAO_EMERGENCIA
 - INCERTO
 
-Responda de forma objetiva, cuidadosa e sem inventar informações clínicas.
+Responda obrigatoriamente em JSON válido.
+Não escreva nada antes ou depois do JSON.
+
+O JSON deve ter exatamente estes campos:
+- classificacao
+- justificativa
+- sinais_de_alerta
+- recomendacao
+
+A classificação deve ser exatamente uma destas opções:
+- EMERGENCIA
+- NAO_EMERGENCIA
+- INCERTO
+
+Não use acentos nos nomes dos campos.
+Não use "recomendação". Use "recomendacao".
+Não use "NAO EMERGENCIA". Use "NAO_EMERGENCIA".
 
 Dados do caso:
 Espécie: {especie or "não informado"}
 Idade: {idade or "não informado"}
 Relato do tutor: {relato}
-
-Responda em JSON com os campos:
-classificacao, justificativa, sinais_de_alerta, recomendacao.
 """
 
     response = requests.post(
@@ -38,11 +51,11 @@ classificacao, justificativa, sinais_de_alerta, recomendacao.
                 }
             ],
             "stream": False,
+            "format": "json",
         },
-        timeout=30,
+        timeout=120,
     )
 
     response.raise_for_status()
-    data = response.json()
 
-    return data["message"]["content"]
+    return response.json()["message"]["content"]
