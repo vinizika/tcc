@@ -306,3 +306,6 @@ para entrega final de TCC2 fazer uma comparação com diferentes modelos pequeno
 - nao fugir acima de modelos de 16GB
 
 ## design of experiments: tabela com diferentes modelos e testes
+
+usar o dataset 2 dizendo que cada linha é uma emergencia ou nao e incluir isso no dataset1.
+- transfer learning
