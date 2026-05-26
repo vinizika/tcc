@@ -803,9 +803,9 @@ def mostrar_feed_caso(caso):
         st.write(f"**{item['pergunta']}**")
         st.write(item["resposta"])
 
-    st.write("#### Primeiros cuidados orientados")
-    for cuidado in caso["primeiros_cuidados_orientados"]:
-        st.write(f"- {cuidado}")
+    #st.write("#### Primeiros cuidados orientados")
+    #for cuidado in caso["primeiros_cuidados_orientados"]:
+    #    st.write(f"- {cuidado}")
 
     st.write("#### Chat completo")
     mostrar_chat_completo(caso["chat_completo"])
