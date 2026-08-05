@@ -7,6 +7,7 @@ from app.exceptions.handlers import (
     generic_exception_handler
 )
 
+from app.api import voice
 from app.llm import chamar_llm_triagem
 from app.core.config import settings
 from app.middleware.logging_middleware import LoggingMiddleware
@@ -41,10 +42,7 @@ app.add_exception_handler(
 app.include_router(health.router)
 app.include_router(chat.router)
 app.include_router(search.router)
-
-
-
-
+app.include_router(voice.router)
 
 # @app.post("/triagem")
 # def triagem(payload: TriagemRequest):

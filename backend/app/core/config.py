@@ -1,16 +1,40 @@
-from dotenv import load_dotenv
-import os
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
-# Carrega as variáveis do .env
-load_dotenv()
 
-class Settings:
-    API_NAME = os.getenv("API_NAME")
-    API_VERSION = os.getenv("API_VERSION")
-    DEBUG = os.getenv("DEBUG") == "True"
+class Settings(BaseSettings):
 
-    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-    VECTOR_DB = os.getenv("VECTOR_DB")
-    ENVIRONMENT = os.getenv("ENVIRONMENT")
+    # ==========================
+    # Informações da API
+    # ==========================
+    API_NAME: str = "TCC Pré-Triagem Veterinária"
+    API_VERSION: str = "1.0.0"
+    DEBUG: bool = True
+    ENVIRONMENT: str = "development"
+
+    # ==========================
+    # OpenAI
+    # ==========================
+    OPENAI_API_KEY: str = ""
+
+    # ==========================
+    # Banco Vetorial
+    # ==========================
+    VECTOR_DB: str = "chromadb"
+    CHROMA_PATH: str = "./chroma_db"
+
+    # ==========================
+    # Pipeline
+    # ==========================
+    TOP_K: int = 5
+    RERANK_TOP_K: int = 3
+
+    # ==========================
+    # Configuração do .env
+    # ==========================
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        extra="ignore"
+    )
+
 
 settings = Settings()

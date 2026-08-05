@@ -1,16 +1,31 @@
+from app.core.logger import setup_logger
+
+logger = setup_logger("QueryClient")
+
+
 class QueryClient:
 
     @staticmethod
     def rewrite(question: str) -> str:
         """
-        Reescreve a pergunta do usuário.
-        Atualmente apenas retorna a pergunta original.
+        Simula o Query Rewriting.
+        Futuramente será substituído pela implementação real.
         """
-        return question
+
+        logger.info("Executando Query Rewriting")
+
+        return question.strip()
 
     @staticmethod
     def generate_queries(question: str) -> list[str]:
         """
-        Futuramente utilizará Multi-Query + HyDE.
+        Simula Multi-Query + HyDE.
         """
-        return [question]
+
+        logger.info("Gerando consultas")
+
+        return [
+            question,
+            f"Informações veterinárias sobre: {question}",
+            f"Emergência veterinária relacionada a: {question}",
+        ]

@@ -10,3 +10,9 @@ requests
 # Validação
 pydantic==2.11.7
 pandas
+pydantic-settings==2.10.1
+
+# Speech to Text
+faster-whisper==1.1.1
+ctranslate2>=4.5.0
+av>=12.0.0
