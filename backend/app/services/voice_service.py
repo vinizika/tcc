@@ -1,32 +1,55 @@
-import shutil
-
 from pathlib import Path
 
-from fastapi import UploadFile
+from faster_whisper import WhisperModel
 
-from app.ai.whisper.transcriber import WhisperTranscriber
+from app.core.logger import setup_logger
+
+logger = setup_logger("VoiceService")
 
 
 class VoiceService:
 
-    UPLOAD_FOLDER = Path("uploads")
+    _model = None
 
-    UPLOAD_FOLDER.mkdir(exist_ok=True)
+    @classmethod
+    def load_model(cls):
 
+        if cls._model is None:
 
-    @staticmethod
-    def transcribe(audio: UploadFile):
+            logger.info("Carregando Faster Whisper...")
 
-        file_path = VoiceService.UPLOAD_FOLDER / audio.filename
+            cls._model = WhisperModel(
+                "small",
+                device="cpu",
+                compute_type="int8"
+            )
 
-        with open(file_path, "wb") as buffer:
+    @classmethod
+    def transcribe(cls, file_path: Path):
 
-            shutil.copyfileobj(audio.file, buffer)
+        cls.load_model()
 
-        text = WhisperTranscriber.transcribe(
-            str(file_path)
+        logger.info(f"Iniciando transcrição: {file_path.name}")
+
+        segments, info = cls._model.transcribe(
+            str(file_path),
+            language="pt",
+            beam_size=5
         )
 
-        file_path.unlink()
+        text = ""
 
-        return text
+        for segment in segments:
+            text += segment.text + " "
+
+        logger.info(f"Idioma: {info.language}")
+        logger.info(f"Confiança: {info.language_probability}")
+        logger.info(f"Duração: {info.duration:.2f}s")
+
+        logger.info("Transcrição finalizada")
+
+        return (
+            text.strip(),
+            info.language,
+            info.duration
+        )
