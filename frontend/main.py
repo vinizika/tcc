@@ -17,10 +17,7 @@ st.title("🐶 VetAI")
 st.subheader("Converse com a VetAI")
 
 
-# Inicializa a transcrição na sessão
-if "voice_transcription" not in st.session_state:
-    st.session_state.voice_transcription = None
-
+voice_prompt = None
 
 audio = record_voice()
 
@@ -30,19 +27,9 @@ if audio is not None:
 
         result = transcribe_audio(audio["bytes"])
 
-    st.write("### Transcrição")
-
-    st.write(result["transcription"])
-
-
-# Exibe a última transcrição
-if st.session_state.voice_transcription:
-
-    st.write("### Transcrição")
-
-    st.write(st.session_state.voice_transcription)
+    voice_prompt = result["transcription"]
 
 
 render_sidebar()
 
-render_chat()
+render_chat(voice_prompt)
