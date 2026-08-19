@@ -18,3 +18,7 @@ pydantic-settings==2.10.1
 faster-whisper==1.1.1
 ctranslate2>=4.5.0
 av>=12.0.0
+
+#ChromaDB
+chromadb # Banco Vetorial
+sentence-transformers # Modelo que transforma textos em embeddings
