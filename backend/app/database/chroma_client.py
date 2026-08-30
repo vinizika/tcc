@@ -21,7 +21,7 @@ class ChromaDBClient:
 
     _embedding_function = (
         embedding_functions.SentenceTransformerEmbeddingFunction(
-            model_name="all-MiniLM-L6-v2"
+            model_name="paraphrase-multilingual-MiniLM-L12-v2"
         )
     )
 
@@ -36,6 +36,11 @@ class ChromaDBClient:
             "description": (
                 "Documentos usados pelo sistema RAG veterinário"
             )
+        },
+        configuration={
+            "hnsw": {
+                "space": "cosine"
+            }
         }
     )
 

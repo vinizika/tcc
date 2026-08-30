@@ -22,3 +22,6 @@ av>=12.0.0
 #ChromaDB
 chromadb # Banco Vetorial
 sentence-transformers # Modelo que transforma textos em embeddings
+
+# Extração de documentos
+pypdf

@@ -67,7 +67,7 @@ class RetrievalClient:
                 metadata = metadata or {}
 
                 # Quanto menor a distância, maior a similaridade.
-                score = 1 / (1 + float(distance))
+                score = 1 - float(distance)
 
                 retrieved_document = RetrievedDocument(
                     id=document_id,

@@ -24,3 +24,7 @@ backend/uploads/
 # IDEs
 .vscode/
 .idea/
+
+# Bancos vetoriais e backups locais
+backend/data/chroma/
+backend/data/chroma_backup*/
