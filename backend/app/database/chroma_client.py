@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import chromadb
 from chromadb.utils import embedding_functions
 
@@ -9,8 +11,12 @@ logger = setup_logger("ChromaDB")
 
 class ChromaDBClient:
 
-    _client = chromadb.PersistentClient(
-        path="/app/data/chroma"
+    _backend_directory = Path(__file__).resolve().parents[2]
+    _chroma_directory = _backend_directory / "data" / "chroma"
+
+    _chroma_directory.mkdir(
+        parents=True,
+        exist_ok=True
     )
 
     _embedding_function = (
@@ -19,9 +25,18 @@ class ChromaDBClient:
         )
     )
 
+    _client = chromadb.PersistentClient(
+        path=str(_chroma_directory)
+    )
+
     _collection = _client.get_or_create_collection(
         name="veterinary_documents",
-        embedding_function=_embedding_function
+        embedding_function=_embedding_function,
+        metadata={
+            "description": (
+                "Documentos usados pelo sistema RAG veterinário"
+            )
+        }
     )
 
     @staticmethod

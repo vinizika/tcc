@@ -309,3 +309,6 @@ para entrega final de TCC2 fazer uma comparação com diferentes modelos pequeno
 
 usar o dataset 2 dizendo que cada linha é uma emergencia ou nao e incluir isso no dataset1.
 - transfer learning
+
+
+INCLUIR CEBOLA NOS TESTES

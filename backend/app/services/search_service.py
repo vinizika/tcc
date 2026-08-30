@@ -1,13 +1,19 @@
+from app.clients.retrieval_client import RetrievalClient
 from app.schemas.search import SearchResponse
 
 
 class SearchService:
 
     @staticmethod
-    def search_documents(question: str) -> SearchResponse:
+    def search(question: str) -> SearchResponse:
+
+        retrieved_documents = RetrievalClient.retrieve(
+            [question]
+        )
 
         return SearchResponse(
             documents=[
-                f"Documento relacionado: {question}"
+                document.content
+                for document in retrieved_documents
             ]
         )

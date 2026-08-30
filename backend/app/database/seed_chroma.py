@@ -15,7 +15,7 @@ documents = [
             "A gravidade depende da quantidade ingerida, do tipo "
             "de chocolate e do peso do animal."
         ),
-        "source": "Manual Veterinário",
+        "source": "Conteúdo sintético para teste técnico",
     },
     {
         "id": "doc_002",
@@ -26,7 +26,7 @@ documents = [
             "da frequência cardíaca, convulsões e, em casos graves, "
             "alterações cardíacas importantes."
         ),
-        "source": "Manual Veterinário",
+        "source": "Conteúdo sintético para teste técnico",
     },
     {
         "id": "doc_003",
@@ -37,7 +37,7 @@ documents = [
             "considerar o peso do animal, a substância ingerida, "
             "a quantidade e o tempo desde a ingestão."
         ),
-        "source": "Manual Veterinário",
+        "source": "Conteúdo sintético para teste técnico",
     },
     {
         "id": "doc_004",
@@ -48,7 +48,7 @@ documents = [
             "concentração de cacau apresentam maior risco de "
             "intoxicação."
         ),
-        "source": "Manual Veterinário",
+        "source": "Conteúdo sintético para teste técnico",
     },
 ]
 
