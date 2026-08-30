@@ -310,5 +310,14 @@ para entrega final de TCC2 fazer uma comparação com diferentes modelos pequeno
 usar o dataset 2 dizendo que cada linha é uma emergencia ou nao e incluir isso no dataset1.
 - transfer learning
 
-
+-----------30 DE AGOSTO----------------
 INCLUIR CEBOLA NOS TESTES
+## Estado atual do ChromaDB e da recuperação documental
+
+Foi implementado um ingestor automático para arquivos PDF e TXT, responsável por extrair o texto, dividi-lo em chunks, associar metadados e inserir os registros no ChromaDB. Também foi adotado o modelo multilíngue `paraphrase-multilingual-MiniLM-L12-v2`, utilizando similaridade cosseno. Atualmente, a base contém protocolos sintéticos sobre dificuldade respiratória, intoxicação por chocolate, cebola e alho, convulsões, obstrução urinária, traumas, vômito e diarreia.
+
+A inserção e a busca vetorial estão funcionando, mas os primeiros testes mostraram problemas na ordenação. Nos três casos avaliados, o documento correto apareceu entre os cinco primeiros resultados, porém não ocupou a primeira posição. Portanto, o sistema apresentou bom `Recall@5`, mas baixa precisão na primeira posição.
+
+O diagnóstico indica que os chunks estão grandes, começam algumas vezes no meio de palavras ou frases e incluem conteúdos repetitivos dos PDFs, como avisos, rodapés e referências. Além disso, nem todos os chunks carregam o título e o tema do documento, fazendo trechos genéricos de protocolos diferentes parecerem semanticamente semelhantes. Por isso, ainda não deve ser definido um limiar mínimo de score: os resultados incorretos obtiveram scores maiores do que os documentos corretos.
+
+Como continuação, recomenda-se melhorar a preparação dos documentos: remover cabeçalhos, rodapés e referências repetitivas; dividir o texto por sentenças ou seções; reduzir o tamanho dos chunks; impedir cortes no meio das palavras; e acrescentar título, tema e espécie a cada chunk. Depois disso, o banco deverá ser recriado e os mesmos testes repetidos. Caso a ordenação continue inadequada, deverá ser avaliada a troca para um modelo voltado especificamente à recuperação, como `multilingual-e5-small`, além da implementação efetiva do reranking já previsto na arquitetura.
