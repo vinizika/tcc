@@ -1,0 +1,26 @@
+# Variáveis de ambiente
+.env
+.env.*
+!.env.example
+
+# Ambientes virtuais
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# macOS
+.DS_Store
+
+# Banco ChromaDB local
+backend/data/chroma/
+
+# Uploads locais
+backend/uploads/
+
+# IDEs
+.vscode/
+.idea/
