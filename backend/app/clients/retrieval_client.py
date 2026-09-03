@@ -1,3 +1,4 @@
+from app.constants.pipeline import DEFAULT_SCORE_THRESHOLD
 from app.core.config import settings
 from app.core.logger import setup_logger
 from app.database.chroma_client import ChromaDBClient
@@ -102,6 +103,21 @@ class RetrievalClient:
             key=lambda document: document.score,
             reverse=True
         )
+
+        above_threshold = [
+            document
+            for document in documents
+            if document.score >= DEFAULT_SCORE_THRESHOLD
+        ]
+
+        if above_threshold:
+            documents = above_threshold
+        else:
+            logger.warning(
+                "Nenhum documento atingiu o score mínimo de "
+                f"{DEFAULT_SCORE_THRESHOLD}; mantendo o(s) mais "
+                "próximo(s) disponível(is) mesmo assim."
+            )
 
         documents = documents[:settings.TOP_K]
 

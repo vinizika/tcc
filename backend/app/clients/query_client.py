@@ -1,3 +1,5 @@
+import re
+
 from ollama import Client
 
 from app.core.logger import setup_logger
@@ -30,12 +32,36 @@ class QueryClient:
                 {
                     "role": "system",
                     "content": (
-                        "Você é um assistente responsável por reformular "
-                        "perguntas para um sistema de busca veterinário. "
-                        "Reescreva a pergunta de forma clara, objetiva "
-                        "e adequada para recuperação de documentos. "
-                        "Mantenha o significado original. "
-                        "Responda apenas com a pergunta reformulada."
+                        "Você reformula relatos de tutores de animais "
+                        "em consultas técnicas para um sistema de "
+                        "busca veterinário. "
+                        "A entrada pode ser uma afirmação, uma "
+                        "descrição de sintomas ou uma pergunta — "
+                        "reescreva-a sempre no mesmo formato (uma "
+                        "afirmação continua sendo uma afirmação). "
+                        "Troque termos coloquiais por terminologia "
+                        "clínica veterinária equivalente. "
+                        "Nunca faça perguntas de volta ao tutor. "
+                        "Nunca peça mais informações. "
+                        "Nunca responda ou dê conselhos. "
+                        "Nunca adicione informações que não estavam "
+                        "no relato original. "
+                        "Responda apenas com a frase reformulada, "
+                        "sem comentários.\n\n"
+                        "Exemplos:\n"
+                        "Entrada: meu cachorro está ofegante e com a "
+                        "língua azul\n"
+                        "Saída: cão apresentando taquipneia e "
+                        "cianose de mucosas\n\n"
+                        "Entrada: meu cachorro comeu chocolate\n"
+                        "Saída: cão com histórico de ingestão de "
+                        "chocolate, possível intoxicação por "
+                        "teobromina\n\n"
+                        "Entrada: minha gata não consegue fazer xixi "
+                        "desde ontem\n"
+                        "Saída: gata com suspeita de obstrução "
+                        "urinária, ausência de micção há mais de "
+                        "24 horas"
                     ),
                 },
                 {
@@ -64,16 +90,32 @@ class QueryClient:
                 {
                     "role": "system",
                     "content": (
-                        "Você é um assistente responsável por gerar "
-                        "múltiplas consultas para um sistema de busca "
-                        "veterinário. "
-                        "A partir da pergunta fornecida, gere exatamente "
-                        "3 consultas diferentes que abordem o mesmo "
-                        "problema por perspectivas diferentes. "
-                        "As consultas devem ser objetivas e adequadas "
-                        "para recuperação de documentos veterinários. "
-                        "Não responda à pergunta. "
-                        "Retorne apenas uma consulta por linha."
+                        "Você gera consultas de busca para um sistema "
+                        "de recuperação de documentos veterinários. "
+                        "A partir do relato fornecido, gere exatamente "
+                        "3 consultas curtas, cada uma abordando um "
+                        "aspecto clínico diferente do mesmo caso "
+                        "(por exemplo: sintomas, causa provável, "
+                        "conduta/tratamento). "
+                        "Cada consulta deve ser uma frase curta e "
+                        "técnica, não uma pergunta. "
+                        "Nunca responda ao relato. "
+                        "Nunca dê conselhos, opiniões ou ressalvas. "
+                        "Nunca explique as consultas. "
+                        "Retorne apenas as 3 consultas, uma por linha, "
+                        "sem numeração, sem marcadores e sem texto "
+                        "antes ou depois.\n\n"
+                        "Exemplo:\n"
+                        "Relato: cão com histórico de ingestão de "
+                        "chocolate, possível intoxicação por "
+                        "teobromina\n"
+                        "Saída:\n"
+                        "sintomas de intoxicação por teobromina em "
+                        "cães\n"
+                        "quantidade de chocolate tóxica para cães "
+                        "por peso corporal\n"
+                        "conduta de emergência para intoxicação por "
+                        "chocolate em cães"
                     ),
                 },
                 {
@@ -86,10 +128,12 @@ class QueryClient:
         content = response["message"]["content"].strip()
 
         queries = [
-            line.strip()
+            re.sub(r"^[\-\*\d\.\)]+\s*", "", line).strip()
             for line in content.splitlines()
             if line.strip()
         ]
+
+        queries = [query for query in queries if query]
 
         queries = queries[:3]
 
