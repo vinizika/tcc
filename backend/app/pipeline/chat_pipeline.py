@@ -3,6 +3,7 @@ from app.clients.retrieval_client import RetrievalClient
 from app.clients.reranker_client import RerankerClient
 from app.clients.llm_client import LLMClient
 
+from app.core.config import settings
 from app.core.logger import setup_logger
 
 import time
@@ -30,6 +31,27 @@ class ChatPipeline:
             queries = QueryClient.generate_queries(rewritten_question)
 
             logger.info(f"{len(queries)} consultas geradas")
+
+            # 2.1 - HyDE
+            if settings.HYDE_ENABLED:
+
+                hypothetical_document = (
+                    QueryClient.generate_hypothetical_document(
+                        rewritten_question
+                    )
+                )
+
+                if hypothetical_document:
+                    queries.append(hypothetical_document)
+
+                logger.info(
+                    "Documento hipotético (HyDE) adicionado às "
+                    "consultas"
+                )
+
+            else:
+
+                logger.info("HyDE desativado")
 
             # 3 - Busca Vetorial
             documents = RetrievalClient.retrieve(queries)

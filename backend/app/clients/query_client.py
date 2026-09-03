@@ -98,3 +98,61 @@ class QueryClient:
         )
 
         return queries
+
+    @staticmethod
+    def generate_hypothetical_document(question: str) -> str:
+        """
+        Gera um documento hipotético a partir da pergunta do
+        usuário (técnica HyDE - Hypothetical Document Embeddings).
+
+        O documento não precisa ser factualmente correto: seu
+        único objetivo é aproximar o vocabulário da consulta da
+        terminologia técnica presente na base veterinária,
+        servindo como âncora adicional para a busca vetorial.
+        Ele nunca é exibido ao tutor nem usado como fonte de
+        verdade pelo restante do pipeline.
+        """
+
+        logger.info("Gerando documento hipotético (HyDE)")
+
+        question = question.strip()
+
+        if not question:
+            return question
+
+        response = QueryClient._client.chat(
+            model="llama3.2:3b",
+            messages=[
+                {
+                    "role": "system",
+                    "content": (
+                        "Você escreve trechos de protocolos clínicos "
+                        "veterinários. "
+                        "A partir do relato de um tutor sobre seu "
+                        "animal, escreva um trecho curto, como se "
+                        "fosse retirado de um manual ou protocolo "
+                        "veterinário, descrevendo o quadro clínico "
+                        "correspondente, possíveis causas e a conduta "
+                        "esperada. "
+                        "Use terminologia técnica veterinária. "
+                        "Não se dirija ao tutor, não faça perguntas, "
+                        "não dê disclaimers. "
+                        "Responda apenas com o trecho do protocolo, "
+                        "em um único parágrafo curto."
+                    ),
+                },
+                {
+                    "role": "user",
+                    "content": question,
+                },
+            ],
+        )
+
+        hypothetical_document = response["message"]["content"].strip()
+
+        logger.info(
+            f"Documento hipotético (HyDE) gerado: "
+            f"{hypothetical_document}"
+        )
+
+        return hypothetical_document

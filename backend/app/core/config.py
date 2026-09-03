@@ -28,6 +28,12 @@ class Settings(BaseSettings):
     TOP_K: int = 5
     RERANK_TOP_K: int = 3
 
+    # Flags de liga/desliga das etapas de consulta,
+    # usadas no estudo de ablação.
+    QUERY_REWRITING_ENABLED: bool = True
+    MULTI_QUERY_ENABLED: bool = True
+    HYDE_ENABLED: bool = True
+
     # ==========================
     # Configuração do .env
     # ==========================
