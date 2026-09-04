@@ -1,10 +1,10 @@
 # Geração de triagem ancorada nos documentos (matar o mock)
 
 **Data:** 04/09/2026 · **Trilho:** B2 (Decisão) · **Rodada:** 3
-**Commits:** parte 1 de 3 — as demais são acrescentadas conforme entram.
+**Commits:** [`a2b9f3c`](https://github.com/vinizika/tcc/commit/a2b9f3c) (estrutura) · [`906bd72`](https://github.com/vinizika/tcc/commit/906bd72) (evidência) · geração real e limpeza a seguir.
 
-> Rodada em andamento. As seções "Resultado esperado" e "Decisões" foram
-> escritas **antes** de medir; "Resultado obtido" é preenchida depois.
+> As seções "Resultado esperado" e "Decisões" foram escritas **antes** de
+> medir. Falta apenas a limpeza (parte 3).
 
 ## O que foi feito
 
@@ -16,9 +16,10 @@ passos, para o repositório nunca ficar quebrado para quem puxar:
    requisição — cada etapa pode ser ligada ou desligada, e a resposta diz o
    que rodou, quanto tempo cada etapa levou e o que a busca encontrou. A
    geração continua simulada de propósito, para este passo ser só estrutura.
-2. **Geração real** (a seguir): o LLM classifica usando os documentos, com
-   saída estruturada; o mock morre.
-3. **Limpeza**: remoção do classificador antigo desligado e da rota morta.
+2. **Geração real** (feito): o LLM classifica usando os documentos, com
+   saída estruturada e fontes citadas por número; o mock morreu.
+3. **Limpeza** (a seguir): remoção do classificador antigo desligado e da
+   rota morta.
 
 ## Por quê
 
@@ -42,7 +43,7 @@ impossível garantir que só uma variável mudou entre duas medições.
 | 2 | Entrega em três commits (estrutura · geração · limpeza) | A `main` é compartilhada pelos três integrantes; cada passo é revisável sozinho |
 | 3 | Documentos abaixo do limiar da busca ainda vão ao classificador, com o score registrado em toda resposta | Descartá-los equivaleria a rodar sem RAG. Passar e medir é o que gera evidência sobre a qualidade da base |
 | 4 | O **relato original** vai ao classificador, não a versão reescrita; a reescrita só entra sob uma chave própria, desligada por padrão | A reescrita adiciona julgamento clínico (ver Observações). Usá-la na decisão misturaria a etapa do trilho B1 dentro do resultado do B2 e confundiria a ablação |
-| 5 | O prompt não terá a regra "sinal grave nos documentos ⇒ emergência": só contam sinais presentes no relato; os documentos qualificam a gravidade | Os 7 protocolos da base são todos de emergência. Com a busca devolvendo o mais próximo mesmo sem relevância, um documento errado empurraria tudo para emergência — justamente a métrica que o projeto precisa melhorar |
+| 5 | Um trecho **relevante** pode elevar a classificação e deve ser citado; um trecho sobre **outro** problema é ignorado. Além disso, um único sinal grave basta, e a ausência de outros sintomas não torna o caso leve | Escrita em duas etapas: a primeira versão só deixava os documentos "qualificarem" a gravidade, para que um documento irrelevante não empurrasse tudo para emergência (os 7 protocolos da base são todos de emergência). Isso produziu um falso não urgente num caso grave — ver "regressão que os controles pegaram". A distinção correta é relevância, não impedir que o documento eleve |
 | 6 | Modo legado fiel ao `llm.py`: prompt literal, sem documentos, saída apenas em JSON, sem teto de tokens e leitura tolerante dos campos | É a única forma de a comparação com os 70,41% medir a mesma coisa. Verificado: 7 das 98 respostas antigas tinham campos faltando ou com o nome errado |
 | 7 | Toda etapa ainda não implementada é **recusada** com erro 400, e nome de opção desconhecido também falha | Uma chave aceita e ignorada produziria uma linha de ablação idêntica à do braço sem ela, sugerindo que a técnica não teve efeito |
 | 8 | Sem busca, as etapas de consulta são desligadas automaticamente | Sem recuperação não há consulta a otimizar; gastaria chamadas ao modelo e a configuração ecoada mentiria sobre o que rodou |
@@ -86,7 +87,66 @@ na diferença entre o previsto e o medido.
 
 ### Parte 2 — geração real
 
-*(a preencher)*
+Testes automatizados: **43 passam**. Cada caso foi rodado em três braços,
+para separar o efeito do prompt novo do efeito do RAG.
+
+| Caso | Esperado | Com RAG | Sem RAG (só prompt) | Modo legado |
+|---|---|---|---|---|
+| Cão comeu chocolate, tremendo e vomitando | EMERGENCIA | **EMERGENCIA** | EMERGENCIA | EMERGENCIA |
+| Gata sem urinar há 24h | EMERGENCIA | **EMERGENCIA** | NAO_EMERGENCIA | EMERGENCIA |
+| Gato espirrando, comendo e brincando | NAO_EMERGENCIA | **NAO_EMERGENCIA** | NAO_EMERGENCIA | NAO_EMERGENCIA |
+
+**O caso de aceitação passou**, mas não pelo motivo previsto. O relato do
+chocolate era classificado como não emergência num teste anterior, feito com
+um prompt mínimo; com o prompt completo desta entrega ele acerta **mesmo sem
+busca**, e o modo legado também acerta. Ou seja: o mérito é do prompt, não do
+RAG. Sem os braços de controle, esse acerto teria sido creditado ao RAG por
+engano — foi exatamente para isso que eles existiram.
+
+**O valor do RAG apareceu em outro caso.** Na gata sem urinar, o mesmo prompt
+com e sem busca dá respostas diferentes: com o protocolo de obstrução urinária
+recuperado, o sistema classifica como emergência e cita a fonte; sem ele,
+classifica como não emergência. É a primeira evidência concreta, no projeto,
+de que a recuperação muda a decisão clínica — e num caso em que errar é grave,
+já que obstrução urinária em gato mata em poucas horas.
+
+Um caso não é medição. O número que vale virá do runner sobre os 98 relatos.
+Mas é o primeiro sinal de que o mecanismo funciona.
+
+**Desempenho:** 10,4s por requisição completa (7,4s nas três chamadas da etapa
+de consulta, 0,2s na busca, 2,8s na classificação), a 85,7 tokens/s na GPU.
+Formato válido na primeira tentativa em todos os casos.
+
+### Uma regressão que os controles pegaram
+
+A primeira versão do prompt classificou a gata sem urinar como **não
+emergência**, com esta justificativa: *"o relato não menciona sinais de dor,
+vômito, fraqueza ou prostração, que são indicadores de urgência"*. O modo
+legado, mais simples, acertava o mesmo caso.
+
+Investigando: a busca tinha funcionado, e trouxe o protocolo certo com score
+0,72 — o modelo recebeu o documento correto e mesmo assim rebaixou o caso, sem
+citar fonte nenhuma. Falha de prompt, não de recuperação.
+
+A causa foi uma regra que escrevi para evitar o problema oposto (decisão 5):
+como a busca devolve o documento mais próximo mesmo sem relevância, e os 7
+protocolos da base são todos de emergência, eu queria impedir que um documento
+errado empurrasse tudo para emergência. A regra dizia que os trechos servem
+apenas para "julgar a gravidade dos sinais relatados". O modelo entendeu que
+precisava de sinais adicionais, procurou dor e vômito, não achou, e rebaixou —
+ignorando que não urinar já é a emergência.
+
+Correção aplicada, mantendo a proteção original:
+
+- um único sinal grave basta para emergência, e a ausência de outros sintomas
+  não torna o caso leve;
+- se um trecho **descrever a situação do relato** e indicar risco, classifique
+  como emergência e cite esse trecho;
+- se um trecho tratar de **outro** problema, ignore-o.
+
+A distinção passou a ser relevância, e não "documento nunca eleva a
+gravidade". Depois da correção, os três casos ficaram corretos nos braços com
+RAG, e o falso não urgente desapareceu.
 
 ## O que mudou no repositório
 
@@ -155,5 +215,7 @@ outros trilhos.
 
 ## Próximo passo
 
-Parte 2: a geração real. O caso do chocolate é o teste de aceitação, e será
-medido nos três braços descritos em "Resultado esperado".
+Parte 3: apagar o classificador antigo, que virou código morto, e registrar
+os contratos entre os trilhos. Depois disso, o runner de avaliação — é ele
+que transforma estes três casos em número sobre os 98 relatos, e permite
+comparar com os 70,41% do baseline.
