@@ -128,6 +128,7 @@ Duas regras de comportamento:
 | `POST /search/` | A | Busca pura, sem classificação |
 | `POST /voice/` | B1 | Transcrição de áudio |
 | `GET /health/` | — | Verificação de saúde |
+| `GET /health/fingerprint` | B2 | Identidade da versão que respondeu: modelo com digest, base vetorial, hash dos prompts. O runner grava no manifesto de cada rodada |
 | ~~`POST /triagem`~~ | — | **Removida.** Era o classificador antigo, sem RAG |
 
 ---
@@ -150,6 +151,6 @@ Coisas que dependem de decisão ou ação de outro trilho.
    `python -m app.database.ingest_documents` uma vez. Falta no README.
 5. **Arquivos que ainda apontam para a rota removida**, fora do backend:
    `frontend/streamlit_app.py` (interface antiga, substituída por `main.py`),
-   `mock/streamlit_app_mock.py` e trechos do `README.md`. O runner de
-   avaliação (`scripts/evaluate_accuracy.py`) também aponta para lá, e será
-   reescrito na próxima entrega do B2.
+   `mock/streamlit_app_mock.py` e trechos do `README.md`. Os scripts de
+   avaliação já foram reescritos: veja
+   [`data/evaluation/README.md`](../data/evaluation/README.md).
