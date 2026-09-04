@@ -1,0 +1,32 @@
+{
+  "_comment": "Configurações nomeadas dos braços de avaliação. Cada preset é um conjunto de opções enviado ao POST /chat/. O runner registra no manifesto tanto o que foi pedido quanto o que a API respondeu ter usado, porque algumas opções são forçadas pelo servidor (o modo legado desliga a busca, por exemplo).",
+
+  "legacy": {
+    "_descricao": "Reproduz de forma aproximada a medição de 04/05: prompt antigo, sem documentos, saída apenas em JSON. Diferenças conhecidas estão no README da avaliação. Usar com --set temperature=0.8 --repeat 3 para obter a faixa de ruído daquele dia.",
+    "prompt_version": "v0_legacy"
+  },
+
+  "llm_only": {
+    "_descricao": "Linha de base determinística: prompt atual, sem recuperação. É o braço contra o qual o ganho do RAG é medido.",
+    "retrieval_enabled": false,
+    "prompt_version": "v1_grounded"
+  },
+
+  "naive_rag": {
+    "_descricao": "Recuperação ligada, otimização de consulta desligada. Determinístico, porque a etapa de consulta ainda usa seed aleatória. É o braço do Marco 1.",
+    "retrieval_enabled": true,
+    "query_rewriting_enabled": false,
+    "multi_query_enabled": false,
+    "hyde_enabled": false,
+    "prompt_version": "v1_grounded"
+  },
+
+  "rag_query": {
+    "_descricao": "Pipeline completo, com reescrita, multi-query e HyDE. Não é determinístico hoje: usar --repeat para medir a variação.",
+    "retrieval_enabled": true,
+    "query_rewriting_enabled": true,
+    "multi_query_enabled": true,
+    "hyde_enabled": true,
+    "prompt_version": "v1_grounded"
+  }
+}

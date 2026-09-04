@@ -32,5 +32,7 @@ backend/uploads/
 backend/data/chroma/
 backend/data/chroma_backup*/
 
-# Rodadas de avaliacao descartaveis (as que viram diario sao commitadas)
-data/evaluation/scratch/
+# Rodadas de avaliacao. Toda rodada grava em runs/; entram no repositorio
+# apenas as promovidas para cited/, que sustentam um numero escrito em
+# alguma evidencia.
+data/evaluation/runs/
