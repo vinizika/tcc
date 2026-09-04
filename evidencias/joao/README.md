@@ -18,31 +18,33 @@ Self-Refine, e a régua de avaliação do sistema (runner de métricas).
 | 1 | 03/09 | [Higiene do repositório e ambiente](2026-09-03-02-higiene-e-ambiente.md) | 41 arquivos gerados fora do Git; clone limpo sobe; modelo 100% na GPU |
 | 2 | 03/09 | [Configuração centralizada](2026-09-03-03-configuracao-centralizada.md) | Mesmo código roda em Docker e local; saída por schema com campos exatos em 8s |
 | 3 | 04/09 | [Geração ancorada nos documentos](2026-09-04-04-geracao-ancorada.md) | Mock morto: classificação real com fontes citadas, 43 testes. RAG muda a decisão em 1 dos 3 casos, mas a etapa de consulta erra 1 em 4 execuções |
+| 4 | 04/09 | [Runner de avaliação](2026-09-04-05-runner-de-avaliacao.md) | A régua existe. **O prompt da rodada 3 vale +32 pontos**; e com a base atual **o RAG custa 20 pontos e 22 falsos não urgentes** (p = 0,0001) |
 
 ## Estado atual
 
-**Etapa 4 de 7.** O produto já classifica de verdade: triagem ancorada nos
-documentos, com fontes citadas e etapas ligáveis por requisição, sobre 43
-testes automatizados. Falta a régua que transforma isso em número — o runner
-de avaliação é a próxima entrega.
+**Etapa 5 de 7.** O produto classifica de verdade e a régua existe: seis
+rodadas medidas sobre os 98 relatos, com previsões versionadas e teste
+estatístico. O Marco 1 está fechado.
 
-O roteiro completo, com marcos e bloqueios, está em
+O roteiro completo, com marcos e os sete bloqueios abertos, está em
 **[planejamento.md](planejamento.md)**.
 
 ## Números de referência
 
-Baseline de 04/05/2026, LLM puro, 98 relatos Dog/Cat:
+Medidos em 04/09 sobre os 98 relatos de cão e gato, temperatura zero. A
+métrica principal é a **acurácia balanceada**, média do recall das duas
+classes: 71 das 98 linhas são emergência, então a acurácia simples premiaria
+um sistema que sempre responde "emergência" (72,4%).
 
-| Métrica | Valor |
-|---|---|
-| Acurácia | 70,41% |
-| Baseline ingênuo (sempre EMERGENCIA) | 72% |
-| Recall EMERGENCIA | 91,55% |
-| Recall NAO_EMERGENCIA | 14,81% |
-| Falsos não urgentes | 4 |
+| Configuração | Balanceada | Estrita | Falsos não urgentes |
+|---|---|---|---|
+| Prompt antigo, sem RAG | 0,572 | 0,745 | 3/71 |
+| **Melhor atual**: prompt novo, sem RAG | **0,893** | **0,878** | 8/71 |
+| Prompt novo, com RAG | 0,763 | 0,674 | 30/71 |
+| Pipeline completo | 0,701 | 0,588 | 36/71 |
 
-Mover esses números com o RAG é o resultado central do trilho. Duas ressalvas
-que acompanham qualquer leitura deles estão registradas no
-[estado inicial](2026-09-03-01-estado-inicial.md): a rodada antiga não era
-determinística, e no conjunto de avaliação a origem do dado separa
-perfeitamente o rótulo.
+A leitura completa está na [rodada 4](2026-09-04-05-runner-de-avaliacao.md).
+Duas ressalvas acompanham qualquer uso destes números: no conjunto de
+avaliação a origem do dado separa perfeitamente o rótulo, e regras triviais
+sem modelo acertam 98 de 98 — ou seja, o conjunto mede se o sistema parou de
+exagerar cinco sinais leves, não a capacidade geral de triagem.

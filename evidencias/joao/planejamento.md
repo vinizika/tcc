@@ -17,14 +17,24 @@ Cuidar do caminho **da evidência recuperada até a resposta**: transformar os
 trechos que a busca encontrou em uma decisão de triagem confiável, e ser a
 **régua que mede o sistema inteiro**.
 
-A régua é a parte que dá o número do TCC. O baseline a ser superado está
-medido: **70,41% de acurácia**, contra 72% de um modelo que sempre responde
-"emergência", com recall de não emergência em apenas 14,81%.
+A régua é a parte que dá o número do TCC. Estado das medições em 04/09,
+sobre os 98 relatos de cão e gato:
+
+| Configuração | Acurácia balanceada | Falsos não urgentes |
+|---|---|---|
+| Medição de 04/05 (prompt antigo) | 0,532 | 4 de 71 |
+| **Melhor atual**: prompt novo, sem RAG | **0,893** | 8 de 71 |
+| Com RAG e a base de hoje | 0,763 | **30 de 71** |
+
+A métrica principal é a **acurácia balanceada**, média do recall das duas
+classes: como 71 das 98 linhas são emergência, um sistema que sempre responde
+"emergência" acerta 72,4% na acurácia simples, e ela premiaria esse
+comportamento. O detalhe de cada número está nas rodadas.
 
 ## Onde estou
 
-**Etapa atual: 4 de 7.** O produto classifica de verdade; falta a régua que
-transforma isso em número.
+**Etapa atual: 5 de 7.** O produto classifica de verdade e a régua existe.
+O Marco 1 está medido.
 
 | # | Entrega | Situação | O que entregou / entrega |
 |---|---|---|---|
@@ -32,32 +42,31 @@ transforma isso em número.
 | 1 | Higiene e ambiente | ✅ 03/09 | Arquivos gerados fora do Git; clone limpo sobe; modelo rodando na GPU |
 | 2 | Configuração centralizada | ✅ 03/09 | Mesmo código em Docker e local; saída estruturada validada |
 | 3 | Geração ancorada | ✅ 04/09 | **O mock morreu.** Classificação real com fontes citadas, etapas ligáveis por requisição, 43 testes |
-| 4 | **Runner de avaliação** | 🔜 **próxima** | Transforma casos isolados em número sobre os 98 relatos |
-| 5 | Chain-of-Thought | ⏳ | Raciocínio em etapas antes da classificação, medido isoladamente |
+| 4 | Runner de avaliação | ✅ 04/09 | A régua: rodadas versionadas com manifesto, métricas e teste estatístico. **Marco 1 medido** |
+| 5 | **Chain-of-Thought** | 🔜 **próxima** | Raciocínio em etapas antes da classificação, medido isoladamente |
 | 6 | Self-Refine | ⏳ | Revisão da própria resposta, com trava de segurança |
 | 7 | Driver de ablação | ⏳ | Cruza as chaves de todos os trilhos e gera as tabelas do artigo |
 
-## Próxima entrega: o runner de avaliação
+## Próxima entrega: Chain-of-Thought
 
-**O problema que resolve.** Hoje o script de métricas do projeto aponta para
-um endpoint que não existe mais, então os 70,41% não são reproduzíveis. E a
-[rodada 3](2026-09-04-04-geracao-ancorada.md) mostrou por que casos isolados
-não bastam: o mesmo relato deu acerto em três execuções e erro grave numa
-quarta. Sem medir sobre o conjunto inteiro, qualquer conclusão é anedota.
+**O problema que resolve.** O erro que mais importa hoje é o falso não
+urgente: 8 em 71 no melhor braço, e 30 em 71 quando o RAG entra. A hipótese
+é que pedir ao modelo para percorrer os sinais um a um, antes de concluir,
+reduza a chance de ele rebaixar um caso grave por comparação com o contexto
+— que foi exatamente o mecanismo observado na
+[rodada 4](2026-09-04-05-runner-de-avaliacao.md).
 
-**O que vai fazer:** rodar os 98 relatos contra a API, calcular acurácia,
-recall por classe, F1 e tempo de resposta, e salvar cada rodada com um
-manifesto do que foi executado — quais etapas estavam ligadas, qual modelo,
-qual configuração. Duas rodadas passam a ser comparáveis porque o manifesto
-diz o que mudou entre elas.
+**O que vai fazer:** a chave `cot_enabled`, que hoje é recusada com erro 400
+de propósito, passa a funcionar. O modelo escreve o raciocínio antes da
+classificação, e a ordem importa: o campo do raciocínio precisa vir primeiro
+no formato de saída, ou a conclusão sai antes do que a justifica.
 
-**Três medições logo depois:**
+**Como será medido:** o mesmo braço com e sem a chave, sobre o conjunto
+inteiro, comparados com o teste pareado. Também o custo em tokens e em
+tempo, porque o artigo trata latência como requisito.
 
-1. **Reproduzir o baseline antigo**, para provar que a régua mede a mesma
-   coisa que a medição de 04/05.
-2. **Fixar uma linha de base determinística**, com temperatura zero.
-3. **Marco 1: a primeira triagem com RAG medida ponta a ponta**, comparada
-   com a linha de base. É o número central do artigo.
+Depois dela vêm o Self-Refine e o driver que cruza as chaves de todos os
+trilhos para gerar as tabelas do artigo.
 
 ## Marcos
 
@@ -69,16 +78,32 @@ diz o que mudou entre elas.
 
 ## O que está travando
 
-| Bloqueio | De quem depende | Efeito |
-|---|---|---|
-| **Temperatura e seed na etapa de consulta** | Trilho B1 | Sem isso as consultas mudam a cada execução, e **nenhuma rodada com RAG é reproduzível**. Medido: 1 erro em 4 execuções do mesmo relato. É a pendência mais urgente do projeto hoje |
-| Ordenação da busca | Trilho A | O documento certo nem sempre aparece entre os primeiros. Limita o ganho que o RAG pode mostrar nas medições |
-| Base de conhecimento sintética | Trilho A + especialista | Os 7 protocolos são de teste. O artigo promete base curada, e curadoria depende de gente, não de código |
+Esta seção **só cresce**. Um bloqueio entra com a data em que foi visto e de
+onde veio, e permanece até o trilho responsável resolvê-lo — só então vai
+para "Resolvidos", com a data. Nada é apagado ou substituído: é a lista que
+diz aos outros desenvolvedores o que fazer para ajudar, e a trilha de como
+cada problema apareceu é parte do valor.
 
-Nenhum deles impede o runner de ser construído. Eles limitam o **resultado**
-que ele vai medir — e é justamente por isso que o runner registra o score da
-recuperação em cada linha: para separar "a decisão errou" de "a busca não
-trouxe o que era preciso".
+### Aberto
+
+| # | Bloqueio | De quem depende | Visto em | Efeito medido |
+|---|---|---|---|---|
+| 1 | **Com a base atual, ligar o RAG degrada o sistema.** Enquanto a busca não separar assunto, o contexto irrelevante recalibra o julgamento do modelo para cima e ele rebaixa emergências | Trilho A | Rodada 4 (04/09) | **−20,4 pontos de acurácia** (IC 95% de −29,6 a −11,2; p = 0,0001) e **+22 falsos não urgentes**. Em 100% das linhas nenhum trecho passou do limiar de relevância; score máximo médio de 0,574 |
+| 2 | **Ordenação da busca não separa assunto.** Para um relato de espirro, o protocolo de obstrução urinária apareceu em primeiro com 0,8183 | Trilho A | Rodada 3 (04/09) | É a causa provável do bloqueio 1 |
+| 3 | **Base de conhecimento sintética.** Os 7 protocolos são de teste e todos tratam de emergência, o que enviesa qualquer recuperação | Trilho A + especialista | Rodada 3 (04/09) | O artigo promete base curada; curadoria depende de gente, não de código |
+| 4 | **Temperatura e seed não fixadas na etapa de consulta.** As três chamadas usam o padrão do Ollama | Trilho B1 | Rodada 3 (04/09) | Nenhuma rodada com o pipeline completo é reproduzível. São três linhas de correção, com o que já existe em `core/ollama.py` |
+| 5 | **O conjunto de avaliação é trivialmente separável.** A classe não emergência usa 5 termos de sintoma contra 192 da outra, e tem 3 ou 4 sintomas contra sempre 5 | Time + especialista | Rodada 4 (04/09) | A regra "só sintomas leves" acerta **98 de 98** sem modelo nenhum. O conjunto mede se o sistema parou de exagerar cinco sinais leves, não a capacidade geral de triagem |
+| 6 | **A etapa de consulta custa 63% do tempo de resposta.** Três chamadas sequenciais ao modelo antes de qualquer busca | Trilho B1 | Rodada 3 (04/09) | Relevante para o requisito de latência do artigo. As chamadas são independentes e poderiam ser paralelas ou fundidas |
+| 7 | **`RERANK_TOP_K` e `CONTEXT_TOP_K` se sobrepõem.** A primeira é do trilho A e hoje não é usada | Trilho A + B2 | Rodada 3 (04/09) | Quando o re-ranking real cortar em 3, pedir 5 trechos devolverá 3 em silêncio |
+
+### Resolvidos
+
+*(nenhum ainda)*
+
+Nenhum destes impediu o runner de ser construído. Eles limitam o
+**resultado** que ele mede — e é por isso que cada linha de cada rodada
+registra o score da recuperação: para separar "a decisão errou" de "a busca
+não trouxe o que era preciso".
 
 ## Fora do escopo deste trilho
 
