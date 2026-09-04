@@ -1,0 +1,29 @@
+# Override opcional para maquinas com GPU NVIDIA.
+#
+# Sem ele, o Ollama roda em CPU e cada chamada ao modelo leva minutos, o que
+# inviabiliza rodar as avaliacoes (98 relatos por rodada). Com a GPU, as mesmas
+# chamadas levam segundos.
+#
+# Como usar:
+#   docker compose -f docker-compose.yml -f docker-compose.gpu.yml up -d
+#
+# Requisitos: driver NVIDIA no host e, no Docker Desktop, a integracao com WSL2
+# ativada. Quem nao tem GPU continua usando so o docker-compose.yml.
+#
+# A porta 11434 deixa de ser publicada no host para nao conflitar com uma
+# instalacao nativa do Ollama; o backend continua acessando o container pela
+# rede interna do compose.
+
+services:
+
+  ollama:
+
+    ports: !override []
+
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]

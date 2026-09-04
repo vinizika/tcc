@@ -18,7 +18,10 @@ __pycache__/
 # Banco ChromaDB local
 backend/data/chroma/
 
-# Uploads locais
+# Uploads de audio gerados em execucao.
+# Os dois arquivos de teste ja versionados (audio.wav e teste.ogg) continuam
+# no repositorio de proposito; esta regra evita que novas gravacoes feitas
+# durante os testes entrem sem querer.
 backend/uploads/
 
 # IDEs
@@ -28,3 +31,6 @@ backend/uploads/
 # Bancos vetoriais e backups locais
 backend/data/chroma/
 backend/data/chroma_backup*/
+
+# Rodadas de avaliacao descartaveis (as que viram diario sao commitadas)
+data/evaluation/scratch/

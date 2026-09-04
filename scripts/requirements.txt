@@ -1,0 +1,7 @@
+# Dependencias dos scripts de dados e avaliacao.
+# Rodam fora do Docker, na maquina do desenvolvedor:
+#   python -m venv .venv && pip install -r scripts/requirements.txt
+
+pandas
+requests
+pytest

@@ -12,6 +12,71 @@ A ideia inicial é permitir que o usuário digite o relato de um tutor e receba 
 
 ---
 
+## Rodando com Docker Compose (forma recomendada)
+
+É o padrão do time: sobe backend, frontend e Ollama juntos, com a mesma
+configuração em todas as máquinas.
+
+**1. Crie seu arquivo de configuração local** (uma vez por máquina):
+
+```bash
+cp .env.example .env
+```
+
+O `.env` não vai para o Git. Ele é opcional — o projeto sobe sem ele, com os
+padrões do código —, mas é onde você sobrescreve o que for específico da sua
+máquina.
+
+**2. Suba os serviços:**
+
+```bash
+docker compose up -d
+```
+
+Se a sua máquina tem **GPU NVIDIA**, use o override e ganhe respostas em
+segundos em vez de minutos (o modelo passa a rodar na GPU):
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.gpu.yml up -d
+```
+
+**3. Baixe o modelo dentro do container** (uma vez; fica guardado no volume):
+
+```bash
+docker compose exec ollama ollama pull llama3.2:3b
+```
+
+**4. Acesse:**
+
+- Interface: <http://localhost:8501>
+- API: <http://localhost:8000>
+- Saúde da API: <http://localhost:8000/health/>
+
+Para acompanhar os logs: `docker compose logs -f backend`.
+Para derrubar tudo: `docker compose down`.
+
+> Se você tem o Ollama instalado nativamente na máquina, ele ocupa a porta
+> 11434 e conflita com o container. O override de GPU já resolve isso (não
+> publica a porta); sem ele, encerre o Ollama nativo antes de subir o compose.
+
+### Scripts de dados e avaliação
+
+Os scripts em `scripts/` rodam **fora** do Docker, direto na sua máquina, e
+falam com a API pela porta 8000. Crie um ambiente virtual na raiz do projeto:
+
+```bash
+python -m venv .venv
+```
+
+Ative (`.venv\Scripts\Activate.ps1` no Windows, `source .venv/bin/activate` no
+Mac/Linux) e instale as dependências:
+
+```bash
+pip install -r scripts/requirements.txt
+```
+
+---
+
 ## Estrutura atual
 
 ```txt

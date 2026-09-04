@@ -1,0 +1,24 @@
+# Ambientes virtuais
+.venv/
+venv/
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Banco vetorial local (recriado pela ingestao)
+data/chroma/
+data/chroma_backup*/
+
+# Uploads de audio gerados em execucao
+uploads/
+
+# Configuracao local
+.env
+.env.*
+!.env.example
+
+# Testes e ferramentas
+.pytest_cache/
+.mypy_cache/
