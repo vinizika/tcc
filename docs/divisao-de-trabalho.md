@@ -128,22 +128,33 @@ respondendo com classificação ancorada citando fontes.
 
 ## O ritual de cada rodada (o "diário de experimentos")
 
-A cada rodada de implementação, quem fez registra no diário do seu trilho:
+A cada rodada de implementação, quem fez registra um arquivo em
+[`evidencias/<seu-nome>/`](../evidencias/README.md), respondendo sempre:
 
 ```
-## [data] · [trilho] · o que mudou
-- Intenção: por que fizemos isso
-- Resultado esperado: o que achávamos que ia acontecer
-- Resultado medido: números da régua compartilhada (antes → depois)
-- Leitura: o que aprendemos com a diferença
-- Próximo passo: o que isso puxa
+# Título da rodada
+Data · Trilho · Commits
+
+## O que foi feito
+## Por quê                     (o problema concreto que resolve)
+## Resultado esperado          (escrito ANTES de medir)
+## Resultado obtido            (com números; resultado negativo também conta)
+## O que mudou no repositório  (arquivos + link do commit)
+## Próximo passo
 ```
+
+Cada um escreve **só na própria pasta** — três pessoas editando o mesmo arquivo
+de diário disputariam as mesmas linhas toda semana.
 
 Três regras para os registros valerem alguma coisa:
 
 1. **Número da régua compartilhada, sempre** — sem número, é opinião.
 2. **Uma mudança por rodada** (ou o resultado não diz qual mudança causou o quê).
 3. **Revisão cruzada na sync semanal** — cada um lê os registros dos outros.
+
+O "resultado esperado" precisa ser escrito antes de medir: depois do resultado
+é fácil convencer a si mesmo de que era o que se previa, e é justamente a
+diferença entre os dois que tem valor para o TCC.
 
 **Atenção à diferença:** este diário **complementa** o estudo de ablação do
 artigo, não o substitui. O estudo formal é a matriz sistemática (cada flag
@@ -172,7 +183,7 @@ do outro lado.
 - Branch curta por tarefa, PR pequeno, **main sempre rodando**.
 - **Arquivo gerado não entra no git** (cache de Python, banco vetorial, uploads).
 - Toda melhoria vem com **antes/depois na régua** (é o ritual acima).
-- **Diário por trilho** em `docs/`, sempre acrescentando no fim, com data.
+- **Evidência por rodada** em `evidencias/<seu-nome>/`, uma por implementação.
 
 ---
 
