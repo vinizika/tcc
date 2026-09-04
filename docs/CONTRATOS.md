@@ -133,24 +133,14 @@ Duas regras de comportamento:
 
 ---
 
-## Pendências combinadas
+## Pendências
 
-Coisas que dependem de decisão ou ação de outro trilho.
-
-1. **Fixar temperatura e seed na etapa de consulta** (B1). As três chamadas
-   usam o padrão do Ollama, com seed aleatória, então as consultas mudam a
-   cada execução e duas rodadas de avaliação com RAG não são comparáveis. São
-   três linhas, com o que já existe em `core/ollama.py`.
-2. **Decidir se a consulta reescrita vai ao índice** junto das variações do
-   multi-query (B1) — item 1 acima.
-3. **`RERANK_TOP_K` × `CONTEXT_TOP_K`.** A primeira é do trilho A e hoje não é
-   usada. Quando o re-ranking real entrar e cortar em 3, pedir 5 trechos de
-   contexto devolverá 3 em silêncio. Combinar quem manda.
-4. **Ingestão em máquina nova** (A). O banco vetorial não é versionado: um
-   clone limpo tem a base vazia e o RAG não recupera nada até rodar
-   `python -m app.database.ingest_documents` uma vez. Falta no README.
-5. **Arquivos que ainda apontam para a rota removida**, fora do backend:
-   `frontend/streamlit_app.py` (interface antiga, substituída por `main.py`),
-   `mock/streamlit_app_mock.py` e trechos do `README.md`. Os scripts de
-   avaliação já foram reescritos: veja
-   [`data/evaluation/README.md`](../data/evaluation/README.md).
+As pendências entre trilhos vivem no [backlog do projeto](../evidencias/backlog.md),
+com detalhe, responsável, prioridade e status — este documento trata só das
+interfaces. Os itens que tocam estes contratos, hoje:
+[B-04](../evidencias/backlog.md#b-04) (seed na etapa de consulta),
+[B-10](../evidencias/backlog.md#b-10) (a consulta reescrita não vai ao
+índice), [B-12](../evidencias/backlog.md#b-12) (ingestão em máquina nova),
+[B-17](../evidencias/backlog.md#b-17) (`RERANK_TOP_K` × `CONTEXT_TOP_K`) e
+[B-19](../evidencias/backlog.md#b-19) (arquivos que ainda apontam para a
+rota removida).

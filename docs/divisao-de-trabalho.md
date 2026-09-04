@@ -91,6 +91,11 @@ chunking/embeddings.
 
 *Para quem estava sem escopo — ganha o coração do produto e a régua de sistema.*
 
+> **Situação em 04/09:** as três entregas imediatas abaixo estão concluídas e
+> o Marco 1 foi medido. O estado vivo do trilho está em
+> [`evidencias/joao/planejamento.md`](../evidencias/joao/planejamento.md);
+> este documento continua como o plano combinado em 31/08.
+
 **Missão:** substituir a resposta simulada pela **decisão real de triagem**,
 ancorada nos documentos e estruturada — e ser o dono da régua que mede o
 sistema inteiro.
@@ -144,7 +149,10 @@ Data · Trilho · Commits
 ```
 
 Cada um escreve **só na própria pasta** — três pessoas editando o mesmo arquivo
-de diário disputariam as mesmas linhas toda semana.
+de diário disputariam as mesmas linhas toda semana. A exceção é o
+[`evidencias/backlog.md`](../evidencias/backlog.md), comum aos três: toda
+observação que exija ação de alguém vai para lá, com dono, prioridade e
+status. O padrão completo está em [`evidencias/README.md`](../evidencias/README.md).
 
 Três regras para os registros valerem alguma coisa:
 
@@ -183,7 +191,8 @@ do outro lado.
 - Branch curta por tarefa, PR pequeno, **main sempre rodando**.
 - **Arquivo gerado não entra no git** (cache de Python, banco vetorial, uploads).
 - Toda melhoria vem com **antes/depois na régua** (é o ritual acima).
-- **Evidência por rodada** em `evidencias/<seu-nome>/`, uma por implementação.
+- **Evidência por rodada** em `evidencias/<seu-nome>/`, uma por implementação;
+  o que exigir ação de alguém vai para o `evidencias/backlog.md`.
 
 ---
 
@@ -191,8 +200,8 @@ do outro lado.
 
 | Item | Volta quando |
 |---|---|
-| Frontend da triagem (exibir classificação/justificativa/fontes) | Outubro, quando o JSON do B2 estabilizar |
-| RAGAs (métricas de qualidade do RAG) | Outubro — pluga direto no runner do B2 |
+| Frontend da triagem (exibir classificação/justificativa/fontes) — [B-20](../evidencias/backlog.md#b-20) | Outubro; o JSON do B2 já está estável |
+| RAGAs (métricas de qualidade do RAG) — [B-21](../evidencias/backlog.md#b-21) | Outubro — pluga direto no runner do B2 |
 | Geolocalização de clínicas + resumo MIST | Outubro — **promessa do artigo, não esquecer** |
 | Deploy no VPS | Outubro/novembro |
 | Estudo de ablação formal (matriz completa) | Outubro, ~1 semana, os três juntos |

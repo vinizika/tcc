@@ -6,6 +6,8 @@ Self-Refine, e a régua de avaliação do sistema (runner de métricas).
 
 - **[planejamento.md](planejamento.md)** — o que já foi feito, o que vem a
   seguir e o que está travando.
+- **[../backlog.md](../backlog.md)** — a fila única de melhorias do projeto,
+  compartilhada pelos três; é para lá que vão as observações que exigem ação.
 - [`docs/divisao-de-trabalho.md`](../../docs/divisao-de-trabalho.md) — escopo
   e fronteiras entre os trilhos.
 - [`../README.md`](../README.md) — o padrão destes registros.

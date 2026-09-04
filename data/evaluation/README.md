@@ -5,17 +5,97 @@ os números que vão para o TCC saem daqui.
 
 ## O que tem aqui
 
-| Caminho | O que é |
-|---|---|
-| `accuracy_results.csv` | As 98 respostas da medição de 04/05/2026. **Artefato histórico, não regerar.** Serve de teste de regressão das métricas |
-| `confusion_matrix.csv` | A matriz daquela mesma medição |
-| `runs/` | Rodadas executadas. **Fora do controle de versão** |
-| `cited/` | Rodadas citadas por alguma evidência. Versionadas, porque sustentam um número escrito |
+```
+evaluation/
+├── README.md               <- este arquivo
+├── accuracy_results.csv    <- as 98 respostas da medição de 04/05/2026 (histórico)
+├── confusion_matrix.csv    <- a matriz daquela medição (histórico)
+├── runs/                   <- rodadas executadas nesta máquina. FORA do Git
+└── cited/                  <- rodadas citadas por alguma evidência. Versionadas
+```
+
+Os dois CSVs históricos **não se regeram**: são o artefato de 04/05 e servem
+de teste de regressão das métricas (o "teste dourado").
 
 Toda rodada grava em `runs/`. Quando um número dela for citado numa
 evidência, `report_evaluation.py cite` copia a rodada para `cited/` — assim
 cada afirmação do TCC tem os dados que a produziram, e as execuções
 descartáveis não incham o repositório.
+
+### Anatomia de uma rodada
+
+Cada rodada é um diretório `AAAAMMDD-HHMMSS_<nome>` com cinco arquivos:
+
+| Arquivo | O que é | Fonte de verdade? |
+|---|---|---|
+| `predictions.jsonl` | Uma linha por relato: o que foi enviado, a resposta completa, tempos, fontes citadas, saída bruta do modelo | **Sim** |
+| `manifest.json` | O que foi executado: configuração pedida **e** a efetiva (ecoada pela API), commit, hash do dataset, identidade do backend (modelo, base, prompts), máquina, horários | **Sim** |
+| `metrics.json` | Os números, calculados a partir das previsões | derivado |
+| `report.md` | Leitura humana das métricas | derivado |
+| `predictions.csv` | As previsões em planilha, sem os textos longos | derivado |
+
+Os derivados podem ser regerados a qualquer momento com
+`report_evaluation.py report <rodada>`.
+
+## Passo a passo
+
+**Antes de qualquer rodada**, a API precisa estar de pé com a base indexada:
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.gpu.yml up -d
+curl localhost:8000/health/fingerprint      # chunk_count deve ser > 0
+```
+
+**1. Rodar.** Escolha um preset (a configuração do braço) e um subconjunto:
+
+```bash
+python scripts/run_evaluation.py --preset naive_rag --subset full --name marco1
+```
+
+| Opção | O que faz |
+|---|---|
+| `--preset` | `llm_only` (sem busca; a linha de base), `naive_rag` (busca ligada, consulta desligada), `rag_query` (pipeline completo), `legacy` (reproduz 04/05). Definidos em `scripts/presets.json` |
+| `--set chave=valor` | Sobrescreve uma opção do preset (ex.: `--set temperature=0.8`). Chave desconhecida falha antes de qualquer requisição |
+| `--subset` | `smoke` (12 + 12 linhas, para iterar), `balanced` (27 + 27), `full` (98). Os números do TCC são sempre `full` |
+| `--limit N` | Só as N primeiras, alternando entre as classes |
+| `--repeat K` | Roda cada linha K vezes, para medir estabilidade |
+| `--base-seed N` | Com temperatura acima de zero, dá uma seed diferente a cada repetição (N, N+1, …). Sem isso a API usa a seed fixa e as repetições saem idênticas |
+| `--name` | O sufixo do diretório |
+
+O runner aquece o modelo com uma chamada e **aborta ali** se a API recusar a
+configuração (erro 400 ou 422) — erro de configuração não é dado. Durante a
+rodada, grava cada linha imediatamente e confere que a configuração efetiva
+não mudou (um backend reiniciado com outro `.env` aborta).
+
+**2. Retomar**, se a rodada foi interrompida:
+
+```bash
+python scripts/run_evaluation.py --resume data/evaluation/runs/<diretório>
+```
+
+Refaz só as linhas que faltam ou falharam. Não aceita mudar o preset nem as
+opções — para isso, comece uma rodada nova.
+
+**3. Comparar** duas rodadas:
+
+```bash
+python scripts/report_evaluation.py compare data/evaluation/runs/<A> data/evaluation/runs/<B>
+```
+
+Ele imprime, nesta ordem: as **diferenças de configuração** (se houver mais
+de uma, o resultado não diz qual causou o quê — é a regra de uma mudança por
+rodada), a tabela de métricas nas linhas em comum, o **teste de McNemar**
+pareado (quantas linhas A acertou e B errou, e vice-versa, com o valor-p), o
+**intervalo de confiança** da diferença de acurácia, e as linhas que mudaram
+de classificação. Só a primeira repetição de cada rodada entra na comparação.
+
+**4. Citar** numa evidência:
+
+```bash
+python scripts/report_evaluation.py cite data/evaluation/runs/<A>
+```
+
+Copia a rodada para `cited/` e imprime o trecho em markdown para colar.
 
 ## Métricas
 
@@ -38,6 +118,11 @@ Abstenções (INCERTO) e respostas mal formadas contam como erro em todas as
 acurácias. `coverage` mostra quanto o sistema decidiu, e `accuracy_decided`,
 o quanto acertou entre as decididas — sempre lidos juntos, porque
 `accuracy_decided` sozinho premia quem se recusa a responder.
+
+O relatório traz também métricas de **ancoragem** (quantas fontes foram
+citadas, quantas linhas não tiveram nenhum trecho acima do limiar de 0,70),
+de **latência** por etapa, e, com `--repeat`, de **estabilidade** (quantas
+linhas mudaram de classificação entre execuções idênticas).
 
 ## O que este conjunto mede, e o que não mede
 
@@ -67,8 +152,7 @@ são quase duplicatas — o que enfraquece qualquer teste estatístico que
 assuma independência.
 
 Ampliar o vocabulário permitido ou rotular casos reais como não urgentes é
-decisão do time com a especialista, e está registrada como bloqueio no
-planejamento do trilho B2.
+decisão do time com a especialista: [B-05](../../evidencias/backlog.md#b-05).
 
 ## Reprodução da medição de 04/05
 
@@ -85,8 +169,11 @@ O preset `legacy` chega perto, mas **não é idêntico**. Diferenças conhecidas
 4. O tamanho de contexto é enviado explicitamente; antes ficava no padrão.
 5. Não se sabe qual versão exata do modelo rodou em 04/05.
 
-Por isso a rodada R1 é chamada de **replicação aproximada**: espera-se que a
-faixa contenha 70,41%, não que reproduza o valor exato.
+A rodada R1 (04/09) mediu essa replicação: faixa de 0,714 a 0,765 de
+acurácia estrita, com **28 das 98 linhas mudando de classificação** entre
+execuções — os 70,41% de 04/05 eram um sorteio de uma distribuição larga,
+não um ponto. Detalhe na
+[rodada 4](../../evidencias/joao/2026-09-04-05-runner-de-avaliacao.md).
 
 ## Contrastes pré-registrados
 
@@ -100,22 +187,22 @@ são declarados antes de rodar:
 - **Exploratório:** todo o resto da matriz de ablação, reportado com
   intervalo de confiança e sem valor-p.
 
-## Como usar
+## Estado das medições
+
+As rodadas citadas até agora estão em `cited/`; a leitura completa, com as
+decisões e o que cada braço ensinou, está na
+[rodada 4 do trilho B2](../../evidencias/joao/2026-09-04-05-runner-de-avaliacao.md).
+Em resumo (98 linhas, temperatura zero):
+
+| Braço | Acurácia balanceada | Falsos não urgentes |
+|---|---|---|
+| Prompt antigo, sem RAG | 0,572 | 3/71 |
+| **Prompt novo, sem RAG** | **0,893** | 8/71 |
+| Prompt novo, com RAG (3 trechos) | 0,763 | 30/71 |
+| Pipeline completo | 0,701 (média de 3) | 36/71 |
+
+## Testes
 
 ```bash
-# uma rodada
-python scripts/run_evaluation.py --preset naive_rag --subset full --name marco1
-
-# retomar uma rodada interrompida
-python scripts/run_evaluation.py --resume data/evaluation/runs/20260904-2130_marco1
-
-# comparar duas rodadas
-python scripts/report_evaluation.py compare runs/<A> runs/<B>
-
-# promover uma rodada citada numa evidência
-python scripts/report_evaluation.py cite runs/<A>
+python -m pytest scripts/tests -q
 ```
-
-Os scripts rodam no host e conversam com a API em `localhost:8000`, que
-precisa estar no ar (`docker compose up -d`). Os testes são executados com
-`python -m pytest scripts/tests -q`.
