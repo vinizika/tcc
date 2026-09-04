@@ -4,9 +4,11 @@ Trilho responsável pelo caminho **da evidência recuperada até a resposta**:
 geração ancorada nos documentos, classificação estruturada, Chain-of-Thought e
 Self-Refine, e a régua de avaliação do sistema (runner de métricas).
 
-Escopo, fronteiras e contratos com os outros trilhos estão em
-[`docs/divisao-de-trabalho.md`](../../docs/divisao-de-trabalho.md).
-O padrão destes registros está em [`../README.md`](../README.md).
+- **[planejamento.md](planejamento.md)** — o que já foi feito, o que vem a
+  seguir e o que está travando.
+- [`docs/divisao-de-trabalho.md`](../../docs/divisao-de-trabalho.md) — escopo
+  e fronteiras entre os trilhos.
+- [`../README.md`](../README.md) — o padrão destes registros.
 
 ## Rodadas
 
@@ -17,20 +19,15 @@ O padrão destes registros está em [`../README.md`](../README.md).
 | 2 | 03/09 | [Configuração centralizada](2026-09-03-03-configuracao-centralizada.md) | Mesmo código roda em Docker e local; saída por schema com campos exatos em 8s |
 | 3 | 04/09 | [Geração ancorada nos documentos](2026-09-04-04-geracao-ancorada.md) | Mock morto: classificação real com fontes citadas, 43 testes. RAG muda a decisão em 1 dos 3 casos, mas a etapa de consulta erra 1 em 4 execuções |
 
-## Estado atual do trilho
+## Estado atual
 
-**Funcionando:** ambiente reproduzível em Docker com GPU; configuração
-centralizada; triagem real ancorada nos documentos, com fontes citadas e
-etapas ligáveis por requisição; 43 testes automatizados.
+**Etapa 4 de 7.** O produto já classifica de verdade: triagem ancorada nos
+documentos, com fontes citadas e etapas ligáveis por requisição, sobre 43
+testes automatizados. Falta a régua que transforma isso em número — o runner
+de avaliação é a próxima entrega.
 
-**Ainda pendente (em ordem):**
-
-1. **Reconstruir a régua** — runner de métricas apontando para o endpoint novo,
-   com resultados versionados e manifesto por rodada.
-2. **Rodadas de medição** — reproduzir o baseline antigo, fixar a linha de base
-   determinística e medir a primeira triagem com RAG ponta a ponta (Marco 1).
-3. **Chain-of-Thought e Self-Refine** medidos separadamente.
-4. **Driver de ablação** cruzando as chaves de todos os trilhos.
+O roteiro completo, com marcos e bloqueios, está em
+**[planejamento.md](planejamento.md)**.
 
 ## Números de referência
 
