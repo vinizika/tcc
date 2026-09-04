@@ -24,7 +24,7 @@ Self-Refine, e a régua de avaliação do sistema (runner de métricas).
 
 **Etapa 5 de 7.** O produto classifica de verdade e a régua existe: seis
 rodadas medidas sobre os 98 relatos, com previsões versionadas e teste
-estatístico. O Marco 1 está fechado.
+estatístico, sobre 97 testes automatizados. O Marco 1 está fechado.
 
 O roteiro completo, com marcos e os sete bloqueios abertos, está em
 **[planejamento.md](planejamento.md)**.

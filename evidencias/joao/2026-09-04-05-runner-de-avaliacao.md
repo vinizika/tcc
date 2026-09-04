@@ -64,6 +64,30 @@ trechos foram citados. Isso é insumo direto para o trilho A.
 
 ## Resultado obtido
 
+### Testes automatizados: 54 novos (48 nos scripts, 6 no backend)
+
+Rodam no host, sem API e sem modelo — o HTTP fica atrás de um cliente
+injetável. O total do projeto passa a 97: 49 no backend e 48 nos scripts.
+
+| Arquivo | Testes | O que garante |
+|---|---|---|
+| `test_run_evaluation.py` | 25 | Que o runner não estrague uma rodada: retomada sem duplicar, última linha truncada refeita, falha transitória repetida, configuração recusada abortando, seed avançando por repetição |
+| `test_evaluation_metrics.py` | 14 | Que os números sejam os certos, com o **teste dourado** à frente |
+| `test_report_evaluation.py` | 9 | Os testes estatísticos, com valores conferíveis à mão |
+| `test_api_health.py` (backend) | 6 | Que a identidade da versão seja estável e não derrube a resposta quando uma parte não responde |
+
+Dois testes carregam mais peso que os outros:
+
+- **O teste dourado** alimenta o módulo com as 98 respostas registradas em
+  04/05 e exige que ele devolva os números daquele dia: 0,7041 de acurácia,
+  recall de emergência 0,9155, 4 falsos não urgentes, 19 falsos urgentes.
+  **É o que autoriza comparar qualquer resultado novo com o histórico.** Sem
+  ele, a régua nova poderia estar medindo outra coisa e ninguém saberia.
+- **A regressão dos relatos** compara o texto enviado ao modelo com os 98
+  relatos gravados em 04/05, um por um. Se alguém mudar o template, a
+  comparação com o histórico deixa de valer — e isso agora falha alto em vez
+  de virar uma diferença inexplicada nos números.
+
 **As duas previsões mais importantes estavam erradas** — a do prompt para
 menos, a do RAG na direção oposta. É o tipo de resultado que só aparece
 medindo o conjunto inteiro.
