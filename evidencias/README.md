@@ -42,6 +42,12 @@ Descrição objetiva da mudança.
 O problema concreto que isso resolve. Sem esta seção o registro não serve
 para o TCC: é ela que liga a implementação à motivação do projeto.
 
+## Decisões desta rodada
+As escolhas feitas no caminho, cada uma com o motivo. Uma tabela
+"decisão | motivo" basta. Isto vale tanto quanto os números: daqui a dois
+meses, na escrita, ninguém lembra por que um limiar é 0.7 ou por que a
+temperatura é zero, e refazer o raciocínio custa mais do que anotá-lo.
+
 ## Resultado esperado
 O que achávamos que ia acontecer, escrito **antes** de medir.
 
@@ -52,6 +58,12 @@ Resultado negativo também é resultado: registrar quando não funcionou.
 ## O que mudou no repositório
 Arquivos tocados e o link do commit, para qualquer afirmação acima poder
 ser conferida no código.
+
+## Observações
+O que foi notado de passagem: comportamento estranho, oportunidade de
+melhoria, algo que afeta o trilho de outra pessoa. Não precisa ser
+conclusivo — precisa ficar registrado. Uma observação anotada vira pauta
+da próxima reunião; uma observação só falada se perde.
 
 ## Próximo passo
 O que esta rodada puxa em seguida.
