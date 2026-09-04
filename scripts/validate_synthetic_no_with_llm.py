@@ -1,5 +1,6 @@
 from pathlib import Path
 import json
+import os
 
 import pandas as pd
 import requests
@@ -14,8 +15,11 @@ SYNTHETIC_INPUT_PATH = PROCESSED_DIR / "dataset1_synthetic_no_cases.csv"
 APPROVED_SYNTHETIC_OUTPUT_PATH = PROCESSED_DIR / "dataset1_synthetic_no_cases_llm_approved.csv"
 FINAL_OUTPUT_PATH = PROCESSED_DIR / "dataset1_augmented_llm_validated.csv"
 
-OLLAMA_URL = "http://localhost:11434/api/chat"
-MODEL_NAME = "llama3.2:3b"
+# Os scripts rodam fora do Docker, entao o padrao aponta para a maquina local.
+# Rodando o Ollama em outro endereco, basta exportar OLLAMA_HOST.
+OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
+OLLAMA_URL = f"{OLLAMA_HOST}/api/chat"
+MODEL_NAME = os.getenv("LLM_MODEL", "llama3.2:3b")
 
 SYMPTOM_COLUMNS = [
     "symptoms1",

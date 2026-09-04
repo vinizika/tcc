@@ -2,7 +2,9 @@
 fastapi==0.116.1
 uvicorn[standard]==0.35.0
 streamlit
-ollama
+# 0.4.4+ aceita um schema JSON no parametro format, o que restringe a
+# decodificacao ao formato esperado na classificacao de triagem.
+ollama>=0.4.4
 
 # Configuração
 python-dotenv==1.1.1
