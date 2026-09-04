@@ -1,8 +1,8 @@
 import re
 
-from ollama import Client
-
+from app.core.config import settings
 from app.core.logger import setup_logger
+from app.core.ollama import get_ollama_client
 
 
 logger = setup_logger("QueryClient")
@@ -10,7 +10,7 @@ logger = setup_logger("QueryClient")
 
 class QueryClient:
 
-    _client = Client(host="http://ollama:11434")
+    _client = get_ollama_client()
 
     @staticmethod
     def rewrite(question: str) -> str:
@@ -27,7 +27,7 @@ class QueryClient:
             return question
 
         response = QueryClient._client.chat(
-            model="llama3.2:3b",
+            model=settings.LLM_MODEL,
             messages=[
                 {
                     "role": "system",
@@ -85,7 +85,7 @@ class QueryClient:
         logger.info("Gerando consultas Multi-Query")
 
         response = QueryClient._client.chat(
-            model="llama3.2:3b",
+            model=settings.LLM_MODEL,
             messages=[
                 {
                     "role": "system",
@@ -165,7 +165,7 @@ class QueryClient:
             return question
 
         response = QueryClient._client.chat(
-            model="llama3.2:3b",
+            model=settings.LLM_MODEL,
             messages=[
                 {
                     "role": "system",
