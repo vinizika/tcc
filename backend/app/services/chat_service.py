@@ -25,6 +25,7 @@ class ChatService:
 
         return ChatResponse(
             answer=result.answer,
+            triage=result.triage,
             sources=[
                 SourceResponse(
                     title=item.document.title,

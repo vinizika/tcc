@@ -15,9 +15,19 @@ from app.clients.retrieval_client import RetrievalClient
 from app.constants.pipeline import DEFAULT_SCORE_THRESHOLD
 from app.core.config import settings
 from app.core.logger import setup_logger
+from app.core.ollama import default_options
 from app.models.retrieved_document import RetrievedDocument
+from app.pipeline.answer_renderer import render
 from app.pipeline.config_resolver import resolve
 from app.pipeline.result import ContextDocument, PipelineResult, QueryPlan
+from app.prompts.triage import build_triage_messages
+from app.schemas.triage_output import (
+    CitedSource,
+    LegacyTriageLLMOutput,
+    TriageLLMOutput,
+    TriageLLMOutputSemContexto,
+    TriageResult,
+)
 from app.schemas.triage import (
     DebugInfo,
     DebugSource,
@@ -37,12 +47,12 @@ class ChatPipeline:
         query_client=QueryClient,
         retrieval_client=RetrievalClient,
         reranker=RerankerClient,
-        llm_client=LLMClient,
+        llm_client=None,
     ):
         self.query_client = query_client
         self.retrieval_client = retrieval_client
         self.reranker = reranker
-        self.llm_client = llm_client
+        self.llm_client = llm_client or LLMClient()
 
     # ------------------------------------------------------------------
     # Etapa de consulta (fronteira com o trilho B1)
@@ -159,6 +169,122 @@ class ChatPipeline:
         return ranked, for_context, info
 
     # ------------------------------------------------------------------
+    # Etapa de decisão
+    # ------------------------------------------------------------------
+
+    def _classify(
+        self,
+        relato: str,
+        documents: list[RetrievedDocument],
+        config: EffectiveConfig,
+        rewritten: str | None = None,
+    ):
+        """
+        Classifica a urgência do caso a partir do relato e dos trechos.
+
+        O relato original vai ao modelo, e não a versão reescrita para
+        busca: a reescrita acrescenta interpretação clínica, o que
+        misturaria a etapa de consulta dentro da decisão.
+        """
+
+        if config.prompt_version == "v0_legacy":
+            output_model = LegacyTriageLLMOutput
+        elif documents:
+            output_model = TriageLLMOutput
+        else:
+            output_model = TriageLLMOutputSemContexto
+
+        messages = build_triage_messages(
+            relato,
+            documents,
+            config,
+            rewritten,
+        )
+
+        call = self.llm_client.classify(
+            messages,
+            output_model,
+            mode=config.structured_output_mode,
+            options=default_options(
+                temperature=config.temperature,
+                seed=config.seed,
+                num_predict=config.num_predict,
+                num_ctx=config.num_ctx,
+            ),
+        )
+
+        if call.output is None:
+            # Duas tentativas sem resposta válida. Em vez de arriscar uma
+            # classificação, o sistema assume que não sabe e orienta
+            # procurar atendimento: é o comportamento conservador, e o
+            # runner registra a linha como saída inválida.
+            logger.warning(
+                "Classificação não estruturada; devolvendo INCERTO"
+            )
+
+            triage = TriageResult(
+                classificacao="INCERTO",
+                justificativa=(
+                    "Não foi possível analisar o relato com segurança."
+                ),
+                recomendacao=(
+                    "Procure um médico-veterinário para avaliar o animal."
+                ),
+                json_parsed=call.json_parsed,
+                schema_valid=False,
+                attempts=call.attempts,
+                done_reason=call.done_reason,
+            )
+
+            return triage, call
+
+        dados = call.output.model_dump()
+
+        indices = dados.pop("fontes", []) or []
+
+        fontes = []
+        invalidos = []
+
+        for indice in indices:
+            # O modelo cita por número. Um índice fora do intervalo é
+            # citação inventada: descartado e contado, para virar métrica
+            # de ancoragem em vez de fonte falsa na tela.
+            if 1 <= indice <= len(documents):
+                documento = documents[indice - 1]
+                fontes.append(
+                    CitedSource(
+                        index=indice,
+                        chunk_id=documento.chunk_id,
+                        title=documento.title,
+                        source=documento.source,
+                    )
+                )
+            else:
+                invalidos.append(indice)
+
+        if invalidos:
+            logger.warning(
+                f"Índices de fonte inexistentes citados: {invalidos}"
+            )
+
+        triage = TriageResult(
+            **dados,
+            fontes=fontes,
+            json_parsed=call.json_parsed,
+            schema_valid=call.schema_valid,
+            attempts=call.attempts,
+            done_reason=call.done_reason,
+            invalid_source_indices=invalidos,
+        )
+
+        logger.info(
+            f"Classificação: {triage.classificacao} "
+            f"({len(fontes)} fonte(s) citada(s))"
+        )
+
+        return triage, call
+
+    # ------------------------------------------------------------------
 
     def execute(
         self,
@@ -204,10 +330,14 @@ class ChatPipeline:
 
             generation_start = time.perf_counter()
 
-            answer = self.llm_client.generate(
-                plan.rewritten,
+            triage, call = self._classify(
+                question,
                 for_context,
+                config,
+                plan.rewritten,
             )
+
+            answer = render(triage)
 
             generation_seconds = time.perf_counter() - generation_start
 
@@ -231,20 +361,38 @@ class ChatPipeline:
                         )
                         for document in ranked
                     ],
+                    raw_llm_output=call.raw,
                 )
+
+            citados = {fonte.chunk_id for fonte in triage.fontes}
 
             return PipelineResult(
                 answer=answer,
                 sources=[
-                    ContextDocument(document=document)
+                    ContextDocument(
+                        document=document,
+                        cited=document.chunk_id in citados,
+                    )
                     for document in for_context
                 ],
+                triage=triage,
                 config=config,
                 timings=Timings(
                     query_s=round(query_seconds, 3),
                     retrieval_s=round(retrieval_seconds, 3),
                     generation_s=round(generation_seconds, 3),
                     total_s=round(total_seconds, 3),
+                    prompt_tokens=call.prompt_tokens,
+                    completion_tokens=call.completion_tokens,
+                    tokens_per_s=(
+                        round(
+                            call.completion_tokens / call.eval_duration_s,
+                            1,
+                        )
+                        if call.eval_duration_s and call.completion_tokens
+                        else None
+                    ),
+                    load_duration_s=call.load_duration_s,
                 ),
                 retrieval=retrieval_info,
                 debug=debug,

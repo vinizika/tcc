@@ -9,6 +9,7 @@ from app.schemas.triage import (
     RetrievalInfo,
     Timings,
 )
+from app.schemas.triage_output import TriageResult
 
 
 class ChatRequest(BaseModel):
@@ -50,6 +51,10 @@ class ChatResponse(BaseModel):
 
     answer: str
     sources: list[SourceResponse]
+
+    # A classificacao estruturada. O texto em "answer" e uma renderizacao
+    # dela; quem consome a API por programa deve ler daqui.
+    triage: Optional[TriageResult] = None
 
     # Campos aditivos: o frontend atual usa apenas "answer" e continua
     # funcionando. Servem à avaliação e ao frontend que virá.

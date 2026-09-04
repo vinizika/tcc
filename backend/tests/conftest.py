@@ -45,6 +45,7 @@ sys.modules.setdefault("app.database.chroma_client", _chroma_stub)
 import pytest  # noqa: E402
 
 from app.core.config import Settings  # noqa: E402
+from app.clients.llm_client import LLMCallResult  # noqa: E402
 from app.models.retrieved_document import RetrievedDocument  # noqa: E402
 
 
@@ -152,11 +153,59 @@ class RerankerFalso:
 
 
 class LLMClientFalso:
+    """
+    Dublê do modelo. Guarda as mensagens recebidas para os testes poderem
+    verificar o que foi ao prompt (por exemplo, que o relato original foi
+    enviado, e não a versão reescrita).
+    """
 
-    def __init__(self, answer: str = "resposta simulada"):
-        self.answer = answer
-        self.chamadas: list[tuple] = []
+    def __init__(self, output=None, falhar: bool = False):
+        self.output = output
+        self.falhar = falhar
+        self.chamadas: list[dict] = []
 
-    def generate(self, question, documents):
-        self.chamadas.append((question, list(documents)))
-        return self.answer
+    def classify(self, messages, output_model, **kwargs):
+        self.chamadas.append(
+            {
+                "messages": messages,
+                "output_model": output_model,
+                **kwargs,
+            }
+        )
+
+        if self.falhar:
+            return LLMCallResult(
+                output=None,
+                raw="isto nao e json",
+                json_parsed=False,
+                schema_valid=False,
+                attempts=2,
+                done_reason="stop",
+            )
+
+        saida = self.output
+
+        if saida is None:
+            campos = {
+                "classificacao": "EMERGENCIA",
+                "justificativa": "sinais compatíveis com risco",
+                "sinais_de_alerta": ["tremores"],
+                "recomendacao": "procure atendimento",
+            }
+
+            if "fontes" in output_model.model_fields:
+                campos["fontes"] = [1]
+
+            saida = output_model(**campos)
+
+        return LLMCallResult(
+            output=saida,
+            raw=saida.model_dump_json(),
+            json_parsed=True,
+            schema_valid=True,
+            attempts=1,
+            done_reason="stop",
+            prompt_tokens=100,
+            completion_tokens=50,
+            eval_duration_s=1.0,
+        )

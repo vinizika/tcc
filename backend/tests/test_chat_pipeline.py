@@ -136,8 +136,10 @@ def test_apenas_os_melhores_trechos_vao_ao_prompt():
         "c2",
     ]
 
-    _, documentos_no_prompt = llm_client.chamadas[0]
-    assert len(documentos_no_prompt) == 2
+    # O prompt cita os trechos numerados; com corte em 2, so [1] e [2].
+    prompt = llm_client.chamadas[0]["messages"][-1]["content"]
+    assert "[1]" in prompt and "[2]" in prompt
+    assert "[3]" not in prompt
 
 
 def test_corte_por_score_minimo_descarta_trecho_fraco():
@@ -226,3 +228,139 @@ def test_tempos_e_configuracao_efetiva_sao_reportados():
     assert resultado.timings.total_s >= 0.0
     assert resultado.config.model == "llama3.2:3b"
     assert resultado.config.retrieval_enabled is True
+
+
+# ----------------------------------------------------------------------
+# Etapa de decisão
+# ----------------------------------------------------------------------
+
+
+def test_o_relato_original_vai_ao_classificador():
+    """
+    A reescrita acrescenta interpretação clínica ("requer avaliação
+    imediata"). Usá-la na decisão misturaria a etapa de consulta dentro do
+    resultado da classificação e confundiria o estudo de ablação.
+    """
+
+    pipeline, _, _, llm_client = montar([documento()])
+
+    pipeline.execute("meu cachorro comeu chocolate")
+
+    prompt = llm_client.chamadas[0]["messages"][-1]["content"]
+
+    assert "meu cachorro comeu chocolate" in prompt
+    assert "consulta reescrita" not in prompt
+
+
+def test_a_dica_da_reescrita_entra_apenas_quando_ligada():
+
+    pipeline, _, _, llm_client = montar([documento()])
+
+    pipeline.execute(
+        "meu cachorro comeu chocolate",
+        PipelineOptions(rewritten_hint_enabled=True),
+    )
+
+    prompt = llm_client.chamadas[0]["messages"][-1]["content"]
+
+    assert "consulta reescrita" in prompt
+
+
+def test_sem_documentos_usa_o_formato_sem_campo_de_fontes():
+    """
+    Não havendo o que citar, a restrição de formato impede o modelo de
+    inventar um número de fonte.
+    """
+
+    pipeline, _, _, llm_client = montar([])
+
+    pipeline.execute("relato", PipelineOptions(retrieval_enabled=False))
+
+    modelo = llm_client.chamadas[0]["output_model"]
+
+    assert "fontes" not in modelo.model_fields
+
+
+def test_fonte_citada_e_resolvida_para_o_documento():
+
+    pipeline, _, _, _ = montar(
+        [documento("chunk-chocolate", "Intoxicação por chocolate", 0.8)]
+    )
+
+    resultado = pipeline.execute("relato")
+
+    assert resultado.triage.fontes[0].chunk_id == "chunk-chocolate"
+    assert resultado.triage.fontes[0].index == 1
+    assert resultado.sources[0].cited is True
+
+
+def test_indice_de_fonte_inexistente_e_descartado_e_contado():
+    """
+    Citar um número que não existe é fonte inventada: não pode aparecer na
+    tela, mas precisa virar métrica de ancoragem.
+    """
+
+    from app.schemas.triage_output import TriageLLMOutput
+    from conftest import LLMClientFalso as Falso
+
+    saida = TriageLLMOutput(
+        classificacao="EMERGENCIA",
+        justificativa="x",
+        sinais_de_alerta=[],
+        recomendacao="y",
+        fontes=[1, 9],
+    )
+
+    pipeline, _, _, _ = montar(
+        [documento("c1", score=0.8)],
+        llm_client=Falso(output=saida),
+    )
+
+    resultado = pipeline.execute("relato")
+
+    assert [f.index for f in resultado.triage.fontes] == [1]
+    assert resultado.triage.invalid_source_indices == [9]
+
+
+def test_falha_do_modelo_vira_incerto_conservador():
+    """
+    Duas tentativas sem resposta válida não podem virar uma classificação
+    arriscada. O sistema assume que não sabe e orienta procurar atendimento.
+    """
+
+    from conftest import LLMClientFalso as Falso
+
+    pipeline, _, _, _ = montar([], llm_client=Falso(falhar=True))
+
+    resultado = pipeline.execute("relato")
+
+    assert resultado.triage.classificacao == "INCERTO"
+    assert resultado.triage.schema_valid is False
+    assert "veterinário" in resultado.triage.recomendacao
+    assert resultado.answer
+
+
+def test_modo_legado_usa_o_prompt_antigo_sem_documentos():
+
+    pipeline, _, _, llm_client = montar([documento()])
+
+    pipeline.execute("relato", PipelineOptions(prompt_version="v0_legacy"))
+
+    chamada = llm_client.chamadas[0]
+    mensagens = chamada["messages"]
+
+    assert len(mensagens) == 1
+    assert mensagens[0]["role"] == "user"
+    assert "não informado" in mensagens[0]["content"]
+    assert chamada["mode"] == "json"
+
+
+def test_tokens_da_geracao_sao_reportados():
+
+    pipeline, _, _, _ = montar([documento()])
+
+    resultado = pipeline.execute("relato")
+
+    assert resultado.timings.prompt_tokens == 100
+    assert resultado.timings.completion_tokens == 50
+    assert resultado.timings.tokens_per_s == 50.0
