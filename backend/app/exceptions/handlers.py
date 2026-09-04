@@ -11,7 +11,7 @@ async def app_exception_handler(
 ):
 
     return JSONResponse(
-        status_code=400,
+        status_code=exc.status_code,
         content=ErrorResponse(
             success=False,
             error=exc.__class__.__name__,

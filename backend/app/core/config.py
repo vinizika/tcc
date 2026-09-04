@@ -79,6 +79,17 @@ class Settings(BaseSettings):
     COT_ENABLED: bool = False
     SELF_REFINE_ENABLED: bool = False
 
+    # Score minimo para um trecho recuperado entrar no prompt. Fica em 0.0
+    # de proposito: hoje nenhum documento atinge o limiar de 0.70 usado na
+    # busca, e descartar todos equivaleria a rodar sem RAG. Cada resposta
+    # registra o score maximo, para que a decisao vire evidencia.
+    CONTEXT_MIN_SCORE: float = 0.0
+
+    # Passa tambem a pergunta reescrita ao classificador. Desligado porque a
+    # reescrita adiciona interpretacao clinica ("requer avaliacao imediata"),
+    # o que misturaria a etapa de consulta na decisao.
+    REWRITTEN_HINT_ENABLED: bool = False
+
     TRIAGE_PROMPT_VERSION: str = "v1_grounded"
 
     # ==========================
