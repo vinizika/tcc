@@ -199,7 +199,17 @@ Em resumo (98 linhas, temperatura zero):
 | Prompt antigo, sem RAG | 0,572 | 3/71 |
 | **Prompt novo, sem RAG** | **0,893** | 8/71 |
 | Prompt novo, com RAG (3 trechos) | 0,763 | 30/71 |
-| Pipeline completo | 0,701 (média de 3) | 36/71 |
+| Pipeline completo (04/09, instável) | 0,701 (média de 3) | 36/71 |
+| Pipeline completo (05/09, após `b907d6e`) | 0,704 | 40/71 |
+
+As duas linhas do pipeline completo medem o mesmo braço em commits
+diferentes. A de 04/09 é a média de três execuções que discordavam entre si
+em 33 das 98 linhas — a etapa de consulta ainda rodava a temperatura 0,8 com
+seed aleatória. A de 05/09 é posterior à correção do trilho B1, com 6 linhas
+instáveis. A diferença entre elas **não é estatisticamente significativa**
+(McNemar p = 0,50), o que era o esperado: a correção mudou a
+reprodutibilidade, não o desempenho. Detalhe na
+[rodada 6 do trilho B2](../../evidencias/joao/2026-09-05-06-determinismo-da-consulta.md).
 
 ## Testes
 

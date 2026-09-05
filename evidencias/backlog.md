@@ -51,7 +51,7 @@ aqui.
 | [B-01](#b-01) | Com a base atual, ligar o RAG degrada o sistema | Trilho A | Alta | Aberto |
 | [B-02](#b-02) | Ordenação da busca não separa assunto | Trilho A | Alta | Aberto |
 | [B-03](#b-03) | Base de conhecimento sintética, só de emergências | Trilho A + especialista | Alta | Aberto |
-| [B-04](#b-04) | Temperatura e seed não fixadas na etapa de consulta | Trilho B1 | Alta | Em andamento |
+| [B-04](#b-04) | Temperatura e seed não fixadas na etapa de consulta | Trilho B1 | Alta | Em andamento — 82% resolvido, ver [B-24](#b-24) |
 | [B-05](#b-05) | Conjunto de avaliação trivialmente separável | Time + especialista | Alta | Aberto |
 | [B-06](#b-06) | Falsos não urgentes subiram de 3 para 8 com o prompt novo | Trilho B2 | Alta | Em andamento |
 | [B-07](#b-07) | Etapa de consulta custa 60% da latência | Trilho B1 | Média | Aberto |
@@ -71,6 +71,9 @@ aqui.
 | [B-21](#b-21) | Métricas RAGAs previstas no artigo | Trilho B2 | Baixa | Aberto (geladeira, outubro) |
 | [B-22](#b-22) | Métrica de sinal alucinado na resposta | Trilho B2 | Baixa | Aberto |
 | [B-23](#b-23) | Frontend só funciona pelo compose: hostname fixo no código | Frontend (dono a definir) | Baixa | Aberto |
+| [B-24](#b-24) | Critério de aceitação do B-04 pode ser inatingível | Time (decisão de método) | Média | Aberto |
+| [B-25](#b-25) | O compare não detecta mudança de código entre rodadas | Trilho B2 | Média | Aberto |
+| [B-26](#b-26) | Runner não registra o documento gerado pelo HyDE | Trilho B2 | Baixa | Aberto |
 
 ---
 
@@ -156,7 +159,7 @@ de não emergência por sistema orgânico frequente em relatos leigos.
 
 **Temperatura e seed não fixadas na etapa de consulta**
 
-**Identificado por:** João (B2) · **Onde:** [rodada 3](joao/2026-09-04-04-geracao-ancorada.md), quantificado na [rodada 4](joao/2026-09-04-05-runner-de-avaliacao.md) · **Responsável:** Trilho B1 · **Prioridade:** Alta · **Status:** Em andamento — corrigido no código e coberto por teste de unidade em [rodada 1 do Ryu](ryu/2026-09-04-01-reprodutibilidade-da-consulta.md), 04/09; falta confirmar o critério numérico (`rag_query --repeat 2`, zero linhas instáveis) com Ollama rodando
+**Identificado por:** João (B2) · **Onde:** [rodada 3](joao/2026-09-04-04-geracao-ancorada.md), quantificado na [rodada 4](joao/2026-09-04-05-runner-de-avaliacao.md) · **Responsável:** Trilho B1 · **Prioridade:** Alta · **Status:** Em andamento — corrigido no código pelo B1 em [rodada 1 do Ryu](ryu/2026-09-04-01-reprodutibilidade-da-consulta.md), 04/09. Critério numérico **medido em 05/09** na [rodada 6 do João](joao/2026-09-05-06-determinismo-da-consulta.md): instabilidade caiu de 33 para **6 linhas em 98** (concordância 0,663 → 0,939), mas o critério pede zero e não foi atingido. A causa residual é ruído numérico de GPU, não configuração — ver [B-24](#b-24), que propõe rever o critério
 
 **O que observamos.** As três chamadas ao modelo em `query_client.py`
 (reescrita, multi-query, HyDE) não passam `options`, então usam a
@@ -511,6 +514,88 @@ consegue; e é o mesmo tipo de acoplamento que o backend tinha e resolveu na
 **O que resolveria.** Ler a URL da API de uma variável de ambiente com
 padrão `http://localhost:8000`, e o compose injetar `http://backend:8000`
 — o mesmo desenho do `OLLAMA_HOST` no backend.
+
+---
+
+### B-24
+
+**O critério de aceitação do B-04 pode ser inatingível como está escrito**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 6](joao/2026-09-05-06-determinismo-da-consulta.md), 05/09 · **Responsável:** Time (decisão de método) · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** O B-04 pede zero linhas instáveis. Depois da correção
+do B1, a instabilidade caiu de 33 para 6 linhas em 98 (concordância de 0,663
+para 0,939), mas não chegou a zero. A causa residual não é configuração: a
+variação cresce com o comprimento da geração — 8% na reescrita (uma frase),
+17% nas multi-queries (três linhas), 30% no HyDE (66 a 154 palavras) —, que
+é a assinatura de ruído numérico de ponto flutuante em GPU com decodificação
+gulosa. Nem seed nem temperatura controlam isso.
+
+**Por que importa.** Um critério inatingível mantém um item aberto para
+sempre e não orienta ninguém. Pior: sugere que o trabalho do B1 não
+funcionou, quando os dados mostram o contrário (sem a correção, a reescrita
+variaria em ~100% das linhas em vez de 8%).
+
+**O que resolveria.** Trocar o critério por um que diga o que de fato
+importa para o artigo: **a instabilidade residual não pode inverter nenhuma
+conclusão da matriz de ablação**. Na prática, todo braço que use a etapa de
+consulta roda com `--repeat` e é reportado com a faixa, não com um ponto; e
+uma diferença entre braços só é afirmada se for maior que a variação interna
+de cada um. É decisão de método, do time — não de um trilho.
+
+---
+
+### B-25
+
+**O `compare` não detecta mudança de código entre rodadas**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 6](joao/2026-09-05-06-determinismo-da-consulta.md), 05/09 · **Responsável:** Trilho B2 · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** Comparando uma rodada de antes com uma de depois do
+commit `b907d6e` — que mudou o comportamento da etapa de consulta —, o
+`report_evaluation.py compare` imprimiu "diferenças de configuração:
+nenhuma". Ele checa configuração, dataset, modelo, base vetorial e prompts,
+e o hash dos prompts cobre apenas os três prompts de triagem (do B2). O
+código do pipeline e os prompts das etapas de consulta não entram no
+fingerprint.
+
+**Por que importa.** O trilho B1 vai mexer nos prompts de consulta (B-08) e
+na montagem das consultas (B-10). Depois disso, duas rodadas minhas podem
+divergir sem que o instrumento avise que o sistema mudou — e a explicação
+mais provável, na hora da escrita, seria atribuir a diferença ao braço
+testado. O dado necessário já existe: o manifesto grava o git sha, e como o
+compose monta `./backend:/app`, esse sha descreve mesmo o código executado.
+
+**O que resolveria.** Duas coisas pequenas: (1) o `compare` avisar quando o
+git sha das duas rodadas diferir, como já faz com modelo e base; (2) o
+`/health/fingerprint` hashear também os prompts de consulta de
+`query_client.py`. Critério: comparar as rodadas `20260904-024433_r3b_variancia`
+e `20260905-133840_b04_confirmacao` deve emitir aviso.
+
+---
+
+### B-26
+
+**O runner não registra o documento gerado pelo HyDE**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 6](joao/2026-09-05-06-determinismo-da-consulta.md), 05/09 · **Responsável:** Trilho B2 · **Prioridade:** Baixa · **Status:** Aberto
+
+**O que observamos.** Cada linha de `predictions.jsonl` grava
+`rewritten_question` e `queries`, mas não o documento hipotético do HyDE em
+campo próprio. Ele entra misturado como um dos elementos de `queries`. Para
+medir sua variação na rodada 6 foi preciso inferi-lo como "o último elemento
+com mais de 200 caracteres" — uma convenção frágil e não documentada.
+
+**Por que importa.** O HyDE é a chamada mais cara e a mais variável da etapa
+de consulta (30% das linhas mudam entre execuções idênticas, contra 8% da
+reescrita), e é a única sem registro próprio. Qualquer análise futura sobre
+o efeito dele — inclusive a hipótese de que atrapalhe a recuperação em vez
+de ajudar — depende de reconstruí-lo por heurística.
+
+**O que resolveria.** Um campo `hyde_document` na linha do JSONL, separado de
+`queries`, alimentado pelo mesmo bloco de depuração que já devolve a
+reescrita. Critério: uma rodada de `rag_query` grava o texto do HyDE em
+campo próprio, e `queries` passa a conter só as consultas.
 
 ---
 

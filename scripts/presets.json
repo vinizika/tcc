@@ -13,7 +13,7 @@
   },
 
   "naive_rag": {
-    "_descricao": "Recuperação ligada, otimização de consulta desligada. Determinístico, porque a etapa de consulta ainda usa seed aleatória. É o braço do Marco 1.",
+    "_descricao": "Recuperação ligada, otimização de consulta desligada. Determinístico, porque nenhuma chamada de consulta acontece. É o braço do Marco 1.",
     "retrieval_enabled": true,
     "query_rewriting_enabled": false,
     "multi_query_enabled": false,
@@ -22,7 +22,7 @@
   },
 
   "rag_query": {
-    "_descricao": "Pipeline completo, com reescrita, multi-query e HyDE. Não é determinístico hoje: usar --repeat para medir a variação.",
+    "_descricao": "Pipeline completo, com reescrita, multi-query e HyDE. Quase determinístico desde b907d6e (04/09): 6 das 98 linhas ainda oscilam entre execuções idênticas, por ruído numérico de GPU nas gerações longas (HyDE). Usar --repeat para reportar a faixa.",
     "retrieval_enabled": true,
     "query_rewriting_enabled": true,
     "multi_query_enabled": true,
