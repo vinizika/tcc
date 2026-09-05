@@ -63,8 +63,18 @@ em geral, uma entrega ou um experimento. Ela pode ter mais de um commit.
    commits, "Deixado para depois" com o que foi adiado e por quê, "Próximo
    passo".
 6. **Leve para o `backlog.md`** toda observação que exija ação de alguém —
-   sua ou de outro trilho. Uma observação anotada vira pauta; uma só falada
-   se perde. O item do backlog aponta para a rodada onde nasceu.
+   sua ou de outro trilho — **e também tudo que ficou em "Deixado para
+   depois"**. Uma observação anotada vira pauta; uma só falada se perde. E um
+   item adiado é, por definição, ação pendente: se o único registro dele for
+   a evidência de uma rodada, ninguém o reencontra depois, porque evidências
+   fechadas não são relidas — quem é fila é o backlog. O item do backlog
+   aponta para a rodada onde nasceu.
+
+   > A segunda metade desta regra nasceu de um erro: na
+   > [rodada 6 do João](joao/2026-09-05-06-determinismo-da-consulta.md) as
+   > observações viraram itens do backlog e os três adiamentos não. A falha
+   > só apareceu porque alguém perguntou — que é exatamente o que não dá
+   > para garantir da próxima vez.
 7. **Atualize seu `planejamento.md`** (entrega concluída, próxima, bloqueios)
    e a tabela de rodadas do seu `README.md`.
 

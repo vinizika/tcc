@@ -74,6 +74,8 @@ aqui.
 | [B-24](#b-24) | Critério de aceitação do B-04 pode ser inatingível | Time (decisão de método) | Média | Aberto |
 | [B-25](#b-25) | O compare não detecta mudança de código entre rodadas | Trilho B2 | Média | Aberto |
 | [B-26](#b-26) | Runner não registra o documento gerado pelo HyDE | Trilho B2 | Baixa | Aberto |
+| [B-27](#b-27) | Caracterizar o ruído residual antes de decidir o critério do B-04 | Trilho B2 | Média | Aberto |
+| [B-28](#b-28) | Efeito de num_ctx nas chamadas de consulta não verificado | Trilho B2 | Baixa | Aberto |
 
 ---
 
@@ -541,7 +543,7 @@ importa para o artigo: **a instabilidade residual não pode inverter nenhuma
 conclusão da matriz de ablação**. Na prática, todo braço que use a etapa de
 consulta roda com `--repeat` e é reportado com a faixa, não com um ponto; e
 uma diferença entre braços só é afirmada se for maior que a variação interna
-de cada um. É decisão de método, do time — não de um trilho.
+de cada um. É decisão de método, do time — não de um trilho. Antes de decidir, vale ter o que o [B-27](#b-27) mede.
 
 ---
 
@@ -596,6 +598,65 @@ de ajudar — depende de reconstruí-lo por heurística.
 `queries`, alimentado pelo mesmo bloco de depuração que já devolve a
 reescrita. Critério: uma rodada de `rag_query` grava o texto do HyDE em
 campo próprio, e `queries` passa a conter só as consultas.
+
+---
+
+### B-27
+
+**Caracterizar o ruído residual antes de decidir o critério do B-04**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 6](joao/2026-09-05-06-determinismo-da-consulta.md), 05/09 · **Responsável:** Trilho B2 · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** A rodada 6 mediu 6 linhas instáveis em 98 e atribuiu a
+causa a ruído numérico de GPU, com base no gradiente por comprimento de
+geração (8% na reescrita, 17% nas multi-queries, 30% no HyDE) e no
+cruzamento "mesmo contexto, mesma decisão, zero exceções". As duas evidências
+são fortes, mas **indiretas**: nenhuma isola a etapa de consulta de fato.
+
+**Por que importa.** É insumo direto do [B-24](#b-24), que pede ao time uma
+decisão sobre o critério do [B-04](#b-04). Decidir sem saber se as 6 linhas
+são sempre as mesmas seria decidir no escuro: "6 linhas frágeis conhecidas"
+e "6 sorteadas a cada par de execuções entre muitas candidatas" são
+problemas de tamanhos diferentes — no primeiro caso dá para listá-las e
+vigiá-las; no segundo, qualquer braço pode virar.
+
+**O que resolveria.** Duas rodadas curtas, cerca de 25 minutos somados:
+
+1. `naive_rag --subset full --repeat 2` — sem nenhuma chamada de consulta.
+   Se der **zero** linhas instáveis, confirma a hipótese H1 da rodada 6 e
+   prova que o ruído nasce na etapa de consulta. Se oscilar, a hipótese cai
+   e o problema é mais amplo do que se pensa.
+2. `rag_query --subset full --repeat 3` — para ver se o conjunto de linhas
+   instáveis se repete entre pares de execuções ou muda a cada vez.
+
+Critério: as duas rodadas citadas em `data/evaluation/cited/`, com a
+resposta registrada numa evidência e levada ao B-24.
+
+---
+
+### B-28
+
+**Efeito de `num_ctx=4096` nas chamadas de consulta não foi verificado**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 6](joao/2026-09-05-06-determinismo-da-consulta.md), 05/09 · **Responsável:** Trilho B2 · **Prioridade:** Baixa · **Status:** Aberto
+
+**O que observamos.** O commit `b907d6e` passou a enviar `default_options()`
+nas três chamadas de consulta, e essa função manda **quatro** parâmetros:
+além de `temperature` e `seed`, também `num_ctx=4096` e `num_predict=600`,
+que antes ficavam no padrão do servidor. Na rodada 6 verifiquei apenas o
+`num_predict`: o documento HyDE mais longo tem 154 palavras (~200 tokens),
+bem abaixo do teto, então esse não morde. O `num_ctx` ficou sem verificação.
+
+**Por que importa.** Pouco, provavelmente — os prompts de consulta recebem
+relatos de duas linhas e dificilmente passariam do contexto anterior. Mas é
+uma mudança de comportamento que entrou junto com outra na mesma rodada, o
+que a regra de "uma mudança por rodada" existe para evitar. Enquanto não for
+verificada, qualquer diferença futura no braço de consulta tem uma segunda
+explicação possível em aberto.
+
+**O que resolveria.** Comparar o tamanho em tokens do maior prompt de
+consulta contra o `num_ctx` padrão do `llama3.2:3b` no Ollama. Se couber com
+folga, fechar o item como verificado e registrar o número.
 
 ---
 

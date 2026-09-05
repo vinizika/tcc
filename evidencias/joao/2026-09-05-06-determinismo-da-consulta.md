@@ -340,21 +340,24 @@ desligado neste mesmo braço.
 
 ## Deixado para depois
 
-**Rodar `naive_rag --repeat 2` para testar a H1.** São cerca de 7 minutos e
+Cada item aqui tem um item correspondente no backlog — é lá que a fila
+vive, e não numa evidência fechada.
+
+**Rodar `naive_rag --repeat 2` para testar a H1** ([B-27](../backlog.md#b-27)). São cerca de 7 minutos e
 daria a prova direta de que a instabilidade residual vem da etapa de
 consulta. O cruzamento "mesmo contexto, mesma decisão, zero exceções" já é
 forte, mas é prova indireta. Ficou de fora porque a pergunta desta rodada era
 o critério do B-04, e misturar dois objetivos numa rodada é o que a regra de
 uma mudança por rodada evita. Volta junto da próxima medição do trilho.
 
-**Repetir com `--repeat 3`.** O critério do backlog fala em duas execuções, e
+**Repetir com `--repeat 3`** ([B-27](../backlog.md#b-27)). O critério do backlog fala em duas execuções, e
 foi o que rodei. Com três daria para estimar se as 6 linhas instáveis são
 sempre as mesmas ou se o conjunto muda a cada par de execuções — o que
 distingue "6 linhas frágeis" de "6 sorteadas entre muitas candidatas".
 Adiado por custo (mais 9,5 min) e porque não muda a conclusão: o critério de
 zero já falhou.
 
-**Investigar se `num_ctx=4096` mudou algo na consulta.** Verifiquei o
+**Investigar se `num_ctx=4096` mudou algo na consulta** ([B-28](../backlog.md#b-28)). Verifiquei o
 `num_predict` (não morde) mas não o tamanho de contexto, que antes ficava no
 padrão do servidor. Só importaria se algum prompt de consulta passasse do
 limite anterior, o que é improvável com relatos de duas linhas.
