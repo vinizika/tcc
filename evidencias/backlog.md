@@ -51,7 +51,7 @@ aqui.
 | [B-01](#b-01) | Com a base atual, ligar o RAG degrada o sistema | Trilho A | Alta | Aberto |
 | [B-02](#b-02) | Ordenação da busca não separa assunto | Trilho A | Alta | Aberto |
 | [B-03](#b-03) | Base de conhecimento sintética, só de emergências | Trilho A + especialista | Alta | Aberto |
-| [B-04](#b-04) | Temperatura e seed não fixadas na etapa de consulta | Trilho B1 | Alta | Aberto |
+| [B-04](#b-04) | Temperatura e seed não fixadas na etapa de consulta | Trilho B1 | Alta | Em andamento |
 | [B-05](#b-05) | Conjunto de avaliação trivialmente separável | Time + especialista | Alta | Aberto |
 | [B-06](#b-06) | Falsos não urgentes subiram de 3 para 8 com o prompt novo | Trilho B2 | Alta | Em andamento |
 | [B-07](#b-07) | Etapa de consulta custa 60% da latência | Trilho B1 | Média | Aberto |
@@ -156,7 +156,7 @@ de não emergência por sistema orgânico frequente em relatos leigos.
 
 **Temperatura e seed não fixadas na etapa de consulta**
 
-**Identificado por:** João (B2) · **Onde:** [rodada 3](joao/2026-09-04-04-geracao-ancorada.md), quantificado na [rodada 4](joao/2026-09-04-05-runner-de-avaliacao.md) · **Responsável:** Trilho B1 · **Prioridade:** Alta · **Status:** Aberto
+**Identificado por:** João (B2) · **Onde:** [rodada 3](joao/2026-09-04-04-geracao-ancorada.md), quantificado na [rodada 4](joao/2026-09-04-05-runner-de-avaliacao.md) · **Responsável:** Trilho B1 · **Prioridade:** Alta · **Status:** Em andamento — corrigido no código e coberto por teste de unidade em [rodada 1 do Ryu](ryu/2026-09-04-01-reprodutibilidade-da-consulta.md), 04/09; falta confirmar o critério numérico (`rag_query --repeat 2`, zero linhas instáveis) com Ollama rodando
 
 **O que observamos.** As três chamadas ao modelo em `query_client.py`
 (reescrita, multi-query, HyDE) não passam `options`, então usam a

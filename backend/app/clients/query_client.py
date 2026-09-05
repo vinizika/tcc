@@ -2,7 +2,7 @@ import re
 
 from app.core.config import settings
 from app.core.logger import setup_logger
-from app.core.ollama import get_ollama_client
+from app.core.ollama import default_options, get_ollama_client
 
 
 logger = setup_logger("QueryClient")
@@ -69,6 +69,7 @@ class QueryClient:
                     "content": question,
                 },
             ],
+            options=default_options(),
         )
 
         rewritten_question = response["message"]["content"].strip()
@@ -123,6 +124,7 @@ class QueryClient:
                     "content": question,
                 },
             ],
+            options=default_options(),
         )
 
         content = response["message"]["content"].strip()
@@ -190,6 +192,7 @@ class QueryClient:
                     "content": question,
                 },
             ],
+            options=default_options(),
         )
 
         hypothetical_document = response["message"]["content"].strip()
