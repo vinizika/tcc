@@ -24,6 +24,9 @@ av>=12.0.0
 #ChromaDB
 chromadb # Banco Vetorial
 sentence-transformers # Modelo que transforma textos em embeddings
+transformers # Tokenizer explícito usado pelo chunking consciente de tokens
 
 # Extração de documentos
-pypdf
+pymupdf==1.28.2 # Extrator principal com blocos e coordenadas (AGPL-3.0/comercial)
+pypdf # Fallback simples quando a extração estruturada falhar
+fonttools # Decodificação completa das fontes CFF encontradas em papers

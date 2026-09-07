@@ -1,0 +1,25 @@
+{
+  "title": "Pathophysiology of heatstroke in dogs – revisited",
+  "source": "Temperature",
+  "document_type": "peer_reviewed_review",
+  "validation_status": "published_not_locally_validated",
+  "species": "dog",
+  "topic": "canine_heatstroke",
+  "authors": "Yaron Bruchim; Michal Horowitz; Itamar Aroch",
+  "year": 2017,
+  "doi": "10.1080/23328940.2017.1367457",
+  "journal": "Temperature",
+  "language": "en",
+  "source_url": "https://doi.org/10.1080/23328940.2017.1367457",
+  "indexing": {
+    "exclude_sections": [
+      "References",
+      "About the authors",
+      "Disclosure of potential conflicts of interest",
+      "Abbreviations"
+    ],
+    "exclude_pages": [
+      1
+    ]
+  }
+}

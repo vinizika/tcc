@@ -9,6 +9,7 @@ aqui — fica em [`evidencias/`](../evidencias/README.md).
 | [`divisao-de-trabalho.md`](divisao-de-trabalho.md) | A divisão em três trilhos (A, B1, B2), o que cada um possui, os acordos de trabalho, o cronograma até novembro e o diagnóstico inicial do código | Para saber de quem é uma pasta, o que está fora do seu escopo, ou quando é cada marco | Qualquer um, em acordo dos três |
 | [`CONTRATOS.md`](CONTRATOS.md) | As interfaces entre os trilhos: o formato do que a busca devolve, o JSON da resposta de triagem, as chaves de liga/desliga e os endpoints | Antes de mudar algo que outro trilho consome. Mudança aqui vai em commit separado, avisando o dono do outro lado | O dono do lado que muda |
 | [`anotacoes.md`](anotacoes.md) | O diário do início do projeto (abril a agosto): dados, primeiras métricas, handovers | Para entender de onde vieram o dataset, o data augmentation e os 70,41% de 04/05 | Histórico — não editar; registros novos vão para `evidencias/` |
+| [`ingestao-documental.md`](ingestao-documental.md) | Arquitetura, heurísticas, fallback e limites da ingestão científica | Antes de alterar extração, limpeza, seções ou chunking do trilho A | Trilho A; avisar o time quando o fluxo mudar |
 
 ## Onde fica o quê, no projeto inteiro
 
@@ -23,3 +24,4 @@ aqui — fica em [`evidencias/`](../evidencias/README.md).
 | Como medir o sistema e ler os números? | [`data/evaluation/README.md`](../data/evaluation/README.md) |
 | De onde vêm os dados e o que cada arquivo é? | [`data/README.md`](../data/README.md) |
 | O que faz cada script e como rodar? | [`scripts/README.md`](../scripts/README.md) |
+| Como adicionar ou evoluir papers do RAG? | [`ingestao-documental.md`](ingestao-documental.md) e [`backend/data/documents/README.md`](../backend/data/documents/README.md) |

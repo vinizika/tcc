@@ -4,6 +4,7 @@ import chromadb
 from chromadb.utils import embedding_functions
 
 from app.core.logger import setup_logger
+from app.database.embedding_config import EMBEDDING_MODEL_NAME
 
 
 logger = setup_logger("ChromaDB")
@@ -21,7 +22,7 @@ class ChromaDBClient:
 
     _embedding_function = (
         embedding_functions.SentenceTransformerEmbeddingFunction(
-            model_name="paraphrase-multilingual-MiniLM-L12-v2"
+            model_name=EMBEDDING_MODEL_NAME
         )
     )
 

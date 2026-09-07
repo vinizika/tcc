@@ -76,6 +76,13 @@ aqui.
 | [B-26](#b-26) | Runner não registra o documento gerado pelo HyDE | Trilho B2 | Baixa | Aberto |
 | [B-27](#b-27) | Caracterizar o ruído residual antes de decidir o critério do B-04 | Trilho B2 | Média | Aberto |
 | [B-28](#b-28) | Efeito de num_ctx nas chamadas de consulta não verificado | Trilho B2 | Baixa | Aberto |
+| [B-29](#b-29) | Fingerprint da base não identifica conteúdo nem embedder | Trilho A + B2 | Média | Aberto |
+| [B-30](#b-30) | Ingestão pode deixar coleção parcial ou registros órfãos | Trilho A | Alta | Aberto |
+| [B-31](#b-31) | Cobertura da ingestão ainda não chega à integração com ChromaDB | Trilho A | Média | Em andamento |
+| [B-32](#b-32) | Upload de voz aceita caminho e tamanho controlados pelo cliente | Trilho B1 | Alta | Aberto |
+| [B-33](#b-33) | Healthcheck não verifica modelo nem base vetorial | Operação + B2 | Média | Aberto |
+| [B-34](#b-34) | `main` não tem CI nem ambiente totalmente reproduzível | Time | Baixa | Aberto |
+| [B-35](#b-35) | Extração do paper multicoluna ainda contém artefatos clínicos | Trilho A | Alta | Em andamento |
 
 ---
 
@@ -657,6 +664,199 @@ explicação possível em aberto.
 **O que resolveria.** Comparar o tamanho em tokens do maior prompt de
 consulta contra o `num_ctx` padrão do `llama3.2:3b` no Ollama. Se couber com
 folga, fechar o item como verificado e registrar o número.
+
+---
+
+### B-29
+
+**Fingerprint da base não identifica conteúdo nem embedder**
+
+**Identificado por:** Vinicius (A) · **Onde:** [auditoria do trilho A](vini/2026-09-07-01-auditoria-do-repositorio.md), 07/09 · **Responsável:** Trilho A + B2 · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** O `/health/fingerprint` calcula o hash da base somente
+sobre os IDs dos chunks. Esses IDs são derivados de
+`caminho:página:índice_do_chunk`, sem conteúdo. Alterar o texto ou os
+metadados mantendo o mesmo número de chunks preserva o fingerprint, mesmo que
+o conhecimento e os vetores tenham mudado. O manifesto também não identifica
+a revisão do modelo de embedding nem os parâmetros do chunking.
+
+**Por que importa.** Duas rodadas podem declarar a mesma base vetorial quando
+na verdade usaram conteúdos ou embeddings diferentes. Isso enfraquece a
+reprodutibilidade justamente durante a próxima ampliação da base.
+
+**O que resolveria.** Incluir no fingerprint um hash determinístico de IDs,
+documentos e metadados, além do nome/revisão do embedder e dos parâmetros de
+chunking. Critério: mudar apenas o texto de um documento, sem mudar seu ID,
+deve alterar o fingerprint em teste automatizado.
+
+---
+
+### B-30
+
+**Ingestão pode deixar coleção parcial ou registros órfãos**
+
+**Identificado por:** Vinicius (A) · **Onde:** [auditoria do trilho A](vini/2026-09-07-01-auditoria-do-repositorio.md), 07/09 · **Responsável:** Trilho A · **Prioridade:** Alta · **Status:** Aberto
+
+**O que observamos.** Para reingerir um arquivo, o ingestor apaga seus chunks
+antes de executar os upserts. Uma falha de embedding ou escrita após essa
+exclusão pode deixar a coleção ativa incompleta; com `--reset`, o risco cobre
+a base inteira. No sentido oposto, a execução sem reset não remove registros
+de documentos que já foram apagados da pasta, pois só visita os arquivos que
+ainda existem.
+
+**Por que importa.** A ampliação da base é a próxima atividade do trilho A e
+sustentará novas medições. Uma coleção parcial ou com documentos órfãos pode
+mudar os resultados sem aparecer como erro explícito.
+
+**O que resolveria.** Preparar a nova base em coleção temporária, validar
+contagem/manifesto e só então promover a coleção completa, ou implementar
+rollback equivalente. O manifesto da ingestão deve também remover fontes que
+deixaram de existir. Critério: uma falha injetada no meio da ingestão mantém a
+coleção ativa anterior intacta, e apagar um documento da origem o remove da
+base seguinte.
+
+---
+
+### B-31
+
+**Cobertura da ingestão ainda não chega à integração com ChromaDB**
+
+**Identificado por:** Vinicius (A) · **Onde:** [auditoria do trilho A](vini/2026-09-07-01-auditoria-do-repositorio.md), 07/09 · **Responsável:** Trilho A · **Prioridade:** Média · **Status:** Em andamento — limpeza, seções, chunking e inspeção ganharam testes na [rodada 2](vini/2026-09-07-02-ingestao-cientifica-token-aware.md); ainda falta uma integração com Chroma temporário e os cenários transacionais
+
+**O que observamos.** Na auditoria inicial, os testes substituíam Chroma,
+recuperação e re-ranking por dublês e não exercitavam o processamento
+documental. A rodada 2 passou a cobrir limpeza, seções, PDF/TXT, metadados,
+IDs produzidos pelo orquestrador, limites e o paper real. Ainda não existe
+teste de reingestão, falha transacional ou consulta sobre Chroma temporário.
+
+**Por que importa.** O núcleo que o trilho A vai modificar pode regredir sem
+que as suítes atuais detectem. A falha só apareceria numa rodada
+completa, mais lenta e com resultado difícil de diagnosticar.
+
+**O que resolveria.** Testes unitários do processamento documental e ao menos
+um teste de integração com armazenamento temporário e função de embedding
+determinística, sem download de modelo. Critério: cobrir ingestão inicial,
+reingestão, falha intermediária e busca ordenada de um caso conhecido.
+
+---
+
+### B-32
+
+**Upload de voz aceita caminho e tamanho controlados pelo cliente**
+
+**Identificado por:** Vinicius (A), em auditoria cruzada · **Onde:** [auditoria do trilho A](vini/2026-09-07-01-auditoria-do-repositorio.md), 07/09 · **Responsável:** Trilho B1 · **Prioridade:** Alta · **Status:** Aberto
+
+**O que observamos.** `POST /voice/` concatena `audio.filename` diretamente à
+pasta `uploads/` e abre esse caminho para escrita. Não há nome gerado pelo
+servidor, validação de permanência na pasta, limite de tamanho/tipo ou remoção
+do arquivo depois da transcrição.
+
+**Por que importa.** Um nome com componentes de caminho pode sobrescrever
+arquivos fora de `uploads/` sob as permissões do backend; arquivos grandes ou
+uploads repetidos podem consumir disco. No Compose, o diretório do backend é
+montado a partir do repositório local, ampliando o impacto de uma sobrescrita.
+
+**O que resolveria.** Gerar nome temporário no servidor, validar tipo e limite
+de bytes, garantir remoção em `finally` e adicionar testes para path traversal
+e excesso de tamanho. Critério: o nome enviado pelo cliente nunca participa do
+caminho de escrita e nenhum arquivo temporário permanece após sucesso ou erro.
+
+---
+
+### B-33
+
+**Healthcheck não verifica modelo nem base vetorial**
+
+**Identificado por:** Vinicius (A) · **Onde:** [auditoria do trilho A](vini/2026-09-07-01-auditoria-do-repositorio.md), 07/09 · **Responsável:** Operação + B2 · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** `GET /health/` sempre devolve `{"status":"ok"}` e é a
+rota usada pelo healthcheck do Compose. O serviço é considerado saudável
+mesmo sem conexão com Ollama, sem o modelo baixado ou com zero chunks. O
+endpoint `/health/fingerprint` expõe parte dessas informações, mas não decide
+saúde e não é usado pelo Compose.
+
+**Por que importa.** O frontend pode ser liberado para um backend incapaz de
+responder, e uma avaliação pode começar sem RAG efetivo se a conferência
+manual for esquecida.
+
+**O que resolveria.** Separar liveness de readiness. A readiness deve conferir
+Ollama/modelo e, quando o preset exigir recuperação, coleção não vazia; o
+Compose deve depender dela. Critério: ausência do modelo ou base vazia mantém
+liveness ativo, mas readiness não saudável.
+
+---
+
+### B-34
+
+**`main` não tem CI nem ambiente totalmente reproduzível**
+
+**Identificado por:** Vinicius (A) · **Onde:** [auditoria do trilho A](vini/2026-09-07-01-auditoria-do-repositorio.md), 07/09 · **Responsável:** Time · **Prioridade:** Baixa · **Status:** Aberto
+
+**O que observamos.** Não existe workflow de CI, lint ou checagem de tipos.
+Parte das dependências está sem versão fixa, incluindo `chromadb` e
+`sentence-transformers`, e a imagem do Ollama usa `latest`. A `.venv` presente
+nesta máquina não executa a suíte do backend. A contagem do README, que estava
+em 49, foi sincronizada para os 92 casos atuais nas rodadas 2 e 3, mas continua
+sendo mantida manualmente.
+
+Na [rodada 3 do trilho A](vini/2026-09-07-03-extracao-cientifica-layout-aware.md),
+uma reconstrução do backend resolveu versões novas e fez `torch==2.14.0`
+baixar vários pacotes CUDA mesmo na imagem padrão. A instalação, inclusive do
+PyMuPDF no Python 3.12/Linux, terminou, mas a exportação foi interrompida
+quando o disco chegou a 99%. A VM registrou erros de I/O em EXT4 e o Docker
+Desktop não voltou após um reinício normal; nenhum reset, prune ou volume foi
+apagado. É uma nova reprodução concreta do mesmo problema de dependências não
+fixadas e agora exige recuperação operacional do Docker, sem abrir um item
+separado.
+
+**Por que importa.** A regra “main sempre rodando” depende de verificação
+manual, e instalações feitas em datas diferentes podem usar implementações
+distintas justamente no núcleo vetorial.
+
+**O que resolveria.** Workflow mínimo executando as duas suítes, dependências
+reprodutíveis e uma única fonte para a contagem/comando dos testes. Critério:
+todo pull request exibe as suítes do backend e dos scripts aprovadas em
+ambiente criado do zero.
+
+---
+
+### B-35
+
+**Extração do paper multicoluna ainda contém artefatos clínicos**
+
+**Identificado por:** Vinicius (A) · **Onde:** [rodada 2 do trilho A](vini/2026-09-07-02-ingestao-cientifica-token-aware.md), 07/09 · **Responsável:** Trilho A · **Prioridade:** Alta · **Status:** Em andamento
+
+**O que observamos.** A limpeza recompõe hifenização de coluna e o parser
+separa corretamente 24 headings no paper real de heatstroke. Mesmo assim, o
+texto entregue pelo `pypdf` contém artefatos anteriores ao chunking, entre
+eles `58delirium` no início da seção de sinais clínicos, sequências como
+`/C14C` em temperaturas e espaços residuais em ligaturas recompostas.
+
+**Por que importa.** A seção de sinais clínicos é uma das mais importantes
+para triagem. Texto truncado ou caracteres espúrios prejudicam legibilidade,
+embedding e rastreabilidade, mesmo quando seção e limite de tokens estão
+corretos.
+
+**O que resolveria.** Criar uma pequena amostra dourada de trechos extraídos
+e comparar, em rodada isolada, ajustes determinísticos ou outro extrator de
+PDF. Critério: headings e passagens clínicas pré-registradas do paper devem
+ser preservados sem texto inventado, e a mudança deve melhorar ou manter a
+régua de recuperação.
+
+**Atualização em 07/09 — em andamento.** A
+[rodada 3 do trilho A](vini/2026-09-07-03-extracao-cientifica-layout-aware.md)
+adotou PyMuPDF com blocos/coordenadas e fallback para `pypdf`. No paper real,
+removeu 15 headers, seis captions e quatro blocos editoriais, recompôs a ordem
+das 15 páginas multicoluna, corrigiu temperaturas para `°C` em contexto
+inequívoco e normalizou ligaturas. `Clinical signs` agora começa na primeira
+sentença completa disponível, sem inventar o prefixo ausente no próprio PDF.
+
+O item não é fechado porque o arquivo-fonte ainda codifica algumas palavras
+sem espaço nem pista geométrica, como `experimentallyinduced` e
+`heatstrokeassociated`. Separá-las exigiria inferência lexical ou um
+dicionário, deliberadamente evitados nesta rodada. O critério residual é
+encontrar uma correção genérica com evidência estrutural — ou manter essa
+limitação explicitamente aceita na curadoria.
 
 ---
 
