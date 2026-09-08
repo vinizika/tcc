@@ -16,6 +16,7 @@ Rewriting, Multi-Query, HyDE e a transcrição de voz (Whisper).
 | # | Data | Rodada | Resultado |
 |---|---|---|---|
 | 1 | 04/09 | [Reprodutibilidade das chamadas de consulta](2026-09-04-01-reprodutibilidade-da-consulta.md) | B-04 fechado no nível de unidade: as três chamadas do `query_client.py` passam a usar `options=default_options()`; falta confirmar o critério numérico com Ollama de pé |
+| 2 | 08/09 | [Endurecimento do upload de voz](2026-09-08-02-endurecimento-do-upload-de-voz.md) | **B-32 resolvido**: `POST /voice/` grava com nome do servidor, valida tipo (415) e tamanho (413), apaga o arquivo em `finally`; 7 testes novos, suíte do backend em 99 |
 
 ## Estado atual
 

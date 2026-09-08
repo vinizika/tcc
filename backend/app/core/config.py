@@ -60,6 +60,15 @@ class Settings(BaseSettings):
     STRUCTURED_OUTPUT_MODE: str = "schema"
 
     # ==========================
+    # Upload de voz (POST /voice/)
+    # ==========================
+    # Teto do áudio aceito na transcrição. O relato de um tutor em emergência
+    # é curto; 25 MB cobrem com folga qualquer gravação real e limitam o
+    # consumo de disco em uploads repetidos ou maliciosos (evidencias/
+    # backlog.md#b-32).
+    MAX_AUDIO_UPLOAD_MB: int = 25
+
+    # ==========================
     # Pipeline
     # ==========================
     TOP_K: int = 5

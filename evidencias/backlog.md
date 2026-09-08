@@ -79,7 +79,7 @@ aqui.
 | [B-29](#b-29) | Fingerprint da base não identifica conteúdo nem embedder | Trilho A + B2 | Média | Aberto |
 | [B-30](#b-30) | Ingestão pode deixar coleção parcial ou registros órfãos | Trilho A | Alta | Aberto |
 | [B-31](#b-31) | Cobertura da ingestão ainda não chega à integração com ChromaDB | Trilho A | Média | Em andamento |
-| [B-32](#b-32) | Upload de voz aceita caminho e tamanho controlados pelo cliente | Trilho B1 | Alta | Aberto |
+| [B-32](#b-32) | Upload de voz aceita caminho e tamanho controlados pelo cliente | Trilho B1 | Alta | Resolvido em 08/09 |
 | [B-33](#b-33) | Healthcheck não verifica modelo nem base vetorial | Operação + B2 | Média | Aberto |
 | [B-34](#b-34) | `main` não tem CI nem ambiente totalmente reproduzível | Time | Baixa | Aberto |
 | [B-35](#b-35) | Extração do paper multicoluna ainda contém artefatos clínicos | Trilho A | Alta | Em andamento |
@@ -744,7 +744,7 @@ reingestão, falha intermediária e busca ordenada de um caso conhecido.
 
 **Upload de voz aceita caminho e tamanho controlados pelo cliente**
 
-**Identificado por:** Vinicius (A), em auditoria cruzada · **Onde:** [auditoria do trilho A](vini/2026-09-07-01-auditoria-do-repositorio.md), 07/09 · **Responsável:** Trilho B1 · **Prioridade:** Alta · **Status:** Aberto
+**Identificado por:** Vinicius (A), em auditoria cruzada · **Onde:** [auditoria do trilho A](vini/2026-09-07-01-auditoria-do-repositorio.md), 07/09 · **Responsável:** Trilho B1 · **Prioridade:** Alta · **Status:** Resolvido em 08/09 — [rodada 2 do Ryu](ryu/2026-09-08-02-endurecimento-do-upload-de-voz.md)
 
 **O que observamos.** `POST /voice/` concatena `audio.filename` diretamente à
 pasta `uploads/` e abre esse caminho para escrita. Não há nome gerado pelo
@@ -760,6 +760,17 @@ montado a partir do repositório local, ampliando o impacto de uma sobrescrita.
 de bytes, garantir remoção em `finally` e adicionar testes para path traversal
 e excesso de tamanho. Critério: o nome enviado pelo cliente nunca participa do
 caminho de escrita e nenhum arquivo temporário permanece após sucesso ou erro.
+
+**Como foi resolvido (08/09).** A rota passa a gravar em
+`uploads/<uuid>.<ext>`, com a extensão vinda de uma allowlist (sufixo do nome
+ou tipo declarado) — o nome do cliente nunca entra no caminho. A gravação é em
+blocos com teto de `MAX_AUDIO_UPLOAD_MB` (padrão 25), abortando com 413; tipo
+não suportado recai em 415 e áudio vazio em 422. O arquivo é removido em
+`finally`, em sucesso ou erro. Sete testes novos em
+`backend/tests/test_api_voice.py` cobrem path traversal, excesso de tamanho,
+tipo inválido, áudio vazio, extensão pelo content-type e limpeza após falha
+na transcrição. Não resolve o benchmark do Whisper ([B-13](#b-13)) nem a URL
+fixa do frontend ([B-23](#b-23)).
 
 ---
 
@@ -862,5 +873,6 @@ limitação explicitamente aceita na curadoria.
 
 ## Resolvidos
 
-*(nenhum ainda — um item chega aqui com a data e um link para a evidência ou
-commit que o fechou)*
+| ID | Item | Fechado em | Evidência |
+|---|---|---|---|
+| [B-32](#b-32) | Upload de voz aceita caminho e tamanho controlados pelo cliente | 08/09 | [rodada 2 do Ryu](ryu/2026-09-08-02-endurecimento-do-upload-de-voz.md) |

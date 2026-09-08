@@ -24,29 +24,33 @@ inteiro (classificação final), não a qualidade da consulta isoladamente.
 |---|---|---|---|
 | — | Query Rewriting, Multi-Query, HyDE (implementação inicial) | ✅ (antes desta pasta existir) | As três técnicas existem em `query_client.py`, plugadas via flags no `chat_pipeline.py` |
 | 1 | Reprodutibilidade das chamadas (B-04) | ✅ 04/09 | `options=default_options()` nas três chamadas; 3 testes novos. Critério numérico do backlog (`rag_query --repeat 2`, zero linhas instáveis) ainda não confirmado — precisa de Ollama rodando |
-| 2 | Decisão de fusão reescrita+variações (B-10) | 🔜 próxima | Ver abaixo |
-| 3 | Whisper único com qualidade medida (B-13) | ⏳ | Consolidar as 3 implementações; benchmark de WER com 15–20 áudios do time |
-| 4 | Conter julgamento clínico na reescrita (B-08) | ⏳ | Exemplos negativos no prompt ou verificação pós-reescrita |
-| 5 | Medir HyDE/Multi-Query/Rewriting ligado×desligado (B-09) | ⏳ bloqueado | Depende da régua de recuperação do trilho A |
-| 6 | Paralelizar/fundir as 3 chamadas de consulta (B-07) | ⏳ | Reduzir os ~3,5s que a etapa custa hoje |
+| 2 | Endurecimento do upload de voz (B-32) | ✅ 08/09 | `POST /voice/` grava com nome do servidor, valida tipo (415) e tamanho (413), apaga o arquivo em `finally`; 7 testes novos |
+| 3 | Whisper único com qualidade medida (B-13) | 🔜 próxima | Consolidar as 3 implementações; benchmark de WER com 15–20 áudios do time |
+| 4 | Decisão de fusão reescrita+variações (B-10) | ⏳ | `[reescrita] + variações` sem duplicatas em `_build_queries` |
+| 5 | Conter julgamento clínico na reescrita (B-08) | ⏳ | Exemplos negativos no prompt ou verificação pós-reescrita |
+| 6 | Medir HyDE/Multi-Query/Rewriting ligado×desligado (B-09) | ⏳ bloqueado | Depende da régua de recuperação do trilho A |
+| 7 | Paralelizar/fundir as 3 chamadas de consulta (B-07) | ⏳ | Reduzir os ~3,5s que a etapa custa hoje |
 
-## Próxima entrega: decisão B-10 (fusão reescrita + variações)
+## Próxima entrega: Whisper único com WER medido (B-13)
 
-**O problema que resolve.** Hoje, com multi-query ligado, a busca recebe só
-as 3 variações + HyDE — a consulta reescrita em si não vai ao índice. Os
-dois braços da ablação ("multi-query ligado" vs. "desligado") diferem em
-natureza, não em grau, o que complica a leitura do estudo de ablação
-formal de outubro.
+**O problema que resolve.** Hoje há três implementações de Whisper
+(`VoiceService` com `small`; `ai/whisper/model.py` e `models/whisper_model.py`
+com `base`, órfãs; `core/models.py` instancia um cliente no import). A
+qualidade da transcrição depende de qual caminho roda, e o artigo cita
+~97,5% de precisão sem que exista medição.
 
-**O que vai fazer:** em `_build_queries` (`chat_pipeline.py`), passar a
-montar `[reescrita] + variações`, sem duplicatas, quando o multi-query
-estiver ligado. É o ponto único já preparado pelo B2 para essa mudança
-(ver `docs/CONTRATOS.md`, item 1).
+**O que vai fazer:** consolidar numa implementação só (a que a API usa),
+apagar as órfãs, e medir a taxa de erro de palavras (WER) com 15–20 áudios
+gravados pelo time, com transcrição de referência. Não depende da régua do
+trilho A.
 
-**Como será medido:** quando a régua de recuperação do trilho A existir,
-comparando Precision@1/MRR antes e depois da fusão. Até lá, ao menos
-garantir com teste de unidade que a lista final não tem duplicatas e inclui
-a reescrita.
+**Como será medido:** WER médio registrado numa evidência, com os áudios e
+as referências versionados.
+
+Depois dela: decisão B-10 (`[reescrita] + variações` sem duplicatas em
+`_build_queries`), conter julgamento clínico na reescrita (B-08) e, quando a
+régua de recuperação do trilho A existir, medir HyDE/Multi-Query/Rewriting
+ligado×desligado (B-09).
 
 ## Marcos
 

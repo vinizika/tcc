@@ -126,7 +126,7 @@ Duas regras de comportamento:
 |---|---|---|
 | `POST /chat/` | B2 | Triagem completa |
 | `POST /search/` | A | Busca pura, sem classificação |
-| `POST /voice/` | B1 | Transcrição de áudio |
+| `POST /voice/` | B1 | Transcrição de áudio. Campo `audio` (multipart). Recusa o que não é áudio (415) e acima de `MAX_AUDIO_UPLOAD_MB` (413); o arquivo é gravado com nome gerado no servidor e apagado após a resposta |
 | `GET /health/` | — | Verificação de saúde |
 | `GET /health/fingerprint` | B2 | Identidade da versão que respondeu: modelo com digest, base vetorial, hash dos prompts. O runner grava no manifesto de cada rodada |
 | ~~`POST /triagem`~~ | — | **Removida.** Era o classificador antigo, sem RAG |
