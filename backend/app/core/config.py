@@ -60,13 +60,19 @@ class Settings(BaseSettings):
     STRUCTURED_OUTPUT_MODE: str = "schema"
 
     # ==========================
-    # Upload de voz (POST /voice/)
+    # Transcrição de voz (Whisper)
     # ==========================
     # Teto do áudio aceito na transcrição. O relato de um tutor em emergência
     # é curto; 25 MB cobrem com folga qualquer gravação real e limitam o
     # consumo de disco em uploads repetidos ou maliciosos (evidencias/
     # backlog.md#b-32).
     MAX_AUDIO_UPLOAD_MB: int = 25
+
+    # Tamanho do modelo faster-whisper. Fica explícito porque o número de WER
+    # medido depende dele, e o artigo cita uma taxa de acerto sem dizer qual
+    # modelo a produziu (evidencias/backlog.md#b-13). "small" é o que roda
+    # hoje na CPU do container.
+    WHISPER_MODEL_SIZE: str = "small"
 
     # ==========================
     # Pipeline

@@ -64,13 +64,32 @@ python scripts/report_evaluation.py compare data/evaluation/runs/<A> data/evalua
 python scripts/report_evaluation.py cite data/evaluation/runs/<A>
 ```
 
+### Benchmark de transcrição de voz (WER)
+
+Mede o WER do Whisper sobre fala sintética (edge-tts, vozes PT-BR), a partir
+de `scripts/voice_benchmark/references.csv`. É um limite otimista — áudio
+limpo, não um tutor real ([B-13](../evidencias/backlog.md#b-13)).
+
+| Arquivo | O que é |
+|---|---|
+| `voice_benchmark/references.csv` | 18 relatos de tutor em PT-BR com texto de referência, voz e ritmo |
+| `voice_benchmark/audio/*.mp3` | os áudios gerados, versionados |
+| `generate_voice_benchmark.py` | `references.csv` → `audio/*.mp3`. Roda uma vez, precisa de rede e de `pip install edge-tts` |
+| `run_voice_benchmark.py` | envia os áudios a `POST /voice/`, compara com a referência, grava `data/voice_benchmark/` |
+| `wer_metrics.py` | módulo puro de WER/CER; não se roda diretamente |
+
+```bash
+docker compose up -d
+python scripts/run_voice_benchmark.py
+```
+
 ## Testes
 
 ```bash
 python -m pytest scripts/tests -q
 ```
 
-48 testes, sem API nem modelo — o HTTP fica atrás de um dublê. Dois deles
+57 testes, sem API nem modelo — o HTTP fica atrás de um dublê. Dois deles
 sustentam a comparabilidade com a medição histórica de 04/05: o **teste
 dourado** (as 98 respostas daquele dia reproduzem exatamente os números do
 diário) e a **regressão dos relatos** (o texto enviado ao modelo é idêntico

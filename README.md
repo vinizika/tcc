@@ -149,10 +149,10 @@ Outras rotas: `POST /search/` (só a busca), `POST /voice/` (transcrição de
 Dois conjuntos, porque rodam em lugares diferentes:
 
 ```bash
-# backend: dentro do container (99 testes; integrações externas usam dublês)
+# backend: dentro do container (102 testes; integrações externas usam dublês)
 docker compose exec backend python -m pytest -q
 
-# scripts: no host (48 testes, incluindo o de regressão contra a medição de 04/05)
+# scripts: no host (57 testes, incluindo o de regressão contra a medição de 04/05)
 python -m pytest scripts/tests -q
 ```
 

@@ -60,12 +60,12 @@ aqui.
 | [B-10](#b-10) | Consulta reescrita não vai ao índice com multi-query ligado | Trilho B1 (decisão) | Média | Aberto |
 | [B-11](#b-11) | Limiar de 0,70 na busca não mede relevância | Trilho A | Média | Aberto |
 | [B-12](#b-12) | Ingestão da base em máquina nova não estava documentada | Trilho A | Média | Em andamento |
-| [B-13](#b-13) | Whisper com três implementações e sem benchmark | Trilho B1 | Média | Aberto |
+| [B-13](#b-13) | Whisper com três implementações e sem benchmark | Trilho B1 | Média | Resolvido em 08/09 |
 | [B-14](#b-14) | Modelo inventa detalhe na justificativa | Trilho B2 | Média | Aberto |
 | [B-15](#b-15) | Relatos de avaliação em inglês contra base em português | Trilho B2 + especialista | Média | Aberto |
 | [B-16](#b-16) | Rótulo do data augmentation não descreve o método real | Time (escrita) | Média | Aberto |
 | [B-17](#b-17) | `RERANK_TOP_K` e `CONTEXT_TOP_K` se sobrepõem | Trilho A + B2 | Baixa | Aberto |
-| [B-18](#b-18) | Código morto e duplicado | Vários (lista no item) | Baixa | Aberto |
+| [B-18](#b-18) | Código morto e duplicado | Vários (lista no item) | Baixa | Em andamento — órfãos de Whisper apagados em 08/09 |
 | [B-19](#b-19) | Arquivos ainda apontam para a rota `/triagem`, removida | Frontend / mock (dono a definir) | Baixa | Aberto |
 | [B-20](#b-20) | Frontend não exibe a triagem estruturada nem as fontes | Frontend (dono a definir) | Baixa | Aberto (geladeira, outubro) |
 | [B-21](#b-21) | Métricas RAGAs previstas no artigo | Trilho B2 | Baixa | Aberto (geladeira, outubro) |
@@ -347,7 +347,7 @@ zero antes de qualquer teste com RAG.
 
 **Whisper com três implementações e sem benchmark**
 
-**Identificado por:** João (B2) · **Onde:** [diagnóstico da divisão](../docs/divisao-de-trabalho.md), 31/08 · **Responsável:** Trilho B1 · **Prioridade:** Média · **Status:** Aberto
+**Identificado por:** João (B2) · **Onde:** [diagnóstico da divisão](../docs/divisao-de-trabalho.md), 31/08 · **Responsável:** Trilho B1 · **Prioridade:** Média · **Status:** Resolvido em 08/09 — [rodada 3 do Ryu](ryu/2026-09-08-03-whisper-unico-e-wer.md)
 
 **O que observamos.** `VoiceService` carrega o modelo `small` (é o que a API
 usa); `ai/whisper/model.py` e `models/whisper_model.py` carregam `base` no
@@ -360,6 +360,18 @@ roda, e o artigo cita ~97,5% de precisão sem que exista medição.
 **O que resolveria.** Uma implementação só; benchmark de taxa de erro de
 palavras com 15 a 20 áudios gravados pelo time. Critério: número registrado
 numa evidência.
+
+**Como foi resolvido (08/09).** As duas implementações órfãs foram apagadas
+(`app/ai/whisper/`, `app/models/whisper_model.py`, `app/clients/whisper_client.py`,
+`app/core/models.py`) — sobrou o `VoiceService`, com o tamanho do modelo em
+setting (`WHISPER_MODEL_SIZE`, padrão `small`) para ficar registrado junto de
+qualquer medição. O benchmark de WER foi construído em `scripts/` (harness
+`run_voice_benchmark.py` + módulo puro `wer_metrics.py` + 18 relatos PT-BR em
+`voice_benchmark/references.csv`). Como o time não quis gravar áudio, os
+relatos são **fala sintética** (edge-tts, vozes neurais PT-BR) — o WER medido
+é um **limite otimista**, a ser substituído por áudio real. Número da rodada
+inaugural na evidência. Não cobre o benchmark com áudio real nem a
+consolidação dos outros órfãos de [B-18](#b-18) fora do Whisper.
 
 ### B-14
 
@@ -434,14 +446,14 @@ trechos de contexto devolverá 3 em silêncio.
 
 **Código morto e duplicado**
 
-**Identificado por:** João (B2) · **Onde:** [diagnóstico da divisão](../docs/divisao-de-trabalho.md), 31/08 · **Responsável:** vários · **Prioridade:** Baixa · **Status:** Aberto
+**Identificado por:** João (B2) · **Onde:** [diagnóstico da divisão](../docs/divisao-de-trabalho.md), 31/08 · **Responsável:** vários · **Prioridade:** Baixa · **Status:** Em andamento — os órfãos de Whisper foram apagados em 08/09 ([rodada 3 do Ryu](ryu/2026-09-08-03-whisper-unico-e-wer.md)); o resto continua
 
 **O que observamos.** Sem importadores ou superados:
 
 | Arquivo | Dono | Nota |
 |---|---|---|
-| `backend/app/core/models.py` | B1 | instancia um cliente Whisper no import |
-| `backend/app/ai/whisper/`, `backend/app/models/whisper_model.py` | B1 | os dois Whispers órfãos ([B-13](#b-13)) |
+| ~~`backend/app/core/models.py`~~ | B1 | **apagado 08/09** — instanciava um cliente Whisper no import |
+| ~~`backend/app/ai/whisper/`, `backend/app/models/whisper_model.py`, `backend/app/clients/whisper_client.py`~~ | B1 | **apagados 08/09** — os Whispers órfãos ([B-13](#b-13)) |
 | `backend/app/base/base_client.py`, `backend/app/utils/log_messages.py` | — | órfãos |
 | `backend/app/database/seed_chroma.py` | A | superado pelo ingestor |
 | `frontend/streamlit_app.py`, `frontend/pages/chat.py`, `send_voice` em `frontend/services/api.py` | frontend | interface antiga (o compose usa `main.py`), página vazia, função duplicada |
@@ -876,3 +888,4 @@ limitação explicitamente aceita na curadoria.
 | ID | Item | Fechado em | Evidência |
 |---|---|---|---|
 | [B-32](#b-32) | Upload de voz aceita caminho e tamanho controlados pelo cliente | 08/09 | [rodada 2 do Ryu](ryu/2026-09-08-02-endurecimento-do-upload-de-voz.md) |
+| [B-13](#b-13) | Whisper com três implementações e sem benchmark | 08/09 | [rodada 3 do Ryu](ryu/2026-09-08-03-whisper-unico-e-wer.md) |

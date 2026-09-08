@@ -1,0 +1,19 @@
+id,expected_class,voice,rate,text
+b01,EMERGENCIA,pt-BR-FranciscaNeural,+0%,meu cachorro comeu um pedaço grande de chocolate hoje de manhã e agora está tremendo e vomitando
+b02,EMERGENCIA,pt-BR-AntonioNeural,-8%,minha gata não consegue fazer xixi desde ontem fica tentando na caixa e miando de dor
+b03,EMERGENCIA,pt-BR-ThalitaMultilingualNeural,+0%,meu cachorro está respirando com muita dificuldade a barriga vai pra dentro e pra fora bem rápido e a língua está meio roxa
+b04,EMERGENCIA,pt-BR-FranciscaNeural,+8%,meu cão teve uma convulsão agora ficou caído de lado tremendo por uns dois minutos e fez xixi no chão
+b05,NAO_EMERGENCIA,pt-BR-AntonioNeural,+0%,minha gata está espirrando de vez em quando desde ontem mas continua comendo e brincando normalmente
+b06,EMERGENCIA,pt-BR-ThalitaMultilingualNeural,-8%,meu cachorro foi atropelado agora há pouco ele está consciente mas mancando muito e tem um sangramento na pata
+b07,EMERGENCIA,pt-BR-FranciscaNeural,+0%,meu cão está com vômito e diarreia desde ontem à noite já foram umas cinco vezes e ele está bem quietinho
+b08,EMERGENCIA,pt-BR-AntonioNeural,+8%,acho que meu cachorro comeu comida com bastante cebola e alho ontem hoje ele está sem energia e a gengiva está pálida
+b09,NAO_EMERGENCIA,pt-BR-ThalitaMultilingualNeural,+0%,meu cachorro está se coçando bastante atrás da orelha e tem uma casquinha na pele mas está comendo bem
+b10,NAO_EMERGENCIA,pt-BR-FranciscaNeural,-8%,meu cão começou a mancar de leve da pata de trás depois de correr no parque mas ainda apoia o pé no chão
+b11,NAO_EMERGENCIA,pt-BR-AntonioNeural,+0%,a gata está com o olho lacrimejando e um pouco de remela há uns dois dias sem inchaço
+b12,EMERGENCIA,pt-BR-ThalitaMultilingualNeural,+8%,meu cachorro grande está com a barriga muito inchada e dura tentando vomitar sem sair nada e muito inquieto
+b13,EMERGENCIA,pt-BR-FranciscaNeural,+0%,meu cão cortou a pata em um vidro e está sangrando bastante já faz uns dez minutos e não para
+b14,EMERGENCIA,pt-BR-AntonioNeural,-8%,meu filhote de dois meses está muito molinho não quer mamar e a boca dele está fria
+b15,EMERGENCIA,pt-BR-ThalitaMultilingualNeural,+0%,meu cachorro macho fica indo no lugar de fazer xixi toda hora e só sai umas gotinhas e ele chora quando faz
+b16,EMERGENCIA,pt-BR-FranciscaNeural,+8%,meu cão foi picado por uma abelha e o focinho dele está inchando bem rápido e ele está se coçando muito
+b17,EMERGENCIA,pt-BR-AntonioNeural,+0%,minha cadela idosa amanheceu sem conseguir levantar as pernas de trás e está ofegante
+b18,NAO_EMERGENCIA,pt-BR-ThalitaMultilingualNeural,-8%,meu gato está com um pouco de secreção no nariz e espirrando mas sem febre e comendo bem

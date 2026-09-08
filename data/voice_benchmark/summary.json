@@ -1,0 +1,51 @@
+{
+  "resumo": {
+    "n_items": 18,
+    "wer": 0.05217391304347826,
+    "cer": 0.018404907975460124,
+    "substitutions": 13,
+    "deletions": 3,
+    "insertions": 2,
+    "ref_words": 345
+  },
+  "manifesto": {
+    "gerado_em": "2026-09-08 20:26 UTC",
+    "git_sha": "b6f567f",
+    "base_url": "http://localhost:8000",
+    "fingerprint": {
+      "api_version": "1.0.0",
+      "model": {
+        "name": "llama3.2:3b",
+        "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+        "size_bytes": 2019393189,
+        "parameter_size": "3.2B",
+        "quantization": "Q4_K_M",
+        "loaded_in_vram_bytes": null
+      },
+      "ollama_version": "0.33.3",
+      "vector_store": {
+        "collection": "veterinary_documents",
+        "chunk_count": 0,
+        "chunk_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "prompts": {
+        "v0_legacy_sha256": "15fa7b045d293f5dfdcb03ef18607fca72ca370776ef2df82687b6167b1423f4",
+        "v1_grounded_sha256": "d04ad0f786ac81aeef28b68c23223243a9760e339adc207d06988eea3c93760c",
+        "v1_grounded_sem_contexto_sha256": "05436e8a47d49bc496559ab06d9b3052e9e221c219ac56d73a8844ef26744e3f"
+      },
+      "defaults": {
+        "temperature": 0.0,
+        "seed": 42,
+        "num_ctx": 4096,
+        "num_predict": 600,
+        "structured_output_mode": "schema",
+        "context_top_k": 3,
+        "context_min_score": 0.0,
+        "prompt_version": "v1_grounded"
+      }
+    },
+    "whisper_model": "small",
+    "request_s_median": 4.5,
+    "language_not_pt": 0
+  }
+}

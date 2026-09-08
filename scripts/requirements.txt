@@ -5,3 +5,8 @@
 pandas
 requests
 pytest
+
+# Só para regerar os áudios do benchmark de voz (generate_voice_benchmark.py).
+# Medir o WER com run_voice_benchmark.py não precisa dele — os MP3 já estão
+# versionados em scripts/voice_benchmark/audio/.
+# edge-tts
