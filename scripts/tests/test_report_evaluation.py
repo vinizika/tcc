@@ -172,3 +172,26 @@ def test_retrato_ausente_de_um_lado_nao_quebra():
 
     assert _diferencas_comparaveis(None, {"chunk_count": 18})
     assert _diferencas_comparaveis(None, None) == []
+
+
+def test_chave_de_configuracao_nova_nao_vira_diferenca():
+    """
+    `cot_position` nasceu em 11/09. Sem este cuidado, toda comparação entre
+    uma rodada anterior e uma posterior acusaria diferença de configuração
+    por uma chave que simplesmente não existia — e o aviso de "mais de uma
+    diferença", disparando sempre, deixaria de ser lido.
+    """
+
+    antiga = {"retrieval_enabled": False, "prompt_version": "v1_grounded"}
+    nova = {
+        "retrieval_enabled": False,
+        "prompt_version": "v1_grounded",
+        "cot_enabled": True,
+        "cot_position": "first",
+    }
+
+    comuns = sorted(set(antiga) & set(nova))
+    diferencas = [c for c in comuns if antiga[c] != nova[c]]
+
+    assert diferencas == []
+    assert sorted(set(nova) - set(antiga)) == ["cot_enabled", "cot_position"]

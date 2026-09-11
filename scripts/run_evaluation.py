@@ -212,6 +212,7 @@ OPCOES_VALIDAS = {
     "context_min_score",
     "rewritten_hint_enabled",
     "cot_enabled",
+    "cot_position",
     "self_refine_enabled",
     "prompt_version",
     "structured_output_mode",
@@ -469,6 +470,13 @@ def achatar(resposta: dict, contexto: dict) -> dict:
         "load_duration_s": tempos.get("load_duration_s"),
         "justificativa": triagem.get("justificativa"),
         "sinais_de_alerta": triagem.get("sinais_de_alerta"),
+        # O raciocínio do Chain-of-Thought. Nulo nos braços sem a chave —
+        # e nulo é diferente de vazio: distingue "não raciocinou" de
+        # "raciocinou e não escreveu nada". O comprimento vira métrica; o
+        # texto é o que permite ler, depois, se o modelo marcou o sinal
+        # grave e mesmo assim concluiu errado.
+        "raciocinio": triagem.get("raciocinio"),
+        "len_raciocinio": len(triagem.get("raciocinio") or "") or None,
         "recomendacao": triagem.get("recomendacao"),
         "queries": depuracao.get("queries"),
         "rewritten_question": depuracao.get("rewritten_question"),
@@ -763,7 +771,12 @@ def finalizar(diretorio: Path, manifesto: dict) -> dict:
 
     # A versão em CSV é para abrir em planilha; sai sem os textos longos,
     # que têm quebras de linha e quebrariam o formato.
-    colunas_longas = ["raw_llm_output", "justificativa", "recomendacao"]
+    colunas_longas = [
+        "raw_llm_output",
+        "justificativa",
+        "recomendacao",
+        "raciocinio",
+    ]
     df.drop(
         columns=[c for c in colunas_longas if c in df.columns]
     ).to_csv(diretorio / "predictions.csv", index=False, encoding="utf-8")

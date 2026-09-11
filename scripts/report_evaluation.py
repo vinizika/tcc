@@ -354,11 +354,19 @@ def comando_compare(dir_a: Path, dir_b: Path, usar: str) -> None:
     config_a = manifesto_a.get("effective_config") or {}
     config_b = manifesto_b.get("effective_config") or {}
 
+    # Só as chaves que as duas rodadas registram. A configuração ganha
+    # chaves ao longo do projeto (`cot_position` nasceu em 11/09), e uma
+    # chave que não existia na rodada antiga apareceria como diferença em
+    # toda comparação com qualquer rodada nova — ruído que faria o aviso
+    # de "mais de uma diferença" disparar sempre e deixar de ser lido.
     diferencas = [
-        (chave, config_a.get(chave), config_b.get(chave))
-        for chave in sorted(set(config_a) | set(config_b))
-        if config_a.get(chave) != config_b.get(chave)
+        (chave, config_a[chave], config_b[chave])
+        for chave in sorted(set(config_a) & set(config_b))
+        if config_a[chave] != config_b[chave]
     ]
+
+    so_em_b = sorted(set(config_b) - set(config_a))
+    so_em_a = sorted(set(config_a) - set(config_b))
 
     if diferencas:
         for chave, valor_a, valor_b in diferencas:
@@ -370,6 +378,21 @@ def comando_compare(dir_a: Path, dir_b: Path, usar: str) -> None:
             )
     else:
         print("  nenhuma")
+
+    for rotulo, chaves, manifesto in (
+        ("B", so_em_b, manifesto_b),
+        ("A", so_em_a, manifesto_a),
+    ):
+        if chaves:
+            valores = ", ".join(
+                f"{chave}={(manifesto.get('effective_config') or {})[chave]}"
+                for chave in chaves
+            )
+            print(
+                f"\n  Nota: a configuração de {rotulo} tem chaves que a "
+                f"outra não registra ({valores}). São chaves que nasceram "
+                "depois — não é diferença de configuração."
+            )
 
     if manifesto_a.get("relato_lang") != manifesto_b.get("relato_lang"):
         raise SystemExit(

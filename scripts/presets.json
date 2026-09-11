@@ -21,6 +21,36 @@
     "prompt_version": "v1_grounded"
   },
 
+  "llm_only_cot": {
+    "_descricao": "Linha de base com Chain-of-Thought: o modelo percorre um checklist (um sinal por linha, risco à vida sim/não/não sei) antes de classificar. Braço principal do B-06; compara com llm_only.",
+    "retrieval_enabled": false,
+    "prompt_version": "v1_grounded",
+    "cot_enabled": true,
+    "cot_position": "first",
+    "num_predict": 1024
+  },
+
+  "llm_only_cot_posthoc": {
+    "_descricao": "Controle do braço acima: mesmo prompt e mesmo checklist, mas o raciocínio é escrito DEPOIS da classificação. Isola o efeito da ordem do efeito da rubrica — se empatar com llm_only_cot, o ganho não veio de raciocinar antes.",
+    "retrieval_enabled": false,
+    "prompt_version": "v1_grounded",
+    "cot_enabled": true,
+    "cot_position": "last",
+    "num_predict": 1024
+  },
+
+  "naive_rag_cot": {
+    "_descricao": "Recuperação ligada com Chain-of-Thought. O checklist ganha um passo que julga cada trecho recuperado ('descreve o caso deste relato?'), mirando os falsos não urgentes que o contexto induz (B-01). Compara com naive_rag.",
+    "retrieval_enabled": true,
+    "query_rewriting_enabled": false,
+    "multi_query_enabled": false,
+    "hyde_enabled": false,
+    "prompt_version": "v1_grounded",
+    "cot_enabled": true,
+    "cot_position": "first",
+    "num_predict": 1024
+  },
+
   "rag_query": {
     "_descricao": "Pipeline completo, com reescrita, multi-query e HyDE. Quase determinístico desde b907d6e (04/09): 6 das 98 linhas ainda oscilam entre execuções idênticas, por ruído numérico de GPU nas gerações longas (HyDE). Usar --repeat para reportar a faixa.",
     "retrieval_enabled": true,

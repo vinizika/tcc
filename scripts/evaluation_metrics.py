@@ -262,6 +262,39 @@ def _latencia(df: pd.DataFrame) -> dict:
             if not valores.empty:
                 resumo[coluna + "_mean"] = round(float(valores.mean()), 1)
 
+    # A cauda dos tokens de saída, não só a média. Um modelo pequeno a
+    # temperatura zero pode entrar em repetição degenerada: a média fica
+    # normal e algumas linhas batem no teto, que é onde a resposta é
+    # truncada e vira saída inválida. Média de 170 com p95 no teto é essa
+    # assinatura, e ela não aparece na média sozinha.
+    if "completion_tokens" in aquecidas.columns:
+        valores = pd.to_numeric(
+            aquecidas["completion_tokens"], errors="coerce"
+        ).dropna()
+
+        if not valores.empty:
+            resumo["completion_tokens_p95"] = int(valores.quantile(0.95))
+            resumo["completion_tokens_max"] = int(valores.max())
+
+    # Tamanho do raciocínio, quando o braço tem Chain-of-Thought. Serve
+    # para duas perguntas: o modelo raciocinou de fato (um texto curto
+    # demais é só uma paráfrase da justificativa) e o teto da gramática
+    # chegou a morder.
+    if "len_raciocinio" in aquecidas.columns:
+        valores = pd.to_numeric(
+            aquecidas["len_raciocinio"], errors="coerce"
+        ).dropna()
+        valores = valores[valores > 0]
+
+        if not valores.empty:
+            resumo["raciocinio_chars"] = {
+                "mean": round(float(valores.mean()), 1),
+                "median": int(valores.median()),
+                "p95": int(valores.quantile(0.95)),
+                "max": int(valores.max()),
+                "rows": int(len(valores)),
+            }
+
     return resumo
 
 
@@ -406,6 +439,30 @@ def _bloco_de_classificacao(df: pd.DataFrame) -> dict:
 
     bloco["incerto_rate"] = _divisao(
         int((df["predicted"] == "INCERTO").sum()), total
+    )
+
+    # Abstenção separada por classe. As duas contam como erro em todas as
+    # acurácias, mas significam coisas opostas na clínica: abster-se diante
+    # de uma emergência é o erro seguro (o tutor é orientado a procurar
+    # atendimento), enquanto abster-se num caso leve é indecisão em caso
+    # fácil. O Chain-of-Thought mexe nas duas — o passo "não sei" do
+    # checklist foi desenhado para a primeira, e nos testes iniciais
+    # produziu a segunda.
+    bloco["emergencia_para_incerto"] = int(
+        len(
+            df[
+                (df["expected"] == "EMERGENCIA")
+                & (df["predicted"] == "INCERTO")
+            ]
+        )
+    )
+    bloco["nao_emergencia_para_incerto"] = int(
+        len(
+            df[
+                (df["expected"] == "NAO_EMERGENCIA")
+                & (df["predicted"] == "INCERTO")
+            ]
+        )
     )
     bloco["invalid_rate"] = _divisao(
         int((df["predicted"] == "INVALID_JSON").sum()), total

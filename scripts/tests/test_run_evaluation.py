@@ -563,3 +563,54 @@ def test_fingerprint_indisponivel_com_busca_ligada_aborta():
             {"vector_store": {"error": "banco fora do ar"}},
             config_efetivo={"retrieval_enabled": True},
         )
+
+
+# ----------------------------------------------------------------------
+# Chain-of-Thought na linha gravada
+# ----------------------------------------------------------------------
+
+
+def resposta_com(triagem: dict) -> dict:
+
+    return {
+        "triage": {
+            "classificacao": "EMERGENCIA",
+            "json_parsed": True,
+            "schema_valid": True,
+            "attempts": 1,
+            "fontes": [],
+            **triagem,
+        },
+        "sources": [],
+        "retrieval": {},
+        "timings": {},
+        "config": {},
+        "debug": {},
+    }
+
+
+def test_raciocinio_e_gravado_com_o_comprimento():
+    """
+    O texto é o que permite ler, depois, se o modelo marcou o sinal grave e
+    mesmo assim concluiu errado. O comprimento vira métrica.
+    """
+
+    linha = runner.achatar(
+        resposta_com({"raciocinio": "vômito — risco à vida? sim"}),
+        {},
+    )
+
+    assert linha["raciocinio"] == "vômito — risco à vida? sim"
+    assert linha["len_raciocinio"] == 26
+
+
+def test_sem_cot_o_raciocinio_fica_nulo():
+    """
+    Nulo, e não vazio ou zero: distingue "o braço não usa raciocínio" de
+    "usou e devolveu nada", que são diagnósticos diferentes.
+    """
+
+    linha = runner.achatar(resposta_com({}), {})
+
+    assert linha["raciocinio"] is None
+    assert linha["len_raciocinio"] is None
