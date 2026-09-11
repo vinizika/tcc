@@ -384,3 +384,180 @@ como ele pediu. As duas alternativas mudaram de peso:
 Em qualquer um dos caminhos, o mesmo pré-requisito aparece: enquanto a base
 não cobrir os assuntos do conjunto e o corte for zero, medir o sistema
 completo mede ruído. Isso é trilho A, e é o que o João leva ao time.
+
+
+---
+
+## Adendo de 12/09 — as três correções, em linguagem simples, e uma hipótese em espera
+
+> Escrito no mesmo dia, depois de fechar a rodada, a partir da conversa em
+> que o João e eu chegamos à conclusão sobre prioridades. Nada acima foi
+> editado. Este adendo existe por dois motivos: a conclusão sobre a **ordem**
+> das correções não estava escrita em lugar nenhum, e uma das correções
+> tinha o dono errado no backlog — o dono era eu.
+
+### A analogia que organiza tudo
+
+O sistema é um **aluno** fazendo uma **prova** de 98 questões, com direito a
+consultar um **livro**. Um **bibliotecário** procura no livro as três páginas
+mais parecidas com cada questão e entrega ao aluno antes de ele responder.
+
+Nessa analogia, os três problemas são:
+
+| Peça | O que está errado hoje | Item |
+|---|---|---|
+| O livro | Não tem os capítulos que a prova pergunta | [B-03](../backlog.md#b-03) |
+| O bibliotecário | Entrega três páginas mesmo quando nenhuma tem a ver com a questão | [B-11](../backlog.md#b-11) |
+| A prova | Dá para gabaritar sem saber veterinária, só pelo vocabulário | [B-05](../backlog.md#b-05), [B-45](../backlog.md#b-45) |
+
+### Correção 1 — o livro: cobertura, não tamanho
+
+O livro tem sete capítulos, todos sobre emergências, todos sintéticos, nenhum
+validado. Nas 98 questões da prova, **nenhuma página passou da nota mínima
+de parecença**. O livro não fala dos assuntos da prova.
+
+A frase "aumentar a base" é a frase errada. O artigo científico sobre
+insolação, já preparado, é o exemplo: acrescentaria 186 páginas ao livro e
+**nenhuma questão da prova tem insolação**. Setenta protocolos de emergência
+não ajudariam mais que sete. O que falta é: capítulos sobre os assuntos que
+aparecem nas 98 questões, **incluindo os quadros leves**, em português,
+validados pela especialista. Quinze capítulos certos valem mais que cem
+errados.
+
+Um cuidado, repetido de propósito: os cinco sintomas leves da prova foram
+escolhidos pela especialista. Um capítulo que diga "estes cinco são leves"
+faz o aluno acertar a prova copiando a chave de resposta. Capítulos reais
+sobre quadros leves, sim; a lista dos cinco, não.
+
+**Dono:** trilho A e a especialista. **Custo:** semanas, e a agenda da
+especialista é o gargalo.
+
+### Correção 2 — o bibliotecário: o corte em zero, e metade dele é meu
+
+O bibliotecário tem uma régua de parecença de 0 a 1 e um combinado: **só
+vale entregar página que passe de 0,70**. Nas 98 questões, a melhor página
+ficou em média em 0,57. Pelo combinado, ele deveria voltar de mãos vazias
+em todas.
+
+Mas ele entrega três páginas mesmo assim, sempre. Por dois motivos, em dois
+lugares:
+
+1. **Do meu lado**, a configuração `CONTEXT_MIN_SCORE` está em **zero**. Eu
+   a coloquei assim de propósito, na rodada 3, e o motivo está escrito no
+   código: naquele dia nenhum documento passava do limiar, e descartar todos
+   faria o braço "com livro" ficar idêntico ao braço "sem livro". Deixei as
+   páginas entrarem e mandei registrar a nota de cada uma, para a decisão
+   virar evidência depois. Virou — esta rodada é a evidência.
+2. **Do lado do trilho A**, a busca tem uma trava parecida: quando nada passa
+   de 0,70, ela devolve os mais próximos assim mesmo, com um aviso no log.
+
+O efeito colateral, que só agora ficou visível em número: o aluno recebe
+três páginas que não têm a ver com a questão e as lê como se tivessem. É
+isso que derruba a nota dele em 20 pontos. **"O RAG piora o sistema" mede
+"entregar três páginas aleatórias piora o sistema."** Consulta ao livro
+nunca aconteceu.
+
+A correção é o bibliotecário voltar a respeitar o combinado: nada passou,
+nada entra. É uma linha do meu lado e uma trava do lado dele. Mas tem um
+custo que precisa estar escrito **antes** de alguém aplicar: com o livro
+atual, ele vai voltar de mãos vazias em 98 de 98, e **o braço com RAG
+desaparece das medições**, porque vira idêntico ao braço sem RAG. Parece
+perda. É o retrato verdadeiro do estado de hoje.
+
+Por que esta correção vem **antes** da base: enquanto o corte for zero,
+qualquer base nova será medida junto com o ruído, e não dá para separar
+quanto foi o livro e quanto foi o lixo que entrou.
+
+**Dono:** B2 e trilho A, meia parte cada. **Custo:** uma configuração de
+cada lado. **Decisão do time:** o que o classificador recebe quando não há
+nada relevante — a resposta proposta é "nada".
+
+### Correção 3 — a prova: questões que não se gabaritem por vocabulário
+
+Das 98 questões, as 27 de "não emergência" foram montadas com as mesmas
+cinco palavras. As 71 de emergência usam 192 palavras diferentes. A regra
+"se só tem palavra da lista de cinco, é leve" acerta **98 de 98** sem saber
+nada de veterinária.
+
+Consequência: quando o aluno tira 0,856, não dá para saber se ele aprendeu
+triagem ou se aprendeu que espirro é leve. Esta rodada mostrou que foi o
+segundo: ele acerta 17 das 18 questões leves com espirro e 6 das 9 sem.
+
+E é isso que faz a prova ser irmã gêmea da base. Se o livro ficar perfeito e
+o aluno tirar 0,95, **a prova continua a mesma**, e continuamos sem saber se
+o número significa triagem. A base destrava construir; a prova destrava
+saber se construiu certo.
+
+Foi também a prova que derrubou o Chain-of-Thought em primeiro lugar: o
+formulário perguntava "isso ameaça a vida?" sintoma por sintoma, e a questão
+dizia só "vômito", sem há quanto tempo nem como. O aluno respondeu "não dá
+para saber" e estava certo.
+
+O que resolve: relatos de tutor reais, com duração e intensidade, em
+português, e um conjunto de desenvolvimento separado do de avaliação, para o
+ajuste de prompt parar de ser feito na prova. Os 18 relatos em português que
+o trilho B1 escreveu para o benchmark de voz são uma semente.
+
+**Dono:** time e a especialista, o mesmo gargalo. **Custo:** semanas, em
+paralelo com a base.
+
+### A ordem, e o que não fica parado
+
+| Quando | O quê | Quem |
+|---|---|---|
+| Agora | Corte: sem relevância, sem trechos | B2 + A, decisão do time |
+| Esta semana | Régua de recuperação, com os sete protocolos que existem | A |
+| Próximas semanas | Livro com cobertura dos assuntos da prova, quadros leves incluídos | A + especialista |
+| Em paralelo | Prova nova, com gravidade e duração, em português | Time + especialista |
+| Depois | Virada da base, remedição dos braços com RAG, e só então o CoT como o artigo desenhou | Cada trilho |
+
+O que **não** depende disso e pode andar: o Whisper e o trilho de voz; a
+régua de recuperação, que pode nascer com os sete protocolos; meu
+instrumento; o diagnóstico com modelo maior ([B-42](../backlog.md#b-42)); o
+teste limpo da ordem ([B-46](../backlog.md#b-46)).
+
+### Hipótese em espera: uma camada de decisão determinística
+
+> **Status: stand-by.** Não é decisão nem candidata em disputa. É uma
+> possibilidade avistada durante a autópsia, registrada para não se perder.
+> O João avaliou que é cedo para decidir sobre ela. Ela volta à mesa em dois
+> casos: se as três correções acima não bastarem para o sistema decidir bem,
+> ou como um braço a mais na ablação do artigo, para fundamentá-la.
+
+**Não estava no artigo.** O desenho do artigo é o modelo decidir, apoiado na
+busca, com CoT e Self-Refine melhorando o raciocínio dele. A hipótese nasceu
+de três coisas: do resultado desta rodada (o modelo lista os sinais bem e
+julga a gravidade mal e de forma inconsistente); da trava de segurança que o
+Self-Refine já previa em código, levada até o fim; e das próprias referências
+do artigo, que citam uma lista estruturada de critérios vencendo a triagem
+intuitiva de veterinários.
+
+**O que é.** Hoje o modelo faz dois trabalhos na mesma resposta: entender o
+relato e julgar a gravidade. A hipótese separa os dois. O modelo continua
+fazendo o primeiro — extrai os sinais num vocabulário fixo — e para de fazer
+o segundo: uma tabela de sinais de alerta, escrita pela especialista a partir
+dos protocolos da base, decide em código, sempre da mesma forma. O modelo
+volta no fim só para explicar ao tutor a decisão já tomada, citando o
+protocolo de onde veio o critério. É a enfermeira de triagem: ela escuta,
+mas o cartão de critérios decide.
+
+**O que mudaria.** Pouco nos arquivos, bastante no significado. Só a etapa
+de decisão muda: uma extração estruturada, um módulo de regras pequeno, uma
+tabela que mora junto da base, uma chave para ligar e desligar. Voz,
+consulta, busca e resposta ficam iguais. A régua ganharia uma métrica nova e
+não circular: se o modelo extraiu os sinais certos, verificável direto
+contra os sintomas de cada linha da prova. A história do projeto mudaria de
+ênfase, de "o modelo decide com apoio da base" para "o modelo entende, a
+regra decide, a base fundamenta" — e isso é decisão do orientador, não só
+nossa.
+
+**O que ela não resolve.** Na prova atual, colapsa na regra trivial que
+acerta 98 de 98: avaliação circular. Um sinal fora da tabela vira "incerto",
+o que é seguro mas reduz cobertura. E se o modelo ler o sinal errado, a regra
+decide sobre o sinal errado. Ela **depende** das três correções acima —
+principalmente do livro, de onde a tabela sairia — e não as substitui.
+
+**Como encaixaria sem quebrar o artigo, se um dia for retirada da espera:**
+como braço da ablação, "decisão por regra sobre sinais extraídos pelo
+modelo", medida lado a lado com "decisão pelo modelo", que é o desenho
+original. Os dois continuam existindo; o número decide.

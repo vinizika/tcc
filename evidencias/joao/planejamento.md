@@ -47,32 +47,38 @@ mecanismo identificado.
 | 4 | Runner de avaliação | ✅ 04/09 | A régua: rodadas versionadas com manifesto, métricas e teste estatístico. **Marco 1 medido** |
 | 5a | Endurecimento do instrumento | ✅ 11/09 | Revisão das entregas dos outros trilhos; o runner recusa base errada ou vazia, o retrato identifica conteúdo e embedder, o `compare` avisa mudança de código. **Nenhuma métrica mudou** |
 | 5 | **Chain-of-Thought** | ✅ 11/09, **resultado negativo** | Implementado e medido em cinco braços. Falsos não urgentes de 8 para 1, mas falsos urgentes de 4 para 16 e recall da classe leve a **zero**. Balanceada de 0,856 para 0,408. Não entra no sistema; fica desligado e medido para a ablação |
-| 6 | **Entrega a decidir** | ⏸️ decisão do João após a [rodada 9](2026-09-12-09-autopsia-do-cot.md) | Duas alternativas: Self-Refine como planejado (enfraquecido — o que o modelo escreve sobre a própria decisão é racionalização) ou uma **camada de decisão determinística**, que o próprio artigo sustenta ao citar que listas estruturadas superam a triagem intuitiva. As duas dependem dos bloqueios 11 a 13 para serem **avaliadas** sem circularidade |
+| 6 | **Entrega a decidir** | ⏸️ aguardando as três correções ([adendo da rodada 9](2026-09-12-09-autopsia-do-cot.md#adendo-de-1209--as-três-correções-em-linguagem-simples-e-uma-hipótese-em-espera)) | O Self-Refine como planejado ficou enfraquecido: o que o modelo escreve sobre a própria decisão é racionalização. Uma camada de decisão determinística foi avistada e está **em stand-by**, por decisão do João — volta só se as correções não bastarem ou como braço a mais da ablação. Qualquer alternativa depende do corte, da base e da prova para ser **avaliada** sem circularidade |
 | 7 | Driver de ablação | ⏳ | Cruza as chaves de todos os trilhos e gera as tabelas do artigo |
 
-## Próxima entrega: a decidir, com a autópsia na mão
+## Próxima entrega: a decidir, depois das três correções
 
-A [rodada 9](2026-09-12-09-autopsia-do-cot.md) mudou o peso das duas
-alternativas, e a decisão é do João.
+A [rodada 9](2026-09-12-09-autopsia-do-cot.md) e a conversa que a seguiu
+levaram a uma conclusão sobre **ordem**, registrada no adendo dela: antes de
+qualquer técnica nova na etapa de decisão, três coisas precisam acontecer, e
+duas delas não são do meu trilho.
 
-**Self-Refine como planejado** perdeu força. Ele pede ao modelo que revise a
-própria decisão, e a autópsia mostrou que o que o modelo escreve sobre a
-própria decisão é **racionalização**, não julgamento: no braço de controle,
-as marcações de gravidade invertem conforme a classe já escolhida (febre
-como risco à vida: 2 de 23 com o raciocínio antes, 22 de 23 com o raciocínio
-depois). A trava de segurança, que é código determinístico, continua de pé.
+1. **O corte de relevância** deixa de ser zero — meia parte minha, meia do
+   trilho A, decisão do time ([B-11](../backlog.md#b-11)). É a mais barata e
+   a mais urgente: enquanto ele for zero, toda medição com RAG mede ruído.
+2. **A base** passa a cobrir os assuntos do conjunto, com quadros leves,
+   validada ([B-03](../backlog.md#b-03)). Trilho A e especialista.
+3. **A prova** deixa de ser separável por vocabulário e ganha um conjunto de
+   desenvolvimento ([B-05](../backlog.md#b-05), [B-45](../backlog.md#b-45)).
+   Time e especialista.
 
-**Camada de decisão determinística** ganhou força. O modelo só extrai e
-normaliza os sinais; uma lista de sinais de alerta, vinda dos protocolos e
-validada pela especialista, decide; abstém-se apenas quando a extração
-falha. O artigo do TCC1 sustenta esse desenho ao citar que listas
-estruturadas de critérios superaram a triagem intuitiva de profissionais.
+Do meu lado, o que anda enquanto isso: o teste limpo da ordem
+([B-46](../backlog.md#b-46)), o item do modelo maior para o time
+([B-42](../backlog.md#b-42)), e o driver de ablação (entrega 7), que não
+depende do resultado de nenhum braço.
 
-**O que vale para as duas.** Nenhuma pode ser **avaliada** no conjunto atual
-sem circularidade: a regra "só sintomas leves → não emergência" acerta 98 de
-98 sem modelo nenhum, e a classe leve testa dois tokens. E enquanto o corte
-de relevância for zero e a base não cobrir os assuntos do conjunto, medir o
-sistema completo mede ruído. Os bloqueios 11 a 13 são pré-requisito.
+**O Self-Refine** como planejado perdeu força com a autópsia: o que o modelo
+escreve sobre a própria decisão é racionalização, não julgamento. A trava de
+segurança, que é código, continua valendo.
+
+**Uma camada de decisão determinística** — o modelo extrai os sinais, uma
+tabela validada pela especialista decide — foi avistada e descrita no adendo
+da rodada 9. Está **em stand-by** por decisão do João: cedo para decidir. Não
+é candidata em disputa; é uma saída registrada para não se perder.
 
 ## Marcos
 

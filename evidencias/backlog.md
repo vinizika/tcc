@@ -320,7 +320,7 @@ variações`, sem duplicatas. O pipeline do B2 já tem o ponto único
 
 **Limiar de 0,70 na busca não mede relevância**
 
-**Identificado por:** João (B2), a partir do handover de 30/08 · **Onde:** [rodada 3](joao/2026-09-04-04-geracao-ancorada.md) e [rodada 4](joao/2026-09-04-05-runner-de-avaliacao.md) · **Responsável:** Trilho A · **Prioridade:** Média · **Status:** Aberto
+**Identificado por:** João (B2), a partir do handover de 30/08 · **Onde:** [rodada 3](joao/2026-09-04-04-geracao-ancorada.md) e [rodada 4](joao/2026-09-04-05-runner-de-avaliacao.md) · **Responsável:** **Trilho A + B2** (o corte tem duas metades, ver atualização de 12/09) · **Prioridade:** Alta · **Status:** Aberto — decisão do time pendente
 
 **O que observamos.** O filtro de score ≥ 0,70 foi adicionado em 03/09; o
 handover de 30/08 dizia para não fixar limiar enquanto documentos errados
@@ -640,6 +640,30 @@ instrução "sem informação suficiente, responda INCERTO".
 cubram os assuntos do conjunto e falem de quadros leves), [B-11](#b-11)
 (corte de relevância maior que zero), [B-05](#b-05) e [B-45](#b-45) (dado
 com gravidade e conjunto de desenvolvimento separado).
+
+
+**Correção de dono, 12/09.** Este item estava com o trilho A como único
+responsável. Conferindo o código, o corte em zero tem **duas metades**, e
+uma é do B2:
+
+| Onde | O que faz | Dono |
+|---|---|---|
+| `CONTEXT_MIN_SCORE = 0.0` em `core/config.py` | Deixa qualquer trecho entrar no prompt, sem nota mínima. Colocado **de propósito** na rodada 3, com o motivo no comentário: naquele dia nenhum documento passava do limiar, e descartar todos faria o braço com RAG ficar idêntico ao braço sem RAG | **B2** |
+| Fallback em `retrieval_client.py` | Quando nada passa de 0,70, devolve os mais próximos assim mesmo, com aviso no log | Trilho A |
+
+**O custo de corrigir, que precisa estar escrito antes de alguém aplicar.**
+Com a base atual, respeitar o corte faz o braço com RAG **desaparecer** das
+medições: ele vira idêntico ao `llm_only`, porque nenhuma das 98 linhas tem
+trecho acima do limiar. Isso não é regressão. É o retrato verdadeiro de que
+hoje o RAG não tem o que acrescentar — e é o motivo de esta correção vir
+**antes** da ampliação da base ([B-03](#b-03)): enquanto o corte for zero,
+qualquer base nova será medida junto com o ruído.
+
+**Decisão pendente do time:** o que o classificador recebe quando não há
+nada relevante. A proposta do B2 é "nada", com o sistema se comportando como
+sem RAG e a resposta registrando que a busca não trouxe nada acima do corte.
+A ordem completa das três correções está no
+[adendo da rodada 9](joao/2026-09-12-09-autopsia-do-cot.md#adendo-de-1209--as-três-correções-em-linguagem-simples-e-uma-hipótese-em-espera).
 
 ---
 
