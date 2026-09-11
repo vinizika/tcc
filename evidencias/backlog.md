@@ -84,7 +84,7 @@ aqui.
 | [B-34](#b-34) | `main` não tem CI nem ambiente totalmente reproduzível | Time | Baixa | Aberto |
 | [B-35](#b-35) | Extração do paper multicoluna ainda contém artefatos clínicos | Trilho A | Alta | Em andamento |
 | [B-36](#b-36) | Rótulo de título e seção embutido no texto do chunk chega ao prompt | Trilho A | Alta | Aberto |
-| [B-37](#b-37) | Base de referência de 18 chunks não se regenera; manuais divergem | Trilho A + B2 | Média | Em andamento |
+| [B-37](#b-37) | Virada da base: trocar os 18 trechos pela base nova sem perder comparabilidade | Trilho A + Time + B2 | **Alta** | Em andamento — passo 1 feito |
 | [B-38](#b-38) | Runner não confere a base antes de uma rodada com recuperação | Trilho B2 | Alta | Resolvido em 11/09 |
 | [B-39](#b-39) | `--expect-base-hash` é opcional e depende de disciplina | Trilho B2 | Baixa | Aberto |
 | [B-40](#b-40) | A conferência de base olha o recorte, não o conteúdo | Trilho B2 | Baixa | Aberto |
@@ -943,34 +943,71 @@ um chunk recuperado da base nova chega ao prompt sem `Document title` nem
 
 ### B-37
 
-**A base de referência de 18 chunks não pode mais ser gerada, e os manuais divergem**
+**Virada da base: trocar os 18 trechos pela base nova sem perder comparabilidade**
 
-**Identificado por:** João (B2) · **Onde:** [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md), 11/09 · **Responsável:** Trilho A (data da virada) + B2 (README raiz) · **Prioridade:** Média · **Status:** Em andamento — o README raiz foi ajustado em 11/09; falta a data da virada
+**Identificado por:** João (B2) · **Onde:** [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md), 11/09 · **Responsável:** Trilho A (passos 2 e 4) + Time (passo 3) + B2 (passos 1, 5 e 6) · **Prioridade:** Alta · **Status:** Em andamento — passo 1 concluído em 11/09; passos 2 e 3 pendentes
 
-**O que observamos.** Três instruções que não batem: o README raiz mandava
-rodar `ingest_documents` e esperar 18 trechos; o README do trilho A pede
-`--reset` na primeira migração; as evidências do trilho A dizem "não
-reindexar até a régua de recuperação existir". O algoritmo antigo de
-chunking foi substituído em 07/09, então a base de 18 chunks só existe nas
-máquinas que já a tinham — um clone limpo não consegue reproduzi-la. Com ou
-sem `--reset`, o comando gera a base nova (apaga por `source_file` e
-regrava); a opção só protege contra restos de arquivos que sumiram da pasta.
+**O que observamos.** Em 07/09 o trilho A substituiu a receita de chunking
+(fatias de 1200 caracteres → seções, frases e tokens). Os mesmos sete PDFs,
+processados hoje, produzem outros trechos, com outros identificadores e
+outros vetores — cerca de 73 no lugar de 18, mais 186 do paper novo. **A
+receita antiga não existe mais no código**, então a base de 18 trechos só
+sobrevive nas máquinas que já a tinham.
 
-**Por que importa.** As rodadas citadas R3, R3c e R6 dependem da base antiga.
-Um colega que siga o manual principal diverge sem aviso, e o fingerprint só
-denuncia na hora de um `compare`. A direção do trilho A — congelar a base
-até a régua existir e migrar com `--reset` — está certa; o que faltou foi o
-manual principal e a percepção de que a base antiga não se regenera.
+O trilho A deliberadamente não reindexou, esperando a régua de recuperação, e
+está certo nisso. Mas essa proteção é uma convenção: qualquer um que rode
+`ingest_documents` — inclusive seguindo o README raiz, que até 11/09 mandava
+fazer isso — troca a base sem aviso.
 
-**O que resolveria.** (1) O trilho A marca a data da virada. (2) Até lá, o
-README raiz avisa que o comando gera a base nova e que quem tem a antiga não
-deve reindexar — feito em 11/09. (3) Na virada, o B2 remede `naive_rag` e
-`rag_query` na base nova e cita as rodadas. (4) Opcional, barato e
-coerente com o resto do projeto: versionar um retrato da base antiga
-(~700 KB) em `data/evaluation/cited/`, como se faz com rodadas, registrando
-a versão do `chromadb`. Critério: um clone limpo consegue chegar à base que
-as evidências citam, ou as evidências dizem explicitamente que ela é
-histórica e apontam a rodada que a substituiu.
+**Por que importa.** Não é burocracia de "marcar uma data". São três
+problemas concretos se a virada acontecer em uma máquina de cada vez, sem
+ordem:
+
+1. **Máquinas diferentes gerariam bases diferentes.** A imagem Docker do B2
+   não tem `pymupdf` (o `requirements.txt` mudou em 07/09 e as imagens não
+   foram reconstruídas). Ali o ingestor cai no fallback `pypdf` com aviso, e
+   o paper sai com 200 trechos e os artefatos do [B-35](#b-35), em vez dos
+   186 limpos que o trilho A mediu. Duas bases, um só nome, e o time achando
+   que mede a mesma coisa.
+2. **O [B-36](#b-36) ainda está aberto.** Cada trecho novo carrega um rótulo
+   em inglês colado no início do texto, e esse texto é o que chega ao prompt
+   do classificador. Virar antes de corrigir significa medir um defeito
+   conhecido e remedir tudo depois.
+3. **As rodadas citadas dependem da base antiga.** `r3_marco1`,
+   `r3c_um_trecho` e `b04_confirmacao` foram medidas sobre os 18 trechos, e
+   os números com RAG do README da raiz vêm delas. Sem um caminho de volta,
+   elas deixariam de ser reproduzíveis no instante da primeira reindexação.
+
+**O que resolveria.** Esta sequência, nesta ordem. Cada passo tem um dono e
+um motivo; o que está entre parênteses é o que quebra se ele for pulado.
+
+| # | Passo | Dono | Por quê |
+|---|---|---|---|
+| 1 | ✅ **Retrato da base antiga versionado** em [`data/evaluation/cited/base-2026-09-04-18-chunks/`](../data/evaluation/cited/base-2026-09-04-18-chunks/README.md), com os vetores, os dois hashes e um script de restauração testado | B2 (feito 11/09) | É a única parte irrecuperável. Sem ela, as três rodadas citadas morrem na primeira reindexação |
+| 2 | **Corrigir o [B-36](#b-36)**: separar o que se embeda do que se exibe | Trilho A | Virar antes é medir um defeito conhecido, e depois medir tudo de novo |
+| 3 | **Torch CPU no `Dockerfile`** e reconstruir a imagem nas três máquinas | Time ([B-34](#b-34)) | Sem isso, as bases saem diferentes por máquina (problema 1). O rebuild sem o ajuste é o que levou o disco a 99% e derrubou o Docker do trilho A |
+| 4 | **`ingest_documents --reset`** em cada máquina, conferindo que o `content_sha256` do `/health/fingerprint` é o mesmo nas três | cada um | O `--reset` também limpa registros de documentos que saíram da pasta; comparar o hash é o que prova que a virada foi igual para todos |
+| 5 | **B2 remede `naive_rag` e `rag_query`** na base nova e cita as rodadas | B2 | Os números com RAG do README e das evidências passam a descrever a base nova |
+| 6 | **Registrar a virada**: README raiz e este item com "a partir de DD/MM a base é a nova, porque…"; as evidências anteriores ganham nota de validade | B2 | O que o João pediu desde o começo: virar e documentar, não virar em silêncio |
+
+**Critério.** As três máquinas mostram o mesmo `content_sha256` no
+`/health/fingerprint`; o retrato da base antiga está citado e restaurável; o
+README raiz diz a data da virada e o motivo; e existe ao menos uma rodada
+citada medindo a base nova.
+
+**O que já foi feito (11/09).** Passo 1 concluído: o retrato está versionado
+com os 18 trechos, os vetores de 384 dimensões, os dois hashes
+(`eeba9f51…` e `89a215ac…`) e a versão do ChromaDB que o gravou. O caminho de
+volta foi **testado de ponta a ponta** — apagar a coleção e restaurar
+devolveu os mesmos dois hashes, e a busca continuou trazendo o protocolo
+certo em primeiro lugar. O README raiz também deixou de prometer "18
+trechos" e passou a avisar que o comando gera a base nova.
+
+**Nota sobre a decisão anterior.** Antes desta reescrita, o item dizia
+"o trilho A marca a data da virada". A palavra "data" deu a impressão de
+cerimônia, e não é: a virada é virar e documentar, como o João apontou. O que
+existe é a ordem acima — e ela pode acontecer em poucos dias, assim que os
+passos 2 e 3 estiverem prontos.
 
 ---
 

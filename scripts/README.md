@@ -64,6 +64,18 @@ python scripts/report_evaluation.py compare data/evaluation/runs/<A> data/evalua
 python scripts/report_evaluation.py cite data/evaluation/runs/<A>
 ```
 
+### Restaurar um retrato da base vetorial
+
+`restore_base_snapshot.py` devolve ao ChromaDB uma base versionada em
+`data/evaluation/cited/`. Existe porque a receita de chunking mudou em 07/09 e
+a base de 18 trechos, que sustenta as rodadas citadas até 05/09, **não pode
+mais ser gerada a partir do código** ([B-37](../evidencias/backlog.md#b-37)).
+
+É o único script daqui que fala com o banco em vez da API, então roda dentro
+do container, com as pastas de fora montadas. O passo a passo está no
+[README do retrato](../data/evaluation/cited/base-2026-09-04-18-chunks/README.md).
+Sem `--force`, ele recusa escrever sobre uma coleção que já tem conteúdo.
+
 ### Benchmark de transcrição de voz (WER)
 
 Mede o WER do Whisper sobre fala sintética (edge-tts, vozes PT-BR), a partir
