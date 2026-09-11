@@ -76,6 +76,24 @@ do container, com as pastas de fora montadas. O passo a passo está no
 [README do retrato](../data/evaluation/cited/base-2026-09-04-18-chunks/README.md).
 Sem `--force`, ele recusa escrever sobre uma coleção que já tem conteúdo.
 
+### Régua de recuperação
+
+Mede se a **busca** traz o protocolo certo, por posição — não mede
+classificação. Construída pelo trilho B2 em nome do trilho A.
+
+| Arquivo | O que é |
+|---|---|
+| `../data/retrieval/cases.csv` | 18 relatos PT-BR com o protocolo esperado, o motivo clínico e a marca de gabarito provisório |
+| `retrieval_metrics.py` | módulo puro: Precision@1, MRR, Recall@5, silêncio por natureza de caso, concentração no 1º lugar |
+| `run_retrieval_eval.py` | chama `POST /search/` por caso e grava a rodada em `../data/retrieval/runs/` |
+
+```bash
+python scripts/run_retrieval_eval.py --name minha_rodada --expect-base-hash <hash>
+```
+
+Leva segundos: a busca não chama o modelo de linguagem. Detalhe e como ler
+os números em [`data/retrieval/README.md`](../data/retrieval/README.md).
+
 ### Benchmark de transcrição de voz (WER)
 
 Mede o WER do Whisper sobre fala sintética (edge-tts, vozes PT-BR), a partir
@@ -101,7 +119,7 @@ python scripts/run_voice_benchmark.py
 python -m pytest scripts/tests -q
 ```
 
-57 testes, sem API nem modelo — o HTTP fica atrás de um dublê. Dois deles
+92 testes, sem API nem modelo — o HTTP fica atrás de um dublê. Dois deles
 sustentam a comparabilidade com a medição histórica de 04/05: o **teste
 dourado** (as 98 respostas daquele dia reproduzem exatamente os números do
 diário) e a **regressão dos relatos** (o texto enviado ao modelo é idêntico

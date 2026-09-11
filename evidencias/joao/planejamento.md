@@ -48,35 +48,38 @@ mecanismo identificado.
 | 5a | Endurecimento do instrumento | ✅ 11/09 | Revisão das entregas dos outros trilhos; o runner recusa base errada ou vazia, o retrato identifica conteúdo e embedder, o `compare` avisa mudança de código. **Nenhuma métrica mudou** |
 | 5 | **Chain-of-Thought** | ✅ 11/09, **resultado negativo** | Implementado e medido em cinco braços. Falsos não urgentes de 8 para 1, mas falsos urgentes de 4 para 16 e recall da classe leve a **zero**. Balanceada de 0,856 para 0,408. Não entra no sistema; fica desligado e medido para a ablação |
 | 5b | Corte de relevância | ✅ 12/09 | O sistema deixou de injetar trecho irrelevante. Com a base atual a busca fica silenciosa em 98 de 98 linhas, e o resultado é idêntico ao braço sem RAG. Preset `naive_rag_sem_corte` preserva o braço antigo para a ablação |
-| 5c | **Régua de recuperação** | 🔜 próxima, **em nome do trilho A** | Instrumento que mede se a busca traz o protocolo certo em primeiro. Gargalo de dois trilhos, e é ela que dirá o limiar certo |
+| 5c | **Régua de recuperação** | ✅ 12/09, **em nome do trilho A** | Instrumento pronto e linha de base congelada. Dois achados: o protocolo certo está **sempre** entre os cinco devolvidos (o problema é ordenação, não cobertura), e existe um **protocolo-ímã** — "trauma" em 1º lugar em 9 de 18 casos. Gabarito provisório, aguardando validação ([B-48](../backlog.md#b-48)) |
 | 6 | **Entrega a decidir** | ⏸️ aguardando as três correções ([adendo da rodada 9](2026-09-12-09-autopsia-do-cot.md#adendo-de-1209--as-três-correções-em-linguagem-simples-e-uma-hipótese-em-espera)) | O Self-Refine como planejado ficou enfraquecido: o que o modelo escreve sobre a própria decisão é racionalização. Uma camada de decisão determinística foi avistada e está **em stand-by**, por decisão do João — volta só se as correções não bastarem ou como braço a mais da ablação. Qualquer alternativa depende do corte, da base e da prova para ser **avaliada** sem circularidade |
 | 7 | Driver de ablação | ⏳ | Cruza as chaves de todos os trilhos e gera as tabelas do artigo |
 
-## Próxima entrega: régua de recuperação, em nome do trilho A
+## Próxima entrega: a fila não mudou, e duas partes dela não são minhas
 
-A primeira das três correções está feita ([rodada 10](2026-09-12-10-corte-de-relevancia.md)).
-A segunda e a terceira — base com cobertura e prova nova — dependem da
-especialista e do trilho A. Mas há uma peça que destrava as duas e que
-ninguém começou: **a régua de recuperação**.
+A régua de recuperação está feita
+([rodada 11](2026-09-12-11-regua-de-recuperacao.md)) e o corte de
+relevância também ([rodada 10](2026-09-12-10-corte-de-relevancia.md)). As
+duas eram pré-requisito de medir qualquer coisa com RAG, e as duas produziram
+achados que mudam prioridades de outros trilhos:
 
-**Por que assumi.** Ela é o gargalo declarado de dois trilhos: o A não
-amplia a base sem ela, o B1 não mede reescrita, multi-query e HyDE sem ela
-([B-09](../backlog.md#b-09)). E é ela que vai dizer o limiar de relevância
-correto, que a rodada 10 deixou provisório. O trilho A planejou a régua como
-próxima entrega e não a começou; o João decidiu assumir a construção, com
-registro explícito de que é trabalho feito em nome do trilho A e que o
-gabarito precisa da validação dele.
+- **O problema da busca é ordenação, não cobertura.** O protocolo certo está
+  entre os cinco devolvidos em 9 de 9 casos; só não vem em primeiro em 4
+  deles. Isso é do trilho A, e reforça o re-ranking.
+- **Existe um protocolo-ímã**: "trauma" aparece em 1º lugar em metade dos
+  casos, inclusive para convulsão e picada de abelha
+  ([B-02](../backlog.md#b-02)).
+- **Quatro protocolos faltam na base**, com nome e quadro clínico
+  ([B-03](../backlog.md#b-03)).
 
-**O que já se sabe, de um ensaio sem código.** Rodando os 18 relatos PT-BR
-do benchmark de voz contra a busca: o protocolo certo vem em primeiro em
-**5 de 11** casos, e **"Trauma, quedas e hemorragias" aparece em primeiro em
-8 de 18** — inclusive para convulsão, picada de abelha e gato espirrando.
-Existe um protocolo-ímã na base, e isso é o [B-02](../backlog.md#b-02) com
-número pela primeira vez.
+**O que falta das três correções**, e nenhuma é minha sozinho: a base com
+cobertura ([B-03](../backlog.md#b-03)) e a prova nova
+([B-05](../backlog.md#b-05), [B-45](../backlog.md#b-45)) dependem da
+especialista. O gabarito da régua depende de validação clínica
+([B-48](../backlog.md#b-48)).
 
-**O que a rodada acrescenta ao ensaio:** o instrumento versionado, o gabarito
-com o motivo de cada "nenhum" (caso leve × sem cobertura na base), e a
-reprodutibilidade para medir antes e depois da virada sobre os mesmos casos.
+**O que anda do meu lado sem depender de ninguém:** o teste limpo da ordem
+([B-46](../backlog.md#b-46)), a limpeza do retrato do sistema
+([B-47](../backlog.md#b-47)) e o driver de ablação — a entrega 7, que cruza
+as chaves de todos os trilhos e gera as tabelas do artigo, e que não depende
+do resultado de nenhum braço.
 
 ## Marcos
 
@@ -114,6 +117,8 @@ dados, o que resolveria e o status — mora no
 | 10 | **A base de 18 trechos não pode mais ser gerada.** O algoritmo de chunking mudou em 07/09 e os manuais divergiam | Trilho A (data da virada) | Rodada 7 (11/09) | As rodadas citadas R3, R3c e R6 dependem dela. Um clone limpo não a reproduz; na virada, os braços com RAG precisam ser remedidos | [B-37](../backlog.md#b-37) |
 | 11 | **A base não cobre os assuntos do conjunto de avaliação, e nenhum protocolo fala de quadros leves.** O desenho de Chain-of-Thought do artigo pressupõe evidência recuperada para o modelo não julgar sozinho | Trilho A + especialista | Rodada 9 (12/09) | O CoT como o artigo o desenhou **nunca foi testado**: o passo "correlacionar com as evidências recuperadas" não teve evidência | [B-03](../backlog.md#b-03) |
 | 13 | **Os relatos de avaliação não têm gravidade nem duração.** São listas de sintomas | Time + especialista | Rodada 9 (12/09) | É a causa raiz do fracasso do CoT: a rubrica por sinal pergunta o que o dado não permite responder. Em 21 das 23 abstenções o modelo contrariou a regra para seguir "sem informação suficiente, responda INCERTO" | [B-05](../backlog.md#b-05) |
+| 14 | **O gabarito da régua de recuperação é meu, não do time.** Qual protocolo é o certo para cada relato foi marcado pelo B2, e é decisão clínica | Trilho A + especialista | Rodada 11 (12/09) | Enquanto não for validado, Precision@1 e MRR medem o que **eu** acho que é o certo. Errei duas marcações em dezoito lendo com atenção | [B-48](../backlog.md#b-48) |
+| 15 | **A régua de recuperação mede pouco com 7 documentos e 18 casos.** Recall@5 = 1,000 é quase geométrico com esse acervo, e Precision@1 se move 11 pontos com um caso | Trilho A (base) + B2 (casos) | Rodada 11 (12/09) | Nenhum número da régua sustenta conclusão isolada; ela serve hoje para **comparação pareada** entre versões do sistema, não para nota absoluta. O risco é alguém ler 1,000 como "recuperação resolvida" e desprioritizar a base | [B-49](../backlog.md#b-49) |
 
 ### Resolvidos
 

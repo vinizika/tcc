@@ -95,6 +95,8 @@ aqui.
 | [B-45](#b-45) | Sem conjunto de desenvolvimento: ajuste de prompt no conjunto de teste | Trilho B2 | Alta | Aberto |
 | [B-46](#b-46) | Teste limpo do efeito da ordem dos campos | Trilho B2 | Baixa | Aberto |
 | [B-47](#b-47) | Retrato do sistema inclui estado de momento e gera aviso falso | Trilho B2 | Baixa | Aberto |
+| [B-48](#b-48) | Gabarito da régua de recuperação precisa de validação clínica | Trilho A + especialista | Alta | Aberto |
+| [B-49](#b-49) | Régua de recuperação mede pouco enquanto a base e o conjunto forem pequenos | Trilho A + B2 | Média | Aberto |
 
 ---
 
@@ -698,6 +700,57 @@ que diferem **só** no corte: balanceada 0,893 com corte contra 0,775 sem, e
 ao RAG são o custo de **injetar três trechos irrelevantes**, não de usar
 conhecimento recuperado. O item continua aberto porque a base ainda não
 cobre os assuntos do conjunto ([B-03](#b-03)).
+
+
+**Medido em 12/09, e o diagnóstico mudou de natureza.** A [rodada 11](joao/2026-09-12-11-regua-de-recuperacao.md)
+construiu a régua de recuperação e mediu os 18 relatos:
+
+| | |
+|---|---|
+| Protocolo certo em 1º lugar | 5 de 9 |
+| Protocolo certo **entre os cinco** devolvidos | **9 de 9** |
+| "Trauma, quedas e hemorragias" em 1º lugar | **9 de 18** |
+
+Recall@5 em 1,000 significa que o índice **tem** o documento certo e **o
+encontra** — só não o põe em primeiro. O problema não é cobertura nem
+chunking: é **ordenação**. Isso reforça o re-ranking e enfraquece a hipótese
+de que mais documentos resolveriam sozinhos.
+
+E existe um **protocolo-ímã**: "trauma" aparece em primeiro em metade dos
+casos, inclusive para convulsão, picada de abelha e cão urinando gotinhas. A
+hipótese é que o texto dele cubra sinais genéricos (dor, sangramento,
+prostração, dificuldade de locomoção) presentes em quase todo relato — mas
+confirmar exige olhar os trechos, e isso é do trilho A.
+
+Um segundo padrão: a busca casa com o **sintoma literal**, não com a causa.
+"Comeu chocolate… e está vomitando" traz o protocolo de vômito em 1º e o de
+chocolate em 5º. Para triagem é o inverso do desejado.
+
+
+**Desbloqueado em 12/09.** A régua de recuperação existe ([rodada 11](joao/2026-09-12-11-regua-de-recuperacao.md)):
+`scripts/run_retrieval_eval.py`, com Precision@1, MRR, Recall@5 e a linha de
+base já congelada. É o instrumento que faltava para medir reescrita,
+multi-query e HyDE ligados e desligados. O trilho B1 pode usá-la assim que
+quiser — a régua chama `POST /search/`, que é busca pura; medir as técnicas
+de consulta exige uma variante que passe pelo `chat_pipeline` com
+`include_debug`, ou uma opção nova na régua para aceitar as consultas já
+transformadas.
+
+
+**Atualização de 12/09 — quatro protocolos que faltam, com nome.** A régua
+de recuperação ([rodada 11](joao/2026-09-12-11-regua-de-recuperacao.md)) tem quatro relatos que são emergência e
+para os quais **nenhum protocolo da base trata do assunto**:
+
+| Quadro | Caso |
+|---|---|
+| Dilatação-torção gástrica | cão grande, barriga inchada e dura, vômito improdutivo |
+| Hipoglicemia e hipotermia neonatal | filhote de dois meses, molinho, não mama, boca fria |
+| Obstrução uretral em **cães** | cão macho urinando gotinhas com dor (o protocolo da base é de **gatos**) |
+| Emergência neurológica | cadela idosa sem levantar as pernas de trás, ofegante |
+
+Nos quatro, a busca oferece o protocolo errado com convicção parecida à dos
+casos que acerta. São quadros clássicos de pronto-socorro veterinário, e
+viram a lista de compras da curadoria.
 
 ---
 
@@ -1486,6 +1539,92 @@ chaves presentes nos dois manifestos.
 gravado, porque é útil para ler latência, mas sai da comparação. Critério:
 duas rodadas seguidas na mesma máquina, sem nenhuma mudança, não geram aviso
 de fingerprint.
+
+---
+
+### B-48
+
+**O gabarito da régua de recuperação é provisório e precisa de validação**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 11](joao/2026-09-12-11-regua-de-recuperacao.md), 12/09 · **Responsável:** Trilho A + especialista · **Prioridade:** Alta · **Status:** Aberto
+
+**O que observamos.** A régua de recuperação foi construída pelo trilho B2
+em nome do trilho A, porque estava bloqueando dois trilhos. O instrumento
+está pronto e a linha de base medida, mas **quem decide qual protocolo é o
+certo para cada relato é quem cuida da base**, com a especialista. O
+`cases.csv` traz a coluna `marked_by` dizendo "B2 — provisório, aguardando
+validação do trilho A" e uma coluna `note` com o motivo clínico de cada
+marcação, para o trilho A discordar de uma linha sem refazer o resto.
+
+**Por que importa.** Enquanto o gabarito não for validado, os números são do
+B2, não do time — e a régua mede o que **eu** acho que é o protocolo certo.
+Errei duas marcações em dezoito lendo com atenção (b12 e b15, no primeiro
+rascunho), o que sugere que uma leitura clínica vai achar mais.
+
+**O que resolveria.** O trilho A revisa as 18 linhas com a especialista, com
+atenção a três pontos: (1) os quatro casos marcados como "sem cobertura" —
+b12 dilatação-torção gástrica, b14 neonato, b15 obstrução uretral em **cão**
+(o protocolo da base é de gatos) e b17 emergência neurológica; (2) b16,
+picada de abelha com edema de face, apontado para dificuldade respiratória
+por risco de via aérea e **não** para trauma; (3) b10, "manca de leve depois
+de correr", marcado como caso leve. Critério: `marked_by` passa a dizer
+"validado pelo trilho A em DD/MM", e a linha de base é remedida se alguma
+marcação mudar.
+
+**Efeito colateral útil:** os quatro casos sem cobertura são a lista dos
+protocolos que faltam na base, e alimentam direto a curadoria
+([B-03](#b-03)).
+
+---
+
+### B-49
+
+**A régua de recuperação mede pouco enquanto a base e o conjunto de casos forem pequenos**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 11](joao/2026-09-12-11-regua-de-recuperacao.md), 12/09 · **Responsável:** Trilho A + B2 · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** A régua funciona e já produziu dois achados, mas três
+dos seus números ainda não sustentam conclusão forte, e o motivo é o mesmo
+nos três: **a base tem 7 documentos e o conjunto tem 18 casos, dos quais só
+9 entram na conta principal**.
+
+| Número | Por que ainda mede pouco |
+|---|---|
+| **Recall@5 = 1,000** | A busca devolve 5 trechos, em média 4,4 documentos distintos, de uma base de 7. "O certo está entre os cinco" é quase geométrico: escolhendo 5 dos 7 ao acaso o recall já seria ≈ 0,71 |
+| **Precision@1 = 0,556** | São 5 acertos em 9 casos. Um caso mudando move o número em 11 pontos — diferenças menores que isso entre duas rodadas não significam nada |
+| **Silêncio nos leves = 5/5** | Nenhum caso passa do corte de 0,70, então a busca "acerta" os leves por estar sempre quieta. A taxa não mede discernimento |
+
+**Por que importa.** O risco não é o instrumento estar errado — é alguém
+ler 1,000 como "a recuperação está resolvida" e desprioritizar a ampliação
+da base ([B-03](#b-03)) justamente por causa do número que a base pequena
+produziu. O relatório da rodada já emite as duas ressalvas sozinho, mas a
+ressalva vive no relatório, não em quem cita o número.
+
+**O que resolveria.** Não é conserto de código; é dado. Com a base ampliada
+e o conjunto maior, cada um destes destrava sozinho:
+
+1. **Base acima de ~20 documentos** ([B-03](#b-03)): Recall@5 volta a
+   informar, porque 5 de 20 deixa de ser quase o acervo inteiro. Só então
+   vale comparar o recall entre duas receitas de chunking.
+2. **Mais casos com protocolo** — de 9 para 25 ou 30: Precision@1 passa a
+   distinguir diferenças de 5 pontos, e aí faz sentido medir re-ranking
+   (entrega 6 do trilho A) por ele. Os relatos podem vir do mesmo lugar que
+   os atuais, escritos em português de tutor.
+3. **Algum caso passando do corte**: as taxas de silêncio passam a medir
+   discernimento, e a régua ganha a capacidade de escolher o limiar, que é a
+   parte do [B-11](#b-11) que ficou com o trilho A.
+4. **Casos de espécie e de idade** (hoje só b15 toca nisso): mede se a busca
+   distingue cão de gato, filhote de idoso — coisa que ela hoje
+   demonstravelmente não faz.
+
+Critério de fechamento: uma rodada da régua sobre a base ampliada em que
+`share_cases_above_threshold` seja maior que zero e `n_com_protocolo` seja
+pelo menos 25.
+
+**Enquanto isso**, a régua já serve para o que foi construída: comparar
+**duas versões do mesmo sistema sobre os mesmos casos** — antes e depois da
+virada da base, com e sem re-ranking, com e sem reescrita de consulta. Essa
+comparação pareada não depende de a base ser grande.
 
 ---
 

@@ -1,0 +1,32 @@
+{
+  "n_casos": 18,
+  "n_com_protocolo": 9,
+  "n_caso_leve": 5,
+  "n_sem_cobertura": 4,
+  "limiar": 0.7,
+  "precision_at_1": 0.5556,
+  "mrr": 0.6981,
+  "recall_at_5": 1.0,
+  "silence_rate_on_mild": 1.0,
+  "silence_rate_on_uncovered": 1.0,
+  "share_cases_above_threshold": 0.0,
+  "top1_concentration": {
+    "topic": "trauma_and_bleeding",
+    "cases": 9,
+    "share": 0.5,
+    "distribution": {
+      "trauma_and_bleeding": 9,
+      "urethral_obstruction": 4,
+      "vomiting_and_diarrhea": 3,
+      "respiratory_distress": 1,
+      "allium_toxicosis": 1
+    }
+  },
+  "n_documentos_vistos": 7,
+  "baselines": {
+    "documento_ao_acaso": 0.1429,
+    "sempre_o_mesmo_documento": 0.2222,
+    "documentos_distintos_por_caso": 4.44
+  },
+  "mean_max_score": 0.5036
+}

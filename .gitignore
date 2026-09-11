@@ -37,3 +37,8 @@ backend/data/chroma_backup*/
 # apenas as promovidas para cited/, que sustentam um numero escrito em
 # alguma evidencia.
 data/evaluation/runs/
+
+# Rodadas da regua de recuperacao. Mesma regra: entram no repositorio
+# apenas as citadas, promovidas para data/retrieval/cited/.
+data/retrieval/runs/
+

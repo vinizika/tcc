@@ -26,6 +26,7 @@ Self-Refine, e a régua de avaliação do sistema (runner de métricas).
 | 7 | 11/09 | [Chain-of-Thought](2026-09-11-08-chain-of-thought.md) | **Resultado negativo.** Falsos não urgentes de 8 para 1, mas a classe leve foi a **zero** e a balanceada caiu de 0,856 para 0,408. O controle mostrou que escrever o raciocínio **depois** é melhor que antes — a hipótese da ordem está refutada |
 | 8 | 12/09 | [Autópsia do Chain-of-Thought](2026-09-12-09-autopsia-do-cot.md) | Análise, sem código. A causa não era o modelo: **a rubrica pergunta o que o dado não tem**. O raciocínio do modelo é racionalização, não julgamento. A linha de base é atalho lexical, e os braços com RAG mediram **ruído** — nenhum trecho passou do limiar em 98 linhas |
 | 9 | 12/09 | [Corte de relevância](2026-09-12-10-corte-de-relevancia.md) | O sistema para de injetar trecho irrelevante. Com a base atual a busca fica **silenciosa em 98 de 98** linhas, e o resultado é **idêntico** à linha de base de 04/09. O par com e sem corte isola o custo do ruído: **11,8 pontos e 22 falsos não urgentes** |
+| 10 | 12/09 | [Régua de recuperação](2026-09-12-11-regua-de-recuperacao.md) | Construída **em nome do trilho A**. O protocolo certo está sempre entre os cinco devolvidos, mas vem em 1º em só 5 de 9: o problema é **ordenação**. E existe um **protocolo-ímã** — "trauma" em 1º em 9 de 18 casos |
 
 ## Estado atual
 
