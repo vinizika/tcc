@@ -97,3 +97,29 @@ def test_falha_de_formato_e_dita_ao_tutor():
 
     assert "Não foi possível estruturar" in texto
     assert "não substitui a avaliação" in texto
+
+
+def test_raciocinio_nao_e_mostrado_ao_tutor():
+    """
+    O raciocínio é pensamento interno de um modelo de 3 bilhões de
+    parâmetros, com especulação clínica ("pode ser pancreatite ou câncer").
+    Ele serve para auditar a decisão e alimentar a avaliação, não para o
+    tutor ler enquanto decide se leva o animal ao veterinário.
+    """
+
+    triagem = TriageResult(
+        classificacao="EMERGENCIA",
+        justificativa="sinais compatíveis com risco",
+        recomendacao="procure atendimento agora",
+        raciocinio=(
+            "vômito — risco à vida? sim. "
+            "Conclusão: EMERGENCIA por suspeita de obstrução."
+        ),
+    )
+
+    texto = render(triagem)
+
+    assert "risco à vida?" not in texto
+    assert "Conclusão" not in texto
+    assert "obstrução" not in texto
+    assert "procure atendimento agora" in texto

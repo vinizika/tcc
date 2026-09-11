@@ -223,6 +223,15 @@ class FingerprintService:
                 "v1_grounded_sem_contexto_sha256": _sha256(
                     triage.SISTEMA_ANCORADO_SEM_CONTEXTO
                 ),
+                "v1_grounded_cot_sha256": _sha256(
+                    triage.SISTEMA_ANCORADO_COT
+                ),
+                "v1_grounded_cot_sem_contexto_sha256": _sha256(
+                    triage.SISTEMA_ANCORADO_COT_SEM_CONTEXTO
+                ),
+                "v1_grounded_cot_posthoc_sha256": _sha256(
+                    triage.SISTEMA_ANCORADO_COT_POSTHOC
+                ),
             }
 
         except Exception as erro:

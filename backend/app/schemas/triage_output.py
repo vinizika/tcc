@@ -155,6 +155,135 @@ class TriageLLMOutputSemContexto(BaseModel):
     )(normalizar_lista_de_texto)
 
 
+# ----------------------------------------------------------------------
+# Chain-of-Thought
+# ----------------------------------------------------------------------
+#
+# Quatro modelos, e a diferença entre eles é só a **posição** do campo de
+# raciocínio e a presença de `fontes`. A posição é o experimento: o
+# conversor de gramática do Ollama emite os campos na ordem em que foram
+# declarados, então declarar `raciocinio` primeiro obriga o modelo a
+# escrever a análise **antes** da conclusão. Declarando por último, a
+# conclusão sai primeiro e a análise vira racionalização — é o braço de
+# controle, que separa "a ordem importa" de "a rubrica importa".
+#
+# São classes independentes, e não subclasses de `TriageLLMOutput`: herdar
+# colocaria o campo novo no fim, que é exatamente o que não se quer no
+# braço principal.
+#
+# `raciocinio` tem teto de caracteres como rede de segurança. A gramática
+# corta no limite, então o modelo ainda consegue emitir a classificação;
+# sem teto, uma repetição degenerada consumiria todo o orçamento de tokens
+# e a resposta sairia sem os campos obrigatórios.
+
+RACIOCINIO_MAX_CHARS = 1500
+
+
+class TriageLLMOutputCoT(BaseModel):
+    """
+    Saída com raciocínio **antes** da conclusão, com trechos no prompt.
+    """
+
+    raciocinio: str = Field(max_length=RACIOCINIO_MAX_CHARS)
+    classificacao: Classificacao
+    justificativa: str
+    sinais_de_alerta: list[str] = Field(max_length=8)
+    recomendacao: str
+    fontes: list[int] = Field(max_length=5)
+
+    _normalizar_classificacao = field_validator(
+        "classificacao",
+        mode="before",
+    )(normalizar_classificacao)
+
+    _normalizar_sinais = field_validator(
+        "sinais_de_alerta",
+        mode="before",
+    )(normalizar_lista_de_texto)
+
+    _normalizar_fontes = field_validator(
+        "fontes",
+        mode="before",
+    )(normalizar_indices)
+
+
+class TriageLLMOutputCoTSemContexto(BaseModel):
+    """
+    Saída com raciocínio antes da conclusão, sem trechos no prompt.
+    """
+
+    raciocinio: str = Field(max_length=RACIOCINIO_MAX_CHARS)
+    classificacao: Classificacao
+    justificativa: str
+    sinais_de_alerta: list[str] = Field(max_length=8)
+    recomendacao: str
+
+    _normalizar_classificacao = field_validator(
+        "classificacao",
+        mode="before",
+    )(normalizar_classificacao)
+
+    _normalizar_sinais = field_validator(
+        "sinais_de_alerta",
+        mode="before",
+    )(normalizar_lista_de_texto)
+
+
+class TriageLLMOutputCoTPostHoc(BaseModel):
+    """
+    Braço de controle: raciocínio **depois** da conclusão, com trechos.
+
+    Mesmo prompt e mesmos campos do braço principal; só a ordem muda. Se
+    este braço empatar com aquele, o ganho veio da rubrica do checklist, e
+    não de raciocinar antes — e a afirmação defensável no texto passa a ser
+    "checklist estruturado", não "chain-of-thought".
+    """
+
+    classificacao: Classificacao
+    justificativa: str
+    sinais_de_alerta: list[str] = Field(max_length=8)
+    recomendacao: str
+    fontes: list[int] = Field(max_length=5)
+    raciocinio: str = Field(max_length=RACIOCINIO_MAX_CHARS)
+
+    _normalizar_classificacao = field_validator(
+        "classificacao",
+        mode="before",
+    )(normalizar_classificacao)
+
+    _normalizar_sinais = field_validator(
+        "sinais_de_alerta",
+        mode="before",
+    )(normalizar_lista_de_texto)
+
+    _normalizar_fontes = field_validator(
+        "fontes",
+        mode="before",
+    )(normalizar_indices)
+
+
+class TriageLLMOutputCoTPostHocSemContexto(BaseModel):
+    """
+    Braço de controle sem trechos no prompt.
+    """
+
+    classificacao: Classificacao
+    justificativa: str
+    sinais_de_alerta: list[str] = Field(max_length=8)
+    recomendacao: str
+    raciocinio: str = Field(max_length=RACIOCINIO_MAX_CHARS)
+
+    _normalizar_classificacao = field_validator(
+        "classificacao",
+        mode="before",
+    )(normalizar_classificacao)
+
+    _normalizar_sinais = field_validator(
+        "sinais_de_alerta",
+        mode="before",
+    )(normalizar_lista_de_texto)
+
+
 class LegacyTriageLLMOutput(BaseModel):
     """
     Saída do modo legado, usado para reproduzir a medição de 04/05.

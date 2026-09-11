@@ -61,6 +61,29 @@ def test_hash_do_prompt_muda_quando_o_texto_muda(monkeypatch):
     assert antes != depois
 
 
+def test_retrato_cobre_os_prompts_de_cot(monkeypatch):
+    """
+    O Chain-of-Thought é um prompt diferente, e o hash é o que permite
+    descobrir, meses depois, que duas rodadas usaram textos diferentes.
+    """
+
+    prompts = FingerprintService._prompts()
+
+    for chave in (
+        "v1_grounded_cot_sha256",
+        "v1_grounded_cot_sem_contexto_sha256",
+        "v1_grounded_cot_posthoc_sha256",
+    ):
+        assert prompts[chave]
+
+    # O braço de controle muda só a posição de um campo. Se os dois hashes
+    # fossem iguais, o retrato não distinguiria os dois experimentos.
+    assert (
+        prompts["v1_grounded_cot_sha256"]
+        != prompts["v1_grounded_cot_posthoc_sha256"]
+    )
+
+
 def test_ollama_indisponivel_nao_derruba_a_resposta(cliente, monkeypatch):
     """
     O retrato é informativo: se uma parte não responde, ela vira nulo com o

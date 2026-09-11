@@ -16,6 +16,12 @@ PromptVersion = Literal["v0_legacy", "v1_grounded"]
 
 StructuredOutputMode = Literal["schema", "json"]
 
+# Onde o campo de raciocínio é declarado no formato de saída. O conversor de
+# gramática do Ollama emite os campos na ordem declarada, então isto decide
+# se o modelo escreve a análise antes ou depois da conclusão. "last" é o
+# braço de controle: separa o efeito da ordem do efeito da rubrica.
+CoTPosition = Literal["first", "last"]
+
 
 class PipelineOptions(BaseModel):
     """
@@ -42,6 +48,7 @@ class PipelineOptions(BaseModel):
     context_min_score: Optional[float] = Field(default=None, ge=0.0, le=1.0)
     rewritten_hint_enabled: Optional[bool] = None
     cot_enabled: Optional[bool] = None
+    cot_position: Optional[CoTPosition] = None
     self_refine_enabled: Optional[bool] = None
 
     # Geração
@@ -69,6 +76,7 @@ class EffectiveConfig(BaseModel):
     context_min_score: float
     rewritten_hint_enabled: bool
     cot_enabled: bool
+    cot_position: CoTPosition
     self_refine_enabled: bool
 
     prompt_version: PromptVersion

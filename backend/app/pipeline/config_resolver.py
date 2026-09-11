@@ -16,7 +16,6 @@ from app.schemas.triage import EffectiveConfig, PipelineOptions
 # Pedir uma delas é erro, não silêncio: uma etapa "ligada" que não roda
 # produziria uma linha de ablação sem significado.
 NOT_IMPLEMENTED_OPTIONS = {
-    "cot_enabled": "Chain-of-Thought ainda não foi implementado.",
     "self_refine_enabled": "Self-Refine ainda não foi implementado.",
 }
 
@@ -69,6 +68,25 @@ def resolve(
         structured_output_mode = "json"
         num_predict = -1
 
+    cot_enabled = _pick(options.cot_enabled, settings.COT_ENABLED)
+    cot_position = _pick(options.cot_position, "first")
+
+    # O modo legado reproduz a medição de 04/05, feita sem raciocínio
+    # nenhum. Fica depois do bloco acima de propósito: pedir as duas coisas
+    # juntas é contradição, e quem manda é o braço histórico.
+    if prompt_version == "v0_legacy":
+        cot_enabled = False
+
+    # Sem a gramática a ordem dos campos não é garantida — e a ordem é o
+    # experimento. Um braço assim não mediria nada, então falha alto em vez
+    # de virar uma linha de ablação sem significado.
+    if cot_enabled and structured_output_mode == "json":
+        raise UnsupportedOptionException(
+            "Chain-of-Thought exige structured_output_mode='schema': é a "
+            "restrição de formato que garante o raciocínio antes da "
+            "classificação."
+        )
+
     query_rewriting_enabled = _pick(
         options.query_rewriting_enabled,
         settings.QUERY_REWRITING_ENABLED,
@@ -108,7 +126,8 @@ def resolve(
             options.rewritten_hint_enabled,
             settings.REWRITTEN_HINT_ENABLED,
         ),
-        cot_enabled=False,
+        cot_enabled=cot_enabled,
+        cot_position=cot_position,
         self_refine_enabled=False,
         prompt_version=prompt_version,
         structured_output_mode=structured_output_mode,

@@ -93,21 +93,14 @@ def test_modo_legado_ignora_pedido_de_busca(settings):
     assert config.retrieval_enabled is False
 
 
-@pytest.mark.parametrize(
-    "campo",
-    ["cot_enabled", "self_refine_enabled"],
-)
-def test_etapa_nao_implementada_falha_em_vez_de_ser_ignorada(
-    settings,
-    campo,
-):
+def test_etapa_nao_implementada_falha_em_vez_de_ser_ignorada(settings):
     """
     Aceitar uma etapa que não existe produziria uma linha de ablação
     idêntica à do braço sem ela, sugerindo que a técnica não teve efeito.
     """
 
     with pytest.raises(UnsupportedOptionException) as erro:
-        resolve(settings, PipelineOptions(**{campo: True}))
+        resolve(settings, PipelineOptions(self_refine_enabled=True))
 
     assert erro.value.status_code == 400
 
@@ -121,6 +114,79 @@ def test_etapa_nao_implementada_desligada_nao_incomoda(settings):
 
     assert config.cot_enabled is False
     assert config.self_refine_enabled is False
+
+
+# ----------------------------------------------------------------------
+# Chain-of-Thought
+# ----------------------------------------------------------------------
+
+
+def test_cot_desligado_por_padrao(settings):
+    """
+    O braço com raciocínio é opcional: ligá-lo sem querer mudaria o que
+    todas as rodadas anteriores mediram.
+    """
+
+    config = resolve(settings, None)
+
+    assert config.cot_enabled is False
+    assert config.cot_position == "first"
+
+
+def test_cot_ligado_pela_requisicao(settings):
+
+    config = resolve(settings, PipelineOptions(cot_enabled=True))
+
+    assert config.cot_enabled is True
+    assert config.cot_position == "first"
+
+
+def test_posicao_do_raciocinio_pode_ser_invertida(settings):
+    """
+    O braço de controle escreve o raciocínio depois da conclusão. É o que
+    separa "a ordem importa" de "a rubrica importa".
+    """
+
+    config = resolve(
+        settings,
+        PipelineOptions(cot_enabled=True, cot_position="last"),
+    )
+
+    assert config.cot_position == "last"
+
+
+def test_modo_legado_ignora_o_cot(settings):
+    """
+    O braço v0_legacy reproduz a medição de 04/05, feita sem raciocínio
+    nenhum. Pedir as duas coisas juntas é contradição, e quem manda é o
+    braço histórico.
+    """
+
+    config = resolve(
+        settings,
+        PipelineOptions(prompt_version="v0_legacy", cot_enabled=True),
+    )
+
+    assert config.cot_enabled is False
+
+
+def test_cot_sem_gramatica_e_recusado(settings):
+    """
+    Em modo json puro a ordem dos campos não é garantida — e a ordem é o
+    experimento. Um braço assim não mediria nada.
+    """
+
+    with pytest.raises(UnsupportedOptionException) as erro:
+        resolve(
+            settings,
+            PipelineOptions(
+                cot_enabled=True,
+                structured_output_mode="json",
+            ),
+        )
+
+    assert erro.value.status_code == 400
+    assert "schema" in str(erro.value)
 
 
 def test_nome_de_opcao_desconhecido_e_rejeitado():

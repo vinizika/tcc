@@ -133,6 +133,165 @@ atendimento na dúvida.
 Responda em português."""
 
 
+# ----------------------------------------------------------------------
+# Chain-of-Thought
+# ----------------------------------------------------------------------
+#
+# O checklist é estruturado, e não "analise passo a passo", por dois
+# motivos medidos. Primeiro, num teste direto com este modelo o raciocínio
+# livre chegou a escrever "condição médica grave, risco de choque" e ainda
+# assim classificar como NAO_EMERGENCIA — pensar antes, sozinho, não aplica
+# a regra. Segundo, o erro que se quer atacar tem forma conhecida: nas oito
+# linhas erradas da linha de base, o modelo listou o sinal grave e depois
+# rebaixou o caso por "faltam informações sobre gravidade ou duração".
+# Tratar falta de informação como prova de leveza é exatamente o que o
+# passo 1 e a regra final proíbem.
+#
+# O limite é estrutural (uma linha por sinal), e não "até N frases": um
+# modelo de 3 bilhões de parâmetros não conta frases de forma confiável.
+
+PASSOS_COT_SEM_CONTEXTO = """\
+Antes de classificar, preencha o campo raciocinio assim:
+
+1. Uma linha para cada sinal citado no relato, no formato \
+"sinal — risco à vida? sim / não / não sei". Use "não sei" quando o relato \
+não trouxer informação suficiente sobre aquele sinal; "não sei" nunca \
+significa "não".
+2. Uma linha final começando por "Conclusão:", aplicando esta regra: algum \
+sinal com "sim" leva a EMERGENCIA; nenhum "sim" e algum "não sei" leva a \
+INCERTO; todos "não" levam a NAO_EMERGENCIA.
+
+O campo raciocinio contém apenas essas linhas. Não repita dentro dele os \
+outros campos: cada um é preenchido no seu próprio lugar.
+
+A classificação tem de ser a que a regra produziu, mesmo que pareça \
+exagerada."""
+
+
+PASSOS_COT = """\
+Antes de classificar, preencha o campo raciocinio assim:
+
+1. Uma linha para cada sinal citado no relato, no formato \
+"sinal — risco à vida? sim / não / não sei". Use "não sei" quando o relato \
+não trouxer informação suficiente sobre aquele sinal; "não sei" nunca \
+significa "não".
+2. Uma linha para cada trecho técnico numerado, no formato \
+"[n] — descreve o caso deste relato? sim / não". Um trecho sobre outro \
+problema recebe "não" e é ignorado daí em diante: ele não torna o caso \
+leve nem grave.
+3. Uma linha final começando por "Conclusão:", aplicando esta regra: algum \
+sinal com "sim" leva a EMERGENCIA; nenhum "sim" e algum "não sei" leva a \
+INCERTO; todos "não" levam a NAO_EMERGENCIA.
+
+O campo raciocinio contém apenas essas linhas. Não repita dentro dele os \
+outros campos: cada um é preenchido no seu próprio lugar.
+
+A classificação tem de ser a que a regra produziu, mesmo que pareça \
+exagerada."""
+
+
+# A descrição do campo muda de lugar conforme o braço: no principal ele é o
+# primeiro a ser escrito, no controle é o último. O texto precisa dizer
+# isso porque o modelo não vê o schema — ele só sente a gramática
+# restringindo a saída, e uma instrução que a contradissesse atrapalharia.
+CAMPO_RACIOCINIO_PRIMEIRO = """\
+- raciocinio: a análise descrita acima, uma linha por item. Escreva este \
+campo primeiro, antes de decidir."""
+
+CAMPO_RACIOCINIO_DEPOIS = """\
+- raciocinio: a análise descrita acima, uma linha por item, registrada \
+depois da classificação."""
+
+_MARCADOR_CAMPOS = "Preencha os campos assim:"
+_FECHAMENTO = "Responda em português."
+
+
+def _com_cot(
+    sistema: str,
+    passos: str,
+    campo: str,
+    primeiro: bool,
+) -> str:
+    """
+    Monta a versão CoT de um prompt de sistema.
+
+    Os passos entram logo antes da lista de campos, e a descrição de
+    `raciocinio` entra na posição correspondente à do schema: primeiro no
+    braço principal, por último no controle. Se as duas discordassem, o
+    modelo receberia uma instrução que a gramática contradiz.
+    """
+
+    antes, depois = sistema.split(_MARCADOR_CAMPOS, 1)
+
+    campos = depois.replace(_FECHAMENTO, "").strip("\n")
+
+    corpo = (
+        f"{campo}\n{campos}"
+        if primeiro
+        else f"{campos}\n{campo}"
+    )
+
+    return (
+        f"{antes}{passos}\n\n"
+        f"{_MARCADOR_CAMPOS}\n{corpo}\n\n{_FECHAMENTO}"
+    )
+
+
+SISTEMA_ANCORADO_COT = _com_cot(
+    SISTEMA_ANCORADO,
+    PASSOS_COT,
+    CAMPO_RACIOCINIO_PRIMEIRO,
+    primeiro=True,
+)
+
+SISTEMA_ANCORADO_COT_SEM_CONTEXTO = _com_cot(
+    SISTEMA_ANCORADO_SEM_CONTEXTO,
+    PASSOS_COT_SEM_CONTEXTO,
+    CAMPO_RACIOCINIO_PRIMEIRO,
+    primeiro=True,
+)
+
+SISTEMA_ANCORADO_COT_POSTHOC = _com_cot(
+    SISTEMA_ANCORADO,
+    PASSOS_COT,
+    CAMPO_RACIOCINIO_DEPOIS,
+    primeiro=False,
+)
+
+SISTEMA_ANCORADO_COT_POSTHOC_SEM_CONTEXTO = _com_cot(
+    SISTEMA_ANCORADO_SEM_CONTEXTO,
+    PASSOS_COT_SEM_CONTEXTO,
+    CAMPO_RACIOCINIO_DEPOIS,
+    primeiro=False,
+)
+
+
+def _sistema_para(config: EffectiveConfig, com_documentos: bool) -> str:
+    """
+    Escolhe o prompt de sistema pelo braço que está rodando.
+    """
+
+    if not config.cot_enabled:
+        return (
+            SISTEMA_ANCORADO
+            if com_documentos
+            else SISTEMA_ANCORADO_SEM_CONTEXTO
+        )
+
+    if config.cot_position == "last":
+        return (
+            SISTEMA_ANCORADO_COT_POSTHOC
+            if com_documentos
+            else SISTEMA_ANCORADO_COT_POSTHOC_SEM_CONTEXTO
+        )
+
+    return (
+        SISTEMA_ANCORADO_COT
+        if com_documentos
+        else SISTEMA_ANCORADO_COT_SEM_CONTEXTO
+    )
+
+
 def montar_bloco_de_contexto(
     documents: list[RetrievedDocument],
 ) -> str:
@@ -199,13 +358,7 @@ def build_triage_messages(
 
     partes.append(f'Relato do tutor:\n"""\n{relato}\n"""')
 
-    sistema = (
-        SISTEMA_ANCORADO
-        if documents
-        else SISTEMA_ANCORADO_SEM_CONTEXTO
-    )
-
     return [
-        {"role": "system", "content": sistema},
+        {"role": "system", "content": _sistema_para(config, bool(documents))},
         {"role": "user", "content": "\n\n".join(partes)},
     ]

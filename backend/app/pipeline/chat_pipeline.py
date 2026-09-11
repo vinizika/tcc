@@ -25,6 +25,10 @@ from app.schemas.triage_output import (
     CitedSource,
     LegacyTriageLLMOutput,
     TriageLLMOutput,
+    TriageLLMOutputCoT,
+    TriageLLMOutputCoTPostHoc,
+    TriageLLMOutputCoTPostHocSemContexto,
+    TriageLLMOutputCoTSemContexto,
     TriageLLMOutputSemContexto,
     TriageResult,
 )
@@ -38,6 +42,45 @@ from app.schemas.triage import (
 )
 
 logger = setup_logger("ChatPipeline")
+
+
+def _modelo_de_saida(config: EffectiveConfig, com_documentos: bool):
+    """
+    Escolhe o formato que o modelo é obrigado a preencher.
+
+    Três eixos decidem: o braço legado (que tem formato tolerante próprio),
+    o Chain-of-Thought ligado ou não, e a presença de trechos — sem trechos
+    o campo de fontes some, para a restrição de formato impedir o modelo de
+    inventar um índice.
+
+    No Chain-of-Thought ainda entra a posição do raciocínio. Ela não é
+    detalhe de organização: a gramática do Ollama emite os campos na ordem
+    declarada, então é ela que decide se a análise vem antes ou depois da
+    conclusão — e "depois" é justamente o braço de controle.
+    """
+
+    if config.prompt_version == "v0_legacy":
+        return LegacyTriageLLMOutput
+
+    if not config.cot_enabled:
+        return (
+            TriageLLMOutput
+            if com_documentos
+            else TriageLLMOutputSemContexto
+        )
+
+    if config.cot_position == "last":
+        return (
+            TriageLLMOutputCoTPostHoc
+            if com_documentos
+            else TriageLLMOutputCoTPostHocSemContexto
+        )
+
+    return (
+        TriageLLMOutputCoT
+        if com_documentos
+        else TriageLLMOutputCoTSemContexto
+    )
 
 
 class ChatPipeline:
@@ -187,12 +230,7 @@ class ChatPipeline:
         misturaria a etapa de consulta dentro da decisão.
         """
 
-        if config.prompt_version == "v0_legacy":
-            output_model = LegacyTriageLLMOutput
-        elif documents:
-            output_model = TriageLLMOutput
-        else:
-            output_model = TriageLLMOutputSemContexto
+        output_model = _modelo_de_saida(config, bool(documents))
 
         messages = build_triage_messages(
             relato,

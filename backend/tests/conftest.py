@@ -196,6 +196,14 @@ class LLMClientFalso:
             if "fontes" in output_model.model_fields:
                 campos["fontes"] = [1]
 
+            # Os formatos de Chain-of-Thought exigem o raciocínio; sem ele
+            # o dublê falharia na validação em vez de devolver a saída.
+            if "raciocinio" in output_model.model_fields:
+                campos["raciocinio"] = (
+                    "tremores — risco à vida? sim. "
+                    "Conclusão: EMERGENCIA."
+                )
+
             saida = output_model(**campos)
 
         return LLMCallResult(

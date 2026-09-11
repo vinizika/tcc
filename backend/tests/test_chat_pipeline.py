@@ -364,3 +364,141 @@ def test_tokens_da_geracao_sao_reportados():
     assert resultado.timings.prompt_tokens == 100
     assert resultado.timings.completion_tokens == 50
     assert resultado.timings.tokens_per_s == 50.0
+
+
+# ----------------------------------------------------------------------
+# Chain-of-Thought
+# ----------------------------------------------------------------------
+
+
+def test_cot_usa_o_formato_com_raciocinio_primeiro():
+    """
+    A ordem dos campos no formato é o experimento: a gramática do Ollama
+    emite na ordem declarada, então o raciocínio precisa vir antes da
+    classificação para o modelo escrevê-lo antes de decidir.
+    """
+
+    pipeline, _, _, llm_client = montar([documento()])
+
+    pipeline.execute("relato", PipelineOptions(cot_enabled=True))
+
+    modelo = llm_client.chamadas[0]["output_model"]
+    campos = list(modelo.model_json_schema()["properties"])
+
+    assert campos[0] == "raciocinio"
+    assert campos.index("raciocinio") < campos.index("classificacao")
+
+
+def test_controle_post_hoc_usa_o_raciocinio_por_ultimo():
+
+    pipeline, _, _, llm_client = montar([documento()])
+
+    pipeline.execute(
+        "relato",
+        PipelineOptions(cot_enabled=True, cot_position="last"),
+    )
+
+    campos = list(
+        llm_client.chamadas[0]["output_model"].model_json_schema()[
+            "properties"
+        ]
+    )
+
+    assert campos[-1] == "raciocinio"
+    assert campos.index("classificacao") < campos.index("raciocinio")
+
+
+def test_cot_sem_documentos_nao_tem_campo_de_fontes():
+    """
+    Mesma razão do braço sem raciocínio: não havendo o que citar, a
+    restrição de formato impede o modelo de inventar um índice.
+    """
+
+    pipeline, _, _, llm_client = montar([])
+
+    pipeline.execute(
+        "relato",
+        PipelineOptions(retrieval_enabled=False, cot_enabled=True),
+    )
+
+    modelo = llm_client.chamadas[0]["output_model"]
+
+    assert "raciocinio" in modelo.model_fields
+    assert "fontes" not in modelo.model_fields
+
+
+def test_raciocinio_chega_ao_resultado():
+    """
+    É o que o runner grava e o que permite ler, depois, se o modelo marcou
+    o sinal grave e mesmo assim concluiu errado.
+    """
+
+    pipeline, _, _, _ = montar([documento()])
+
+    resultado = pipeline.execute("relato", PipelineOptions(cot_enabled=True))
+
+    assert resultado.triage.raciocinio
+    assert "Conclusão" in resultado.triage.raciocinio
+
+
+def test_sem_cot_o_raciocinio_fica_nulo():
+    """
+    Nulo e não vazio: distingue "não usou raciocínio" de "raciocinou e não
+    escreveu nada".
+    """
+
+    pipeline, _, _, _ = montar([documento()])
+
+    resultado = pipeline.execute("relato")
+
+    assert resultado.triage.raciocinio is None
+
+
+def test_prompt_do_cot_so_aparece_quando_ligado():
+
+    pipeline, _, _, llm_client = montar([documento()])
+
+    pipeline.execute("relato")
+    sem_cot = llm_client.chamadas[0]["messages"][0]["content"]
+
+    pipeline.execute("relato", PipelineOptions(cot_enabled=True))
+    com_cot = llm_client.chamadas[1]["messages"][0]["content"]
+
+    assert "risco à vida?" not in sem_cot
+    assert "risco à vida?" in com_cot
+    assert "Conclusão:" in com_cot
+
+
+def test_cot_com_contexto_pede_para_julgar_cada_trecho():
+    """
+    É o passo que mira o mecanismo do B-01: com a base atual o modelo
+    rebaixa emergências por causa de trechos que tratam de outro problema.
+    """
+
+    pipeline, _, _, llm_client = montar([documento()])
+
+    pipeline.execute("relato", PipelineOptions(cot_enabled=True))
+    com_documentos = llm_client.chamadas[0]["messages"][0]["content"]
+
+    pipeline.execute(
+        "relato",
+        PipelineOptions(retrieval_enabled=False, cot_enabled=True),
+    )
+    sem_documentos = llm_client.chamadas[1]["messages"][0]["content"]
+
+    assert "descreve o caso deste relato?" in com_documentos
+    assert "descreve o caso deste relato?" not in sem_documentos
+
+
+def test_modo_legado_ignora_o_cot_no_formato():
+
+    pipeline, _, _, llm_client = montar([documento()])
+
+    pipeline.execute(
+        "relato",
+        PipelineOptions(prompt_version="v0_legacy", cot_enabled=True),
+    )
+
+    modelo = llm_client.chamadas[0]["output_model"]
+
+    assert "raciocinio" not in modelo.model_fields
