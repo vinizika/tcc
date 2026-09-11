@@ -218,12 +218,35 @@ def escrever_relatorio(
             "",
             "| Métrica | Valor |",
             "|---|---|",
+            f"| **Respostas que receberam algum trecho** | {_formatar(g.get('share_rows_with_context'), 3)} |",
+            f"| Respostas em que a busca ficou silenciosa | {_formatar(g.get('share_rows_rag_silent'), 3)} |",
             f"| Fontes citadas por resposta | {_formatar(g.get('mean_cited_sources'), 2)} |",
             f"| Respostas com ao menos uma citação | {_formatar(g.get('share_rows_with_citation'), 3)} |",
             f"| Linhas em que nada passou de 0,70 | {_formatar(g.get('share_rows_max_score_below_0_70'), 3)} |",
             f"| Score máximo médio | {_formatar(g.get('mean_max_score'))} |",
             f"| Respostas com citação inválida | {_formatar(g.get('share_rows_invalid_citation'), 3)} |",
         ]
+
+        silencio = g.get("share_rows_rag_silent")
+
+        if silencio == 1.0:
+            linhas += [
+                "",
+                "> **A busca ficou silenciosa em todas as linhas.** Nenhum "
+                "trecho passou do corte de relevância, então o "
+                "classificador decidiu sem contexto em 100% dos casos: "
+                "esta rodada mediu o mesmo que o braço sem recuperação.",
+            ]
+
+        violacoes = g.get("rows_used_below_min_score")
+
+        if violacoes:
+            linhas += [
+                "",
+                f"> **Atenção: {violacoes} linha(s) usaram trecho abaixo "
+                "do corte.** Isso não deveria acontecer — o filtro do "
+                "pipeline falhou e a rodada é suspeita.",
+            ]
 
     if metricas.get("repeats"):
         r = metricas["repeats"]

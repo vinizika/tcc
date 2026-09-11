@@ -102,6 +102,14 @@ class RetrievalInfo(BaseModel):
     max_score: Optional[float] = None
     threshold: float = 0.0
 
+    # O corte que de fato valeu nesta requisição, e a trava que garante que
+    # ele valeu. `used_below_min_score` **nunca** deve ser verdadeiro: se
+    # for, o filtro do pipeline quebrou e um trecho irrelevante chegou ao
+    # classificador. O runner grava os dois em cada linha, para o erro
+    # aparecer na hora e não semanas depois, na leitura da evidência.
+    context_min_score: float = 0.0
+    used_below_min_score: bool = False
+
 
 class Timings(BaseModel):
 

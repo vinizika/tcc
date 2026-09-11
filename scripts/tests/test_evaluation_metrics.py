@@ -345,3 +345,73 @@ def test_classe_ausente_devolve_nulo_em_vez_de_zero():
     assert resultado["support"] == 0
     assert resultado["recall"] is None
     assert resultado["f1"] is None
+
+
+# ----------------------------------------------------------------------
+# Auditoria do corte de relevância (evidencias/backlog.md#b-11)
+# ----------------------------------------------------------------------
+
+
+def linhas_com_contexto(usados: list[int]) -> pd.DataFrame:
+
+    return pd.DataFrame(
+        {
+            "status": ["ok"] * len(usados),
+            "expected": ["EMERGENCIA"] * len(usados),
+            "predicted": ["EMERGENCIA"] * len(usados),
+            # A busca rodou e trouxe trechos em todas as linhas; o que
+            # varia e quantos passaram do corte e chegaram ao prompt.
+            "retrieval_returned": [5] * len(usados),
+            "n_sources_used": usados,
+            "used_below_min_score": [False] * len(usados),
+        }
+    )
+
+
+def test_busca_silenciosa_em_todas_as_linhas():
+    """
+    O estado do sistema em 12/09: o corte passou a valer e, com a base
+    atual, nenhum trecho chega ao classificador. A rodada mede o mesmo que
+    o braço sem recuperação, e o relatório precisa dizer isso.
+    """
+
+    metricas = compute_metrics(linhas_com_contexto([0, 0, 0, 0]))
+
+    ancoragem = metricas["grounding"]
+
+    assert ancoragem["share_rows_with_context"] == 0.0
+    assert ancoragem["share_rows_rag_silent"] == 1.0
+
+
+def test_contexto_em_todas_as_linhas():
+
+    ancoragem = compute_metrics(linhas_com_contexto([3, 3, 2, 1]))[
+        "grounding"
+    ]
+
+    assert ancoragem["share_rows_with_context"] == 1.0
+    assert ancoragem["share_rows_rag_silent"] == 0.0
+
+
+def test_contexto_em_parte_das_linhas():
+
+    ancoragem = compute_metrics(linhas_com_contexto([3, 0, 1, 0]))[
+        "grounding"
+    ]
+
+    assert ancoragem["share_rows_with_context"] == 0.5
+    assert ancoragem["share_rows_rag_silent"] == 0.5
+
+
+def test_trecho_abaixo_do_corte_e_contado_como_violacao():
+    """
+    Zero é o único valor aceitável. Qualquer outro significa que o filtro
+    do pipeline falhou e a rodada inteira é suspeita.
+    """
+
+    df = linhas_com_contexto([3, 3])
+    df["used_below_min_score"] = [False, True]
+
+    ancoragem = compute_metrics(df)["grounding"]
+
+    assert ancoragem["rows_used_below_min_score"] == 1

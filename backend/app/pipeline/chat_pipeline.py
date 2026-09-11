@@ -207,6 +207,11 @@ class ChatPipeline:
                 else None
             ),
             threshold=DEFAULT_SCORE_THRESHOLD,
+            context_min_score=config.context_min_score,
+            used_below_min_score=any(
+                document.score < config.context_min_score
+                for document in for_context
+            ),
         )
 
         return ranked, for_context, info

@@ -447,6 +447,11 @@ def achatar(resposta: dict, contexto: dict) -> dict:
         "attempts": triagem.get("attempts"),
         "done_reason": triagem.get("done_reason"),
         "n_sources_used": len(fontes),
+        # O corte que de fato valeu e a trava de auditoria. `abaixo_do_corte`
+        # nunca deve ser verdadeiro: se for, um trecho irrelevante chegou ao
+        # classificador e a linha inteira é suspeita.
+        "context_min_score": recuperacao.get("context_min_score"),
+        "used_below_min_score": recuperacao.get("used_below_min_score"),
         "n_sources_cited": len(triagem.get("fontes") or []),
         "n_invalid_citations": len(
             triagem.get("invalid_source_indices") or []

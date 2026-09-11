@@ -51,6 +51,16 @@
     "num_predict": 1024
   },
 
+  "naive_rag_sem_corte": {
+    "_descricao": "Reproduz o braço de setembro: a busca entrega os 3 trechos mais próximos mesmo quando nenhum passa do limiar de relevância. Era o padrão até 12/09, quando a rodada 9 mediu que isso injeta ruído em 98 de 98 linhas. Existe para a ablação comparar 'com corte' contra 'sem corte' e para reproduzir as rodadas citadas até 11/09.",
+    "retrieval_enabled": true,
+    "query_rewriting_enabled": false,
+    "multi_query_enabled": false,
+    "hyde_enabled": false,
+    "prompt_version": "v1_grounded",
+    "context_min_score": 0.0
+  },
+
   "rag_query": {
     "_descricao": "Pipeline completo, com reescrita, multi-query e HyDE. Quase determinístico desde b907d6e (04/09): 6 das 98 linhas ainda oscilam entre execuções idênticas, por ruído numérico de GPU nas gerações longas (HyDE). Usar --repeat para reportar a faixa.",
     "retrieval_enabled": true,

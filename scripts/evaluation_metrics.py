@@ -347,6 +347,31 @@ def _ancoragem(df: pd.DataFrame, com_recuperacao: bool) -> Optional[dict]:
             )
             resultado["mean_max_score"] = round(float(maximo.mean()), 4)
 
+    # Em quantas linhas o RAG de fato contribuiu.
+    #
+    # É a leitura de andamento do projeto num número só: `with_context` é a
+    # fração de relatos que chegaram ao classificador com pelo menos um
+    # trecho; `rag_silent` é a fração em que a busca rodou e nada passou do
+    # corte. Se `rag_silent` for 1,0, a rodada mediu exatamente o mesmo que
+    # o braço sem recuperação — que é o estado de 12/09, quando o corte
+    # deixou de ser zero (evidencias/backlog.md#b-11).
+    if "n_sources_used" in df.columns:
+        usados = pd.to_numeric(
+            df["n_sources_used"], errors="coerce"
+        ).fillna(0)
+        resultado["share_rows_with_context"] = _divisao(
+            int((usados > 0).sum()), total
+        )
+        resultado["share_rows_rag_silent"] = _divisao(
+            int((usados == 0).sum()), total
+        )
+
+    # Trava de auditoria: nenhum trecho abaixo do corte pode ter entrado.
+    # Qualquer valor diferente de zero aqui invalida a rodada.
+    if "used_below_min_score" in df.columns:
+        violacoes = df["used_below_min_score"].fillna(False).astype(bool)
+        resultado["rows_used_below_min_score"] = int(violacoes.sum())
+
     if "cited_chunk_ids" in df.columns:
         contagem: dict[str, int] = {}
         for lista in df["cited_chunk_ids"].dropna():

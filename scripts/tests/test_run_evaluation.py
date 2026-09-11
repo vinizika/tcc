@@ -614,3 +614,24 @@ def test_sem_cot_o_raciocinio_fica_nulo():
 
     assert linha["raciocinio"] is None
     assert linha["len_raciocinio"] is None
+
+
+def test_o_corte_aplicado_e_a_trava_vao_na_linha():
+    """
+    A trava nunca deve ser verdadeira. Gravá-la por linha faz o erro
+    aparecer na rodada, e não semanas depois na leitura da evidência
+    (evidencias/backlog.md#b-11).
+    """
+
+    resposta = resposta_com({})
+    resposta["retrieval"] = {
+        "returned_count": 3,
+        "used_count": 0,
+        "context_min_score": 0.70,
+        "used_below_min_score": False,
+    }
+
+    linha = runner.achatar(resposta, {})
+
+    assert linha["context_min_score"] == 0.70
+    assert linha["used_below_min_score"] is False

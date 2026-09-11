@@ -2,6 +2,8 @@ from pathlib import Path
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+from app.constants.pipeline import DEFAULT_SCORE_THRESHOLD
+
 
 # A raiz do repositorio, para que um unico .env sirva tanto ao docker compose
 # quanto ao backend rodando fora do container.
@@ -94,11 +96,28 @@ class Settings(BaseSettings):
     COT_ENABLED: bool = False
     SELF_REFINE_ENABLED: bool = False
 
-    # Score minimo para um trecho recuperado entrar no prompt. Fica em 0.0
-    # de proposito: hoje nenhum documento atinge o limiar de 0.70 usado na
-    # busca, e descartar todos equivaleria a rodar sem RAG. Cada resposta
-    # registra o score maximo, para que a decisao vire evidencia.
-    CONTEXT_MIN_SCORE: float = 0.0
+    # Score minimo para um trecho recuperado entrar no prompt.
+    #
+    # Ficou em 0.0 de 04/09 a 12/09, de proposito: naquele momento nenhum
+    # documento atingia o limiar de relevancia, e descartar todos faria o
+    # braco com RAG ficar identico ao braco sem RAG, impedindo medir. A
+    # decisao mandava registrar o score de cada trecho para que virasse
+    # evidencia depois -- e virou: a rodada 9 mediu que, nas 98 linhas do
+    # conjunto, NENHUM trecho passou de 0.70 e mesmo assim tres entravam em
+    # todos os prompts. Os bracos com RAG mediram injecao de ruido, nao
+    # recuperacao.
+    #
+    # Agora acompanha o mesmo limiar que a busca usa para dizer o que e
+    # relevante: sem nada acima dele, o classificador recebe nada e o
+    # sistema responde como sem RAG. O valor e PROVISORIO -- 0.70 e tao
+    # arbitrario quanto 0.0, so que coerente com o que o sistema ja reporta
+    # em toda rodada. O numero certo sai da regua de recuperacao do trilho
+    # A, nao de discussao (evidencias/backlog.md#b-11).
+    #
+    # Para reproduzir as rodadas anteriores a 12/09, passe
+    # context_min_score=0.0 na requisicao ou use o preset
+    # naive_rag_sem_corte.
+    CONTEXT_MIN_SCORE: float = DEFAULT_SCORE_THRESHOLD
 
     # Passa tambem a pergunta reescrita ao classificador. Desligado porque a
     # reescrita adiciona interpretacao clinica ("requer avaliacao imediata"),

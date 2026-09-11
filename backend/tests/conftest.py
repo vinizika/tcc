@@ -68,7 +68,7 @@ def settings() -> Settings:
         HYDE_ENABLED=True,
         RETRIEVAL_ENABLED=True,
         CONTEXT_TOP_K=3,
-        CONTEXT_MIN_SCORE=0.0,
+        CONTEXT_MIN_SCORE=0.70,
         COT_ENABLED=False,
         SELF_REFINE_ENABLED=False,
         REWRITTEN_HINT_ENABLED=False,
@@ -79,9 +79,17 @@ def settings() -> Settings:
 def documento(
     chunk_id: str = "c1",
     titulo: str = "Protocolo",
-    score: float = 0.5,
+    score: float = 0.8,
     conteudo: str = "conteúdo do protocolo",
 ) -> RetrievedDocument:
+    """
+    Um trecho recuperado **relevante**, por padrão.
+
+    O score padrão subiu de 0,5 para 0,8 em 12/09, quando o corte mínimo
+    passou a valer (0,70): com 0,5 todo documento do teste seria descartado
+    antes do prompt, e testes que falam de contexto mediriam a ausência
+    dele. Quem quer um trecho fraco passa o score explicitamente.
+    """
 
     return RetrievedDocument(
         id=chunk_id,

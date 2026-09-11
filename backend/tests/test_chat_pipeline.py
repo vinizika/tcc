@@ -502,3 +502,109 @@ def test_modo_legado_ignora_o_cot_no_formato():
     modelo = llm_client.chamadas[0]["output_model"]
 
     assert "raciocinio" not in modelo.model_fields
+
+
+# ----------------------------------------------------------------------
+# Corte de relevância (evidencias/backlog.md#b-11)
+# ----------------------------------------------------------------------
+
+
+def test_por_padrao_o_trecho_irrelevante_nao_entra_no_prompt():
+    """
+    Até 12/09 o corte era zero e qualquer trecho entrava, por mais distante
+    que fosse do relato. A rodada 9 mediu o custo disso: nas 98 linhas do
+    conjunto nenhum trecho passava de 0,70, e três entravam em todos os
+    prompts — os braços com RAG mediram injeção de ruído.
+    """
+
+    documentos = [
+        documento("relevante", score=0.75),
+        documento("irrelevante", score=0.60),
+    ]
+
+    pipeline, _, _, _ = montar(documentos)
+
+    resultado = pipeline.execute("relato")
+
+    assert [item.document.chunk_id for item in resultado.sources] == [
+        "relevante"
+    ]
+
+
+def test_nada_relevante_e_o_classificador_decide_sem_contexto():
+    """
+    O caso central desta correção, e o estado real do sistema hoje: a busca
+    roda, devolve trechos, e nenhum é bom o bastante. O classificador
+    precisa receber **nada** — e não os três mais próximos — respondendo
+    como no braço sem RAG.
+    """
+
+    documentos = [
+        documento("fraco1", score=0.57),
+        documento("fraco2", score=0.55),
+        documento("fraco3", score=0.51),
+    ]
+
+    pipeline, _, _, llm_client = montar(documentos)
+
+    resultado = pipeline.execute("relato")
+
+    info = resultado.retrieval
+
+    # A busca rodou e trouxe coisa: o problema não é base vazia.
+    assert info.returned_count == 3
+    assert info.used_count == 0
+    assert info.above_threshold_count == 0
+
+    assert resultado.sources == []
+
+    # Sem trechos, o formato de saída não tem campo de fontes — a restrição
+    # de formato impede o modelo de inventar um índice.
+    assert "fontes" not in llm_client.chamadas[0]["output_model"].model_fields
+
+    # E o prompt não traz bloco de contexto nenhum.
+    prompt = llm_client.chamadas[0]["messages"][-1]["content"]
+    assert "Trechos de protocolos" not in prompt
+
+
+def test_o_corte_aplicado_vai_na_resposta_com_a_trava_de_auditoria():
+    """
+    `used_below_min_score` nunca pode ser verdadeiro. Se for, o filtro
+    quebrou e um trecho irrelevante chegou ao classificador — e o runner
+    pega isso na linha, não semanas depois na leitura da evidência.
+    """
+
+    documentos = [
+        documento("forte", score=0.9),
+        documento("fraco", score=0.3),
+    ]
+
+    pipeline, _, _, _ = montar(documentos)
+
+    info = pipeline.execute("relato").retrieval
+
+    assert info.context_min_score == 0.70
+    assert info.used_below_min_score is False
+
+
+def test_o_braco_antigo_continua_reproduzivel_com_corte_zero():
+    """
+    As rodadas citadas até 11/09 usaram corte zero. Elas precisam continuar
+    reproduzíveis, ou a comparação com o histórico se perde.
+    """
+
+    documentos = [
+        documento("fraco1", score=0.57),
+        documento("fraco2", score=0.55),
+    ]
+
+    pipeline, _, _, _ = montar(documentos)
+
+    resultado = pipeline.execute(
+        "relato",
+        PipelineOptions(context_min_score=0.0),
+    )
+
+    assert len(resultado.sources) == 2
+    assert resultado.retrieval.context_min_score == 0.0
+    assert resultado.retrieval.used_below_min_score is False

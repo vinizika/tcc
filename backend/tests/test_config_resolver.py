@@ -197,3 +197,26 @@ def test_nome_de_opcao_desconhecido_e_rejeitado():
 
     with pytest.raises(ValidationError):
         PipelineOptions(retrieval_enable=False)
+
+
+def test_corte_de_relevancia_padrao_acompanha_o_limiar_da_busca(settings):
+    """
+    Os dois cortes não podem divergir por acidente: o que a busca chama de
+    relevante é o que entra no prompt. Até 12/09 o padrão era zero e tudo
+    entrava (evidencias/backlog.md#b-11).
+    """
+
+    config = resolve(settings, None)
+
+    assert config.context_min_score == 0.70
+
+
+def test_corte_pode_ser_zerado_para_reproduzir_o_historico(settings):
+    """
+    As rodadas citadas até 11/09 rodaram com corte zero; reproduzi-las
+    exige pedir o valor antigo explicitamente.
+    """
+
+    config = resolve(settings, PipelineOptions(context_min_score=0.0))
+
+    assert config.context_min_score == 0.0
