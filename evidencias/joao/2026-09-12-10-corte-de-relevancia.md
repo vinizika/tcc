@@ -1,7 +1,7 @@
 # O corte de relevância deixa de ser zero
 
 **Data:** 12/09/2026 · **Trilho:** B2 (Decisão) · **Rodada:** 10 ·
-**Commits:** _(a preencher ao fechar)_
+**Commits:** 9a1ec45 (código), + este
 
 > Arquivo criado **antes** de qualquer linha de código, com o resultado
 > esperado preenchido — o padrão da pasta, que a rodada 8 não seguiu.
@@ -81,20 +81,133 @@ diferente de `m0_llm_only` em mais que o ruído, ou C2 diferente de
 
 ## Resultado obtido
 
-_(a preencher)_
+As duas medições confirmaram o esperado, e a primeira foi mais limpa do que
+eu previra.
+
+### C1 — o braço com RAG e o corte valendo
+
+Rodada [`20260911-192018_c1_naive_rag_com_corte`](../../data/evaluation/cited/20260911-192018_c1_naive_rag_com_corte/report.md)
+· preset `naive_rag` · 98 linhas · corte 0,70.
+
+| Verificação | Resultado |
+|---|---|
+| Linhas que receberam algum trecho | **0 de 98** |
+| Busca silenciosa | **100%** |
+| Trava de auditoria violada | 0 linhas |
+| Nota máxima média da busca | 0,574 |
+
+E o teste de regressão, que era o ponto da rodada:
+
+| Comparação | Linhas com classificação diferente |
+|---|---|
+| C1 contra `m0_llm_only` (ontem) | **2** — as linhas 843 e 845 |
+| C1 contra `r2_linha_de_base` (04/09) | **0 de 98** |
+
+**Zero diferenças contra a linha de base de 04/09.** As duas diferenças
+contra a rodada de ontem são exatamente as linhas 843 e 845, as mesmas que o
+[B-43](../backlog.md#b-43) já registrou como ruído entre sessões — não são
+efeito da correção. Isso era o esperado: sem trecho no prompt, o braço com
+RAG **é** o braço sem RAG, e a acurácia sobe de 0,856 para 0,893 só porque
+deixa de carregar o ruído.
+
+O relatório emitiu o aviso automático sozinho:
+
+> A busca ficou silenciosa em todas as linhas. Nenhum trecho passou do corte
+> de relevância, então o classificador decidiu sem contexto em 100% dos
+> casos: esta rodada mediu o mesmo que o braço sem recuperação.
+
+### C2 — o preset que reproduz setembro
+
+Rodada [`20260911-192335_c2_naive_rag_sem_corte`](../../data/evaluation/cited/20260911-192335_c2_naive_rag_sem_corte/report.md)
+· preset `naive_rag_sem_corte` · corte 0,0 · **98 de 98** linhas com trecho.
+
+Contra a `m3_naive_rag` de ontem: **3 linhas diferentes** (12, 24, 68),
+balanceada 0,775 contra 0,768, falsos não urgentes idênticos em 30, McNemar
+1 contra 2 com p = 1,0. Dentro do ruído entre sessões. O preset reproduz o
+braço antigo.
+
+### O que os dois juntos mostram
+
+| Braço | Balanceada | FNU | FU | Trechos no prompt |
+|---|---:|---:|---:|---:|
+| Com corte (C1) | **0,893** | 8 | 2 | 0 de 98 |
+| Sem corte (C2) | 0,775 | 30 | 0 | 98 de 98 |
+
+A diferença entre as duas linhas é **só** o corte, e ela custa 11,8 pontos
+de acurácia balanceada e 22 falsos não urgentes. Este é o número mais
+honesto que o projeto tem sobre o RAG hoje: **injetar três trechos
+irrelevantes custa 22 emergências classificadas como leves**. Não é o RAG
+que degrada; é o ruído.
+
+### As duas previsões
+
+| # | Previsão | Resultado |
+|---|---|---|
+| C1: busca silenciosa em 100%, idêntica ao braço sem RAG | ✅ **Certa, e melhor**: 0 diferenças contra 04/09, 2 contra ontem (as do ruído conhecido) |
+| C2: idêntica à rodada de ontem | ✅ Certa: 3 linhas, dentro do ruído, mesmas métricas clínicas |
 
 ## O que mudou no repositório
 
-_(a preencher)_
+| Arquivo | Mudança |
+|---|---|
+| `backend/app/core/config.py` | `CONTEXT_MIN_SCORE` de 0,0 para `DEFAULT_SCORE_THRESHOLD`; comentário com a história inteira |
+| `backend/app/schemas/triage.py` | `RetrievalInfo` com `context_min_score` e `used_below_min_score` |
+| `backend/app/pipeline/chat_pipeline.py` | `_retrieve` preenche os dois campos |
+| `scripts/evaluation_metrics.py` | `share_rows_with_context`, `share_rows_rag_silent`, `rows_used_below_min_score` |
+| `scripts/report_evaluation.py` | as métricas no relatório, com aviso automático de busca silenciosa |
+| `scripts/run_evaluation.py` | corte e trava gravados por linha |
+| `scripts/presets.json` | preset `naive_rag_sem_corte` |
+| `backend/tests/*`, `scripts/tests/*` | scripts 71 → 76, backend 123 → 129 |
+| `data/evaluation/cited/` | C1 e C2 |
+
+Commits: `9a1ec45` (código) e o desta evidência.
 
 ## Observações
 
-_(a preencher)_
+**1. O braço com RAG não desapareceu — virou dois braços.** Eu havia
+avisado que ele sumiria das medições. Na prática ficou melhor: o par C1 e C2
+**é** a medição, e ela isola o efeito do ruído com uma variável só. A
+ablação do artigo ganha uma linha que não tinha: "com corte" contra "sem
+corte", 11,8 pontos de diferença.
+
+**2. O `compare` acusou duas diferenças de configuração, e ele está certo.**
+Entre C1 e `m0_llm_only` mudaram `context_min_score` **e**
+`retrieval_enabled` — porque o braço sem RAG desliga a busca, enquanto o C1
+liga a busca e descarta o resultado. São caminhos diferentes que produzem o
+mesmo prompt. Vale para a leitura: o número é idêntico, a configuração não.
+
+**3. Um campo do retrato do sistema virou ruído no aviso.** O `compare`
+alertou que `model.loaded_in_vram_bytes` diferia entre as rodadas: 2,5 GB
+contra nulo. É a memória de vídeo ocupada no instante da chamada, que muda
+conforme o modelo já estava carregado. Não descreve o sistema, descreve o
+momento. Vai para o backlog como [B-47](../backlog.md#b-47).
+
+**4. A nota máxima média da busca é a mesma nos dois braços: 0,574.** Ela
+não depende do corte, porque o corte age depois. Serve como número de
+referência para o trilho A: é a distância entre o que a busca encontra hoje
+e o que ela considera relevante.
+
+**5. O limiar continua sem fundamento medido.** 0,70 é o valor que o sistema
+já reportava, e agora ele decide. O número certo sai da régua de recuperação
+([B-11](../backlog.md#b-11)). Enquanto isso, a escolha é defensável por
+coerência interna, não por evidência.
 
 ## Deixado para depois
 
-_(a preencher — e cada item vai também ao backlog)_
+**Medir o limiar certo.** É a régua de recuperação, e virou a rodada
+seguinte ([B-11](../backlog.md#b-11)). Um ensaio dela, feito nesta sessão
+sem código, já mostrou que o protocolo certo vem em primeiro em 5 de 11
+casos e que "Trauma, quedas e hemorragias" aparece em primeiro em 8 de 18 —
+o protocolo-ímã, que é o [B-02](../backlog.md#b-02) com número.
+
+**Limpar o retrato do sistema do que é estado de momento**
+([B-47](../backlog.md#b-47)). A memória de vídeo ocupada não descreve a
+versão; ela faz o `compare` avisar sem motivo, o que gasta a atenção que o
+aviso deveria receber.
 
 ## Próximo passo
 
-_(a preencher)_
+**A régua de recuperação**, construída em nome do trilho A, como o João
+decidiu. Ela é o gargalo de dois trilhos — o A não amplia a base sem ela, o
+B1 não mede as técnicas de consulta sem ela — e é ela que vai dizer o limiar
+que esta rodada deixou provisório.

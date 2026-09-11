@@ -54,7 +54,7 @@ python scripts/run_evaluation.py --preset naive_rag --subset full --name marco1
 
 | Opção | O que faz |
 |---|---|
-| `--preset` | `llm_only` (sem busca; a linha de base), `naive_rag` (busca ligada, consulta desligada), `rag_query` (pipeline completo), `legacy` (reproduz 04/05). Definidos em `scripts/presets.json` |
+| `--preset` | `llm_only` (sem busca; a linha de base), `naive_rag` (busca ligada, consulta desligada), `naive_rag_sem_corte` (idem, mas aceita trecho irrelevante — reproduz as rodadas até 11/09), `rag_query` (pipeline completo), `legacy` (reproduz 04/05), mais os braços de Chain-of-Thought. Definidos em `scripts/presets.json` |
 | `--set chave=valor` | Sobrescreve uma opção do preset (ex.: `--set temperature=0.8`). Chave desconhecida falha antes de qualquer requisição |
 | `--subset` | `smoke` (12 + 12 linhas, para iterar), `balanced` (27 + 27), `full` (98). Os números do TCC são sempre `full` |
 | `--limit N` | Só as N primeiras, alternando entre as classes |
@@ -97,6 +97,15 @@ python scripts/report_evaluation.py cite data/evaluation/runs/<A>
 ```
 
 Copia a rodada para `cited/` e imprime o trecho em markdown para colar.
+
+> **Corte de relevância, desde 12/09.** O padrão passou de 0,0 para 0,70:
+> um trecho só entra no prompt se a busca o considerar relevante. Com a base
+> atual isso significa que a busca fica silenciosa em todas as linhas, e o
+> braço `naive_rag` produz o mesmo resultado que `llm_only`. As rodadas
+> anteriores a 12/09 usaram corte zero; para reproduzi-las, use o preset
+> `naive_rag_sem_corte` ou `--set context_min_score=0.0`. O relatório de
+> cada rodada traz "respostas que receberam algum trecho", que é a leitura
+> de quanto o RAG contribuiu.
 
 ## Métricas
 

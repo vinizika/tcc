@@ -104,7 +104,7 @@ vier na requisição vence; o que vier vazio usa o padrão.
 | `hyde_enabled` | B1 | Gera um documento hipotético como consulta extra |
 | `retrieval_enabled` | B2 | Desligado = **LLM puro**, a linha de base da ablação |
 | `context_top_k` | B2 | Quantos trechos vão ao prompt |
-| `context_min_score` | B2 | Score mínimo para um trecho entrar no prompt |
+| `context_min_score` | B2 | Score mínimo para um trecho entrar no prompt. **Padrão 0,70 desde 12/09** (era 0,0): sem trecho acima do corte, o classificador recebe nada e o sistema responde como sem RAG. Valor provisório até a régua de recuperação medir o limiar certo. `RetrievalInfo` ecoa o corte aplicado e a trava `used_below_min_score` |
 | `rewritten_hint_enabled` | B2 | Passa também a versão reescrita ao classificador |
 | `prompt_version` | B2 | `v1_grounded` ou `v0_legacy` |
 | `structured_output_mode` | B2 | `schema` ou `json` |

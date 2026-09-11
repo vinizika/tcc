@@ -25,6 +25,7 @@ Self-Refine, e a régua de avaliação do sistema (runner de métricas).
 | 6 | 11/09 | [Endurecimento do instrumento](2026-09-11-07-endurecimento-do-instrumento.md) | Revisão das entregas dos trilhos A e B1. A régua passa a **recusar medir sobre a base errada ou vazia**, o retrato identifica conteúdo e embedder, e o `compare` avisa quando o código mudou. Nenhuma métrica mudou |
 | 7 | 11/09 | [Chain-of-Thought](2026-09-11-08-chain-of-thought.md) | **Resultado negativo.** Falsos não urgentes de 8 para 1, mas a classe leve foi a **zero** e a balanceada caiu de 0,856 para 0,408. O controle mostrou que escrever o raciocínio **depois** é melhor que antes — a hipótese da ordem está refutada |
 | 8 | 12/09 | [Autópsia do Chain-of-Thought](2026-09-12-09-autopsia-do-cot.md) | Análise, sem código. A causa não era o modelo: **a rubrica pergunta o que o dado não tem**. O raciocínio do modelo é racionalização, não julgamento. A linha de base é atalho lexical, e os braços com RAG mediram **ruído** — nenhum trecho passou do limiar em 98 linhas |
+| 9 | 12/09 | [Corte de relevância](2026-09-12-10-corte-de-relevancia.md) | O sistema para de injetar trecho irrelevante. Com a base atual a busca fica **silenciosa em 98 de 98** linhas, e o resultado é **idêntico** à linha de base de 04/09. O par com e sem corte isola o custo do ruído: **11,8 pontos e 22 falsos não urgentes** |
 
 ## Estado atual
 
@@ -49,7 +50,8 @@ um sistema que sempre responde "emergência" (72,4%).
 | Prompt antigo, sem RAG | 0,572 | 0,745 | 3/71 |
 | **Melhor atual**: prompt novo, sem RAG | **0,893** | **0,878** | 8/71 |
 | Prompt novo, sem RAG, com Chain-of-Thought (11/09) | 0,408 | 0,592 | 1/71, mas 16 falsos urgentes |
-| Prompt novo, com RAG | 0,763 | 0,674 | 30/71 |
+| Prompt novo, com RAG **sem corte** (ruído) | 0,775 | 0,673 | 30/71 |
+| Prompt novo, com RAG **com corte** (12/09) | **0,893** | **0,878** | 8/71 |
 | Pipeline completo (05/09, estável) | 0,704 | 0,571 | 40/71 |
 
 A leitura completa está na [rodada 4](2026-09-04-05-runner-de-avaliacao.md).

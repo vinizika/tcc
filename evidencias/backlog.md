@@ -94,6 +94,7 @@ aqui.
 | [B-44](#b-44) | Divergências entre o artigo do TCC1 e o sistema construído | Time (escrita) | Média | Aberto |
 | [B-45](#b-45) | Sem conjunto de desenvolvimento: ajuste de prompt no conjunto de teste | Trilho B2 | Alta | Aberto |
 | [B-46](#b-46) | Teste limpo do efeito da ordem dos campos | Trilho B2 | Baixa | Aberto |
+| [B-47](#b-47) | Retrato do sistema inclui estado de momento e gera aviso falso | Trilho B2 | Baixa | Aberto |
 
 ---
 
@@ -320,7 +321,7 @@ variações`, sem duplicatas. O pipeline do B2 já tem o ponto único
 
 **Limiar de 0,70 na busca não mede relevância**
 
-**Identificado por:** João (B2), a partir do handover de 30/08 · **Onde:** [rodada 3](joao/2026-09-04-04-geracao-ancorada.md) e [rodada 4](joao/2026-09-04-05-runner-de-avaliacao.md) · **Responsável:** **Trilho A + B2** (o corte tem duas metades, ver atualização de 12/09) · **Prioridade:** Alta · **Status:** Aberto — decisão do time pendente
+**Identificado por:** João (B2), a partir do handover de 30/08 · **Onde:** [rodada 3](joao/2026-09-04-04-geracao-ancorada.md) e [rodada 4](joao/2026-09-04-05-runner-de-avaliacao.md) · **Responsável:** Trilho A (medir o limiar certo) · **Prioridade:** Alta · **Status:** Em andamento — a parte do B2 foi **resolvida em 12/09** ([rodada 10](joao/2026-09-12-10-corte-de-relevancia.md)); falta o limiar medido na régua de recuperação
 
 **O que observamos.** O filtro de score ≥ 0,70 foi adicionado em 03/09; o
 handover de 30/08 dizia para não fixar limiar enquanto documentos errados
@@ -664,6 +665,39 @@ nada relevante. A proposta do B2 é "nada", com o sistema se comportando como
 sem RAG e a resposta registrando que a busca não trouxe nada acima do corte.
 A ordem completa das três correções está no
 [adendo da rodada 9](joao/2026-09-12-09-autopsia-do-cot.md#adendo-de-1209--as-três-correções-em-linguagem-simples-e-uma-hipótese-em-espera).
+
+
+**Resolvido em 12/09, na parte do B2** ([rodada 10](joao/2026-09-12-10-corte-de-relevancia.md)). `CONTEXT_MIN_SCORE`
+passou de 0,0 para 0,70, referenciando a constante que a busca já usa. Sem
+trecho acima do corte, o classificador recebe nada e o sistema responde como
+sem RAG. A resposta passou a trazer o corte aplicado e uma trava
+(`used_below_min_score`) que nunca pode ser verdadeira; o relatório de cada
+rodada passou a dizer em quantos por cento dos casos o RAG contribuiu, com
+aviso automático quando a busca fica silenciosa em todas as linhas.
+
+Medido: com corte, **0 de 98** linhas recebem trecho e o resultado é
+**idêntico** à linha de base de 04/09 (zero linhas diferentes). Sem corte,
+98 de 98 recebem e a acurácia balanceada cai 11,8 pontos, com 22 falsos não
+urgentes a mais. **Injetar três trechos irrelevantes custa 22 emergências
+classificadas como leves** — este é o número honesto do RAG hoje.
+
+O preset `naive_rag_sem_corte` preserva o braço antigo para a ablação e para
+reproduzir as rodadas citadas até 11/09.
+
+**O que falta, e é do trilho A:** o limiar 0,70 continua sem fundamento
+medido — é o valor que o sistema já reportava, escolhido por coerência
+interna e declarado provisório no código. O número certo sai da régua de
+recuperação.
+
+
+**Atualização de 12/09 — o custo do ruído, isolado.** Com o corte valendo
+([rodada 10](joao/2026-09-12-10-corte-de-relevancia.md)), o braço com RAG e o braço sem RAG passaram a produzir o
+**mesmo** resultado, porque nenhum trecho entra. Comparando os dois braços
+que diferem **só** no corte: balanceada 0,893 com corte contra 0,775 sem, e
+8 contra 30 falsos não urgentes. Ou seja, os 20 pontos que este item atribuía
+ao RAG são o custo de **injetar três trechos irrelevantes**, não de usar
+conhecimento recuperado. O item continua aberto porque a base ainda não
+cobre os assuntos do conjunto ([B-03](#b-03)).
 
 ---
 
@@ -1425,6 +1459,33 @@ prompt, dá o contraste mais limpo possível: mesma instrução, mesmo tamanho,
 mesma rubrica, só a ordem muda. Critério: uma rodada `llm_only` com o campo
 movido, comparada com a rodada `m0_llm_only` de 11/09. Custo estimado: 4
 minutos de GPU.
+
+---
+
+### B-47
+
+**O retrato do sistema inclui estado de momento, e isso gera aviso falso**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 10](joao/2026-09-12-10-corte-de-relevancia.md), 12/09 · **Responsável:** Trilho B2 · **Prioridade:** Baixa · **Status:** Aberto
+
+**O que observamos.** Ao comparar duas rodadas da mesma sessão, o `compare`
+avisou que o sistema "não era o mesmo", apontando
+`model.loaded_in_vram_bytes`: 2.554.708.622 contra nulo. É a memória de
+vídeo ocupada pelo modelo no instante da chamada, que varia conforme ele já
+estava carregado ou não.
+
+**Por que importa.** O aviso de fingerprint existe para dizer "o sistema
+mudou entre estas duas rodadas". Um campo que muda sozinho, sem nada mudar,
+faz o aviso disparar sem motivo — e um aviso que aparece sempre deixa de ser
+lido. Foi exatamente o cuidado que motivou, na rodada 7, comparar só as
+chaves presentes nos dois manifestos.
+
+**O que resolveria.** Separar no retrato o que **identifica** a versão
+(nome do modelo, digest, versão do Ollama, hashes) do que descreve o
+**momento** (memória ocupada, se estava carregado). O segundo grupo continua
+gravado, porque é útil para ler latência, mas sai da comparação. Critério:
+duas rodadas seguidas na mesma máquina, sem nenhuma mudança, não geram aviso
+de fingerprint.
 
 ---
 

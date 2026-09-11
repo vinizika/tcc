@@ -47,38 +47,36 @@ mecanismo identificado.
 | 4 | Runner de avaliação | ✅ 04/09 | A régua: rodadas versionadas com manifesto, métricas e teste estatístico. **Marco 1 medido** |
 | 5a | Endurecimento do instrumento | ✅ 11/09 | Revisão das entregas dos outros trilhos; o runner recusa base errada ou vazia, o retrato identifica conteúdo e embedder, o `compare` avisa mudança de código. **Nenhuma métrica mudou** |
 | 5 | **Chain-of-Thought** | ✅ 11/09, **resultado negativo** | Implementado e medido em cinco braços. Falsos não urgentes de 8 para 1, mas falsos urgentes de 4 para 16 e recall da classe leve a **zero**. Balanceada de 0,856 para 0,408. Não entra no sistema; fica desligado e medido para a ablação |
+| 5b | Corte de relevância | ✅ 12/09 | O sistema deixou de injetar trecho irrelevante. Com a base atual a busca fica silenciosa em 98 de 98 linhas, e o resultado é idêntico ao braço sem RAG. Preset `naive_rag_sem_corte` preserva o braço antigo para a ablação |
+| 5c | **Régua de recuperação** | 🔜 próxima, **em nome do trilho A** | Instrumento que mede se a busca traz o protocolo certo em primeiro. Gargalo de dois trilhos, e é ela que dirá o limiar certo |
 | 6 | **Entrega a decidir** | ⏸️ aguardando as três correções ([adendo da rodada 9](2026-09-12-09-autopsia-do-cot.md#adendo-de-1209--as-três-correções-em-linguagem-simples-e-uma-hipótese-em-espera)) | O Self-Refine como planejado ficou enfraquecido: o que o modelo escreve sobre a própria decisão é racionalização. Uma camada de decisão determinística foi avistada e está **em stand-by**, por decisão do João — volta só se as correções não bastarem ou como braço a mais da ablação. Qualquer alternativa depende do corte, da base e da prova para ser **avaliada** sem circularidade |
 | 7 | Driver de ablação | ⏳ | Cruza as chaves de todos os trilhos e gera as tabelas do artigo |
 
-## Próxima entrega: a decidir, depois das três correções
+## Próxima entrega: régua de recuperação, em nome do trilho A
 
-A [rodada 9](2026-09-12-09-autopsia-do-cot.md) e a conversa que a seguiu
-levaram a uma conclusão sobre **ordem**, registrada no adendo dela: antes de
-qualquer técnica nova na etapa de decisão, três coisas precisam acontecer, e
-duas delas não são do meu trilho.
+A primeira das três correções está feita ([rodada 10](2026-09-12-10-corte-de-relevancia.md)).
+A segunda e a terceira — base com cobertura e prova nova — dependem da
+especialista e do trilho A. Mas há uma peça que destrava as duas e que
+ninguém começou: **a régua de recuperação**.
 
-1. **O corte de relevância** deixa de ser zero — meia parte minha, meia do
-   trilho A, decisão do time ([B-11](../backlog.md#b-11)). É a mais barata e
-   a mais urgente: enquanto ele for zero, toda medição com RAG mede ruído.
-2. **A base** passa a cobrir os assuntos do conjunto, com quadros leves,
-   validada ([B-03](../backlog.md#b-03)). Trilho A e especialista.
-3. **A prova** deixa de ser separável por vocabulário e ganha um conjunto de
-   desenvolvimento ([B-05](../backlog.md#b-05), [B-45](../backlog.md#b-45)).
-   Time e especialista.
+**Por que assumi.** Ela é o gargalo declarado de dois trilhos: o A não
+amplia a base sem ela, o B1 não mede reescrita, multi-query e HyDE sem ela
+([B-09](../backlog.md#b-09)). E é ela que vai dizer o limiar de relevância
+correto, que a rodada 10 deixou provisório. O trilho A planejou a régua como
+próxima entrega e não a começou; o João decidiu assumir a construção, com
+registro explícito de que é trabalho feito em nome do trilho A e que o
+gabarito precisa da validação dele.
 
-Do meu lado, o que anda enquanto isso: o teste limpo da ordem
-([B-46](../backlog.md#b-46)), o item do modelo maior para o time
-([B-42](../backlog.md#b-42)), e o driver de ablação (entrega 7), que não
-depende do resultado de nenhum braço.
+**O que já se sabe, de um ensaio sem código.** Rodando os 18 relatos PT-BR
+do benchmark de voz contra a busca: o protocolo certo vem em primeiro em
+**5 de 11** casos, e **"Trauma, quedas e hemorragias" aparece em primeiro em
+8 de 18** — inclusive para convulsão, picada de abelha e gato espirrando.
+Existe um protocolo-ímã na base, e isso é o [B-02](../backlog.md#b-02) com
+número pela primeira vez.
 
-**O Self-Refine** como planejado perdeu força com a autópsia: o que o modelo
-escreve sobre a própria decisão é racionalização, não julgamento. A trava de
-segurança, que é código, continua valendo.
-
-**Uma camada de decisão determinística** — o modelo extrai os sinais, uma
-tabela validada pela especialista decide — foi avistada e descrita no adendo
-da rodada 9. Está **em stand-by** por decisão do João: cedo para decidir. Não
-é candidata em disputa; é uma saída registrada para não se perder.
+**O que a rodada acrescenta ao ensaio:** o instrumento versionado, o gabarito
+com o motivo de cada "nenhum" (caso leve × sem cobertura na base), e a
+reprodutibilidade para medir antes e depois da virada sobre os mesmos casos.
 
 ## Marcos
 
@@ -115,12 +113,13 @@ dados, o que resolveria e o status — mora no
 | 9 | **O rótulo de título e seção vai embutido no texto do trecho.** Depois da reindexação, ele chega ao classificador como se fosse texto do protocolo | Trilho A | Rodada 7 (11/09) | Qualquer medição com RAG sobre a base nova mistura o efeito do rótulo com o da recuperação. Sem efeito hoje: a base não foi reindexada | [B-36](../backlog.md#b-36) |
 | 10 | **A base de 18 trechos não pode mais ser gerada.** O algoritmo de chunking mudou em 07/09 e os manuais divergiam | Trilho A (data da virada) | Rodada 7 (11/09) | As rodadas citadas R3, R3c e R6 dependem dela. Um clone limpo não a reproduz; na virada, os braços com RAG precisam ser remedidos | [B-37](../backlog.md#b-37) |
 | 11 | **A base não cobre os assuntos do conjunto de avaliação, e nenhum protocolo fala de quadros leves.** O desenho de Chain-of-Thought do artigo pressupõe evidência recuperada para o modelo não julgar sozinho | Trilho A + especialista | Rodada 9 (12/09) | O CoT como o artigo o desenhou **nunca foi testado**: o passo "correlacionar com as evidências recuperadas" não teve evidência | [B-03](../backlog.md#b-03) |
-| 12 | **O corte de relevância da busca é zero.** Nas 98 linhas, nenhum trecho passou do limiar de 0,70, e três entraram em todos os prompts assim mesmo | Trilho A | Rodada 9 (12/09) | Os braços com recuperação mediram **injeção de ruído**, não conhecimento. Com o corte aplicado, `naive_rag` seria idêntico a `llm_only` | [B-11](../backlog.md#b-11) |
 | 13 | **Os relatos de avaliação não têm gravidade nem duração.** São listas de sintomas | Time + especialista | Rodada 9 (12/09) | É a causa raiz do fracasso do CoT: a rubrica por sinal pergunta o que o dado não permite responder. Em 21 das 23 abstenções o modelo contrariou a regra para seguir "sem informação suficiente, responda INCERTO" | [B-05](../backlog.md#b-05) |
 
 ### Resolvidos
 
-*(nenhum ainda)*
+| # | Bloqueio | Resolvido em | Como |
+|---|---|---|---|
+| 12 | **O corte de relevância da busca era zero**, e três trechos entravam em todos os prompts mesmo sem relevância | 12/09 | [Rodada 10](2026-09-12-10-corte-de-relevancia.md): o corte passou a valer (0,70, provisório), e o par de rodadas com e sem corte isolou o custo do ruído — 11,8 pontos de acurácia balanceada e 22 falsos não urgentes. O limiar certo ainda é do trilho A ([B-11](../backlog.md#b-11)) |
 
 Nenhum destes impediu o runner de ser construído. Eles limitam o
 **resultado** que ele mede — e é por isso que cada linha de cada rodada
