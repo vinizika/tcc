@@ -82,8 +82,16 @@ docker compose exec backend python -m app.database.ingest_documents
 ```
 
 Confira que funcionou: `curl localhost:8000/health/fingerprint` deve mostrar
-`chunk_count` maior que zero (hoje, 18 trechos de 7 protocolos). Para
-reindexar do zero, acrescente `--reset`.
+`chunk_count` maior que zero. Para reindexar do zero, acrescente `--reset`.
+
+> **Atenção à base de referência.** Em 07/09 o trilho A trocou o algoritmo de
+> chunking. O comando acima, numa máquina nova, gera a **base nova** (cerca de
+> 259 trechos de 8 documentos). As rodadas citadas até 05/09 usaram a base
+> anterior, de 18 trechos, que não pode mais ser gerada a partir do código.
+> Quem já tem essa base **não deve reindexar** até a virada combinada pelo
+> time ([B-37](evidencias/backlog.md#b-37)). Como preparar e inspecionar um
+> documento novo está em
+> [`backend/data/documents/README.md`](backend/data/documents/README.md).
 
 **5. Acesse:**
 

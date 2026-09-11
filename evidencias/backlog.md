@@ -72,17 +72,20 @@ aqui.
 | [B-22](#b-22) | Métrica de sinal alucinado na resposta | Trilho B2 | Baixa | Aberto |
 | [B-23](#b-23) | Frontend só funciona pelo compose: hostname fixo no código | Frontend (dono a definir) | Baixa | Aberto |
 | [B-24](#b-24) | Critério de aceitação do B-04 pode ser inatingível | Time (decisão de método) | Média | Aberto |
-| [B-25](#b-25) | O compare não detecta mudança de código entre rodadas | Trilho B2 | Média | Aberto |
+| [B-25](#b-25) | O compare não detecta mudança de código entre rodadas | Trilho B2 | Média | Em andamento |
 | [B-26](#b-26) | Runner não registra o documento gerado pelo HyDE | Trilho B2 | Baixa | Aberto |
 | [B-27](#b-27) | Caracterizar o ruído residual antes de decidir o critério do B-04 | Trilho B2 | Média | Aberto |
 | [B-28](#b-28) | Efeito de num_ctx nas chamadas de consulta não verificado | Trilho B2 | Baixa | Aberto |
-| [B-29](#b-29) | Fingerprint da base não identifica conteúdo nem embedder | Trilho A + B2 | Média | Aberto |
+| [B-29](#b-29) | Fingerprint da base não identifica conteúdo nem embedder | Trilho A + B2 | Média | Em andamento |
 | [B-30](#b-30) | Ingestão pode deixar coleção parcial ou registros órfãos | Trilho A | Alta | Aberto |
 | [B-31](#b-31) | Cobertura da ingestão ainda não chega à integração com ChromaDB | Trilho A | Média | Em andamento |
 | [B-32](#b-32) | Upload de voz aceita caminho e tamanho controlados pelo cliente | Trilho B1 | Alta | Resolvido em 08/09 |
 | [B-33](#b-33) | Healthcheck não verifica modelo nem base vetorial | Operação + B2 | Média | Aberto |
 | [B-34](#b-34) | `main` não tem CI nem ambiente totalmente reproduzível | Time | Baixa | Aberto |
 | [B-35](#b-35) | Extração do paper multicoluna ainda contém artefatos clínicos | Trilho A | Alta | Em andamento |
+| [B-36](#b-36) | Rótulo de título e seção embutido no texto do chunk chega ao prompt | Trilho A | Alta | Aberto |
+| [B-37](#b-37) | Base de referência de 18 chunks não se regenera; manuais divergem | Trilho A + B2 | Média | Em andamento |
+| [B-38](#b-38) | Runner não confere a base antes de uma rodada com recuperação | Trilho B2 | Alta | Em andamento |
 
 ---
 
@@ -570,7 +573,7 @@ de cada um. É decisão de método, do time — não de um trilho. Antes de deci
 
 **O `compare` não detecta mudança de código entre rodadas**
 
-**Identificado por:** João (B2) · **Onde:** [rodada 6](joao/2026-09-05-06-determinismo-da-consulta.md), 05/09 · **Responsável:** Trilho B2 · **Prioridade:** Média · **Status:** Aberto
+**Identificado por:** João (B2) · **Onde:** [rodada 6](joao/2026-09-05-06-determinismo-da-consulta.md), 05/09 · **Responsável:** Trilho B2 · **Prioridade:** Média · **Status:** Em andamento — tratado junto com o [B-29](#b-29) na [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md), 11/09
 
 **O que observamos.** Comparando uma rodada de antes com uma de depois do
 commit `b907d6e` — que mudou o comportamento da etapa de consulta —, o
@@ -683,7 +686,7 @@ folga, fechar o item como verificado e registrar o número.
 
 **Fingerprint da base não identifica conteúdo nem embedder**
 
-**Identificado por:** Vinicius (A) · **Onde:** [auditoria do trilho A](vini/2026-09-07-01-auditoria-do-repositorio.md), 07/09 · **Responsável:** Trilho A + B2 · **Prioridade:** Média · **Status:** Aberto
+**Identificado por:** Vinicius (A) · **Onde:** [auditoria do trilho A](vini/2026-09-07-01-auditoria-do-repositorio.md), 07/09 · **Responsável:** Trilho A + B2 · **Prioridade:** Média · **Status:** Em andamento — a parte do fingerprint (embedder, parâmetros de chunking, hash de conteúdo) entra na [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md), 11/09, junto com o [B-25](#b-25)
 
 **O que observamos.** O `/health/fingerprint` calcula o hash da base somente
 sobre os IDs dos chunks. Esses IDs são derivados de
@@ -880,6 +883,94 @@ sem espaço nem pista geométrica, como `experimentallyinduced` e
 dicionário, deliberadamente evitados nesta rodada. O critério residual é
 encontrar uma correção genérica com evidência estrutural — ou manter essa
 limitação explicitamente aceita na curadoria.
+
+---
+
+### B-36
+
+**Rótulo de título e seção embutido no texto do chunk chega ao prompt**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md), 11/09 · **Responsável:** Trilho A · **Prioridade:** Alta · **Status:** Aberto
+
+**O que observamos.** O chunking novo monta cada chunk como
+`"Document title: {título}\nSection: {seção}\n\n" + texto` e grava esse texto
+inteiro como documento no ChromaDB. O `RetrievalClient` devolve exatamente
+isso em `content`, e o prompt do B2 renderiza `[n] {título} — {content}`.
+Depois da reindexação, o modelo vai ler o título duas vezes, um rótulo em
+inglês dentro de protocolos em português e, nos sete protocolos antigos, que
+caem no fallback de seção única, a palavra `Document` como nome de seção.
+Hoje não tem efeito porque a base não foi reindexada.
+
+**Por que importa.** O contrato A → B2 em `docs/CONTRATOS.md` diz que
+`content` é "o texto que entra no prompt"; a semântica mudou sem aviso. A
+intenção é boa — título e seção participarem do embedding vem do diário
+antigo do projeto. Mas qualquer medição com RAG sobre a base nova vai
+misturar o efeito do rótulo com o efeito da recuperação, e um modelo de 3B
+lendo ruído em inglês não ajuda a decisão.
+
+**O que resolveria.** Separar o que se embeda do que se exibe. Duas opções,
+à escolha do dono: gravar o corpo limpo em `documents` e fornecer ao Chroma
+os vetores calculados sobre `prefixo + corpo`; ou gravar o corpo limpo num
+metadado (`body`) e o `RetrievalClient` devolvê-lo como `content`. Critério:
+um chunk recuperado da base nova chega ao prompt sem `Document title` nem
+`Section` no início, e o vetor continua considerando título e seção.
+
+---
+
+### B-37
+
+**A base de referência de 18 chunks não pode mais ser gerada, e os manuais divergem**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md), 11/09 · **Responsável:** Trilho A (data da virada) + B2 (README raiz) · **Prioridade:** Média · **Status:** Em andamento — o README raiz foi ajustado em 11/09; falta a data da virada
+
+**O que observamos.** Três instruções que não batem: o README raiz mandava
+rodar `ingest_documents` e esperar 18 trechos; o README do trilho A pede
+`--reset` na primeira migração; as evidências do trilho A dizem "não
+reindexar até a régua de recuperação existir". O algoritmo antigo de
+chunking foi substituído em 07/09, então a base de 18 chunks só existe nas
+máquinas que já a tinham — um clone limpo não consegue reproduzi-la. Com ou
+sem `--reset`, o comando gera a base nova (apaga por `source_file` e
+regrava); a opção só protege contra restos de arquivos que sumiram da pasta.
+
+**Por que importa.** As rodadas citadas R3, R3c e R6 dependem da base antiga.
+Um colega que siga o manual principal diverge sem aviso, e o fingerprint só
+denuncia na hora de um `compare`. A direção do trilho A — congelar a base
+até a régua existir e migrar com `--reset` — está certa; o que faltou foi o
+manual principal e a percepção de que a base antiga não se regenera.
+
+**O que resolveria.** (1) O trilho A marca a data da virada. (2) Até lá, o
+README raiz avisa que o comando gera a base nova e que quem tem a antiga não
+deve reindexar — feito em 11/09. (3) Na virada, o B2 remede `naive_rag` e
+`rag_query` na base nova e cita as rodadas. (4) Opcional, barato e
+coerente com o resto do projeto: versionar um retrato da base antiga
+(~700 KB) em `data/evaluation/cited/`, como se faz com rodadas, registrando
+a versão do `chromadb`. Critério: um clone limpo consegue chegar à base que
+as evidências citam, ou as evidências dizem explicitamente que ela é
+histórica e apontam a rodada que a substituiu.
+
+---
+
+### B-38
+
+**Runner não confere a base antes de uma rodada com recuperação**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md), 11/09 · **Responsável:** Trilho B2 · **Prioridade:** Alta · **Status:** Em andamento
+
+**O que observamos.** O preflight do `run_evaluation.py` checa `/health/`,
+faz o aquecimento e grava o fingerprint no manifesto — mas não decide nada
+com ele. Com `retrieval_enabled` ligado e `chunk_count` zero, a rodada roda
+até o fim e sai como sucesso. Na prática é um `llm_only` rotulado como
+`naive_rag`. É o mesmo buraco que o [B-33](#b-33) aponta no healthcheck.
+
+**Por que importa.** Base vazia é o estado padrão de um clone limpo
+([B-12](#b-12)), e a virada da base ([B-37](#b-37)) vai mudar o hash sem
+aviso. Uma rodada citada com a base errada é um número errado no TCC.
+
+**O que resolveria.** Abortar no preflight se a busca estiver ligada e a
+base estiver vazia, com mensagem dizendo o comando de ingestão. Uma opção
+`--expect-base-hash` que aborta se o hash da base não for o esperado, para
+toda rodada que vá ser citada. Critério: `naive_rag` contra base vazia
+aborta antes da primeira linha; com o hash errado, aborta mostrando os dois.
 
 ---
 
