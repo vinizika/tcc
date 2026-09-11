@@ -88,6 +88,9 @@ aqui.
 | [B-38](#b-38) | Runner não confere a base antes de uma rodada com recuperação | Trilho B2 | Alta | Resolvido em 11/09 |
 | [B-39](#b-39) | `--expect-base-hash` é opcional e depende de disciplina | Trilho B2 | Baixa | Aberto |
 | [B-40](#b-40) | A conferência de base olha o recorte, não o conteúdo | Trilho B2 | Baixa | Aberto |
+| [B-41](#b-41) | Modelo não calibra "risco à vida"; âncora não testada | Trilho B2 | Média | Aberto |
+| [B-42](#b-42) | Técnica e modelo confundidos: CoT não rodou com modelo maior | Time | Média | Aberto |
+| [B-43](#b-43) | Etapa de decisão não é reproduzível entre sessões | Trilho B2 | Baixa | Aberto |
 
 ---
 
@@ -218,7 +221,7 @@ Critério: as regras triviais abaixo de 0,90.
 
 **Falsos não urgentes subiram de 3 para 8 com o prompt novo**
 
-**Identificado por:** João (B2) · **Onde:** [rodada 4](joao/2026-09-04-05-runner-de-avaliacao.md), 04/09 · **Responsável:** Trilho B2 · **Prioridade:** Alta · **Status:** Em andamento (próxima entrega: Chain-of-Thought)
+**Identificado por:** João (B2) · **Onde:** [rodada 4](joao/2026-09-04-05-runner-de-avaliacao.md), 04/09 · **Responsável:** Trilho B2 · **Prioridade:** Alta · **Status:** Aberto — o Chain-of-Thought foi medido em 11/09 e **reprovado**; ver abaixo
 
 **O que observamos.** Com o prompt antigo a temperatura zero: 3 falsos não
 urgentes em 71 e 22 falsos urgentes em 27. Com o prompt novo: 8 e 2. A
@@ -540,6 +543,30 @@ consegue; e é o mesmo tipo de acoplamento que o backend tinha e resolveu na
 **O que resolveria.** Ler a URL da API de uma variável de ambiente com
 padrão `http://localhost:8000`, e o compose injetar `http://backend:8000`
 — o mesmo desenho do `OLLAMA_HOST` no backend.
+
+
+**Medido em 11/09 — o Chain-of-Thought não resolve.** A
+[rodada 8](joao/2026-09-11-08-chain-of-thought.md) implementou o checklist estruturado e mediu cinco braços.
+Os falsos não urgentes caíram de 8 para **1** (o critério pedia 4 ou menos),
+mas os falsos urgentes subiram de 4 para **16** — e o recall da classe não
+emergência foi a **zero**: das 27 linhas leves, nenhuma classificada
+corretamente. Acurácia balanceada de 0,856 para 0,408, McNemar 29 contra 3,
+p abaixo de 0,0001.
+
+A metade "mantendo falsos urgentes ≤ 5" do critério foi o que impediu a
+leitura errada: sozinha, a primeira metade diria que o item estava resolvido.
+
+Causa raiz em [B-41](#b-41): o modelo marca claudicação como risco à vida em
+20 de 25 vezes, e a regra do checklist amplifica fielmente esse julgamento.
+O braço de controle mostrou que a rubrica pesa mais que a ordem dos campos —
+escrever o raciocínio **depois** da conclusão deu 0,664, melhor que os 0,408
+de escrever antes.
+
+**O item segue aberto.** As rotas que restam são a âncora de calibração
+([B-41](#b-41)) e um modelo maior ([B-42](#b-42)); nenhuma é a entrega
+seguinte do trilho. O Self-Refine, que era a outra técnica prevista para este
+item, tem o mesmo pressuposto e provavelmente o mesmo destino — o que
+sobrevive do desenho dele é a trava de segurança determinística.
 
 ---
 
@@ -1092,6 +1119,119 @@ retrato nasceu em 11/09 —, e exigi-lo agora tornaria irreproduzível
 justamente a linha de base do Chain-of-Thought. Critério: quando todas as
 rodadas citadas tiverem `content_sha256` no manifesto, a opção passa a
 comparar os dois hashes.
+
+---
+
+### B-41
+
+**O modelo não calibra "risco à vida" — a âncora de calibração não foi testada**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 8](joao/2026-09-11-08-chain-of-thought.md), 11/09 · **Responsável:** Trilho B2 · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** O Chain-of-Thought pede ao modelo que marque cada
+sinal do relato como risco à vida ou não. Contando as marcações nos cinco
+sinais que definem a classe leve do conjunto:
+
+| Sinal | "sim" | "não sei" | "não" |
+|---|---:|---:|---:|
+| **Lameness** (mancar) | **20** | 2 | 3 |
+| Eye discharge | 1 | 5 | 18 |
+| Skin lesions | 1 | 5 | 13 |
+| Sneezing | 0 | 4 | 15 |
+| Nasal discharge | 1 | 0 | 15 |
+
+Claudicação é julgada risco à vida em 20 de 25 vezes. A regra do checklist
+("um sinal de risco basta") amplifica fielmente esse julgamento errado, e o
+recall da classe não emergência foi a **zero**.
+
+**Por que importa.** É a causa raiz do resultado negativo da rodada 8, e ela
+não é da técnica: um checklist é tão bom quanto quem o preenche. Enquanto o
+julgamento clínico do modelo não for ancorado, qualquer técnica que dependa
+dele — Chain-of-Thought, Self-Refine, auto-avaliação — herda o mesmo erro.
+
+**O que resolveria.** Uma lista curta de exemplos no prompt, ancorando a
+escala ("mancar não é risco à vida; convulsão é; dificuldade respiratória
+é"), e uma nova medição do braço `llm_only_cot`. Critério: claudicação
+marcada como risco à vida em menos de 20% das ocorrências, e recall da classe
+não emergência acima de 0,70.
+
+**Por que não foi feito na rodada 8.** Seria a quarta versão do prompt na
+mesma rodada, e a terceira já foi medida e revertida por piorar. Sem um
+conjunto de desenvolvimento separado do de avaliação, continuar ajustando é
+calibrar no conjunto de teste — o que invalidaria os números do artigo. Isto
+depende do [B-05](#b-05) ou de uma divisão do conjunto atual.
+
+---
+
+### B-42
+
+**A técnica e o modelo estão confundidos: o CoT nunca rodou com modelo maior**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 8](joao/2026-09-11-08-chain-of-thought.md), 11/09 · **Responsável:** Time (decisão de escopo) · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** O Chain-of-Thought foi medido apenas com
+`llama3.2:3b`, e o resultado foi fortemente negativo: −44,7 pontos de
+acurácia balanceada, com a classe não emergência indo a zero.
+
+Duas hipóteses explicam esse resultado igualmente bem:
+
+1. A técnica não serve para triagem veterinária.
+2. A técnica exige um julgamento clínico que um modelo de 3 bilhões de
+   parâmetros não tem ([B-41](#b-41)).
+
+As duas fazem exatamente a mesma previsão nesta rodada, e nada nos dados
+atuais as separa.
+
+**Por que importa.** É a diferença entre o TCC afirmar "Chain-of-Thought não
+ajuda na pré-triagem" e "Chain-of-Thought não ajuda com modelo pequeno". A
+primeira é uma afirmação sobre a técnica que os dados não sustentam; a
+segunda é o que foi medido. A literatura reporta ganhos de CoT em modelos
+grandes, então a leitura sem essa separação será questionada na banca.
+
+**O que resolveria.** Rodar `llm_only_cot` com um modelo de 7 a 8 bilhões
+(por exemplo `llama3.1:8b`), com o mesmo prompt e o mesmo conjunto. Se o
+ganho aparecer, a conclusão é sobre o tamanho do modelo; se não aparecer, é
+sobre a técnica. Critério: uma rodada citada com modelo maior, e o texto do
+artigo escolhendo a afirmação que os dados sustentam.
+
+**A decisão é do time**, não do trilho: o projeto é local-first e declara
+`llama3.2:3b`. Rodar um modelo maior só para o estudo de ablação é
+compatível com isso (a medição não precisa ser a configuração de produção),
+mas muda o tempo das rodadas e exige espaço em disco.
+
+---
+
+### B-43
+
+**A etapa de decisão não é reproduzível entre sessões**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 8](joao/2026-09-11-08-chain-of-thought.md), 11/09 · **Responsável:** Trilho B2 · **Prioridade:** Baixa · **Status:** Aberto
+
+**O que observamos.** Repetindo o preset `llm_only` sete dias depois, com o
+mesmo modelo, o mesmo prompt (hash conferido), a mesma base e a mesma seed:
+
+| | |
+|---|---|
+| Linhas com saída **byte a byte** idêntica | 31 de 98 |
+| Linhas com a mesma classificação | 96 de 98 |
+
+Duas linhas não emergência viraram emergência (843 e 845). A
+[rodada 6](joao/2026-09-05-06-determinismo-da-consulta.md) mediu que a etapa
+de decisão era determinística **dentro** de uma mesma execução, com zero
+exceções — este é outro recorte, entre execuções separadas por dias.
+
+**Por que importa.** É a mesma assinatura de ruído numérico de GPU descrita
+na hipótese H1 da rodada 6, e ela não poupa a etapa de decisão. Muda o que
+"reproduzir uma rodada" significa: o texto não se reproduz, a decisão quase
+sempre sim. Um efeito pequeno, da ordem de 2 a 3 linhas, pode ser ruído de
+sessão e não a mudança testada.
+
+**O que resolveria.** Repetir o `llm_only` em três dias diferentes e reportar
+a faixa de linhas que mudam, como se fez com o braço de consulta no
+[B-27](#b-27). Critério: uma faixa registrada, e uma regra escrita dizendo a
+partir de quantas linhas uma diferença deixa de ser atribuível a ruído de
+sessão. Hoje não bloqueia nada: o efeito medido na rodada 8 foi 20 vezes
+maior que esse ruído.
 
 ---
 

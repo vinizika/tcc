@@ -33,8 +33,10 @@ comportamento. O detalhe de cada número está nas rodadas.
 
 ## Onde estou
 
-**Etapa atual: 5 de 7.** O produto classifica de verdade, a régua existe e
-agora ela recusa medir sobre a base errada. O Marco 1 está medido.
+**Etapa atual: 6 de 7.** O produto classifica de verdade, a régua existe e
+recusa medir sobre a base errada. O Marco 1 está medido, e o
+Chain-of-Thought foi medido e reprovado — um resultado negativo com
+mecanismo identificado.
 
 | # | Entrega | Situação | O que entregou / entrega |
 |---|---|---|---|
@@ -44,30 +46,30 @@ agora ela recusa medir sobre a base errada. O Marco 1 está medido.
 | 3 | Geração ancorada | ✅ 04/09 | **O mock morreu.** Classificação real com fontes citadas, etapas ligáveis por requisição, 43 testes |
 | 4 | Runner de avaliação | ✅ 04/09 | A régua: rodadas versionadas com manifesto, métricas e teste estatístico. **Marco 1 medido** |
 | 5a | Endurecimento do instrumento | ✅ 11/09 | Revisão das entregas dos outros trilhos; o runner recusa base errada ou vazia, o retrato identifica conteúdo e embedder, o `compare` avisa mudança de código. **Nenhuma métrica mudou** |
-| 5 | **Chain-of-Thought** | 🔜 **próxima** | Raciocínio em etapas antes da classificação, medido isoladamente |
-| 6 | Self-Refine | ⏳ | Revisão da própria resposta, com trava de segurança |
+| 5 | **Chain-of-Thought** | ✅ 11/09, **resultado negativo** | Implementado e medido em cinco braços. Falsos não urgentes de 8 para 1, mas falsos urgentes de 4 para 16 e recall da classe leve a **zero**. Balanceada de 0,856 para 0,408. Não entra no sistema; fica desligado e medido para a ablação |
+| 6 | **Self-Refine** | 🔜 **próxima**, com desenho revisto | A rodada 8 mostrou que este modelo aplica mal uma regra explícita. O que sobrevive do plano é a **trava de segurança** determinística, que não depende do julgamento do modelo |
 | 7 | Driver de ablação | ⏳ | Cruza as chaves de todos os trilhos e gera as tabelas do artigo |
 
-## Próxima entrega: Chain-of-Thought
+## Próxima entrega: Self-Refine, com o desenho revisto
 
-**O problema que resolve.** O erro que mais importa hoje é o falso não
-urgente: 8 em 71 no melhor braço, e 30 em 71 quando o RAG entra. A hipótese
-é que pedir ao modelo para percorrer os sinais um a um, antes de concluir,
-reduza a chance de ele rebaixar um caso grave por comparação com o contexto
-— que foi exatamente o mecanismo observado na
-[rodada 4](2026-09-04-05-runner-de-avaliacao.md).
+**O que a rodada 8 mudou.** O plano original era o modelo revisar a própria
+resposta e corrigi-la. O Chain-of-Thought acabou de mostrar que, quando este
+modelo recebe uma regra explícita e a aplica, ele a aplica mal — não por
+desobedecer, mas porque o julgamento clínico que a regra pressupõe não está
+lá (marca claudicação como risco à vida em 20 de 25 vezes,
+[B-41](../backlog.md#b-41)). Um Self-Refine que peça "revise sua decisão"
+tende ao mesmo destino.
 
-**O que vai fazer:** a chave `cot_enabled`, que hoje é recusada com erro 400
-de propósito, passa a funcionar. O modelo escreve o raciocínio antes da
-classificação, e a ordem importa: o campo do raciocínio precisa vir primeiro
-no formato de saída, ou a conclusão sai antes do que a justifica.
+**O que sobrevive.** A **trava de segurança**: o código que compara a
+revisão com o rascunho e só aceita rebaixar a urgência quando a justificativa
+cita um trecho literal do relato ou dos documentos. Ela é determinística, não
+depende do julgamento do modelo, e é a única parte do desenho que a rodada 8
+não enfraqueceu. Também endereça o [B-14](../backlog.md#b-14), o detalhe
+inventado na justificativa.
 
-**Como será medido:** o mesmo braço com e sem a chave, sobre o conjunto
-inteiro, comparados com o teste pareado. Também o custo em tokens e em
-tempo, porque o artigo trata latência como requisito.
-
-Depois dela vêm o Self-Refine e o driver que cruza as chaves de todos os
-trilhos para gerar as tabelas do artigo.
+**Como será medido:** o mesmo braço com e sem a chave, com a trava registrando
+quantas revisões foram recusadas e por quê. Uma revisão que nunca é aceita é
+tão informativa quanto uma que sempre é.
 
 ## Marcos
 

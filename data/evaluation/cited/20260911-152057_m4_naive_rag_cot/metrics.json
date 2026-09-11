@@ -1,0 +1,302 @@
+{
+  "rows_evaluated": 98,
+  "rows_with_error": 0,
+  "classification": {
+    "n": 98,
+    "balanced_accuracy": 0.38941053729786124,
+    "accuracy_strict": 0.3979591836734694,
+    "accuracy_strict_ci95": [
+      0.3067,
+      0.497
+    ],
+    "coverage": 0.6224489795918368,
+    "accuracy_decided": 0.639344262295082,
+    "macro_f1": 0.45949152542372884,
+    "per_class": {
+      "EMERGENCIA": {
+        "support": 71,
+        "true_positive": 29,
+        "false_positive": 0,
+        "false_negative": 42,
+        "precision": 1.0,
+        "recall": 0.4084507042253521,
+        "recall_ci95": [
+          0.3017,
+          0.5246
+        ],
+        "f1": 0.5800000000000001
+      },
+      "NAO_EMERGENCIA": {
+        "support": 27,
+        "true_positive": 10,
+        "false_positive": 22,
+        "false_negative": 17,
+        "precision": 0.3125,
+        "recall": 0.37037037037037035,
+        "recall_ci95": [
+          0.2153,
+          0.5577
+        ],
+        "f1": 0.3389830508474576
+      }
+    },
+    "confusion_matrix": {
+      "EMERGENCIA": {
+        "EMERGENCIA": 29,
+        "NAO_EMERGENCIA": 22,
+        "INCERTO": 20,
+        "INVALID_JSON": 0,
+        "OTHER": 0
+      },
+      "NAO_EMERGENCIA": {
+        "EMERGENCIA": 0,
+        "NAO_EMERGENCIA": 10,
+        "INCERTO": 17,
+        "INVALID_JSON": 0,
+        "OTHER": 0
+      }
+    },
+    "false_non_urgent": 22,
+    "false_non_urgent_rate": 0.30985915492957744,
+    "false_urgent": 0,
+    "false_urgent_rate": 0.0,
+    "incerto_rate": 0.37755102040816324,
+    "emergencia_para_incerto": 20,
+    "nao_emergencia_para_incerto": 17,
+    "invalid_rate": 0.0,
+    "other_rate": 0.0,
+    "accuracy_single_attempt": 0.3979591836734694
+  },
+  "baselines": {
+    "always_emergencia": 0.7244897959183674,
+    "rule_few_symptoms": 0.9897959183673469,
+    "rule_only_mild_symptoms": 1.0
+  },
+  "strata": {
+    "by_source": {
+      "llm_data_augmentation": {
+        "n": 27,
+        "labels": [
+          "NAO_EMERGENCIA"
+        ],
+        "recall": 0.37037037037037035,
+        "recall_ci95": [
+          0.2153,
+          0.5577
+        ],
+        "incerto_rate": 0.6296296296296297,
+        "invalid_rate": 0.0,
+        "precision": null,
+        "f1": null,
+        "note": "estrato contém um único rótulo; precisão e F1 não se aplicam"
+      },
+      "original": {
+        "n": 71,
+        "labels": [
+          "EMERGENCIA"
+        ],
+        "recall": 0.4084507042253521,
+        "recall_ci95": [
+          0.3017,
+          0.5246
+        ],
+        "incerto_rate": 0.28169014084507044,
+        "invalid_rate": 0.0,
+        "precision": null,
+        "f1": null,
+        "note": "estrato contém um único rótulo; precisão e F1 não se aplicam"
+      }
+    },
+    "by_animal": {
+      "Cat": {
+        "n": 49,
+        "balanced_accuracy": 0.3450854700854701,
+        "accuracy_strict": 0.32653061224489793,
+        "accuracy_strict_ci95": [
+          0.2121,
+          0.4662
+        ],
+        "coverage": 0.6326530612244898,
+        "accuracy_decided": 0.5161290322580645,
+        "macro_f1": 0.38555770470664086,
+        "per_class": {
+          "EMERGENCIA": {
+            "support": 36,
+            "true_positive": 11,
+            "false_positive": 0,
+            "false_negative": 25,
+            "precision": 1.0,
+            "recall": 0.3055555555555556,
+            "recall_ci95": [
+              0.18,
+              0.4686
+            ],
+            "f1": 0.46808510638297873
+          },
+          "NAO_EMERGENCIA": {
+            "support": 13,
+            "true_positive": 5,
+            "false_positive": 15,
+            "false_negative": 8,
+            "precision": 0.25,
+            "recall": 0.38461538461538464,
+            "recall_ci95": [
+              0.1771,
+              0.6448
+            ],
+            "f1": 0.30303030303030304
+          }
+        },
+        "confusion_matrix": {
+          "EMERGENCIA": {
+            "EMERGENCIA": 11,
+            "NAO_EMERGENCIA": 15,
+            "INCERTO": 10,
+            "INVALID_JSON": 0,
+            "OTHER": 0
+          },
+          "NAO_EMERGENCIA": {
+            "EMERGENCIA": 0,
+            "NAO_EMERGENCIA": 5,
+            "INCERTO": 8,
+            "INVALID_JSON": 0,
+            "OTHER": 0
+          }
+        },
+        "false_non_urgent": 15,
+        "false_non_urgent_rate": 0.4166666666666667,
+        "false_urgent": 0,
+        "false_urgent_rate": 0.0,
+        "incerto_rate": 0.3673469387755102,
+        "emergencia_para_incerto": 10,
+        "nao_emergencia_para_incerto": 8,
+        "invalid_rate": 0.0,
+        "other_rate": 0.0,
+        "accuracy_single_attempt": 0.32653061224489793
+      },
+      "Dog": {
+        "n": 49,
+        "balanced_accuracy": 0.4357142857142857,
+        "accuracy_strict": 0.46938775510204084,
+        "accuracy_strict_ci95": [
+          0.337,
+          0.6062
+        ],
+        "coverage": 0.6122448979591837,
+        "accuracy_decided": 0.7666666666666667,
+        "macro_f1": 0.5319303338171262,
+        "per_class": {
+          "EMERGENCIA": {
+            "support": 35,
+            "true_positive": 18,
+            "false_positive": 0,
+            "false_negative": 17,
+            "precision": 1.0,
+            "recall": 0.5142857142857142,
+            "recall_ci95": [
+              0.3557,
+              0.6701
+            ],
+            "f1": 0.6792452830188679
+          },
+          "NAO_EMERGENCIA": {
+            "support": 14,
+            "true_positive": 5,
+            "false_positive": 7,
+            "false_negative": 9,
+            "precision": 0.4166666666666667,
+            "recall": 0.35714285714285715,
+            "recall_ci95": [
+              0.1634,
+              0.6124
+            ],
+            "f1": 0.3846153846153846
+          }
+        },
+        "confusion_matrix": {
+          "EMERGENCIA": {
+            "EMERGENCIA": 18,
+            "NAO_EMERGENCIA": 7,
+            "INCERTO": 10,
+            "INVALID_JSON": 0,
+            "OTHER": 0
+          },
+          "NAO_EMERGENCIA": {
+            "EMERGENCIA": 0,
+            "NAO_EMERGENCIA": 5,
+            "INCERTO": 9,
+            "INVALID_JSON": 0,
+            "OTHER": 0
+          }
+        },
+        "false_non_urgent": 7,
+        "false_non_urgent_rate": 0.2,
+        "false_urgent": 0,
+        "false_urgent_rate": 0.0,
+        "incerto_rate": 0.3877551020408163,
+        "emergencia_para_incerto": 10,
+        "nao_emergencia_para_incerto": 9,
+        "invalid_rate": 0.0,
+        "other_rate": 0.0,
+        "accuracy_single_attempt": 0.46938775510204084
+      }
+    }
+  },
+  "latency": {
+    "rows_with_model_load": 0,
+    "query_s": {
+      "mean": 0.0,
+      "median": 0.0,
+      "p95": 0.0
+    },
+    "retrieval_s": {
+      "mean": 0.074,
+      "median": 0.067,
+      "p95": 0.133
+    },
+    "generation_s": {
+      "mean": 3.994,
+      "median": 3.276,
+      "p95": 8.914
+    },
+    "total_s": {
+      "mean": 4.069,
+      "median": 3.344,
+      "p95": 9.045
+    },
+    "client_s": {
+      "mean": 4.087,
+      "median": 3.365,
+      "p95": 9.063
+    },
+    "prompt_tokens_mean": 1437.0,
+    "completion_tokens_mean": 255.1,
+    "completion_tokens_p95": 493,
+    "completion_tokens_max": 785,
+    "raciocinio_chars": {
+      "mean": 225.7,
+      "median": 136,
+      "p95": 1013,
+      "max": 1500,
+      "rows": 98
+    }
+  },
+  "grounding": {
+    "mean_cited_sources": 0.32,
+    "share_rows_with_citation": 0.2755102040816326,
+    "share_rows_invalid_citation": 0.01020408163265306,
+    "share_rows_max_score_below_0_70": 1.0,
+    "mean_max_score": 0.574,
+    "citations_per_chunk": {
+      "04f38e4c19858430032eca9387f51e70a707c8d6dc06380c1984c8924f5654d3": 14,
+      "fa1e3cfa7d3cbcd2b1b12c91297736862b9ae21f4e702b1df15e36903ffe8f82": 6,
+      "79ab7e03c7082d12c878145bbfc89b9ee38f3ce7da1a0ad87c6cfc4a7fae07cb": 3,
+      "abb899a21330cf7dc677c954687ba0b3396db98dc97959d55115fa603531c95d": 2,
+      "111b5cdb72a9c8ee9d58968bf8c20b708dbcf164fe53ee461a3979debbf73f8b": 2,
+      "8485bed7cdbb5405e9a8f0f9f8491c31abf6299d3e6fed65acd69b30a92c8f98": 2,
+      "0a8acb238701317e666480dac8cf0982abe1eb218259b9eb61be23fb8d8fdc57": 1,
+      "75332f8c00b1f5960ef5baeda1596d6b1ec28dee5bc76bf9dfa312b93d62ab88": 1
+    }
+  },
+  "repeats": null
+}

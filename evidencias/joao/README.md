@@ -23,6 +23,7 @@ Self-Refine, e a régua de avaliação do sistema (runner de métricas).
 | 4 | 04/09 | [Runner de avaliação](2026-09-04-05-runner-de-avaliacao.md) | A régua existe. **O prompt da rodada 3 vale +32 pontos**; e com a base atual **o RAG custa 20 pontos e 22 falsos não urgentes** (p = 0,0001) |
 | 5 | 05/09 | [Determinismo da consulta](2026-09-05-06-determinismo-da-consulta.md) | Segundo uso da régua, confirmatório. A correção do B1 cortou 82% da instabilidade (33 → **6 linhas em 98**), mas não zerou: o resto é ruído de GPU, proporcional ao tamanho da geração. **A etapa de decisão é determinística** (0 exceções) |
 | 6 | 11/09 | [Endurecimento do instrumento](2026-09-11-07-endurecimento-do-instrumento.md) | Revisão das entregas dos trilhos A e B1. A régua passa a **recusar medir sobre a base errada ou vazia**, o retrato identifica conteúdo e embedder, e o `compare` avisa quando o código mudou. Nenhuma métrica mudou |
+| 7 | 11/09 | [Chain-of-Thought](2026-09-11-08-chain-of-thought.md) | **Resultado negativo.** Falsos não urgentes de 8 para 1, mas a classe leve foi a **zero** e a balanceada caiu de 0,856 para 0,408. O controle mostrou que escrever o raciocínio **depois** é melhor que antes — a hipótese da ordem está refutada |
 
 ## Estado atual
 
@@ -46,6 +47,7 @@ um sistema que sempre responde "emergência" (72,4%).
 |---|---|---|---|
 | Prompt antigo, sem RAG | 0,572 | 0,745 | 3/71 |
 | **Melhor atual**: prompt novo, sem RAG | **0,893** | **0,878** | 8/71 |
+| Prompt novo, sem RAG, com Chain-of-Thought (11/09) | 0,408 | 0,592 | 1/71, mas 16 falsos urgentes |
 | Prompt novo, com RAG | 0,763 | 0,674 | 30/71 |
 | Pipeline completo (05/09, estável) | 0,704 | 0,571 | 40/71 |
 
