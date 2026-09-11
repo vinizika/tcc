@@ -58,7 +58,7 @@ aqui.
 | [B-08](#b-08) | Reescrita de consulta adiciona julgamento clínico | Trilho B1 | Média | Aberto |
 | [B-09](#b-09) | HyDE gera doença inexistente e nunca foi medido | Trilho B1 | Média | Aberto |
 | [B-10](#b-10) | Consulta reescrita não vai ao índice com multi-query ligado | Trilho B1 (decisão) | Média | Aberto |
-| [B-11](#b-11) | Limiar de 0,70 na busca não mede relevância | Trilho A | Média | Aberto |
+| [B-11](#b-11) | Limiar de 0,70 na busca não mede relevância — e o corte efetivo é zero | Trilho A | **Alta** | Aberto |
 | [B-12](#b-12) | Ingestão da base em máquina nova não estava documentada | Trilho A | Média | Em andamento |
 | [B-13](#b-13) | Whisper com três implementações e sem benchmark | Trilho B1 | Média | Resolvido em 08/09 |
 | [B-14](#b-14) | Modelo inventa detalhe na justificativa | Trilho B2 | Média | Aberto |
@@ -91,6 +91,9 @@ aqui.
 | [B-41](#b-41) | Modelo não calibra "risco à vida"; âncora não testada | Trilho B2 | Média | Aberto |
 | [B-42](#b-42) | Técnica e modelo confundidos: CoT não rodou com modelo maior | Time | Média | Aberto |
 | [B-43](#b-43) | Etapa de decisão não é reproduzível entre sessões | Trilho B2 | Baixa | Aberto |
+| [B-44](#b-44) | Divergências entre o artigo do TCC1 e o sistema construído | Time (escrita) | Média | Aberto |
+| [B-45](#b-45) | Sem conjunto de desenvolvimento: ajuste de prompt no conjunto de teste | Trilho B2 | Alta | Aberto |
+| [B-46](#b-46) | Teste limpo do efeito da ordem dos campos | Trilho B2 | Baixa | Aberto |
 
 ---
 
@@ -567,6 +570,76 @@ de escrever antes.
 seguinte do trilho. O Self-Refine, que era a outra técnica prevista para este
 item, tem o mesmo pressuposto e provavelmente o mesmo destino — o que
 sobrevive do desenho dele é a trava de segurança determinística.
+
+
+**Atualização de 12/09 — o corte efetivo é zero, e isso muda todas as
+medições com RAG.** A [rodada 9](joao/2026-09-12-09-autopsia-do-cot.md) mediu, sobre as 98 linhas do braço
+`naive_rag`: similaridade máxima **média de 0,574** e **zero linhas** com
+algum trecho acima do limiar de 0,70. Mesmo assim, **98 de 98** prompts
+receberam três trechos, porque `context_min_score` está em **0,0** — o
+limiar de 0,70 só aparece como estatística no relatório, não corta nada.
+
+Consequência: os braços com recuperação do projeto não mediram recuperação,
+mediram **injeção fixa de ruído**. Com o corte aplicado, `naive_rag` seria
+idêntico a `llm_only`. Por isso a prioridade sobe para Alta: enquanto isto
+não for decidido, nenhuma rodada com RAG mede o que diz medir.
+
+
+**Atualização de 12/09 — o que foi medido, com precisão.** À luz do
+[B-11](#b-11), a frase "ligar o RAG degrada o sistema" precisa ser lida como
+**"injetar três trechos irrelevantes no prompt degrada o sistema"**: nas 98
+linhas, nenhum trecho recuperado passou do limiar de relevância, e os três
+entraram assim mesmo. O mecanismo descrito acima (recalibração do limiar de
+gravidade) continua válido; o que muda é que ele foi provocado por ruído, e
+não por conhecimento mal aplicado. Ver [rodada 9](joao/2026-09-12-09-autopsia-do-cot.md).
+
+
+**Atualização de 12/09.** A [rodada 9](joao/2026-09-12-09-autopsia-do-cot.md) acrescenta dois pontos à
+curadoria:
+
+1. **Nenhum dos protocolos atuais trata de quadros leves**, e nenhum diz a
+   gravidade de um sinal isolado. O desenho de Chain-of-Thought do artigo
+   pressupõe exatamente isso — o passo "correlacionar com as evidências
+   recuperadas" existe para o modelo não precisar julgar sozinho.
+2. **Cuidado ao curar:** os cinco sintomas leves do conjunto de avaliação
+   foram escolhidos pela especialista. Um protocolo que diga "estes cinco
+   são leves" faz o RAG acertar a prova por construção. Protocolos reais
+   sobre quadros leves, sim; a chave de resposta, não.
+
+
+**Atualização de 12/09 — o atalho é ainda mais estreito do que parecia.**
+A [rodada 9](joao/2026-09-12-09-autopsia-do-cot.md) mediu que **18 das 27 linhas leves contêm "Sneezing"**, e o
+acerto depende disso: a linha de base acerta 17 de 18 com espirro e 6 de 9
+sem. No braço com a rubrica do CoT, 10 de 18 contra **0 de 9**. Os quatro
+falsos urgentes da linha de base são **todas** as combinações de lesão de
+pele com claudicação.
+
+Ou seja, a classe leve testa na prática dois tokens. Isso não invalida as
+medições, mas limita o que elas significam: o conjunto mede **vocabulário**,
+não triagem.
+
+
+**Atualização de 12/09 — o Chain-of-Thought do artigo nunca chegou a ser
+testado.** A [rodada 9](joao/2026-09-12-09-autopsia-do-cot.md) comparou o que foi medido com o que o artigo do
+TCC1 descreve. O artigo define o CoT em três passos, sendo o do meio
+*"a correlação com as evidências recuperadas"* — é ele que dispensa o modelo
+pequeno de julgar sozinho.
+
+Esse passo não rodou: no braço sem recuperação por construção, e no braço
+com recuperação porque a busca não trouxe nada relevante ([B-11](#b-11)) e o
+passo que julgaria os trechos apareceu em 17 de 98 linhas.
+
+O que a rodada 8 mediu, portanto, foi o julgamento clínico do modelo
+**sozinho**. A causa principal do fracasso também mudou: não é só o modelo
+não calibrar gravidade, é a rubrica por sinal exigir um julgamento que a
+entrada não permite — os relatos são listas sem gravidade nem duração, e em
+21 das 23 abstenções o modelo contrariou a regra do checklist para seguir a
+instrução "sem informação suficiente, responda INCERTO".
+
+**Dependências para uma nova tentativa:** [B-03](#b-03) (protocolos que
+cubram os assuntos do conjunto e falem de quadros leves), [B-11](#b-11)
+(corte de relevância maior que zero), [B-05](#b-05) e [B-45](#b-45) (dado
+com gravidade e conjunto de desenvolvimento separado).
 
 ---
 
@@ -1124,43 +1197,36 @@ comparar os dois hashes.
 
 ### B-41
 
-**O modelo não calibra "risco à vida" — a âncora de calibração não foi testada**
+**O julgamento de "risco à vida" não se resolve por âncoras no prompt**
 
-**Identificado por:** João (B2) · **Onde:** [rodada 8](joao/2026-09-11-08-chain-of-thought.md), 11/09 · **Responsável:** Trilho B2 · **Prioridade:** Média · **Status:** Aberto
+**Identificado por:** João (B2) · **Onde:** [rodada 8](joao/2026-09-11-08-chain-of-thought.md), 11/09; reescrito na [rodada 9](joao/2026-09-12-09-autopsia-do-cot.md), 12/09 · **Responsável:** Trilho B2 · **Prioridade:** Baixa · **Status:** Aberto — bloqueado por [B-45](#b-45) e [B-05](#b-05)
 
-**O que observamos.** O Chain-of-Thought pede ao modelo que marque cada
-sinal do relato como risco à vida ou não. Contando as marcações nos cinco
-sinais que definem a classe leve do conjunto:
+**O que observamos.** Ao preencher o checklist do Chain-of-Thought, o modelo
+marca **claudicação** como risco à vida em **24 de 25** ocorrências (contagem
+pelo método declarado na rodada 9: primeira marca por sinal, primeira
+repetição). Os outros quatro termos leves ele marca bem. Como 21 das 27
+linhas leves contêm claudicação, e a regra é "um sinal de risco basta", um
+único termo contamina 78% da classe.
 
-| Sinal | "sim" | "não sei" | "não" |
-|---|---:|---:|---:|
-| **Lameness** (mancar) | **20** | 2 | 3 |
-| Eye discharge | 1 | 5 | 18 |
-| Skin lesions | 1 | 5 | 13 |
-| Sneezing | 0 | 4 | 15 |
-| Nasal discharge | 1 | 0 | 15 |
+**Por que a proposta original não serve.** A primeira versão deste item
+propunha âncoras de calibração no prompt, do tipo "mancar não é risco à
+vida; convulsão é". Isso é **vazamento por construção**: os cinco termos
+leves *são* a classe não emergência do conjunto de avaliação, então
+qualquer exemplo que os cite entrega a resposta. E dividir as 15 combinações
+distintas em desenvolvimento e teste deixa os dois lados pequenos demais.
 
-Claudicação é julgada risco à vida em 20 de 25 vezes. A regra do checklist
-("um sinal de risco basta") amplifica fielmente esse julgamento errado, e o
-recall da classe não emergência foi a **zero**.
+**O que mudou no diagnóstico.** A [rodada 9](joao/2026-09-12-09-autopsia-do-cot.md) mostrou que a marcação
+errada é a **segunda** causa, não a primeira, e que ela sequer é um
+julgamento estável: no braço de controle, as mesmas marcações invertem
+conforme a classe já decidida (febre como risco à vida: 2 de 23 com o
+raciocínio antes, 22 de 23 com o raciocínio depois). Não há uma escala
+clínica para calibrar — há texto gerado para combinar com a conclusão.
 
-**Por que importa.** É a causa raiz do resultado negativo da rodada 8, e ela
-não é da técnica: um checklist é tão bom quanto quem o preenche. Enquanto o
-julgamento clínico do modelo não for ancorado, qualquer técnica que dependa
-dele — Chain-of-Thought, Self-Refine, auto-avaliação — herda o mesmo erro.
-
-**O que resolveria.** Uma lista curta de exemplos no prompt, ancorando a
-escala ("mancar não é risco à vida; convulsão é; dificuldade respiratória
-é"), e uma nova medição do braço `llm_only_cot`. Critério: claudicação
-marcada como risco à vida em menos de 20% das ocorrências, e recall da classe
-não emergência acima de 0,70.
-
-**Por que não foi feito na rodada 8.** Seria a quarta versão do prompt na
-mesma rodada, e a terceira já foi medida e revertida por piorar. Sem um
-conjunto de desenvolvimento separado do de avaliação, continuar ajustando é
-calibrar no conjunto de teste — o que invalidaria os números do artigo. Isto
-depende do [B-05](#b-05) ou de uma divisão do conjunto atual.
-
+**O que resolveria.** Duas rotas, nenhuma por prompt: (1) tirar o julgamento
+do modelo, com uma lista de sinais de alerta vinda dos protocolos e validada
+pela especialista decidindo em código; ou (2) dar ao modelo a evidência
+recuperada que o artigo previa ([B-03](#b-03)). Em qualquer caso, um
+conjunto de desenvolvimento separado ([B-45](#b-45)) é pré-requisito.
 ---
 
 ### B-42
@@ -1232,6 +1298,109 @@ a faixa de linhas que mudam, como se fez com o braço de consulta no
 partir de quantas linhas uma diferença deixa de ser atribuível a ruído de
 sessão. Hoje não bloqueia nada: o efeito medido na rodada 8 foi 20 vezes
 maior que esse ruído.
+
+---
+
+### B-44
+
+**Divergências entre o artigo do TCC1 e o sistema construído**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 9](joao/2026-09-12-09-autopsia-do-cot.md), 12/09 · **Responsável:** Time (escrita do TCC2) · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** Lendo o artigo de ponta a ponta e comparando com o
+repositório, cinco itens prometidos não existem no código:
+
+| Prometido no artigo | Estado |
+|---|---|
+| Orquestração por **LangChain** | Nunca entrou. O código fala direto com Ollama e ChromaDB. A única menção no repositório é uma nota do diário de maio |
+| **LightRAG / grafo de conhecimento** e raciocínio multi-hop | Não existe. A recuperação é vetorial simples |
+| **Re-ranking por cross-encoder** | O `RerankerClient` apenas reordena pelo mesmo score da busca |
+| **RAGAs** (faithfulness, answer relevance, context precision) | Não integrado. Já registrado em [B-21](#b-21) |
+| Os **datasets** como fonte de conhecimento indexada | Hoje servem só à avaliação — e **deve continuar assim**, ver abaixo |
+
+**Por que importa.** O TCC2 descreve o que foi construído; divergir do plano
+é normal e esperado num projeto de pesquisa. O problema não é divergir, é
+divergir **sem registro**: a banca vai perguntar, e hoje não existe uma
+justificativa escrita para nenhum dos cinco.
+
+Sobre o último item, vale dizer que a divergência foi uma **melhoria**: os
+datasets são o conjunto de avaliação, ou seja, a prova. Indexá-los como
+conhecimento faria o sistema acertar por consulta à chave de resposta. A
+base foi construída a partir de protocolos, o que separa prova de fonte.
+
+**O que resolveria.** Um parágrafo por item no TCC2, dizendo o que mudou e
+por quê. Para o LangChain, a justificativa disponível é: o estudo de ablação
+exige controle explícito sobre o texto exato enviado ao modelo, a ordem dos
+campos na saída estruturada, os parâmetros de geração e a contagem de
+tentativas — o retrato do sistema (`/health/fingerprint`) e o runner são
+construídos sobre esse controle. Critério: nenhuma promessa do artigo fica
+sem correspondência ou sem justificativa no texto final.
+
+**Também entra aqui** a leitura qualitativa das 39 linhas que mudaram entre
+a linha de base e o Chain-of-Thought: material direto para a seção de
+resultados, com os dados já em `data/evaluation/cited/`.
+
+---
+
+### B-45
+
+**Não há conjunto de desenvolvimento: todo ajuste de prompt é feito no conjunto de teste**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 9](joao/2026-09-12-09-autopsia-do-cot.md), 12/09 · **Responsável:** Trilho B2 · **Prioridade:** Alta · **Status:** Aberto
+
+**O que observamos.** Existe um único conjunto de 98 relatos, usado ao mesmo
+tempo para desenvolver e para medir. O prompt `v1_grounded` foi iterado
+sobre ele na rodada 3, de 0,572 para 0,893 de acurácia balanceada. O
+Chain-of-Thought teve duas iterações de prompt medidas nos mesmos 98 relatos
+na rodada 8, e uma terceira tentativa foi revertida por piorar.
+
+**Por que importa.** Isso é ajuste ao conjunto de teste. Duas consequências
+concretas:
+
+1. Comparar um prompt afinado no conjunto com um prompt novo, **no mesmo
+   conjunto**, favorece o primeiro. Parte da diferença entre a linha de base
+   e o CoT pode ser isso, e não a técnica.
+2. Qualquer melhoria futura de prompt herda o problema. As âncoras de
+   calibração do [B-41](#b-41) são o caso extremo: os cinco termos leves
+   **são** a classe leve, então um exemplo que os cite é vazamento por
+   construção.
+
+**O que resolveria.** Separar um conjunto de desenvolvimento antes do
+próximo ajuste de prompt. Com 98 linhas e 15 combinações distintas na classe
+leve, dividir o conjunto atual deixa os dois lados pequenos demais — então a
+saída provável é gerar relatos de desenvolvimento novos, o que liga este
+item ao [B-05](#b-05). Critério: nenhum ajuste de prompt é medido no mesmo
+conjunto em que foi desenvolvido, e as evidências dizem qual conjunto foi
+usado para cada coisa.
+
+---
+
+### B-46
+
+**Teste limpo do efeito da ordem dos campos**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 9](joao/2026-09-12-09-autopsia-do-cot.md), 12/09 · **Responsável:** Trilho B2 · **Prioridade:** Baixa · **Status:** Aberto — aprovado pelo João em 12/09
+
+**O que observamos.** A rodada 8 comparou o braço com raciocínio antes
+contra o braço com raciocínio depois e concluiu que a ordem importa. Mas
+essa comparação carrega **três** mudanças de uma vez em relação à linha de
+base: o texto do checklist, um campo novo na saída e um prompt 56% maior
+(432 para 675 tokens). Só a comparação entre os dois braços de CoT isola a
+ordem, e mesmo ela difere numa frase do prompt.
+
+**Por que importa.** "A ordem dos campos na saída estruturada muda a
+decisão" é uma afirmação forte e transferível — vale para qualquer sistema
+que use saída restrita por gramática, não só para triagem. Se for para o
+TCC, precisa de um teste com uma variável.
+
+**O que resolveria.** O formato atual da saída já tem `sinais_de_alerta`
+declarado **depois** de `classificacao`, e ele carrega uma rubrica leve
+("apenas os sinais preocupantes que aparecem no relato"). Mover **apenas
+esse campo** para antes de `classificacao`, sem alterar uma palavra do
+prompt, dá o contraste mais limpo possível: mesma instrução, mesmo tamanho,
+mesma rubrica, só a ordem muda. Critério: uma rodada `llm_only` com o campo
+movido, comparada com a rodada `m0_llm_only` de 11/09. Custo estimado: 4
+minutos de GPU.
 
 ---
 

@@ -47,29 +47,32 @@ mecanismo identificado.
 | 4 | Runner de avaliação | ✅ 04/09 | A régua: rodadas versionadas com manifesto, métricas e teste estatístico. **Marco 1 medido** |
 | 5a | Endurecimento do instrumento | ✅ 11/09 | Revisão das entregas dos outros trilhos; o runner recusa base errada ou vazia, o retrato identifica conteúdo e embedder, o `compare` avisa mudança de código. **Nenhuma métrica mudou** |
 | 5 | **Chain-of-Thought** | ✅ 11/09, **resultado negativo** | Implementado e medido em cinco braços. Falsos não urgentes de 8 para 1, mas falsos urgentes de 4 para 16 e recall da classe leve a **zero**. Balanceada de 0,856 para 0,408. Não entra no sistema; fica desligado e medido para a ablação |
-| 6 | **Self-Refine** | 🔜 **próxima**, com desenho revisto | A rodada 8 mostrou que este modelo aplica mal uma regra explícita. O que sobrevive do plano é a **trava de segurança** determinística, que não depende do julgamento do modelo |
+| 6 | **Entrega a decidir** | ⏸️ decisão do João após a [rodada 9](2026-09-12-09-autopsia-do-cot.md) | Duas alternativas: Self-Refine como planejado (enfraquecido — o que o modelo escreve sobre a própria decisão é racionalização) ou uma **camada de decisão determinística**, que o próprio artigo sustenta ao citar que listas estruturadas superam a triagem intuitiva. As duas dependem dos bloqueios 11 a 13 para serem **avaliadas** sem circularidade |
 | 7 | Driver de ablação | ⏳ | Cruza as chaves de todos os trilhos e gera as tabelas do artigo |
 
-## Próxima entrega: Self-Refine, com o desenho revisto
+## Próxima entrega: a decidir, com a autópsia na mão
 
-**O que a rodada 8 mudou.** O plano original era o modelo revisar a própria
-resposta e corrigi-la. O Chain-of-Thought acabou de mostrar que, quando este
-modelo recebe uma regra explícita e a aplica, ele a aplica mal — não por
-desobedecer, mas porque o julgamento clínico que a regra pressupõe não está
-lá (marca claudicação como risco à vida em 20 de 25 vezes,
-[B-41](../backlog.md#b-41)). Um Self-Refine que peça "revise sua decisão"
-tende ao mesmo destino.
+A [rodada 9](2026-09-12-09-autopsia-do-cot.md) mudou o peso das duas
+alternativas, e a decisão é do João.
 
-**O que sobrevive.** A **trava de segurança**: o código que compara a
-revisão com o rascunho e só aceita rebaixar a urgência quando a justificativa
-cita um trecho literal do relato ou dos documentos. Ela é determinística, não
-depende do julgamento do modelo, e é a única parte do desenho que a rodada 8
-não enfraqueceu. Também endereça o [B-14](../backlog.md#b-14), o detalhe
-inventado na justificativa.
+**Self-Refine como planejado** perdeu força. Ele pede ao modelo que revise a
+própria decisão, e a autópsia mostrou que o que o modelo escreve sobre a
+própria decisão é **racionalização**, não julgamento: no braço de controle,
+as marcações de gravidade invertem conforme a classe já escolhida (febre
+como risco à vida: 2 de 23 com o raciocínio antes, 22 de 23 com o raciocínio
+depois). A trava de segurança, que é código determinístico, continua de pé.
 
-**Como será medido:** o mesmo braço com e sem a chave, com a trava registrando
-quantas revisões foram recusadas e por quê. Uma revisão que nunca é aceita é
-tão informativa quanto uma que sempre é.
+**Camada de decisão determinística** ganhou força. O modelo só extrai e
+normaliza os sinais; uma lista de sinais de alerta, vinda dos protocolos e
+validada pela especialista, decide; abstém-se apenas quando a extração
+falha. O artigo do TCC1 sustenta esse desenho ao citar que listas
+estruturadas de critérios superaram a triagem intuitiva de profissionais.
+
+**O que vale para as duas.** Nenhuma pode ser **avaliada** no conjunto atual
+sem circularidade: a regra "só sintomas leves → não emergência" acerta 98 de
+98 sem modelo nenhum, e a classe leve testa dois tokens. E enquanto o corte
+de relevância for zero e a base não cobrir os assuntos do conjunto, medir o
+sistema completo mede ruído. Os bloqueios 11 a 13 são pré-requisito.
 
 ## Marcos
 
@@ -105,6 +108,9 @@ dados, o que resolveria e o status — mora no
 | 8 | **O critério de aceitação do B-04 precisa de decisão do time.** Ele pede zero linhas instáveis, mas 6 sobram por ruído numérico de GPU, que nenhuma configuração controla | Time (decisão de método) | Rodada 6 (05/09) | Enquanto não se decide, o B-04 fica aberto sem que ninguém possa fechá-lo, e a matriz de ablação de outubro não tem regra definida para comparar braços que usam a etapa de consulta | [B-24](../backlog.md#b-24) |
 | 9 | **O rótulo de título e seção vai embutido no texto do trecho.** Depois da reindexação, ele chega ao classificador como se fosse texto do protocolo | Trilho A | Rodada 7 (11/09) | Qualquer medição com RAG sobre a base nova mistura o efeito do rótulo com o da recuperação. Sem efeito hoje: a base não foi reindexada | [B-36](../backlog.md#b-36) |
 | 10 | **A base de 18 trechos não pode mais ser gerada.** O algoritmo de chunking mudou em 07/09 e os manuais divergiam | Trilho A (data da virada) | Rodada 7 (11/09) | As rodadas citadas R3, R3c e R6 dependem dela. Um clone limpo não a reproduz; na virada, os braços com RAG precisam ser remedidos | [B-37](../backlog.md#b-37) |
+| 11 | **A base não cobre os assuntos do conjunto de avaliação, e nenhum protocolo fala de quadros leves.** O desenho de Chain-of-Thought do artigo pressupõe evidência recuperada para o modelo não julgar sozinho | Trilho A + especialista | Rodada 9 (12/09) | O CoT como o artigo o desenhou **nunca foi testado**: o passo "correlacionar com as evidências recuperadas" não teve evidência | [B-03](../backlog.md#b-03) |
+| 12 | **O corte de relevância da busca é zero.** Nas 98 linhas, nenhum trecho passou do limiar de 0,70, e três entraram em todos os prompts assim mesmo | Trilho A | Rodada 9 (12/09) | Os braços com recuperação mediram **injeção de ruído**, não conhecimento. Com o corte aplicado, `naive_rag` seria idêntico a `llm_only` | [B-11](../backlog.md#b-11) |
+| 13 | **Os relatos de avaliação não têm gravidade nem duração.** São listas de sintomas | Time + especialista | Rodada 9 (12/09) | É a causa raiz do fracasso do CoT: a rubrica por sinal pergunta o que o dado não permite responder. Em 21 das 23 abstenções o modelo contrariou a regra para seguir "sem informação suficiente, responda INCERTO" | [B-05](../backlog.md#b-05) |
 
 ### Resolvidos
 

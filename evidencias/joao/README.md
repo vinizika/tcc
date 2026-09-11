@@ -24,6 +24,7 @@ Self-Refine, e a régua de avaliação do sistema (runner de métricas).
 | 5 | 05/09 | [Determinismo da consulta](2026-09-05-06-determinismo-da-consulta.md) | Segundo uso da régua, confirmatório. A correção do B1 cortou 82% da instabilidade (33 → **6 linhas em 98**), mas não zerou: o resto é ruído de GPU, proporcional ao tamanho da geração. **A etapa de decisão é determinística** (0 exceções) |
 | 6 | 11/09 | [Endurecimento do instrumento](2026-09-11-07-endurecimento-do-instrumento.md) | Revisão das entregas dos trilhos A e B1. A régua passa a **recusar medir sobre a base errada ou vazia**, o retrato identifica conteúdo e embedder, e o `compare` avisa quando o código mudou. Nenhuma métrica mudou |
 | 7 | 11/09 | [Chain-of-Thought](2026-09-11-08-chain-of-thought.md) | **Resultado negativo.** Falsos não urgentes de 8 para 1, mas a classe leve foi a **zero** e a balanceada caiu de 0,856 para 0,408. O controle mostrou que escrever o raciocínio **depois** é melhor que antes — a hipótese da ordem está refutada |
+| 8 | 12/09 | [Autópsia do Chain-of-Thought](2026-09-12-09-autopsia-do-cot.md) | Análise, sem código. A causa não era o modelo: **a rubrica pergunta o que o dado não tem**. O raciocínio do modelo é racionalização, não julgamento. A linha de base é atalho lexical, e os braços com RAG mediram **ruído** — nenhum trecho passou do limiar em 98 linhas |
 
 ## Estado atual
 

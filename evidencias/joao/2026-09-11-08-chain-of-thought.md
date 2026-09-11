@@ -411,3 +411,132 @@ compara a revisão com o rascunho e recusa mudanças sem evidência literal no
 relato ou nos trechos. Essa trava é código determinístico, não depende do
 julgamento do modelo, e é a única parte do desenho que esta rodada não
 enfraqueceu.
+
+---
+
+## Adendo de 12/09 — correções após a autópsia
+
+> Esta seção foi escrita um dia depois, na
+> [rodada 9](2026-09-12-09-autopsia-do-cot.md). **Nada acima dela foi
+> editado**: uma rodada fechada é o registro do que se sabia naquele dia, e
+> apagar o erro apagaria a trilha de como ele foi descoberto. O que vale
+> hoje é o texto original mais estas correções.
+>
+> Todas nasceram de uma releitura dos `predictions.jsonl` das cinco rodadas
+> citadas, motivada por uma revisão adversarial da análise. Seis afirmações
+> estavam erradas, e quatro delas erravam **a favor** da minha própria
+> leitura — que é o motivo de a revisão existir.
+
+**Método de contagem**, que faltava declarar e é o que torna os números
+abaixo reproduzíveis: primeira repetição de cada rodada; uma marcação por
+sinal por linha (a primeira, quando o modelo repete o mesmo sinal); leitura
+por expressão regular sobre o campo `raciocinio`.
+
+### 1. Houve vazamento de formato, em 21 das 98 linhas
+
+**O que eu afirmei:** "Depois dela, nenhum vazamento" — a correção do prompt
+teria resolvido o problema de o modelo escrever a resposta inteira dentro do
+campo de raciocínio.
+
+**O que os dados mostram:** na rodada completa do braço principal, **21 de
+98** linhas trazem justificativa, recomendação ou o marcador de fim de turno
+dentro do `raciocinio`. Exemplo do fim de uma delas:
+
+```
+… | Recomendação: O tutor deve levar o animal a um veterinário o mais
+rápido possível para avaliação e tratamento adequados. | }assistant
+```
+
+**Como errei:** conferi em 5 relatos escolhidos a dedo e generalizei para
+98. É o mesmo erro que a seção "O que os cinco relatos mostraram" alerta —
+cometido na frase seguinte.
+
+**O que muda:** o modelo encerra o turno dentro da string, e a gramática o
+obriga a continuar; a classificação é gerada depois desse ponto. Não invalida
+as métricas (a decisão sai mesmo assim), mas invalida o `raciocinio` como
+material de auditoria em um quinto das linhas.
+
+### 2. A regra não é "amplificada fielmente" — ela é ignorada numa direção
+
+**O que eu afirmei:** "a regra amplifica fielmente um julgamento clínico que
+o modelo não tem".
+
+**O que os dados mostram:** a fidelidade depende da direção.
+
+| A regra, aplicada às marcações do modelo, aponta para | Linhas | Obedecida |
+|---|---:|---:|
+| EMERGENCIA | 89 | 73 (82%) |
+| NAO_EMERGENCIA | 6 | **1 (17%)** |
+| INCERTO | 2 | 2 |
+
+**O que muda:** a afirmação original sugere um mecanismo neutro que
+"apenas amplifica". O real é assimétrico, e a assimetria tem origem no texto
+que eu escrevi: o prompt tem três frases empurrando para a urgência ("mesmo
+que pareça exagerada", "não sei nunca significa não", "a ausência de outros
+sintomas não torna o caso leve") e nenhuma na direção oposta.
+
+### 3. Os falsos não urgentes foram 1 a 3, não 1
+
+**O que eu afirmei:** "de 8 para 1".
+
+**O que os dados mostram:** 1 na primeira repetição, **3** nas outras duas.
+Os falsos urgentes ficaram em 16 nas três.
+
+**O que muda:** relatar o melhor de três repetições como se fosse o
+resultado é escolher o número favorável. O correto é a faixa: **1 a 3**.
+
+### 4. As saídas inválidas foram zero **após o retry**
+
+**O que eu afirmei:** "saídas inválidas em zero nas cinco rodadas".
+
+**O que os dados mostram:** verdade no resultado final, mas **1 linha do
+braço principal e 1 do controle precisaram de segunda tentativa**. A métrica
+`accuracy_single_attempt`, que recontabiliza essas linhas como inválidas,
+existe exatamente para essa distinção e eu não a li.
+
+**O que muda:** pouco no número, mas a frase "o teto se pagou" fica mais
+precisa assim: ele evitou que a repetição degenerada consumisse o orçamento
+de tokens, e o retry cobriu o que restou.
+
+### 5. As abstenções não vêm do "não sei"
+
+**O que eu afirmei:** "a segunda perda vem do «não sei» … daí as 11 não
+emergências que viraram incerto".
+
+**O que os dados mostram:** das 23 linhas em que o modelo se absteve:
+
+| Origem | Linhas |
+|---|---:|
+| Tinha um "sim" marcado (a regra mandava EMERGENCIA) | **16** |
+| Todas as marcações "não" (a regra mandava NAO_EMERGENCIA) | 5 |
+| Só por "não sei" | **2** |
+
+**O que muda:** a explicação real é outra, e é mais importante. O modelo
+ignorou a regra do checklist e obedeceu a uma cláusula anterior do prompt de
+sistema: "se o relato não trouxer informação suficiente para decidir,
+responda INCERTO". Essa frase é **literalmente verdadeira nas 98 linhas** —
+os relatos são listas de sintomas sem gravidade nem duração. A rubrica por
+sinal não falhou por acaso: ela pediu um julgamento que o dado não permite.
+É a causa principal, e está desenvolvida na [rodada 9](2026-09-12-09-autopsia-do-cot.md).
+
+### 6. Claudicação: 24 de 25, com método declarado
+
+**O que eu afirmei:** "20 de 25", sem dizer como contei.
+
+**O que os dados mostram:** **24 de 25** pelo método declarado no topo deste
+adendo. A diferença vinha de contar marcações repetidas da mesma linha.
+
+**O que muda:** o número fica maior e a conclusão, mais forte. Mas a lição é
+outra: contagem sem método declarado não é verificável, e este adendo existe
+em parte por isso.
+
+### O que a rodada 8 acertou, e continua valendo
+
+O resultado central não se move: o Chain-of-Thought derrubou a acurácia
+balanceada de 0,856 para 0,408, zerou o recall da classe não emergência, e o
+braço de controle (raciocínio escrito depois) foi **melhor** que o principal.
+O teto de caracteres evitou saídas inválidas sistemáticas. A instabilidade
+medida (3 linhas) é pequena diante do efeito.
+
+O que muda é **por que** aconteceu — e a resposta da rodada 8 estava
+incompleta.
