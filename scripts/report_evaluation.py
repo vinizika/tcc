@@ -314,6 +314,31 @@ def comando_report(diretorio: Path) -> None:
     print(f"Regerado: {diretorio / 'report.md'}")
 
 
+def _diferencas_comparaveis(parte_a, parte_b) -> list:
+    """
+    Compara duas partes do fingerprint só nas chaves que as duas têm.
+
+    O retrato ganha campos ao longo do projeto (o hash de conteúdo e o
+    embedder entraram em 11/09). Comparar o dicionário inteiro faria toda
+    rodada anterior acusar diferença contra toda rodada nova, por um campo
+    que simplesmente não existia — e um aviso que aparece sempre deixa de
+    ser lido. O que as duas registram é comparável; o resto, não.
+    """
+
+    if not isinstance(parte_a, dict) or not isinstance(parte_b, dict):
+        return (
+            []
+            if parte_a == parte_b
+            else [("", parte_a, parte_b)]
+        )
+
+    return [
+        (chave, parte_a[chave], parte_b[chave])
+        for chave in sorted(set(parte_a) & set(parte_b))
+        if parte_a[chave] != parte_b[chave]
+    ]
+
+
 def comando_compare(dir_a: Path, dir_b: Path, usar: str) -> None:
 
     manifesto_a, df_a = carregar(dir_a)
@@ -364,11 +389,38 @@ def comando_compare(dir_a: Path, dir_b: Path, usar: str) -> None:
     impressao_b = (manifesto_b.get("backend_fingerprint") or {})
 
     for parte in ("model", "vector_store", "prompts"):
-        if impressao_a.get(parte) != impressao_b.get(parte):
+        for chave, valor_a, valor_b in _diferencas_comparaveis(
+            impressao_a.get(parte),
+            impressao_b.get(parte),
+        ):
             print(
-                f"\n  Aviso: '{parte}' difere entre as rodadas — "
+                f"\n  Aviso: '{parte}.{chave}' difere entre as rodadas — "
                 "o sistema não era o mesmo."
             )
+            print(f"    {valor_a}  ->  {valor_b}")
+
+    # O fingerprint descreve o modelo, a base e os prompts, mas não o código
+    # do pipeline nem os prompts da etapa de consulta. Duas rodadas com
+    # commits diferentes podem sair como "nenhuma diferença" — foi o que
+    # aconteceu na rodada 6 (evidencias/backlog.md#b-25). O compose monta
+    # ./backend:/app, então o commit descreve mesmo o código que respondeu.
+    sha_a = (manifesto_a.get("git") or {}).get("sha")
+    sha_b = (manifesto_b.get("git") or {}).get("sha")
+
+    if sha_a and sha_b and sha_a != sha_b:
+        print(
+            f"\n  Aviso: as rodadas rodaram commits diferentes "
+            f"({sha_a} -> {sha_b}). Mudanças no código do pipeline ou nos "
+            "prompts de consulta não aparecem no fingerprint."
+        )
+
+    if (manifesto_a.get("git") or {}).get("dirty") or (
+        manifesto_b.get("git") or {}
+    ).get("dirty"):
+        print(
+            "\n  Aviso: ao menos uma das rodadas foi executada com "
+            "alterações locais não commitadas."
+        )
 
     # Só a primeira execução de cada rodada entra na comparação: usar todas
     # as repetições trataria a mesma linha como observações independentes e

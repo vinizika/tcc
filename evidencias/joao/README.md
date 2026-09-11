@@ -22,6 +22,7 @@ Self-Refine, e a régua de avaliação do sistema (runner de métricas).
 | 3 | 04/09 | [Geração ancorada nos documentos](2026-09-04-04-geracao-ancorada.md) | Mock morto: classificação real com fontes citadas, 43 testes. RAG muda a decisão em 1 dos 3 casos, mas a etapa de consulta erra 1 em 4 execuções |
 | 4 | 04/09 | [Runner de avaliação](2026-09-04-05-runner-de-avaliacao.md) | A régua existe. **O prompt da rodada 3 vale +32 pontos**; e com a base atual **o RAG custa 20 pontos e 22 falsos não urgentes** (p = 0,0001) |
 | 5 | 05/09 | [Determinismo da consulta](2026-09-05-06-determinismo-da-consulta.md) | Segundo uso da régua, confirmatório. A correção do B1 cortou 82% da instabilidade (33 → **6 linhas em 98**), mas não zerou: o resto é ruído de GPU, proporcional ao tamanho da geração. **A etapa de decisão é determinística** (0 exceções) |
+| 6 | 11/09 | [Endurecimento do instrumento](2026-09-11-07-endurecimento-do-instrumento.md) | Revisão das entregas dos trilhos A e B1. A régua passa a **recusar medir sobre a base errada ou vazia**, o retrato identifica conteúdo e embedder, e o `compare` avisa quando o código mudou. Nenhuma métrica mudou |
 
 ## Estado atual
 

@@ -33,8 +33,8 @@ comportamento. O detalhe de cada número está nas rodadas.
 
 ## Onde estou
 
-**Etapa atual: 5 de 7.** O produto classifica de verdade e a régua existe.
-O Marco 1 está medido.
+**Etapa atual: 5 de 7.** O produto classifica de verdade, a régua existe e
+agora ela recusa medir sobre a base errada. O Marco 1 está medido.
 
 | # | Entrega | Situação | O que entregou / entrega |
 |---|---|---|---|
@@ -43,6 +43,7 @@ O Marco 1 está medido.
 | 2 | Configuração centralizada | ✅ 03/09 | Mesmo código em Docker e local; saída estruturada validada |
 | 3 | Geração ancorada | ✅ 04/09 | **O mock morreu.** Classificação real com fontes citadas, etapas ligáveis por requisição, 43 testes |
 | 4 | Runner de avaliação | ✅ 04/09 | A régua: rodadas versionadas com manifesto, métricas e teste estatístico. **Marco 1 medido** |
+| 5a | Endurecimento do instrumento | ✅ 11/09 | Revisão das entregas dos outros trilhos; o runner recusa base errada ou vazia, o retrato identifica conteúdo e embedder, o `compare` avisa mudança de código. **Nenhuma métrica mudou** |
 | 5 | **Chain-of-Thought** | 🔜 **próxima** | Raciocínio em etapas antes da classificação, medido isoladamente |
 | 6 | Self-Refine | ⏳ | Revisão da própria resposta, com trava de segurança |
 | 7 | Driver de ablação | ⏳ | Cruza as chaves de todos os trilhos e gera as tabelas do artigo |
@@ -100,6 +101,8 @@ dados, o que resolveria e o status — mora no
 | 6 | **A etapa de consulta custa 63% do tempo de resposta.** Três chamadas sequenciais ao modelo antes de qualquer busca | Trilho B1 | Rodada 3 (04/09) | Relevante para o requisito de latência do artigo. As chamadas são independentes e poderiam ser paralelas ou fundidas | [B-07](../backlog.md#b-07) |
 | 7 | **`RERANK_TOP_K` e `CONTEXT_TOP_K` se sobrepõem.** A primeira é do trilho A e hoje não é usada | Trilho A + B2 | Rodada 3 (04/09) | Quando o re-ranking real cortar em 3, pedir 5 trechos devolverá 3 em silêncio | [B-17](../backlog.md#b-17) |
 | 8 | **O critério de aceitação do B-04 precisa de decisão do time.** Ele pede zero linhas instáveis, mas 6 sobram por ruído numérico de GPU, que nenhuma configuração controla | Time (decisão de método) | Rodada 6 (05/09) | Enquanto não se decide, o B-04 fica aberto sem que ninguém possa fechá-lo, e a matriz de ablação de outubro não tem regra definida para comparar braços que usam a etapa de consulta | [B-24](../backlog.md#b-24) |
+| 9 | **O rótulo de título e seção vai embutido no texto do trecho.** Depois da reindexação, ele chega ao classificador como se fosse texto do protocolo | Trilho A | Rodada 7 (11/09) | Qualquer medição com RAG sobre a base nova mistura o efeito do rótulo com o da recuperação. Sem efeito hoje: a base não foi reindexada | [B-36](../backlog.md#b-36) |
+| 10 | **A base de 18 trechos não pode mais ser gerada.** O algoritmo de chunking mudou em 07/09 e os manuais divergiam | Trilho A (data da virada) | Rodada 7 (11/09) | As rodadas citadas R3, R3c e R6 dependem dela. Um clone limpo não a reproduz; na virada, os braços com RAG precisam ser remedidos | [B-37](../backlog.md#b-37) |
 
 ### Resolvidos
 

@@ -466,3 +466,100 @@ def test_limite_preserva_as_duas_classes():
     assert len(escolhido) == 4
     assert classes.get("Yes", 0) == 2
     assert classes.get("No", 0) == 2
+
+
+# ----------------------------------------------------------------------
+# Conferência da base antes de medir (evidencias/backlog.md#b-38)
+# ----------------------------------------------------------------------
+
+
+def impressao(chunk_count=18, chunk_ids_sha256="hash-da-base"):
+
+    return {
+        "vector_store": {
+            "chunk_count": chunk_count,
+            "chunk_ids_sha256": chunk_ids_sha256,
+        }
+    }
+
+
+def test_busca_ligada_com_base_vazia_aborta():
+    """
+    Sem esta trava a rodada ia até o fim e saía como sucesso, sendo na
+    prática um llm_only com rótulo de naive_rag. Base vazia é o estado
+    padrão de um clone limpo.
+    """
+
+    with pytest.raises(SystemExit) as erro:
+        runner.conferir_base(
+            impressao(chunk_count=0),
+            config_efetivo={"retrieval_enabled": True},
+        )
+
+    assert "vazia" in str(erro.value)
+    assert "ingest_documents" in str(erro.value)
+
+
+def test_busca_desligada_com_base_vazia_segue():
+    """
+    O braço llm_only é a linha de base da ablação e não usa a busca: base
+    vazia ali não é problema nenhum.
+    """
+
+    runner.conferir_base(
+        impressao(chunk_count=0),
+        config_efetivo={"retrieval_enabled": False},
+    )
+
+
+def test_base_cheia_com_busca_ligada_segue():
+
+    runner.conferir_base(
+        impressao(chunk_count=18),
+        config_efetivo={"retrieval_enabled": True},
+    )
+
+
+def test_hash_diferente_do_esperado_aborta_mostrando_os_dois():
+    """
+    Desde a troca do chunking, a mesma pasta de documentos gera outra base.
+    Quem reproduz uma rodada citada precisa saber antes de gastar a GPU.
+    """
+
+    with pytest.raises(SystemExit) as erro:
+        runner.conferir_base(
+            impressao(chunk_ids_sha256="base-nova"),
+            hash_esperado="base-antiga",
+        )
+
+    assert "base-nova" in str(erro.value)
+    assert "base-antiga" in str(erro.value)
+
+
+def test_hash_igual_ao_esperado_segue():
+
+    runner.conferir_base(
+        impressao(chunk_ids_sha256="mesma-base"),
+        hash_esperado="mesma-base",
+    )
+
+
+def test_sem_hash_esperado_nao_confere_nada():
+    """
+    A opção é opcional de propósito: obrigar atrapalharia um smoke rápido.
+    """
+
+    runner.conferir_base(impressao(chunk_ids_sha256="qualquer"))
+
+
+def test_fingerprint_indisponivel_com_busca_ligada_aborta():
+    """
+    Se o retrato falhou, `chunk_count` é nulo. Seguir seria medir sem saber
+    o que a busca tinha para devolver.
+    """
+
+    with pytest.raises(SystemExit):
+        runner.conferir_base(
+            {"vector_store": {"error": "banco fora do ar"}},
+            config_efetivo={"retrieval_enabled": True},
+        )

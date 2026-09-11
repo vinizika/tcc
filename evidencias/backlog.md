@@ -72,11 +72,11 @@ aqui.
 | [B-22](#b-22) | Métrica de sinal alucinado na resposta | Trilho B2 | Baixa | Aberto |
 | [B-23](#b-23) | Frontend só funciona pelo compose: hostname fixo no código | Frontend (dono a definir) | Baixa | Aberto |
 | [B-24](#b-24) | Critério de aceitação do B-04 pode ser inatingível | Time (decisão de método) | Média | Aberto |
-| [B-25](#b-25) | O compare não detecta mudança de código entre rodadas | Trilho B2 | Média | Em andamento |
+| [B-25](#b-25) | O compare não detecta mudança de código entre rodadas | Trilho B2 | Média | Resolvido em 11/09 |
 | [B-26](#b-26) | Runner não registra o documento gerado pelo HyDE | Trilho B2 | Baixa | Aberto |
 | [B-27](#b-27) | Caracterizar o ruído residual antes de decidir o critério do B-04 | Trilho B2 | Média | Aberto |
 | [B-28](#b-28) | Efeito de num_ctx nas chamadas de consulta não verificado | Trilho B2 | Baixa | Aberto |
-| [B-29](#b-29) | Fingerprint da base não identifica conteúdo nem embedder | Trilho A + B2 | Média | Em andamento |
+| [B-29](#b-29) | Fingerprint da base não identifica conteúdo nem embedder | Trilho A + B2 | Média | Resolvido em 11/09 |
 | [B-30](#b-30) | Ingestão pode deixar coleção parcial ou registros órfãos | Trilho A | Alta | Aberto |
 | [B-31](#b-31) | Cobertura da ingestão ainda não chega à integração com ChromaDB | Trilho A | Média | Em andamento |
 | [B-32](#b-32) | Upload de voz aceita caminho e tamanho controlados pelo cliente | Trilho B1 | Alta | Resolvido em 08/09 |
@@ -85,7 +85,9 @@ aqui.
 | [B-35](#b-35) | Extração do paper multicoluna ainda contém artefatos clínicos | Trilho A | Alta | Em andamento |
 | [B-36](#b-36) | Rótulo de título e seção embutido no texto do chunk chega ao prompt | Trilho A | Alta | Aberto |
 | [B-37](#b-37) | Base de referência de 18 chunks não se regenera; manuais divergem | Trilho A + B2 | Média | Em andamento |
-| [B-38](#b-38) | Runner não confere a base antes de uma rodada com recuperação | Trilho B2 | Alta | Em andamento |
+| [B-38](#b-38) | Runner não confere a base antes de uma rodada com recuperação | Trilho B2 | Alta | Resolvido em 11/09 |
+| [B-39](#b-39) | `--expect-base-hash` é opcional e depende de disciplina | Trilho B2 | Baixa | Aberto |
+| [B-40](#b-40) | A conferência de base olha o recorte, não o conteúdo | Trilho B2 | Baixa | Aberto |
 
 ---
 
@@ -573,7 +575,7 @@ de cada um. É decisão de método, do time — não de um trilho. Antes de deci
 
 **O `compare` não detecta mudança de código entre rodadas**
 
-**Identificado por:** João (B2) · **Onde:** [rodada 6](joao/2026-09-05-06-determinismo-da-consulta.md), 05/09 · **Responsável:** Trilho B2 · **Prioridade:** Média · **Status:** Em andamento — tratado junto com o [B-29](#b-29) na [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md), 11/09
+**Identificado por:** João (B2) · **Onde:** [rodada 6](joao/2026-09-05-06-determinismo-da-consulta.md), 05/09 · **Responsável:** Trilho B2 · **Prioridade:** Média · **Status:** Resolvido em 11/09 — [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md)
 
 **O que observamos.** Comparando uma rodada de antes com uma de depois do
 commit `b907d6e` — que mudou o comportamento da etapa de consulta —, o
@@ -595,6 +597,17 @@ git sha das duas rodadas diferir, como já faz com modelo e base; (2) o
 `/health/fingerprint` hashear também os prompts de consulta de
 `query_client.py`. Critério: comparar as rodadas `20260904-024433_r3b_variancia`
 e `20260905-133840_b04_confirmacao` deve emitir aviso.
+
+
+**Como foi resolvido (11/09).** O `compare` passou a avisar quando o
+`git.sha` das duas rodadas difere, e também quando alguma delas rodou com a
+árvore suja. A comparação do fingerprint passou a olhar **apenas as chaves
+presentes nos dois manifestos**: sem isso, os campos que nasceram em 11/09
+fariam toda rodada anterior acusar diferença contra toda rodada nova, e um
+aviso que aparece sempre deixa de ser lido. Verificado no caso que motivou o
+item: R3b contra a rodada 6 agora imprime `a95f895 -> ad7c7b8`. Não cobre
+hashear os prompts da etapa de consulta — o aviso de commit já denuncia a
+mudança, e hashear prompts de outro trilho é acoplamento que não se paga.
 
 ---
 
@@ -686,7 +699,7 @@ folga, fechar o item como verificado e registrar o número.
 
 **Fingerprint da base não identifica conteúdo nem embedder**
 
-**Identificado por:** Vinicius (A) · **Onde:** [auditoria do trilho A](vini/2026-09-07-01-auditoria-do-repositorio.md), 07/09 · **Responsável:** Trilho A + B2 · **Prioridade:** Média · **Status:** Em andamento — a parte do fingerprint (embedder, parâmetros de chunking, hash de conteúdo) entra na [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md), 11/09, junto com o [B-25](#b-25)
+**Identificado por:** Vinicius (A) · **Onde:** [auditoria do trilho A](vini/2026-09-07-01-auditoria-do-repositorio.md), 07/09 · **Responsável:** Trilho A + B2 · **Prioridade:** Média · **Status:** Resolvido em 11/09 — [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md)
 
 **O que observamos.** O `/health/fingerprint` calcula o hash da base somente
 sobre os IDs dos chunks. Esses IDs são derivados de
@@ -703,6 +716,17 @@ reprodutibilidade justamente durante a próxima ampliação da base.
 documentos e metadados, além do nome/revisão do embedder e dos parâmetros de
 chunking. Critério: mudar apenas o texto de um documento, sem mudar seu ID,
 deve alterar o fingerprint em teste automatizado.
+
+
+**Como foi resolvido (11/09).** O `/health/fingerprint` passou a trazer, em
+`vector_store`: `content_sha256` (hash de id + texto + metadados de todos os
+trechos, ordenado, então independe da ordem de leitura do banco),
+`embedding_model` e `chunking` (target, overlap, limite). O
+`chunk_ids_sha256` ficou **intacto** de propósito — é por ele que as seis
+rodadas citadas até 05/09 continuam comparáveis. Critério atendido: sete
+testes em `backend/tests/test_api_health.py`, entre eles o que reescreve o
+texto de um trecho sem mudar o id e verifica que só o hash de conteúdo muda.
+Custo medido da chamada: 19 ms com 18 trechos.
 
 ---
 
@@ -954,7 +978,7 @@ histórica e apontam a rodada que a substituiu.
 
 **Runner não confere a base antes de uma rodada com recuperação**
 
-**Identificado por:** João (B2) · **Onde:** [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md), 11/09 · **Responsável:** Trilho B2 · **Prioridade:** Alta · **Status:** Em andamento
+**Identificado por:** João (B2) · **Onde:** [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md), 11/09 · **Responsável:** Trilho B2 · **Prioridade:** Alta · **Status:** Resolvido em 11/09
 
 **O que observamos.** O preflight do `run_evaluation.py` checa `/health/`,
 faz o aquecimento e grava o fingerprint no manifesto — mas não decide nada
@@ -972,6 +996,66 @@ base estiver vazia, com mensagem dizendo o comando de ingestão. Uma opção
 toda rodada que vá ser citada. Critério: `naive_rag` contra base vazia
 aborta antes da primeira linha; com o hash errado, aborta mostrando os dois.
 
+
+**Como foi resolvido (11/09).** `conferir_base()` no preflight do runner,
+chamada em dois momentos: o `--expect-base-hash` antes do aquecimento
+(barato, evita pagar o carregamento do modelo para descobrir que a base é
+outra) e a checagem de base vazia depois dele, contra o `config` **efetivo**
+ecoado pela API — o modo legado desliga a busca no servidor, e ali base
+vazia não é problema. O hash declarado entra no manifesto. Sete testes em
+`scripts/tests/test_run_evaluation.py`. Não cobre conferir o conteúdo
+([B-40](#b-40)) nem obrigar a opção nas rodadas citáveis
+([B-39](#b-39)).
+
+---
+
+### B-39
+
+**`--expect-base-hash` é opcional e depende de disciplina**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md), 11/09 · **Responsável:** Trilho B2 · **Prioridade:** Baixa · **Status:** Aberto
+
+**O que observamos.** A opção que confere a base é opcional de propósito:
+obrigar quebraria um smoke rápido, e a primeira medição de uma base nova não
+tem hash conhecido para declarar. O efeito é que nada impede uma rodada ser
+citada numa evidência sem ter conferido a base.
+
+**Por que importa.** É a mesma classe de problema do [B-37](#b-37): uma
+convenção que o código não garante. Em outubro, montando a matriz de
+ablação, uma rodada citada sobre a base errada seria um número errado no
+artigo — e o `compare` só denuncia se alguém comparar.
+
+**O que resolveria.** Uma regra que pegue as rodadas do artigo sem atrapalhar
+as exploratórias. A candidata é exigir a opção quando `--subset full`, com
+um `--no-expect-base-hash` explícito para a primeira medição de uma base
+nova. Critério: uma rodada `full` sem hash declarado não começa, e a
+mensagem diz como declarar o hash atual.
+
+---
+
+### B-40
+
+**A conferência de base olha o recorte, não o conteúdo**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md), 11/09 · **Responsável:** Trilho B2 · **Prioridade:** Baixa · **Status:** Aberto
+
+**O que observamos.** O `--expect-base-hash` compara o `chunk_ids_sha256`,
+que muda quando o recorte muda. Duas bases com o mesmo recorte e textos
+diferentes — o caso que o `content_sha256` passou a detectar na mesma rodada
+([B-29](#b-29)) — passariam pela conferência sem aviso.
+
+**Por que importa.** É o buraco que o B-29 fechou no retrato, mas que a
+trava do runner ainda não usa. Reescrever um protocolo sem mudar o número de
+trechos continua invisível **na hora de rodar**; só aparece depois, no
+`compare`.
+
+**O que resolveria.** Aceitar também o hash de conteúdo na conferência.
+Ficou adiado porque as seis rodadas citadas até 05/09 não têm o campo — o
+retrato nasceu em 11/09 —, e exigi-lo agora tornaria irreproduzível
+justamente a linha de base do Chain-of-Thought. Critério: quando todas as
+rodadas citadas tiverem `content_sha256` no manifesto, a opção passa a
+comparar os dois hashes.
+
 ---
 
 ## Resolvidos
@@ -980,3 +1064,6 @@ aborta antes da primeira linha; com o hash errado, aborta mostrando os dois.
 |---|---|---|---|
 | [B-32](#b-32) | Upload de voz aceita caminho e tamanho controlados pelo cliente | 08/09 | [rodada 2 do Ryu](ryu/2026-09-08-02-endurecimento-do-upload-de-voz.md) |
 | [B-13](#b-13) | Whisper com três implementações e sem benchmark | 08/09 | [rodada 3 do Ryu](ryu/2026-09-08-03-whisper-unico-e-wer.md) |
+| [B-25](#b-25) | O compare não detecta mudança de código entre rodadas | 11/09 | [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md) |
+| [B-29](#b-29) | Fingerprint da base não identifica conteúdo nem embedder | 11/09 | [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md) |
+| [B-38](#b-38) | Runner não confere a base antes de uma rodada com recuperação | 11/09 | [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md) |

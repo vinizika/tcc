@@ -9,7 +9,11 @@ muda e o teste avisa.
 import numpy as np
 import pytest
 
-from report_evaluation import bootstrap_diferenca, mcnemar
+from report_evaluation import (
+    _diferencas_comparaveis,
+    bootstrap_diferenca,
+    mcnemar,
+)
 
 
 # ----------------------------------------------------------------------
@@ -111,3 +115,60 @@ def test_sem_diferenca_o_intervalo_cerca_o_zero():
 
     assert resultado["diff"] == 0.0
     assert resultado["ci95"] == [0.0, 0.0]
+
+
+# ----------------------------------------------------------------------
+# Fingerprint que ganhou campos novos (evidencias/backlog.md#b-25, #b-29)
+# ----------------------------------------------------------------------
+
+
+def test_campo_novo_no_retrato_nao_vira_alarme_falso():
+    """
+    O retrato ganha campos ao longo do projeto. Comparar o dicionário
+    inteiro faria toda rodada antiga acusar diferença contra toda rodada
+    nova, por um campo que não existia — e um aviso que aparece sempre
+    deixa de ser lido.
+    """
+
+    antiga = {"chunk_count": 18, "chunk_ids_sha256": "abc"}
+    nova = {
+        "chunk_count": 18,
+        "chunk_ids_sha256": "abc",
+        "content_sha256": "novo",
+        "embedding_model": "MiniLM",
+    }
+
+    assert _diferencas_comparaveis(antiga, nova) == []
+
+
+def test_diferenca_em_campo_que_as_duas_registram_e_apontada():
+
+    diferencas = _diferencas_comparaveis(
+        {"chunk_count": 18, "chunk_ids_sha256": "abc"},
+        {"chunk_count": 259, "chunk_ids_sha256": "xyz"},
+    )
+
+    assert [chave for chave, _, _ in diferencas] == [
+        "chunk_count",
+        "chunk_ids_sha256",
+    ]
+
+
+def test_conteudo_reescrito_e_apontado_entre_duas_rodadas_novas():
+    """
+    O caso do B-29: mesmo recorte, texto diferente. Antes do hash de
+    conteúdo as duas rodadas pareciam ter usado a mesma base.
+    """
+
+    diferencas = _diferencas_comparaveis(
+        {"chunk_ids_sha256": "abc", "content_sha256": "antes"},
+        {"chunk_ids_sha256": "abc", "content_sha256": "depois"},
+    )
+
+    assert [chave for chave, _, _ in diferencas] == ["content_sha256"]
+
+
+def test_retrato_ausente_de_um_lado_nao_quebra():
+
+    assert _diferencas_comparaveis(None, {"chunk_count": 18})
+    assert _diferencas_comparaveis(None, None) == []

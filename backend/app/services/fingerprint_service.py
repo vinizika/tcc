@@ -24,6 +24,42 @@ def _sha256(texto: str) -> str:
     return hashlib.sha256(texto.encode("utf-8")).hexdigest()
 
 
+def _hash_de_conteudo(
+    identificadores: list,
+    documentos: list,
+    metadados: list,
+) -> str:
+    """
+    Hash do que a base realmente contém: id, texto e metadados de cada trecho.
+
+    Ordenado por id e com os metadados em ordem alfabética, para que o valor
+    não dependa da ordem em que o banco devolveu os registros. Um metadado
+    novo muda o hash de propósito: ele vai ao prompt (título, fonte) ou
+    descreve a procedência do trecho.
+    """
+
+    linhas = []
+
+    for posicao, identificador in enumerate(identificadores):
+
+        documento = documentos[posicao] if posicao < len(documentos) else ""
+        metadado = metadados[posicao] if posicao < len(metadados) else None
+
+        pares = sorted((metadado or {}).items())
+
+        linhas.append(
+            "".join(
+                [
+                    str(identificador),
+                    str(documento or ""),
+                    *(f"{chave}={valor}" for chave, valor in pares),
+                ]
+            )
+        )
+
+    return _sha256("".join(sorted(linhas)))
+
+
 class FingerprintService:
 
     @staticmethod
@@ -92,18 +128,53 @@ class FingerprintService:
     @staticmethod
     def _base_vetorial() -> dict:
         """
-        Quantos trechos existem e quais são eles.
+        O que a base contém e como ela foi construída.
 
-        O hash dos identificadores muda se a base for reindexada com outro
-        recorte de texto, mesmo que a quantidade continue igual — é o que
-        detecta uma reingestão silenciosa entre duas rodadas.
+        São identidades diferentes, e cada uma pega um tipo de mudança:
+
+        - `chunk_ids_sha256` muda quando o **recorte** muda, porque o id é
+          derivado de arquivo, página e índice do trecho. É o campo antigo e
+          não pode mudar de definição: é por ele que as rodadas citadas até
+          05/09 continuam comparáveis.
+        - `content_sha256` muda quando o **texto ou os metadados** mudam,
+          ainda que o id continue o mesmo — reescrever um protocolo sem
+          alterar o número de trechos era invisível até aqui
+          (evidencias/backlog.md#b-29).
+        - `embedding_model` e `chunking` descrevem **como o texto virou
+          vetor**. Mesmo texto com embedder diferente recupera outra coisa.
         """
 
-        informacoes = {
+        informacoes: dict = {
             "collection": None,
             "chunk_count": None,
             "chunk_ids_sha256": None,
+            "content_sha256": None,
+            "embedding_model": None,
+            "chunking": None,
         }
+
+        try:
+            # Constantes do trilho A. Import local pelo mesmo motivo do
+            # bloco abaixo: o retrato não pode depender de outro trilho
+            # para responder.
+            from app.database.embedding_config import (
+                CHUNK_OVERLAP_TOKENS,
+                CHUNK_TARGET_TOKENS,
+                EMBEDDING_MAX_TOKENS,
+                EMBEDDING_MODEL_NAME,
+            )
+
+            informacoes["embedding_model"] = EMBEDDING_MODEL_NAME
+            informacoes["chunking"] = {
+                "target_tokens": CHUNK_TARGET_TOKENS,
+                "overlap_tokens": CHUNK_OVERLAP_TOKENS,
+                "max_tokens": EMBEDDING_MAX_TOKENS,
+            }
+
+        except Exception as erro:
+            logger.warning(
+                f"Não foi possível ler a configuração de embedding: {erro}"
+            )
 
         try:
             # Import local: o módulo abre o banco e carrega o modelo de
@@ -113,12 +184,21 @@ class FingerprintService:
 
             colecao = ChromaDBClient.get_collection()
 
-            identificadores = sorted(colecao.get(include=[])["ids"])
+            registros = colecao.get(include=["documents", "metadatas"])
+
+            identificadores = list(registros.get("ids") or [])
+            documentos = list(registros.get("documents") or [])
+            metadados = list(registros.get("metadatas") or [])
 
             informacoes["collection"] = colecao.name
             informacoes["chunk_count"] = len(identificadores)
             informacoes["chunk_ids_sha256"] = _sha256(
-                "\n".join(identificadores)
+                "\n".join(sorted(identificadores))
+            )
+            informacoes["content_sha256"] = _hash_de_conteudo(
+                identificadores,
+                documentos,
+                metadados,
             )
 
         except Exception as erro:

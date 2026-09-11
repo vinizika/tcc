@@ -1,7 +1,7 @@
 # Endurecimento do instrumento antes do Chain-of-Thought
 
 **Data:** 11/09/2026 · **Trilho:** B2 (Decisão) · **Rodada:** 7 ·
-**Commits:** _(a preencher ao fechar)_
+**Commits:** c1a6a07 (revisão e backlog), + este
 
 ## O que foi feito
 
@@ -137,20 +137,190 @@ _Escrito antes de codar._
 
 ## Resultado obtido
 
-_(a preencher)_
+As três correções ficaram de pé e as quatro previsões se confirmaram. Nada
+de métrica mudou, como esperado de uma rodada de instrumentação.
+
+### 1. O runner confere a base
+
+| Cenário | Antes | Agora |
+|---|---|---|
+| Busca ligada, base vazia | rodava até o fim e saía como sucesso | **aborta no preflight**, com o comando de ingestão na mensagem |
+| Busca desligada, base vazia | rodava | roda (correto: `llm_only` não usa a busca) |
+| `--expect-base-hash` diferente | não existia | **aborta antes do aquecimento**, imprimindo os dois hashes |
+
+Verificado de ponta a ponta contra a API:
+
+```
+$ python scripts/run_evaluation.py --preset llm_only --subset smoke \
+    --limit 2 --expect-base-hash base-que-nao-existe
+A base vetorial não é a esperada.
+  esperado: base-que-nao-existe
+  na API  : eeba9f51d239e2f6167d18ffe87ef5e6f505de0497b222555a3cb953dd12a914
+```
+
+Com o hash certo, o smoke de duas linhas roda normalmente, e o manifesto
+passa a registrar `expected_base_hash` — a rodada guarda que foi conferida.
+
+A checagem da busca usa o `config` **efetivo** ecoado pelo aquecimento, e
+não o pedido: o modo `v0_legacy` desliga a recuperação no servidor, e ali
+base vazia não é problema nenhum.
+
+### 2. O retrato do sistema ficou completo
+
+`GET /health/fingerprint`, em `vector_store`, agora traz:
+
+| Campo | O que pega | Valor nesta máquina |
+|---|---|---|
+| `chunk_ids_sha256` | mudança de **recorte** (o campo antigo, intacto) | `eeba9f51…` |
+| `content_sha256` | mudança de **texto ou metadados**, mesmo com o id igual | `89a215ac…` |
+| `embedding_model` | qual modelo transformou texto em vetor | `…/paraphrase-multilingual-MiniLM-L12-v2` |
+| `chunking` | target 96, overlap 16, limite 128 | — |
+
+O `chunk_ids_sha256` continua idêntico ao das seis rodadas citadas, que era
+a condição para elas seguirem comparáveis.
+
+**Custo da chamada: 19 ms** (0,092 s na primeira, fria). O risco que eu
+havia registrado — o hash de conteúdo lê a coleção inteira — não se
+materializou com 18 chunks. Com os ~259 da base nova ainda deve ser
+irrelevante; com dezenas de milhares valeria um cache por contagem.
+
+### 3. O `compare` enxerga mudança de código
+
+O caso que passou batido na rodada 6, agora:
+
+```
+$ python scripts/report_evaluation.py compare \
+    data/evaluation/cited/20260904-024433_r3b_variancia \
+    data/evaluation/cited/20260905-133840_b04_confirmacao
+
+--- diferenças de configuração ---
+  nenhuma
+
+  Aviso: as rodadas rodaram commits diferentes (a95f895 -> ad7c7b8).
+  Mudanças no código do pipeline ou nos prompts de consulta não aparecem
+  no fingerprint.
+
+  Aviso: ao menos uma das rodadas foi executada com alterações locais não
+  commitadas.
+```
+
+O commit `ad7c7b8` é exatamente o merge da correção do Ryu, que mudou o
+comportamento da etapa de consulta. O segundo aviso é um brinde que não
+estava previsto: quatro das seis rodadas citadas rodaram com a árvore suja,
+e isso enfraquece a rastreabilidade delas. Fica registrado nas Observações.
+
+A comparação do fingerprint passou a olhar **apenas as chaves presentes nos
+dois manifestos**. Sem isso, toda rodada anterior a hoje acusaria diferença
+contra toda rodada nova, por causa dos campos que acabaram de nascer — e um
+aviso que aparece sempre deixa de ser lido.
+
+### Testes
+
+| Suíte | Antes | Depois |
+|---|---:|---:|
+| Scripts (host) | 57 | **68** |
+| Backend (container) | 102 | **109** |
+
+Os 11 novos dos scripts cobrem os quatro cenários da conferência de base, o
+fingerprint indisponível, e as quatro situações da comparação de retratos.
+Os 7 do backend cobrem o hash de conteúdo: texto reescrito muda o hash e o
+dos ids não; metadado reescrito muda; a ordem de leitura e a ordem das
+chaves não mudam; um dublê sem documentos não quebra; e a base indisponível
+não derruba a rota.
+
+**Uma falha continua no backend, e é anterior a esta rodada:**
+`test_pdf_layout_extraction.py::test_regressao_do_paper_real…` espera o
+extrator novo e recebe o fallback, porque a imagem Docker desta máquina não
+tem `pymupdf`. O `requirements.txt` mudou em 07/09 e a imagem não foi
+reconstruída — de propósito, conforme a decisão desta rodada. Não é
+regressão do que fiz aqui: falhava igual antes, e o código que toquei não
+passa por ali.
 
 ## O que mudou no repositório
 
-_(a preencher)_
+| Arquivo | Mudança |
+|---|---|
+| `scripts/run_evaluation.py` | `conferir_base()`, chamada no preflight em dois momentos; opção `--expect-base-hash`; `expected_base_hash` no manifesto |
+| `scripts/report_evaluation.py` | `_diferencas_comparaveis()`; aviso de commit diferente e de árvore suja; comparação do fingerprint chave a chave |
+| `backend/app/services/fingerprint_service.py` | `_hash_de_conteudo()`; `content_sha256`, `embedding_model` e `chunking` em `_base_vetorial` |
+| `scripts/tests/test_run_evaluation.py` | 7 testes da conferência de base |
+| `scripts/tests/test_report_evaluation.py` | 4 testes da comparação de retratos |
+| `backend/tests/test_api_health.py` | 7 testes do hash de conteúdo e do embedder |
+| `docs/CONTRATOS.md` | a linha do `/health/fingerprint` descreve os campos novos |
+| `data/evaluation/README.md` | `--expect-base-hash` na tabela de opções |
+| `README.md` | passo 4 avisa sobre a virada da base (commit anterior) |
+| `evidencias/backlog.md` | B-25, B-29 e B-38 fechados; B-36, B-37 e B-38 criados (commit anterior) |
 
 ## Observações
 
-_(a preencher)_
+**1. Quatro das seis rodadas citadas rodaram com a árvore suja.** O aviso
+novo revelou isso de passagem: R2, R3, R3b, R1b e R3c têm `git.dirty: true`
+no manifesto. Elas continuam válidas — o que elas mediram está nos
+`predictions.jsonl` —, mas o commit delas não descreve exatamente o código
+que rodou. Daqui para a frente, rodada que for citada roda com a árvore
+limpa. Não vira item de backlog: é disciplina, não código.
+
+**2. O `git.sha` do manifesto vem do host, não do container.** Ele descreve
+o código que rodou porque o Compose monta `./backend:/app`. Se alguém rodar
+uma imagem construída, sem o volume, o sha deixa de dizer a verdade e o
+aviso novo passa a mentir em silêncio. Vale saber antes de mexer no
+Compose; hoje não é problema.
+
+**3. O `content_sha256` muda quando um metadado muda, de propósito.** Título
+e fonte vão ao prompt do classificador; os demais descrevem a procedência do
+trecho. Acrescentar um campo de metadado na ingestão vai acusar mudança de
+base — é o comportamento correto, mas o trilho A precisa saber para não
+levar susto.
+
+**4. A conferência de base custa uma requisição a mais.** O fingerprint já
+era buscado para o manifesto; agora ele é buscado **antes** do aquecimento,
+e o valor é reaproveitado. A rodada não ficou mais lenta.
+
+**5. O `--expect-base-hash` é opcional, e essa é a escolha frágil da
+rodada.** Obrigar quebraria um smoke rápido, mas depender de disciplina é
+exatamente o que falhou no B-37. Se em outubro alguém citar uma rodada sem
+o hash, vale rever: tornar obrigatório quando `--subset full`, por exemplo.
+
+**6. O que a revisão dos outros trilhos deixou para o time** está no
+backlog: [B-36](../backlog.md#b-36) (o rótulo no `content`) e
+[B-37](../backlog.md#b-37) (a virada da base). Os dois são do trilho A e
+travam a próxima medição minha com RAG sobre a base nova.
 
 ## Deixado para depois
 
-_(a preencher — e cada item vai também ao backlog)_
+**Tornar o `--expect-base-hash` obrigatório para rodadas citáveis.** Hoje é
+opcional e depende de disciplina (Observação 5). Ficou de fora porque a
+regra certa ainda não está clara: obrigar em `--subset full` pegaria as
+rodadas do artigo sem atrapalhar smoke, mas também impediria a primeira
+medição de uma base nova, que por definição não tem hash conhecido. Volta
+quando a base nova estabilizar. Item [B-39](../backlog.md#b-39).
+
+**Conferir também o `content_sha256` no `--expect-base-hash`.** Hoje a
+opção compara só o hash dos ids, que é o que liga às rodadas citadas. Duas
+bases com o mesmo recorte e textos diferentes passariam. Adiado porque as
+rodadas antigas não têm o campo — exigir agora as tornaria irreproduzíveis.
+Volta quando todas as rodadas citadas tiverem o retrato novo. Item
+[B-40](../backlog.md#b-40).
+
+**Reconstruir a imagem Docker.** É o que falta para o teste do paper passar
+nesta máquina, e será obrigatório quando a API precisar do extrator novo.
+Adiado porque o rebuild resolve `torch` com CUDA e foi o que encheu o disco
+do Vinicius. Volta junto de fixar a versão CPU do torch — parte do
+[B-34](../backlog.md#b-34), sem item novo.
 
 ## Próximo passo
 
-_(a preencher)_
+**Chain-of-Thought**, finalmente, com o instrumento endurecido: o runner
+recusa base errada, o retrato identifica conteúdo e embedder, e o `compare`
+avisa quando o código mudou. A linha de base continua sendo o preset
+`llm_only` (0,893 de acurácia balanceada, 8 falsos não urgentes em 71), que
+não usa a etapa de consulta e por isso é imune tanto à instabilidade da
+rodada 6 quanto à virada da base.
+
+Duas coisas que esta rodada muda no plano do CoT:
+
+1. **Toda rodada do CoT roda com `--expect-base-hash`** e com a árvore
+   limpa, para o par antes/depois ficar rastreável.
+2. **O braço `naive_rag + cot` tem prazo.** Ele só é comparável com a R3
+   enquanto a base for a de 18 chunks ([B-37](../backlog.md#b-37)). Ou mede
+   antes da virada, ou refaz depois — decisão do João, com o trilho A.

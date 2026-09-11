@@ -61,6 +61,7 @@ python scripts/run_evaluation.py --preset naive_rag --subset full --name marco1
 | `--repeat K` | Roda cada linha K vezes, para medir estabilidade |
 | `--base-seed N` | Com temperatura acima de zero, dá uma seed diferente a cada repetição (N, N+1, …). Sem isso a API usa a seed fixa e as repetições saem idênticas |
 | `--name` | O sufixo do diretório |
+| `--expect-base-hash` | Aborta se a base vetorial não for esta (o `chunk_ids_sha256` do fingerprint). Opcional, para não atrapalhar um smoke — **use em toda rodada que for citada** |
 
 O runner aquece o modelo com uma chamada e **aborta ali** se a API recusar a
 configuração (erro 400 ou 422) — erro de configuração não é dado. Durante a

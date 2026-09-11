@@ -511,6 +511,62 @@ def agora() -> str:
     return datetime.now(timezone.utc).astimezone().isoformat()
 
 
+def conferir_base(
+    impressao: dict,
+    config_efetivo: dict | None = None,
+    hash_esperado: str | None = None,
+) -> None:
+    """
+    Recusa a rodada quando a base não é a que a medição precisa.
+
+    Dois casos, os dois silenciosos até aqui (evidencias/backlog.md#b-38):
+
+    1. Busca ligada e base vazia. A rodada iria até o fim e sairia como
+       sucesso, mas o modelo não teria visto documento nenhum — seria um
+       `llm_only` com rótulo de `naive_rag`. Base vazia é o estado padrão de
+       um clone limpo (B-12).
+    2. Base diferente da esperada. Desde a troca do chunking em 07/09, a
+       mesma pasta de documentos gera uma base diferente (B-37), e quem
+       compara com uma rodada citada precisa saber disso **antes** de gastar
+       meia hora de GPU, não depois, no `compare`.
+
+    Só `SystemExit`: erro de configuração não é dado.
+    """
+
+    base = impressao.get("vector_store") or {}
+
+    if hash_esperado:
+        hash_real = base.get("chunk_ids_sha256")
+
+        if hash_real != hash_esperado:
+            raise SystemExit(
+                "A base vetorial não é a esperada.\n"
+                f"  esperado: {hash_esperado}\n"
+                f"  na API  : {hash_real}\n"
+                "Compare com o `backend_fingerprint` da rodada que você "
+                "quer reproduzir, ou rode sem --expect-base-hash se a "
+                "intenção é medir a base atual."
+            )
+
+    if config_efetivo is None:
+        return
+
+    if not config_efetivo.get("retrieval_enabled"):
+        return
+
+    if base.get("chunk_count"):
+        return
+
+    raise SystemExit(
+        "A busca está ligada, mas a base vetorial está vazia "
+        f"(chunk_count={base.get('chunk_count')}).\n"
+        "A rodada mediria o modelo sem contexto nenhum, com rótulo de RAG. "
+        "Indexe antes:\n"
+        "  docker compose exec backend python -m "
+        "app.database.ingest_documents"
+    )
+
+
 # ----------------------------------------------------------------------
 # Execução
 # ----------------------------------------------------------------------
@@ -746,6 +802,15 @@ def main(argv=None) -> None:
         ),
     )
     parser.add_argument("--name", default="rodada")
+    parser.add_argument(
+        "--expect-base-hash",
+        help=(
+            "Aborta se a base vetorial não for esta (o "
+            "`chunk_ids_sha256` do fingerprint). Opcional, para não "
+            "atrapalhar um smoke; use em toda rodada que for citada numa "
+            "evidência."
+        ),
+    )
     parser.add_argument("--resume", type=Path)
     parser.add_argument("--api-url", default="http://localhost:8000")
     parser.add_argument("--timeout", type=int, default=1500)
@@ -787,6 +852,12 @@ def main(argv=None) -> None:
                 "Suba com: docker compose up -d"
             )
 
+        impressao = cliente.fingerprint()
+
+        # O hash é conferido antes do aquecimento: é barato e evita pagar o
+        # carregamento do modelo para depois descobrir que a base é outra.
+        conferir_base(impressao, hash_esperado=argumentos.expect_base_hash)
+
         # Aquecimento: a primeira chamada paga o carregamento do modelo, e
         # também é aqui que uma configuração inválida é recusada, antes de
         # gastar meia hora de rodada.
@@ -795,7 +866,7 @@ def main(argv=None) -> None:
         inicio = time.perf_counter()
 
         try:
-            cliente.classify(
+            resposta_aquecimento = cliente.classify(
                 build_relato(linhas.iloc[0]),
                 {**opcoes, "include_debug": True},
             )
@@ -810,6 +881,14 @@ def main(argv=None) -> None:
 
         aquecimento = round(time.perf_counter() - inicio, 2)
         print(f"  pronto em {aquecimento}s")
+
+        # A busca é conferida contra o config **efetivo**, e não contra o
+        # pedido: o modo legado desliga a recuperação no servidor, e ali
+        # base vazia não é problema nenhum.
+        conferir_base(
+            impressao,
+            config_efetivo=resposta_aquecimento.get("config") or {},
+        )
 
         carimbo = datetime.now().strftime("%Y%m%d-%H%M%S")
         diretorio = DIRETORIO_RODADAS / f"{carimbo}_{argumentos.name}"
@@ -843,7 +922,8 @@ def main(argv=None) -> None:
             "api_url": argumentos.api_url,
             "presets_sha256": sha256_arquivo(PRESETS),
             "warmup_seconds": aquecimento,
-            "backend_fingerprint": cliente.fingerprint(),
+            "backend_fingerprint": impressao,
+            "expected_base_hash": argumentos.expect_base_hash,
         }
 
         escrever_atomico(
