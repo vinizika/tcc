@@ -22,6 +22,8 @@ class SearchService:
                     content=document.content,
                     source=document.source,
                     score=round(document.score, 4),
+                    topic=document.topic,
+                    source_file=document.source_file,
                 )
                 for document in retrieved_documents
             ]

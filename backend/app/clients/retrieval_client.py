@@ -82,7 +82,9 @@ class RetrievalClient:
                         "source",
                         "Fonte não informada"
                     ),
-                    score=score
+                    score=score,
+                    topic=metadata.get("topic", ""),
+                    source_file=metadata.get("source_file", ""),
                 )
 
                 previous_document = best_documents.get(
