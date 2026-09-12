@@ -122,14 +122,56 @@ Quatro regras:
 
 1. **Quem trabalha na base não escreve caso da prova**, e vice-versa.
 2. **Quem escreve a prova não lê os documentos da base** enquanto escreve.
-3. **A prova é congelada** (hash registrado) antes de a base final ser
-   indexada.
+3. **A prova é congelada assim que estiver validada** — o conteúdo para de
+   mudar, com o hash registrado, e a partir daí quem muda é o sistema.
+   Congelar **não é deixar de usar**: ver a [cadência](#a-cadência-congelar-não-é-deixar-de-usar)
+   logo abaixo. O que nunca acontece é editar um caso depois de ver o sistema
+   errar nele.
 4. Antes de fechar, **um passo automático confere sobreposição de texto**
    entre os casos da prova e os documentos da base.
 
 Isso vale também para os casos da régua de recuperação: eles são escritos a
 partir da linha do mapa, **antes** de ler a fonte — senão o relato copia a
 linguagem do documento e a busca "acerta" por eco.
+
+### A cadência: congelar não é deixar de usar
+
+Congelar a prova significa que **o conteúdo dela para de mudar**, não que
+fiquemos sem medir até a base estar pronta. Medir o tempo todo é justamente o
+que este desenho permite, e é para isso que existem **dois conjuntos**:
+
+| Conjunto | Para quê | Com que frequência |
+|---|---|---|
+| **Desenvolvimento** (~50 casos) | Testar à vontade: ajustar prompt, ver o efeito de um lote de documentos, errar e tentar de novo | Sempre que precisar |
+| **Teste** (~100 casos, congelado) | O número que vai para o artigo | Em marcos |
+
+Com os três instrumentos do projeto, a cadência fica assim — e nenhuma linha
+espera a base ficar pronta:
+
+| Quando | Pergunta | Instrumento | Custo |
+|---|---|---|---|
+| A cada lote de documentos | A busca melhorou? | Régua de recuperação, 18 casos | segundos |
+| A cada mudança de prompt | Vale a pena? | Conjunto de **desenvolvimento** | minutos |
+| Em marcos | Qual é o número? | Conjunto de **teste**, congelado | mais demorado |
+
+**O que o congelamento protege** são duas coisas, e a segunda é menos óbvia:
+
+1. **Não reescrever um caso que o sistema errou.** É mover a trave depois do
+   chute.
+2. **Não escolher a melhor de trinta medições.** Rodar o conjunto de teste em
+   trinta configurações e reportar a melhor produz um número inflado por
+   seleção. Explorar no desenvolvimento e confirmar no teste evita isso — e
+   como cada rodada é versionada com manifesto, dá para **contar** quantas
+   vezes o conjunto de teste foi tocado. Isso é defensável; "a gente foi
+   medindo" não é.
+
+**E o gabarito da prova não envelhece quando a base cresce.** "Este cão com a
+barriga dura e inchada é emergência" continua verdade com 7 ou com 40
+documentos — é fato clínico, não fato da base. Quem envelhece é o gabarito da
+**régua de recuperação**, que aponta para documentos: um caso hoje marcado
+"sem cobertura" precisa ganhar o documento novo quando ele entrar. Por isso o
+[`compare`](#45-agente-2--indexar-e-dizer-o-que-melhorou) do agente 2 tem o
+bloco "gabarito a atualizar".
 
 ---
 
@@ -282,7 +324,8 @@ Requisitos do instrumento — o desenho é de quem vai construir:
    [`data/retrieval/cases.csv`](../data/retrieval/cases.csv), que tem colunas
    `note` e `marked_by` para o especialista discordar de **uma linha** sem
    refazer o resto.
-5. **Que a prova seja congelada** por hash antes do próximo ajuste de prompt.
+5. **Que a prova seja congelada** por hash assim que validada, e usada desde
+   o primeiro dia — ver [a cadência](#a-cadência-congelar-não-é-deixar-de-usar).
 
 ### 5.3 O que o time aprendeu, e suspeita
 
