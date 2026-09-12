@@ -12,7 +12,7 @@ data/curadoria/
 ├── referencias.md             <- as fontes que sustentam cada linha, com o grau de verificação
 ├── vocabulario-dataset1.csv   <- cada sinal do conjunto de avaliação → linha do mapa, ou "inespecifico"
 ├── doencas-dataset2.csv       <- cada doença do dataset2 → linha do mapa, ou excluída com motivo
-└── fontes/                    <- (etapa seguinte) uma lista de fontes por quadro, do pesquisador
+└── fontes/                    <- o dossiê de cada quadro e as capturas → README próprio
 ```
 
 Parece burocracia e não é. O mesmo arquivo é cinco coisas:
@@ -50,7 +50,7 @@ A leitura completa — o que a pesquisa mudou no desenho, o que não foi possív
 | `referencias` | ids `R..` separados por `;`, ou `SEM_FONTE` | Sustentação em [`referencias.md`](referencias.md). `SEM_FONTE` declara a lacuna em vez de inventar |
 | `prioridade` | `A` · `B` · `C` | Mérito clínico e frequência (regra abaixo). Ordena a fila **dentro** de cada etapa |
 | `etapa` | `1` · `2` | O corte que a porta de decisão pode mover (abaixo) |
-| `cobertura` | `sem_documento` → `fonte_enviada` → `fonte_aprovada` → `indexada`; e `sintetico` | Onde a linha está no caminho até a base. `sintetico` marca os sete protocolos de teste que ainda precisam de fonte real |
+| `cobertura` | `sem_documento` → `fonte_encontrada` → `fonte_enviada` → `fonte_aprovada` → `indexada`; e `sintetico` | Onde a linha está no caminho até a base, e **quem move cada seta** está no [README das fontes](fontes/README.md). `sintetico` marca os sete protocolos de teste que ainda precisam de fonte real |
 | `validacao` | `rascunho` · `validada:<nome>:<DD/MM>` · `contestada` | O que os especialistas disseram desta linha |
 | `observacoes` | livre | O que não cabe nas outras colunas |
 

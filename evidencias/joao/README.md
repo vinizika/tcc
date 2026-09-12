@@ -28,12 +28,13 @@ Self-Refine, e a régua de avaliação do sistema (runner de métricas).
 | 9 | 12/09 | [Corte de relevância](2026-09-12-10-corte-de-relevancia.md) | O sistema para de injetar trecho irrelevante. Com a base atual a busca fica **silenciosa em 98 de 98** linhas, e o resultado é **idêntico** à linha de base de 04/09. O par com e sem corte isola o custo do ruído: **11,8 pontos e 22 falsos não urgentes** |
 | 10 | 12/09 | [Régua de recuperação](2026-09-12-11-regua-de-recuperacao.md) | Construída **em nome do trilho A**. O protocolo certo está sempre entre os cinco devolvidos, mas vem em 1º em só 5 de 9: o problema é **ordenação**. E existe um **protocolo-ímã** — "trauma" em 1º em 9 de 18 casos |
 | 11 | 12/09 | [Mapa de assuntos](2026-09-12-12-mapa-de-assuntos.md) | Construção, sem medição. **61 quadros clínicos** com referência, par de confusão e a pergunta que separa cada par; etapa 1 com 31. O eixo toxicológico do Brasil é outro: **"chumbinho" é metade das intoxicações em gatos** na USP. A decisão de ir às 61 fica para uma porta com critérios escritos antes |
+| 12 | 12/09 | [O pesquisador](2026-09-12-13-pesquisador.md) | O agente que acha as fontes, com captura determinística e piloto na torção gástrica. Achado de fundo: **não existe fonte autoritativa, em português e para tutor** — então cada linha leva uma de cada natureza, e a etapa 1 vira experimento de idioma × registro |
 
 ## Estado atual
 
 **Etapa 6 de 7.** O produto classifica de verdade e a régua existe: sete
 rodadas medidas sobre os 98 relatos, com previsões versionadas e teste
-estatístico, sobre 110 testes automatizados. O Marco 1 está fechado, e a régua
+estatístico, sobre 124 testes automatizados. O Marco 1 está fechado, e a régua
 já foi usada uma segunda vez — desta vez para verificar a correção de outro
 trilho, não para descrever o sistema.
 

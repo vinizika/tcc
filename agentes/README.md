@@ -47,7 +47,7 @@ quem usa Claude Code, e aponta de volta para cá. O conteúdo não é duplicado.
 | Papel | Roda | Recebe | Produz | Usa LLM? | Estado |
 |---|---|---|---|---|---|
 | **Cartógrafo** | uma vez por revisão do mapa | régua de recuperação, fichas da base, backlog, referências de triagem | `data/curadoria/mapa-de-assuntos.csv` + `referencias.md` | sim | [roteiro pronto](cartografo.md); mapa rascunhado em 12/09, 61 linhas |
-| **Pesquisador** | uma vez por quadro clínico | uma linha do mapa | `data/curadoria/fontes/<topic>.md` + rascunho da ficha JSON | sim, com busca na web | roteiro a escrever |
+| **Pesquisador** | uma vez por quadro clínico | uma linha do mapa | `data/curadoria/fontes/<topic>.md` + captura e ficha, pelo script | sim, com busca na web | [roteiro pronto](pesquisador.md); piloto em 12/09 |
 | **Redator de lacuna** | só quando não há fonte utilizável | a fonte que existe sobre o quadro | resumo do time, marcado `document_type: team_summary` | sim | roteiro a escrever |
 | **Ingestão e retorno** | uma vez por lote aprovado | fontes aprovadas pelos especialistas | base atualizada + `compare.md` da régua + rascunho da evidência | **em parte** — ver abaixo | roteiro a escrever |
 

@@ -1,0 +1,232 @@
+Resumo
+
+A síndrome da dilatação volvo gástrica (DVG) é uma condição grave, de caráter agudo, que confere alto índice de óbito em pequenos animais. A etiologia não está completamente estabelecida e, em contrapartida, diversas possibilidades de tratamento são descritas. A DVG causa grave redução na perfusão tecidual, afetando vários órgãos, incluindo os sistemas respiratório e cardiovascular. Este estudo tem como objetivo realizar uma revisão de literatura sobre a patogenia desta síndrome e seu tratamento.
+
+necrose; lesão por reperfusão; fenômeno de não-refluxo
+
+Abstract
+
+The syndrome of gastric dilatation volvulus (GDV) is a severe condition of acute character, which gives a high rate of death in small animals. The etiology is not fully established, however, several treatment options have been described. The DVG causes severe reduction in tissue perfusion, affecting many organs, including the respiratory and cardiovascular systems. This study aims to conduct a comprehensive literature review of the pathogenesis of this syndrome as well as its treatment.
+
+necrosis; reperfusion injury; no-reflow phenomenon
+
+      REVISÃO BIBLIOGRÁFICA
+
+CLÍNICA E CIRURGIA
+
+Síndrome da dilatação volvo gástrica em cães
+
+      Gastric volvulus dilatation syndrome in dogs
+
+Sérgio Santalucia Ramos da SilvaI,<sup>1</sup>; Jorge Luiz Costa Castro<sup>II</sup>; Verônica Souza Paiva Castro<sup>II</sup>; Alceu Gaspar RaiserII
+
+<sup>I</sup>Médico Veterinário Autônomo, Rua Marques de Abrantes, 212, 22230-061, Rio de Janeiro, RJ, Brasil. E-mail: santalucia.sergio@gmail.com
+
+<sup>II</sup>Programa de Pós-graduação em Medicina Veterinária (PPGMV), Centro de Ciências Rurais (CCR), Universidade Federal de Santa Maria (UFSM), Santa Maria, RS, Brasil
+
+      RESUMO
+
+A síndrome da dilatação volvo gástrica (DVG) é uma condição grave, de caráter agudo, que confere alto índice de óbito em pequenos animais. A etiologia não está completamente estabelecida e, em contrapartida, diversas possibilidades de tratamento são descritas. A DVG causa grave redução na perfusão tecidual, afetando vários órgãos, incluindo os sistemas respiratório e cardiovascular. Este estudo tem como objetivo realizar uma revisão de literatura sobre a patogenia desta síndrome e seu tratamento.
+
+Palavras-chave: necrose, lesão por reperfusão, fenômeno de não-refluxo.
+
+      ABSTRACT
+
+The syndrome of gastric dilatation volvulus (GDV) is a severe condition of acute character, which gives a high rate of death in small animals. The etiology is not fully established, however, several treatment options have been described. The DVG causes severe reduction in tissue perfusion, affecting many organs, including the respiratory and cardiovascular systems. This study aims to conduct a comprehensive literature review of the pathogenesis of this syndrome as well as its treatment.
+
+Key words: necrosis, reperfusion injury, no-reflow phenomenon.
+
+      INTRODUÇÃO
+
+A dilatação aguda do estômago, associada a sua torção, é um evento potencialmente maléfico que requer tratamento médico emergencial, podendo ou não estar associada à terapia cirúrgica, na tentativa de otimizar as chances de sucesso e consequente manutenção da vida do paciente. A rápida identificação, escolha da terapia adequada e estabilização precoce do paciente são os principais componentes de sucesso no tratamento. A taxa de mortalidade nos casos de dilatação volvo gástrica (DVG) é alta e está intimamente relacionada à identificação precoce das alterações sistêmicas e início correto da terapia médica. Este artigo objetiva revisar a influência dessa síndrome em diferentes órgãos e seu manejo.
+
+Síndrome da dilatação volvo gástrica
+
+Dilatação gástrica com volvo é diferenciada do ingurgitamento pós-prandial ("timpanismo alimentar"), que se caracteriza pelo consumo de grande volume alimentar, entretanto, resulta em um estômago excessivamente distendido e cheio de conteúdo em posição normal (RASMUSSEN, 2007).
+
+A Síndrome da DVG é uma condição clínica e cirúrgica aguda, com vários efeitos fisiopatológicos locais e sistêmicos (MATTHIESEN, 1996), que expõem o animal a um risco iminente de morte (DENNLER et al., 2005; MARCONATO, 2006; LEVINE & MOORE, 2009; EVANS & ADAMS, 2010). Provavelmente, a DVG não ocorra em decorrência de um único fator (MATTHIESEN, 1996).
+
+Dentre os fatores sugeridos, tem-se a conformação corporal com peito profundo, frouxidão dos ligamentos hepatoduodenal e hepatogástrico, exercício pós-prandial, composição alimentar, bacia de alimentação elevada, temperamento estressado, idade, ingestão súbita de grande volume de alimentos, parentes de primeiro grau com história prévia de DVG e aumento na produção ou ingestão de gás gástrico (MATTHIESEN, 1996; DENNLER et al., 2005; MARCONATO, 2006; RASMUSSEN, 2007; LEVINE & MOORE, 2009; EVANS & ADAMS, 2010). Existe maior prevalência da DVG em animais de grande porte, de raça pura ou ainda naqueles de tórax profundo (MATTHIESEN, 1996; DENNLER et al., 2005; LEVINE & MOORE, 2009; EVANS & ADAMS, 2010), o que sugere, na verdade, uma possível disfunção dos arranjos anatômicos que são projetados para impedir o refluxo gastresofagiano. Como fatores adicionais de risco, estão a obstrução ou o esvaziamento gástrico retardado (MATTHIESEN, 1996). Os autores desta revisão têm observado que este retardamento parece estar relacionado também com situações de estresse que retardam a digestão, pois diminuem a perfusão na parede gástrica.
+
+Na DVG, ocorre inicialmente acúmulo de gás (MARCONATO, 2006; LEVINE & MOORE, 2009), líquido ou material ingerido, juntamente com a obstrução mecânica ou funcional do piloro ou junção gastresofagiana (MATTHIESEN, 1996). Embora a aerofagia seja a origem mais provável, não se sabe ao certo a origem do acúmulo de ar (LEVINE & MOORE, 2009). Normalmente, o ar é ingerido no momento da deglutição de alimentos ou água. Cães excitados, nervosos ou ainda os que ingerem o alimento com rapidez, podem deglutir uma quantidade ainda maior de ar (MATTHIESEN, 1996). O mecanismo de disfunção gastresofagiana ou pilórica ainda não é conhecido (MATTHIESEN, 1996; RASMUSSEN, 2007; TIVERS & BROCKMAN, 2009a). Os meios normais de alívio, como, por exemplo, a eructação, vômito ou esvaziamento pilórico, deixam de ocorrer diante da dilatação gástrica. Vários mecanismos anti-refluxo, normalmente impedem o refluxo gastresofagiano, como, por exemplo, o ângulo oblíquo da junção gastresofagiana, o esôfago intra-abdominal, os pilares diafragmáticos, a pressão fúndica e o músculo esfíncter gastresofagiano inferior. Quando ocorrer disfunção ou exagero de qualquer um desses mecanismos, a eructação fica comprometida (LEVINE & MOORE, 2009).
+
+Quando ocorre um volvo parcial, a compressão que ocorre no piloro e no duodeno inibe o esvaziamento gástrico. Geralmente, a dilatação gástrica precede o volvo (RASMUSSEN, 2007), embora existam casos sem dilatação, o que sugere que ela não pode ser considerada o único fator que estabelece essa condição (EVANS & ADAMS, 2010).
+
+A rotação no sentido horário é a mais comumente constatada nos cães com DVG. O grau de rotação é determinado pelo desvio do eixo longitudinal pelo piloro e cárdia no plano sagital e geralmente situa-se entre 270 e 360°. Se a rotação for inferior a 180°, ela é denominada "torção" e, se for superior, será referida como volvo. A rotação no sentido horário inicia-se com um deslocamento do piloro e do antro, desde a parede abdominal direita, até a linha média ventral. Dessa forma, o piloro e o antro passam sobre o fundo e corpo em direção à parede abdominal esquerda, que, por sua vez, passam sob o piloro e antro, no sentido da linha média ventral e parede abdominal direita (RASMUSSEN, 2007).
+
+O estômago está ligado ao baço pelo ligamento gastroesplênico, sendo assim, a posição do baço pode variar e frequentemente depende do grau do volvo gástrico. O baço sofre congestão devido ao deslocamento e oclusão dos seus vasos e o estômago secundariamente à torção e oclusão compressiva da veia porta (MATTHIESEN, 1996). Assim como o estômago, o órgão supracitado também está sujeito à torção no sentido horário e anti-horário, em torno de seu próprio pedículo vascular, o que contribui ainda mais para a congestão venosa, levando à sensível esplenomegalia e comprometimento arterial (MATTHIESEN, 1996; PARTON et al., 2006). Na maioria dos cães, o baço congesto e aumentado de volume acaba retornando às dimensões e coloração normais minutos após o reposicionamento. A esplenectomia antes do reposicionamento é indicada em casos de trombose venosa ou necrose esplênica (PARTON et al., 2006; RASMUSSEN, 2007).
+
+O reposicionamento em casos de necrose é contra-indicado, pois pode liberar diversos fatores ou mediadores vasoativos, que comprometerão a circulação sistêmica (MATTHIESEN, 1996).
+
+Fisiopatologia gástrica
+
+As alterações patológicas que ocorrem no estômago variam desde edema e hemorragia leves até necrose de todo o órgão (STROMBECK & GUILFORD, 1996). A DVG leva a um declínio grave na tensão de oxigênio na superfície do estômago, que chega a 92%, em estudo experimental, com decréscimo marcante no fluxo sanguíneo gástrico e consequentemente isquemia (MATTHIESEN, 1996; STROMBECK & GUILFORD, 1996).
+
+Diversos são os fatores que levam à isquemia gástrica, entre eles, a elevada pressão transmural, a obstrução da saída venosa, o infarto da micro vascularização, o edema mural, a redução do débito cardíaco (com consequente decréscimo na pressão e perfusão arterial), além de avulsão ou infarto das artérias gástrica curta e epiplóica ao longo da curvatura maior do estômago. O acúmulo de gás e líquido no estômago de cães com DVG eleva a pressão intragástrica, causa estase e congestão venosas, que acarretarão em distúrbios ao fluxo sanguíneo. A redução do fluxo sanguíneo arterial, secundária a alterações cardiovasculares, como, por exemplo, a redução do débito cardíaco, leva a isquemia gástrica. Esta se agrava em função da avulsão ou infarto da artéria gástrica curta e epiplóica, da curvatura maior do estômago (MATTHIESEN, 1996). Histologicamente, pode-se encontrar edema e hemorragia da submucosa, micro necrose aguda da camada muscular longitudinal, além de edema e hemorragia da camada serosa. Provavelmente, as alterações patológicas são causadas pela combinação de fatores como lesão pelo ácido clorídrico, isquemia e lesão por reperfusão (STROMBECK & GUILFORD, 1996).
+
+O infarto e necrose ocorrem com maior frequência ao longo da curvatura maior do estômago, nas regiões do corpo e fundo (GREEN et al., 2011). Não raro, é difícil determinar a presença e a extensão da lesão isquêmica e da necrose secundária. Estudando a correlação entre o nível de lactato sérico e lesões gástricas, GREEN et al. (2011) consideraram que não existem parâmetros objetivos e consistentes para a avaliação intra-operatória das lesões isquêmicas ou necróticas. Clinicamente, a viabilidade gástrica baseia-se na coloração da camada serosa, permeabilidade dos vasos serosos e palpação da parede gástrica. Em caso de estômago lesionado, observar-se-á, ao exame clínico da camada serosa, áreas acinzentadas a esverdeadas, até negras a negro-azuladas (). Mediante a palpação da parede abdominal lesionada, pode ser perceptível certo adelgaçamento ou estiramento. Após a incisão na camada seromuscular, o estômago poderá ter sua viabilidade questionada frente à ausência de sangramento ativo. TIVERS & BROCKMAN (2009b) consideram como indicações mais práticas de desvitalização a alteração na cor e a espessura da parede, a ausência de pulso nos vasos locais e de sangramento na camada seromuscular ou trombose local. A viabilidade gástrica pode ser mensurada, ainda, pela progressão clínica da doença, exames radiográficos e ultrassonográficos e citologia do líquido peritoneal (MACKENZIE et al., 2010). Os autores desta revisão, além de considerar as características citadas por TIVERS & BROCKMAN (2009b), aguardam um período de 10 a 15 minutos, após desfazer o volvo, para reavaliar a condição da parede gástrica. Em persistindo as características, efetuam ressecção segmentar.
+
+Fisiopatologia respiratória
+
+Percebe-se claramente que um estômago dilatado prejudica a excursão diafragmática, porque, ao alojar-se no espaço torácico, provoca redução do volume corrente. Em decorrência do prejuízo da função mecânica respiratória, ocorre maior exigência de energia para o adequado funcionamento pulmonar, por meio de mecanismos compensatórios (WINGFIELD, 1981). Se houver obstrução das veias porta e cava caudal, diminuirá o retorno venoso para o ventrículo direito e, dessa forma, um menor volume de sangue estará disponível para oxigenação nos pulmões (MATTHIESEN, 1996). Em virtude da ventilação alveolar inadequada e do desequilíbrio entre a ventilação e a perfusão, ocorrerá hipoxemia, devido à redução na complacência pulmonar e volume corrente, associado com a restrição do funcionamento mecânico respiratório (WINGFIELD, 1981).
+
+Fisiopatologia cardiovascular
+
+A dilatação gástrica promove uma compressão mecânica direta sobre as veias cava caudal e porta, o que aumenta a pressão desses vasos (WINGFIELD, 1981). O organismo tenta compensar a diminuição do retorno venoso na veia cava caudal pela veia ázigos, que, no entanto, não atinge o objetivo. A redução do retorno venoso ao coração diminui o débito cardíaco, a pressão arterial sistêmica e a pressão arterial pulmonar média. Dessa forma, os sinais clínicos apresentados pelo paciente incluirão taquicardia, taquipnéia, pulsos hipocinéticos rápidos, redução na pressão de pulso e no débito urinário (MATTHIESEN, 1996). Esses sinais clínicos estão associados ao desenvolvimento do choque hipovolêmico (MATTHIESEN, 1996; DENNLER et al., 2005; MARCONATO, 2006), de má distribuição (MATTHIESEN, 1996) e de acidose metabólica (DENNLER et al., 2005). RAISER (2005) classifica esse tipo de choque de má distribuição como sendo por obstáculo circulatório, que se dá por restrição ou impedimento do retorno venoso na grande circulação, embora, com a evolução e sequestro de líquido no lume gástrico, possa tornar-se hipovolêmico.
+
+Secundariamente à isquemia do miocárdio, acidose e lesão de reperfusão, ocorrem as arritmias cardíacas (MATTHIESEN, 1996; DENNLER et al., 2005) e redução da contratilidade, que contribuem para a depressão e disfunção cardíacas, reduzindo, assim, o fluxo sanguíneo sistêmico e a pressão de perfusão. A hipertensão portal reduz a capacidade do sistema reticuloendotelial hepático (células de Küpffer), que atua na eliminação de bactérias e endotoxinas (WINGFIELD, 1981).
+
+Fisiopatologia hepática
+
+Animais com DVG comumente apresentam lesão hepática, com aumentos brandos ou graves das concentrações séricas de alanina transaminase (ALT) e fosfatase alcalina (FA) (STROMBECK & GUILFORD, 1996). A lesão hepática aguda envolve congestão, infiltração de neutrófilos, além de necrose de moderada a grave. Provavelmente, vários fatores estão associados à lesão hepática, como, por exemplo, isquemia ou hipóxia, absorção de endotoxinas e lesão por reperfusão (MATTHIESEN, 1996). Na rotina dos autores, tem sido constatada elevação na ALT e FA, dados que são compatíveis com observações de WINKLER et al. (2003), os quais a relacionam à congestão e lesão de isquemia-reperfusão.
+
+Lesão por reperfusão
+
+A interrupção temporária do fornecimento sanguíneo aos tecidos e sua subsequente reperfusão induz uma cascata de eventos catastróficos, que incluem o aumento na produção de espécies reativas de oxigênio, necrose, lesão vascular e aumento da permeabilidade da mucosa. Novos estudos destacam o papel das moléculas do citoesqueleto na lesão por reperfusão, como -actina e a expressão de neoantígenos na superfície celular, tais como a miosina. Recentemente, o papel de subpopulações de células T e B tem sido considerado. Mediadores imunológicos são produzidos e penetram na circulação, iniciando uma resposta inflamatória sistêmica que pode danificar inúmeros órgãos (LOANNOU et al., 2011). Durante a reperfusão do estômago isquêmico e outros órgãos esplâncnicos, as lesões teciduais ocorrem em decorrência da incapacidade do sangue em fluir através de leitos capilares previamente isquêmicos (fenômeno de não-refluxo) e da ação de radicais livres derivados do oxigênio (oxirradicais) (MATTHIESEN, 1996; MAJESKI, 2005).
+
+Fenômeno de não-refluxo
+
+A incapacidade do sangue em fluir adequadamente em algumas áreas da microcirculação após lesão isquêmica pode ocorrer por obstrução vascular secundária ao edema intersticial, marginação neutrofílica, trombose, hipotensão pós-isquêmica, liberação de agentes vasoativos e aumento da viscosidade sanguínea. É comum ocorrer, durante a DVG, falha da reperfusão seguida de obstrução venosa (isquemia de escoamento). Com a obstrução do escoamento venoso, aumenta a pressão hidrostática capilar e edema tecidual, que causam tumefação perivascular e trombose (GUILFORD, 1990).
+
+Tratamento
+
+Existem duas possibilidades de tratamento para a DVG, o conservador (clínico) e o definitivo (cirúrgico). Independente de qual deles seja instituído, deve-se descomprimir o quanto antes o estômago, por meio de gastrocentese, utilizando cateter n. 14, 16 ou 18G, no lado direito ou esquerdo, na região com maior grau de timpanismo à percussão (GUZMAN, 2010; GREEN et al., 2011).
+
+RASMUSSEN (2007) recomenda que, antes de ser realizada a descompressão gástrica, seja primeiramente assegurado um acesso venoso, devido à grande liberação de endotoxinas que se acumularam secundariamente à estase vascular e à isquemia tecidual, entretanto, GUZMAN (2010) salienta que a descompressão deve ser o primeiro passo a ser realizado em frente a um quadro de DVG, antes mesmo do acesso venoso para reposição de fluidos. Este procedimento ajuda na eliminação do gás, de forma gradativa, enquanto outros procedimentos vão sendo realizados simultaneamente, como, por exemplo, o acesso venoso. Os autores desta revisão têm se preocupado inicialmente em assegurar sustentação de vida, adotando essas medidas com prioridade para aquela que esteja associada ao manejo da situação mais crítica. De modo geral, a descompressão gástrica é a primeira opção, pois, além de melhorar o padrão respiratório, aumentará a pré-carga e consequentemente o débito cardíaco.
+
+Posteriormente, com o animal sedado, uma sonda oro-gástrica é introduzida para concluir a remoção dos gases e restos de conteúdo gástrico. É recomendado que sejam feitas sucessivas lavagens com litros de água morna. Essa água é removida por meio de uma bomba de sucção ou por gravidade, posicionando a cabeça do animal em um plano inferior ao corpo (RASMUSSEN, 2007; GUZMAN, 2010). Devido ao alto risco de pneumonia aspirativa, é aconselhado que o paciente esteja entubado durante o procedimento (GUZMAN, 2010).
+
+Tratamento conservador
+
+Após a lavagem gástrica por meio de sonda oro-gástrica, coloca-se uma sonda naso-gástrica, para eliminar o gás que por ventura ainda esteja sendo produzido. Outra importante vantagem é a possibilidade de aspirações gradativas do conteúdo gástrico, monitorando, assim, elementos que permitam detectar precocemente o aparecimento de necrose gástrica, uma vez que, segundo MONNET (2003), a presença de líquido hemorrágico ou fragmentos de mucosa com coloração escurecida indicam isquemia avançada com presença de áreas de necrose. A sonda possibilita ainda a reintrodução precoce de alimentos, naqueles pacientes cuja resposta inicial ao tratamento seja favorável (GUZMAN, 2010; GREEN et al., 2011).
+
+Deve-se agregar ao tratamento conservador inibidores de secreção gástrica como o cloridrato de ranitidina, a famotidina ou o omeprazol, preferencialmente pela via intravenosa nas primeiras 48 horas e, após, seguir com administração oral, com objetivo de proteger a mucosa gástrica, associando também sucralfato, pela sonda, durante dois dias (GUZMAN, 2010). O cloridrato de metoclopramida deve ser administrado também, uma vez que promove contração gástrica e relaxamento do piloro (GUZMAN, 2010; GREEN et al., 2011).
+
+Em caso de choque hipovolêmico, fluidoterapia agressiva deve ser instituída utilizando solução de Ringer com lactato, na dose de 90ml kg<sup>-1</sup> h<sup>-1</sup> (RASMUSSEN, 2007; TIVERS & BROCKMAN, 2009a; GUZMAN, 2010; GREEN et al., 2011). TIVERS & BROCKMAN (2009a) recomendam a administração em bolus de 20-25ml kg<sup>-1</sup> em 15 minutos, repetindo, se necessário, até a dose total de 90ml kg<sup>-1</sup>. RABELO (2010) recomenda para choque hipovolêmico efetuar a prova de carga (10ml kg<sup>-1</sup> em 6 minutos) com solução de Ringer com lactato e reavaliar os parâmetros hemodinâmicos a cada bolus oferecido ao paciente. Para manter a pressão oncótica e melhor perfundir as aéreas isquêmicas, pode-se associar hidroxietilamido, na dose de 10-20ml kg<sup>-1</sup>, durante 10-15 minutos (MONNET, 2003; RASMUSSEN, 2007; GREEN et al., 2011). Este pode ser utilizado também quando o hematócrito pré-operatório estiver inferior a 30%, assim, melhorando o transporte de oxigênio, quando na indisponibilidade de utilização de bolsa de concentrado de hemácias para transfusão (GUZMAN, 2010). Outra característica importante dos colóides é sua capacidade de prolongar o efeito dos cristalóides, aumentando a pressão oncótica (MONNET, 2003).
+
+Um protocolo que os autores utilizam no Hospital Veterinário Universitário da UFSM, para cães de grande porte, consiste em administrar três litros de Ringer lactato associado a uma unidade de expansor de baixo peso molecular (oxipoligelina) que proporciona rápida expansão de volume, mas esse fármaco possui tempo de ação reduzido (em média o efeito dura de 2-4h). Se necessário, administrar mais três litros de Ringer lactato e uma unidade de hidroxietilamido que tem efeito mais duradouro (em média o efeito dura 25h). Com esse protocolo, os autores têm observado que há sensível melhora na perfusão tecidual com diminuição significativa no nível de lactato e consequente sobrevivência do paciente. GREEN et al. (2011) concluíram que uma queda maior que 50% no nível de lactato sérico dentro de 12h, em cães com DVG, é um bom indicador de sobrevivência.
+
+Para controle da dor, nos paciente com DVG, devem ser utilizados analgésicos opióides como cloridrato de morfina, na dose de 0,1-0,5mg kg<sup>-1</sup> ou cloridrato de tramadol, na dose de 2-4mg kg<sup>-1</sup> (RASMUSSEN, 2007; GREEN et al., 2011). Ansiolíticos também são indicados para esses pacientes, como, por exemplo, diazepam (GUZMAN, 2010) ou midazolam (RASMUSSEN, 2007). Os autores desta revisão recomendam diluir o benzodiazepínico em glicose a 5%, numa proporção de uma ampola para 5ml e administrar 1ml a cada 30s até que se obtenha o efeito sedativo, sendo que a dose varia de 0,5 a 2mg kg<sup>-1</sup>.
+
+Devido à alteração na permeabilidade das mucosas, translocação bacteriana e possibilidade de necrose gástrica, deve ser instituída antibioticoterapia com fármacos bactericidas de amplo espectro. Dentre os fármacos de escolha, estão a ampicilina (25mg kg<sup>-1</sup>) ou enrofloxacina (5mg kg<sup>-1</sup>) e, em casos de choque séptico, associar metronidazol (5-10mg kg<sup>-1</sup>) (RASMUSSEN, 2007; GUZMAN, 2010). Os autores deste artigo preferem a ceftriaxona sódica (30mg kg<sup>-1</sup>), intravenosa, a cada 12h, por ser fármaco de amplo espectro, ação prolongada e ter indicação para afecções gastrintestinais.
+
+A lesão por reperfusão deve ser evitada, principalmente pela descompressão lenta do estômago, além do mais, as arritmias também devem ser tratadas, melhorando assim o prognóstico dos pacientes com DVG (GUZMAN, 2010). As arritmias ventriculares severas podem ser manejadas pela administração de cloridrato de lidocaína, na dose de 2mg kg<sup>-1</sup>, podendo chegar a 4mg kg<sup>-1</sup> (RASMUSSEN, 2007) e, no máximo, 8mg kg<sup>-1</sup> (SCHOBER, 2010). A lidocaína apresenta meia vida curta, dessa maneira, se, após 5 minutos, as arritmias permanecerem, novas doses poderão ser aplicadas para solucionar a alteração (GUZMAN, 2010) ou então fazer administração por infusão contínua na dose de 25-75mcg kg<sup>-1</sup> min<sup>-1</sup> (RASMUSSEN, 2007; GUZMAN, 2010). Na persistência da arritmia, deve-se utilizar a procainamida, em dose de 10mg kg<sup>-1</sup>, tid (MONNET, 2003), 6-12mg kg<sup>-1</sup> em bolus (GUSMAN, 2010) ou 8-20mg kg IM, qid (SCHOBER, 2010). Caso não se tenha obtido resposta, utilizar propranolol na dose de 0,1mg ml<sup>-1</sup> e administrar 0,1mg min<sup>-1</sup> até efeito, na dose máxima de 0,6mg kg<sup>-1</sup> (PLUNKETT, 2001) ou 0,25-1,0mg kg<sup>-1</sup> V.O de atenolol (SCHOBER, 2010).
+
+Após a estabilização do paciente, uma gastropexia profilática deve ser realizada, com o objetivo de evitar recidivas (MARCONATO, 2006; LEVINE & MOORE, 2009; GUZMAN, 2010), caso contrário, estas podem ocorrer em 80-85% dos casos.
+
+Tratamento cirúrgico
+
+O seu objetivo é promover o esvaziamento gástrico, quando a passagem da sonda oro-gástrica não for possível, para reposicionar o estômago rotacionado, realizar gastropexia (GUZMAN, 2010) e determinar as viabilidades gástrica e esplênica (RASMUSSEN, 2007).
+
+Nos casos em que houver necrose gástrica, deverá ser realizada uma gastrectomia parcial, por ressecção e sutura (PARTON et al., 2006; GUZMAN, 2010; GREEN et al., 2011), ou com o equipamento de autogrampeamento GIA (TIVERS & BROCKMAN, 2009b). Existe ainda uma técnica alternativa para áreas localizadas, de viabilidade questionável, que consiste no seu enfossamento (PARTON et al., 2006). Esses autores descreveram como complicações pós-operatórias, para esta técnica de enfossamento, o aparecimento de úlcera gástrica severa no local da invaginação, torção e infarto esplênico local. MONNET (2003) recomenda a gastrectomia ao invés da invaginação e REEMS (2011) contra-indica essa técnica devido ao risco de hemorragia grave.
+
+A gastropexia deve ser realizada em todos os casos de DVG para evitar recidivas, que é comum em cães que não são submetidos a esta técnica. Ela pode ser realizada pelas técnicas incisional, em forma de cinto, a circuncostal (por trás da costela) e a gastropexia por tubo. Todas elas são de rápida execução e criam fixação e aderência bem resistentes. A gastropexia por tubo utilizando uma sonda de Foley tem a vantagem de proporcionar acesso enteral para nutrição pós-operatória e permite descompressão gástrica em caso de dilatação no pós-operatório (TIVERS & BROCKMAN, 2009b).
+
+Complicações pós-operatórias
+
+Arritmias ventriculares
+
+Aproximadamente 50% dos cães com DVG apresentam arritmias ventriculares, que ocorrem geralmente entre 12 a 72 horas após a apresentação inicial e, em sua maioria, devem-se à isquemia do miocárdio (MATTHIESEN, 1996; GREEN et al., 2011). Esta, por sua vez, ocorre devido ao decréscimo no débito cardíaco associado à redução no retorno venoso esplâncnico, e na perfusão coronariana efetiva (MATTHIESEN, 1996). Experimentalmente, a DVG promove um decréscimo de 40-89% no débito cardíaco, 5-45% na pressão arterial média e 50% no fluxo sanguíneo coronário (HORNE et al., 1985). A falha de reperfusão (fenômeno de não-refluxo) e a produção de radicais livres derivados do oxigênio foram reconhecidas como importantes causas de lesão ao miocárdio hipóxico, podendo ter um importante papel na provocação da lesão ao miocárdio em cães com DVG (BERNIER et al., 1986).
+
+Anemia
+
+Após a correção da DVG, o hematócrito tende a demonstrar anemia (inferior a 32%). Pode ocorrer uma substancial perda sanguínea pré-operatória, devido à avulsão dos ramos gástricos e epiplóicos esquerdos, ao longo da curvatura maior do estômago e, no trans-operatório, significativa perda sanguínea pode ocorrer secundariamente à gastropexia ou gastrectomia. Além disso, naqueles pacientes esplenectomizados, ocorre importante espoliação, devido ao sequestro que ocorre em um baço congesto e ingurgitado. Um quadro de DVG grave pode levar à síndrome da resposta inflamatória sistêmica e coagulação intravascular disseminada (TIVERS & BROCKMAN, 2009b), em decorrência da vasculite e vasculopatias que ocorrem (LOANNOU et al., 2011).
+
+Hipocalemia
+
+A anormalidade eletrolítica pós-operatória mais comum em cães com DVG é a hipocalemia (K+ sérico <3,5mEq L<sup>-1</sup>) (MATTHIESEN, 1985). Diversas são as causas relacionadas a perdas de potássio, entre elas, a hipersecreção gástrica, as perdas renais, a fluidoterapia prolongada, a intubação e a lavagem orogástrica, o refluxo duodenogástrico, a regurgitação das secreções biliares e pancreáticas, a translocação do potássio do compartimento extracelular para o intracelular secundariamente aos desequilíbrios ácido-base, a anorexia, o vômito, além da redução na ingesta de potássio (WINGFIELD, 1981; MATTHIESEN, 1985).
+
+Normalmente, os sinais clínicos relacionados à hipocalemia ocorrem em níveis de potássio <3,0mEq L<sup>-1</sup>. Mais comumente, observa-se debilidade muscular generalizada e motilidade gastrintestinal prejudicada, associada à paralisia intestinal. A hipocalemia pode contribuir também para o aparecimento das arritmias (MATTHIESEN, 1985; WINGFIELD, 2002). A reposição do potássio, na DVG, deve ser baseada na hemogasometria e ionograma (GALVÃO et al., 2012).
+
+Para a reposição do potássio, sem controle por ECG, os autores desta revisão diluem uma ampola de 10ml de KCl a 10% (13,4mEq) ou a 20% (26,8mEq) em um litro de Ringer lactato e administram em dose 25ml kg<sup>-1</sup> h<sup>-1</sup> ou 12,5ml kg<sup>-1</sup> h<sup>-1</sup>. Esse protocolo não visa a corrigir o déficit, mas a oferecer um nível mínimo de reposição até que o paciente possa ter reposição oral.
+
+Hipoproteinemia
+
+Ocorre hipoproteinemia (proteína sérica total <5,2g dl<sup>-1</sup>) em pacientes com DVG devido à perda de proteína secundária à inflamação, associada à gastrite e à ulceração da mucosa gástrica. Outras causas relacionadas com o desenvolvimento da hipoproteinemia seriam peritonite, perda sanguínea e hemodiluição. Pacientes com níveis de proteína sérica total entre 3 e 3,5g dl<sup>-1</sup> devem receber plasma fresco congelado ou expansores coloidais sintéticos (MATTHIESEN, 1985).
+
+Lesão à mucosa gástrica e perfuração
+
+Uma complicação comum observada no pós-operatório da correção cirúrgica de DVG é a lesão à mucosa gástrica. Ela pode variar desde um leve edema de mucosa, até grandes áreas de necrose, ulceração e perfuração. As causas ainda não são totalmente conhecidas, embora, suponha-se que estejam associadas à lesão isquêmica por reperfusão (MATTHIESEN, 1985). PEYCKE et al. (2005) acreditam que grande parte dos danos à mucosa ocorra em decorrência do período isquêmico. Os radicais livres derivados do oxigênio parecem ter papel fundamental sobre a lesão (PEYCKE et al., 2005). Tem sido sugerido que essa lesão é parcialmente responsável pela morbidade e mortalidade associada com DVG (TIVERS & BROCKMAN, 2009a).
+
+Estudos demonstraram que a reperfusão gradual do estômago é capaz de reduzir significativamente a lesão à mucosa, presumivelmente em virtude de evitar ou diminuir a produção aguda de radicais de oxigênio, como ocorre na reperfusão súbita (PERRY & WADHWA, 1988). Devido ao grande potencial de lesão à mucosa gástrica, antiácidos e bloqueadores dos receptores histamínicos de tipo H<sub>2</sub> devem ser instituídos ao protocolo terapêutico (MATTHIESEN, 1985).
+
+A perfuração gástrica pode ocorrer secundariamente à necrose, resultando em peritonite séptica (TIVERS & BROCKMAN, 2009b). O local mais comumente afetado pela perfuração é a curvatura maior, nas regiões do fundo e corpo. O tratamento a ser instituído diante de um quadro de perfuração gástrica deverá incluir a exploração total do abdômen, a gastrectomia parcial, a lavagem abdominal abundante com solução de ringer com lactato e, em alguns casos, a drenagem peritoneal aberta (MATTHIESEN, 1985).
+
+      CONCLUSÃO
+
+A síndrome da DVG é uma condição clínico-cirúrgica aguda, de etiologia não completamente estabelecida, com alto risco de óbito. Embora diversas propostas de tratamento estejam descritas, sua taxa de mortalidade permanece alta. Por apresentar caráter agudo, a identificação prematura das alterações, sua interpretação e escolha da terapia correta são essenciais para o sucesso da manutenção da vida do paciente. A literatura diverge sobre qual o primeiro procedimento a ser instituído, se descomprimir ou expandir volume. Ambos são emergenciais, se possível instituí-los simultaneamente, caso contrário, deve-se adotar primeiramente aquele mais importante para cada paciente.
+
+A lesão por reperfusão e as arritmias são as principais alterações responsáveis pelo prognóstico desfavorável nos pacientes com DVG, que não raro são subestimadas. A maior preocupação dos clínicos parece estar relacionada à drenagem do ar presente no estômago da forma mais rápida possível, sem atentar que este procedimento feito de forma súbita pode causar prejuízos irreversíveis, uma vez que a descompressão rápida predispõe o aparecimento da lesão por reperfusão, o que contribui por manter a taxa de mortalidade alta nos pacientes acometidos pela síndrome. Conclui-se que, frente a um quadro de DVG, o entendimento e percepção da fisiopatogenia influenciam diretamente no prognóstico do paciente.
+
+Recebido para publicação 02.08.11
+
+Aprovado em 10.10.11
+
+Devolvido pelo autor 13.11.11
+
+CR-5963
+
+Referências bibliográficas
+
+-
+BERNIER, M. et    al. Reperfusion induced arrhythmias and oxygen-derived free radicals: studies    with "anti-free radical" interventions and a free radical generating    system in the isolated perfused rat heart. Circulation Research , v.58,    p.331-340, 1986. Disponível em: <http://circres.ahajournals.org/cgi/reprint/58/3/331>.    Acesso em: 06 jun. 2011.
+-
+DENNLER, R. et    al. Climatic conditions as a risk factor in canine gastric dilatation-volvulus.    Veterinary Journal , v.169, p.97-101, 2005. Disponível em: <http://www.sciencedirect.com/science/article/pii/S109002330400005X>.    Acesso em: 25 maio, 2011. doi: 10.1016/j.tvjl.2003.12.013.
+-
+EVANS, K.M.; ADAMS,    V.J. Mortality and morbidity due to gastric dilatation-volvulus syndrome in    pedigree dogs in the UK. Journal of Small Animal Practice , v.51, p.376-381,    2010. Disponível em: <http://onlinelibrary.wiley.com/doi/10.1111/j.1748-5827.2010.00949.x/pdf>.    Acesso em: 25 maio, 2011. doi: 10.1111/j.1748-5827.2010.00949.x.
+-
+GALVÃO,    J.F. de B. et al. Fluid and electrolyte disturbances in gastrointestinal and    pancreatic disease - Gastric dilatation and volvulus. In: DiBARTOLA, S.P. Fluid,    electrolyte, and acid-base disorders in small animal practice 4.ed. St.    Louis: Elsevier Saunders, 2012. Cap.18. p.448.
+-
+GREEN, T.I. et    al. Evaluation of initial plasma lactate values as a predictor of gastric necrosis    and initial and subsequent plasma lactate values as a predictor of survival    in dogs with gastric dilatation-volvulus: 84 dogs (2003-2007). Journal of    Veterinary Emergency and Critical Care, v.21, n.1, p.36-44, 2011. Disponível    em: <http://onlinelibrary.wiley.com/doi/10.1111/j.1476-4431.2010.00599.x/pdf>.    Acesso em: 01 jun. 2011. doi: 10.1111/j.1476-4431.2010.00599.x.
+-
+GUILFORD, W.G.    Ischemia-reperfusion injury. Presented at the American College of Veterinary    Internal Medicine Washington, D.C., 1990. 1 CD.
+-
+GUZMAN, P.T. Síndrome    dilatación/vólvulo gástrico (DGV). In: CONGRESO ECVECCS    EMERGENCIA Y CUIDADOS CRITICOS VETERINARIOS, 2010, Guayaquil, Ecuador. Proceedings Guayaquil: IVIS, 2010. Disponível em: <http://www.ivis.org/proceedings/ecveccs/2010/Torres2.pdf>.    Acesso em: 27 mar. 2011.
+-
+HORNE, W.A. et    al. Effects of gastric distension-volvulus on coronary blood flow and myocardial    oxygen consumption in the dog. American Journal of Veterinary Research ,    v.46, n.1, p.98-104, 1985.
+-
+LEVINE, M.; MOORE,    G.E. A time series model of the occurrence of gastric dilatation-volvulus in    a population of dogs. Biomed Central Veterinary Research , v.5, n.12,    p.1-6, 2009. Disponível em: <http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2679001/?tool=pubmed>.    Acesso em: 02 jun. 2011. doi: 10.1186/1746-6148-5-12.
+-
+LOANNOU, A. et    al. Immunopathogenesis of ischemia/reperfusion-associated tissue damage. Clinical    Immunology , p.1-12, 2011. Disponível em: <http://www.sciencedirect.com/science/article/pii/S1521661611002099>.    Acesso em: 07 set. 2011. doi:10.1016/j.clim.2011.07.001.
+-
+MACKENZIE, G. et    al. A retrospective study of factors influencing survival following surgery    for gastric dilatation-volvulus syndrome in 306 dogs. Jounal of the American    Animal Hospital Association , v.46, p.97-102, 2010.
+-
+MAJESKI, J. Operative    therapy for cecal volvulus combining resection with colopexy. American Journal    of Surgery , v.189, p.211-213, 2005. Disponível em: <http://www.sciencedirect.com/science/article/pii/S0002961004005409>.    Acesso em: 04 jun. 2011. doi: 10.1016/j.amjsurg.2004.11.004.
+-
+MARCONATO, L. Gastric    dilatation-volvulus as complication after surgical removal of a splenic Haemangiosarcoma    in a dog. Journal of Veterinary Medicine , v.53, n.7, p.371-374, 2006.    Disponível em: <http://onlinelibrary.wiley.com/doi/10.1111/j.1439-0442.2006.00838.x/pdf>.    Acesso em: 22 maio, 2011. doi: 10.1111/j.1439-0442.2006.00838.x.
+-
+MATTHIESEN, D.T.    Partial gastrectomy as treatment of gastric volvulus. Results in 30 dogs. Veterinary    Surgery , v.14, p.185, 1985. Disponível em: <http://onlinelibrary.wiley.com/doi/10.1111/j.1532-950X.1985.tb00859.x/abstract>.    Acesso em: 11 abr.2011. doi: 10.1111/j.1532-950X.1985.tb00859.x.
+-
+MATTHIESEN, D.T.    Fisiopatologia da dilatação gástrica-vólvulo. In:    BOJRAB, M.J. Mecanismos da moléstia na cirurgia dos pequenos animais 2.ed. São Paulo: Manole, 1996. p.260-273.
+-
+MONNET, E. Gastric    dilatation-volvulus syndrome in dogs. Veterinary Clinics of North America:    Small Animal Pratice , v.33, p.987-1005, 2003.
+-
+PARTON, A.T. et    al. Gastric ulceration subsequent to partial invagination of the stomach in    a dog with gastric dilatation-volvulus. Journal of the American Veterinary    Medical Association , v.228, n.12, p.1895-1900, 2006. Disponível em:    <http://avmajournals.avma.org/doi/abs/10.2460/javma.228.12.1895?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%3dpubmed>.    Acesso em: 12 abr. 2011. doi: 10.2460/javma.228.12.1895.
+-
+PERRY, M.A.; WADHWA,    S.S. Gradual reintroduction of oxygen reduces reperfusion injury in cat stomach.    American Journal of Physiology , v.254, n.3 pt 1, p.366-372, 1988.
+-
+PEYCKE, L.E. et    al. The effect of experimental gastric dilatation-volvulus on adenosine triphosphate    content and conductance of the canine gastric and jejunal mucosa. Canadian    Journal of Veterinary Research , v.69, p.170-179, 2005.
+-
+PLUNKET, S.J. Gatrointestinal    emergencies - Gastric dilatation volvulus (GDV). In: Emergency procedures    for the small animal veterinarian 2.ed. Edinburgh: Saunders, 2001. Cap.7,    p.149-154.
+-
+RABELO, R.C. Fluidoterapia    otimizada em metas. In: CONGRESO LATINOAMERICANO DE EMERGENCIA Y CUIDADOS INTENSIVOS,    2010, Buenos Aires. Proceedings... Buenos Aires: LAVECCS, 2010. Disponível    em:<http://www.ivis.org/proceedings/laveccs/2010/Cardoso.pdf>.    Acesso em: 05 set. 2011.
+-
+RAISER, A.G. Choque.    In: RABELO R.C; CROWE Jr D. (Eds.). Fundamentos de terapia intensiva veterinária    em pequenos animais Condutas no paciente crítico. Rio de Janeiro:    LF Livros, 2005. Cap.10, p.71-104.
+-
+RASMUSSEN, L. Estômago.    In: SLATTER, D. Manual de cirurgia de pequenos animais 3.ed. São    Paulo: Manole, 2007. p.592-644.
+-
+REEMS, M. Gastric    dilatation volvulus: pathophysiology and management. In: FLORIDA VETERINARY    MEDICAL ASSOCIATION, 2011, Tampa, Florida. Proceedings... Tampa: Florida    Veterinary Specialists, 2011. Disponível em: <http://www.fvmace.org/FVMA%2082nd%20Annual%20Conference/Proceedings/Gastric%20Dilatation%20Volvulus-%20Pathophysiology%20and%20Management.html>.    Acesso em: 05 set. 2011.
+-
+SCHOBER, K.E. Medical    treatment of tachyarrithmias. In: WORLD SMALL ANIMAL VETERINARY CONGRESS, 35.,    2010, Geneva. Proceedings Geneva: WSAVA, 2010. Disponível    em: <http://www.ivis.org/procedures/wsava/2010/d49>.    Acesso em: 13 set. 2011.
+-
+STROMBECK, D.R.;    GUILFORD, W.G. Gastric dilatation, gastric dilatation-volvulus, and chronic    gastric volvulus. In: . Small animals gastroenterology 3.ed. Philadelphia:    Saunders, 1996. p.303-317.
+-
+TIVERS, M.; BROCKMAN,    D. Gastric dilation-volvulus syndrome in dogs. 1. Pathophysiology, diagnosis    and stabilization. In Practice , v.31, p.66-69, 2009a.
+-
+TIVERS, M.; BROCKMAN,    D. Gastric dilation-volvulus syndrome in dogs. 2. Surgical and postoperative    management. In Practice , v.31, p.114-121, 2009b.
+-
+WINGFIELD, W.E.    The stomach. In: BOJRAB, M.J. Pathophysiology in small animal surgery Philadelphia: Lea & Febiger, 1981. p.110-114.
+-
+WINGFIELD, W.E.    Gastric dilatation-volvulus. In: ; RAFFE, M.R. The veterinary ICU book Jackson Hole: Tenton Media, 2002. Cap.50, p.753-762.
+-
+WINKLER, K.P. Bacteremia    and bacterial translocation in the naturally occurring canine gastric dilatation-volvulus    patient. Journal of the American Animal Hospital Association , v.39, p.361-368,    2003.

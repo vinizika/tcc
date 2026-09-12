@@ -94,6 +94,23 @@ python scripts/run_retrieval_eval.py --name minha_rodada --expect-base-hash <has
 Leva segundos: a busca não chama o modelo de linguagem. Detalhe e como ler
 os números em [`data/retrieval/README.md`](../data/retrieval/README.md).
 
+### Captura de fontes para a base
+
+Baixa uma fonte da web e grava o texto com hash e data, no formato que a
+ingestão espera. O agente pesquisador **lê** páginas para julgar se servem;
+este script **captura** a escolhida — o que um modelo lê é o que ele entendeu
+da página, e indexar isso faria a base ser paráfrase.
+
+```bash
+python scripts/capturar_fonte.py <url> --topic <id do mapa> --slug <apelido> \
+    --title "Titulo curto" --source "Instituicao" --language pt --register tutor
+```
+
+Grava em `../data/curadoria/fontes/capturas/` o `.txt` (ou `.pdf`) e a ficha
+`.json`. Recusa `--topic` que não seja linha do
+[mapa de assuntos](../data/curadoria/README.md). O procedimento completo está
+no [roteiro do pesquisador](../agentes/pesquisador.md).
+
 ### Benchmark de transcrição de voz (WER)
 
 Mede o WER do Whisper sobre fala sintética (edge-tts, vozes PT-BR), a partir
@@ -119,7 +136,7 @@ python scripts/run_voice_benchmark.py
 python -m pytest scripts/tests -q
 ```
 
-110 testes, sem API nem modelo — o HTTP fica atrás de um dublê. Dois deles
+124 testes, sem API nem modelo — o HTTP fica atrás de um dublê. Dois deles
 sustentam a comparabilidade com a medição histórica de 04/05: o **teste
 dourado** (as 98 respostas daquele dia reproduzem exatamente os números do
 diário) e a **regressão dos relatos** (o texto enviado ao modelo é idêntico

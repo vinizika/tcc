@@ -1,0 +1,30 @@
+{
+  "title": "Torcao gastrica em caes",
+  "source": "PDSA Pet Health Hub",
+  "document_type": "owner_guidance",
+  "validation_status": "pending_specialist",
+  "species": "dog",
+  "topic": "gastric_dilatation_volvulus",
+  "language": "en",
+  "source_url": "https://www.pdsa.org.uk/pet-help-and-advice/pet-health-hub/conditions/gdv-gastric-dilatation-volvulus-in-dogs",
+  "indexing": {
+    "include_sections": [
+      "Overview",
+      "What is GDV?",
+      "Which dogs are most at risk of GDV?",
+      "GDV Symptoms"
+    ],
+    "exclude_sections": [],
+    "exclude_pages": []
+  },
+  "register": "tutor",
+  "access_date": "2026-09-12",
+  "captured_sha256": "b049102f29ae1c0c42b76797e80c4701313450ee4ab39bc6cedce0c2ba7ebad4",
+  "map_line": "gastric_dilatation_volvulus",
+  "specialist": {
+    "verdict": "",
+    "name": "",
+    "date": ""
+  },
+  "year": 2024
+}

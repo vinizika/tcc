@@ -1725,6 +1725,29 @@ O que os especialistas devem olhar primeiro: as linhas `ate_24h`, a primeira
 convulsão como imediato, a espécie da piometra, a prioridade dos três
 tóxicos brasileiros e a linha da exposição à raiva.
 
+**Atualização 12/09 — o pesquisador está de pé, e achou um problema de
+fundo.** O roteiro ([`agentes/pesquisador.md`](../agentes/pesquisador.md)) e
+a captura ([`scripts/capturar_fonte.py`](../scripts/capturar_fonte.py))
+existem, com piloto na torção gástrica ([rodada 12](joao/2026-09-12-13-pesquisador.md)).
+O problema: **não existe, em volume, fonte que seja ao mesmo tempo
+autoritativa, em português e escrita para tutor.** O MSD "em português"
+traduz os títulos e deixa o corpo em inglês; o que há em PT com autoridade é
+acadêmico; o que há para tutor em PT é de clínica comercial. A saída
+adotada é coletar **as duas naturezas** por linha — uma PT com autoridade e
+uma EN para tutor — marcando `language` e `register` na ficha, e deixar a
+régua de recuperação dizer qual delas a busca encontra para um relato leigo
+em português. Isso transforma a etapa 1 num experimento de idioma × registro,
+e é a porta de decisão que lê o resultado.
+
+As fichas passam a usar vocabulários fechados que o README da base ainda não
+formaliza — `document_type` (`owner_guidance`, `professional_manual`,
+`guideline`, `technical_bulletin`, `peer_reviewed_article`, `case_report`,
+`team_summary`, `synthetic_protocol`), `validation_status`
+(`pending_specialist`, `approved_by_specialist`, `rejected_by_specialist`,
+`not_validated`) e `register` (`tutor`, `clinico`, `academico`). O trilho A
+pode formalizá-los em `backend/data/documents/README.md` quando quiser; até
+lá, quem valida é o script de captura.
+
 ---
 
 ### B-51

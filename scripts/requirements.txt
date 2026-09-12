@@ -6,6 +6,10 @@ pandas
 requests
 pytest
 
+# Extrai o texto principal de uma pagina web (capturar_fonte.py), sem menu,
+# rodape nem banner de cookie. Pura Python, sem navegador.
+trafilatura
+
 # Só para regerar os áudios do benchmark de voz (generate_voice_benchmark.py).
 # Medir o WER com run_voice_benchmark.py não precisa dele — os MP3 já estão
 # versionados em scripts/voice_benchmark/audio/.

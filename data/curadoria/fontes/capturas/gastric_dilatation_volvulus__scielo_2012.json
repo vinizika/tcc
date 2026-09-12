@@ -1,0 +1,44 @@
+{
+  "title": "Dilatacao volvo gastrica",
+  "source": "Ciencia Rural",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "pending_specialist",
+  "species": "dog",
+  "topic": "gastric_dilatation_volvulus",
+  "language": "pt",
+  "source_url": "https://www.scielo.br/j/cr/a/CPzTSK3tQkWxFSz7Q3L3zLv/?lang=pt",
+  "indexing": {
+    "include_sections": [
+      "Síndrome da dilatação volvo gástrica"
+    ],
+    "exclude_sections": [
+      "Fisiopatologia gástrica",
+      "Fisiopatologia respiratória",
+      "Fisiopatologia cardiovascular",
+      "Fisiopatologia hepática",
+      "Lesão por reperfusão",
+      "Fenômeno de não-refluxo",
+      "Tratamento",
+      "Tratamento conservador",
+      "Tratamento cirúrgico",
+      "Complicações pós-operatórias",
+      "Arritmias ventriculares",
+      "Anemia",
+      "Hipocalemia",
+      "Hipoproteinemia",
+      "Lesão à mucosa gástrica e perfuração"
+    ],
+    "exclude_pages": []
+  },
+  "register": "academico",
+  "access_date": "2026-09-12",
+  "captured_sha256": "c0b9aff03f06a6a5be8354b6a08122622bc5a6920979d9afc20cd439bbbbd12c",
+  "map_line": "gastric_dilatation_volvulus",
+  "specialist": {
+    "verdict": "",
+    "name": "",
+    "date": ""
+  },
+  "year": 2012,
+  "authors": "Silva SSR; Castro JLC; Castro VSP; Raiser AG"
+}

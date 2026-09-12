@@ -37,7 +37,8 @@ SISTEMAS = {
     "reprodutivo", "metabolico", "ambiental", "neonatos_e_idosos",
 }
 COBERTURAS = {
-    "sem_documento", "sintetico", "fonte_enviada", "fonte_aprovada", "indexada",
+    "sem_documento", "sintetico", "fonte_encontrada", "fonte_enviada",
+    "fonte_aprovada", "indexada",
 }
 
 # Só as colunas que a etapa 1 precisa ter escritas. A etapa 2 existe para dar
