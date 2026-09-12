@@ -218,6 +218,16 @@ A interface atual de chat continua servindo para desenvolvimento e demo até lá
 | Outubro | **Marco 2 — matriz de ablação completa** · sai da geladeira: RAGAs, frontend, geolocalização/MIST, deploy |
 | Novembro | **Marco 3 — números congelados**, escrita final |
 
+**Atualização de 12/09.** A semana de 20–30/09 foi redirecionada. As rodadas 9,
+10 e 11 do trilho B2 mostraram que a iteração pelas réguas esbarra em duas
+coisas que valem para os três trilhos — a **base** (sintética, só de
+emergências) e a **prova** (listas de sintomas em inglês, que uma regra sem
+modelo acerta 98 de 98). As duas viraram frentes paralelas do time, com uma
+peça comum (o mapa de assuntos) e agentes que ajudam na curadoria. O plano
+completo, com o raciocínio e quem faz o quê, está em
+[`plano-base-e-prova.md`](plano-base-e-prova.md). A tabela acima fica como
+registro do que havia sido combinado em setembro.
+
 ---
 
 ## Diagnóstico em alto nível (graus de atenção)

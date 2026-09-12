@@ -97,6 +97,9 @@ aqui.
 | [B-47](#b-47) | Retrato do sistema inclui estado de momento e gera aviso falso | Trilho B2 | Baixa | Aberto |
 | [B-48](#b-48) | Gabarito da régua de recuperação precisa de validação clínica | Trilho A + especialista | Alta | Aberto |
 | [B-49](#b-49) | Régua de recuperação mede pouco enquanto a base e o conjunto forem pequenos | Trilho A + B2 | Média | Aberto |
+| [B-50](#b-50) | Mapa de assuntos: a lista de quadros clínicos que a base cobre e a prova pergunta | Time + especialistas | Alta | Aberto |
+| [B-51](#b-51) | Régua de recuperação não diz o que mudou entre duas rodadas | Trilho B2 | Média | Aberto |
+| [B-52](#b-52) | Fonte de terceiro versionada em repositório público | Time | Alta | Aberto |
 
 ---
 
@@ -178,6 +181,14 @@ cobrindo também condições leves e não urgentes, mantendo o padrão de
 metadados do ingestor (`topic`, `species`). Critério: ao menos um protocolo
 de não emergência por sistema orgânico frequente em relatos leigos.
 
+**Atualização 12/09 — a direção mudou, o critério não.** O time decidiu que a
+base será feita de **fontes originais** indexadas como estão, com aprovação de
+especialistas, e não de protocolos escritos por nós — que ficam como exceção
+para quadro sem fonte utilizável. O critério acima continua valendo, e o
+[mapa de assuntos](#b-50) é o instrumento que diz quando ele foi cumprido: a
+coluna de status mostra, quadro a quadro, o que já tem documento. Plano
+completo em [`docs/plano-base-e-prova.md`](../docs/plano-base-e-prova.md).
+
 ### B-04
 
 **Temperatura e seed não fixadas na etapa de consulta**
@@ -222,6 +233,16 @@ quase duplicadas também enfraquecem qualquer teste que assuma independência.
 especialista, ou rotular casos originais leves como não emergência, ou
 construir um conjunto de relatos leigos reais (ver [B-15](#b-15)).
 Critério: as regras triviais abaixo de 0,90.
+
+**Atualização 12/09 — caminho escolhido e dono.** A terceira alternativa:
+**um conjunto novo de relatos de tutor em português**, construído pelo trilho
+B1, com gabarito ancorado em referência publicada de triagem, motivo por linha
+e validação de especialistas. Fecha junto o [B-15](#b-15) e o [B-45](#b-45). O
+critério permanece o desta ficha — regras triviais abaixo de 0,90 —, mas os
+baselines triviais de hoje contam sintomas e não funcionam com texto livre:
+precisam de substitutos (saco de palavras com validação cruzada, palavra de
+alarme, comprimento), senão o time perde justamente o instrumento que detectou
+este problema. Ver [`docs/plano-base-e-prova.md`](../docs/plano-base-e-prova.md).
 
 ### B-06
 
@@ -419,6 +440,13 @@ palavras não é o "relato de um tutor leigo" que o prompt espera.
 **O que resolveria.** Um arquivo de mapeamento inglês→português revisado
 pela especialista, versionado; uma chave `--relato-lang` no runner; rodada
 própria comparando os idiomas, nunca misturados na mesma comparação.
+
+**Atualização 12/09 — proposta de mudança de dono.** Com a decisão de construir
+a prova nova em português ([B-05](#b-05)), a tradução do conjunto antigo deixa
+de ser o caminho: o conjunto novo já nasce na língua certa. O que permanece é a
+`--relato-lang` no runner, que vem junto da adaptação para ler texto livre.
+**Dono proposto: trilho B1**, junto com a prova. Troca de dono é acordo entre
+os dois (regra 3 deste arquivo) — a confirmar com o Ryu.
 
 ### B-16
 
@@ -1484,6 +1512,12 @@ item ao [B-05](#b-05). Critério: nenhum ajuste de prompt é medido no mesmo
 conjunto em que foi desenvolvido, e as evidências dizem qual conjunto foi
 usado para cada coisa.
 
+**Atualização 12/09.** Confirmado o caminho previsto: a prova nova
+([B-05](#b-05)) nasce já dividida em conjunto de teste e de desenvolvimento,
+separados por semente e nunca misturados, e congelada por hash antes do
+próximo ajuste de prompt. Ver
+[`docs/plano-base-e-prova.md`](../docs/plano-base-e-prova.md).
+
 ---
 
 ### B-46
@@ -1625,6 +1659,110 @@ pelo menos 25.
 **duas versões do mesmo sistema sobre os mesmos casos** — antes e depois da
 virada da base, com e sem re-ranking, com e sem reescrita de consulta. Essa
 comparação pareada não depende de a base ser grande.
+
+---
+
+### B-50
+
+**Mapa de assuntos: a lista de quadros clínicos que a base cobre e a prova pergunta**
+
+**Identificado por:** João (B2) · **Onde:** [plano das duas frentes](../docs/plano-base-e-prova.md), 12/09 · **Responsável:** Time + especialistas · **Prioridade:** Alta · **Status:** Aberto
+
+**O que observamos.** O projeto nunca escreveu quais quadros clínicos a base
+deveria cobrir. A base tem sete protocolos escolhidos para teste técnico; a
+prova tem 98 combinações de sintoma vindas de um dataset do Kaggle. As duas
+foram montadas por caminhos independentes, e o resultado está registrado no
+bloqueio 11 do planejamento do B2: **a base não cobre os assuntos que a prova
+pergunta**. A [rodada 11](joao/2026-09-12-11-regua-de-recuperacao.md) mediu um
+pedaço disso — quatro dos dezoito casos tratam de quadros que nenhum protocolo
+cobre.
+
+**Por que importa.** Sem essa lista, três coisas ficam sem resposta. (1) A
+busca por fontes não tem critério: "emergências veterinárias" devolve duzentas
+possibilidades. (2) Não há como dizer se a base melhorou — "cobertura" exige
+uma definição do que deveria estar coberto. (3) Base e prova, sendo ampliadas
+em paralelo por pessoas diferentes, voltam a não se encaixar, que é o problema
+de hoje com mais documentos.
+
+Os datasets existentes não servem de esqueleto: no `dataset1` todas as 70
+linhas de cão e gato são "perigosas" e nenhuma nomeia um quadro — além de ser
+a prova atual, o que faria a base ser montada olhando a chave de resposta. O
+`dataset2` nomeia 48 doenças, quase todas infecciosas ou crônicas, **sem uma
+emergência clássica** (nada de trauma, intoxicação, torção gástrica, obstrução
+uretral, convulsão). Servem como checagem de vocabulário, não como índice.
+
+**O que resolveria.** `data/curadoria/mapa-de-assuntos.csv`, uma linha por
+quadro, com: quadro em português, sistema orgânico, espécie, classe
+(emergência ou pode esperar), sinais que o tutor relata, **par de confusão**
+(a gêmea leve que usa as mesmas palavras), por que entra (a referência),
+prioridade e status. Construído pelo time a partir dos sete protocolos atuais,
+dos quatro quadros sem cobertura da régua e de referência publicada de
+triagem; validado pelos especialistas. Critério: onda 1 com 20 a 25 linhas
+validadas, cada uma com status, e cada sinal do `dataset1` caindo em alguma
+linha ou marcado como inespecífico.
+
+---
+
+### B-51
+
+**A régua de recuperação não diz o que mudou entre duas rodadas**
+
+**Identificado por:** João (B2) · **Onde:** [plano das duas frentes](../docs/plano-base-e-prova.md), 12/09 · **Responsável:** Trilho B2 · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** A régua ([rodada 11](joao/2026-09-12-11-regua-de-recuperacao.md))
+mede uma rodada por vez. Comparar duas — antes e depois de indexar documentos
+novos — é hoje trabalho manual de abrir dois relatórios lado a lado. O runner
+de classificação já tem `report_evaluation.py compare` para isso; a régua de
+recuperação não tem equivalente.
+
+**Por que importa.** A ampliação da base vai acontecer em lotes, e a pergunta
+a cada lote é sempre a mesma: melhorou, piorou, ou não mudou? Sem a comparação
+automática, a resposta depende de alguém lembrar de olhar — e o risco concreto
+não é deixar de ver uma melhora, é **deixar de ver uma piora**. Uma base maior
+pode espalhar o assunto certo e empurrar o documento correto para baixo, ou
+fazer crescer a concentração do protocolo-ímã ([B-02](#b-02)). A
+[rodada 10](joao/2026-09-12-10-corte-de-relevancia.md) mediu quanto custa
+ruído recuperado: 22 emergências classificadas como leves.
+
+**O que resolveria.** Um `compare` da régua, no mesmo desenho do que já existe
+para a classificação, gerando um `compare.md` com quatro blocos: **cobertura**
+(quais quadros do [mapa](#b-50) passaram a ter documento, quais faltam),
+**ordenação** (Δ Precision@1, Δ MRR e a tabela caso a caso com a posição antes
+e depois), **ruído** (Δ concentração no primeiro lugar, Δ casos acima do corte
+e, para os casos leves, se a nota máxima subiu) e **gabarito a atualizar**
+(casos marcados "sem cobertura" cujo assunto agora tem documento). Critério:
+recusa comparar quando o `cases.csv` mudou entre as duas rodadas — antes e
+depois só valem sobre os mesmos casos.
+
+Vale a ressalva do [B-49](#b-49): com o conjunto atual, um lote de três
+documentos costuma mover zero a dois casos. O valor do compare por lote é
+cobertura e guarda de regressão; o ganho de ordenação aparece entre ondas.
+
+---
+
+### B-52
+
+**Fonte de terceiro versionada em repositório público**
+
+**Identificado por:** João (B2) · **Onde:** [plano das duas frentes](../docs/plano-base-e-prova.md), 12/09 · **Responsável:** Time · **Prioridade:** Alta · **Status:** Aberto
+
+**O que observamos.** O repositório é público e não tem arquivo de licença. Em
+`backend/data/documents/` está versionado o PDF completo de um artigo de
+periódico comercial (`pathophysiology_heatstroke_dogs_2017.pdf`), e o plano da
+base prevê acrescentar outras fontes originais. O README da própria pasta já
+avisa: *"a possibilidade técnica de extrair e indexar uma fonte não concede
+permissão para redistribuí-la"*.
+
+**Por que importa.** Versionar em repositório público é distribuir, e isso vale
+para o histórico do Git mesmo depois de o arquivo ser removido. É o único item
+deste plano que não é problema de engenharia.
+
+**O que resolveria.** Tornar o repositório **privado antes do primeiro commit
+de fonte nova** — é configuração do GitHub, na conta em que o repositório está.
+Critério: repositório privado, e a nota de licença do
+[README da pasta de documentos](../backend/data/documents/README.md) continua
+valendo como lembrete a cada fonte nova. Se o deploy previsto para
+outubro/novembro expuser as fontes ao usuário final, o assunto volta.
 
 ---
 

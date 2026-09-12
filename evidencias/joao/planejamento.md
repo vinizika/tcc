@@ -49,10 +49,10 @@ mecanismo identificado.
 | 5 | **Chain-of-Thought** | ✅ 11/09, **resultado negativo** | Implementado e medido em cinco braços. Falsos não urgentes de 8 para 1, mas falsos urgentes de 4 para 16 e recall da classe leve a **zero**. Balanceada de 0,856 para 0,408. Não entra no sistema; fica desligado e medido para a ablação |
 | 5b | Corte de relevância | ✅ 12/09 | O sistema deixou de injetar trecho irrelevante. Com a base atual a busca fica silenciosa em 98 de 98 linhas, e o resultado é idêntico ao braço sem RAG. Preset `naive_rag_sem_corte` preserva o braço antigo para a ablação |
 | 5c | **Régua de recuperação** | ✅ 12/09, **em nome do trilho A** | Instrumento pronto e linha de base congelada. Dois achados: o protocolo certo está **sempre** entre os cinco devolvidos (o problema é ordenação, não cobertura), e existe um **protocolo-ímã** — "trauma" em 1º lugar em 9 de 18 casos. Gabarito provisório, aguardando validação ([B-48](../backlog.md#b-48)) |
-| 6 | **Entrega a decidir** | ⏸️ aguardando as três correções ([adendo da rodada 9](2026-09-12-09-autopsia-do-cot.md#adendo-de-1209--as-três-correções-em-linguagem-simples-e-uma-hipótese-em-espera)) | O Self-Refine como planejado ficou enfraquecido: o que o modelo escreve sobre a própria decisão é racionalização. Uma camada de decisão determinística foi avistada e está **em stand-by**, por decisão do João — volta só se as correções não bastarem ou como braço a mais da ablação. Qualquer alternativa depende do corte, da base e da prova para ser **avaliada** sem circularidade |
+| 6 | **Ferramentas da frente base**: mapa de assuntos, agentes de curadoria e retorno por lote | ⏳ próxima ([plano das duas frentes](../../docs/plano-base-e-prova.md)) | Deixou de ser "a decidir". Nenhuma técnica nova de prompt vale a pena antes de a base cobrir os assuntos e a prova medir triagem de verdade, então a entrega do B2 passa a ser **construir o que destrava as duas frentes**: o mapa de assuntos, os roteiros dos agentes e o `compare` da régua ([B-50](../backlog.md#b-50), [B-51](../backlog.md#b-51)). O Self-Refine e a camada determinística continuam **em stand-by**, pelo motivo da [rodada 9](2026-09-12-09-autopsia-do-cot.md#adendo-de-1209--as-três-correções-em-linguagem-simples-e-uma-hipótese-em-espera): o que o modelo escreve sobre a própria decisão é racionalização, e qualquer alternativa depende do corte, da base e da prova para ser **avaliada** sem circularidade |
 | 7 | Driver de ablação | ⏳ | Cruza as chaves de todos os trilhos e gera as tabelas do artigo |
 
-## Próxima entrega: a fila não mudou, e duas partes dela não são minhas
+## Próxima entrega: as ferramentas que destravam a base e a prova
 
 A régua de recuperação está feita
 ([rodada 11](2026-09-12-11-regua-de-recuperacao.md)) e o corte de
@@ -69,17 +69,25 @@ achados que mudam prioridades de outros trilhos:
 - **Quatro protocolos faltam na base**, com nome e quadro clínico
   ([B-03](../backlog.md#b-03)).
 
-**O que falta das três correções**, e nenhuma é minha sozinho: a base com
-cobertura ([B-03](../backlog.md#b-03)) e a prova nova
-([B-05](../backlog.md#b-05), [B-45](../backlog.md#b-45)) dependem da
-especialista. O gabarito da régua depende de validação clínica
-([B-48](../backlog.md#b-48)).
+**O que ficou claro depois disso:** as duas correções que faltam — base com
+cobertura e prova nova — deixaram de ser "dependências de outra pessoa" e
+viraram as **duas frentes do time**, atacadas em paralelo. O desenho, o
+raciocínio e quem faz o quê estão em
+[`docs/plano-base-e-prova.md`](../../docs/plano-base-e-prova.md).
 
-**O que anda do meu lado sem depender de ninguém:** o teste limpo da ordem
-([B-46](../backlog.md#b-46)), a limpeza do retrato do sistema
-([B-47](../backlog.md#b-47)) e o driver de ablação — a entrega 7, que cruza
-as chaves de todos os trilhos e gera as tabelas do artigo, e que não depende
-do resultado de nenhum braço.
+**O que é meu nessas três semanas** é ferramenta, não técnica de prompt: o
+mapa de assuntos ([B-50](../backlog.md#b-50)) — a lista de quadros clínicos
+que a base deve cobrir e a prova deve perguntar, sem a qual as duas frentes
+voltam a não se encaixar; os roteiros dos agentes de curadoria, em
+[`agentes/`](../../agentes/README.md); e o `compare` da régua
+([B-51](../backlog.md#b-51)), que diz a cada lote de documentos novos o que
+melhorou, o que piorou e o que ainda falta cobrir. A **prova é inteira do
+trilho B1**, inclusive adaptar o runner para ler relatos em português — quem
+escreveu os prompts do classificador não deve escrever a prova que os mede.
+
+Depois disso, a entrega 7: o driver de ablação, que cruza as chaves dos três
+trilhos e gera as tabelas do artigo. Ele não depende do resultado de nenhum
+braço, então pode andar em paralelo.
 
 ## Marcos
 
