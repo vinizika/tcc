@@ -1,0 +1,985 @@
+{
+  "a": {
+    "run_id": "20260911-201429_linha_de_base",
+    "quando": "2026-09-11T20:14:29.827464-03:00",
+    "commit": "74c6dfa"
+  },
+  "b": {
+    "run_id": "20260911-202505_linha_de_base",
+    "quando": "2026-09-11T20:25:05.973047-03:00",
+    "commit": "74c6dfa"
+  },
+  "limiar": 0.7,
+  "pareamento": {
+    "comuns": [
+      "b01",
+      "b02",
+      "b03",
+      "b04",
+      "b05",
+      "b06",
+      "b07",
+      "b08",
+      "b09",
+      "b10",
+      "b11",
+      "b12",
+      "b13",
+      "b14",
+      "b15",
+      "b16",
+      "b17",
+      "b18"
+    ],
+    "so_em_a": [],
+    "so_em_b": [],
+    "limiar": 0.7
+  },
+  "base": {
+    "chunk_count": [
+      18,
+      18
+    ],
+    "chunk_ids_sha256": [
+      "eeba9f51d239e2f6167d18ffe87ef5e6f505de0497b222555a3cb953dd12a914",
+      "eeba9f51d239e2f6167d18ffe87ef5e6f505de0497b222555a3cb953dd12a914"
+    ],
+    "content_sha256": [
+      "89a215ac3c7c6014b6dce500652f1c921e2a276f8d2ecd195751626592ad1444",
+      "89a215ac3c7c6014b6dce500652f1c921e2a276f8d2ecd195751626592ad1444"
+    ],
+    "mesma_base": true,
+    "avisos": []
+  },
+  "cobertura": {
+    "linhas": [
+      {
+        "id": "chocolate_toxicosis",
+        "quadro": "Intoxicacao por chocolate",
+        "especie_mapa": "cao",
+        "especie_ficha": "ambos",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "encontravel",
+        "depois": "encontravel",
+        "mudou": false
+      },
+      {
+        "id": "allium_toxicosis",
+        "quadro": "Intoxicacao por cebola e alho",
+        "especie_mapa": "ambos",
+        "especie_ficha": "ambos",
+        "prioridade": "B",
+        "etapa": "1",
+        "antes": "encontravel",
+        "depois": "encontravel",
+        "mudou": false
+      },
+      {
+        "id": "respiratory_distress",
+        "quadro": "Dificuldade respiratoria",
+        "especie_mapa": "ambos",
+        "especie_ficha": "ambos",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "encontravel",
+        "depois": "encontravel",
+        "mudou": false
+      },
+      {
+        "id": "seizures",
+        "quadro": "Convulsao",
+        "especie_mapa": "ambos",
+        "especie_ficha": "ambos",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "encontravel",
+        "depois": "encontravel",
+        "mudou": false
+      },
+      {
+        "id": "trauma_and_bleeding",
+        "quadro": "Trauma, atropelamento e hemorragia",
+        "especie_mapa": "ambos",
+        "especie_ficha": "ambos",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "encontravel",
+        "depois": "encontravel",
+        "mudou": false
+      },
+      {
+        "id": "urethral_obstruction",
+        "quadro": "Obstrucao uretral",
+        "especie_mapa": "ambos",
+        "especie_ficha": "gato",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "encontravel",
+        "depois": "encontravel",
+        "mudou": false
+      },
+      {
+        "id": "vomiting_and_diarrhea",
+        "quadro": "Vomito e diarreia persistentes",
+        "especie_mapa": "ambos",
+        "especie_ficha": "ambos",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "encontravel",
+        "depois": "encontravel",
+        "mudou": false
+      },
+      {
+        "id": "canine_heatstroke",
+        "quadro": "Intermacao (golpe de calor)",
+        "especie_mapa": "cao",
+        "especie_ficha": "cao",
+        "prioridade": "B",
+        "etapa": "1",
+        "antes": "indexado, nao encontrado",
+        "depois": "indexado, nao encontrado",
+        "mudou": false
+      },
+      {
+        "id": "gastric_dilatation_volvulus",
+        "quadro": "Dilatacao e torcao gastrica",
+        "especie_mapa": "cao",
+        "especie_ficha": "",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "fading_neonate",
+        "quadro": "Filhote recem-nascido que nao mama",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "acute_hindlimb_paralysis",
+        "quadro": "Paralisia aguda das patas traseiras",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "carbamate_organophosphate_poisoning",
+        "quadro": "Intoxicacao por chumbinho e inseticidas agricolas",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "anticoagulant_rodenticide_poisoning",
+        "quadro": "Intoxicacao por raticida anticoagulante",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "human_medication_poisoning",
+        "quadro": "Intoxicacao por medicamento humano",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "anaphylaxis_facial_swelling",
+        "quadro": "Reacao alergica grave com inchaco de face",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "pyometra",
+        "quadro": "Piometra",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "single_vomiting_or_mild_diarrhea",
+        "quadro": "Vomito isolado ou fezes moles em animal ativo",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "dietary_indiscretion_mild",
+        "quadro": "Comeu algo fora da dieta, sem sinais",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "mild_upper_respiratory_signs",
+        "quadro": "Espirro e coriza leves",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "tremors_without_seizure",
+        "quadro": "Tremor sem convulsao",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "B",
+        "etapa": "1",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "mild_lameness",
+        "quadro": "Claudicacao leve",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "inappropriate_urination_or_cystitis",
+        "quadro": "Xixi fora do lugar e cistite",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "osteoarthritis_stiffness",
+        "quadro": "Rigidez de artrose em idoso",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "flea_dermatitis_pruritus",
+        "quadro": "Coceira e dermatite",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "normal_estrus",
+        "quadro": "Cio normal",
+        "especie_mapa": "cao",
+        "especie_ficha": "",
+        "prioridade": "B",
+        "etapa": "1",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "collapse_and_pale_gums",
+        "quadro": "Colapso e gengiva palida",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "parvovirus_panleukopenia",
+        "quadro": "Parvovirose e panleucopenia",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "ocular_emergency",
+        "quadro": "Emergencia ocular",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "B",
+        "etapa": "1",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "mild_conjunctivitis",
+        "quadro": "Conjuntivite leve",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "reduced_appetite_no_other_signs",
+        "quadro": "Comendo menos, sem outros sinais",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "permethrin_toxicosis_cats",
+        "quadro": "Intoxicacao por permetrina em gato",
+        "especie_mapa": "gato",
+        "especie_ficha": "",
+        "prioridade": "A",
+        "etapa": "1",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "gastrointestinal_foreign_body",
+        "quadro": "Corpo estranho no tubo digestivo",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "A",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "airway_foreign_body_choking",
+        "quadro": "Engasgo com obstrucao de via aerea",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "B",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "dystocia",
+        "quadro": "Distocia (parto dificil)",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "B",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "snake_and_scorpion_envenomation",
+        "quadro": "Acidente com cobra, escorpiao ou aranha",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "B",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "distemper_neurological",
+        "quadro": "Cinomose com sinais neurologicos",
+        "especie_mapa": "cao",
+        "especie_ficha": "",
+        "prioridade": "B",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "leptospirosis_acute",
+        "quadro": "Leptospirose aguda",
+        "especie_mapa": "cao",
+        "especie_ficha": "",
+        "prioridade": "B",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "tick_borne_disease_anemia",
+        "quadro": "Doenca do carrapato com anemia",
+        "especie_mapa": "cao",
+        "especie_ficha": "",
+        "prioridade": "C",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "congestive_heart_failure",
+        "quadro": "Insuficiencia cardiaca descompensada",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "B",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "hypoglycemia_toy_puppy",
+        "quadro": "Hipoglicemia em filhote de raca pequena",
+        "especie_mapa": "cao",
+        "especie_ficha": "",
+        "prioridade": "B",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "diabetic_ketoacidosis",
+        "quadro": "Cetoacidose diabetica",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "B",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "feline_aortic_thromboembolism",
+        "quadro": "Tromboembolismo aortico felino",
+        "especie_mapa": "gato",
+        "especie_ficha": "",
+        "prioridade": "B",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "vestibular_syndrome_otitis_interna",
+        "quadro": "Sindrome vestibular",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "C",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "cat_bite_abscess",
+        "quadro": "Ferida de briga de gato",
+        "especie_mapa": "gato",
+        "especie_ficha": "",
+        "prioridade": "B",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "high_rise_syndrome_cats",
+        "quadro": "Queda de altura em gato",
+        "especie_mapa": "gato",
+        "especie_ficha": "",
+        "prioridade": "B",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "burns_and_electrical_injury",
+        "quadro": "Queimadura e choque eletrico",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "C",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "eclampsia",
+        "quadro": "Eclampsia puerperal",
+        "especie_mapa": "cao",
+        "especie_ficha": "",
+        "prioridade": "C",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "lily_toxicosis_cats",
+        "quadro": "Intoxicacao por lirio em gato",
+        "especie_mapa": "gato",
+        "especie_ficha": "",
+        "prioridade": "B",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "grape_xylitol_toxicosis",
+        "quadro": "Intoxicacao por uva, passa ou xilitol",
+        "especie_mapa": "cao",
+        "especie_ficha": "",
+        "prioridade": "C",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "toad_bufotoxin_poisoning",
+        "quadro": "Envenenamento por sapo",
+        "especie_mapa": "cao",
+        "especie_ficha": "",
+        "prioridade": "B",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "normal_whelping",
+        "quadro": "Parto normal",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "B",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "insect_sting_local_reaction",
+        "quadro": "Picada de inseto com reacao local",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "B",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "kennel_cough_mild",
+        "quadro": "Tosse dos canis leve",
+        "especie_mapa": "cao",
+        "especie_ficha": "",
+        "prioridade": "B",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "polyuria_polydipsia_investigate",
+        "quadro": "Bebe e urina mais que o normal",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "B",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "otitis_externa_mild",
+        "quadro": "Otite externa leve",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "B",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "minor_wound",
+        "quadro": "Ferida superficial pequena",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "B",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "periodontal_disease_mild",
+        "quadro": "Tartaro e mau halito",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "C",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "slow_growing_lump",
+        "quadro": "Caroco de crescimento lento",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "C",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "exertional_panting_mild",
+        "quadro": "Ofegacao apos exercicio",
+        "especie_mapa": "cao",
+        "especie_ficha": "",
+        "prioridade": "B",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "rabies_exposure_wild_animal_bite",
+        "quadro": "Mordido por morcego ou animal silvestre",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "C",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      },
+      {
+        "id": "ticks_found_no_signs",
+        "quadro": "Carrapatos no animal, sem sinais",
+        "especie_mapa": "ambos",
+        "especie_ficha": "",
+        "prioridade": "C",
+        "etapa": "2",
+        "antes": "sem documento",
+        "depois": "sem documento",
+        "mudou": false
+      }
+    ],
+    "encontraveis": [
+      7,
+      7
+    ],
+    "encontraveis_etapa_1": [
+      7,
+      7
+    ],
+    "total_mapa": 61,
+    "total_etapa_1": 31,
+    "topicos_novos": [],
+    "fora_do_mapa": [],
+    "especies_divergentes": [
+      {
+        "id": "chocolate_toxicosis",
+        "mapa": "cao",
+        "ficha": "ambos"
+      }
+    ],
+    "especies_normalizadas": [
+      "cats → gato",
+      "dog → cao",
+      "dogs_and_cats → ambos"
+    ]
+  },
+  "ordenacao": {
+    "metricas": {
+      "precision_at_1": [
+        0.5556,
+        0.5556
+      ],
+      "mrr": [
+        0.6981,
+        0.6981
+      ],
+      "recall_at_5": [
+        1.0,
+        1.0
+      ]
+    },
+    "deltas": {
+      "precision_at_1": 0.0,
+      "mrr": 0.0,
+      "recall_at_5": 0.0
+    },
+    "casos": [
+      {
+        "id": "b01",
+        "esperado": [
+          "chocolate_toxicosis"
+        ],
+        "antes": 5,
+        "depois": 5,
+        "situacao": "igual"
+      },
+      {
+        "id": "b02",
+        "esperado": [
+          "urethral_obstruction"
+        ],
+        "antes": 1,
+        "depois": 1,
+        "situacao": "igual"
+      },
+      {
+        "id": "b03",
+        "esperado": [
+          "respiratory_distress"
+        ],
+        "antes": 1,
+        "depois": 1,
+        "situacao": "igual"
+      },
+      {
+        "id": "b04",
+        "esperado": [
+          "seizures"
+        ],
+        "antes": 4,
+        "depois": 4,
+        "situacao": "igual"
+      },
+      {
+        "id": "b06",
+        "esperado": [
+          "trauma_and_bleeding"
+        ],
+        "antes": 1,
+        "depois": 1,
+        "situacao": "igual"
+      },
+      {
+        "id": "b07",
+        "esperado": [
+          "vomiting_and_diarrhea"
+        ],
+        "antes": 1,
+        "depois": 1,
+        "situacao": "igual"
+      },
+      {
+        "id": "b08",
+        "esperado": [
+          "allium_toxicosis"
+        ],
+        "antes": 2,
+        "depois": 2,
+        "situacao": "igual"
+      },
+      {
+        "id": "b13",
+        "esperado": [
+          "trauma_and_bleeding"
+        ],
+        "antes": 1,
+        "depois": 1,
+        "situacao": "igual"
+      },
+      {
+        "id": "b16",
+        "esperado": [
+          "respiratory_distress"
+        ],
+        "antes": 3,
+        "depois": 3,
+        "situacao": "igual"
+      }
+    ],
+    "melhoraram": 0,
+    "pioraram": 0,
+    "iguais": 9
+  },
+  "ruido": {
+    "ima": {
+      "antes": {
+        "topic": "trauma_and_bleeding",
+        "share": 0.5
+      },
+      "depois": {
+        "topic": "trauma_and_bleeding",
+        "share": 0.5
+      },
+      "delta": 0.0
+    },
+    "acima_do_corte": [
+      0.0,
+      0.0
+    ],
+    "leves": [
+      {
+        "id": "b05",
+        "antes": 0.5039,
+        "depois": 0.5039,
+        "cruzou_o_corte": false,
+        "acima_do_corte": false,
+        "top1_depois": "urethral_obstruction"
+      },
+      {
+        "id": "b09",
+        "antes": 0.518,
+        "depois": 0.518,
+        "cruzou_o_corte": false,
+        "acima_do_corte": false,
+        "top1_depois": "trauma_and_bleeding"
+      },
+      {
+        "id": "b10",
+        "antes": 0.5136,
+        "depois": 0.5136,
+        "cruzou_o_corte": false,
+        "acima_do_corte": false,
+        "top1_depois": "trauma_and_bleeding"
+      },
+      {
+        "id": "b11",
+        "antes": 0.46,
+        "depois": 0.46,
+        "cruzou_o_corte": false,
+        "acima_do_corte": false,
+        "top1_depois": "urethral_obstruction"
+      },
+      {
+        "id": "b18",
+        "antes": 0.4893,
+        "depois": 0.4893,
+        "cruzou_o_corte": false,
+        "acima_do_corte": false,
+        "top1_depois": "urethral_obstruction"
+      }
+    ],
+    "sem_cobertura": [
+      {
+        "id": "b12",
+        "antes": 0.5617,
+        "depois": 0.5617,
+        "cruzou_o_corte": false,
+        "acima_do_corte": false,
+        "top1_depois": "trauma_and_bleeding"
+      },
+      {
+        "id": "b14",
+        "antes": 0.3755,
+        "depois": 0.3755,
+        "cruzou_o_corte": false,
+        "acima_do_corte": false,
+        "top1_depois": "allium_toxicosis"
+      },
+      {
+        "id": "b15",
+        "antes": 0.5996,
+        "depois": 0.5996,
+        "cruzou_o_corte": false,
+        "acima_do_corte": false,
+        "top1_depois": "trauma_and_bleeding"
+      },
+      {
+        "id": "b17",
+        "antes": 0.546,
+        "depois": 0.546,
+        "cruzou_o_corte": false,
+        "acima_do_corte": false,
+        "top1_depois": "trauma_and_bleeding"
+      }
+    ],
+    "leves_acima_do_corte": 0
+  },
+  "gabarito_a_atualizar": [],
+  "porta": [
+    {
+      "eixo": "Ordenação",
+      "pergunta": "Adicionar documento piorou onde?",
+      "valor": "0 pioraram, 0 melhoraram",
+      "limite": "pioraram ≤ melhoraram",
+      "aprova": true
+    },
+    {
+      "eixo": "Ímã",
+      "pergunta": "Um documento ainda atrai tudo?",
+      "valor": "trauma_and_bleeding em 50% dos casos",
+      "limite": "nenhum documento em 1º em mais de 1/3",
+      "aprova": false
+    },
+    {
+      "eixo": "Ruído nos leves",
+      "pergunta": "A base nova empurra caso leve para dentro do prompt?",
+      "valor": "0 caso(s) leve(s) acima do corte",
+      "limite": "nenhum",
+      "aprova": true
+    },
+    {
+      "eixo": "Cobertura real",
+      "pergunta": "O documento indexado é encontrável?",
+      "valor": "nenhum assunto novo nesta comparação",
+      "limite": "≥ 70% dos quadros novos",
+      "aprova": true
+    }
+  ]
+}

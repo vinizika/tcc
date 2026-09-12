@@ -24,6 +24,7 @@ import csv
 import json
 import platform
 import socket
+import sys
 from datetime import datetime
 from pathlib import Path
 
@@ -40,11 +41,15 @@ from run_evaluation import (
     git_estado,
     sha256_arquivo,
 )
+from retrieval_compare import carregar_rodada, compute_compare
+from retrieval_compare_report import escrever_compare_md
 from retrieval_metrics import avaliar_caso, compute_retrieval_metrics
 
 RAIZ = Path(__file__).resolve().parents[1]
 CASOS = RAIZ / "data" / "retrieval" / "cases.csv"
 DIRETORIO_RODADAS = RAIZ / "data" / "retrieval" / "runs"
+MAPA = RAIZ / "data" / "curadoria" / "mapa-de-assuntos.csv"
+DOCUMENTOS = RAIZ / "backend" / "data" / "documents"
 
 LIMIAR_PADRAO = 0.70
 
@@ -209,10 +214,101 @@ def escrever_relatorio(
     escrever_atomico(diretorio / "report.md", "\n".join(linhas))
 
 
+def comando_compare(dir_a: Path, dir_b: Path) -> None:
+    """
+    Diz o que mudou entre duas rodadas, e grava o resultado ao lado de B.
+
+    O arquivo fica na pasta da rodada **depois**, porque é ela que mudou, e
+    leva o `run_id` de A no nome: uma mesma rodada pode ser comparada com
+    mais de um antes, e sobrescrever silenciosamente seria perder medição.
+    """
+
+    a = carregar_rodada(dir_a)
+    b = carregar_rodada(dir_b)
+
+    with open(MAPA, encoding="utf-8", newline="") as arquivo:
+        mapa = list(csv.DictReader(arquivo))
+
+    fichas = [
+        json.loads(caminho.read_text(encoding="utf-8"))
+        for caminho in sorted(DOCUMENTOS.glob("*.json"))
+    ]
+
+    resultado = compute_compare(a, b, mapa, fichas)
+
+    nome = f"compare__vs_{a['run_id']}"
+
+    escrever_atomico(dir_b / f"{nome}.md", escrever_compare_md(resultado))
+    escrever_atomico(
+        dir_b / f"{nome}.json",
+        json.dumps(resultado, ensure_ascii=False, indent=2, default=str),
+    )
+
+    print(f"A = {a['run_id']}")
+    print(f"B = {b['run_id']}\n")
+
+    if resultado["base"]["mesma_base"]:
+        print(
+            "  A base é a mesma nas duas rodadas: nada foi indexado entre "
+            "elas, e tudo abaixo deve dar zero.\n"
+        )
+
+    ordenacao = resultado["ordenacao"]
+    print(
+        f"  ordenação : {ordenacao['melhoraram']} melhoraram, "
+        f"{ordenacao['pioraram']} pioraram, {ordenacao['iguais']} iguais"
+    )
+    print(
+        f"  cobertura : {resultado['cobertura']['encontraveis'][0]} -> "
+        f"{resultado['cobertura']['encontraveis'][1]} quadros encontráveis"
+    )
+
+    if resultado["gabarito_a_atualizar"]:
+        print(
+            f"  gabarito  : {len(resultado['gabarito_a_atualizar'])} caso(s) "
+            "precisam de revisão"
+        )
+
+    print("\n  porta de decisão:")
+    for criterio in resultado["porta"]:
+        marca = "passa" if criterio["aprova"] else "NÃO PASSA"
+        print(f"    {criterio['eixo']:<16} {marca:<10} {criterio['valor']}")
+
+    print(f"\n  {_curto(dir_b / f'{nome}.md')}")
+
+
+def _curto(caminho: Path) -> str:
+
+    try:
+        return str(caminho.relative_to(RAIZ))
+    except ValueError:
+        return str(caminho)
+
+
 def main(argv=None) -> None:
 
+    argv = sys.argv[1:] if argv is None else list(argv)
+
+    # Subcomando só quando é pedido: o comando documentado da régua é
+    # `run_retrieval_eval.py --name … --expect-base-hash …`, e ele está em
+    # README, em evidência e no roteiro do pesquisador. Quebrar isso para
+    # acrescentar o compare trocaria um instrumento em uso por um mais
+    # arrumado.
+    if argv and argv[0] == "compare":
+        parser = argparse.ArgumentParser(
+            prog="run_retrieval_eval.py compare",
+            description="Compara duas rodadas da régua: o que mudou.",
+        )
+        parser.add_argument("run_a", type=Path, help="a rodada de antes")
+        parser.add_argument("run_b", type=Path, help="a rodada de depois")
+
+        argumentos = parser.parse_args(argv[1:])
+        comando_compare(argumentos.run_a, argumentos.run_b)
+        return
+
     parser = argparse.ArgumentParser(
-        description="Mede se a busca traz o protocolo certo."
+        description="Mede se a busca traz o protocolo certo. "
+                    "Use `compare A B` para comparar duas rodadas."
     )
     parser.add_argument("--name", default="rodada")
     parser.add_argument("--api-url", default="http://localhost:8000")

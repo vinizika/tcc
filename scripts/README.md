@@ -91,6 +91,12 @@ classificação. Construída pelo trilho B2 em nome do trilho A.
 python scripts/run_retrieval_eval.py --name minha_rodada --expect-base-hash <hash>
 ```
 
+Para comparar duas rodadas (antes e depois de indexar documentos):
+
+```bash
+python scripts/run_retrieval_eval.py compare <rodada antes> <rodada depois>
+```
+
 Leva segundos: a busca não chama o modelo de linguagem. Detalhe e como ler
 os números em [`data/retrieval/README.md`](../data/retrieval/README.md).
 
@@ -136,7 +142,7 @@ python scripts/run_voice_benchmark.py
 python -m pytest scripts/tests -q
 ```
 
-141 testes, sem API nem modelo — o HTTP fica atrás de um dublê. Dois deles
+164 testes, sem API nem modelo — o HTTP fica atrás de um dublê. Dois deles
 sustentam a comparabilidade com a medição histórica de 04/05: o **teste
 dourado** (as 98 respostas daquele dia reproduzem exatamente os números do
 diário) e a **regressão dos relatos** (o texto enviado ao modelo é idêntico

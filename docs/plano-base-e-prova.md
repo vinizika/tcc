@@ -278,7 +278,7 @@ Cinco dos sete passos **já existem no repositório**. O ciclo:
 | 3 | Indexar | `ingest_documents` | ✅ |
 | 4 | Conferir que a base mudou como esperado | `GET /health/fingerprint` | ✅ |
 | 5 | Régua **depois**, nos mesmos casos | `run_retrieval_eval.py` | ✅ |
-| 6 | **Comparar** e dizer o que mudou | `compare` da régua | **a fazer** ([B-51](../evidencias/backlog.md#b-51)) |
+| 6 | **Comparar** e dizer o que mudou | `run_retrieval_eval.py compare A B` | ✅ 12/09 ([rodada 13](../evidencias/joao/2026-09-12-14-compare-da-regua.md)) |
 | 7 | Explicar o resultado e rascunhar a evidência | o agente lê o passo 6 | **a fazer** |
 
 **Antes disso, um passo 0: empacotar os passos 1 a 6 num comando só.** Hoje
@@ -303,7 +303,7 @@ O que o `compare` devolve:
 | **Ordenação** | Δ Precision@1, Δ MRR e a **tabela caso a caso**: posição antes → depois, marcada melhorou / piorou / igual | Uma base maior pode **piorar** a ordenação; a tabela pareada mostra exatamente onde |
 | **Ruído** | Δ concentração do protocolo-ímã · Δ casos acima do corte · para os casos **leves**, a nota máxima subiu (ruim) ou desceu (bom) | É o mecanismo que custou 22 falsos não urgentes, vigiado a cada lote |
 | **Gabarito a atualizar** | Casos marcados "sem cobertura" cujo assunto agora tem documento | O `expected_topics` daquele caso precisa mudar — o compare avisa em vez de alguém lembrar |
-| **Trava** | Recusa comparar se o `cases.csv` mudou entre as duas rodadas | Antes/depois só vale sobre os mesmos casos |
+| **Trava** | Compara os casos **em comum**; recusa se um caso em comum mudou de texto ou de gabarito, ou se o limiar difere | Antes/depois só vale sobre a mesma pergunta. Travar pelo hash do `cases.csv` abortaria em todo lote, já que cada lote traz relatos novos |
 
 **Duas expectativas, para ninguém se frustrar:**
 

@@ -82,6 +82,9 @@ O mapa tem 61 linhas; ninguém busca 61 fontes em três semanas. A fila é por *
 
 **Não decidimos hoje se vamos às 61.** A porta de decisão abre quando todas as linhas A da etapa 1 estiverem indexadas, **ou em 26/09**, o que vier primeiro. Os três decidem juntos, com os números na mão, e a decisão fica registrada aqui e no [B-50](../../evidencias/backlog.md#b-50), com data. Os critérios estão escritos **antes**, porque porta sem critério vira "achamos que foi bem":
 
+Quatro dos seis saem do `compare.md` da régua, no bloco 5, já com
+aprova/reprova calculado — quem lê não precisa fazer conta.
+
 | Eixo | Pergunta | Número | De onde vem |
 |---|---|---|---|
 | Velocidade | Deu tempo? | ≥ 25 das 31 linhas da etapa 1 com `fonte_aprovada` ou `indexada` | coluna `cobertura` |

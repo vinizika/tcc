@@ -100,7 +100,8 @@ aqui.
 | [B-50](#b-50) | Mapa de assuntos: a lista de quadros clínicos que a base cobre e a prova pergunta | Time + especialistas | Alta | Em andamento — rascunho de 12/09, aguardando revisão e validação |
 | [B-53](#b-53) | Vocabulário de `species` nas fichas da base não é fechado | Trilho A | Baixa | Aberto |
 | [B-54](#b-54) | Baixar à mão o Caderno Técnico nº 87 da UFMG, a melhor fonte brasileira que temos | Time | Média | Aberto |
-| [B-51](#b-51) | Ciclo de ingestão num comando, e a régua dizendo o que mudou entre duas rodadas | Trilho B2 | Média | Aberto |
+| [B-55](#b-55) | O único documento real da base nunca é recuperado | Trilho A | Média | Aberto |
+| [B-51](#b-51) | Ciclo de ingestão num comando, e a régua dizendo o que mudou entre duas rodadas | Trilho B2 | Média | Em andamento — compare feito em 12/09; falta o passo 0 |
 | [B-52](#b-52) | Fonte de terceiro versionada em repositório público | Time | Alta | Aberto |
 
 ---
@@ -1859,8 +1860,17 @@ para a classificação, gerando um `compare.md` com quatro blocos: **cobertura**
 e depois), **ruído** (Δ concentração no primeiro lugar, Δ casos acima do corte
 e, para os casos leves, se a nota máxima subiu) e **gabarito a atualizar**
 (casos marcados "sem cobertura" cujo assunto agora tem documento). Critério:
-recusa comparar quando o `cases.csv` mudou entre as duas rodadas — antes e
-depois só valem sobre os mesmos casos.
+compara sobre os casos em comum, e recusa quando um caso em comum mudou de
+texto ou de gabarito.
+
+**Correção de 12/09, ao implementar.** Este item dizia "recusa comparar quando
+o `cases.csv` mudou". Tomado ao pé da letra, o instrumento travaria **em todo
+lote**: a §4.5 do plano promete que cada lote de fontes traz 1 a 3 relatos de
+régua novos, então o arquivo muda sempre. As duas promessas se contradiziam.
+A saída é a interseção dos ids, que é o que o compare da classificação já faz
+(`comuns = set(a) & set(b)`), com o `SystemExit` reservado para o que de fato
+invalida a comparação: um caso com o mesmo id ter outro texto ou outro
+gabarito. Casos novos entram como "sem antes" e valem na comparação seguinte.
 
 **Um passo 0 antes do compare: empacotar o ciclo num comando.** Os seis passos
 (régua antes, inspeção, ingestão, fingerprint, régua depois, compare) são hoje
@@ -1874,6 +1884,22 @@ qualquer conferência recusa, em vez de seguir sem ela.
 Vale a ressalva do [B-49](#b-49): com o conjunto atual, um lote de três
 documentos costuma mover zero a dois casos. O valor do compare por lote é
 cobertura e guarda de regressão; o ganho de ordenação aparece entre ondas.
+
+**Feito em 12/09** ([rodada 13](joao/2026-09-12-14-compare-da-regua.md)):
+`scripts/retrieval_compare.py` (cálculo), `retrieval_compare_report.py` (o
+relatório) e o subcomando `run_retrieval_eval.py compare A B`. Os cinco blocos
+saem num `compare.md` em disco — e não só no terminal, como o compare da
+classificação —, porque o roteiro do agente de ingestão exige que número
+citado aponte para o arquivo.
+
+Um achado do caminho: **a régua é determinística**. As duas rodadas de 11/09
+sobre a mesma base devolvem posições e notas idênticas nos 18 casos. Não há
+ruído de sessão para separar do sinal, então o compare não tem McNemar nem
+bootstrap — contagens e diferenças bastam, e um caso que piorou, piorou.
+
+**Falta o passo 0**, e ele é o que fecha este item: empacotar o ciclo num
+comando. Ele depende de a ingestão poder acontecer ([B-37](#b-37)), e entra
+junto com o roteiro do agente de ingestão.
 
 ---
 
@@ -1925,6 +1951,14 @@ ou conta cobertura errada em silêncio.
 exemplo `dog`, `cat`, `dog_and_cat`) e ajusta as oito fichas; até lá, o
 `compare` normaliza e avisa. Critério: um único valor por espécie em todas as
 fichas, documentado, e o `compare` sem normalização.
+
+**Atualização 12/09.** O `compare` já normaliza e lista as grafias
+convertidas no rodapé do relatório. Uma ressalva que só apareceu ao
+implementar: **`species` não existe na rodada** — nem no `results.jsonl`, nem
+em `/health/fingerprint`. O compare lê as fichas do disco **no momento da
+comparação**, então a espécie que ele mostra é a de hoje, não a de cada
+rodada. Para cobertura isso basta; para qualquer afirmação de "antes era X,
+agora é Y" em espécie, não.
 
 ---
 
@@ -1993,6 +2027,48 @@ versionar o PDF.
 Critério: **R30 deixa de ser `bloqueada` em `referencias.md`**, com o sumário
 registrado e a lista de linhas do mapa que ele efetivamente cobre — ou, se
 não servir, o motivo escrito, que também é resultado.
+
+---
+
+### B-55
+
+**O único documento real da base nunca é recuperado**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 13](joao/2026-09-12-14-compare-da-regua.md), 12/09 · **Responsável:** Trilho A · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** O bloco de cobertura do `compare` da régua conta quantos
+assuntos da base **aparecem** entre os cinco trechos devolvidos em algum dos 18
+casos. São **sete dos oito**. O que falta é `canine_heatstroke` — o paper de
+golpe de calor, que é o **único documento real** da base; os outros sete são os
+protocolos sintéticos de teste.
+
+Ele está indexado, com 186 trechos, e não aparece em primeiro, nem em quinto,
+em caso nenhum.
+
+**Por que importa.** É o primeiro exemplo concreto de **cobertura no papel**: um
+documento que entrou na base e não muda a resposta de ninguém. O critério
+"cobertura real" da [porta de decisão](../data/curadoria/README.md) existe
+justamente para separar as duas coisas nos documentos novos — e aqui a distinção
+já custa alguma coisa, porque o heatstroke é o documento com mais trechos da
+base inteira.
+
+Duas explicações possíveis, e elas pedem ações diferentes:
+
+1. **Nenhum dos 18 casos é de golpe de calor.** Se for só isso, o documento
+   está bem e falta caso na régua — e aí a ação é escrever um.
+2. **O documento não é recuperável para relato de tutor.** São 186 trechos de
+   fisiopatologia em inglês, extraídos de um paper de 16 páginas. É a mesma
+   suspeita que o [B-35](#b-35) levanta sobre a extração e que a
+   [rodada 12](joao/2026-09-12-13-pesquisador.md) formulou como "trecho de
+   artigo não é trecho de triagem".
+
+**O que resolveria.** Escrever um caso de régua de golpe de calor — o quadro
+está no mapa (`canine_heatstroke`, etapa 1) e o documento já existe, então é o
+teste mais barato possível. Se o caso for escrito e **ainda assim** o documento
+não aparecer, a resposta é a segunda hipótese, e isso é dado forte para o
+re-ranking e para a decisão de que tipo de fonte entra na base. Critério: um
+caso de golpe de calor no `cases.csv`, e o `compare` dizendo se
+`canine_heatstroke` passou a ser encontrável.
 
 ---
 

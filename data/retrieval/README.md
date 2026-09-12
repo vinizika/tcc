@@ -138,6 +138,35 @@ re-ranking, com e sem reescrita de consulta. A comparação pareada não
 depende do tamanho do acervo, e é para isso que a linha de base foi
 congelada agora.
 
+## Comparar duas rodadas
+
+Depois de indexar documentos, a pergunta é sempre a mesma: melhorou, piorou,
+ou não mudou?
+
+```bash
+python scripts/run_retrieval_eval.py compare <rodada antes> <rodada depois>
+```
+
+Sai um `compare__vs_<rodada antes>.md` na pasta da rodada **depois**, com
+cinco blocos: **cobertura** (quais quadros do mapa passaram a ter documento
+encontrável), **ordenação** (a tabela pareada, caso a caso), **ruído** (o
+protocolo-ímã, os casos acima do corte, e se algum caso leve passou a receber
+trecho), **gabarito a atualizar** (casos "sem cobertura" cujo assunto entrou
+na base) e a **porta de decisão**, com os quatro critérios que saem daqui.
+
+**A comparação é sobre os casos em comum**, não sobre o arquivo inteiro. Cada
+lote de fontes traz relatos de régua novos, e travar por hash do `cases.csv`
+abortaria em todo lote. O que aborta é um caso em comum ter mudado de texto ou
+de gabarito — aí "antes e depois" deixaria de ser sobre a mesma pergunta — e
+limiar diferente entre as duas rodadas.
+
+**Diferença aqui é sinal, não ruído.** A régua é determinística: as duas
+rodadas de 11/09 (`20260911-201429` e `20260911-202505`), sobre a mesma base,
+devolveram posições e notas **idênticas** nos 18 casos. Isso é o contrário do
+runner de classificação, onde 2 ou 3 linhas mudam entre sessões por ruído de
+GPU ([B-43](../../evidencias/backlog.md#b-43)) e é preciso teste estatístico
+para separar as coisas. Aqui um caso que piorou, piorou.
+
 ## Estado
 
 A primeira rodada está em `cited/`. A leitura completa está na
