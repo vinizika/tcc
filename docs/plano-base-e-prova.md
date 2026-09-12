@@ -224,6 +224,21 @@ Dois itens do trilho A são pré-requisito, e não é burocracia:
 | [B-36](../evidencias/backlog.md#b-36) | Cada trecho novo recebe `Document title: … Section: …` colado no texto, e esse texto chega ao prompt | É como fotocopiar uma página com um carimbo em cima do texto. Indexar fontes novas antes de corrigir é medir o defeito, não o documento |
 | [B-37](../evidencias/backlog.md#b-37), passos 2–4 | A "virada": a base viva ainda é a antiga, de 18 trechos, que não se reproduz mais. Trocar pela nova nas três máquinas, conferindo que o `content_sha256` bate | Sem isso, cada máquina gera uma base diferente e o time acha que mede a mesma coisa |
 
+**A sequência detalhada, passo a passo, com o que é cada um e o que quebra se
+for pulado, está no próprio [B-37](../evidencias/backlog.md#b-37)** — escrita
+para quem vai executar, não como resumo. Ela inclui dois itens que não estavam
+nesta tabela: o [B-35](../evidencias/backlog.md#b-35) (a extração de PDF, que
+todo documento novo atravessa) e o [B-30](../evidencias/backlog.md#b-30), que
+não bloqueia a virada mas bloqueia o primeiro lote de fontes curadas.
+
+**E a virada é o piloto do agente 2.** O time decidiu em 12/09 que o roteiro
+do agente de ingestão só se escreve quando der para pilotá-lo — foi pilotando
+que o roteiro do pesquisador ganhou as regras que mais valem. O piloto não
+precisa esperar fonte curada: a virada **já é um antes-e-depois** (18 trechos
+pela receita antiga contra ~259 pela nova, sobre os mesmos casos da régua), e
+responde de quebra uma pergunta aberta desde 07/09 — *a receita de picar
+melhorou a recuperação, ou só mudou?*
+
 ### 4.4 Agente 1 — encontrar fontes
 
 **Recebe:** uma linha do mapa de assuntos (um quadro clínico, espécie, se é
@@ -567,7 +582,7 @@ relatos. Mais que isso não cabe em três semanas.
 |---|---|
 | **João (B2)** | Construção dos agentes e dos roteiros · mapa de assuntos (rascunho) · `compare` da régua · casos de régua dos quadros novos · revisão da mudança no runner |
 | **Ryu (B1)** | Frente prova inteira: desenho, casos, gabarito, adaptação do runner |
-| **Vinicius (A)** | [B-36](../evidencias/backlog.md#b-36) e a virada da base ([B-37](../evidencias/backlog.md#b-37)) · depois, re-ranking |
+| **Vinicius (A)** | O caminho até a primeira indexação, nesta ordem: [B-36](../evidencias/backlog.md#b-36) (o rótulo dentro do trecho) · [B-35](../evidencias/backlog.md#b-35) (fechar ou declarar a extração de PDF) · Torch CPU e rebuild nas três máquinas · a virada ([B-37](../evidencias/backlog.md#b-37) passo 4). Depois: [B-30](../evidencias/backlog.md#b-30), antes do primeiro lote curado, e o re-ranking. **Passo a passo detalhado no [B-37](../evidencias/backlog.md#b-37)** |
 | **Qualquer um dos três** | Rodar o agente 1 (achar fontes) e o agente 2 (indexar e comparar) quando estiver trabalhando na base |
 | **Especialistas** | Validar o mapa de assuntos · dizer se cada fonte serve · validar os rótulos da prova |
 

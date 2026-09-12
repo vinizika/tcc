@@ -988,6 +988,10 @@ ainda existem.
 sustentará novas medições. Uma coleção parcial ou com documentos órfãos pode
 mudar os resultados sem aparecer como erro explícito.
 
+**Onde ele entra.** Não bloqueia a virada ([B-37](#b-37)) — o retrato da base
+antiga dá caminho de volta. Bloqueia o **primeiro lote de fontes curadas**,
+quando não houver retrato do estado desejado para restaurar.
+
 **O que resolveria.** Preparar a nova base em coleção temporária, validar
 contagem/manifesto e só então promover a coleção completa, ou implementar
 rollback equivalente. O manifesto da ingestão deve também remover fontes que
@@ -1173,6 +1177,11 @@ antigo do projeto. Mas qualquer medição com RAG sobre a base nova vai
 misturar o efeito do rótulo com o efeito da recuperação, e um modelo de 3B
 lendo ruído em inglês não ajuda a decisão.
 
+**Onde ele entra.** É o **passo 2** do [B-37](#b-37), o primeiro da fila da
+virada — e hoje é o que segura a frente base inteira: as fontes curadas da
+[rodada 12](joao/2026-09-12-13-pesquisador.md) não podem ser indexadas antes
+dele.
+
 **O que resolveria.** Separar o que se embeda do que se exibe. Duas opções,
 à escolha do dono: gravar o corpo limpo em `documents` e fornecer ao Chroma
 os vetores calculados sobre `prefixo + corpo`; ou gravar o corpo limpo num
@@ -1226,7 +1235,8 @@ um motivo; o que está entre parênteses é o que quebra se ele for pulado.
 |---|---|---|---|
 | 1 | ✅ **Retrato da base antiga versionado** em [`data/evaluation/cited/base-2026-09-04-18-chunks/`](../data/evaluation/cited/base-2026-09-04-18-chunks/README.md), com os vetores, os dois hashes e um script de restauração testado | B2 (feito 11/09) | É a única parte irrecuperável. Sem ela, as três rodadas citadas morrem na primeira reindexação |
 | 2 | **Corrigir o [B-36](#b-36)**: separar o que se embeda do que se exibe | Trilho A | Virar antes é medir um defeito conhecido, e depois medir tudo de novo |
-| 3 | **Torch CPU no `Dockerfile`** e reconstruir a imagem nas três máquinas | Time ([B-34](#b-34)) | Sem isso, as bases saem diferentes por máquina (problema 1). O rebuild sem o ajuste é o que levou o disco a 99% e derrubou o Docker do trilho A |
+| 2b | **Fechar ou declarar o [B-35](#b-35)**: a extração do PDF está boa o bastante? | Trilho A | Todo PDF novo passa por aqui, inclusive o Caderno da UFMG ([B-54](#b-54)). Provavelmente é decisão, não trabalho — o PyMuPDF já resolveu quase tudo |
+| 3 | **Torch CPU no `Dockerfile`** e reconstruir a imagem nas três máquinas | Time (a parte estreita do [B-34](#b-34)) | Sem isso, as bases saem diferentes por máquina (problema 1). O rebuild sem o ajuste é o que levou o disco a 99% e derrubou o Docker do trilho A. **Só esta linha bloqueia** — CI, lint e dependências fixadas são o resto do B-34 e ficam para depois |
 | 4 | **`ingest_documents --reset`** em cada máquina, conferindo que o `content_sha256` do `/health/fingerprint` é o mesmo nas três | cada um | O `--reset` também limpa registros de documentos que saíram da pasta; comparar o hash é o que prova que a virada foi igual para todos |
 | 5 | **B2 remede `naive_rag` e `rag_query`** na base nova e cita as rodadas | B2 | Os números com RAG do README e das evidências passam a descrever a base nova |
 | 6 | **Registrar a virada**: README raiz e este item com "a partir de DD/MM a base é a nova, porque…"; as evidências anteriores ganham nota de validade | B2 | O que o João pediu desde o começo: virar e documentar, não virar em silêncio |
@@ -1235,6 +1245,76 @@ um motivo; o que está entre parênteses é o que quebra se ele for pulado.
 `/health/fingerprint`; o retrato da base antiga está citado e restaurável; o
 README raiz diz a data da virada e o motivo; e existe ao menos uma rodada
 citada medindo a base nova.
+
+### Atualização 12/09 — a virada virou caminho crítico de mais coisas
+
+Duas frentes novas passaram a depender deste item, e vale dizer isso aqui em
+vez de deixar cada uma descobrir sozinha:
+
+**1. A virada é o piloto do agente de ingestão.** O
+[plano das duas frentes](../docs/plano-base-e-prova.md) prevê um agente que
+indexa um lote de fontes e diz o que melhorou, e o
+[B-51](#b-51) é o instrumento dele. O time decidiu (12/09) que o roteiro
+desse agente **só se escreve quando der para pilotá-lo** — foi pilotando que o
+roteiro do pesquisador ganhou as duas regras que mais valem. E o piloto não
+precisa esperar fonte curada nenhuma: **a virada já é um antes-e-depois** — 18
+trechos pela receita antiga contra ~259 pela nova, sobre os mesmos 18 casos da
+régua. Ela responde de quebra uma pergunta aberta desde 07/09: *a receita de
+picar melhorou a recuperação, ou só mudou?*
+
+**2. Nenhuma fonte curada pode ser indexada antes.** A frente base já tem mapa,
+pesquisador e a primeira linha com fontes capturadas
+([rodada 12](joao/2026-09-12-13-pesquisador.md)). Tudo isso para em
+`fonte_encontrada` e fica esperando: indexar com o rótulo do B-36 colado no
+texto significaria medir o defeito e remedir tudo depois.
+
+### O que exatamente fazer, na ordem, com o que cada passo é
+
+Escrito para quem vai executar, porque a tabela acima é resumo:
+
+**Passo 2 — B-36, o rótulo dentro do trecho.** Hoje cada trecho é gravado como
+`"Document title: X\nSection: Y\n\n" + texto`, e é esse texto inteiro que vai
+para o ChromaDB. O `RetrievalClient` devolve isso em `content`, e o prompt do
+B2 renderiza `[n] {título} — {content}`: o modelo lê o título **duas vezes**,
+em inglês, dentro de um protocolo em português. A correção é separar o que se
+embeda do que se exibe, e o item dá duas opções à escolha do dono. *Pronto
+quando:* um trecho recuperado chega ao prompt sem `Document title` nem
+`Section` no início, **e o vetor continua considerando título e seção**.
+
+**Passo 2b — B-35, a extração do PDF.** Está em andamento e quase fechado: o
+PyMuPDF removeu headers, captions e blocos editoriais, recompôs as páginas
+multicoluna e normalizou ligaturas. O que sobrou vem do **arquivo-fonte**, não
+do extrator. Provavelmente é uma decisão — fechar como "bom o bastante", com o
+que sobrou registrado — e não mais trabalho. Quem sabe é o trilho A. *Está aqui
+porque* todo PDF novo passa por esse caminho.
+
+**Passo 3 — Torch CPU.** Cuidado com o escopo: o [B-34](#b-34) inteiro é CI,
+lint e dependências fixadas, tem prioridade **Baixa** e não bloqueia nada. O
+que bloqueia é uma linha dele: `torch` puxa pacotes CUDA na imagem padrão, e
+foi isso que levou o disco a 99%. *Pronto quando:* as três máquinas rodam a
+mesma imagem, e a do B2 passa a ter `pymupdf` — hoje ela cai no fallback
+`pypdf` e produziria **outro recorte da mesma base**.
+
+**Passo 4 — a virada em si.** `ingest_documents --reset` em cada máquina,
+comparando o `content_sha256` do `/health/fingerprint`. Os três números iguais
+são a prova de que a virada foi a mesma; diferentes, alguém está com imagem ou
+pasta de documentos diferente.
+
+**Depois disso**, os passos 5 e 6 são do B2, e o piloto do agente de ingestão
+acontece sobre a rodada da régua na base nova.
+
+### O que não bloqueia a virada, mas bloqueia o uso depois
+
+**[B-30](#b-30)** — a ingestão apaga os trechos de um arquivo antes de escrever
+os novos, então falha no meio deixa a coleção incompleta; com `--reset`, o
+risco é a base inteira. **Não bloqueia a virada**, porque o retrato da base
+antiga existe e o script de restauração foi testado — há caminho de volta.
+**Bloqueia o uso rotineiro**: quando cada lote de fontes curadas for indexado,
+não vai existir retrato do estado desejado para restaurar. Vale antes do
+primeiro lote, não antes da virada.
+
+**[B-53](#b-53)** — `species` com três grafias nas fichas. O `compare` normaliza
+até lá; é higiene, não bloqueio.
 
 **O que já foi feito (11/09).** Passo 1 concluído: o retrato está versionado
 com os 18 trechos, os vetores de 384 dimensões, os dois hashes
