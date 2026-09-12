@@ -28,7 +28,7 @@ class BaixadorFalso:
 
 
 PAGINA = """
-<html><head><title>GDV em cães — Exemplo</title></head><body>
+<html><head><title>GDV em cães, exemplo</title></head><body>
 <nav><a href="/">Início</a><a href="/caes">Cães</a><a href="/gatos">Gatos</a></nav>
 <div class="cookie">Este site usa cookies. Aceitar todos.</div>
 <article>
@@ -47,14 +47,37 @@ quadro leva o cão ao choque em poucas horas.</p>
 </body></html>
 """
 
+PAGINA_EM_INGLES = """
+<html><head><title>GDV in dogs</title></head><body>
+<nav><a href="/">Home</a></nav>
+<article>
+<h1>Bloat in dogs</h1>
+<h2>Signs</h2>
+<p>The dog retches without bringing anything up, the belly becomes swollen
+and hard, they drool a lot and pace around restlessly, unable to settle.
+Breathing becomes fast and shallow as the condition progresses, and the gums
+may turn pale. Owners usually notice the restlessness first.</p>
+<h2>When to contact your vet</h2>
+<p>Contact your vet straight away. This condition leads to shock within
+hours, and every hour of delay lowers the chance that your dog will survive
+the surgery they will almost certainly need.</p>
+</article>
+</body></html>
+"""
+
 BASE = ["https://exemplo.org/gdv", "--topic", "gastric_dilatation_volvulus"]
 
 
 def capturar(tmp_path, *extras, pagina=PAGINA, tipo="text/html"):
-    baixador = BaixadorFalso(pagina.encode("utf-8"), tipo)
+    """
+    `pagina` aceita texto (codificado em UTF-8) ou bytes já codificados,
+    para os testes de codificação poderem entregar Latin-1.
+    """
+
+    bruto = pagina if isinstance(pagina, bytes) else pagina.encode("utf-8")
     main(
         [*BASE, "--slug", "exemplo", "--destino", str(tmp_path), *extras],
-        baixador=baixador,
+        baixador=BaixadorFalso(bruto, tipo),
     )
     return tmp_path / "gastric_dilatation_volvulus__exemplo"
 
@@ -220,8 +243,166 @@ def test_ficha_carrega_idioma_e_registro(tmp_path):
 
 
 # ----------------------------------------------------------------------
+# Codificação
+# ----------------------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "codificacao, tipo",
+    [
+        ("utf-8", "text/html"),
+        ("latin-1", "text/html"),
+        ("latin-1", "text/html; charset=iso-8859-1"),
+        ("cp1252", "text/html"),
+    ],
+)
+def test_acentos_sobrevivem_em_qualquer_codificacao(tmp_path, codificacao, tipo):
+    """
+    Material veterinário de universidade e de conselho regional brasileiro
+    costuma estar em Latin-1. Decodificar isso como UTF-8 transforma "Sinais
+    clínicos" em "Sinais cl?nicos" **sem erro nenhum** — e o documento seria
+    indexado como lixo. Como a página é a fonte em português que o projeto
+    mais precisa, isto não pode depender do servidor declarar o charset.
+    """
+
+    texto = capturar(
+        tmp_path, pagina=PAGINA.encode(codificacao), tipo=tipo
+    ).with_suffix(".txt").read_text(encoding="utf-8")
+
+    assert "Sinais clínicos" in texto
+    assert "Torção gástrica em cães" in texto
+    assert "�" not in texto
+
+
+def test_mesma_pagina_em_codificacoes_diferentes_da_o_mesmo_hash(tmp_path):
+    """
+    O hash é o que liga a aprovação do especialista a um texto. Se ele
+    dependesse da codificação de origem, a mesma fonte capturada em duas
+    máquinas produziria duas aprovações diferentes.
+    """
+
+    import hashlib
+
+    hashes = set()
+    for i, (codificacao, tipo) in enumerate(
+        [("utf-8", "text/html"), ("latin-1", "text/html; charset=iso-8859-1")]
+    ):
+        destino = tmp_path / str(i)
+        destino.mkdir()
+        base = capturar(destino, pagina=PAGINA.encode(codificacao), tipo=tipo)
+        hashes.add(hashlib.sha256(base.with_suffix(".txt").read_bytes()).hexdigest())
+
+    assert len(hashes) == 1
+
+
+# ----------------------------------------------------------------------
 # O que ela recusa
 # ----------------------------------------------------------------------
+
+
+def test_recusa_secao_declarada_que_nao_existe_no_texto(tmp_path):
+    """
+    Esta é a armadilha que o piloto pagou para descobrir: declarei uma seção
+    a partir do resultado de busca, e ela não existia na página. O ingestor
+    ignora seção não encontrada **em silêncio**, e a curadoria sai diferente
+    do que se pensa. Melhor recusar aqui.
+    """
+
+    with pytest.raises(SystemExit, match="não existem no texto capturado"):
+        capturar(tmp_path, "--include", "Primeiros socorros em casa")
+
+
+def test_recusa_secao_declarada_sem_acento(tmp_path):
+    """
+    A variante sutil da anterior: o ingestor compara sem normalizar acentos,
+    então "Sinais clinicos" e "Sinais clínicos" são chaves diferentes. Um
+    acento faltando descarta a seção inteira sem avisar.
+    """
+
+    with pytest.raises(SystemExit, match="não existem no texto capturado"):
+        capturar(tmp_path, "--include", "Sinais clinicos")
+
+
+def test_recusa_pagina_curta_demais_para_ser_fonte(tmp_path):
+    """
+    Página de erro, muro de login e conteúdo que só existe depois do
+    JavaScript devolvem pouquíssimo texto — e viraram documento silencioso
+    antes desta trava.
+    """
+
+    vazia = "<html><body><article><p>Página não encontrada</p></article></body></html>"
+
+    with pytest.raises(SystemExit, match="palavras foram extraídas"):
+        capturar(tmp_path, pagina=vazia)
+
+
+def test_recusa_html_que_o_servidor_anuncia_como_pdf(tmp_path):
+    """
+    Acontece com repositório universitário: o link termina em .pdf, o
+    servidor diz `application/pdf` e devolve a página de login. O arquivo
+    salvo passaria pelo extrator de PDF e falharia lá na frente, longe daqui.
+    """
+
+    with pytest.raises(SystemExit, match="não começa com %PDF"):
+        capturar(tmp_path, tipo="application/pdf")
+
+
+def test_recusa_titulo_longo(tmp_path):
+    """
+    O título entra no começo de **todos** os trechos do documento, e um
+    trecho tem ~40 palavras. Título comprido é conteúdo clínico que não cabe.
+    """
+
+    with pytest.raises(SystemExit, match="palavras"):
+        capturar(tmp_path, "--title", "Um titulo muito longo que ocupa espaco demais")
+
+
+def test_recusa_sobrescrever_captura_existente(tmp_path):
+    """
+    O especialista aprova um arquivo com hash. Trocar o arquivo por baixo,
+    mantendo o nome, invalidaria a aprovação sem que ninguém percebesse.
+    """
+
+    capturar(tmp_path)
+
+    with pytest.raises(SystemExit, match="Já existe captura"):
+        capturar(tmp_path)
+
+
+def test_forcar_permite_substituir_de_proposito(tmp_path):
+    """
+    Recapturar é legítimo — a página mudou, ou a captura anterior saiu ruim.
+    O que não pode é acontecer sem querer.
+    """
+
+    primeiro = capturar(tmp_path).with_suffix(".txt").read_text(encoding="utf-8")
+    outra = PAGINA.replace("Sinais clínicos", "Sinais clínicos revisados")
+    segundo = capturar(tmp_path, "--forcar", pagina=outra).with_suffix(
+        ".txt"
+    ).read_text(encoding="utf-8")
+
+    assert primeiro != segundo
+
+
+def test_avisa_quando_o_idioma_declarado_nao_e_o_do_corpo(tmp_path, capsys):
+    """
+    A armadilha do MSD, encontrada no piloto: o site traduz o menu e os
+    títulos e deixa o corpo em inglês. Uma ficha que diz `language: pt` sobre
+    um corpo em inglês faria o experimento de idioma × registro medir a coisa
+    errada. Avisa, não recusa — a heurística não é boa o bastante para
+    decidir sozinha.
+    """
+
+    capturar(tmp_path, "--language", "pt", pagina=PAGINA_EM_INGLES)
+
+    assert "corpo parece estar em 'en'" in capsys.readouterr().out
+
+
+def test_nao_avisa_quando_o_idioma_bate(tmp_path, capsys):
+
+    capturar(tmp_path, "--language", "en", pagina=PAGINA_EM_INGLES)
+
+    assert "corpo parece estar" not in capsys.readouterr().out
 
 
 def test_recusa_topico_que_nao_esta_no_mapa(tmp_path):

@@ -17,7 +17,7 @@ para o especialista. Três peças:
 | Peça | O que é |
 |---|---|
 | [`agentes/pesquisador.md`](../../agentes/pesquisador.md) | O roteiro: onde procurar, como julgar, nove passos, o que ele não faz |
-| [`scripts/capturar_fonte.py`](../../scripts/capturar_fonte.py) | A captura determinística — baixa, extrai o texto principal, grava com hash e monta a ficha. 14 testes, sem rede |
+| [`scripts/capturar_fonte.py`](../../scripts/capturar_fonte.py) | A captura determinística — baixa, extrai o texto principal, grava com hash e monta a ficha. 28 testes, sem rede |
 | [`data/curadoria/fontes/`](../../data/curadoria/fontes/README.md) | Onde o trabalho mora: o dossiê por quadro, as capturas e a mesa dos especialistas |
 
 E o piloto: a linha `gastric_dilatation_volvulus` (torção gástrica) levada do
@@ -167,6 +167,59 @@ script de captura. O trilho A pode formalizá-los quando quiser
 **5. Uma dependência nova.** `trafilatura`, em `scripts/requirements.txt` —
 extrai o texto principal de uma página sem menu, rodapé nem banner de cookie.
 Roda fora do Docker, é pura Python, e não toca no backend.
+
+## Adendo de 12/09 — o que o teste de estresse achou
+
+Depois de escrever o roteiro, submeti a captura a entradas que o mundo real
+produz. **Sete falhas**, e o script passava em todas em silêncio:
+
+| O que eu joguei nele | O que acontecia | Agora |
+|---|---|---|
+| Página em **Latin-1** | "Sinais clínicos" virava "Sinais cl�nicos", sem erro nenhum | Decodifica pelo charset do header, pelo `<meta>` do HTML, ou tentando — e confere se o resultado tem cara de texto |
+| Página em Latin-1 **com charset declarado** | Idem: eu ignorava o cabeçalho | Idem |
+| **404 disfarçado** ("Página não encontrada") | Virava documento de 3 palavras | Recusa abaixo de 50 palavras; avisa abaixo de 150 |
+| HTML que o servidor **anuncia como PDF** | Virava `.pdf` de 0 palavras | Recusa: confere os bytes `%PDF-` |
+| **Seção declarada que não existe** | Passava — é a armadilha nº 1 do piloto | Recusa, listando as ausentes |
+| Seção declarada **sem um acento** | Idem, e é a variante mais sutil | Recusa |
+| **Título de 25 palavras** | Passava, e era cobrado em todo trecho | Recusa acima de 6 |
+| **Recapturar com o mesmo nome** | Sobrescrevia em silêncio | Recusa; `--forcar` quando for de propósito |
+
+A da codificação é a mais séria para este projeto: material de universidade e
+de conselho regional brasileiro costuma estar em Latin-1, e é exatamente a
+fonte em português que mais nos falta. Os quatro testes de codificação
+produzem hoje **o mesmo hash** — que é a prova de que a normalização funciona,
+e de que a aprovação do especialista não depende de qual servidor entregou a
+página.
+
+**Uma trava nova que o piloto não tinha como pedir:** o script agora **avisa**
+quando o idioma declarado na ficha não parece o do corpo. É a armadilha do
+MSD, e uma ficha errada nesse campo faria o experimento de idioma × registro
+medir outra coisa. Avisa, não recusa — a heurística não é boa o bastante para
+decidir sozinha.
+
+**O que o endurecimento não mudou:** a captura do piloto, refeita com todas as
+travas, saiu byte a byte idêntica (`b049102f`). As travas recusam entrada
+ruim; não transformam entrada boa.
+
+### E uma lacuna no roteiro, não no script
+
+Testei o roteiro contra uma linha **leve** (`single_vomiting_or_mild_diarrhea`)
+e ele não servia: as famílias de busca estavam todas orientadas a emergência, e
+ninguém escreve artigo sobre "vomitou uma vez e está bem". Onze das 31 linhas
+da etapa 1 são assim. O roteiro ganhou uma seção com três ajustes: buscar pela
+**queixa** e não pelo quadro; capturar a **mesma página duas vezes**, com
+seções diferentes, para a linha leve e para a grave (a página "Vomiting in
+dogs" da PDSA cobre as duas); e inverter o critério "diz quando ir" — numa
+linha leve, o que importa é a fonte dizer **quando pode esperar**. Uma página
+que só lista alarme ensina o sistema a ter medo de tudo, que é o defeito que o
+[B-03](../backlog.md#b-03) descreve.
+
+O roteiro também ganhou a tabela **"o que o script recusa, e o que só você
+pega"** — porque metade do que dá errado continua fora do alcance dele: fonte
+de autoridade baixa disfarçada de boa, conteúdo certo sobre a espécie errada,
+e o limite de seção não declarado, que só o `--inspect` revela.
+
+Testes: 124 → **138**.
 
 ## Deixado para depois
 

@@ -136,7 +136,7 @@ python scripts/run_voice_benchmark.py
 python -m pytest scripts/tests -q
 ```
 
-124 testes, sem API nem modelo — o HTTP fica atrás de um dublê. Dois deles
+138 testes, sem API nem modelo — o HTTP fica atrás de um dublê. Dois deles
 sustentam a comparabilidade com a medição histórica de 04/05: o **teste
 dourado** (as 98 respostas daquele dia reproduzem exatamente os números do
 diário) e a **regressão dos relatos** (o texto enviado ao modelo é idêntico

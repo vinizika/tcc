@@ -56,6 +56,27 @@ porque nenhuma das duas famílias tem tudo — ver "O dilema idioma × registro"
 consulta: *"barriga inchada tentando vomitar cachorro"*. Acha material que a
 busca por nome técnico não acha — e é o vocabulário que o sistema vai receber.
 
+### Linha leve: a busca é outra, e a fonte costuma ser a mesma do par
+
+Onze das 31 linhas da etapa 1 são `pode_esperar`, e elas não têm nome de
+doença para procurar — ninguém escreve um artigo sobre "vomitou uma vez e
+está bem". Três ajustes:
+
+1. **Busque pela queixa, não pelo quadro**: *"dog vomited once acting normal
+   when to worry"*, *"cão mancando de leve ainda apoia a pata"*. O que
+   responde é a página genérica do sintoma.
+2. **A fonte quase sempre é a mesma do par grave.** A página "Vomiting in
+   dogs" da PDSA cobre o vômito isolado **e** manda ao pronto-socorro na
+   torção. Capture-a **duas vezes**, com `--slug` diferente e
+   `include_sections` diferentes: a linha leve leva as seções de "o que fazer
+   em casa" e "quando é normal"; a linha grave leva as de alarme. Duas fichas,
+   dois `topic`, um só texto de origem.
+3. **O critério "diz quando ir" inverte.** Numa linha leve, o que importa é a
+   fonte dizer **quando pode esperar** e, no mesmo fôlego, o que muda isso.
+   Uma página que só lista sinais de alarme não serve para a linha leve — ela
+   ensina o sistema a ter medo de tudo, que é o erro que o
+   [B-03](../evidencias/backlog.md#b-03) descreve.
+
 **Parar quando:** houver uma fonte PT verificada e uma EN para tutor
 verificada, **ou** depois de oito buscas. O que faltar vai para a seção "Não
 encontrado" do dossiê, que é dado de curadoria, não fracasso.
@@ -120,19 +141,21 @@ que a etapa 1 existe para responder. Não escolha por intuição.
    Ainda **sem** `--include`: as seções se declaram no passo seguinte, lendo
    o arquivo que saiu.
 6. **Declarar as seções, lendo o texto capturado.** Abra o `.txt`, veja quais
-   headings existem de verdade e escolha os que entram. Duas regras que o
-   piloto custou a aprender:
+   headings existem de verdade e escolha os que entram, recapturando com
+   `--include` e `--forcar`. Duas regras que o piloto custou a aprender:
    - **Declare exatamente o que está no arquivo**, caractere por caractere,
      acento por acento. O ingestor compara sem normalizar acentos, e uma
      seção declarada com nome ligeiramente diferente é ignorada **em
      silêncio**. No piloto, `"When to contact your vet"` veio do resultado de
-     busca e não existia na página.
+     busca e não existia na página. *(O script hoje recusa isso — mas a
+     recusa só existe porque a regra existe.)*
    - **Declare também as seções que você quer excluir.** O ingestor só
      enxerga um heading que esteja no catálogo, e o catálogo é formado pelo
      que a ficha declara. Se você listar só o que quer incluir, a seção
      desejada **engole todo o resto do documento**: no piloto, o artigo do
      SciELO produziu **217 trechos** de fisiopatologia e cirurgia; com os 15
      headings seguintes declarados em `exclude_sections`, caiu para **29**.
+     *Esta o script não pega — só o `--inspect` do passo 7 revela.*
 7. **Inspecionar**, sem tocar no banco. Copie a captura e a ficha para
    `backend/data/documents/`, rode e **apague depois** — nada não aprovado
    fica na pasta da base:
@@ -149,6 +172,26 @@ que a etapa 1 existe para responder. Não escolha por intuição.
    `referencias.md`; linha em `PARA-VALIDAR.md`; rodar
    `python -m pytest scripts/tests -q`.
 9. **Relatar** na conversa.
+
+## O que o script recusa, e o que só você pega
+
+A captura tem travas, mas elas cobrem só metade do que dá errado. Vale saber
+de qual lado cada coisa está:
+
+| O script recusa sozinho | Só você percebe |
+|---|---|
+| `topic` que não é linha do mapa | Fonte de autoridade baixa disfarçada de boa |
+| Seção declarada que não existe no texto, inclusive por um acento | **Limite de seção não declarado** — a seção engole o documento (só o `--inspect` mostra) |
+| Página curta demais para ser fonte (erro, login, JavaScript) | Conteúdo certo sobre a **espécie errada** |
+| HTML que o servidor anuncia como PDF | Fonte que responde tudo menos o discriminador |
+| Título longo demais para caber no prefixo de todo trecho | Página que repete outra sem creditar |
+| Sobrescrever uma captura já existente (use `--forcar` de propósito) | |
+| **Avisa** quando o idioma declarado não parece o do corpo | |
+
+O aviso de idioma é heurística e pode errar nos dois sentidos — ele existe
+porque o piloto encontrou o MSD com menu em português e corpo em inglês, e
+uma ficha errada nesse campo faria o experimento de idioma × registro medir
+outra coisa. Confira o corpo você mesmo.
 
 ## Regras
 

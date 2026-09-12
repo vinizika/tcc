@@ -61,6 +61,17 @@ TIPOS = {
 }
 ESPECIES = {"dog", "cat", "dogs_and_cats"}
 
+# O título entra no começo de todo trecho do documento, e um trecho tem ~40
+# palavras: título comprido é conteúdo clínico que não cabe.
+MAX_PALAVRAS_TITULO = 6
+
+# Abaixo do piso não é fonte, é página de erro, muro de login ou conteúdo que
+# só existe depois do JavaScript rodar. Entre o piso e o aviso pode ser uma
+# lista curta de "quando levar ao veterinário", que é legítima e valiosa — por
+# isso avisa em vez de recusar.
+MIN_PALAVRAS = 50
+POUCAS_PALAVRAS = 150
+
 _MARCA_DE_TITULO = re.compile(r"^#{1,6}\s*")
 # Negrito e itálico do markdown viram lixo dentro do trecho indexado, e um
 # trecho tem ~40 palavras. O modelo não ganha nada lendo asteriscos.
@@ -98,6 +109,76 @@ def topicos_do_mapa() -> set[str]:
 
     with open(MAPA, encoding="utf-8", newline="") as arquivo:
         return {linha["id"] for linha in csv.DictReader(arquivo)}
+
+
+def decodificar(conteudo: bytes, tipo: str) -> str:
+    """
+    Converte os bytes da página em texto, respeitando a codificação dela.
+
+    Não é detalhe: material veterinário de universidade e de conselho
+    regional brasileiro costuma estar em Latin-1, e decodificar isso como
+    UTF-8 transforma "Sinais clínicos" em "Sinais cl�nicos" **sem erro
+    nenhum**. Um documento assim seria indexado e recuperado como lixo.
+    """
+
+    declarada = ""
+    if "charset=" in tipo.lower():
+        declarada = tipo.lower().split("charset=")[1].split(";")[0].strip(" \"'")
+
+    candidatas = [declarada, "utf-8", "cp1252", "latin-1"]
+
+    # A página também declara a codificação dentro do HTML, e é comum o
+    # servidor mentir e o <meta> estar certo.
+    cabecalho = conteudo[:2048].decode("ascii", errors="ignore").lower()
+    achado = re.search(r'charset=["\']?([\w-]+)', cabecalho)
+    if achado:
+        candidatas.insert(1, achado.group(1))
+
+    for codificacao in candidatas:
+        if not codificacao:
+            continue
+        try:
+            texto = conteudo.decode(codificacao)
+        except (UnicodeDecodeError, LookupError):
+            continue
+        # `latin-1` decodifica qualquer byte, então ela nunca falha — é a
+        # última da fila justamente por isso, e ainda assim conferimos se o
+        # resultado tem cara de texto e não de bytes mal interpretados.
+        if "�" not in texto:
+            return texto
+
+    return conteudo.decode("utf-8", errors="replace")
+
+
+def idioma_provavel(texto: str) -> str:
+    """
+    Chuta o idioma do **corpo** por palavras funcionais, para pegar um caso
+    que o piloto encontrou: sites traduzem o menu e os títulos e deixam o
+    texto em inglês. Uma ficha que diz `language: pt` sobre um corpo em
+    inglês faz o experimento de idioma × registro medir a coisa errada.
+
+    É heurística, e serve para avisar — nunca para decidir sozinha.
+    """
+
+    palavras = re.findall(r"[a-záàâãéêíóôõúç]+", texto.lower())
+    if len(palavras) < 40:
+        return ""
+
+    amostra = set(palavras)
+    pt = sum(p in amostra for p in (
+        "não", "para", "com", "uma", "que", "são", "pode", "quando", "cão",
+        "está", "sinais", "veterinário", "também", "mais", "sobre",
+    ))
+    en = sum(p in amostra for p in (
+        "the", "and", "your", "with", "they", "will", "when", "dog",
+        "should", "signs", "veterinary", "also", "more", "about", "have",
+    ))
+
+    if pt >= en + 3:
+        return "pt"
+    if en >= pt + 3:
+        return "en"
+    return ""
 
 
 def texto_principal(html: str) -> tuple[str, str]:
@@ -211,6 +292,13 @@ def main(argv=None, baixador: Baixador | None = None) -> None:
     )
     parser.add_argument("--exclude", action="append")
     parser.add_argument("--destino", type=Path, default=DESTINO_PADRAO)
+    parser.add_argument(
+        "--forcar",
+        action="store_true",
+        help="Sobrescreve uma captura existente. Sem isto, o script recusa: "
+             "o especialista aprova um arquivo com hash, e trocá-lo por "
+             "baixo invalidaria a aprovação em silêncio.",
+    )
 
     argumentos = parser.parse_args(argv)
 
@@ -223,12 +311,43 @@ def main(argv=None, baixador: Baixador | None = None) -> None:
     if not re.fullmatch(r"[a-z0-9_]+", argumentos.slug):
         raise SystemExit("--slug aceita só letras minúsculas, dígitos e _.")
 
+    if argumentos.title and len(argumentos.title.split()) > MAX_PALAVRAS_TITULO:
+        raise SystemExit(
+            f"--title tem {len(argumentos.title.split())} palavras. O título "
+            f"entra no começo de **todos** os trechos deste documento, e cada "
+            f"trecho tem ~40 palavras: use no máximo {MAX_PALAVRAS_TITULO}."
+        )
+
+    argumentos.destino.mkdir(parents=True, exist_ok=True)
+    base = argumentos.destino / f"{argumentos.topic}__{argumentos.slug}"
+
+    existentes = [
+        base.with_suffix(sufixo)
+        for sufixo in (".txt", ".pdf", ".json")
+        if base.with_suffix(sufixo).exists()
+    ]
+    if existentes and not argumentos.forcar:
+        raise SystemExit(
+            f"Já existe captura com este nome: {_curto(existentes[0])}. "
+            "Use outro --slug, ou --forcar se a intenção é substituir. "
+            "Trocar o arquivo por baixo invalida a aprovação do especialista, "
+            "que é dada sobre um hash."
+        )
+
     conteudo, tipo = (baixador or Baixador()).buscar(argumentos.url)
 
-    if "pdf" in tipo.lower():
-        corpo, extensao, titulo = conteudo, ".pdf", ""
+    ehpdf = conteudo[:5] == b"%PDF-"
+
+    if ehpdf:
+        corpo, extensao, titulo, texto = conteudo, ".pdf", "", ""
+    elif "pdf" in tipo.lower():
+        raise SystemExit(
+            "O servidor anunciou PDF, mas o conteúdo não começa com %PDF-. "
+            "Provavelmente é uma página de erro ou de login. Abra a URL no "
+            "navegador e confira."
+        )
     elif "html" in tipo.lower() or not tipo:
-        texto, titulo = texto_principal(conteudo.decode("utf-8", errors="replace"))
+        texto, titulo = texto_principal(decodificar(conteudo, tipo))
         corpo, extensao = texto.encode("utf-8"), ".txt"
     else:
         raise SystemExit(
@@ -236,12 +355,51 @@ def main(argv=None, baixador: Baixador | None = None) -> None:
             "e texto."
         )
 
-    argumentos.destino.mkdir(parents=True, exist_ok=True)
-    base = argumentos.destino / f"{argumentos.topic}__{argumentos.slug}"
+    palavras = len(texto.split()) if texto else 0
+
+    if extensao == ".txt" and palavras < MIN_PALAVRAS:
+        raise SystemExit(
+            f"Só {palavras} palavras foram extraídas — página de erro, muro "
+            "de login ou conteúdo carregado por JavaScript. Abra a URL no "
+            "navegador antes de insistir."
+        )
+
+    avisos = []
+
+    if extensao == ".txt" and palavras < POUCAS_PALAVRAS:
+        avisos.append(
+            f"só {palavras} palavras. Pode ser uma lista curta legítima, mas "
+            "também é o que uma página carregada por JavaScript devolve — "
+            "abra a URL no navegador e compare."
+        )
+
+    if extensao == ".txt" and argumentos.include:
+        linhas = set(texto.splitlines())
+        ausentes = [secao for secao in argumentos.include if secao not in linhas]
+        if ausentes:
+            raise SystemExit(
+                "Estas seções não existem no texto capturado, linha por "
+                f"linha: {ausentes}. O ingestor as ignoraria **em silêncio**, "
+                "e a curadoria sairia diferente do que você pensa. Abra o "
+                "arquivo, veja os títulos que existem de verdade e declare "
+                "esses — acento por acento."
+            )
+
+    if extensao == ".txt" and argumentos.language:
+        detectado = idioma_provavel(texto)
+        declarado = argumentos.language.split("-")[0].lower()
+        if detectado and detectado != declarado:
+            avisos.append(
+                f"a ficha diz language={argumentos.language}, mas o corpo "
+                f"parece estar em '{detectado}'. Sites traduzem o menu e os "
+                "títulos e deixam o texto no idioma original — confira antes "
+                "de seguir."
+            )
+
     caminho = base.with_suffix(extensao)
 
-    # `newline=""` e bytes: escrever o texto como bytes evita que o Windows
-    # troque \n por \r\n e mude o sha256 entre máquinas.
+    # Bytes, e não `write_text`: escrever assim evita que o Windows troque
+    # \n por \r\n e mude o sha256 entre máquinas.
     caminho.write_bytes(corpo)
 
     sha256 = hashlib.sha256(corpo).hexdigest()
@@ -250,11 +408,13 @@ def main(argv=None, baixador: Baixador | None = None) -> None:
         json.dumps(ficha, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
 
-    palavras = len(corpo.decode("utf-8", errors="replace").split())
     print(f"Capturado: {_curto(caminho)}")
     print(f"  sha256   : {sha256[:16]}…")
     print(f"  palavras : {palavras}" if extensao == ".txt" else "  (PDF)")
     print(f"  ficha    : {_curto(base.with_suffix('.json'))}")
+
+    for aviso in avisos:
+        print(f"\n  ATENÇÃO: {aviso}")
     print(
         "\nPróximo passo: inspecionar sem tocar no banco.\n"
         "  docker compose exec backend python -m app.database.ingest_documents "
