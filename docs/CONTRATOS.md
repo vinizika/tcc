@@ -39,10 +39,39 @@ O que a busca devolve, por trecho:
 | `content` | O texto que entra no prompt |
 | `source` | Arquivo de origem, exibido junto do título |
 | `score` | Similaridade; decide o corte e vai nas métricas |
+| `topic` | **O assunto do documento.** Identificador estável, em inglês e snake_case (`chocolate_toxicosis`, `urethral_obstruction`). Vem do sidecar JSON da fonte. Acrescentado em 12/09 (`74c6dfa`) |
+| `source_file` | Caminho do arquivo de origem, relativo à pasta de documentos. Acrescentado no mesmo commit |
 
 **Estável.** Acrescentar campo é seguro; renomear ou remover quebra o
-classificador. Sugestão de melhoria: expor também `topic` e `species`, que já
-existem nos metadados dos trechos e permitiriam citações mais precisas.
+classificador.
+
+### `topic` é um identificador, não um rótulo de exibição
+
+Desde 12/09 o `topic` atravessa três lugares e precisa ser **o mesmo texto**
+nos três:
+
+| Onde | O que faz |
+|---|---|
+| `backend/data/documents/<fonte>.json` | Declara o assunto da fonte |
+| `POST /search/`, por trecho | Diz de qual assunto veio cada trecho recuperado |
+| `data/curadoria/mapa-de-assuntos.csv`, coluna `id` | A linha do mapa que aquele assunto cobre |
+
+É por igualdade exata entre os três que a régua de recuperação julga a busca
+(`expected_topics` em `data/retrieval/cases.csv`) e que o `compare` do agente
+de ingestão mede **cobertura**: quais quadros do mapa passaram a ter documento
+e quais faltam ([B-51](../evidencias/backlog.md#b-51)).
+
+**Consequência prática, para o trilho A:** renomear um `topic`, ou indexar uma
+fonte com `topic` que não existe no mapa, faz a cobertura parar de bater **sem
+erro visível** — a busca continua funcionando e o número fica errado. As duas
+coisas são permitidas; o que não pode é acontecer sozinho. Documento novo entra
+com o `topic` de uma linha do mapa; assunto novo ganha linha no mapa antes de
+ser indexado. O teste `scripts/tests/test_mapa_de_assuntos.py` recusa as duas
+situações, e é a rede de segurança disso.
+
+`species` **não** é exposto pela busca, e por enquanto não precisa ser: a
+cobertura por espécie é conferida na ingestão, contra o sidecar. O vocabulário
+dele ainda não é fechado ([B-53](../evidencias/backlog.md#b-53)).
 
 ## 3. Resposta de triagem — B2 → runner e frontend
 
@@ -141,6 +170,7 @@ interfaces. Os itens que tocam estes contratos, hoje:
 [B-04](../evidencias/backlog.md#b-04) (seed na etapa de consulta),
 [B-10](../evidencias/backlog.md#b-10) (a consulta reescrita não vai ao
 índice), [B-12](../evidencias/backlog.md#b-12) (ingestão em máquina nova),
-[B-17](../evidencias/backlog.md#b-17) (`RERANK_TOP_K` × `CONTEXT_TOP_K`) e
+[B-17](../evidencias/backlog.md#b-17) (`RERANK_TOP_K` × `CONTEXT_TOP_K`),
 [B-19](../evidencias/backlog.md#b-19) (arquivos que ainda apontam para a
-rota removida).
+rota removida) e [B-53](../evidencias/backlog.md#b-53) (o vocabulário de
+`species` nos sidecars não é fechado).
