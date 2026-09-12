@@ -32,13 +32,12 @@
   },
   "register": "academico",
   "access_date": "2026-09-12",
-  "captured_sha256": "c0b9aff03f06a6a5be8354b6a08122622bc5a6920979d9afc20cd439bbbbd12c",
+  "captured_sha256": "0f0b922b0af159dadd222c11aa377953775331b0fe21e9f77cad310acf2182c2",
   "map_line": "gastric_dilatation_volvulus",
   "specialist": {
     "verdict": "",
     "name": "",
     "date": ""
   },
-  "year": 2012,
-  "authors": "Silva SSR; Castro JLC; Castro VSP; Raiser AG"
+  "year": 2012
 }

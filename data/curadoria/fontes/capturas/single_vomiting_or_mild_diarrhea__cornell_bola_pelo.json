@@ -1,0 +1,28 @@
+{
+  "title": "Bola de pelo em gatos",
+  "source": "Cornell Feline Health Center",
+  "document_type": "owner_guidance",
+  "validation_status": "pending_specialist",
+  "species": "cat",
+  "topic": "single_vomiting_or_mild_diarrhea",
+  "language": "en",
+  "source_url": "https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/danger-hairballs",
+  "indexing": {
+    "include_sections": [
+      "Hazardous Potential"
+    ],
+    "exclude_sections": [
+      "Relieving the Obstruction"
+    ],
+    "exclude_pages": []
+  },
+  "register": "tutor",
+  "access_date": "2026-09-12",
+  "captured_sha256": "a75db0bbb2b1de5d810bd2401147bccaf44fd85490b57cb285969c980434202d",
+  "map_line": "single_vomiting_or_mild_diarrhea",
+  "specialist": {
+    "verdict": "",
+    "name": "",
+    "date": ""
+  }
+}

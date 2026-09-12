@@ -10,13 +10,13 @@ The syndrome of gastric dilatation volvulus (GDV) is a severe condition of acute
 
 necrosis; reperfusion injury; no-reflow phenomenon
 
-      REVISÃO BIBLIOGRÁFICA
+REVISÃO BIBLIOGRÁFICA
 
 CLÍNICA E CIRURGIA
 
 Síndrome da dilatação volvo gástrica em cães
 
-      Gastric volvulus dilatation syndrome in dogs
+Gastric volvulus dilatation syndrome in dogs
 
 Sérgio Santalucia Ramos da SilvaI,<sup>1</sup>; Jorge Luiz Costa Castro<sup>II</sup>; Verônica Souza Paiva Castro<sup>II</sup>; Alceu Gaspar RaiserII
 
@@ -24,19 +24,19 @@ Sérgio Santalucia Ramos da SilvaI,<sup>1</sup>; Jorge Luiz Costa Castro<sup>II<
 
 <sup>II</sup>Programa de Pós-graduação em Medicina Veterinária (PPGMV), Centro de Ciências Rurais (CCR), Universidade Federal de Santa Maria (UFSM), Santa Maria, RS, Brasil
 
-      RESUMO
+RESUMO
 
 A síndrome da dilatação volvo gástrica (DVG) é uma condição grave, de caráter agudo, que confere alto índice de óbito em pequenos animais. A etiologia não está completamente estabelecida e, em contrapartida, diversas possibilidades de tratamento são descritas. A DVG causa grave redução na perfusão tecidual, afetando vários órgãos, incluindo os sistemas respiratório e cardiovascular. Este estudo tem como objetivo realizar uma revisão de literatura sobre a patogenia desta síndrome e seu tratamento.
 
 Palavras-chave: necrose, lesão por reperfusão, fenômeno de não-refluxo.
 
-      ABSTRACT
+ABSTRACT
 
 The syndrome of gastric dilatation volvulus (GDV) is a severe condition of acute character, which gives a high rate of death in small animals. The etiology is not fully established, however, several treatment options have been described. The DVG causes severe reduction in tissue perfusion, affecting many organs, including the respiratory and cardiovascular systems. This study aims to conduct a comprehensive literature review of the pathogenesis of this syndrome as well as its treatment.
 
 Key words: necrosis, reperfusion injury, no-reflow phenomenon.
 
-      INTRODUÇÃO
+INTRODUÇÃO
 
 A dilatação aguda do estômago, associada a sua torção, é um evento potencialmente maléfico que requer tratamento médico emergencial, podendo ou não estar associada à terapia cirúrgica, na tentativa de otimizar as chances de sucesso e consequente manutenção da vida do paciente. A rápida identificação, escolha da terapia adequada e estabilização precoce do paciente são os principais componentes de sucesso no tratamento. A taxa de mortalidade nos casos de dilatação volvo gástrica (DVG) é alta e está intimamente relacionada à identificação precoce das alterações sistêmicas e início correto da terapia médica. Este artigo objetiva revisar a influência dessa síndrome em diferentes órgãos e seu manejo.
 
@@ -152,7 +152,7 @@ Estudos demonstraram que a reperfusão gradual do estômago é capaz de reduzir 
 
 A perfuração gástrica pode ocorrer secundariamente à necrose, resultando em peritonite séptica (TIVERS & BROCKMAN, 2009b). O local mais comumente afetado pela perfuração é a curvatura maior, nas regiões do fundo e corpo. O tratamento a ser instituído diante de um quadro de perfuração gástrica deverá incluir a exploração total do abdômen, a gastrectomia parcial, a lavagem abdominal abundante com solução de ringer com lactato e, em alguns casos, a drenagem peritoneal aberta (MATTHIESEN, 1985).
 
-      CONCLUSÃO
+CONCLUSÃO
 
 A síndrome da DVG é uma condição clínico-cirúrgica aguda, de etiologia não completamente estabelecida, com alto risco de óbito. Embora diversas propostas de tratamento estejam descritas, sua taxa de mortalidade permanece alta. Por apresentar caráter agudo, a identificação prematura das alterações, sua interpretação e escolha da terapia correta são essenciais para o sucesso da manutenção da vida do paciente. A literatura diverge sobre qual o primeiro procedimento a ser instituído, se descomprimir ou expandir volume. Ambos são emergenciais, se possível instituí-los simultaneamente, caso contrário, deve-se adotar primeiramente aquele mais importante para cada paciente.
 

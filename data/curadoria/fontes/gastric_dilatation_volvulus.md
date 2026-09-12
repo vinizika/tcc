@@ -8,6 +8,11 @@ estufada e dura?*
 **Pesquisado em:** 12/09/2026, pelo [roteiro do pesquisador](../../../agentes/pesquisador.md)
 **Estado:** `fonte_encontrada` — duas capturas esperando validação
 
+> **Recapturado em 12/09.** O piloto da linha leve mostrou que a extração
+> deixava a indentação do markdown no texto, e um heading indentado não bate
+> com o nome declarado na ficha. A correção mudou o hash das duas capturas; o
+> conteúdo é o mesmo, e os hashes atuais estão nas fichas `.json`.
+
 ## Casos da régua
 
 A linha **já tem caso**: `b12` em [`data/retrieval/cases.csv`](../../retrieval/cases.csv),

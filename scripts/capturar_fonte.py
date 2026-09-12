@@ -150,6 +150,17 @@ def decodificar(conteudo: bytes, tipo: str) -> str:
     return conteudo.decode("utf-8", errors="replace")
 
 
+def _chave_de_secao(titulo: str) -> str:
+    """
+    A mesma normalização que o ingestor aplica antes de comparar nomes de
+    seção (`document_processing._section_key`): tudo que não é letra ou
+    dígito cai fora. **Acento não é normalizado** — "Diagnóstico" e
+    "Diagnostico" continuam sendo chaves diferentes, lá e aqui.
+    """
+
+    return re.sub(r"[^a-z0-9]+", "", titulo.lower())
+
+
 def idioma_provavel(texto: str) -> str:
     """
     Chuta o idioma do **corpo** por palavras funcionais, para pegar um caso
@@ -209,8 +220,13 @@ def texto_principal(html: str) -> tuple[str, str]:
             "Salve o conteúdo à mão, se a fonte valer a pena."
         )
 
+    # `strip()` e não `rstrip()`: o markdown do trafilatura indenta o que
+    # estava aninhado na página, e num trecho de ~40 palavras a tabulação não
+    # ensina nada. Pior: um heading indentado não bate, caractere por
+    # caractere, com o nome declarado na ficha — e foi assim que a captura da
+    # Cornell quase perdeu duas seções.
     linhas = [
-        _ENFASE.sub("", _MARCA_DE_TITULO.sub("", linha)).rstrip()
+        _ENFASE.sub("", _MARCA_DE_TITULO.sub("", linha)).strip()
         for linha in extraido.splitlines()
     ]
     texto = _LINHAS_VAZIAS.sub("\n\n", "\n".join(linhas)).strip()
@@ -374,8 +390,15 @@ def main(argv=None, baixador: Baixador | None = None) -> None:
         )
 
     if extensao == ".txt" and argumentos.include:
-        linhas = set(texto.splitlines())
-        ausentes = [secao for secao in argumentos.include if secao not in linhas]
+        # Compara pela mesma chave que o ingestor usa (`_section_key`), e não
+        # pela linha literal: ele ignora pontuação e espaço, mas **não**
+        # normaliza acento. Uma trava mais rígida que o ingestor recusaria
+        # seção que funcionaria.
+        linhas = {_chave_de_secao(linha) for linha in texto.splitlines()}
+        ausentes = [
+            secao for secao in argumentos.include
+            if _chave_de_secao(secao) not in linhas
+        ]
         if ausentes:
             raise SystemExit(
                 "Estas seções não existem no texto capturado, linha por "

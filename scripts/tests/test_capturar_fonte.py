@@ -312,6 +312,48 @@ def test_recusa_secao_declarada_que_nao_existe_no_texto(tmp_path):
         capturar(tmp_path, "--include", "Primeiros socorros em casa")
 
 
+def test_indentacao_nao_sobrevive_a_captura(tmp_path):
+    """
+    O markdown do trafilatura indenta o que estava aninhado na página. Num
+    trecho de ~40 palavras a tabulação não ensina nada — e um heading
+    indentado não bate, caractere por caractere, com o nome declarado na
+    ficha. A captura da Cornell veio com quatro linhas assim.
+    """
+
+    pagina = PAGINA.replace(
+        "<h2>Sinais clínicos</h2>",
+        "<blockquote><h2>Sinais clínicos</h2></blockquote>",
+    )
+
+    linhas = capturar(tmp_path, pagina=pagina).with_suffix(".txt").read_text(
+        encoding="utf-8"
+    ).splitlines()
+
+    assert not any(linha[:1] in (" ", "	") for linha in linhas if linha)
+
+
+def test_secao_declarada_casa_pela_mesma_chave_que_o_ingestor(tmp_path):
+    """
+    O ingestor compara nomes de seção por uma chave que descarta pontuação e
+    espaço. Uma trava mais rígida que ele recusaria seção que funcionaria —
+    e foi o que quase aconteceu com "Hazardous Potential", que vinha com
+    tabulação na frente.
+    """
+
+    capturar(tmp_path, "--include", "Sinais clínicos!")
+
+
+def test_a_tolerancia_nao_alcanca_acento(tmp_path):
+    """
+    O ingestor **apaga** acentos em vez de normalizá-los, então "clinicos" e
+    "clínicos" são chaves diferentes lá. Aqui também têm de ser: relaxar isso
+    devolveria o descarte silencioso que a trava existe para evitar.
+    """
+
+    with pytest.raises(SystemExit, match="não existem no texto capturado"):
+        capturar(tmp_path, "--include", "Sinais clinicos")
+
+
 def test_recusa_secao_declarada_sem_acento(tmp_path):
     """
     A variante sutil da anterior: o ingestor compara sem normalizar acentos,

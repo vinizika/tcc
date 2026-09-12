@@ -221,6 +221,122 @@ e o limite de seção não declarado, que só o `--inspect` revela.
 
 Testes: 124 → **138**.
 
+## Adendo de 12/09 — o piloto da linha leve
+
+O roteiro ganhou em 12/09 uma seção sobre **linhas leves** escrita a partir de
+uma busca, sem piloto — e onze das 31 linhas da etapa 1 dependem dela. Levei
+`single_vomiting_or_mild_diarrhea` de ponta a ponta para testá-la. O dossiê
+completo está em
+[`fontes/single_vomiting_or_mild_diarrhea.md`](../../data/curadoria/fontes/single_vomiting_or_mild_diarrhea.md).
+
+### A hipótese estava meio certa
+
+O roteiro dizia: *"a fonte quase sempre é a mesma do par grave; capture-a duas
+vezes, com seções diferentes"*. **Não foi o que aconteceu.** A PDSA tem duas
+páginas — a de sintoma (`symptoms/vomiting-in-dogs`) e a de condição
+(`conditions/gdv-...`) — e cada linha ficou com a sua. A página de sintoma
+cobre os dois lados, mas a de condição é mais funda no lado grave.
+
+A captura dupla continua valendo, só que como **exceção**: é o caso do site
+que tem apenas a página de sintoma. O roteiro foi corrigido.
+
+**O que funcionou como previsto:** buscar pela queixa em vez do quadro
+("dog vomited once eating normally when to worry") achou a página certa de
+primeira. E o critério invertido — a fonte precisa dizer **quando pode
+esperar** — foi o que mais separou as candidatas.
+
+### O dilema idioma × registro ficou pior do que a rodada 12 descreveu
+
+Na torção gástrica o problema era: em português só há fonte clínica ou
+comercial. Aqui apareceu **outra camada**.
+
+A única fonte em português com corpo em português de verdade foi o
+[CRMV-SP](https://crmvsp.gov.br/vomitos-frequentes-indicam-serios-problemas-de-saude-em-caes-e-gatos/).
+Ela diz: *"vômitos ocasionais, uma vez por mês, são aceitáveis, mas se essa
+frequência for de uma vez por semana, o animal deve passar por avaliação"*.
+
+Isso responde **com que frequência é demais**. A linha do mapa pergunta sobre
+**o episódio de hoje** — vomitou uma vez, está comendo e brincando. São
+perguntas diferentes, e um trecho desses recuperado para um relato agudo pode
+atrapalhar em vez de ajudar.
+
+Ou seja: **não é só registro, é escopo.** Se isso se repetir nas outras dez
+linhas leves, o [redator de lacuna](../../agentes/README.md) deixa de ser
+plano B e vira o caminho principal para o lado leve em português.
+
+E a fonte tem uma segunda ressalva que só uma pessoa pega: o domínio é do
+conselho regional, mas o rodapé diz "Fonte: Sigma Six Comunicação" e a
+veterinária citada é de hospital privado. O CRMV publicou, não redigiu.
+Classifiquei como autoridade **média**, e a pergunta foi para os
+especialistas.
+
+### O achado novo: página sem heading não pode ser curada
+
+O `--inspect` mostrou um número que não estava previsto:
+
+| Fonte | Palavras | Seções | Indexadas | **Trechos** |
+|---|---:|---:|---:|---:|
+| PDSA (EN, tutor) | 933 | 7 | 2 | **9** |
+| Cornell (EN, tutor, gato) | 698 | 3 | 1 | **6** |
+| CRMV-SP (PT, tutor) | 509 | **1** | 1 | **17** |
+
+A fonte mais fraca produz **mais trechos que as duas boas somadas**. O motivo:
+a página do CRMV-SP não tem estrutura de heading, então o ingestor cai no
+fallback de seção única e indexa tudo — inclusive o parágrafo sobre medicação
+e o rodapé da agência. Não há como deixar nada de fora.
+
+Isso vira critério na régua de aptidão: **quanto pior a estrutura, mais a
+fonte ocupa a busca**. Uma fonte ruim e curável compete menos que uma fonte
+razoável e não curável.
+
+### A armadilha do limite de seção reapareceu, em outro site
+
+Na Cornell, sem declarar *Relieving the Obstruction* em `exclude_sections`, a
+seção anterior engolia **417 palavras em vez de 215** — levando conduta
+cirúrgica junto. É exatamente o que o artigo do SciELO fez no piloto anterior
+(217 trechos contra 29), num site com estrutura completamente diferente.
+
+Duas ocorrências em dois pilotos: não é peculiaridade de uma fonte, é como o
+ingestor funciona. O roteiro já avisava; agora avisa com dois exemplos.
+
+### Uma correção no script, achada aqui
+
+Os headings da Cornell vinham com **tabulação na frente** — artefato do
+markdown do trafilatura para conteúdo aninhado. O ingestor tolera, porque
+normaliza antes de comparar; **a minha trava não**, porque comparava a linha
+literal. Era falso negativo: eu recusaria uma seção que funcionaria.
+
+Corrigido nas duas pontas: a captura passa a tirar a indentação, e a trava
+passa a comparar pela mesma chave que o ingestor usa. A tolerância **não**
+alcança acento, de propósito — o ingestor também não normaliza acento, e
+relaxar isso devolveria o descarte silencioso.
+
+As capturas da torção gástrica foram refeitas e mudaram de hash; o conteúdo é
+o mesmo.
+
+### Duas coisas que o piloto produziu de brinde
+
+**Fechou uma lacuna declarada.** A [rodada 11](2026-09-12-12-mapa-de-assuntos.md)
+registrou como não encontrado o "limiar numérico de frequência de bola de pelo
+em gato". A Cornell tem: **uma a cada uma ou duas semanas é normal**, mais de
+uma por mês merece consulta.
+
+**Confirmou a armadilha do MSD pela segunda vez.** A página
+`msdvetmanual.com/pt/cat-owners/…/vômito-em-gatos` tem títulos de seção em
+português e corpo em inglês. Não é peculiaridade de uma página: é como o MSD
+traduz.
+
+### Três casos de régua propostos
+
+A linha leve **não tinha caso**: os cinco casos leves da régua são espirro,
+coceira, claudicação, olho e coriza — nenhum de vômito, que é a queixa mais
+frequente do pronto-socorro em cães. Escrevi b19, b20 e b21 antes de abrir
+qualquer fonte, e eles entram no `cases.csv` **quando o lote for indexado** —
+acrescentar caso agora mudaria o sha256 e tornaria as rodadas anteriores não
+comparáveis.
+
+Testes: 138 → **141**.
+
 ## Deixado para depois
 
 **Rodar o pesquisador nas outras 30 linhas da etapa 1**, por sistema orgânico,

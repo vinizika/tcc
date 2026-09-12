@@ -67,12 +67,12 @@ está bem". Três ajustes:
 1. **Busque pela queixa, não pelo quadro**: *"dog vomited once acting normal
    when to worry"*, *"cão mancando de leve ainda apoia a pata"*. O que
    responde é a página genérica do sintoma.
-2. **A fonte quase sempre é a mesma do par grave.** A página "Vomiting in
-   dogs" da PDSA cobre o vômito isolado **e** manda ao pronto-socorro na
-   torção. Capture-a **duas vezes**, com `--slug` diferente e
-   `include_sections` diferentes: a linha leve leva as seções de "o que fazer
-   em casa" e "quando é normal"; a linha grave leva as de alarme. Duas fichas,
-   dois `topic`, um só texto de origem.
+2. **A página de sintoma serve a linha leve; a de condição, a grave.**
+   Sites bons têm as duas: a PDSA tem `symptoms/vomiting-in-dogs` **e**
+   `conditions/gdv-...`, e no piloto cada linha ficou com a sua. A página de
+   sintoma cobre os dois lados, mas a de condição é mais funda no lado grave.
+   **Capturar a mesma página duas vezes**, com `--slug` e `include_sections`
+   diferentes, é o caso em que o site **só** tem a de sintoma — não a regra.
 3. **O critério "diz quando ir" inverte.** Numa linha leve, o que importa é a
    fonte dizer **quando pode esperar** e, no mesmo fôlego, o que muda isso.
    Uma página que só lista sinais de alarme não serve para a linha leve — ela
@@ -157,7 +157,16 @@ que a etapa 1 existe para responder. Não escolha por intuição.
      desejada **engole todo o resto do documento**: no piloto, o artigo do
      SciELO produziu **217 trechos** de fisiopatologia e cirurgia; com os 15
      headings seguintes declarados em `exclude_sections`, caiu para **29**.
-     *Esta o script não pega — só o `--inspect` do passo 7 revela.*
+     *Esta o script não pega — só o `--inspect` do passo 7 revela.* No piloto
+     da linha leve ela reapareceu num site totalmente diferente: sem declarar
+     *Relieving the Obstruction*, a seção anterior da Cornell engolia 417
+     palavras em vez de 215, levando conduta cirúrgica junto.
+   - **Página sem heading nenhum é tudo ou nada.** O `--inspect` mostra uma
+     seção só, `Document`, e não há como deixar nada de fora. A fonte em
+     português do piloto da linha leve caiu nisso: 509 palavras viraram **17
+     trechos**, incluindo o parágrafo sobre medicação — mais trechos do que as
+     duas fontes curáveis somadas. Conta como ponto contra na régua de
+     aptidão: **quanto pior a estrutura, mais a fonte ocupa a busca**.
 7. **Inspecionar**, sem tocar no banco. Copie a captura e a ficha para
    `backend/data/documents/`, rode e **apague depois** — nada não aprovado
    fica na pasta da base:

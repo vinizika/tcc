@@ -1,0 +1,33 @@
+{
+  "title": "Vomito em caes",
+  "source": "PDSA Pet Health Hub",
+  "document_type": "owner_guidance",
+  "validation_status": "pending_specialist",
+  "species": "dog",
+  "topic": "single_vomiting_or_mild_diarrhea",
+  "language": "en",
+  "source_url": "https://www.pdsa.org.uk/pet-help-and-advice/pet-health-hub/symptoms/vomiting-in-dogs",
+  "indexing": {
+    "include_sections": [
+      "Overview",
+      "When to contact your vet"
+    ],
+    "exclude_sections": [
+      "Home remedies for vomiting in dogs",
+      "Dog vomit colour chart",
+      "Published: October 2024",
+      "Tell us more"
+    ],
+    "exclude_pages": []
+  },
+  "register": "tutor",
+  "access_date": "2026-09-12",
+  "captured_sha256": "6a2dc5a55ece68948bce451c1bbf794c4827b0bc53b9b084d9d65cad84936edb",
+  "map_line": "single_vomiting_or_mild_diarrhea",
+  "specialist": {
+    "verdict": "",
+    "name": "",
+    "date": ""
+  },
+  "year": 2024
+}
