@@ -99,6 +99,7 @@ aqui.
 | [B-49](#b-49) | Régua de recuperação mede pouco enquanto a base e o conjunto forem pequenos | Trilho A + B2 | Média | Aberto |
 | [B-50](#b-50) | Mapa de assuntos: a lista de quadros clínicos que a base cobre e a prova pergunta | Time + especialistas | Alta | Em andamento — rascunho de 12/09, aguardando revisão e validação |
 | [B-53](#b-53) | Vocabulário de `species` nas fichas da base não é fechado | Trilho A | Baixa | Aberto |
+| [B-54](#b-54) | Baixar à mão o Caderno Técnico nº 87 da UFMG, a melhor fonte brasileira que temos | Time | Média | Aberto |
 | [B-51](#b-51) | Ciclo de ingestão num comando, e a régua dizendo o que mudou entre duas rodadas | Trilho B2 | Média | Aberto |
 | [B-52](#b-52) | Fonte de terceiro versionada em repositório público | Time | Alta | Aberto |
 
@@ -1844,6 +1845,74 @@ ou conta cobertura errada em silêncio.
 exemplo `dog`, `cat`, `dog_and_cat`) e ajusta as oito fichas; até lá, o
 `compare` normaliza e avisa. Critério: um único valor por espécie em todas as
 fichas, documentado, e o `compare` sem normalização.
+
+---
+
+### B-54
+
+**Baixar à mão o Caderno Técnico nº 87 da UFMG, a melhor fonte brasileira que temos**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 11](joao/2026-09-12-12-mapa-de-assuntos.md) e [rodada 12](joao/2026-09-12-13-pesquisador.md), 12/09 · **Responsável:** Time (qualquer um, é um download) · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** *Cadernos Técnicos de Veterinária e Zootecnia nº 87 —
+Emergência em Medicina Veterinária*, Escola de Veterinária da UFMG com o
+CRMV-MG, dezembro de 2017. É um livro inteiro sobre emergência veterinária,
+em português, publicado por universidade federal e conselho profissional.
+
+A rodada 12 estabeleceu que **não existe, em volume, fonte que seja ao mesmo
+tempo autoritativa, em português e sobre emergência**: o que há em PT com
+autoridade é artigo acadêmico avulso, o que há em PT para tutor é de clínica
+comercial, e o que há de bom sobre emergência está em inglês. Este caderno é
+o único candidato que junta instituição séria, português e emergência como
+assunto do livro todo.
+
+**Duas tentativas de leitura automatizada falharam, por motivos diferentes:**
+a página do caderno em `vet.ufmg.br` devolve erro de certificado, e o PDF
+direto passa de 10 MB, acima do limite da ferramenta. Nenhuma das duas é "o
+arquivo não existe" — um navegador baixa normalmente. Por isso ele está em
+[`referencias.md`](../data/curadoria/referencias.md) como **R30**, com
+verificação `bloqueada`, que é a marca de "a fonte é a certa, mas ninguém do
+time leu ainda".
+
+URLs, para quem for baixar:
+`vet.ufmg.br/caderno-tecnico/cadernos-tecnicos-de-veterinaria-e-zootecnia-no-87-emergencia-em-medicina-veterinaria/`
+e o PDF em `vet.ufmg.br/ARQUIVOS/FCK/file/editora/cteletronico 87 Emergencia em Medicina Veterinaria.compressed.pdf`.
+
+**Por que importa.** Sendo um livro com capítulo por quadro clínico, ele pode
+servir **várias linhas do mapa de uma vez**, em vez de uma busca por linha. O
+piloto da rodada 12 levou uma linha do início ao fim; este caderno pode
+encurtar o caminho de muitas.
+
+**Quais linhas, exatamente, é hipótese — não sabemos o sumário**, justamente
+porque as duas tentativas de acesso falharam. O plausível, pelo título e pelo
+escopo, são as linhas de emergência da etapa 1: torção gástrica, convulsão,
+trauma, dificuldade respiratória, obstrução uretral, colapso com gengiva
+pálida, paralisia aguda, os três tóxicos brasileiros (chumbinho, raticida,
+medicamento humano), intermação, neonato, anafilaxia e piometra. Confirmar
+isso é parte do trabalho.
+
+**Uma ressalva que precisa andar junto.** Ele provavelmente resolve o
+problema de **idioma, não o de registro**: é um caderno técnico escrito para
+veterinários, a mesma natureza do artigo do SciELO que, no piloto, ficou como
+"parcial" em cobrir os sinais e "não" em responder o discriminador. O cenário
+realista é ele virar a fonte **PT clínica** de muitas linhas, com o lado
+"para tutor" continuando a vir do inglês. Ainda é ganho grande, porque é o
+lado que hoje está mais fraco — mas não é bala de prata, e o
+[redator de lacuna](../agentes/README.md) continua de pé como caminho para o
+registro de tutor em português.
+
+**O que resolveria.** Alguém baixa o PDF no navegador e o coloca em
+`backend/data/documents/` com ficha, seguindo o
+[roteiro do pesquisador](../agentes/pesquisador.md). Daí em diante o caminho
+já existe: o extrator de PDF do trilho A (o mesmo do paper de heatstroke),
+`--inspect` para ver os capítulos detectados, e `include_sections` escolhendo
+quais entram — provavelmente um recorte por linha do mapa, já que o `topic` é
+um por documento. Vale conferir também a licença de redistribuição antes de
+versionar o PDF.
+
+Critério: **R30 deixa de ser `bloqueada` em `referencias.md`**, com o sumário
+registrado e a lista de linhas do mapa que ele efetivamente cobre — ou, se
+não servir, o motivo escrito, que também é resultado.
 
 ---
 

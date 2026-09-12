@@ -42,7 +42,9 @@ porque nenhuma das duas famílias tem tudo — ver "O dilema idioma × registro"
 **Português, autoridade alta**
 - `site:scielo.br <quadro> cães gatos` — artigos revisados, acesso aberto
 - Cadernos Técnicos de Veterinária e Zootecnia (UFMG/CRMV-MG), índice em
-  `vet.ufmg.br/cadernos-tecnicos/` — PDFs grandes, baixar manualmente
+  `vet.ufmg.br/cadernos-tecnicos/` — PDFs grandes, baixar manualmente. O
+  nº 87 é sobre emergência e pode cobrir várias linhas de uma vez
+  ([B-54](../evidencias/backlog.md#b-54))
 - `site:repositorio.*.br` / `lume.ufrgs.br` / `acervodigital.unesp.br` —
   teses, dissertações e TCCs (confira se há PDF anexo antes de contar com ele)
 - CRMVs: informativos e cartilhas
