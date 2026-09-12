@@ -1264,10 +1264,29 @@ régua. Ela responde de quebra uma pergunta aberta desde 07/09: *a receita de
 picar melhorou a recuperação, ou só mudou?*
 
 **2. Nenhuma fonte curada pode ser indexada antes.** A frente base já tem mapa,
-pesquisador e a primeira linha com fontes capturadas
-([rodada 12](joao/2026-09-12-13-pesquisador.md)). Tudo isso para em
+pesquisador e **duas** linhas com fontes capturadas — torção gástrica e vômito
+isolado ([rodada 12](joao/2026-09-12-13-pesquisador.md)). Tudo isso para em
 `fonte_encontrada` e fica esperando: indexar com o rótulo do B-36 colado no
 texto significaria medir o defeito e remedir tudo depois.
+
+**3. O instrumento que vai medir a virada já existe.** Em 12/09 o `compare` da
+régua ficou pronto ([rodada 13](joao/2026-09-12-14-compare-da-regua.md),
+[B-51](#b-51)): `run_retrieval_eval.py compare A B` produz um `compare.md` com
+cobertura, ordenação caso a caso, ruído, gabarito a atualizar e a porta de
+decisão. Então **o passo 4 desta lista já tem com o que ser medido** — basta
+rodar a régua antes de reindexar, reindexar, rodar depois, e comparar. Sem o
+"antes", a virada acontece sem medição e a pergunta de 07/09 continua aberta.
+
+Dois números que o compare já devolveu e que mudam o que esperar da virada:
+
+- **O ímã reprova a porta hoje.** `trauma_and_bleeding` ocupa o primeiro lugar
+  em metade dos 18 casos, contra o limite de um terço ([B-02](#b-02)). Se a
+  base nova só crescer sem mudar isso, o critério continua reprovado.
+- **O único documento real da base nunca é recuperado** ([B-55](#b-55)): o
+  paper de golpe de calor, com 186 trechos, não aparece no top-5 de caso
+  nenhum. Pode ser falta de caso de régua sobre o assunto, ou pode ser que
+  trecho de artigo não sirva para relato de tutor — e a segunda hipótese é
+  dado direto para o re-ranking.
 
 ### O que exatamente fazer, na ordem, com o que cada passo é
 
@@ -1300,6 +1319,11 @@ mesma imagem, e a do B2 passa a ter `pymupdf` — hoje ela cai no fallback
 comparando o `content_sha256` do `/health/fingerprint`. Os três números iguais
 são a prova de que a virada foi a mesma; diferentes, alguém está com imagem ou
 pasta de documentos diferente.
+
+**E rode a régua antes de reindexar.** É a única janela: depois do `--reset`,
+a base antiga só volta pelo retrato, e sem o "antes" não há o que comparar. A
+sequência é `run_retrieval_eval.py --name antes_da_virada`, reindexar,
+`--name depois_da_virada`, e `compare` entre as duas.
 
 **Depois disso**, os passos 5 e 6 são do B2, e o piloto do agente de ingestão
 acontece sobre a rodada da régua na base nova.
