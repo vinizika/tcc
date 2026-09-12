@@ -97,7 +97,8 @@ aqui.
 | [B-47](#b-47) | Retrato do sistema inclui estado de momento e gera aviso falso | Trilho B2 | Baixa | Aberto |
 | [B-48](#b-48) | Gabarito da régua de recuperação precisa de validação clínica | Trilho A + especialista | Alta | Aberto |
 | [B-49](#b-49) | Régua de recuperação mede pouco enquanto a base e o conjunto forem pequenos | Trilho A + B2 | Média | Aberto |
-| [B-50](#b-50) | Mapa de assuntos: a lista de quadros clínicos que a base cobre e a prova pergunta | Time + especialistas | Alta | Aberto |
+| [B-50](#b-50) | Mapa de assuntos: a lista de quadros clínicos que a base cobre e a prova pergunta | Time + especialistas | Alta | Em andamento — rascunho de 12/09, aguardando revisão e validação |
+| [B-53](#b-53) | Vocabulário de `species` nas fichas da base não é fechado | Trilho A | Baixa | Aberto |
 | [B-51](#b-51) | Ciclo de ingestão num comando, e a régua dizendo o que mudou entre duas rodadas | Trilho B2 | Média | Aberto |
 | [B-52](#b-52) | Fonte de terceiro versionada em repositório público | Time | Alta | Aberto |
 
@@ -1666,7 +1667,7 @@ comparação pareada não depende de a base ser grande.
 
 **Mapa de assuntos: a lista de quadros clínicos que a base cobre e a prova pergunta**
 
-**Identificado por:** João (B2) · **Onde:** [plano das duas frentes](../docs/plano-base-e-prova.md), 12/09 · **Responsável:** Time + especialistas · **Prioridade:** Alta · **Status:** Aberto
+**Identificado por:** João (B2) · **Onde:** [plano das duas frentes](../docs/plano-base-e-prova.md), 12/09 · **Responsável:** Time + especialistas · **Prioridade:** Alta · **Status:** Em andamento — rascunho de 12/09 ([rodada 11](joao/2026-09-12-12-mapa-de-assuntos.md)), aguardando revisão dos três e validação dos especialistas
 
 **O que observamos.** O projeto nunca escreveu quais quadros clínicos a base
 deveria cobrir. A base tem sete protocolos escolhidos para teste técnico; a
@@ -1700,6 +1701,29 @@ dos quatro quadros sem cobertura da régua e de referência publicada de
 triagem; validado pelos especialistas. Critério: onda 1 com 20 a 25 linhas
 validadas, cada uma com status, e cada sinal do `dataset1` caindo em alguma
 linha ou marcado como inespecífico.
+
+**Atualização 12/09 — o rascunho existe, e o critério mudou.** O mapa tem 61
+linhas em [`data/curadoria/mapa-de-assuntos.csv`](../data/curadoria/mapa-de-assuntos.csv),
+com duas colunas que o plano não previa e a pesquisa pediu: `urgencia`, com
+os três níveis do MSD (imediato / até 24 h / rotina), e `discriminador`, a
+pergunta que separa cada quadro do seu par de confusão. O `status` virou
+dois — `cobertura` (tem documento?) e `validacao` (especialista concordou?).
+A checagem é contra **194 termos**, não "~98" (98 é a contagem de linhas).
+E a etapa 1 ficou com **31 linhas**, não 20 a 25, porque a pesquisa mostrou
+apresentações de alta frequência que não cabiam — colapso com gengiva
+pálida, apatia, parvovirose, o par ocular e a permetrina em gato.
+
+**Critério reescrito.** (1) Mapa completo validado pelos especialistas, linha
+a linha, com `validacao` preenchida. (2) Toda linha A da etapa 1 com
+documento aprovado e indexado antes do primeiro marco de medição. (3) A
+decisão de ir à etapa 2 tomada na **porta de decisão** — quando as A
+estiverem indexadas ou em 26/09 — com os critérios pré-registrados no
+[README da pasta](../data/curadoria/README.md), e registrada aqui com data.
+(4) Base congelada com hash antes da ablação de outubro.
+
+O que os especialistas devem olhar primeiro: as linhas `ate_24h`, a primeira
+convulsão como imediato, a espécie da piometra, a prioridade dos três
+tóxicos brasileiros e a linha da exposição à raiva.
 
 ---
 
@@ -1772,6 +1796,31 @@ Critério: repositório privado, e a nota de licença do
 [README da pasta de documentos](../backend/data/documents/README.md) continua
 valendo como lembrete a cada fonte nova. Se o deploy previsto para
 outubro/novembro expuser as fontes ao usuário final, o assunto volta.
+
+---
+
+### B-53
+
+**Vocabulário de `species` nas fichas da base não é fechado**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 11](joao/2026-09-12-12-mapa-de-assuntos.md), 12/09 · **Responsável:** Trilho A · **Prioridade:** Baixa · **Status:** Aberto
+
+**O que observamos.** As oito fichas JSON de `backend/data/documents/` usam
+três grafias para a espécie: `dogs_and_cats` (seis), `cats` (uma) e `dog`
+(uma). O README da base exemplifica com `"species": "dog"`, no singular.
+Não existe `dog_and_cat`, `canine` nem `feline`.
+
+**Por que importa.** O mapa de assuntos confere cobertura **por espécie** —
+é o que distingue o caso b15 da régua (obstrução uretral em cão, com
+protocolo só de gato). O `compare` do agente 2 ([B-51](#b-51)) vai comparar
+o `species` de cada trecho com a coluna `especie` do mapa; com três grafias
+para a mesma coisa, ou ele normaliza singular e plural por conta própria,
+ou conta cobertura errada em silêncio.
+
+**O que resolveria.** O trilho A fecha o vocabulário no README da base (por
+exemplo `dog`, `cat`, `dog_and_cat`) e ajusta as oito fichas; até lá, o
+`compare` normaliza e avisa. Critério: um único valor por espécie em todas as
+fichas, documentado, e o `compare` sem normalização.
 
 ---
 

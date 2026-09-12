@@ -1,0 +1,49 @@
+doenca,id_do_mapa,motivo
+Allergic Rhinitis,mild_upper_respiratory_signs,
+Arthritis,osteoarthritis_stiffness,
+Bordetella Infection,kennel_cough_mild,
+Canine Cough,kennel_cough_mild,
+Canine Distemper,distemper_neurological,
+Canine Flu,kennel_cough_mild,
+Canine Heartworm Disease,excluida,cronica
+Canine Hepatitis,excluida,rara com vacinacao; sem caso na regua
+Canine Infectious Hepatitis,excluida,rara com vacinacao
+Canine Influenza,kennel_cough_mild,
+Canine Leptospirosis,leptospirosis_acute,
+Canine Parvovirus,parvovirus_panleukopenia,
+Chronic Bronchitis,excluida,cronica; a descompensacao cai em respiratory_distress
+Conjunctivitis,mild_conjunctivitis,
+Distemper,distemper_neurological,
+Feline Asthma,respiratory_distress,a crise asmatica felina chega como dispneia
+Feline Calicivirus,mild_upper_respiratory_signs,
+Feline Chlamydia,mild_upper_respiratory_signs,
+Feline Chlamydiosis,mild_upper_respiratory_signs,
+Feline Coronavirus,excluida,cronica
+Feline Herpesvirus,mild_upper_respiratory_signs,
+Feline Immunodeficiency Virus,excluida,cronica
+Feline Infectious Peritonitis,excluida,doenca progressiva; a apresentacao aguda cai em respiratory_distress ou collapse_and_pale_gums
+Feline Leukemia,excluida,cronica
+Feline Leukemia Virus,excluida,cronica; nao e assunto de triagem de urgencia
+Feline Panleukopenia,parvovirus_panleukopenia,
+Feline Panleukopenia Virus,parvovirus_panleukopenia,
+Feline Renal Disease,excluida,cronica
+Feline Respiratory Disease Complex,mild_upper_respiratory_signs,
+Feline Respiratory Infection,mild_upper_respiratory_signs,
+Feline Rhinotracheitis,mild_upper_respiratory_signs,
+Feline Upper Respiratory Infection,mild_upper_respiratory_signs,
+Feline Viral Rhinotracheitis,mild_upper_respiratory_signs,
+Fungal Infection,flea_dermatitis_pruritus,
+Gastroenteritis,vomiting_and_diarrhea,
+Heartworm Disease,excluida,cronica; a descompensacao cai em congestive_heart_failure
+Hyperthyroidism,excluida,cronica
+Inflammatory Bowel Disease,excluida,cronica
+Intestinal Parasites,single_vomiting_or_mild_diarrhea,
+Kennel Cough,kennel_cough_mild,
+Leptospirosis,leptospirosis_acute,
+Lyme Disease,excluida,borreliose e rara no Brasil; a doenca do carrapato relevante aqui e erliquiose e babesiose
+Pancreatitis,vomiting_and_diarrhea,o tutor relata vomito e dor abdominal
+Panleukopenia,parvovirus_panleukopenia,
+Parvovirus,parvovirus_panleukopenia,
+Ringworm,flea_dermatitis_pruritus,dermatofitose: o tutor relata lesao de pele
+Tick-Borne Disease,tick_borne_disease_anemia,
+Upper Respiratory Infection,mild_upper_respiratory_signs,

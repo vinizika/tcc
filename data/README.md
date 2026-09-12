@@ -11,7 +11,10 @@ data/
 ├── dataset1.csv         <- o mesmo, com as colunas usadas
 ├── dataset2.csv         <- Animal Disease Prediction (Kaggle), como baixado
 ├── processed/           <- tudo que os scripts derivam dos dois acima
-└── evaluation/          <- rodadas de avaliação → README próprio
+├── evaluation/          <- rodadas de avaliação → README próprio
+├── retrieval/           <- régua de recuperação → README próprio
+├── curadoria/           <- mapa de assuntos da base → README próprio
+└── voice_benchmark/     <- benchmark de transcrição (WER)
 ```
 
 Regra: os três CSVs de origem **não se editam**. Tudo em `processed/` é

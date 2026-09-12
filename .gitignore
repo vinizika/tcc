@@ -29,6 +29,11 @@ backend/uploads/
 .vscode/
 .idea/
 
+# Claude Code: sessao e configuracao local ficam fora; so os atalhos dos
+# agentes de construcao entram (agentes/README.md).
+.claude/*
+!.claude/agents/
+
 # Bancos vetoriais e backups locais
 backend/data/chroma/
 backend/data/chroma_backup*/

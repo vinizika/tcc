@@ -375,6 +375,12 @@ Requisitos do instrumento — o desenho é de quem vai construir:
 
 Hipóteses, não regras. Quem construir a prova testa, adapta ou descarta.
 
+**Uma que veio do mapa (12/09):** a base pode chegar a cobrir os 61 quadros
+do [mapa de assuntos](../data/curadoria/README.md). Os casos "fora da base"
+da prova, que medem se o sistema sabe ficar quieto, precisam então vir de
+**fora do mapa** — não de linhas que apenas ainda não foram indexadas. O
+mapa diz o que está coberto; a prova escolhe o que não está.
+
 - **Duração e gravidade dentro do texto.** Foi a causa raiz do fracasso do
   CoT: a rubrica pedia julgamento que o dado não permitia. Um relato que diz
   "desde ontem, já foram cinco vezes" mede algo que "Vomiting" não mede.
@@ -492,17 +498,27 @@ esqueleto precisa de quadro clínico, e ele vem de referência publicada.
    edema de face · xixi fora do lugar ↔ obstrução uretral. É aqui que a
    inteligência clínica do projeto fica escrita **uma vez**, servindo à base e
    à prova.
-5. **Colunas:** `id`, `quadro` (PT), `sistema`, `especie`, `classe`,
-   `sinais_que_o_tutor_relata`, `par_de_confusao`, `por_que_entra` (a
-   referência), `prioridade` (A/B/C, por frequência × gravidade), `status`
-   (na base / falta fonte / fonte enviada / validada / indexada), `dono`.
-6. **Checagem cruzada com os datasets:** cada um dos ~98 sinais do `dataset1`
-   cai em pelo menos uma linha, ou é marcado "inespecífico"; cada uma das 48
-   doenças do `dataset2` está coberta ou foi excluída de propósito.
-7. **Ondas.** Onda 1: 20 a 25 linhas — os 7 atuais, os 4 sem cobertura, uns 10
-   pares leves, e os clássicos que faltam (distocia, anafilaxia, engasgo,
-   raticida, hipoglicemia de filhote; golpe de calor já tem fonte). Onda 2
-   depois da virada da base.
+5. **Colunas:** `id` (que **é** o `topic` da ficha JSON), `quadro` (PT),
+   `sistema`, `especie`, `classe` (binária) e `urgencia` (os três níveis do
+   MSD: imediato / até 24 h / rotina), `sinais_que_o_tutor_relata`,
+   `discriminador` (a pergunta que separa do par), `par_de_confusao`,
+   `motivo` e `referencias`, `prioridade` (A/B/C), `etapa`, `cobertura` (o
+   caminho até a base) e `validacao` (o que os especialistas disseram). O
+   detalhe está no [README da pasta](../data/curadoria/README.md).
+6. **Checagem cruzada com os datasets:** cada um dos **194 termos** de
+   sintoma do conjunto de avaliação (98 é o número de linhas, não de sinais)
+   cai em pelo menos uma linha, ou é marcado "inespecífico" com motivo; cada
+   uma das 48 doenças do `dataset2` está coberta ou foi excluída de propósito.
+7. **Etapas e a porta de decisão.** A fila é por prioridade (A → B → C); a
+   etapa 1 (31 linhas: os 8 documentos atuais, os 4 sem cobertura da régua,
+   os tóxicos brasileiros, colapso, parvovirose, o par ocular, a permetrina
+   em gato e a gêmea leve de cada emergência) se busca, aprova e indexa
+   primeiro. **Não decidimos hoje se vamos às 61**: a porta abre quando as
+   linhas A estiverem indexadas ou em 26/09, com critérios escritos antes —
+   velocidade, e o que o `compare` disser sobre ordenação, ímã, ruído e
+   cobertura real. Três saídas: entra a etapa 2; pausa e conserta a
+   ordenação; ou fica na etapa 1. A base congela com hash antes da ablação.
+   Critérios e saídas no [README da pasta](../data/curadoria/README.md).
 8. **Especialistas validam:** acrescentam, cortam, reclassificam, mudam
    prioridade. Só então a lista vira o índice das duas frentes.
 
@@ -525,7 +541,7 @@ registro de como foram usados.
 | **Cartógrafo** | uma vez (por onda) | régua, backlog, referências de triagem | `data/curadoria/mapa-de-assuntos.csv` | sim |
 | **Pesquisador** (agente 1) | uma vez por quadro | uma linha do mapa | `data/curadoria/fontes/<topic>.md` + rascunho da ficha JSON | sim, com busca na web |
 | **Redator de lacuna** | só quando não há fonte | a fonte que existe | resumo do time, `document_type: team_summary` | sim |
-| **Ingestão e retorno** (agente 2) | uma vez por lote | fontes aprovadas | base atualizada + `compare.md` | **não** — é script |
+| **Ingestão e retorno** (agente 2) | uma vez por lote | fontes aprovadas | base atualizada + `compare.md` + rascunho da evidência | **em parte** — o script calcula, o agente conversa (§4.5) |
 
 O detalhe de cada roteiro está em [`agentes/README.md`](../agentes/README.md).
 

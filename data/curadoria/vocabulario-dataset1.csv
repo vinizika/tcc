@@ -1,0 +1,195 @@
+termo,ids_do_mapa,nota
+Abdominal Pain,gastric_dilatation_volvulus;urethral_obstruction;vomiting_and_diarrhea,
+Allergic Reaction,anaphylaxis_facial_swelling;insect_sting_local_reaction,
+Anaemia,collapse_and_pale_gums;allium_toxicosis;tick_borne_disease_anemia,grafia britanica de anemia
+Anemia,collapse_and_pale_gums;allium_toxicosis;tick_borne_disease_anemia,
+Anoxeria,reduced_appetite_no_other_signs,grafia errada de anorexia
+Appetite Loss,reduced_appetite_no_other_signs,
+Appetite Varies,reduced_appetite_no_other_signs,
+Arthritis,osteoarthritis_stiffness,
+Attacks,inespecifico,ambiguo: pode ser crise convulsiva ou agressividade
+Back Pain,acute_hindlimb_paralysis;osteoarthritis_stiffness,
+Bad Smell,periodontal_disease_mild;otitis_externa_mild,
+Black On Ear,otitis_externa_mild;flea_dermatitis_pruritus,
+Black Stool,anticoagulant_rodenticide_poisoning;vomiting_and_diarrhea,melena: sangramento digestivo alto
+Blindness,ocular_emergency,
+Blood In Faces,vomiting_and_diarrhea;parvovirus_panleukopenia,grafia errada de feces
+Blood In Stool,vomiting_and_diarrhea;parvovirus_panleukopenia,
+Blood Stool,vomiting_and_diarrhea;parvovirus_panleukopenia,
+Bloody Drool,trauma_and_bleeding;periodontal_disease_mild,
+Bloody Urine,inappropriate_urination_or_cystitis;urethral_obstruction,
+Blue Eye,ocular_emergency,edema de cornea
+Breathing Difficulty,respiratory_distress,
+Broken Bones,trauma_and_bleeding,
+"Bumps(Black,Grey Or Red)",slow_growing_lump;flea_dermatitis_pruritus,
+Change In Gait,acute_hindlimb_paralysis;osteoarthritis_stiffness;mild_lameness,
+Change Their Normal Behaviour,inespecifico,sinal geral; a AAHA lista mudanca subita de comportamento como alerta
+Chewing,inespecifico,termo truncado no dataset
+Chronic Eye Inflamation,mild_conjunctivitis,grafia errada de inflammation
+Clouded Cornea,ocular_emergency,
+Congestion,mild_upper_respiratory_signs,
+Convulsion,seizures,
+Coughing,kennel_cough_mild;congestive_heart_failure,
+Cramps,tremors_without_seizure;seizures,
+Crusting Of The Skin,flea_dermatitis_pruritus,
+Dandruff,flea_dermatitis_pruritus,
+Dandruff In Cat Coat,flea_dermatitis_pruritus,
+Dark Or Black Face,inespecifico,sem correspondencia clinica clara
+Darkened Skin,flea_dermatitis_pruritus,
+Decrease Appetite,reduced_appetite_no_other_signs,
+Dehydration,vomiting_and_diarrhea;parvovirus_panleukopenia,
+Depression,reduced_appetite_no_other_signs;collapse_and_pale_gums,"sinal geral: o nivel depende do que o acompanha, por isso aponta para os dois lados do par"
+Diarrhea,single_vomiting_or_mild_diarrhea;vomiting_and_diarrhea,
+Diarrhea With Muscus,vomiting_and_diarrhea;parvovirus_panleukopenia,grafia errada de mucus
+Diffculty Breathing,respiratory_distress,grafia errada
+Difficulty In Breathing,respiratory_distress,
+Difficulty Walking,acute_hindlimb_paralysis;mild_lameness;vestibular_syndrome_otitis_interna,
+Diffulty Chewing,periodontal_disease_mild,grafia errada
+Discharge From Eye,mild_conjunctivitis;ocular_emergency,
+Disharge From Affected Eye,mild_conjunctivitis,grafia errada de discharge
+Distended Chest,respiratory_distress,
+Distended Stomach,gastric_dilatation_volvulus,
+Effort To Breath,respiratory_distress,
+Enlarged Lymph Nodes,inespecifico,"achado de exame, nao relato de tutor"
+Enlarged Lymph Nodes Or Swelling,inespecifico,"achado de exame, nao relato de tutor"
+Erythema,flea_dermatitis_pruritus,
+Excessive Grooming,flea_dermatitis_pruritus;inappropriate_urination_or_cystitis,lamber a regiao genital aponta para o trato urinario
+Exessive Urination,polyuria_polydipsia_investigate,grafia errada de excessive
+Eye And Skin Change,inespecifico,termo composto e vago
+Eye Discharge,mild_conjunctivitis,
+Eye Disharge,mild_conjunctivitis,grafia errada
+Eye Movements,vestibular_syndrome_otitis_interna,nistagmo
+Eye Ulcer,ocular_emergency,
+Eyeproblem,inespecifico,termo generico sem espaco
+Facial Swelling,anaphylaxis_facial_swelling,
+Fatty Stool,single_vomiting_or_mild_diarrhea,
+Fell Unwell,reduced_appetite_no_other_signs;collapse_and_pale_gums,"grafia errada; sinal geral: o nivel depende do que o acompanha, por isso aponta para os dois lados do par"
+Fever,inespecifico,sinal geral; tutor raramente mede temperatura
+Firm,inespecifico,termo truncado
+Flatulence,single_vomiting_or_mild_diarrhea,
+Floopy Muscle,fading_neonate;acute_hindlimb_paralysis,grafia errada de floppy
+Foul Breath,periodontal_disease_mild,
+Gasc,inespecifico,termo ilegivel no dataset
+Greenish Yellow Nasal Discharge,mild_upper_respiratory_signs,
+Hair Loss,flea_dermatitis_pruritus,
+Hydrophobia,rabies_exposure_wild_animal_bite,"sinal classico de raiva; a linha do mapa e a exposicao, que e o que o tutor consegue relatar"
+Hyperesthesia,inespecifico,"termo tecnico, nao relato de tutor"
+Inability To Jump,osteoarthritis_stiffness;acute_hindlimb_paralysis,
+Inflamed Nostrils,mild_upper_respiratory_signs,
+Inflammation,inespecifico,termo generico
+Inflammed Eye,mild_conjunctivitis;ocular_emergency,grafia errada
+Intellectual Disability,inespecifico,termo do dataset sem correspondencia em triagem veterinaria
+Jaundice,leptospirosis_acute;allium_toxicosis;human_medication_poisoning,
+Jaw Is Dropped,trauma_and_bleeding,fratura de mandibula
+Joint Pain,osteoarthritis_stiffness;mild_lameness,
+Lack Of Pigmentation,inespecifico,"cronico, nao de triagem"
+Lameness,mild_lameness;trauma_and_bleeding,
+Lesions,flea_dermatitis_pruritus,
+Lesions In The Nasal Cavity,mild_upper_respiratory_signs,
+Lesions On Nose,flea_dermatitis_pruritus,
+Lession On Cat Skin,flea_dermatitis_pruritus,grafia errada de lesion
+Lession On The Skin,flea_dermatitis_pruritus,grafia errada de lesion
+Lethargy,reduced_appetite_no_other_signs;collapse_and_pale_gums,"sinal geral: o nivel depende do que o acompanha, por isso aponta para os dois lados do par"
+Limp,mild_lameness,
+Limping,mild_lameness,
+Liver Disease,inespecifico,"diagnostico, nao sinal observavel pelo tutor"
+Loss Of Appettite,reduced_appetite_no_other_signs,grafia errada
+Loss Of Consciousness,collapse_and_pale_gums;seizures,
+Loss Of Eat,reduced_appetite_no_other_signs,termo truncado
+Lossened Teeth,periodontal_disease_mild,grafia errada de loosened
+Lound Breathing,respiratory_distress;airway_foreign_body_choking,grafia errada de loud
+Lumps,slow_growing_lump,
+Mild Sneezing,mild_upper_respiratory_signs,
+Muscle Pain,inespecifico,sinal geral
+Muscle Stiffness,osteoarthritis_stiffness;eclampsia,
+Nasal,inespecifico,termo truncado
+Nasal Bleeding,anticoagulant_rodenticide_poisoning;trauma_and_bleeding,
+Nasal Discharge,mild_upper_respiratory_signs,
+Nausea,single_vomiting_or_mild_diarrhea,
+Neurologic Abnormalities,inespecifico,termo guarda-chuva
+No Appp,reduced_appetite_no_other_signs,truncado de no appetite
+Noisy Breathing,respiratory_distress;airway_foreign_body_choking,
+Nose Bleeds,anticoagulant_rodenticide_poisoning;trauma_and_bleeding,
+Nosebleeds,anticoagulant_rodenticide_poisoning;trauma_and_bleeding,
+Nuerological,inespecifico,grafia errada de neurological
+Ocular Discharge,mild_conjunctivitis,
+Pain,inespecifico,"sinal geral; dor intensa e nivel imediato no MSD, mas o termo sozinho nao diz"
+Pain On Face,periodontal_disease_mild;ocular_emergency,
+Pain On Leg,mild_lameness;trauma_and_bleeding,
+Painfull,inespecifico,grafia errada de painful
+Pale Gums,collapse_and_pale_gums;allium_toxicosis;anticoagulant_rodenticide_poisoning,
+Periodic Vommiting,single_vomiting_or_mild_diarrhea,grafia errada de vomiting
+Pink Eye,mild_conjunctivitis,
+Pnemonia,respiratory_distress,grafia errada
+Pneumonia,respiratory_distress,
+Polydipsa,polyuria_polydipsia_investigate,grafia errada de polydipsia
+Polyuria,polyuria_polydipsia_investigate,
+Poor Appetite,reduced_appetite_no_other_signs,
+Poor Coat Apperence,flea_dermatitis_pruritus,grafia errada de appearance
+Raised Growth Or Bump,slow_growing_lump,
+Rapid Breathing,respiratory_distress,
+Rapid Heart Rate,collapse_and_pale_gums;chocolate_toxicosis,
+Red And Inflammation Ear,otitis_externa_mild,
+Red Patches,flea_dermatitis_pruritus,
+Reduce Energy,reduced_appetite_no_other_signs;collapse_and_pale_gums,"sinal geral: o nivel depende do que o acompanha, por isso aponta para os dois lados do par"
+Respiratory Distress,respiratory_distress,
+Rubbing Eye,ocular_emergency;mild_conjunctivitis,esfregar o olho sugere dor e ulcera
+Runny Nose,mild_upper_respiratory_signs,
+Salivating,carbamate_organophosphate_poisoning;gastric_dilatation_volvulus;airway_foreign_body_choking,
+Salivation,carbamate_organophosphate_poisoning;gastric_dilatation_volvulus;airway_foreign_body_choking,
+Scabs,flea_dermatitis_pruritus,
+Scaly Patches Of Skin,flea_dermatitis_pruritus,
+Scartch,flea_dermatitis_pruritus,grafia errada de scratch
+Scartching,flea_dermatitis_pruritus,grafia errada de scratching
+Scartching Ear,otitis_externa_mild,grafia errada de scratching
+Seizuers,seizures,grafia errada de seizures
+Seizures,seizures,
+Sensitivity To Bright Light,ocular_emergency,
+Severe Weekness And Depression,collapse_and_pale_gums,grafia errada de weakness
+Shaking Head,otitis_externa_mild,
+Short Term Lethargy,reduced_appetite_no_other_signs;collapse_and_pale_gums,"sinal geral: o nivel depende do que o acompanha, por isso aponta para os dois lados do par"
+Shyness Or Aggression,inespecifico,"mudanca de comportamento: alerta, mas nao aponta quadro"
+Sickness,inespecifico,termo generico
+Skin Irritation,flea_dermatitis_pruritus,
+Skin Issue,flea_dermatitis_pruritus,
+Skin Lesions,flea_dermatitis_pruritus,um dos 5 sintomas leves do conjunto sintetico
+Sneezing,mild_upper_respiratory_signs,um dos 5 sintomas leves do conjunto sintetico
+Sore,inespecifico,termo truncado
+Speech Delay,inespecifico,termo do dataset sem correspondencia veterinaria
+Stiffness,osteoarthritis_stiffness,
+Stomach Growling,single_vomiting_or_mild_diarrhea,
+Stop Drinking,reduced_appetite_no_other_signs,
+Stop Eating,reduced_appetite_no_other_signs,
+Straining,urethral_obstruction;inappropriate_urination_or_cystitis,fazer forca: o discriminador e se sai urina
+Strong Cough,kennel_cough_mild;congestive_heart_failure,
+Sudden Death,inespecifico,"desfecho, nao sinal de triagem"
+Swallowing,airway_foreign_body_choking;gastrointestinal_foreign_body,
+Swelling,inespecifico,generico; o local e a progressao decidem
+Swelling In The Bite Area,insect_sting_local_reaction;snake_and_scorpion_envenomation,
+Swelling Of Face Or Leg,anaphylaxis_facial_swelling,
+Swelling Of Joints,mild_lameness,
+Swelling On Leg,mild_lameness;trauma_and_bleeding,
+Swollen Lymph Nodes,inespecifico,achado de exame
+Tarry Stool,anticoagulant_rodenticide_poisoning;vomiting_and_diarrhea,melena
+Tenderness,inespecifico,achado de exame
+Tensemus,urethral_obstruction;vomiting_and_diarrhea,grafia errada de tenesmus
+Thrist And Urination,polyuria_polydipsia_investigate,grafia errada de thirst
+Tiredness,reduced_appetite_no_other_signs;collapse_and_pale_gums,"sinal geral: o nivel depende do que o acompanha, por isso aponta para os dois lados do par"
+Twitching,tremors_without_seizure;seizures,
+Ulcerated Skin,flea_dermatitis_pruritus,
+Ulcers,inespecifico,"sem local, nao aponta quadro"
+Unable To Eat,periodontal_disease_mild;reduced_appetite_no_other_signs,
+Unable To Exercise,congestive_heart_failure;osteoarthritis_stiffness,
+Upset Stomach,single_vomiting_or_mild_diarrhea,
+Vaginal Discharge,pyometra;normal_estrus,o par de confusao numero 19
+Vomiting,single_vomiting_or_mild_diarrhea;vomiting_and_diarrhea,
+Walking Problem,acute_hindlimb_paralysis;mild_lameness,
+Watering,mild_conjunctivitis,lacrimejamento
+Watery Stool,single_vomiting_or_mild_diarrhea;vomiting_and_diarrhea,
+Week Legs,acute_hindlimb_paralysis,grafia errada de weak
+Week Pulse,collapse_and_pale_gums,grafia errada de weak
+Weekness,reduced_appetite_no_other_signs;collapse_and_pale_gums,"grafia errada; sinal geral: o nivel depende do que o acompanha, por isso aponta para os dois lados do par"
+Weekness In The Back Legs,acute_hindlimb_paralysis,grafia errada de weakness
+Weight Loss,inespecifico,"cronico, nao de triagem"
+Wheezing,respiratory_distress,
+Willnot Run To Jump,osteoarthritis_stiffness,grafia errada de will not
