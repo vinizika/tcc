@@ -49,12 +49,23 @@ quem usa Claude Code, e aponta de volta para cá. O conteúdo não é duplicado.
 | **Cartógrafo** | uma vez por onda | régua de recuperação, backlog, referências de triagem | `data/curadoria/mapa-de-assuntos.csv` | sim | roteiro a escrever |
 | **Pesquisador** | uma vez por quadro clínico | uma linha do mapa | `data/curadoria/fontes/<topic>.md` + rascunho da ficha JSON | sim, com busca na web | roteiro a escrever |
 | **Redator de lacuna** | só quando não há fonte utilizável | a fonte que existe sobre o quadro | resumo do time, marcado `document_type: team_summary` | sim | roteiro a escrever |
-| **Ingestão e retorno** | uma vez por lote aprovado | fontes aprovadas pelos especialistas | base atualizada + `compare.md` da régua | **não** — é script | roteiro a escrever |
+| **Ingestão e retorno** | uma vez por lote aprovado | fontes aprovadas pelos especialistas | base atualizada + `compare.md` da régua + rascunho da evidência | **em parte** — ver abaixo | roteiro a escrever |
 
-O último não usa modelo de propósito: a ingestão precisa sair **igual nas três
-máquinas e conferível por hash**. Um modelo decidindo seções ou reescrevendo
-metadados quebraria as duas coisas. É o mesmo princípio que o projeto já
-segue: onde não precisa de LLM, não se usa.
+O último é o único em que modelo e script dividem o trabalho, e a fronteira
+importa: **o script calcula, o agente conversa.** Os seis passos do ciclo ficam
+empacotados num comando só, porque a base precisa sair **igual nas três
+máquinas e conferível por hash** — um modelo escolhendo comandos na hora, ou
+decidindo seções e reescrevendo metadados, quebraria as duas coisas. O agente
+roda esse comando, diagnostica quando quebra, lê o `compare.md` pronto,
+explica em linguagem simples, liga o resultado ao backlog e rascunha a
+evidência da rodada.
+
+Duas regras entram no roteiro dele antes de qualquer outra: **se uma
+conferência falhar, para e conta — nunca contorna** (o perigo não é errar
+conta, é "ajudar" rodando de novo sem a flag que recusou); e **número citado
+aponta para o arquivo, não para a conversa**. É o mesmo princípio que o
+projeto já segue: onde não precisa de LLM, não se usa — e onde se usa, ele não
+produz o número, comenta o número.
 
 ## O que todo roteiro precisa ter
 

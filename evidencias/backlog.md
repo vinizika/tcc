@@ -98,7 +98,7 @@ aqui.
 | [B-48](#b-48) | Gabarito da régua de recuperação precisa de validação clínica | Trilho A + especialista | Alta | Aberto |
 | [B-49](#b-49) | Régua de recuperação mede pouco enquanto a base e o conjunto forem pequenos | Trilho A + B2 | Média | Aberto |
 | [B-50](#b-50) | Mapa de assuntos: a lista de quadros clínicos que a base cobre e a prova pergunta | Time + especialistas | Alta | Aberto |
-| [B-51](#b-51) | Régua de recuperação não diz o que mudou entre duas rodadas | Trilho B2 | Média | Aberto |
+| [B-51](#b-51) | Ciclo de ingestão num comando, e a régua dizendo o que mudou entre duas rodadas | Trilho B2 | Média | Aberto |
 | [B-52](#b-52) | Fonte de terceiro versionada em repositório público | Time | Alta | Aberto |
 
 ---
@@ -1705,7 +1705,7 @@ linha ou marcado como inespecífico.
 
 ### B-51
 
-**A régua de recuperação não diz o que mudou entre duas rodadas**
+**O ciclo de ingestão não é um comando só, e a régua não diz o que mudou entre duas rodadas**
 
 **Identificado por:** João (B2) · **Onde:** [plano das duas frentes](../docs/plano-base-e-prova.md), 12/09 · **Responsável:** Trilho B2 · **Prioridade:** Média · **Status:** Aberto
 
@@ -1733,6 +1733,15 @@ e, para os casos leves, se a nota máxima subiu) e **gabarito a atualizar**
 (casos marcados "sem cobertura" cujo assunto agora tem documento). Critério:
 recusa comparar quando o `cases.csv` mudou entre as duas rodadas — antes e
 depois só valem sobre os mesmos casos.
+
+**Um passo 0 antes do compare: empacotar o ciclo num comando.** Os seis passos
+(régua antes, inspeção, ingestão, fingerprint, régua depois, compare) são hoje
+seis comandos com flags, hashes e caminhos. Montar a sequência à mão a cada
+lote — ou pedir a um modelo que a monte — faz duas execuções saírem
+diferentes, e aí o antes/depois não compara mais nada. Empacotado, vira
+`ciclo_de_ingestao.py --doc X --name lote3`, e quem o roda não tem como
+variar. Critério: um comando reproduz o ciclo inteiro e **falha alto** quando
+qualquer conferência recusa, em vez de seguir sem ela.
 
 Vale a ressalva do [B-49](#b-49): com o conjunto atual, um lote de três
 documentos costuma mover zero a dois casos. O valor do compare por lote é

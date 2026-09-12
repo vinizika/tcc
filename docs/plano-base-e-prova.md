@@ -254,7 +254,7 @@ veterinárias.
 
 ### 4.5 Agente 2 — indexar e dizer o que melhorou
 
-Seis dos sete passos **já existem no repositório**. O ciclo:
+Cinco dos sete passos **já existem no repositório**. O ciclo:
 
 | # | Passo | Ferramenta | Estado |
 |---|---|---|---|
@@ -264,7 +264,17 @@ Seis dos sete passos **já existem no repositório**. O ciclo:
 | 4 | Conferir que a base mudou como esperado | `GET /health/fingerprint` | ✅ |
 | 5 | Régua **depois**, nos mesmos casos | `run_retrieval_eval.py` | ✅ |
 | 6 | **Comparar** e dizer o que mudou | `compare` da régua | **a fazer** ([B-51](../evidencias/backlog.md#b-51)) |
-| 7 | Escrever o retorno em linguagem simples | opcional, um agente lê o passo 6 | opcional |
+| 7 | Explicar o resultado e rascunhar a evidência | o agente lê o passo 6 | **a fazer** |
+
+**Antes disso, um passo 0: empacotar os passos 1 a 6 num comando só.** Hoje
+são seis comandos com flags, hashes e caminhos. Se cada pessoa montar a
+sequência na hora — ou pedir a um modelo que a monte —, duas execuções saem
+diferentes, e o antes/depois deixa de ser comparável, que é exatamente o que
+o instrumento existe para garantir. Empacotado, o ciclo vira uma linha:
+
+```bash
+python scripts/ciclo_de_ingestao.py --doc torcao_gastrica.pdf --name lote3
+```
 
 **O ciclo inteiro leva de 1 a 3 minutos** — a régua de recuperação não chama o
 modelo de linguagem. (A régua de classificação, que roda os 98 relatos contra
@@ -290,6 +300,40 @@ O que o `compare` devolve:
    documento") e **guarda de regressão** ("nada piorou"). O "melhorou X
    pontos" aparece entre ondas, não a cada documento. É a limitação já
    registrada em [B-49](../evidencias/backlog.md#b-49).
+
+#### Quem faz o quê: o script calcula, o agente conversa
+
+O agente 2 é o único papel em que um modelo e um script trabalham juntos, e a
+fronteira entre os dois precisa ficar explícita:
+
+| | Script | Agente |
+|---|---|---|
+| Roda os seis passos na ordem | ✅ | |
+| Calcula e escreve os números | ✅ | |
+| Recusa quando o hash da base ou dos casos não bate | ✅ | |
+| Executa o comando quando alguém pede | | ✅ |
+| Diagnostica quando quebra ("o backend não está de pé") | | ✅ |
+| Lê o `compare.md` e explica em linguagem simples | | ✅ |
+| Liga o resultado ao backlog e sugere o próximo passo | | ✅ |
+| Rascunha a evidência da rodada | | ✅ |
+
+**A regra que o roteiro precisa trazer em primeiro lugar: se uma conferência
+falhar, o agente para e conta — nunca contorna.** O risco real não é ele errar
+uma conta; é ele "ajudar": ver o `--expect-base-hash` recusar e rodar de novo
+sem a flag. Isso destrói em silêncio a garantia de que o instrumento inteiro
+depende.
+
+**E os números citados em evidência apontam para o arquivo, não para a
+conversa.** O agente pode repetir "Precision@1 subiu de 0,556 para 0,600" à
+vontade; a fonte é o `compare.md` versionado. Mesma disciplina de sempre: sem
+número da régua, é opinião.
+
+**O que o agente acrescenta** que um script não consegue: ligar o resultado ao
+backlog ("o b08 piorou, e é o protocolo-ímã do [B-02](../evidencias/backlog.md#b-02)");
+dizer quando **nada** mudou e isso era o esperado com o conjunto atual
+([B-49](../evidencias/backlog.md#b-49)), que sozinho se lê como "não
+funcionou"; e escrever o rascunho da evidência, que é o ritual do projeto e a
+parte que mais se adia.
 
 ---
 
