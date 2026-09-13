@@ -226,6 +226,7 @@ class ChatPipeline:
         documents: list[RetrievedDocument],
         config: EffectiveConfig,
         rewritten: str | None = None,
+        animal_context: str | None = None,
     ):
         """
         Classifica a urgência do caso a partir do relato e dos trechos.
@@ -242,6 +243,7 @@ class ChatPipeline:
             documents,
             config,
             rewritten,
+            animal_context,
         )
 
         call = self.llm_client.classify(
@@ -333,6 +335,7 @@ class ChatPipeline:
         self,
         question: str,
         options: PipelineOptions | None = None,
+        animal_context: str | None = None,
     ) -> PipelineResult:
 
         start = time.perf_counter()
@@ -378,6 +381,7 @@ class ChatPipeline:
                 for_context,
                 config,
                 plan.rewritten,
+                animal_context,
             )
 
             answer = render(triage)

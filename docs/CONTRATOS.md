@@ -158,7 +158,21 @@ Duas regras de comportamento:
 | `POST /voice/` | B1 | Transcrição de áudio. Campo `audio` (multipart). Recusa o que não é áudio (415) e acima de `MAX_AUDIO_UPLOAD_MB` (413); o arquivo é gravado com nome gerado no servidor e apagado após a resposta |
 | `GET /health/` | — | Verificação de saúde |
 | `GET /health/fingerprint` | B2 | Identidade da versão que respondeu: modelo com digest, hash dos prompts e, da base vetorial, a contagem, o hash dos ids (**recorte**), o hash do conteúdo (**texto e metadados**), o embedder e os parâmetros de chunking. O runner grava no manifesto de cada rodada e o `compare` avisa quando algo difere |
+| `POST /tutors/`, `GET /tutors/{id}`, `GET /tutors/{id}/pets` | B1 | Cadastro do tutor (Supabase). Sem autenticação nesta fase — `id` é a única credencial |
+| `POST /pets/`, `GET /pets/{id}`, `PATCH /pets/{id}` | B1 | Cadastro do pet (Supabase). `pet_id` em `POST /chat/` injeta o cadastro no prompt de triagem (`PetResponse.to_triage_context`) |
+| `GET /conversations/{id}` | B1 | Histórico de uma conversa (MongoDB) |
 | ~~`POST /triagem`~~ | — | **Removida.** Era o classificador antigo, sem RAG |
+
+**Sobre `POST /chat/`:** três campos opcionais e independentes —
+`tutor_id`, `pet_id`, `conversation_id`. `pet_id` busca o cadastro do pet e
+acrescenta um bloco "Dados cadastrais do animal" ao prompt, separado do
+relato do tutor. Qualquer um dos três presentes já grava o turno no
+histórico de conversa e a resposta devolve `conversation_id` para o
+próximo turno reaproveitar. Sem nenhum dos três (o caso do runner de
+avaliação), nada disso roda — comportamento idêntico a antes desta
+extensão existir. Sem Supabase configurado, `pet_id` devolve 503; sem
+MongoDB, o histórico simplesmente não é gravado (`conversation_id` volta
+`null`), sem quebrar a triagem.
 
 ---
 

@@ -225,3 +225,125 @@ class LLMClientFalso:
             completion_tokens=50,
             eval_duration_s=1.0,
         )
+
+
+class _ResultadoSupabaseFalso:
+
+    def __init__(self, data: list[dict]):
+        self.data = data
+
+
+class _TabelaSupabaseFalsa:
+    """
+    Encadeia como o cliente real (`.table(...).insert(...).execute()`), mas
+    guarda tudo em memória. Cobre só o que os serviços usam: insert, select
+    com eq, update com eq — o bastante para TutorService e PetService.
+    """
+
+    def __init__(self, nome: str, armazenamento: dict):
+        self._nome = nome
+        self._armazenamento = armazenamento
+        self._filtros: dict = {}
+        self._payload: dict | None = None
+        self._modo: str | None = None
+
+    def insert(self, payload: dict):
+        self._modo = "insert"
+        self._payload = payload
+        return self
+
+    def update(self, payload: dict):
+        self._modo = "update"
+        self._payload = payload
+        return self
+
+    def select(self, *_colunas):
+        self._modo = "select"
+        return self
+
+    def eq(self, campo: str, valor):
+        self._filtros[campo] = valor
+        return self
+
+    def execute(self) -> _ResultadoSupabaseFalso:
+
+        linhas = self._armazenamento.setdefault(self._nome, [])
+
+        if self._modo == "insert":
+            linha = dict(self._payload)
+            linha.setdefault("id", f"{self._nome}-{len(linhas) + 1}")
+            linha.setdefault("created_at", "2026-01-01T00:00:00Z")
+            if self._nome == "pets":
+                linha.setdefault("updated_at", "2026-01-01T00:00:00Z")
+            linhas.append(linha)
+            return _ResultadoSupabaseFalso([dict(linha)])
+
+        casam = [
+            linha
+            for linha in linhas
+            if all(linha.get(k) == v for k, v in self._filtros.items())
+        ]
+
+        if self._modo == "select":
+            return _ResultadoSupabaseFalso([dict(linha) for linha in casam])
+
+        if self._modo == "update":
+            for linha in casam:
+                linha.update(self._payload)
+            return _ResultadoSupabaseFalso([dict(linha) for linha in casam])
+
+        raise AssertionError(f"modo não suportado pelo dublê: {self._modo}")
+
+
+class SupabaseClientFalso:
+    """
+    Dublê do cliente Supabase. Cada instância tem seu próprio armazenamento,
+    então testes não vazam dados um para o outro.
+    """
+
+    def __init__(self):
+        self._armazenamento: dict = {}
+
+    def table(self, nome: str) -> _TabelaSupabaseFalsa:
+        return _TabelaSupabaseFalsa(nome, self._armazenamento)
+
+
+class _ColecaoMongoFalsa:
+
+    def __init__(self):
+        self._documentos: dict = {}
+
+    def insert_one(self, documento: dict):
+        self._documentos[documento["_id"]] = dict(documento)
+
+    def update_one(self, filtro: dict, atualizacao: dict):
+
+        documento = self._documentos.get(filtro.get("_id"))
+
+        if documento is None:
+            return
+
+        for campo, valor in atualizacao.get("$push", {}).items():
+            novos = valor.get("$each", [valor]) if isinstance(valor, dict) else [valor]
+            documento.setdefault(campo, []).extend(novos)
+
+        documento.update(atualizacao.get("$set", {}))
+
+    def find_one(self, filtro: dict):
+
+        documento = self._documentos.get(filtro.get("_id"))
+
+        return dict(documento) if documento is not None else None
+
+
+class MongoDatabaseFalso:
+    """
+    Dublê de banco Mongo: só o suficiente para ConversationService
+    (inserção, push de mensagens, busca por id).
+    """
+
+    def __init__(self):
+        self._colecoes: dict[str, _ColecaoMongoFalsa] = {}
+
+    def __getitem__(self, nome: str) -> _ColecaoMongoFalsa:
+        return self._colecoes.setdefault(nome, _ColecaoMongoFalsa())

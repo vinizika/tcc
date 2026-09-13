@@ -324,6 +324,7 @@ def build_triage_messages(
     documents: list[RetrievedDocument],
     config: EffectiveConfig,
     rewritten: str | None = None,
+    animal_context: str | None = None,
 ) -> list[dict]:
     """
     Monta as mensagens enviadas ao modelo.
@@ -333,6 +334,8 @@ def build_triage_messages(
     """
 
     if config.prompt_version == "v0_legacy":
+        # Reproduz a medição de 04/05 ao pé da letra — `animal_context` não
+        # entra aqui de propósito, mesmo quando o pet está cadastrado.
         return [
             {
                 "role": "user",
@@ -349,6 +352,15 @@ def build_triage_messages(
     if documents:
         partes.append("Trechos de protocolos veterinários:")
         partes.append(montar_bloco_de_contexto(documents))
+
+    # Vem do cadastro do pet (app/schemas/pet.py), não do relato — por isso
+    # fica separado, como "dado de cadastro" e não como sinal clínico do
+    # tutor. Um pet sem cadastro simplesmente não gera este bloco.
+    if animal_context:
+        partes.append(
+            f"Dados cadastrais do animal, informados previamente pelo "
+            f"tutor:\n{animal_context}"
+        )
 
     # A reescrita da consulta acrescenta interpretação clínica, então por
     # padrão ela não chega ao classificador: isso misturaria a etapa de

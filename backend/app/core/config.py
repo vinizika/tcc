@@ -62,6 +62,24 @@ class Settings(BaseSettings):
     STRUCTURED_OUTPUT_MODE: str = "schema"
 
     # ==========================
+    # Persistência: tutores, pets e histórico de conversa
+    # ==========================
+    # Supabase (Postgres) guarda tutores e pets — dados estruturados, com
+    # relação clara entre as duas tabelas. Vazio por padrão: em
+    # desenvolvimento, sem um projeto criado ainda, as rotas de tutor/pet
+    # devolvem 503 em vez de derrubar o resto da API.
+    SUPABASE_URL: str = ""
+    SUPABASE_KEY: str = ""
+
+    # MongoDB guarda o histórico de conversa — formato varia por turno
+    # (texto ou voz, com ou sem triagem anexada), então não força um schema
+    # relacional. O padrão atende quem roda o backend fora do container; o
+    # compose injeta o endereço do serviço "mongo" (mesmo desenho do
+    # OLLAMA_HOST).
+    MONGODB_URI: str = "mongodb://localhost:27017"
+    MONGODB_DB_NAME: str = "vetai"
+
+    # ==========================
     # Transcrição de voz (Whisper)
     # ==========================
     # Teto do áudio aceito na transcrição. O relato de um tutor em emergência

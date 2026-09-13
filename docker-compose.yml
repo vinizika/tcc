@@ -18,6 +18,10 @@ services:
 
     environment:
       OLLAMA_HOST: http://ollama:11434
+      MONGODB_URI: mongodb://mongo:27017
+
+    depends_on:
+      - mongo
 
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health/')"]
@@ -59,6 +63,23 @@ services:
 
     restart: unless-stopped
 
+  # Histórico de conversa (ConversationService). Sobe local para
+  # desenvolvimento — nada aqui substitui tutores e pets, que ficam no
+  # Supabase (serviço externo, sem container próprio).
+  mongo:
+    image: mongo:7
+
+    container_name: mongo
+
+    ports:
+      - "27017:27017"
+
+    volumes:
+      - mongo_data:/data/db
+
+    restart: unless-stopped
+
 
 volumes:
   ollama_data:
+  mongo_data:

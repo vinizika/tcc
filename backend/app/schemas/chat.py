@@ -21,6 +21,15 @@ class ChatRequest(BaseModel):
     # o backend.
     options: Optional[PipelineOptions] = None
 
+    # Opcionais e independentes entre si. `pet_id` enriquece o prompt com o
+    # cadastro do animal (app/schemas/pet.py); qualquer um dos três presente
+    # já é suficiente para o turno ser gravado no histórico de conversa —
+    # ver ChatService.process. Nenhum dos três muda o comportamento do
+    # runner de avaliação, que nunca os envia.
+    tutor_id: Optional[str] = None
+    pet_id: Optional[str] = None
+    conversation_id: Optional[str] = None
+
     @field_validator("question")
     @classmethod
     def question_nao_pode_ser_so_espaco(cls, value: str) -> str:
@@ -62,3 +71,9 @@ class ChatResponse(BaseModel):
     retrieval: Optional[RetrievalInfo] = None
     timings: Optional[Timings] = None
     debug: Optional[DebugInfo] = None
+
+    # Preenchido quando o turno foi gravado no histórico de conversa (Mongo
+    # configurado e algum de tutor_id/pet_id/conversation_id informado).
+    # O tutor manda de volta no próximo turno para continuar a mesma
+    # conversa; `None` não é erro — só significa que não há histórico.
+    conversation_id: Optional[str] = None

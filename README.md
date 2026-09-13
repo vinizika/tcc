@@ -93,7 +93,15 @@ Confira que funcionou: `curl localhost:8000/health/fingerprint` deve mostrar
 > documento novo está em
 > [`backend/data/documents/README.md`](backend/data/documents/README.md).
 
-**5. Acesse:**
+**5. (Opcional) Cadastro de tutor/pet e histórico de conversa.** O compose já
+sobe um MongoDB local (histórico de conversa funciona de graça). Tutores e
+pets ficam no Supabase, que é externo: crie um projeto em
+[supabase.com](https://supabase.com), rode
+[`backend/supabase_schema.sql`](backend/supabase_schema.sql) no SQL Editor
+dele, e preencha `SUPABASE_URL`/`SUPABASE_KEY` no `.env`. Sem isso, `/chat/`
+funciona normalmente — só `/tutors/` e `/pets/` respondem 503.
+
+**6. Acesse:**
 
 | O quê | Onde |
 |---|---|
@@ -150,6 +158,24 @@ curl -s -X POST localhost:8000/chat/ \
 Outras rotas: `POST /search/` (só a busca), `POST /voice/` (transcrição de
 áudio), `GET /health/`, `GET /health/fingerprint`.
 
+**Tutor, pet e histórico de conversa** (precisa do Supabase configurado —
+passo 5 acima; o histórico usa só o Mongo, que já vem no compose):
+
+```bash
+# cadastra o tutor e o pet
+tutor_id=$(curl -s -X POST localhost:8000/tutors/ -d '{"name": "Ana"}' | jq -r .id)
+pet_id=$(curl -s -X POST localhost:8000/pets/ \
+  -d "{\"tutor_id\": \"$tutor_id\", \"name\": \"Bidu\", \"species\": \"cao\"}" | jq -r .id)
+
+# o pet_id enriquece o prompt com o cadastro; qualquer um dos três ids grava histórico
+curl -s -X POST localhost:8000/chat/ \
+  -d "{\"question\": \"o Bidu vomitou uma vez hoje\", \"pet_id\": \"$pet_id\"}"
+```
+
+A resposta traz `conversation_id` — mande de volta no próximo turno para
+continuar a mesma conversa. Detalhe completo em
+[`docs/CONTRATOS.md`](docs/CONTRATOS.md).
+
 ---
 
 ## Testes
@@ -187,15 +213,15 @@ python scripts/run_evaluation.py --preset naive_rag --subset full --name minha_r
 ```
 backend/
   app/
-    api/          rotas HTTP (chat, search, voice, health)
-    services/     tradução entre a API e o pipeline
+    api/          rotas HTTP (chat, search, voice, health, tutors, pets, conversations)
+    services/     tradução entre a API e o pipeline; tutor/pet/conversation (Supabase e Mongo)
     pipeline/     orquestração da triagem, chaves de liga/desliga, renderização
-    clients/      etapa de consulta (B1), busca (A), classificação (B2)
+    clients/      etapa de consulta (B1), busca (A), classificação (B2), supabase/mongo (B1)
     prompts/      os prompts, versionados (v0_legacy, v1_grounded)
     schemas/      contratos de entrada e saída (Pydantic)
     core/         configuração, cliente Ollama, logger
     database/     ChromaDB e ingestão dos documentos (A)
-    ai/whisper/   transcrição de voz (B1)
+  supabase_schema.sql  DDL de tutors/pets — rodar uma vez no projeto Supabase
   data/documents/ a base de conhecimento: PDFs + metadados em JSON
   tests/          testes do backend
 frontend/         interface Streamlit (o compose sobe main.py)

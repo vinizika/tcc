@@ -102,6 +102,7 @@ aqui.
 | [B-54](#b-54) | Baixar à mão o Caderno Técnico nº 87 da UFMG, a melhor fonte brasileira que temos | Time | Média | Aberto |
 | [B-55](#b-55) | O único documento real da base nunca é recuperado | Trilho A | Média | Aberto |
 | [B-51](#b-51) | Ciclo de ingestão num comando, e a régua dizendo o que mudou entre duas rodadas | Trilho B2 | Média | Em andamento — compare feito em 12/09; falta o passo 0 |
+| [B-56](#b-56) | Cadastro de tutor/pet sem autenticação real e com política aberta no Supabase | Trilho B1 | Média | Aberto |
 | [B-52](#b-52) | Fonte de terceiro versionada em repositório público | Time | Alta | Aberto |
 
 ---
@@ -2093,6 +2094,32 @@ não aparecer, a resposta é a segunda hipótese, e isso é dado forte para o
 re-ranking e para a decisão de que tipo de fonte entra na base. Critério: um
 caso de golpe de calor no `cases.csv`, e o `compare` dizendo se
 `canine_heatstroke` passou a ser encontrável.
+
+---
+
+### B-56
+
+**Cadastro de tutor/pet sem autenticação real e com política aberta no Supabase**
+
+**Identificado por:** Ryu (B1) · **Onde:** evidência da persistência de tutor/pet/histórico, 13/09 · **Responsável:** Trilho B1 · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** As rotas `/tutors/` e `/pets/` (Supabase) não exigem
+login: qualquer chamada cria ou lê qualquer tutor/pet sabendo o `id`. O
+`supabase_schema.sql` liga RLS (correto, é o padrão seguro do Supabase) mas
+com uma política `using (true)` — equivalente, na prática, a não ter RLS.
+Decisão deliberada para a fase de desenvolvimento (item 1 da conversa que
+motivou esta frente), registrada aqui para não virar suposição de que
+ninguém pensou nisso.
+
+**Por que importa.** Enquanto o projeto roda só localmente/em dev, o risco é
+baixo. Vira problema no dia em que a API for exposta (VPS, seção K do
+TCC1) com dados reais de tutores — LGPD é citada explicitamente no artigo.
+
+**O que resolveria.** Antes de qualquer exposição pública com dados reais:
+autenticação de tutor (Supabase Auth já vem pronto no projeto criado) e
+reescrever as políticas de RLS para `tutor_id = auth.uid()` (ou equivalente).
+Critério: um tutor autenticado não consegue ler nem escrever pet de outro
+tutor.
 
 ---
 
