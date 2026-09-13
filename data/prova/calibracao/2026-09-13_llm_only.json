@@ -1,0 +1,193 @@
+{
+  "gerado_em": "2026-09-13 12:01 UTC",
+  "commit": "17f1eeb",
+  "config": {
+    "retrieval_enabled": false,
+    "prompt_version": "v1_grounded",
+    "temperature": 0.0,
+    "seed": 42
+  },
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "prompt_sem_contexto_sha256": "05436e8a47d49bc496559ab06d9b3052e9e221c219ac56d73a8844ef26744e3f",
+  "n_casos": 18,
+  "acertos": 15,
+  "resultados": [
+    {
+      "id": "p01",
+      "expected": "EMERGENCIA",
+      "predicted": "EMERGENCIA",
+      "acerto": true,
+      "justificativa": "O cachorro está apresentando sintomas graves, como convulsões, tremer e babar muito, o que indica uma possibilidade de envenenamento por isca. É necessário atendimento médico imediato para evitar complicações.",
+      "sinais": [
+        "convulsão",
+        "tremor",
+        "babar muito"
+      ]
+    },
+    {
+      "id": "p02",
+      "expected": "NAO_EMERGENCIA",
+      "predicted": "NAO_EMERGENCIA",
+      "acerto": true,
+      "justificativa": "O cachorro está comendo e brincando normalmente, o que indica que não há sinais de dor ou desconforto grave. Além disso, a ausência de perda de equilíbrio ou caída, apesar da coceira na orelha, sugere que o problema pode ser leve e não requer atendimento imediato.",
+      "sinais": []
+    },
+    {
+      "id": "p03",
+      "expected": "EMERGENCIA",
+      "predicted": "EMERGENCIA",
+      "acerto": true,
+      "justificativa": "O relato traz sinais de dor intensa e instabilidade no movimento do cachorro, o que indica um risco à vida. A cabeça torta e a incapacidade de andar direito são preocupantes, e a tremedura nos olhos sugere dor intensa. É necessário atendimento imediato.",
+      "sinais": [
+        "cabeça torta",
+        "inabilidade de andar direito",
+        "olhos tremendo sem parar"
+      ]
+    },
+    {
+      "id": "p04",
+      "expected": "NAO_EMERGENCIA",
+      "predicted": "NAO_EMERGENCIA",
+      "acerto": true,
+      "justificativa": "O relato não menciona sinais de sofrimento intenso ou risco à vida. O fato de o cachorro estar comendo e brincando normalmente sugere que não há sinais graves de problemas de saúde. No entanto, é importante monitorar o comportamento do animal e procurar atendimento veterinário se os sintomas piorarem ou se o animal apresentar outros sinais de doença.",
+      "sinais": []
+    },
+    {
+      "id": "p05",
+      "expected": "EMERGENCIA",
+      "predicted": "NAO_EMERGENCIA",
+      "acerto": false,
+      "justificativa": "O relato não traz sinais de risco à vida ou sofrimento intenso. A administração de medicamento sem orientação veterinária e a ocorrência de vômito e arroxeamento das gengivas podem ser sinais de efeitos colaterais ou reações adversas, mas não indicam uma emergência imediata. Informação adicional ajudaria a tomar uma decisão mais precisa.",
+      "sinais": [
+        "vômito",
+        "arroxeamento das gengivas"
+      ]
+    },
+    {
+      "id": "p06",
+      "expected": "NAO_EMERGENCIA",
+      "predicted": "NAO_EMERGENCIA",
+      "acerto": true,
+      "justificativa": "O gato vomitou uma bola de pelo, mas voltou a comer normalmente e está brincando, o que sugere que o problema pode ser leve e não há sinais de sofrimento intenso ou risco à vida imediato.",
+      "sinais": []
+    },
+    {
+      "id": "p07",
+      "expected": "EMERGENCIA",
+      "predicted": "NAO_EMERGENCIA",
+      "acerto": false,
+      "justificativa": "O cachorro está sem fazer escândalo e não há outros sinais de doença. No entanto, a tentativa de vomitar várias vezes e a barriga estufada são preocupantes e devem ser investigadas. É importante procurar atendimento veterinário para uma avaliação mais detalhada.",
+      "sinais": [
+        "vomitar várias vezes",
+        "barriga estufada"
+      ]
+    },
+    {
+      "id": "p08",
+      "expected": "EMERGENCIA",
+      "predicted": "NAO_EMERGENCIA",
+      "acerto": false,
+      "justificativa": "O gato está fazendo força para sair da caixinha de areia, mas não há sinais de dor ou desconforto agudo. Além disso, a saída de xixi é limitada, mas não há informações sobre outros sintomas graves. É possível que o gato esteja apenas se esforçando para sair da caixinha ou tenha uma necessidade fisiológica não atendida.",
+      "sinais": []
+    },
+    {
+      "id": "p09",
+      "expected": "NAO_EMERGENCIA",
+      "predicted": "NAO_EMERGENCIA",
+      "acerto": true,
+      "justificativa": "O gato está exibindo comportamento anormal de urinação, mas não há sinais de dor ou esforço. Além disso, a ausência de outros sintomas, como febre, perda de apetite ou dificuldade para se mover, sugere que o problema pode ser leve e não requer atendimento imediato.",
+      "sinais": []
+    },
+    {
+      "id": "p10",
+      "expected": "EMERGENCIA",
+      "predicted": "EMERGENCIA",
+      "acerto": true,
+      "justificativa": "O relato do tutor indica que a cadela está apresentando sintomas graves, como corrimento com pus saindo pela vulva, o que pode ser um sinal de infecção ou infecção sexual transmitida por cães (EST). Além disso, a falta de ânimo e o aumento da água bebida podem ser sinais de desidratação e desidratação aguda. É fundamental que a cadela seja levada a um veterinário o mais rápido possível para um diagnóstico e tratamento adequados.",
+      "sinais": [
+        "corrimento com pus saindo pela vulva",
+        "falta de ânimo",
+        "desidratação",
+        "desidratação aguda"
+      ]
+    },
+    {
+      "id": "p11",
+      "expected": "NAO_EMERGENCIA",
+      "predicted": "NAO_EMERGENCIA",
+      "acerto": true,
+      "justificativa": "Embora o sangramento e a inchaço sejam sinais preocupantes, a cadela está ativa, comendo e brincando normalmente. Isso sugere que o animal não está em um estado de sofrimento intenso ou em risco à vida. No entanto, é importante consultar um veterinário para uma avaliação mais detalhada e orientação sobre o que fazer em seguida.",
+      "sinais": [
+        "sangramento",
+        "inchaço"
+      ]
+    },
+    {
+      "id": "p12",
+      "expected": "EMERGENCIA",
+      "predicted": "EMERGENCIA",
+      "acerto": true,
+      "justificativa": "O gato está gritando de dor e a respiração está acelerada, indicando sofrimento intenso e potencial risco à vida. Além disso, a imobilidade das patas de trás é um sinal grave que requer atendimento imediato.",
+      "sinais": [
+        "Grito de dor",
+        "Respiração acelerada",
+        "Imobilidade das patas de trás"
+      ]
+    },
+    {
+      "id": "p13",
+      "expected": "NAO_EMERGENCIA",
+      "predicted": "NAO_EMERGENCIA",
+      "acerto": true,
+      "justificativa": "O relato do tutor indica que o cachorro está com dificuldade para levantar, mas melhora após começar a andar e ainda consegue subir a escadinha. Isso sugere que o animal está lidando com uma limitação física, mas não há sinais de sofrimento intenso ou risco à vida imediato.",
+      "sinais": []
+    },
+    {
+      "id": "p14",
+      "expected": "EMERGENCIA",
+      "predicted": "EMERGENCIA",
+      "acerto": true,
+      "justificativa": "O cachorro latiu de repente e a pata da frente começou a inchar rapidamente, indicando dor e possivelmente uma lesão grave. É importante procurar atendimento veterinário imediatamente.",
+      "sinais": [
+        "latido de repente",
+        "inchaço rápido na pata da frente"
+      ]
+    },
+    {
+      "id": "p15",
+      "expected": "INCERTO",
+      "predicted": "INCERTO",
+      "acerto": true,
+      "justificativa": "O relato do tutor não traz informação suficiente para decidir sobre a gravidade do caso. A expressão 'meio estranho' é vaga e não fornece detalhes sobre os sintomas ou comportamentos do gato que possam indicar uma condição específica ou emergência.",
+      "sinais": []
+    },
+    {
+      "id": "p16",
+      "expected": "NAO_EMERGENCIA",
+      "predicted": "NAO_EMERGENCIA",
+      "acerto": true,
+      "justificativa": "O comportamento do cachorro de destruir sapatos e latir quando o dono sai para trabalhar é comum em cães que não estão adequadamente treinados ou que têm ansiedade. No entanto, é importante monitorar a intensidade do latido e a duração do comportamento, pois pode ser um sinal de ansiedade ou estresse. Se o comportamento for leve e não causar estresse, pode ser considerado normal. No entanto, se o latido for intenso ou persistente, é recomendável consultar um veterinário para avaliar a saúde do cachorro.",
+      "sinais": []
+    },
+    {
+      "id": "p17",
+      "expected": "EMERGENCIA",
+      "predicted": "EMERGENCIA",
+      "acerto": true,
+      "justificativa": "O relato menciona que o olho do cachorro saltou para fora, o que é um sinal grave de lesão ocular. Além disso, a inchaço ao redor do olho e a impossibilidade de fechar a pálpebra indicam uma lesão potencialmente grave que requer atendimento médico imediato.",
+      "sinais": [
+        "olho saltou para fora",
+        "inchaço ao redor do olho",
+        "impossibilidade de fechar a pálpebra"
+      ]
+    },
+    {
+      "id": "p18",
+      "expected": "NAO_EMERGENCIA",
+      "predicted": "NAO_EMERGENCIA",
+      "acerto": true,
+      "justificativa": "O gato está com um olho vermelho e uma remela amarelada, mas o olho abre normal e o animal não apresenta sintomas de dor ou desconforto. Além disso, continua comendo e brincando normalmente, o que sugere que o problema pode não ser grave.",
+      "sinais": []
+    }
+  ]
+}
