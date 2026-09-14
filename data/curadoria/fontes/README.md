@@ -23,12 +23,13 @@ A coluna `cobertura` do mapa diz onde cada quadro está:
 | `sintetico` | Tem o protocolo de teste, que não é fonte real | **Pesquisador** |
 | `fonte_encontrada` | Dossiê e captura existem; ninguém validou | quem leva a `PARA-VALIDAR.md` ao especialista |
 | `fonte_enviada` | Está na mesa do especialista | **Especialista** |
-| `fonte_aprovada` | Ele disse sim; pode ser indexada | **Agente de ingestão** |
+| `fonte_aprovada` | Especialista e direitos registrados; pode ser candidata à indexação | **Agente de ingestão** |
 | `indexada` | Está no ChromaDB e a régua já mediu | — |
 
 Nada pula etapa. Em particular: **arquivo em `capturas/` não é documento da
 base.** A cópia para `backend/data/documents/` acontece uma vez, depois da
-aprovação, e é do agente de ingestão. O pesquisador só copia temporariamente
+aprovação, e é do agente de ingestão. O agente não concede essa aprovação:
+apenas confere se ela já foi registrada. O pesquisador só copia temporariamente
 para rodar `--inspect`, e apaga em seguida.
 
 ## Como uma fonte é capturada

@@ -217,12 +217,14 @@ já existem ou estão previstas:
 
 ### 4.3 Antes da primeira ingestão
 
-Dois itens do trilho A são pré-requisito, e não é burocracia:
+Os pré-requisitos técnicos foram reconstruídos em 13/09; a aprovação das
+fontes continua humana:
 
 | Item | O quê | Por que antes |
 |---|---|---|
-| [B-36](../evidencias/backlog.md#b-36) | Cada trecho novo recebe `Document title: … Section: …` colado no texto, e esse texto chega ao prompt | É como fotocopiar uma página com um carimbo em cima do texto. Indexar fontes novas antes de corrigir é medir o defeito, não o documento |
-| [B-37](../evidencias/backlog.md#b-37), passos 2–4 | A "virada": a base viva ainda é a antiga, de 18 trechos, que não se reproduz mais. Trocar pela nova nas três máquinas, conferindo que o `content_sha256` bate | Sem isso, cada máquina gera uma base diferente e o time acha que mede a mesma coisa |
+| [B-36](../evidencias/backlog.md#b-36) | ✅ corpo limpo separado do texto usado no embedding | Evita que os rótulos de título/seção cheguem ao prompt |
+| [B-30](../evidencias/backlog.md#b-30) | ✅ staging, manifesto, hashes, ativação explícita e rollback | Uma falha não substitui nem deixa parcial a coleção ativa |
+| [B-37](../evidencias/backlog.md#b-37) | ⏳ virada e medição da base curada | Só acontece depois de aprovação clínica e direitos registrados |
 
 **A sequência detalhada, passo a passo, com o que é cada um e o que quebra se
 for pulado, está no próprio [B-37](../evidencias/backlog.md#b-37)** — escrita
@@ -269,26 +271,24 @@ veterinárias.
 
 ### 4.5 Agente 2 — indexar e dizer o que melhorou
 
-Cinco dos sete passos **já existem no repositório**. O ciclo:
+Todos os passos mecânicos existem no repositório. O ciclo:
 
 | # | Passo | Ferramenta | Estado |
 |---|---|---|---|
 | 1 | Régua **antes** | `scripts/run_retrieval_eval.py --expect-base-hash …` | ✅ |
 | 2 | Inspecionar o documento sem tocar no banco | `ingest_documents --inspect --file X` | ✅ |
-| 3 | Indexar | `ingest_documents` | ✅ |
+| 3 | Criar candidata sem ativar | `ingest_documents --profile curated --stage-only` | ✅ |
 | 4 | Conferir que a base mudou como esperado | `GET /health/fingerprint` | ✅ |
 | 5 | Régua **depois**, nos mesmos casos | `run_retrieval_eval.py` | ✅ |
 | 6 | **Comparar** e dizer o que mudou | `run_retrieval_eval.py compare A B` | ✅ 12/09 ([rodada 13](../evidencias/joao/2026-09-12-14-compare-da-regua.md)) |
 | 7 | Explicar o resultado e rascunhar a evidência | o agente lê o passo 6 | **a fazer** |
 
-**Antes disso, um passo 0: empacotar os passos 1 a 6 num comando só.** Hoje
-são seis comandos com flags, hashes e caminhos. Se cada pessoa montar a
-sequência na hora — ou pedir a um modelo que a monte —, duas execuções saem
-diferentes, e o antes/depois deixa de ser comparável, que é exatamente o que
-o instrumento existe para garantir. Empacotado, o ciclo vira uma linha:
+**O passo 0 foi entregue em 13/09.** O comando apenas mostra o plano por
+padrão; executar e ativar são decisões explícitas:
 
 ```bash
-python scripts/ciclo_de_ingestao.py --doc torcao_gastrica.pdf --name lote3
+python scripts/run_ingestion_cycle.py --name lote3 --profile curated
+python scripts/run_ingestion_cycle.py --name lote3 --profile curated --execute --activate
 ```
 
 **O ciclo inteiro leva de 1 a 3 minutos** — a régua de recuperação não chama o
@@ -299,7 +299,7 @@ O que o `compare` devolve:
 
 | Bloco | O que mostra | Por que importa |
 |---|---|---|
-| **Cobertura** | Quais quadros do mapa passaram a ter documento; quais ainda faltam | É o progresso da curadoria, em número |
+| **Cobertura** | Tópicos realmente novos, cobertos para a espécie e devolvidos em casos que os esperam | É o progresso da curadoria, sem contar mera presença no índice |
 | **Ordenação** | Δ Precision@1, Δ MRR e a **tabela caso a caso**: posição antes → depois, marcada melhorou / piorou / igual | Uma base maior pode **piorar** a ordenação; a tabela pareada mostra exatamente onde |
 | **Ruído** | Δ concentração do protocolo-ímã · Δ casos acima do corte · para os casos **leves**, a nota máxima subiu (ruim) ou desceu (bom) | É o mecanismo que custou 22 falsos não urgentes, vigiado a cada lote |
 | **Gabarito a atualizar** | Casos marcados "sem cobertura" cujo assunto agora tem documento | O `expected_topics` daquele caso precisa mudar — o compare avisa em vez de alguém lembrar |
@@ -582,7 +582,7 @@ relatos. Mais que isso não cabe em três semanas.
 |---|---|
 | **João (B2)** | Construção dos agentes e dos roteiros · mapa de assuntos (rascunho) · `compare` da régua · casos de régua dos quadros novos · revisão da mudança no runner |
 | **Ryu (B1)** | Frente prova inteira: desenho, casos, gabarito, adaptação do runner |
-| **Vinicius (A)** | O caminho até a primeira indexação, nesta ordem: [B-36](../evidencias/backlog.md#b-36) (o rótulo dentro do trecho) · [B-35](../evidencias/backlog.md#b-35) (fechar ou declarar a extração de PDF) · Torch CPU e rebuild nas três máquinas · a virada ([B-37](../evidencias/backlog.md#b-37) passo 4). Depois: [B-30](../evidencias/backlog.md#b-30), antes do primeiro lote curado, e o re-ranking. **Passo a passo detalhado no [B-37](../evidencias/backlog.md#b-37)** |
+| **Vinicius (A)** | Segurança técnica reconstruída: [B-30](../evidencias/backlog.md#b-30), [B-31](../evidencias/backlog.md#b-31), [B-36](../evidencias/backlog.md#b-36), receita fixa e Torch CPU. Pendentes: decisão do [B-35](../evidencias/backlog.md#b-35), virada curada/medição do [B-37](../evidencias/backlog.md#b-37) e re-ranking |
 | **Qualquer um dos três** | Rodar o agente 1 (achar fontes) e o agente 2 (indexar e comparar) quando estiver trabalhando na base |
 | **Especialistas** | Validar o mapa de assuntos · dizer se cada fonte serve · validar os rótulos da prova |
 
@@ -616,8 +616,8 @@ Nesta ordem, porque cada um alimenta o seguinte:
 | # | O quê | Produz | Quem |
 |---|---|---|---|
 | 1 | **Mapa de assuntos** | Roteiro do cartógrafo em `agentes/` + primeiro rascunho de `data/curadoria/mapa-de-assuntos.csv` | João rascunha; os três revisam |
-| 2 | **Roteiros dos agentes** | `agentes/pesquisador.md`, `agentes/ingestao.md`, `agentes/redator-de-lacuna.md` e os atalhos em `.claude/agents/` | João |
-| 3 | **`compare` da régua** | O retorno por lote do agente 2 ([B-51](../evidencias/backlog.md#b-51)) | João |
+| 2 | **Roteiros dos agentes** | pesquisador e ingestão prontos; redator de lacuna ainda pendente | João / Vinicius |
+| 3 | **`compare` e ciclo da régua** | ✅ compare conservador e comando fail-stop ([B-51](../evidencias/backlog.md#b-51)) | João / Vinicius |
 | 4 | **Frente prova** | A partir da [seção 5](#5-frente-prova) | Ryu |
 
 Os quatro cabem na primeira semana, e nenhum deles chama o modelo de

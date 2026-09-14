@@ -312,8 +312,56 @@ def test_retrato_descreve_o_embedder_e_o_chunking(monkeypatch):
     )
 
     assert "MiniLM" in base["embedding_model"]
+    assert len(base["embedding_revision"]) == 40
+    assert len(base["recipe_sha256"]) == 64
     assert base["chunking"]["target_tokens"] > 0
     assert base["chunking"]["max_tokens"] > 0
+
+
+def test_retrato_preserva_inventario_e_manifesto_da_rodada(monkeypatch):
+    modulo = sys.modules["app.database.chroma_client"]
+    collection = ColecaoComConteudo(
+        ["c1", "c2"],
+        ["texto 1", "texto 2"],
+        [
+            {
+                "topic": "heatstroke",
+                "species": "dog",
+                "source_file": "paper.pdf",
+                "validation_status": "pending_specialist",
+            },
+            {
+                "topic": "heatstroke",
+                "species": "dog",
+                "source_file": "paper.pdf",
+                "validation_status": "pending_specialist",
+            },
+        ],
+    )
+    monkeypatch.setattr(
+        modulo.ChromaDBClient,
+        "get_collection",
+        staticmethod(lambda: collection),
+    )
+    monkeypatch.setattr(
+        modulo.ChromaDBClient,
+        "load_manifest",
+        staticmethod(
+            lambda name, required=False: {
+                "profile": "experimental",
+                "sources": {"source_set_sha256": "fontes"},
+            }
+        ),
+        raising=False,
+    )
+
+    base = FingerprintService._base_vetorial()
+
+    assert base["document_count"] == 1
+    assert base["topic_counts"] == {"heatstroke": 2}
+    assert base["species_counts_by_topic"] == {"heatstroke": {"dog": 2}}
+    assert base["source_set_sha256"] == "fontes"
+    assert base["profile"] == "experimental"
 
 
 def test_base_indisponivel_nao_derruba_a_resposta(cliente, monkeypatch):

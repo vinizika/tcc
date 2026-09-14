@@ -36,7 +36,7 @@ O que a busca devolve, por trecho:
 |---|---|
 | `chunk_id` | Identifica o trecho exato; usado para marcar quais embasaram a resposta |
 | `title` | Vai ao prompt e aparece na resposta ao tutor |
-| `content` | O texto que entra no prompt |
+| `content` | Corpo limpo que entra no prompt; não inclui os prefixos de título/seção usados somente no embedding |
 | `source` | Arquivo de origem, exibido junto do título |
 | `score` | Similaridade; decide o corte e vai nas métricas |
 | `topic` | **O assunto do documento.** Identificador estável, em inglês e snake_case (`chocolate_toxicosis`, `urethral_obstruction`). Vem do sidecar JSON da fonte. Acrescentado em 12/09 (`74c6dfa`) |
@@ -69,9 +69,13 @@ com o `topic` de uma linha do mapa; assunto novo ganha linha no mapa antes de
 ser indexado. O teste `scripts/tests/test_mapa_de_assuntos.py` recusa as duas
 situações, e é a rede de segurança disso.
 
-`species` **não** é exposto pela busca, e por enquanto não precisa ser: a
-cobertura por espécie é conferida na ingestão, contra o sidecar. O vocabulário
-dele ainda não é fechado ([B-53](../evidencias/backlog.md#b-53)).
+`species` é persistido no metadado vetorial e no fingerprint por tópico. O
+vocabulário fechado é `dog`, `cat` e `dog_and_cat`. O compare só considera um
+tópico coberto quando o inventário daquela rodada cobre a espécie esperada e
+o tópico é devolvido num caso que realmente o espera ([B-53](../evidencias/backlog.md#b-53)).
+
+Cada rodada deve preservar o fingerprint da sua própria coleção. Ler sidecars
+atuais para explicar uma rodada antiga é proibido: eles podem ter mudado.
 
 ## 3. Resposta de triagem — B2 → runner e frontend
 

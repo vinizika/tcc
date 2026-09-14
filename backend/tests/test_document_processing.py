@@ -239,6 +239,7 @@ def test_metadados_adicionais_e_de_chunk_sao_preservados():
     assert result["page_start"] == 4
     assert result["page_end"] == 5
     assert result["token_count"] == 20
+    assert result["body"] == "text"
 
 
 def test_documento_sem_json_usa_defaults_neutros(tmp_path, caplog):

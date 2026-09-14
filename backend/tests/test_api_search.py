@@ -157,3 +157,37 @@ def test_trecho_sem_metadado_de_procedencia_nao_quebra(cliente, monkeypatch):
 
     assert documento["topic"] == ""
     assert documento["source_file"] == ""
+
+
+@pytest.mark.parametrize(
+    "metadata,stored,expected",
+    [
+        ({"body": "corpo limpo"}, "Document title: X\nSection: Y\n\ncorpo limpo", "corpo limpo"),
+        ({}, "texto legado", "texto legado"),
+    ],
+)
+def test_cliente_separa_corpo_do_embedding_e_preserva_legado(
+    monkeypatch, metadata, stored, expected
+):
+    from app.clients.retrieval_client import RetrievalClient
+    from app.database.chroma_client import ChromaDBClient
+
+    class Collection:
+        def count(self):
+            return 1
+
+        def query(self, **kwargs):
+            return {
+                "ids": [["c1"]],
+                "documents": [[stored]],
+                "metadatas": [[metadata]],
+                "distances": [[0.1]],
+            }
+
+    monkeypatch.setattr(
+        ChromaDBClient,
+        "get_collection",
+        staticmethod(lambda: Collection()),
+    )
+
+    assert RetrievalClient.retrieve(["consulta"])[0].content == expected

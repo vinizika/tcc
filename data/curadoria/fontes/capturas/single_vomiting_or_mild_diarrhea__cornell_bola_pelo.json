@@ -3,6 +3,7 @@
   "source": "Cornell Feline Health Center",
   "document_type": "owner_guidance",
   "validation_status": "pending_specialist",
+  "ingestion_scope": "curated_candidate",
   "species": "cat",
   "topic": "single_vomiting_or_mild_diarrhea",
   "language": "en",
@@ -23,6 +24,12 @@
   "specialist": {
     "verdict": "",
     "name": "",
+    "date": ""
+  },
+  "rights": {
+    "status": "pending_review",
+    "basis": "",
+    "checked_by": "",
     "date": ""
   }
 }

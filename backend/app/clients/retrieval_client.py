@@ -77,7 +77,10 @@ class RetrievalClient:
                         "title",
                         "Documento sem título"
                     ),
-                    content=content,
+                    # Coleções novas armazenam o texto contextualizado para
+                    # embedding e o corpo limpo nos metadados. O fallback
+                    # mantém snapshots legados legíveis.
+                    content=metadata.get("body", content),
                     source=metadata.get(
                         "source",
                         "Fonte não informada"

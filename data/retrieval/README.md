@@ -148,8 +148,9 @@ python scripts/run_retrieval_eval.py compare <rodada antes> <rodada depois>
 ```
 
 Sai um `compare__vs_<rodada antes>.md` na pasta da rodada **depois**, com
-cinco blocos: **cobertura** (quais quadros do mapa passaram a ter documento
-encontrável), **ordenação** (a tabela pareada, caso a caso), **ruído** (o
+cinco blocos: **cobertura** (quais quadros do inventário preservado em cada
+fingerprint passaram a ter documento da espécie esperada e encontrável num
+caso que espera aquele tópico), **ordenação** (a tabela pareada, caso a caso), **ruído** (o
 protocolo-ímã, os casos acima do corte, e se algum caso leve passou a receber
 trecho), **gabarito a atualizar** (casos "sem cobertura" cujo assunto entrou
 na base) e a **porta de decisão**, com os quatro critérios que saem daqui.
@@ -159,6 +160,11 @@ lote de fontes traz relatos de régua novos, e travar por hash do `cases.csv`
 abortaria em todo lote. O que aborta é um caso em comum ter mudado de texto ou
 de gabarito — aí "antes e depois" deixaria de ser sobre a mesma pergunta — e
 limiar diferente entre as duas rodadas.
+
+O comparador não lê as fichas atuais para reinterpretar rodadas antigas.
+`topic_counts` e `species_counts_by_topic` vêm do `fingerprint.json` gravado
+com cada rodada. Artefatos históricos sem esse inventário usam fallback
+conservador: não sustentam afirmações por espécie nem “documento encontrável”.
 
 **Diferença aqui é sinal, não ruído.** A régua é determinística: as duas
 rodadas de 11/09 (`20260911-201429` e `20260911-202505`), sobre a mesma base,

@@ -108,9 +108,9 @@ def _bloco_cobertura(cobertura: dict) -> list[str]:
         "## 1. Cobertura — quais quadros têm documento encontrável",
         "",
         "**Encontrável** quer dizer que o assunto apareceu entre os cinco "
-        "trechos devolvidos em algum caso. Um documento indexado que nunca "
-        "aparece é cobertura no papel: entrou na base e não muda a resposta "
-        "de ninguém.",
+        "trechos de um caso que realmente o espera e que a fonte cobre a "
+        "espécie exigida. Aparecer por acaso em outro caso é ruído, não "
+        "cobertura.",
         "",
         "| | Antes | Depois |",
         "|---|---|---|",
@@ -343,8 +343,9 @@ def _rodape(resultado: dict) -> list[str]:
         "inteiro. Cada lote de fontes traz relatos novos, e travar por hash "
         "do `cases.csv` abortaria sempre; o que aborta é um caso em comum ter "
         "mudado de texto ou de gabarito.",
-        "- **A espécie vem das fichas de hoje**, não das de cada rodada: "
-        "`backend/data/documents/*.json` é lido no momento da comparação.",
+        "- **Inventário e espécie vêm do fingerprint de cada rodada.** "
+        "Artefatos históricos sem esses campos usam apenas tópicos observados "
+        "e não recebem cobertura de espécie inventada.",
     ]
 
     if cobertura["especies_normalizadas"]:

@@ -3,7 +3,8 @@
   "source": "CRMV-SP",
   "document_type": "owner_guidance",
   "validation_status": "pending_specialist",
-  "species": "dogs_and_cats",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog_and_cat",
   "topic": "single_vomiting_or_mild_diarrhea",
   "language": "pt",
   "source_url": "https://crmvsp.gov.br/vomitos-frequentes-indicam-serios-problemas-de-saude-em-caes-e-gatos/",
@@ -19,6 +20,12 @@
   "specialist": {
     "verdict": "",
     "name": "",
+    "date": ""
+  },
+  "rights": {
+    "status": "pending_review",
+    "basis": "",
+    "checked_by": "",
     "date": ""
   }
 }

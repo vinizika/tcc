@@ -171,6 +171,8 @@ def test_ficha_registra_procedencia_e_que_ninguem_validou(tmp_path):
     assert ficha["topic"] == "gastric_dilatation_volvulus"
     assert ficha["source_url"] == "https://exemplo.org/gdv"
     assert ficha["validation_status"] == "pending_specialist"
+    assert ficha["ingestion_scope"] == "curated_candidate"
+    assert ficha["rights"]["status"] == "pending_review"
     assert len(ficha["captured_sha256"]) == 64
     assert ficha["access_date"]
     assert ficha["specialist"] == {"verdict": "", "name": "", "date": ""}
@@ -343,26 +345,24 @@ def test_secao_declarada_casa_pela_mesma_chave_que_o_ingestor(tmp_path):
     capturar(tmp_path, "--include", "Sinais clínicos!")
 
 
-def test_a_tolerancia_nao_alcanca_acento(tmp_path):
+def test_normalizacao_de_secao_aceita_variante_sem_acento(tmp_path):
     """
-    O ingestor **apaga** acentos em vez de normalizá-los, então "clinicos" e
-    "clínicos" são chaves diferentes lá. Aqui também têm de ser: relaxar isso
-    devolveria o descarte silencioso que a trava existe para evitar.
-    """
-
-    with pytest.raises(SystemExit, match="não existem no texto capturado"):
-        capturar(tmp_path, "--include", "Sinais clinicos")
-
-
-def test_recusa_secao_declarada_sem_acento(tmp_path):
-    """
-    A variante sutil da anterior: o ingestor compara sem normalizar acentos,
-    então "Sinais clinicos" e "Sinais clínicos" são chaves diferentes. Um
-    acento faltando descarta a seção inteira sem avisar.
+    Captura e ingestor usam a mesma chave Unicode; diferença de acento não
+    pode descartar silenciosamente uma seção que existe.
     """
 
-    with pytest.raises(SystemExit, match="não existem no texto capturado"):
-        capturar(tmp_path, "--include", "Sinais clinicos")
+    capturar(tmp_path, "--include", "Sinais clinicos")
+
+
+def test_normalizacao_unicode_e_consistente_na_ficha(tmp_path):
+    """
+    A ficha preserva o texto humano fornecido, embora a comparação estrutural
+    seja normalizada.
+    """
+
+    base = capturar(tmp_path, "--include", "Sinais clinicos")
+    ficha = json.loads(base.with_suffix(".json").read_text(encoding="utf-8"))
+    assert ficha["indexing"]["include_sections"] == ["Sinais clinicos"]
 
 
 def test_recusa_pagina_curta_demais_para_ser_fonte(tmp_path):

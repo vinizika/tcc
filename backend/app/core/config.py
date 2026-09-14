@@ -29,7 +29,8 @@ class Settings(BaseSettings):
     # Banco Vetorial
     # ==========================
     VECTOR_DB: str = "chromadb"
-    CHROMA_PATH: str = "./chroma_db"
+    CHROMA_PATH: str = "data/chroma"
+    CHROMA_COLLECTION: str = "veterinary_documents"
 
     # ==========================
     # Modelo de linguagem (Ollama)

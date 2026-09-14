@@ -371,6 +371,13 @@ def main(argv=None) -> None:
         "backend_fingerprint": impressao,
     }
 
+    # Cópia imutável ao lado dos resultados. Comparadores futuros não devem
+    # consultar a base que estiver ativa no momento da análise.
+    escrever_atomico(
+        diretorio / "fingerprint.json",
+        json.dumps(impressao, ensure_ascii=False, indent=2, default=str),
+    )
+
     print(f"Rodada {diretorio.name}")
     print(f"  casos: {len(casos)} | limiar: {argumentos.limiar}\n")
 

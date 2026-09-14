@@ -86,6 +86,9 @@ classificação. Construída pelo trilho B2 em nome do trilho A.
 | `../data/retrieval/cases.csv` | 18 relatos PT-BR com o protocolo esperado, o motivo clínico e a marca de gabarito provisório |
 | `retrieval_metrics.py` | módulo puro: Precision@1, MRR, Recall@5, silêncio por natureza de caso, concentração no 1º lugar |
 | `run_retrieval_eval.py` | chama `POST /search/` por caso e grava a rodada em `../data/retrieval/runs/` |
+| `retrieval_compare.py` | compara inventário, espécie e resultados preservados nas duas rodadas |
+| `run_ingestion_cycle.py` | planeja ou executa a sequência antes → staging → ativação → depois → compare |
+| `verify_vector_consensus.py` | recusa divergência entre fingerprints ou entre manifesto, recibo e estado |
 
 ```bash
 python scripts/run_retrieval_eval.py --name minha_rodada --expect-base-hash <hash>
@@ -95,6 +98,19 @@ Para comparar duas rodadas (antes e depois de indexar documentos):
 
 ```bash
 python scripts/run_retrieval_eval.py compare <rodada antes> <rodada depois>
+```
+
+O compare não consulta fichas atuais para reinterpretar o passado. Um tópico é
+“novo” somente se aparece no inventário posterior e não no anterior; ele é
+“encontrável” somente quando há cobertura da espécie esperada e a busca o
+devolve em um caso cujo gabarito espera aquele tópico.
+
+O ciclo seguro é somente um plano sem `--execute`, e staging não ativa:
+
+```bash
+python scripts/run_ingestion_cycle.py --name lote-1 --profile curated
+python scripts/run_ingestion_cycle.py --name lote-1 --profile curated --execute
+python scripts/run_ingestion_cycle.py --name lote-1 --profile curated --execute --activate
 ```
 
 Leva segundos: a busca não chama o modelo de linguagem. Detalhe e como ler
@@ -142,7 +158,8 @@ python scripts/run_voice_benchmark.py
 python -m pytest scripts/tests -q
 ```
 
-164 testes, sem API nem modelo — o HTTP fica atrás de um dublê. Dois deles
+A contagem é fornecida pelo pytest, sem número duplicado neste README. A suíte
+não chama a API nem o modelo — o HTTP fica atrás de um dublê. Dois testes
 sustentam a comparabilidade com a medição histórica de 04/05: o **teste
 dourado** (as 98 respostas daquele dia reproduzem exatamente os números do
 diário) e a **regressão dos relatos** (o texto enviado ao modelo é idêntico

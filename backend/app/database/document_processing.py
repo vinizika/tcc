@@ -24,6 +24,7 @@ from app.database.embedding_config import (
     CHUNK_TARGET_TOKENS,
     EMBEDDING_MAX_TOKENS,
     EMBEDDING_MODEL_NAME,
+    EMBEDDING_MODEL_REVISION,
 )
 from app.database.pdf_layout_extraction import (
     ExtractionStatistics,
@@ -184,6 +185,9 @@ class DocumentChunk:
     page_start: int
     page_end: int
     token_count: int
+    # Corpo limpo, sem os rótulos contextuais usados somente no embedding.
+    # O default preserva construtores posicionais e snapshots antigos.
+    body: str = ""
 
 
 @dataclass(frozen=True)
@@ -234,7 +238,12 @@ def clean_structured_text(text: str) -> str:
 
 
 def _section_key(title: str) -> str:
-    title = unicodedata.normalize("NFKC", title).casefold()
+    title = unicodedata.normalize("NFKD", title).casefold()
+    title = "".join(
+        character
+        for character in title
+        if not unicodedata.combining(character)
+    )
     title = _NUMBERED_HEADING_PREFIX.sub("", title)
     return re.sub(r"[^a-z0-9]+", "", title)
 
@@ -657,6 +666,7 @@ def load_embedding_tokenizer() -> Tokenizer:
 
     return AutoTokenizer.from_pretrained(
         EMBEDDING_MODEL_NAME,
+        revision=EMBEDDING_MODEL_REVISION,
         use_fast=True,
     )
 
@@ -907,6 +917,7 @@ def chunk_section(
                 page_start=min(unit.page_start for unit in current),
                 page_end=max(unit.page_end for unit in current),
                 token_count=token_count,
+                body=content,
             )
         )
 
@@ -1037,6 +1048,7 @@ def chunk_metadata(
         "section": chunk.section,
         "chunk_index": chunk_index,
         "token_count": chunk.token_count,
+        "body": chunk.body or chunk.text,
     }
 
     for field_name in OPTIONAL_METADATA_FIELDS:

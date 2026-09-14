@@ -2,13 +2,13 @@
 # Rodam fora do Docker, na maquina do desenvolvedor:
 #   python -m venv .venv && pip install -r scripts/requirements.txt
 
-pandas
-requests
-pytest
+pandas==3.0.5
+requests==2.34.2
+pytest==9.1.1
 
 # Extrai o texto principal de uma pagina web (capturar_fonte.py), sem menu,
 # rodape nem banner de cookie. Pura Python, sem navegador.
-trafilatura
+trafilatura==2.2.0
 
 # Só para regerar os áudios do benchmark de voz (generate_voice_benchmark.py).
 # Medir o WER com run_voice_benchmark.py não precisa dele — os MP3 já estão

@@ -74,7 +74,11 @@ Escrita para os três aplicarem igual:
 
 ### A checagem por espécie
 
-Uma linha `ambos` está coberta para gato e descoberta para cão se só houver documento de gato — é exatamente o caso b15 da régua (obstrução uretral: protocolo de gatos, caso de cão macho). O `compare` confere `topic` **e** `species`. Mapeamento com a ficha JSON: `cao` ↔ `dog`/`dogs`, `gato` ↔ `cat`/`cats`, `ambos` ↔ `dogs_and_cats`. As fichas de hoje usam os três formatos misturados ([B-53](../../evidencias/backlog.md#b-53)); o `compare` normaliza singular e plural até o trilho A fechar o vocabulário.
+Uma linha `ambos` está coberta para gato e descoberta para cão se só houver
+documento de gato — é exatamente o caso b15 da régua (obstrução uretral:
+protocolo de gatos, caso de cão macho). O `compare` confere `topic` **e**
+`species` no fingerprint preservado em cada rodada. As fichas usam somente
+`dog`, `cat` e `dog_and_cat` ([B-53](../../evidencias/backlog.md#b-53)).
 
 ## A fila, as etapas e a porta de decisão
 

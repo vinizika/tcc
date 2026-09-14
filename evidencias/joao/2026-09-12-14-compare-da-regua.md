@@ -201,3 +201,14 @@ está no [B-37](../backlog.md#b-37), e é do trilho A.
 Do meu lado, o que anda sem depender de ninguém é a entrega 7 — o driver de
 ablação, que cruza as chaves dos três trilhos e gera as tabelas do artigo.
 Ele não depende do resultado de nenhum braço.
+
+## Errata de 13/09/2026
+
+Os resultados brutos e a conclusão de determinismo permanecem válidos, mas a
+interpretação de cobertura não. O compare histórico leu espécie das fichas do
+checkout e chamou de encontrável um tópico visto em qualquer caso, ainda que o
+caso não o esperasse. Por isso “sete dos oito” e a conclusão sobre
+`canine_heatstroke` não eram demonstrados por aquelas duas rodadas. O compare
+reconstruído usa inventário/fingerprint de cada rodada, espécie e encontro no
+caso esperado; artefatos antigos sem esses campos recebem fallback
+conservador. O [B-55](../backlog.md#b-55) registra a correção completa.

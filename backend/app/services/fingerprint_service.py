@@ -10,6 +10,8 @@ Nada aqui pode derrubar a requisição: se uma parte não responder, ela vira
 """
 
 import hashlib
+import json
+from collections import Counter, defaultdict
 
 import httpx
 
@@ -45,14 +47,17 @@ def _hash_de_conteudo(
         documento = documentos[posicao] if posicao < len(documentos) else ""
         metadado = metadados[posicao] if posicao < len(metadados) else None
 
-        pares = sorted((metadado or {}).items())
-
         linhas.append(
             "".join(
                 [
                     str(identificador),
                     str(documento or ""),
-                    *(f"{chave}={valor}" for chave, valor in pares),
+                    json.dumps(
+                        metadado or {},
+                        ensure_ascii=False,
+                        sort_keys=True,
+                        separators=(",", ":"),
+                    ),
                 ]
             )
         )
@@ -150,7 +155,16 @@ class FingerprintService:
             "chunk_ids_sha256": None,
             "content_sha256": None,
             "embedding_model": None,
+            "embedding_revision": None,
+            "recipe_sha256": None,
             "chunking": None,
+            "topic_counts": {},
+            "species_counts_by_topic": {},
+            "source_file_counts": {},
+            "validation_status_counts": {},
+            "manifest_sha256": None,
+            "profile": None,
+            "source_set_sha256": None,
         }
 
         try:
@@ -162,9 +176,13 @@ class FingerprintService:
                 CHUNK_TARGET_TOKENS,
                 EMBEDDING_MAX_TOKENS,
                 EMBEDDING_MODEL_NAME,
+                EMBEDDING_MODEL_REVISION,
+                embedding_recipe_sha256,
             )
 
             informacoes["embedding_model"] = EMBEDDING_MODEL_NAME
+            informacoes["embedding_revision"] = EMBEDDING_MODEL_REVISION
+            informacoes["recipe_sha256"] = embedding_recipe_sha256()
             informacoes["chunking"] = {
                 "target_tokens": CHUNK_TARGET_TOKENS,
                 "overlap_tokens": CHUNK_OVERLAP_TOKENS,
@@ -200,6 +218,61 @@ class FingerprintService:
                 documentos,
                 metadados,
             )
+
+            topic_counts = Counter()
+            source_counts = Counter()
+            validation_counts = Counter()
+            species_by_topic: dict[str, Counter] = defaultdict(Counter)
+            document_keys: set[str] = set()
+
+            for metadata in metadados:
+                metadata = metadata or {}
+                topic = str(metadata.get("topic") or "not_informed")
+                species = str(metadata.get("species") or "not_informed")
+                source_file = str(
+                    metadata.get("source_file") or "not_informed"
+                )
+                validation_status = str(
+                    metadata.get("validation_status") or "not_informed"
+                )
+                topic_counts[topic] += 1
+                source_counts[source_file] += 1
+                validation_counts[validation_status] += 1
+                species_by_topic[topic][species] += 1
+                document_keys.add(source_file)
+
+            informacoes["document_count"] = len(document_keys)
+            informacoes["topic_counts"] = dict(sorted(topic_counts.items()))
+            informacoes["species_counts_by_topic"] = {
+                topic: dict(sorted(counts.items()))
+                for topic, counts in sorted(species_by_topic.items())
+            }
+            informacoes["source_file_counts"] = dict(
+                sorted(source_counts.items())
+            )
+            informacoes["validation_status_counts"] = dict(
+                sorted(validation_counts.items())
+            )
+
+            manifest_loader = getattr(ChromaDBClient, "load_manifest", None)
+            manifest = (
+                manifest_loader(colecao.name, required=False)
+                if callable(manifest_loader)
+                else None
+            )
+            if manifest:
+                informacoes["manifest_sha256"] = _sha256(
+                    json.dumps(
+                        manifest,
+                        ensure_ascii=False,
+                        sort_keys=True,
+                        separators=(",", ":"),
+                    )
+                )
+                informacoes["profile"] = manifest.get("profile")
+                informacoes["source_set_sha256"] = (
+                    (manifest.get("sources") or {}).get("source_set_sha256")
+                )
 
         except Exception as erro:
             logger.warning(f"Não foi possível consultar a base: {erro}")

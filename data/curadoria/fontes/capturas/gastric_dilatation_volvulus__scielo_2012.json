@@ -3,6 +3,7 @@
   "source": "Ciencia Rural",
   "document_type": "peer_reviewed_article",
   "validation_status": "pending_specialist",
+  "ingestion_scope": "curated_candidate",
   "species": "dog",
   "topic": "gastric_dilatation_volvulus",
   "language": "pt",
@@ -37,6 +38,12 @@
   "specialist": {
     "verdict": "",
     "name": "",
+    "date": ""
+  },
+  "rights": {
+    "status": "pending_review",
+    "basis": "",
+    "checked_by": "",
     "date": ""
   },
   "year": 2012

@@ -29,6 +29,7 @@ import csv
 import hashlib
 import json
 import re
+import unicodedata
 from datetime import date
 from pathlib import Path
 
@@ -59,7 +60,7 @@ TIPOS = {
     "team_summary",
     "synthetic_protocol",
 }
-ESPECIES = {"dog", "cat", "dogs_and_cats"}
+ESPECIES = {"dog", "cat", "dog_and_cat"}
 
 # O título entra no começo de todo trecho do documento, e um trecho tem ~40
 # palavras: título comprido é conteúdo clínico que não cabe.
@@ -153,12 +154,17 @@ def decodificar(conteudo: bytes, tipo: str) -> str:
 def _chave_de_secao(titulo: str) -> str:
     """
     A mesma normalização que o ingestor aplica antes de comparar nomes de
-    seção (`document_processing._section_key`): tudo que não é letra ou
-    dígito cai fora. **Acento não é normalizado** — "Diagnóstico" e
-    "Diagnostico" continuam sendo chaves diferentes, lá e aqui.
+    seção (`document_processing._section_key`): Unicode é decomposto,
+    acentos são removidos e espaço/pontuação não participam da chave.
     """
 
-    return re.sub(r"[^a-z0-9]+", "", titulo.lower())
+    decomposed = unicodedata.normalize("NFKD", titulo or "")
+    plain = "".join(
+        character
+        for character in decomposed
+        if not unicodedata.combining(character)
+    )
+    return re.sub(r"[^a-z0-9]+", "", plain.casefold())
 
 
 def idioma_provavel(texto: str) -> str:
@@ -249,6 +255,7 @@ def montar_ficha(argumentos, url: str, sha256: str, titulo_sugerido: str) -> dic
         "source": argumentos.source or "",
         "document_type": argumentos.document_type or "",
         "validation_status": "pending_specialist",
+        "ingestion_scope": "curated_candidate",
         "species": argumentos.species or "",
         "topic": argumentos.topic,
         "language": argumentos.language or "",
@@ -257,6 +264,7 @@ def montar_ficha(argumentos, url: str, sha256: str, titulo_sugerido: str) -> dic
             "include_sections": list(argumentos.include or []),
             "exclude_sections": list(argumentos.exclude or []),
             "exclude_pages": [],
+            "extraction_reviewed": False,
         },
         # Os quatro abaixo não chegam ao ChromaDB — o ingestor só copia uma
         # lista fechada de campos. Vivem aqui, versionados, porque é a ficha
@@ -266,6 +274,12 @@ def montar_ficha(argumentos, url: str, sha256: str, titulo_sugerido: str) -> dic
         "captured_sha256": sha256,
         "map_line": argumentos.topic,
         "specialist": {"verdict": "", "name": "", "date": ""},
+        "rights": {
+            "status": "pending_review",
+            "basis": "",
+            "checked_by": "",
+            "date": "",
+        },
     }
 
     if argumentos.year:
@@ -391,9 +405,9 @@ def main(argv=None, baixador: Baixador | None = None) -> None:
 
     if extensao == ".txt" and argumentos.include:
         # Compara pela mesma chave que o ingestor usa (`_section_key`), e não
-        # pela linha literal: ele ignora pontuação e espaço, mas **não**
-        # normaliza acento. Uma trava mais rígida que o ingestor recusaria
-        # seção que funcionaria.
+        # pela linha literal: ele normaliza Unicode/acentos e ignora
+        # pontuação e espaço. Uma trava diferente da usada pelo ingestor
+        # poderia recusar uma seção que funcionaria.
         linhas = {_chave_de_secao(linha) for linha in texto.splitlines()}
         ausentes = [
             secao for secao in argumentos.include
@@ -405,7 +419,7 @@ def main(argv=None, baixador: Baixador | None = None) -> None:
                 f"linha: {ausentes}. O ingestor as ignoraria **em silêncio**, "
                 "e a curadoria sairia diferente do que você pensa. Abra o "
                 "arquivo, veja os títulos que existem de verdade e declare "
-                "esses — acento por acento."
+                "esses."
             )
 
     if extensao == ".txt" and argumentos.language:
