@@ -1,0 +1,118 @@
+{
+  "schema_version": 2,
+  "date": "2026-09-13",
+  "branch": "codex/harden-vector-ingestion",
+  "initial_head": "c3f09ec5c6a5608e2039a0651a0dec437d19479b",
+  "scope": "Reconstrução e validação em Chroma temporário; nenhuma coleção do projeto foi alterada.",
+  "baseline": {
+    "backend": "passed with DEBUG=true",
+    "scripts_passed": 164
+  },
+  "tests": {
+    "backend": {
+      "command": "DEBUG=True .venv/bin/python -m pytest -o addopts='' backend/tests -q --disable-warnings",
+      "passed": 201,
+      "failed": 0,
+      "warnings": 18,
+      "real_chromadb_tests": 9
+    },
+    "scripts": {
+      "command": ".venv/bin/python -m pytest scripts/tests -q",
+      "passed": 185,
+      "failed": 0
+    },
+    "total_passed": 386,
+    "pip_check": "No broken requirements found",
+    "compileall": "passed",
+    "git_diff_check": "passed",
+    "json_validation": "passed",
+    "yaml_validation": "passed"
+  },
+  "runtime": {
+    "python": "3.12.0",
+    "platform": "Darwin 23.5.0 arm64",
+    "packages": {
+      "PyMuPDF": "1.28.2",
+      "chromadb": "1.5.9",
+      "fonttools": "4.65.0",
+      "pypdf": "6.18.1",
+      "sentence-transformers": "6.0.1",
+      "torch": "2.14.0",
+      "transformers": "5.17.0"
+    }
+  },
+  "embedding": {
+    "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+    "dimensions": 384,
+    "recipe_version": "vector-ingestion-recovery-v1",
+    "recipe_sha256": "1a93e1e7db9a5b5a7766ca11b54162cb74cb76bb4d4c2c02b2dc0d5c4319682b",
+    "historical_recipe_sha256_reference": "64952a575f5ebf686ef83e595c4f30593f5461f198b15eee0c19a8397bf25c93",
+    "historical_hash_reproduced": false,
+    "difference": "A serialização literal perdida não estava disponível; foi criada uma nova identidade de receita e os hashes não foram manipulados."
+  },
+  "curated_gate": {
+    "command": "DEBUG=True PYTHONPATH=backend CHROMA_PATH=<temp>/chroma python -m app.database.ingest_documents --profile curated --stage-only",
+    "exit_code": 2,
+    "eligible_documents": 0,
+    "chroma_path_created": false,
+    "clinical_approvals_added": 0
+  },
+  "ingestions": {
+    "legacy_rechunk": {
+      "document_count": 7,
+      "chunk_count": 73,
+      "token_count": {"min": 55, "mean": 82.658, "median": 82, "max": 128},
+      "fallback_splits": 0,
+      "corrupted_openers_removed": 0,
+      "warning_count": 14,
+      "source_set_sha256": "6e5c03049c17c3730af55d5ba0747514bdc4993f7383a7588a98fcd6a4e6dde5",
+      "chunk_ids_sha256": "eefb077334cfc25ca9b0b4ef8d4791ad25fd07a79c47712db4483d7e05fcbaba",
+      "content_sha256": "c37090bb263e45b8039323785ac1e2e8ab4c37ca283159e14453dbb90e8478f7",
+      "manifest_sha256": "b72b8c62f47f1b3c775a6b46e3f295da29108de7f7e7f5c0d60f5ccfafe4ba21"
+    },
+    "experimental": {
+      "document_count": 8,
+      "chunk_count": 259,
+      "token_count": {"min": 48, "mean": 86.768, "median": 92, "max": 128},
+      "fallback_splits": 31,
+      "corrupted_openers_removed": 1,
+      "warning_count": 18,
+      "source_set_sha256": "5c578a44d8d130f39db2ef333542b2e3128704cffa62d096338853a20a4b4d9e",
+      "chunk_ids_sha256": "0f0c383c3835e41dd9520c0444e66aea6dde544fb387bb04fa011ca2ceb2a6ed",
+      "content_sha256": "598545e66d32b42461cab2036acf0fcb662212afea9a237d0e47229d83ce3bbd"
+    }
+  },
+  "transaction_smoke": {
+    "staging_did_not_replace_active": true,
+    "activation_validated_manifest_count_and_hashes": true,
+    "rollback_target": "legacy_rechunk",
+    "rollback_passed": true,
+    "artifact_consensus": "consensus"
+  },
+  "retrieval_smoke": {
+    "query": "cachorro muito quente, ofegante e desmaiando depois de ficar no sol",
+    "topics": ["canine_heatstroke", "canine_heatstroke", "canine_heatstroke", "canine_heatstroke", "canine_heatstroke"],
+    "scores": [0.698586, 0.690476, 0.664504, 0.650005, 0.649911],
+    "clean_body": true,
+    "threshold": 0.7,
+    "threshold_reached": false,
+    "clinical_interpretation_allowed": false
+  },
+  "docker": {
+    "docker_version": "29.7.2",
+    "compose_version": "v5.4.0",
+    "compose_config": "passed",
+    "build": "blocked",
+    "reason": "Docker Desktop is unable to start",
+    "desktop_start_attempted": true
+  },
+  "limitations": [
+    "Docker images and containers were not validated because the local daemon could not start.",
+    "CI result is pending the pull request.",
+    "No three-machine consensus was performed.",
+    "No source received clinical approval or rights clearance.",
+    "The curated corpus remains empty.",
+    "The retrieval smoke is not a clinical evaluation."
+  ]
+}

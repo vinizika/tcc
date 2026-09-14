@@ -20,14 +20,14 @@ e re-ranking.
 | 1 | 07/09 | [Auditoria do repositório e estado do trilho A](2026-09-07-01-auditoria-do-repositorio.md) | Repositório sincronizado; achados anteriores separados dos novos; base local confirmada com 18 chunks de 7 protocolos; próximos passos do trilho definidos |
 | 2 | 07/09 | [Ingestão científica com seções e tokens](2026-09-07-02-ingestao-cientifica-token-aware.md) | Pipeline determinístico implementado; paper real inspecionado em 200 chunks, mediana 90,5 e máximo 128 tokens; ChromaDB não alterado |
 | 3 | 07/09 | [Extração científica orientada a layout](2026-09-07-03-extracao-cientifica-layout-aware.md) | PyMuPDF e heurísticas genéricas de blocos/colunas adotados; seis captions, 15 headers e quatro blocos editoriais removidos; paper passou a 186 chunks, máximo 119; sete PDFs antigos preservados e Chroma ainda com 18 registros |
+| 4 | 13/09 | [Endurecimento da ingestão vetorial](2026-09-13-04-endurecimento-da-ingestao-vetorial.md) | Reconstrução da receita fixa, perfis, staging/ativação/rollback, fingerprint por rodada, compare corrigido e testes reais com Chroma temporário |
 
 ## Estado atual
 
-O pipeline de recuperação funciona de ponta a ponta, mas ainda não cumpre a
-missão do trilho: colocar o documento correto nas primeiras posições de forma
-comprovada. A régua própria de recuperação ainda não existe, o re-ranking é
-apenas uma ordenação pelo score original e a base tem somente sete protocolos
-sintéticos, todos voltados a emergências.
+O pipeline e a régua funcionam de ponta a ponta, mas o re-ranking ainda é
+apenas a ordenação pelo score original e a base ativa de referência continua
+composta pelos protocolos sintéticos. Fontes capturadas permanecem candidatas;
+nenhuma foi promovida clinicamente por esta reconstrução.
 
 A preparação documental já possui inspeção sem escrita, seções, chunks por
 tokens e extração multicoluna por coordenadas. O primeiro paper real foi

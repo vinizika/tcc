@@ -1,5 +1,5 @@
 # Dependencias usadas apenas em desenvolvimento e nos testes.
 # Rodar os testes:  docker compose exec backend python -m pytest
 
-pytest
-httpx
+pytest==9.1.1
+httpx==0.28.1

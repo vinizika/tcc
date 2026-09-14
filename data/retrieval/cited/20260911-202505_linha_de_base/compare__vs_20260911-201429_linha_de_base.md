@@ -97,3 +97,14 @@ Os outros dois critérios não vêm daqui: **velocidade** sai da coluna `cobertu
 - **A comparação é sobre os casos em comum**, não sobre o arquivo inteiro. Cada lote de fontes traz relatos novos, e travar por hash do `cases.csv` abortaria sempre; o que aborta é um caso em comum ter mudado de texto ou de gabarito.
 - **A espécie vem das fichas de hoje**, não das de cada rodada: `backend/data/documents/*.json` é lido no momento da comparação.
 - **Espécies normalizadas** (as fichas usam mais de uma grafia, B-53): cats → gato; dog → cao; dogs_and_cats → ambos.
+
+### Errata de 13/09/2026
+
+Este relatório foi produzido pela lógica histórica e os resultados brutos não
+foram reescritos. A contagem de “encontrável” acima não é válida para afirmar
+cobertura: ela aceitava um tópico visto em qualquer caso e lia espécie das
+fichas do checkout posterior. O comparador atual exige fingerprint da rodada,
+cobertura da espécie e retorno num caso que espera o tópico. Como estas
+rodadas não preservaram inventário por espécie, a releitura atual é
+conservadora e não atribui cobertura positiva. Veja
+[`data/retrieval/README.md`](../../README.md) e [B-55](../../../../evidencias/backlog.md#b-55).

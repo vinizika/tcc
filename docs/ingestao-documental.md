@@ -8,7 +8,7 @@ documento explica as fronteiras da implementação.
 ## Fluxo e responsabilidades
 
 ```text
-PDF/TXT + sidecar opcional
+PDF/TXT + sidecar e política do perfil
         ↓
 extração de blocos e coordenadas por página
         ↓
@@ -18,9 +18,11 @@ detecção e filtragem de seções
         ↓
 chunks de 96 tokens, overlap 16, limite 128
         ↓
-embedding MiniLM multilíngue
+embedding MiniLM multilíngue em revisão fixa
         ↓
-ChromaDB
+coleção Chroma versionada em staging
+        ↓ validar manifesto, contagem e hashes
+ativação explícita com rollback
 ```
 
 | Arquivo | Responsabilidade |
@@ -29,6 +31,7 @@ ChromaDB
 | `backend/app/database/document_processing.py` | Carregar sidecar, aplicar fallback, detectar/filtrar seções e produzir chunks por tokens |
 | `backend/app/database/ingest_documents.py` | CLI, inspeção, logs e escrita explícita no ChromaDB |
 | `backend/app/database/embedding_config.py` | Fonte única do modelo e dos limites de chunking |
+| `backend/app/database/chroma_client.py` | Ponteiro ativo estrito, manifestos, validação, ativação e rollback |
 
 O extrator de layout não conhece títulos, autores, periódicos, arquivos ou
 páginas específicas. O paper de heatstroke é uma regressão real, não uma
@@ -83,8 +86,15 @@ de parsing, tradução ou resumo nesta camada.
 4. Confira limites de tokens, seções, warnings e exemplos antes/depois.
 5. Registre a rodada em `evidencias/<nome>/`, atualize o planejamento e o
    backlog quando houver limitação pendente.
-6. Reindexe somente em uma rodada experimental autorizada e com a linha de
-   base congelada. `--inspect` nunca deve abrir ou escrever no ChromaDB.
+6. Crie primeiro uma coleção em staging. `--inspect` e uma recusa do perfil
+   `curated` nunca devem abrir ou escrever no ChromaDB.
+7. Ative somente após validar manifesto, contagem e hashes; registre a coleção
+   anterior para rollback.
+
+O texto vetorizado inclui título e seção para recuperação. O corpo limpo é
+armazenado separadamente em `body` e é o que chega ao prompt. A revisão do
+modelo e tokenizer e a identidade da receita estão em
+[`estado-atual.md`](estado-atual.md).
 
 Mudanças de modelo, chunking, busca, ranking ou contrato pertencem a rodadas
 separadas para que seus efeitos continuem mensuráveis.

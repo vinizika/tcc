@@ -56,6 +56,8 @@ def escrever_rodada(
     chunk_ids="hash-da-base",
     chunk_count=18,
     limiar=0.70,
+    indexed_topics=None,
+    include_inventory=True,
 ):
     """
     Escreve uma rodada de mentira com a mesma forma da real.
@@ -66,6 +68,26 @@ def escrever_rodada(
 
     destino.mkdir(parents=True, exist_ok=True)
 
+    if indexed_topics is None:
+        indexed_topics = {
+            ficha["topic"]: ficha["species"] for ficha in FICHAS
+        }
+    vector_store = {
+        "chunk_count": chunk_count,
+        "chunk_ids_sha256": chunk_ids,
+        "content_sha256": chunk_ids + "-conteudo",
+    }
+    if include_inventory:
+        vector_store.update(
+            {
+                "topic_counts": {topic: 1 for topic in indexed_topics},
+                "species_counts_by_topic": {
+                    topic: {species: 1}
+                    for topic, species in indexed_topics.items()
+                },
+            }
+        )
+
     (destino / "manifest.json").write_text(
         json.dumps(
             {
@@ -74,11 +96,7 @@ def escrever_rodada(
                 "git": {"sha": "abc1234"},
                 "limiar": limiar,
                 "backend_fingerprint": {
-                    "vector_store": {
-                        "chunk_count": chunk_count,
-                        "chunk_ids_sha256": chunk_ids,
-                        "content_sha256": chunk_ids + "-conteudo",
-                    }
+                    "vector_store": vector_store
                 },
             }
         ),
@@ -127,9 +145,17 @@ def comparar(tmp_path, casos_a, casos_b, **kwargs):
     """Compara duas rodadas descritas pelos casos, devolvendo o resultado."""
 
     chunk_ids_b = kwargs.pop("chunk_ids_b", "hash-da-base-nova")
+    indexed_topics_a = kwargs.pop("indexed_topics_a", None)
+    indexed_topics_b = kwargs.pop("indexed_topics_b", None)
 
     a = carregar_rodada(
-        escrever_rodada(tmp_path / "a", casos_a, run_id="antes", **kwargs)
+        escrever_rodada(
+            tmp_path / "a",
+            casos_a,
+            run_id="antes",
+            indexed_topics=indexed_topics_a,
+            **kwargs,
+        )
     )
     b = carregar_rodada(
         escrever_rodada(
@@ -137,6 +163,7 @@ def comparar(tmp_path, casos_a, casos_b, **kwargs):
             casos_b,
             run_id="depois",
             chunk_ids=chunk_ids_b,
+            indexed_topics=indexed_topics_b,
             **kwargs,
         )
     )
@@ -305,7 +332,8 @@ def test_assunto_que_passou_a_aparecer_vira_encontravel(tmp_path):
 
     assert linha["antes"] == "indexado, nao encontrado"
     assert linha["depois"] == "encontravel"
-    assert cobertura["encontraveis"] == [1, 2]
+    # Trauma apareceu no caso de chocolate, onde é erro: não é cobertura.
+    assert cobertura["encontraveis"] == [0, 1]
 
 
 def test_documento_indexado_que_nunca_aparece_nao_conta_como_cobertura(tmp_path):
@@ -367,9 +395,84 @@ def test_especie_divergente_entre_ficha_e_mapa_e_apontada(tmp_path):
     cobertura = comparar(tmp_path, casos, casos)["cobertura"]
     divergentes = {d["id"] for d in cobertura["especies_divergentes"]}
 
-    # chocolate no mapa é `cao`; a ficha diz `dogs_and_cats` → `ambos`.
-    assert "chocolate_toxicosis" in divergentes
+    # Uma fonte para ambos cobre corretamente uma linha que exige somente cão.
+    assert "chocolate_toxicosis" not in divergentes
     assert "urethral_obstruction" not in divergentes
+
+
+def test_linha_ambos_nao_e_coberta_por_fonte_so_de_gato(tmp_path):
+    mapa = [
+        {
+            "id": "urethral_obstruction",
+            "quadro": "Obstrucao uretral",
+            "especie": "ambos",
+            "prioridade": "A",
+            "etapa": "1",
+        }
+    ]
+    casos = [
+        (
+            "b15",
+            ["urethral_obstruction"],
+            "com protocolo",
+            [("urethral_obstruction", 0.8)],
+        )
+    ]
+    a = carregar_rodada(
+        escrever_rodada(
+            tmp_path / "a",
+            casos,
+            indexed_topics={"urethral_obstruction": "cat"},
+        )
+    )
+
+    cobertura = compute_compare(a, a, mapa, [])["cobertura"]
+
+    assert cobertura["linhas"][0]["depois"] == (
+        "indexado, cobertura de especie incompleta"
+    )
+
+
+def test_documento_em_caso_inesperado_nao_e_encontravel(tmp_path):
+    casos = [
+        (
+            "b01",
+            ["chocolate_toxicosis"],
+            "com protocolo",
+            [("trauma_and_bleeding", 0.9)],
+        )
+    ]
+
+    cobertura = comparar(tmp_path, casos, casos)["cobertura"]
+    trauma = next(
+        line for line in cobertura["linhas"]
+        if line["id"] == "trauma_and_bleeding"
+    )
+
+    assert trauma["depois"] == "indexado, nao encontrado"
+
+
+def test_topico_existente_nas_duas_bases_nao_e_novo(tmp_path):
+    casos = [
+        (
+            "b12",
+            [],
+            "sem cobertura",
+            [("gastric_dilatation_volvulus", 0.8)],
+        )
+    ]
+    indexed = {"gastric_dilatation_volvulus": "dog"}
+
+    resultado = comparar(
+        tmp_path,
+        casos,
+        casos,
+        indexed_topics_a=indexed,
+        indexed_topics_b=indexed,
+    )
+
+    assert resultado["cobertura"]["topicos_novos"] == []
+    assert resultado["gabarito_a_atualizar"] == []
 
 
 # ----------------------------------------------------------------------
@@ -389,7 +492,16 @@ def test_assunto_novo_num_caso_sem_cobertura_pede_revisao(tmp_path):
         )
     ]
 
-    pendentes = comparar(tmp_path, antes, depois)["gabarito_a_atualizar"]
+    pendentes = comparar(
+        tmp_path,
+        antes,
+        depois,
+        indexed_topics_a={"trauma_and_bleeding": "dogs_and_cats"},
+        indexed_topics_b={
+            "trauma_and_bleeding": "dogs_and_cats",
+            "gastric_dilatation_volvulus": "dog",
+        },
+    )["gabarito_a_atualizar"]
 
     assert len(pendentes) == 1
     assert pendentes[0]["apareceu"] == "gastric_dilatation_volvulus"
@@ -545,8 +657,11 @@ def test_rodada_citada_comparada_consigo_mesma_nao_muda_nada():
     assert resultado["gabarito_a_atualizar"] == []
     assert resultado["cobertura"]["topicos_novos"] == []
 
-    # E o que ela de fato mede hoje, para o teste falhar se a linha de base
-    # mudar sem ninguém perceber: sete dos oito documentos são encontráveis
-    # (o heatstroke nunca aparece), e o ímã ocupa metade dos casos.
-    assert resultado["cobertura"]["encontraveis"] == [7, 7]
+    # O artefato histórico não gravou espécie por tópico. O fallback não
+    # inventa essa cobertura a partir dos sidecars do checkout atual.
+    assert resultado["cobertura"]["inventory_source"] == [
+        "observed_results_fallback",
+        "observed_results_fallback",
+    ]
+    assert resultado["cobertura"]["encontraveis"] == [0, 0]
     assert resultado["ruido"]["ima"]["depois"]["share"] == 0.5

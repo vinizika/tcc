@@ -1,0 +1,3 @@
+# Instale por meio do índice CPU antes de requirements.txt. A versão fica
+# separada para o Docker não baixar dependências CUDA em hosts Linux.
+torch==2.14.0

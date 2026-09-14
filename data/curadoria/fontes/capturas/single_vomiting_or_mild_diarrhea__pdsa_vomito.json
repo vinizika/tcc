@@ -3,6 +3,7 @@
   "source": "PDSA Pet Health Hub",
   "document_type": "owner_guidance",
   "validation_status": "pending_specialist",
+  "ingestion_scope": "curated_candidate",
   "species": "dog",
   "topic": "single_vomiting_or_mild_diarrhea",
   "language": "en",
@@ -27,6 +28,12 @@
   "specialist": {
     "verdict": "",
     "name": "",
+    "date": ""
+  },
+  "rights": {
+    "status": "pending_review",
+    "basis": "",
+    "checked_by": "",
     "date": ""
   },
   "year": 2024

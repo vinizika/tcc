@@ -2,7 +2,8 @@
 
 Esta pasta contém as fontes originais usadas pela recuperação. O ingestor
 aceita arquivos `.pdf` e `.txt`; o documento original não deve ser editado
-manualmente para facilitar a indexação.
+manualmente para facilitar a indexação. Captura não significa curadoria, e
+nenhuma automação concede aprovação clínica ou direito de redistribuição.
 
 ## Adicionando uma fonte
 
@@ -12,9 +13,8 @@ manualmente para facilitar a indexação.
 3. Inspecione seções e chunks antes de alterar a coleção.
 4. Só então execute a ingestão.
 
-Sem sidecar, o documento ainda é processado, mas recebe valores neutros
-(`document_type: unknown` e `validation_status: not_informed`) e gera um
-warning pedindo curadoria.
+Sem sidecar, o documento só pode aparecer nos perfis permissivos e gera
+warning. O perfil `curated` o recusa antes de abrir o Chroma.
 
 Adicionar um paper novo não deve exigir nenhuma alteração no código Python.
 O sidecar é curadoria opcional, não um perfil de parser por documento.
@@ -35,6 +35,11 @@ Campos principais suportados:
   "journal": "Periódico",
   "language": "en",
   "source_url": "https://doi.org/10.xxxx/exemplo",
+  "ingestion_scope": "experimental_only",
+  "rights": {
+    "status": "pending",
+    "redistribution_allowed": false
+  },
   "indexing": {
     "include_sections": [],
     "exclude_sections": ["Supplementary material"],
@@ -55,6 +60,11 @@ Campos principais suportados:
 Publicação revisada por pares e validação local são coisas diferentes. Use,
 por exemplo, `peer_reviewed_review` com
 `published_not_locally_validated` até a avaliação pela especialista do projeto.
+
+O vocabulário canônico de `species` é `dog`, `cat` e `dog_and_cat`. O perfil
+curado também exige `ingestion_scope: curated`, aprovação especialista
+identificada e datada, direitos compatíveis, hash e URL da fonte, e `topic`
+existente no mapa. PDFs exigem `extraction_reviewed: true`.
 
 ## O que o pipeline faz com PDFs
 
@@ -110,23 +120,27 @@ O relatório mostra seções detectadas/incluídas/excluídas, páginas, quantid
 e tamanho em tokens dos chunks, métricas da extração e um preview de cada
 trecho. Esse modo não abre nem altera a coleção.
 
-## Ingestão e reindexação
+## Ingestão versionada
 
-Ingerir ou reinserir os documentos encontrados:
-
-```bash
-docker compose exec backend python -m app.database.ingest_documents
-```
-
-Reconstruir toda a coleção após uma mudança de chunking:
+Criar uma candidata sem trocar a coleção ativa:
 
 ```bash
-docker compose exec backend python -m app.database.ingest_documents --reset
+docker compose exec backend python -m app.database.ingest_documents \
+  --profile curated --stage-only
 ```
 
-O algoritmo atual produz recortes e IDs diferentes do chunking antigo por
-caracteres; portanto, use `--reset` na primeira migração. Confirme o relatório
-de inspeção e mantenha uma medição anterior antes de reconstruir a base.
+Ativar somente depois de revisar os artefatos:
+
+```bash
+docker compose exec backend python -m app.database.ingest_documents \
+  --profile curated --activate
+```
+
+`--reset` foi removido porque apagava o estado ativo. Cada candidata tem
+manifesto obrigatório; contagem e hashes são conferidos antes da ativação.
+Use `--list-collections` e `--rollback` para inventário e retorno. Os perfis,
+a receita fixa e o ponteiro ativo estão em
+[`docs/estado-atual.md`](../../../docs/estado-atual.md).
 
 Antes de fazer commit de qualquer PDF em repositório público, verifique os
 direitos autorais e a licença de redistribuição. A possibilidade técnica de

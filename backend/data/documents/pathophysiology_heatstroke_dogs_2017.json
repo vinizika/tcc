@@ -3,6 +3,7 @@
   "source": "Temperature",
   "document_type": "peer_reviewed_review",
   "validation_status": "published_not_locally_validated",
+  "ingestion_scope": "experimental_only",
   "species": "dog",
   "topic": "canine_heatstroke",
   "authors": "Yaron Bruchim; Michal Horowitz; Itamar Aroch",

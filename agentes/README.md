@@ -49,7 +49,7 @@ quem usa Claude Code, e aponta de volta para cá. O conteúdo não é duplicado.
 | **Cartógrafo** | uma vez por revisão do mapa | régua de recuperação, fichas da base, backlog, referências de triagem | `data/curadoria/mapa-de-assuntos.csv` + `referencias.md` | sim | [roteiro pronto](cartografo.md); mapa rascunhado em 12/09, 61 linhas |
 | **Pesquisador** | uma vez por quadro clínico | uma linha do mapa | `data/curadoria/fontes/<topic>.md` + captura e ficha, pelo script | sim, com busca na web | [roteiro pronto](pesquisador.md); piloto em 12/09 |
 | **Redator de lacuna** | só quando não há fonte utilizável | a fonte que existe sobre o quadro | resumo do time, marcado `document_type: team_summary` | sim | roteiro a escrever |
-| **Ingestão e retorno** | uma vez por lote aprovado | fontes aprovadas pelos especialistas | base atualizada + `compare.md` da régua + rascunho da evidência | **em parte** — ver abaixo | roteiro a escrever |
+| **Ingestão e retorno** | uma vez por lote aprovado | fontes aprovadas pelos especialistas | base atualizada + `compare.md` da régua + rascunho da evidência | **em parte** — ver abaixo | [roteiro pronto](ingestao.md) |
 
 O último é o único em que modelo e script dividem o trabalho, e a fronteira
 importa: **o script calcula, o agente conversa.** Os seis passos do ciclo ficam

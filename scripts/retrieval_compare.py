@@ -34,8 +34,8 @@ LIMITE_IMA = 1 / 3
 # papel — e o critério da porta existe para separar as duas coisas.
 MINIMO_COBERTURA_REAL = 0.70
 
-# As três grafias de espécie que as fichas da base usam hoje (B-53). O trilho
-# A fecha o vocabulário; até lá o compare normaliza e avisa.
+# O vocabulário novo é fechado; aliases permanecem somente para fingerprints
+# históricos, sem reinterpretar seus sidecars.
 ESPECIES = {
     "dog": "cao",
     "dogs": "cao",
@@ -53,9 +53,8 @@ def normalizar_especie(valor: str) -> str:
     """
     Traduz a espécie da ficha para o vocabulário do mapa.
 
-    Sem isto, `cats` da ficha nunca casaria com `gato` do mapa e a cobertura
-    por espécie sairia errada **em silêncio** — que é exatamente o risco que
-    o B-53 descreve.
+    Sem isto, `cats` de um fingerprint histórico nunca casaria com `gato` do
+    mapa e a cobertura por espécie sairia errada em silêncio.
     """
 
     return ESPECIES.get((valor or "").strip().lower(), "")
@@ -114,10 +113,20 @@ def carregar_rodada(diretorio: Path) -> dict:
             )
         )
 
+    fingerprint_path = diretorio / "fingerprint.json"
+    fingerprint = (
+        json.loads(fingerprint_path.read_text(encoding="utf-8"))
+        if fingerprint_path.exists()
+        else manifesto.get("backend_fingerprint") or {}
+    )
+
     return {
         "diretorio": diretorio,
         "run_id": manifesto.get("run_id", diretorio.name),
         "manifesto": manifesto,
+        # O retrato fica junto da rodada. O fallback atende artefatos antigos,
+        # mas nunca consulta o estado atual da base para reescrever o passado.
+        "fingerprint": fingerprint,
         "casos": {c["id"]: c for c in casos},
         "avaliados": {a["id"]: a for a in avaliados},
     }
@@ -185,6 +194,15 @@ def _delta(antes: Optional[float], depois: Optional[float]) -> Optional[float]:
     return round(depois - antes, 4)
 
 
+def _vector_store(rodada: dict) -> dict:
+    fingerprint = rodada.get("fingerprint") or {}
+    if fingerprint.get("vector_store"):
+        return fingerprint["vector_store"] or {}
+    return (rodada["manifesto"].get("backend_fingerprint") or {}).get(
+        "vector_store"
+    ) or {}
+
+
 def comparar_base(a: dict, b: dict) -> dict:
     """
     O que mudou na base vetorial entre as duas rodadas.
@@ -196,12 +214,8 @@ def comparar_base(a: dict, b: dict) -> dict:
     tudo deveria dar zero.
     """
 
-    loja_a = (a["manifesto"].get("backend_fingerprint") or {}).get(
-        "vector_store"
-    ) or {}
-    loja_b = (b["manifesto"].get("backend_fingerprint") or {}).get(
-        "vector_store"
-    ) or {}
+    loja_a = _vector_store(a)
+    loja_b = _vector_store(b)
 
     mesma = loja_a.get("chunk_ids_sha256") == loja_b.get("chunk_ids_sha256")
 
@@ -209,6 +223,8 @@ def comparar_base(a: dict, b: dict) -> dict:
 
     for chave, rotulo in (
         ("embedding_model", "o modelo de embedding"),
+        ("embedding_revision", "a revisão do embedding"),
+        ("recipe_sha256", "a identidade da receita"),
         ("chunking", "a receita de chunking"),
     ):
         if chave in loja_a and chave in loja_b and loja_a[chave] != loja_b[chave]:
@@ -373,7 +389,7 @@ def comparar_ruido(a: dict, b: dict, comuns: list[str], limiar: float) -> dict:
 
 
 def _topicos_vistos(rodada: dict, comuns: list[str]) -> set[str]:
-    """Assuntos que a busca devolveu em algum caso — o que é encontrável."""
+    """Assuntos observados em qualquer resultado (não implica cobertura)."""
 
     return {
         topico
@@ -381,6 +397,64 @@ def _topicos_vistos(rodada: dict, comuns: list[str]) -> set[str]:
         for topico in rodada["avaliados"][caso_id]["topics"]
         if topico
     }
+
+
+def _topicos_indexados(rodada: dict, comuns: list[str]) -> tuple[set[str], str]:
+    """Inventário da rodada, com fallback histórico explicitamente conservador."""
+
+    topic_counts = _vector_store(rodada).get("topic_counts") or {}
+    if isinstance(topic_counts, dict) and topic_counts:
+        return {
+            str(topic)
+            for topic, count in topic_counts.items()
+            if topic and topic != "not_informed" and (count or 0) > 0
+        }, "fingerprint"
+    return _topicos_vistos(rodada, comuns), "observed_results_fallback"
+
+
+def _especies_por_topico(rodada: dict) -> dict[str, set[str]]:
+    raw = _vector_store(rodada).get("species_counts_by_topic") or {}
+    result: dict[str, set[str]] = {}
+    if not isinstance(raw, dict):
+        return result
+    for topic, counts in raw.items():
+        if isinstance(counts, dict):
+            values = {species for species, count in counts.items() if count}
+        elif isinstance(counts, list):
+            values = set(counts)
+        else:
+            values = set()
+        result[str(topic)] = {
+            normalized
+            for value in values
+            if (normalized := normalizar_especie(str(value)))
+        }
+    return result
+
+
+def species_covers(required: str, available: set[str]) -> bool:
+    required = normalizar_especie(required)
+    has_dog = bool({"cao", "ambos"} & available)
+    has_cat = bool({"gato", "ambos"} & available)
+    if required == "ambos":
+        return has_dog and has_cat
+    if required == "cao":
+        return has_dog
+    if required == "gato":
+        return has_cat
+    return False
+
+
+def _topicos_encontraveis(rodada: dict, comuns: list[str]) -> set[str]:
+    """Tópico só é encontrável quando aparece em caso que o espera."""
+
+    found: set[str] = set()
+    for case_id in comuns:
+        evaluated = rodada["avaliados"][case_id]
+        expected = set(evaluated.get("expected_topics") or [])
+        returned = set(evaluated.get("topics") or [])
+        found.update(expected & returned)
+    return found
 
 
 def comparar_cobertura(
@@ -401,40 +475,47 @@ def comparar_cobertura(
     hoje ela diz `indexada` em uma linha, enquanto a base tem oito documentos.
     """
 
-    indexados = {}
-    especies_originais = {}
+    del fichas  # preserva a assinatura sem usar sidecars atuais no passado
+    indexed_a, source_a = _topicos_indexados(a, comuns)
+    indexed_b, source_b = _topicos_indexados(b, comuns)
+    species_a = _especies_por_topico(a)
+    species_b = _especies_por_topico(b)
+    findable_a = _topicos_encontraveis(a, comuns)
+    findable_b = _topicos_encontraveis(b, comuns)
 
-    for ficha in fichas:
-        topico = (ficha.get("topic") or "").strip()
-
-        if not topico or topico == "not_informed":
-            continue
-
-        indexados[topico] = normalizar_especie(ficha.get("species", ""))
-        especies_originais[topico] = ficha.get("species", "")
-
-    vistos_a = _topicos_vistos(a, comuns)
-    vistos_b = _topicos_vistos(b, comuns)
-
-    def estado(topico: str, vistos: set[str]) -> str:
-        if topico in vistos:
+    def estado(
+        topico: str,
+        required_species: str,
+        indexed: set[str],
+        available_species: dict[str, set[str]],
+        findable: set[str],
+    ) -> str:
+        if topico not in indexed:
+            return "sem documento"
+        if not species_covers(required_species, available_species.get(topico, set())):
+            return "indexado, cobertura de especie incompleta"
+        if topico in findable:
             return "encontravel"
-        if topico in indexados:
-            return "indexado, nao encontrado"
-        return "sem documento"
+        return "indexado, nao encontrado"
 
     linhas = []
 
     for linha_mapa in mapa:
         topico = linha_mapa["id"]
-        antes, depois = estado(topico, vistos_a), estado(topico, vistos_b)
+        required_species = linha_mapa.get("especie", "")
+        antes = estado(
+            topico, required_species, indexed_a, species_a, findable_a
+        )
+        depois = estado(
+            topico, required_species, indexed_b, species_b, findable_b
+        )
 
         linhas.append(
             {
                 "id": topico,
                 "quadro": linha_mapa.get("quadro", ""),
                 "especie_mapa": linha_mapa.get("especie", ""),
-                "especie_ficha": indexados.get(topico, ""),
+                "especie_ficha": ",".join(sorted(species_b.get(topico, set()))),
                 "prioridade": linha_mapa.get("prioridade", ""),
                 "etapa": linha_mapa.get("etapa", ""),
                 "antes": antes,
@@ -445,7 +526,7 @@ def comparar_cobertura(
 
     # Um documento é "novo" quando o assunto dele só aparece na base de B.
     # É sobre esses que a porta pergunta se são encontráveis.
-    novos = sorted(vistos_b - vistos_a)
+    novos = sorted(indexed_b - indexed_a)
     novos_no_mapa = [t for t in novos if any(l["id"] == t for l in mapa)]
 
     # Espécie divergente entre a ficha e o mapa: não é erro, mas é o que o
@@ -459,8 +540,10 @@ def comparar_cobertura(
         for linha in linhas
         if linha["especie_ficha"]
         and linha["especie_mapa"]
-        and linha["especie_ficha"] != linha["especie_mapa"]
-        and linha["especie_mapa"] != "ambos"
+        and not species_covers(
+            linha["especie_mapa"],
+            set(linha["especie_ficha"].split(",")),
+        )
     ]
 
     def cobertos(chave: str) -> int:
@@ -480,15 +563,10 @@ def comparar_cobertura(
         "total_mapa": len(linhas),
         "total_etapa_1": sum(1 for linha in linhas if linha["etapa"] == "1"),
         "topicos_novos": novos_no_mapa,
-        "fora_do_mapa": sorted(set(indexados) - {l["id"] for l in mapa}),
+        "fora_do_mapa": sorted(indexed_b - {l["id"] for l in mapa}),
         "especies_divergentes": divergencias,
-        "especies_normalizadas": sorted(
-            {
-                f"{valor} → {normalizar_especie(valor)}"
-                for valor in especies_originais.values()
-                if valor and normalizar_especie(valor) != valor
-            }
-        ),
+        "especies_normalizadas": [],
+        "inventory_source": [source_a, source_b],
     }
 
 
@@ -517,7 +595,9 @@ def gabarito_a_atualizar(
     """
 
     ids_do_mapa = {linha["id"] for linha in mapa}
-    vistos_em_a = _topicos_vistos(a, comuns)
+    indexados_a, _ = _topicos_indexados(a, comuns)
+    indexados_b, _ = _topicos_indexados(b, comuns)
+    topicos_realmente_novos = indexados_b - indexados_a
 
     pendentes = []
 
@@ -530,7 +610,9 @@ def gabarito_a_atualizar(
         novos_neste_caso = [
             topico
             for topico in avaliado["topics"]
-            if topico and topico in ids_do_mapa and topico not in vistos_em_a
+            if topico
+            and topico in ids_do_mapa
+            and topico in topicos_realmente_novos
         ]
 
         if novos_neste_caso:

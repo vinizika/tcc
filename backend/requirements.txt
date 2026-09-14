@@ -1,35 +1,35 @@
 # Framework
 fastapi==0.116.1
 uvicorn[standard]==0.35.0
-streamlit
+streamlit==1.63.0
 # 0.4.4+ aceita um schema JSON no parametro format, o que restringe a
 # decodificacao ao formato esperado na classificacao de triagem.
-ollama>=0.4.4
+ollama==0.6.2
 
 # Configuração
 python-dotenv==1.1.1
-requests
-python-multipart
+requests==2.34.2
+python-multipart==0.0.32
 
 # Validação
 pydantic==2.11.7
-pandas
+pandas==3.0.5
 pydantic-settings==2.10.1
 
 # Speech to Text
 faster-whisper==1.1.1
-ctranslate2>=4.5.0
-av>=12.0.0
+ctranslate2==4.8.2
+av==18.1.0
 
 #ChromaDB
-chromadb # Banco Vetorial
-sentence-transformers # Modelo que transforma textos em embeddings
-transformers # Tokenizer explícito usado pelo chunking consciente de tokens
+chromadb==1.5.9 # Banco Vetorial
+sentence-transformers==6.0.1 # Modelo que transforma textos em embeddings
+transformers==5.17.0 # Tokenizer explícito usado pelo chunking consciente de tokens
 
 # Extração de documentos
 pymupdf==1.28.2 # Extrator principal com blocos e coordenadas (AGPL-3.0/comercial)
-pypdf # Fallback simples quando a extração estruturada falhar
-fonttools # Decodificação completa das fontes CFF encontradas em papers
+pypdf==6.18.1 # Fallback simples quando a extração estruturada falhar
+fonttools==4.65.0 # Decodificação completa das fontes CFF encontradas em papers
 
 # Persistência: tutores e pets (Supabase/Postgres), histórico de conversa (MongoDB)
 supabase==2.15.0

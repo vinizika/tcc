@@ -51,7 +51,7 @@ services:
     restart: unless-stopped
 
   ollama:
-    image: ollama/ollama:latest
+    image: ollama/ollama:0.33.3
 
     container_name: ollama
 
@@ -67,7 +67,7 @@ services:
   # desenvolvimento — nada aqui substitui tutores e pets, que ficam no
   # Supabase (serviço externo, sem container próprio).
   mongo:
-    image: mongo:7
+    image: mongo:7.0.41
 
     container_name: mongo
 

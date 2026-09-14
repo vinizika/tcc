@@ -29,7 +29,7 @@ Esses números medem o sistema inteiro, não substituem a régua do trilho A.
 |---|---|---|---|
 | 0 | Implementação inicial de ingestão e busca | ✅ anterior a esta pasta | PDFs/TXTs extraídos, divididos e indexados no ChromaDB com embeddings multilíngues |
 | 1 | Auditoria do estado do trilho | ✅ 07/09 | Base local confirmada; achados antigos e novos classificados; riscos de ingestão registrados |
-| 2 | **Régua de recuperação** | 🔜 próxima | Casos fixos com documento esperado; Precision@1, Recall@k e MRR de partida |
+| 2 | **Régua de recuperação** | ✅ entregue pelo B2 | Casos fixos, fingerprint por rodada, Precision@1, Recall@5, MRR e compare conservador |
 | 3 | Preparação, extração e chunking | ✅ código em 07/09; medição de retrieval pendente | Layout por coordenadas, limpeza determinística, seções, sidecar e chunks por tokens implementados e inspecionados; ainda não reindexados |
 | 4 | Curadoria e ampliação da base | ⏳ | Protocolos reais, com procedência e cobertura de emergências e não emergências |
 | 5 | Comparação de embeddings | ⏳ | Comparar o MiniLM atual com alternativas usando a mesma régua |
@@ -74,14 +74,15 @@ Esta seção só cresce. O detalhe e o status ficam no
 | 2 | A ordenação não separa assunto | Trilho A | Handover de 30/08 e rodada 3 do B2 | Protocolos incorretos superam o correto e podem ter score alto | [B-02](../backlog.md#b-02) |
 | 3 | Base sintética e somente de emergências | Trilho A + especialista | Rodadas 3 e 4 do B2 | Enviesa qualquer contexto recuperado e não sustenta a proposta final | [B-03](../backlog.md#b-03) |
 | 4 | A régua de recuperação ainda não existe | Trilho A | Planejamento do time, 31/08 | Bloqueia a avaliação isolada do trilho A e das técnicas do B1 | [B-02](../backlog.md#b-02) e [B-09](../backlog.md#b-09) |
-| 5 | Fingerprint não identifica mudança de conteúdo ou do embedder | Trilho A + B2 | Auditoria do trilho A, 07/09 | Duas bases materialmente diferentes podem parecer iguais no manifesto | [B-29](../backlog.md#b-29) |
-| 6 | Ingestão pode deixar coleção parcial ou registros órfãos | Trilho A | Auditoria do trilho A, 07/09 | Compromete a ampliação segura e a reprodutibilidade da base | [B-30](../backlog.md#b-30) |
-| 7 | Cobertura ainda não testa ChromaDB real temporário | Trilho A | Auditoria e implementação, 07/09 | Processamento documental está coberto; reingestão, falha transacional e busca real ainda não | [B-31](../backlog.md#b-31) |
 | 8 | PDF-fonte ainda contém fusões sem evidência estrutural para corrigir | Trilho A | Rodadas 2 e 3, 07/09 | Layout, captions, `°C` e ligaturas foram corrigidos; termos como `heatstrokeassociated` exigiriam inferência lexical insegura | [B-35](../backlog.md#b-35) |
 
 ### Resolvidos
 
-*(nenhum ainda)*
+- B-29: fingerprint identifica conteúdo, modelo, revisão, receita e inventário.
+- B-30: staging validado, ativação atômica e rollback preservam a base ativa.
+- B-31: integração usa Chroma real temporário e embedding determinístico.
+- B-36: corpo limpo foi separado do texto usado para embedding.
+- B-53: vocabulário de espécie fechado em `dog`, `cat`, `dog_and_cat`.
 
 ## Fora do escopo deste trilho
 

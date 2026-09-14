@@ -977,7 +977,7 @@ Custo medido da chamada: 19 ms com 18 trechos.
 
 **Ingestão pode deixar coleção parcial ou registros órfãos**
 
-**Identificado por:** Vinicius (A) · **Onde:** [auditoria do trilho A](vini/2026-09-07-01-auditoria-do-repositorio.md), 07/09 · **Responsável:** Trilho A · **Prioridade:** Alta · **Status:** Aberto
+**Identificado por:** Vinicius (A) · **Onde:** [auditoria do trilho A](vini/2026-09-07-01-auditoria-do-repositorio.md), 07/09 · **Responsável:** Trilho A · **Prioridade:** Alta · **Status:** Resolvido em 13/09 — staging versionado, validação e rollback
 
 **O que observamos.** Para reingerir um arquivo, o ingestor apaga seus chunks
 antes de executar os upserts. Uma falha de embedding ou escrita após essa
@@ -1001,13 +1001,20 @@ deixaram de existir. Critério: uma falha injetada no meio da ingestão mantém 
 coleção ativa anterior intacta, e apagar um documento da origem o remove da
 base seguinte.
 
+**Como foi resolvido (13/09).** Toda a preparação termina antes de o Chroma
+ser aberto. A escrita cria coleção versionada candidata, exige manifesto,
+confere contagem e hashes e só troca um ponteiro atômico com `--activate`.
+Falha remove apenas a candidata; a coleção anterior permanece e pode ser
+reativada com `--rollback`. O manifesto enumera exatamente o conjunto de
+fontes, portanto a versão seguinte não herda órfãos da anterior.
+
 ---
 
 ### B-31
 
 **Cobertura da ingestão ainda não chega à integração com ChromaDB**
 
-**Identificado por:** Vinicius (A) · **Onde:** [auditoria do trilho A](vini/2026-09-07-01-auditoria-do-repositorio.md), 07/09 · **Responsável:** Trilho A · **Prioridade:** Média · **Status:** Em andamento — limpeza, seções, chunking e inspeção ganharam testes na [rodada 2](vini/2026-09-07-02-ingestao-cientifica-token-aware.md); ainda falta uma integração com Chroma temporário e os cenários transacionais
+**Identificado por:** Vinicius (A) · **Onde:** [auditoria do trilho A](vini/2026-09-07-01-auditoria-do-repositorio.md), 07/09 · **Responsável:** Trilho A · **Prioridade:** Média · **Status:** Resolvido em 13/09 — integração com Chroma real temporário
 
 **O que observamos.** Na auditoria inicial, os testes substituíam Chroma,
 recuperação e re-ranking por dublês e não exercitavam o processamento
@@ -1023,6 +1030,11 @@ completa, mais lenta e com resultado difícil de diagnosticar.
 um teste de integração com armazenamento temporário e função de embedding
 determinística, sem download de modelo. Critério: cobrir ingestão inicial,
 reingestão, falha intermediária e busca ordenada de um caso conhecido.
+
+**Como foi resolvido (13/09).** A suíte abre Chroma real em diretório
+temporário, com embedding determinístico e sem rede. Ela cobre staging sem
+ativação, persistência da ativação, rollback, ponteiro obsoleto sem criação
+acidental, divergência de hash, manifesto ausente e proteção da coleção ativa.
 
 ---
 
@@ -1087,7 +1099,7 @@ liveness ativo, mas readiness não saudável.
 
 **`main` não tem CI nem ambiente totalmente reproduzível**
 
-**Identificado por:** Vinicius (A) · **Onde:** [auditoria do trilho A](vini/2026-09-07-01-auditoria-do-repositorio.md), 07/09 · **Responsável:** Time · **Prioridade:** Baixa · **Status:** Aberto
+**Identificado por:** Vinicius (A) · **Onde:** [auditoria do trilho A](vini/2026-09-07-01-auditoria-do-repositorio.md), 07/09 · **Responsável:** Time · **Prioridade:** Baixa · **Status:** Em validação no PR de 13/09
 
 **O que observamos.** Não existe workflow de CI, lint ou checagem de tipos.
 Parte das dependências está sem versão fixa, incluindo `chromadb` e
@@ -1114,6 +1126,11 @@ distintas justamente no núcleo vetorial.
 reprodutíveis e uma única fonte para a contagem/comando dos testes. Critério:
 todo pull request exibe as suítes do backend e dos scripts aprovadas em
 ambiente criado do zero.
+
+**Atualização 13/09.** As dependências diretas foram fixadas, Torch CPU foi
+separado para Linux/Docker, imagens externas receberam versão e o workflow
+`.github/workflows/tests.yml` instala do zero, executa `pip check`, as duas
+suítes e `compileall`. O item fecha quando esse workflow passar no PR.
 
 ---
 
@@ -1161,7 +1178,7 @@ limitação explicitamente aceita na curadoria.
 
 **Rótulo de título e seção embutido no texto do chunk chega ao prompt**
 
-**Identificado por:** João (B2) · **Onde:** [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md), 11/09 · **Responsável:** Trilho A · **Prioridade:** Alta · **Status:** Aberto
+**Identificado por:** João (B2) · **Onde:** [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md), 11/09 · **Responsável:** Trilho A · **Prioridade:** Alta · **Status:** Resolvido em 13/09
 
 **O que observamos.** O chunking novo monta cada chunk como
 `"Document title: {título}\nSection: {seção}\n\n" + texto` e grava esse texto
@@ -1191,13 +1208,18 @@ metadado (`body`) e o `RetrievalClient` devolvê-lo como `content`. Critério:
 um chunk recuperado da base nova chega ao prompt sem `Document title` nem
 `Section` no início, e o vetor continua considerando título e seção.
 
+**Como foi resolvido (13/09).** O documento vetorizado continua contendo o
+prefixo de título e seção, mas o corpo limpo é armazenado separadamente em
+`metadata.body`. O cliente devolve `body` como `content` e mantém fallback
+para coleções legadas sem esse campo.
+
 ---
 
 ### B-37
 
 **Virada da base: trocar os 18 trechos pela base nova sem perder comparabilidade**
 
-**Identificado por:** João (B2) · **Onde:** [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md), 11/09 · **Responsável:** Trilho A (passos 2 e 4) + Time (passo 3) + B2 (passos 1, 5 e 6) · **Prioridade:** Alta · **Status:** Em andamento — passo 1 concluído em 11/09; passos 2 e 3 pendentes
+**Identificado por:** João (B2) · **Onde:** [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md), 11/09 · **Responsável:** Trilho A (passos 2 e 4) + Time (passo 3) + B2 (passos 1, 5 e 6) · **Prioridade:** Alta · **Status:** Em andamento — segurança reconstruída em 13/09; virada curada e medição ainda pendentes
 
 **O que observamos.** Em 07/09 o trilho A substituiu a receita de chunking
 (fatias de 1200 caracteres → seções, frases e tokens). Os mesmos sete PDFs,
@@ -1239,9 +1261,18 @@ um motivo; o que está entre parênteses é o que quebra se ele for pulado.
 | 2 | **Corrigir o [B-36](#b-36)**: separar o que se embeda do que se exibe | Trilho A | Virar antes é medir um defeito conhecido, e depois medir tudo de novo |
 | 2b | **Fechar ou declarar o [B-35](#b-35)**: a extração do PDF está boa o bastante? | Trilho A | Todo PDF novo passa por aqui, inclusive o Caderno da UFMG ([B-54](#b-54)). Provavelmente é decisão, não trabalho — o PyMuPDF já resolveu quase tudo |
 | 3 | **Torch CPU no `Dockerfile`** e reconstruir a imagem nas três máquinas | Time (a parte estreita do [B-34](#b-34)) | Sem isso, as bases saem diferentes por máquina (problema 1). O rebuild sem o ajuste é o que levou o disco a 99% e derrubou o Docker do trilho A. **Só esta linha bloqueia** — CI, lint e dependências fixadas são o resto do B-34 e ficam para depois |
-| 4 | **`ingest_documents --reset`** em cada máquina, conferindo que o `content_sha256` do `/health/fingerprint` é o mesmo nas três | cada um | O `--reset` também limpa registros de documentos que saíram da pasta; comparar o hash é o que prova que a virada foi igual para todos |
+| 4 | **Staging + validação + ativação explícita** em cada máquina, conferindo consenso do fingerprint | cada um | A candidata contém o corpus completo sem herdar órfãos; o ponteiro só muda depois de manifesto, contagem e hashes válidos |
 | 5 | **B2 remede `naive_rag` e `rag_query`** na base nova e cita as rodadas | B2 | Os números com RAG do README e das evidências passam a descrever a base nova |
 | 6 | **Registrar a virada**: README raiz e este item com "a partir de DD/MM a base é a nova, porque…"; as evidências anteriores ganham nota de validade | B2 | O que o João pediu desde o começo: virar e documentar, não virar em silêncio |
+
+**Atualização 13/09.** Os passos técnicos foram reformulados sem apagar a
+história acima: B-36 foi corrigido; Torch CPU e versões fixas entraram no
+Docker/CI; `--reset` foi removido. A migração agora cria coleção versionada
+em staging, valida manifesto, contagem e hashes, e só então altera um ponteiro
+ativo explícito, preservando rollback. O fingerprint leva revisão, receita,
+conjunto de fontes e inventário por tópico/espécie. Nenhuma fonte atualmente
+capturada foi promovida a curada, portanto a virada clínica e a nova medição
+continuam pendentes.
 
 **Critério.** As três máquinas mostram o mesmo `content_sha256` no
 `/health/fingerprint`; o retrato da base antiga está citado e restaurável; o
@@ -1316,31 +1347,27 @@ foi isso que levou o disco a 99%. *Pronto quando:* as três máquinas rodam a
 mesma imagem, e a do B2 passa a ter `pymupdf` — hoje ela cai no fallback
 `pypdf` e produziria **outro recorte da mesma base**.
 
-**Passo 4 — a virada em si.** `ingest_documents --reset` em cada máquina,
-comparando o `content_sha256` do `/health/fingerprint`. Os três números iguais
-são a prova de que a virada foi a mesma; diferentes, alguém está com imagem ou
-pasta de documentos diferente.
+**Passo 4 — a virada em si (procedimento atualizado em 13/09).** Criar uma
+candidata `--stage-only`, conferir manifesto/recibo e só então usar
+`--activate`. Comparar os dez campos com `verify_vector_consensus.py` nas três
+máquinas. Consenso prova que a virada foi a mesma; divergência preserva a
+coleção anterior e bloqueia a ativação.
 
-**E rode a régua antes de reindexar.** É a única janela: depois do `--reset`,
-a base antiga só volta pelo retrato, e sem o "antes" não há o que comparar. A
-sequência é `run_retrieval_eval.py --name antes_da_virada`, reindexar,
-`--name depois_da_virada`, e `compare` entre as duas.
+**E rode a régua antes de ativar.** Sem o “antes” não há o que comparar. Use
+`scripts/run_ingestion_cycle.py`, que preserva fingerprints e encadeia
+staging, ativação explícita, rodada posterior e compare; em falha depois da
+ativação, tenta o rollback e registra o resultado.
 
 **Depois disso**, os passos 5 e 6 são do B2, e o piloto do agente de ingestão
 acontece sobre a rodada da régua na base nova.
 
 ### O que não bloqueia a virada, mas bloqueia o uso depois
 
-**[B-30](#b-30)** — a ingestão apaga os trechos de um arquivo antes de escrever
-os novos, então falha no meio deixa a coleção incompleta; com `--reset`, o
-risco é a base inteira. **Não bloqueia a virada**, porque o retrato da base
-antiga existe e o script de restauração foi testado — há caminho de volta.
-**Bloqueia o uso rotineiro**: quando cada lote de fontes curadas for indexado,
-não vai existir retrato do estado desejado para restaurar. Vale antes do
-primeiro lote, não antes da virada.
+**[B-30](#b-30) foi resolvido em 13/09.** A candidata é isolada, validada e
+somente depois ativada; falha intermediária não altera a coleção ativa.
 
-**[B-53](#b-53)** — `species` com três grafias nas fichas. O `compare` normaliza
-até lá; é higiene, não bloqueio.
+**[B-53](#b-53) foi resolvido em 13/09.** O vocabulário atual é `dog`, `cat`,
+`dog_and_cat`, preservado no fingerprint de cada rodada.
 
 **O que já foi feito (11/09).** Passo 1 concluído: o retrato está versionado
 com os 18 trechos, os vetores de 384 dimensões, os dois hashes
@@ -1861,7 +1888,7 @@ lá, quem valida é o script de captura.
 
 **O ciclo de ingestão não é um comando só, e a régua não diz o que mudou entre duas rodadas**
 
-**Identificado por:** João (B2) · **Onde:** [plano das duas frentes](../docs/plano-base-e-prova.md), 12/09 · **Responsável:** Trilho B2 · **Prioridade:** Média · **Status:** Aberto
+**Identificado por:** João (B2) · **Onde:** [plano das duas frentes](../docs/plano-base-e-prova.md), 12/09 · **Responsável:** Trilho B2 · **Prioridade:** Média · **Status:** Resolvido em 13/09
 
 **O que observamos.** A régua ([rodada 11](joao/2026-09-12-11-regua-de-recuperacao.md))
 mede uma rodada por vez. Comparar duas — antes e depois de indexar documentos
@@ -1902,7 +1929,7 @@ gabarito. Casos novos entram como "sem antes" e valem na comparação seguinte.
 seis comandos com flags, hashes e caminhos. Montar a sequência à mão a cada
 lote — ou pedir a um modelo que a monte — faz duas execuções saírem
 diferentes, e aí o antes/depois não compara mais nada. Empacotado, vira
-`ciclo_de_ingestao.py --doc X --name lote3`, e quem o roda não tem como
+`run_ingestion_cycle.py --name lote3 --profile curated`, e quem o roda não tem como
 variar. Critério: um comando reproduz o ciclo inteiro e **falha alto** quando
 qualquer conferência recusa, em vez de seguir sem ela.
 
@@ -1925,6 +1952,12 @@ bootstrap — contagens e diferenças bastam, e um caso que piorou, piorou.
 **Falta o passo 0**, e ele é o que fecha este item: empacotar o ciclo num
 comando. Ele depende de a ingestão poder acontecer ([B-37](#b-37)), e entra
 junto com o roteiro do agente de ingestão.
+
+**Como foi resolvido (13/09).** `scripts/run_ingestion_cycle.py` é fail-stop,
+mostra somente o plano por padrão e, quando explicitamente executado,
+encadeia fingerprint/régua anterior, staging, ativação opcional, régua
+posterior e compare. `scripts/verify_vector_consensus.py` cruza fingerprints
+e manifesto/recibo e recusa campos ausentes ou divergentes.
 
 ---
 
@@ -1958,7 +1991,7 @@ outubro/novembro expuser as fontes ao usuário final, o assunto volta.
 
 **Vocabulário de `species` nas fichas da base não é fechado**
 
-**Identificado por:** João (B2) · **Onde:** [rodada 11](joao/2026-09-12-12-mapa-de-assuntos.md), 12/09 · **Responsável:** Trilho A · **Prioridade:** Baixa · **Status:** Aberto
+**Identificado por:** João (B2) · **Onde:** [rodada 11](joao/2026-09-12-12-mapa-de-assuntos.md), 12/09 · **Responsável:** Trilho A · **Prioridade:** Baixa · **Status:** Resolvido em 13/09
 
 **O que observamos.** As oito fichas JSON de `backend/data/documents/` usam
 três grafias para a espécie: `dogs_and_cats` (seis), `cats` (uma) e `dog`
@@ -1984,6 +2017,11 @@ em `/health/fingerprint`. O compare lê as fichas do disco **no momento da
 comparação**, então a espécie que ele mostra é a de hoje, não a de cada
 rodada. Para cobertura isso basta; para qualquer afirmação de "antes era X,
 agora é Y" em espécie, não.
+
+**Como foi resolvido (13/09).** As oito fichas usam o vocabulário fechado
+`dog`, `cat`, `dog_and_cat`; o ingestor recusa outra grafia no perfil curado.
+Cada rodada preserva `species_counts_by_topic` no fingerprint, e o compare
+deixou de consultar fichas atuais para explicar o passado.
 
 ---
 
@@ -2059,7 +2097,7 @@ não servir, o motivo escrito, que também é resultado.
 
 **O único documento real da base nunca é recuperado**
 
-**Identificado por:** João (B2) · **Onde:** [rodada 13](joao/2026-09-12-14-compare-da-regua.md), 12/09 · **Responsável:** Trilho A · **Prioridade:** Média · **Status:** Aberto
+**Identificado por:** João (B2) · **Onde:** [rodada 13](joao/2026-09-12-14-compare-da-regua.md), 12/09 · **Responsável:** Trilho A · **Prioridade:** Média · **Status:** Corrigido em 13/09 — conclusão histórica não era demonstrada
 
 **O que observamos.** O bloco de cobertura do `compare` da régua conta quantos
 assuntos da base **aparecem** entre os cinco trechos devolvidos em algum dos 18
@@ -2094,6 +2132,15 @@ não aparecer, a resposta é a segunda hipótese, e isso é dado forte para o
 re-ranking e para a decisão de que tipo de fonte entra na base. Critério: um
 caso de golpe de calor no `cases.csv`, e o `compare` dizendo se
 `canine_heatstroke` passou a ser encontrável.
+
+**Errata (13/09).** O compare antigo chamava um tópico de encontrável quando
+ele aparecia em qualquer resultado, mesmo num caso que não o esperava, e lia
+espécie das fichas atuais em vez do fingerprint da rodada. Portanto os “sete
+de oito” e a conclusão de que este era o único documento nunca recuperado não
+são sustentados pelo artefato histórico. O comparador agora exige inventário
+da própria rodada, cobertura da espécie e retorno em caso que espera o tópico;
+rodadas antigas sem esses campos recebem fallback conservador. Um novo caso e
+uma nova rodada ainda são necessários para responder a hipótese clínica.
 
 ---
 
@@ -2131,4 +2178,9 @@ tutor.
 | [B-13](#b-13) | Whisper com três implementações e sem benchmark | 08/09 | [rodada 3 do Ryu](ryu/2026-09-08-03-whisper-unico-e-wer.md) |
 | [B-25](#b-25) | O compare não detecta mudança de código entre rodadas | 11/09 | [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md) |
 | [B-29](#b-29) | Fingerprint da base não identifica conteúdo nem embedder | 11/09 | [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md) |
+| [B-30](#b-30) | Ingestão pode deixar coleção parcial ou registros órfãos | 13/09 | [reconstrução do endurecimento](vini/2026-09-13-04-endurecimento-da-ingestao-vetorial.md) |
+| [B-31](#b-31) | Cobertura não chegava ao Chroma real temporário | 13/09 | [reconstrução do endurecimento](vini/2026-09-13-04-endurecimento-da-ingestao-vetorial.md) |
+| [B-36](#b-36) | Rótulos de embedding chegavam ao prompt | 13/09 | [reconstrução do endurecimento](vini/2026-09-13-04-endurecimento-da-ingestao-vetorial.md) |
+| [B-51](#b-51) | Ciclo de ingestão não era um comando fail-stop | 13/09 | [reconstrução do endurecimento](vini/2026-09-13-04-endurecimento-da-ingestao-vetorial.md) |
+| [B-53](#b-53) | Vocabulário de espécie não era fechado nem preservado por rodada | 13/09 | [reconstrução do endurecimento](vini/2026-09-13-04-endurecimento-da-ingestao-vetorial.md) |
 | [B-38](#b-38) | Runner não confere a base antes de uma rodada com recuperação | 11/09 | [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md) |

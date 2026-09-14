@@ -74,23 +74,26 @@ docker compose -f docker-compose.yml -f docker-compose.gpu.yml up -d
 docker compose exec ollama ollama pull llama3.2:3b
 ```
 
-**4. Indexe a base de conhecimento** (uma vez por máquina — o banco vetorial
-não é versionado, e sem este passo o RAG não recupera nada):
+**4. Prepare a base de conhecimento.** A operação segura cria uma coleção
+versionada em staging; não troca a base ativa por acidente:
 
 ```bash
-docker compose exec backend python -m app.database.ingest_documents
+docker compose exec backend python -m app.database.ingest_documents \
+  --profile curated --stage-only
 ```
 
-Confira que funcionou: `curl localhost:8000/health/fingerprint` deve mostrar
-`chunk_count` maior que zero. Para reindexar do zero, acrescente `--reset`.
+O perfil `curated` recusa toda fonte sem aprovação clínica, direitos e
+procedência completos e falha antes de criar o Chroma se nenhuma for elegível.
+Use `experimental` apenas para candidatas e `legacy_rechunk` apenas para os
+protocolos sintéticos antigos. A ativação requer `--activate` explícito e
+ocorre após contagem, manifesto e hashes serem validados. Consulte o
+[`estado atual da ingestão`](docs/estado-atual.md) antes de operar a base.
 
-> **Atenção à base de referência.** Em 07/09 o trilho A trocou o algoritmo de
-> chunking. O comando acima, numa máquina nova, gera a **base nova** (cerca de
-> 259 trechos de 8 documentos). As rodadas citadas até 05/09 usaram a base
-> anterior, de 18 trechos, que não pode mais ser gerada a partir do código.
-> Quem já tem essa base **não deve reindexar** até a virada combinada pelo
-> time ([B-37](evidencias/backlog.md#b-37)). Como preparar e inspecionar um
-> documento novo está em
+> **Atenção à base de referência.** As rodadas citadas até 05/09 usaram a
+> coleção legada de 18 trechos. Os números posteriores dependem da coleção e
+> dos hashes registrados em cada fingerprint. Staging não muda essa base, e o
+> rollback preserva o caminho de volta ([B-37](evidencias/backlog.md#b-37)).
+> Como preparar e inspecionar um documento novo está em
 > [`backend/data/documents/README.md`](backend/data/documents/README.md).
 
 **5. (Opcional) Cadastro de tutor/pet e histórico de conversa.** O compose já
@@ -183,12 +186,14 @@ continuar a mesma conversa. Detalhe completo em
 Dois conjuntos, porque rodam em lugares diferentes:
 
 ```bash
-# backend: dentro do container (102 testes; integrações externas usam dublês)
+# backend: dentro do container; inclui Chroma real em diretório temporário
 docker compose exec backend python -m pytest -q
 
-# scripts: no host (57 testes, incluindo o de regressão contra a medição de 04/05)
+# scripts: no host
 python -m pytest scripts/tests -q
 ```
+
+A contagem é obtida pela própria coleta do pytest e não é mantida manualmente.
 
 No Windows, prefixe os comandos do host com `$env:PYTHONUTF8=1;` (PowerShell)
 para os acentos dos arquivos serem lidos corretamente.

@@ -248,37 +248,24 @@ def test_parser_estruturado_faz_fallback_limpo_para_pypdf(monkeypatch):
     assert "layout inválido" in statistics.warnings[0]
 
 
-def test_falha_em_um_documento_nao_impede_tentativa_do_seguinte(monkeypatch):
-    paths = [Path("broken.pdf"), Path("working.pdf")]
-    attempted = []
+def test_falha_na_preparacao_aborta_antes_do_staging(monkeypatch):
+    """Um lote é indivisível: erro documental não produz coleção parcial."""
 
-    class Collection:
-        def count(self):
-            return 1
+    def fail_preparation(**kwargs):
+        del kwargs
+        raise ingest_documents.IngestionValidationError("broken.pdf")
 
-    def fake_ingest(collection, document_path, tokenizer=None):
-        del collection, tokenizer
-        attempted.append(document_path.name)
-        if document_path.name == "broken.pdf":
-            raise ValueError("PDF malformado")
-        return 1
+    def forbidden_stage(*args, **kwargs):
+        raise AssertionError(f"staging indevido: {args!r}, {kwargs!r}")
 
-    monkeypatch.setattr(ingest_documents, "_document_paths", lambda: paths)
-    monkeypatch.setattr(ingest_documents, "ingest_document", fake_ingest)
-    monkeypatch.setattr(ingest_documents, "load_embedding_tokenizer", object)
+    monkeypatch.setattr(ingest_documents, "prepare_ingestion", fail_preparation)
+    monkeypatch.setattr(ingest_documents, "stage_ingestion", forbidden_stage)
 
-    from app.database.chroma_client import ChromaDBClient
-
-    monkeypatch.setattr(
-        ChromaDBClient,
-        "get_collection",
-        staticmethod(lambda: Collection()),
-    )
-
-    with pytest.raises(RuntimeError, match="broken.pdf"):
-        ingest_documents.ingest_documents()
-
-    assert attempted == ["broken.pdf", "working.pdf"]
+    with pytest.raises(
+        ingest_documents.IngestionValidationError,
+        match="broken.pdf",
+    ):
+        ingest_documents.ingest_documents(profile="experimental")
 
 
 def test_regressao_do_paper_real_melhora_extracao_sem_tocar_no_indice():

@@ -47,3 +47,6 @@ data/evaluation/runs/
 # apenas as citadas, promovidas para data/retrieval/cited/.
 data/retrieval/runs/
 
+# Recibos locais dos ciclos de ingestao. Somente evidencias promovidas e
+# reproduzidas devem ser versionadas.
+data/retrieval/cycles/
