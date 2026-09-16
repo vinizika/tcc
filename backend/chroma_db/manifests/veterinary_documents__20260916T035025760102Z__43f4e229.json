@@ -1,0 +1,85 @@
+{
+  "chunking": {
+    "dimensions": 384,
+    "embedding_text_fields": [
+      "title",
+      "section",
+      "body"
+    ],
+    "max_tokens": 128,
+    "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "overlap_tokens": 16,
+    "recipe_sha256": "1a93e1e7db9a5b5a7766ca11b54162cb74cb76bb4d4c2c02b2dc0d5c4319682b",
+    "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+    "target_tokens": 96,
+    "version": "vector-ingestion-recovery-v1"
+  },
+  "chunks": {
+    "content_sha256": "5613734846377472b4ab4de9edea6822d719c959fa63f0b8ddcc393282b8b4bf",
+    "count": 99,
+    "ids_sha256": "f58264d16755034b56c0f86023979e1886bf7175f76ba018fa787141e0f0a0ed",
+    "tokens": {
+      "max": 127,
+      "mean": 82.576,
+      "median": 84,
+      "min": 46
+    }
+  },
+  "collection_name": "veterinary_documents__20260916T035025760102Z__43f4e229",
+  "created_at": "2026-09-16T03:52:26.147719+00:00",
+  "embedding": {
+    "dimensions": 384,
+    "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42"
+  },
+  "profile": "experimental",
+  "quality": {
+    "corrupt_document_count": 0,
+    "fallback_count": 2,
+    "species_counts": {
+      "cat": 11,
+      "dog": 7,
+      "dog_and_cat": 81
+    },
+    "topic_counts": {
+      "acute_hindlimb_paralysis": 18,
+      "anaphylaxis_facial_swelling": 32,
+      "fading_neonate": 49
+    },
+    "validation_status_counts": {
+      "approved_by_specialist": 99
+    },
+    "warning_count": 6
+  },
+  "schema_version": 1,
+  "sources": {
+    "document_count": 4,
+    "documents": [
+      {
+        "chunk_count": 11,
+        "path": "acute_hindlimb_paralysis__jfms_2024_feline_ate.txt",
+        "sidecar_sha256": "ccea8a4867db7ff6980c583986d75eecd1de6eecdbf874f24d801d7246365cbf",
+        "source_sha256": "724453ba336b20390ef226b12949ace7290625c940e35420f5a941c8e5d8f494"
+      },
+      {
+        "chunk_count": 7,
+        "path": "acute_hindlimb_paralysis__pvb_2017_canine_ischemic_neuromyopathy_excerpt.txt",
+        "sidecar_sha256": "ae2293ffc96a0201e4c289ab68f8ce6caf679cbf0a6e57ca3ce3f08d35384785",
+        "source_sha256": "41c0284eb7c0b1aa7b41e5262af190796e45492762d2c347aaf879c7ddbb0eb4"
+      },
+      {
+        "chunk_count": 32,
+        "path": "anaphylaxis_facial_swelling__toxins_2024_bees_wasps_excerpt.txt",
+        "sidecar_sha256": "9208f4f9563af1ef5935874b66ddc3f8b05890b658e07644b100bc4394acca51",
+        "source_sha256": "2120b88919a5fbfd1cfd2e1261c6350deae5cc16b8b93a1ac4ffe7500f7e27a5"
+      },
+      {
+        "chunk_count": 49,
+        "path": "fading_neonate__animals_2024_neonatal_triage.txt",
+        "sidecar_sha256": "cf6eb1a87ac7dd348f32783add0ed8018dada1a9781b793b0048621a9c1b3f91",
+        "source_sha256": "6ec82e32eaba49122030888892daef854252b7dcae394c9dd40fef53d3e60782"
+      }
+    ],
+    "source_set_sha256": "43f4e229de8ccfb8b3ecc73f247ec1b8d4f716ae7eda611438e2a5e8618d3dba"
+  }
+}

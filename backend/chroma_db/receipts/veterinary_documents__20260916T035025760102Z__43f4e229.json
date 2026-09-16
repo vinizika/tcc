@@ -1,0 +1,10 @@
+{
+  "activated": false,
+  "active_pointer": null,
+  "chunk_count": 99,
+  "collection_name": "veterinary_documents__20260916T035025760102Z__43f4e229",
+  "created_at": "2026-09-16T03:52:26.176780+00:00",
+  "manifest_sha256": "cd514c9cd903b30918c20bfd3feb01ce3877cadda1c21ae6596848414ac8231b",
+  "profile": "experimental",
+  "schema_version": 1
+}

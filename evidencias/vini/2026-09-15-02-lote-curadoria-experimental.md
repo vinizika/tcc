@@ -9,6 +9,14 @@
 **Escopo:** `anticoagulant_rodenticide_poisoning`,
 `parvovirus_panleukopenia` e `pyometra`
 
+> **Atualização de 16/09/2026:** o responsável informou que a ASAVET —
+> Primeiro Grupo de Anestesia e Veterinaria Universitaria do Brasil aprovou
+> coletivamente as quatro capturas deste lote. Os sidecars e o mapa foram
+> atualizados para `approved_by_specialist` / `fonte_aprovada`, sem registrar
+> revisor individual ou CRMV. O escopo continua `experimental_only`. Os hashes
+> de sidecar abaixo são os preservados no staging original, anterior ao
+> registro dessa aprovação.
+
 ## Resultado
 
 Os três tópicos foram confirmados como `sem_documento` antes da pesquisa e
@@ -137,7 +145,8 @@ passaram.
 
 ## Pendências
 
-1. Especialista deve avaliar as quatro capturas; nenhuma está aprovada.
+1. ~~Especialista deve avaliar as quatro capturas.~~ Resolvida em 16/09/2026:
+   aprovação coletiva da ASAVET registrada nas quatro fichas.
 2. Encontrar fonte felina de panleucopenia com extração limpa.
 3. Encontrar fonte redistribuível em português sobre raticida anticoagulante.
 4. Melhorar a cobertura/escore dos três casos e repetir a régua.
