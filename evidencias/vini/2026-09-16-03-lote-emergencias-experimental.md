@@ -125,5 +125,9 @@ A candidata não deve ser ativada.
 4. Não ativar a candidata atual nem executar ingestão `curated` antes da
    revisão dos resultados e de uma decisão separada sobre o escopo.
 
-Não houve commit, push ou abertura de PR nesta etapa. O diff foi preparado
-para revisão do usuário.
+O lote foi publicado no commit
+`5e76529` da branch `codex/lote-03-emergencias`. A tentativa de abrir o PR pelo
+conector do GitHub recebeu HTTP 403 (`Resource not accessible by integration`).
+A branch está disponível e o PR pode ser criado pelo link informado pelo
+próprio GitHub:
+<https://github.com/vinizika/tcc/pull/new/codex/lote-03-emergencias>.

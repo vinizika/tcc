@@ -160,8 +160,12 @@
     "do not activate and do not run curated ingestion before retrieval review and a separate scope decision"
   ],
   "publication": {
-    "committed": false,
-    "pushed": false,
-    "pull_request_opened": false
+    "committed": true,
+    "data_commit": "5e76529",
+    "pushed": true,
+    "remote_branch": "origin/codex/lote-03-emergencias",
+    "pull_request_opened": false,
+    "pull_request_blocker": "GitHub connector returned HTTP 403: Resource not accessible by integration.",
+    "pull_request_creation_url": "https://github.com/vinizika/tcc/pull/new/codex/lote-03-emergencias"
   }
 }
