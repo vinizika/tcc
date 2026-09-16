@@ -1,0 +1,34 @@
+{
+  "title": "Anticoagulant rodenticide bleeding",
+  "source": "Frontiers in Veterinary Science",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "pending_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "anticoagulant_rodenticide_poisoning",
+  "language": "en",
+  "source_url": "https://www.frontiersin.org/journals/veterinary-science/articles/10.3389/fvets.2022.879179/pdf",
+  "indexing": {
+    "include_sections": ["Introduction", "Conclusions"],
+    "exclude_sections": ["Original Research", "Materials and methods", "Results", "Discussion", "Data Availability Statement", "Ethics Statement", "References"],
+    "exclude_pages": [],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-15",
+  "captured_sha256": "c8c9ed5eae1ab33d7e918beb45f98aa63649073ffc4e7af9fbce6bfdd6e29f01",
+  "map_line": "anticoagulant_rodenticide_poisoning",
+  "specialist": {
+    "verdict": "",
+    "name": "",
+    "date": ""
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; captura e redistribuicao experimental autorizadas com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-15"
+  },
+  "year": 2022,
+  "authors": "S. Stroope; R. Walton; J.P. Mochel; L. Yuan; B. Enders"
+}

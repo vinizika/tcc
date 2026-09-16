@@ -24,6 +24,10 @@ que será indexado.
 | Medicamento humano | [ABMVZ 2012 — Sensibilidade a AINEs](https://www.scielo.br/j/abmvz/a/ysbs3yBFpPWrYBgtv3hNn3F/?format=html&lang=pt) · `human_medication_poisoning__scielo_2012_aines_pdf` | pt · acadêmico | somente `RESUMO` | 7 | sim | ASAVET · 14/09/2026 |
 | Carbamato/organofosforado | [ABMVZ 2021 — Envenenamento em gatos no Brasil](https://www.scielo.br/j/abmvz/a/YZMjLkrv5SsSLqLw3qSXHKG/?lang=en) · `carbamate_organophosphate_poisoning__scielo_2021_feline_poisoning` | en · acadêmico | somente `ABSTRACT` | 7 | sim | ASAVET · 14/09/2026 |
 | Permetrina em gato | [VMD 2014 — Permethrin: don’t put your cat at risk](https://www.gov.uk/government/publications/permethrin-dont-put-your-cat-at-risk) · `permethrin_toxicosis_cats__vmd_2014` | en · tutor | exposição por produto canino · sinais · orientação imediata | 10 | sim | ASAVET · 14/09/2026 |
+| Raticida anticoagulante | [Frontiers 2022 — Clinical bleeding in dogs](https://www.frontiersin.org/journals/veterinary-science/articles/10.3389/fvets.2022.879179/full) · `anticoagulant_rodenticide_poisoning__frontiers_2022_bleeding` | en · acadêmico | `Introduction` · `Conclusions` | 19 | | |
+| Parvovirose | [Microorganisms 2025 — Canine parvovirus research](https://www.mdpi.com/2076-2607/13/1/47) · `parvovirus_panleukopenia__mdpi_2025_canine_parvovirus` | en · acadêmico | primeira página de `Introduction` | 9 | | |
+| Piometra | [Animals 2023 — Canine Pyometra](https://www.mdpi.com/2076-2615/13/21/3310) · `pyometra__mdpi_2023_review` | en · acadêmico | somente `Clinical presentation` | 7 | | |
+| Piometra | [ABMVZ 2013 — OSH em cadelas e gatas](https://www.scielo.br/j/abmvz/a/s8WXqc8QPnRq33ZqdyGDnvq/?lang=pt) · `pyometra__scielo_2013_cadelas_gatas` | pt · acadêmico | somente página 4 | 14 | | |
 
 ## Perguntas da leva do vômito isolado (12/09)
 
