@@ -1,0 +1,43 @@
+{
+  "title": "Sensibilidade a anti-inflamatorios",
+  "source": "Arquivo Brasileiro de Medicina Veterinaria e Zootecnia",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog_and_cat",
+  "topic": "human_medication_poisoning",
+  "language": "pt",
+  "source_url": "https://www.scielo.br/j/abmvz/a/ysbs3yBFpPWrYBgtv3hNn3F/?format=pdf&lang=pt",
+  "indexing": {
+    "include_sections": [
+      "RESUMO"
+    ],
+    "exclude_sections": [
+      "ABSTRACT",
+      "INTRODUÇÃO",
+      "MATERIAL E MÉTODOS",
+      "RESULTADOS E DISCUSSÃO",
+      "CONCLUSÕES",
+      "REFERÊNCIAS"
+    ],
+    "exclude_pages": [],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-14",
+  "captured_sha256": "ed59061397a41e9560fde046c87e81d45f7d1eda5a2731282a377f9687be0030",
+  "map_line": "human_medication_poisoning",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET — Primeiro Grupo de Anestesia e Veterinaria Universitaria do Brasil",
+    "date": "2026-09-14"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY-NC 4.0 declarada na pagina do artigo; uso experimental nao comercial autorizado pelo responsavel do projeto em 2026-09-14.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-14"
+  },
+  "year": 2012,
+  "authors": "E. Riboldi; D.A. Lima; E. Dallegrave"
+}

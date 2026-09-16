@@ -1,981 +1,879 @@
-from pathlib import Path
-from datetime import datetime, timedelta
-import re
+"""Protótipo navegável e independente do fluxo tutor–clínica.
+
+Execute a partir da raiz do repositório:
+    python -m streamlit run mock/streamlit_app_mock.py --server.port 8502
+
+Tudo nesta interface é local e simulado. Nenhuma função deste arquivo chama o
+backend real, um mapa externo ou uma clínica.
+"""
+
+from __future__ import annotations
+
+from datetime import datetime
+from uuid import uuid4
 
 import pandas as pd
 import streamlit as st
 
 try:
     import pydeck as pdk
-except Exception:
+except Exception:  # pragma: no cover - exercitado manualmente sem PyDeck
     pdk = None
 
-st.set_page_config(page_title="Triagem Veterinária Mock", page_icon="🐾", layout="wide")
-
-# ============================================================
-# MOCK 100% HARD CODED
-# - Sem LLM
-# - Sem backend
-# - Sem banco de dados
-# - Sem geolocalização real
-# ============================================================
-
-RELATO_PADRAO = (
-    "Meu cachorro Thor está estranho desde hoje cedo. Ele está muito quieto, "
-    "parece cansado, não quis comer direito e agora está deitado respirando mais rápido. "
-    "Estou preocupado porque isso não é normal para ele."
+from mock.demo_data import (
+    CLINICS,
+    DEFAULT_REPORT,
+    DEMO_PET,
+    DEMO_TIMEZONE,
+    DEMO_TUTOR,
+    EMERGENCY_GUIDANCE,
+    INITIAL_AI_MESSAGE,
+    NON_EMERGENCY_GUIDANCE,
+    TRIAGE_CAVEATS,
+)
+from mock.demo_service import (
+    ConsentRequiredError,
+    create_referral,
+    dashboard_metrics,
+    filter_cases,
+    filter_clinics,
+    find_case,
+    get_clinic,
+    get_location,
+    initial_case_store,
+    list_clinic_cases,
+    list_clinics,
+    new_demo_state,
+    send_message,
+    update_status,
+)
+from mock.domain import (
+    Case,
+    CaseStatus,
+    Classification,
+    Clinic,
+    Message,
+    MessageAuthor,
+    Triage,
+    TriageAnswer,
 )
 
-TUTOR = {
-    "nome": "João Pedro",
-    "telefone": "(11) 98765-4321",
-}
 
-PERFIL_ANIMAL = {
-    "nome": "Thor",
-    "especie": "Cachorro",
-    "raca": "Bulldog Francês",
-    "idade": "8 anos",
-    "peso": "12,4 kg",
-    "historico": [
-        "Histórico de intolerância ao calor",
-        "Episódios anteriores de tosse após esforço",
-        "Vacinação em dia",
-        "Sem alergias medicamentosas registradas",
-    ],
-}
-
-MENSAGEM_INICIAL_ASSISTENTE = (
-    f"Olá! Eu sou o assistente de triagem veterinária.\n\n"
-    f"Já estou contextualizado com o histórico do {PERFIL_ANIMAL['nome']}, "
-    "incluindo intolerância ao calor, episódios anteriores de tosse após esforço, "
-    "vacinação em dia e ausência de alergias medicamentosas registradas.\n\n"
-    f"Descreva o que está acontecendo com o {PERFIL_ANIMAL['nome']} para que eu possa te orientar."
+st.set_page_config(
+    page_title="VetAI — demonstração de encaminhamento",
+    page_icon="🐾",
+    layout="wide",
+    initial_sidebar_state="expanded",
 )
 
-LOCALIZACAO_TUTOR = {
-    "nome": "Tutor - localização simulada",
-    "lat": -23.6939,
-    "lon": -46.5654,
-}
-
-CLINICAS = [
-    {
-        "id": "vitalvet",
-        "aba": "Clínica - VitalVet",
-        "nome": "Hospital Veterinário VitalVet 24h",
-        "lat": -23.6889,
-        "lon": -46.5577,
-        "distancia": "1,4 km",
-        "tempo": "6 min",
-        "avaliacao": "4,8",
-        "endereco": "Av. Central, 1200 - São Bernardo do Campo",
-        "atendimento": "Emergência 24h, oxigenioterapia e internação",
-    },
-    {
-        "id": "animalcare",
-        "aba": "Clínica - AnimalCare",
-        "nome": "Clínica AnimalCare Emergências",
-        "lat": -23.7015,
-        "lon": -46.5591,
-        "distancia": "2,1 km",
-        "tempo": "9 min",
-        "avaliacao": "4,6",
-        "endereco": "Rua das Acácias, 85 - São Bernardo do Campo",
-        "atendimento": "Clínica geral, emergência e exames rápidos",
-    },
-    {
-        "id": "petlife",
-        "aba": "Clínica - PetLife",
-        "nome": "Centro Veterinário PetLife",
-        "lat": -23.6994,
-        "lon": -46.5799,
-        "distancia": "3,3 km",
-        "tempo": "13 min",
-        "avaliacao": "4,7",
-        "endereco": "Rua Marechal Mock, 410 - São Bernardo do Campo",
-        "atendimento": "Emergência, cardiologia e imagem",
-    },
-]
-
-PRIMEIROS_CUIDADOS = [
-    "Mantenha o Thor em local fresco, calmo e ventilado.",
-    "Evite esforço físico até a avaliação veterinária.",
-    "Não ofereça medicamentos por conta própria.",
-    "Não force água ou alimento se ele estiver desconfortável.",
-    "Procure atendimento veterinário o quanto antes.",
-]
-
-CUIDADOS_NAO_EMERGENCIAIS = [
-    "Mantenha o Thor em um ambiente calmo, fresco e ventilado.",
-    "Ofereça água em pequenas quantidades, sem forçar a ingestão.",
-    "Observe se ele volta a se alimentar e interagir normalmente nas próximas horas.",
-    "Evite exercícios, calor intenso ou brincadeiras agitadas no momento.",
-    "Se surgirem novos sinais, piora do comportamento, vômitos, desmaio ou dificuldade respiratória, procure uma clínica veterinária.",
-]
-
-SINTOMA_CHAVE_OFEGANCIA = "Dyspnea"
-
-ESPECIALIDADE_SUGERIDA = "Clínica emergencial / suporte respiratório"
-
-ETAPAS_FLUXO = {
-    "inicio": {"label": "Relato inicial", "progresso": 15},
-    "pergunta_ofegante": {"label": "Pergunta decisória", "progresso": 35},
-    "orientacao": {"label": "Emergência identificada", "progresso": 60},
-    "orientacao_nao_emergencial": {"label": "Orientação não emergencial", "progresso": 60},
-    "continuacao_conversa": {"label": "Investigação adicional", "progresso": 45},
-    "busca_clinica": {"label": "Busca por clínica", "progresso": 80},
-    "clinica_notificada": {"label": "Clínica notificada", "progresso": 100},
-}
-
-# Mapeamento simples de termos em português para sintomas existentes no dataset.
-# O sintoma só é exibido se existir nas colunas symptoms1...symptoms5 do CSV.
-MAPEAMENTO_SINTOMAS = [
-    {
-        "sintoma_dataset": "Tiredness",
-        "termos": ["cansado", "cansada", "cansaço", "quieto", "quieta", "prostrado", "prostrada"],
-    },
-    {
-        "sintoma_dataset": "Appetite Loss",
-        "termos": ["não quis comer", "nao quis comer", "sem apetite", "não comeu", "nao comeu", "recusa alimentar"],
-    },
-    {
-        "sintoma_dataset": "Breathing Difficulty",
-        "termos": ["respirando", "respiração", "respiracao", "ofegante", "ofegância", "falta de ar", "dificuldade para respirar"],
-    },
-    {
-        "sintoma_dataset": "Coughing",
-        "termos": ["tosse", "tossindo", "tossiu"],
-    },
-    {
-        "sintoma_dataset": "Lethargy",
-        "termos": ["letargia", "muito parado", "deitado", "fraco", "fraqueza"],
-    },
-]
+st.markdown(
+    """
+    <style>
+      :root { --vet-teal: #116466; --vet-ink: #18343b; --vet-soft: #eef7f5; }
+      .block-container { max-width: 1440px; padding-top: 1.5rem; }
+      h1, h2, h3 { color: var(--vet-ink); letter-spacing: -0.02em; }
+      [data-testid="stMetric"] { background: #f7faf9; border: 1px solid #dce8e5;
+        border-radius: .75rem; padding: .7rem; }
+      .demo-banner { background: #fff7df; border: 1px solid #e5c766;
+        border-radius: .75rem; color: #4d400f; padding: .75rem 1rem; margin-bottom: 1rem; }
+      .clinic-card { border-left: 4px solid var(--vet-teal); padding-left: .8rem; }
+      @media (max-width: 760px) { .block-container { padding-left: 1rem; padding-right: 1rem; } }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 
 
-# ============================================================
-# DATASET DE SINTOMAS
-# ============================================================
-
-def obter_caminhos_dataset():
-    pasta_atual = Path(__file__).resolve().parent
-    raiz_projeto = pasta_atual.parent
-
-    return [
-        raiz_projeto / "data" / "processed" / "dataset1_augmented_llm_validated.csv",
-        pasta_atual / "dataset1_augmented_llm_validated.csv",
-        raiz_projeto / "dataset1_augmented_llm_validated.csv",
-    ]
+def now() -> datetime:
+    return datetime.now(DEMO_TIMEZONE)
 
 
-@st.cache_data
-def carregar_sintomas_validos():
-    for caminho in obter_caminhos_dataset():
-        if caminho.exists():
-            df = pd.read_csv(caminho)
-            colunas_sintomas = [col for col in df.columns if col.lower().startswith("symptoms")]
-
-            sintomas = set()
-            for coluna in colunas_sintomas:
-                valores = df[coluna].dropna().astype(str).str.strip()
-                sintomas.update(valor for valor in valores if valor)
-
-            return sintomas, str(caminho)
-
-    return set(), "Dataset não encontrado"
-
-
-SINTOMAS_VALIDOS_DATASET, CAMINHO_DATASET_USADO = carregar_sintomas_validos()
-
-
-def sintoma_existe_no_dataset(nome_sintoma):
-    return nome_sintoma in SINTOMAS_VALIDOS_DATASET
-
-
-def identificar_sintomas_validos(relato, resposta_ofegante=None):
-    texto = f"{relato or ''} {resposta_ofegante or ''}".lower()
-    sintomas_identificados = []
-
-    for regra in MAPEAMENTO_SINTOMAS:
-        sintoma = regra["sintoma_dataset"]
-
-        if not sintoma_existe_no_dataset(sintoma):
-            continue
-
-        encontrou_termo = any(termo in texto for termo in regra["termos"])
-
-        if encontrou_termo and sintoma not in sintomas_identificados:
-            sintomas_identificados.append(sintoma)
-
-    # Pergunta decisória do mock:
-    # a resposta "Sim" confirma um quinto sintoma respiratório validado pelo dataset.
-    if resposta_ofegante == "Sim" and sintoma_existe_no_dataset(SINTOMA_CHAVE_OFEGANCIA):
-        if SINTOMA_CHAVE_OFEGANCIA not in sintomas_identificados:
-            sintomas_identificados.append(SINTOMA_CHAVE_OFEGANCIA)
-
-    return sintomas_identificados[:5]
-
-
-# ============================================================
-# FUNÇÕES AUXILIARES
-# ============================================================
-
-def obter_clinica_por_id(clinica_id):
-    for clinica in CLINICAS:
-        if clinica["id"] == clinica_id:
-            return clinica
-    return None
-
-
-def obter_clinica_por_aba(nome_aba):
-    for clinica in CLINICAS:
-        if clinica["aba"] == nome_aba:
-            return clinica
-    return None
-
-
-def extrair_minutos(texto_tempo):
-    resultado = re.search(r"\d+", texto_tempo or "")
-    if not resultado:
-        return 0
-    return int(resultado.group())
-
-
-def resumir_relato_tutor(relato):
-    # Mock hard coded: resumo textual sem LLM.
-    return (
-        f"O tutor relata que {PERFIL_ANIMAL['nome']} está quieto, cansado, com recusa alimentar "
-        "e respiração acelerada desde hoje cedo."
+def new_message(
+    author_type: MessageAuthor,
+    author_name: str,
+    content: str,
+) -> Message:
+    return Message(
+        id=uuid4().hex,
+        author_type=author_type,
+        author_name=author_name,
+        content=content,
+        created_at=now(),
     )
 
 
-def navegar_para(tela_destino, rerun=False):
-    st.session_state.navegar_para = tela_destino
-    if rerun:
-        st.rerun()
-
-
-# ============================================================
-# ESTADO DA DEMONSTRAÇÃO
-# ============================================================
-
-def iniciar_estado():
-    if "mensagens" not in st.session_state:
-        st.session_state.mensagens = [
+def initialize_session() -> dict:
+    if "demo" not in st.session_state:
+        state = new_demo_state()
+        state.update(
             {
-                "role": "assistant",
-                "content": MENSAGEM_INICIAL_ASSISTENTE,
-                "autor": "Assistente de Triagem",
-                "origem": "ia",
-                "horario": datetime.now().strftime("%H:%M"),
+                "area": "Área do tutor",
+                "tutor_page": "Chat",
+                "report": DEFAULT_REPORT,
+                "answer": None,
+                "triage": None,
+                "search_performed": False,
+                "clinic_view": "list",
+                "map_focus_id": None,
+                "consent": False,
             }
+        )
+        state["triage_conversation"] = [
+            new_message(
+                MessageAuthor.AI,
+                "Assistente de pré-triagem",
+                INITIAL_AI_MESSAGE,
+            )
         ]
+        st.session_state.demo = state
+    return st.session_state.demo
 
-    if "etapa" not in st.session_state:
-        st.session_state.etapa = "inicio"
 
-    if "tela" not in st.session_state:
-        st.session_state.tela = "Tutor - Chat"
-
-    if "relato" not in st.session_state:
-        st.session_state.relato = RELATO_PADRAO
-
-    if "resposta_ofegante" not in st.session_state:
-        st.session_state.resposta_ofegante = None
-
-    if "classificacao" not in st.session_state:
-        st.session_state.classificacao = "Inconclusiva"
-
-    if "clinica_selecionada" not in st.session_state:
-        st.session_state.clinica_selecionada = None
-
-    if "relato_enviado_clinica" not in st.session_state:
-        st.session_state.relato_enviado_clinica = False
-
-    if "feed_clinicas" not in st.session_state:
-        st.session_state.feed_clinicas = {clinica["id"]: [] for clinica in CLINICAS}
-
-    # Mantido apenas para compatibilidade com versões antigas do mock.
-    if "feed_clinica" not in st.session_state:
-        st.session_state.feed_clinica = []
-
-
-def corrigir_origens_mensagens_antigas():
-    for mensagem in st.session_state.get("mensagens", []):
-        if "origem" not in mensagem:
-            mensagem["origem"] = "tutor" if mensagem.get("role") == "user" else "ia"
-
-        if mensagem.get("role") == "user" and mensagem.get("origem") == "ia":
-            mensagem["origem"] = "tutor"
-
-        if "autor" not in mensagem:
-            if mensagem.get("origem") == "tutor":
-                mensagem["autor"] = TUTOR["nome"]
-            elif mensagem.get("origem") == "clinica":
-                mensagem["autor"] = "Clínica"
-            else:
-                mensagem["autor"] = "Assistente de Triagem"
-
-        if "horario" not in mensagem:
-            mensagem["horario"] = datetime.now().strftime("%H:%M")
-
-
-def reiniciar_mock():
-    for chave in list(st.session_state.keys()):
-        del st.session_state[chave]
-    iniciar_estado()
-
-
-def adicionar_mensagem(role, content, autor=None, origem=None):
-    if origem is None:
-        origem = "tutor" if role == "user" else "ia"
-
-    if autor is None:
-        if origem == "tutor":
-            autor = TUTOR["nome"]
-        elif origem == "clinica":
-            autor = "Clínica"
-        else:
-            autor = "Assistente de Triagem"
-
-    mensagem = {
-        "role": role,
-        "content": content,
-        "autor": autor,
-        "origem": origem,
-        "horario": datetime.now().strftime("%H:%M"),
-    }
-    st.session_state.mensagens.append(mensagem)
-    return mensagem
-
-
-def obter_caso_clinica_ativo():
-    clinica = st.session_state.get("clinica_selecionada")
-    if not clinica:
-        return None
-
-    casos = st.session_state.feed_clinicas.get(clinica["id"], [])
-    if not casos:
-        return None
-
-    return casos[0]
-
-
-def sincronizar_chat_no_caso_ativo():
-    caso = obter_caso_clinica_ativo()
-    if caso is not None:
-        caso["chat_completo"] = list(st.session_state.mensagens)
-
-
-def enviar_mensagem_clinica(clinica_id):
-    texto = st.session_state.get(f"mensagem_clinica_{clinica_id}", "").strip()
-    if not texto:
-        return
-
-    clinica = obter_clinica_por_id(clinica_id)
-    nome_clinica = clinica["nome"] if clinica else "Clínica"
-
-    adicionar_mensagem(
-        "assistant",
-        texto,
-        autor=nome_clinica,
-        origem="clinica",
-    )
-    sincronizar_chat_no_caso_ativo()
-    st.session_state[f"mensagem_clinica_{clinica_id}"] = ""
-
-
-def enviar_mensagem_tutor_para_clinica():
-    texto = st.session_state.get("mensagem_tutor_clinica", "").strip()
-    if not texto:
-        return
-
-    adicionar_mensagem(
-        "user",
-        texto,
-        autor=TUTOR["nome"],
-        origem="tutor",
-    )
-    sincronizar_chat_no_caso_ativo()
-    st.session_state.mensagem_tutor_clinica = ""
-
-
-def atualizar_classificacao_por_resposta(resposta):
-    if resposta == "Sim":
-        return "Emergência provável"
-    if resposta == "Não":
-        return "Não emergencial aparente"
-    return "Inconclusiva - continuar investigação"
-
-
-def obter_sintomas_identificados():
-    if st.session_state.etapa == "inicio":
-        return []
-
-    return identificar_sintomas_validos(
-        st.session_state.relato,
-        st.session_state.resposta_ofegante,
-    )
-
-
-def montar_triagem_simulada():
-    classificacao = st.session_state.classificacao
-
-    if classificacao == "Emergência provável":
-        nivel = "Vermelho"
-        primeiros_cuidados = PRIMEIROS_CUIDADOS
-    elif classificacao == "Não emergencial aparente":
-        nivel = "Verde"
-        primeiros_cuidados = CUIDADOS_NAO_EMERGENCIAIS
-    else:
-        nivel = "Cinza"
-        primeiros_cuidados = []
-
-    return {
-        "classificacao": classificacao,
-        "nivel": nivel,
-        "especialidade": ESPECIALIDADE_SUGERIDA,
-        "sinais_detectados": obter_sintomas_identificados(),
-        "primeiros_cuidados": primeiros_cuidados,
-    }
-
-
-# ============================================================
-# AÇÕES DO FLUXO
-# ============================================================
-
-def enviar_relato():
-    relato = st.session_state.get("relato_digitado", RELATO_PADRAO).strip()
-
-    if not relato:
-        relato = RELATO_PADRAO
-
-    st.session_state.relato = relato
-
-    adicionar_mensagem("user", relato)
-    adicionar_mensagem(
-        "assistant",
-        (
-            "Entendi. Sinto muito que o Thor esteja passando por isso. "
-            "Pelo histórico dele e pelo que você descreveu, alguns sinais já foram identificados. "
-            "Agora preciso de uma pergunta-chave para fechar a pré-triagem: "
-            "ele está ofegante ou respirando com dificuldade?"
-        ),
-    )
-
-    st.session_state.etapa = "pergunta_ofegante"
-
-
-def responder_ofegante(resposta):
-    st.session_state.resposta_ofegante = resposta
-    st.session_state.classificacao = atualizar_classificacao_por_resposta(resposta)
-    adicionar_mensagem("user", resposta)
-
-    if resposta == "Sim":
-        texto_resposta = (
-            "Obrigado por confirmar. Essa resposta funciona como uma pergunta decisória no mock: "
-            f"ela adiciona o sintoma **{SINTOMA_CHAVE_OFEGANCIA}** à lista de sintomas identificados e altera a classificação para **Emergência provável**.\n\n"
-            "Pelo relato, pelo histórico do Thor e pela confirmação de ofegância/dificuldade respiratória, recomendo atendimento veterinário imediato. "
-            "Isso ainda não é um diagnóstico definitivo, mas é um sinal de alerta importante, principalmente em um cão braquicefálico.\n\n"
-            "Enquanto você se desloca: mantenha-o em local fresco e ventilado, evite esforço físico, não dê medicamentos sem orientação "
-            "e não force água ou comida. A seguir, você pode buscar uma clínica próxima."
-        )
-        st.session_state.etapa = "orientacao"
-
-    elif resposta == "Não":
-        texto_resposta = (
-            "Entendi. Como você respondeu que o Thor **não** está ofegante nem com dificuldade para respirar, "
-            "a pré-triagem simulada não recomenda ida imediata à clínica neste momento.\n\n"
-            "A classificação foi atualizada para **Não emergencial aparente**. Ainda assim, continue observando o comportamento dele. "
-            "Você pode mantê-lo em um ambiente calmo e fresco, oferecer água em pequenas quantidades, evitar esforço físico e observar se o apetite e a disposição melhoram.\n\n"
-            "Caso apareçam sinais como piora importante, vômitos persistentes, desmaio, dor intensa, gengivas arroxeadas ou dificuldade respiratória, procure atendimento veterinário."
-        )
-        st.session_state.etapa = "orientacao_nao_emergencial"
-
-    else:
-        texto_resposta = (
-            "Sem problema. Quando o tutor não consegue confirmar esse sinal, o sistema não fecha a classificação ainda.\n\n"
-            "Nesta versão demonstrativa, vou simular a continuação da conversa: eu faria novas perguntas sobre frequência respiratória, coloração da gengiva, presença de tosse, desmaio, dor, vômitos e nível de consciência antes de recomendar ou não a ida imediata à clínica."
-        )
-        st.session_state.etapa = "continuacao_conversa"
-
-    adicionar_mensagem("assistant", texto_resposta)
-
-
-def abrir_mapa():
-    if st.session_state.etapa == "orientacao":
-        st.session_state.etapa = "busca_clinica"
-    navegar_para("Tutor - Mapa")
-
-
-def selecionar_clinica(clinica):
-    st.session_state.clinica_selecionada = clinica
-    st.session_state.relato_enviado_clinica = True
-    st.session_state.classificacao = st.session_state.classificacao or "Emergência provável"
-    st.session_state.etapa = "clinica_notificada"
-
-    triagem = montar_triagem_simulada()
-    horario_alerta_dt = datetime.now()
-    minutos_ate_chegada = extrair_minutos(clinica["tempo"])
-    chegada_prevista_dt = horario_alerta_dt + timedelta(minutes=minutos_ate_chegada)
-
-    mensagem_confirmacao = (
-        f"A clínica {clinica['nome']} já recebeu o relato do {PERFIL_ANIMAL['nome']}, "
-        f"incluindo os sintomas identificados, o histórico do animal e a previsão de chegada de {clinica['tempo']}."
-    )
-
-    adicionar_mensagem("assistant", mensagem_confirmacao)
-
-    caso_clinica = {
-        "horario_alerta": horario_alerta_dt.strftime("%H:%M"),
-        "chegada_prevista": chegada_prevista_dt.strftime("%H:%M"),
-        "clinica": clinica,
-        "relato": st.session_state.relato,
-        "resumo_relato": resumir_relato_tutor(st.session_state.relato),
-        "resposta_ofegante": st.session_state.resposta_ofegante,
-        "animal": PERFIL_ANIMAL,
-        "tutor": TUTOR,
-        "triagem": triagem,
-        "respostas_dadas": [
-            {"pergunta": "O animal está ofegante ou respirando com dificuldade?", "resposta": st.session_state.resposta_ofegante or "Não informado"},
-        ],
-        "primeiros_cuidados_orientados": triagem["primeiros_cuidados"],
-        "chat_completo": list(st.session_state.mensagens),
-    }
-
-    if "feed_clinicas" not in st.session_state:
-        st.session_state.feed_clinicas = {clinica_item["id"]: [] for clinica_item in CLINICAS}
-
-    # Cada clínica recebe apenas os casos direcionados para ela.
-    st.session_state.feed_clinicas[clinica["id"]].insert(0, caso_clinica)
-
-    # Mantido para compatibilidade com versões antigas do mock.
-    st.session_state.feed_clinica = st.session_state.feed_clinicas[clinica["id"]]
-
-    navegar_para("Tutor - Chat", rerun=True)
-
-
-iniciar_estado()
-corrigir_origens_mensagens_antigas()
-
-# ============================================================
-# ABAS SUPERIORES
-# ============================================================
-
-ABAS = ["Tutor - Chat", "Tutor - Mapa"] + [clinica["aba"] for clinica in CLINICAS]
-
-if "tela" not in st.session_state or st.session_state.tela not in ABAS:
-    st.session_state.tela = "Tutor - Chat"
-
-if "aba_visualizacao" not in st.session_state or st.session_state.aba_visualizacao not in ABAS:
-    st.session_state.aba_visualizacao = st.session_state.tela
-
-if "navegar_para" in st.session_state:
-    destino = st.session_state.navegar_para
-    if destino in ABAS:
-        st.session_state.tela = destino
-        st.session_state.aba_visualizacao = destino
-    del st.session_state.navegar_para
-
-tela_escolhida = st.radio(
-    "Visualização",
-    ABAS,
-    index=ABAS.index(st.session_state.tela),
-    key="aba_visualizacao",
-    horizontal=True,
-    label_visibility="collapsed",
-)
-
-st.session_state.tela = tela_escolhida
-
-st.title("Triagem Veterinária")
-
-# ============================================================
-# MENU LATERAL ESQUERDO
-# ============================================================
-
-st.sidebar.title("Perfil do animal")
-st.sidebar.write(f"**Nome:** {PERFIL_ANIMAL['nome']}")
-st.sidebar.write(f"**Idade:** {PERFIL_ANIMAL['idade']}")
-st.sidebar.write(f"**Peso:** {PERFIL_ANIMAL['peso']}")
-st.sidebar.write(f"**Espécie:** {PERFIL_ANIMAL['especie']}")
-st.sidebar.write(f"**Raça:** {PERFIL_ANIMAL['raca']}")
-
-st.sidebar.divider()
-
-st.sidebar.subheader("Resumo simulado da triagem")
-
-etapa_atual = ETAPAS_FLUXO.get(st.session_state.etapa, ETAPAS_FLUXO["inicio"])
-st.sidebar.write(f"**Etapa atual:** {etapa_atual['label']}")
-st.sidebar.progress(etapa_atual["progresso"])
-
-st.sidebar.write(f"**Classificação:** {st.session_state.classificacao}")
-
-sintomas_identificados = obter_sintomas_identificados()
-st.sidebar.write("**Sintomas:**")
-if sintomas_identificados:
-    for sintoma in sintomas_identificados:
-        st.sidebar.write(f"- {sintoma}")
-else:
-    st.sidebar.write("Aguardando identificação")
-
-if st.session_state.clinica_selecionada:
-    st.sidebar.write(f"**Clínica:** {st.session_state.clinica_selecionada['nome']}")
-else:
-    st.sidebar.write("**Clínica:** Aguardando seleção")
-
-st.sidebar.caption(f"Sintomas validados pelo dataset: {len(SINTOMAS_VALIDOS_DATASET)} termos carregados.")
-
-st.sidebar.divider()
-
-if st.sidebar.button("Reiniciar demonstração"):
-    reiniciar_mock()
+def reset_demo() -> None:
+    st.session_state.clear()
     st.rerun()
 
 
-# ============================================================
-# COMPONENTES VISUAIS
-# ============================================================
+def go_to_tutor(page: str) -> None:
+    state["area"] = "Área do tutor"
+    state["tutor_page"] = page
+    st.rerun()
 
-user_avatar = "👤"
-assistant_avatar = "✨"
-clinica_avatar = "🏥"
 
-def mostrar_mensagens_chat():
-    for mensagem in st.session_state.mensagens:
-        autor = mensagem.get("autor")
-        origem = mensagem.get("origem", "ia")
+def go_to_clinic(clinic_id: str | None = None) -> None:
+    if clinic_id:
+        state["dashboard_clinic_id"] = clinic_id
+    state["area"] = "Área da clínica"
+    st.rerun()
 
-        if origem == "clinica":
-            with st.chat_message("assistant", avatar=clinica_avatar):
-                st.write(f"**{autor}:**")
-                st.write(mensagem["content"])
 
-        elif origem == "ia":
-            with st.chat_message("assistant", avatar=assistant_avatar):
-                st.write(mensagem["content"])
+def render_demo_banner() -> None:
+    st.markdown(
+        """
+        <div class="demo-banner"><strong>Ambiente demonstrativo.</strong>
+        Localização, clínicas, distância, tempo, avaliações e disponibilidade são
+        simulados. Não há comunicação externa, reserva ou envio de dados reais.</div>
+        """,
+        unsafe_allow_html=True,
+    )
 
-        elif origem == "tutor":
-            with st.chat_message("user", avatar=user_avatar):
-                st.write(mensagem["content"])
 
+def render_sidebar() -> None:
+    with st.sidebar:
+        st.title("VetAI Demo")
+        st.caption("Protótipo acadêmico de pré-triagem e encaminhamento")
+
+        area = st.selectbox(
+            "Área",
+            ["Área do tutor", "Área da clínica"],
+            index=0 if state["area"] == "Área do tutor" else 1,
+        )
+        state["area"] = area
+
+        if area == "Área do tutor":
+            page = st.pills(
+                "Navegação do tutor",
+                ["Chat", "Clínicas próximas"],
+                default=state["tutor_page"],
+                required=True,
+                width="stretch",
+            )
+            state["tutor_page"] = page or "Chat"
         else:
-            with st.chat_message(mensagem["role"]):
-                st.write(mensagem["content"])
+            clinic_ids = [clinic.id for clinic in CLINICS]
+            selected = state.get("dashboard_clinic_id", clinic_ids[0])
+            if selected not in clinic_ids:
+                selected = clinic_ids[0]
+            state["dashboard_clinic_id"] = st.selectbox(
+                "Clínica atualmente selecionada",
+                clinic_ids,
+                index=clinic_ids.index(selected),
+                format_func=lambda item: get_clinic(item).name,
+            )
+            st.caption("Cada painel mostra somente os casos enviados à sua unidade.")
+
+        st.divider()
+        st.subheader("Animal da demonstração")
+        st.write(f"**{DEMO_PET.name}** · {DEMO_PET.species}")
+        st.caption(f"{DEMO_PET.breed} · {DEMO_PET.age} · {DEMO_PET.weight}")
+        triage = state.get("triage")
+        if triage:
+            st.write(f"**Pré-triagem simulada:** {triage.classification.value}")
+        selected_clinic = get_clinic(state.get("selected_clinic_id"))
+        st.write(
+            f"**Clínica escolhida:** {selected_clinic.name}"
+            if selected_clinic
+            else "**Clínica escolhida:** nenhuma"
+        )
+        st.divider()
+        if st.button("Reiniciar demonstração", width="stretch"):
+            reset_demo()
 
 
-def mostrar_mapa_simulado():
-    pontos_mapa = [
+def render_message(message: Message) -> None:
+    role = "user" if message.author_type == MessageAuthor.TUTOR else "assistant"
+    avatars = {
+        MessageAuthor.TUTOR: "👤",
+        MessageAuthor.AI: "🤖",
+        MessageAuthor.CLINIC: "🏥",
+        MessageAuthor.SYSTEM: "ℹ️",
+    }
+    with st.chat_message(role, avatar=avatars[message.author_type]):
+        st.caption(f"{message.author_name} · {message.created_at:%d/%m/%Y %H:%M}")
+        st.markdown(message.content)
+
+
+def submit_report() -> None:
+    report = st.session_state.get("demo_report_input", "").strip() or DEFAULT_REPORT
+    state["report"] = report
+    state["triage_conversation"].append(
+        new_message(MessageAuthor.TUTOR, DEMO_TUTOR.name, report)
+    )
+    state["triage_conversation"].append(
+        new_message(
+            MessageAuthor.AI,
+            "Assistente de pré-triagem",
+            "Obrigado pelo relato. O Thor está ofegante ou parece respirar com dificuldade?",
+        )
+    )
+    state["flow_stage"] = "question"
+
+
+def answer_triage(answer: str) -> None:
+    state["answer"] = answer
+    state["triage_conversation"].append(
+        new_message(MessageAuthor.TUTOR, DEMO_TUTOR.name, answer)
+    )
+
+    if answer == "Sim":
+        classification = Classification.EMERGENCY
+        signs = ("Respiração acelerada", "Ofegância confirmada", "Cansaço", "Recusa alimentar")
+        rationale = (
+            "A confirmação de alteração respiratória, combinada ao relato, indica "
+            "necessidade de avaliação veterinária imediata no cenário demonstrativo."
+        )
+        guidance = EMERGENCY_GUIDANCE
+        response = (
+            "A **pré-triagem simulada** classificou o cenário como **Emergência**. "
+            "Isso não é diagnóstico. Procure avaliação veterinária; você pode comparar "
+            "clínicas fictícias e decidir explicitamente se deseja encaminhar o caso."
+        )
+        state["flow_stage"] = "triage_ready"
+    elif answer == "Não":
+        classification = Classification.NON_EMERGENCY
+        signs = ("Cansaço", "Recusa alimentar")
+        rationale = "Não houve confirmação de dificuldade respiratória neste cenário."
+        guidance = NON_EMERGENCY_GUIDANCE
+        response = (
+            "A **pré-triagem simulada** classificou o cenário como **Não emergência**. "
+            "Observe o animal e procure um veterinário se houver piora."
+        )
+        state["flow_stage"] = "closed"
+    else:
+        classification = Classification.UNCERTAIN
+        signs = ("Respiração acelerada relatada", "Cansaço", "Recusa alimentar")
+        rationale = "A informação disponível não permite classificar com segurança."
+        guidance = NON_EMERGENCY_GUIDANCE
+        response = (
+            "A **pré-triagem simulada** permaneceu **Incerta**. Uma aplicação real faria "
+            "novas perguntas; procure avaliação veterinária se estiver preocupado ou houver piora."
+        )
+        state["flow_stage"] = "closed"
+
+    state["triage"] = Triage(
+        original_report=state["report"],
+        answers=(
+            TriageAnswer(
+                question="O animal está ofegante ou respirando com dificuldade?",
+                answer=answer,
+            ),
+        ),
+        classification=classification,
+        signs=signs,
+        rationale=rationale,
+        guidance=guidance,
+        caveats=TRIAGE_CAVEATS,
+    )
+    state["triage_conversation"].append(
+        new_message(MessageAuthor.AI, "Assistente de pré-triagem", response)
+    )
+
+
+def render_tutor_chat() -> None:
+    st.title("Chat do tutor")
+    st.caption("Relato e pré-triagem acadêmica com dados fictícios")
+    render_demo_banner()
+
+    profile, history = st.columns([1, 2.2])
+    with profile:
+        with st.container(border=True):
+            st.subheader(DEMO_PET.name)
+            st.write(f"{DEMO_PET.species} · {DEMO_PET.breed}")
+            st.write(f"{DEMO_PET.age} · {DEMO_PET.weight}")
+            st.write("**Histórico relevante simulado**")
+            for item in DEMO_PET.relevant_history:
+                st.write(f"• {item}")
+    with history:
+        for message in state["triage_conversation"]:
+            render_message(message)
+
+        if state["flow_stage"] == "report":
+            st.text_area(
+                "Relato demonstrativo",
+                value=state["report"],
+                key="demo_report_input",
+                height=130,
+            )
+            st.button("Enviar relato", type="primary", on_click=submit_report)
+        elif state["flow_stage"] == "question":
+            st.write("**Escolha uma resposta para a pergunta complementar:**")
+            columns = st.columns(3)
+            for column, answer in zip(columns, ("Sim", "Não", "Não sei")):
+                column.button(
+                    answer,
+                    on_click=answer_triage,
+                    args=(answer,),
+                    type="primary" if answer == "Sim" else "secondary",
+                    width="stretch",
+                )
+        elif state["flow_stage"] == "triage_ready":
+            if st.button("Encontrar clínicas próximas", type="primary"):
+                state["search_performed"] = True
+                go_to_tutor("Clínicas próximas")
+        elif state["flow_stage"] == "closed":
+            st.info("O encaminhamento imediato não foi aberto neste cenário demonstrativo.")
+        elif state["flow_stage"] == "referred":
+            render_tutor_clinic_channel()
+
+
+def map_selection_id(event) -> str | None:
+    try:
+        objects = event.selection.objects
+        for selected_objects in objects.values():
+            if selected_objects:
+                return selected_objects[0].get("clinic_id")
+    except (AttributeError, IndexError, TypeError):
+        return None
+    return None
+
+
+def render_map(clinics: list[Clinic]) -> None:
+    location = get_location()
+    points = [
         {
-            "lat": LOCALIZACAO_TUTOR["lat"],
-            "lon": LOCALIZACAO_TUTOR["lon"],
-            "label": LOCALIZACAO_TUTOR["nome"],
-            "tipo": "Tutor",
-            "color": [33, 150, 243, 220],
-            "radius": 180,
+            "latitude": location["latitude"],
+            "longitude": location["longitude"],
+            "label": location["label"],
+            "kind": "Tutor",
+            "clinic_id": "",
+            "color": [25, 100, 150, 230],
+            "radius": 170,
         }
     ]
-
-    for clinica in CLINICAS:
-        pontos_mapa.append(
-            {
-                "lat": clinica["lat"],
-                "lon": clinica["lon"],
-                "label": clinica["nome"],
-                "tipo": "Clínica",
-                "color": [229, 57, 53, 210],
-                "radius": 120,
-            }
-        )
-
-    df_mapa = pd.DataFrame(pontos_mapa)
+    points.extend(
+        {
+            "latitude": clinic.latitude,
+            "longitude": clinic.longitude,
+            "label": clinic.name,
+            "kind": "Clínica fictícia",
+            "clinic_id": clinic.id,
+            "color": [17, 100, 102, 230],
+            "radius": 130,
+        }
+        for clinic in clinics
+    )
+    frame = pd.DataFrame(points)
 
     if pdk is None:
-        st.warning("PyDeck não está disponível. Exibindo mapa simples como alternativa.")
-        st.map(df_mapa, latitude="lat", longitude="lon", size="radius")
+        st.warning("PyDeck indisponível. Exibindo o fallback de mapa simples.")
+        st.map(frame, latitude="latitude", longitude="longitude", size="radius")
+    else:
+        layer = pdk.Layer(
+            "ScatterplotLayer",
+            data=frame,
+            get_position="[longitude, latitude]",
+            get_fill_color="color",
+            get_radius="radius",
+            pickable=True,
+        )
+        event = st.pydeck_chart(
+            pdk.Deck(
+                map_style=None,
+                initial_view_state=pdk.ViewState(
+                    latitude=location["latitude"],
+                    longitude=location["longitude"],
+                    zoom=13,
+                ),
+                layers=[layer],
+                tooltip={"text": "{kind}: {label}"},
+            ),
+            on_select="rerun",
+            selection_mode="single-object",
+            key="demo_clinic_map",
+        )
+        selected_id = map_selection_id(event)
+        if selected_id:
+            state["selected_clinic_id"] = selected_id
+            state["clinic_view"] = "detail"
+            st.rerun()
+
+    legend_a, legend_b = st.columns(2)
+    legend_a.info("● Tutor — localização simulada")
+    legend_b.success("● Clínica fictícia — dados simulados")
+    marker = st.pills(
+        "Selecionar um marcador do mapa",
+        [clinic.id for clinic in clinics],
+        format_func=lambda item: get_clinic(item).name,
+        key="map_marker_fallback",
+    )
+    if marker and marker != state.get("map_focus_id"):
+        state["map_focus_id"] = marker
+        state["selected_clinic_id"] = marker
+        state["clinic_view"] = "detail"
+        st.rerun()
+
+
+def render_clinic_card(clinic: Clinic) -> None:
+    with st.container(border=True):
+        st.markdown(f"<div class='clinic-card'><strong>{clinic.name}</strong></div>", unsafe_allow_html=True)
+        st.caption("Dados simulados · Disponibilidade não confirmada")
+        st.write(clinic.address)
+        first, second = st.columns(2)
+        first.metric("Distância estimada", f"{clinic.distance_km:.1f} km".replace(".", ","))
+        second.metric("Tempo estimado", f"{clinic.eta_minutes} min")
+        st.write(f"**24 horas:** {'Sim' if clinic.open_24h else 'Não'}")
+        st.write(f"**Avaliação simulada:** {clinic.rating:.1f}/5 ({clinic.review_count} avaliações)")
+        st.write(f"**Disponibilidade simulada:** {clinic.availability}")
+        if st.button("Visualizar detalhes", key=f"details-{clinic.id}", width="stretch"):
+            state["selected_clinic_id"] = clinic.id
+            state["clinic_view"] = "detail"
+            st.rerun()
+
+
+def render_clinic_detail(clinic: Clinic) -> None:
+    st.caption("Clínica fictícia · Dados simulados · Disponibilidade não confirmada")
+    st.header(clinic.name)
+    st.write(f"**Endereço fictício:** {clinic.address}")
+    st.write(f"**Telefone fictício:** {clinic.phone}")
+    st.write(f"**Horário declarado:** {clinic.opening_hours}")
+    cols = st.columns(4)
+    cols[0].metric("Distância estimada", f"{clinic.distance_km:.1f} km".replace(".", ","))
+    cols[1].metric("Tempo estimado", f"{clinic.eta_minutes} min")
+    cols[2].metric("Avaliação simulada", f"{clinic.rating:.1f}/5")
+    cols[3].metric("Avaliações simuladas", clinic.review_count)
+    st.write("**Estrutura ou serviços declarados:** " + " · ".join(clinic.services))
+    st.write(f"**Disponibilidade simulada:** {clinic.availability}")
+    st.write(f"**Última atualização simulada:** {clinic.last_updated:%d/%m/%Y %H:%M}")
+    st.info(clinic.notes)
+
+    primary, back, map_col = st.columns(3)
+    if primary.button("Selecionar esta clínica", type="primary", width="stretch"):
+        state["selected_clinic_id"] = clinic.id
+        state["clinic_view"] = "review"
+        state["consent"] = False
+        st.session_state.pop("referral_consent_checkbox", None)
+        st.rerun()
+    if back.button("Voltar à lista", width="stretch"):
+        state["clinic_view"] = "list"
+        st.rerun()
+    if map_col.button("Ver no mapa", width="stretch"):
+        state["clinic_view"] = "list"
+        state["map_focus_id"] = clinic.id
+        st.rerun()
+
+    copy_col, route_col = st.columns(2)
+    if copy_col.button("Copiar endereço", width="stretch"):
+        st.code(clinic.address, language=None)
+        st.caption("Selecione e copie o endereço fictício acima.")
+    if route_col.button("Abrir rota simulada", width="stretch"):
+        st.warning(
+            f"Rota demonstrativa: saída da localização simulada, chegada em "
+            f"{clinic.eta_minutes} min. Nenhum aplicativo de navegação foi aberto."
+        )
+
+
+def render_share_review(clinic: Clinic) -> None:
+    triage: Triage = state["triage"]
+    st.header("Revisar encaminhamento simulado")
+    st.caption(f"Destino escolhido pelo tutor: {clinic.name}")
+    st.warning("Revise todos os dados. Nada será criado no feed antes do consentimento.")
+
+    identity, animal = st.columns(2)
+    with identity:
+        st.subheader("Tutor")
+        st.write(f"**Nome:** {DEMO_TUTOR.name}")
+        st.write(f"**Telefone fictício:** {DEMO_TUTOR.phone}")
+    with animal:
+        st.subheader("Animal")
+        st.write(f"**Nome:** {DEMO_PET.name}")
+        st.write(f"**Espécie:** {DEMO_PET.species}")
+        st.write(f"**Raça:** {DEMO_PET.breed}")
+        st.write(f"**Idade:** {DEMO_PET.age}")
+        st.write(f"**Peso:** {DEMO_PET.weight}")
+
+    tabs = st.tabs(["Histórico", "Relato e respostas", "Pré-triagem", "Conversa completa"])
+    with tabs[0]:
+        for item in DEMO_PET.relevant_history:
+            st.write(f"• {item}")
+    with tabs[1]:
+        st.write(f"**Relato original:** {triage.original_report}")
+        for item in triage.answers:
+            st.write(f"**Pergunta:** {item.question}")
+            st.write(f"**Resposta:** {item.answer}")
+    with tabs[2]:
+        st.write(f"**Classificação:** {triage.classification.value} — pré-triagem simulada")
+        st.write("**Sinais identificados:** " + ", ".join(triage.signs))
+        st.write(f"**Justificativa:** {triage.rationale}")
+        st.write("**Orientação já exibida:**")
+        for item in triage.guidance:
+            st.write(f"• {item}")
+        for caveat in triage.caveats:
+            st.caption(caveat)
+        st.write(f"**Previsão simulada de chegada:** {clinic.eta_minutes} min após a confirmação")
+    with tabs[3]:
+        for message in state["triage_conversation"]:
+            render_message(message)
+
+    consent = st.checkbox(
+        "Estou ciente de que esta é uma demonstração e autorizo o "
+        "compartilhamento simulado destes dados com a clínica selecionada.",
+        key="referral_consent_checkbox",
+    )
+    state["consent"] = consent
+    send_col, cancel_col = st.columns(2)
+    if send_col.button(
+        "Concluir envio simulado",
+        type="primary",
+        disabled=not consent,
+        width="stretch",
+    ):
+        try:
+            case = create_referral(
+                state["cases_by_clinic"],
+                clinic_id=clinic.id,
+                tutor=DEMO_TUTOR,
+                pet=DEMO_PET,
+                triage=triage,
+                conversation=state["triage_conversation"],
+                consent=consent,
+                now=now(),
+            )
+        except ConsentRequiredError as error:
+            st.error(str(error))
+        else:
+            state["referral_case_id"] = case.id
+            state["selected_case_by_clinic"][clinic.id] = case.id
+            state["flow_stage"] = "referred"
+            state["clinic_view"] = "detail"
+            go_to_tutor("Chat")
+    if cancel_col.button("Cancelar e voltar ao chat", width="stretch"):
+        state["selected_clinic_id"] = None
+        state["clinic_view"] = "list"
+        st.session_state.pop("referral_consent_checkbox", None)
+        go_to_tutor("Chat")
+
+
+def render_tutor_clinic_channel() -> None:
+    clinic_id = state["selected_clinic_id"]
+    case = find_case(state["cases_by_clinic"], clinic_id, state["referral_case_id"])
+    clinic = get_clinic(clinic_id)
+    st.success("Demonstração: nenhum dado foi enviado a uma clínica real.")
+    st.subheader(f"Conversa humana simulada · {clinic.name}")
+    st.caption("A IA não responde neste canal. As mensagens existem somente nesta sessão.")
+    for message in case.messages:
+        render_message(message)
+
+    with st.form("tutor-clinic-message", clear_on_submit=True):
+        content = st.text_area("Mensagem para a clínica", height=90)
+        submitted = st.form_submit_button("Enviar mensagem manual", type="primary")
+    if submitted:
+        if content.strip():
+            send_message(
+                state["cases_by_clinic"],
+                clinic_id=clinic_id,
+                case_id=case.id,
+                author_type=MessageAuthor.TUTOR,
+                author_name=DEMO_TUTOR.name,
+                content=content,
+                now=now(),
+            )
+            st.rerun()
+        else:
+            st.warning("Digite uma mensagem antes de enviar.")
+    if st.button("Abrir painel da clínica selecionada"):
+        go_to_clinic(clinic_id)
+
+
+def render_nearby_clinics() -> None:
+    st.title("Clínicas próximas")
+    st.caption("Comparação demonstrativa; a escolha é sempre explícita do tutor")
+    render_demo_banner()
+
+    if state.get("triage") is None or state["triage"].classification != Classification.EMERGENCY:
+        st.info("Conclua primeiro o cenário de pré-triagem no chat para abrir a busca.")
+        if st.button("Voltar ao chat"):
+            go_to_tutor("Chat")
         return
 
-    camada_pontos = pdk.Layer(
-        "ScatterplotLayer",
-        data=df_mapa,
-        get_position="[lon, lat]",
-        get_fill_color="color",
-        get_radius="radius",
-        pickable=True,
-    )
-
-    visualizacao_inicial = pdk.ViewState(
-        latitude=LOCALIZACAO_TUTOR["lat"],
-        longitude=LOCALIZACAO_TUTOR["lon"],
-        zoom=13,
-        pitch=0,
-    )
-
-    st.pydeck_chart(
-        pdk.Deck(
-            map_style=None,
-            initial_view_state=visualizacao_inicial,
-            layers=[camada_pontos],
-            tooltip={"text": "{tipo}: {label}"},
-        )
-    )
-
-    col1, col2 = st.columns(2)
-    with col1:
-        st.info("🔵 Tutor: localização simulada")
-    with col2:
-        st.error("🔴 Clínicas/Hospitais veterinários")
-
-
-def mostrar_chat_completo(chat_completo):
-    for mensagem in chat_completo:
-        autor = mensagem.get("autor") or ("Tutor" if mensagem["role"] == "user" else "Assistente")
-        horario = mensagem.get("horario")
-        origem = mensagem.get("origem", "ia")
-
-        cabecalho = autor
-        if horario:
-            cabecalho = f"{autor} • {horario}"
-
-        if origem == "clinica":
-            with st.chat_message("assistant", avatar=clinica_avatar):
-                st.write(f"**Clínica: {cabecalho}**")
-                st.write(mensagem["content"])
-
-        elif origem == "ia":
-            with st.chat_message("assistant", avatar=assistant_avatar):
-                st.write(f"**{cabecalho}**")
-                st.write(mensagem["content"])
-
-        elif origem == "tutor":
-            with st.chat_message("user", avatar=user_avatar):
-                st.write(f"**{cabecalho}**")
-                st.write(mensagem["content"])
-
-        else:
-            with st.chat_message(mensagem["role"]):
-                st.write(f"**{cabecalho}**")
-                st.write(mensagem["content"])
-
-
-def mostrar_feed_caso(caso):
-    animal = caso["animal"]
-    tutor = caso.get("tutor", TUTOR)
-    clinica = caso["clinica"]
-    triagem = caso["triagem"]
-    sinais = triagem.get("sinais_detectados", [])
+    clinic = get_clinic(state.get("selected_clinic_id"))
+    if state["clinic_view"] == "detail" and clinic:
+        render_clinic_detail(clinic)
+        return
+    if state["clinic_view"] == "review" and clinic:
+        render_share_review(clinic)
+        return
 
     with st.container(border=True):
-        st.write(f"### {animal['nome']}")
-        st.write(f"**Telefone do tutor:** {tutor['telefone']}")
-        st.write(f"**Classificação:** {triagem['classificacao']}")
-        st.write(
-            f"**Previsão de chegada:** {clinica['tempo']} "
-            f"(alerta às {caso['horario_alerta']} + {clinica['tempo']} = chegada prevista às {caso['chegada_prevista']})"
+        search_text = st.text_input(
+            "Buscar por nome, endereço ou estrutura simulada",
+            placeholder="Ex.: imagem ou nome inexistente",
         )
-        st.write(f"**Horário do alerta:** {caso['horario_alerta']}")
-        st.write("**Sintomas identificados:**")
-        if sinais:
-            for sinal in sinais:
-                st.write(f"- {sinal}")
-        else:
-            st.write("Nenhum sintoma validado pelo dataset foi identificado.")
-        st.write(f"**Resumo do relato do tutor:** {caso['resumo_relato']}")
+        sort_col, open_col, available_col = st.columns(3)
+        sort_label = sort_col.selectbox(
+            "Ordenar por",
+            ["Distância estimada", "Tempo estimado"],
+        )
+        open_only = open_col.checkbox("Somente atendimento 24 horas")
+        available_only = available_col.checkbox("Somente disponibilidade simulada")
+        if st.button("Atualizar busca simulada"):
+            state["search_performed"] = True
 
-    st.write("#### Dados do tutor")
-    st.write(f"**Nome:** {tutor['nome']}")
-    st.write(f"**Telefone:** {tutor['telefone']}")
+    if not state["search_performed"]:
+        st.info("Clique em “Atualizar busca simulada” para carregar as clínicas fictícias.")
+        return
 
-    st.write("#### Histórico do animal")
-    col_hist_1, col_hist_2 = st.columns(2)
-    with col_hist_1:
-        st.write(f"**Espécie:** {animal['especie']}")
-        st.write(f"**Raça:** {animal['raca']}")
-        st.write(f"**Idade:** {animal['idade']}")
-        st.write(f"**Peso:** {animal['peso']}")
-    with col_hist_2:
-        for historico in animal["historico"]:
-            st.write(f"- {historico}")
+    with st.spinner("Consultando dados simulados de localização e clínicas..."):
+        clinics = filter_clinics(
+            list_clinics(),
+            open_24h_only=open_only,
+            available_only=available_only,
+            sort_by="eta" if sort_label == "Tempo estimado" else "distance",
+            query=search_text,
+        )
 
-    st.write("#### Respostas dadas")
-    for item in caso["respostas_dadas"]:
-        st.write(f"**{item['pergunta']}**")
-        st.write(item["resposta"])
+    if not clinics:
+        st.warning("Nenhuma clínica fictícia corresponde aos filtros selecionados.")
+        st.caption("Remova um filtro para voltar a visualizar os dados simulados.")
+        return
 
-    #st.write("#### Primeiros cuidados orientados")
-    #for cuidado in caso["primeiros_cuidados_orientados"]:
-    #    st.write(f"- {cuidado}")
+    map_col, list_col = st.columns([1.35, 1], gap="large")
+    with map_col:
+        st.subheader("Mapa simulado")
+        render_map(clinics)
+    with list_col:
+        st.subheader(f"{len(clinics)} clínicas fictícias")
+        for item in clinics:
+            render_clinic_card(item)
+    if st.button("Cancelar e voltar ao chat"):
+        go_to_tutor("Chat")
 
-    st.write("#### Chat completo")
-    mostrar_chat_completo(caso["chat_completo"])
 
-    st.warning(
-        "Mock demonstrativo: em uma versão real, este painel receberia dados estruturados via backend/API."
+def classification_label(classification: Classification) -> str:
+    labels = {
+        Classification.EMERGENCY: "Alerta — Emergência",
+        Classification.NON_EMERGENCY: "Atenção — Não emergência",
+        Classification.UNCERTAIN: "Revisar — Incerto",
+    }
+    return labels[classification]
+
+
+def case_summary(case: Case) -> str:
+    report = case.triage.original_report.strip()
+    return report if len(report) <= 105 else report[:102].rstrip() + "…"
+
+
+def render_case_queue(clinic_id: str, cases: list[Case]) -> Case | None:
+    st.subheader("Fila de casos")
+    classification_filter = st.selectbox(
+        "Classificação",
+        ["Todas"] + [item.value for item in Classification],
+        key=f"class-filter-{clinic_id}",
     )
+    status_filter = st.selectbox(
+        "Status",
+        ["Todos"] + [item.value for item in CaseStatus],
+        key=f"status-filter-{clinic_id}",
+    )
+    order = st.selectbox(
+        "Ordenação",
+        ["Mais recentes", "Mais antigos"],
+        key=f"order-filter-{clinic_id}",
+    )
+    classification = None if classification_filter == "Todas" else Classification(classification_filter)
+    status = None if status_filter == "Todos" else CaseStatus(status_filter)
+    filtered = filter_cases(
+        cases,
+        classification=classification,
+        status=status,
+        newest_first=order == "Mais recentes",
+    )
+    if not filtered:
+        st.info("Nenhum caso desta clínica corresponde aos filtros.")
+        return None
 
-
-# ============================================================
-# TELAS
-# ============================================================
-
-
-def tela_tutor_chat():
-    mostrar_mensagens_chat()
-
-    if st.session_state.etapa == "inicio":
-        st.text_area(
-            "Mensagem pronta para envio",
-            value=st.session_state.relato,
-            key="relato_digitado",
-            height=140,
+    visible_ids = [case.id for case in filtered]
+    selected_id = state["selected_case_by_clinic"].get(clinic_id)
+    if selected_id not in visible_ids:
+        selected_id = visible_ids[0]
+    selected_id = st.radio(
+        "Selecionar caso",
+        visible_ids,
+        index=visible_ids.index(selected_id),
+        format_func=lambda case_id: (
+            f"{find_case(state['cases_by_clinic'], clinic_id, case_id).created_at:%H:%M} · "
+            f"{find_case(state['cases_by_clinic'], clinic_id, case_id).pet.name} · "
+            f"{find_case(state['cases_by_clinic'], clinic_id, case_id).status.value}"
+        ),
+        key=f"case-select-{clinic_id}",
+        label_visibility="collapsed",
+    )
+    state["selected_case_by_clinic"][clinic_id] = selected_id
+    selected = find_case(state["cases_by_clinic"], clinic_id, selected_id)
+    with st.container(border=True):
+        st.write(f"**{classification_label(selected.triage.classification)}**")
+        st.write(f"**{selected.pet.name}** · {selected.pet.species} · {selected.status.value}")
+        st.caption(
+            f"Alerta {selected.created_at:%H:%M} · chegada simulada {selected.expected_arrival:%H:%M}"
         )
-        st.button("Enviar relato", type="primary", on_click=enviar_relato)
-
-    elif st.session_state.etapa == "pergunta_ofegante":
-        st.write("Responder pergunta:")
-        col1, col2, col3 = st.columns(3)
-        with col1:
-            st.button("Sim", type="primary", on_click=responder_ofegante, args=("Sim",), use_container_width=True)
-        with col2:
-            st.button("Não", on_click=responder_ofegante, args=("Não",), use_container_width=True)
-        with col3:
-            st.button("Não sei", on_click=responder_ofegante, args=("Não sei",), use_container_width=True)
-
-    elif st.session_state.etapa == "orientacao":
-        st.button("Encontrar clínica", type="primary", on_click=abrir_mapa)
-
-    elif st.session_state.etapa == "orientacao_nao_emergencial":
-        st.info(
-            "Fluxo encerrado como não emergencial aparente. Neste caso, o mock não libera o encaminhamento imediato para clínica."
-        )
-
-    elif st.session_state.etapa == "continuacao_conversa":
-        st.info(
-            "Nesta amostra, a conversa adicional foi apenas simulada. Em uma versão completa, novas perguntas seriam feitas antes da classificação final."
-        )
-
-    elif st.session_state.etapa == "busca_clinica":
-        st.info("Abra a aba Tutor - Mapa para selecionar uma clínica próxima.")
-        if st.button("Ir para o mapa", type="primary"):
-            navegar_para("Tutor - Mapa", rerun=True)
-
-    elif st.session_state.etapa == "clinica_notificada":
-        st.success("A clínica selecionada recebeu o relato simulado do tutor.")
-
-        st.write("#### Conversa com a clínica")
-        st.caption("A partir deste ponto, o chat continua entre tutor e clínica, sem interferência da IA.")
-        st.text_area(
-            "Responder para a clínica",
-            key="mensagem_tutor_clinica",
-            placeholder="Digite uma resposta para a equipe da clínica...",
-            height=90,
-        )
-        st.button(
-            "Enviar mensagem para a clínica",
-            on_click=enviar_mensagem_tutor_para_clinica,
-            use_container_width=True,
-        )
-
-        col1, col2 = st.columns(2)
-        with col1:
-            if st.button("Ver mapa", use_container_width=True):
-                navegar_para("Tutor - Mapa", rerun=True)
-        with col2:
-            clinica = st.session_state.clinica_selecionada
-            destino = clinica["aba"] if clinica else "Clínica - VitalVet"
-            if st.button("Visualizar painel da clínica", use_container_width=True):
-                navegar_para(destino, rerun=True)
+        st.write(case_summary(selected))
+    return selected
 
 
-def tela_tutor_mapa():
-    st.subheader("Mapa de clínicas próximas")
-    st.write("Mapa simulado com a posição do tutor e algumas clínicas/hospitais veterinários próximos.")
-
-    if st.session_state.etapa in ["inicio", "pergunta_ofegante"]:
-        st.warning("Para a demonstração ficar completa, primeiro envie o relato e responda à pergunta de triagem no chat.")
-
-    if st.session_state.etapa in ["orientacao_nao_emergencial", "continuacao_conversa"]:
-        st.info(
-            "Neste cenário, o sistema ainda não recomenda o encaminhamento imediato para uma clínica. "
-            "Volte ao chat para visualizar a orientação da triagem."
-        )
-        return
-
-    if st.session_state.etapa == "orientacao":
-        st.session_state.etapa = "busca_clinica"
-
-    coluna_mapa, coluna_clinicas = st.columns([1.4, 1])
-
-    with coluna_mapa:
-        mostrar_mapa_simulado()
-
-    with coluna_clinicas:
-        st.subheader("Clínicas encontradas")
-
-        for clinica in CLINICAS:
-            with st.container(border=True):
-                st.write(f"**{clinica['nome']}**")
-                st.write(clinica["endereco"])
-                st.write(f"Distância: {clinica['distancia']}")
-                st.write(f"Tempo estimado: {clinica['tempo']}")
-                st.write(f"Avaliação: ⭐ {clinica['avaliacao']}")
-                st.write(f"Atendimento: {clinica['atendimento']}")
-
-                if st.button("Selecionar clínica", key=f"selecionar_{clinica['id']}"):
-                    selecionar_clinica(clinica)
+def status_actions(case: Case) -> None:
+    st.write("**Ações simuladas da equipe**")
+    actions = [
+        ("Reconhecer caso", CaseStatus.ACKNOWLEDGED),
+        ("Aguardando o tutor", CaseStatus.ON_THE_WAY),
+        ("Marcar em atendimento", CaseStatus.IN_CARE),
+        ("Concluir", CaseStatus.COMPLETED),
+        ("Cancelar", CaseStatus.CANCELLED),
+    ]
+    columns = st.columns(3)
+    for index, (label, status) in enumerate(actions):
+        if columns[index % 3].button(
+            label,
+            key=f"status-{case.id}-{status.value}",
+            disabled=case.status == status,
+            width="stretch",
+        ):
+            update_status(
+                state["cases_by_clinic"],
+                clinic_id=case.clinic_id,
+                case_id=case.id,
+                status=status,
+                now=now(),
+            )
+            st.rerun()
 
 
-def tela_clinica_painel(clinica_id):
-    clinica = obter_clinica_por_id(clinica_id)
-
-    if not clinica:
-        st.error("Clínica não encontrada no mock.")
-        return
-
-    st.subheader(f"Feed da clínica: {clinica['nome']}")
-    st.write("Tela simulando o recebimento antecipado dos casos direcionados para esta clínica.")
-
-    casos = st.session_state.feed_clinicas.get(clinica_id, [])
-
-    if not casos:
-        st.info(
-            "Feed vazio para esta clínica. Quando o tutor selecionar esta unidade no mapa, "
-            "o relato aparecerá somente aqui."
-        )
-        return
-
-    for indice, caso in enumerate(casos, start=1):
-        st.write(f"## Caso {indice}")
-        mostrar_feed_caso(caso)
-
-        st.write("#### Enviar mensagem ao tutor")
-        st.caption("Mensagem manual da clínica para o tutor. Ela será adicionada ao mesmo histórico do chat, sem resposta da IA.")
-        st.text_area(
-            "Mensagem da clínica",
-            key=f"mensagem_clinica_{clinica_id}_{indice}",
-            placeholder="Ex.: Estamos aguardando vocês. Mantenha o Thor em local ventilado durante o trajeto.",
-            height=90,
-        )
-        if st.button("Enviar mensagem ao tutor", key=f"enviar_clinica_{clinica_id}_{indice}"):
-            texto = st.session_state.get(f"mensagem_clinica_{clinica_id}_{indice}", "").strip()
-            if texto:
-                st.session_state[f"mensagem_clinica_{clinica_id}"] = texto
-                enviar_mensagem_clinica(clinica_id)
+def render_case_detail(case: Case, clinic: Clinic) -> None:
+    st.subheader(f"Caso {case.id}")
+    st.caption("Dados simulados · uso apenas acadêmico")
+    status_actions(case)
+    tabs = st.tabs(["Resumo", "Animal", "Tutor", "Triagem", "Conversa", "Eventos"])
+    with tabs[0]:
+        st.write(f"**Classificação:** {classification_label(case.triage.classification)} — pré-triagem simulada")
+        st.write(f"**Status:** {case.status.value}")
+        st.write(f"**Sinais identificados:** {', '.join(case.triage.signs)}")
+        st.write(f"**Resumo do relato:** {case_summary(case)}")
+        st.write(f"**Horário do alerta:** {case.created_at:%d/%m/%Y %H:%M}")
+        st.write(f"**Previsão simulada de chegada:** {case.expected_arrival:%d/%m/%Y %H:%M}")
+    with tabs[1]:
+        st.write(f"**Nome:** {case.pet.name}")
+        st.write(f"**Espécie:** {case.pet.species}")
+        st.write(f"**Raça:** {case.pet.breed}")
+        st.write(f"**Idade:** {case.pet.age}")
+        st.write(f"**Peso:** {case.pet.weight}")
+        st.write("**Histórico relevante:**")
+        for item in case.pet.relevant_history:
+            st.write(f"• {item}")
+    with tabs[2]:
+        st.write(f"**Nome:** {case.tutor.name}")
+        st.write(f"**Telefone fictício:** {case.tutor.phone}")
+    with tabs[3]:
+        st.write(f"**Relato original:** {case.triage.original_report}")
+        for answer in case.triage.answers:
+            st.write(f"**Pergunta:** {answer.question}")
+            st.write(f"**Resposta:** {answer.answer}")
+        st.write(f"**Classificação:** {case.triage.classification.value} — pré-triagem simulada")
+        st.write(f"**Justificativa:** {case.triage.rationale}")
+        st.write("**Orientação apresentada:**")
+        for item in case.triage.guidance:
+            st.write(f"• {item}")
+        st.write("**Ressalvas:**")
+        for item in case.triage.caveats:
+            st.write(f"• {item}")
+    with tabs[4]:
+        st.caption("Mensagens identificadas por autor e horário. A IA não participa após o envio.")
+        for message in case.messages:
+            render_message(message)
+        with st.form(f"clinic-message-{case.id}", clear_on_submit=True):
+            content = st.text_area("Mensagem manual ao tutor", height=85)
+            submitted = st.form_submit_button("Enviar como equipe da clínica")
+        if submitted:
+            if content.strip():
+                send_message(
+                    state["cases_by_clinic"],
+                    clinic_id=clinic.id,
+                    case_id=case.id,
+                    author_type=MessageAuthor.CLINIC,
+                    author_name=clinic.name,
+                    content=content,
+                    now=now(),
+                )
                 st.rerun()
             else:
                 st.warning("Digite uma mensagem antes de enviar.")
+    with tabs[5]:
+        for event in reversed(case.events):
+            st.write(f"**{event.created_at:%d/%m/%Y %H:%M}** · {event.description}")
 
-        st.divider()
+
+def render_clinic_dashboard() -> None:
+    clinic_id = state.get("dashboard_clinic_id", CLINICS[0].id)
+    clinic = get_clinic(clinic_id)
+    cases = list_clinic_cases(state["cases_by_clinic"], clinic_id)
+    st.title(clinic.name)
+    st.caption(f"Dashboard demonstrativo · {clinic.address} · {clinic.phone}")
+    render_demo_banner()
+
+    metrics = dashboard_metrics(cases)
+    metric_columns = st.columns(6)
+    values = [
+        ("Aguardando análise", metrics["waiting"]),
+        ("Emergências prováveis", metrics["emergencies"]),
+        ("Reconhecidos", metrics["acknowledged"]),
+        ("A caminho", metrics["on_the_way"]),
+        ("Concluídos", metrics["completed"]),
+        ("Média até reconhecer", f"{metrics['average_recognition_minutes']:.1f} min".replace(".", ",")),
+    ]
+    for column, (label, value) in zip(metric_columns, values):
+        column.metric(label, value, help="Métrica derivada somente do estado desta sessão.")
+
+    if not cases:
+        st.info(
+            "Fila vazia para esta clínica. Casos enviados às outras unidades não aparecem aqui."
+        )
+        return
+
+    queue_col, detail_col = st.columns([1, 2.1], gap="large")
+    with queue_col:
+        selected_case = render_case_queue(clinic_id, cases)
+    with detail_col:
+        if selected_case:
+            render_case_detail(selected_case, clinic)
+        else:
+            st.info("Selecione filtros com resultados para abrir um caso.")
 
 
-if st.session_state.tela == "Tutor - Chat":
-    tela_tutor_chat()
-elif st.session_state.tela == "Tutor - Mapa":
-    tela_tutor_mapa()
+state = initialize_session()
+if "cases_by_clinic" not in state:  # migração defensiva de sessão antiga
+    state["cases_by_clinic"] = initial_case_store()
+render_sidebar()
+
+if state["area"] == "Área da clínica":
+    render_clinic_dashboard()
+elif state["tutor_page"] == "Clínicas próximas":
+    render_nearby_clinics()
 else:
-    clinica_atual = obter_clinica_por_aba(st.session_state.tela)
-    if clinica_atual:
-        tela_clinica_painel(clinica_atual["id"])
-    else:
-        st.error("Tela não encontrada no mock.")
+    render_tutor_chat()

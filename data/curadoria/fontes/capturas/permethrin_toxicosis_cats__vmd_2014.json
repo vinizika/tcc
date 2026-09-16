@@ -1,0 +1,46 @@
+{
+  "title": "Permetrina: risco para gatos",
+  "source": "Veterinary Medicines Directorate",
+  "document_type": "owner_guidance",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "cat",
+  "topic": "permethrin_toxicosis_cats",
+  "language": "en",
+  "source_url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/427802/Permethrin_spot-ons.pdf",
+  "indexing": {
+    "include_sections": [
+      "Dog spot-ons: permethrin",
+      "Veterinary medicines with permethrin: Spot-ons",
+      "Permethrin poisoning: what to look for"
+    ],
+    "exclude_sections": [
+      "Places to buy spot-on veterinary medicines",
+      "Number of cats affected",
+      "Veterinary medicines with permethrin: Other types"
+    ],
+    "exclude_pages": [
+      2,
+      3,
+      6
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "tutor",
+  "access_date": "2026-09-14",
+  "captured_sha256": "d4c156306be9da1593f0f89a757cacc4718a4495a95033049ff542b9fa9712e5",
+  "map_line": "permethrin_toxicosis_cats",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET — Primeiro Grupo de Anestesia e Veterinaria Universitaria do Brasil",
+    "date": "2026-09-14"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "Open Government Licence v3.0 declarada na pagina GOV.UK que publica este PDF; atribuicao Crown copyright preservada.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-14"
+  },
+  "year": 2014,
+  "authors": "Veterinary Medicines Directorate"
+}

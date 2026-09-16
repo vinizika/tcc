@@ -83,6 +83,14 @@ qualquer outra.
 | **R39** | Ministério da Saúde. *Raiva Animal.* [gov.br](https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/r/raiva/raiva-animal). "O último caso de raiva em cão doméstico causado pela variante AgV1 foi registrado em 2016 … o último caso por AgV2 ocorreu em 2019"; "cães e gatos continuam suscetíveis à infecção por variantes silvestres … especialmente aquelas associadas a morcegos hematófagos" | normativa/vigilância (BR) | `direta` |
 | **R40** | CRMV-SP. *Dia Mundial contra a Raiva: morcegos são os principais transmissores no Brasil.* [crmvsp.gov.br](https://crmvsp.gov.br/dia-mundial-contra-a-raiva-morcegos-sao-os-principais-transmissores-no-brasil/). Reforço vacinal após contato de cão ou gato com morcego ou mamífero silvestre; notificação compulsória; acionar o serviço de zoonoses | conselho profissional (BR) | `resumo` |
 
+## Acrescentadas no lote de intoxicações (14/09)
+
+| id | Referência | Tipo | Verificação |
+|---|---|---|---|
+| **R41** | Riboldi E, Lima DA, Dallegrave E. *Sensibilidade espécie-específica aos anti-inflamatórios não esteroidais: humanos X animais de companhia.* Arq. Bras. Med. Vet. Zootec. 64(1), 2012. DOI [10.1590/S0102-09352012000100006](https://doi.org/10.1590/S0102-09352012000100006). Página do artigo declara CC BY-NC 4.0 | artigo revisado por pares (BR) | `direta` — HTML e PDF integral abertos; captura experimental usa somente o resumo em português |
+| **R42** | Jardim MPB et al. *Poisoning in domestic cats in Brazil: toxicants, clinical signs, and therapeutic approaches.* Arq. Bras. Med. Vet. Zootec. 73(1), 2021. DOI [10.1590/1678-4162-11856](https://doi.org/10.1590/1678-4162-11856). Artigo aberto sob CC BY | artigo revisado por pares (BR) | `direta` — texto integral aberto; captura experimental usa somente o abstract em inglês e não cobre cães |
+| **R43** | Veterinary Medicines Directorate. *Permethrin: don’t put your cat at risk.* GOV.UK, 2014. [Página e PDF](https://www.gov.uk/government/publications/permethrin-dont-put-your-cat-at-risk). Conteúdo sob Open Government Licence v3.0 | orientação oficial para tutores | `direta` — PDF integral aberto; captura experimental limitada a exposição, sinais e procura imediata por veterinário |
+
 ## O que ficou sem fonte
 
 Registrado para ninguém procurar de novo sem saber que já se procurou:

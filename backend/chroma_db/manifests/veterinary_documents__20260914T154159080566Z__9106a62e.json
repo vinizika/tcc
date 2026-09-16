@@ -1,0 +1,78 @@
+{
+  "chunking": {
+    "dimensions": 384,
+    "embedding_text_fields": [
+      "title",
+      "section",
+      "body"
+    ],
+    "max_tokens": 128,
+    "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "overlap_tokens": 16,
+    "recipe_sha256": "1a93e1e7db9a5b5a7766ca11b54162cb74cb76bb4d4c2c02b2dc0d5c4319682b",
+    "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+    "target_tokens": 96,
+    "version": "vector-ingestion-recovery-v1"
+  },
+  "chunks": {
+    "content_sha256": "349b6f10bb1f4a3311d6483149a76e9e317a1e9ebf100f1dc37fee6421413555",
+    "count": 24,
+    "ids_sha256": "5f0325d0b61712e070424f2c41d50e12e190cada1bffa80dbf00b171be4890e5",
+    "tokens": {
+      "max": 116,
+      "mean": 80.542,
+      "median": 81.0,
+      "min": 55
+    }
+  },
+  "collection_name": "veterinary_documents__20260914T154159080566Z__9106a62e",
+  "created_at": "2026-09-14T15:42:05.456050+00:00",
+  "embedding": {
+    "dimensions": 384,
+    "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42"
+  },
+  "profile": "experimental",
+  "quality": {
+    "corrupt_document_count": 0,
+    "fallback_count": 0,
+    "species_counts": {
+      "cat": 17,
+      "dog_and_cat": 7
+    },
+    "topic_counts": {
+      "carbamate_organophosphate_poisoning": 7,
+      "human_medication_poisoning": 7,
+      "permethrin_toxicosis_cats": 10
+    },
+    "validation_status_counts": {
+      "pending_specialist": 24
+    },
+    "warning_count": 6
+  },
+  "schema_version": 1,
+  "sources": {
+    "document_count": 3,
+    "documents": [
+      {
+        "chunk_count": 7,
+        "path": "human_medication_poisoning__scielo_2012_aines_pdf.pdf",
+        "sidecar_sha256": "702734a2ad5f9592fcc480caa8019b6d45cbe53e2b04de89e1846794b70f4d37",
+        "source_sha256": "ed59061397a41e9560fde046c87e81d45f7d1eda5a2731282a377f9687be0030"
+      },
+      {
+        "chunk_count": 7,
+        "path": "carbamate_organophosphate_poisoning__scielo_2021_feline_poisoning.txt",
+        "sidecar_sha256": "1dadf7221c191a1e2e3417bdd427a496705ca9330270d5d4dc9546511dc1c849",
+        "source_sha256": "6094639a2a3700bbe048822761a8d46ceb1212687ed7ce14fe491192829e2c74"
+      },
+      {
+        "chunk_count": 10,
+        "path": "permethrin_toxicosis_cats__vmd_2014.pdf",
+        "sidecar_sha256": "7a468bad7de04f962c9afc6048cc50b9f8c8fd18e3edc08eb22ed15b7ea2e469",
+        "source_sha256": "d4c156306be9da1593f0f89a757cacc4718a4495a95033049ff542b9fa9712e5"
+      }
+    ],
+    "source_set_sha256": "9106a62e074b28e0992c2515daba38ac503427c06496dec27c0819f71efb8a07"
+  }
+}

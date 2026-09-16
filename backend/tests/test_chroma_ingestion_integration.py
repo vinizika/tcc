@@ -249,3 +249,33 @@ def test_rollback_invalido_preserva_ponteiro_atual(real_chroma_module, tmp_path)
 
     assert client.load_active_pointer() == before
     assert client.get_collection().name == name
+
+
+def test_inspecao_nao_carrega_embedding_nem_cria_colecao(
+    real_chroma_module, tmp_path, monkeypatch
+):
+    client = real_chroma_module.ChromaDBClient
+    client.configure(
+        path=tmp_path,
+        collection_name="documents",
+        embedding_function=DeterministicEmbedding(),
+    )
+    client.get_collection()
+
+    monkeypatch.setattr(
+        client,
+        "_get_embedding_function",
+        classmethod(
+            lambda cls: (_ for _ in ()).throw(
+                AssertionError("modelo de embedding carregado durante inspeção")
+            )
+        ),
+    )
+
+    collection = client.get_collection_for_inspection()
+
+    assert collection.name == "documents"
+    assert collection.count() == 0
+    assert [item.name for item in client.get_client().list_collections()] == [
+        "documents"
+    ]

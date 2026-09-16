@@ -229,13 +229,20 @@ backend/
   supabase_schema.sql  DDL de tutors/pets — rodar uma vez no projeto Supabase
   data/documents/ a base de conhecimento: PDFs + metadados em JSON
   tests/          testes do backend
-frontend/         interface Streamlit (o compose sobe main.py)
+frontend/         interface Streamlit real (o compose sobe main.py)
 scripts/          limpeza de dados, data augmentation, avaliação → README próprio
 data/             datasets, processados e rodadas de avaliação → README próprio
 docs/             divisão de trabalho, contratos, diário inicial → README próprio
 evidencias/       o que cada um fez, mediu e concluiu, rodada a rodada → README próprio
-mock/             protótipo inicial (obsoleto)
+mock/             protótipo oficial de demonstração (independente do frontend real)
 ```
+
+### Protótipo de localização e painel de clínicas
+
+O fluxo navegável com clínicas fictícias, consentimento antes do encaminhamento
+e dashboard isolado por clínica vive em [`mock/`](mock/README.md). Ele é uma
+demonstração independente, executada na porta 8502, e não substitui nem chama o
+frontend/backend reais do Compose.
 
 ---
 

@@ -87,6 +87,9 @@ ficha, e a coluna `validacao` da linha no mapa.
 | Quadro | Estado | Dossiê |
 |---|---|---|
 | Torção gástrica | `fonte_encontrada` — 2 capturas, aguardando validação | [gastric_dilatation_volvulus.md](gastric_dilatation_volvulus.md) |
+| Medicamento humano | `fonte_aprovada` — ASAVET, ainda restrita ao perfil experimental | [human_medication_poisoning.md](human_medication_poisoning.md) |
+| Carbamato/organofosforado | `fonte_aprovada` — ASAVET, ainda restrita ao perfil experimental | [carbamate_organophosphate_poisoning.md](carbamate_organophosphate_poisoning.md) |
+| Permetrina em gato | `fonte_aprovada` — ASAVET, ainda restrita ao perfil experimental | [permethrin_toxicosis_cats.md](permethrin_toxicosis_cats.md) |
 
-As outras 30 linhas da etapa 1 seguem em `sem_documento` ou `sintetico`. A
-fila e a porta de decisão estão no [README da curadoria](../README.md).
+As demais linhas da etapa 1 seguem no estado verdadeiro registrado no mapa.
+A fila e a porta de decisão estão no [README da curadoria](../README.md).
