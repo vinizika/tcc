@@ -21,6 +21,9 @@ e re-ranking.
 | 2 | 07/09 | [Ingestão científica com seções e tokens](2026-09-07-02-ingestao-cientifica-token-aware.md) | Pipeline determinístico implementado; paper real inspecionado em 200 chunks, mediana 90,5 e máximo 128 tokens; ChromaDB não alterado |
 | 3 | 07/09 | [Extração científica orientada a layout](2026-09-07-03-extracao-cientifica-layout-aware.md) | PyMuPDF e heurísticas genéricas de blocos/colunas adotados; seis captions, 15 headers e quatro blocos editoriais removidos; paper passou a 186 chunks, máximo 119; sete PDFs antigos preservados e Chroma ainda com 18 registros |
 | 4 | 13/09 | [Endurecimento da ingestão vetorial](2026-09-13-04-endurecimento-da-ingestao-vetorial.md) | Reconstrução da receita fixa, perfis, staging/ativação/rollback, fingerprint por rodada, compare corrigido e testes reais com Chroma temporário |
+| 5 | 14/09 | [Lote 01 — intoxicações, staging experimental](2026-09-14-01-lote-intoxicacoes-experimental.md) | Três fontes redistribuíveis capturadas e inspecionadas; staging de 24 chunks mantido inativo porque a encontrabilidade top-5 ficou em 66,7% |
+| 6 | 15/09 | [Correção do travamento em `/health/fingerprint`](2026-09-15-02-correcao-health-fingerprint.md) | Fingerprint separado do carregamento de embeddings, uma única leitura com validação de integridade, backend atualizado e chamadas consecutivas abaixo de 0,3 s |
+| 7 | 15/09 | [Publicação da branch e deploy local](2026-09-15-03-publicacao-e-deploy-local.md) | Quatro commits publicados, artigos e snapshot experimental do Chroma versionados, Compose reconstruído e quatro endpoints locais validados com HTTP 200 |
 
 ## Estado atual
 
