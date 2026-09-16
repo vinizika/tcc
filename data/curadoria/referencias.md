@@ -91,6 +91,15 @@ qualquer outra.
 | **R42** | Jardim MPB et al. *Poisoning in domestic cats in Brazil: toxicants, clinical signs, and therapeutic approaches.* Arq. Bras. Med. Vet. Zootec. 73(1), 2021. DOI [10.1590/1678-4162-11856](https://doi.org/10.1590/1678-4162-11856). Artigo aberto sob CC BY | artigo revisado por pares (BR) | `direta` — texto integral aberto; captura experimental usa somente o abstract em inglês e não cobre cães |
 | **R43** | Veterinary Medicines Directorate. *Permethrin: don’t put your cat at risk.* GOV.UK, 2014. [Página e PDF](https://www.gov.uk/government/publications/permethrin-dont-put-your-cat-at-risk). Conteúdo sob Open Government Licence v3.0 | orientação oficial para tutores | `direta` — PDF integral aberto; captura experimental limitada a exposição, sinais e procura imediata por veterinário |
 
+## Acrescentadas no segundo lote experimental (15/09)
+
+| id | Referência | Tipo | Verificação |
+|---|---|---|---|
+| **R44** | Stroope S, Walton R, Mochel JP, Yuan L, Enders B. *Retrospective Evaluation of Clinical Bleeding in Dogs With Anticoagulant Rodenticide Toxicity—A Multi-Center Evaluation of 62 Cases (2010–2020).* Front Vet Sci 9, 2022. DOI [10.3389/fvets.2022.879179](https://doi.org/10.3389/fvets.2022.879179). CC BY 4.0 | artigo revisado por pares | `direta` — texto e PDF integrais abertos; captura experimental usa `Introduction` e `Conclusions` |
+| **R45** | Zhou H et al. *Overview of Recent Advances in Canine Parvovirus Research: Current Status and Future Perspectives.* Microorganisms 13(1):47, 2025. DOI [10.3390/microorganisms13010047](https://doi.org/10.3390/microorganisms13010047). CC BY 4.0 | revisão por pares | `direta` — texto e PDF integrais abertos; captura experimental usa a primeira página da introdução |
+| **R46** | Xavier RGC et al. *Canine Pyometra: A Short Review of Current Advances.* Animals 13(21):3310, 2023. DOI [10.3390/ani13213310](https://doi.org/10.3390/ani13213310). CC BY 4.0 | revisão por pares | `direta` — texto e PDF integrais abertos; captura experimental usa somente apresentação clínica |
+| **R47** | Silveira CPB et al. *Estudo retrospectivo de ovariossalpingo-histerectomia em cadelas e gatas atendidas em Hospital Veterinário Escola no período de um ano.* Arq Bras Med Vet Zootec 65(2):335–340, 2013. [SciELO](https://www.scielo.br/j/abmvz/a/s8WXqc8QPnRq33ZqdyGDnvq/?lang=pt). CC BY-NC 4.0 | artigo revisado por pares (BR) | `direta` — texto e PDF integrais abertos; captura experimental usa somente a página clínica |
+
 ## O que ficou sem fonte
 
 Registrado para ninguém procurar de novo sem saber que já se procurou:

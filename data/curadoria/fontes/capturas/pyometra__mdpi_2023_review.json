@@ -1,0 +1,34 @@
+{
+  "title": "Canine pyometra clinical presentation",
+  "source": "Animals (MDPI)",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "pending_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "pyometra",
+  "language": "en",
+  "source_url": "https://mdpi-res.com/d_attachment/animals/animals-13-03310/article_deploy/animals-13-03310.pdf",
+  "indexing": {
+    "include_sections": ["Clinical presentation"],
+    "exclude_sections": ["Introduction", "Diagnosis", "Treatment", "Conclusions", "References"],
+    "exclude_pages": [],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-15",
+  "captured_sha256": "c8e169d07f3aea9e0ca2b063c257301a56e0b9305f83aa1a3d7258e3fc50d35b",
+  "map_line": "pyometra",
+  "specialist": {
+    "verdict": "",
+    "name": "",
+    "date": ""
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; captura e redistribuicao experimental autorizadas com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-15"
+  },
+  "year": 2023,
+  "authors": "Rafael Gariglio Clark Xavier et al."
+}

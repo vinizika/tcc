@@ -90,6 +90,9 @@ ficha, e a coluna `validacao` da linha no mapa.
 | Medicamento humano | `fonte_aprovada` — ASAVET, ainda restrita ao perfil experimental | [human_medication_poisoning.md](human_medication_poisoning.md) |
 | Carbamato/organofosforado | `fonte_aprovada` — ASAVET, ainda restrita ao perfil experimental | [carbamate_organophosphate_poisoning.md](carbamate_organophosphate_poisoning.md) |
 | Permetrina em gato | `fonte_aprovada` — ASAVET, ainda restrita ao perfil experimental | [permethrin_toxicosis_cats.md](permethrin_toxicosis_cats.md) |
+| Raticida anticoagulante | `fonte_encontrada` — 1 captura experimental, aguardando validação | [anticoagulant_rodenticide_poisoning.md](anticoagulant_rodenticide_poisoning.md) |
+| Parvovirose/panleucopenia | `fonte_encontrada` — 1 captura canina experimental; lacuna felina | [parvovirus_panleukopenia.md](parvovirus_panleukopenia.md) |
+| Piometra | `fonte_encontrada` — 2 capturas experimentais, aguardando validação | [pyometra.md](pyometra.md) |
 
 As demais linhas da etapa 1 seguem no estado verdadeiro registrado no mapa.
 A fila e a porta de decisão estão no [README da curadoria](../README.md).
