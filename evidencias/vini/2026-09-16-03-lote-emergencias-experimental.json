@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "local_date": "2026-09-16",
+  "branch": "codex/lote-03-emergencias",
+  "initial_head": "c77bcf711f8e5376cf9b1f33346125c36669612a",
+  "base_note": "Branch criada sobre o lote 2 e depois atualizada por fast-forward para o merge 6f852ba8624964417c7c48a8ce073f9577063057 da main.",
+  "scope": [
+    "fading_neonate",
+    "acute_hindlimb_paralysis",
+    "anaphylaxis_facial_swelling"
+  ],
+  "clinical_approval_granted": true,
+  "clinical_approval": {
+    "organization": "ASAVET — Primeiro Grupo de Anestesia e Veterinaria Universitaria do Brasil",
+    "date": "2026-09-16",
+    "scope": "all four captures in batch 3",
+    "individual_reviewer_or_crmv_recorded": false
+  },
+  "curated_ingestion_executed": false,
+  "active_pointer_changed": false,
+  "staging": {
+    "collection": "veterinary_documents__20260916T035025760102Z__43f4e229",
+    "profile": "experimental",
+    "document_count": 4,
+    "chunk_count": 99,
+    "activated": false,
+    "active_pointer": null,
+    "source_set_sha256": "43f4e229de8ccfb8b3ecc73f247ec1b8d4f716ae7eda611438e2a5e8618d3dba",
+    "chunk_ids_sha256": "f58264d16755034b56c0f86023979e1886bf7175f76ba018fa787141e0f0a0ed",
+    "chunk_content_sha256": "5613734846377472b4ab4de9edea6822d719c959fa63f0b8ddcc393282b8b4bf",
+    "manifest_canonical_sha256": "cd514c9cd903b30918c20bfd3feb01ce3877cadda1c21ae6596848414ac8231b",
+    "manifest_file_sha256": "919a24d8f7d0c52afe7659adef6d406e64391b79e3b854215cc8debc1e5a9eea",
+    "receipt_file_sha256": "4c95bb096713271bcd6d327e2c03d692535652736bb1ac4c214feb69dce2abe3",
+    "integrity_validated": true,
+    "warning_count": 6,
+    "fallback_count": 2,
+    "corrupt_document_count": 0,
+    "embedding": {
+      "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+      "dimensions": 384,
+      "recipe_sha256": "1a93e1e7db9a5b5a7766ca11b54162cb74cb76bb4d4c2c02b2dc0d5c4319682b"
+    }
+  },
+  "active_backend_after_staging": {
+    "collection": "veterinary_documents",
+    "chunk_count": 0,
+    "active_pointer_exists": false
+  },
+  "documents": [
+    {
+      "topic": "fading_neonate",
+      "file": "fading_neonate__animals_2024_neonatal_triage.txt",
+      "source": "Animals (MDPI)",
+      "year": 2024,
+      "language": "en",
+      "species": "dog_and_cat",
+      "rights": "CC BY 4.0",
+      "sha256": "6ec82e32eaba49122030888892daef854252b7dcae394c9dd40fef53d3e60782",
+      "sidecar_sha256": "cf6eb1a87ac7dd348f32783add0ed8018dada1a9781b793b0048621a9c1b3f91",
+      "chunks": 49,
+      "validation_status": "approved_by_specialist",
+      "ingestion_scope": "experimental_only"
+    },
+    {
+      "topic": "acute_hindlimb_paralysis",
+      "file": "acute_hindlimb_paralysis__jfms_2024_feline_ate.txt",
+      "source": "Journal of Feline Medicine and Surgery",
+      "year": 2024,
+      "language": "en",
+      "species": "cat",
+      "rights": "CC BY-NC 4.0",
+      "sha256": "724453ba336b20390ef226b12949ace7290625c940e35420f5a941c8e5d8f494",
+      "sidecar_sha256": "ccea8a4867db7ff6980c583986d75eecd1de6eecdbf874f24d801d7246365cbf",
+      "chunks": 11,
+      "validation_status": "approved_by_specialist",
+      "ingestion_scope": "experimental_only"
+    },
+    {
+      "topic": "acute_hindlimb_paralysis",
+      "file": "acute_hindlimb_paralysis__pvb_2017_canine_ischemic_neuromyopathy_excerpt.txt",
+      "source": "Pesquisa Veterinaria Brasileira",
+      "year": 2017,
+      "language": "pt",
+      "species": "dog",
+      "rights": "CC BY-NC 4.0",
+      "sha256": "41c0284eb7c0b1aa7b41e5262af190796e45492762d2c347aaf879c7ddbb0eb4",
+      "sidecar_sha256": "ae2293ffc96a0201e4c289ab68f8ce6caf679cbf0a6e57ca3ce3f08d35384785",
+      "chunks": 7,
+      "validation_status": "approved_by_specialist",
+      "ingestion_scope": "experimental_only"
+    },
+    {
+      "topic": "anaphylaxis_facial_swelling",
+      "file": "anaphylaxis_facial_swelling__toxins_2024_bees_wasps_excerpt.txt",
+      "source": "Toxins (MDPI)",
+      "year": 2024,
+      "language": "en",
+      "species": "dog_and_cat",
+      "rights": "CC BY 4.0",
+      "sha256": "2120b88919a5fbfd1cfd2e1261c6350deae5cc16b8b93a1ac4ffe7500f7e27a5",
+      "sidecar_sha256": "9208f4f9563af1ef5935874b66ddc3f8b05890b658e07644b100bc4394acca51",
+      "chunks": 32,
+      "validation_status": "approved_by_specialist",
+      "ingestion_scope": "experimental_only"
+    }
+  ],
+  "sources_reviewed": {
+    "accepted": 4,
+    "rejected_after_inspection": [
+      "Frontiers 2022 canine insect anaphylaxis: 225 chunks and noisy table-derived headings",
+      "Full Animals neonatal PDF: 143 chunks outside the intended clinical slice",
+      "Full Toxins zootoxins PDF: 44 chunks including unrelated toxins"
+    ],
+    "blocked_or_reference_only": [
+      "VCA and University of Illinois fading-neonate pages",
+      "Basic triage in dogs and cats: Part II",
+      "VCA anaphylaxis page"
+    ]
+  },
+  "discarded_intermediate_staging": {
+    "collection": "veterinary_documents__20260916T032339309830Z__34620914",
+    "chunk_count": 92,
+    "activated": false,
+    "removed": true,
+    "reason": "b17 did not find the expected topic without a canine Portuguese source"
+  },
+  "discarded_preapproval_staging": {
+    "collection": "veterinary_documents__20260916T033003107495Z__3c4d8506",
+    "chunk_count": 99,
+    "activated": false,
+    "removed": true,
+    "reason": "Rebuilt after ASAVET approval changed the sidecars and source-set hash."
+  },
+  "findability": {
+    "top_k": 5,
+    "threshold": 0.7,
+    "expected_topic_found": 3,
+    "expected_topic_rank_1": 3,
+    "cases": [
+      {"id": "b14", "expected_topic": "fading_neonate", "best_rank": 1, "best_score": 0.617052, "passed_threshold": false},
+      {"id": "b16", "expected_topic": "anaphylaxis_facial_swelling", "best_rank": 1, "best_score": 0.504331, "passed_threshold": false},
+      {"id": "b17", "expected_topic": "acute_hindlimb_paralysis", "best_rank": 1, "best_score": 0.553069, "passed_threshold": false}
+    ]
+  },
+  "tests": {
+    "scripts": "186 passed",
+    "backend": "203 passed; 13 deprecation warnings",
+    "pip_check": "No broken requirements found",
+    "compileall": "ok",
+    "docker_compose_config": "ok",
+    "json_yaml": "69 JSON and 3 YAML valid",
+    "csv": "2 CSV valid",
+    "git_diff_check": "ok"
+  },
+  "pending": [
+    "Portuguese licensed sources for fading neonate and anaphylaxis",
+    "coverage for other acute paralysis causes such as intervertebral disc disease",
+    "retrieval improvement because all three scores remain below 0.70",
+    "do not activate and do not run curated ingestion before retrieval review and a separate scope decision"
+  ],
+  "publication": {
+    "committed": true,
+    "data_commit": "5e76529",
+    "pushed": true,
+    "remote_branch": "origin/codex/lote-03-emergencias",
+    "pull_request_opened": false,
+    "pull_request_blocker": "GitHub connector returned HTTP 403: Resource not accessible by integration.",
+    "pull_request_creation_url": "https://github.com/vinizika/tcc/pull/new/codex/lote-03-emergencias"
+  }
+}

@@ -2,7 +2,7 @@
   "title": "Canine parvovirus research advances",
   "source": "Microorganisms (MDPI)",
   "document_type": "peer_reviewed_article",
-  "validation_status": "pending_specialist",
+  "validation_status": "approved_by_specialist",
   "ingestion_scope": "experimental_only",
   "species": "dog",
   "topic": "parvovirus_panleukopenia",
@@ -19,9 +19,9 @@
   "captured_sha256": "16dcc62d5b4f980ea5f2c536795250ac929289dfc4a1a5660b568a58f9e3e920",
   "map_line": "parvovirus_panleukopenia",
   "specialist": {
-    "verdict": "",
-    "name": "",
-    "date": ""
+    "verdict": "approved",
+    "name": "ASAVET — Primeiro Grupo de Anestesia e Veterinaria Universitaria do Brasil",
+    "date": "2026-09-16"
   },
   "rights": {
     "status": "allowed",

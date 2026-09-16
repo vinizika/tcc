@@ -6,7 +6,7 @@
 
 **Pesquisado em:** 15/09/2026
 
-**Estado:** `fonte_encontrada` — sem aprovação clínica; somente experimental
+**Estado:** `fonte_aprovada` — aprovada pela ASAVET em 16/09/2026; ainda experimental
 
 ## Fonte capturada
 
@@ -21,8 +21,8 @@ frase longa. Ele cobre gastroenterite hemorrágica, miocardite e o risco maior
 em filhotes não vacinados. Tratamento, diagnóstico, prevenção, perspectivas e
 referências não entram.
 
-O arquivo está `pending_specialist` e `experimental_only`. A licença permite
-redistribuição com atribuição; isso não equivale a aprovação clínica.
+O arquivo foi aprovado pela ASAVET e permanece `experimental_only`. A licença
+permite redistribuição com atribuição.
 
 ## Fonte rejeitada após inspeção
 

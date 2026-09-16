@@ -1,0 +1,34 @@
+{
+  "title": "Bee and wasp envenomation",
+  "source": "Toxins (MDPI)",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog_and_cat",
+  "topic": "anaphylaxis_facial_swelling",
+  "language": "en",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10818608/",
+  "indexing": {
+    "include_sections": ["Bees and Wasps"],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-16",
+  "captured_sha256": "2120b88919a5fbfd1cfd2e1261c6350deae5cc16b8b93a1ac4ffe7500f7e27a5",
+  "map_line": "anaphylaxis_facial_swelling",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET — Primeiro Grupo de Anestesia e Veterinaria Universitaria do Brasil",
+    "date": "2026-09-16"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; extracao literal da secao Bees and Wasps autorizada para uso experimental com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-16"
+  },
+  "year": 2024,
+  "authors": "Andras-Laszlo Nagy et al."
+}

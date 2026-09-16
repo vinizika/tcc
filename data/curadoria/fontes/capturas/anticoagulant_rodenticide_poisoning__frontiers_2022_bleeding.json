@@ -2,7 +2,7 @@
   "title": "Anticoagulant rodenticide bleeding",
   "source": "Frontiers in Veterinary Science",
   "document_type": "peer_reviewed_article",
-  "validation_status": "pending_specialist",
+  "validation_status": "approved_by_specialist",
   "ingestion_scope": "experimental_only",
   "species": "dog",
   "topic": "anticoagulant_rodenticide_poisoning",
@@ -19,9 +19,9 @@
   "captured_sha256": "c8c9ed5eae1ab33d7e918beb45f98aa63649073ffc4e7af9fbce6bfdd6e29f01",
   "map_line": "anticoagulant_rodenticide_poisoning",
   "specialist": {
-    "verdict": "",
-    "name": "",
-    "date": ""
+    "verdict": "approved",
+    "name": "ASAVET — Primeiro Grupo de Anestesia e Veterinaria Universitaria do Brasil",
+    "date": "2026-09-16"
   },
   "rights": {
     "status": "allowed",

@@ -1,0 +1,34 @@
+{
+  "title": "Neonatal triad and risk signs",
+  "source": "Animals (MDPI)",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog_and_cat",
+  "topic": "fading_neonate",
+  "language": "en",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11640698/",
+  "indexing": {
+    "include_sections": ["Assessment of the Neonatal Triad", "Hypothermia", "Hypoglycemia", "Dehydration", "The Role of the Owner in Identifying Newborns at Risk"],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-16",
+  "captured_sha256": "6ec82e32eaba49122030888892daef854252b7dcae394c9dd40fef53d3e60782",
+  "map_line": "fading_neonate",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET — Primeiro Grupo de Anestesia e Veterinaria Universitaria do Brasil",
+    "date": "2026-09-16"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; extracao literal das secoes selecionadas autorizada para uso experimental com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-16"
+  },
+  "year": 2024,
+  "authors": "Keylla Helena Nobre Pacífico Pereira et al."
+}

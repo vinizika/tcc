@@ -6,7 +6,7 @@
 
 **Pesquisado em:** 15/09/2026
 
-**Estado:** `fonte_encontrada` — sem aprovação clínica; somente experimental
+**Estado:** `fonte_aprovada` — aprovada pela ASAVET em 16/09/2026; ainda experimental
 
 ## Fontes capturadas
 
@@ -30,9 +30,9 @@ doses; há menção geral à necessidade de intervenção emergencial. Como o
 título da seção é perdido pelo recorte de página, o ingestor registra a seção
 neutra `Document`.
 
-As duas fichas estão `pending_specialist` e `experimental_only`. As licenças
-permitem esta reutilização com atribuição; o uso da fonte SciELO permanece
-não comercial. Isso não equivale a aprovação clínica.
+As duas fichas foram aprovadas pela ASAVET e permanecem `experimental_only`.
+As licenças permitem esta reutilização com atribuição; o uso da fonte SciELO
+permanece não comercial.
 
 ## Fonte aberta, mas não armazenada
 
@@ -42,5 +42,5 @@ não comercial. Isso não equivale a aprovação clínica.
 ## Limitações
 
 O artigo brasileiro inclui cães e gatos, mas sua amostra é majoritariamente
-canina. A suficiência clínica e a adequação do recorte ao tutor brasileiro
-ainda precisam de especialista.
+canina. A ASAVET aprovou o recorte, mas essa limitação de representatividade
+continua registrada para as próximas avaliações.

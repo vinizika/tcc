@@ -165,5 +165,20 @@
   "pushed": true,
   "remote_branch": "origin/codex/lote-02-curadoria",
   "pull_request_opened": true,
-  "pull_request": "https://github.com/vinizika/tcc/pull/6"
+  "pull_request": "https://github.com/vinizika/tcc/pull/6",
+  "post_publication_update": {
+    "date": "2026-09-16",
+    "clinical_approval_granted": true,
+    "organization": "ASAVET — Primeiro Grupo de Anestesia e Veterinaria Universitaria do Brasil",
+    "scope": "all four captures in batch 2",
+    "individual_reviewer_or_crmv_recorded": false,
+    "ingestion_scope_after_approval": "experimental_only",
+    "updated_sidecar_sha256": {
+      "anticoagulant_rodenticide_poisoning__frontiers_2022_bleeding.json": "1aa7648b4399a909dc75e65b6b7581c01d60509cbfb491102a79e21053907061",
+      "parvovirus_panleukopenia__mdpi_2025_canine_parvovirus.json": "a6b157e5c265b42dc11090fe3b2f96580373d18d13a2c427e443ce8403b36d18",
+      "pyometra__mdpi_2023_review.json": "6b7099a6e28b2f8306e0ee2a5c4882dfa8218ec4fd5543e396a44bbcc8187172",
+      "pyometra__scielo_2013_cadelas_gatas.json": "afacb4dd11477f57ae45558fee6e103e6745080a22e64a6db320dc94ca97c009"
+    },
+    "note": "Original staging and sidecar hashes above are preserved as historical facts from before approval was reported."
+  }
 }
