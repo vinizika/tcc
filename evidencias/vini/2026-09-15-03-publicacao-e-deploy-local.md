@@ -60,6 +60,15 @@ A candidata não foi ativada porque a encontrabilidade top-5 medida foi 2/3,
 ou 66,7%, abaixo da porta de 70%. Versionar o banco garante que a equipe
 receba o mesmo snapshot, mas não altera essa decisão registrada.
 
+Depois que o backend foi religado, o próprio Chroma alterou novamente
+`chroma.sqlite3` apenas por abrir o armazenamento. Por isso, o Git contém o
+snapshot consistente capturado com o backend parado, enquanto a cópia de
+trabalho volta a aparecer modificada durante a execução normal. Essa mutação
+automática — além de conflitos binários difíceis de mesclar — era a razão
+técnica para inicialmente manter bancos locais fora do versionamento. O
+snapshot foi publicado mesmo assim por decisão explícita do responsável do
+projeto, para que toda a equipe parta dos mesmos bytes.
+
 ## Deploy local
 
 Comando executado:
