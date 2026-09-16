@@ -143,4 +143,8 @@ passaram.
 4. Melhorar a cobertura/escore dos três casos e repetir a régua.
 5. Não ativar a candidata atual: todos os scores ficaram abaixo de 0,70.
 
-Não houve commit, push, PR, ingestão `curated` ou mudança da coleção ativa.
+O lote foi publicado no commit
+`6710393eca6eac34dbf253749c8cbd52d51960c1`, na branch
+`codex/lote-02-curadoria`, e abriu o
+[PR #6](https://github.com/vinizika/tcc/pull/6) contra `main`. Não houve
+ingestão `curated` ou mudança da coleção ativa.

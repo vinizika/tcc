@@ -158,7 +158,12 @@
     "improve_scores_and_repeat_gate",
     "do_not_activate_current_candidate"
   ],
-  "commit_created": false,
-  "pushed": false,
-  "pull_request_opened": false
+  "commit_created": true,
+  "commits": {
+    "data_sources_and_staging": "6710393eca6eac34dbf253749c8cbd52d51960c1"
+  },
+  "pushed": true,
+  "remote_branch": "origin/codex/lote-02-curadoria",
+  "pull_request_opened": true,
+  "pull_request": "https://github.com/vinizika/tcc/pull/6"
 }
