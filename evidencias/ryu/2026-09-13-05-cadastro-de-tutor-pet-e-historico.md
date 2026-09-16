@@ -94,3 +94,43 @@ Criar os projetos (Supabase e, se quiser, um Atlas para produção — o Mongo
 local do compose já resolve para desenvolvimento), rodar
 `backend/supabase_schema.sql`, e testar o fluxo completo do README. Depois:
 o formulário do pet no frontend.
+
+---
+
+## Adendo de 15–16/09 — teste contra o Supabase real
+
+O projeto foi criado em 15/09 e o schema, rodado pelo próprio usuário no SQL
+Editor. Dois problemas apareceram ao testar de ponta a ponta, nenhum deles
+prova de que o código estava errado — os dois eram do ambiente.
+
+**1. `supabase==2.15.0` não reconhece o formato novo de chave.** O projeto
+criado já usa `sb_secret_...`/`sb_publishable_...` em vez do JWT antigo
+(`eyJ...`); a versão fixada rejeitava com `SupabaseException("Invalid API
+key")`. Corrigido para `2.31.0` — os 201 testes do backend continuam
+passando (dublês não tocam a biblioteca de verdade).
+
+**2. Disco do host quase cheio (2,1 GB livres de 223 GB) travou o
+container.** Coincidiu com o merge do PR do Vinicius
+(`codex/harden-vector-ingestion`), que fixou versões de várias dependências
+— qualquer recriação de container agora baixa o modelo de embeddings do
+zero (ele mora no cache da camada do container, não no bind mount), e com o
+disco cheio a escrita simplesmente trava sem erro explícito. Resolvido
+limpando o disco (o usuário liberou espaço no C:, e `docker builder prune`
+tirou mais 15,6 GB de cache de build). Fica registrado porque é o mesmo
+modo de falha que já tinha corrompido o Docker Desktop do Vinicius em
+07/09 — vale todo mundo ficar de olho no disco antes de recriar containers.
+
+**Teste de ponta a ponta, com os dois corrigidos:** tutor e pet criados no
+Supabase real; `POST /chat/` com `pet_id` classificou corretamente
+("vomitou uma vez, comendo normal" → `NAO_EMERGENCIA`) e devolveu
+`conversation_id`; `GET /conversations/{id}` trouxe o turno completo,
+incluindo a triagem embutida. A cadeia inteira (Supabase → prompt → Mongo)
+funciona com infraestrutura real, não só dublês.
+
+**O que ficou para depois:** o registro de teste ("Teste Ryu" / "Bidu")
+continua no Supabase — não há rota de exclusão ainda (`POST`/`GET`/`PATCH`
+existem, `DELETE` não foi implementado). E a chave usada é a `secret`
+(equivalente a service role, ignora RLS por completo) — funciona porque a
+política hoje é aberta mesmo, mas quando o B-56 for resolvido (autenticação
+real), o app deve passar a usar a `publishable`/`anon` key, reservando a
+`secret` para tarefas administrativas.

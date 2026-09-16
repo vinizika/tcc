@@ -32,5 +32,9 @@ pypdf==6.18.1 # Fallback simples quando a extração estruturada falhar
 fonttools==4.65.0 # Decodificação completa das fontes CFF encontradas em papers
 
 # Persistência: tutores e pets (Supabase/Postgres), histórico de conversa (MongoDB)
-supabase==2.15.0
+# supabase >= 2.20 é o piso real: versões anteriores só reconhecem chave no
+# formato antigo (JWT "eyJ..."); o projeto Supabase criado em 15/09 já usa o
+# formato novo ("sb_secret_...", "sb_publishable_...") e 2.15.0 rejeitava com
+# "Invalid API key" — descoberto testando contra o projeto real.
+supabase==2.31.0
 pymongo==4.15.3
