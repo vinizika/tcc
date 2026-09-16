@@ -37,7 +37,6 @@ backend/uploads/
 # Bancos vetoriais e backups locais
 backend/data/chroma/
 backend/data/chroma_backup*/
-backend/chroma_db/
 
 # Rodadas de avaliacao. Toda rodada grava em runs/; entram no repositorio
 # apenas as promovidas para cited/, que sustentam um numero escrito em
