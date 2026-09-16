@@ -178,6 +178,18 @@ def test_ficha_registra_procedencia_e_que_ninguem_validou(tmp_path):
     assert ficha["specialist"] == {"verdict": "", "name": "", "date": ""}
 
 
+def test_ficha_pode_restringir_captura_a_uso_experimental(tmp_path):
+    ficha = json.loads(
+        capturar(
+            tmp_path,
+            "--ingestion-scope",
+            "experimental_only",
+        ).with_suffix(".json").read_text(encoding="utf-8")
+    )
+
+    assert ficha["ingestion_scope"] == "experimental_only"
+
+
 def test_hash_da_ficha_e_o_hash_do_arquivo_gravado(tmp_path):
     """
     Se divergirem, a aprovação do especialista deixa de valer como prova de

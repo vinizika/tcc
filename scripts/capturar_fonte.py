@@ -61,6 +61,7 @@ TIPOS = {
     "synthetic_protocol",
 }
 ESPECIES = {"dog", "cat", "dog_and_cat"}
+ESCOPO_DE_INGESTAO = {"curated_candidate", "experimental_only"}
 
 # O título entra no começo de todo trecho do documento, e um trecho tem ~40
 # palavras: título comprido é conteúdo clínico que não cabe.
@@ -255,7 +256,7 @@ def montar_ficha(argumentos, url: str, sha256: str, titulo_sugerido: str) -> dic
         "source": argumentos.source or "",
         "document_type": argumentos.document_type or "",
         "validation_status": "pending_specialist",
-        "ingestion_scope": "curated_candidate",
+        "ingestion_scope": argumentos.ingestion_scope,
         "species": argumentos.species or "",
         "topic": argumentos.topic,
         "language": argumentos.language or "",
@@ -312,6 +313,12 @@ def main(argv=None, baixador: Baixador | None = None) -> None:
     parser.add_argument("--species", choices=sorted(ESPECIES))
     parser.add_argument("--language", help="pt, pt-PT, en…")
     parser.add_argument("--register", choices=sorted(REGISTROS))
+    parser.add_argument(
+        "--ingestion-scope",
+        choices=sorted(ESCOPO_DE_INGESTAO),
+        default="curated_candidate",
+        help="Limita a captura a candidatura curada ou uso experimental.",
+    )
     parser.add_argument("--year", type=int)
     parser.add_argument("--authors")
     parser.add_argument(

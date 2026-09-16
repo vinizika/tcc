@@ -21,6 +21,9 @@ que será indexado.
 | Vômito isolado | [PDSA — Vomiting in dogs](https://www.pdsa.org.uk/pet-help-and-advice/pet-health-hub/symptoms/vomiting-in-dogs) · `single_vomiting_or_mild_diarrhea__pdsa_vomito` | en · tutor | Overview · When to contact your vet | 9 | | |
 | Vômito isolado (gato) | [Cornell — The Danger of Hairballs](https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/danger-hairballs) · `single_vomiting_or_mild_diarrhea__cornell_bola_pelo` | en · tutor | Hazardous Potential | 6 | | |
 | Vômito isolado | [CRMV-SP — Vômitos frequentes](https://crmvsp.gov.br/vomitos-frequentes-indicam-serios-problemas-de-saude-em-caes-e-gatos/) · `single_vomiting_or_mild_diarrhea__crmvsp` | **pt** · tutor | a página inteira — não tem heading para curar | 17 | | |
+| Medicamento humano | [ABMVZ 2012 — Sensibilidade a AINEs](https://www.scielo.br/j/abmvz/a/ysbs3yBFpPWrYBgtv3hNn3F/?format=html&lang=pt) · `human_medication_poisoning__scielo_2012_aines_pdf` | pt · acadêmico | somente `RESUMO` | 7 | sim | ASAVET · 14/09/2026 |
+| Carbamato/organofosforado | [ABMVZ 2021 — Envenenamento em gatos no Brasil](https://www.scielo.br/j/abmvz/a/YZMjLkrv5SsSLqLw3qSXHKG/?lang=en) · `carbamate_organophosphate_poisoning__scielo_2021_feline_poisoning` | en · acadêmico | somente `ABSTRACT` | 7 | sim | ASAVET · 14/09/2026 |
+| Permetrina em gato | [VMD 2014 — Permethrin: don’t put your cat at risk](https://www.gov.uk/government/publications/permethrin-dont-put-your-cat-at-risk) · `permethrin_toxicosis_cats__vmd_2014` | en · tutor | exposição por produto canino · sinais · orientação imediata | 10 | sim | ASAVET · 14/09/2026 |
 
 ## Perguntas da leva do vômito isolado (12/09)
 
