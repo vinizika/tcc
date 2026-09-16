@@ -382,3 +382,30 @@ def test_base_indisponivel_nao_derruba_a_resposta(cliente, monkeypatch):
     assert resposta.status_code == 200
     assert resposta.json()["vector_store"]["chunk_count"] is None
     assert "banco fora do ar" in resposta.json()["vector_store"]["error"]
+
+
+def test_fingerprint_prefere_inspecao_sem_embedding(monkeypatch):
+    """A rota de saúde não pode carregar modelo nem tocar a rede."""
+
+    modulo = sys.modules["app.database.chroma_client"]
+    collection = ColecaoComConteudo(["c1"], ["texto"], [{"topic": "demo"}])
+
+    def consulta_vetorial_indevida():
+        raise AssertionError("o fingerprint tentou abrir a coleção para query")
+
+    monkeypatch.setattr(
+        modulo.ChromaDBClient,
+        "get_collection",
+        staticmethod(consulta_vetorial_indevida),
+    )
+    monkeypatch.setattr(
+        modulo.ChromaDBClient,
+        "get_collection_for_inspection",
+        staticmethod(lambda: collection),
+        raising=False,
+    )
+
+    base = FingerprintService._base_vetorial()
+
+    assert base["chunk_count"] == 1
+    assert "error" not in base

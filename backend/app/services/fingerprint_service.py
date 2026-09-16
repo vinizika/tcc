@@ -200,7 +200,12 @@ class FingerprintService:
             # depender disso para responder.
             from app.database.chroma_client import ChromaDBClient
 
-            colecao = ChromaDBClient.get_collection()
+            inspection_loader = getattr(
+                ChromaDBClient,
+                "get_collection_for_inspection",
+                ChromaDBClient.get_collection,
+            )
+            colecao = inspection_loader()
 
             registros = colecao.get(include=["documents", "metadatas"])
 
@@ -261,6 +266,21 @@ class FingerprintService:
                 else None
             )
             if manifest:
+                expected_chunks = manifest.get("chunks")
+                if isinstance(expected_chunks, dict):
+                    actual_chunks = {
+                        "count": informacoes["chunk_count"],
+                        "ids_sha256": informacoes["chunk_ids_sha256"],
+                        "content_sha256": informacoes["content_sha256"],
+                    }
+                    for field_name, actual_value in actual_chunks.items():
+                        expected_value = expected_chunks.get(field_name)
+                        if expected_value != actual_value:
+                            raise RuntimeError(
+                                "Integridade divergente em "
+                                f"chunks.{field_name}: esperado={expected_value!r}, "
+                                f"real={actual_value!r}"
+                            )
                 informacoes["manifest_sha256"] = _sha256(
                     json.dumps(
                         manifest,

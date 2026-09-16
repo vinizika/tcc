@@ -187,16 +187,76 @@ class ChromaDBClient:
         return pointer
 
     @classmethod
-    def _get_strict_collection(cls, collection_name: str):
+    def _get_strict_collection(
+        cls,
+        collection_name: str,
+        *,
+        with_embedding_function: bool = True,
+    ):
         try:
             return cls.get_client().get_collection(
                 name=collection_name,
-                embedding_function=cls._get_embedding_function(),
+                embedding_function=(
+                    cls._get_embedding_function()
+                    if with_embedding_function
+                    else None
+                ),
             )
         except Exception as error:
             raise ActiveCollectionUnavailableError(
                 f"A coleção {collection_name!r} não existe ou não pode ser aberta"
             ) from error
+
+    @classmethod
+    def get_collection_for_inspection(cls):
+        """Abre a coleção ativa sem modelo de embedding e sem criar estado.
+
+        Fingerprints e verificações que só usam ``count``/``get`` não precisam
+        transformar texto em vetor. Carregar o SentenceTransformer nesse caminho
+        fazia uma rota de saúde consultar o Hugging Face e aguardar todos os
+        backoffs de rede quando o modelo não estava inteiramente no cache.
+
+        A inspeção continua validando a identidade do manifesto apontado. A
+        integridade dos chunks é conferida sobre a única leitura feita pelo
+        próprio fingerprint, evitando duas varreduras integrais consecutivas.
+        """
+
+        pointer = cls.load_active_pointer()
+        if pointer:
+            collection_name = str(pointer["collection_name"])
+            collection = cls._get_strict_collection(
+                collection_name,
+                with_embedding_function=False,
+            )
+            manifest = cls.load_manifest(collection_name, required=True)
+            chunks = manifest.get("chunks")
+            required_chunk_fields = ("count", "ids_sha256", "content_sha256")
+            if not isinstance(chunks, dict) or any(
+                field not in chunks for field in required_chunk_fields
+            ):
+                raise CollectionIntegrityError(
+                    "Manifesto ativo sem metadados obrigatórios de chunks."
+                )
+            if pointer.get("manifest_sha256") != sha256_json(manifest):
+                raise CollectionIntegrityError(
+                    "Hash do manifesto ativo não coincide com o ponteiro."
+                )
+            return collection
+
+        # Inspeção nunca cria a coleção legada. Uma rota de saúde não deve
+        # modificar o banco apenas para dizer que ele ainda não foi preparado.
+        existing_names = {
+            collection.name for collection in cls.get_client().list_collections()
+        }
+        collection_name = cls.base_collection_name()
+        if collection_name not in existing_names:
+            raise ActiveCollectionUnavailableError(
+                f"A coleção legada {collection_name!r} não existe."
+            )
+        return cls._get_strict_collection(
+            collection_name,
+            with_embedding_function=False,
+        )
 
     @classmethod
     def get_collection(cls):
