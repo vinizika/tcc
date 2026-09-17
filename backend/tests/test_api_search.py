@@ -191,3 +191,79 @@ def test_cliente_separa_corpo_do_embedding_e_preserva_legado(
     )
 
     assert RetrievalClient.retrieve(["consulta"])[0].content == expected
+
+
+def test_cliente_busca_mais_candidatos_e_prioriza_fontes_diferentes(
+    monkeypatch,
+):
+    from app.clients.retrieval_client import RetrievalClient
+    from app.database.chroma_client import ChromaDBClient
+
+    class Collection:
+        requested_results = None
+
+        def count(self):
+            return 60
+
+        def query(self, **kwargs):
+            self.requested_results = kwargs["n_results"]
+            return {
+                "ids": [["a1", "a2", "a3", "b1", "c1"]],
+                "documents": [["A1", "A2", "A3", "B1", "C1"]],
+                "metadatas": [[
+                    {"source_file": "a.pdf", "topic": "a"},
+                    {"source_file": "a.pdf", "topic": "a"},
+                    {"source_file": "a.pdf", "topic": "a"},
+                    {"source_file": "b.pdf", "topic": "b"},
+                    {"source_file": "c.pdf", "topic": "c"},
+                ]],
+                "distances": [[0.5, 0.51, 0.52, 0.53, 0.54]],
+            }
+
+    collection = Collection()
+    monkeypatch.setattr(
+        ChromaDBClient,
+        "get_collection",
+        staticmethod(lambda: collection),
+    )
+
+    documents = RetrievalClient.retrieve(["consulta"])
+
+    assert collection.requested_results == 50
+    assert [document.id for document in documents[:3]] == [
+        "a1", "b1", "c1"
+    ]
+    assert [document.id for document in documents[3:]] == ["a2", "a3"]
+
+
+def test_cliente_preserva_repeticoes_quando_nao_ha_fontes_suficientes(
+    monkeypatch,
+):
+    from app.clients.retrieval_client import RetrievalClient
+    from app.database.chroma_client import ChromaDBClient
+
+    class Collection:
+        def count(self):
+            return 3
+
+        def query(self, **kwargs):
+            return {
+                "ids": [["a1", "a2", "a3"]],
+                "documents": [["A1", "A2", "A3"]],
+                "metadatas": [[
+                    {"source_file": "a.pdf"},
+                    {"source_file": "a.pdf"},
+                    {"source_file": "a.pdf"},
+                ]],
+                "distances": [[0.5, 0.51, 0.52]],
+            }
+
+    monkeypatch.setattr(
+        ChromaDBClient,
+        "get_collection",
+        staticmethod(lambda: Collection()),
+    )
+
+    assert [document.id for document in RetrievalClient.retrieve(["consulta"])] == [
+        "a1", "a2", "a3"
+    ]

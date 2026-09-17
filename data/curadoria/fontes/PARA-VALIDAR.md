@@ -32,6 +32,12 @@ que será indexado.
 | Paralisia aguda (gato) | [JFMS 2024 — Feline Aortic Thromboembolism](https://pmc.ncbi.nlm.nih.gov/articles/PMC11274361/) · `acute_hindlimb_paralysis__jfms_2024_feline_ate` | en · acadêmico | `Introduction` · `Clinical presentation` | 11 | sim | ASAVET · 16/09/2026 |
 | Paralisia aguda (cão) | [PVB 2017 — Neuromiopatia isquêmica em cães](https://doi.org/10.1590/S0100-736X2017000900012) · `acute_hindlimb_paralysis__pvb_2017_canine_ischemic_neuromyopathy_excerpt` | pt · acadêmico | `RESUMO` | 7 | sim | ASAVET · 16/09/2026 |
 | Anafilaxia/inchaço facial | [Toxins 2024 — Bees and Wasps](https://pmc.ncbi.nlm.nih.gov/articles/PMC10818608/) · `anaphylaxis_facial_swelling__toxins_2024_bees_wasps_excerpt` | en · acadêmico | `Bees and Wasps` | 32 | sim | ASAVET · 16/09/2026 |
+| Indiscrição alimentar leve (cão) | [PLOS One 2025 — Acute diarrhoea](https://doi.org/10.1371/journal.pone.0324203) · `dietary_indiscretion_mild__plos_2025_acute_diarrhoea` | en · acadêmico | extração literal de `Results` · `Conclusions` | 7 | sim | ASAVET · 17/09/2026 |
+| Sinais respiratórios leves (gato) | [Veterinary Sciences 2024 — Feline URI](https://doi.org/10.3390/vetsci11060232) · `mild_upper_respiratory_signs__vetsci_2024_feline_uri` | en · acadêmico | `Introduction` | 35 | sim | ASAVET · 17/09/2026 |
+| Claudicação leve (cão) | [BMC 2018 — Short-term lameness](https://doi.org/10.1186/s12917-018-1484-2) · `mild_lameness__bmc_2018_short_term_lameness` | en · acadêmico | `Abstract` | 11 | sim | ASAVET · 17/09/2026 |
+| Xixi fora do lugar/cistite (gato) | [Frontiers 2022 — Feline idiopathic cystitis](https://doi.org/10.3389/fvets.2022.900847) · `inappropriate_urination_or_cystitis__frontiers_2022_feline_cystitis` | en · acadêmico | `Introduction` | 18 | sim | ASAVET · 17/09/2026 |
+| Conjuntivite leve (cão) | [BMC 2023 — Allergic conjunctivitis](https://doi.org/10.1186/s12917-022-03561-5) · `mild_conjunctivitis__bmc_2023_allergic_conjunctivitis` | en · acadêmico | `Abstract` | 17 | sim | ASAVET · 17/09/2026 |
+| Conjuntivite leve (gato) | [Open Veterinary Journal 2024 — Chlamydophila felis](https://doi.org/10.5455/OVJ.2024.v14.i12.13) · `mild_conjunctivitis__ovj_2024_feline_chlamydophila_excerpt` | en · acadêmico | extração literal de `Introduction` | 3 | sim | ASAVET · 17/09/2026 |
 
 ## Perguntas da leva do vômito isolado (12/09)
 
@@ -69,3 +75,17 @@ que será indexado.
 
 O detalhe de cada fonte — com as citações que sustentam cada julgamento —
 está no dossiê do quadro, em [`gastric_dilatation_volvulus.md`](gastric_dilatation_volvulus.md).
+
+## Perguntas do quarto lote (16/09)
+
+1. A fonte de indiscrição alimentar fala de cães já atendidos por diarreia. Ela
+   serve apenas para relacionar indiscrição e sinais digestivos, sem sugerir que
+   uma ingestão desconhecida seja segura?
+2. A revisão respiratória é felina e concentrada em abrigos. O recorte serve
+   para reconhecer os sinais, mantendo explícito que não define quando esperar?
+3. O estudo de claudicação é experimental e canino. Ele ajuda a recuperar o
+   relato de apoio parcial ou é específico demais para tutores?
+4. Na cistite felina, devemos manter o recorte mesmo com 2 fallbacks de frases
+   longas, ou exigir uma extração literal menor antes da aprovação?
+5. A fonte ocular cobre apenas conjuntivite alérgica canina. Ela serve com essa
+   ressalva ou pode confundir outras causas de olho vermelho?

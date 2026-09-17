@@ -104,6 +104,17 @@ qualquer outra.
 | **R50** | Nagy AL et al. *Zootoxins and Domestic Animals: A European View.* Toxins 16(1):48, 2024. DOI [10.3390/toxins16010048](https://doi.org/10.3390/toxins16010048). CC BY 4.0 | revisão por pares | `direta` — texto integral aberto; captura experimental usa literalmente a seção `Bees and Wasps` |
 | **R51** | Ripplinger A et al. *Neuromiopatia isquêmica em cinco cães (2008–2016).* Pesquisa Veterinária Brasileira 37(9):971–976, 2017. DOI [10.1590/S0100-736X2017000900012](https://doi.org/10.1590/S0100-736X2017000900012). CC BY-NC 4.0 | artigo revisado por pares (BR) | `direta` — PDF integral aberto; captura experimental usa literalmente apenas o resumo em português |
 
+## Acrescentadas no quarto lote experimental (16/09)
+
+| id | Referência | Tipo | Verificação |
+|---|---|---|---|
+| **R52** | O’Neill DG et al. *Epidemiology and clinical management of acute diarrhoea in dogs under primary veterinary care in the UK.* PLOS One 20(6), 2025. DOI [10.1371/journal.pone.0324203](https://doi.org/10.1371/journal.pone.0324203). CC BY 4.0 | artigo revisado por pares | `direta` — texto integral aberto; captura experimental contém extração literal de resultados e conclusões |
+| **R53** | Kennedy U et al. *A Scoping Review of the Evidence on Prevalence of Feline Upper Respiratory Tract Infections and Associated Risk Factors.* Veterinary Sciences 11(6):232, 2024. DOI [10.3390/vetsci11060232](https://doi.org/10.3390/vetsci11060232). CC BY 4.0 | revisão por pares | `direta` — PDF integral aberto; captura experimental usa `Introduction` |
+| **R54** | Goldner B et al. *Kinematic adaptions to induced short-term pelvic limb lameness in trotting dogs.* BMC Vet Res 14:183, 2018. DOI [10.1186/s12917-018-1484-2](https://doi.org/10.1186/s12917-018-1484-2). CC BY 4.0 | artigo revisado por pares | `direta` — PDF integral aberto; captura experimental usa `Abstract` |
+| **R55** | He C et al. *Prevalence, Risk Factors, Pathophysiology, Potential Biomarkers and Management of Feline Idiopathic Cystitis: An Update Review.* Front Vet Sci 9, 2022. DOI [10.3389/fvets.2022.900847](https://doi.org/10.3389/fvets.2022.900847). CC BY 4.0 | revisão por pares | `direta` — PDF integral aberto; captura experimental usa `Introduction` |
+| **R56** | Delgado E et al. *Diagnostic approach and grading scheme for canine allergic conjunctivitis.* BMC Vet Res 19:32, 2023. DOI [10.1186/s12917-022-03561-5](https://doi.org/10.1186/s12917-022-03561-5). CC BY 4.0 | artigo revisado por pares | `direta` — PDF integral aberto; captura experimental usa `Abstract` |
+| **R57** | Al-Jumaa ZM, Jaber MT, Al-Doori AA. *Molecular detection of Chlamydophila felis from conjunctiva of cats infected with conjunctivitis and upper respiratory disease.* Open Vet J 14(12), 2024. DOI [10.5455/OVJ.2024.v14.i12.13](https://doi.org/10.5455/OVJ.2024.v14.i12.13). CC BY-NC 4.0 | artigo revisado por pares | `direta` — texto integral aberto no PMC; captura experimental usa extração literal curta de `Introduction`; aprovada pela ASAVET em 17/09/2026 |
+
 ## O que ficou sem fonte
 
 Registrado para ninguém procurar de novo sem saber que já se procurou:

@@ -1,0 +1,34 @@
+{
+  "title": "Diagnostic approach and grading scheme for canine allergic conjunctivitis",
+  "source": "BMC Veterinary Research",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "mild_conjunctivitis",
+  "language": "en",
+  "source_url": "https://bmcvetres.biomedcentral.com/counter/pdf/10.1186/s12917-022-03561-5.pdf",
+  "indexing": {
+    "include_sections": ["Abstract"],
+    "exclude_sections": ["Introduction", "Methods", "Results", "Clinical signs", "Discussion", "Conclusions", "References"],
+    "exclude_pages": [],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-16",
+  "captured_sha256": "a2fda2fdfefbbfa2e66b98725bb1bb8b18ff26c8fd0169875d778382cc7abed8",
+  "map_line": "mild_conjunctivitis",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET — Primeiro Grupo de Anestesia e Veterinaria Universitaria do Brasil",
+    "date": "2026-09-17"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; captura e redistribuicao permitidas com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-16"
+  },
+  "year": 2023,
+  "authors": "Elisabete Delgado et al."
+}

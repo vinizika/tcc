@@ -8,6 +8,52 @@ from app.models.retrieved_document import RetrievedDocument
 logger = setup_logger("RetrievalClient")
 
 
+def _source_key(document: RetrievedDocument) -> str:
+    """Return the best available key for source-level diversification."""
+
+    return (
+        document.source_file
+        or document.topic
+        or document.title
+        or document.id
+    )
+
+
+def _diversify_by_source(
+    documents: list[RetrievedDocument],
+    limit: int,
+) -> list[RetrievedDocument]:
+    """Prefer one chunk per source, then fill any remaining positions.
+
+    A long document often produces several neighbouring chunks. Without
+    this pass, those chunks can occupy every result even when another
+    relevant source is only a few positions lower in the vector ranking.
+    """
+
+    if limit <= 0:
+        return []
+
+    selected: list[RetrievedDocument] = []
+    repeated: list[RetrievedDocument] = []
+    seen_sources: set[str] = set()
+
+    for document in documents:
+        source_key = _source_key(document)
+
+        if source_key in seen_sources:
+            repeated.append(document)
+            continue
+
+        seen_sources.add(source_key)
+        selected.append(document)
+
+        if len(selected) == limit:
+            return selected
+
+    selected.extend(repeated[:limit - len(selected)])
+    return selected
+
+
 class RetrievalClient:
 
     @staticmethod
@@ -35,8 +81,10 @@ class RetrievalClient:
             logger.warning("A coleção do ChromaDB está vazia")
             return []
 
+        # Consult more candidates than the public TOP_K so repeated chunks
+        # from one long source do not hide a second relevant source.
         number_of_results = min(
-            settings.TOP_K,
+            max(settings.TOP_K * 10, settings.TOP_K),
             document_count
         )
 
@@ -124,7 +172,10 @@ class RetrievalClient:
                 "próximo(s) disponível(is) mesmo assim."
             )
 
-        documents = documents[:settings.TOP_K]
+        documents = _diversify_by_source(
+            documents,
+            settings.TOP_K,
+        )
 
         logger.info(
             f"{len(documents)} documentos recuperados"
