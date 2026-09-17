@@ -3,7 +3,7 @@
 **Data:** 16/09/2026
 **Branch:** `codex/lote-04-pares-clinicos`
 **HEAD inicial:** `6932dd8a74dd4e102c9590ff744deb2d35683f72`
-**Estado:** pronto para revisão; sem commit, push, PR ou ativação
+**Estado:** publicado no PR [#8](https://github.com/vinizika/tcc/pull/8), pronto para merge; coleção não ativada
 
 ## Escopo e estado inicial
 
@@ -150,3 +150,10 @@ Python.
 - `collapse_and_pale_gums` continua sem documento armazenável adequado.
 - Próxima decisão: calibrar a régua de score com casos representativos, sem
   alterar resultados manualmente. Esta coleção não foi ativada.
+
+## Publicação
+
+- Branch: `codex/lote-04-pares-clinicos`
+- Commit inicial do lote: `eca77b2`
+- Pull request: [#8 — Amplia curadoria clínica e diversifica recuperação](https://github.com/vinizika/tcc/pull/8)
+- Base: `main`
