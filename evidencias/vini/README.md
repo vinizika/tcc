@@ -24,6 +24,9 @@ e re-ranking.
 | 5 | 14/09 | [Lote 01 — intoxicações, staging experimental](2026-09-14-01-lote-intoxicacoes-experimental.md) | Três fontes redistribuíveis capturadas e inspecionadas; staging de 24 chunks mantido inativo porque a encontrabilidade top-5 ficou em 66,7% |
 | 6 | 15/09 | [Correção do travamento em `/health/fingerprint`](2026-09-15-02-correcao-health-fingerprint.md) | Fingerprint separado do carregamento de embeddings, uma única leitura com validação de integridade, backend atualizado e chamadas consecutivas abaixo de 0,3 s |
 | 7 | 15/09 | [Publicação da branch e deploy local](2026-09-15-03-publicacao-e-deploy-local.md) | Quatro commits publicados, artigos e snapshot experimental do Chroma versionados, Compose reconstruído e quatro endpoints locais validados com HTTP 200 |
+| 8 | 15/09 | [Lote 02 — curadoria experimental](2026-09-15-02-lote-curadoria-experimental.md) | Raticida, parvovirose e piometra pesquisados, inspecionados e mantidos em staging experimental |
+| 9 | 16/09 | [Lote 03 — emergências experimentais](2026-09-16-03-lote-emergencias-experimental.md) | Neonato, paralisia aguda e anafilaxia pesquisados e medidos sem ativar a candidata |
+| 10 | 16/09 | [Lote 04 — pares clínicos experimentais](2026-09-16-04-lote-clinicos-experimental.md) | Seis fontes capturadas; diversidade da busca corrigida; 5/5 tópicos documentados encontráveis; candidata de 350 chunks mantida inativa |
 
 ## Estado atual
 

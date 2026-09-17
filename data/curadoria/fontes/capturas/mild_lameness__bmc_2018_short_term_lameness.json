@@ -1,0 +1,34 @@
+{
+  "title": "Kinematic adaptions to induced short-term pelvic limb lameness in trotting dogs",
+  "source": "BMC Veterinary Research",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "mild_lameness",
+  "language": "en",
+  "source_url": "https://bmcvetres.biomedcentral.com/counter/pdf/10.1186/s12917-018-1484-2.pdf",
+  "indexing": {
+    "include_sections": ["Abstract"],
+    "exclude_sections": ["Background", "Methods", "Results", "Discussion", "Conclusions", "References"],
+    "exclude_pages": [],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-16",
+  "captured_sha256": "a57615f1c26e03687c1fd5b344628110a180ebfa6376c5c26fd92ed221f0b4e4",
+  "map_line": "mild_lameness",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET — Primeiro Grupo de Anestesia e Veterinaria Universitaria do Brasil",
+    "date": "2026-09-17"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; captura e redistribuicao permitidas com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-16"
+  },
+  "year": 2018,
+  "authors": "Bettina Goldner et al."
+}

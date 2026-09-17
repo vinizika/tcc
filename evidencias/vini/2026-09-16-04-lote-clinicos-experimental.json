@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-16",
+  "branch": "codex/lote-04-pares-clinicos",
+  "initial_head": "6932dd8a74dd4e102c9590ff744deb2d35683f72",
+  "status": "ready_for_review",
+  "published": false,
+  "clinical_approval": true,
+  "clinical_approval_complete": true,
+  "clinical_approval_record": {
+    "verdict": "approved",
+    "name": "ASAVET — Primeiro Grupo de Anestesia e Veterinaria Universitaria do Brasil",
+    "date": "2026-09-17",
+    "source_count": 6
+  },
+  "topics_selected": [
+    "dietary_indiscretion_mild",
+    "mild_upper_respiratory_signs",
+    "mild_lameness",
+    "inappropriate_urination_or_cystitis",
+    "collapse_and_pale_gums",
+    "mild_conjunctivitis"
+  ],
+  "accepted_sources": [
+    {
+      "topic": "dietary_indiscretion_mild",
+      "doi": "10.1371/journal.pone.0324203",
+      "license": "CC BY 4.0",
+      "species": "dog",
+      "chunks": 7,
+      "sha256": "ce97800e37515ea85569cf6dc33d63532ae6691a2dc3397285906e1146cbbdbc"
+    },
+    {
+      "topic": "mild_upper_respiratory_signs",
+      "doi": "10.3390/vetsci11060232",
+      "license": "CC BY 4.0",
+      "species": "cat",
+      "chunks": 35,
+      "sha256": "6cf203b171a0a924df188870f85a876876050d63c6e9f476d53989c1e0757e45"
+    },
+    {
+      "topic": "mild_lameness",
+      "doi": "10.1186/s12917-018-1484-2",
+      "license": "CC BY 4.0",
+      "species": "dog",
+      "chunks": 11,
+      "sha256": "a57615f1c26e03687c1fd5b344628110a180ebfa6376c5c26fd92ed221f0b4e4"
+    },
+    {
+      "topic": "inappropriate_urination_or_cystitis",
+      "doi": "10.3389/fvets.2022.900847",
+      "license": "CC BY 4.0",
+      "species": "cat",
+      "chunks": 18,
+      "sha256": "e6f245d441f57c413d1f91b5a61beda0f78afc816d67ac4e327331971e7b3665"
+    },
+    {
+      "topic": "mild_conjunctivitis",
+      "doi": "10.1186/s12917-022-03561-5",
+      "license": "CC BY 4.0",
+      "species": "dog",
+      "chunks": 17,
+      "sha256": "a2fda2fdfefbbfa2e66b98725bb1bb8b18ff26c8fd0169875d778382cc7abed8"
+    },
+    {
+      "topic": "mild_conjunctivitis",
+      "doi": "10.5455/OVJ.2024.v14.i12.13",
+      "license": "CC BY-NC 4.0",
+      "species": "cat",
+      "chunks": 3,
+      "sha256": "2bda92787ba47fac3d6a84dcc07af30a161c7162893f2288c9e0e59b4b9cce0f"
+    }
+  ],
+  "pending_sources": [],
+  "rejected_sources": [
+    {
+      "topic": "collapse_and_pale_gums",
+      "doi": "10.3389/fvets.2021.638104",
+      "reason": "The article covers hemorrhagic shock but does not directly connect collapse and pale gums in owner language."
+    }
+  ],
+  "staging": {
+    "collection": "veterinary_documents__20260917T033016639440Z__1c0fa630",
+    "profile": "experimental",
+    "activated": false,
+    "active_pointer_before": null,
+    "active_pointer_after": null,
+    "document_count": 14,
+    "chunk_count": 350,
+    "new_source_chunk_count": 91,
+    "source_set_sha256": "1c0fa63051388b4cf961f8e883f79f9bee01d1daf1d73a9a314fb274316b9f2a",
+    "ids_sha256": "7496cacfed1824a4e6a7c1e82302873ff1393ac2e154e3944e57618a29e83261",
+    "content_sha256": "14cd275df01ba8d4e4a75ef09935af2584384a1ee375cd72615a29ffdccc97e9",
+    "manifest_sha256": "99bf5271fc9bad2533ce1dafd7b6471bf62ef1eb02c57e9ca2cd74922844b900",
+    "approved_chunk_count": 91,
+    "pending_specialist_chunk_count": 0,
+    "superseded_staging_removed": true
+  },
+  "retrieval": {
+    "threshold": 0.7,
+    "findable_new_topics": 5,
+    "new_topics_evaluated": 5,
+    "findable_share": 1.0,
+    "activation_gate_passed": false,
+    "cases": {
+      "b05": {"expected_position": 1, "max_score": 0.5569},
+      "b10": {"expected_position": 1, "max_score": 0.6049},
+      "b11": {"expected_position": 1, "max_score": 0.5116},
+      "b18": {"expected_position": 1, "max_score": 0.6063},
+      "b25": {"expected_position": 1, "max_score": 0.5526},
+      "b26": {"expected_position": 2, "max_score": 0.5369, "expected_topic_score": 0.4514},
+      "b27": {"expected_position": null, "max_score": 0.4997}
+    }
+  },
+  "tests": {
+    "baseline": {"command": ".venv/bin/python -m pytest scripts/tests -q", "passed": 186},
+    "after_retrieval_fix": {"command": "docker compose exec -T backend pytest tests -q", "passed": 205},
+    "final": {"command": ".venv/bin/python -m pytest scripts/tests -q", "passed": 186}
+  },
+  "checks": {
+    "pip_check": "passed",
+    "compileall": "passed",
+    "git_diff_check": "passed",
+    "json_validation": "passed_with_python_json_tool",
+    "docker_compose_config": "passed",
+    "staging_integrity": "passed_350_chunks_active_pointer_absent",
+    "local_backend_test_limitation": "DEBUG=release is not a valid boolean outside the configured container",
+    "jq_limitation": "jq is not installed; Python json.tool was used instead"
+  },
+  "pending": [
+    "calibrate_retrieval_score_threshold_without_manual_result_changes",
+    "find_direct_redistributable_source_for_collapse_and_pale_gums",
+    "do_not_activate_staging_collection"
+  ]
+}

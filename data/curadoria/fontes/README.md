@@ -96,6 +96,12 @@ ficha, e a coluna `validacao` da linha no mapa.
 | Neonato que não mama | `fonte_aprovada` — ASAVET, ainda restrita ao perfil experimental | [fading_neonate.md](fading_neonate.md) |
 | Paralisia aguda dos membros traseiros | `fonte_aprovada` — ASAVET, cão e gato, ainda experimental | [acute_hindlimb_paralysis.md](acute_hindlimb_paralysis.md) |
 | Anafilaxia e inchaço facial | `fonte_aprovada` — ASAVET, ainda restrita ao perfil experimental | [anaphylaxis_facial_swelling.md](anaphylaxis_facial_swelling.md) |
+| Indiscrição alimentar leve | `fonte_aprovada` — ASAVET, ainda restrita ao perfil experimental | [dietary_indiscretion_mild.md](dietary_indiscretion_mild.md) |
+| Sinais respiratórios superiores leves | `fonte_aprovada` — ASAVET, ainda restrita ao perfil experimental | [mild_upper_respiratory_signs.md](mild_upper_respiratory_signs.md) |
+| Claudicação leve | `fonte_aprovada` — ASAVET, ainda restrita ao perfil experimental | [mild_lameness.md](mild_lameness.md) |
+| Xixi fora do lugar e cistite | `fonte_aprovada` — ASAVET, ainda restrita ao perfil experimental | [inappropriate_urination_or_cystitis.md](inappropriate_urination_or_cystitis.md) |
+| Conjuntivite leve | fontes canina e felina aprovadas pela ASAVET; ambas experimentais | [mild_conjunctivitis.md](mild_conjunctivitis.md) |
+| Colapso e gengiva pálida | `sem_documento` — fonte acadêmica aproximada rejeitada | [collapse_and_pale_gums.md](collapse_and_pale_gums.md) |
 
 As demais linhas da etapa 1 seguem no estado verdadeiro registrado no mapa.
 A fila e a porta de decisão estão no [README da curadoria](../README.md).
