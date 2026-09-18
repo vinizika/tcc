@@ -37,11 +37,10 @@ benchmark de voz.
 | 4 | **Frente prova — lote de calibração** | ✅ 13/09 | Formato definido em `data/prova/`, referência de triagem (MSD, mesma do mapa de assuntos), 18 casos com 7 pares de confusão. Rodado contra a API: 15/18, as 3 falhas são falsos não urgentes — inclusive o par de maior letalidade do mapa |
 | 5 | **Frente prova — lote oficial (~150 casos, dev/teste)** | 🔜 próxima | Depende de validar o formato com o time primeiro |
 | 6 | **Frente prova — adaptar o runner** para ler `text` livre | ⏳ | Coluna alternativa, `--relato-lang`, caminho por opção, baselines triviais novos (seção 5.4 do plano) |
-| 7 | Decisão de fusão reescrita+variações (B-10) | ⏳ | `[reescrita] + variações` sem duplicatas em `_build_queries` — não bloqueado, mas represado atrás da prova |
-| 8 | Conter julgamento clínico na reescrita (B-08) | ⏳ | Exemplos negativos no prompt ou verificação pós-reescrita |
-| 9 | Medir HyDE/Multi-Query/Rewriting ligado×desligado (B-09) | ⏳ desbloqueado 12/09 | A régua de recuperação existe; falta encaixar na agenda depois da prova |
-| 10 | Paralelizar/fundir as 3 chamadas de consulta (B-07) | ⏳ | Reduzir os ~3,5s que a etapa custa hoje |
-| 11 | Benchmark de WER com áudio real | ⏳ | Substitui o número otimista da fala sintética (B-13) |
+| 7 | **Medir consulta nas coleções experimentais (B-09, B-10)** | ✅ 17/09 | Instrumento novo (`measure_query_techniques.py`) contra as 3 candidatas do trilho A. HyDE nunca ajudou → `HYDE_ENABLED=False` por padrão. Fusão reescrita+multi-query (B-10) nunca perde → implementada. Achado colateral: [B-57](../backlog.md#b-57) |
+| 8 | Conter julgamento clínico na reescrita (B-08) | 🔜 próxima | Exemplos negativos no prompt ou verificação pós-reescrita; agora dá pra medir contra as candidatas reais |
+| 9 | Paralelizar/fundir as 3 chamadas de consulta (B-07) | ⏳ | Reduzir os ~3,5s que a etapa custa hoje |
+| 10 | Benchmark de WER com áudio real | ⏳ | Substitui o número otimista da fala sintética (B-13) |
 
 ## Próxima entrega: lote oficial da prova (~150 casos)
 
@@ -63,10 +62,9 @@ desenvolvimento a qualquer momento; o de teste, só em marcos, com hash
 registrado. Antes de fechar, um passo automático confere que os casos não
 têm sobreposição de texto com os documentos da base.
 
-Em paralelo, sem depender da prova: decisão B-10 (fusão reescrita +
-variações — agora com a régua de recuperação para medir de verdade),
-conter julgamento clínico na reescrita (B-08), e o benchmark de WER com
-áudio real.
+Em paralelo, sem depender da prova: conter julgamento clínico na reescrita
+(B-08, agora com as candidatas reais do trilho A para medir contra) e o
+benchmark de WER com áudio real.
 
 ## Marcos
 
@@ -96,6 +94,7 @@ permanece até ser resolvido — então vai para "Resolvidos", com a data.
 |---|---|---|---|
 | 1 | **Régua de recuperação do trilho A não existia.** Sem ela, nenhuma das três técnicas de consulta podia ser medida isoladamente | 12/09 | O João construiu em nome do trilho A ([rodada 11](../joao/2026-09-12-11-regua-de-recuperacao.md)), reaproveitando os 18 relatos PT-BR do benchmark de voz deste trilho. Destrava o [B-09](../backlog.md#b-09) |
 | 3 | **Whisper com três implementações órfãs, sem benchmark de qualidade** | 08/09 | [Rodada 3](2026-09-08-03-whisper-unico-e-wer.md): consolidado em `VoiceService`, WER de 5,2% medido (fala sintética) |
+| 5 | **Nenhuma base tinha conteúdo real para medir consulta contra** | 17/09 | Os três lotes experimentais do trilho A (14–16/09) deixaram coleções candidatas em staging. Medido em [rodada 6](2026-09-17-06-medindo-consulta-nas-candidatas.md); no caminho, achado o [B-57](../backlog.md#b-57) (o snapshot está num caminho que o backend real não lê) |
 
 ## Fora do escopo deste trilho
 

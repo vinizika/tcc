@@ -56,8 +56,8 @@ aqui.
 | [B-06](#b-06) | Falsos não urgentes subiram de 3 para 8 com o prompt novo | Trilho B2 | Alta | Em andamento |
 | [B-07](#b-07) | Etapa de consulta custa 60% da latência | Trilho B1 | Média | Aberto |
 | [B-08](#b-08) | Reescrita de consulta adiciona julgamento clínico | Trilho B1 | Média | Aberto |
-| [B-09](#b-09) | HyDE gera doença inexistente e nunca foi medido | Trilho B1 | Média | Aberto |
-| [B-10](#b-10) | Consulta reescrita não vai ao índice com multi-query ligado | Trilho B1 (decisão) | Média | Aberto |
+| [B-09](#b-09) | HyDE gera doença inexistente e nunca foi medido | Trilho B1 | Média | Resolvido em 17/09 |
+| [B-10](#b-10) | Consulta reescrita não vai ao índice com multi-query ligado | Trilho B1 (decisão) | Média | Resolvido em 17/09 |
 | [B-11](#b-11) | Limiar de 0,70 na busca não mede relevância — e o corte efetivo é zero | Trilho A | **Alta** | Aberto |
 | [B-12](#b-12) | Ingestão da base em máquina nova não estava documentada | Trilho A | Média | Em andamento |
 | [B-13](#b-13) | Whisper com três implementações e sem benchmark | Trilho B1 | Média | Resolvido em 08/09 |
@@ -103,6 +103,7 @@ aqui.
 | [B-55](#b-55) | O único documento real da base nunca é recuperado | Trilho A | Média | Aberto |
 | [B-51](#b-51) | Ciclo de ingestão num comando, e a régua dizendo o que mudou entre duas rodadas | Trilho B2 | Média | Em andamento — compare feito em 12/09; falta o passo 0 |
 | [B-56](#b-56) | Cadastro de tutor/pet sem autenticação real e com política aberta no Supabase | Trilho B1 | Média | Aberto |
+| [B-57](#b-57) | O snapshot versionado do ChromaDB não é o caminho que o backend real lê | Trilho A | Alta | Aberto |
 | [B-52](#b-52) | Fonte de terceiro versionada em repositório público | Time | Alta | Aberto |
 
 ---
@@ -309,7 +310,7 @@ inserções de "imediata", "urgente" ou "emergência" em 30 relatos leves.
 
 **HyDE gera doença inexistente e nunca foi medido**
 
-**Identificado por:** João (B2) · **Onde:** [rodada 3](joao/2026-09-04-04-geracao-ancorada.md), 04/09 · **Responsável:** Trilho B1 · **Prioridade:** Média · **Status:** Aberto
+**Identificado por:** João (B2) · **Onde:** [rodada 3](joao/2026-09-04-04-geracao-ancorada.md), 04/09 · **Responsável:** Trilho B1 · **Prioridade:** Média · **Status:** Resolvido em 17/09 — [evidência](ryu/2026-09-17-06-medindo-consulta-nas-candidatas.md)
 
 **O que observamos.** Para o relato de chocolate, o documento hipotético
 começava com *"Síndrome de Sífilo da Cadeia de Reações Imunes (SCR)"*, que
@@ -326,11 +327,26 @@ desligado, na régua de recuperação do trilho A. Se uma técnica não melhorar
 Precision@1, desligá-la por padrão. Critério: cada técnica mantida só com
 número que a justifique.
 
+**Como foi resolvido (17/09).** As três coleções experimentais dos lotes do
+trilho A (14–16/09) deram, pela primeira vez, conteúdo real para medir contra
+— antes disso a coleção ativa tinha 0 chunks e não havia nada a comparar.
+Medido com `POST /search/` fora do caminho: `backend/app/database/
+measure_query_techniques.py` aponta o `RetrievalClient` para a coleção
+candidata (sem tocar o ponteiro) e roda cinco arranjos sobre os 9 casos das
+três candidatas (b14, b16, b17, b19–b24). Resultado: a reescrita sozinha e o
+HyDE **pioram** Precision@1/MRR frente ao relato cru em pelo menos um lote
+cada (no lote 2, HyDE derrubou de 1,0/1,0 para 0,667/0,833); o multi-query
+fundido com a reescrita (o candidato do B-10) nunca fica pior que o relato
+cru e tem a maior taxa de casos acima do corte de 0,70 empatada com o
+pipeline completo, **sem precisar do HyDE**. `HYDE_ENABLED` passou a `False`
+por padrão. Amostra pequena (9 casos, 3 por lote) — repetir quando a régua
+crescer.
+
 ### B-10
 
 **Consulta reescrita não vai ao índice com multi-query ligado**
 
-**Identificado por:** João (B2) · **Onde:** [rodada 3](joao/2026-09-04-04-geracao-ancorada.md) e [`docs/CONTRATOS.md`](../docs/CONTRATOS.md) · **Responsável:** Trilho B1 (decisão) · **Prioridade:** Média · **Status:** Aberto
+**Identificado por:** João (B2) · **Onde:** [rodada 3](joao/2026-09-04-04-geracao-ancorada.md) e [`docs/CONTRATOS.md`](../docs/CONTRATOS.md) · **Responsável:** Trilho B1 (decisão) · **Prioridade:** Média · **Status:** Resolvido em 17/09 — [evidência](ryu/2026-09-17-06-medindo-consulta-nas-candidatas.md)
 
 **O que observamos.** Com o multi-query ligado, a busca recebe as três
 variações e o HyDE; a consulta reescrita em si só é buscada quando o
@@ -343,6 +359,14 @@ difícil de interpretar.
 **O que resolveria.** Decisão do dono: passar a buscar `[reescrita] +
 variações`, sem duplicatas. O pipeline do B2 já tem o ponto único
 (`_build_queries`) para absorver a mudança.
+
+**Como foi resolvido (17/09).** Implementado em `_build_queries`
+(`chat_pipeline.py`): a lista sempre começa com a reescrita, e as variações
+do multi-query entram depois, sem duplicar. Medido contra três coleções
+experimentais reais (mesma rodada do B-09): o arranjo fundido nunca perdeu
+para o comportamento antigo (reescrita descartada) em Precision@1/MRR, em
+nenhum dos três lotes, e teve nota média e taxa de corte iguais ou melhores.
+2 testes novos em `test_chat_pipeline.py` travam o comportamento.
 
 ### B-11
 
@@ -2170,6 +2194,41 @@ tutor.
 
 ---
 
+### B-57
+
+**O snapshot versionado do ChromaDB não é o caminho que o backend real lê**
+
+**Identificado por:** Ryu (B1) · **Onde:** [evidência da medição de consulta nas candidatas](ryu/2026-09-17-06-medindo-consulta-nas-candidatas.md), 17/09 · **Responsável:** Trilho A · **Prioridade:** Alta · **Status:** Aberto
+
+**O que observamos.** `backend.app.core.config.Settings.CHROMA_PATH` vale
+`data/chroma` (resolve para `backend/data/chroma`). O snapshot experimental
+versionado nos três lotes de curadoria (`02c0fef`, `6710393`, `5e76529`)
+foi gravado em `backend/chroma_db/` — uma pasta **diferente**. Um clone
+limpo do repositório, seguindo só o README e o `docker compose up`, sobe
+com a coleção `veterinary_documents` vazia (0 chunks) mesmo com as três
+coleções candidatas cheias sentadas ao lado, no caminho errado. Confirmado
+tentando abrir as candidatas pelo caminho padrão (`ActiveCollectionUnavailableError:
+a coleção não existe`) e resolvido só depois de apontar
+`ChromaDBClient.configure(path="/app/chroma_db")` manualmente.
+
+**Por que importa.** Todo o trabalho de curadoria dos três lotes (17
+fontes, 9 documentos aprovados pela ASAVET) está no repositório mas **não é
+alcançável** pelo sistema como configurado hoje — nem pela API real, nem por
+quem clonar o repo e seguir as instruções ao pé da letra. As medições que os
+próprios lotes registram ("consulta direta à candidata, sem alterar o
+ponteiro") foram feitas apontando para o caminho certo manualmente; ninguém
+notou a divergência com o `CHROMA_PATH` padrão porque nenhuma delas ativou
+a candidata pelo fluxo comum.
+
+**O que resolveria.** Decisão do trilho A: ou o snapshot deveria ter sido
+gravado em `backend/data/chroma/` (o caminho real), ou `CHROMA_PATH` deveria
+apontar para `chroma_db` — as duas correções são de uma linha, mas são
+incompatíveis entre si e a escolha errada reintroduz o problema na próxima
+ingestão. Critério: um clone limpo, sem passos manuais, sobe com as
+coleções candidatas visíveis em `ChromaDBClient.get_client().list_collections()`.
+
+---
+
 ## Resolvidos
 
 | ID | Item | Fechado em | Evidência |
@@ -2184,3 +2243,5 @@ tutor.
 | [B-51](#b-51) | Ciclo de ingestão não era um comando fail-stop | 13/09 | [reconstrução do endurecimento](vini/2026-09-13-04-endurecimento-da-ingestao-vetorial.md) |
 | [B-53](#b-53) | Vocabulário de espécie não era fechado nem preservado por rodada | 13/09 | [reconstrução do endurecimento](vini/2026-09-13-04-endurecimento-da-ingestao-vetorial.md) |
 | [B-38](#b-38) | Runner não confere a base antes de uma rodada com recuperação | 11/09 | [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md) |
+| [B-09](#b-09) | HyDE gera doença inexistente e nunca foi medido | 17/09 | [medição de consulta nas candidatas](ryu/2026-09-17-06-medindo-consulta-nas-candidatas.md) |
+| [B-10](#b-10) | Consulta reescrita não vai ao índice com multi-query ligado | 17/09 | [medição de consulta nas candidatas](ryu/2026-09-17-06-medindo-consulta-nas-candidatas.md) |

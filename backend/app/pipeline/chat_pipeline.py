@@ -124,22 +124,30 @@ class ChatPipeline:
         rewritten = (rewritten or "").strip() or question
 
         if config.multi_query_enabled:
-            queries = self.query_client.generate_queries(rewritten)
-            logger.info(f"{len(queries)} consultas geradas")
+            variations = self.query_client.generate_queries(rewritten)
+            logger.info(f"{len(variations)} consultas geradas")
         else:
-            queries = []
+            variations = []
             logger.info("Multi-Query desativado")
 
-        queries = [
+        variations = [
             query.strip()
-            for query in queries
+            for query in variations
             if query and query.strip()
         ]
 
-        # O Multi-Query pode devolver nada; nesse caso a própria consulta
-        # reescrita vai à busca, em vez de pesquisar uma lista vazia.
-        if not queries:
-            queries = [rewritten]
+        # B-10: a reescrita entra no índice junto das variações, sem
+        # duplicatas — "ligado" passa a ser superconjunto de "desligado" em
+        # vez de uma lista de natureza diferente. Decisão validada em
+        # evidencias/ryu/2026-09-17-06-medindo-consulta-nas-candidatas.md:
+        # contra três coleções experimentais reais, fundir bateu ou empatou
+        # com o comportamento antigo em Precision@1/MRR em todos os lotes, e
+        # nunca ficou pior.
+        queries = [rewritten]
+
+        for variation in variations:
+            if variation not in queries:
+                queries.append(variation)
 
         hypothetical_document = None
 

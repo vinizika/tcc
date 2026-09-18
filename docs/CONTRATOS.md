@@ -14,19 +14,19 @@ outro lado. A divisão de trabalho e as fronteiras de cada trilho estão em
 
 O que a etapa de consulta entrega à busca vetorial: uma **lista de textos**.
 
-Hoje o pipeline monta essa lista assim, na ordem:
+Desde 17/09 (decisão do B-10), o pipeline monta essa lista assim:
 
-1. a consulta reescrita, **se** o multi-query estiver desligado;
-2. as variações geradas pelo multi-query, **se** ligado;
-3. o documento hipotético do HyDE, **se** ligado.
+1. a consulta reescrita (ou o relato original, se a reescrita estiver
+   desligada) — **sempre** entra, é a primeira da lista;
+2. as variações geradas pelo multi-query, **se** ligado, sem duplicar a
+   reescrita;
+3. o documento hipotético do HyDE, **se** ligado (desligado por padrão
+   desde 17/09 — ver `HYDE_ENABLED` em `backend/app/core/config.py`).
 
-Se o multi-query devolver lista vazia, a consulta reescrita entra no lugar —
-buscar com lista vazia devolveria zero documentos e pareceria falha da
-recuperação.
-
-**Ponto em aberto para o B1.** Hoje, com o multi-query ligado, a consulta
-reescrita **não** vai ao índice: só as três variações e o HyDE. Proposta: usar
-`[reescrita] + variações`, sem duplicatas. Precisa de decisão do dono.
+"Ligado" é superconjunto de "desligado": multi-query ligado nunca produz uma
+lista de natureza diferente da de desligado, só mais itens. Validado contra
+três coleções experimentais reais em
+[evidencias/ryu/2026-09-17-06-medindo-consulta-nas-candidatas.md](../evidencias/ryu/2026-09-17-06-medindo-consulta-nas-candidatas.md).
 
 ## 2. Documento recuperado — A → B2
 

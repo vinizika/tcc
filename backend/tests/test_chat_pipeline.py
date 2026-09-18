@@ -102,6 +102,42 @@ def test_multi_query_vazio_nao_deixa_a_busca_sem_consulta():
     assert retrieval_client.chamadas == [["consulta reescrita"]]
 
 
+def test_multi_query_ligado_funde_reescrita_e_variacoes(monkeypatch):
+    """
+    B-10: "ligado" é superconjunto de "desligado" — a reescrita não some da
+    lista quando o multi-query traz variações. Validado contra coleções
+    reais em evidencias/ryu/2026-09-17-06-medindo-consulta-nas-candidatas.md.
+    """
+
+    pipeline, _, retrieval_client, _ = montar()
+
+    pipeline.execute(
+        "meu cachorro comeu chocolate",
+        PipelineOptions(hyde_enabled=False),
+    )
+
+    assert retrieval_client.chamadas == [
+        ["consulta reescrita", "consulta 1", "consulta 2"]
+    ]
+
+
+def test_multi_query_ligado_nao_duplica_variacao_igual_a_reescrita():
+
+    query_client = QueryClientFalso(
+        rewritten="consulta reescrita",
+        queries=["consulta reescrita", "consulta 2"],
+    )
+
+    pipeline, _, retrieval_client, _ = montar(query_client=query_client)
+
+    pipeline.execute(
+        "meu cachorro comeu chocolate",
+        PipelineOptions(hyde_enabled=False),
+    )
+
+    assert retrieval_client.chamadas == [["consulta reescrita", "consulta 2"]]
+
+
 def test_hyde_entra_como_consulta_adicional():
 
     pipeline, query_client, retrieval_client, _ = montar()
