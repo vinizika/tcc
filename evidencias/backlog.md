@@ -54,8 +54,8 @@ aqui.
 | [B-04](#b-04) | Temperatura e seed não fixadas na etapa de consulta | Trilho B1 | Alta | Em andamento — 82% resolvido, ver [B-24](#b-24) |
 | [B-05](#b-05) | Conjunto de avaliação trivialmente separável | Time + especialista | Alta | Aberto |
 | [B-06](#b-06) | Falsos não urgentes subiram de 3 para 8 com o prompt novo | Trilho B2 | Alta | Em andamento |
-| [B-07](#b-07) | Etapa de consulta custa 60% da latência | Trilho B1 | Média | Aberto |
-| [B-08](#b-08) | Reescrita de consulta adiciona julgamento clínico | Trilho B1 | Média | Aberto |
+| [B-07](#b-07) | Etapa de consulta custa 60% da latência | Trilho B1 | Média | Em andamento — Multi-Query e HyDE paralelizados em 17/09; falta confirmar o número com o runner |
+| [B-08](#b-08) | Reescrita de consulta adiciona julgamento clínico | Trilho B1 | Média | Resolvido em 17/09 |
 | [B-09](#b-09) | HyDE gera doença inexistente e nunca foi medido | Trilho B1 | Média | Resolvido em 17/09 |
 | [B-10](#b-10) | Consulta reescrita não vai ao índice com multi-query ligado | Trilho B1 (decisão) | Média | Resolvido em 17/09 |
 | [B-11](#b-11) | Limiar de 0,70 na busca não mede relevância — e o corte efetivo é zero | Trilho A | **Alta** | Aberto |
@@ -290,7 +290,7 @@ hipotético num só JSON. Critério: `query_s` mediano abaixo de 1,5s.
 
 **Reescrita de consulta adiciona julgamento clínico**
 
-**Identificado por:** João (B2) · **Onde:** [rodada 3](joao/2026-09-04-04-geracao-ancorada.md), 04/09 · **Responsável:** Trilho B1 · **Prioridade:** Média · **Status:** Aberto
+**Identificado por:** João (B2) · **Onde:** [rodada 3](joao/2026-09-04-04-geracao-ancorada.md), 04/09 · **Responsável:** Trilho B1 · **Prioridade:** Média · **Status:** Resolvido em 17/09
 
 **O que observamos.** *"Meu gato está espirrando"* virou *"gato apresentando
 espirro, sintoma que requer avaliação veterinária imediata"* — um juízo de
@@ -305,6 +305,20 @@ desligada por padrão.
 **O que resolveria.** Exemplos negativos no prompt, ou uma verificação após a
 reescrita que rejeite termos de urgência ausentes do original. Critério: zero
 inserções de "imediata", "urgente" ou "emergência" em 30 relatos leves.
+
+**Como foi resolvido (17/09).** As duas frentes do critério, junto:
+1) `QueryClient.rewrite` ganhou um exemplo negativo explícito no prompt
+(entrada "meu gato está espirrando" → saída errada mostrada e rejeitada,
+saída correta ao lado) e uma instrução direta contra julgamento de
+gravidade/urgência; 2) um guarda-corpo determinístico,
+`_contains_unwarranted_urgency`, verifica a reescrita contra os termos
+"imediata", "imediato", "urgente", "urgência", "emergência" e
+"emergencial" — se algum aparecer na reescrita sem estar no relato
+original, a reescrita inteira é descartada e o relato original é usado no
+lugar. Isso garante o critério por construção (zero inserções), não só
+por prompt. 2 testes novos em `test_query_client.py` travam o
+comportamento (descarta quando o termo é injetado; mantém quando o termo
+já vinha do tutor). Testes: 205 → 207.
 
 ### B-09
 
@@ -2245,3 +2259,4 @@ coleções candidatas visíveis em `ChromaDBClient.get_client().list_collections
 | [B-38](#b-38) | Runner não confere a base antes de uma rodada com recuperação | 11/09 | [rodada 7 do João](joao/2026-09-11-07-endurecimento-do-instrumento.md) |
 | [B-09](#b-09) | HyDE gera doença inexistente e nunca foi medido | 17/09 | [medição de consulta nas candidatas](ryu/2026-09-17-06-medindo-consulta-nas-candidatas.md) |
 | [B-10](#b-10) | Consulta reescrita não vai ao índice com multi-query ligado | 17/09 | [medição de consulta nas candidatas](ryu/2026-09-17-06-medindo-consulta-nas-candidatas.md) |
+| [B-08](#b-08) | Reescrita de consulta adiciona julgamento clínico | 17/09 | [conter julgamento clínico na reescrita](ryu/2026-09-17-07-conter-julgamento-clinico-na-reescrita.md) |

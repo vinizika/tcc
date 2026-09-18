@@ -7,6 +7,7 @@ usa em produção não precisa saber disso.
 """
 
 import time
+from concurrent.futures import ThreadPoolExecutor
 
 from app.clients.llm_client import LLMClient
 from app.clients.query_client import QueryClient
@@ -123,12 +124,9 @@ class ChatPipeline:
         # Sem reescrita útil, a busca ainda precisa de algo para procurar.
         rewritten = (rewritten or "").strip() or question
 
-        if config.multi_query_enabled:
-            variations = self.query_client.generate_queries(rewritten)
-            logger.info(f"{len(variations)} consultas geradas")
-        else:
-            variations = []
-            logger.info("Multi-Query desativado")
+        variations, hypothetical_document = self._generate_variations_and_hyde(
+            rewritten, config
+        )
 
         variations = [
             query.strip()
@@ -149,26 +147,60 @@ class ChatPipeline:
             if variation not in queries:
                 queries.append(variation)
 
-        hypothetical_document = None
-
-        if config.hyde_enabled:
-            hypothetical_document = (
-                self.query_client.generate_hypothetical_document(
-                    rewritten
-                )
-            )
-
-            if hypothetical_document:
-                queries.append(hypothetical_document)
-                logger.info("Documento hipotético (HyDE) adicionado")
-        else:
-            logger.info("HyDE desativado")
+        if hypothetical_document:
+            queries.append(hypothetical_document)
+            logger.info("Documento hipotético (HyDE) adicionado")
 
         return QueryPlan(
             rewritten=rewritten,
             queries=queries,
             hypothetical_document=hypothetical_document,
         )
+
+    def _generate_variations_and_hyde(
+        self,
+        rewritten: str,
+        config: EffectiveConfig,
+    ) -> tuple[list[str], str | None]:
+        """
+        Gera Multi-Query e HyDE — as duas só dependem da reescrita, nunca
+        uma da outra, então rodam em paralelo quando ambas estão ligadas
+        (B-07: a etapa de consulta chegava a somar as duas chamadas em
+        sequência, e são chamadas de rede ao Ollama, presas em I/O).
+        """
+
+        if not config.multi_query_enabled and not config.hyde_enabled:
+            logger.info("Multi-Query desativado")
+            logger.info("HyDE desativado")
+            return [], None
+
+        if config.multi_query_enabled and not config.hyde_enabled:
+            variations = self.query_client.generate_queries(rewritten)
+            logger.info(f"{len(variations)} consultas geradas")
+            logger.info("HyDE desativado")
+            return variations, None
+
+        if config.hyde_enabled and not config.multi_query_enabled:
+            logger.info("Multi-Query desativado")
+            hypothetical_document = (
+                self.query_client.generate_hypothetical_document(rewritten)
+            )
+            return [], hypothetical_document
+
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            variations_future = executor.submit(
+                self.query_client.generate_queries, rewritten
+            )
+            hyde_future = executor.submit(
+                self.query_client.generate_hypothetical_document,
+                rewritten,
+            )
+            variations = variations_future.result()
+            hypothetical_document = hyde_future.result()
+
+        logger.info(f"{len(variations)} consultas geradas (em paralelo com HyDE)")
+
+        return variations, hypothetical_document
 
     # ------------------------------------------------------------------
     # Etapa de recuperação

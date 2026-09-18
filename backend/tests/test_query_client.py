@@ -31,6 +31,33 @@ def test_rewrite_usa_opcoes_padrao(monkeypatch):
     assert cliente_falso.chamadas[0]["options"] == default_options()
 
 
+def test_rewrite_descarta_termo_de_urgencia_nao_presente_no_relato(monkeypatch):
+
+    cliente_falso = _OllamaClientFalso(
+        "gato apresentando espirro, sintoma que requer avaliação "
+        "veterinária imediata"
+    )
+    monkeypatch.setattr(QueryClient, "_client", cliente_falso)
+
+    resultado = QueryClient.rewrite("meu gato está espirrando")
+
+    assert resultado == "meu gato está espirrando"
+
+
+def test_rewrite_mantem_termo_de_urgencia_ja_presente_no_relato(monkeypatch):
+
+    cliente_falso = _OllamaClientFalso(
+        "cão em situação de emergência, ausência de micção"
+    )
+    monkeypatch.setattr(QueryClient, "_client", cliente_falso)
+
+    resultado = QueryClient.rewrite(
+        "meu cachorro não faz xixi, acho que é uma emergência"
+    )
+
+    assert resultado == "cão em situação de emergência, ausência de micção"
+
+
 def test_generate_queries_usa_opcoes_padrao(monkeypatch):
 
     cliente_falso = _OllamaClientFalso("consulta 1\nconsulta 2\nconsulta 3")

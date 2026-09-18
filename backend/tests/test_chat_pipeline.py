@@ -151,6 +151,30 @@ def test_hyde_entra_como_consulta_adicional():
     assert "documento hipotético" in retrieval_client.chamadas[0]
 
 
+def test_multi_query_e_hyde_juntos_preservam_a_ordem_apesar_do_paralelismo():
+    """
+    B-07: Multi-Query e HyDE rodam em paralelo (as duas só dependem da
+    reescrita, nunca uma da outra) — mas a ordem final da lista de
+    consultas não pode depender de qual chamada termina primeiro.
+    """
+
+    pipeline, _, retrieval_client, _ = montar()
+
+    pipeline.execute(
+        "meu cachorro comeu chocolate",
+        PipelineOptions(multi_query_enabled=True, hyde_enabled=True),
+    )
+
+    assert retrieval_client.chamadas == [
+        [
+            "consulta reescrita",
+            "consulta 1",
+            "consulta 2",
+            "documento hipotético",
+        ]
+    ]
+
+
 def test_apenas_os_melhores_trechos_vao_ao_prompt():
 
     documentos = [

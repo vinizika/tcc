@@ -38,9 +38,10 @@ benchmark de voz.
 | 5 | **Frente prova — lote oficial (~150 casos, dev/teste)** | 🔜 próxima | Depende de validar o formato com o time primeiro |
 | 6 | **Frente prova — adaptar o runner** para ler `text` livre | ⏳ | Coluna alternativa, `--relato-lang`, caminho por opção, baselines triviais novos (seção 5.4 do plano) |
 | 7 | **Medir consulta nas coleções experimentais (B-09, B-10)** | ✅ 17/09 | Instrumento novo (`measure_query_techniques.py`) contra as 3 candidatas do trilho A. HyDE nunca ajudou → `HYDE_ENABLED=False` por padrão. Fusão reescrita+multi-query (B-10) nunca perde → implementada. Achado colateral: [B-57](../backlog.md#b-57) |
-| 8 | Conter julgamento clínico na reescrita (B-08) | 🔜 próxima | Exemplos negativos no prompt ou verificação pós-reescrita; agora dá pra medir contra as candidatas reais |
-| 9 | Paralelizar/fundir as 3 chamadas de consulta (B-07) | ⏳ | Reduzir os ~3,5s que a etapa custa hoje |
-| 10 | Benchmark de WER com áudio real | ⏳ | Substitui o número otimista da fala sintética (B-13) |
+| 8 | Conter julgamento clínico na reescrita (B-08) | ✅ 17/09 | Exemplo negativo no prompt + guarda-corpo determinístico (`_contains_unwarranted_urgency`) que descarta a reescrita quando ela injeta urgência ausente do relato. 2 testes novos |
+| 9 | Cadastro de tutor/pet sem autenticação real (B-56) | ⏳ (adiado para o deploy, decisão de 17/09) | Política aberta no Supabase, sem auth — risco baixo enquanto o sistema roda só local/dev |
+| 10 | Paralelizar Multi-Query e HyDE (B-07) | 🔶 em andamento, 17/09 | As duas rodam em paralelo (`ThreadPoolExecutor`) quando ligadas juntas; sobreposição confirmada nos logs. Falta medir `query_s` mediano com o runner, modelo aquecido |
+| 11 | Benchmark de WER com áudio real | ⏳ | Substitui o número otimista da fala sintética (B-13) |
 
 ## Próxima entrega: lote oficial da prova (~150 casos)
 

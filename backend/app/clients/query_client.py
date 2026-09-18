@@ -7,6 +7,27 @@ from app.core.ollama import default_options, get_ollama_client
 
 logger = setup_logger("QueryClient")
 
+# B-08: termos de urgência que a reescrita não pode introduzir por
+# conta própria — são decisão do classificador, não da etapa de consulta.
+_URGENCY_TERMS = (
+    "imediata",
+    "imediato",
+    "urgente",
+    "urgência",
+    "emergência",
+    "emergencial",
+)
+
+
+def _contains_unwarranted_urgency(original: str, rewritten: str) -> bool:
+    original_lower = original.lower()
+    rewritten_lower = rewritten.lower()
+
+    return any(
+        term in rewritten_lower and term not in original_lower
+        for term in _URGENCY_TERMS
+    )
+
 
 class QueryClient:
 
@@ -46,6 +67,11 @@ class QueryClient:
                         "Nunca responda ou dê conselhos. "
                         "Nunca adicione informações que não estavam "
                         "no relato original. "
+                        "Nunca adicione julgamento de gravidade ou "
+                        "urgência (como 'urgente', 'imediata', "
+                        "'emergência') que não estava explícito no "
+                        "relato original — isso é decisão do "
+                        "classificador, não da reescrita. "
                         "Responda apenas com a frase reformulada, "
                         "sem comentários.\n\n"
                         "Exemplos:\n"
@@ -61,7 +87,14 @@ class QueryClient:
                         "desde ontem\n"
                         "Saída: gata com suspeita de obstrução "
                         "urinária, ausência de micção há mais de "
-                        "24 horas"
+                        "24 horas\n\n"
+                        "Exemplo do que NÃO fazer:\n"
+                        "Entrada: meu gato está espirrando\n"
+                        "Saída errada: gato apresentando espirro, "
+                        "sintoma que requer avaliação veterinária "
+                        "imediata (isto insere um juízo de urgência "
+                        "que o relato não tem)\n"
+                        "Saída correta: gato apresentando espirro"
                     ),
                 },
                 {
@@ -73,6 +106,14 @@ class QueryClient:
         )
 
         rewritten_question = response["message"]["content"].strip()
+
+        if _contains_unwarranted_urgency(question, rewritten_question):
+            logger.warning(
+                "Query Rewriting descartado (B-08): termo de urgência "
+                "ausente do relato original apareceu na reescrita. "
+                f"Reescrita descartada: {rewritten_question!r}"
+            )
+            return question
 
         logger.info(
             f"Query Rewriting concluído: {rewritten_question}"
