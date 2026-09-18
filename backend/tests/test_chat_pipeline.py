@@ -102,6 +102,42 @@ def test_multi_query_vazio_nao_deixa_a_busca_sem_consulta():
     assert retrieval_client.chamadas == [["consulta reescrita"]]
 
 
+def test_multi_query_ligado_funde_reescrita_e_variacoes(monkeypatch):
+    """
+    B-10: "ligado" é superconjunto de "desligado" — a reescrita não some da
+    lista quando o multi-query traz variações. Validado contra coleções
+    reais em evidencias/ryu/2026-09-17-06-medindo-consulta-nas-candidatas.md.
+    """
+
+    pipeline, _, retrieval_client, _ = montar()
+
+    pipeline.execute(
+        "meu cachorro comeu chocolate",
+        PipelineOptions(hyde_enabled=False),
+    )
+
+    assert retrieval_client.chamadas == [
+        ["consulta reescrita", "consulta 1", "consulta 2"]
+    ]
+
+
+def test_multi_query_ligado_nao_duplica_variacao_igual_a_reescrita():
+
+    query_client = QueryClientFalso(
+        rewritten="consulta reescrita",
+        queries=["consulta reescrita", "consulta 2"],
+    )
+
+    pipeline, _, retrieval_client, _ = montar(query_client=query_client)
+
+    pipeline.execute(
+        "meu cachorro comeu chocolate",
+        PipelineOptions(hyde_enabled=False),
+    )
+
+    assert retrieval_client.chamadas == [["consulta reescrita", "consulta 2"]]
+
+
 def test_hyde_entra_como_consulta_adicional():
 
     pipeline, query_client, retrieval_client, _ = montar()
@@ -113,6 +149,30 @@ def test_hyde_entra_como_consulta_adicional():
 
     assert query_client.hyde_calls == 1
     assert "documento hipotético" in retrieval_client.chamadas[0]
+
+
+def test_multi_query_e_hyde_juntos_preservam_a_ordem_apesar_do_paralelismo():
+    """
+    B-07: Multi-Query e HyDE rodam em paralelo (as duas só dependem da
+    reescrita, nunca uma da outra) — mas a ordem final da lista de
+    consultas não pode depender de qual chamada termina primeiro.
+    """
+
+    pipeline, _, retrieval_client, _ = montar()
+
+    pipeline.execute(
+        "meu cachorro comeu chocolate",
+        PipelineOptions(multi_query_enabled=True, hyde_enabled=True),
+    )
+
+    assert retrieval_client.chamadas == [
+        [
+            "consulta reescrita",
+            "consulta 1",
+            "consulta 2",
+            "documento hipotético",
+        ]
+    ]
 
 
 def test_apenas_os_melhores_trechos_vao_ao_prompt():

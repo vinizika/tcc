@@ -102,10 +102,19 @@ class Settings(BaseSettings):
     RERANK_TOP_K: int = 3
 
     # Flags de liga/desliga das etapas de consulta,
-    # usadas no estudo de ablação.
+    # usadas no estudo de ablação. Dono: trilho B1 (docs/CONTRATOS.md, item 4).
     QUERY_REWRITING_ENABLED: bool = True
     MULTI_QUERY_ENABLED: bool = True
-    HYDE_ENABLED: bool = True
+
+    # Desligado por padrão desde 17/09. Medido contra três coleções reais
+    # (evidencias/ryu/2026-09-17-06-medindo-consulta-nas-candidatas.md):
+    # em nenhum dos três lotes o HyDE melhorou Precision@1/MRR sobre a
+    # reescrita fundida com o multi-query, e no lote 2 piorou (1,0 -> 0,667).
+    # É a chamada mais lenta da etapa de consulta e a que já se sabia
+    # inventar diagnóstico sem âncora (evidencias/backlog.md#b-09). Segue
+    # implementado e medível — liga por requisição ou pelo preset
+    # rag_query — só não é mais o padrão.
+    HYDE_ENABLED: bool = False
 
     # Flags de liga/desliga das etapas de decisão, também usadas no estudo
     # de ablação. Com RETRIEVAL_ENABLED desligado o sistema roda como LLM
