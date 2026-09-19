@@ -1,0 +1,38 @@
+{
+  "title": "Feline flea allergy dermatitis",
+  "source": "Veterinary Sciences (MDPI)",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "cat",
+  "topic": "flea_dermatitis_pruritus",
+  "language": "en",
+  "source_url": "https://mdpi-res.com/d_attachment/vetsci/vetsci-04-00025/article_deploy/vetsci-04-00025.pdf",
+  "indexing": {
+    "include_sections": [
+      "Flea Bite Hypersensitivity (Flea Allergy Dermatitis)"
+    ],
+    "exclude_sections": [
+      "References"
+    ],
+    "exclude_pages": [1, 3, 4, 5, 6, 7, 8, 9, 10],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "8388d1f1950363bc581b7acb3e3ebde5d68145a63e2fcd7e9594ad150af9c8b4",
+  "map_line": "flea_dermatitis_pruritus",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET — Primeiro Grupo de Anestesia e Veterinaria Universitaria do Brasil",
+    "date": "2026-09-19"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; captura e redistribuicao experimental permitidas com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "year": 2017,
+  "authors": "Alison Diesel"
+}

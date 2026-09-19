@@ -27,6 +27,7 @@ e re-ranking.
 | 8 | 15/09 | [Lote 02 — curadoria experimental](2026-09-15-02-lote-curadoria-experimental.md) | Raticida, parvovirose e piometra pesquisados, inspecionados e mantidos em staging experimental |
 | 9 | 16/09 | [Lote 03 — emergências experimentais](2026-09-16-03-lote-emergencias-experimental.md) | Neonato, paralisia aguda e anafilaxia pesquisados e medidos sem ativar a candidata |
 | 10 | 16/09 | [Lote 04 — pares clínicos experimentais](2026-09-16-04-lote-clinicos-experimental.md) | Seis fontes capturadas; diversidade da busca corrigida; 5/5 tópicos documentados encontráveis; candidata de 350 chunks mantida inativa |
+| 11 | 19/09 | [Lote 05 — dermatologia, artrose e apetite](2026-09-19-05-lote-dermatologia-artrose-apetite-experimental.md) | Cinco fontes capturadas; três recortes levados a staging; dermatite recuperada, artrose fraca e distorção da consulta de apetite documentadas; candidata de 312 chunks mantida inativa |
 
 ## Estado atual
 

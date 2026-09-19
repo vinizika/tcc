@@ -1,0 +1,38 @@
+{
+  "title": "Canine osteoarthritis early signs",
+  "source": "Frontiers in Veterinary Science",
+  "document_type": "guideline",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "osteoarthritis_stiffness",
+  "language": "en",
+  "source_url": "https://public-pages-files-2025.frontiersin.org/journals/veterinary-science/articles/10.3389/fvets.2022.830098/pdf",
+  "indexing": {
+    "include_sections": [
+      "Treatment Guidelines"
+    ],
+    "exclude_sections": [
+      "References"
+    ],
+    "exclude_pages": [1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+    "extraction_reviewed": true
+  },
+  "register": "clinico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "7d19fc33d0827be1d5e98a90039bb7b6679f29bebd5bdaf99a8276c9818285fa",
+  "map_line": "osteoarthritis_stiffness",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET — Primeiro Grupo de Anestesia e Veterinaria Universitaria do Brasil",
+    "date": "2026-09-19"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; captura e redistribuicao experimental permitidas com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "year": 2022,
+  "authors": "Conny Mosley et al."
+}
