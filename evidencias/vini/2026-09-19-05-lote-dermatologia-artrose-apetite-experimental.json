@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-19",
+  "branch": "codex/lote-05-mapa-assuntos",
+  "initial_head": "382c8203b1efc5752aeecdb993318ff28841ad78",
+  "status": "local_review_pending",
+  "published": false,
+  "clinical_approval": true,
+  "clinical_approval_record": {
+    "verdict": "approved",
+    "name": "ASAVET — Primeiro Grupo de Anestesia e Veterinaria Universitaria do Brasil",
+    "date": "2026-09-19",
+    "source_count": 5
+  },
+  "ryu_scan": {
+    "files_read": 8,
+    "findings": [
+      "hyde_did_not_improve_and_is_disabled",
+      "rewriting_and_multi_query_are_fused_and_deduplicated",
+      "query_transformation_does_not_replace_specific_sources",
+      "versioned_staging_path_is_backend_chroma_db",
+      "clean_b07_latency_measurement_pending"
+    ]
+  },
+  "map": {
+    "before": {"total": 61, "sem_documento": 37, "fonte_aprovada": 14, "fonte_encontrada": 3, "sintetico": 7},
+    "after": {"total": 61, "sem_documento": 34, "fonte_aprovada": 16, "fonte_encontrada": 4, "sintetico": 7},
+    "stage_1_without_document_after": 4
+  },
+  "topics_selected": [
+    "osteoarthritis_stiffness",
+    "flea_dermatitis_pruritus",
+    "reduced_appetite_no_other_signs"
+  ],
+  "captured_sources": [
+    {
+      "topic": "osteoarthritis_stiffness",
+      "title": "Proposed Canadian Consensus Guidelines on Osteoarthritis Treatment Based on OA-COAST Stages 1–4",
+      "authors": "Conny Mosley et al.",
+      "institution": "Frontiers in Veterinary Science",
+      "year": 2022,
+      "species": "dog",
+      "language": "en",
+      "url": "https://public-pages-files-2025.frontiersin.org/journals/veterinary-science/articles/10.3389/fvets.2022.830098/pdf",
+      "license": "CC BY 4.0",
+      "sha256": "7d19fc33d0827be1d5e98a90039bb7b6679f29bebd5bdaf99a8276c9818285fa",
+      "chunks": 13,
+      "staged": true
+    },
+    {
+      "topic": "osteoarthritis_stiffness",
+      "title": "Avaliacao psicometrica em portugues do indicador de dor cronica de Helsinki em caes com sinais cronicos de osteoartrite",
+      "authors": "L. M. Matsubara et al.",
+      "institution": "Arquivo Brasileiro de Medicina Veterinaria e Zootecnia",
+      "year": 2019,
+      "species": "dog",
+      "language": "pt",
+      "url": "https://www.scielo.br/j/abmvz/a/SRDKTYD6dZ5TgjHBtng6dBK/?format=pdf&lang=pt",
+      "license": "CC BY",
+      "sha256": "33158f748b3cb4568fbe5fb64bf119639946e9f93f6f0afd80f681eec705f18f",
+      "chunks": 51,
+      "staged": false,
+      "reason": "section_mixes_signs_methods_and_drugs"
+    },
+    {
+      "topic": "flea_dermatitis_pruritus",
+      "title": "Cutaneous Hypersensitivity Dermatoses in the Feline Patient: A Review of Allergic Skin Disease in Cats",
+      "authors": "Alison Diesel",
+      "institution": "Veterinary Sciences (MDPI)",
+      "year": 2017,
+      "species": "cat",
+      "language": "en",
+      "url": "https://mdpi-res.com/d_attachment/vetsci/vetsci-04-00025/article_deploy/vetsci-04-00025.pdf",
+      "license": "CC BY 4.0",
+      "sha256": "8388d1f1950363bc581b7acb3e3ebde5d68145a63e2fcd7e9594ad150af9c8b4",
+      "chunks": 23,
+      "staged": true
+    },
+    {
+      "topic": "flea_dermatitis_pruritus",
+      "title": "Caracterizacao clinica e histopatologica das dermatites alergicas em caes",
+      "authors": "Jackson S. de Vasconcelos et al.",
+      "institution": "Pesquisa Veterinaria Brasileira / Embrapa",
+      "year": 2017,
+      "species": "dog",
+      "language": "pt",
+      "url": "https://ainfo.cnptia.embrapa.br/digital/bitstream/item/161110/1/Caracterizacao-clinica-e-histopatologica.pdf",
+      "license": "CC BY 4.0",
+      "sha256": "3a51cdd56446e388ca5b94c99284d80c51f9269a21cf308fe888d5d2011f534b",
+      "chunks": 17,
+      "staged": true
+    },
+    {
+      "topic": "reduced_appetite_no_other_signs",
+      "title": "Owner's Perspective About the Use of Mirtazapine Transdermal Ointment in Cats—A Survey-Based Study",
+      "authors": "Sofia I. F. Carvalho et al.",
+      "institution": "Animals (MDPI)",
+      "year": 2025,
+      "species": "cat",
+      "language": "en",
+      "url": "https://mdpi-res.com/d_attachment/animals/animals-15-03054/article_deploy/animals-15-03054.pdf",
+      "license": "CC BY 4.0",
+      "sha256": "429e4227a3595cd9f67b259064b1e6f64731c915477230b425bbd19186150a4b",
+      "chunks": 20,
+      "staged": false,
+      "reason": "pharmacological_focus_does_not_support_triage_deadline"
+    }
+  ],
+  "not_stored_sources": [
+    {
+      "title": "2022 ISFM Consensus Guidelines on Management of the Inappetent Hospitalised Cat",
+      "url": "https://doi.org/10.1177/1098612X221106353",
+      "rights": "CC BY recorded by Royal Veterinary College repository",
+      "reason": "hospitalised_population_does_not_support_home_triage_deadline"
+    },
+    {
+      "title": "Picky Eaters",
+      "url": "https://hospital.cvm.ncsu.edu/services/small-animals/nutrition/picky-eaters/",
+      "rights": "all_rights_reserved",
+      "reason": "redistribution_not_allowed"
+    },
+    {
+      "title": "Reduced or Altered Appetite",
+      "url": "https://vet.tufts.edu/foster-hospital-small-animals/specialty-services/cardiology/heartsmart/heart-disease-symptoms/reduced-or-altered-appetitie",
+      "rights": "no_open_license_identified",
+      "reason": "cardiac_population_and_redistribution_unclear"
+    }
+  ],
+  "staging": {
+    "collection": "veterinary_documents__20260919T172103063002Z__70a774a4",
+    "superseded_preapproval_collection": "veterinary_documents__20260919T154008538116Z__a45ef7e8",
+    "profile": "experimental",
+    "activated": false,
+    "active_pointer_before": null,
+    "active_pointer_after": null,
+    "document_count": 11,
+    "chunk_count": 312,
+    "new_source_chunk_count": 53,
+    "source_set_sha256": "70a774a4c13f9a2cc5d5de16494ece17cbdfa7ef1071e9d5b9a5944ae6638533",
+    "ids_sha256": "b1246ebbb969dfd617daccd66fb8ca7576d8ef7930ddcce37893253941a196be",
+    "content_sha256": "c25966b64a58202e22a333f1bc40d653326e308c094fdd34cd429f41756b93af",
+    "manifest_sha256": "711421fc81cbb379f107caa95f96dfb1626a899a5e32a5935c69025f66693e93",
+    "recipe_sha256": "1a93e1e7db9a5b5a7766ca11b54162cb74cb76bb4d4c2c02b2dc0d5c4319682b",
+    "embedding_revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+    "approved_by_specialist_chunk_count": 53,
+    "pending_specialist_chunk_count": 0
+  },
+  "retrieval": {
+    "measurement_collection": "veterinary_documents__20260919T154008538116Z__a45ef7e8",
+    "not_repeated_reason": "Only validation metadata changed; title, section, body, ids and embeddings are unchanged.",
+    "threshold": 0.7,
+    "activation_gate_passed": false,
+    "cases": {
+      "b09": {"raw_expected_position": 1, "raw_score": 0.628713, "best_score": 0.768328, "expected_found_after_transformations": true},
+      "b28": {"raw_expected_position": 3, "raw_score": 0.41955, "expected_found_after_transformations": false, "dominant_wrong_topic": "canine_heatstroke"},
+      "b29": {"raw_expected_position": null, "raw_max_score": 0.478829, "transformed_wrong_topic": "urethral_obstruction", "transformed_wrong_score": 0.703904}
+    }
+  },
+  "tests": {
+    "baseline_scripts": {"command": ".venv/bin/python -m pytest scripts/tests -q", "passed": 186},
+    "final_scripts": {"command": ".venv/bin/python -m pytest scripts/tests -q", "passed": 186},
+    "backend": {"command": "docker compose exec -T backend pytest tests -q", "passed": 210}
+  },
+  "checks": {
+    "pip_check": "passed",
+    "compileall": "passed",
+    "git_diff_check": "passed",
+    "json_validation": "passed_with_python_json_tool",
+    "yaml_validation": "passed_with_ruby_psych",
+    "docker_compose_config": "passed",
+    "docker_services": "four_running_backend_healthy",
+    "backend_health": "http_200_status_ok",
+    "staging_integrity": "passed_312_chunks_active_pointer_absent",
+    "jq_limitation": "jq is not installed; Python json.tool was used instead"
+  },
+  "pending": [
+    "improve_osteoarthritis_source_cut",
+    "find_redistributable_home_triage_source_for_reduced_appetite",
+    "fix_query_transformations_for_b28_and_b29",
+    "do_not_activate_staging_collection"
+  ]
+}

@@ -115,6 +115,16 @@ qualquer outra.
 | **R56** | Delgado E et al. *Diagnostic approach and grading scheme for canine allergic conjunctivitis.* BMC Vet Res 19:32, 2023. DOI [10.1186/s12917-022-03561-5](https://doi.org/10.1186/s12917-022-03561-5). CC BY 4.0 | artigo revisado por pares | `direta` — PDF integral aberto; captura experimental usa `Abstract` |
 | **R57** | Al-Jumaa ZM, Jaber MT, Al-Doori AA. *Molecular detection of Chlamydophila felis from conjunctiva of cats infected with conjunctivitis and upper respiratory disease.* Open Vet J 14(12), 2024. DOI [10.5455/OVJ.2024.v14.i12.13](https://doi.org/10.5455/OVJ.2024.v14.i12.13). CC BY-NC 4.0 | artigo revisado por pares | `direta` — texto integral aberto no PMC; captura experimental usa extração literal curta de `Introduction`; aprovada pela ASAVET em 17/09/2026 |
 
+## Acrescentadas no quinto lote experimental (19/09)
+
+| id | Referência | Tipo | Verificação |
+|---|---|---|---|
+| **R58** | Mosley C et al. *Proposed Canadian Consensus Guidelines on Osteoarthritis Treatment Based on OA-COAST Stages 1–4.* Front Vet Sci 9, 2022. DOI [10.3389/fvets.2022.830098](https://doi.org/10.3389/fvets.2022.830098). CC BY 4.0 | consenso clínico revisado por pares | `direta` — PDF aberto; captura experimental limitada à página com sinais iniciais percebidos pelo tutor; aprovada pela ASAVET em 19/09/2026 |
+| **R59** | Matsubara LM et al. *Avaliação psicométrica em português do indicador de dor crônica de Helsinki em cães com sinais crônicos de osteoartrite.* Arq Bras Med Vet Zootec 71(1):109–118, 2019. DOI [10.1590/1678-4162-9892](https://doi.org/10.1590/1678-4162-9892). CC BY | artigo revisado por pares (BR) | `direta` — PDF aberto e inspecionado; aprovado pela ASAVET em 19/09/2026; não levado ao staging porque a seção útil mistura sinais e detalhes metodológicos |
+| **R60** | Diesel A. *Cutaneous Hypersensitivity Dermatoses in the Feline Patient: A Review of Allergic Skin Disease in Cats.* Vet Sci 4(2):25, 2017. DOI [10.3390/vetsci4020025](https://doi.org/10.3390/vetsci4020025). CC BY 4.0 | revisão por pares | `direta` — PDF aberto; captura experimental limitada à página de hipersensibilidade à picada de pulga; aprovada pela ASAVET em 19/09/2026 |
+| **R61** | Vasconcelos JS et al. *Caracterização clínica e histopatológica das dermatites alérgicas em cães.* Pesq Vet Bras 37(3):248–256, 2017. DOI [10.1590/S0100-736X2017000300008](https://doi.org/10.1590/S0100-736X2017000300008). CC BY 4.0 | artigo revisado por pares (BR) | `direta` — cópia institucional da Embrapa; captura experimental limitada à introdução na página 2; aprovada pela ASAVET em 19/09/2026 |
+| **R62** | Carvalho SIF et al. *Owner’s Perspective About the Use of Mirtazapine Transdermal Ointment in Cats—A Survey-Based Study.* Animals 15(20):3054, 2025. DOI [10.3390/ani15203054](https://doi.org/10.3390/ani15203054). CC BY 4.0 | artigo revisado por pares | `direta` — PDF aberto e aprovado pela ASAVET em 19/09/2026; não levado ao staging porque a introdução enfatiza tratamento farmacológico e não sustenta o prazo de triagem |
+
 ## O que ficou sem fonte
 
 Registrado para ninguém procurar de novo sem saber que já se procurou:

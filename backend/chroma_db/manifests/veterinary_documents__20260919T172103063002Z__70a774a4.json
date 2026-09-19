@@ -1,0 +1,136 @@
+{
+  "chunking": {
+    "dimensions": 384,
+    "embedding_text_fields": [
+      "title",
+      "section",
+      "body"
+    ],
+    "max_tokens": 128,
+    "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "overlap_tokens": 16,
+    "recipe_sha256": "1a93e1e7db9a5b5a7766ca11b54162cb74cb76bb4d4c2c02b2dc0d5c4319682b",
+    "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+    "target_tokens": 96,
+    "version": "vector-ingestion-recovery-v1"
+  },
+  "chunks": {
+    "content_sha256": "c25966b64a58202e22a333f1bc40d653326e308c094fdd34cd429f41756b93af",
+    "count": 312,
+    "ids_sha256": "b1246ebbb969dfd617daccd66fb8ca7576d8ef7930ddcce37893253941a196be",
+    "tokens": {
+      "max": 128,
+      "mean": 86.179,
+      "median": 91.0,
+      "min": 36
+    }
+  },
+  "collection_name": "veterinary_documents__20260919T172103063002Z__70a774a4",
+  "created_at": "2026-09-19T17:21:31.874407+00:00",
+  "embedding": {
+    "dimensions": 384,
+    "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42"
+  },
+  "profile": "experimental",
+  "quality": {
+    "corrupt_document_count": 1,
+    "fallback_count": 32,
+    "species_counts": {
+      "cat": 35,
+      "dog": 216,
+      "dog_and_cat": 61
+    },
+    "topic_counts": {
+      "allium_toxicosis": 12,
+      "canine_heatstroke": 186,
+      "chocolate_toxicosis": 12,
+      "flea_dermatitis_pruritus": 40,
+      "osteoarthritis_stiffness": 13,
+      "respiratory_distress": 5,
+      "seizures": 10,
+      "trauma_and_bleeding": 11,
+      "urethral_obstruction": 12,
+      "vomiting_and_diarrhea": 11
+    },
+    "validation_status_counts": {
+      "approved_by_specialist": 53,
+      "not_validated": 73,
+      "published_not_locally_validated": 186
+    },
+    "warning_count": 22
+  },
+  "schema_version": 1,
+  "sources": {
+    "document_count": 11,
+    "documents": [
+      {
+        "chunk_count": 10,
+        "path": "convulsoes.pdf",
+        "sidecar_sha256": "f1a0343f9bde31c0beb561557ea2a615ec8ce88f74a6f95da8a2676cc186b98d",
+        "source_sha256": "70b43a91d252b32d1742f0fe581baa83a413ea1717081083a70d87e02a3f79fb"
+      },
+      {
+        "chunk_count": 5,
+        "path": "dificuldade_respiratoria.pdf",
+        "sidecar_sha256": "45af05ed91e2ba73798d10b3c0b96fa71b2a7ebcade22080fa29a3eb9241a43e",
+        "source_sha256": "b16587f81eeecbc51e11b57f38975e607506db0342847587f04721394d161332"
+      },
+      {
+        "chunk_count": 17,
+        "path": "flea_dermatitis_pruritus__pvb_2017_dermatite_alergica.pdf",
+        "sidecar_sha256": "efeb9e39a9a2b72933eb3a679be0c6e412624551a4e69fbb5cfe4d14a6c17ec3",
+        "source_sha256": "3a51cdd56446e388ca5b94c99284d80c51f9269a21cf308fe888d5d2011f534b"
+      },
+      {
+        "chunk_count": 23,
+        "path": "flea_dermatitis_pruritus__vetsci_2017_feline_fad.pdf",
+        "sidecar_sha256": "bee512ef8da88df5a1ee329ccb6c80f2239ff419c1fc1cc57ea7a594a08e1fbc",
+        "source_sha256": "8388d1f1950363bc581b7acb3e3ebde5d68145a63e2fcd7e9594ad150af9c8b4"
+      },
+      {
+        "chunk_count": 12,
+        "path": "intoxicacao_cebola_alho.pdf",
+        "sidecar_sha256": "718d96859f0c825988033ddcb82424606420d100a084a8403c0965c775eb3601",
+        "source_sha256": "522722554a7b21f67c2edf9db04c98efc26629e44bacc50a098be16769dfae08"
+      },
+      {
+        "chunk_count": 12,
+        "path": "intoxicacao_chocolate.pdf",
+        "sidecar_sha256": "764aea90bd9be65aa8aa232d4d8c0e0b520e366fa1a73465c6950fa1460f7108",
+        "source_sha256": "f051c31450c7ffd95279e94e51705e8d070df65e497818dc5a6c9919add20828"
+      },
+      {
+        "chunk_count": 12,
+        "path": "obstrucao_urinaria_gatos.pdf",
+        "sidecar_sha256": "784599fa3ed05c08772a8d620df4705030b4b2ba14312384e79c1d363aafa554",
+        "source_sha256": "2911bfd8df6c6281f493b541acec65c8b4d6f28272fc7ddaf713f4c3fd7bdffd"
+      },
+      {
+        "chunk_count": 13,
+        "path": "osteoarthritis_stiffness__frontiers_2022_canine_oa.pdf",
+        "sidecar_sha256": "0b26530b5c8ce77cb1f30e312e09866168dcafb3336c3f8a13f699d185389b97",
+        "source_sha256": "7d19fc33d0827be1d5e98a90039bb7b6679f29bebd5bdaf99a8276c9818285fa"
+      },
+      {
+        "chunk_count": 186,
+        "path": "pathophysiology_heatstroke_dogs_2017.pdf",
+        "sidecar_sha256": "a1a71e7aa89c1db9668d04b227b40fa0c65282de268d7cdda7b59c69ee770054",
+        "source_sha256": "e35a625db133f6cf4785ec1ea3dc7164db5652cddb183e0fecd60c4c901eeda3"
+      },
+      {
+        "chunk_count": 11,
+        "path": "trauma_hemorragia.pdf",
+        "sidecar_sha256": "47c3e95187eac1e8aa714ade6fbb4ac2143d7abdb02c00f71a2b715541951a41",
+        "source_sha256": "d63b826e80fa4a5b2e5320cd9abd845b0a7267860a4107cc47d80e3d809cc559"
+      },
+      {
+        "chunk_count": 11,
+        "path": "vomito_diarreia.pdf",
+        "sidecar_sha256": "d4763731522aa1ba65ea21db51fa9a09e6210aefe4b508c5d176687c6590fee8",
+        "source_sha256": "b11c73816e00a3ef31c8b0ccfad92446b83a6208684c82ee19b867cd956094de"
+      }
+    ],
+    "source_set_sha256": "70a774a4c13f9a2cc5d5de16494ece17cbdfa7ef1071e9d5b9a5944ae6638533"
+  }
+}

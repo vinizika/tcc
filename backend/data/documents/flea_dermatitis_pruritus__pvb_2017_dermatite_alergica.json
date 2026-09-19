@@ -1,0 +1,38 @@
+{
+  "title": "Dermatite alérgica em cães",
+  "source": "Pesquisa Veterinaria Brasileira",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "flea_dermatitis_pruritus",
+  "language": "pt",
+  "source_url": "https://ainfo.cnptia.embrapa.br/digital/bitstream/item/161110/1/Caracterizacao-clinica-e-histopatologica.pdf",
+  "indexing": {
+    "include_sections": [
+      "INTRODUÇÃO"
+    ],
+    "exclude_sections": [
+      "REFERÊNCIAS"
+    ],
+    "exclude_pages": [1, 3, 4, 5, 6, 7, 8, 9],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "3a51cdd56446e388ca5b94c99284d80c51f9269a21cf308fe888d5d2011f534b",
+  "map_line": "flea_dermatitis_pruritus",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET — Primeiro Grupo de Anestesia e Veterinaria Universitaria do Brasil",
+    "date": "2026-09-19"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada na politica da Pesquisa Veterinaria Brasileira; copia institucional da Embrapa, com redistribuicao permitida mediante atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "year": 2017,
+  "authors": "Jackson S. de Vasconcelos et al."
+}

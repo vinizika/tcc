@@ -1,0 +1,38 @@
+{
+  "title": "Osteoartrite canina sinais crônicos",
+  "source": "Arquivo Brasileiro de Medicina Veterinaria e Zootecnia",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "osteoarthritis_stiffness",
+  "language": "pt",
+  "source_url": "https://www.scielo.br/j/abmvz/a/SRDKTYD6dZ5TgjHBtng6dBK/?format=pdf&lang=pt",
+  "indexing": {
+    "include_sections": [
+      "MATERIAL E MÉTODOS"
+    ],
+    "exclude_sections": [
+      "REFERÊNCIAS"
+    ],
+    "exclude_pages": [],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "33158f748b3cb4568fbe5fb64bf119639946e9f93f6f0afd80f681eec705f18f",
+  "map_line": "osteoarthritis_stiffness",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET — Primeiro Grupo de Anestesia e Veterinaria Universitaria do Brasil",
+    "date": "2026-09-19"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY declarada no registro institucional da Universidade de Helsinki e na politica do ABMVZ; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "year": 2019,
+  "authors": "L. M. Matsubara et al."
+}

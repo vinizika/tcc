@@ -1,0 +1,38 @@
+{
+  "title": "Feline inappetence owner perspective",
+  "source": "Animals (MDPI)",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "cat",
+  "topic": "reduced_appetite_no_other_signs",
+  "language": "en",
+  "source_url": "https://mdpi-res.com/d_attachment/animals/animals-15-03054/article_deploy/animals-15-03054.pdf",
+  "indexing": {
+    "include_sections": [
+      "Introduction"
+    ],
+    "exclude_sections": [
+      "References"
+    ],
+    "exclude_pages": [],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "429e4227a3595cd9f67b259064b1e6f64731c915477230b425bbd19186150a4b",
+  "map_line": "reduced_appetite_no_other_signs",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET — Primeiro Grupo de Anestesia e Veterinaria Universitaria do Brasil",
+    "date": "2026-09-19"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo da Animals (MDPI); captura e redistribuicao experimental permitidas com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "year": 2025,
+  "authors": "Sofia I. F. Carvalho et al."
+}
