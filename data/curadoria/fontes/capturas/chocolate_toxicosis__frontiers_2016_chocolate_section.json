@@ -1,0 +1,42 @@
+{
+  "title": "Chocolate Toxicity in Dogs and Cats",
+  "source": "Frontiers in Veterinary Science",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog_and_cat",
+  "topic": "chocolate_toxicosis",
+  "language": "en",
+  "source_url": "https://doi.org/10.3389/fvets.2016.00026",
+  "indexing": {
+    "include_sections": [
+      "Methylxanthines (Caffeine, Theobromine, and Theophylline)"
+    ],
+    "exclude_sections": [
+      "Xylitol"
+    ],
+    "exclude_pages": [
+
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-20",
+  "captured_sha256": "6bb19e877af496167579a562f3f536e4642d27f77d2b38532a8c3cd0e01b1b71",
+  "map_line": "chocolate_toxicosis",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-20"
+  },
+  "doi": "10.3389/fvets.2016.00026",
+  "journal": "Frontiers in Veterinary Science",
+  "year": 2016,
+  "authors": "Cristina Cortinovis; Francesca Caloni"
+}

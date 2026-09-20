@@ -1,0 +1,42 @@
+{
+  "title": "Effective management of eclampsia in bitches – A veterinary emergency",
+  "source": "International Journal of Veterinary Sciences and Animal Husbandry",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "eclampsia",
+  "language": "en",
+  "source_url": "https://doi.org/10.22271/veterinary.2025.v10.i12d.2827",
+  "indexing": {
+    "include_sections": [
+      "Introduction"
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "7d6b0839326de2be5a36453a7785a605c0dddaf2beabd5c6aa4aa0aaa76aec64",
+  "map_line": "eclampsia",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY-NC-SA 4.0 declarada no artigo; redistribuicao nao comercial permitida com atribuicao e compartilhamento pela mesma licenca.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.22271/veterinary.2025.v10.i12d.2827",
+  "journal": "International Journal of Veterinary Sciences and Animal Husbandry",
+  "year": 2025,
+  "authors": "VVV Amruth Kumar; K Shivani"
+}

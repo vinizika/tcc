@@ -1,0 +1,516 @@
+{
+  "chunking": {
+    "dimensions": 384,
+    "embedding_text_fields": [
+      "title",
+      "section",
+      "body"
+    ],
+    "max_tokens": 128,
+    "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "overlap_tokens": 16,
+    "recipe_sha256": "1a93e1e7db9a5b5a7766ca11b54162cb74cb76bb4d4c2c02b2dc0d5c4319682b",
+    "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+    "target_tokens": 96,
+    "version": "vector-ingestion-recovery-v1"
+  },
+  "chunks": {
+    "content_sha256": "1f6ac800b23921693822ea4ebd7137d91c9ed8e365a6d42f37f9c255dcba5485",
+    "count": 3481,
+    "ids_sha256": "c3cf64e9cbbb23612a755acdcaa3b4a771dc1a5251401401f9ab12d558f630ba",
+    "tokens": {
+      "max": 127,
+      "mean": 85.159,
+      "median": 87,
+      "min": 25
+    }
+  },
+  "collection_name": "veterinary_documents__20260920T134907150949Z__7f927242",
+  "created_at": "2026-09-20T13:52:33.429385+00:00",
+  "embedding": {
+    "dimensions": 384,
+    "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42"
+  },
+  "profile": "experimental",
+  "quality": {
+    "corrupt_document_count": 1,
+    "fallback_count": 152,
+    "species_counts": {
+      "cat": 512,
+      "dog": 2023,
+      "dog_and_cat": 946
+    },
+    "topic_counts": {
+      "acute_hindlimb_paralysis": 18,
+      "airway_foreign_body_choking": 33,
+      "allium_toxicosis": 20,
+      "anaphylaxis_facial_swelling": 32,
+      "anticoagulant_rodenticide_poisoning": 19,
+      "burns_and_electrical_injury": 47,
+      "canine_heatstroke": 186,
+      "carbamate_organophosphate_poisoning": 7,
+      "cat_bite_abscess": 44,
+      "chocolate_toxicosis": 24,
+      "collapse_and_pale_gums": 85,
+      "congestive_heart_failure": 80,
+      "diabetic_ketoacidosis": 46,
+      "dietary_indiscretion_mild": 7,
+      "distemper_neurological": 16,
+      "dystocia": 68,
+      "eclampsia": 6,
+      "exertional_panting_mild": 87,
+      "fading_neonate": 49,
+      "feline_aortic_thromboembolism": 41,
+      "flea_dermatitis_pruritus": 40,
+      "gastric_dilatation_volvulus": 11,
+      "gastrointestinal_foreign_body": 56,
+      "grape_xylitol_toxicosis": 156,
+      "high_rise_syndrome_cats": 77,
+      "human_medication_poisoning": 7,
+      "hypoglycemia_toy_puppy": 129,
+      "inappropriate_urination_or_cystitis": 18,
+      "insect_sting_local_reaction": 71,
+      "kennel_cough_mild": 56,
+      "leptospirosis_acute": 127,
+      "lily_toxicosis_cats": 41,
+      "mild_conjunctivitis": 20,
+      "mild_lameness": 11,
+      "mild_upper_respiratory_signs": 35,
+      "minor_wound": 76,
+      "normal_estrus": 53,
+      "normal_whelping": 235,
+      "ocular_emergency": 94,
+      "osteoarthritis_stiffness": 13,
+      "otitis_externa_mild": 107,
+      "parvovirus_panleukopenia": 9,
+      "periodontal_disease_mild": 73,
+      "permethrin_toxicosis_cats": 10,
+      "polyuria_polydipsia_investigate": 51,
+      "pyometra": 21,
+      "rabies_exposure_wild_animal_bite": 43,
+      "reduced_appetite_no_other_signs": 20,
+      "respiratory_distress": 21,
+      "seizures": 31,
+      "single_vomiting_or_mild_diarrhea": 12,
+      "slow_growing_lump": 131,
+      "snake_and_scorpion_envenomation": 105,
+      "tick_borne_disease_anemia": 80,
+      "ticks_found_no_signs": 182,
+      "toad_bufotoxin_poisoning": 18,
+      "trauma_and_bleeding": 14,
+      "tremors_without_seizure": 127,
+      "urethral_obstruction": 60,
+      "vestibular_syndrome_otitis_interna": 112,
+      "vomiting_and_diarrhea": 13
+    },
+    "validation_status_counts": {
+      "approved_by_specialist": 3458,
+      "pending_specialist": 23
+    },
+    "warning_count": 112
+  },
+  "schema_version": 1,
+  "sources": {
+    "document_count": 66,
+    "documents": [
+      {
+        "chunk_count": 11,
+        "path": "acute_hindlimb_paralysis__jfms_2024_feline_ate.txt",
+        "sidecar_sha256": "ccea8a4867db7ff6980c583986d75eecd1de6eecdbf874f24d801d7246365cbf",
+        "source_sha256": "724453ba336b20390ef226b12949ace7290625c940e35420f5a941c8e5d8f494"
+      },
+      {
+        "chunk_count": 7,
+        "path": "acute_hindlimb_paralysis__pvb_2017_canine_ischemic_neuromyopathy_excerpt.txt",
+        "sidecar_sha256": "ae2293ffc96a0201e4c289ab68f8ce6caf679cbf0a6e57ca3ce3f08d35384785",
+        "source_sha256": "41c0284eb7c0b1aa7b41e5262af190796e45492762d2c347aaf879c7ddbb0eb4"
+      },
+      {
+        "chunk_count": 33,
+        "path": "airway_foreign_body_choking__cab_2010_tracheal_obstruction.txt",
+        "sidecar_sha256": "e727b2b3d4beafe81d1869a4830c95f50c7492ae3b2653642a49988508589874",
+        "source_sha256": "d76346907ae61b70d6d263fe33173350b2cc8e3f16a927b06e5d063c528266ac"
+      },
+      {
+        "chunk_count": 20,
+        "path": "allium_toxicosis__frontiers_2016_allium_section.txt",
+        "sidecar_sha256": "aaf16bc0995af831025a7f310eea0a72e2dfed45068d98970f25013873e06633",
+        "source_sha256": "6bb19e877af496167579a562f3f536e4642d27f77d2b38532a8c3cd0e01b1b71"
+      },
+      {
+        "chunk_count": 32,
+        "path": "anaphylaxis_facial_swelling__toxins_2024_bees_wasps_excerpt.txt",
+        "sidecar_sha256": "9208f4f9563af1ef5935874b66ddc3f8b05890b658e07644b100bc4394acca51",
+        "source_sha256": "2120b88919a5fbfd1cfd2e1261c6350deae5cc16b8b93a1ac4ffe7500f7e27a5"
+      },
+      {
+        "chunk_count": 19,
+        "path": "anticoagulant_rodenticide_poisoning__frontiers_2022_bleeding.pdf",
+        "sidecar_sha256": "1aa7648b4399a909dc75e65b6b7581c01d60509cbfb491102a79e21053907061",
+        "source_sha256": "c8c9ed5eae1ab33d7e918beb45f98aa63649073ffc4e7af9fbce6bfdd6e29f01"
+      },
+      {
+        "chunk_count": 47,
+        "path": "burns_and_electrical_injury__bmc_2024_electrocution.pdf",
+        "sidecar_sha256": "8c8a76e247c142afc2a0e50ecd93e56da006e6d0bac7e14270b24d18a9d10a23",
+        "source_sha256": "5adc0b96a6cb6b90f4672a6ba5219dbf2b7789ff34416c87ef7567757dc979c1"
+      },
+      {
+        "chunk_count": 7,
+        "path": "carbamate_organophosphate_poisoning__scielo_2021_feline_poisoning.txt",
+        "sidecar_sha256": "b988c976a0fe54df3b5915459b9a3a78b6fb7aaa7cdaba216905929d1f469730",
+        "source_sha256": "6094639a2a3700bbe048822761a8d46ceb1212687ed7ce14fe491192829e2c74"
+      },
+      {
+        "chunk_count": 44,
+        "path": "cat_bite_abscess__frontiers_2025_feline_abscess.pdf",
+        "sidecar_sha256": "e0711c76927fce870f5fe3e6db77e2387217898020419404c71ca8b1fcd776c8",
+        "source_sha256": "996c364f63c5f28ab8e5cd7edb5ea30c3768a26583be4604e26f3fe2f8b4a4af"
+      },
+      {
+        "chunk_count": 24,
+        "path": "chocolate_toxicosis__frontiers_2016_chocolate_section.txt",
+        "sidecar_sha256": "60b0543b82976ecfb8ab1339261c258b3c6ecf8a70242b94517c5a958a70d9f2",
+        "source_sha256": "6bb19e877af496167579a562f3f536e4642d27f77d2b38532a8c3cd0e01b1b71"
+      },
+      {
+        "chunk_count": 85,
+        "path": "collapse_and_pale_gums__frontiers_2021_volume_status.pdf",
+        "sidecar_sha256": "863f2aae6e20f5e922c1413a40e89efb9b796b75133b7a554bfa702846370d52",
+        "source_sha256": "4b6b2c2c1157d4e72ab1c6849c6f21c345d0852439ee03f60423720adbcae274"
+      },
+      {
+        "chunk_count": 80,
+        "path": "congestive_heart_failure__frontiers_2020_cough.pdf",
+        "sidecar_sha256": "fc8f880fdaded84a8a9b286ad9f73a1009a2fadd46fbe76bb9ea4ca91d1584c5",
+        "source_sha256": "9fc525f2ebfd6e0ebc9cfe6c932cc8649a21ca4ef06bcf6975dda849daa9d881"
+      },
+      {
+        "chunk_count": 46,
+        "path": "diabetic_ketoacidosis__arshi_2025_feline_dka.pdf",
+        "sidecar_sha256": "8aae099f11914cc358c9d4768f940b684d4f5774752e4e81096edee597f03763",
+        "source_sha256": "f5236d534acd52289aae31dcf29c8c650ac85f3dd84c4c814d5d0c9756766002"
+      },
+      {
+        "chunk_count": 7,
+        "path": "dietary_indiscretion_mild__plos_2025_acute_diarrhoea.txt",
+        "sidecar_sha256": "8e8b421800b33f6303b7f33fd92abb9e73ed86a7eb4ca82f8834a332d1a9cdc8",
+        "source_sha256": "ce97800e37515ea85569cf6dc33d63532ae6691a2dc3397285906e1146cbbdbc"
+      },
+      {
+        "chunk_count": 16,
+        "path": "distemper_neurological__viruses_2022_distemper.pdf",
+        "sidecar_sha256": "e5b3e799b49677283493ec94779c8451df5c37067a02cff4cd803d80382d434c",
+        "source_sha256": "243b8581f721719db97f8fd95b8db4aa7fc31774f340502fea2ea35ed42f969d"
+      },
+      {
+        "chunk_count": 68,
+        "path": "dystocia__acta_2025_feline_dystocia.pdf",
+        "sidecar_sha256": "cb7612096691d3af4a7c46262fd9d1df03010d5f8727a1555b357d207705d9bb",
+        "source_sha256": "eb4483eefd264440f4a56f9a22a1b80028ce5301cb73eb3c94b73533122fb596"
+      },
+      {
+        "chunk_count": 6,
+        "path": "eclampsia__ijvsah_2025_management.pdf",
+        "sidecar_sha256": "b69b128fff21fc2d2cffe59e0897c0ff21c4745aad9816ebdd7f3fab8e59c472",
+        "source_sha256": "7d6b0839326de2be5a36453a7785a605c0dddaf2beabd5c6aa4aa0aaa76aec64"
+      },
+      {
+        "chunk_count": 87,
+        "path": "exertional_panting_mild__frontiers_2018_working_dogs.pdf",
+        "sidecar_sha256": "a786faede64a1a5bb61d10371433669006ea6942ad42c7aa63e68ed3e24261f3",
+        "source_sha256": "3a7083eed08fa55ec967a2c6432ae1a78623e83474b5a935164f571e2bf80027"
+      },
+      {
+        "chunk_count": 49,
+        "path": "fading_neonate__animals_2024_neonatal_triage.txt",
+        "sidecar_sha256": "cf6eb1a87ac7dd348f32783add0ed8018dada1a9781b793b0048621a9c1b3f91",
+        "source_sha256": "6ec82e32eaba49122030888892daef854252b7dcae394c9dd40fef53d3e60782"
+      },
+      {
+        "chunk_count": 41,
+        "path": "feline_aortic_thromboembolism__jfms_2024_fate.pdf",
+        "sidecar_sha256": "5c13c9146a211e03f1dcf2fded7529726bcbd20d6739ec8d6a7bdcf12bf7255d",
+        "source_sha256": "1d319d26e1796bf06cce656d727bafa5e9fa2faa06bd73e59f6ac9bba46b836c"
+      },
+      {
+        "chunk_count": 17,
+        "path": "flea_dermatitis_pruritus__pvb_2017_dermatite_alergica.pdf",
+        "sidecar_sha256": "efeb9e39a9a2b72933eb3a679be0c6e412624551a4e69fbb5cfe4d14a6c17ec3",
+        "source_sha256": "3a51cdd56446e388ca5b94c99284d80c51f9269a21cf308fe888d5d2011f534b"
+      },
+      {
+        "chunk_count": 23,
+        "path": "flea_dermatitis_pruritus__vetsci_2017_feline_fad.pdf",
+        "sidecar_sha256": "bee512ef8da88df5a1ee329ccb6c80f2239ff419c1fc1cc57ea7a594a08e1fbc",
+        "source_sha256": "8388d1f1950363bc581b7acb3e3ebde5d68145a63e2fcd7e9594ad150af9c8b4"
+      },
+      {
+        "chunk_count": 11,
+        "path": "gastric_dilatation_volvulus__animals_2025_gdv.pdf",
+        "sidecar_sha256": "b796b7dbe12267f499b7b4a0823df5cfe783eab38784be781c5e6c82935073ee",
+        "source_sha256": "3b4fd87a3b964e6d7a4989f6407cc81a838cc73386f18b4dc93ca11dde8f2424"
+      },
+      {
+        "chunk_count": 56,
+        "path": "gastrointestinal_foreign_body__frontiers_2025_imaging.pdf",
+        "sidecar_sha256": "e56953f9a6cbc60b67ea4abaafbb98c4ca75c546d2a3bb76cf01d739633ec0b4",
+        "source_sha256": "8ca9de24e96f8fdb8549f3e0f2f970937e0c86491f0eb9f2eb5f911b16adf518"
+      },
+      {
+        "chunk_count": 156,
+        "path": "grape_xylitol_toxicosis__frontiers_2016_toxic_foods.pdf",
+        "sidecar_sha256": "efd35a971ce03e521706684628c555585bd8a974b70dad4cc67a16a66b2b2b1b",
+        "source_sha256": "4dd80bd7843f80fc15e568e45f5403a62d2292e13a4afff9f80d0d8d5be21fb1"
+      },
+      {
+        "chunk_count": 77,
+        "path": "high_rise_syndrome_cats__animals_2026_trauma_shock.pdf",
+        "sidecar_sha256": "4eec7863745661657e924d54e056828d400be9e3cdb3404963eba7bb46645928",
+        "source_sha256": "ad24fe0d6216bbd2841b71afe19693fc7fc2820d1c80bf533a3308e0104dc93d"
+      },
+      {
+        "chunk_count": 7,
+        "path": "human_medication_poisoning__scielo_2012_aines_pdf.pdf",
+        "sidecar_sha256": "25c2165f9774329481d2cd963eee3a2fb0f05391c3115f94291cf0952d3f4b89",
+        "source_sha256": "ed59061397a41e9560fde046c87e81d45f7d1eda5a2731282a377f9687be0030"
+      },
+      {
+        "chunk_count": 129,
+        "path": "hypoglycemia_toy_puppy__frontiers_2024_neonatal_hypoglycemia.pdf",
+        "sidecar_sha256": "206b5b185b4fc131eb31f01480306792a1aac5ed4d7f3f636586c0dbb8242164",
+        "source_sha256": "3ce285a546e871c580e1f2e7094ba5c725b7b043dfff6c8da220a3162abae5c9"
+      },
+      {
+        "chunk_count": 18,
+        "path": "inappropriate_urination_or_cystitis__frontiers_2022_feline_cystitis.pdf",
+        "sidecar_sha256": "2ca18f56a18a9fc86216a7ff1bad18be2af94612126ce190c81b41f9b5134238",
+        "source_sha256": "e6f245d441f57c413d1f91b5a61beda0f78afc816d67ac4e327331971e7b3665"
+      },
+      {
+        "chunk_count": 71,
+        "path": "insect_sting_local_reaction__animals_2024_hymenoptera_allergy.pdf",
+        "sidecar_sha256": "406e24bd8c3c9f198d2e7953a76b0cbee797f770591213e7745c7bb1d3f05b5a",
+        "source_sha256": "920eb009c3a6a48c42bce702c00a5c6b7cb0601e6b921706c891a5d214185e86"
+      },
+      {
+        "chunk_count": 56,
+        "path": "kennel_cough_mild__plos_one_2019_respiratory_microbiota.pdf",
+        "sidecar_sha256": "019e320dd6a7320d9bb8953d4cafdc9708b765adb30f21a07516e6e7a23d1e65",
+        "source_sha256": "3ba544d14dbf2616933fe711b6716f49afec77c5edc7590aa2de03837ba75c91"
+      },
+      {
+        "chunk_count": 127,
+        "path": "leptospirosis_acute__acvim_2023_leptospirosis.pdf",
+        "sidecar_sha256": "fa9e68ed4f9adafedc8dbd84beedadb243696469ebb3790a4339198483d6504c",
+        "source_sha256": "6de65211a73cc5a7cb667755526626494b5d967c3df7e3b142bac465250df6eb"
+      },
+      {
+        "chunk_count": 41,
+        "path": "lily_toxicosis_cats__frontiers_2023_lily.pdf",
+        "sidecar_sha256": "f0db1226795f2bfe3bbe5a50fed6744771d98a2a950771ca5b28b8e1263c031a",
+        "source_sha256": "b327e3ef0d57f1d858b302999b628910b6c6d8134c5ff7b7832d31ff8cf9298b"
+      },
+      {
+        "chunk_count": 17,
+        "path": "mild_conjunctivitis__bmc_2023_allergic_conjunctivitis.pdf",
+        "sidecar_sha256": "4cbbce1eace7d78b504b4c79ccdbcd0dba72b0b6b4de568f740fffff8ba90b90",
+        "source_sha256": "a2fda2fdfefbbfa2e66b98725bb1bb8b18ff26c8fd0169875d778382cc7abed8"
+      },
+      {
+        "chunk_count": 3,
+        "path": "mild_conjunctivitis__ovj_2024_feline_chlamydophila_excerpt.txt",
+        "sidecar_sha256": "3aec6450bc8e54343c52169973835c8661154cf9301ab606277278cabf8edf8c",
+        "source_sha256": "2bda92787ba47fac3d6a84dcc07af30a161c7162893f2288c9e0e59b4b9cce0f"
+      },
+      {
+        "chunk_count": 11,
+        "path": "mild_lameness__bmc_2018_short_term_lameness.pdf",
+        "sidecar_sha256": "7e30e62d279e0b9850937b1e5d573eac9d1e5a75be2110f0f4c1bcdc50b72907",
+        "source_sha256": "a57615f1c26e03687c1fd5b344628110a180ebfa6376c5c26fd92ed221f0b4e4"
+      },
+      {
+        "chunk_count": 35,
+        "path": "mild_upper_respiratory_signs__vetsci_2024_feline_uri.pdf",
+        "sidecar_sha256": "fb4e9206dc35e3c327d36b4459506a4638c932069d760850dbb8ab2d43436942",
+        "source_sha256": "6cf203b171a0a924df188870f85a876876050d63c6e9f476d53989c1e0757e45"
+      },
+      {
+        "chunk_count": 76,
+        "path": "minor_wound__vetsci_2026_wound_healing.pdf",
+        "sidecar_sha256": "9561c615a82e06e82d852aa1942ddc5e284829d8d2ff598ee312f5f5a5d9bb6a",
+        "source_sha256": "2ca34aed1338400c47dceff0e6482042823b2d6a37c1e9c3716e20aafb1e03f0"
+      },
+      {
+        "chunk_count": 53,
+        "path": "normal_estrus__animals_2021_reproductive_biology.pdf",
+        "sidecar_sha256": "8652ddc840af9be9ec2920113916b127d97aada371367a08a8ed69620fc269c0",
+        "source_sha256": "1053ec6758fe78270fff3ce2943e6694553d1cde3a0bd56a139914843a50dd4c"
+      },
+      {
+        "chunk_count": 235,
+        "path": "normal_whelping__frontiers_2023_uterine_dynamics.pdf",
+        "sidecar_sha256": "7cd5cec19b8e747c810907573d02cefbf465e2ffc5ba5a08c6c32241b092272f",
+        "source_sha256": "44e411b0062c4bb185f970d722152d6c0156e3d03efdadac387bead5752e8745"
+      },
+      {
+        "chunk_count": 94,
+        "path": "ocular_emergency__frontiers_2024_traumatic_proptosis.pdf",
+        "sidecar_sha256": "f22ea33b76868684074088e9e3ed7d283400f81be2fac3c3c22722b4099accb9",
+        "source_sha256": "2585f08df239e20d8d17e15ea3ab437ec07b5889a4d6f28645821f3f2aa2c0b5"
+      },
+      {
+        "chunk_count": 13,
+        "path": "osteoarthritis_stiffness__frontiers_2022_canine_oa.pdf",
+        "sidecar_sha256": "0b26530b5c8ce77cb1f30e312e09866168dcafb3336c3f8a13f699d185389b97",
+        "source_sha256": "7d19fc33d0827be1d5e98a90039bb7b6679f29bebd5bdaf99a8276c9818285fa"
+      },
+      {
+        "chunk_count": 107,
+        "path": "otitis_externa_mild__microorganisms_2023_otitis.pdf",
+        "sidecar_sha256": "8596de833e35ee40e581807b02b010ab69046fb47df6c93c711436c3c6040860",
+        "source_sha256": "505fa677581af534b69dfa550ba1922414fff06d0d52cf34f9617c3567f7949f"
+      },
+      {
+        "chunk_count": 9,
+        "path": "parvovirus_panleukopenia__mdpi_2025_canine_parvovirus.pdf",
+        "sidecar_sha256": "a6b157e5c265b42dc11090fe3b2f96580373d18d13a2c427e443ce8403b36d18",
+        "source_sha256": "16dcc62d5b4f980ea5f2c536795250ac929289dfc4a1a5660b568a58f9e3e920"
+      },
+      {
+        "chunk_count": 186,
+        "path": "pathophysiology_heatstroke_dogs_2017.pdf",
+        "sidecar_sha256": "1aab161d4260a37594ed3cc132b0a41988f84108425ff13be162fab03256809e",
+        "source_sha256": "e35a625db133f6cf4785ec1ea3dc7164db5652cddb183e0fecd60c4c901eeda3"
+      },
+      {
+        "chunk_count": 73,
+        "path": "periodontal_disease_mild__antibiotics_2022_periodontal.pdf",
+        "sidecar_sha256": "f6ca098123ddf7aa8067243226abb4d83a19799458a290cf5d5a8ee3b23f5e0d",
+        "source_sha256": "c78af961e81fd54d2836ea36949b5393376c99db65c5276b5a1a4dfa96363683"
+      },
+      {
+        "chunk_count": 10,
+        "path": "permethrin_toxicosis_cats__vmd_2014.pdf",
+        "sidecar_sha256": "6a0497a581353fc754a0f636eeda9c70b1a80c70cfcbee7dce896eb5097ad584",
+        "source_sha256": "d4c156306be9da1593f0f89a757cacc4718a4495a95033049ff542b9fa9712e5"
+      },
+      {
+        "chunk_count": 51,
+        "path": "polyuria_polydipsia_investigate__frontiers_2025_water_balance.pdf",
+        "sidecar_sha256": "3616832261da007b70d6076682a4fb458045b067abfdb3eae32ae7e2a9dd5750",
+        "source_sha256": "1dc6a723fb06371b7cf6fd7075dd67d3b2398b019935a7c6241e5ea8a10d4ec4"
+      },
+      {
+        "chunk_count": 7,
+        "path": "pyometra__mdpi_2023_review.pdf",
+        "sidecar_sha256": "6b7099a6e28b2f8306e0ee2a5c4882dfa8218ec4fd5543e396a44bbcc8187172",
+        "source_sha256": "c8e169d07f3aea9e0ca2b063c257301a56e0b9305f83aa1a3d7258e3fc50d35b"
+      },
+      {
+        "chunk_count": 14,
+        "path": "pyometra__scielo_2013_cadelas_gatas.pdf",
+        "sidecar_sha256": "afacb4dd11477f57ae45558fee6e103e6745080a22e64a6db320dc94ca97c009",
+        "source_sha256": "bd8ee6a25991db66eac086333b0b0c85179c19a4ff649c60215ffec5b9401687"
+      },
+      {
+        "chunk_count": 43,
+        "path": "rabies_exposure_wild_animal_bite__viruses_2024_rabies_cats.pdf",
+        "sidecar_sha256": "db39a998bed4d1f1af6eb9dbdf20289ac33f4fb1b4913ec9811b3e55c7e62e60",
+        "source_sha256": "e515445a1d0443303d48ab600bb91feb4af1d92a98cece540dafd12424c9966d"
+      },
+      {
+        "chunk_count": 20,
+        "path": "reduced_appetite_no_other_signs__animals_2025_feline_inappetence.pdf",
+        "sidecar_sha256": "ec5fa9dbec8e1ead4ff1a90d419bcff40915a44fe2d6c1def5064ee4015f2917",
+        "source_sha256": "429e4227a3595cd9f67b259064b1e6f64731c915477230b425bbd19186150a4b"
+      },
+      {
+        "chunk_count": 21,
+        "path": "respiratory_distress__frontiers_2026_lung_ultrasound.pdf",
+        "sidecar_sha256": "31578552b877f4b4fa6f620a8474ae95939fb2433ae543d01bafb0dd6e6858f1",
+        "source_sha256": "7c7bac93cb436424aa7e6d749044bf3788cd3de8c4f372ab7bccb45337f26a80"
+      },
+      {
+        "chunk_count": 31,
+        "path": "seizures__vetsci_2024_emergency_seizures.pdf",
+        "sidecar_sha256": "f29e8ab0a3422aed412bdf229bfeb5a6aba84679ee2c9e28deb59fa38a954c36",
+        "source_sha256": "60847c73b3139bcd94bcf5e7a1f33555ce5d17b8aeca8435db92c3288b1c0db0"
+      },
+      {
+        "chunk_count": 12,
+        "path": "single_vomiting_or_mild_diarrhea__frontiers_2023_uncomplicated_vomiting.pdf",
+        "sidecar_sha256": "fa8ac8758b069cbd9b17c00205331d72c1c8b173182e29654dddc9b56d2576ff",
+        "source_sha256": "482a69011e47d209b75bd3d38dc5e0ef7332faf73690edaed0a3c7e2e0a15008"
+      },
+      {
+        "chunk_count": 131,
+        "path": "slow_growing_lump__cells_2022_mast_cell_consensus.pdf",
+        "sidecar_sha256": "b61a41ca9dc0592e93dda2527912f4a10b6ca6a71def254552b8ba593faac8cc",
+        "source_sha256": "b569392ab298252ecdd4c402e900c193866add8ef2b0b35af55eaf51867a8daa"
+      },
+      {
+        "chunk_count": 105,
+        "path": "snake_and_scorpion_envenomation__toxins_2024_zootoxins.pdf",
+        "sidecar_sha256": "dc4300a68f212963fc229163df5a21ab99b9cf282f36fa50055757705bc5dcc9",
+        "source_sha256": "4d5aefb6734fdf89db694f139564525cf38baf69a5a616d1a5672b5eb1979ac2"
+      },
+      {
+        "chunk_count": 80,
+        "path": "tick_borne_disease_anemia__vetsci_2023_ehrlichia_canis.pdf",
+        "sidecar_sha256": "6ded47444aa82fe19cbca488846ae371d62533cf01248f462b250a170676de0c",
+        "source_sha256": "8e11958bbfef428d172bfb74222ad2dcc44791dc3feed126ec57088e78046ef9"
+      },
+      {
+        "chunk_count": 182,
+        "path": "ticks_found_no_signs__vetsci_2024_vector_borne_pathogens.pdf",
+        "sidecar_sha256": "bdfed794bc22d36c94c119d4e7692d95635ed94167a2dace7eebcefe4794ec6d",
+        "source_sha256": "be7edb3b425fe78f78d8d42e711c11d4a605ba164bb4ad288d3edb54780263af"
+      },
+      {
+        "chunk_count": 18,
+        "path": "toad_bufotoxin_poisoning__pubvet_2024_bufotoxin_case.pdf",
+        "sidecar_sha256": "6e2f719074ab4d105ad27413d70eebf044ba7b192c6545e9ae699442d8646de1",
+        "source_sha256": "897ce472dff59a2b540291a4428f4d8df43a995df89d337ff994010a0aac2f0a"
+      },
+      {
+        "chunk_count": 14,
+        "path": "trauma_and_bleeding__frontiers_2021_hemorrhage.pdf",
+        "sidecar_sha256": "36df341ea8615df2c87ccd507aed01d105b77866e9cd5690324ab9cdb0063333",
+        "source_sha256": "4b6b2c2c1157d4e72ab1c6849c6f21c345d0852439ee03f60423720adbcae274"
+      },
+      {
+        "chunk_count": 127,
+        "path": "tremors_without_seizure__frontiers_2024_dyskinesia.pdf",
+        "sidecar_sha256": "1148a8c2530872bdeda83d9e9d008a6432b6a52bbec498788dfe6a072f1cc61b",
+        "source_sha256": "a854cdef29db2875045d6ecac784701aacda3cf34e1f9f2092fbc660f54fedb1"
+      },
+      {
+        "chunk_count": 35,
+        "path": "urethral_obstruction__frontiers_2023_canine_obstruction.pdf",
+        "sidecar_sha256": "1cfca04b2a00aee16f88f9a1875d37e8a0849bf3b70f60e2826606d4bc2a645e",
+        "source_sha256": "4fc8ec005be8e7537ac6c261d31bf6b79fe6466d9e19c214bf3599d57dd6ab36"
+      },
+      {
+        "chunk_count": 25,
+        "path": "urethral_obstruction__icatcare_2025_lower_urinary.pdf",
+        "sidecar_sha256": "ce0e81a0f70f83df063a5d1887e573554ed45e44b7b94b47dc2001cf133ddf15",
+        "source_sha256": "2cc8bb64898e983ccc16c749f94e1079fe2f722296e715cc3716a602b9e4d3ab"
+      },
+      {
+        "chunk_count": 112,
+        "path": "vestibular_syndrome_otitis_interna__frontiers_2023_idiopathic_vestibular.pdf",
+        "sidecar_sha256": "b745479222604fe4afba8420eb6ac094324c41254fdd8f8756e1fcc335ec8f15",
+        "source_sha256": "087d0c4f0d5af75cd1d31f24ee7d0755738b776b24d034593eb66046bf2f2d66"
+      },
+      {
+        "chunk_count": 13,
+        "path": "vomiting_and_diarrhea__frontiers_2023_gastrointestinal_presentations.pdf",
+        "sidecar_sha256": "72dbac54c343dcee0bfeac0b2d332cd078a9d2b42f29c536fc245c22f6a8b804",
+        "source_sha256": "31cd34a71f1441e2b4ea83157e6f1e30307d556da32e7960ac49a5119a19e8d8"
+      }
+    ],
+    "source_set_sha256": "7f927242d94ef7756dfd973d4977edddd1ccc320821554f8d5d138aee0c60daa"
+  }
+}

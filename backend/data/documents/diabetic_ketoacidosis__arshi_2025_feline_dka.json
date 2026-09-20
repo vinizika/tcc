@@ -1,0 +1,36 @@
+{
+  "title": "Feline diabetic ketoacidosis case",
+  "source": "ARSHI Veterinary Letters",
+  "document_type": "case_report",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "cat",
+  "topic": "diabetic_ketoacidosis",
+  "language": "en",
+  "source_url": "https://journal.ipb.ac.id/arshivetlett/article/download/69191/31869/370258",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "f5236d534acd52289aae31dcf29c8c650ac85f3dd84c4c814d5d0c9756766002",
+  "map_line": "diabetic_ketoacidosis",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-19"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY-SA 4.0 declarada no artigo; redistribuicao permitida com atribuicao e compartilhamento pela mesma licenca.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.29244/avl.9.3.81-82",
+  "journal": "ARSHI Veterinary Letters",
+  "year": 2025,
+  "authors": "Nur Atirah Suhaila Mohd Nordin; Sunita Krishnan"
+}

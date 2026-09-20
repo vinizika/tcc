@@ -1,0 +1,206 @@
+{
+  "chunking": {
+    "dimensions": 384,
+    "embedding_text_fields": [
+      "title",
+      "section",
+      "body"
+    ],
+    "max_tokens": 128,
+    "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "overlap_tokens": 16,
+    "recipe_sha256": "1a93e1e7db9a5b5a7766ca11b54162cb74cb76bb4d4c2c02b2dc0d5c4319682b",
+    "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+    "target_tokens": 96,
+    "version": "vector-ingestion-recovery-v1"
+  },
+  "chunks": {
+    "content_sha256": "be9ba546aca3decf92318ec4d1752c90f37f1b3edcc66f1c978f0628f3afb36b",
+    "count": 849,
+    "ids_sha256": "9ebdae42d47cc31da0464cbf9b33544922b63aabba44e844be2797da12020e25",
+    "tokens": {
+      "max": 128,
+      "mean": 83.167,
+      "median": 86,
+      "min": 36
+    }
+  },
+  "collection_name": "veterinary_documents__20260919T213831239313Z__4953d00c",
+  "created_at": "2026-09-19T21:39:35.961372+00:00",
+  "embedding": {
+    "dimensions": 384,
+    "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42"
+  },
+  "profile": "experimental",
+  "quality": {
+    "corrupt_document_count": 1,
+    "fallback_count": 68,
+    "species_counts": {
+      "cat": 275,
+      "dog": 377,
+      "dog_and_cat": 197
+    },
+    "topic_counts": {
+      "allium_toxicosis": 12,
+      "canine_heatstroke": 186,
+      "cat_bite_abscess": 44,
+      "chocolate_toxicosis": 12,
+      "congestive_heart_failure": 80,
+      "diabetic_ketoacidosis": 46,
+      "distemper_neurological": 16,
+      "dystocia": 68,
+      "feline_aortic_thromboembolism": 41,
+      "flea_dermatitis_pruritus": 40,
+      "gastrointestinal_foreign_body": 56,
+      "leptospirosis_acute": 127,
+      "lily_toxicosis_cats": 41,
+      "osteoarthritis_stiffness": 13,
+      "respiratory_distress": 5,
+      "seizures": 10,
+      "toad_bufotoxin_poisoning": 18,
+      "trauma_and_bleeding": 11,
+      "urethral_obstruction": 12,
+      "vomiting_and_diarrhea": 11
+    },
+    "validation_status_counts": {
+      "approved_by_specialist": 590,
+      "not_validated": 73,
+      "published_not_locally_validated": 186
+    },
+    "warning_count": 41
+  },
+  "schema_version": 1,
+  "sources": {
+    "document_count": 21,
+    "documents": [
+      {
+        "chunk_count": 44,
+        "path": "cat_bite_abscess__frontiers_2025_feline_abscess.pdf",
+        "sidecar_sha256": "e0711c76927fce870f5fe3e6db77e2387217898020419404c71ca8b1fcd776c8",
+        "source_sha256": "996c364f63c5f28ab8e5cd7edb5ea30c3768a26583be4604e26f3fe2f8b4a4af"
+      },
+      {
+        "chunk_count": 80,
+        "path": "congestive_heart_failure__frontiers_2020_cough.pdf",
+        "sidecar_sha256": "fc8f880fdaded84a8a9b286ad9f73a1009a2fadd46fbe76bb9ea4ca91d1584c5",
+        "source_sha256": "9fc525f2ebfd6e0ebc9cfe6c932cc8649a21ca4ef06bcf6975dda849daa9d881"
+      },
+      {
+        "chunk_count": 10,
+        "path": "convulsoes.pdf",
+        "sidecar_sha256": "f1a0343f9bde31c0beb561557ea2a615ec8ce88f74a6f95da8a2676cc186b98d",
+        "source_sha256": "70b43a91d252b32d1742f0fe581baa83a413ea1717081083a70d87e02a3f79fb"
+      },
+      {
+        "chunk_count": 46,
+        "path": "diabetic_ketoacidosis__arshi_2025_feline_dka.pdf",
+        "sidecar_sha256": "8aae099f11914cc358c9d4768f940b684d4f5774752e4e81096edee597f03763",
+        "source_sha256": "f5236d534acd52289aae31dcf29c8c650ac85f3dd84c4c814d5d0c9756766002"
+      },
+      {
+        "chunk_count": 5,
+        "path": "dificuldade_respiratoria.pdf",
+        "sidecar_sha256": "45af05ed91e2ba73798d10b3c0b96fa71b2a7ebcade22080fa29a3eb9241a43e",
+        "source_sha256": "b16587f81eeecbc51e11b57f38975e607506db0342847587f04721394d161332"
+      },
+      {
+        "chunk_count": 16,
+        "path": "distemper_neurological__viruses_2022_distemper.pdf",
+        "sidecar_sha256": "e5b3e799b49677283493ec94779c8451df5c37067a02cff4cd803d80382d434c",
+        "source_sha256": "243b8581f721719db97f8fd95b8db4aa7fc31774f340502fea2ea35ed42f969d"
+      },
+      {
+        "chunk_count": 68,
+        "path": "dystocia__acta_2025_feline_dystocia.pdf",
+        "sidecar_sha256": "cb7612096691d3af4a7c46262fd9d1df03010d5f8727a1555b357d207705d9bb",
+        "source_sha256": "eb4483eefd264440f4a56f9a22a1b80028ce5301cb73eb3c94b73533122fb596"
+      },
+      {
+        "chunk_count": 41,
+        "path": "feline_aortic_thromboembolism__jfms_2024_fate.pdf",
+        "sidecar_sha256": "5c13c9146a211e03f1dcf2fded7529726bcbd20d6739ec8d6a7bdcf12bf7255d",
+        "source_sha256": "1d319d26e1796bf06cce656d727bafa5e9fa2faa06bd73e59f6ac9bba46b836c"
+      },
+      {
+        "chunk_count": 17,
+        "path": "flea_dermatitis_pruritus__pvb_2017_dermatite_alergica.pdf",
+        "sidecar_sha256": "efeb9e39a9a2b72933eb3a679be0c6e412624551a4e69fbb5cfe4d14a6c17ec3",
+        "source_sha256": "3a51cdd56446e388ca5b94c99284d80c51f9269a21cf308fe888d5d2011f534b"
+      },
+      {
+        "chunk_count": 23,
+        "path": "flea_dermatitis_pruritus__vetsci_2017_feline_fad.pdf",
+        "sidecar_sha256": "bee512ef8da88df5a1ee329ccb6c80f2239ff419c1fc1cc57ea7a594a08e1fbc",
+        "source_sha256": "8388d1f1950363bc581b7acb3e3ebde5d68145a63e2fcd7e9594ad150af9c8b4"
+      },
+      {
+        "chunk_count": 56,
+        "path": "gastrointestinal_foreign_body__frontiers_2025_imaging.pdf",
+        "sidecar_sha256": "e56953f9a6cbc60b67ea4abaafbb98c4ca75c546d2a3bb76cf01d739633ec0b4",
+        "source_sha256": "8ca9de24e96f8fdb8549f3e0f2f970937e0c86491f0eb9f2eb5f911b16adf518"
+      },
+      {
+        "chunk_count": 12,
+        "path": "intoxicacao_cebola_alho.pdf",
+        "sidecar_sha256": "718d96859f0c825988033ddcb82424606420d100a084a8403c0965c775eb3601",
+        "source_sha256": "522722554a7b21f67c2edf9db04c98efc26629e44bacc50a098be16769dfae08"
+      },
+      {
+        "chunk_count": 12,
+        "path": "intoxicacao_chocolate.pdf",
+        "sidecar_sha256": "764aea90bd9be65aa8aa232d4d8c0e0b520e366fa1a73465c6950fa1460f7108",
+        "source_sha256": "f051c31450c7ffd95279e94e51705e8d070df65e497818dc5a6c9919add20828"
+      },
+      {
+        "chunk_count": 127,
+        "path": "leptospirosis_acute__acvim_2023_leptospirosis.pdf",
+        "sidecar_sha256": "fa9e68ed4f9adafedc8dbd84beedadb243696469ebb3790a4339198483d6504c",
+        "source_sha256": "6de65211a73cc5a7cb667755526626494b5d967c3df7e3b142bac465250df6eb"
+      },
+      {
+        "chunk_count": 41,
+        "path": "lily_toxicosis_cats__frontiers_2023_lily.pdf",
+        "sidecar_sha256": "f0db1226795f2bfe3bbe5a50fed6744771d98a2a950771ca5b28b8e1263c031a",
+        "source_sha256": "b327e3ef0d57f1d858b302999b628910b6c6d8134c5ff7b7832d31ff8cf9298b"
+      },
+      {
+        "chunk_count": 12,
+        "path": "obstrucao_urinaria_gatos.pdf",
+        "sidecar_sha256": "784599fa3ed05c08772a8d620df4705030b4b2ba14312384e79c1d363aafa554",
+        "source_sha256": "2911bfd8df6c6281f493b541acec65c8b4d6f28272fc7ddaf713f4c3fd7bdffd"
+      },
+      {
+        "chunk_count": 13,
+        "path": "osteoarthritis_stiffness__frontiers_2022_canine_oa.pdf",
+        "sidecar_sha256": "0b26530b5c8ce77cb1f30e312e09866168dcafb3336c3f8a13f699d185389b97",
+        "source_sha256": "7d19fc33d0827be1d5e98a90039bb7b6679f29bebd5bdaf99a8276c9818285fa"
+      },
+      {
+        "chunk_count": 186,
+        "path": "pathophysiology_heatstroke_dogs_2017.pdf",
+        "sidecar_sha256": "a1a71e7aa89c1db9668d04b227b40fa0c65282de268d7cdda7b59c69ee770054",
+        "source_sha256": "e35a625db133f6cf4785ec1ea3dc7164db5652cddb183e0fecd60c4c901eeda3"
+      },
+      {
+        "chunk_count": 18,
+        "path": "toad_bufotoxin_poisoning__pubvet_2024_bufotoxin_case.pdf",
+        "sidecar_sha256": "6e2f719074ab4d105ad27413d70eebf044ba7b192c6545e9ae699442d8646de1",
+        "source_sha256": "897ce472dff59a2b540291a4428f4d8df43a995df89d337ff994010a0aac2f0a"
+      },
+      {
+        "chunk_count": 11,
+        "path": "trauma_hemorragia.pdf",
+        "sidecar_sha256": "47c3e95187eac1e8aa714ade6fbb4ac2143d7abdb02c00f71a2b715541951a41",
+        "source_sha256": "d63b826e80fa4a5b2e5320cd9abd845b0a7267860a4107cc47d80e3d809cc559"
+      },
+      {
+        "chunk_count": 11,
+        "path": "vomito_diarreia.pdf",
+        "sidecar_sha256": "d4763731522aa1ba65ea21db51fa9a09e6210aefe4b508c5d176687c6590fee8",
+        "source_sha256": "b11c73816e00a3ef31c8b0ccfad92446b83a6208684c82ee19b867cd956094de"
+      }
+    ],
+    "source_set_sha256": "4953d00cba14e9d7da338c6c0b790a02cff310340aa13f0048f0bfa77db95465"
+  }
+}

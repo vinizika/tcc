@@ -2,7 +2,7 @@
   "title": "Bola de pelo em gatos",
   "source": "Cornell Feline Health Center",
   "document_type": "owner_guidance",
-  "validation_status": "pending_specialist",
+  "validation_status": "approved_by_specialist",
   "ingestion_scope": "curated_candidate",
   "species": "cat",
   "topic": "single_vomiting_or_mild_diarrhea",
@@ -15,16 +15,18 @@
     "exclude_sections": [
       "Relieving the Obstruction"
     ],
-    "exclude_pages": []
+    "exclude_pages": [
+
+    ]
   },
   "register": "tutor",
   "access_date": "2026-09-12",
   "captured_sha256": "a75db0bbb2b1de5d810bd2401147bccaf44fd85490b57cb285969c980434202d",
   "map_line": "single_vomiting_or_mild_diarrhea",
   "specialist": {
-    "verdict": "",
-    "name": "",
-    "date": ""
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
   },
   "rights": {
     "status": "pending_review",

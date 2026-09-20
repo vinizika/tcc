@@ -1,0 +1,49 @@
+{
+  "title": "Uncomplicated Vomiting in Dogs",
+  "source": "Frontiers in Veterinary Science",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "pending_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "single_vomiting_or_mild_diarrhea",
+  "language": "en",
+  "source_url": "https://public-pages-files-2025.frontiersin.org/journals/veterinary-science/articles/10.3389/fvets.2023.1063080/pdf",
+  "indexing": {
+    "include_sections": [
+
+    ],
+    "exclude_sections": [
+      "Edited By",
+      "Reviewed By"
+    ],
+    "exclude_pages": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-20",
+  "captured_sha256": "482a69011e47d209b75bd3d38dc5e0ef7332faf73690edaed0a3c7e2e0a15008",
+  "map_line": "single_vomiting_or_mild_diarrhea",
+  "specialist": {
+    "verdict": "",
+    "name": "",
+    "date": ""
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo Frontiers; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-20"
+  },
+  "year": 2023,
+  "authors": "Bettina Holzmann; Melanie Werner; Stefan Unterer; Rene Doerfelt"
+}

@@ -1,0 +1,44 @@
+{
+  "title": "Envenenamento por veneno de sapo",
+  "source": "Pesquisa Veterinaria Brasileira",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "toad_bufotoxin_poisoning",
+  "language": "pt",
+  "source_url": "https://pvb.com.br/portal/download_artigo/NjE2fDIwMjYwNTMwMTgyOTM4",
+  "indexing": {
+    "include_sections": [
+
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+      3,
+      4,
+      5
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "9e2716fba3690cfc8712329dbca52d29b7fc8de3c4211e0762fbfa7fe9a4c534",
+  "map_line": "toad_bufotoxin_poisoning",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 informada pela politica editorial vigente da Pesquisa Veterinaria Brasileira; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.1590/S0100-736X2009000800006",
+  "journal": "Pesquisa Veterinaria Brasileira",
+  "year": 2009,
+  "authors": "Annelise C. Camplesi; Michiko Sakate; Natalia M. B. Simao; Carla F. Moya"
+}

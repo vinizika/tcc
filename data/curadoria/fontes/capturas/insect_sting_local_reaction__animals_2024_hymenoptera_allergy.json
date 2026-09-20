@@ -1,0 +1,49 @@
+{
+  "title": "Natural History and Risk Factors of Hymenoptera Venom Allergy in Dogs",
+  "source": "Animals",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "insect_sting_local_reaction",
+  "language": "en",
+  "source_url": "https://doi.org/10.3390/ani14223220",
+  "indexing": {
+    "include_sections": [
+
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "920eb009c3a6a48c42bce702c00a5c6b7cb0601e6b921706c891a5d214185e86",
+  "map_line": "insect_sting_local_reaction",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.3390/ani14223220",
+  "journal": "Animals",
+  "year": 2024,
+  "authors": "Edwin Chapman et al."
+}

@@ -1,0 +1,51 @@
+{
+  "title": "Respiratory Distress in Dogs and Cats",
+  "source": "Frontiers in Veterinary Science",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog_and_cat",
+  "topic": "respiratory_distress",
+  "language": "en",
+  "source_url": "https://doi.org/10.3389/fvets.2026.1790755",
+  "indexing": {
+    "include_sections": [
+      "Introduction",
+      "Discussion"
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10,
+      11,
+      12
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-20",
+  "captured_sha256": "7c7bac93cb436424aa7e6d749044bf3788cd3de8c4f372ab7bccb45337f26a80",
+  "map_line": "respiratory_distress",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-20"
+  },
+  "doi": "10.3389/fvets.2026.1790755",
+  "journal": "Frontiers in Veterinary Science",
+  "year": 2026,
+  "authors": "Bittenecker; Mohr; Saenger; Doerfelt; Kraszewska; Henninger; Wess"
+}

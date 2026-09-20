@@ -1,0 +1,34 @@
+{
+  "title": "Neuromiopatia isquêmica em cães",
+  "source": "Pesquisa Veterinária Brasileira",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "acute_hindlimb_paralysis",
+  "language": "pt",
+  "source_url": "https://doi.org/10.1590/S0100-736X2017000900012",
+  "indexing": {
+    "include_sections": ["RESUMO"],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-16",
+  "captured_sha256": "41c0284eb7c0b1aa7b41e5262af190796e45492762d2c347aaf879c7ddbb0eb4",
+  "map_line": "acute_hindlimb_paralysis",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET — Primeiro Grupo de Anestesia e Veterinaria Universitaria do Brasil",
+    "date": "2026-09-16"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY-NC 4.0 declarada para o artigo; extracao literal do resumo autorizada para uso experimental nao comercial com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-16"
+  },
+  "year": 2017,
+  "authors": "Angel Ripplinger et al."
+}

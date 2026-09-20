@@ -1,0 +1,46 @@
+{
+  "title": "Canine Mechanical Urethral Obstruction",
+  "source": "Frontiers in Veterinary Science",
+  "document_type": "case_report",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "urethral_obstruction",
+  "language": "en",
+  "source_url": "https://doi.org/10.3389/fvets.2023.1200406",
+  "indexing": {
+    "include_sections": [
+      "Introduction"
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "clinico",
+  "access_date": "2026-09-20",
+  "captured_sha256": "4fc8ec005be8e7537ac6c261d31bf6b79fe6466d9e19c214bf3599d57dd6ab36",
+  "map_line": "urethral_obstruction",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-20"
+  },
+  "doi": "10.3389/fvets.2023.1200406",
+  "journal": "Frontiers in Veterinary Science",
+  "year": 2023,
+  "authors": "Yesim Er; Meghan Fick; Elizabeth Long Mays"
+}

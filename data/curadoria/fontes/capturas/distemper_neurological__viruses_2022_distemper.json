@@ -1,0 +1,36 @@
+{
+  "title": "Neuropathogenicity of canine distemper",
+  "source": "Viruses",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "distemper_neurological",
+  "language": "en",
+  "source_url": "https://mdpi-res.com/d_attachment/viruses/viruses-14-01520/article_deploy/viruses-14-01520-v2.pdf",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "243b8581f721719db97f8fd95b8db4aa7fc31774f340502fea2ea35ed42f969d",
+  "map_line": "distemper_neurological",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-19"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada pelo periodico MDPI; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.3390/v14071520",
+  "journal": "Viruses",
+  "year": 2022,
+  "authors": "Jiaxin Wu et al."
+}

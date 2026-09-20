@@ -1,0 +1,34 @@
+{
+  "title": "Epidemiology and clinical management of acute diarrhoea in dogs under primary veterinary care in the UK",
+  "source": "PLOS One",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "dietary_indiscretion_mild",
+  "language": "en",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12156985/",
+  "indexing": {
+    "include_sections": ["Results", "Conclusions"],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-16",
+  "captured_sha256": "ce97800e37515ea85569cf6dc33d63532ae6691a2dc3397285906e1146cbbdbc",
+  "map_line": "dietary_indiscretion_mild",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET — Primeiro Grupo de Anestesia e Veterinaria Universitaria do Brasil",
+    "date": "2026-09-17"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; extracao literal e redistribuicao permitidas com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-16"
+  },
+  "year": 2025,
+  "authors": "Dan G. O’Neill et al."
+}

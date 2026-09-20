@@ -163,7 +163,9 @@ def test_toda_linha_tem_referencia_ou_declara_a_lacuna(mapa):
     """
 
     texto = REFERENCIAS.read_text(encoding="utf-8")
-    conhecidas = set(re.findall(r"\*\*(R\d{2})\*\*", texto))
+    # O catálogo ultrapassou R99 no lote de 20/09; aceite qualquer número
+    # com pelo menos dois dígitos sem afrouxar o prefixo nem o negrito.
+    conhecidas = set(re.findall(r"\*\*(R\d{2,})\*\*", texto))
 
     assert len(conhecidas) >= 30
 

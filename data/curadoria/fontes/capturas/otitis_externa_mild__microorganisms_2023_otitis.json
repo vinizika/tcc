@@ -1,0 +1,43 @@
+{
+  "title": "Pseudomonas spp. in Canine Otitis Externa",
+  "source": "Microorganisms",
+  "document_type": "peer_reviewed_review",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "otitis_externa_mild",
+  "language": "en",
+  "source_url": "https://doi.org/10.3390/microorganisms11112650",
+  "indexing": {
+    "include_sections": [
+      "Introduction",
+      "Conclusions"
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "505fa677581af534b69dfa550ba1922414fff06d0d52cf34f9617c3567f7949f",
+  "map_line": "otitis_externa_mild",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.3390/microorganisms11112650",
+  "journal": "Microorganisms",
+  "year": 2023,
+  "authors": "Bailey Secker; Stephen Shaw; Robert J. Atterbury"
+}

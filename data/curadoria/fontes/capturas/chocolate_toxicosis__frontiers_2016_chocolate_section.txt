@@ -1,0 +1,235 @@
+Abstract
+
+Several foods that are perfectly suitable for human consumption can be toxic to dogs and cats. Food-associated poisoning cases involving the accidental ingestion of chocolate and chocolate-based products, Allium spp. (onion, garlic, leek, and chives), macadamia nuts, Vitis vinifera fruits (grapes, raisins, sultanas, and currants), products sweetened with xylitol, alcoholic beverages, and unbaked bread dough have been reported worldwide in the last decade. The poisoning episodes are generally due to lack of public knowledge of the serious health threat to dogs and cats that can be posed by these products. The present review aims to outline the current knowledge of common food items frequently involved in the poisoning of small animals, particularly dogs, and provides an overview of poisoning episodes reported in the literature.
+
+Introduction
+
+Several foods, while safe for humans, may pose a serious threat to the health of dogs and cats. Food-associated poisoning cases involving the accidental ingestion of chocolate, onions, macadamia nuts, Vitis vinifera fruits (grapes, raisins, sultanas, and currants), xylitol, and ethanol have been recorded worldwide in the last decade (–). Foods accounted for 14.8% of hazardous exposure cases reported to the Kansas State Veterinary Diagnostic Laboratory. Chocolate- and cocoa-based products were most commonly involved, followed by products sweetened with xylitol, onions and garlic, grapes and raisins, macadamia nuts, and ethanol (). In general, the poisoning episodes resulted from a lack of public knowledge of the health hazard to small animals that may be posed by these products. Dogs and cats may be fed harmful foodstuffs by owners unaware of the danger or given the wide occurrence of these products in the home, pets may easily have accidental access to them. Dogs are undiscriminating in their eating habits and will readily ingest potentially harmful foodstuffs, thus being far more commonly affected than cats (). While some foodstuffs, such as chocolate, have long been known to cause poisoning in dogs and cats, others such as grapes had previously been considered unlikely to cause problems and have emerged as a potential concern only in the last few years (). As a consequence, cases of significant exposure had been wrongly diagnosed for many years (). This review aims to outline the current knowledge of common household foods frequently involved in the poisoning of small animals, particularly dogs, and provides an overview of poisoning episodes reported in the literature.
+
+Allium spp.
+
+Onion (Allium cepa), garlic (Allium sativum), leek (Allium porrum), and chives (Allium schoenoprasum) are all members of the genus Allium (Amaryllidaceae family). These bulbous plants are strongly aromatic, producing a characteristic odor when crushed, and are commonly used (fresh, cooked, or dehydrated) as ingredients in many dishes. The components responsible for their toxicity are organosulfoxides. Chewing the plant converts organosulfoxides to a complex mixture of sulfur compounds. The primary toxicological mechanism of Allium-derived sulfur compounds is oxidative hemolysis characterized by the development of methemoglobinemia and Heinz body formation in the erythrocytes (, ). Cooking, drying, and processing do not eliminate the toxic effect of Allium spp. (, ). Dogs and cats are highly susceptible to Allium toxicosis and the ingestion of 5 g/kg of onions by cats and 15–30 g/kg by dogs is enough to cause clinically important hematologic changes (). In the case of dogs, hereditary high erythrocyte-reduced glutathione and potassium concentrations observed in certain breeds (e.g., Akita, Shiba, and Jindo) lead to greater susceptibility to onion-induced oxidative damage (). Clinical signs of Allium toxicosis may appear 1 day or several days after consumption depending on the amounts ingested. Common clinical signs initially include vomiting, diarrhea, abdominal pain, loss of appetite, and depression. Due to the developing anemia, pale mucous membranes, weakness, rapid respiratory and heart rates, jaundice, and dark urine (reddish or brown) indicating hemoglobinuria are subsequently observed (). Several cases of dog and cat poisoning by Allium spp. have been reported in the literature. Poisoning has been reported to occur after the ingestion of Catalan spring onion commonly known as “calcot” (), baked garlic (), onion soufflè (), butter-cooked onions (), and Chinese steamed dumplings containing Chinese chives (Allium tuberosum) and garlic (). A case in which a dog was intentionally fed a large quantity of raw onions by the owner has also been reported (). From 1994 to 2008, 69 cases of canine poisoning and 4 cases of feline poisoning by Allium spp. ingestion () were recorded by the Veterinary Poisons Information Service (VPIS). In the case of dogs, vomiting, diarrhea, abdominal pain and, less frequently, anemia, hematuria, and convulsions were reported. Two cases of death occurred and two dogs were euthanized. In the case of cats, gastrointestinal signs, lethargy, and polydipsia occurred in one case, while anemia and icterus were observed in the second case. One cat remained asymptomatic without treatment, and the other cat died from hemorrhage into the pleural and abdominal cavities (). Recently, hypertension associated with garlic-induced hemolytic anemia has been reported in the case of a dog (). No specific antidote is available for Allium toxicosis. Inducing vomiting should be considered in asymptomatic dogs and cats, provided there are no complicating factors and not more than 2 h have elapsed since ingestion (). The administration of activated charcoal is indicated after vomiting has stopped. Once clinical signs have manifested themselves, treatment should consist of supportive care. Severely anemic animals may require a blood transfusion ().
+
+Ethanol
+
+Ethanol or ethyl alcohol is a two-carbon alcohol found in a variety of products, such as alcoholic beverages, paint and varnish, medication, perfume, mouthwash, certain types of thermometers, and certain forms of antifreeze. It is also used as a disinfectant, a fuel substitute, and if administered intravenously, as a competitive substrate in the treatment of dogs and cats poisoned by ethylene glycol. Ethanol toxicosis in small animals generally occurs as a result of accidental ingestion of alcoholic beverages (–). Ethanol intoxication has also been reported in the case of dogs, following ingestion of rotten apples (), sloe berries used to make sloe gin (), and uncooked bread and pizza dough (–). The latter contains the yeast Saccharomyces cerevisiae, which metabolizes carbohydrate substrates to ethanol and carbon dioxide (). Once ingested, ethanol is rapidly absorbed from the gastrointestinal tract and crosses the blood–brain barrier (). The mechanism of action of ethanol is not completely clear. Ethanol is suspected of inhibiting N-methyl-d-aspartate glutamate receptors in brain cells and the related production of cyclic guanosine monophosphate (). Clinical signs usually develop within an hour of ingestion and include central nervous system (CNS) depression, ataxia, lethargy, sedation, hypothermia, and metabolic acidosis (). Animals may become comatose and develop severe respiratory depression. A distended and painful abdomen due to excessive gas production may be noted in animals that ingest uncooked bread dough (). Emesis should be induced with extreme caution and only in cases of very recent ingestion by animals that prove to be asymptomatic (). Recently, hemodialysis has been shown to be beneficial for the rapid removal of ethanol in patients with severe toxicosis (). Yohimbine, an alpha 2-adrenergic antagonist which readily crosses the blood–brain barrier, has been recommended as an arousal agent in the treatment of ethanol intoxication (). In previous case reports, most patients recovered when monitored closely and given supportive care (, , ). Fatal ethanol intoxication was reported in the case of a dog, following the massive ingestion of rotten apples. The dog developed vomiting, ataxia, tremors, and dehydration, and died 48 h later. However, liver damage secondary to the chronic ingestion of rotten apples (presumed to reflect chronic ethanol toxicity) was suspected as a factor in the death of this dog ().
+
+Grapes and Their Dried Products (Raisins, Sultanas, and Currants)
+
+Grapes, the fruits of Vitis vinifera, and their dried products (raisins, sultanas, and currants) have been reported to cause renal failure in dogs. The fruits may be ingested raw or cooked as ingredients of fruit cake, mince pies, malt loaf, snack bars, scones, and other baked goods (). The toxic syndrome has also been observed with consumption of marc (the residue of grapes after pressing) (). The toxic principle(s) and the exact mechanism of grape-induced nephrotoxicity are still unknown. The latter appears to involve a nephrotoxic agent or an idiosyncratic reaction, leading to hypovolemic shock and renal ischemia (). There is considerable variation in the susceptibility of dogs to grapes and their dried products. In a recent study that reviewed 180 reports recorded by the VPIS between August 1994 and September 2007 on the ingestion of Vitis fruits by dogs, some animals were reported to remain asymptomatic after ingesting up to 1 kg of raisins while others died following the ingestion of just a handful (). Published case reports have identified renal failure in dogs following the ingestion of estimated doses of raisins as low as 2.8 mg/kg () and as little as four to five grapes in a dog weighing 8.2 kg () (Table 1). Therefore, ingestion of any quantity of these fruits should be considered as a potential clinical problem. Vomiting within 24 h of ingestion is the typical clinical sign observed. Diarrhea, anorexia, lethargy, and abdominal pain have also been reported (, ). Partially digested grapes and grape products may be present in the vomit, fecal material, or both (–). This is followed by signs of renal insufficiency or failure (oliguria, anuria, polydipsia, proteinuria, and elevated serum concentrations of creatinine and urea) within a short period (, , ). In cases of dogs with oliguria or anuria, the prognosis is generally poor (, ). The time taken to administer treatment may also play a significant role in the outcome (). Given the large variability in the tolerance exhibited by dogs, the ingestion of any quantity of grapes or grape products by dogs should be handled aggressively (). Following recent ingestion, prompt decontamination using emetics and repeated doses of activated charcoal is highly recommended (, ). All dogs should receive aggressive intravenous fluid therapy for a minimum of 48–72 h, and their renal function should be monitored for at least 72 h (, ).
+
+Table 1
+
+| Breed | Age (years) | Sex | Product | Dose | Time to onset of clinical signs (h) | Outcome | Reference |
+|---|---|---|---|---|---|---|---|
+| Labrador Retriever (13 dogs) Golden Retriever (4 dogs) Others (26 dogs) | Range: 0.6–13, median: 4 | Male (27 dogs) Female (16 dogs) | Raisins (28 dogs) Grapes (13 dogs) Raisins and grapes (2 dogs) | Raisins <sup>a</sup> :
+range: 2.8–36.4 g/kg,
+median: 19.6 g/kg | <24 (35 dogs) 24–48 (8 dogs) | Recovery (23 dogs) Died (5 dogs) Euthanized (15 dogs) | () |
+|  |  |  |  | Grapes <sup>b</sup> :
+range: 19.6–148.4 g/kg, median: 40.6 g/kg |  |  |  |
+| Labrador Retriever | 3 | Male | Raisins | 3 g/kg | – <sup>c</sup> | Died or euthanized | () |
+| Dachshund | 5 | Male | Grapes | 4–5 grapes in an 8.2-kg dog | – | Recovery | () |
+| German Shepherd Dog cross | 4 | Male | Grapes | 4 g/kg | – | Died or euthanized | () |
+| Norwegian Elkhound | 5 | Male | Raisins | 4.8 g/kg | – | Died | () |
+| Labrador Retriever cross | 3.5 | Male | Grapes | 6 g/kg | – | Died or euthanized | () |
+| American Pit Bull Terrier | 8.5 | Male | Raisins | 6 g/kg | – | Died or euthanized | () |
+| Labrador Retriever | 3.5 | Male | Currants | 7.8 g/kg | 12 | Recovery | () |
+| – | – | – | Grapes (5 dogs) | 11.6–31.2 g/kg <sup>d</sup> | Few hours | Recovery (5 dogs) | () |
+|  |  |  | Raisins (5 dogs) |  |  | Died (2 dogs) |  |
+|  |  |  |  |  |  | Euthanized (3 dogs) |  |
+| Labrador Retriever | 6 | Female | Raisins | 15.7 g/kg | 8 | Died | () |
+| Australian Shepherd Dog | 7 | Male | Raisins | 18 g/kg | – | Died or euthanized | () |
+| Maltese | 2 | Female | Grape skins | 18.8 g/kg | 12 | Recovery | () |
+| Galgo Espaniol | 1 | Female | Grapes and marc | 20 g/kg | 6–7 | Euthanized | () |
+| Maltese | 3 | Male | Grapes | 20 g/kg | 5 | Died | () |
+| Border Collie | 3.5 | Male | Raisins | 20.6 g/kg | 12 | Recovery | () |
+| Basenji | 10 | Female | Raisins | 24 g/kg | – | Died or euthanized | () |
+| Golden Retriever | 2 | Male | Raisins | 30 g/kg | – | Died or euthanized | () |
+| Labrador Retriever | 7 | Male | Raisins | 30 g/kg | – | Died or euthanized | () |
+| Maltese | 2 | Female | Grapes | 65.2 g/kg | 8 | Euthanized | () |
+
+Range of doses of grapes and their dried products (raisins, sultanas, and currants) reported to cause renal failure in dogs.
+
+<sup>a</sup>Data are limited to 24 dogs.
+
+<sup>b</sup>Data are limited to four dogs.
+
+<sup>c</sup>Unknown or not provided.
+
+<sup>d</sup>Data are limited to four dogs.
+
+Hops
+
+Hops, the inflorescences of the female plant of the species Humulus lupulus, are used for beer brewing to add a bitter taste and hoppy aroma to beer and to stabilize the beer foam. As home brewing becomes increasingly popular, companion animals may be at risk of exposure. The ingestion of both fresh and spent hops has been associated with the development of malignant hyperthermia in dogs (). Any breed of dog may be affected, but breeds predisposed to malignant hyperthermia (e.g., Greyhounds, Labrador Retrievers, Saint Bernards, Pointers, Dobermans, Border Collies, English Springer Spaniels, and northern breeds) appear to be particularly susceptible (). Hops contain a variety of compounds, including resins, essential oils (hycrocarbons and oxygenated compounds), phenolic compounds (tannins), and nitrogenous compounds (). These compounds or their metabolites may uncouple oxidative phosphorylation resulting in malignant hyperthermia (, ). Clinical signs may be seen within hours of consuming hops and include marked hyperthermia, anxiety, tachycardia, tachypnea, panting, vomiting, abdominal pain, and seizures. Dark brown urine suggesting muscle necrosis may be observed (, ). Mortality can be high despite the aggressive therapy for hyperthermia (). Duncan et al. (44) reported five cases involving dogs (four of which were Greyhounds) that exhibited marked hyperthermia, restlessness, panting, vomiting, signs of abdominal pain, and seizures, after the ingestion of hops. Four of the five dogs died despite intensive care treatment (44). Dogs suspected of recent ingestion of hops should be treated aggressively to decontaminate the gastrointestinal tract. Cooling measures, such as ice baths and cold IV fluids, should be used to lower the high body temperature. If available, dantrolene sodium, a skeletal muscle relaxant that has been used in humans to reverse malignant hyperthermia, may be administered (, , ).
+
+Macadamia Nuts
+
+Macadamia nuts are produced by trees of the genus Macadamia (Proteaceae family). Only two species, Macadamia integrifolia and Macadamia tetraphylla, are plants of commercial importance as sources of food. All Macadamia spp. accumulate cyanogenic glycoside (proteacin and durrin) in their seeds but in very low concentrations in the case of commercial seeds (45). Macadamia nuts are very popular as snacks for human consumption, both as plain nuts or when used in cakes, cookies, or candy (46). They are considered to be a valuable food for their low cholesterol and sodium content and as an excellent source of manganese and thiamine (45). Macadamia nut toxicosis has only been reported in dogs to date (, 47–49). The mechanism of action of their toxicity in the case of dogs is currently unknown and the dose required to induce toxicity has not been established precisely (46). The ingestion of as little as 0.7 g/kg of nuts has been associated with the development of clinical signs in dogs (48). In another case, a series of toxic doses ranging from 2.2 to 62.4 g/kg was reported (49). Clinical signs generally develop within 12 h of ingestion and may include weakness (particularly hind limb weakness), depression, vomiting, ataxia, tremors, hyperthermia, abdominal pain, lameness, stiffness, recumbency, and pale mucous membranes (47–49). Although macadamia nut poisoning is relatively infrequent, 83 cases were reported in Queensland, a major area for Macadamia spp. cultivation in Australia, over a period of 5 years (). No deaths have been reported to date, and animals are expected to fully recover within 24–48 h with minimal veterinary intervention (46). The induction of emesis should be considered in cases of recent ingestion of macadamia nuts by dogs that prove to be asymptomatic (46).
+
+Methylxanthines (Caffeine, Theobromine, and Theophylline)
+
+Methylxanthines, including caffeine, theobromine, and theophylline, are plant-derived alkaloids that are commonly found in a variety of foods, beverages, human medication, and other products in the home. Caffeine is found in coffee (from the fruit of Coffea arabica), tea (from the leaves of Thea sinensis), guarana (from the seeds of Paullinia cupana), and as an additive in many soft drinks. Theobromine occurs in cacao seeds (Theobroma cacao) and in products manufactured from these seeds, such as chocolate. Theophylline is found in tea along with caffeine. Moreover, caffeine is used in human medication to increase mental alertness, and theophylline is widely used as a bronchodilator in anti-asthma drugs (50). Methylxanthines antagonize cellular adenosine receptors and inhibit cellular phosphodiesterases, causing an increase in cyclic adenosine monophosphate (cAMP) (50). Moreover, methylxanthines enhance the release of catecholamines and increase cellular calcium entry while inhibiting intracellular sequestration of calcium by the sarcoplasmic reticulum, leading to increased muscular contractility (51). These combined actions result in the stimulation of both the CNS and cardiac muscle, the relaxation of smooth muscle, most notably bronchial muscle, and diuresis (50). Methylxanthine poisoning cases have been reported after the ingestion of herbal supplements containing guarana (52), garden mulch made of cacao bean shells (53, 54), caffeine tablets (55, 56), and caffeine-containing bait (57). However, most poisoning cases occur as a result of chocolate ingestion (, 58–62). Though the intoxication of cats may also occur, dogs are most commonly affected because of their indiscriminate eating habits (). The presence of chocolate was noted in the 10 most common cases of toxicosis involving dogs reported to the VPIS and to the American Society for the Prevention of Cruelty to Animals (ASPCA), Animal Poisons Control Center (APCC) in the past few years (60, 63). Poisoning episodes frequently occur around holidays when there is a higher occurrence of chocolate products in the home (, 60). In addition to theobromine, chocolate contains caffeine but in much lower concentrations. Theobromine and caffeine concentrations vary according to the type of chocolate (). Unsweetened baking chocolate and cocoa powder usually contain more than 14 mg of theobromine per gram. Semisweet dark chocolate and milk chocolate often contain around 5 and 2 mg of theobromine per gram, respectively, while white chocolate is considered to be an insignificant source of theobromine (50). According to the ASPCA APCC data, mild clinical signs appear in dogs after ingesting 20 mg/kg of theobromine and caffeine, while severe clinical signs are observed at 40–50 mg/kg and seizures occur at 60 mg/kg (). Dogs with CYP1A2 deficiency polymorphism 1117C > T may be more at risk of poisoning due to reduced metabolism (64, 65). In dogs, caffeine is absorbed rapidly after ingestion while theobromine is absorbed 10 times slower, reaching peak plasma levels at approximately 10 h (50). Initial clinical signs are generally observed within 2–4 h after ingestion and include restlessness, polydipsia, urinary incontinence, vomiting, and perhaps diarrhea. Dogs can be in an excited state and show marked hyperthermia and tachycardia. As intoxication progresses, hypertension, cardiac arrhythmias, premature ventricular contractions, muscular rigidity, ataxia, seizures, and coma may be observed. Death may occur from cardiac arrhythmia or respiratory failure (50). Decontamination via emesis or gastric lavage, administration of multiple doses of activated charcoal, and meticulous supportive care should be the mainstay of treatment (, 60). Prognosis is usually good, if effective decontamination is obtained within 2–4 h of ingestion (50, 60).
+
+Xylitol
+
+Xylitol is a five-carbon sugar alcohol primarily used as an artificial sweetener in many products, including sugar-free gum, candy, bread, cookies, and other baked goods. It can also be purchased as a granulated powder for cooking and baking. Because of its antibacterial activity and palatability, xylitol is also included in a variety of medical and dental care products. An additional concern is that the use of xylitol is not just confined to products intended for human use. Xylitol is also an ingredient in drinking water additives developed to help maintain dog and cat dental health (66). The increased marketing and use of xylitol as a sweetener in recent years has led to increased risk of pet exposure to this agent (66, 67). Dogs are the species at the risk of developing severe, life-threatening clinical signs. In dogs, xylitol is a potent stimulator of insulin release, leading to dramatic decrease in blood glucose levels (66, 67). Doses, as low as 0.03 g/kg, have resulted in hypoglycemia in this species (68). Moreover, xylitol ingestion has been associated with liver failure in dogs. The mechanisms responsible for hepatic injury are not clear yet. It is thought to be related to either adenosine triphosphate (ATP) depletion secondary to xylitol metabolism, leading to hepatic necrosis or the generation of hepatocyte-damaging reactive oxygen species or both (69). According to the ASPCA APCC data, the lowest dose associated with xylitol-induced liver failure in dogs is 0.5 g/kg (70). Clinical signs of xylitol toxicity in dogs may be related to hypoglycemia or hepatopathy or both. Vomiting is usually the initial clinical sign. Clinical signs of hypoglycemia, including lethargy, ataxia, collapse, and seizures, may develop within 30–60 min after ingestion or may be delayed up to 12 h after ingestion (66, 70). In dogs developing hepatopathy, lethargy, icterus, vomiting, and coagulopathic signs, such as petechiae, ecchymoses, and gastrointestinal hemorrhages, may be observed (67, 69). Several cases of xylitol ingestion have been reported in the last decade (69, 71–75). Table 2 summarizes the cases of xylitol-induced acute hepatic failure reported in the literature. Recently, a retrospective study of the 192 cases of xylitol ingestion by dogs, reported to three American university teaching hospitals from December 2007 to February 2012, has been performed (68). The median estimated dose ingested was 0.32 g/kg (range 0.03–3.64 g/kg). Clinical signs developed in 41 (21%) dogs and primarily included vomiting and lethargy, followed by diarrhea, ataxia, seizures, restlessness, and anorexia (68). Thirty dogs (15.6%) became hypoglycemic and no significant difference was observed between hypoglycemic and euglycemic dogs with regards to the estimated dose of xylitol ingested. No dogs developed clinical signs or showed biochemistry values consistent with liver failure. All dogs survived and were discharged, suggesting an excellent prognosis for dogs that receive prompt veterinary care and evade liver failure (68). Supportive care and monitoring are the mainstay of xylitol toxicity treatment. The induction of emesis should only be attempted early and in asymptomatic animals. Activated charcoal is not recommended because of its poor ability to bind to xylitol (68, 70). Blood glucose levels and liver function should be monitored. If hypoglycemia develops, intravenous dextrose should be administered (69, 70). Xylitol ingestion should always be considered by veterinarians as a differential diagnosis for any unexplained hypoglycemic presentation with or without accompanying liver dysfunction (76).
+
+Table 2
+
+| Breed | Age (years) | Sex | Product | Dose (g/kg) | Time to onset of clinical signs (h) | Outcome | Reference |
+|---|---|---|---|---|---|---|---|
+| Standard Poodle | 3 | Male | 5 or 6 cookies | 1.4–2 | 24 | Died | (69) |
+| English Springer Spaniel | 2.5 | Male | Homemade bread containing xylitol | 3.7 | 1–2 | Recovered | (72) |
+| Labrador Retriever | 8 | Female | Xylitol powder | 4.1 | 2 | Recovered | (69) |
+| Cocker Spaniel | 4 | Male | 45 pieces of gum | 4.7 | 72 | Died | (73) |
+| Dalmatian | 6 | Female | 8 muffins sweetened with xylitol | 5 | 9 | Recovered | (69) |
+| Scottish Terrier | 5 | Female | 30 pieces of gum | 7 | 24 | Euthanized | (69) |
+| Labrador Retriever mixed breed | 6 | Female | Xylitol powder | 13.9 | 24 | Died | (69) |
+| Welsh Springer Spaniel | 4 | Male | 4 large chocolate-frosted muffins sweetened with xylitol | 15.9 | 1–2 | Euthanized | (69) |
+| Miniature Dachshund | 7 | Female | 100 pieces of gum | 16 | 72 | Recovered | (69) |
+| Chihuahua | 9 | Male | Granulated xylitol | 45 | 1–2 | Recovered | (75) |
+
+Range of xylitol doses reported to cause acute hepatic failure in dogs.
+
+Conclusion
+
+The present review highlights the issue of exposure of small animals, particularly dogs, to potentially harmful foodstuffs commonly present in the home. A noticeable trend in exposure has emerged due to the increasing popularity of xylitol as a sweetener in several products. Obtaining an accurate history of exposure, early recognition of clinical signs, and rapid establishment of appropriate therapy can greatly improve the prognosis of food-related poisoning cases. Large gaps still exist in public knowledge of the hazard that certain foodstuffs may pose to the health of dogs and cats. Preventing exposure is the key to reducing the incidence of these poisoning episodes. Therefore, it is important to increase the knowledge of pet owners with regard to foodstuffs that must not be fed to dogs and cats and should be stored outside their reach.
+
+Statements
+
+Author contributions
+
+CC and FC gave substantial contributions to the conception and design of the work; drafted the work and revised it critically for important intellectual content; gave final approval of the version to be published; and agreed to be accountable for all aspects of the work in ensuring that questions related to the accuracy or integrity of any part of the work are appropriately investigated and resolved.
+
+Conflict of interest
+
+The authors declare that the research was conducted in the absence of any commercial or financial relationships that could be construed as a potential conflict of interest. The reviewer PZ and handling Editor declared their shared affiliation, and the handling Editor states that the process nevertheless met the standards of a fair and objective review.
+
+References
+
+- 1 MckenzieRA. Poisoning of companion animals by garden and house plants in Queensland: a veterinary practice survey. Aust Vet J (2007) 85:467–8.10.1111/j.1751-0813.2007.00222.x
+- 2 CaloniFBernyPCroubelsSSachanaMGuitartR. Epidemiology of animal poisonings in Europe. 2nd ed. In: GuptaRC, editor. Veterinary Toxicology: Basic and Clinical Principles . San Diego, CA: Elsevier Inc. (2012). p. 88–97.
+- 3 MahdiAVan der MerweD. Dog and cat exposures to hazardous substances reported to the Kansas State Veterinary Diagnostic Laboratory: 2009-2012. J Med Toxicol (2013) 9:207–11.10.1007/s13181-013-0289-8
+- 4
+- 5
+- 6
+- 7
+- 8
+- 9 YamotoOMaedeY. Susceptibility to onion-induced hemolysis in dogs with hereditary high erythrocyte reduced glutathione and potassium concentrations. Am J Vet Res (1992) 53:134–7.
+- 10 GuitartRMateuCLopez i AgulloAAlberolaJ. Heinz body anaemia in two dogs after Catalan spring onion (“calcot”) ingestion: case reports. Veterinarni Medicina (2008) 53:392–5.
+- 11
+- 12
+- 13
+- 14 YamatoOKasaiEKatsuraTTakahashiSShiotaTTajimaMet alHeinz body hemolytic anemia with eccentrocytosis from ingestion of Chinese chive ( Allium tuberosum ) and garlic (Allium sativum ) in a dog.J Am Anim Hosp Assoc (2005) 41:68–73.10.5326/0410068
+- 15
+- 16
+- 17
+- 18
+- 19
+- 20 KenoLALangstonCE. Treatment of accidental ethanol intoxication with hemodialysis in a dog. J Vet Emerg Crit Care (2011) 21:363–8.10.1111/j.1476-4431.2011.00652.x
+- 21
+- 22
+- 23
+- 24
+- 25
+- 26 ThrallMAHamarDW. Alcohols and glycols. 2nd ed. In: GuptaRC, editor. Veterinary Toxicology: Basic and Clinical Principles . San Diego, CA: Elsevier Inc. (2012). p. 735–44.
+- 27
+- 28 SuttonNMBatesNCampbellA. Factors influencing outcome of Vitis vinifera (grapes, raisins, currants and sultanas) intoxication in dogs.Vet Rec (2009) 164:430–1.10.1136/vr.164.14.430
+- 29
+- 30
+- 31 EubigPABradyMSGwaltney-BrantSMKhanSAMazzaferroEMMorrowCM. Acute renal failure in dogs after the ingestion of grapes or raisins: a retrospective evaluation of 43 dogs (1992-2002). J Vet Intern Med (2005) 19:663–74.10.1111/j.1939-1676.2005.tb02744.x
+- 32 MazzaferroEMEubigPAHackettTBLegareMMillerCWingfieldWEet alAcute renal failure associated with raisin or grape ingestion in 4 dogs. J Vet Emerg Crit Care (2004) 14:203–12.10.1111/j.1534-6935.2004.00114.x
+- 33 Gwaltney-BrantSHoldingJKDonaldsonCWEubigPAKhanSA. Renal failure associated with ingestion of grapes or raisins in dogs. J Am Vet Med Assoc (2001) 218:1555–6.10.2460/javma.2001.218.1553
+- 34
+- 35 MorrowCMValliVEVolmerPAEubigPA. Canine renal pathology associated with grape or raisin ingestion: 10 cases. J Vet Diagn Invest (2005) 17:223–31.10.1177/104063870501700302
+- 36
+- 37
+- 38
+- 39
+- 40
+- 41
+- 42 LeeJA. Hops. In: OsweilerGDHovdaLRBrutlagAGLeeJA, editors. Blackwell’s Five-Minute Veterinary Consult Clinical Companion: Small Animal Toxicology . Ames, IA: Wiley-Blackwell (2010). p. 436–40.
+- 43
+- 44
+- 45 BalhornDJ. Cyanogenic glycosides in nuts and seeds. 1st ed. In: PreedyVRWatsonRRPatelVB, editors. Nuts and Seeds in Health and Disease Prevention . San Diego, CA: Elsevier Inc. (2011). p. 129–36.
+- 46
+- 47
+- 48
+- 49
+- 50
+- 51 CraftEMPowellLL. Chocolate and caffeine. In: OsweilerGDHovdaLRBrutlagAGLeeJA, editors. Blackwell’s Five-Minute Veterinary Consult Clinical Companion: Small Animal Toxicology . Ames, IA: Wiley-Blackwell (2010). p. 421–8.
+- 52 OomsTGKhanSAMeansC. Suspected caffeine and ephedrine toxicosis resulting from ingestion of an herbal supplement containing guarana and ma huang in dogs: 47 cases (1997-1999). J Am Vet Med Assoc (2001) 21:225–9.10.2460/javma.2001.218.225
+- 53
+- 54
+- 55
+- 56
+- 57 TawdeSNPuschnerBAlbinTStumpSPoppengaRH. Death by caffeine: presumptive malicious poisoning of a dog by incorporation in ground meat. J Med Toxicol (2012) 8:436–40.10.1007/s13181-012-0254-y
+- 58
+- 59
+- 60
+- 61
+- 62
+- 63
+- 64 CollicaS. Der Polymorphismus 1117C>T im Cytochrom P450 CYP1A2 beeinträchtigt die Metabolisierung von Theobromin beim Beagle Hund [Dissertation] . Giessen: Justus-Liebig-University Giessen (2012).
+- 65
+- 66
+- 67
+- 68 DuHadwayMRSharpCRMeyersKEKoenigshofAM. Retrospective evaluation of xylitol ingestion in dogs: 192 cases (2007-2012). J Vet Emerg Crit Care (2015) 25:646–54.10.1111/vec.12350
+- 69 DunayerEKGwaltney-BrantSM. Acute hepatic failure and coagulopathy associated with xylitol ingestion in eight dogs. J Am Vet Med Assoc (2006) 229:1113–7.10.2460/javma.229.7.1113
+- 70
+- 71
+- 72
+- 73
+- 74
+- 75
+- 76
+
+Summary
+
+Keywords
+
+chocolate, ethanol, grape, macadamia nuts, onion, poisoning, pets, xylitol
+
+Citation
+
+Cortinovis C and Caloni F (2016) Household Food Items Toxic to Dogs and Cats. Front. Vet. Sci. 3:26. doi: 10.3389/fvets.2016.00026
+
+Received
+
+16 February 2016
+
+Accepted
+
+07 March 2016
+
+Published
+
+22 March 2016
+
+Volume
+
+3 - 2016
+
+Edited by
+
+Nora Mestorino, National University of La Plata, Argentina
+
+Reviewed by
+
+Pedro Zeinsteger, National University of La Plata, Argentina; Alexander Campbell, National Poisons Information Service, UK
+
+Updates
+
+Copyright
+
+© 2016 Cortinovis and Caloni.
+
+This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY). The use, distribution or reproduction in other forums is permitted, provided the original author(s) or licensor are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms.
+
+Correspondence: Francesca Caloni, francesca.caloni@unimi.it
+
+Specialty section: This article was submitted to Veterinary Pharmacology and Toxicology, a section of the journal Frontiers in Veterinary Science
+
+Disclaimer
+
+All claims expressed in this article are solely those of the authors and do not necessarily represent those of their affiliated organizations, or those of the publisher, the editors and the reviewers. Any product that may be evaluated in this article or claim that may be made by its manufacturer is not guaranteed or endorsed by the publisher.

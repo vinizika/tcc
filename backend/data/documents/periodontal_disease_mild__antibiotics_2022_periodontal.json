@@ -1,0 +1,50 @@
+{
+  "title": "Revisiting Periodontal Disease in Dogs: How to Manage This New Old Problem?",
+  "source": "Antibiotics",
+  "document_type": "peer_reviewed_review",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "periodontal_disease_mild",
+  "language": "en",
+  "source_url": "https://doi.org/10.3390/antibiotics11121729",
+  "indexing": {
+    "include_sections": [
+
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "c78af961e81fd54d2836ea36949b5393376c99db65c5276b5a1a4dfa96363683",
+  "map_line": "periodontal_disease_mild",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.3390/antibiotics11121729",
+  "journal": "Antibiotics",
+  "year": 2022,
+  "authors": "Eva Cunha; Luís Tavares; Manuela Oliveira"
+}

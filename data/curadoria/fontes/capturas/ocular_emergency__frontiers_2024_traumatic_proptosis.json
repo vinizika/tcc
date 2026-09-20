@@ -1,0 +1,42 @@
+{
+  "title": "Incidence of concurrent systemic injuries with traumatic proptosis and its effect on outcome – 100 dogs",
+  "source": "Frontiers in Veterinary Science",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "ocular_emergency",
+  "language": "en",
+  "source_url": "https://doi.org/10.3389/fvets.2023.1271189",
+  "indexing": {
+    "include_sections": [
+
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "2585f08df239e20d8d17e15ea3ab437ec07b5889a4d6f28645821f3f2aa2c0b5",
+  "map_line": "ocular_emergency",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.3389/fvets.2023.1271189",
+  "journal": "Frontiers in Veterinary Science",
+  "year": 2024,
+  "authors": "Nicole Whinery; Rachel A. Allbaugh; Lionel Sebbag; Rebecca Walton"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Feline abscess case",
+  "source": "Frontiers in Veterinary Science",
+  "document_type": "case_report",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "cat",
+  "topic": "cat_bite_abscess",
+  "language": "en",
+  "source_url": "https://www.frontiersin.org/journals/veterinary-science/articles/10.3389/fvets.2025.1654990/pdf",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [3, 4, 5],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "996c364f63c5f28ab8e5cd7edb5ea30c3768a26583be4604e26f3fe2f8b4a4af",
+  "map_line": "cat_bite_abscess",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-19"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.3389/fvets.2025.1654990",
+  "journal": "Frontiers in Veterinary Science",
+  "year": 2025,
+  "authors": "Kei Tamura; Kazuya Kushida; Tomoko Iwanaga; Ryuji Fukushima; Keitaro Ohmori"
+}

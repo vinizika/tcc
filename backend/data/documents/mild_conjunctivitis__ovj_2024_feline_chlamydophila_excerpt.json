@@ -1,0 +1,37 @@
+{
+  "title": "Molecular detection of Chlamydophila felis from conjunctiva of cats infected with conjunctivitis and upper respiratory disease",
+  "source": "Open Veterinary Journal",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "cat",
+  "topic": "mild_conjunctivitis",
+  "language": "en",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11799655/",
+  "doi": "10.5455/OVJ.2024.v14.i12.13",
+  "journal": "Open Veterinary Journal",
+  "indexing": {
+    "include_sections": ["Introduction"],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-17",
+  "captured_sha256": "2bda92787ba47fac3d6a84dcc07af30a161c7162893f2288c9e0e59b4b9cce0f",
+  "map_line": "mild_conjunctivitis",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET — Primeiro Grupo de Anestesia e Veterinaria Universitaria do Brasil",
+    "date": "2026-09-17"
+  },
+  "rights": {
+    "status": "allowed",
+    "redistribution_allowed": true,
+    "basis": "CC BY-NC 4.0 declarada no artigo; uso e redistribuicao nao comerciais permitidos com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-17"
+  },
+  "year": 2024,
+  "authors": "Zahraa Mustafa Al-Jumaa; Mohammed Tariq Jaber; Atheer Abdulrazzaq Al-Doori"
+}

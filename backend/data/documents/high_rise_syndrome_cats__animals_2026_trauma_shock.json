@@ -1,0 +1,57 @@
+{
+  "title": "Prognostic Performance of Shock Index, Whole-Blood Lactate Concentration, Rectal–Interdigital Temperature Gradient, and ATT Score in Cats with Trauma-Induced Shock",
+  "source": "Animals",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "cat",
+  "topic": "high_rise_syndrome_cats",
+  "language": "en",
+  "source_url": "https://doi.org/10.3390/ani16152410",
+  "indexing": {
+    "include_sections": [
+
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+      2,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "ad24fe0d6216bbd2841b71afe19693fc7fc2820d1c80bf533a3308e0104dc93d",
+  "map_line": "high_rise_syndrome_cats",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.3390/ani16152410",
+  "journal": "Animals",
+  "year": 2026,
+  "authors": "Sena Yazıcı Özcan; Kurtuluş Parlak"
+}

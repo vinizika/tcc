@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-20",
+  "branch": "codex/lote-06-dez-lacunas",
+  "initial_head": "fb4040d01224ae9bcd93a2d6ba9c0dc7eba54830",
+  "synthetic_replacement": {
+    "topics": [
+      "chocolate_toxicosis",
+      "allium_toxicosis",
+      "respiratory_distress",
+      "seizures",
+      "trauma_and_bleeding",
+      "urethral_obstruction",
+      "vomiting_and_diarrhea"
+    ],
+    "removed_files": 14,
+    "removed_chunks": 73,
+    "remaining_synthetic_protocol_occurrences": 0,
+    "replacement_documents": 8,
+    "replacement_chunks": 183,
+    "sources": [
+      {
+        "topic": "chocolate_toxicosis",
+        "title": "Chocolate Toxicity in Dogs and Cats",
+        "authors": "Cristina Cortinovis; Francesca Caloni",
+        "institution": "Frontiers in Veterinary Science",
+        "year": 2016,
+        "species": "dog_and_cat",
+        "url": "https://doi.org/10.3389/fvets.2016.00026",
+        "rights": "CC BY 4.0; allowed with attribution",
+        "captured_sha256": "6bb19e877af496167579a562f3f536e4642d27f77d2b38532a8c3cd0e01b1b71",
+        "chunks": 24,
+        "validation_status": "pending_specialist",
+        "ingestion_scope": "experimental_only"
+      },
+      {
+        "topic": "allium_toxicosis",
+        "title": "Allium Toxicity in Dogs and Cats",
+        "authors": "Cristina Cortinovis; Francesca Caloni",
+        "institution": "Frontiers in Veterinary Science",
+        "year": 2016,
+        "species": "dog_and_cat",
+        "url": "https://doi.org/10.3389/fvets.2016.00026",
+        "rights": "CC BY 4.0; allowed with attribution",
+        "captured_sha256": "6bb19e877af496167579a562f3f536e4642d27f77d2b38532a8c3cd0e01b1b71",
+        "chunks": 20,
+        "validation_status": "pending_specialist",
+        "ingestion_scope": "experimental_only"
+      },
+      {
+        "topic": "respiratory_distress",
+        "title": "Respiratory Distress in Dogs and Cats",
+        "authors": "Bittenecker; Mohr; Saenger; Doerfelt; Kraszewska; Henninger; Wess",
+        "institution": "Frontiers in Veterinary Science",
+        "year": 2026,
+        "species": "dog_and_cat",
+        "url": "https://doi.org/10.3389/fvets.2026.1790755",
+        "rights": "CC BY 4.0; allowed with attribution",
+        "captured_sha256": "7c7bac93cb436424aa7e6d749044bf3788cd3de8c4f372ab7bccb45337f26a80",
+        "chunks": 21,
+        "validation_status": "pending_specialist",
+        "ingestion_scope": "experimental_only"
+      },
+      {
+        "topic": "seizures",
+        "title": "Acute Seizures in Dogs and Cats",
+        "authors": "Munguia; Brooks; Thomovsky; Johnson et al.",
+        "institution": "Veterinary Sciences",
+        "year": 2024,
+        "species": "dog_and_cat",
+        "url": "https://doi.org/10.3390/vetsci11060277",
+        "rights": "CC BY 4.0; allowed with attribution",
+        "captured_sha256": "60847c73b3139bcd94bcf5e7a1f33555ce5d17b8aeca8435db92c3288b1c0db0",
+        "chunks": 31,
+        "validation_status": "pending_specialist",
+        "ingestion_scope": "experimental_only"
+      },
+      {
+        "topic": "trauma_and_bleeding",
+        "title": "Hemorrhage in Dogs and Cats",
+        "authors": "Kelly Hall; Kenneth Drobatz",
+        "institution": "Frontiers in Veterinary Science",
+        "year": 2021,
+        "species": "dog_and_cat",
+        "url": "https://doi.org/10.3389/fvets.2021.638104",
+        "rights": "CC BY 4.0; allowed with attribution",
+        "captured_sha256": "4b6b2c2c1157d4e72ab1c6849c6f21c345d0852439ee03f60423720adbcae274",
+        "chunks": 14,
+        "validation_status": "pending_specialist",
+        "ingestion_scope": "experimental_only"
+      },
+      {
+        "topic": "urethral_obstruction",
+        "title": "Feline Lower Urinary Tract Guidelines",
+        "authors": "Samantha Taylor; Soren Boysen; Tony Buffington et al.",
+        "institution": "iCatCare / Journal of Feline Medicine and Surgery",
+        "year": 2025,
+        "species": "cat",
+        "url": "https://doi.org/10.1177/1098612X241309176",
+        "rights": "CC BY-NC 4.0; allowed for non-commercial use with attribution",
+        "captured_sha256": "2cc8bb64898e983ccc16c749f94e1079fe2f722296e715cc3716a602b9e4d3ab",
+        "chunks": 25,
+        "validation_status": "pending_specialist",
+        "ingestion_scope": "experimental_only"
+      },
+      {
+        "topic": "urethral_obstruction",
+        "title": "Canine Mechanical Urethral Obstruction",
+        "authors": "Yesim Er; Meghan Fick; Elizabeth Long Mays",
+        "institution": "Frontiers in Veterinary Science",
+        "year": 2023,
+        "species": "dog",
+        "url": "https://doi.org/10.3389/fvets.2023.1200406",
+        "rights": "CC BY 4.0; allowed with attribution",
+        "captured_sha256": "4fc8ec005be8e7537ac6c261d31bf6b79fe6466d9e19c214bf3599d57dd6ab36",
+        "chunks": 35,
+        "validation_status": "pending_specialist",
+        "ingestion_scope": "experimental_only"
+      },
+      {
+        "topic": "vomiting_and_diarrhea",
+        "title": "Gastrointestinal Presentations in Dogs and Cats",
+        "authors": "Ivo Fins; David Singleton; Alan Radford et al.",
+        "institution": "Frontiers in Veterinary Science",
+        "year": 2023,
+        "species": "dog_and_cat",
+        "url": "https://doi.org/10.3389/fvets.2023.1166114",
+        "rights": "CC BY 4.0; allowed with attribution",
+        "captured_sha256": "31cd34a71f1441e2b4ea83157e6f1e30307d556da32e7960ac49a5119a19e8d8",
+        "chunks": 13,
+        "validation_status": "pending_specialist",
+        "ingestion_scope": "experimental_only"
+      }
+    ]
+  },
+  "asavet": {
+    "statement_recorded_for_preexisting_sources": true,
+    "preexisting_sources_approved": 30,
+    "sidecars_updated": 55,
+    "date": "2026-09-20",
+    "scope_preserved": "experimental_only",
+    "new_replacement_files_excluded_from_blanket_approval": true,
+    "reason": "The exact new files and hashes did not exist when the prior blanket approval was given."
+  },
+  "coverage": {
+    "map_topics": 61,
+    "map_fonte_aprovada": 52,
+    "map_fonte_encontrada": 9,
+    "ingested_topics": 59,
+    "previously_missing_topics_added": 15,
+    "documents_copied_for_previously_missing_topics": 18,
+    "rights_blocked_topics": [
+      "gastric_dilatation_volvulus",
+      "single_vomiting_or_mild_diarrhea"
+    ]
+  },
+  "candidate": {
+    "collection_name": "veterinary_documents__20260920T045641179741Z__885cecf4",
+    "profile": "experimental",
+    "activated": false,
+    "active_pointer": null,
+    "document_count": 64,
+    "chunk_count": 3458,
+    "topic_count": 59,
+    "validation_status_counts": {
+      "approved_by_specialist": 3275,
+      "pending_specialist": 183
+    },
+    "species_counts": {
+      "dog": 2000,
+      "cat": 512,
+      "dog_and_cat": 946
+    },
+    "warning_count": 116,
+    "fallback_count": 152,
+    "corrupt_document_count": 1,
+    "source_set_sha256": "885cecf478dee6567015887c95a712a62b364708a0f43da86b6184be824217b2",
+    "chunk_ids_sha256": "53dc12dfee2fa1d8072ef9b7bd1921bff57dc0a1e96c255b01f81d592ec5a8cb",
+    "chunk_content_sha256": "b51b2e6bff884a524f7b8ef4c3effdb7a14525ba9faad8584c95102f90121553",
+    "manifest_sha256": "e36836d6e050d5bae28a8c50856d2454184f3d1ed892eb39ffcb7964c310e4ef",
+    "consensus": "passed"
+  },
+  "retrieval_comparison": {
+    "scored_cases": 61,
+    "total_cases": 63,
+    "old_collection": {
+      "name": "veterinary_documents__20260919T223447338940Z__2b248783",
+      "documents": 45,
+      "chunks": 3065,
+      "topics": 44,
+      "precision_at_1": 0.1639,
+      "precision_at_1_cases": 10,
+      "mrr": 0.2484,
+      "recall_at_5": 0.4098,
+      "recall_at_5_cases": 25,
+      "cases_at_or_above_0_70": 1,
+      "mean_max_score": 0.594404,
+      "mean_latency_seconds": 0.0484,
+      "p95_latency_seconds": 0.0820
+    },
+    "new_collection": {
+      "name": "veterinary_documents__20260920T045641179741Z__885cecf4",
+      "documents": 64,
+      "chunks": 3458,
+      "topics": 59,
+      "precision_at_1": 0.1967,
+      "precision_at_1_cases": 12,
+      "mrr": 0.2822,
+      "recall_at_5": 0.4426,
+      "recall_at_5_cases": 27,
+      "cases_at_or_above_0_70": 1,
+      "mean_max_score": 0.597407,
+      "mean_latency_seconds": 0.1195,
+      "p95_latency_seconds": 0.1457
+    },
+    "wins": ["b05", "b10", "b14", "b17", "b18", "b24", "b25", "b26"],
+    "losses": ["b03", "b04", "b06", "b08", "b31", "b36", "b49"],
+    "unchanged": 48,
+    "latency_caveat": "Single ordered local run; not randomized, warmed and repeated enough for a controlled latency benchmark.",
+    "activation_recommendation": "do_not_activate"
+  },
+  "ryu_benchmarks": {
+    "query_techniques": {
+      "path": "backend/app/database/measure_query_techniques.py",
+      "applicable": true,
+      "attempted": true,
+      "completed": false,
+      "reason": "Local Ollama generated about one token per second; the first HyDE case did not complete after several minutes.",
+      "next_step": "Run with a GPU or add bounded generation/timeouts before repeating all nine cases."
+    },
+    "speech_wer": {
+      "applicable_to_vector_expansion": false
+    },
+    "classification_calibration": {
+      "applicable": true,
+      "condition": "Use an explicitly selected approved RAG candidate; do not silently activate staging."
+    }
+  },
+  "tests": [
+    {
+      "command": "pytest scripts/tests -q",
+      "status": "passed",
+      "result": "186 passed"
+    },
+    {
+      "command": "docker compose exec -T backend pytest -q",
+      "status": "passed",
+      "result": "210 passed"
+    },
+    {
+      "command": "ingest_documents --profile experimental --stage-only",
+      "status": "passed",
+      "result": "64 documents, 3458 chunks, not activated"
+    },
+    {
+      "command": "verify_vector_consensus for final candidate",
+      "status": "passed",
+      "result": "manifest, receipt and actual collection agree"
+    },
+    {
+      "command": "measure_query_techniques against final candidate",
+      "status": "incomplete",
+      "result": "stopped during first HyDE case because local generation was too slow; no partial score reported"
+    },
+    {
+      "command": ".venv/bin/python -m pip check and docker compose exec -T backend python -m pip check",
+      "status": "passed",
+      "result": "No broken requirements found"
+    },
+    {
+      "command": "compileall scripts backend/app and compileall app in the backend container",
+      "status": "passed"
+    },
+    {
+      "command": "JSON/YAML syntax validation, docker compose config --quiet, git diff --check",
+      "status": "passed"
+    },
+    {
+      "command": "GET http://localhost:8000/health/",
+      "status": "passed",
+      "result": "{\"status\":\"ok\"}"
+    }
+  ],
+  "environment_notes": [
+    "An accidental test run with the macOS global Python failed 26 capture tests because trafilatura was not installed there; the reproducible project .venv passed all 186 tests.",
+    "The local .env currently sets CHROMA_PATH=./chroma_db; production must set this explicitly because the code and .env.example default to data/chroma."
+  ],
+  "production_blockers": [
+    "ASAVET decision tied to the exact eight new files and hashes",
+    "Redistribution rights for gastric_dilatation_volvulus and single_vomiting_or_mild_diarrhea",
+    "Retrieval regressions for respiratory distress, seizures, trauma and Allium",
+    "Explicit production CHROMA_PATH alignment with the backend/chroma_db candidate location",
+    "Legacy heatstroke corrupt extraction and incomplete rights metadata",
+    "Curated staging, full regression, load, security, backup, monitoring and rollback validation"
+  ]
+}

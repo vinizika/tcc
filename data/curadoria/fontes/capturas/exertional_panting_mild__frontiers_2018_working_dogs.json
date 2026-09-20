@@ -1,0 +1,43 @@
+{
+  "title": "Working Dogs Drinking a Nutrient-Enriched Water Maintain Cooler Body Temperature and Improved Pulse Rate Recovery After Exercise",
+  "source": "Frontiers in Veterinary Science",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "exertional_panting_mild",
+  "language": "en",
+  "source_url": "https://doi.org/10.3389/fvets.2018.00202",
+  "indexing": {
+    "include_sections": [
+      "Introduction",
+      "Discussion"
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "3a7083eed08fa55ec967a2c6432ae1a78623e83474b5a935164f571e2bf80027",
+  "map_line": "exertional_panting_mild",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.3389/fvets.2018.00202",
+  "journal": "Frontiers in Veterinary Science",
+  "year": 2018,
+  "authors": "Brian M. Zanghi et al."
+}

@@ -1,0 +1,61 @@
+{
+  "title": "Canid Reproductive Biology: Norm and Unique Aspects in Strategies and Mechanisms",
+  "source": "Animals",
+  "document_type": "peer_reviewed_review",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "normal_estrus",
+  "language": "en",
+  "source_url": "https://doi.org/10.3390/ani11030653",
+  "indexing": {
+    "include_sections": [
+
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "1053ec6758fe78270fff3ce2943e6694553d1cde3a0bd56a139914843a50dd4c",
+  "map_line": "normal_estrus",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.3390/ani11030653",
+  "journal": "Animals",
+  "year": 2021,
+  "authors": "Jennifer B. Nagashima; Nucharin Songsasen"
+}
