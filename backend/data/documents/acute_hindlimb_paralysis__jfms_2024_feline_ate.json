@@ -1,0 +1,34 @@
+{
+  "title": "Feline aortic thromboembolism",
+  "source": "Journal of Feline Medicine and Surgery",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "cat",
+  "topic": "acute_hindlimb_paralysis",
+  "language": "en",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11274361/",
+  "indexing": {
+    "include_sections": ["Introduction", "Clinical presentation"],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-16",
+  "captured_sha256": "724453ba336b20390ef226b12949ace7290625c940e35420f5a941c8e5d8f494",
+  "map_line": "acute_hindlimb_paralysis",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET — Primeiro Grupo de Anestesia e Veterinaria Universitaria do Brasil",
+    "date": "2026-09-16"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY-NC 4.0 declarada no artigo; extracao literal das secoes Introduction e Clinical presentation autorizada para uso experimental nao comercial com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-16"
+  },
+  "year": 2024,
+  "authors": "Julien Guillaumin"
+}

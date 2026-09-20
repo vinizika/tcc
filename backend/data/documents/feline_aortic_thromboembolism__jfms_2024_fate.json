@@ -1,0 +1,36 @@
+{
+  "title": "Feline aortic thromboembolism review",
+  "source": "Journal of Feline Medicine and Surgery",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "cat",
+  "topic": "feline_aortic_thromboembolism",
+  "language": "en",
+  "source_url": "https://felinevetfriends.nl/wp-content/uploads/2025/01/2024-ISFM-Feline-Aortic-thromboembolism-Recent-advances-and-future-prospects.pdf",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "1d319d26e1796bf06cce656d727bafa5e9fa2faa06bd73e59f6ac9bba46b836c",
+  "map_line": "feline_aortic_thromboembolism",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-19"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY-NC 4.0 declarada no artigo; redistribuicao nao comercial permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.1177/1098612X241257878",
+  "journal": "Journal of Feline Medicine and Surgery",
+  "year": 2024,
+  "authors": "Julien Guillaumin"
+}

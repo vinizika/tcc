@@ -1,0 +1,52 @@
+{
+  "title": "Hemorrhage in Dogs and Cats",
+  "source": "Frontiers in Veterinary Science",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog_and_cat",
+  "topic": "trauma_and_bleeding",
+  "language": "en",
+  "source_url": "https://doi.org/10.3389/fvets.2021.638104",
+  "indexing": {
+    "include_sections": [
+
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-20",
+  "captured_sha256": "4b6b2c2c1157d4e72ab1c6849c6f21c345d0852439ee03f60423720adbcae274",
+  "map_line": "trauma_and_bleeding",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-20"
+  },
+  "doi": "10.3389/fvets.2021.638104",
+  "journal": "Frontiers in Veterinary Science",
+  "year": 2021,
+  "authors": "Kelly Hall; Kenneth Drobatz"
+}

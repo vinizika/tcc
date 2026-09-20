@@ -1,0 +1,45 @@
+{
+  "title": "Uterine dynamics, blood profiles, and electronic fetal monitoring of primiparous and multiparous bitches classified according to their weight",
+  "source": "Frontiers in Veterinary Science",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "normal_whelping",
+  "language": "en",
+  "source_url": "https://doi.org/10.3389/fvets.2023.1282389",
+  "indexing": {
+    "include_sections": [
+      "Introduction",
+      "Results",
+      "Discussion",
+      "Conclusion"
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "44e411b0062c4bb185f970d722152d6c0156e3d03efdadac387bead5752e8745",
+  "map_line": "normal_whelping",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.3389/fvets.2023.1282389",
+  "journal": "Frontiers in Veterinary Science",
+  "year": 2023,
+  "authors": "Karina Lezama-García et al."
+}

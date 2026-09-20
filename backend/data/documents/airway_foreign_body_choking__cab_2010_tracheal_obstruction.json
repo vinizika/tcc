@@ -1,0 +1,43 @@
+{
+  "title": "Obstrução parcial da traqueia em canino – relato de caso",
+  "source": "Ciência Animal Brasileira",
+  "document_type": "case_report",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "airway_foreign_body_choking",
+  "language": "pt",
+  "source_url": "https://doi.org/10.5216/cab.v11i1.1561",
+  "indexing": {
+    "include_sections": [
+      "Obstrução Parcial Da Traqueia Em Canino",
+      "Partial Tracheal Obstruction In Canines"
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "d76346907ae61b70d6d263fe33173350b2cc8e3f16a927b06e5d063c528266ac",
+  "map_line": "airway_foreign_body_choking",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY declarada pela politica editorial da Ciencia Animal Brasileira; texto capturado sem traducao ou reescrita.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.5216/cab.v11i1.1561",
+  "journal": "Ciência Animal Brasileira",
+  "year": 2010,
+  "authors": "Silvio Henrique de Freitas et al."
+}

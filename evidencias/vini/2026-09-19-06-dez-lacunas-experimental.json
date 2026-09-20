@@ -1,0 +1,78 @@
+{
+  "date": "2026-09-19",
+  "branch": "codex/lote-06-dez-lacunas",
+  "initial_head": "fb4040d01224ae9bcd93a2d6ba9c0dc7eba54830",
+  "status": "staged_not_activated_approved_by_asavet",
+  "map": {
+    "initial_missing": 34,
+    "topics_filled": 10,
+    "remaining_missing": 24,
+    "coverage_state": "fonte_aprovada",
+    "validation_state": "validada:asavet:19/09"
+  },
+  "topics": [
+    "gastrointestinal_foreign_body",
+    "cat_bite_abscess",
+    "congestive_heart_failure",
+    "diabetic_ketoacidosis",
+    "distemper_neurological",
+    "dystocia",
+    "feline_aortic_thromboembolism",
+    "leptospirosis_acute",
+    "lily_toxicosis_cats",
+    "toad_bufotoxin_poisoning"
+  ],
+  "staging": {
+    "collection": "veterinary_documents__20260919T213831239313Z__4953d00c",
+    "profile": "experimental",
+    "document_count": 21,
+    "chunk_count": 849,
+    "source_set_sha256": "4953d00cba14e9d7da338c6c0b790a02cff310340aa13f0048f0bfa77db95465",
+    "chunk_ids_sha256": "9ebdae42d47cc31da0464cbf9b33544922b63aabba44e844be2797da12020e25",
+    "content_sha256": "be9ba546aca3decf92318ec4d1752c90f37f1b3edcc66f1c978f0628f3afb36b",
+    "manifest_sha256": "b8c9fd7b15c4ced107393287d27565a503e5f51cfd15080462a971ddec349347",
+    "approved_by_specialist_chunks": 590,
+    "activated": false,
+    "active_pointer_before": null,
+    "active_pointer_after": null
+  },
+  "retrieval": {
+    "mode": "raw_query_production_retrieval_with_threshold_and_fallback",
+    "top5_found": 8,
+    "top5_total": 10,
+    "top1_found": 2,
+    "above_0_70": 1,
+    "cases": [
+      {"id": "b30", "topic": "gastrointestinal_foreign_body", "position": null, "max_score": 0.601285},
+      {"id": "b31", "topic": "cat_bite_abscess", "position": 3, "max_score": 0.564723},
+      {"id": "b32", "topic": "congestive_heart_failure", "position": 1, "max_score": 0.709097},
+      {"id": "b33", "topic": "diabetic_ketoacidosis", "position": 5, "max_score": 0.603552},
+      {"id": "b34", "topic": "distemper_neurological", "position": 4, "max_score": 0.661981},
+      {"id": "b35", "topic": "dystocia", "position": null, "max_score": 0.514025},
+      {"id": "b36", "topic": "feline_aortic_thromboembolism", "position": 3, "max_score": 0.556702},
+      {"id": "b37", "topic": "leptospirosis_acute", "position": 3, "max_score": 0.582224},
+      {"id": "b38", "topic": "lily_toxicosis_cats", "position": 1, "max_score": 0.626081},
+      {"id": "b39", "topic": "toad_bufotoxin_poisoning", "position": 3, "max_score": 0.638003}
+    ]
+  },
+  "tests": {
+    "baseline_scripts": {"passed": 186},
+    "baseline_backend": {"passed": 210},
+    "final_scripts": {"passed": 186},
+    "final_backend": {"passed": 210},
+    "pip_check": "passed",
+    "compileall": "passed",
+    "json": "passed",
+    "yaml": "passed",
+    "docker_compose_config": "passed",
+    "backend_health": "healthy",
+    "git_diff_check": "passed"
+  },
+  "limitations": [
+    "The cat_bite_abscess source concerns feline intra-abdominal abscess rather than a bite wound.",
+    "The complete query-technique measurement was stopped because local Ollama inference was too slow.",
+    "gastrointestinal_foreign_body and dystocia were not found in the raw-query top 5.",
+    "Only congestive_heart_failure exceeded the provisional score threshold of 0.70.",
+    "The pre-existing active collection pointer was null and was not changed."
+  ]
+}

@@ -6,8 +6,10 @@
 **Discriminador:** *Continua comendo e ativo? Sai conteúdo quando vomita? Tem
 sangue? Passou de 24 horas?*
 
-**Estado:** `fonte_encontrada` em 12/09. Duas primárias e uma alternativa,
-esperando os especialistas.
+**Estado:** as duas primárias e a alternativa foram validadas clinicamente
+pela ASAVET em 20/09/2026, mas permanecem fora da ingestão por licença
+indefinida. Uma fonte substituta CC BY foi capturada e inspecionada para o
+perfil experimental; o arquivo novo ainda aguarda validação da ASAVET.
 
 > **Segunda linha levada de ponta a ponta, e a primeira do lado leve.** O que
 > ela testa não é o pesquisador em geral — é a seção "Linha leve" do roteiro,
@@ -171,14 +173,24 @@ isolado em animal ativo. É a lacuna que o [B-54](../../../evidencias/backlog.md
 pode ou não fechar, e o argumento mais concreto até agora para o redator de
 lacuna.
 
-## Para os especialistas
+## Validação
 
-Três perguntas em `PARA-VALIDAR.md`:
+A ASAVET aprovou as três capturas em 20/09/2026. As ressalvas de procedência,
+escopo e possível confusão temporal continuam registradas. Como os direitos
+continuam `pending_review`, os arquivos não foram copiados para
+`backend/data/documents/`.
 
-1. A fonte da PDSA (inglês, para tutor) serve como referência de "vômito
-   isolado em cão ativo" para um sistema brasileiro?
-2. A da Cornell serve para o lado gato, com o limiar de uma bola de pelo a
-   cada uma ou duas semanas?
-3. A do CRMV-SP: o conteúdo serve, mesmo sendo release de agência publicado
-   pelo conselho? E o limiar de "uma vez por mês é aceitável" vale para o
-   tutor brasileiro, ou confunde quem está com um episódio agudo?
+## Substituição com redistribuição permitida
+
+R105 · Holzmann et al. · *Utility of diagnostic tests in vomiting dogs
+presented to an internal medicine emergency service* · Frontiers in Veterinary
+Science 10:1063080 · 2023 · DOI `10.3389/fvets.2023.1063080` · CC BY 4.0.
+
+A captura usa somente a primeira página do PDF, que contém o resumo e a
+separação entre vômito simples e complicado. O recorte foi inspecionado e
+preserva o texto original. SHA-256:
+`482a69011e47d209b75bd3d38dc5e0ef7332faf73690edaed0a3c7e2e0a15008`.
+
+O arquivo entrou somente no perfil `experimental` e permanece
+`pending_specialist`, pois foi produzido depois da validação das fontes
+anteriores.

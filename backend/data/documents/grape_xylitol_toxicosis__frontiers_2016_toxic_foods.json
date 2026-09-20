@@ -1,0 +1,43 @@
+{
+  "title": "Household Food Items Toxic to Dogs and Cats",
+  "source": "Frontiers in Veterinary Science",
+  "document_type": "peer_reviewed_review",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog_and_cat",
+  "topic": "grape_xylitol_toxicosis",
+  "language": "en",
+  "source_url": "https://doi.org/10.3389/fvets.2016.00026",
+  "indexing": {
+    "include_sections": [
+
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+      6,
+      7
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "4dd80bd7843f80fc15e568e45f5403a62d2292e13a4afff9f80d0d8d5be21fb1",
+  "map_line": "grape_xylitol_toxicosis",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.3389/fvets.2016.00026",
+  "journal": "Frontiers in Veterinary Science",
+  "year": 2016,
+  "authors": "Cristina Cortinovis; Francesca Caloni"
+}

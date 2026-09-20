@@ -2,7 +2,7 @@
   "title": "Dilatacao volvo gastrica",
   "source": "Ciencia Rural",
   "document_type": "peer_reviewed_article",
-  "validation_status": "pending_specialist",
+  "validation_status": "approved_by_specialist",
   "ingestion_scope": "curated_candidate",
   "species": "dog",
   "topic": "gastric_dilatation_volvulus",
@@ -29,16 +29,18 @@
       "Hipoproteinemia",
       "Lesão à mucosa gástrica e perfuração"
     ],
-    "exclude_pages": []
+    "exclude_pages": [
+
+    ]
   },
   "register": "academico",
   "access_date": "2026-09-12",
   "captured_sha256": "0f0b922b0af159dadd222c11aa377953775331b0fe21e9f77cad310acf2182c2",
   "map_line": "gastric_dilatation_volvulus",
   "specialist": {
-    "verdict": "",
-    "name": "",
-    "date": ""
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
   },
   "rights": {
     "status": "pending_review",

@@ -2,7 +2,7 @@
   "title": "Pathophysiology of heatstroke in dogs – revisited",
   "source": "Temperature",
   "document_type": "peer_reviewed_review",
-  "validation_status": "published_not_locally_validated",
+  "validation_status": "approved_by_specialist",
   "ingestion_scope": "experimental_only",
   "species": "dog",
   "topic": "canine_heatstroke",
@@ -22,5 +22,10 @@
     "exclude_pages": [
       1
     ]
+  },
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
   }
 }

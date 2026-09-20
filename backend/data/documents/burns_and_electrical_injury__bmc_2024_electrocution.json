@@ -1,0 +1,46 @@
+{
+  "title": "Successful management of pulmonary edema secondary to accidental electrocution in a young dog",
+  "source": "BMC Veterinary Research",
+  "document_type": "case_report",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "burns_and_electrical_injury",
+  "language": "en",
+  "source_url": "https://doi.org/10.1186/s12917-024-03982-4",
+  "indexing": {
+    "include_sections": [
+
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "5adc0b96a6cb6b90f4672a6ba5219dbf2b7789ff34416c87ef7567757dc979c1",
+  "map_line": "burns_and_electrical_injury",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.1186/s12917-024-03982-4",
+  "journal": "BMC Veterinary Research",
+  "year": 2024,
+  "authors": "Eduardo A. Díaz et al."
+}

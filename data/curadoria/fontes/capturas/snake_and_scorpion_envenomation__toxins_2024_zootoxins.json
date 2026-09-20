@@ -1,0 +1,55 @@
+{
+  "title": "Zootoxins and Domestic Animals: A European View",
+  "source": "Toxins",
+  "document_type": "peer_reviewed_review",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog_and_cat",
+  "topic": "snake_and_scorpion_envenomation",
+  "language": "en",
+  "source_url": "https://doi.org/10.3390/toxins16010048",
+  "indexing": {
+    "include_sections": [
+
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      14,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "4d5aefb6734fdf89db694f139564525cf38baf69a5a616d1a5672b5eb1979ac2",
+  "map_line": "snake_and_scorpion_envenomation",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.3390/toxins16010048",
+  "journal": "Toxins",
+  "year": 2024,
+  "authors": "Andras-Laszlo Nagy et al."
+}

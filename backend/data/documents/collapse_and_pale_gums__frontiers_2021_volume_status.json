@@ -1,0 +1,50 @@
+{
+  "title": "Volume Resuscitation in the Acutely Hemorrhaging Patient: Historic Use to Current Applications",
+  "source": "Frontiers in Veterinary Science",
+  "document_type": "peer_reviewed_review",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog_and_cat",
+  "topic": "collapse_and_pale_gums",
+  "language": "en",
+  "source_url": "https://doi.org/10.3389/fvets.2021.638104",
+  "indexing": {
+    "include_sections": [
+
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      9,
+      10,
+      11,
+      12
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "4b6b2c2c1157d4e72ab1c6849c6f21c345d0852439ee03f60423720adbcae274",
+  "map_line": "collapse_and_pale_gums",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.3389/fvets.2021.638104",
+  "journal": "Frontiers in Veterinary Science",
+  "year": 2021,
+  "authors": "Kelly Hall; Kenneth Drobatz"
+}

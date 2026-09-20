@@ -1,0 +1,125 @@
+33-1561V11N1
+DOI: 10.5216/cab.v11i1.1561
+OBSTRUÇÃO PARCIAL DA TRAQUEIA EM CANINO
+– Relato de caso –
+Silvio Henrique de Freitas,
+1
+Lázaro Manoel de Camargo,
+1
+Patrícia Scapucin,
+1
+Ana Helena Benetti,
+1
+Cláudia Gorgulho Nogueira Fernandes
+1
+e Renata Gebara Sampaio Dória
+1
+1. Professores da Faculdade de Medicina Veterinária da Universidade de Cuiabá, UNIC. E-mail: shfreitas@.com.br
+RESUMO
+A obstrução traqueal incompleta por corpos estranhos é uma afecção rara na espécie canina, que pode causar traqueíte, bronquite e pneumonia. Os principais sinais clínicos são dispneia, tosse e cianose, que podem levar o animal a óbito. Um canino da raça Rottweiler, fêmea, com um ano e sete meses de idade, foi atendido no Hospital Veterinário da Universidade de Cuiabá/UNIC/MT, apresentando tosse e angústia respiratória. O exame radiológico revelou uma estrutura radiopaca de formato circular localizado na traqueia cervical cranial. O animal foi, então, submetido à traqueotomia para retirada do corpo estranho, ocasião em que se pôde confirmar que se tratava de uma bola de gude. Os resultados foram satisfatórios, confirmados através de ausência de sinais de dificuldade respiratória após o procedimento cirúrgico.
+PALAVRAS-CHAVES: Canino, corpo estranho, traqueia.
+ABSTRACT
+PARTIAL TRACHEAL OBSTRUCTION IN CANINES
+– Case report –
+Partial tracheal obstruction caused by foreign bodies is a rare afliction in canines which can lead to tracheitis, bronchitis or pneumonia. The main clinical indications are dyspnea, coughing and cyanosis, which may lead to the death of the animal. One female Rottweiler dog of one year and seven months of age was treated at the Veterinary Hospital of the University of Cuiabá (UNIC/MT) for coughing and breathing difficulty. The radiology exam showed an opaque, circular object located in the cranial cervical trachea. The animal was therefore submitted to a surgical procedure for the removal of the foreign body which was subsequently identified as a child’s marble. The results were satisfactory, confirmed by the lack of respiratory difficulty signs after the surgical procedure.
+KEY WORDS: Canine, foreign body, trachea.
+INTRODUÇÃO
+A traqueia é um conduto tubular flexível e semirrígido que interliga a laringe aos brônquios. Ela é composta por anéis traqueais em forma de “C”, unidos ventral e lateralmente pelos ligamentos anulares e dorsalmente pela membrana dorsal traqueal (BRAYLEY & ETTINGER, 1997; KNELLER, 1998; FINGLAND, 2004).
+Os corpos estranhos traqueais como pedras, dentes, bola de gude, alfinetes e fragmentos de capim são mais frequentes em animais jovens, porém podem ser diagnosticados em cães adultos (FINGLAND, 1996; HAWKINS, 1997; NELSON, 1998; KEALY & McALLISTER, 2000). Os objetos maiores, geralmente, ficam retidos na carina, porém os menores, após serem inalados ou introduzidos por falsa via, podem passar pela traqueia e alojarem-se nos brônquios e causar pneumonia, abscessos, piotórax e, em alguns casos, trajetos fistulosos (FINGLAND, 1996).
+O animal com corpo estranho traqueal, geralmente, apresenta episódio agudo de tosse forçada e seca, dispneia e cianose (NAVARRO
+et al
+., 2006). Nos casos de obstrução parcial, próximo ao corpo estranho, podem ser auscultados estertores de alta frequência (FINGLAND, 1996; NELSON, 1998). Na fase aguda, alguns pacientes podem ser assintomáticos. Já nos casos crônicos, os animais podem apresentar traqueíte, bronquite e/ou pneumonia. Eventualmente, são observados corrimento nasal piossanguinolento, engasgo e até mesmo vômito (FINGLAND, 1996).
+Os sinais clínicos apresentados pelo animal, normalmente, sugerem presença de corpo estranho traqueal, porém o diagnóstico definitivo é realizado por meio de exames radiológico e/ou endoscópico. Os corpos estranhos radiopacos, geralmente, são visualizados através de radiografias simples; já os radioluscentes são confirmados pela endoscopia ou broncografia por contraste positivo (FARROW, 1993; FINGLAND, 1996; NELSON, 1998; BITTENCOURT & CAMARGOS, 2002; ANDRADE
+et al
+., 2005).
+O tipo de tratamento recomendado para remoção do corpo estranho traqueal vai depender do diâmetro do lúmen traqueal, local, tamanho e forma do objeto (FINGLAND, 1996). Normalmente, recomenda-se como tratamento de primeira escolha o uso de endoscópio, pois é menos invasivo, porém quando essa manobra não é bem-sucedida, recomenda-se o uso de método mais invasivo, como a traqueotomia (SMITH & WALDRON; 1993, FINGLAND, 1996; NELSON, 1998; HOSGOOD, 1999; BJORLING, 2000; NAVARRO, 2006).
+Os corpos estranhos traqueais, em geral, causam lesões à mucosa. A técnica utilizada para remover esses objetos, por menos invasiva que seja, acaba agredindo ainda mais a mucosa traqueal. Por isso, indica-se o uso de antibióticos, analgésicos/antinflamatórios e broncodilatadores, por três a cinco dias consecutivos (NELSON, 1998; NOGUEIRA & PARDO, 2002). Normalmente, esses pacientes recuperam-se em uma semana (NELSON, 1998).
+O diagnóstico precoce e a remoção cuidadosa do corpo estranho traqueal são fundamentais para um bom prognóstico (HAWKINS, 1997; LUDWIG, 2000).
+O presente trabalho tem como objetivo relatar a traqueotomia como técnica cirúrgica efetiva para remoção de corpo estranho traqueal, diagnosticado por meio de exame radiográfico simples, em um canino da raça Rottweiler.
+RELATO DE CASO
+Foi atendida no Hospital Veterinário da Universidade de Cuiabá (UNIC) uma cadela da raça Rottweiler, com um ano e sete meses de idade, trazida à consulta por apresentar síncope e cianose após ingestão de ração comercial. Ao exame físico constataram-se dispneia, tosse improdutiva e cianose na mucosa oral. O animal foi submetido à terapia sintomática e a exames radiográficos após internamento. Ao ser posicionado para avaliação radiográfica do tórax, o animal demonstrou piora da dispneia. O exame radiológico revelou, nas projeções lateral e dorsoventral (
+Figura 1
+), uma estrutura radiopaca que, em ambas as projeções, apresentava formato circular com, aproximadamente, dois centímetros de diâmetro, localizado posteriormente à carina. Realizou-se esofagograma (
+Figura 2
+) para avaliação do trânsito esofágico, não sendo observada obstrução, porém o corpo estranho torácico não foi mais visualizado nesta radiografia. Sequencialmente, realizaram-se exames radiográficos do abdome e nenhuma alteração ou corpo estranho foi notado. O paciente permanecia com tosse e disfagia, sem, contudo, ter apresentado, novamente, cianose e/ou síncope. Solicitaram-se novos exames radiográficos das regiões torácica e abdominal, buscando-se encontrar o corpo estranho, e não foi revelada nenhuma alteração digna de nota. Então, realizou-se radiografia da região cervical cranial, a qual demonstrou presença de corpo estranho radiopaco na luz traqueal, que nas projeções lateral e dorsoventral apresentava formato circular (
+Figura 3
+). Foi instituída terapia paliativa com a administração de cloranfenicola (50mg/kg), pela via oral, a cada oito horas, e flunixin-meglumineb (1,0 mg/kg), pela via subcutânea, a cada 24 horas. Durante a internação, o cão apresentava-se com apetite, mas com disfagia.
+Imediatamente, o animal foi encaminhado para cirurgia, sendo a indução anestésica realizada com propofolc (5 mg/kg), por via intravenosa. Posicionou-se o animal em decúbito dorsal e realizou-se antissepsia com PVPI tópicoe e álcoolf. Realizou-se, então, incisão de pele na porção ventrocaudal da região cervical e os músculos esterno-hióideo foram divulsionados, quando uma incisão entre os anéis traqueais foi realizada para introdução de sonda endotraqueal e manutenção da anestesia geral inalatória com isofluoranod, em sistema semifechado, durante o procedimento cirúrgico.
+Na sequência, realizou-se uma segunda traqueotomia, cranialmente à primeira, por onde foi removida a bola de gude (
+Figura 2
+).
+Para facilitar a remoção do corpo estranho, utilizou-se sonda endotraqueal introduzida pela boca para empurrar o objeto caudalmente até o local da traqueotomia, sendo ele removido com ajuda de uma pinça Crille curva (
+Figura 3
+).
+Aproximaram-se os anéis traqueais com pontos separados simples, utilizando-se náilon 0,25mm. Os músculos e o subcutâneo foram aproximados com categuteg (3-0) e a pele suturada com pontos separados simples, com náilon 0,25mm. Tratou-se diariamente a ferida diariamente com rifamicina,h sendo os pontos retirados com dez dias. Decorridos sete meses, o animal encontra-se bem.
+DISCUSSÃO
+Corpos estranhos traqueais são pouco frequentes em pequenos animais, acometendo, principalmente, animais jovens (NELSON, 1998; KEALY & McALLISTER, 2000). Porém podem ser encontrados em animais adultos, como no caso descrito anteriormente.
+Os animais com corpo estranho traqueal, geralmente, apresentam episódios agudos de tosse forçada e seca, dispneia e eventualmente cianose (NAVARRO,
+et al
+., 2006). Nesse caso, os sinais anteriormente citados estavam presentes, vindo a corroborar o diagnóstico de corpo estranho traqueal.
+O diagnóstico de corpo estranho traqueal radiopaco pode ser confirmado por meio de exame radiográfico simples (FINGLAND, 1996; NELSON, 1998), como demonstrado no caso relatado, de encontro de um corpo estranho radiopaco localizado na traqueia cervical, no caso uma bola de gude. Porém, esse corpo estranho apresentava-se móvel, deslocando-se pela traqueia e brônquios durante a respiração, o que exigiu repetições de tomadas radiográficas, a fim de se localizar precisamente a bola de gude.
+O corpo estranho traqueal pode comprometer a respiração do paciente, razão por que sua remoção é indicada. O tratamento de primeira escolha é o uso de endoscópio. Nos casos, porém, em que essa manobra não possa ser realizada ou na ausência de equipamento adequado, como neste relato de caso, a traqueotomia pode ser utilizada (SMITH & WALDRON, 1993; FINGLAND, 1996; NELSON, 1998; HOSGOOD, 1999; BJORLING, 2000; NAVARRO, 2006).
+O diagnóstico precoce e a remoção cuidadosa do corpo estranho traqueal são fundamentais para um bom prognóstico (HAWKINS, 1997; LUDWIG, 2000). No caso relatado o prognóstico foi excelente, pois o animal, após remoção do corpo estranho, se recuperou completamente, não apresentando complicações com o tratamento instituído.
+Neste trabalho, ficou demonstrado que a permanência de um objeto dentro de um brônquio foi compatível com a vida, pois o animal manteve-se vivo respirando apenas com um dos pulmões, embora com sinais de obstrução parcial das vias respiratórias.
+CONCLUSÕES
+O exame radiográfico no diagnóstico e localização de corpo estranho traqueal radiopaco, em região cervical de cães, é decisivo e a traqueotomia é uma técnica cirúrgica eficiente na remoção deste.
+FONTES DE AQUISIÇÃO
+a. Pfizer.
+b. Banamine pet – Schering-Plough Veterinária.
+c. Propovan – Cristália Produtos Químicos Farmacêuticos Ltda.
+d. Iofluorano – Zeneca.
+e. Nordiodine – Cinordia Sul.
+f. Mazzaferro – Produtos para Pesca Ltda.
+g. Categute – Ethicon.
+h. Rifocina – Aventis Pharma.
+REFERÊNCIAS
+ANDRADE, C. F.; SÁNCHEZ, P. G.; CARDOSO, P. F. G. Broncoscopia.
+Revista AMRIGS
+, v. 49, n. 3, p. 178-182, 2005.
+BITTENCOURT, P. F. S.; CAMARGOS, P. A. M. Aspiração de corpos estranhos.
+Jornal de Pediatria
+, v. 78, n. 1, p. 9-18, 2002.
+BJORLING, D.; McANULTY, J.; SWAINSON, S. Surgically treatable upper respiratory disorders.
+Veterinary Clinics of North America
+: Small Animal Practice, v. 30, n. 6, p. 1227-1251, 2000.
+BRAYLEY, K. A.; ETTINGER, S. J. Afecções da traqueia. In: ETTINGER, S. J.; FELDMAN, E. C.
+Tratado de medicina interna veterinária
+. 4. ed. São Paulo: Manole,
+1997. v. 1, p. 1064-1079.
+FARROW, C. S.
+Radiology of the cat
+. Boston: Mosby, 1993. p. 119-120.
+FINGLAND, R. B. Traqueia e brônquios. In: BOJRAB, M.J.
+Mecanismos da moléstia na cirurgia dos pequenos animais
+. 2. ed. São Paulo: Manole, 1996. p. 444-455.
+FINGLAND, R. B. Traqueia. In: BOJRAB, M.J.
+Técnicas atuais em cirurgia de pequenos animais.
+3. ed. São Paulo: Roca, 2004. p. 323-332.
+HAWKINS, E. C. Afecções do sistema respiratório inferior. In: ETTINGER, S. J.; FELDMAN, E. C.
+Tratado de medicina interna veterinária
+. 4. ed. São Paulo: Manole, 1997. p. 1080-1142.
+HOSGOOD, G. Sistema respiratório. In: HARARI, J.
+Cirurgia de pequenos animais
+. Porto Alegre: Atmed, 1999. p. 87-111.
+KEALY, J. K.; McALLISTER, H.
+Diagnostic radiology and ultrasonography of the dog and cat
+. London: W. B. Saunders Company, 2000. p.156.
+KNELLER, S. K. The larynx, pharynx, and trachea. In: THRALL, D. E.
+Textbook of veterinary diagnostic radiology
+. 3. ed. London: W.B. Saunders Company, 1998. p. 263-268.
+LUDWIG, L. L. Surgical emergencies of the respiratory system.
+Veterinary Clinics of North America
+: Small Animal Practice, v. 30, n. 3, p. 531-553, 2000.
+NAVARRO, B. C.; GUIRELLI, C. O.; KOZU, F. Corpo estranho traqueal em cão. Relato de caso. In: CONGRESSO PAULISTA DE CLÍNICOS VETERINÁRIOS DE PEQUENOS ANIMAIS, 6., 2006, São Paulo,
+Anais
+..., São Paulo, 2006. p. 173.
+NELSON, A. W. Sistema respiratório inferior. In: SLATTER, D.
+Manual de cirurgia de pequenos animais
+. 2. ed. São Paulo: Manole, 1998. v. 1, p. 936-968.
+NOGUEIRA, R. B.; PARDO, P. E. Terapêutica do sistema respiratório. In: ANDRADE, S. F.
+Manual de terapêutica veterinária
+. 2. ed. São Paulo: Roca, 2002. p. 207-222.
+SMITH, M. M.; WALDRON, D. R.
+Atlas of approaches for general surgery of the dog and cat
+. London: W.B. Saunders Company, 1993. p. 119-121.
+Protocolado em: 20 ago. 2007. Aceito em: 21 out. 2008.

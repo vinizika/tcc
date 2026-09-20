@@ -1,0 +1,61 @@
+{
+  "title": "Integrative Therapies in Wound Healing in Small Animals: An Approach Beyond Traditional Medicine",
+  "source": "Veterinary Sciences",
+  "document_type": "peer_reviewed_review",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog_and_cat",
+  "topic": "minor_wound",
+  "language": "en",
+  "source_url": "https://doi.org/10.3390/vetsci13050418",
+  "indexing": {
+    "include_sections": [
+
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+      3,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "2ca34aed1338400c47dceff0e6482042823b2d6a37c1e9c3716e20aafb1e03f0",
+  "map_line": "minor_wound",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.3390/vetsci13050418",
+  "journal": "Veterinary Sciences",
+  "year": 2026,
+  "authors": "Jorge Kauã Vila Real Sampaio Santos et al."
+}

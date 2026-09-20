@@ -1,0 +1,42 @@
+{
+  "title": "Costa Rican Genotype of Ehrlichia canis: A Current Concern",
+  "source": "Veterinary Sciences",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "tick_borne_disease_anemia",
+  "language": "en",
+  "source_url": "https://doi.org/10.3390/vetsci10050316",
+  "indexing": {
+    "include_sections": [
+
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+      6
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "8e11958bbfef428d172bfb74222ad2dcc44791dc3feed126ec57088e78046ef9",
+  "map_line": "tick_borne_disease_anemia",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.3390/vetsci10050316",
+  "journal": "Veterinary Sciences",
+  "year": 2023,
+  "authors": "Karla Irigaray Nogueira Borges et al."
+}

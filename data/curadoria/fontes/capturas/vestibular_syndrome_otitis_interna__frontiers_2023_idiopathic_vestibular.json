@@ -1,0 +1,47 @@
+{
+  "title": "Current definition, diagnosis, and treatment of canine and feline idiopathic vestibular syndrome",
+  "source": "Frontiers in Veterinary Science",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog_and_cat",
+  "topic": "vestibular_syndrome_otitis_interna",
+  "language": "en",
+  "source_url": "https://doi.org/10.3389/fvets.2023.1263976",
+  "indexing": {
+    "include_sections": [
+
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+      2,
+      4,
+      5,
+      7,
+      9,
+      10
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "087d0c4f0d5af75cd1d31f24ee7d0755738b776b24d034593eb66046bf2f2d66",
+  "map_line": "vestibular_syndrome_otitis_interna",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.3389/fvets.2023.1263976",
+  "journal": "Frontiers in Veterinary Science",
+  "year": 2023,
+  "authors": "Anna Morgana Mertens; Henning Christian Schenk; Holger Andreas Volk"
+}

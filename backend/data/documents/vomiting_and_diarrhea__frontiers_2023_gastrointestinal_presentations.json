@@ -1,0 +1,55 @@
+{
+  "title": "Gastrointestinal Presentations in Dogs and Cats",
+  "source": "Frontiers in Veterinary Science",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog_and_cat",
+  "topic": "vomiting_and_diarrhea",
+  "language": "en",
+  "source_url": "https://doi.org/10.3389/fvets.2023.1166114",
+  "indexing": {
+    "include_sections": [
+      "Introduction"
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-20",
+  "captured_sha256": "31cd34a71f1441e2b4ea83157e6f1e30307d556da32e7960ac49a5119a19e8d8",
+  "map_line": "vomiting_and_diarrhea",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-20"
+  },
+  "doi": "10.3389/fvets.2023.1166114",
+  "journal": "Frontiers in Veterinary Science",
+  "year": 2023,
+  "authors": "Ivo Fins; David Singleton; Alan Radford et al."
+}

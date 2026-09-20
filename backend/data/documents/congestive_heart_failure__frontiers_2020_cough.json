@@ -1,0 +1,36 @@
+{
+  "title": "Cardiac cough in small animals",
+  "source": "Frontiers in Veterinary Science",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog_and_cat",
+  "topic": "congestive_heart_failure",
+  "language": "en",
+  "source_url": "https://www.frontiersin.org/journals/veterinary-science/articles/10.3389/fvets.2019.00513/pdf",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [1, 2, 3, 7, 8, 9, 10, 11, 12, 13, 14],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "9fc525f2ebfd6e0ebc9cfe6c932cc8649a21ca4ef06bcf6975dda849daa9d881",
+  "map_line": "congestive_heart_failure",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-19"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.3389/fvets.2019.00513",
+  "journal": "Frontiers in Veterinary Science",
+  "year": 2020,
+  "authors": "Brisa M. Hsieh; Alicia K. Beets"
+}

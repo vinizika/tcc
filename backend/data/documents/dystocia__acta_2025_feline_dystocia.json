@@ -1,0 +1,36 @@
+{
+  "title": "Feline dystocia cases",
+  "source": "Acta Veterinaria Scandinavica",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "cat",
+  "topic": "dystocia",
+  "language": "en",
+  "source_url": "https://actavetscand.biomedcentral.com/counter/pdf/10.1186/s13028-025-00805-w.pdf",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [3, 5, 6, 7, 8, 9, 10],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "eb4483eefd264440f4a56f9a22a1b80028ce5301cb73eb3c94b73533122fb596",
+  "map_line": "dystocia",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-19"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.1186/s13028-025-00805-w",
+  "journal": "Acta Veterinaria Scandinavica",
+  "year": 2025,
+  "authors": "Eva Axner; Josefine Jakobsson; Tilde Vermelin; Ulrika Hermansson"
+}

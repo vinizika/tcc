@@ -1,0 +1,44 @@
+{
+  "title": "Rabies in Cats—An Emerging Public Health Issue",
+  "source": "Viruses",
+  "document_type": "peer_reviewed_review",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "cat",
+  "topic": "rabies_exposure_wild_animal_bite",
+  "language": "en",
+  "source_url": "https://doi.org/10.3390/v16101635",
+  "indexing": {
+    "include_sections": [
+      "Introduction",
+      "Discussion",
+      "Conclusions"
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "e515445a1d0443303d48ab600bb91feb4af1d92a98cece540dafd12424c9966d",
+  "map_line": "rabies_exposure_wild_animal_bite",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.3390/v16101635",
+  "journal": "Viruses",
+  "year": 2024,
+  "authors": "Christine Fehlner-Gardiner et al."
+}

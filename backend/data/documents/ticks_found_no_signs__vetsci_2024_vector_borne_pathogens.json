@@ -1,0 +1,48 @@
+{
+  "title": "Clinical Study and Serological Diagnosis of Vector-Borne Pathogens in Sardinian Dogs",
+  "source": "Veterinary Sciences",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "ticks_found_no_signs",
+  "language": "en",
+  "source_url": "https://doi.org/10.3390/vetsci11070313",
+  "indexing": {
+    "include_sections": [
+
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+      3,
+      4,
+      7,
+      8,
+      9,
+      14,
+      15
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "be7edb3b425fe78f78d8d42e711c11d4a605ba164bb4ad288d3edb54780263af",
+  "map_line": "ticks_found_no_signs",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.3390/vetsci11070313",
+  "journal": "Veterinary Sciences",
+  "year": 2024,
+  "authors": "Valentina Chisu et al."
+}

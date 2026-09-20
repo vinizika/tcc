@@ -86,7 +86,7 @@ ficha, e a coluna `validacao` da linha no mapa.
 
 | Quadro | Estado | Dossiê |
 |---|---|---|
-| Torção gástrica | `fonte_encontrada` — 2 capturas, aguardando validação | [gastric_dilatation_volvulus.md](gastric_dilatation_volvulus.md) |
+| Torção gástrica | fonte CC BY inspecionada e na ingestão experimental; arquivo novo aguarda validação ASAVET | [gastric_dilatation_volvulus.md](gastric_dilatation_volvulus.md) |
 | Medicamento humano | `fonte_aprovada` — ASAVET, ainda restrita ao perfil experimental | [human_medication_poisoning.md](human_medication_poisoning.md) |
 | Carbamato/organofosforado | `fonte_aprovada` — ASAVET, ainda restrita ao perfil experimental | [carbamate_organophosphate_poisoning.md](carbamate_organophosphate_poisoning.md) |
 | Permetrina em gato | `fonte_aprovada` — ASAVET, ainda restrita ao perfil experimental | [permethrin_toxicosis_cats.md](permethrin_toxicosis_cats.md) |
@@ -101,7 +101,15 @@ ficha, e a coluna `validacao` da linha no mapa.
 | Claudicação leve | `fonte_aprovada` — ASAVET, ainda restrita ao perfil experimental | [mild_lameness.md](mild_lameness.md) |
 | Xixi fora do lugar e cistite | `fonte_aprovada` — ASAVET, ainda restrita ao perfil experimental | [inappropriate_urination_or_cystitis.md](inappropriate_urination_or_cystitis.md) |
 | Conjuntivite leve | fontes canina e felina aprovadas pela ASAVET; ambas experimentais | [mild_conjunctivitis.md](mild_conjunctivitis.md) |
-| Colapso e gengiva pálida | `sem_documento` — fonte acadêmica aproximada rejeitada | [collapse_and_pale_gums.md](collapse_and_pale_gums.md) |
+| Colapso e gengiva pálida | `fonte_aprovada` — ASAVET, com limitação de escopo preservada | [collapse_and_pale_gums.md](collapse_and_pale_gums.md) |
+| Vômito isolado/diarreia leve | fonte CC BY inspecionada e na ingestão experimental; arquivo novo aguarda validação ASAVET | [single_vomiting_or_mild_diarrhea.md](single_vomiting_or_mild_diarrhea.md) |
+| Intoxicação por chocolate | `fonte_aprovada` — ASAVET; captura real experimental | [chocolate_toxicosis.md](chocolate_toxicosis.md) |
+| Intoxicação por cebola/alho | `fonte_aprovada` — ASAVET; captura real experimental | [allium_toxicosis.md](allium_toxicosis.md) |
+| Dificuldade respiratória | `fonte_aprovada` — ASAVET; captura real experimental | [respiratory_distress.md](respiratory_distress.md) |
+| Convulsão | `fonte_aprovada` — ASAVET; captura real experimental | [seizures.md](seizures.md) |
+| Trauma e hemorragia | `fonte_aprovada` — ASAVET; fonte técnica e experimental | [trauma_and_bleeding.md](trauma_and_bleeding.md) |
+| Obstrução uretral | `fonte_aprovada` — ASAVET; capturas felina e canina experimentais | [urethral_obstruction.md](urethral_obstruction.md) |
+| Vômito/diarreia persistentes | `fonte_aprovada` — ASAVET; fonte experimental ainda ruidosa | [vomiting_and_diarrhea.md](vomiting_and_diarrhea.md) |
 
 As demais linhas da etapa 1 seguem no estado verdadeiro registrado no mapa.
 A fila e a porta de decisão estão no [README da curadoria](../README.md).

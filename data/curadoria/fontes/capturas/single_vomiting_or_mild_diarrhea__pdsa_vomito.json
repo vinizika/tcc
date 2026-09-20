@@ -2,7 +2,7 @@
   "title": "Vomito em caes",
   "source": "PDSA Pet Health Hub",
   "document_type": "owner_guidance",
-  "validation_status": "pending_specialist",
+  "validation_status": "approved_by_specialist",
   "ingestion_scope": "curated_candidate",
   "species": "dog",
   "topic": "single_vomiting_or_mild_diarrhea",
@@ -19,16 +19,18 @@
       "Published: October 2024",
       "Tell us more"
     ],
-    "exclude_pages": []
+    "exclude_pages": [
+
+    ]
   },
   "register": "tutor",
   "access_date": "2026-09-12",
   "captured_sha256": "6a2dc5a55ece68948bce451c1bbf794c4827b0bc53b9b084d9d65cad84936edb",
   "map_line": "single_vomiting_or_mild_diarrhea",
   "specialist": {
-    "verdict": "",
-    "name": "",
-    "date": ""
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
   },
   "rights": {
     "status": "pending_review",

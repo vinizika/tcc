@@ -1,0 +1,44 @@
+{
+  "title": "Envenenamento em gatos no Brasil",
+  "source": "Arquivo Brasileiro de Medicina Veterinaria e Zootecnia",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "cat",
+  "topic": "carbamate_organophosphate_poisoning",
+  "language": "en",
+  "source_url": "https://www.scielo.br/j/abmvz/a/YZMjLkrv5SsSLqLw3qSXHKG/?format=html&lang=en",
+  "indexing": {
+    "include_sections": [
+      "ABSTRACT"
+    ],
+    "exclude_sections": [
+      "RESUMO",
+      "INTRODUCTION",
+      "Materials and methods",
+      "RESULTS",
+      "DISCUSSION",
+      "CONCLUSIONS",
+      "REFERENCES"
+    ],
+    "exclude_pages": [],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-14",
+  "captured_sha256": "6094639a2a3700bbe048822761a8d46ceb1212687ed7ce14fe491192829e2c74",
+  "map_line": "carbamate_organophosphate_poisoning",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET — Primeiro Grupo de Anestesia e Veterinaria Universitaria do Brasil",
+    "date": "2026-09-14"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY declarada na pagina do artigo; captura e redistribuicao experimental autorizadas com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-14"
+  },
+  "year": 2021,
+  "authors": "M.P.B. Jardim et al."
+}

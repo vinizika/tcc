@@ -1,0 +1,34 @@
+{
+  "title": "A Scoping Review of the Evidence on Prevalence of Feline Upper Respiratory Tract Infections and Associated Risk Factors",
+  "source": "Veterinary Sciences (MDPI)",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "cat",
+  "topic": "mild_upper_respiratory_signs",
+  "language": "en",
+  "source_url": "https://mdpi-res.com/d_attachment/vetsci/vetsci-11-00232/article_deploy/vetsci-11-00232-v2.pdf",
+  "indexing": {
+    "include_sections": ["Introduction"],
+    "exclude_sections": ["Materials and methods", "Results", "Fhv-1 57", "Fcv 47", "Methods", "[26] Fhv", "Fcv (Pcr, Vi)", "Discussion", "Conclusions", "References"],
+    "exclude_pages": [],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-16",
+  "captured_sha256": "6cf203b171a0a924df188870f85a876876050d63c6e9f476d53989c1e0757e45",
+  "map_line": "mild_upper_respiratory_signs",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET — Primeiro Grupo de Anestesia e Veterinaria Universitaria do Brasil",
+    "date": "2026-09-17"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; captura e redistribuicao permitidas com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-16"
+  },
+  "year": 2024,
+  "authors": "Ursula Kennedy et al."
+}

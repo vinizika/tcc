@@ -6,7 +6,10 @@ imediato · prioridade A · etapa 1
 estufada e dura?*
 **Par de confusão:** `single_vomiting_or_mild_diarrhea`
 **Pesquisado em:** 12/09/2026, pelo [roteiro do pesquisador](../../../agentes/pesquisador.md)
-**Estado:** `fonte_encontrada` — duas capturas esperando validação
+**Estado:** as capturas anteriores foram validadas pela ASAVET, mas continuam
+fora da ingestão por licença indefinida. Uma fonte substituta CC BY foi
+capturada e inspecionada para uso experimental; a validação ASAVET desse novo
+arquivo ainda está pendente.
 
 > **Recapturado em 12/09.** O piloto da linha leve mostrou que a extração
 > deixava a indentação do markdown no texto, e um heading indentado não bate
@@ -128,9 +131,23 @@ b12, ela sai — e isso já é resposta.
   PDF passa de 10 MB e não abriu na leitura automatizada. É a melhor
   candidata institucional brasileira e vale baixar à mão.
 
-## Para o especialista
+## Validação
 
-Duas perguntas, uma por fonte, em `PARA-VALIDAR.md`. A segunda é a que
-importa: **uma revisão acadêmica de 2012, da qual indexaríamos só a seção de
-definição e fatores de risco, serve como referência para este quadro no
-Brasil — ou é melhor não ter fonte em português do que ter essa?**
+A ASAVET aprovou as duas capturas em 20/09/2026. As limitações acima continuam
+registradas. Como o direito de redistribuição ainda está `pending_review`, os
+arquivos não foram copiados para `backend/data/documents/`.
+
+## Substituição com redistribuição permitida
+
+R104 · Olimpo et al. · *Gastric Dilatation-Volvulus in Dogs: Analysis of 130
+Cases in a Single Institution* · Animals 15:579 · 2025 · DOI
+`10.3390/ani15040579` · CC BY 4.0.
+
+A captura preserva o PDF original e indexa somente `1. Introduction`: 11
+chunks sobre caráter emergencial, rotação gástrica, comprometimento vascular,
+risco de necrose e fatores predisponentes. SHA-256:
+`3b4fd87a3b964e6d7a4989f6407cc81a838cc73386f18b4dc93ca11dde8f2424`.
+
+O arquivo foi inspecionado individualmente e entrou somente no perfil
+`experimental`. Como ele foi capturado depois da validação acima, permanece
+`pending_specialist` até a ASAVET avaliar este hash exato.

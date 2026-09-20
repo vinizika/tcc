@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-20",
+  "branch": "codex/lote-06-dez-lacunas",
+  "initial_head": "fb4040d01224ae9bcd93a2d6ba9c0dc7eba54830",
+  "map": {
+    "topics": 61,
+    "approved_source_topics": 59,
+    "found_source_topics": 2,
+    "synthetic_protocol_files": 0
+  },
+  "asavet": {
+    "validation_date": "2026-09-20",
+    "newly_approved_replacements": 8,
+    "new_open_files_pending_exact_file_validation": 2
+  },
+  "rights_resolution": {
+    "strategy": "open_license_replacements",
+    "unclear_license_sources_ingested": false,
+    "sources": [
+      {
+        "topic": "gastric_dilatation_volvulus",
+        "doi": "10.3390/ani15040579",
+        "license": "CC BY 4.0",
+        "sha256": "3b4fd87a3b964e6d7a4989f6407cc81a838cc73386f18b4dc93ca11dde8f2424",
+        "chunks": 11,
+        "validation_status": "pending_specialist"
+      },
+      {
+        "topic": "single_vomiting_or_mild_diarrhea",
+        "doi": "10.3389/fvets.2023.1063080",
+        "license": "CC BY 4.0",
+        "sha256": "482a69011e47d209b75bd3d38dc5e0ef7332faf73690edaed0a3c7e2e0a15008",
+        "chunks": 12,
+        "validation_status": "pending_specialist"
+      }
+    ]
+  },
+  "staging": {
+    "collection": "veterinary_documents__20260920T134907150949Z__7f927242",
+    "profile": "experimental",
+    "activated": false,
+    "active_pointer": null,
+    "documents": 66,
+    "chunks": 3481,
+    "topics": 61,
+    "approved_chunks": 3458,
+    "pending_chunks": 23,
+    "source_set_sha256": "7f927242d94ef7756dfd973d4977edddd1ccc320821554f8d5d138aee0c60daa",
+    "chunk_ids_sha256": "c3cf64e9cbbb23612a755acdcaa3b4a771dc1a5251401401f9ab12d558f630ba",
+    "content_sha256": "1f6ac800b23921693822ea4ebd7137d91c9ed8e365a6d42f37f9c255dcba5485",
+    "manifest_sha256": "5104a711c1e7a17cfd37ce7c029f941af5552be48731d2e3444452883b5773dd",
+    "artifact_consensus": "passed"
+  },
+  "targeted_retrieval": [
+    {"case": "b12", "expected_topic": "gastric_dilatation_volvulus", "top5_position": null},
+    {"case": "b64", "expected_topic": "single_vomiting_or_mild_diarrhea", "top5_position": 1},
+    {"case": "b65", "expected_topic": "single_vomiting_or_mild_diarrhea", "top5_position": null},
+    {"case": "b66", "expected_topic": "single_vomiting_or_mild_diarrhea", "top5_position": 1}
+  ],
+  "checks": {
+    "script_tests": {"passed": 186, "failed": 0},
+    "backend_tests": {"passed": 210, "failed": 0, "warnings": 13},
+    "pip_check": "passed",
+    "compileall": "passed",
+    "json_files_validated": 282,
+    "yaml_files_syntax_validated": 10,
+    "docker_compose_config": "passed",
+    "git_diff_check": "passed",
+    "backend_health": "healthy"
+  },
+  "localhost": {
+    "resolved_collection": "veterinary_documents",
+    "chunk_count": 0,
+    "new_staging_collection_used_by_application": false
+  },
+  "limitations": [
+    "Os dois arquivos abertos mais recentes ainda aguardam validacao ASAVET do arquivo exato.",
+    "O caso b12 nao recuperou GDV no top 5.",
+    "O caso b65 nao recuperou vomito leve no top 5.",
+    "A colecao experimental nao foi ativada."
+  ]
+}

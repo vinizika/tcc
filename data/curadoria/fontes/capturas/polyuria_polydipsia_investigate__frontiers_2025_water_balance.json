@@ -1,0 +1,43 @@
+{
+  "title": "Arginine vasopressin and copeptin: comparative review and perspective in veterinary medicine",
+  "source": "Frontiers in Veterinary Science",
+  "document_type": "peer_reviewed_review",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog_and_cat",
+  "topic": "polyuria_polydipsia_investigate",
+  "language": "en",
+  "source_url": "https://doi.org/10.3389/fvets.2025.1528008",
+  "indexing": {
+    "include_sections": [
+      "Introduction",
+      "Conclusion"
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "1dc6a723fb06371b7cf6fd7075dd67d3b2398b019935a7c6241e5ea8a10d4ec4",
+  "map_line": "polyuria_polydipsia_investigate",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.3389/fvets.2025.1528008",
+  "journal": "Frontiers in Veterinary Science",
+  "year": 2025,
+  "authors": "Mathieu Victor Paulin et al."
+}

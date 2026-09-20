@@ -1,0 +1,45 @@
+{
+  "title": "Canine infectious respiratory disease: New insights into the etiology and epidemiology of associated pathogens",
+  "source": "PLOS ONE",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "kennel_cough_mild",
+  "language": "en",
+  "source_url": "https://doi.org/10.1371/journal.pone.0215817",
+  "indexing": {
+    "include_sections": [
+      "Abstract",
+      "Introduction",
+      "Clinical signs",
+      "Conclusion"
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "3ba544d14dbf2616933fe711b6716f49afec77c5edc7590aa2de03837ba75c91",
+  "map_line": "kennel_cough_mild",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.1371/journal.pone.0215817",
+  "journal": "PLOS ONE",
+  "year": 2019,
+  "authors": "Grazieli Maboni et al."
+}

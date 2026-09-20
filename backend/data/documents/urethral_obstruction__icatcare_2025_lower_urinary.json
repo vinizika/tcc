@@ -1,0 +1,76 @@
+{
+  "title": "Feline Lower Urinary Tract Guidelines",
+  "source": "Journal of Feline Medicine and Surgery",
+  "document_type": "guideline",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "cat",
+  "topic": "urethral_obstruction",
+  "language": "en",
+  "source_url": "https://doi.org/10.1177/1098612X241309176",
+  "indexing": {
+    "include_sections": [
+
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "clinico",
+  "access_date": "2026-09-20",
+  "captured_sha256": "2cc8bb64898e983ccc16c749f94e1079fe2f722296e715cc3716a602b9e4d3ab",
+  "map_line": "urethral_obstruction",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY-NC 4.0 declarada no artigo; redistribuicao nao comercial permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-20"
+  },
+  "doi": "10.1177/1098612X241309176",
+  "journal": "Journal of Feline Medicine and Surgery",
+  "year": 2025,
+  "authors": "Samantha Taylor; Soren Boysen; Tony Buffington et al."
+}

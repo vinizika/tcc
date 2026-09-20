@@ -1,0 +1,70 @@
+{
+  "title": "Diagnosis, Prognosis and Treatment of Canine Cutaneous and Subcutaneous Mast Cell Tumors",
+  "source": "Cells",
+  "document_type": "peer_reviewed_review",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "slow_growing_lump",
+  "language": "en",
+  "source_url": "https://doi.org/10.3390/cells11040618",
+  "indexing": {
+    "include_sections": [
+
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "b569392ab298252ecdd4c402e900c193866add8ef2b0b35af55eaf51867a8daa",
+  "map_line": "slow_growing_lump",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.3390/cells11040618",
+  "journal": "Cells",
+  "year": 2022,
+  "authors": "Andrigo Barboza de Nardi et al."
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Intoxicacao por sapo em caes",
+  "source": "PUBVET",
+  "document_type": "case_report",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "toad_bufotoxin_poisoning",
+  "language": "pt",
+  "source_url": "https://ojs.pubvet.com.br/index.php/revista/en/article/download/3664/3666",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [1, 2, 4, 5, 6, 7, 8, 9],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-19",
+  "captured_sha256": "897ce472dff59a2b540291a4428f4d8df43a995df89d337ff994010a0aac2f0a",
+  "map_line": "toad_bufotoxin_poisoning",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-19"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 adotada pela PUBVET e declarada nos artigos do periodico; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-19"
+  },
+  "doi": "10.31533/pubvet.v18n06e1609",
+  "journal": "PUBVET",
+  "year": 2024,
+  "authors": "Mauricio Carneiro Aquino; Moyses Serpa"
+}

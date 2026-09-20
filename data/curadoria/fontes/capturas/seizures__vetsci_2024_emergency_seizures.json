@@ -1,0 +1,50 @@
+{
+  "title": "Acute Seizures in Dogs and Cats",
+  "source": "Veterinary Sciences",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "experimental_only",
+  "species": "dog_and_cat",
+  "topic": "seizures",
+  "language": "en",
+  "source_url": "https://doi.org/10.3390/vetsci11060277",
+  "indexing": {
+    "include_sections": [
+
+    ],
+    "exclude_sections": [
+
+    ],
+    "exclude_pages": [
+      1,
+      2,
+      3,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "extraction_reviewed": true
+  },
+  "register": "academico",
+  "access_date": "2026-09-20",
+  "captured_sha256": "60847c73b3139bcd94bcf5e7a1f33555ce5d17b8aeca8435db92c3288b1c0db0",
+  "map_line": "seizures",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY 4.0 declarada no artigo; redistribuicao permitida com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-20"
+  },
+  "doi": "10.3390/vetsci11060277",
+  "journal": "Veterinary Sciences",
+  "year": 2024,
+  "authors": "Munguia; Brooks; Thomovsky; Johnson et al."
+}

@@ -1,26 +1,32 @@
-# Colapso e gengiva pálida — busca do lote 4
+# Colapso e gengiva pálida — fontes
 
-**Linha do mapa:** `collapse_and_pale_gums` · cão e gato · emergência · imediato
+**Linha do mapa:** `collapse_and_pale_gums`
 
-**Caso da régua:** `b27`, escrito antes da pesquisa
+**Casos da régua:** `b27` (cão) e `b42` (gato), escritos antes desta captura
 
-**Pesquisado em:** 16/09/2026
+**Pesquisado em:** 19/09/2026
 
-**Estado:** `sem_documento` — nenhuma captura aceita
+**Estado:** `fonte_aprovada` — validada pela ASAVET em 20/09/2026
 
-## Fonte rejeitada para indexação
+## Fonte experimental
 
-Hall K, Drobatz K. *Volume Resuscitation in the Acutely Hemorrhaging Patient:
-Historic Use to Current Applications.* Frontiers in Veterinary Science, 2021,
-DOI `10.3389/fvets.2021.638104`, CC BY 4.0.
+R75 · Volume Resuscitation in the Acutely Hemorrhaging Patient · Frontiers in Veterinary Science · 2021. A licença e a procedência estão
+registradas no sidecar. O arquivo integral foi preservado com SHA-256
+`4b6b2c2c1157d4e72ab1c6849c6f21c345d0852439ee03f60423720adbcae274`.
 
-O artigo foi aberto e inspecionado. É adequado sobre hemorragia e choque, mas o
-texto recuperável apenas manda reavaliar cor de mucosa e outros parâmetros; não
-liga de modo direto a linguagem do tutor “desmaiou” e “gengiva branca”. A captura
-foi rejeitada e não ficou no repositório.
+A inspeção individual do recorte produziu **85 chunks** e confirmou que
+nenhum registro foi escrito no ChromaDB durante a inspeção.
 
-## Pendência
+## Limitações
 
-As páginas da AAHA, PDSA e VCA sustentam a urgência para tutores, mas não deixam
-clara a redistribuição integral. Permanecem apenas como referências R09, R15 e
-R16. O tópico continua sem documento, sem forçar uma fonte apenas aproximada.
+A fonte cobre hemorragia e perfusão; não cobre isoladamente todas as causas de colapso ou mucosa pálida.
+
+Em 16/09, a mesma fonte havia sido rejeitada porque não traduz diretamente o
+relato leigo “desmaiou e está com a gengiva branca”. Neste lote ela foi
+preservada somente como candidata experimental, com recorte nas páginas 1, 2
+e 8. A limitação permanece e a ASAVET deve decidir se o recorte serve; esta
+mudança não equivale a aprovação.
+
+A captura está `approved_by_specialist`, com validação da ASAVET em 20/09/2026.
+O `ingestion_scope` permanece `experimental_only`; a validação clínica, por si
+só, não autoriza ativação da coleção.
