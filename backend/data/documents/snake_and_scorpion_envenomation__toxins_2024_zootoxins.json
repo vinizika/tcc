@@ -9,6 +9,7 @@
   "language": "en",
   "source_url": "https://doi.org/10.3390/toxins16010048",
   "indexing": {
+    "retrieval_anchors": ["snake", "serpent", "cobra", "scorpion", "escorpiao", "escorpião"],
     "include_sections": [
 
     ],

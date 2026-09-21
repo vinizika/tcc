@@ -317,6 +317,7 @@ def load_metadata(document_path: Path) -> dict[str, Any]:
     # Valida cedo para que erros de curadoria não apareçam no meio do upsert.
     _metadata_list(indexing, "include_sections")
     _metadata_list(indexing, "exclude_sections")
+    _metadata_list(indexing, "retrieval_anchors")
     _excluded_pages(indexing)
     metadata["indexing"] = indexing
 
@@ -1050,6 +1051,17 @@ def chunk_metadata(
         "token_count": chunk.token_count,
         "body": chunk.body or chunk.text,
     }
+
+    retrieval_anchors = _metadata_list(
+        document_metadata.get("indexing") or {},
+        "retrieval_anchors",
+    )
+    if retrieval_anchors:
+        metadata["retrieval_anchors"] = json.dumps(
+            retrieval_anchors,
+            ensure_ascii=False,
+            separators=(",", ":"),
+        )
 
     for field_name in OPTIONAL_METADATA_FIELDS:
         value = document_metadata.get(field_name)

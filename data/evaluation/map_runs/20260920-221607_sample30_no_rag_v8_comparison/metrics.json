@@ -1,0 +1,11 @@
+{
+  "total": 30,
+  "correct": 24,
+  "accuracy": 0.8,
+  "balanced_accuracy": 0.8571428571428572,
+  "emergency_recall": 0.7142857142857143,
+  "nonurgent_recall": 1.0,
+  "false_nonurgent": 6,
+  "false_urgent": 0,
+  "cases_with_context": 0
+}

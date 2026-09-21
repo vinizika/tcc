@@ -465,6 +465,7 @@ def achatar(resposta: dict, contexto: dict) -> dict:
             "above_threshold_count"
         ),
         "retrieval_max_score": recuperacao.get("max_score"),
+        "retrieval_max_ranking_score": recuperacao.get("max_ranking_score"),
         "query_s": tempos.get("query_s"),
         "retrieval_s": tempos.get("retrieval_s"),
         "generation_s": tempos.get("generation_s"),

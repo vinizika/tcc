@@ -210,6 +210,7 @@ class ChatPipeline:
         self,
         queries: list[str],
         config: EffectiveConfig,
+        original_question: str,
     ):
         """
         Devolve (tudo que a busca trouxe, o que vai ao prompt, estatísticas).
@@ -219,37 +220,56 @@ class ChatPipeline:
         para distinguir "a geração errou" de "a busca não trouxe nada útil".
         """
 
-        retrieved = self.retrieval_client.retrieve(queries)
+        retrieved = self.retrieval_client.retrieve(
+            queries,
+            routing_query=original_question,
+        )
 
         logger.info(f"{len(retrieved)} documentos recuperados")
 
-        ranked = self.reranker.rerank(retrieved)
+        ranked = self.reranker.rerank(
+            queries,
+            retrieved,
+            eligibility_query=original_question,
+        )
+
+        def context_score(document: RetrievedDocument) -> float:
+            return (
+                document.ranking_score
+                if document.ranking_score is not None
+                else document.score
+            )
 
         for_context = [
             document
             for document in ranked
-            if document.score >= config.context_min_score
+            if context_score(document) >= config.context_min_score
         ][: config.context_top_k]
 
         info = RetrievalInfo(
-            returned_count=len(retrieved),
+            returned_count=len(ranked),
             used_count=len(for_context),
             above_threshold_count=len(
                 [
                     document
-                    for document in retrieved
+                    for document in ranked
                     if document.score >= DEFAULT_SCORE_THRESHOLD
                 ]
             ),
             max_score=(
-                max(document.score for document in retrieved)
-                if retrieved
+                max(document.score for document in ranked)
+                if ranked
+                else None
+            ),
+            max_ranking_score=(
+                max(context_score(document) for document in ranked)
+                if ranked
                 else None
             ),
             threshold=DEFAULT_SCORE_THRESHOLD,
             context_min_score=config.context_min_score,
             used_below_min_score=any(
-                document.score < config.context_min_score
+                context_score(document) < config.context_min_score
                 for document in for_context
             ),
         )
@@ -406,6 +426,7 @@ class ChatPipeline:
                 ranked, for_context, retrieval_info = self._retrieve(
                     plan.queries,
                     config,
+                    question,
                 )
                 retrieval_seconds = time.perf_counter() - retrieval_start
 

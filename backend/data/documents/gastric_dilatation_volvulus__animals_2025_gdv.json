@@ -2,7 +2,7 @@
   "title": "Gastric Dilatation-Volvulus in Dogs",
   "source": "Animals / University of Turin",
   "document_type": "peer_reviewed_article",
-  "validation_status": "pending_specialist",
+  "validation_status": "approved_by_specialist",
   "ingestion_scope": "experimental_only",
   "species": "dog",
   "topic": "gastric_dilatation_volvulus",
@@ -25,9 +25,9 @@
   "captured_sha256": "3b4fd87a3b964e6d7a4989f6407cc81a838cc73386f18b4dc93ca11dde8f2424",
   "map_line": "gastric_dilatation_volvulus",
   "specialist": {
-    "verdict": "",
-    "name": "",
-    "date": ""
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
   },
   "rights": {
     "status": "allowed",

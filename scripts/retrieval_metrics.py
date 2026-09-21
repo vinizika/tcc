@@ -63,11 +63,20 @@ def posicao_do_acerto(
 def avaliar_caso(caso: dict, recuperados: list[dict]) -> dict:
     """
     Julga um caso. `recuperados` é a lista ordenada que a busca devolveu,
-    cada item com `topic` e `score`.
+    cada item com `topic`, `score` e, nas versões híbridas,
+    `ranking_score`. O último é a nota realmente usada pelo corte do chat;
+    snapshots antigos continuam comparáveis pelo fallback vetorial.
     """
 
     topicos = [documento.get("topic", "") for documento in recuperados]
-    notas = [float(documento.get("score", 0.0)) for documento in recuperados]
+    notas = [
+        float(
+            documento.get("ranking_score")
+            if documento.get("ranking_score") is not None
+            else documento.get("score", 0.0)
+        )
+        for documento in recuperados
+    ]
 
     esperados = [
         topico

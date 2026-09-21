@@ -11,6 +11,7 @@ class SearchDocument(BaseModel):
     content: str
     source: str
     score: float
+    ranking_score: float | None = None
 
     # Procedência do trecho. O título é texto livre e muda quando o
     # documento é reescrito; `topic` é o identificador estável do assunto e

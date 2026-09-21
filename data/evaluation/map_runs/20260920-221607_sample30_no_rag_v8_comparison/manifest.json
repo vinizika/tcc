@@ -1,0 +1,394 @@
+{
+  "run_id": "20260920-221607_sample30_no_rag_v8_comparison",
+  "started_at": "2026-09-20T22:16:07.065961-03:00",
+  "mode": "no_rag",
+  "options": {
+    "retrieval_enabled": false,
+    "query_rewriting_enabled": false,
+    "multi_query_enabled": false,
+    "hyde_enabled": false,
+    "prompt_version": "v1_grounded",
+    "context_min_score": 0.72,
+    "include_debug": true
+  },
+  "git": {
+    "sha": "66bcce7",
+    "dirty": true
+  },
+  "backend_fingerprint": {
+    "api_version": "1.0.0",
+    "model": {
+      "name": "llama3.2:3b",
+      "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+      "size_bytes": 2019393189,
+      "parameter_size": "3.2B",
+      "quantization": "Q4_K_M",
+      "loaded_in_vram_bytes": 0
+    },
+    "ollama_version": "0.33.3",
+    "vector_store": {
+      "collection": "veterinary_documents__20260920T233307713518Z__b4fd334d",
+      "chunk_count": 3494,
+      "chunk_ids_sha256": "fd9b72d2e64eb92b79714d375652df6a538fff359d6a27120039374f838943af",
+      "content_sha256": "d41d76a9f21926e0d1c0fff318212958a0702cc17de003c418ef1ebd2b0f0d6c",
+      "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "embedding_revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+      "recipe_sha256": "1a93e1e7db9a5b5a7766ca11b54162cb74cb76bb4d4c2c02b2dc0d5c4319682b",
+      "chunking": {
+        "target_tokens": 96,
+        "overlap_tokens": 16,
+        "max_tokens": 128
+      },
+      "topic_counts": {
+        "acute_hindlimb_paralysis": 18,
+        "airway_foreign_body_choking": 33,
+        "allium_toxicosis": 20,
+        "anaphylaxis_facial_swelling": 32,
+        "anticoagulant_rodenticide_poisoning": 19,
+        "burns_and_electrical_injury": 47,
+        "canine_heatstroke": 186,
+        "carbamate_organophosphate_poisoning": 7,
+        "cat_bite_abscess": 44,
+        "chocolate_toxicosis": 24,
+        "collapse_and_pale_gums": 85,
+        "congestive_heart_failure": 80,
+        "diabetic_ketoacidosis": 46,
+        "dietary_indiscretion_mild": 7,
+        "distemper_neurological": 16,
+        "dystocia": 68,
+        "eclampsia": 6,
+        "exertional_panting_mild": 87,
+        "fading_neonate": 49,
+        "feline_aortic_thromboembolism": 41,
+        "flea_dermatitis_pruritus": 40,
+        "gastric_dilatation_volvulus": 11,
+        "gastrointestinal_foreign_body": 56,
+        "grape_xylitol_toxicosis": 156,
+        "high_rise_syndrome_cats": 77,
+        "human_medication_poisoning": 7,
+        "hypoglycemia_toy_puppy": 129,
+        "inappropriate_urination_or_cystitis": 18,
+        "insect_sting_local_reaction": 71,
+        "kennel_cough_mild": 56,
+        "leptospirosis_acute": 127,
+        "lily_toxicosis_cats": 41,
+        "mild_conjunctivitis": 20,
+        "mild_lameness": 11,
+        "mild_upper_respiratory_signs": 35,
+        "minor_wound": 76,
+        "normal_estrus": 53,
+        "normal_whelping": 235,
+        "ocular_emergency": 94,
+        "osteoarthritis_stiffness": 13,
+        "otitis_externa_mild": 107,
+        "parvovirus_panleukopenia": 9,
+        "periodontal_disease_mild": 73,
+        "permethrin_toxicosis_cats": 10,
+        "polyuria_polydipsia_investigate": 51,
+        "pyometra": 21,
+        "rabies_exposure_wild_animal_bite": 43,
+        "reduced_appetite_no_other_signs": 20,
+        "respiratory_distress": 21,
+        "seizures": 31,
+        "single_vomiting_or_mild_diarrhea": 12,
+        "slow_growing_lump": 131,
+        "snake_and_scorpion_envenomation": 105,
+        "tick_borne_disease_anemia": 80,
+        "ticks_found_no_signs": 182,
+        "toad_bufotoxin_poisoning": 18,
+        "trauma_and_bleeding": 14,
+        "tremors_without_seizure": 127,
+        "urethral_obstruction": 60,
+        "vestibular_syndrome_otitis_interna": 112,
+        "vomiting_and_diarrhea": 26
+      },
+      "species_counts_by_topic": {
+        "acute_hindlimb_paralysis": {
+          "cat": 11,
+          "dog": 7
+        },
+        "airway_foreign_body_choking": {
+          "dog": 33
+        },
+        "allium_toxicosis": {
+          "dog_and_cat": 20
+        },
+        "anaphylaxis_facial_swelling": {
+          "dog_and_cat": 32
+        },
+        "anticoagulant_rodenticide_poisoning": {
+          "dog": 19
+        },
+        "burns_and_electrical_injury": {
+          "dog": 47
+        },
+        "canine_heatstroke": {
+          "dog": 186
+        },
+        "carbamate_organophosphate_poisoning": {
+          "cat": 7
+        },
+        "cat_bite_abscess": {
+          "cat": 44
+        },
+        "chocolate_toxicosis": {
+          "dog_and_cat": 24
+        },
+        "collapse_and_pale_gums": {
+          "dog_and_cat": 85
+        },
+        "congestive_heart_failure": {
+          "dog_and_cat": 80
+        },
+        "diabetic_ketoacidosis": {
+          "cat": 46
+        },
+        "dietary_indiscretion_mild": {
+          "dog": 7
+        },
+        "distemper_neurological": {
+          "dog": 16
+        },
+        "dystocia": {
+          "cat": 68
+        },
+        "eclampsia": {
+          "dog": 6
+        },
+        "exertional_panting_mild": {
+          "dog": 87
+        },
+        "fading_neonate": {
+          "dog_and_cat": 49
+        },
+        "feline_aortic_thromboembolism": {
+          "cat": 41
+        },
+        "flea_dermatitis_pruritus": {
+          "cat": 23,
+          "dog": 17
+        },
+        "gastric_dilatation_volvulus": {
+          "dog": 11
+        },
+        "gastrointestinal_foreign_body": {
+          "dog_and_cat": 56
+        },
+        "grape_xylitol_toxicosis": {
+          "dog_and_cat": 156
+        },
+        "high_rise_syndrome_cats": {
+          "cat": 77
+        },
+        "human_medication_poisoning": {
+          "dog_and_cat": 7
+        },
+        "hypoglycemia_toy_puppy": {
+          "dog": 129
+        },
+        "inappropriate_urination_or_cystitis": {
+          "cat": 18
+        },
+        "insect_sting_local_reaction": {
+          "dog": 71
+        },
+        "kennel_cough_mild": {
+          "dog": 56
+        },
+        "leptospirosis_acute": {
+          "dog": 127
+        },
+        "lily_toxicosis_cats": {
+          "cat": 41
+        },
+        "mild_conjunctivitis": {
+          "cat": 3,
+          "dog": 17
+        },
+        "mild_lameness": {
+          "dog": 11
+        },
+        "mild_upper_respiratory_signs": {
+          "cat": 35
+        },
+        "minor_wound": {
+          "dog_and_cat": 76
+        },
+        "normal_estrus": {
+          "dog": 53
+        },
+        "normal_whelping": {
+          "dog": 235
+        },
+        "ocular_emergency": {
+          "dog": 94
+        },
+        "osteoarthritis_stiffness": {
+          "dog": 13
+        },
+        "otitis_externa_mild": {
+          "dog": 107
+        },
+        "parvovirus_panleukopenia": {
+          "dog": 9
+        },
+        "periodontal_disease_mild": {
+          "dog": 73
+        },
+        "permethrin_toxicosis_cats": {
+          "cat": 10
+        },
+        "polyuria_polydipsia_investigate": {
+          "dog_and_cat": 51
+        },
+        "pyometra": {
+          "dog": 7,
+          "dog_and_cat": 14
+        },
+        "rabies_exposure_wild_animal_bite": {
+          "cat": 43
+        },
+        "reduced_appetite_no_other_signs": {
+          "cat": 20
+        },
+        "respiratory_distress": {
+          "dog_and_cat": 21
+        },
+        "seizures": {
+          "dog_and_cat": 31
+        },
+        "single_vomiting_or_mild_diarrhea": {
+          "dog": 12
+        },
+        "slow_growing_lump": {
+          "dog": 131
+        },
+        "snake_and_scorpion_envenomation": {
+          "dog_and_cat": 105
+        },
+        "tick_borne_disease_anemia": {
+          "dog": 80
+        },
+        "ticks_found_no_signs": {
+          "dog": 182
+        },
+        "toad_bufotoxin_poisoning": {
+          "dog": 18
+        },
+        "trauma_and_bleeding": {
+          "dog_and_cat": 14
+        },
+        "tremors_without_seizure": {
+          "dog": 127
+        },
+        "urethral_obstruction": {
+          "cat": 25,
+          "dog": 35
+        },
+        "vestibular_syndrome_otitis_interna": {
+          "dog_and_cat": 112
+        },
+        "vomiting_and_diarrhea": {
+          "dog": 13,
+          "dog_and_cat": 13
+        }
+      },
+      "source_file_counts": {
+        "acute_hindlimb_paralysis__jfms_2024_feline_ate.txt": 11,
+        "acute_hindlimb_paralysis__pvb_2017_canine_ischemic_neuromyopathy_excerpt.txt": 7,
+        "airway_foreign_body_choking__cab_2010_tracheal_obstruction.txt": 33,
+        "allium_toxicosis__frontiers_2016_allium_section.txt": 20,
+        "anaphylaxis_facial_swelling__toxins_2024_bees_wasps_excerpt.txt": 32,
+        "anticoagulant_rodenticide_poisoning__frontiers_2022_bleeding.pdf": 19,
+        "burns_and_electrical_injury__bmc_2024_electrocution.pdf": 47,
+        "carbamate_organophosphate_poisoning__scielo_2021_feline_poisoning.txt": 7,
+        "cat_bite_abscess__frontiers_2025_feline_abscess.pdf": 44,
+        "chocolate_toxicosis__frontiers_2016_chocolate_section.txt": 24,
+        "collapse_and_pale_gums__frontiers_2021_volume_status.pdf": 85,
+        "congestive_heart_failure__frontiers_2020_cough.pdf": 80,
+        "diabetic_ketoacidosis__arshi_2025_feline_dka.pdf": 46,
+        "dietary_indiscretion_mild__plos_2025_acute_diarrhoea.txt": 7,
+        "distemper_neurological__viruses_2022_distemper.pdf": 16,
+        "dystocia__acta_2025_feline_dystocia.pdf": 68,
+        "eclampsia__ijvsah_2025_management.pdf": 6,
+        "exertional_panting_mild__frontiers_2018_working_dogs.pdf": 87,
+        "fading_neonate__animals_2024_neonatal_triage.txt": 49,
+        "feline_aortic_thromboembolism__jfms_2024_fate.pdf": 41,
+        "flea_dermatitis_pruritus__pvb_2017_dermatite_alergica.pdf": 17,
+        "flea_dermatitis_pruritus__vetsci_2017_feline_fad.pdf": 23,
+        "gastric_dilatation_volvulus__animals_2025_gdv.pdf": 11,
+        "gastrointestinal_foreign_body__frontiers_2025_imaging.pdf": 56,
+        "grape_xylitol_toxicosis__frontiers_2016_toxic_foods.pdf": 156,
+        "high_rise_syndrome_cats__animals_2026_trauma_shock.pdf": 77,
+        "human_medication_poisoning__scielo_2012_aines_pdf.pdf": 7,
+        "hypoglycemia_toy_puppy__frontiers_2024_neonatal_hypoglycemia.pdf": 129,
+        "inappropriate_urination_or_cystitis__frontiers_2022_feline_cystitis.pdf": 18,
+        "insect_sting_local_reaction__animals_2024_hymenoptera_allergy.pdf": 71,
+        "kennel_cough_mild__plos_one_2019_respiratory_microbiota.pdf": 56,
+        "leptospirosis_acute__acvim_2023_leptospirosis.pdf": 127,
+        "lily_toxicosis_cats__frontiers_2023_lily.pdf": 41,
+        "mild_conjunctivitis__bmc_2023_allergic_conjunctivitis.pdf": 17,
+        "mild_conjunctivitis__ovj_2024_feline_chlamydophila_excerpt.txt": 3,
+        "mild_lameness__bmc_2018_short_term_lameness.pdf": 11,
+        "mild_upper_respiratory_signs__vetsci_2024_feline_uri.pdf": 35,
+        "minor_wound__vetsci_2026_wound_healing.pdf": 76,
+        "normal_estrus__animals_2021_reproductive_biology.pdf": 53,
+        "normal_whelping__frontiers_2023_uterine_dynamics.pdf": 235,
+        "ocular_emergency__frontiers_2024_traumatic_proptosis.pdf": 94,
+        "osteoarthritis_stiffness__frontiers_2022_canine_oa.pdf": 13,
+        "otitis_externa_mild__microorganisms_2023_otitis.pdf": 107,
+        "parvovirus_panleukopenia__mdpi_2025_canine_parvovirus.pdf": 9,
+        "pathophysiology_heatstroke_dogs_2017.pdf": 186,
+        "periodontal_disease_mild__antibiotics_2022_periodontal.pdf": 73,
+        "permethrin_toxicosis_cats__vmd_2014.pdf": 10,
+        "polyuria_polydipsia_investigate__frontiers_2025_water_balance.pdf": 51,
+        "pyometra__mdpi_2023_review.pdf": 7,
+        "pyometra__scielo_2013_cadelas_gatas.pdf": 14,
+        "rabies_exposure_wild_animal_bite__viruses_2024_rabies_cats.pdf": 43,
+        "reduced_appetite_no_other_signs__animals_2025_feline_inappetence.pdf": 20,
+        "respiratory_distress__frontiers_2026_lung_ultrasound.pdf": 21,
+        "seizures__vetsci_2024_emergency_seizures.pdf": 31,
+        "single_vomiting_or_mild_diarrhea__frontiers_2023_uncomplicated_vomiting.pdf": 12,
+        "slow_growing_lump__cells_2022_mast_cell_consensus.pdf": 131,
+        "snake_and_scorpion_envenomation__toxins_2024_zootoxins.pdf": 105,
+        "tick_borne_disease_anemia__vetsci_2023_ehrlichia_canis.pdf": 80,
+        "ticks_found_no_signs__vetsci_2024_vector_borne_pathogens.pdf": 182,
+        "toad_bufotoxin_poisoning__pubvet_2024_bufotoxin_case.pdf": 18,
+        "trauma_and_bleeding__frontiers_2021_hemorrhage.pdf": 14,
+        "tremors_without_seizure__frontiers_2024_dyskinesia.pdf": 127,
+        "urethral_obstruction__frontiers_2023_canine_obstruction.pdf": 35,
+        "urethral_obstruction__icatcare_2025_lower_urinary.pdf": 25,
+        "vestibular_syndrome_otitis_interna__frontiers_2023_idiopathic_vestibular.pdf": 112,
+        "vomiting_and_diarrhea__frontiers_2023_gastrointestinal_presentations.pdf": 13,
+        "vomiting_and_diarrhea__ovj_2026_teletriage.pdf": 13
+      },
+      "validation_status_counts": {
+        "approved_by_specialist": 3458,
+        "pending_specialist": 23,
+        "published_not_locally_validated": 13
+      },
+      "manifest_sha256": "35fe7681098af09089e578f6afbdff605c34ff9f7050a84b8beebc6e3fb37998",
+      "profile": "experimental",
+      "source_set_sha256": "b4fd334dfc5e3da9f6e0646de092d80b2837d8dd7c70fcf84c2d5a27ac2cb948",
+      "document_count": 67
+    },
+    "prompts": {
+      "v0_legacy_sha256": "15fa7b045d293f5dfdcb03ef18607fca72ca370776ef2df82687b6167b1423f4",
+      "v1_grounded_sha256": "a1e9cd51e0f618731926ce3f8de3bfa3b478f7e3fae8c8b6650041671ca912b5",
+      "v1_grounded_sem_contexto_sha256": "6084a79be5466da0066f23cd9dbd3716601b068fc65b7cebd311fca9c24510b7",
+      "v1_grounded_cot_sha256": "936cdc903895645dc6fb43cfd4465b1cb70fa10ec185e9f4d890841b8705c97b",
+      "v1_grounded_cot_sem_contexto_sha256": "18231ba795024b099c382e226b05a8767304cb2308cca3c24016eb57eeb4cd73",
+      "v1_grounded_cot_posthoc_sha256": "274fbab1850aa81af39aa7d1d02615f86fd0a4152d55ad9678089cf305a94d74"
+    },
+    "defaults": {
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 4096,
+      "num_predict": 600,
+      "structured_output_mode": "schema",
+      "context_top_k": 3,
+      "context_min_score": 0.72,
+      "prompt_version": "v1_grounded"
+    }
+  }
+}

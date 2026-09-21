@@ -56,7 +56,7 @@ def cliente(monkeypatch):
     monkeypatch.setattr(
         retrieval_client.RetrievalClient,
         "retrieve",
-        staticmethod(lambda queries: list(devolvidos)),
+        staticmethod(lambda queries, **kwargs: list(devolvidos)),
     )
 
     with TestClient(app) as test_client:
@@ -138,7 +138,7 @@ def test_trecho_sem_metadado_de_procedencia_nao_quebra(cliente, monkeypatch):
         retrieval_client.RetrievalClient,
         "retrieve",
         staticmethod(
-            lambda queries: [
+            lambda queries, **kwargs: [
                 RetrievedDocument(
                     id="antigo",
                     chunk_id="antigo",
@@ -193,7 +193,7 @@ def test_cliente_separa_corpo_do_embedding_e_preserva_legado(
     assert RetrievalClient.retrieve(["consulta"])[0].content == expected
 
 
-def test_cliente_busca_mais_candidatos_e_prioriza_fontes_diferentes(
+def test_cliente_busca_mais_candidatos_para_o_reranker(
     monkeypatch,
 ):
     from app.clients.retrieval_client import RetrievalClient
@@ -230,10 +230,65 @@ def test_cliente_busca_mais_candidatos_e_prioriza_fontes_diferentes(
     documents = RetrievalClient.retrieve(["consulta"])
 
     assert collection.requested_results == 50
-    assert [document.id for document in documents[:3]] == [
-        "a1", "b1", "c1"
+    assert [document.id for document in documents] == [
+        "a1", "a2", "a3", "b1", "c1"
     ]
-    assert [document.id for document in documents[3:]] == ["a2", "a3"]
+
+
+def test_cliente_funde_candidatos_da_rota_de_assunto(monkeypatch):
+    from app.clients import retrieval_client
+    from app.clients.retrieval_client import RetrievalClient
+    from app.database.chroma_client import ChromaDBClient
+
+    class Collection:
+        calls = []
+
+        def count(self):
+            return 100
+
+        def query(self, **kwargs):
+            self.calls.append(kwargs)
+            if "where" in kwargs:
+                return {
+                    "ids": [["correto"]],
+                    "documents": [["Cebola pode causar anemia"]],
+                    "metadatas": [[{
+                        "topic": "allium_toxicosis",
+                        "source_file": "allium.pdf",
+                    }]],
+                    "distances": [[0.47]],
+                }
+            return {
+                "ids": [["geral"]],
+                "documents": [["Outro conteúdo"]],
+                "metadatas": [[{"topic": "outro"}]],
+                "distances": [[0.30]],
+            }
+
+    collection = Collection()
+    monkeypatch.setattr(
+        ChromaDBClient,
+        "get_collection",
+        staticmethod(lambda: collection),
+    )
+    monkeypatch.setattr(
+        retrieval_client,
+        "likely_topics",
+        lambda query: ["allium_toxicosis"],
+    )
+
+    documents = RetrievalClient.retrieve(
+        ["consulta reescrita"],
+        routing_query="meu cachorro comeu cebola",
+    )
+
+    assert {document.id for document in documents} == {"geral", "correto"}
+    assert collection.calls[1]["query_texts"] == [
+        "meu cachorro comeu cebola"
+    ]
+    assert collection.calls[1]["where"] == {
+        "topic": {"$in": ["allium_toxicosis"]}
+    }
 
 
 def test_cliente_preserva_repeticoes_quando_nao_ha_fontes_suficientes(

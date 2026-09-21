@@ -9,6 +9,7 @@
   "language": "en",
   "source_url": "https://doi.org/10.3389/fvets.2016.00026",
   "indexing": {
+    "retrieval_anchors": ["grape", "grapes", "raisin", "raisins", "xylitol", "uva", "uvas", "passa", "passas", "chiclete", "gum"],
     "include_sections": [
 
     ],
