@@ -40,15 +40,27 @@ def main() -> None:
     parser.add_argument("--api-url", default="http://localhost:8000")
     parser.add_argument("--timeout", type=int, default=180)
     parser.add_argument("--limit", type=int)
+    # B1: o runner nasceu lendo só a régua de recuperação (data/retrieval/
+    # cases.csv). A prova nova do trilho B1 (data/prova/) usa as mesmas
+    # colunas text/expected_class/id, então rodar contra ela é só apontar
+    # para outro arquivo — sem duplicar a lógica de avaliação.
+    parser.add_argument("--cases", type=Path, default=CASES)
+    # A prova nova tem uma coluna `split` (calibracao/dev/teste) que a
+    # régua não tem; filtrar por ela evita misturar o lote de calibração
+    # com o lote oficial numa mesma rodada.
+    parser.add_argument("--split")
+    parser.add_argument("--runs-dir", type=Path, default=RUNS)
     args = parser.parse_args()
 
-    with CASES.open(encoding="utf-8", newline="") as source:
+    with args.cases.open(encoding="utf-8", newline="") as source:
         cases = list(csv.DictReader(source))
+    if args.split:
+        cases = [case for case in cases if case.get("split") == args.split]
     if args.limit:
         cases = cases[: args.limit]
 
     run_id = f"{datetime.now():%Y%m%d-%H%M%S}_{args.name}"
-    directory = RUNS / run_id
+    directory = args.runs_dir / run_id
     started_at = agora()
 
     health = requests.get(f"{args.api_url.rstrip('/')}/health/", timeout=10)
@@ -135,6 +147,9 @@ def main() -> None:
         "started_at": started_at,
         "mode": args.mode,
         "options": selected_options,
+        "cases_file": str(args.cases),
+        "split": args.split,
+        "case_count": len(cases),
         "git": git_estado(),
         "backend_fingerprint": fingerprint,
     }

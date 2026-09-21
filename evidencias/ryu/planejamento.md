@@ -36,11 +36,11 @@ benchmark de voz.
 | 3 | Whisper único com WER medido (B-13) | ✅ 08/09 | 2 órfãos apagados; `VoiceService` sozinho, tamanho do modelo em setting; benchmark de WER com 18 relatos PT-BR sintéticos (edge-tts) — limite otimista |
 | 4 | **Frente prova — lote de calibração** | ✅ 13/09 | Formato definido em `data/prova/`, referência de triagem (MSD, mesma do mapa de assuntos), 18 casos com 7 pares de confusão. Rodado contra a API: 15/18, as 3 falhas são falsos não urgentes — inclusive o par de maior letalidade do mapa |
 | 5 | **Frente prova — lote oficial (~150 casos, dev/teste)** | 🔜 próxima | Depende de validar o formato com o time primeiro |
-| 6 | **Frente prova — adaptar o runner** para ler `text` livre | ⏳ | Coluna alternativa, `--relato-lang`, caminho por opção, baselines triviais novos (seção 5.4 do plano) |
+| 6 | **Frente prova — adaptar o runner** para ler `text` livre | ✅ 21/09 | Reaproveitado `scripts/run_map_triage_eval.py` (Vinicius já lia `text`/`expected_class` em PT-BR) em vez de escrever um runner paralelo — ganhou `--cases`, `--split` e `--runs-dir`. Rodado como fumaça contra o lote de calibração. Baselines triviais novos (seção 5.4 do plano) ficam para quando o lote oficial existir, com volume suficiente para calibrá-los |
 | 7 | **Medir consulta nas coleções experimentais (B-09, B-10)** | ✅ 17/09 | Instrumento novo (`measure_query_techniques.py`) contra as 3 candidatas do trilho A. HyDE nunca ajudou → `HYDE_ENABLED=False` por padrão. Fusão reescrita+multi-query (B-10) nunca perde → implementada. Achado colateral: [B-57](../backlog.md#b-57) |
 | 8 | Conter julgamento clínico na reescrita (B-08) | ✅ 17/09 | Exemplo negativo no prompt + guarda-corpo determinístico (`_contains_unwarranted_urgency`) que descarta a reescrita quando ela injeta urgência ausente do relato. 2 testes novos |
 | 9 | Cadastro de tutor/pet sem autenticação real (B-56) | ⏳ (adiado para o deploy, decisão de 17/09) | Política aberta no Supabase, sem auth — risco baixo enquanto o sistema roda só local/dev |
-| 10 | Paralelizar Multi-Query e HyDE (B-07) | 🔶 em andamento, 17/09 | As duas rodam em paralelo (`ThreadPoolExecutor`) quando ligadas juntas; sobreposição confirmada nos logs. Falta medir `query_s` mediano com o runner, modelo aquecido |
+| 10 | Paralelizar Multi-Query e HyDE (B-07) | 🔶 em andamento, 21/09 | Paralelas desde 17/09; medido em 21/09 contra a coleção real (3.481 chunks) — economiza 13-39%, nunca piora. Falta GPU disponível para confirmar o número absoluto (`query_s` < 1,5s); ambiente atual roda 100% CPU |
 | 11 | Benchmark de WER com áudio real | ⏳ | Substitui o número otimista da fala sintética (B-13) |
 
 ## Próxima entrega: lote oficial da prova (~150 casos)

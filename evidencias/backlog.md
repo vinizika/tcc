@@ -54,7 +54,7 @@ aqui.
 | [B-04](#b-04) | Temperatura e seed não fixadas na etapa de consulta | Trilho B1 | Alta | Em andamento — 82% resolvido, ver [B-24](#b-24) |
 | [B-05](#b-05) | Conjunto de avaliação trivialmente separável | Time + especialista | Alta | Aberto |
 | [B-06](#b-06) | Falsos não urgentes subiram de 3 para 8 com o prompt novo | Trilho B2 | Alta | Em andamento |
-| [B-07](#b-07) | Etapa de consulta custa 60% da latência | Trilho B1 | Média | Em andamento — Multi-Query e HyDE paralelizados em 17/09; falta confirmar o número com o runner |
+| [B-07](#b-07) | Etapa de consulta custa 60% da latência | Trilho B1 | Média | Em andamento — paralelização implementada e ganho medido (13–39%, 21/09); número absoluto depende de ambiente com GPU |
 | [B-08](#b-08) | Reescrita de consulta adiciona julgamento clínico | Trilho B1 | Média | Resolvido em 17/09 |
 | [B-09](#b-09) | HyDE gera doença inexistente e nunca foi medido | Trilho B1 | Média | Resolvido em 17/09 |
 | [B-10](#b-10) | Consulta reescrita não vai ao índice com multi-query ligado | Trilho B1 (decisão) | Média | Resolvido em 17/09 |
@@ -272,7 +272,7 @@ urgentes ≤ 5.
 
 **Etapa de consulta custa 60% da latência**
 
-**Identificado por:** João (B2) · **Onde:** [rodada 3](joao/2026-09-04-04-geracao-ancorada.md) e [rodada 4](joao/2026-09-04-05-runner-de-avaliacao.md) · **Responsável:** Trilho B1 · **Prioridade:** Média · **Status:** Aberto
+**Identificado por:** João (B2) · **Onde:** [rodada 3](joao/2026-09-04-04-geracao-ancorada.md) e [rodada 4](joao/2026-09-04-05-runner-de-avaliacao.md) · **Responsável:** Trilho B1 · **Prioridade:** Média · **Status:** Em andamento — paralelização implementada e ganho relativo medido em 21/09; falta ambiente com GPU para confirmar o número absoluto
 
 **O que observamos.** Com o pipeline completo, 3,5s dos 5,7s por resposta
 são as três chamadas sequenciais ao modelo antes de qualquer busca. A
@@ -285,6 +285,20 @@ tempo.
 **O que resolveria.** As três chamadas são independentes: rodar em paralelo,
 ou fundir numa única chamada que devolve reescrita, variações e documento
 hipotético num só JSON. Critério: `query_s` mediano abaixo de 1,5s.
+
+**Progresso (17/09 e 21/09).** A reescrita não pode ser paralelizada de
+verdade (as outras duas dependem do texto dela), mas Multi-Query e HyDE são
+independentes entre si — rodam em `ThreadPoolExecutor` desde 17/09
+([rodada 8](ryu/2026-09-17-08-paralelizando-multi-query-e-hyde.md)). Medido
+com modelo aquecido contra a coleção real de 3.481 chunks do trilho A
+([rodada 9](ryu/2026-09-21-09-medindo-latencia-com-modelo-aquecido.md)): a
+paralelização nunca piora e economiza entre 13% e 39% da etapa, dependendo
+de quão desbalanceadas são as duas chamadas. O critério numérico
+(`query_s` < 1,5s) não pôde ser confirmado nesta máquina: `ollama ps`
+mostrou o modelo rodando 100% CPU, sem GPU — o baseline original de 3,5s
+quase certamente foi medido com GPU disponível (o time tem rodadas citando
+`native_gpu_reranker`). Falta repetir a medição num ambiente com GPU para
+fechar o item.
 
 ### B-08
 
