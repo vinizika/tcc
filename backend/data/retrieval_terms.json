@@ -1,0 +1,365 @@
+{
+  "source": "data/curadoria/mapa-de-assuntos.csv",
+  "source_sha256": "440630fd19ca10e97c6d47c88bc13ae857b03e92e6d61bddc63a1b3984dbad3d",
+  "topics": {
+    "acute_hindlimb_paralysis": [
+      "Paralisia aguda das patas traseiras",
+      "amanheceu sem levantar as patas de tras",
+      "arrastando",
+      "gritando de dor",
+      "nao sente as patas",
+      "fez xixi sem querer"
+    ],
+    "airway_foreign_body_choking": [
+      "Engasgo com obstrucao de via aerea"
+    ],
+    "allium_toxicosis": [
+      "Intoxicacao por cebola e alho",
+      "comeu cebola ou alho",
+      "sem energia",
+      "gengiva palida",
+      "urina escura"
+    ],
+    "anaphylaxis_facial_swelling": [
+      "Reacao alergica grave com inchaco de face",
+      "foi picado por abelha",
+      "focinho inchando rapido",
+      "olhos inchados",
+      "carocos pelo corpo",
+      "cocando muito",
+      "respiracao barulhenta"
+    ],
+    "anticoagulant_rodenticide_poisoning": [
+      "Intoxicacao por raticida anticoagulante",
+      "comeu veneno de rato",
+      "sangramento pelo nariz",
+      "manchas roxas na pele",
+      "gengiva palida",
+      "tosse com sangue",
+      "fraqueza"
+    ],
+    "burns_and_electrical_injury": [
+      "Queimadura e choque eletrico"
+    ],
+    "canine_heatstroke": [
+      "Intermacao (golpe de calor)",
+      "ficou no sol ou no carro",
+      "ofegante sem parar",
+      "muito quente ao toque",
+      "cambaleando",
+      "lingua vermelha escura"
+    ],
+    "carbamate_organophosphate_poisoning": [
+      "Intoxicacao por chumbinho e inseticidas agricolas",
+      "babando muito",
+      "tremendo",
+      "convulsao",
+      "pupila pequena",
+      "diarreia",
+      "xixi solto",
+      "respiracao dificil"
+    ],
+    "cat_bite_abscess": [
+      "Ferida de briga de gato"
+    ],
+    "chocolate_toxicosis": [
+      "Intoxicacao por chocolate",
+      "comeu chocolate",
+      "tremendo",
+      "vomitando",
+      "agitado",
+      "coracao acelerado"
+    ],
+    "collapse_and_pale_gums": [
+      "Colapso e gengiva palida",
+      "desmaiou",
+      "caiu e nao levanta",
+      "gengiva branca ou muito palida",
+      "respiracao rapida",
+      "frio",
+      "barriga inchou de repente",
+      "muito fraco de uma hora para outra"
+    ],
+    "congestive_heart_failure": [
+      "Insuficiencia cardiaca descompensada"
+    ],
+    "diabetic_ketoacidosis": [
+      "Cetoacidose diabetica"
+    ],
+    "dietary_indiscretion_mild": [
+      "Comeu algo fora da dieta, sem sinais",
+      "comeu uma sobra",
+      "mexeu no lixo",
+      "comeu um pedacinho",
+      "esta normal",
+      "comendo e brincando"
+    ],
+    "distemper_neurological": [
+      "Cinomose com sinais neurologicos"
+    ],
+    "dystocia": [
+      "Distocia (parto dificil)"
+    ],
+    "eclampsia": [
+      "Eclampsia puerperal"
+    ],
+    "exertional_panting_mild": [
+      "Ofegacao apos exercicio"
+    ],
+    "fading_neonate": [
+      "Filhote recem-nascido que nao mama",
+      "filhote molinho",
+      "nao quer mamar",
+      "boca fria",
+      "chorando muito",
+      "parou de se mexer"
+    ],
+    "feline_aortic_thromboembolism": [
+      "Tromboembolismo aortico felino"
+    ],
+    "flea_dermatitis_pruritus": [
+      "Coceira e dermatite",
+      "se cocando muito",
+      "casquinha na pele",
+      "perdendo pelo",
+      "cocando a orelha",
+      "comendo bem"
+    ],
+    "gastric_dilatation_volvulus": [
+      "Dilatacao e torcao gastrica",
+      "barriga muito inchada e dura",
+      "tentando vomitar e nao sai nada",
+      "inquieto",
+      "babando",
+      "anda de um lado para o outro"
+    ],
+    "gastrointestinal_foreign_body": [
+      "Corpo estranho no tubo digestivo"
+    ],
+    "grape_xylitol_toxicosis": [
+      "Intoxicacao por uva, passa ou xilitol"
+    ],
+    "high_rise_syndrome_cats": [
+      "Queda de altura em gato"
+    ],
+    "human_medication_poisoning": [
+      "Intoxicacao por medicamento humano",
+      "dei remedio de gente",
+      "dei dipirona",
+      "dei paracetamol",
+      "dei anti-inflamatorio",
+      "lingua ou gengiva arroxeada",
+      "rosto inchado",
+      "vomitando"
+    ],
+    "hypoglycemia_toy_puppy": [
+      "Hipoglicemia em filhote de raca pequena"
+    ],
+    "inappropriate_urination_or_cystitis": [
+      "Xixi fora do lugar e cistite",
+      "fazendo xixi fora da caixa",
+      "xixi com um pouco de sangue",
+      "indo mais vezes ao banheiro",
+      "a urina sai em quantidade normal",
+      "sem esforco",
+      "sem dor aparente"
+    ],
+    "insect_sting_local_reaction": [
+      "Picada de inseto com reacao local"
+    ],
+    "kennel_cough_mild": [
+      "Tosse dos canis leve"
+    ],
+    "leptospirosis_acute": [
+      "Leptospirose aguda"
+    ],
+    "lily_toxicosis_cats": [
+      "Intoxicacao por lirio em gato"
+    ],
+    "mild_conjunctivitis": [
+      "Conjuntivite leve",
+      "olho vermelho",
+      "lacrimejando",
+      "remela",
+      "sem inchaco",
+      "olho aberto",
+      "enxerga normal",
+      "comendo e brincando"
+    ],
+    "mild_lameness": [
+      "Claudicacao leve",
+      "mancando de leve",
+      "ainda apoia a pata",
+      "depois de correr",
+      "sem inchaco",
+      "comendo normal"
+    ],
+    "mild_upper_respiratory_signs": [
+      "Espirro e coriza leves",
+      "espirrando de vez em quando",
+      "nariz escorrendo",
+      "espirro esquisito que passa sozinho",
+      "comendo bem",
+      "brincando"
+    ],
+    "minor_wound": [
+      "Ferida superficial pequena"
+    ],
+    "normal_estrus": [
+      "Cio normal",
+      "sangramento pela vulva",
+      "vulva inchada",
+      "mais carente",
+      "atraindo machos",
+      "ativa e comendo"
+    ],
+    "normal_whelping": [
+      "Parto normal"
+    ],
+    "ocular_emergency": [
+      "Emergencia ocular",
+      "olho saltado para fora",
+      "olho fechado e apertando",
+      "esfregando o olho",
+      "olho opaco ou azulado",
+      "pupila muito grande",
+      "esbarrando nas coisas",
+      "olho machucado em briga"
+    ],
+    "osteoarthritis_stiffness": [
+      "Rigidez de artrose em idoso",
+      "custa a levantar",
+      "melhora depois que anda",
+      "nao sobe mais no sofa",
+      "devagar ha meses"
+    ],
+    "otitis_externa_mild": [
+      "Otite externa leve"
+    ],
+    "parvovirus_panleukopenia": [
+      "Parvovirose e panleucopenia",
+      "filhote",
+      "nao vacinado ou vacina incompleta",
+      "vomitando",
+      "diarreia com sangue",
+      "cheiro muito forte",
+      "nao come",
+      "apatico",
+      "desidratado"
+    ],
+    "periodontal_disease_mild": [
+      "Tartaro e mau halito"
+    ],
+    "permethrin_toxicosis_cats": [
+      "Intoxicacao por permetrina em gato",
+      "passei antipulgas de cachorro no gato",
+      "tremendo muito",
+      "convulsao",
+      "andando estranho",
+      "salivando",
+      "o gato dorme junto com o cao que tomou antipulgas"
+    ],
+    "polyuria_polydipsia_investigate": [
+      "Bebe e urina mais que o normal"
+    ],
+    "pyometra": [
+      "Piometra",
+      "femea nao castrada",
+      "saiu pus pela vulva",
+      "bebendo muita agua",
+      "apatica",
+      "nao come",
+      "barriga inchada",
+      "teve cio ha cerca de um mes"
+    ],
+    "rabies_exposure_wild_animal_bite": [
+      "Mordido por morcego ou animal silvestre"
+    ],
+    "reduced_appetite_no_other_signs": [
+      "Comendo menos, sem outros sinais",
+      "comendo menos",
+      "recusou uma refeicao",
+      "bebendo agua",
+      "ativo",
+      "sem vomito",
+      "sem diarreia"
+    ],
+    "respiratory_distress": [
+      "Dificuldade respiratoria",
+      "respirando com dificuldade",
+      "barriga subindo e descendo rapido",
+      "lingua ou gengiva roxa",
+      "pescoco esticado",
+      "gato de boca aberta"
+    ],
+    "seizures": [
+      "Convulsao",
+      "caiu de lado",
+      "tremendo",
+      "pedalando as patas",
+      "babando",
+      "fez xixi",
+      "nao responde"
+    ],
+    "single_vomiting_or_mild_diarrhea": [
+      "Vomito isolado ou fezes moles em animal ativo",
+      "vomitou uma vez",
+      "fezes moles",
+      "comendo normal",
+      "brincando",
+      "bola de pelo"
+    ],
+    "slow_growing_lump": [
+      "Caroco de crescimento lento"
+    ],
+    "snake_and_scorpion_envenomation": [
+      "Acidente com cobra, escorpiao ou aranha"
+    ],
+    "tick_borne_disease_anemia": [
+      "Doenca do carrapato com anemia"
+    ],
+    "ticks_found_no_signs": [
+      "Carrapatos no animal, sem sinais"
+    ],
+    "toad_bufotoxin_poisoning": [
+      "Envenenamento por sapo"
+    ],
+    "trauma_and_bleeding": [
+      "Trauma, atropelamento e hemorragia",
+      "foi atropelado",
+      "caiu de altura",
+      "sangrando muito",
+      "nao para de sangrar",
+      "ferida funda",
+      "briga com outro animal"
+    ],
+    "tremors_without_seizure": [
+      "Tremor sem convulsao",
+      "tremendo de frio",
+      "tremendo de medo",
+      "acordado e me olhando",
+      "anda normal"
+    ],
+    "urethral_obstruction": [
+      "Obstrucao uretral",
+      "vai na caixa e nao sai nada",
+      "faz forca",
+      "sai so gotinhas",
+      "chora quando tenta",
+      "lambe muito a regiao",
+      "barriga dura e dolorida"
+    ],
+    "vestibular_syndrome_otitis_interna": [
+      "Sindrome vestibular"
+    ],
+    "vomiting_and_diarrhea": [
+      "Vomito e diarreia persistentes",
+      "vomitando varias vezes",
+      "diarreia com sangue",
+      "fezes muito fedidas",
+      "quietinho",
+      "nao levanta",
+      "nao bebe agua"
+    ]
+  }
+}

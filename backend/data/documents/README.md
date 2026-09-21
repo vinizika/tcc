@@ -41,6 +41,7 @@ Campos principais suportados:
     "redistribution_allowed": false
   },
   "indexing": {
+    "retrieval_anchors": ["chocolate", "cacau", "cocoa"],
     "include_sections": [],
     "exclude_sections": ["Supplementary material"],
     "exclude_pages": []
@@ -54,6 +55,9 @@ Campos principais suportados:
   Bibliography, conflitos, financiamento, contribuições e agradecimentos.
 - `exclude_pages` é um fallback para páginas editoriais ou PDFs cuja estrutura
   não possa ser interpretada. A numeração começa em 1 para PDF; TXT usa 0.
+- `retrieval_anchors` restringe fontes dependentes de uma exposição ou contexto
+  explícito. Ao menos um termo precisa aparecer no relato para a fonte ser
+  elegível; isso evita recuperar intoxicação apenas por sintomas genéricos.
 - Nomes de seção são comparados sem diferenciar maiúsculas de minúsculas.
 - Uma seção configurada e não encontrada produz warning para revisão.
 

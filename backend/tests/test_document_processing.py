@@ -227,6 +227,7 @@ def test_metadados_adicionais_e_de_chunk_sao_preservados():
         journal="Temperature",
         language="en",
         source_url="https://doi.org/10.1/example",
+        indexing={"retrieval_anchors": ["uva", "xylitol"]},
     )
     chunk = DocumentChunk("text", "Prognosis", 4, 5, 20)
 
@@ -240,6 +241,7 @@ def test_metadados_adicionais_e_de_chunk_sao_preservados():
     assert result["page_end"] == 5
     assert result["token_count"] == 20
     assert result["body"] == "text"
+    assert json.loads(result["retrieval_anchors"]) == ["uva", "xylitol"]
 
 
 def test_documento_sem_json_usa_defaults_neutros(tmp_path, caplog):

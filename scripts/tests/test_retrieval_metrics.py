@@ -163,6 +163,20 @@ def test_silencio_usa_o_limiar_e_nao_a_ausencia_de_resultado():
     assert m["silence_rate_on_mild"] == 0.5
 
 
+def test_corte_usa_nota_hibrida_com_fallback_para_snapshot_antigo():
+    novo = avaliar_caso(
+        caso("novo", motivo="caso leve"),
+        [{"topic": "x", "score": 0.50, "ranking_score": 0.75}],
+    )
+    antigo = avaliar_caso(
+        caso("antigo", motivo="caso leve"),
+        [{"topic": "x", "score": 0.69}],
+    )
+
+    assert novo["max_score"] == 0.75
+    assert antigo["max_score"] == 0.69
+
+
 def test_silencio_em_tudo_fica_visivel_como_acidente():
     """
     Com a base atual a busca não passa do corte em nenhum caso, e por isso

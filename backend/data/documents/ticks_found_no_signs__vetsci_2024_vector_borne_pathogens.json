@@ -9,6 +9,7 @@
   "language": "en",
   "source_url": "https://doi.org/10.3390/vetsci11070313",
   "indexing": {
+    "retrieval_anchors": ["tick", "ticks", "carrapato", "carrapatos"],
     "include_sections": [
 
     ],

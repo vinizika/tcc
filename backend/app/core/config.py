@@ -2,7 +2,7 @@ from pathlib import Path
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-from app.constants.pipeline import DEFAULT_SCORE_THRESHOLD
+from app.constants.pipeline import DEFAULT_CONTEXT_MIN_SCORE
 
 
 # A raiz do repositorio, para que um unico .env sirva tanto ao docker compose
@@ -135,17 +135,16 @@ class Settings(BaseSettings):
     # todos os prompts. Os bracos com RAG mediram injecao de ruido, nao
     # recuperacao.
     #
-    # Agora acompanha o mesmo limiar que a busca usa para dizer o que e
-    # relevante: sem nada acima dele, o classificador recebe nada e o
-    # sistema responde como sem RAG. O valor e PROVISORIO -- 0.70 e tao
-    # arbitrario quanto 0.0, so que coerente com o que o sistema ja reporta
-    # em toda rodada. O numero certo sai da regua de recuperacao do trilho
-    # A, nao de discussao (evidencias/backlog.md#b-11).
+    # A avaliação completa de 20/09/2026 comparou 0.70 e 0.72 na mesma base.
+    # O corte 0.72 eliminou os três erros novos causados por trechos
+    # limítrofes e deixou o RAG a um acerto da linha de base sem RAG. Ele é
+    # conservador de propósito: sem evidência suficientemente próxima, o
+    # classificador recebe o relato sem contexto em vez de receber ruído.
     #
     # Para reproduzir as rodadas anteriores a 12/09, passe
     # context_min_score=0.0 na requisicao ou use o preset
     # naive_rag_sem_corte.
-    CONTEXT_MIN_SCORE: float = DEFAULT_SCORE_THRESHOLD
+    CONTEXT_MIN_SCORE: float = DEFAULT_CONTEXT_MIN_SCORE
 
     # Passa tambem a pergunta reescrita ao classificador. Desligado porque a
     # reescrita adiciona interpretacao clinica ("requer avaliacao imediata"),

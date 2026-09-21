@@ -22,6 +22,17 @@ from app.schemas.triage import EffectiveConfig
 # onde estão as instruções.
 CONTEXT_MAX_CHARS = 4000
 
+EMERGENCY_EVIDENCE_MARKERS = (
+    "emergency facility",
+    "emergency referral",
+    "emergency evaluation",
+    "immediate medical attention",
+    "atendimento emergencial",
+    "encaminhamento emergencial",
+    "avaliacao emergencial",
+    "atendimento imediato",
+)
+
 
 PROMPT_LEGADO = """
 Você é um assistente de apoio à triagem veterinária.
@@ -86,13 +97,13 @@ INCERTO.
 
 Preencha os campos assim:
 - classificacao: uma das três categorias, exatamente como escritas acima.
-- justificativa: duas a três frases explicando a decisão, em linguagem \
-que o tutor entenda.
-- sinais_de_alerta: apenas os sinais preocupantes que aparecem no relato. \
-Lista vazia se não houver nenhum.
-- recomendacao: o que o tutor deve fazer agora. Sem nome de medicamento e \
-sem dose. Em caso INCERTO, diga que informação ajudaria e oriente procurar \
-atendimento na dúvida.
+- justificativa: uma única frase, com no máximo 20 palavras, explicando a \
+decisão em linguagem que o tutor entenda. Não liste procedimentos.
+- sinais_de_alerta: no máximo três sinais preocupantes que aparecem no \
+relato. Lista vazia se não houver nenhum.
+- recomendacao: uma única frase, com no máximo 15 palavras, dizendo o que o \
+tutor deve fazer agora. Sem nome de medicamento e sem dose. Em caso INCERTO, \
+oriente procurar atendimento na dúvida.
 - fontes: os números dos trechos que embasaram a decisão. Lista vazia se \
 nenhum trecho foi usado.
 
@@ -122,13 +133,13 @@ INCERTO.
 
 Preencha os campos assim:
 - classificacao: uma das três categorias, exatamente como escritas acima.
-- justificativa: duas a três frases explicando a decisão, em linguagem \
-que o tutor entenda.
-- sinais_de_alerta: apenas os sinais preocupantes que aparecem no relato. \
-Lista vazia se não houver nenhum.
-- recomendacao: o que o tutor deve fazer agora. Sem nome de medicamento e \
-sem dose. Em caso INCERTO, diga que informação ajudaria e oriente procurar \
-atendimento na dúvida.
+- justificativa: uma única frase, com no máximo 20 palavras, explicando a \
+decisão em linguagem que o tutor entenda. Não liste procedimentos.
+- sinais_de_alerta: no máximo três sinais preocupantes que aparecem no \
+relato. Lista vazia se não houver nenhum.
+- recomendacao: uma única frase, com no máximo 15 palavras, dizendo o que o \
+tutor deve fazer agora. Sem nome de medicamento e sem dose. Em caso INCERTO, \
+oriente procurar atendimento na dúvida.
 
 Responda em português."""
 
@@ -314,7 +325,18 @@ def montar_bloco_de_contexto(
 
         total += len(conteudo)
 
-        linhas.append(f"[{posicao}] {documento.title} — {conteudo}")
+        conteudo_normalizado = conteudo.casefold()
+        marcador = (
+            " [O TRECHO MENCIONA EXPLICITAMENTE ENCAMINHAMENTO EMERGENCIAL]"
+            if any(
+                termo in conteudo_normalizado
+                for termo in EMERGENCY_EVIDENCE_MARKERS
+            )
+            else ""
+        )
+        linhas.append(
+            f"[{posicao}]{marcador} {documento.title} — {conteudo}"
+        )
 
     return "\n\n".join(linhas)
 

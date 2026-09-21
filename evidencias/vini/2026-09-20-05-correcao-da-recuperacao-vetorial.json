@@ -1,0 +1,131 @@
+{
+  "date": "2026-09-20",
+  "branch": "codex/improve-retrieval",
+  "initial_head": "66bcce7d92ee5065b9452f1ddb782f278a44efe7",
+  "status": "ready_for_pull_request_not_activated",
+  "collection": {
+    "name": "veterinary_documents__20260920T233307713518Z__b4fd334d",
+    "documents": 67,
+    "chunks": 3494,
+    "topics": 61,
+    "chunk_ids_sha256": "fd9b72d2e64eb92b79714d375652df6a538fff359d6a27120039374f838943af",
+    "activated": false
+  },
+  "classification": {
+    "without_rag": {"correct": 85, "total": 98, "balanced_accuracy": 0.8740, "false_nonurgent": 8, "false_urgent": 3},
+    "previous_rag": {"correct": 80, "total": 98, "balanced_accuracy": 0.8159, "false_nonurgent": 11, "false_urgent": 5},
+    "corrected_070": {"correct": 83, "total": 98, "balanced_accuracy": 0.8599, "false_nonurgent": 10, "false_urgent": 3},
+    "corrected_072_final": {"correct": 84, "total": 98, "balanced_accuracy": 0.8670, "false_nonurgent": 9, "false_urgent": 3}
+  },
+  "retrieval": {
+    "initial_run": "20260920-171310_reranker_ancoras_especie_v2",
+    "initial_precision_at_1": 0.2121,
+    "initial_mrr": 0.2912,
+    "lexicon_run": "20260920-190059_hybrid_topic_lexicon_v4",
+    "lexicon_precision_at_1": 0.4545,
+    "lexicon_mrr": 0.4790,
+    "routed_run": "20260920-191623_hybrid_topic_routing_v5",
+    "routed_precision_at_1": 0.4848,
+    "routed_mrr": 0.5515,
+    "final_run": "20260920-192041_hybrid_topic_routing_confident_v6",
+    "final_precision_at_1": 0.5,
+    "final_mrr": 0.5629,
+    "final_recall_at_5": 0.6818,
+    "findable_topics": 24,
+    "cases": 66,
+    "context_above_072": 11,
+    "context_top_topic_correct": 11,
+    "largest_magnet_first_places": 5,
+    "v8_run": "20260920-204653_hybrid_topic_adjacent_teletriage_v8",
+    "v8_precision_at_1": 0.5152,
+    "v8_mrr": 0.5699,
+    "v8_recall_at_5": 0.6667,
+    "v8_context_above_072": 18,
+    "v8_correct_top_topic": 34
+  },
+  "tests": {
+    "backend_passed": 226,
+    "scripts_passed": 187,
+    "git_diff_check": "passed",
+    "pip_check": "passed",
+    "compileall": "passed",
+    "json_validation": "passed",
+    "yaml_ci_validation": "passed",
+    "docker_compose_config": "passed",
+    "docker_runtime_recreated": false
+  },
+  "final_run": {
+    "run": "20260920-171451_native_gpu_reranker_ancoras_especie_v2",
+    "predictions": 98,
+    "resumed_after_interruption": true,
+    "completed": true
+  },
+  "end_to_end_retest": {
+    "status": "completed",
+    "baseline_no_rag_run": "20260920-194416_smoke10_prompt_curto_no_rag",
+    "baseline_no_rag_correct": 8,
+    "previous_hybrid_run": "20260920-195827_smoke10_prompt_curto_hybrid_v6",
+    "previous_hybrid_correct": 8,
+    "final_run": "20260920-204758_smoke10_hybrid_v8_teletriage",
+    "total": 10,
+    "correct": 10,
+    "false_nonurgent": 0,
+    "false_urgent": 0,
+    "cases_with_context": 4
+  },
+  "expanded_paired_evaluation": {
+    "cases": 30,
+    "class_distribution": {
+      "emergency": 21,
+      "nonurgent": 9
+    },
+    "without_rag": {
+      "run": "20260920-221607_sample30_no_rag_v8_comparison",
+      "correct": 24,
+      "balanced_accuracy": 0.8571428571428572,
+      "false_nonurgent": 6,
+      "false_urgent": 0,
+      "cases_with_context": 0
+    },
+    "with_rag": {
+      "run": "20260920-212052_sample30_hybrid_v8_teletriage",
+      "correct": 26,
+      "balanced_accuracy": 0.9047619047619048,
+      "false_nonurgent": 4,
+      "false_urgent": 0,
+      "cases_with_context": 14
+    },
+    "fixed_by_rag": ["b07", "b08", "b14"],
+    "regressed_with_rag": ["b27"],
+    "wrong_in_both": ["b15", "b16", "b30"],
+    "balanced_accuracy_delta": 0.04761904761904756
+  },
+  "handoff": {
+    "pet_joao": [
+      "run_paired_decision_ablations_on_ryu_independent_dataset",
+      "audit_cases_where_context_changes_the_decision",
+      "finish_ablation_driver_without_tuning_on_official_test"
+    ],
+    "ryu": [
+      "produce_independent_50_dev_100_test_cases_and_freeze_test_hash",
+      "adapt_runner_for_free_text_portuguese",
+      "remeasure_query_rewriting_and_multi_query_on_candidate_collection",
+      "finish_warm_latency_and_real_audio_wer"
+    ]
+  },
+  "limitations": [
+    "retrieval_terms_and_evaluation_cases_share_the_same_curated_map",
+    "independent_paraphrased_holdout_required",
+    "new_teletriage_source_not_yet_locally_validated",
+    "full_98_case_v8_run_not_repeated_due_to_local_model_latency",
+    "b27_regressed_with_rag_due_to_weak_chunk_alignment"
+  ],
+  "pending": [
+    "specialist_review_of_new_teletriage_source",
+    "create_independent_paraphrased_holdout",
+    "improve_collapse_and_pale_gums_chunk_selection",
+    "use_map_safety_discriminators_for_b15_and_b30_routing",
+    "full_diff_review",
+    "explicit_activation_decision"
+  ]
+}

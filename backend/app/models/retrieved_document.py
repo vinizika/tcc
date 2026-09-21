@@ -16,6 +16,11 @@ class RetrievedDocument:
 
     score: float
 
+    # Score combinado pelo reordenador. ``score`` continua sendo a
+    # similaridade vetorial original para preservar auditoria e comparação
+    # histórica; quando ausente, o pipeline usa o score vetorial.
+    ranking_score: float | None = None
+
     # Procedencia do trecho, vinda dos metadados da ingestao. Nao vai ao
     # prompt: serve para dizer DE QUAL documento o trecho saiu, que e o que
     # a regua de recuperacao precisa para julgar se a busca trouxe o
@@ -27,3 +32,13 @@ class RetrievedDocument:
     topic: str = ""
 
     source_file: str = ""
+
+    species: str = ""
+
+    # Posição dentro do documento original. Permite continuar um trecho que
+    # terminou no meio de uma explicação clínica.
+    chunk_index: int | None = None
+
+    # Termos que precisam aparecer no relato para uma fonte dependente de
+    # exposição/contexto ser elegível. A tupla vazia mantém fontes gerais.
+    retrieval_anchors: tuple[str, ...] = ()

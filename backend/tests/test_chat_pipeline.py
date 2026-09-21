@@ -11,7 +11,9 @@ from conftest import (
     documento,
 )
 
+from app.constants.pipeline import DEFAULT_CONTEXT_MIN_SCORE
 from app.pipeline.chat_pipeline import ChatPipeline
+from app.prompts.triage import montar_bloco_de_contexto
 from app.schemas.triage import PipelineOptions
 
 
@@ -627,6 +629,27 @@ def test_nada_relevante_e_o_classificador_decide_sem_contexto():
     assert "Trechos de protocolos" not in prompt
 
 
+def test_contexto_destaca_encaminhamento_emergencial_explicito():
+    trecho = documento("urgente", score=0.9)
+    trecho.content = (
+        "Vomiting and lethargy were associated with emergency referral."
+    )
+
+    contexto = montar_bloco_de_contexto([trecho])
+
+    assert "MENCIONA EXPLICITAMENTE ENCAMINHAMENTO EMERGENCIAL" in contexto
+    assert trecho.content in contexto
+
+
+def test_contexto_nao_rotula_trecho_sem_linguagem_emergencial():
+    trecho = documento("neutro", score=0.9)
+    trecho.content = "Vomiting was recorded in the study population."
+
+    contexto = montar_bloco_de_contexto([trecho])
+
+    assert "ENCAMINHAMENTO EMERGENCIAL" not in contexto
+
+
 def test_o_corte_aplicado_vai_na_resposta_com_a_trava_de_auditoria():
     """
     `used_below_min_score` nunca pode ser verdadeiro. Se for, o filtro
@@ -643,7 +666,7 @@ def test_o_corte_aplicado_vai_na_resposta_com_a_trava_de_auditoria():
 
     info = pipeline.execute("relato").retrieval
 
-    assert info.context_min_score == 0.70
+    assert info.context_min_score == DEFAULT_CONTEXT_MIN_SCORE
     assert info.used_below_min_score is False
 
 

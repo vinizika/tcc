@@ -38,5 +38,7 @@ jobs:
         run: python -m pytest -q backend/tests
       - name: Test scripts
         run: python -m pytest -q scripts/tests
+      - name: Check retrieval vocabulary
+        run: python scripts/sync_retrieval_terms.py --check
       - name: Compile Python
         run: python -m compileall -q backend/app scripts

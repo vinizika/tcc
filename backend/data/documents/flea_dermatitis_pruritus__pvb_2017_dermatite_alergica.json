@@ -9,6 +9,7 @@
   "language": "pt",
   "source_url": "https://ainfo.cnptia.embrapa.br/digital/bitstream/item/161110/1/Caracterizacao-clinica-e-histopatologica.pdf",
   "indexing": {
+    "retrieval_anchors": ["flea", "fleas", "pulga", "pulgas", "pruritus", "prurido", "coceira"],
     "include_sections": [
       "INTRODUÇÃO"
     ],

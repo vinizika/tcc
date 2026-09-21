@@ -1,0 +1,39 @@
+{
+  "title": "Retrospective analysis of teletriage and teleadvice administered to 1,575 dogs with gastrointestinal signs",
+  "source": "Open Veterinary Journal",
+  "document_type": "peer_reviewed_article",
+  "validation_status": "published_not_locally_validated",
+  "ingestion_scope": "experimental_only",
+  "species": "dog",
+  "topic": "vomiting_and_diarrhea",
+  "language": "en",
+  "source_url": "https://doi.org/10.5455/OVJ.2026.v16.i1.33",
+  "authors": "Shadi J. Ireifej; Samantha L. Morello; Marty Lesser",
+  "year": 2026,
+  "doi": "10.5455/OVJ.2026.v16.i1.33",
+  "journal": "Open Veterinary Journal",
+  "access_date": "2026-09-20",
+  "captured_sha256": "d091be1abab8254250d64aa387c15245b42ff504b290444cab4dde588c357072",
+  "map_line": "vomiting_and_diarrhea",
+  "indexing": {
+    "include_sections": [
+      "Abstract"
+    ],
+    "exclude_sections": [
+      "References"
+    ],
+    "exclude_pages": [],
+    "extraction_reviewed": true
+  },
+  "rights": {
+    "status": "allowed",
+    "basis": "CC BY-NC 4.0 declarada no PDF e na politica da Open Veterinary Journal; uso academico nao comercial com atribuicao.",
+    "checked_by": "Codex (verificacao documental)",
+    "date": "2026-09-20"
+  },
+  "specialist": {
+    "verdict": "pending",
+    "name": "",
+    "date": ""
+  }
+}

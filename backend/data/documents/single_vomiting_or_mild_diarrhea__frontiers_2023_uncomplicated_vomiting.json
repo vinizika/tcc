@@ -2,7 +2,7 @@
   "title": "Uncomplicated Vomiting in Dogs",
   "source": "Frontiers in Veterinary Science",
   "document_type": "peer_reviewed_article",
-  "validation_status": "pending_specialist",
+  "validation_status": "approved_by_specialist",
   "ingestion_scope": "experimental_only",
   "species": "dog",
   "topic": "single_vomiting_or_mild_diarrhea",
@@ -34,9 +34,9 @@
   "captured_sha256": "482a69011e47d209b75bd3d38dc5e0ef7332faf73690edaed0a3c7e2e0a15008",
   "map_line": "single_vomiting_or_mild_diarrhea",
   "specialist": {
-    "verdict": "",
-    "name": "",
-    "date": ""
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-20"
   },
   "rights": {
     "status": "allowed",

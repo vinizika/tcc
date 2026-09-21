@@ -144,7 +144,13 @@ class RetrievalClientFalso:
         self.documentos = documentos or []
         self.chamadas: list[list[str]] = []
 
-    def retrieve(self, queries: list[str]) -> list[RetrievedDocument]:
+    def retrieve(
+        self,
+        queries: list[str],
+        *,
+        routing_query: str | None = None,
+    ) -> list[RetrievedDocument]:
+        del routing_query
         self.chamadas.append(list(queries))
         return list(self.documentos)
 
@@ -152,7 +158,8 @@ class RetrievalClientFalso:
 class RerankerFalso:
 
     @staticmethod
-    def rerank(documentos):
+    def rerank(queries, documentos, *, eligibility_query=None):
+        del queries, eligibility_query
         return sorted(
             documentos,
             key=lambda documento: documento.score,

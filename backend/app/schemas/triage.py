@@ -100,6 +100,7 @@ class RetrievalInfo(BaseModel):
     used_count: int = 0
     above_threshold_count: int = 0
     max_score: Optional[float] = None
+    max_ranking_score: Optional[float] = None
     threshold: float = 0.0
 
     # O corte que de fato valeu nesta requisição, e a trava que garante que
