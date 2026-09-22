@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-22",
+  "status": "partial_preserved",
+  "branch": "codex/evaluate-rag-variants",
+  "initial_head": "f2b83119e0cb24e4589c0e8f2ddd1f9df1748b57",
+  "active_collection_changed": false,
+  "dataset": {"path": "data/retrieval/cases.csv", "cases": 66, "expected_topics": 60},
+  "candidate": {
+    "name": "veterinary_documents__20260920T160842289762Z__388f518d",
+    "chunks": 3481,
+    "documents": 66,
+    "target_tokens": 96,
+    "overlap_tokens": 16
+  },
+  "tests_before": {
+    "backend": {"passed": 226, "failed": 0},
+    "scripts": {"passed": 161, "failed": 26, "reason": "trafilatura ausente no Python local"}
+  },
+  "targeted_tests_after": {"passed": 36, "failed": 0},
+  "retrieval_results": {
+    "vector_only": {"precision_at_1": 0.2121212121, "recall_at_5": 0.3030303030, "mrr": 0.2441919192, "median_ms": 46.218},
+    "rerank_only": {"precision_at_1": 0.4545454545, "recall_at_5": 0.5303030303, "mrr": 0.4790404040, "median_ms": 51.596},
+    "routing_only": {"precision_at_1": 0.2121212121, "recall_at_5": 0.3030303030, "mrr": 0.2441919192, "median_ms": 109.612},
+    "production": {"precision_at_1": 0.5151515152, "recall_at_5": 0.6666666667, "mrr": 0.5699494949, "median_ms": 125.35}
+  },
+  "thresholds": {
+    "0.60": {"cases_with_context": 48, "correct_topic_in_context": 31},
+    "0.65": {"cases_with_context": 33, "correct_topic_in_context": 25},
+    "0.70": {"cases_with_context": 22, "correct_topic_in_context": 20},
+    "0.72": {"cases_with_context": 18, "correct_topic_in_context": 16},
+    "0.75": {"cases_with_context": 3, "correct_topic_in_context": 3}
+  },
+  "raw_artifact": {
+    "path": "data/evaluation/rag_variants/20260922-retrieval-components-overlap16.json",
+    "sha256": "45cb510f247fe495e1bc4b55398a20e3ad3e65699b13da855a0b5fc5902fbc96"
+  },
+  "overlap_0_partial": {
+    "path": "data/evaluation/rag_variants/20260922-retrieval-components-overlap0.json",
+    "sha256": "293a1971a8f3aa9bd6b1c141abd1033694798f369ca1b6d5cd330aa02c11871f",
+    "chunks": 3009,
+    "documents": 67,
+    "production_precision_at_1": 0.4696969697,
+    "production_recall_at_5": 0.6818181818,
+    "production_mrr": 0.5439393939,
+    "comparable_to_historical_overlap_16": false,
+    "reason": "source set atual tem 67 documentos; candidata historica tem 66"
+  },
+  "pending": ["overlap_16_same_source_set", "overlap_32", "llm_ablation", "query_techniques", "full_validation"]
+}
