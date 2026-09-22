@@ -6,13 +6,19 @@ streamlit==1.63.0
 # decodificacao ao formato esperado na classificacao de triagem.
 ollama==0.6.2
 
+# Comparacao experimental Gemini x Ollama na etapa de consulta (22/09) —
+# nao usado por nada em producao. Ver backend/app/clients/gemini_query_client.py.
+google-genai==2.24.0
+
 # Configuração
 python-dotenv==1.1.1
 requests==2.34.2
 python-multipart==0.0.32
 
 # Validação
-pydantic==2.11.7
+# >=2.12.5 porque google-genai (comparador experimental Gemini x Ollama)
+# exige esse piso; testado e compativel com o resto do backend.
+pydantic==2.13.5
 pandas==3.0.5
 pydantic-settings==2.10.1
 

@@ -53,6 +53,19 @@ class Settings(BaseSettings):
     LLM_NUM_CTX: int = 4096
     LLM_NUM_PREDICT: int = 600
 
+    # ==========================
+    # Gemini (experimental — comparação com Ollama na etapa de consulta)
+    # ==========================
+    # Nada no pipeline de produção lê estas duas. Existem só para
+    # backend/app/clients/gemini_query_client.py e o script de comparação
+    # em backend/app/database/compare_query_providers.py — o teste pedido
+    # pelo grupo em 22/09 para ver se um modelo maior ajuda a reescrita, o
+    # multi-query e o HyDE. Sem chave configurada, o cliente recusa a
+    # chamada com uma mensagem clara em vez de falhar tarde, na API do
+    # Google.
+    GEMINI_API_KEY: str = ""
+    GEMINI_MODEL: str = "gemini-3.5-flash-lite"
+
     LLM_TIMEOUT_S: int = 600
     LLM_KEEP_ALIVE: str = "10m"
 

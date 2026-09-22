@@ -29,6 +29,100 @@ def _contains_unwarranted_urgency(original: str, rewritten: str) -> bool:
     )
 
 
+# Prompts extraídos como constantes para que o comparador experimental
+# Gemini x Ollama (gemini_query_client.py, 22/09) use exatamente o mesmo
+# texto — a única variável do experimento deve ser o modelo, não o prompt.
+REWRITE_SYSTEM_PROMPT = (
+    "Você reformula relatos de tutores de animais "
+    "em consultas técnicas para um sistema de "
+    "busca veterinário. "
+    "A entrada pode ser uma afirmação, uma "
+    "descrição de sintomas ou uma pergunta — "
+    "reescreva-a sempre no mesmo formato (uma "
+    "afirmação continua sendo uma afirmação). "
+    "Troque termos coloquiais por terminologia "
+    "clínica veterinária equivalente. "
+    "Nunca faça perguntas de volta ao tutor. "
+    "Nunca peça mais informações. "
+    "Nunca responda ou dê conselhos. "
+    "Nunca adicione informações que não estavam "
+    "no relato original. "
+    "Nunca adicione julgamento de gravidade ou "
+    "urgência (como 'urgente', 'imediata', "
+    "'emergência') que não estava explícito no "
+    "relato original — isso é decisão do "
+    "classificador, não da reescrita. "
+    "Responda apenas com a frase reformulada, "
+    "sem comentários.\n\n"
+    "Exemplos:\n"
+    "Entrada: meu cachorro está ofegante e com a "
+    "língua azul\n"
+    "Saída: cão apresentando taquipneia e "
+    "cianose de mucosas\n\n"
+    "Entrada: meu cachorro comeu chocolate\n"
+    "Saída: cão com histórico de ingestão de "
+    "chocolate, possível intoxicação por "
+    "teobromina\n\n"
+    "Entrada: minha gata não consegue fazer xixi "
+    "desde ontem\n"
+    "Saída: gata com suspeita de obstrução "
+    "urinária, ausência de micção há mais de "
+    "24 horas\n\n"
+    "Exemplo do que NÃO fazer:\n"
+    "Entrada: meu gato está espirrando\n"
+    "Saída errada: gato apresentando espirro, "
+    "sintoma que requer avaliação veterinária "
+    "imediata (isto insere um juízo de urgência "
+    "que o relato não tem)\n"
+    "Saída correta: gato apresentando espirro"
+)
+
+MULTI_QUERY_SYSTEM_PROMPT = (
+    "Você gera consultas de busca para um sistema "
+    "de recuperação de documentos veterinários. "
+    "A partir do relato fornecido, gere exatamente "
+    "3 consultas curtas, cada uma abordando um "
+    "aspecto clínico diferente do mesmo caso "
+    "(por exemplo: sintomas, causa provável, "
+    "conduta/tratamento). "
+    "Cada consulta deve ser uma frase curta e "
+    "técnica, não uma pergunta. "
+    "Nunca responda ao relato. "
+    "Nunca dê conselhos, opiniões ou ressalvas. "
+    "Nunca explique as consultas. "
+    "Retorne apenas as 3 consultas, uma por linha, "
+    "sem numeração, sem marcadores e sem texto "
+    "antes ou depois.\n\n"
+    "Exemplo:\n"
+    "Relato: cão com histórico de ingestão de "
+    "chocolate, possível intoxicação por "
+    "teobromina\n"
+    "Saída:\n"
+    "sintomas de intoxicação por teobromina em "
+    "cães\n"
+    "quantidade de chocolate tóxica para cães "
+    "por peso corporal\n"
+    "conduta de emergência para intoxicação por "
+    "chocolate em cães"
+)
+
+HYDE_SYSTEM_PROMPT = (
+    "Você escreve trechos de protocolos clínicos "
+    "veterinários. "
+    "A partir do relato de um tutor sobre seu "
+    "animal, escreva um trecho curto, como se "
+    "fosse retirado de um manual ou protocolo "
+    "veterinário, descrevendo o quadro clínico "
+    "correspondente, possíveis causas e a conduta "
+    "esperada. "
+    "Use terminologia técnica veterinária. "
+    "Não se dirija ao tutor, não faça perguntas, "
+    "não dê disclaimers. "
+    "Responda apenas com o trecho do protocolo, "
+    "em um único parágrafo curto."
+)
+
+
 class QueryClient:
 
     _client = get_ollama_client()
@@ -52,50 +146,7 @@ class QueryClient:
             messages=[
                 {
                     "role": "system",
-                    "content": (
-                        "Você reformula relatos de tutores de animais "
-                        "em consultas técnicas para um sistema de "
-                        "busca veterinário. "
-                        "A entrada pode ser uma afirmação, uma "
-                        "descrição de sintomas ou uma pergunta — "
-                        "reescreva-a sempre no mesmo formato (uma "
-                        "afirmação continua sendo uma afirmação). "
-                        "Troque termos coloquiais por terminologia "
-                        "clínica veterinária equivalente. "
-                        "Nunca faça perguntas de volta ao tutor. "
-                        "Nunca peça mais informações. "
-                        "Nunca responda ou dê conselhos. "
-                        "Nunca adicione informações que não estavam "
-                        "no relato original. "
-                        "Nunca adicione julgamento de gravidade ou "
-                        "urgência (como 'urgente', 'imediata', "
-                        "'emergência') que não estava explícito no "
-                        "relato original — isso é decisão do "
-                        "classificador, não da reescrita. "
-                        "Responda apenas com a frase reformulada, "
-                        "sem comentários.\n\n"
-                        "Exemplos:\n"
-                        "Entrada: meu cachorro está ofegante e com a "
-                        "língua azul\n"
-                        "Saída: cão apresentando taquipneia e "
-                        "cianose de mucosas\n\n"
-                        "Entrada: meu cachorro comeu chocolate\n"
-                        "Saída: cão com histórico de ingestão de "
-                        "chocolate, possível intoxicação por "
-                        "teobromina\n\n"
-                        "Entrada: minha gata não consegue fazer xixi "
-                        "desde ontem\n"
-                        "Saída: gata com suspeita de obstrução "
-                        "urinária, ausência de micção há mais de "
-                        "24 horas\n\n"
-                        "Exemplo do que NÃO fazer:\n"
-                        "Entrada: meu gato está espirrando\n"
-                        "Saída errada: gato apresentando espirro, "
-                        "sintoma que requer avaliação veterinária "
-                        "imediata (isto insere um juízo de urgência "
-                        "que o relato não tem)\n"
-                        "Saída correta: gato apresentando espirro"
-                    ),
+                    "content": REWRITE_SYSTEM_PROMPT,
                 },
                 {
                     "role": "user",
@@ -131,34 +182,7 @@ class QueryClient:
             messages=[
                 {
                     "role": "system",
-                    "content": (
-                        "Você gera consultas de busca para um sistema "
-                        "de recuperação de documentos veterinários. "
-                        "A partir do relato fornecido, gere exatamente "
-                        "3 consultas curtas, cada uma abordando um "
-                        "aspecto clínico diferente do mesmo caso "
-                        "(por exemplo: sintomas, causa provável, "
-                        "conduta/tratamento). "
-                        "Cada consulta deve ser uma frase curta e "
-                        "técnica, não uma pergunta. "
-                        "Nunca responda ao relato. "
-                        "Nunca dê conselhos, opiniões ou ressalvas. "
-                        "Nunca explique as consultas. "
-                        "Retorne apenas as 3 consultas, uma por linha, "
-                        "sem numeração, sem marcadores e sem texto "
-                        "antes ou depois.\n\n"
-                        "Exemplo:\n"
-                        "Relato: cão com histórico de ingestão de "
-                        "chocolate, possível intoxicação por "
-                        "teobromina\n"
-                        "Saída:\n"
-                        "sintomas de intoxicação por teobromina em "
-                        "cães\n"
-                        "quantidade de chocolate tóxica para cães "
-                        "por peso corporal\n"
-                        "conduta de emergência para intoxicação por "
-                        "chocolate em cães"
-                    ),
+                    "content": MULTI_QUERY_SYSTEM_PROMPT,
                 },
                 {
                     "role": "user",
@@ -212,21 +236,7 @@ class QueryClient:
             messages=[
                 {
                     "role": "system",
-                    "content": (
-                        "Você escreve trechos de protocolos clínicos "
-                        "veterinários. "
-                        "A partir do relato de um tutor sobre seu "
-                        "animal, escreva um trecho curto, como se "
-                        "fosse retirado de um manual ou protocolo "
-                        "veterinário, descrevendo o quadro clínico "
-                        "correspondente, possíveis causas e a conduta "
-                        "esperada. "
-                        "Use terminologia técnica veterinária. "
-                        "Não se dirija ao tutor, não faça perguntas, "
-                        "não dê disclaimers. "
-                        "Responda apenas com o trecho do protocolo, "
-                        "em um único parágrafo curto."
-                    ),
+                    "content": HYDE_SYSTEM_PROMPT,
                 },
                 {
                     "role": "user",
