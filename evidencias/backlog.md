@@ -249,6 +249,37 @@ precisam de substitutos (saco de palavras com validação cruzada, palavra de
 alarme, comprimento), senão o time perde justamente o instrumento que detectou
 este problema. Ver [`docs/plano-base-e-prova.md`](../docs/plano-base-e-prova.md).
 
+**Medido em 22/09 contra a prova nova (150 casos) — parcialmente reprovado.**
+`scripts/prova_baselines.py` implementou os três substitutos previstos acima
+e rodou contra `data/prova/casos_oficiais.csv`
+([evidência](ryu/2026-09-22-13-baselines-triviais-e-congelamento.md)):
+
+| Baseline | Acurácia (150 casos) | Acurácia (só `dev`, 50) | Acurácia (só `teste`, 100) |
+|---|---:|---:|---:|
+| Palavra de alarme | 0,571 | 0,633 | 0,541 |
+| Comprimento do relato (limiar por validação cruzada) | 0,592 | 0,673 | 0,582 |
+| Saco de palavras (Naive Bayes, validação cruzada) | **0,912** | 0,673 | 0,847 |
+
+Os dois primeiros baselines continuam bem abaixo do critério, inclusive no
+conjunto combinado. O terceiro **passa de 0,90 quando os dois lotes rodam
+juntos**, mesmo ficando abaixo em cada lote separado — o efeito cresce com o
+volume de exemplos, porque um autor único deixa tiques de escrita (conectivos,
+pronomes, frases de tranquilização) que um modelo estatístico simples consegue
+aprender sem entender nada de veterinária. Duas palavras de conteúdo
+("agora", "comendo") concentradas 100% numa classe só foram encontradas e
+reescritas sem mudar rótulo nem fato clínico, o que reduziu a acurácia de
+0,925 para 0,912 — melhora real, mas o sinal residual está espalhado por
+dezenas de palavras funcionais (`mas`, `se`, `continua`, `sempre`, `vez`),
+não concentrado em alvos fáceis de corrigir um a um.
+
+**O que resolveria, de verdade.** Diversificar autoria — pelo menos parte
+dos casos escritos por outra pessoa do time ou por um especialista, quebrando
+o padrão de estilo de um autor único. É a mesma razão da "muralha" já existir
+entre quem escreve a base e quem escreve a prova, agora aplicada a
+"quem escreve o quê dentro da prova". Registrado como pendência; não bloqueia
+o uso do conjunto, mas deveria ser considerado antes de citar este número
+como definitivo no artigo.
+
 ### B-06
 
 **Falsos não urgentes subiram de 3 para 8 com o prompt novo**
