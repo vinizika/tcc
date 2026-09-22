@@ -163,12 +163,57 @@ calibração, todo `topic` existe no mapa, e `expected_class`/
 `urgencia`/`especie` do mapa para o tópico citado — o rótulo não é opinião
 solta, é derivado mecanicamente da peça comum.
 
+---
+
+## O lote `teste` (21/09) — 100 casos, `casos_oficiais.csv`, split `teste`
+
+Completa os ~150 do plano. Cobre os 14 tópicos que o `dev` não tinha tocado
+(inclui o par reservado `pyometra` × `normal_estrus`) e repete boa parte dos
+tópicos do `dev` com espécie, idade ou apresentação diferente — inclusive
+casos de segunda profundidade que testam nuance (ex.: convulsão que dura
+mais que o normal num cão já epiléptico; apetite reduzido bem no limite das
+24h que o mapa usa como corte para gato adulto).
+
+**Balanço do arquivo inteiro (dev + teste, 150 casos):** 77 emergência / 70
+não emergência / 3 incerto — 51%/47%/2%, o mais perto de 50/50 que o projeto
+já teve (a prova antiga: 72/28).
+
+**Cobertura: 61 de 61 tópicos do mapa**, todos com pelo menos um caso.
+
+**23 pares de confusão** no arquivo inteiro, incluindo 3 pares que atravessam
+os dois lotes (ex.: `p77`, do lote `teste`, forma par com `p47`, do lote
+`dev` — a régua de recuperação e a prova de classificação não precisam
+nascer no mesmo lote pra se testarem).
+
+**O passo automático da regra 4 da muralha existe agora:**
+[`backend/app/database/check_prova_overlap.py`](../../backend/app/database/check_prova_overlap.py)
+compara os 150 casos contra os documentos reais da base (via os chunks já
+extraídos na coleção do ChromaDB, não abrindo os PDFs/TXT de novo) por
+sobreposição de sequências de 6 palavras. Rodado contra a coleção de 3.481
+chunks do trilho A: **nenhum dos 150 casos compartilha 6 palavras seguidas
+com nenhum documento.**
+
+**Verificação informal de separabilidade, honesta sobre o que achou:** nas
+150 linhas, cinco palavras de conteúdo aparecem concentradas demais numa
+classe só — `"agora"` e `"repente"` só em casos de emergência, `"comendo"`
+só em não emergência. `"repente"` e `"comendo"` fazem sentido clínico (início
+súbito é um discriminador real do MSD; "comendo normal" é a frase padrão de
+tranquilidade) — não são bugs, mas são exatamente o tipo de atalho que um
+baseline de saco de palavras vai explorar. Registrado aqui para quando os
+baselines triviais novos (seção 5.4 do plano) forem construídos: é esperado
+que eles peguem algum sinal nessas palavras, e isso não invalida a prova —
+só significa que a acurácia do baseline não vai ser zero, e o critério do
+B-05 (abaixo de 0,90) segue sendo o que decide se é problema.
+
 ## Próximo passo
 
-**Escrever o lote `teste`** (~100 casos, split `teste`) no mesmo arquivo
-`casos_oficiais.csv` — é o que falta para os ~150 do plano. Ao contrário do
-`dev`, o `teste` congela por hash assim que terminar (não se edita depois de
-ver o sistema errar num caso). Antes de congelar: rodar o passo automático
-de sobreposição de texto contra `backend/data/documents/` (regra 4 da
-muralha, ainda não implementado — hoje só confiro sobreposição entre os
-próprios lotes da prova, não contra os documentos da base).
+**Congelar o lote `teste` por hash**, agora que as verificações automáticas
+(id, pares, sobreposição interna, sobreposição com a base, rótulo batendo
+com o mapa) estão todas limpas — falta uma decisão do time (ou minha,
+seguindo o pedido do Vinicius) sobre o momento exato de congelar, já que
+depois disso nenhuma linha do `teste` pode ser reescrita mesmo se o sistema
+errar nela.
+
+**Baselines triviais novos** (saco de palavras com validação cruzada,
+palavra de alarme, comprimento do relato) — agora há amostra (150 casos)
+suficiente para calibrá-los. É o próximo item da seção 5.4 do plano.
