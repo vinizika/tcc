@@ -28,6 +28,7 @@ e re-ranking.
 | 9 | 16/09 | [Lote 03 — emergências experimentais](2026-09-16-03-lote-emergencias-experimental.md) | Neonato, paralisia aguda e anafilaxia pesquisados e medidos sem ativar a candidata |
 | 10 | 16/09 | [Lote 04 — pares clínicos experimentais](2026-09-16-04-lote-clinicos-experimental.md) | Seis fontes capturadas; diversidade da busca corrigida; 5/5 tópicos documentados encontráveis; candidata de 350 chunks mantida inativa |
 | 11 | 19/09 | [Lote 05 — dermatologia, artrose e apetite](2026-09-19-05-lote-dermatologia-artrose-apetite-experimental.md) | Cinco fontes capturadas; três recortes levados a staging; dermatite recuperada, artrose fraca e distorção da consulta de apetite documentadas; candidata de 312 chunks mantida inativa |
+| 12 | 22/09 | [Benchmark dos componentes do RAG](2026-09-22-10-benchmark-componentes-rag.md) | 66 relatos e quatro arranjos de busca medidos contra 3.481 chunks; pipeline atual chegou a 51,5% no top 1 e 66,7% no top 5; overlap 0 preservado como resultado parcial não comparável por diferença no conjunto documental |
 
 ## Estado atual
 
@@ -48,3 +49,8 @@ sobem para 30. No pipeline completo mais recente, chegam a 40.
 
 O detalhe da auditoria e a distinção entre descobertas da equipe e achados
 novos estão na [rodada 1](2026-09-07-01-auditoria-do-repositorio.md).
+
+> **Atualização de 22/09:** o parágrafo acima preserva o estado histórico das
+> primeiras rodadas. A coleção candidata mais recente possui 3.481 chunks de
+> 66 documentos e continua inativa. A medição atual dos componentes está na
+> [rodada 12](2026-09-22-10-benchmark-componentes-rag.md).

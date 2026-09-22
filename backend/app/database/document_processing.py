@@ -1008,6 +1008,9 @@ def process_pages(
 def process_document(
     document_path: Path,
     tokenizer: Tokenizer | None = None,
+    *,
+    target_tokens: int = CHUNK_TARGET_TOKENS,
+    overlap_tokens: int = CHUNK_OVERLAP_TOKENS,
 ) -> ProcessedDocument:
     metadata = load_metadata(document_path)
     pages, extraction_statistics = extract_document_pages_with_statistics(
@@ -1019,6 +1022,8 @@ def process_document(
         pages,
         metadata,
         active_tokenizer,
+        target_tokens=target_tokens,
+        overlap_tokens=overlap_tokens,
         extraction_statistics=extraction_statistics,
     )
 
