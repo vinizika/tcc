@@ -9,8 +9,8 @@ usa em produção não precisa saber disso.
 import time
 from concurrent.futures import ThreadPoolExecutor
 
+from app.clients.hybrid_query_client import HybridQueryClient
 from app.clients.llm_client import LLMClient
-from app.clients.query_client import QueryClient
 from app.clients.reranker_client import RerankerClient
 from app.clients.retrieval_client import RetrievalClient
 from app.constants.pipeline import DEFAULT_SCORE_THRESHOLD
@@ -88,7 +88,7 @@ class ChatPipeline:
 
     def __init__(
         self,
-        query_client=QueryClient,
+        query_client=HybridQueryClient,
         retrieval_client=RetrievalClient,
         reranker=RerankerClient,
         llm_client=None,
@@ -110,8 +110,11 @@ class ChatPipeline:
         """
         Transforma o relato do tutor nas consultas que vão à busca vetorial.
 
-        É o único ponto que conhece a interface do QueryClient, para que uma
-        mudança daquele trilho tenha um lugar só para ser absorvida.
+        É o único ponto que conhece a interface do cliente de consulta
+        (hoje `HybridQueryClient`, Gemini com fallback para Ollama — ver
+        evidencias/ryu/2026-09-23-16-integracao-gemini-com-fallback.md),
+        para que uma mudança daquele trilho tenha um lugar só para ser
+        absorvida.
         """
 
         if config.query_rewriting_enabled:

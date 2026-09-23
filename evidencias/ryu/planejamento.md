@@ -42,6 +42,7 @@ benchmark de voz.
 | 9 | Cadastro de tutor/pet sem autenticação real (B-56) | ⏳ (adiado para o deploy, decisão de 17/09) | Política aberta no Supabase, sem auth — risco baixo enquanto o sistema roda só local/dev |
 | 10 | Paralelizar Multi-Query e HyDE (B-07) | 🔶 em andamento, 21/09 | Paralelas desde 17/09; medido em 21/09 contra a coleção real (3.481 chunks) — economiza 13-39%, nunca piora. Falta GPU disponível para confirmar o número absoluto (`query_s` < 1,5s); ambiente atual roda 100% CPU |
 | 11 | Benchmark de WER com áudio real | ⏳ | Substitui o número otimista da fala sintética (B-13) |
+| 12 | **Gemini na etapa de consulta, com fallback para Ollama** | ✅ 23/09 | 25 casos revisados (rodadas 14-15): Ollama cometeu 5 erros factuais claros, Gemini nenhum. `HybridQueryClient` integrado como cliente padrão do `ChatPipeline`; `HYDE_ENABLED` voltou a `True` (só roda via Gemini — se falhar, não cai para o Ollama nesta técnica). Confirmado ao vivo: etapa de consulta em 3,3s, contra dezenas de segundos no Ollama |
 
 ## Próxima entrega: lote oficial da prova (~150 casos)
 

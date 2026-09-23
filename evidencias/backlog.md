@@ -105,6 +105,7 @@ aqui.
 | [B-56](#b-56) | Cadastro de tutor/pet sem autenticação real e com política aberta no Supabase | Trilho B1 | Média | Aberto |
 | [B-57](#b-57) | O snapshot versionado do ChromaDB não é o caminho que o backend real lê | Trilho A | Alta | Aberto |
 | [B-52](#b-52) | Fonte de terceiro versionada em repositório público | Time | Alta | Aberto |
+| [B-58](#b-58) | A tag `tcc-backend:latest` local pode estar desatualizada e derrubar o backend num restart | Time | Média | Aberto |
 
 ---
 
@@ -400,6 +401,16 @@ cru e tem a maior taxa de casos acima do corte de 0,70 empatada com o
 pipeline completo, **sem precisar do HyDE**. `HYDE_ENABLED` passou a `False`
 por padrão. Amostra pequena (9 casos, 3 por lote) — repetir quando a régua
 crescer.
+
+**Atualização 23/09 — `HYDE_ENABLED` voltou a `True`, por um caminho
+diferente.** O diagnóstico original (Ollama sem âncora inventa termo)
+continua verdadeiro e não foi revisto — o que mudou é que a etapa de
+consulta passou a tentar o Gemini primeiro
+([`HybridQueryClient`](ryu/2026-09-23-16-integracao-gemini-com-fallback.md)),
+que não alucinou em nenhum dos 25 casos revisados nas rodadas 14-15. Se o
+Gemini falhar (sem chave, limite atingido), o HyDE **não cai para o
+Ollama** — a consulta segue sem documento hipotético nesta chamada, para
+não reintroduzir em silêncio o problema que esta ficha descreve.
 
 ### B-10
 
@@ -2285,6 +2296,39 @@ apontar para `chroma_db` — as duas correções são de uma linha, mas são
 incompatíveis entre si e a escolha errada reintroduz o problema na próxima
 ingestão. Critério: um clone limpo, sem passos manuais, sobe com as
 coleções candidatas visíveis em `ChromaDBClient.get_client().list_collections()`.
+
+### B-58
+
+**A tag `tcc-backend:latest` local pode estar desatualizada e derrubar o backend num restart**
+
+**Identificado por:** Ryu (B1) · **Onde:** [rodada 16](ryu/2026-09-23-16-integracao-gemini-com-fallback.md), 23/09 · **Responsável:** Time · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** Depois de mudar `backend/requirements.txt`, rodei
+`docker compose up -d --force-recreate backend` para o container pegar as
+variáveis de ambiente novas. O container recriado usou a imagem local
+`tcc-backend:latest`, que estava **desatualizada** (build de 07/09, sem
+`pymongo` — dependência adicionada bem depois) mesmo o container que
+estava rodando até então funcionando perfeitamente com tudo presente. O
+backend caiu num loop de `ModuleNotFoundError` até eu rodar
+`docker compose build backend` (reconstrução completa, ~7 min) e subir de
+novo a partir da imagem nova.
+
+**Por que importa.** `docker compose restart` e `--force-recreate` **não
+reconstroem a imagem** — só recriam o container a partir do que já está
+taggeado como `latest` localmente. Se essa tag ficou parada num commit
+anterior (cada `docker compose up` normal, sem `--build`, não atualiza a
+tag), qualquer um que precisar reiniciar o backend por outro motivo
+qualquer (não só mudança de dependência) corre o risco de derrubar o
+serviço sem entender por quê — o container antigo, rodando, parecia
+saudável; só a recriação expôs a divergência.
+
+**O que resolveria.** Ou documentar no README que qualquer
+`--force-recreate`/`restart` do backend deve vir acompanhado de
+`docker compose build` quando `requirements.txt` mudou, ou (melhor)
+configurar o compose para sempre reconstruir (`docker compose up --build`)
+como o comando padrão documentado, em vez de assumir que a tag local está
+em dia. Critério: um `docker compose restart backend` ou `--force-recreate`
+nunca deveria conseguir subir um container com dependência faltando.
 
 ---
 

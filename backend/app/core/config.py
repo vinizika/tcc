@@ -119,15 +119,16 @@ class Settings(BaseSettings):
     QUERY_REWRITING_ENABLED: bool = True
     MULTI_QUERY_ENABLED: bool = True
 
-    # Desligado por padrão desde 17/09. Medido contra três coleções reais
-    # (evidencias/ryu/2026-09-17-06-medindo-consulta-nas-candidatas.md):
-    # em nenhum dos três lotes o HyDE melhorou Precision@1/MRR sobre a
-    # reescrita fundida com o multi-query, e no lote 2 piorou (1,0 -> 0,667).
-    # É a chamada mais lenta da etapa de consulta e a que já se sabia
-    # inventar diagnóstico sem âncora (evidencias/backlog.md#b-09). Segue
-    # implementado e medível — liga por requisição ou pelo preset
-    # rag_query — só não é mais o padrão.
-    HYDE_ENABLED: bool = False
+    # Ligado de novo em 23/09 (estava desligado desde 17/09). O motivo do
+    # desligamento original (evidencias/backlog.md#b-09) era o Ollama: em
+    # três coleções reais, nunca melhorou Precision@1/MRR e alucinava
+    # diagnóstico sem âncora. Com o HybridQueryClient (Gemini com fallback
+    # para Ollama, evidencias/ryu/2026-09-23-16-integracao-gemini-com-
+    # fallback.md), o HyDE roda via Gemini — 25 casos revisados sem
+    # nenhuma alucinação — e, se o Gemini falhar, o HyDE simplesmente não
+    # gera documento nesta consulta em vez de cair para o Ollama: cair
+    # reintroduziria em silêncio o problema que este flag resolveu.
+    HYDE_ENABLED: bool = True
 
     # Flags de liga/desliga das etapas de decisão, também usadas no estudo
     # de ablação. Com RETRIEVAL_ENABLED desligado o sistema roda como LLM
