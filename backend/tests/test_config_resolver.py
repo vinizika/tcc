@@ -220,3 +220,32 @@ def test_corte_pode_ser_zerado_para_reproduzir_o_historico(settings):
     config = resolve(settings, PipelineOptions(context_min_score=0.0))
 
     assert config.context_min_score == 0.0
+
+
+def test_padroes_da_arquitetura_da_autopsia_2():
+    """
+    Desde 25/09 (rodada 24 do João): busca vetorial pura, as 3 mais
+    próximas sem porta, tradutor desligado, e a pasta versionada do Chroma.
+    """
+
+    from app.core.config import Settings
+
+    padroes = Settings(_env_file=None)
+    config = resolve(padroes, None)
+
+    assert padroes.CHROMA_PATH == "chroma_db"
+    assert config.retrieval_mode == "vector"
+    assert config.context_min_score == 0.0
+    assert config.context_top_k == 3
+    assert config.query_rewriting_enabled is False
+    assert config.multi_query_enabled is False
+    assert config.hyde_enabled is False
+
+
+def test_modo_da_busca_pode_ser_pedido_por_requisicao(settings):
+    config = resolve(settings, PipelineOptions(retrieval_mode="routed_rerank"))
+
+    assert config.retrieval_mode == "routed_rerank"
+
+    with pytest.raises(ValidationError):
+        PipelineOptions(retrieval_mode="hibrido")

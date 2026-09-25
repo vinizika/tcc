@@ -114,6 +114,10 @@ def resolve(
         multi_query_enabled=multi_query_enabled,
         hyde_enabled=hyde_enabled,
         retrieval_enabled=retrieval_enabled,
+        retrieval_mode=_pick(
+            options.retrieval_mode,
+            settings.RETRIEVAL_MODE,
+        ),
         context_top_k=_pick(
             options.context_top_k,
             settings.CONTEXT_TOP_K,

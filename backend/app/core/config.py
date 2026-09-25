@@ -29,7 +29,10 @@ class Settings(BaseSettings):
     # Banco Vetorial
     # ==========================
     VECTOR_DB: str = "chromadb"
-    CHROMA_PATH: str = "data/chroma"
+    # A pasta versionada no repositório (backend/chroma_db), com o ponteiro da
+    # coleção ativa. Até 25/09 o padrão era data/chroma, uma pasta fora do Git:
+    # um clone limpo subia com a coleção vazia (evidencias/backlog.md#b-57).
+    CHROMA_PATH: str = "chroma_db"
     CHROMA_COLLECTION: str = "veterinary_documents"
 
     # ==========================
@@ -114,31 +117,43 @@ class Settings(BaseSettings):
     TOP_K: int = 5
     RERANK_TOP_K: int = 3
 
-    # Flags de liga/desliga das etapas de consulta,
-    # usadas no estudo de ablação. Dono: trilho B1 (docs/CONTRATOS.md, item 4).
-    QUERY_REWRITING_ENABLED: bool = True
-    MULTI_QUERY_ENABLED: bool = True
-
-    # Ligado de novo em 23/09 (estava desligado desde 17/09). O motivo do
-    # desligamento original (evidencias/backlog.md#b-09) era o Ollama: em
-    # três coleções reais, nunca melhorou Precision@1/MRR e alucinava
-    # diagnóstico sem âncora. Com o HybridQueryClient (Gemini com fallback
-    # para Ollama, evidencias/ryu/2026-09-23-16-integracao-gemini-com-
-    # fallback.md), o HyDE roda via Gemini — 25 casos revisados sem
-    # nenhuma alucinação — e, se o Gemini falhar, o HyDE simplesmente não
-    # gera documento nesta consulta em vez de cair para o Ollama: cair
-    # reintroduziria em silêncio o problema que este flag resolveu.
-    HYDE_ENABLED: bool = True
+    # Flags de liga/desliga das etapas de consulta (o "tradutor"), usadas no
+    # estudo de ablação. Dono: trilho B1 (docs/CONTRATOS.md, item 4).
+    #
+    # Desligadas por padrão desde 25/09 (rodada 24 do João). A autópsia 2
+    # mediu que, nas fichas de triagem, toda técnica piora a busca (a ficha
+    # certa em 1º cai de 107 para 84 em 129 casos) e que, com o qwen, fichas
+    # sem tradutor é a melhor célula da 2×2 (rodada 17). Os presets
+    # `fichas_tradutor` e `hoje_academico_*` religam as três.
+    #
+    # Histórico do HyDE: ligado de novo em 23/09 (estava desligado desde
+    # 17/09, evidencias/backlog.md#b-09) com o HybridQueryClient
+    # (evidencias/ryu/2026-09-23-16-integracao-gemini-com-fallback.md).
+    QUERY_REWRITING_ENABLED: bool = False
+    MULTI_QUERY_ENABLED: bool = False
+    HYDE_ENABLED: bool = False
 
     # Flags de liga/desliga das etapas de decisão, também usadas no estudo
     # de ablação. Com RETRIEVAL_ENABLED desligado o sistema roda como LLM
     # puro, que é a linha de base contra a qual o RAG é medido.
     RETRIEVAL_ENABLED: bool = True
+
+    # Como a busca ordena o que achou (rodada 24 do João):
+    # - "vector": só a similaridade do embedding, em ordem. É o padrão, e é a
+    #   busca medida na autópsia 2 sobre as fichas de triagem;
+    # - "routed_rerank": o caminho até 24/09 — rota lexical pelo vocabulário do
+    #   mapa, reranker lexical, âncoras e veto de espécie. Fica para o braço
+    #   acadêmico da ablação.
+    RETRIEVAL_MODE: str = "vector"
     CONTEXT_TOP_K: int = 3
     COT_ENABLED: bool = False
     SELF_REFINE_ENABLED: bool = False
 
     # Score minimo para um trecho recuperado entrar no prompt.
+    #
+    # Desde 25/09 o padrão é 0.0: com as fichas de triagem entram sempre as 3
+    # mais próximas (ver app/constants/pipeline.py). O histórico abaixo é da
+    # base acadêmica, onde o corte continua valendo pelos presets.
     #
     # Ficou em 0.0 de 04/09 a 12/09, de proposito: naquele momento nenhum
     # documento atingia o limiar de relevancia, e descartar todos faria o

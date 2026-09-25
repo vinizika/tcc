@@ -208,6 +208,7 @@ OPCOES_VALIDAS = {
     "multi_query_enabled",
     "hyde_enabled",
     "retrieval_enabled",
+    "retrieval_mode",
     "context_top_k",
     "context_min_score",
     "rewritten_hint_enabled",

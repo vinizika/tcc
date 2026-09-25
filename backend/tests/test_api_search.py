@@ -322,3 +322,58 @@ def test_cliente_preserva_repeticoes_quando_nao_ha_fontes_suficientes(
     assert [document.id for document in RetrievalClient.retrieve(["consulta"])] == [
         "a1", "a2", "a3"
     ]
+
+
+# ----------------------------------------------------------------------
+# Modo da busca (rodada 24 do João)
+# ----------------------------------------------------------------------
+
+
+def test_por_padrao_a_busca_e_vetorial_e_nao_passa_pelo_reranker(
+    cliente, monkeypatch
+):
+    from app.clients import reranker_client
+
+    def nao_pode(*args, **kwargs):
+        raise AssertionError("o modo vetorial não chama o reranker")
+
+    monkeypatch.setattr(reranker_client.RerankerClient, "rerank", nao_pode)
+
+    documentos = cliente.post(
+        "/search/", json={"question": "chocolate"}
+    ).json()["documents"]
+
+    assert [d["topic"] for d in documentos] == [
+        "chocolate_toxicosis",
+        "trauma_and_bleeding",
+    ]
+    assert all(d["ranking_score"] is None for d in documentos)
+
+
+def test_modo_roteado_passa_pelo_reranker(cliente, monkeypatch):
+    from app.clients import reranker_client
+
+    chamadas = []
+
+    def inverte(queries, documents, *, eligibility_query=None):
+        chamadas.append(eligibility_query)
+        return list(reversed(documents))
+
+    monkeypatch.setattr(
+        reranker_client.RerankerClient, "rerank", staticmethod(inverte)
+    )
+
+    documentos = cliente.post(
+        "/search/", json={"question": "chocolate", "mode": "routed_rerank"}
+    ).json()["documents"]
+
+    assert chamadas == ["chocolate"]
+    assert documentos[0]["topic"] == "trauma_and_bleeding"
+
+
+def test_modo_desconhecido_e_recusado(cliente):
+    resposta = cliente.post(
+        "/search/", json={"question": "chocolate", "mode": "hibrido"}
+    )
+
+    assert resposta.status_code == 422

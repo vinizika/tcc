@@ -68,11 +68,14 @@ def carregar_casos() -> list[dict]:
     return casos
 
 
-def buscar(base_url: str, texto: str, timeout: int) -> list[dict]:
+def buscar(base_url: str, texto: str, timeout: int, modo: str | None = None) -> list[dict]:
 
+    corpo = {"question": texto}
+    if modo:
+        corpo["mode"] = modo
     resposta = requests.post(
         f"{base_url.rstrip('/')}/search/",
-        json={"question": texto},
+        json=corpo,
         timeout=(5, timeout),
     )
     resposta.raise_for_status()
@@ -330,6 +333,15 @@ def main(argv=None) -> None:
             "for citada numa evidência."
         ),
     )
+    parser.add_argument(
+        "--mode",
+        choices=("vector", "routed_rerank"),
+        help=(
+            "Modo da busca no /search. Sem ele vale o RETRIEVAL_MODE da API "
+            "(padrão 'vector' desde 25/09). 'routed_rerank' é o caminho até "
+            "24/09: rota lexical, reranker, âncoras e veto de espécie."
+        ),
+    )
 
     argumentos = parser.parse_args(argv)
 
@@ -366,6 +378,7 @@ def main(argv=None) -> None:
             "n": len(casos),
         },
         "limiar": argumentos.limiar,
+        "mode": argumentos.mode,
         "api_url": argumentos.api_url,
         "expected_base_hash": argumentos.expect_base_hash,
         "backend_fingerprint": impressao,
@@ -385,7 +398,9 @@ def main(argv=None) -> None:
     avaliados = []
 
     for numero, caso in enumerate(casos, start=1):
-        documentos = buscar(argumentos.api_url, caso["text"], argumentos.timeout)
+        documentos = buscar(
+            argumentos.api_url, caso["text"], argumentos.timeout, argumentos.mode
+        )
 
         avaliado = avaliar_caso(caso, documentos)
         avaliados.append(avaliado)

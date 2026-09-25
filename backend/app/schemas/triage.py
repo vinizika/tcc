@@ -22,6 +22,11 @@ StructuredOutputMode = Literal["schema", "json"]
 # braço de controle: separa o efeito da ordem do efeito da rubrica.
 CoTPosition = Literal["first", "last"]
 
+# Como a busca ordena o que achou. "vector" é a busca pura por similaridade
+# (padrão desde 25/09); "routed_rerank" é o caminho até 24/09, com rota
+# lexical, reranker, âncoras e veto de espécie.
+RetrievalMode = Literal["vector", "routed_rerank"]
+
 
 class PipelineOptions(BaseModel):
     """
@@ -44,6 +49,7 @@ class PipelineOptions(BaseModel):
 
     # Etapas de decisão (trilho B2)
     retrieval_enabled: Optional[bool] = None
+    retrieval_mode: Optional[RetrievalMode] = None
     context_top_k: Optional[int] = Field(default=None, ge=1, le=10)
     context_min_score: Optional[float] = Field(default=None, ge=0.0, le=1.0)
     rewritten_hint_enabled: Optional[bool] = None
@@ -72,6 +78,7 @@ class EffectiveConfig(BaseModel):
     hyde_enabled: bool
 
     retrieval_enabled: bool
+    retrieval_mode: RetrievalMode = "vector"
     context_top_k: int
     context_min_score: float
     rewritten_hint_enabled: bool

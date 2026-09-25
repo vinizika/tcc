@@ -11,7 +11,10 @@ from conftest import (
     documento,
 )
 
-from app.constants.pipeline import DEFAULT_CONTEXT_MIN_SCORE
+from app.constants.pipeline import (
+    ACADEMIC_CONTEXT_MIN_SCORE,
+    DEFAULT_CONTEXT_MIN_SCORE,
+)
 from app.pipeline.chat_pipeline import ChatPipeline
 from app.prompts.triage import montar_bloco_de_contexto
 from app.schemas.triage import PipelineOptions
@@ -79,7 +82,11 @@ def test_multi_query_desligado_busca_apenas_a_consulta_reescrita():
 
     pipeline.execute(
         "meu cachorro comeu chocolate",
-        PipelineOptions(multi_query_enabled=False, hyde_enabled=False),
+        PipelineOptions(
+            query_rewriting_enabled=True,
+            multi_query_enabled=False,
+            hyde_enabled=False,
+        ),
     )
 
     assert query_client.generate_queries_calls == 0
@@ -98,7 +105,11 @@ def test_multi_query_vazio_nao_deixa_a_busca_sem_consulta():
 
     pipeline.execute(
         "meu cachorro comeu chocolate",
-        PipelineOptions(hyde_enabled=False),
+        PipelineOptions(
+            query_rewriting_enabled=True,
+            multi_query_enabled=True,
+            hyde_enabled=False,
+        ),
     )
 
     assert retrieval_client.chamadas == [["consulta reescrita"]]
@@ -115,7 +126,11 @@ def test_multi_query_ligado_funde_reescrita_e_variacoes(monkeypatch):
 
     pipeline.execute(
         "meu cachorro comeu chocolate",
-        PipelineOptions(hyde_enabled=False),
+        PipelineOptions(
+            query_rewriting_enabled=True,
+            multi_query_enabled=True,
+            hyde_enabled=False,
+        ),
     )
 
     assert retrieval_client.chamadas == [
@@ -134,7 +149,11 @@ def test_multi_query_ligado_nao_duplica_variacao_igual_a_reescrita():
 
     pipeline.execute(
         "meu cachorro comeu chocolate",
-        PipelineOptions(hyde_enabled=False),
+        PipelineOptions(
+            query_rewriting_enabled=True,
+            multi_query_enabled=True,
+            hyde_enabled=False,
+        ),
     )
 
     assert retrieval_client.chamadas == [["consulta reescrita", "consulta 2"]]
@@ -164,7 +183,11 @@ def test_multi_query_e_hyde_juntos_preservam_a_ordem_apesar_do_paralelismo():
 
     pipeline.execute(
         "meu cachorro comeu chocolate",
-        PipelineOptions(multi_query_enabled=True, hyde_enabled=True),
+        PipelineOptions(
+            query_rewriting_enabled=True,
+            multi_query_enabled=True,
+            hyde_enabled=True,
+        ),
     )
 
     assert retrieval_client.chamadas == [
@@ -272,7 +295,7 @@ def test_debug_so_aparece_quando_pedido():
 
     com_debug = pipeline.execute(
         "relato",
-        PipelineOptions(include_debug=True),
+        PipelineOptions(include_debug=True, query_rewriting_enabled=True),
     )
 
     assert com_debug.debug is not None
@@ -320,7 +343,10 @@ def test_a_dica_da_reescrita_entra_apenas_quando_ligada():
 
     pipeline.execute(
         "meu cachorro comeu chocolate",
-        PipelineOptions(rewritten_hint_enabled=True),
+        PipelineOptions(
+            rewritten_hint_enabled=True,
+            query_rewriting_enabled=True,
+        ),
     )
 
     prompt = llm_client.chamadas[0]["messages"][-1]["content"]
@@ -571,12 +597,13 @@ def test_modo_legado_ignora_o_cot_no_formato():
 # ----------------------------------------------------------------------
 
 
-def test_por_padrao_o_trecho_irrelevante_nao_entra_no_prompt():
+def test_com_a_porta_academica_o_trecho_irrelevante_nao_entra_no_prompt():
     """
-    Até 12/09 o corte era zero e qualquer trecho entrava, por mais distante
-    que fosse do relato. A rodada 9 mediu o custo disso: nas 98 linhas do
-    conjunto nenhum trecho passava de 0,70, e três entravam em todos os
-    prompts — os braços com RAG mediram injeção de ruído.
+    O braço acadêmico da ablação. Até 12/09 o corte era zero e qualquer
+    trecho entrava, por mais distante que fosse do relato. A rodada 9 mediu o
+    custo disso: nas 98 linhas do conjunto nenhum trecho passava de 0,70, e
+    três entravam em todos os prompts — os braços com RAG mediram injeção de
+    ruído. Com a base acadêmica, a porta de 0,72 continua sendo o braço.
     """
 
     documentos = [
@@ -586,7 +613,13 @@ def test_por_padrao_o_trecho_irrelevante_nao_entra_no_prompt():
 
     pipeline, _, _, _ = montar(documentos)
 
-    resultado = pipeline.execute("relato")
+    resultado = pipeline.execute(
+        "relato",
+        PipelineOptions(
+            retrieval_mode="routed_rerank",
+            context_min_score=ACADEMIC_CONTEXT_MIN_SCORE,
+        ),
+    )
 
     assert [item.document.chunk_id for item in resultado.sources] == [
         "relevante"
@@ -609,7 +642,13 @@ def test_nada_relevante_e_o_classificador_decide_sem_contexto():
 
     pipeline, _, _, llm_client = montar(documentos)
 
-    resultado = pipeline.execute("relato")
+    resultado = pipeline.execute(
+        "relato",
+        PipelineOptions(
+            retrieval_mode="routed_rerank",
+            context_min_score=ACADEMIC_CONTEXT_MIN_SCORE,
+        ),
+    )
 
     info = resultado.retrieval
 
@@ -691,3 +730,110 @@ def test_o_braco_antigo_continua_reproduzivel_com_corte_zero():
     assert len(resultado.sources) == 2
     assert resultado.retrieval.context_min_score == 0.0
     assert resultado.retrieval.used_below_min_score is False
+
+
+# ----------------------------------------------------------------------
+# Busca vetorial pura (padrão desde 25/09, rodada 24 do João)
+# ----------------------------------------------------------------------
+
+
+class _RerankerQueNaoPodeRodar:
+
+    @staticmethod
+    def rerank(queries, documentos, *, eligibility_query=None):
+        raise AssertionError("o modo vetorial não chama o reranker")
+
+
+class _RetrievalQueGuardaARota(RetrievalClientFalso):
+
+    def __init__(self, documentos):
+        super().__init__(documentos)
+        self.rotas: list[str | None] = []
+
+    def retrieve(self, queries, *, routing_query=None):
+        self.rotas.append(routing_query)
+        return super().retrieve(queries, routing_query=routing_query)
+
+
+def test_por_padrao_as_3_mais_proximas_entram_mesmo_com_nota_baixa():
+    """
+    A decisão da autópsia 2: com as fichas, as 3 mais próximas entram sempre.
+    As notas do bge-m3 nas fichas ficam perto de 0,6; a porta de 0,72 fechava
+    98 de 129 prompts (rodada 16 do João).
+    """
+
+    documentos = [
+        documento("quarta", score=0.40),
+        documento("primeira", score=0.62),
+        documento("terceira", score=0.51),
+        documento("segunda", score=0.55),
+    ]
+
+    pipeline, _, _, llm_client = montar(documentos)
+
+    resultado = pipeline.execute("relato")
+
+    assert DEFAULT_CONTEXT_MIN_SCORE == 0.0
+    assert resultado.config.retrieval_mode == "vector"
+    assert [item.document.chunk_id for item in resultado.sources] == [
+        "primeira",
+        "segunda",
+        "terceira",
+    ]
+    assert resultado.retrieval.used_count == 3
+    assert "fontes" in llm_client.chamadas[0]["output_model"].model_fields
+
+
+def test_modo_vetorial_nao_usa_rota_lexical_nem_reranker():
+
+    retrieval = _RetrievalQueGuardaARota([documento("a", score=0.6)])
+    pipeline = ChatPipeline(
+        query_client=QueryClientFalso(),
+        retrieval_client=retrieval,
+        reranker=_RerankerQueNaoPodeRodar,
+        llm_client=LLMClientFalso(),
+    )
+
+    resultado = pipeline.execute(
+        "meu cachorro comeu chocolate",
+        PipelineOptions(retrieval_mode="vector"),
+    )
+
+    assert retrieval.rotas == [None]
+    assert [item.document.chunk_id for item in resultado.sources] == ["a"]
+    assert resultado.sources[0].document.ranking_score is None
+
+
+def test_modo_roteado_usa_o_relato_como_rota_e_chama_o_reranker():
+
+    retrieval = _RetrievalQueGuardaARota([documento("a", score=0.8)])
+    pipeline = ChatPipeline(
+        query_client=QueryClientFalso(),
+        retrieval_client=retrieval,
+        reranker=RerankerFalso,
+        llm_client=LLMClientFalso(),
+    )
+
+    pipeline.execute(
+        "meu cachorro comeu chocolate",
+        PipelineOptions(retrieval_mode="routed_rerank"),
+    )
+
+    assert retrieval.rotas == ["meu cachorro comeu chocolate"]
+
+
+def test_por_padrao_o_tradutor_esta_desligado():
+    """
+    Reescrita, multi-query e HyDE pioram a busca nas fichas (rodada 17 do
+    João): o relato vai cru, e nenhuma chamada de consulta acontece.
+    """
+
+    pipeline, query_client, retrieval_client, _ = montar([documento()])
+
+    resultado = pipeline.execute("meu cachorro comeu chocolate")
+
+    assert query_client.rewrite_calls == 0
+    assert query_client.generate_queries_calls == 0
+    assert query_client.hyde_calls == 0
+    assert retrieval_client.chamadas == [["meu cachorro comeu chocolate"]]
+    assert resultado.config.query_rewriting_enabled is False

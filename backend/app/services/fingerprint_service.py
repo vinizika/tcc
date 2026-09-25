@@ -156,6 +156,7 @@ class FingerprintService:
             "content_sha256": None,
             "embedding_model": None,
             "embedding_revision": None,
+            "embedding_recipe": None,
             "recipe_sha256": None,
             "chunking": None,
             "topic_counts": {},
@@ -180,8 +181,12 @@ class FingerprintService:
                 embedding_recipe_sha256,
             )
 
+            # Valores da receita acadêmica, que é a da coleção-base legada. Se
+            # a coleção ativa tem manifesto, a receita dele substitui estes
+            # valores logo abaixo: cada coleção diz com que modelo foi feita.
             informacoes["embedding_model"] = EMBEDDING_MODEL_NAME
             informacoes["embedding_revision"] = EMBEDDING_MODEL_REVISION
+            informacoes["embedding_recipe"] = "minilm-academic-v1"
             informacoes["recipe_sha256"] = embedding_recipe_sha256()
             informacoes["chunking"] = {
                 "target_tokens": CHUNK_TARGET_TOKENS,
@@ -294,6 +299,19 @@ class FingerprintService:
                     (manifest.get("sources") or {}).get("source_set_sha256")
                 )
 
+                from app.database.embedding_config import recipe_from_manifest
+
+                receita = recipe_from_manifest(manifest)
+                informacoes["embedding_model"] = receita.model
+                informacoes["embedding_revision"] = receita.revision
+                informacoes["embedding_recipe"] = receita.key
+                informacoes["recipe_sha256"] = receita.sha256()
+                informacoes["chunking"] = {
+                    "target_tokens": receita.target_tokens,
+                    "overlap_tokens": receita.overlap_tokens,
+                    "max_tokens": receita.max_tokens,
+                }
+
         except Exception as erro:
             logger.warning(f"Não foi possível consultar a base: {erro}")
             informacoes["error"] = str(erro)
@@ -349,5 +367,9 @@ class FingerprintService:
                 "context_top_k": settings.CONTEXT_TOP_K,
                 "context_min_score": settings.CONTEXT_MIN_SCORE,
                 "prompt_version": settings.TRIAGE_PROMPT_VERSION,
+                "retrieval_mode": settings.RETRIEVAL_MODE,
+                "query_rewriting_enabled": settings.QUERY_REWRITING_ENABLED,
+                "multi_query_enabled": settings.MULTI_QUERY_ENABLED,
+                "hyde_enabled": settings.HYDE_ENABLED,
             },
         }

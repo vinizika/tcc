@@ -69,6 +69,10 @@ def settings() -> Settings:
         RETRIEVAL_ENABLED=True,
         CONTEXT_TOP_K=3,
         CONTEXT_MIN_SCORE=0.70,
+        # O fixture descreve o caminho até 24/09 (tradutor ligado, corte e
+        # rota): os testes que exercitam essas etapas as ligam aqui. Os
+        # padrões novos têm teste próprio em test_config_resolver.py.
+        RETRIEVAL_MODE="routed_rerank",
         COT_ENABLED=False,
         SELF_REFINE_ENABLED=False,
         REWRITTEN_HINT_ENABLED=False,

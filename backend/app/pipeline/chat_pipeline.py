@@ -223,18 +223,33 @@ class ChatPipeline:
         para distinguir "a geração errou" de "a busca não trouxe nada útil".
         """
 
-        retrieved = self.retrieval_client.retrieve(
-            queries,
-            routing_query=original_question,
-        )
+        if config.retrieval_mode == "vector":
+            # Busca pura: a ordem é a da similaridade do embedding, sem rota
+            # lexical, sem reranker, sem âncoras e sem veto de espécie. É a
+            # busca medida na autópsia 2 (rodada 16 do João).
+            retrieved = self.retrieval_client.retrieve(
+                queries,
+                routing_query=None,
+            )
+            logger.info(f"{len(retrieved)} documentos recuperados (vetor)")
+            ranked = sorted(
+                retrieved,
+                key=lambda document: document.score,
+                reverse=True,
+            )
+        else:
+            retrieved = self.retrieval_client.retrieve(
+                queries,
+                routing_query=original_question,
+            )
 
-        logger.info(f"{len(retrieved)} documentos recuperados")
+            logger.info(f"{len(retrieved)} documentos recuperados")
 
-        ranked = self.reranker.rerank(
-            queries,
-            retrieved,
-            eligibility_query=original_question,
-        )
+            ranked = self.reranker.rerank(
+                queries,
+                retrieved,
+                eligibility_query=original_question,
+            )
 
         def context_score(document: RetrievedDocument) -> float:
             return (
