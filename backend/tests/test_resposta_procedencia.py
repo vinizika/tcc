@@ -62,9 +62,37 @@ def test_ficha_citada_mostra_o_documento_aprovado_com_titulo_real():
     assert (
         "- Intoxicação por chocolate — fonte: Household Food Items Toxic to "
         "Dogs and Cats (Frontiers in Veterinary Science, 2016). "
-        "https\\://doi.org/10.3389/fvets.2016.00026"
+        "<https://doi.org/10.3389/fvets.2016.00026>"
     ) in texto
     assert "Ficha de triagem do time" not in texto
+
+
+def test_endereco_que_nao_e_http_continua_escapado():
+    """
+    Só vira link o que tem cara de endereço http. A rodada 26 achou o DOI
+    escapado ("https\\://"), o que quebrava o link na tela.
+    """
+
+    triagem = TriageResult(
+        classificacao="EMERGENCIA",
+        justificativa="x",
+        recomendacao="y",
+        fontes=[
+            CitedSource(
+                index=1,
+                chunk_id="ficha__x",
+                title="Ficha de triagem: X",
+                source="Ficha de triagem do time (mapa de assuntos)",
+                display_title="X",
+                references=[SourceReference(title="Doc", url="javascript:alert(1)")],
+            )
+        ],
+    )
+
+    texto = render(triagem)
+
+    assert "javascript\\:alert(1)" in texto
+    assert "<javascript" not in texto
 
 
 def test_trecho_da_base_academica_continua_citado_como_antes():

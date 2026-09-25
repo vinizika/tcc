@@ -121,6 +121,7 @@ aqui.
 | [B-71](#b-71) | Checagens por hash de arquivo falham num clone no Windows (CRLF) | A definir | Baixa | Aberto |
 | [B-72](#b-72) | Documentos aprovados que tratam de outro assunto, e autoria errada em sidecars | A definir | Média | Aberto |
 | [B-73](#b-73) | Abrir o Chroma versionado altera os arquivos binários do repositório | A definir | Média | Aberto |
+| [B-74](#b-74) | "Respondido por" na tela, e o erro do atendente tratado no frontend | A definir | Média | Aberto |
 
 ---
 
@@ -2629,6 +2630,13 @@ aquecido como alternativa declarada; a latência medida na máquina da
 demonstração. Critério: 99% das respostas abaixo de 5 s na demonstração, ou a
 mensagem de indisponibilidade antes disso.
 
+**Atualização 25/09, madrugada ([rodada 26](joao/2026-09-25-27-atendente-gemini-e-replica.md)).**
+Pela API, na réplica, o Gemini levou ~4 s por caso na mediana, e esse número é
+quase todo o espaçamento de 4 s entre chamadas (`GEMINI_MIN_INTERVAL_S`), que
+existe para a rodada não esbarrar no limite por minuto da conta gratuita; o p95
+ficou entre 5 e 10 s por lote. Numa demonstração com uma pergunta por vez, o espaçamento não
+pesa, mas o limite por minuto e a cota diária (500 chamadas por conta) sim.
+
 ### B-66
 
 **Ablação final na arquitetura da autópsia 2**
@@ -2652,6 +2660,18 @@ busca; os três atendentes; o tom pareado; McNemar e IC 95%; uma semântica só 
 métrica ([B-60](#b-60)); e o pré-registro em `data/evaluation/README.md` refeito
 para a arquitetura nova. Critério: a tabela do artigo gerada por um comando, a
 partir de rodadas citadas.
+
+**Atualização 25/09, madrugada ([rodada 26](joao/2026-09-25-27-atendente-gemini-e-replica.md)).**
+O runner, pela API, reproduziu a autópsia caso a caso nos braços sem tradutor.
+O braço **artigos com o tradutor ligado** não reproduz (11 · 3 contra 8 · 3 na
+prova + régua), e por dois motivos que a ablação precisa tratar: (1) na autópsia,
+esse braço usou reescrita, multi-query **e HyDE** gerados pelo llama, mas o
+sistema sem a chave do Gemini não gera o HyDE (a queda descarta a etapa); (2) a
+reescrita do `llama3.2:3b` não é estável: com temperatura 0 e seed fixa, 6 de 16
+casos mudaram entre duas chamadas seguidas, e a de hoje difere da de 24/09 em 61
+de 134 casos. Na ablação, as consultas do tradutor devem ser geradas uma vez,
+guardadas e dadas a todos os braços que as usam (ou o braço roda com repetições),
+e o HyDE tem de estar declarado.
 
 ### B-67
 
@@ -2812,6 +2832,26 @@ coleção das fichas e gerá-la na subida a partir do `fichas.json` versionado
 (61 fichas, ~1,5 min de CPU), mantendo no repositório só o manifesto esperado.
 Critério: rodar o backend num clone limpo não deixa arquivo versionado
 alterado, e a coleção continua conferida por hash.
+
+### B-74
+
+**"Respondido por" na tela, e o erro do atendente tratado no frontend**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 25](joao/2026-09-25-26-resposta-com-ficha-e-fonte.md) e [rodada 26](joao/2026-09-25-27-atendente-gemini-e-replica.md), 25/09 · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** A API devolve a procedência de cada resposta (provedor,
+modelo, versão, e a troca, quando permitida) e responde 503 com
+`attendant_unavailable` ou `quota_exhausted` quando o atendente falha. O frontend
+mostra só o campo `answer` ([B-20](#b-20)) e não sabe o que fazer com o 503.
+
+**Por que importa.** "Nunca trocar de modelo em silêncio" é condição da decisão
+pelo Gemini ([rodada 18](joao/2026-09-24-19-atendente-llama-qwen-gemini.md)); na tela,
+o tutor e o avaliador precisam ver quem respondeu, e o 503 precisa virar uma
+mensagem que diga para procurar o veterinário.
+
+**O que resolveria.** Uma linha "Respondido por <modelo>" a partir de
+`provenance.attendant`, e uma mensagem de indisponibilidade no 503. Junto com a
+[B-64](#b-64) (LGPD: aviso de que o relato vai a um serviço externo).
 
 ---
 

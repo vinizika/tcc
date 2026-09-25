@@ -1,0 +1,139 @@
+{
+  "rows_evaluated": 18,
+  "rows_with_error": 0,
+  "classification": {
+    "n": 18,
+    "balanced_accuracy": 0.9375,
+    "accuracy_strict": 0.9444444444444444,
+    "accuracy_strict_ci95": [
+      0.7424,
+      0.9901
+    ],
+    "coverage": 0.8888888888888888,
+    "accuracy_decided": 1.0,
+    "macro_f1": 0.9666666666666667,
+    "per_class": {
+      "EMERGENCIA": {
+        "support": 9,
+        "true_positive": 9,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "recall_ci95": [
+          0.7008,
+          1.0
+        ],
+        "f1": 1.0
+      },
+      "NAO_EMERGENCIA": {
+        "support": 8,
+        "true_positive": 7,
+        "false_positive": 0,
+        "false_negative": 1,
+        "precision": 1.0,
+        "recall": 0.875,
+        "recall_ci95": [
+          0.5291,
+          0.9776
+        ],
+        "f1": 0.9333333333333333
+      }
+    },
+    "confusion_matrix": {
+      "EMERGENCIA": {
+        "EMERGENCIA": 9,
+        "NAO_EMERGENCIA": 0,
+        "INCERTO": 0,
+        "INVALID_JSON": 0,
+        "OTHER": 0
+      },
+      "NAO_EMERGENCIA": {
+        "EMERGENCIA": 0,
+        "NAO_EMERGENCIA": 7,
+        "INCERTO": 1,
+        "INVALID_JSON": 0,
+        "OTHER": 0
+      }
+    },
+    "false_non_urgent": 0,
+    "false_non_urgent_rate": 0.0,
+    "false_urgent": 0,
+    "false_urgent_rate": 0.0,
+    "incerto_rate": 0.1111111111111111,
+    "emergencia_para_incerto": 0,
+    "nao_emergencia_para_incerto": 1,
+    "invalid_rate": 0.0,
+    "other_rate": 0.0,
+    "accuracy_single_attempt": 0.9444444444444444
+  },
+  "baselines": {
+    "always_emergencia": 0.5,
+    "rule_few_symptoms": null,
+    "rule_only_mild_symptoms": null
+  },
+  "strata": {},
+  "latency": {
+    "rows_with_model_load": 0,
+    "query_s": {
+      "mean": 0.0,
+      "median": 0.0,
+      "p95": 0.0
+    },
+    "retrieval_s": {
+      "mean": 0.134,
+      "median": 0.124,
+      "p95": 0.192
+    },
+    "generation_s": {
+      "mean": 3.716,
+      "median": 3.803,
+      "p95": 4.546
+    },
+    "total_s": {
+      "mean": 3.85,
+      "median": 3.918,
+      "p95": 4.678
+    },
+    "client_s": {
+      "mean": 3.86,
+      "median": 3.936,
+      "p95": 4.693
+    },
+    "prompt_tokens_mean": 908.2,
+    "completion_tokens_mean": 107.3,
+    "completion_tokens_p95": 123,
+    "completion_tokens_max": 128
+  },
+  "grounding": {
+    "mean_cited_sources": 1.0,
+    "share_rows_with_citation": 0.8888888888888888,
+    "share_rows_invalid_citation": 0.0,
+    "share_rows_max_score_below_0_70": 0.8333333333333334,
+    "mean_max_score": 0.64,
+    "share_rows_with_context": 1.0,
+    "share_rows_rag_silent": 0.0,
+    "rows_used_below_min_score": 0,
+    "citations_per_chunk": {
+      "ficha__seizures": 1,
+      "ficha__otitis_externa_mild": 1,
+      "ficha__vestibular_syndrome_otitis_interna": 1,
+      "ficha__dietary_indiscretion_mild": 1,
+      "ficha__human_medication_poisoning": 1,
+      "ficha__single_vomiting_or_mild_diarrhea": 1,
+      "ficha__gastric_dilatation_volvulus": 1,
+      "ficha__urethral_obstruction": 1,
+      "ficha__inappropriate_urination_or_cystitis": 1,
+      "ficha__pyometra": 1,
+      "ficha__normal_estrus": 1,
+      "ficha__feline_aortic_thromboembolism": 1,
+      "ficha__acute_hindlimb_paralysis": 1,
+      "ficha__osteoarthritis_stiffness": 1,
+      "ficha__snake_and_scorpion_envenomation": 1,
+      "ficha__anaphylaxis_facial_swelling": 1,
+      "ficha__ocular_emergency": 1,
+      "ficha__mild_conjunctivitis": 1
+    }
+  },
+  "repeats": null
+}

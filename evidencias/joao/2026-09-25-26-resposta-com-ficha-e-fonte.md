@@ -168,3 +168,12 @@ quando ligada com um qwen, precisaria do mesmo parâmetro (fica anotado).
 A [rodada 26](2026-09-25-27-atendente-gemini-e-replica.md): o cliente do
 Gemini como atendente, o provedor selecionável sem troca silenciosa, e a
 réplica completa (Gemini, qwen e o sistema de hoje).
+
+## Adendo (25/09, 04h40)
+
+A observação 2 estava incompleta: renderizado como markdown, `https\://…` sai
+com o texto certo, mas **deixa de ser link**. Corrigido na
+[rodada 26](2026-09-25-27-atendente-gemini-e-replica.md): o endereço que vem do
+sidecar e tem cara de `http(s)://` sai como link automático (`<https://…>`);
+o resto continua escapado. O teste desta rodada, que travava a forma escapada,
+mudou junto.

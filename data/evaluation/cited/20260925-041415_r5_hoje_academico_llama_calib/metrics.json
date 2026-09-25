@@ -1,0 +1,124 @@
+{
+  "rows_evaluated": 18,
+  "rows_with_error": 0,
+  "classification": {
+    "n": 18,
+    "balanced_accuracy": 0.7708333333333333,
+    "accuracy_strict": 0.7777777777777778,
+    "accuracy_strict_ci95": [
+      0.5478,
+      0.91
+    ],
+    "coverage": 0.9444444444444444,
+    "accuracy_decided": 0.7647058823529411,
+    "macro_f1": 0.7638888888888888,
+    "per_class": {
+      "EMERGENCIA": {
+        "support": 9,
+        "true_positive": 6,
+        "false_positive": 1,
+        "false_negative": 3,
+        "precision": 0.8571428571428571,
+        "recall": 0.6666666666666666,
+        "recall_ci95": [
+          0.3542,
+          0.8794
+        ],
+        "f1": 0.75
+      },
+      "NAO_EMERGENCIA": {
+        "support": 8,
+        "true_positive": 7,
+        "false_positive": 3,
+        "false_negative": 1,
+        "precision": 0.7,
+        "recall": 0.875,
+        "recall_ci95": [
+          0.5291,
+          0.9776
+        ],
+        "f1": 0.7777777777777777
+      }
+    },
+    "confusion_matrix": {
+      "EMERGENCIA": {
+        "EMERGENCIA": 6,
+        "NAO_EMERGENCIA": 3,
+        "INCERTO": 0,
+        "INVALID_JSON": 0,
+        "OTHER": 0
+      },
+      "NAO_EMERGENCIA": {
+        "EMERGENCIA": 1,
+        "NAO_EMERGENCIA": 7,
+        "INCERTO": 0,
+        "INVALID_JSON": 0,
+        "OTHER": 0
+      }
+    },
+    "false_non_urgent": 3,
+    "false_non_urgent_rate": 0.3333333333333333,
+    "false_urgent": 1,
+    "false_urgent_rate": 0.125,
+    "incerto_rate": 0.05555555555555555,
+    "emergencia_para_incerto": 0,
+    "nao_emergencia_para_incerto": 0,
+    "invalid_rate": 0.0,
+    "other_rate": 0.0,
+    "accuracy_single_attempt": 0.7777777777777778
+  },
+  "baselines": {
+    "always_emergencia": 0.5,
+    "rule_few_symptoms": null,
+    "rule_only_mild_symptoms": null
+  },
+  "strata": {},
+  "latency": {
+    "rows_with_model_load": 0,
+    "query_s": {
+      "mean": 0.0,
+      "median": 0.0,
+      "p95": 0.0
+    },
+    "retrieval_s": {
+      "mean": 0.312,
+      "median": 0.304,
+      "p95": 0.347
+    },
+    "generation_s": {
+      "mean": 1.066,
+      "median": 1.058,
+      "p95": 1.442
+    },
+    "total_s": {
+      "mean": 1.378,
+      "median": 1.368,
+      "p95": 1.741
+    },
+    "client_s": {
+      "mean": 1.388,
+      "median": 1.387,
+      "p95": 1.747
+    },
+    "prompt_tokens_mean": 528.1,
+    "completion_tokens_mean": 102.1,
+    "completion_tokens_p95": 126,
+    "completion_tokens_max": 136
+  },
+  "grounding": {
+    "mean_cited_sources": 0.17,
+    "share_rows_with_citation": 0.05555555555555555,
+    "share_rows_invalid_citation": 0.05555555555555555,
+    "share_rows_max_score_below_0_70": 0.9444444444444444,
+    "mean_max_score": 0.5708,
+    "share_rows_with_context": 0.2222222222222222,
+    "share_rows_rag_silent": 0.7777777777777778,
+    "rows_used_below_min_score": 0,
+    "citations_per_chunk": {
+      "db4b7b1a81a42e13e074cede25439160bd46117665137029e42fa5b8a97a72b9": 1,
+      "68eb0af357b92fa202e8c0e22fd6a9c3ae208ab67ef2b3030cc8c949130a8de2": 1,
+      "fa5d90d0e8d8cf02b7e9b41d9b86405d24cf4b2555291fa65e1c0c29f8e9e38c": 1
+    }
+  },
+  "repeats": null
+}

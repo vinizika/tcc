@@ -133,7 +133,7 @@ class GeminiLLMClient:
                         model=self.model,
                         reason="server_unavailable",
                     ) from erro
-                logger.warning(f"Gemini {getattr(erro, 'code', 5)}xx; esperando {espera_503:.0f}s")
+                logger.warning(f"Gemini {getattr(erro, 'code', None) or '5xx'}; esperando {espera_503:.0f}s")
                 self._dormir(espera_503)
                 espera_503 = min(espera_503 * 2, 300.0)
             except (AttendantUnavailableException, QuotaExhaustedException):

@@ -33,6 +33,11 @@ CARACTERES_INLINE = re.compile(r"([\\`*_\[\]<>|~$:])")
 MARCADOR_SIMBOLO = re.compile(r"^([#>+-])(\s)")
 MARCADOR_NUMERADO = re.compile(r"^(\d+)(\.)(\s)")
 
+# O endereço da fonte vem do sidecar da curadoria, não do modelo. Escapado,
+# "https\://" deixa de ser link; entre < > é um link automático do markdown,
+# sem formatação dentro. O que não tem cara de endereço http é escapado.
+URL_SEGURA = re.compile(r"^https?://[^\s<>]+$")
+
 
 def escapar(texto: str) -> str:
     """
@@ -65,7 +70,8 @@ def _referencia(referencia) -> str:
         texto += f" ({escapar(detalhes)})"
     texto += "."
     if referencia.url:
-        texto += f" {escapar(referencia.url)}"
+        url = str(referencia.url).strip()
+        texto += f" <{url}>" if URL_SEGURA.match(url) else f" {escapar(url)}"
     return texto
 
 

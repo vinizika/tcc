@@ -1,0 +1,110 @@
+{
+  "rows_evaluated": 66,
+  "rows_with_error": 0,
+  "classification": {
+    "n": 66,
+    "balanced_accuracy": 0.9615384615384616,
+    "accuracy_strict": 0.9696969696969697,
+    "accuracy_strict_ci95": [
+      0.8961,
+      0.9917
+    ],
+    "coverage": 1.0,
+    "accuracy_decided": 0.9696969696969697,
+    "macro_f1": 0.9678048780487805,
+    "per_class": {
+      "EMERGENCIA": {
+        "support": 40,
+        "true_positive": 40,
+        "false_positive": 2,
+        "false_negative": 0,
+        "precision": 0.9523809523809523,
+        "recall": 1.0,
+        "recall_ci95": [
+          0.9124,
+          1.0
+        ],
+        "f1": 0.975609756097561
+      },
+      "NAO_EMERGENCIA": {
+        "support": 26,
+        "true_positive": 24,
+        "false_positive": 0,
+        "false_negative": 2,
+        "precision": 1.0,
+        "recall": 0.9230769230769231,
+        "recall_ci95": [
+          0.7586,
+          0.9786
+        ],
+        "f1": 0.9600000000000001
+      }
+    },
+    "confusion_matrix": {
+      "EMERGENCIA": {
+        "EMERGENCIA": 40,
+        "NAO_EMERGENCIA": 0,
+        "INCERTO": 0,
+        "INVALID_JSON": 0,
+        "OTHER": 0
+      },
+      "NAO_EMERGENCIA": {
+        "EMERGENCIA": 2,
+        "NAO_EMERGENCIA": 24,
+        "INCERTO": 0,
+        "INVALID_JSON": 0,
+        "OTHER": 0
+      }
+    },
+    "false_non_urgent": 0,
+    "false_non_urgent_rate": 0.0,
+    "false_urgent": 2,
+    "false_urgent_rate": 0.07692307692307693,
+    "incerto_rate": 0.0,
+    "emergencia_para_incerto": 0,
+    "nao_emergencia_para_incerto": 0,
+    "invalid_rate": 0.0,
+    "other_rate": 0.0,
+    "accuracy_single_attempt": 0.9696969696969697
+  },
+  "baselines": {
+    "always_emergencia": 0.6060606060606061,
+    "rule_few_symptoms": null,
+    "rule_only_mild_symptoms": null
+  },
+  "strata": {},
+  "latency": {
+    "rows_with_model_load": 0,
+    "query_s": {
+      "mean": 0.0,
+      "median": 0.0,
+      "p95": 0.0
+    },
+    "retrieval_s": {
+      "mean": 0.0,
+      "median": 0.0,
+      "p95": 0.0
+    },
+    "generation_s": {
+      "mean": 4.313,
+      "median": 3.99,
+      "p95": 8.015
+    },
+    "total_s": {
+      "mean": 4.314,
+      "median": 3.99,
+      "p95": 8.015
+    },
+    "client_s": {
+      "mean": 4.33,
+      "median": 4.008,
+      "p95": 8.033
+    },
+    "prompt_tokens_mean": 368.6,
+    "completion_tokens_mean": 98.0,
+    "completion_tokens_p95": 108,
+    "completion_tokens_max": 113
+  },
+  "grounding": null,
+  "repeats": null
+}

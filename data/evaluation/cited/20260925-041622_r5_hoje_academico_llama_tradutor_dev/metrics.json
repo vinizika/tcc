@@ -1,0 +1,140 @@
+{
+  "rows_evaluated": 50,
+  "rows_with_error": 0,
+  "classification": {
+    "n": 50,
+    "balanced_accuracy": 0.8375,
+    "accuracy_strict": 0.82,
+    "accuracy_strict_ci95": [
+      0.692,
+      0.9023
+    ],
+    "coverage": 1.0,
+    "accuracy_decided": 0.82,
+    "macro_f1": 0.8284313725490196,
+    "per_class": {
+      "EMERGENCIA": {
+        "support": 25,
+        "true_positive": 20,
+        "false_positive": 3,
+        "false_negative": 5,
+        "precision": 0.8695652173913043,
+        "recall": 0.8,
+        "recall_ci95": [
+          0.6087,
+          0.9114
+        ],
+        "f1": 0.8333333333333333
+      },
+      "NAO_EMERGENCIA": {
+        "support": 24,
+        "true_positive": 21,
+        "false_positive": 6,
+        "false_negative": 3,
+        "precision": 0.7777777777777778,
+        "recall": 0.875,
+        "recall_ci95": [
+          0.69,
+          0.9566
+        ],
+        "f1": 0.823529411764706
+      }
+    },
+    "confusion_matrix": {
+      "EMERGENCIA": {
+        "EMERGENCIA": 20,
+        "NAO_EMERGENCIA": 5,
+        "INCERTO": 0,
+        "INVALID_JSON": 0,
+        "OTHER": 0
+      },
+      "NAO_EMERGENCIA": {
+        "EMERGENCIA": 3,
+        "NAO_EMERGENCIA": 21,
+        "INCERTO": 0,
+        "INVALID_JSON": 0,
+        "OTHER": 0
+      }
+    },
+    "false_non_urgent": 5,
+    "false_non_urgent_rate": 0.2,
+    "false_urgent": 3,
+    "false_urgent_rate": 0.125,
+    "incerto_rate": 0.0,
+    "emergencia_para_incerto": 0,
+    "nao_emergencia_para_incerto": 0,
+    "invalid_rate": 0.0,
+    "other_rate": 0.0,
+    "accuracy_single_attempt": 0.82
+  },
+  "baselines": {
+    "always_emergencia": 0.5,
+    "rule_few_symptoms": null,
+    "rule_only_mild_symptoms": null
+  },
+  "strata": {},
+  "latency": {
+    "rows_with_model_load": 0,
+    "query_s": {
+      "mean": 0.995,
+      "median": 0.99,
+      "p95": 1.165
+    },
+    "retrieval_s": {
+      "mean": 0.339,
+      "median": 0.332,
+      "p95": 0.404
+    },
+    "generation_s": {
+      "mean": 1.175,
+      "median": 1.184,
+      "p95": 1.409
+    },
+    "total_s": {
+      "mean": 2.51,
+      "median": 2.547,
+      "p95": 2.91
+    },
+    "client_s": {
+      "mean": 2.522,
+      "median": 2.555,
+      "p95": 2.917
+    },
+    "prompt_tokens_mean": 695.0,
+    "completion_tokens_mean": 109.0,
+    "completion_tokens_p95": 131,
+    "completion_tokens_max": 140
+  },
+  "grounding": {
+    "mean_cited_sources": 0.4,
+    "share_rows_with_citation": 0.36,
+    "share_rows_invalid_citation": 0.06,
+    "share_rows_max_score_below_0_70": 0.24,
+    "mean_max_score": 0.7419,
+    "share_rows_with_context": 0.84,
+    "share_rows_rag_silent": 0.16,
+    "rows_used_below_min_score": 0,
+    "citations_per_chunk": {
+      "30c444862288b4fc7e43761dc80108222e2a69a5ba558c1a080b57b0cef26ca9": 2,
+      "57b952105e3058ea57a054392036b4bd813b70433f26c3df94bd9e9066302eca": 1,
+      "cdfd4678747dec4c09bb27b64a79f06990f51e279c7d6c9e8fdb67bb34a05179": 1,
+      "490e17845885f38fe38c6df10c94e3d266248337bfbb54d7a85d92e80ac09129": 1,
+      "e5a37e1736d6421def79923d6218aeae890603a3c18da75595eca393b23d5b44": 1,
+      "66288503f74b003a75fbbd0ddce3ddd3b38753acb73f2d64f40ff86b30845164": 1,
+      "ca07e63fac70436d70eebb13d8917149dcb7c84f64d754e84e55b149fd313f33": 1,
+      "cb2d8192e043ed85f11d4ca8e81c6e9958dbac2f544771b5c061674457c2e0ec": 1,
+      "458d97b99064028cff8978fc33b881caa7a5ba920f405520d38017e4f174c2b3": 1,
+      "4de35125428b7bb95be03ab6a452f588c95a66e480c50a21e1cd963d4da9e7c2": 1,
+      "189831cc9e0391b8dfc5a28217111af523a27050f4f37ca53523db1b8696147c": 1,
+      "a30ad833ee39a69ffe4de76514fd9dcc183580b2c1f6c8398bab2c1ae1293067": 1,
+      "33341e5d7c111b3d41257457841be70e080aeedb9c99aa8683cf85dfbbf302ba": 1,
+      "b6864fd51e964f4d7a3a780804bae400c3dd698de774be8e7e2d14a198bf0440": 1,
+      "3f8e6c4c794ea15554201346563bf8c176153b7c7f00be4a9b2fb72923f1cc0c": 1,
+      "38ecb96d0098dafae05dabd284db5ff4cf19434e16668d00319396cb1af9924e": 1,
+      "50f00c376073f3e94b9bcd08f6a10d9559ce4d13ca18f115d1b7292e878a4011": 1,
+      "9ad62a44a1499dedb04058639e87528e1bb6c6f2d0fb51be815ddab6067bf613": 1,
+      "bd885b06280b0948f83390a982b027df76cd732d97d667024309e21f2e149b0f": 1
+    }
+  },
+  "repeats": null
+}

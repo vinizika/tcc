@@ -1,0 +1,431 @@
+{
+  "run_id": "20260925-042504_r2_gemini_piloto_conta1",
+  "name": "r2_gemini_piloto_conta1",
+  "status": "done",
+  "started_at": "2026-09-25T04:25:04.951017-03:00",
+  "hostname": "DESKTOP-5UGARQ1",
+  "python": "3.12.10",
+  "git": {
+    "sha": "fe11b99",
+    "dirty": true
+  },
+  "cases": {
+    "path": "data/diagnostico/piloto_prova2.csv",
+    "sha256": "93b718b4e36b285ac7a6609ff846639cec2160b5f43afe7734f73399b4db7771",
+    "split": null,
+    "n": 40
+  },
+  "subset": null,
+  "limit": null,
+  "row_ids": [
+    "pA01",
+    "pA02",
+    "pA03",
+    "pA04",
+    "pA05",
+    "pA06",
+    "pA07",
+    "pA08",
+    "pA09",
+    "pA10",
+    "pA11",
+    "pA12",
+    "pA13",
+    "pA14",
+    "pA15",
+    "pA16",
+    "pA17",
+    "pA18",
+    "pA19",
+    "pA20",
+    "pB01",
+    "pB02",
+    "pB03",
+    "pB04",
+    "pB05",
+    "pB06",
+    "pB07",
+    "pB08",
+    "pB09",
+    "pB10",
+    "pB11",
+    "pB12",
+    "pB13",
+    "pB14",
+    "pB15",
+    "pB16",
+    "pB17",
+    "pB18",
+    "pB19",
+    "pB20"
+  ],
+  "label_distribution": {
+    "EMERGENCIA": 24,
+    "NAO_EMERGENCIA": 16
+  },
+  "preset": "producao",
+  "set": [],
+  "requested_options": {
+    "retrieval_enabled": true,
+    "retrieval_mode": "vector",
+    "context_min_score": 0.0,
+    "query_rewriting_enabled": false,
+    "multi_query_enabled": false,
+    "hyde_enabled": false,
+    "prompt_version": "v1_grounded",
+    "attendant_provider": "gemini"
+  },
+  "effective_config": {
+    "query_rewriting_enabled": false,
+    "multi_query_enabled": false,
+    "hyde_enabled": false,
+    "retrieval_enabled": true,
+    "retrieval_mode": "vector",
+    "context_top_k": 3,
+    "context_min_score": 0.0,
+    "rewritten_hint_enabled": false,
+    "cot_enabled": false,
+    "cot_position": "first",
+    "self_refine_enabled": false,
+    "prompt_version": "v1_grounded",
+    "structured_output_mode": "schema",
+    "model": "gemini-3.5-flash-lite",
+    "temperature": 0.0,
+    "seed": 42,
+    "num_ctx": 4096,
+    "num_predict": 600,
+    "think": false,
+    "attendant_provider": "gemini",
+    "attendant_fallback": "none"
+  },
+  "repeats": 1,
+  "base_seed": null,
+  "relato_lang": "pt",
+  "api_url": "http://127.0.0.1:8000",
+  "presets_sha256": "cefe8371bcc3b5990281e04bc484abdbd42173e4a7488450c8b5d99ab38b95bf",
+  "warmup_seconds": 1.57,
+  "backend_fingerprint": {
+    "api_version": "1.0.0",
+    "model": {
+      "name": "qwen3:8b",
+      "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+      "size_bytes": 5225388164,
+      "parameter_size": "8.2B",
+      "quantization": "Q4_K_M",
+      "loaded_in_vram_bytes": null
+    },
+    "ollama_version": "0.34.4",
+    "vector_store": {
+      "collection": "veterinary_documents__20260925T061349534255Z__280baf13",
+      "chunk_count": 61,
+      "chunk_ids_sha256": "232184405e9bd9bbaf64ed96b13fa2693f1fb5b37396f686d171a97109f1e8d6",
+      "content_sha256": "9274aff4254398f6a50789381514ab6994d6f0ad75de828ccb1f37d399a2fffd",
+      "embedding_model": "BAAI/bge-m3",
+      "embedding_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+      "embedding_recipe": "bge-m3-fichas-v1",
+      "recipe_sha256": "3bfd745d110ea09f939b0353c2f8e8d94903140c9a3dfa7002b435aa2a7aa739",
+      "chunking": {
+        "target_tokens": null,
+        "overlap_tokens": null,
+        "max_tokens": 512
+      },
+      "topic_counts": {
+        "acute_hindlimb_paralysis": 1,
+        "airway_foreign_body_choking": 1,
+        "allium_toxicosis": 1,
+        "anaphylaxis_facial_swelling": 1,
+        "anticoagulant_rodenticide_poisoning": 1,
+        "burns_and_electrical_injury": 1,
+        "canine_heatstroke": 1,
+        "carbamate_organophosphate_poisoning": 1,
+        "cat_bite_abscess": 1,
+        "chocolate_toxicosis": 1,
+        "collapse_and_pale_gums": 1,
+        "congestive_heart_failure": 1,
+        "diabetic_ketoacidosis": 1,
+        "dietary_indiscretion_mild": 1,
+        "distemper_neurological": 1,
+        "dystocia": 1,
+        "eclampsia": 1,
+        "exertional_panting_mild": 1,
+        "fading_neonate": 1,
+        "feline_aortic_thromboembolism": 1,
+        "flea_dermatitis_pruritus": 1,
+        "gastric_dilatation_volvulus": 1,
+        "gastrointestinal_foreign_body": 1,
+        "grape_xylitol_toxicosis": 1,
+        "high_rise_syndrome_cats": 1,
+        "human_medication_poisoning": 1,
+        "hypoglycemia_toy_puppy": 1,
+        "inappropriate_urination_or_cystitis": 1,
+        "insect_sting_local_reaction": 1,
+        "kennel_cough_mild": 1,
+        "leptospirosis_acute": 1,
+        "lily_toxicosis_cats": 1,
+        "mild_conjunctivitis": 1,
+        "mild_lameness": 1,
+        "mild_upper_respiratory_signs": 1,
+        "minor_wound": 1,
+        "normal_estrus": 1,
+        "normal_whelping": 1,
+        "ocular_emergency": 1,
+        "osteoarthritis_stiffness": 1,
+        "otitis_externa_mild": 1,
+        "parvovirus_panleukopenia": 1,
+        "periodontal_disease_mild": 1,
+        "permethrin_toxicosis_cats": 1,
+        "polyuria_polydipsia_investigate": 1,
+        "pyometra": 1,
+        "rabies_exposure_wild_animal_bite": 1,
+        "reduced_appetite_no_other_signs": 1,
+        "respiratory_distress": 1,
+        "seizures": 1,
+        "single_vomiting_or_mild_diarrhea": 1,
+        "slow_growing_lump": 1,
+        "snake_and_scorpion_envenomation": 1,
+        "tick_borne_disease_anemia": 1,
+        "ticks_found_no_signs": 1,
+        "toad_bufotoxin_poisoning": 1,
+        "trauma_and_bleeding": 1,
+        "tremors_without_seizure": 1,
+        "urethral_obstruction": 1,
+        "vestibular_syndrome_otitis_interna": 1,
+        "vomiting_and_diarrhea": 1
+      },
+      "species_counts_by_topic": {
+        "acute_hindlimb_paralysis": {
+          "dog_and_cat": 1
+        },
+        "airway_foreign_body_choking": {
+          "dog_and_cat": 1
+        },
+        "allium_toxicosis": {
+          "dog_and_cat": 1
+        },
+        "anaphylaxis_facial_swelling": {
+          "dog_and_cat": 1
+        },
+        "anticoagulant_rodenticide_poisoning": {
+          "dog_and_cat": 1
+        },
+        "burns_and_electrical_injury": {
+          "dog_and_cat": 1
+        },
+        "canine_heatstroke": {
+          "dog": 1
+        },
+        "carbamate_organophosphate_poisoning": {
+          "dog_and_cat": 1
+        },
+        "cat_bite_abscess": {
+          "cat": 1
+        },
+        "chocolate_toxicosis": {
+          "dog": 1
+        },
+        "collapse_and_pale_gums": {
+          "dog_and_cat": 1
+        },
+        "congestive_heart_failure": {
+          "dog_and_cat": 1
+        },
+        "diabetic_ketoacidosis": {
+          "dog_and_cat": 1
+        },
+        "dietary_indiscretion_mild": {
+          "dog_and_cat": 1
+        },
+        "distemper_neurological": {
+          "dog": 1
+        },
+        "dystocia": {
+          "dog_and_cat": 1
+        },
+        "eclampsia": {
+          "dog": 1
+        },
+        "exertional_panting_mild": {
+          "dog": 1
+        },
+        "fading_neonate": {
+          "dog_and_cat": 1
+        },
+        "feline_aortic_thromboembolism": {
+          "cat": 1
+        },
+        "flea_dermatitis_pruritus": {
+          "dog_and_cat": 1
+        },
+        "gastric_dilatation_volvulus": {
+          "dog": 1
+        },
+        "gastrointestinal_foreign_body": {
+          "dog_and_cat": 1
+        },
+        "grape_xylitol_toxicosis": {
+          "dog": 1
+        },
+        "high_rise_syndrome_cats": {
+          "cat": 1
+        },
+        "human_medication_poisoning": {
+          "dog_and_cat": 1
+        },
+        "hypoglycemia_toy_puppy": {
+          "dog": 1
+        },
+        "inappropriate_urination_or_cystitis": {
+          "dog_and_cat": 1
+        },
+        "insect_sting_local_reaction": {
+          "dog_and_cat": 1
+        },
+        "kennel_cough_mild": {
+          "dog": 1
+        },
+        "leptospirosis_acute": {
+          "dog": 1
+        },
+        "lily_toxicosis_cats": {
+          "cat": 1
+        },
+        "mild_conjunctivitis": {
+          "dog_and_cat": 1
+        },
+        "mild_lameness": {
+          "dog_and_cat": 1
+        },
+        "mild_upper_respiratory_signs": {
+          "dog_and_cat": 1
+        },
+        "minor_wound": {
+          "dog_and_cat": 1
+        },
+        "normal_estrus": {
+          "dog": 1
+        },
+        "normal_whelping": {
+          "dog_and_cat": 1
+        },
+        "ocular_emergency": {
+          "dog_and_cat": 1
+        },
+        "osteoarthritis_stiffness": {
+          "dog_and_cat": 1
+        },
+        "otitis_externa_mild": {
+          "dog_and_cat": 1
+        },
+        "parvovirus_panleukopenia": {
+          "dog_and_cat": 1
+        },
+        "periodontal_disease_mild": {
+          "dog_and_cat": 1
+        },
+        "permethrin_toxicosis_cats": {
+          "cat": 1
+        },
+        "polyuria_polydipsia_investigate": {
+          "dog_and_cat": 1
+        },
+        "pyometra": {
+          "dog_and_cat": 1
+        },
+        "rabies_exposure_wild_animal_bite": {
+          "dog_and_cat": 1
+        },
+        "reduced_appetite_no_other_signs": {
+          "dog_and_cat": 1
+        },
+        "respiratory_distress": {
+          "dog_and_cat": 1
+        },
+        "seizures": {
+          "dog_and_cat": 1
+        },
+        "single_vomiting_or_mild_diarrhea": {
+          "dog_and_cat": 1
+        },
+        "slow_growing_lump": {
+          "dog_and_cat": 1
+        },
+        "snake_and_scorpion_envenomation": {
+          "dog_and_cat": 1
+        },
+        "tick_borne_disease_anemia": {
+          "dog": 1
+        },
+        "ticks_found_no_signs": {
+          "dog_and_cat": 1
+        },
+        "toad_bufotoxin_poisoning": {
+          "dog": 1
+        },
+        "trauma_and_bleeding": {
+          "dog_and_cat": 1
+        },
+        "tremors_without_seizure": {
+          "dog_and_cat": 1
+        },
+        "urethral_obstruction": {
+          "dog_and_cat": 1
+        },
+        "vestibular_syndrome_otitis_interna": {
+          "dog_and_cat": 1
+        },
+        "vomiting_and_diarrhea": {
+          "dog_and_cat": 1
+        }
+      },
+      "source_file_counts": {
+        "fichas.json": 61
+      },
+      "validation_status_counts": {
+        "reading_card_from_validated_map": 61
+      },
+      "manifest_sha256": "82992d435e87f002a349a4ebbe1d99a6c9f27a35eef7b3b62ac8018764022007",
+      "profile": "fichas",
+      "source_set_sha256": "280baf13749ad2d913d0a66d013e37917440ab7c71910ff305aa192eaabe612f",
+      "document_count": 1
+    },
+    "prompts": {
+      "v0_legacy_sha256": "15fa7b045d293f5dfdcb03ef18607fca72ca370776ef2df82687b6167b1423f4",
+      "v1_grounded_sha256": "a1e9cd51e0f618731926ce3f8de3bfa3b478f7e3fae8c8b6650041671ca912b5",
+      "v1_grounded_sem_contexto_sha256": "6084a79be5466da0066f23cd9dbd3716601b068fc65b7cebd311fca9c24510b7",
+      "v1_grounded_cot_sha256": "936cdc903895645dc6fb43cfd4465b1cb70fa10ec185e9f4d890841b8705c97b",
+      "v1_grounded_cot_sem_contexto_sha256": "18231ba795024b099c382e226b05a8767304cb2308cca3c24016eb57eeb4cd73",
+      "v1_grounded_cot_posthoc_sha256": "274fbab1850aa81af39aa7d1d02615f86fd0a4152d55ad9678089cf305a94d74",
+      "context_block_sha256": "aa8f7029809c0a6b54eff1c5639b6fa61a0e4693003dc840e130b22eb851fda5"
+    },
+    "defaults": {
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 4096,
+      "num_predict": 600,
+      "structured_output_mode": "schema",
+      "context_top_k": 3,
+      "context_min_score": 0.0,
+      "prompt_version": "v1_grounded",
+      "retrieval_mode": "vector",
+      "query_rewriting_enabled": false,
+      "multi_query_enabled": false,
+      "hyde_enabled": false,
+      "think": false,
+      "gemini_model": "gemini-3.5-flash-lite"
+    },
+    "attendant": {
+      "provider": "gemini",
+      "fallback": "none",
+      "gemini_model": "gemini-3.5-flash-lite",
+      "gemini_key_configured": true,
+      "ollama_model": "qwen3:8b",
+      "gemini_min_interval_s": 4.0
+    },
+    "overridden_by_env": [
+      "GEMINI_API_KEY"
+    ]
+  },
+  "expected_base_hash": null,
+  "attendant_fallback_lines": 0,
+  "finished_at": "2026-09-25T04:28:03.413194-03:00"
+}
