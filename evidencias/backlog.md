@@ -120,6 +120,7 @@ aqui.
 | [B-70](#b-70) | Self-Refine como checagem de que o contexto é do assunto do relato | A definir | Baixa | Em espera — CoT e Self-Refine voltam depois do RAG consolidado |
 | [B-71](#b-71) | Checagens por hash de arquivo falham num clone no Windows (CRLF) | A definir | Baixa | Aberto |
 | [B-72](#b-72) | Documentos aprovados que tratam de outro assunto, e autoria errada em sidecars | A definir | Média | Aberto |
+| [B-73](#b-73) | Abrir o Chroma versionado altera os arquivos binários do repositório | A definir | Média | Aberto |
 
 ---
 
@@ -2406,6 +2407,13 @@ incompatíveis entre si e a escolha errada reintroduz o problema na próxima
 ingestão. Critério: um clone limpo, sem passos manuais, sobe com as
 coleções candidatas visíveis em `ChromaDBClient.get_client().list_collections()`.
 
+**Atualização 25/09, madrugada — critério atendido na branch da implementação
+([rodada 24](joao/2026-09-25-25-busca-por-fichas-com-bge-m3.md)).** O
+`CHROMA_PATH` padrão passou a ser `chroma_db` e o ponteiro ativo entrou no
+repositório: um clone limpo da branch abre a coleção das fichas sem passo
+manual (conferido). O item fecha quando a branch subir e o trilho A confirmar
+na máquina dele; efeito colateral no [B-73](#b-73).
+
 **Atualização 25/09.** Confirmado na autópsia 2: num clone limpo, seguindo o
 README, nenhum número com RAG se reproduz sem passos manuais
 ([rodada 14](joao/2026-09-23-15-autopsia-do-sistema-de-hoje.md)). O plano de
@@ -2733,6 +2741,8 @@ trabalho o mapa está com CRLF. No CI (Linux, LF) passa. Na mesma linha, o
 E o próprio `sync_retrieval_terms.py`, quando regenera o arquivo no Windows,
 grava com CRLF (`write_text` em modo texto), e o arquivo inteiro aparece como
 mudado no Git ([rodada 23](joao/2026-09-25-24-fichas-de-busca-e-de-leitura.md)).
+O `atomic_write_json` do `chroma_client.py` faz o mesmo com manifesto, recibo e
+ponteiro ativo ([rodada 24](joao/2026-09-25-25-busca-por-fichas-com-bge-m3.md)).
 
 **Por que importa.** Quem roda a suíte do CI no Windows vê uma falha falsa e pode
 "consertar" regenerando o arquivo, o que grava um hash que o CI recusa.
@@ -2771,6 +2781,29 @@ busca foram escritos a partir deles.
 (as fontes capturadas na [rodada 27](joao/2026-09-25-28-fontes-para-tutor-etapa-2.md)
 são candidatas em vários), e a autoria corrigida pelo Crossref. Critério: cada
 documento citado trata do quadro em que está.
+
+### B-73
+
+**Abrir o Chroma versionado altera os arquivos binários do repositório**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 24](joao/2026-09-25-25-busca-por-fichas-com-bge-m3.md), 25/09 · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** Num clone limpo, a primeira consulta à coleção ativa muda
+o `backend/chroma_db/chroma.sqlite3` (e, na coleção das fichas, o `length.bin`
+do índice) sem mudar o conteúdo da coleção. Acontece também em `2d37a5e`, com a
+coleção acadêmica: o comportamento é do Chroma, não da rodada 24. Além disso, o
+arquivo binário tem 73 MB e cada coleção nova é mais uma versão dele no
+histórico.
+
+**Por que importa.** Quem roda o backend e faz `git add -A` commita um banco
+alterado sem querer, e o conteúdo real só se confere pelo manifesto.
+
+**O que resolveria.** Duas saídas: documentar no README o
+`git update-index --skip-worktree` para a pasta, ou deixar de versionar a
+coleção das fichas e gerá-la na subida a partir do `fichas.json` versionado
+(61 fichas, ~1,5 min de CPU), mantendo no repositório só o manifesto esperado.
+Critério: rodar o backend num clone limpo não deixa arquivo versionado
+alterado, e a coleção continua conferida por hash.
 
 ---
 

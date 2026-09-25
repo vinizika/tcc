@@ -91,20 +91,111 @@ _Escrito antes de rodar._
 
 ## Resultado obtido
 
-_(preenchido ao fechar a rodada)_
+**A busca do código reproduz a da autópsia, exata.**
+
+**R0, funcional** (API local, `uvicorn`, 03h16):
+
+| Checagem | Resultado |
+|---|---|
+| `/health/fingerprint` | coleção `veterinary_documents__20260925T061349534255Z__280baf13`, **61 registros**, `BAAI/bge-m3` na revisão `5617a9f6…`, receita `bge-m3-fichas-v1` (`3bfd745d…`), perfil `fichas`, conteúdo `9274aff4…`, manifesto `82992d43…`; padrões `vector`, corte 0,0, top 3, tradutor desligado |
+| `--rollback` para `…388f518d` | abre com **3.481 trechos e o MiniLM**, escolhido pelo manifesto; "meu cachorro comeu chocolate e está tremendo" → 3 trechos de `chocolate_toxicosis` |
+| rollback de volta | 61 fichas, bge-m3 |
+| `/search` "meu cachorro comeu chocolate e está tremendo" | **`chocolate_toxicosis` em 1º** (0,761), depois `hypoglycemia_toy_puppy` e `grape_xylitol_toxicosis` |
+| clone limpo da branch, sem passo manual | abre a coleção das fichas pelo ponteiro versionado; "minha gata não consegue fazer xixi…" → `urethral_obstruction` em 1º ([B-57](../backlog.md#b-57)) |
+
+**R1, a réplica da busca** (`POST /search/`, modo `vector`, as 3 primeiras,
+296 casos; `rodada_noturna/scripts/r1_busca.py` do diário):
+
+| | Esperado (autópsia) | Obtido |
+|---|---|---|
+| Trios iguais, na ordem | ≥ 99% | **296 de 296** |
+| Prova + régua: ficha certa em 1º / entre as 3 (129) | 107 / 123 | **107 / 123** |
+| Relatos independentes (122) | 74 / 94 | **74 / 94** |
+| Piloto da prova 2 (40) | 16 / 32 | **16 / 32** |
+| Maior diferença de nota nos trios | — | 0,0001 |
+
+A régua do repositório, em modo `vector` (66 casos,
+[`data/retrieval/cited/20260925-031753_fichas_bge_m3_vector`](../../data/retrieval/cited/20260925-031753_fichas_bge_m3_vector/report.md)):
+
+```
+$ python scripts/run_retrieval_eval.py --name fichas_bge_m3_vector --mode vector
+  protocolo certo em 1º : 0.8788
+  MRR                   : 0.9315
+  acima do limiar       : 0.2576
+  1º lugar mais comum   : urethral_obstruction (3/66)
+```
+
+O "acima do limiar" (0,70) de 26% é o motivo de não haver porta: com o bge-m3
+nas fichas, três quartos das fichas certas ficam abaixo de 0,70 e mesmo assim
+estão em 1º.
+
+**Suíte:** backend 242 → **262** (20 novos: receitas, perfil de fichas numa
+coleção Chroma real, modo vetorial, padrões novos, `/search` com modo);
+scripts 209.
 
 ## O que mudou no repositório
 
-_(preenchido ao fechar a rodada)_
+| Arquivo | Mudança |
+|---|---|
+| `backend/app/database/embedding_config.py` | `EmbeddingRecipe`, `RECIPES`, `PROFILE_RECIPES`, `recipe_for`, `recipe_for_profile`, `recipe_from_manifest`; as constantes antigas continuam sendo a receita acadêmica |
+| `backend/app/database/chroma_client.py` | uma função de embedding por receita; `get_collection()` lê o manifesto antes de abrir; integridade conferida contra a receita do manifesto; `create_staging_collection(..., recipe=)`; `active_recipe()` |
+| `backend/app/database/ingest_documents.py` | perfil `fichas`: `prepare_fichas_ingestion`, `stage_fichas`, manifesto com `recipe_key`; `recipe_key` também no manifesto acadêmico |
+| `scripts/run_ingestion_cycle.py` | `fichas` nas opções |
+| `backend/app/core/config.py`, `backend/app/constants/pipeline.py` | `CHROMA_PATH = "chroma_db"`, `RETRIEVAL_MODE = "vector"`, corte padrão 0,0 (`ACADEMIC_CONTEXT_MIN_SCORE = 0.72`), tradutor desligado |
+| `backend/app/schemas/triage.py`, `backend/app/pipeline/config_resolver.py` | `retrieval_mode` nas opções e na configuração efetiva |
+| `backend/app/pipeline/chat_pipeline.py` | `_retrieve` em modo `vector`: sem rota, sem reranker, ordem por similaridade |
+| `backend/app/schemas/search.py`, `backend/app/services/search_service.py`, `backend/app/api/search.py` | `/search` com `mode` |
+| `backend/app/services/fingerprint_service.py` | receita, modelo e revisão lidos do manifesto ativo; `retrieval_mode` e as três flags do tradutor nos padrões |
+| `scripts/run_retrieval_eval.py`, `scripts/run_evaluation.py` | `--mode`; `retrieval_mode` nas opções válidas |
+| `scripts/presets.json` | `fichas_com_porta_0_72`; os presets antigos com modo e corte explícitos |
+| `docker-compose.yml` | volume `hf_cache` e `HF_HOME` |
+| `backend/chroma_db/` | a coleção das fichas, o manifesto, o recibo e o **ponteiro ativo** |
+| `backend/tests/` | `test_embedding_config.py` e `test_fichas_ingestion.py` (novos); `test_chat_pipeline.py`, `test_api_search.py`, `test_config_resolver.py`, `test_api_chat.py`, `conftest.py` |
+| `data/retrieval/cited/20260925-031753_fichas_bge_m3_vector/` | a rodada da régua em modo `vector` |
+
+Commits: `67e666a` (abre a rodada: receitas e perfil, trilho A), `a00ff88`
+(modo vetorial e padrões, trilhos A e B1), `cd15c3d` (a coleção versionada) e
+este.
 
 ## Observações
 
-_(preenchido ao fechar a rodada)_
+**1. Abrir o Chroma versionado altera os arquivos versionados**
+([B-73](../backlog.md#b-73)). Num clone limpo, a primeira consulta muda o
+`chroma.sqlite3` (e, na coleção nova, o `length.bin` do índice), sem mudar o
+conteúdo da coleção. Não é desta rodada: em `2d37a5e`, consultar a coleção
+acadêmica faz o mesmo. Quem roda o backend e dá `git add -A` commita um banco
+alterado sem querer.
+
+**2. O `chroma.sqlite3` versionado cresce de 72,5 para 73,0 MB.** É mais uma
+versão do arquivo binário no histórico do Git. Alternativa, se o time
+preferir: não versionar a coleção e gerá-la na subida do backend a partir do
+`fichas.json` (61 fichas, ~1,5 min de CPU). Fica para decisão.
+
+**3. O `atomic_write_json` grava CRLF no Windows** (manifesto, recibo e
+ponteiro saíram assim). Normalizados para LF, como os manifestos antigos;
+anotado no [B-71](../backlog.md#b-71).
+
+**4. O Ollama desta máquina é o 0.34.4** (o registro da autópsia fala em
+0.34.3). Não afeta a busca; entra na conferência da réplica do atendente
+(rodadas 25 e 26), na ordem de depuração do plano.
+
+**5. O veto de espécie saiu do caminho padrão junto com o reranker.** Um relato
+de cachorro pode trazer uma ficha só de gato entre as 3 (ex.: permetrina em
+gato). É o que a autópsia mediu, e a ficha de leitura diz a espécie; fica
+anotado para a ablação.
 
 ## Deixado para depois
 
-_(preenchido ao fechar a rodada)_
+- **Decidir se a coleção fica versionada** ou é gerada na subida
+  ([B-73](../backlog.md#b-73)).
+- **A régua nas fichas como instrumento oficial**, com linha de base citada e
+  `--recall-k 3` (a rodada citada aqui mede o 1º lugar e o MRR).
+- **O `benchmark_retrieval_variants.py`** ainda abre a coleção com a função de
+  embedding padrão (a acadêmica); precisa ler a receita do manifesto antes de
+  ser usado nas fichas.
 
 ## Próximo passo
 
-_(preenchido ao fechar a rodada)_
+A [rodada 25](2026-09-25-26-resposta-com-ficha-e-fonte.md): a resposta cita a
+ficha e o documento com o título real, o corte de 4.000 caracteres para de
+listar como fonte o que o modelo não viu, e a procedência vai na resposta.
