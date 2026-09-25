@@ -63,20 +63,81 @@ _Escrito antes de rodar._
 
 ## Resultado obtido
 
-_(preenchido ao fechar a rodada)_
+**Tudo como esperado.**
+
+| Checagem | Resultado |
+|---|---|
+| `pytest backend/tests` (com `DEBUG=true`) | **242 passaram** |
+| `pytest scripts/tests` | **197 passaram** |
+| `sync_retrieval_terms.py --check` | limpo (depois do checkout com LF; ver Observações) |
+| `compileall backend/app scripts` | limpo |
+| Relatos independentes: CSV × JSON da autópsia | 122 de 122 iguais (id, texto, classe, tópico) |
+| Piloto da prova 2: CSV × JSON da autópsia | 40 de 40 iguais |
+| Prova 1, calibração, régua e mapa × cópia da autópsia | iguais byte a byte (sha256 `448f6d3b…`, `36978e48…`, `bd0f8f93…`, `440630fd…`) |
+| Lote `teste` | 100 casos: 52 emergências, 46 leves, 2 incertos |
+
+O congelamento:
+
+```
+$ python scripts/prova_freeze.py --cases data/prova/casos_oficiais.csv --split teste --freeze
+Congelado: 100 linhas, sha256=d370a0a51d5974d124a9dbd3139710a73db3dbca1bf2185b8e6dce868fa18781
+$ python scripts/prova_freeze.py --cases data/prova/casos_oficiais.csv --split teste
+OK: 100 linhas batem com o congelamento de 2026-09-25T02:27:20.653066-03:00 (sha256=d370a0a5…8781).
+```
+
+Como os lotes são os mesmos, **os números das rodadas 14 a 21 são o alvo da
+réplica** nas rodadas seguintes, sem ressalva de dado.
 
 ## O que mudou no repositório
 
-_(preenchido ao fechar a rodada)_
+| Arquivo | Mudança |
+|---|---|
+| `data/prova/casos_oficiais.teste.freeze.json` | **novo**: o manifesto do congelamento (100 linhas, sha256, data) |
+| `data/prova/README.md` | seção "O lote `teste` congelado (25/09)": hash, comando de conferência, ressalva do B-05, contador de uso (0); nota no "Próximo passo" original, sem apagar o texto do Ryu |
+| esta evidência, `evidencias/joao/README.md` | a rodada 22 |
+| `evidencias/backlog.md` | [B-71](../backlog.md#b-71) |
+
+Commits: `9c9f92f` (abre a rodada, com o esperado), `cba543a` (o
+congelamento, trilho B1) e este. Testes: 242 / 197 antes e depois.
 
 ## Observações
 
-_(preenchido ao fechar a rodada)_
+**1. O `--check` do vocabulário falha num clone limpo no Windows**
+([B-71](../backlog.md#b-71)). O Git no Windows, com `core.autocrlf=true`,
+grava os arquivos com CRLF na pasta de trabalho. O
+`sync_retrieval_terms.py` calcula o `source_sha256` sobre os bytes do mapa,
+então o hash do mapa com CRLF não bate com o gerado no CI (LF), e o check
+diz "desatualizado" sem nada ter mudado. No clone desta rodada o checkout foi
+refeito com LF (`core.autocrlf=false`), como no CI. O mesmo cuidado vale para
+qualquer hash de arquivo que as rodadas seguintes criarem: o
+`sync_fichas.py` da rodada 23 normaliza as quebras de linha antes do hash.
+
+**2. O manifesto guarda o caminho com barra invertida no Windows.** O
+`prova_freeze.py` grava `str(Path)`; o campo `cases_file` foi reescrito com
+barra normal. O campo é só informativo (a conferência recalcula o caminho do
+manifesto a partir de `--cases`). Vai junto no B-71.
+
+**3. O lote teste nunca foi usado, e agora está protegido.** O runner de mapa
+(`run_map_triage_eval.py`) já confere o hash quando roda com `--split teste`;
+o `run_evaluation.py` passa a conferir também quando ganhar o `--cases`
+(rodada 25).
 
 ## Deixado para depois
 
-_(preenchido ao fechar a rodada)_
+- **Normalizar as quebras de linha nos hashes de arquivo** do
+  `sync_retrieval_terms.py` e gravar caminhos com barra normal no
+  `prova_freeze.py` ([B-71](../backlog.md#b-71)). Não foi feito aqui porque
+  são arquivos de outros trilhos e o CI (Linux) não é afetado.
+- **Usar o lote teste** só uma vez, pela configuração final — ou não usar, se
+  a prova 2 substituir a prova 1 como instrumento final
+  ([B-63](../backlog.md#b-63)).
 
 ## Próximo passo
 
-_(preenchido ao fechar a rodada)_
+A [rodada 23](2026-09-25-24-fichas-de-busca-e-de-leitura.md): o script que
+gera, a partir do mapa e dos rascunhos versionados, o arquivo de fichas que o
+backend lê.
+
+```
+python scripts/sync_fichas.py && python scripts/sync_fichas.py --check
+```

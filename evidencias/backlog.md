@@ -118,6 +118,7 @@ aqui.
 | [B-68](#b-68) | Uma lista de sinais de alarme gerais, escrita e validada pelos especialistas | A definir | Baixa | Aberto |
 | [B-69](#b-69) | Tradutor só quando a busca estiver insegura (ideia não testada) | A definir | Baixa | Aberto |
 | [B-70](#b-70) | Self-Refine como checagem de que o contexto é do assunto do relato | A definir | Baixa | Em espera — CoT e Self-Refine voltam depois do RAG consolidado |
+| [B-71](#b-71) | Checagens por hash de arquivo falham num clone no Windows (CRLF) | A definir | Baixa | Aberto |
 
 ---
 
@@ -2715,6 +2716,30 @@ errado; um que confere o contexto trata o certo.
 problema do relato? a justificativa só usa sinais do relato?", medida como braço
 na prova 2. Critério: menos INCERTO por contexto errado, sem subir as
 emergências perdidas.
+
+### B-71
+
+**Checagens por hash de arquivo falham num clone no Windows (CRLF)**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 22](joao/2026-09-25-23-preparacao-da-implementacao.md), 25/09 · **Responsável:** A definir · **Prioridade:** Baixa · **Status:** Aberto
+
+**O que observamos.** Num clone limpo no Windows, com `core.autocrlf=true` (o
+padrão do Git para Windows), o `python scripts/sync_retrieval_terms.py --check`
+falha dizendo que `backend/data/retrieval_terms.json` está desatualizado sem nada
+ter mudado: o `source_sha256` é calculado sobre os bytes do mapa, e na pasta de
+trabalho o mapa está com CRLF. No CI (Linux, LF) passa. Na mesma linha, o
+`prova_freeze.py` grava `cases_file` com barra invertida quando roda no Windows.
+
+**Por que importa.** Quem roda a suíte do CI no Windows vê uma falha falsa e pode
+"consertar" regenerando o arquivo, o que grava um hash que o CI recusa.
+
+**O que resolveria.** Normalizar `
+` → `
+` antes do hash no
+`sync_retrieval_terms.py` (o `sync_fichas.py` da rodada 23 já faz isso) e gravar
+caminhos com `as_posix()` no `prova_freeze.py`; ou um `.gitattributes` com
+`* text=auto eol=lf` para os arquivos de dados. Critério: o `--check` passa num
+clone limpo no Windows e no CI, sem regenerar nada.
 
 ---
 

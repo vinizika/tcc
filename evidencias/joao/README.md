@@ -38,6 +38,7 @@ Self-Refine, e a régua de avaliação do sistema (runner de métricas).
 | 19 | 24/09 | [Fichas em duas camadas](2026-09-24-20-fichas-em-duas-camadas.md) | A IA escreve as fichas com a origem de cada frase (99,8% dos trechos conferem). A ficha escrita pela IA **busca** melhor (independentes: 52 → 61% em 1º), mas **ler** ela piora o qwen (13 perdas; vira checklist). Busca na ficha da IA, leitura na do mapa: 5 · 7. O critério pré-registrado falhou, e está dito |
 | 20 | 24/09 | [Prova 2: desenho e piloto](2026-09-24-21-prova-2-desenho-e-piloto.md) | A prova 1 entrega a classe pelas palavras (79% sem assunto em comum) e só vê diferenças grandes. Especificação dos 330 relatos. O piloto de 40 passou: é **mais difícil** que a prova 1 e reproduz os efeitos dos relatos independentes |
 | 21 | 24/09 | [O sistema proposto contra o de hoje](2026-09-24-22-arquitetura-proposta-contra-a-de-hoje.md) | Nos relatos de quem não viu o mapa: **40 · 22 → 6 · 3** (35 × 1, p < 0,0001); tom 46 → 3. Na prova + régua, 15 · 4 → 2 · 1 — mas contra o sistema de hoje com o tradutor, 8 × 2 (p = 0,11): o limite da prova 1. A implementação e a réplica pelo runner são as rodadas seguintes |
+| 22 | 25/09 | [Preparação da implementação](2026-09-25-23-preparacao-da-implementacao.md) | Ponto de partida conferido: clone de `2d37a5e`, suíte do CI verde (242 / 197) e os lotes iguais aos da autópsia. **O lote teste da prova 1 está congelado** (100 casos, `d370a0a5…`), com a ressalva do B-05 e um contador de uso (0) |
 
 ## Estado atual
 
