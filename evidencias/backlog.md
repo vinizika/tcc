@@ -106,6 +106,18 @@ aqui.
 | [B-57](#b-57) | O snapshot versionado do ChromaDB não é o caminho que o backend real lê | Trilho A | Alta | Aberto |
 | [B-52](#b-52) | Fonte de terceiro versionada em repositório público | Time | Alta | Aberto |
 | [B-58](#b-58) | A tag `tcc-backend:latest` local pode estar desatualizada e derrubar o backend num restart | Time | Média | Aberto |
+| [B-59](#b-59) | Fim de linha CRLF no Windows quebra os hashes das fontes `.txt` e `.csv` | A definir | Média | Aberto |
+| [B-60](#b-60) | Os runners contam INCERTO de jeitos diferentes: falta uma semântica só de métrica | A definir | Média | Aberto |
+| [B-61](#b-61) | Validação clínica das fichas de leitura e de busca | A definir | Alta | Aberto |
+| [B-62](#b-62) | Fonte escrita para tutor nos quadros em que o documento não descreve o que o tutor vê | A definir | Média | Aberto |
+| [B-63](#b-63) | Prova 2: da geração ao congelamento | A definir | Alta | Aberto |
+| [B-64](#b-64) | LGPD com o Gemini como atendente padrão: o relato do tutor sai da máquina | A definir | Média | Aberto |
+| [B-65](#b-65) | Latência na demonstração: a cauda do Gemini e o qwen sem placa de vídeo | A definir | Média | Aberto |
+| [B-66](#b-66) | Ablação final na arquitetura da autópsia 2 | A definir | Média | Aberto |
+| [B-67](#b-67) | A régua de recuperação nas fichas como instrumento oficial | A definir | Média | Aberto |
+| [B-68](#b-68) | Uma lista de sinais de alarme gerais, escrita e validada pelos especialistas | A definir | Baixa | Aberto |
+| [B-69](#b-69) | Tradutor só quando a busca estiver insegura (ideia não testada) | A definir | Baixa | Aberto |
+| [B-70](#b-70) | Self-Refine como checagem de que o contexto é do assunto do relato | A definir | Baixa | Em espera — CoT e Self-Refine voltam depois do RAG consolidado |
 
 ---
 
@@ -141,6 +153,18 @@ condições leves ([B-03](#b-03)), e ordenação que separe assunto
 superar o `llm_only` em acurácia balanceada **e** em falsos não urgentes,
 sobre os 98 relatos.
 
+**Atualização 25/09 — a autópsia 2 mediu o mecanismo e uma saída.** Com a base
+de 3.481 trechos, o RAG continua sem ajudar (conserta 2 e quebra 8 em 232 casos
+pareados, p = 0,11) e 116 de 122 relatos de quem não viu o mapa chegam ao
+atendente sem trecho nenhum ([rodada 14](joao/2026-09-23-15-autopsia-do-sistema-de-hoje.md)).
+Mesmo com o trecho acadêmico certo, o llama perde 16 de 74 emergências (sem
+nada, 14); com a ficha de triagem certa, 0 ([rodada 15](joao/2026-09-23-16-fichas-no-lugar-dos-artigos.md)).
+Com a arquitetura proposta — fichas em duas camadas, bge-m3, as 3 mais próximas
+—, o RAG passa a ajudar: nos relatos de quem não viu o mapa, o qwen vai de 21
+para 5 emergências perdidas (16 × 0, p < 0,0001;
+[rodada 17](joao/2026-09-24-18-tradutor-desligado.md)). O item se resolve quando
+a implementação reproduzir isso pelo runner.
+
 ### B-02
 
 **Ordenação da busca não separa assunto**
@@ -166,6 +190,14 @@ documentos, prefixo de título/tema/espécie em cada chunk e re-ranking real.
 Critério: documento correto em primeiro nos três casos de referência
 (chocolate, obstrução urinária, e nenhum protocolo de emergência para o
 espirro leve).
+
+**Atualização 25/09 — o problema era o embedding e o conteúdo.** Nas fichas, o
+MiniLM põe a ficha certa em 1º em ~20% dos casos; o bge-m3, em ~80% (prova +
+régua) e ~50–60% (relatos independentes), com a certa entre as 3 primeiras em
+93–95% e 76–77% ([rodada 16](joao/2026-09-24-17-busca-bge-m3-e-tres-fichas.md)).
+A arquitetura nova manda as 3 mais próximas ao atendente, o que torna o 1º
+lugar menos decisivo. Re-ranking por cross-encoder não foi testado; o que ele
+poderia melhorar é o "entre as 3" dos relatos independentes (77%).
 
 ### B-03
 
@@ -194,6 +226,13 @@ para quadro sem fonte utilizável. O critério acima continua valendo, e o
 [mapa de assuntos](#b-50) é o instrumento que diz quando ele foi cumprido: a
 coluna de status mostra, quadro a quadro, o que já tem documento. Plano
 completo em [`docs/plano-base-e-prova.md`](../docs/plano-base-e-prova.md).
+
+**Atualização 25/09 — a base passa a ser de fichas.** A arquitetura da autópsia
+2 troca os trechos acadêmicos no prompt por 61 fichas de triagem, uma por quadro
+do mapa, em duas camadas (busca e leitura); os documentos aprovados ficam por
+trás das fichas, como fonte citada ([rodadas 15](joao/2026-09-23-16-fichas-no-lugar-dos-artigos.md)
+e [19](joao/2026-09-24-20-fichas-em-duas-camadas.md)). O que falta de conteúdo
+clínico está no [B-61](#b-61) e no [B-62](#b-62).
 
 ### B-04
 
@@ -281,6 +320,13 @@ entre quem escreve a base e quem escreve a prova, agora aplicada a
 o uso do conjunto, mas deveria ser considerado antes de citar este número
 como definitivo no artigo.
 
+**Atualização 25/09 — a prova de 150 casos também, e a prova 2 foi desenhada.**
+Na prova do B1, um Naive Bayes só com palavras acerta 0,91 com divisão aleatória
+e 0,79 com divisão por assunto; "tem 'mas' ⇒ leve" acerta 0,77; há 3 casos de
+emergência contada com calma. A especificação da prova 2 e o piloto estão na
+[rodada 20](joao/2026-09-24-21-prova-2-desenho-e-piloto.md); o trabalho que falta,
+no [B-63](#b-63).
+
 ### B-06
 
 **Falsos não urgentes subiram de 3 para 8 com o prompt novo**
@@ -332,6 +378,12 @@ quase certamente foi medido com GPU disponível (o time tem rodadas citando
 `native_gpu_reranker`). Falta repetir a medição num ambiente com GPU para
 fechar o item.
 
+**Atualização 25/09 — medido na GPU.** Na RTX 4060, nos 98 casos antigos, a
+etapa de consulta local (reescrita e multi-query, sem HyDE) leva 0,92 s de
+mediana, abaixo do critério de 1,5 s ([rodada 14](joao/2026-09-23-15-autopsia-do-sistema-de-hoje.md)).
+Na arquitetura da autópsia 2 a etapa fica desligada por padrão
+([rodada 17](joao/2026-09-24-18-tradutor-desligado.md)).
+
 ### B-08
 
 **Reescrita de consulta adiciona julgamento clínico**
@@ -365,6 +417,12 @@ lugar. Isso garante o critério por construção (zero inserções), não só
 por prompt. 2 testes novos em `test_query_client.py` travam o
 comportamento (descarta quando o termo é injetado; mantém quando o termo
 já vinha do tutor). Testes: 205 → 207.
+
+**Atualização 25/09 — a trava vigia a peça certa só em parte.** A urgência
+inserida na reescrita ficou em 0–2%; no HyDE ela é de 25% a 64% das saídas
+(llama e Gemini), e o multi-query de 6% a 12% — os dois sem trava. A reescrita
+do llama inventa ou distorce sinais em 54% dos casos; a do Gemini é fiel
+([rodada 17](joao/2026-09-24-18-tradutor-desligado.md)).
 
 ### B-09
 
@@ -412,6 +470,12 @@ Gemini falhar (sem chave, limite atingido), o HyDE **não cai para o
 Ollama** — a consulta segue sem documento hipotético nesta chamada, para
 não reintroduzir em silêncio o problema que esta ficha descreve.
 
+**Atualização 25/09 — medido com os dois geradores.** O HyDE nomeia um
+diagnóstico em 86% das saídas com o llama e em 90% com o Gemini, fala de conduta
+em ~100% e insere urgência em 25–64%. Nas fichas, piora a busca (0,81 → 0,64 no
+1º lugar). Na arquitetura da autópsia 2 fica desligado por padrão, como braço
+da ablação ([rodada 17](joao/2026-09-24-18-tradutor-desligado.md)).
+
 ### B-10
 
 **Consulta reescrita não vai ao índice com multi-query ligado**
@@ -458,6 +522,14 @@ de que faltavam documentos, quando o provável era a base vazia
 
 **O que resolveria.** Medir por posição (Precision@1, MRR) na régua de
 recuperação, não por score absoluto; rever o limiar só depois do re-ranking.
+
+**Atualização 25/09 — o limiar sai do caminho padrão.** Na base de 3.481 trechos,
+nenhum trecho passa de 0,72 por mérito (máximo 0,709); 15 dos 18 casos da régua
+com contexto entram pelo piso de 0,721. Com bge-m3 e fichas, a porta vira uma
+"porta de confiança" que vai bem na prova e barra a ficha certa nos relatos
+independentes; as 3 fichas mais próximas sem porta ganham por 15 × 1
+([rodada 16](joao/2026-09-24-17-busca-bge-m3-e-tres-fichas.md)). A porta fica como
+braço da ablação.
 
 ### B-12
 
@@ -546,6 +618,11 @@ de ser o caminho: o conjunto novo já nasce na língua certa. O que permanece é
 **Dono proposto: trilho B1**, junto com a prova. Troca de dono é acordo entre
 os dois (regra 3 deste arquivo) — a confirmar com o Ryu.
 
+**Atualização 25/09.** Na arquitetura da autópsia 2 a língua da base é a do tutor:
+fichas em português. Com o mesmo conteúdo em inglês, a busca perde de 6 a 25
+pontos no 1º lugar e o qwen passa de 6 para 10 emergências perdidas
+([rodada 15](joao/2026-09-23-16-fichas-no-lugar-dos-artigos.md)).
+
 ### B-16
 
 **Rótulo do data augmentation não descreve o método real**
@@ -581,6 +658,11 @@ trechos de contexto devolverá 3 em silêncio.
 
 **O que resolveria.** Combinar qual dos dois manda, e documentar em
 `CONTRATOS.md`.
+
+**Atualização 25/09.** No caminho padrão da arquitetura da autópsia 2 (busca
+vetorial pura, as 3 mais próximas), o reranker sai do caminho e a sobreposição
+deixa de importar; ela continua valendo no modo com roteador e reranker, que
+fica como opção ([rodada 16](joao/2026-09-24-17-busca-bge-m3-e-tres-fichas.md)).
 
 ### B-18
 
@@ -1635,6 +1717,12 @@ mas muda o tempo das rodadas e exige espaço em disco.
 
 ---
 
+**Atualização 25/09.** O CoT (checklist, `first`) piora o llama e o qwen também
+com fichas (no llama, 17 de 24 leves e 4 de 25 emergências viram INCERTO no
+dev). Não rodou com o Gemini. Fica adiado por decisão do João, para depois do
+RAG consolidado, e deve ser medido só no atendente escolhido e na configuração
+final ([rodada 18](joao/2026-09-24-19-atendente-llama-qwen-gemini.md)).
+
 ### B-43
 
 **A etapa de decisão não é reproduzível entre sessões**
@@ -1709,6 +1797,15 @@ a linha de base e o Chain-of-Thought: material direto para a seção de
 resultados, com os dados já em `data/evaluation/cited/`.
 
 ---
+
+**Atualização 25/09 — quatro divergências novas, com o porquê.** Base de
+protocolos → fichas de triagem em duas camadas
+([rodadas 15](joao/2026-09-23-16-fichas-no-lugar-dos-artigos.md) e
+[19](joao/2026-09-24-20-fichas-em-duas-camadas.md)); modelo local → Gemini como
+padrão, com o local como opção ([rodada 18](joao/2026-09-24-19-atendente-llama-qwen-gemini.md));
+reescrita, multi-query e HyDE → desligados por padrão
+([rodada 17](joao/2026-09-24-18-tradutor-desligado.md)); MiniLM → bge-m3
+([rodada 16](joao/2026-09-24-17-busca-bge-m3-e-tres-fichas.md)).
 
 ### B-45
 
@@ -1978,6 +2075,12 @@ lá, quem valida é o script de captura.
 
 ---
 
+**Atualização 25/09 — o que a autópsia 2 pede do mapa.** O mapa vira a ficha de
+leitura: o que o atendente lê. As 60 células da etapa 2 continuam vazias; os
+rascunhos estão na folha de certificação; 11 linhas têm, no `motivo`, notas
+internas que chegam ao atendente; 5 linhas têm conflito com o documento. Tudo
+isso está no [B-61](#b-61).
+
 ### B-51
 
 **O ciclo de ingestão não é um comando só, e a régua não diz o que mudou entre duas rodadas**
@@ -2080,6 +2183,10 @@ valendo como lembrete a cada fonte nova. Se o deploy previsto para
 outubro/novembro expuser as fontes ao usuário final, o assunto volta.
 
 ---
+
+**Atualização 25/09.** O João decidiu tornar o repositório privado quando o
+orientador liberar. Com isso, as fontes escritas para tutor que ficaram fora da
+ingestão por licença podem voltar ([B-62](#b-62)).
 
 ### B-53
 
@@ -2297,6 +2404,13 @@ incompatíveis entre si e a escolha errada reintroduz o problema na próxima
 ingestão. Critério: um clone limpo, sem passos manuais, sobe com as
 coleções candidatas visíveis em `ChromaDBClient.get_client().list_collections()`.
 
+**Atualização 25/09.** Confirmado na autópsia 2: num clone limpo, seguindo o
+README, nenhum número com RAG se reproduz sem passos manuais
+([rodada 14](joao/2026-09-23-15-autopsia-do-sistema-de-hoje.md)). O plano de
+implementação da autópsia 2 prevê versionar a coleção de fichas e apontar o
+`CHROMA_PATH` para o caminho versionado; o item fecha quando um clone limpo
+subir com a coleção visível, como o critério pede.
+
 ### B-58
 
 **A tag `tcc-backend:latest` local pode estar desatualizada e derrubar o backend num restart**
@@ -2329,6 +2443,278 @@ configurar o compose para sempre reconstruir (`docker compose up --build`)
 como o comando padrão documentado, em vez de assumir que a tag local está
 em dia. Critério: um `docker compose restart backend` ou `--force-recreate`
 nunca deveria conseguir subir um container com dependência faltando.
+
+### B-59
+
+**Fim de linha CRLF no Windows quebra os hashes das fontes `.txt` e `.csv`**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 14](joao/2026-09-23-15-autopsia-do-sistema-de-hoje.md), 23/09 · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** O Git no Windows converte `.txt` e `.csv` para CRLF no
+checkout, e o `.gitattributes` só protege os PDFs. Os hashes das fontes são
+calculados sobre os bytes crus. Numa máquina Windows, 10 fontes `.txt` falham na
+verificação de hash, o `sync_retrieval_terms.py --check` falha (e passa no Linux)
+e o conjunto de fontes sai diferente do de uma máquina Linux.
+
+**Por que importa.** A verificação de consenso entre as máquinas do time falha
+se alguém usar Windows, e um hash divergente parece corrupção de fonte.
+
+**O que resolveria.** `*.txt -text` e `*.csv -text` no `.gitattributes`, com um
+`git add --renormalize`. Critério: num clone limpo no Windows, os 10 hashes
+conferem e o `sync_retrieval_terms.py --check` passa.
+
+### B-60
+
+**Os runners contam INCERTO de jeitos diferentes: falta uma semântica só de métrica**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 14](joao/2026-09-23-15-autopsia-do-sistema-de-hoje.md), 23/09 · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** O `run_map_triage_eval.py` (prova) e o `run_evaluation.py`
+(B2) tratam o INCERTO dado a uma emergência de formas diferentes; o primeiro
+fixa o tradutor desligado nos dois modos e não confere o hash da base. A
+autópsia usou uma regra só nas rodadas 14 a 21: **emergência perdida =
+emergência respondida como NAO_EMERGENCIA ou INCERTO**.
+
+**Por que importa.** A ablação final compara braços medidos por runners
+diferentes. Com duas semânticas, a mesma resposta vira acerto num e perda
+noutro.
+
+**O que resolveria.** Uma função de métrica única, usada pelos dois runners (ou
+um runner só), com "emergências perdidas" incluindo INCERTO e o `compare`
+capaz de comparar por ela. Critério: as mesmas previsões dão os mesmos números
+nos dois caminhos.
+
+### B-61
+
+**Validação clínica das fichas de leitura e de busca**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 15](joao/2026-09-23-16-fichas-no-lugar-dos-artigos.md) e [rodada 19](joao/2026-09-24-20-fichas-em-duas-camadas.md), 24/09 · **Responsável:** A definir · **Prioridade:** Alta · **Status:** Aberto
+
+**O que observamos.** A arquitetura da autópsia 2 faz o atendente ler a **ficha
+de leitura** (a ficha curta do mapa) e a busca procurar na **ficha de busca**
+(escrita por IA, com a origem de cada frase). Faltam quatro coisas, todas de
+conteúdo clínico:
+1. **As 60 células vazias da etapa 2** no mapa (sinais que o tutor relata e
+   discriminador, 30 linhas). Os rascunhos estão na folha
+   `data/curadoria/fichas/CERTIFICACAO.md` (274 itens de documento e 48 `geral`
+   na etapa 2, ~2 horas).
+2. **Os 5 conflitos entre o mapa e o documento** que os autores anotaram:
+   convulsão (2 min no mapa × 5 min no documento), piometra (1 mês × 2 a 4 meses
+   depois do cio), conjuntivite, cistite, obstrução uretral.
+3. **As notas internas de curadoria** que o "Por que importa" mostra ao
+   atendente em 11 fichas de leitura ("Caso b14", "não encontrei artigo
+   primário, só um TCC", "a exposição pede reforço vacinal").
+4. **Os itens `geral`** das fichas de busca (53), que não têm documento por trás.
+
+**Por que importa.** A ficha de leitura é o que o atendente lê e o que a
+resposta cita: é conteúdo clínico, e hoje parte dele não passou por ninguém com
+formação. O erro numa ficha de busca custa menos (troca uma das 3 fichas
+trazidas), mas também precisa de revisão.
+
+**O que resolveria.** A folha de certificação respondida por veterinários
+(aceito / recuso / corrijo, item a item), as colunas da etapa 2 preenchidas no
+mapa e o "Por que importa" das 11 fichas reescrito. **Cada mudança de texto de
+ficha de leitura é uma rodada medida**, porque o número do sistema depende desse
+texto. Critério: nenhuma ficha de leitura com texto não validado e a rodada
+depois da mudança dentro do ruído (ou melhor) na régua do momento.
+
+### B-62
+
+**Fonte escrita para tutor nos quadros em que o documento não descreve o que o tutor vê**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 15](joao/2026-09-23-16-fichas-no-lugar-dos-artigos.md), 24/09 · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** Na etapa 2, os documentos aprovados dão apoio suficiente
+para uma ficha em 7 quadros, parcial em 15 e **insuficiente em 8**: ferida de
+briga de gato, insuficiência cardíaca descompensada, ofegação após exercício,
+ferida pequena, parto normal, bebe e urina mais, mordida de morcego, caroço de
+crescimento lento. São artigos de pesquisa sobre outra coisa (o de parto normal
+é um estudo de monitoração fetal) ou, na insuficiência cardíaca, só exame
+clínico. É nesses quadros que as fichas de busca concentram os itens `geral`.
+
+**Por que importa.** Sem uma fonte que descreva o que o tutor vê, o item vira
+conhecimento geral, que só o especialista pode validar, e a citação ao tutor
+aponta para um documento que não fala do caso.
+
+**O que resolveria.** Uma fonte feita para tutor por quadro (página de
+orientação de hospital-escola, manual veterinário na versão para tutores),
+capturada pelo `capturar_fonte.py` e validada pelos especialistas; a ficha cita
+a fonte, sem indexar o texto inteiro. Com o repositório privado
+([B-52](#b-52)), as fontes para tutor que ficaram de fora por licença podem
+voltar. Critério: os 8 quadros com ao menos uma fonte validada que descreva os
+sinais em casa.
+
+### B-63
+
+**Prova 2: da geração ao congelamento**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 20](joao/2026-09-24-21-prova-2-desenho-e-piloto.md), 24/09 · **Responsável:** A definir · **Prioridade:** Alta · **Status:** Aberto
+
+**O que observamos.** A prova 1 carrega a classe nas palavras (Naive Bayes 0,79
+mesmo sem assunto em comum; "mas" ⇒ leve acerta 0,77), foi escrita com o
+vocabulário do mapa (a busca cai de ~0,8 para ~0,5 com autores que não o viram)
+e tem 74 emergências somando dev, calibração e régua (0 perdas é compatível com
+até 4% de erro real). Na prova 1 a porta de confiança empata com as 3 fichas; nos
+relatos de quem não viu o mapa, perde por 15 × 1.
+
+**Por que importa.** O número final do TCC não pode sair da prova 1. Sem a
+prova 2, qualquer resultado com fichas é otimista, e não há poder para comparar
+atendentes bons entre si.
+
+**O que resolveria.** A prova 2 como especificada na rodada 20: 330 relatos (190
+emergências, 115 não emergências, 25 especiais), escritos por agentes de IA
+isolados (sem acesso ao mapa, às fichas e à prova 1), com as correções do piloto;
+conferência completa; planilha cega para os veterinários validarem os rótulos;
+divisão por assunto (66 de calibração, 264 de teste); congelamento por hash
+antes da primeira rodada; README com a autoria e a validação. Critério: o
+arquivo congelado, com 100% dos rótulos validados, e o vazamento conferido
+(Naive Bayes entre lotes perto do acaso).
+
+### B-64
+
+**LGPD com o Gemini como atendente padrão: o relato do tutor sai da máquina**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 18](joao/2026-09-24-19-atendente-llama-qwen-gemini.md), 24–25/09 · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** Com o Gemini como atendente padrão (decisão do João, 25/09),
+todo relato vai para a API do Google. Na conta gratuita, os termos permitem que
+o Google use o conteúdo para melhorar os modelos. O README ainda diz que o
+sistema roda na máquina.
+
+**Por que importa.** O relato pode trazer dado pessoal (nome, telefone, endereço)
+e é dado de saúde animal ligado a uma pessoa. O TCC1 prometia modelo local.
+
+**O que resolveria.** Aviso claro ao tutor antes do envio; nada de dado pessoal
+no texto; uma opção "só local" (o qwen) documentada; o relato fora do
+`logger.info`; o README corrigido; e, se possível, a conta paga (onde o conteúdo
+não é usado para treinar). Critério: o fluxo com o Gemini só envia o relato
+depois do aviso, e o modo local funciona sem rede.
+
+### B-65
+
+**Latência na demonstração: a cauda do Gemini e o qwen sem placa de vídeo**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 18](joao/2026-09-24-19-atendente-llama-qwen-gemini.md), 24/09 · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** O Gemini responde em 1,1 s na mediana, mas 1 em cada 100
+chamadas passou de 20 s, e a pior, em 2.163 chamadas, levou 190 s; na conta
+gratuita há horas de sobrecarga (503) em que cada nova tentativa custa de
+segundos a minutos, e as recusas contam na cota diária. O qwen é estável na GPU
+(2,6 s) e leva **34 s por caso** só no processador.
+
+**Por que importa.** Numa apresentação ao vivo, uma chamada de 20 s parece
+falha; e a alternativa local só existe onde houver placa de vídeo.
+
+**O que resolveria.** Um tempo limite por chamada com mensagem clara ao tutor
+(sem troca silenciosa de modelo); a máquina da demonstração com GPU e o qwen
+aquecido como alternativa declarada; a latência medida na máquina da
+demonstração. Critério: 99% das respostas abaixo de 5 s na demonstração, ou a
+mensagem de indisponibilidade antes disso.
+
+### B-66
+
+**Ablação final na arquitetura da autópsia 2**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 21](joao/2026-09-24-22-arquitetura-proposta-contra-a-de-hoje.md), 24/09 · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** A autópsia mediu os braços com um executor próprio, nos
+lotes de desenvolvimento e nos relatos independentes. Faltam: a medição na prova
+2, pelo runner do repositório; o tradutor gerado pelo Gemini nas fichas, na
+decisão (só a busca foi medida); e uma tabela única com todos os braços. Por
+decisão do João, a ablação completa é a última etapa, depois de o projeto estar
+completo (CoT, Self-Refine).
+
+**Por que importa.** É a matriz que o artigo promete, e a única que sustenta
+"cada componente, ligado e desligado".
+
+**O que resolveria.** Um driver que roda a matriz na prova 2 congelada: sem
+contexto; artigos com e sem tradutor; fichas com e sem tradutor (llama e Gemini
+gerando); porta de confiança × 3 fichas; leitura na ficha do mapa × na ficha de
+busca; os três atendentes; o tom pareado; McNemar e IC 95%; uma semântica só de
+métrica ([B-60](#b-60)); e o pré-registro em `data/evaluation/README.md` refeito
+para a arquitetura nova. Critério: a tabela do artigo gerada por um comando, a
+partir de rodadas citadas.
+
+### B-67
+
+**A régua de recuperação nas fichas como instrumento oficial**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 16](joao/2026-09-24-17-busca-bge-m3-e-tres-fichas.md), 24/09 · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** Toda a busca da autópsia (embeddings, porta, âncoras,
+fichas do Claude) foi medida com scripts próprios. A régua do time
+(`run_retrieval_eval.py`) mede a base acadêmica, com o recall em 5 e a
+ordenação de produção. Na arquitetura nova, o que importa é a ficha certa
+**entre as 3** que vão ao prompt.
+
+**Por que importa.** Sem a régua oficial nas fichas, a busca da arquitetura nova
+não tem linha de base citada, e a próxima mudança de ficha não tem com o que se
+comparar.
+
+**O que resolveria.** A régua lendo a coleção de fichas pela receita do
+manifesto, com `--recall-k 3` e o modo vetorial; uma linha de base citada nos
+lotes dev, calibração e régua e nos relatos independentes; o `compare` apontando
+mudanças por caso. Critério: a linha de base reproduz 107/129 e 123/129 (prova +
+régua, 1º e entre as 3) e 74/122 e 94/122 (independentes), ±1 caso.
+
+### B-68
+
+**Uma lista de sinais de alarme gerais, escrita e validada pelos especialistas**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 18](joao/2026-09-24-19-atendente-llama-qwen-gemini.md), 24/09 · **Responsável:** A definir · **Prioridade:** Baixa · **Status:** Aberto
+
+**O que observamos.** Com a ficha certa no prompt, o qwen não cai no tom do
+tutor (0 de 76 emergências perdidas nos relatos independentes); o problema é
+quando ela não chega. Uma lista de sinais de alarme gerais, sempre presente,
+protegeria esses relatos — mas montada com os sinais do mapa, fora do contexto de
+cada quadro, ela vira "vomitando", "babando", "tremendo" = emergência, o que não
+é o que os especialistas validaram. A tentativa foi abandonada antes de rodar.
+
+**Por que importa.** É a defesa natural para o relato cuja ficha a busca não
+acha, no estilo dos discriminadores do protocolo de Manchester e da VTL.
+
+**O que resolveria.** Uma lista curta, escrita e validada pelos especialistas,
+medida como braço (com e sem a lista) na prova 2. Critério: menos emergências
+perdidas nos relatos cuja ficha não está entre as 3, sem subir os falsos alarmes
+além do ruído.
+
+### B-69
+
+**Tradutor só quando a busca estiver insegura (ideia não testada)**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 17](joao/2026-09-24-18-tradutor-desligado.md), 24/09 · **Responsável:** A definir · **Prioridade:** Baixa · **Status:** Aberto
+
+**O que observamos.** Nas fichas, toda técnica do tradutor piora a busca, com os
+dois geradores. Uma variante não testada: acionar o tradutor só quando a nota da
+1ª ficha for baixa. Sobra pouco para ganhar: o relato cru já põe a ficha certa
+entre as 3 primeiras em 95% da prova + régua e em 77% dos relatos independentes.
+
+**Por que importa.** Pouco, hoje. É o único jeito de o tradutor ainda poder
+ajudar na arquitetura nova, e vale registrar para a ablação não esquecer.
+
+**O que resolveria.** Um braço medido na prova 2: tradutor condicional ×
+desligado, com o limiar calibrado só na calibração. Critério: subir o "entre as
+3" dos relatos independentes em ≥ 3 pontos sem piorar a decisão.
+
+### B-70
+
+**Self-Refine como checagem de que o contexto é do assunto do relato**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 18](joao/2026-09-24-19-atendente-llama-qwen-gemini.md), 24/09 · **Responsável:** A definir · **Prioridade:** Baixa · **Status:** Em espera — CoT e Self-Refine voltam depois do RAG consolidado (decisão do João, 23/09)
+
+**O que observamos.** O Self-Refine não existe no código (só a chave, recusada
+pelo `config_resolver.py`). Com um atendente forte, o erro que sobra deixou de
+ser "raciocinar mal" e passou a ser o contexto errado: com a ficha de outro
+assunto, o Gemini responde INCERTO (6 de 27 emergências da etapa 2 com a ficha
+e5 mais próxima).
+
+**Por que importa.** Um Self-Refine que reescreve a resposta trata o problema
+errado; um que confere o contexto trata o certo.
+
+**O que resolveria.** Uma checagem de um passo: "a ficha usada é do mesmo
+problema do relato? a justificativa só usa sinais do relato?", medida como braço
+na prova 2. Critério: menos INCERTO por contexto errado, sem subir as
+emergências perdidas.
 
 ---
 

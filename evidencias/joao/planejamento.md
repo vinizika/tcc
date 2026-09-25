@@ -50,9 +50,19 @@ mecanismo identificado.
 | 5b | Corte de relevância | ✅ 12/09 | O sistema deixou de injetar trecho irrelevante. Com a base atual a busca fica silenciosa em 98 de 98 linhas, e o resultado é idêntico ao braço sem RAG. Preset `naive_rag_sem_corte` preserva o braço antigo para a ablação |
 | 5c | **Régua de recuperação** | ✅ 12/09, **em nome do trilho A** | Instrumento pronto e linha de base congelada. Dois achados: o protocolo certo está **sempre** entre os cinco devolvidos (o problema é ordenação, não cobertura), e existe um **protocolo-ímã** — "trauma" em 1º lugar em 9 de 18 casos. Gabarito provisório, aguardando validação ([B-48](../backlog.md#b-48)) |
 | 6 | **Ferramentas da frente base**: mapa de assuntos, agentes de curadoria e retorno por lote | 🔄 em andamento — mapa ([rodada 11](2026-09-12-12-mapa-de-assuntos.md)) e pesquisador ([rodada 12](2026-09-12-13-pesquisador.md)) e `compare` ([rodada 13](2026-09-12-14-compare-da-regua.md)) prontos; faltam a validação dos especialistas, o roteiro da ingestão e o passo 0 do B-51 | Deixou de ser "a decidir". Nenhuma técnica nova de prompt vale a pena antes de a base cobrir os assuntos e a prova medir triagem de verdade, então a entrega do B2 passa a ser **construir o que destrava as duas frentes**: o mapa de assuntos, os roteiros dos agentes e o `compare` da régua ([B-50](../backlog.md#b-50), [B-51](../backlog.md#b-51)). O Self-Refine e a camada determinística continuam **em stand-by**, pelo motivo da [rodada 9](2026-09-12-09-autopsia-do-cot.md#adendo-de-1209--as-três-correções-em-linguagem-simples-e-uma-hipótese-em-espera): o que o modelo escreve sobre a própria decisão é racionalização, e qualquer alternativa depende do corte, da base e da prova para ser **avaliada** sem circularidade |
+| 6c | **Autópsia 2** | ✅ 23–24/09 | Diagnóstico do sistema de 23/09 e uma arquitetura nova, medidos fora do código em oito rodadas ([14 a 21](README.md#rodadas)): fichas de triagem em duas camadas, bge-m3, as 3 fichas mais próximas, tradutor desligado, Gemini como atendente padrão, prova 2. Nos relatos de quem não viu o mapa, as emergências perdidas vão de 40 para 6 em 76. Falta a implementação e a réplica pelo runner |
 | 7 | Driver de ablação | ⏳ | Cruza as chaves de todos os trilhos e gera as tabelas do artigo |
 
 ## Próxima entrega: as ferramentas que destravam a base e a prova
+
+**Atualização 25/09 — a próxima entrega é implementar a autópsia 2.** A
+arquitetura está decidida na [rodada 21](2026-09-24-22-arquitetura-proposta-contra-a-de-hoje.md)
+e cada peça tem a sua rodada de porquê (14 a 20). A implementação é uma
+sequência de rodadas (23 a 30), cada uma com evidência e teste de
+convergência, e termina com a réplica: o runner do repositório, pela API,
+reproduzindo os números da autópsia dentro do ruído. O driver de ablação
+(entrega 7) fica para depois de o projeto estar completo, por decisão do João
+([B-66](../backlog.md#b-66)).
 
 A régua de recuperação está feita
 ([rodada 11](2026-09-12-11-regua-de-recuperacao.md)) e o corte de
@@ -127,6 +137,8 @@ dados, o que resolveria e o status — mora no
 | 13 | **Os relatos de avaliação não têm gravidade nem duração.** São listas de sintomas | Time + especialista | Rodada 9 (12/09) | É a causa raiz do fracasso do CoT: a rubrica por sinal pergunta o que o dado não permite responder. Em 21 das 23 abstenções o modelo contrariou a regra para seguir "sem informação suficiente, responda INCERTO" | [B-05](../backlog.md#b-05) |
 | 14 | **O gabarito da régua de recuperação é meu, não do time.** Qual protocolo é o certo para cada relato foi marcado pelo B2, e é decisão clínica | Trilho A + especialista | Rodada 11 (12/09) | Enquanto não for validado, Precision@1 e MRR medem o que **eu** acho que é o certo. Errei duas marcações em dezoito lendo com atenção | [B-48](../backlog.md#b-48) |
 | 15 | **A régua de recuperação mede pouco com 7 documentos e 18 casos.** Recall@5 = 1,000 é quase geométrico com esse acervo, e Precision@1 se move 11 pontos com um caso | Trilho A (base) + B2 (casos) | Rodada 11 (12/09) | Nenhum número da régua sustenta conclusão isolada; ela serve hoje para **comparação pareada** entre versões do sistema, não para nota absoluta. O risco é alguém ler 1,000 como "recuperação resolvida" e desprioritizar a base | [B-49](../backlog.md#b-49) |
+| 16 | **O número final do TCC não pode sair da prova 1.** Ela entrega a classe pelas palavras e foi escrita com o vocabulário do mapa; na prova, a porta de confiança empata com as 3 fichas, e nos relatos de quem não viu o mapa perde por 15 × 1 | A definir (prova 2) + especialistas (rótulos) | Rodada 20 (24/09) | Sem a prova 2, qualquer número com fichas é otimista, e não há poder para comparar atendentes bons entre si | [B-63](../backlog.md#b-63) |
+| 17 | **O texto que o atendente lê não está todo validado.** A ficha de leitura sai do mapa: a etapa 2 não tem sinais nem discriminador, 11 linhas mostram notas internas no "por que importa" e 5 têm conflito com o documento | Especialistas (validação clínica) | Rodadas 15 e 19 (24/09) | Na etapa 2, a ficha de leitura é magra; e qualquer mudança nesse texto muda o número do sistema, então cada uma vira rodada medida | [B-61](../backlog.md#b-61) |
 
 ### Resolvidos
 
