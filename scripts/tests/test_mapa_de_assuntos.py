@@ -28,7 +28,7 @@ COLUNAS = [
     "id", "quadro", "sistema", "especie", "classe", "urgencia",
     "sinais_que_o_tutor_relata", "discriminador", "par_de_confusao",
     "motivo", "referencias", "prioridade", "etapa", "cobertura",
-    "validacao", "observacoes",
+    "validacao", "observacoes", "por_que_importa",
 ]
 
 SISTEMAS = {

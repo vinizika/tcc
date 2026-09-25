@@ -53,6 +53,12 @@ A leitura completa — o que a pesquisa mudou no desenho, o que não foi possív
 | `cobertura` | `sem_documento` → `fonte_encontrada` → `fonte_enviada` → `fonte_aprovada` → `indexada`; e `sintetico` | Onde a linha está no caminho até a base, e **quem move cada seta** está no [README das fontes](fontes/README.md). `sintetico` marca os sete protocolos de teste que ainda precisam de fonte real |
 | `validacao` | `rascunho` · `validada:<nome>:<DD/MM>` · `contestada` | O que os especialistas disseram desta linha |
 | `observacoes` | livre | O que não cabe nas outras colunas |
+| `por_que_importa` | uma frase, ou vazio | **Texto que o atendente lê** na ficha de leitura ("Por que importa: …"), escrito para o tutor e validado pelos especialistas. Vazio, a ficha usa o `motivo` sem as frases de nota de curadoria (é o texto medido na autópsia 2). Coluna criada vazia em 25/09 ([rodada 23 do João](../../evidencias/joao/2026-09-25-24-fichas-de-busca-e-de-leitura.md)); preencher muda o texto que o atendente lê, e por isso é rodada medida |
+
+As fichas de triagem que o backend lê (`backend/data/fichas.json`) saem deste
+mapa e dos rascunhos de busca em [`fichas/`](fichas/README.md) pelo
+`python scripts/sync_fichas.py`; o CI recusa o arquivo gerado desatualizado
+(`--check`).
 
 ### A regra de colapso, e por que "até 24 h" é a zona cinzenta
 
