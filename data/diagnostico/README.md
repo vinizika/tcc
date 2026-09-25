@@ -25,5 +25,23 @@ Escritos por dois modelos de IA de famílias diferentes do atendente testado:
 - `author_severe_sign` é o sinal de gravidade que o próprio autor disse ter
   posto no relato.
 
-O piloto da prova 2 (`piloto_prova2.csv` e os cadernos de linguagem) entra com a
+## `piloto_prova2.csv` — 40 relatos do piloto da prova 2
+
+Escritos por duas instâncias isoladas de IA (Claude), 20 relatos cada (pA e pB),
+em 20 quadros do mapa: 24 emergências e 16 não emergências.
+
+- **O que os autores receberam:** o quadro em linguagem leiga, a espécie, a
+  gravidade e o tom. **Não** viram o mapa, as fichas, a prova nem os relatos
+  independentes.
+- **Como escreveram:** antes de escrever, cada autor pesquisou como tutores
+  descrevem cada quadro e anotou um caderno de linguagem
+  (`piloto_prova2/cadernos/<topic>.md`, com as fontes consultadas; as
+  expressões anotadas são sínteses, não citações). Os relatos foram escritos do
+  zero, com uma persona por relato (`persona`).
+- **As fontes de cada relato** estão em `inspiration_urls`.
+- **Rótulo:** a urgência do mapa, sem validação de veterinário.
+- `topic_species` é a espécie da linha do mapa, não necessariamente a do animal
+  do relato.
+
+O desenho, os critérios e as medidas do piloto estão na
 [rodada 20](../../evidencias/joao/2026-09-24-21-prova-2-desenho-e-piloto.md).
