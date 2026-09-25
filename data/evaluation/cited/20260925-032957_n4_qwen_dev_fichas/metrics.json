@@ -1,0 +1,163 @@
+{
+  "rows_evaluated": 50,
+  "rows_with_error": 0,
+  "classification": {
+    "n": 50,
+    "balanced_accuracy": 0.98,
+    "accuracy_strict": 0.96,
+    "accuracy_strict_ci95": [
+      0.8654,
+      0.989
+    ],
+    "coverage": 1.0,
+    "accuracy_decided": 0.96,
+    "macro_f1": 0.969795918367347,
+    "per_class": {
+      "EMERGENCIA": {
+        "support": 25,
+        "true_positive": 24,
+        "false_positive": 0,
+        "false_negative": 1,
+        "precision": 1.0,
+        "recall": 0.96,
+        "recall_ci95": [
+          0.8046,
+          0.9929
+        ],
+        "f1": 0.9795918367346939
+      },
+      "NAO_EMERGENCIA": {
+        "support": 24,
+        "true_positive": 24,
+        "false_positive": 2,
+        "false_negative": 0,
+        "precision": 0.9230769230769231,
+        "recall": 1.0,
+        "recall_ci95": [
+          0.862,
+          1.0
+        ],
+        "f1": 0.9600000000000001
+      }
+    },
+    "confusion_matrix": {
+      "EMERGENCIA": {
+        "EMERGENCIA": 24,
+        "NAO_EMERGENCIA": 1,
+        "INCERTO": 0,
+        "INVALID_JSON": 0,
+        "OTHER": 0
+      },
+      "NAO_EMERGENCIA": {
+        "EMERGENCIA": 0,
+        "NAO_EMERGENCIA": 24,
+        "INCERTO": 0,
+        "INVALID_JSON": 0,
+        "OTHER": 0
+      }
+    },
+    "false_non_urgent": 1,
+    "false_non_urgent_rate": 0.04,
+    "false_urgent": 0,
+    "false_urgent_rate": 0.0,
+    "incerto_rate": 0.0,
+    "emergencia_para_incerto": 0,
+    "nao_emergencia_para_incerto": 0,
+    "invalid_rate": 0.0,
+    "other_rate": 0.0,
+    "accuracy_single_attempt": 0.96
+  },
+  "baselines": {
+    "always_emergencia": 0.5,
+    "rule_few_symptoms": null,
+    "rule_only_mild_symptoms": null
+  },
+  "strata": {},
+  "latency": {
+    "rows_with_model_load": 0,
+    "query_s": {
+      "mean": 0.0,
+      "median": 0.0,
+      "p95": 0.0
+    },
+    "retrieval_s": {
+      "mean": 0.139,
+      "median": 0.139,
+      "p95": 0.184
+    },
+    "generation_s": {
+      "mean": 2.549,
+      "median": 2.598,
+      "p95": 2.903
+    },
+    "total_s": {
+      "mean": 2.689,
+      "median": 2.728,
+      "p95": 3.012
+    },
+    "client_s": {
+      "mean": 2.702,
+      "median": 2.742,
+      "p95": 3.026
+    },
+    "prompt_tokens_mean": 1023.1,
+    "completion_tokens_mean": 101.7,
+    "completion_tokens_p95": 116,
+    "completion_tokens_max": 123
+  },
+  "grounding": {
+    "mean_cited_sources": 0.88,
+    "share_rows_with_citation": 0.86,
+    "share_rows_invalid_citation": 0.0,
+    "share_rows_max_score_below_0_70": 0.88,
+    "mean_max_score": 0.6476,
+    "share_rows_with_context": 1.0,
+    "share_rows_rag_silent": 0.0,
+    "rows_used_below_min_score": 0,
+    "citations_per_chunk": {
+      "ficha__respiratory_distress": 2,
+      "ficha__vomiting_and_diarrhea": 2,
+      "ficha__chocolate_toxicosis": 1,
+      "ficha__allium_toxicosis": 1,
+      "ficha__seizures": 1,
+      "ficha__trauma_and_bleeding": 1,
+      "ficha__urethral_obstruction": 1,
+      "ficha__airway_foreign_body_choking": 1,
+      "ficha__gastric_dilatation_volvulus": 1,
+      "ficha__fading_neonate": 1,
+      "ficha__acute_hindlimb_paralysis": 1,
+      "ficha__anticoagulant_rodenticide_poisoning": 1,
+      "ficha__human_medication_poisoning": 1,
+      "ficha__anaphylaxis_facial_swelling": 1,
+      "ficha__congestive_heart_failure": 1,
+      "ficha__collapse_and_pale_gums": 1,
+      "ficha__parvovirus_panleukopenia": 1,
+      "ficha__ocular_emergency": 1,
+      "ficha__permethrin_toxicosis_cats": 1,
+      "ficha__gastrointestinal_foreign_body": 1,
+      "ficha__dystocia": 1,
+      "ficha__hypoglycemia_toy_puppy": 1,
+      "ficha__eclampsia": 1,
+      "ficha__inappropriate_urination_or_cystitis": 1,
+      "ficha__otitis_externa_mild": 1,
+      "ficha__single_vomiting_or_mild_diarrhea": 1,
+      "ficha__osteoarthritis_stiffness": 1,
+      "ficha__insect_sting_local_reaction": 1,
+      "ficha__kennel_cough_mild": 1,
+      "ficha__mild_conjunctivitis": 1,
+      "ficha__normal_whelping": 1,
+      "ficha__tremors_without_seizure": 1,
+      "ficha__mild_lameness": 1,
+      "ficha__flea_dermatitis_pruritus": 1,
+      "ficha__cat_bite_abscess": 1,
+      "ficha__polyuria_polydipsia_investigate": 1,
+      "ficha__minor_wound": 1,
+      "ficha__periodontal_disease_mild": 1,
+      "ficha__slow_growing_lump": 1,
+      "ficha__rabies_exposure_wild_animal_bite": 1,
+      "ficha__ticks_found_no_signs": 1,
+      "ficha__exertional_panting_mild": 1
+    }
+  },
+  "repeats": null
+}
