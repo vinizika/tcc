@@ -236,7 +236,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--name", required=True)
     parser.add_argument(
         "--profile",
-        choices=("curated", "experimental", "legacy_rechunk"),
+        choices=("curated", "experimental", "legacy_rechunk", "fichas"),
         default="curated",
     )
     parser.add_argument("--api-url", default="http://localhost:8000")

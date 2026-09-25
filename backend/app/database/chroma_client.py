@@ -20,9 +20,11 @@ from chromadb.utils import embedding_functions
 from app.core.config import settings
 from app.core.logger import setup_logger
 from app.database.embedding_config import (
-    EMBEDDING_MODEL_NAME,
-    EMBEDDING_MODEL_REVISION,
-    embedding_recipe_sha256,
+    LEGACY_RECIPE_KEY,
+    EmbeddingRecipe,
+    recipe_for,
+    recipe_for_profile,
+    recipe_from_manifest,
 )
 
 
@@ -98,7 +100,9 @@ class ChromaDBClient:
 
     _backend_directory = Path(__file__).resolve().parents[2]
     _client = None
-    _embedding_function = None
+    # Uma função de embedding por receita: a coleção de fichas e a acadêmica
+    # convivem no mesmo banco, cada uma com o seu modelo.
+    _embedding_functions: dict[str, Any] = {}
     _path_override: Path | None = None
     _collection_override: str | None = None
     _embedding_override = None
@@ -117,7 +121,7 @@ class ChromaDBClient:
         cls._collection_override = collection_name
         cls._embedding_override = embedding_function
         cls._client = None
-        cls._embedding_function = None
+        cls._embedding_functions = {}
 
     @classmethod
     def reset_configuration(cls) -> None:
@@ -145,17 +149,24 @@ class ChromaDBClient:
         return cls.chroma_path() / "manifests" / f"{collection_name}.json"
 
     @classmethod
-    def _get_embedding_function(cls):
+    def _get_embedding_function(cls, recipe: EmbeddingRecipe | None = None):
+        """O modelo que transforma texto em vetor para a receita pedida.
+
+        Sem receita, vale a da coleção-base legada (MiniLM), que é o que este
+        método devolvia antes de existirem receitas.
+        """
+
         if cls._embedding_override is not None:
             return cls._embedding_override
-        if cls._embedding_function is None:
-            cls._embedding_function = (
+        recipe = recipe or recipe_for(LEGACY_RECIPE_KEY)
+        if recipe.key not in cls._embedding_functions:
+            cls._embedding_functions[recipe.key] = (
                 embedding_functions.SentenceTransformerEmbeddingFunction(
-                    model_name=EMBEDDING_MODEL_NAME,
-                    revision=EMBEDDING_MODEL_REVISION,
+                    model_name=recipe.model,
+                    revision=recipe.revision,
                 )
             )
-        return cls._embedding_function
+        return cls._embedding_functions[recipe.key]
 
     @classmethod
     def get_client(cls):
@@ -192,12 +203,13 @@ class ChromaDBClient:
         collection_name: str,
         *,
         with_embedding_function: bool = True,
+        recipe: EmbeddingRecipe | None = None,
     ):
         try:
             return cls.get_client().get_collection(
                 name=collection_name,
                 embedding_function=(
-                    cls._get_embedding_function()
+                    cls._get_embedding_function(recipe)
                     if with_embedding_function
                     else None
                 ),
@@ -265,7 +277,12 @@ class ChromaDBClient:
         pointer = cls.load_active_pointer()
         if pointer:
             collection_name = str(pointer["collection_name"])
-            collection = cls._get_strict_collection(collection_name)
+            # Primeiro a coleção precisa existir (um ponteiro obsoleto falha
+            # aqui, sem criar nada); depois o manifesto, que é quem diz com
+            # qual modelo a consulta tem de virar vetor.
+            cls._get_strict_collection(
+                collection_name, with_embedding_function=False
+            )
             manifest = cls.load_manifest(collection_name, required=True)
             actual_manifest_hash = sha256_json(manifest)
             expected_manifest_hash = pointer.get("manifest_sha256")
@@ -273,6 +290,10 @@ class ChromaDBClient:
                 raise CollectionIntegrityError(
                     "Hash do manifesto ativo não coincide com o ponteiro."
                 )
+            recipe = cls.recipe_for_manifest(manifest)
+            collection = cls._get_strict_collection(
+                collection_name, recipe=recipe
+            )
             cls.validate_collection_integrity(collection_name, manifest=manifest)
             return collection
 
@@ -285,17 +306,44 @@ class ChromaDBClient:
             configuration={"hnsw": {"space": "cosine"}},
         )
 
+    @staticmethod
+    def recipe_for_manifest(manifest: dict | None) -> EmbeddingRecipe:
+        try:
+            return recipe_from_manifest(manifest)
+        except ValueError as error:
+            raise CollectionIntegrityError(str(error)) from error
+
     @classmethod
-    def create_staging_collection(cls, collection_name: str, *, profile: str):
+    def active_recipe(cls) -> EmbeddingRecipe:
+        """A receita da coleção ativa, sem abrir o modelo nem a coleção."""
+
+        pointer = cls.load_active_pointer()
+        if not pointer:
+            return recipe_for(LEGACY_RECIPE_KEY)
+        manifest = cls.load_manifest(
+            str(pointer["collection_name"]), required=True
+        )
+        return cls.recipe_for_manifest(manifest)
+
+    @classmethod
+    def create_staging_collection(
+        cls,
+        collection_name: str,
+        *,
+        profile: str,
+        recipe: EmbeddingRecipe | None = None,
+    ):
         if not cls.is_versioned_collection(collection_name):
             raise ValueError("Coleção staged deve usar um nome versionado.")
+        recipe = recipe or recipe_for_profile(profile)
         return cls.get_client().create_collection(
             name=collection_name,
-            embedding_function=cls._get_embedding_function(),
+            embedding_function=cls._get_embedding_function(recipe),
             metadata={
                 "description": "Coleção candidata de documentos veterinários",
                 "profile": profile,
-                "recipe_sha256": embedding_recipe_sha256(),
+                "recipe_key": recipe.key,
+                "recipe_sha256": recipe.sha256(),
             },
             configuration={"hnsw": {"space": "cosine"}},
         )
@@ -345,12 +393,11 @@ class ChromaDBClient:
         *,
         manifest: dict | None = None,
     ) -> dict:
-        collection = cls._get_strict_collection(collection_name)
-
         # A única leitura sem manifesto admitida é a coleção-base legada.
         if manifest is None:
             manifest = cls.load_manifest(collection_name)
         if manifest is None and collection_name == cls.base_collection_name():
+            collection = cls._get_strict_collection(collection_name)
             return {"legacy": True, "chunk_count": collection.count()}
         if manifest is None:
             raise MissingManifestError(collection_name)
@@ -379,13 +426,19 @@ class ChromaDBClient:
 
         if manifest["collection_name"] != collection_name:
             raise CollectionIntegrityError("Nome da coleção diverge do manifesto.")
-        if manifest["embedding"]["model"] != EMBEDDING_MODEL_NAME:
+        # A coleção é conferida contra a receita que o próprio manifesto
+        # declara, e a receita contra o registro de receitas do código: um
+        # manifesto que diga um modelo e traga o hash de outra receita é
+        # coleção adulterada ou de uma versão do código que não existe mais.
+        recipe = cls.recipe_for_manifest(manifest)
+        if manifest["embedding"]["model"] != recipe.model:
             raise CollectionIntegrityError("Modelo do manifesto é incompatível.")
-        if manifest["embedding"]["revision"] != EMBEDDING_MODEL_REVISION:
+        if manifest["embedding"]["revision"] != recipe.revision:
             raise CollectionIntegrityError("Revisão do embedding é incompatível.")
-        if manifest["chunking"]["recipe_sha256"] != embedding_recipe_sha256():
+        if manifest["chunking"]["recipe_sha256"] != recipe.sha256():
             raise CollectionIntegrityError("Receita de chunks é incompatível.")
 
+        collection = cls._get_strict_collection(collection_name, recipe=recipe)
         records = collection.get(include=["documents", "metadatas"])
         identifiers = list(records.get("ids") or [])
         documents = list(records.get("documents") or [])
