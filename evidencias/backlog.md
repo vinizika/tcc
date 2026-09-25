@@ -119,6 +119,7 @@ aqui.
 | [B-69](#b-69) | Tradutor só quando a busca estiver insegura (ideia não testada) | A definir | Baixa | Aberto |
 | [B-70](#b-70) | Self-Refine como checagem de que o contexto é do assunto do relato | A definir | Baixa | Em espera — CoT e Self-Refine voltam depois do RAG consolidado |
 | [B-71](#b-71) | Checagens por hash de arquivo falham num clone no Windows (CRLF) | A definir | Baixa | Aberto |
+| [B-72](#b-72) | Documentos aprovados que tratam de outro assunto, e autoria errada em sidecars | A definir | Média | Aberto |
 
 ---
 
@@ -2729,6 +2730,9 @@ falha dizendo que `backend/data/retrieval_terms.json` está desatualizado sem na
 ter mudado: o `source_sha256` é calculado sobre os bytes do mapa, e na pasta de
 trabalho o mapa está com CRLF. No CI (Linux, LF) passa. Na mesma linha, o
 `prova_freeze.py` grava `cases_file` com barra invertida quando roda no Windows.
+E o próprio `sync_retrieval_terms.py`, quando regenera o arquivo no Windows,
+grava com CRLF (`write_text` em modo texto), e o arquivo inteiro aparece como
+mudado no Git ([rodada 23](joao/2026-09-25-24-fichas-de-busca-e-de-leitura.md)).
 
 **Por que importa.** Quem roda a suíte do CI no Windows vê uma falha falsa e pode
 "consertar" regenerando o arquivo, o que grava um hash que o CI recusa.
@@ -2740,6 +2744,33 @@ trabalho o mapa está com CRLF. No CI (Linux, LF) passa. Na mesma linha, o
 caminhos com `as_posix()` no `prova_freeze.py`; ou um `.gitattributes` com
 `* text=auto eol=lf` para os arquivos de dados. Critério: o `--check` passa num
 clone limpo no Windows e no CI, sem regenerar nada.
+
+### B-72
+
+**Documentos aprovados que tratam de outro assunto, e autoria errada em sidecars**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 23](joao/2026-09-25-24-fichas-de-busca-e-de-leitura.md), 25/09 · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** Conferindo os títulos reais pelo DOI, seis documentos
+aprovados tratam de outra coisa que não o quadro do mapa em que estão:
+`cat_bite_abscess` (abscessos em linfonodos dentro do abdômen, não mordida),
+`flea_dermatitis_pruritus` (a revisão felina trata da dermatite não causada por
+pulga), `pyometra` (o SciELO 2013 é um estudo de castração),
+`osteoarthritis_stiffness` (consenso de tratamento), `vomiting_and_diarrhea`
+(Frontiers 2023, prescrição de antimicrobiano) e
+`single_vomiting_or_mild_diarrhea` (exames em cães atendidos na emergência).
+Nos metadados, a autoria da cinomose (Viruses 2022) está inteira errada, cinco
+sidecars têm um primeiro nome errado, e o `source` do GDV mistura periódico e
+afiliação.
+
+**Por que importa.** São esses documentos que a resposta cita ao tutor como
+"documento aprovado por trás da ficha", e os itens de documento das fichas de
+busca foram escritos a partir deles.
+
+**O que resolveria.** Os especialistas confirmarem ou trocarem cada um dos seis
+(as fontes capturadas na [rodada 27](joao/2026-09-25-28-fontes-para-tutor-etapa-2.md)
+são candidatas em vários), e a autoria corrigida pelo Crossref. Critério: cada
+documento citado trata do quadro em que está.
 
 ---
 

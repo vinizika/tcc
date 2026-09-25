@@ -88,20 +88,113 @@ _Escrito antes de rodar._
 
 ## Resultado obtido
 
-_(preenchido ao fechar a rodada)_
+**As duas camadas saem iguais, byte a byte, ao que a autópsia mediu.**
+
+| Checagem | Resultado |
+|---|---|
+| 61 textos de busca × `_trabalho/fichas_cl.json` (o que a autópsia indexou) | **61 de 61 iguais** |
+| 61 textos de leitura × `artefatos_rodada2/fichas.json` (o que o atendente leu) | **61 de 61 iguais** |
+| 61 títulos de leitura × o mesmo arquivo | **61 de 61 iguais** |
+| Tokens do bge-m3 (revisão `5617a9f6…`, com os especiais) no texto de busca | máximo **485** (`tremors_without_seizure`), mediana 315; nenhum acima de 485 |
+| Tokens do texto de leitura | máximo 190 |
+| Referências aprovadas | 66, em 61 de 61 tópicos (o documento `vomiting_and_diarrhea__ovj_2026_teletriage`, `published_not_locally_validated`, fica de fora) |
+| `sync_fichas.py --check` e `sync_retrieval_terms.py --check` | limpos, depois de cada commit |
+| Suíte | backend 242 → 242; scripts 201 → **209** (8 testes do gerador) |
+
+A conferência é o script `rodada_noturna/scripts/n2_conferir.py` do diário
+da noite (fora do repositório, porque lê os arquivos da autópsia).
+
+**Os títulos.** Conferidos um a um por um agente de IA, pelo DOI no Crossref
+(66 documentos, com o assunto e o ano batendo com o arquivo capturado) e pela
+API do GOV.UK (a cartilha da permetrina, a única sem DOI):
+
+| O `title` gravado era | Documentos |
+|---|---|
+| o título real | 32 |
+| um rótulo inventado ("Feline abscess case", "Hemorrhage in Dogs and Cats") | 27 |
+| um pedaço do título real | 8 |
+| de outro documento | 0 |
+
+Os 21 sidecars sem DOI ganharam o DOI confirmado. Nenhum DOI gravado apontava
+para outro documento.
+
+**O título real mostra que 6 documentos aprovados tratam de outra coisa** que
+não o quadro em que estão:
+- `cat_bite_abscess` é um relato de abscessos em linfonodos dentro do abdômen,
+  não de mordida;
+- a revisão felina de `flea_dermatitis_pruritus` trata da dermatite **não**
+  causada por pulga;
+- o SciELO 2013 de `pyometra` é um estudo de castração, em que a piometra é o
+  achado mais comum;
+- o de `osteoarthritis_stiffness` é um consenso de tratamento, não de sinais;
+- o de `vomiting_and_diarrhea` (Frontiers 2023) é sobre prescrição de
+  antimicrobiano;
+- o de `single_vomiting_or_mild_diarrhea` é sobre exames em cães atendidos na
+  emergência.
+
+Os autores das próprias fichas de busca já tinham anotado o primeiro
+([rodada 19](2026-09-24-20-fichas-em-duas-camadas.md)). Vai ao
+[B-72](../backlog.md#b-72).
 
 ## O que mudou no repositório
 
-_(preenchido ao fechar a rodada)_
+| Arquivo | Mudança |
+|---|---|
+| `scripts/sync_fichas.py` | **novo**: gera `backend/data/fichas.json` do mapa, dos rascunhos e dos sidecars; `--check` |
+| `scripts/tests/test_sync_fichas.py` | **novo**, 8 testes: as duas regras de montagem, a coluna nova, a gêmea múltipla, as referências, o hash com CRLF |
+| `backend/data/fichas.json` | **novo**: 61 fichas (texto de busca, texto e título de leitura, título para o tutor, espécie, classe, urgência, etapa, referências, hashes) |
+| `data/curadoria/mapa-de-assuntos.csv` | coluna `por_que_importa` no fim, vazia |
+| `data/curadoria/README.md` | a coluna nova e o gerador |
+| `scripts/tests/test_mapa_de_assuntos.py` | `COLUNAS` com a coluna nova |
+| `backend/data/retrieval_terms.json` | regenerado (só o hash do mapa muda) |
+| `.github/workflows/tests.yml` | passo `sync_fichas.py --check` |
+| `backend/data/documents/*.json` (67) | `full_title` em todos; `doi` em 21; as âncoras saem de 6 |
+| `backend/data/documents/README.md` | o exemplo de âncora que não existia sai; âncoras e `full_title` documentados |
+| `evidencias/backlog.md` | [B-72](../backlog.md#b-72); [B-71](../backlog.md#b-71) atualizado |
+
+Commits: `56048b0` (abre a rodada: gerador, coluna, CI), `d510b7b` (âncoras,
+trilho A), `a1c72df` (títulos reais, trilho A) e este.
 
 ## Observações
 
-_(preenchido ao fechar a rodada)_
+**1. O gerador reproduz até as irregularidades do texto medido**, de
+propósito: a ficha de busca tem acento e a de leitura não ("Isto é uma
+emergência" × "Isto e uma emergencia"); o discriminador ganha um ponto depois
+da interrogação ("Há esforço para respirar?."); a linha com mais de uma gêmea
+não ganha a frase "Pode ser confundido com". Cada uma dessas é uma mudança de
+texto a medir, não um conserto a fazer em silêncio.
+
+**2. No Windows, o `sync_retrieval_terms.py` grava o JSON com CRLF.** O
+`write_text` em modo texto converte as quebras de linha; o arquivo regenerado
+aparece inteiro como mudado no Git. Foi normalizado para LF antes do commit.
+Acrescentado ao [B-71](../backlog.md#b-71). O `sync_fichas.py` já grava com
+`newline="\n"`.
+
+**3. A ficha de leitura continua mostrando nota interna ao atendente** em 11
+tópicos ("Caso b14", "não encontrei artigo primário"). A coluna
+`por_que_importa` é onde os especialistas escrevem o texto limpo; quando
+preencherem, é rodada medida ([B-61](../backlog.md#b-61)).
+
+**4. Autores errados em 6 sidecars** (a cinomose tem a autoria inteira errada;
+cinco têm um primeiro nome errado) e o `source` do GDV mistura periódico e
+afiliação. Não mexi: não é o que a resposta mostra, e é curadoria do trilho A
+([B-72](../backlog.md#b-72)).
 
 ## Deixado para depois
 
-_(preenchido ao fechar a rodada)_
+- **Os 6 documentos aprovados que tratam de outro assunto** e os metadados de
+  autoria ([B-72](../backlog.md#b-72)).
+- **Preencher `por_que_importa`** com os especialistas
+  ([B-61](../backlog.md#b-61)); cada preenchimento é uma rodada medida.
+- **Conferir o trecho de cada item de documento no CI**, e não só na
+  curadoria: exigiria extrair os 66 documentos a cada commit. Fica o
+  `conferencia.json`.
 
 ## Próximo passo
 
-_(preenchido ao fechar a rodada)_
+A [rodada 24](2026-09-25-25-busca-por-fichas-com-bge-m3.md): a coleção das
+fichas no bge-m3 e a busca vetorial pura.
+
+```
+python -m app.database.ingest_documents --profile fichas --activate
+```
