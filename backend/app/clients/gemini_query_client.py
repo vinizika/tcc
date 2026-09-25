@@ -10,9 +10,10 @@ depender de uma API externa? Ver
 backend/app/database/compare_query_providers.py, o script que roda os
 dois lado a lado.
 
-Não é chamado por nada em produção. `ChatPipeline` continua usando só o
-QueryClient (Ollama) até essa pergunta ser respondida com número, não
-opinião.
+Desde 23/09 é o primeiro provedor da etapa de consulta em produção, pelo
+`HybridQueryClient` (Gemini com queda para o Ollama; decisão do trilho B1).
+Desde 25/09 a etapa de consulta vem desligada por padrão (rodada 24 do João),
+e a queda para o Ollama aparece na procedência da resposta (rodada 25).
 """
 
 import re

@@ -43,21 +43,44 @@ Self-Refine, e a régua de avaliação do sistema (runner de métricas).
 | 24 | 25/09 | [Busca nas fichas com o bge-m3](2026-09-25-25-busca-por-fichas-com-bge-m3.md) | Receita de embedding por manifesto (a coleção acadêmica continua abrindo com o MiniLM), coleção das 61 fichas versionada e ativa, busca vetorial pura como padrão, tradutor desligado. **A API devolve as mesmas 3 fichas que a autópsia em 296 de 296 casos**, e os agregados exatos (prova + régua 107/123 de 129; independentes 74/94 de 122). Clone limpo sobe sem passo manual (B-57) |
 | 25 | 25/09 | [A resposta: ficha, fonte real e procedência](2026-09-25-26-resposta-com-ficha-e-fonte.md) | "Baseado em" mostra a ficha e o documento aprovado com título real e DOI; o trecho que não coube no prompt deixa de ser fonte; a resposta diz provedor, modelo e versão, e a queda do Gemini na consulta deixa de ser silenciosa; `think` do qwen configurável; runner com `--cases`. **O qwen pela API repete a autópsia em 50 de 50 casos** do lote dev |
 | 26 | 25/09 | [O Gemini como atendente, e a réplica](2026-09-25-27-atendente-gemini-e-replica.md) | Gemini padrão, qwen e llama como opções; **sem chave, a API responde 503 em vez de trocar de modelo**, e a troca, quando permitida, vem dita na resposta. **A réplica pela API bate caso a caso**: Gemini 2 · 1 e 6 · 3, qwen 2 · 1 e 5 · 7, com a mesma resposta da autópsia em todos os casos; o sistema de hoje, 15 · 4. Só o braço de hoje com o tradutor fica fora (11 · 3 contra 8 · 3): o HyDE da autópsia não existe sem chave, e a reescrita do llama não é estável |
-| 27 | 25/09 | [Fontes para as frases sem fonte das fichas de busca](2026-09-25-28-fontes-para-tutor-etapa-2.md) | Quatro agentes pesquisadores capturaram 44 fontes pelo script do time. **36 das 53 frases "geral" ganharam trecho literal (68%)**, 16 têm fonte parcial, 1 ficou sem; os 52 trechos conferidos por programa. Nenhuma frase mudou (a coleção reindexada seria idêntica). Cinco capturas são da VCA, que proíbe redistribuir |
+| 27 | 25/09 | [Fontes para as frases sem fonte das fichas de busca](2026-09-25-28-fontes-para-tutor-etapa-2.md) | Quatro agentes pesquisadores capturaram 45 fontes pelo script do time. **36 das 53 frases "geral" ganharam trecho literal (68%)**, 16 têm fonte parcial, 1 ficou sem; os 52 trechos conferidos por programa. Nenhuma frase mudou (a coleção reindexada seria idêntica). Cinco capturas são da VCA, que proíbe redistribuir |
 | 28 | 25/09 | [Prova 2: a geração](2026-09-25-29-prova-2-geracao.md) | Nove agentes isolados escreveram os **330 relatos, com a composição exata** (190 emergências e 115 leves de 61 quadros, mais 25 especiais), "mas" em 40% de cada classe e nenhum texto repetido. Rótulos provisórios; a validação dos veterinários, a divisão e o congelamento vêm depois. A pesquisa foi mais fraca que a do piloto: a busca na web acabou cedo |
+| 29 | 25/09 | [Fechamento da implementação](2026-09-25-30-fechamento-da-rodada-noturna.md) | Documentação, sem código de sistema: README, `.env.example`, contratos e estado atual descrevem o sistema que o código roda; a interface antiga sai; o backlog ganha B-74 a B-76 e registra o que as rodadas 22 a 28 deixaram para depois |
 
 ## Estado atual
 
-**Etapa 6 de 7.** O produto classifica de verdade e a régua existe: sete
-rodadas medidas sobre os 98 relatos, com previsões versionadas e teste
-estatístico, sobre 164 testes automatizados. O Marco 1 está fechado, e a régua
-já foi usada uma segunda vez — desta vez para verificar a correção de outro
-trilho, não para descrever o sistema.
+**25/09 — a arquitetura da autópsia 2 está no código e replicada** (rodadas
+22 a 29, na branch `autopsia2-implementacao`, a validar). O relato cru vai à
+busca vetorial (bge-m3) nas 61 fichas de busca; as 3 mais próximas entram no
+prompt como fichas de leitura; o Gemini responde por padrão, sem troca
+silenciosa de modelo, e o qwen e o llama ficam como opções. O runner do time,
+pela API, reproduz a autópsia caso a caso. Suíte: backend 285, scripts 216.
+
+A próxima entrega é **a prova 2 até o uso** ([B-63](../backlog.md#b-63)) e, em
+paralelo, a certificação das fichas pelos especialistas
+([B-61](../backlog.md#b-61)). A ablação completa fica para quando o projeto
+estiver completo ([B-66](../backlog.md#b-66)).
 
 O roteiro completo, com marcos e os sete bloqueios abertos, está em
 **[planejamento.md](planejamento.md)**.
 
 ## Números de referência
+
+Da réplica pela API ([rodada 26](2026-09-25-27-atendente-gemini-e-replica.md)),
+em **emergências perdidas · falsos alarmes** (perdida inclui INCERTO). A prova 1
+entrega a classe pelas palavras e só vê diferenças grandes
+([rodada 20](2026-09-24-21-prova-2-desenho-e-piloto.md)); o número final sai da
+prova 2.
+
+| Configuração | Prova + régua (74 · 58) | Independentes (76 · 46) | Piloto (24 · 16) | Tom calmo (74) |
+|---|---|---|---|---|
+| **Proposto, Gemini (padrão)** | **2 · 1** | **6 · 3** | **0 · 3** | **3** |
+| Proposto, qwen3:8b | 2 · 1 | 5 · 7 | 0 · 3 | 4 |
+| Gemini sem busca | 0 · 3 | 5 · 10 | — | — |
+| qwen sem busca | 7 · 0 | 21 · 9 | — | — |
+| Hoje (artigos, MiniLM, porta 0,72, llama), tradutor desligado | 15 · 4 | 40 · 22 (autópsia) | — | 46 (autópsia) |
+
+### Números de 04/09 (histórico)
 
 Medidos em 04/09 sobre os 98 relatos de cão e gato, temperatura zero. A
 métrica principal é a **acurácia balanceada**, média do recall das duas

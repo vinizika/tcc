@@ -6,37 +6,58 @@ Rafael Gomes Alves.
 
 O sistema recebe o relato de um tutor sobre seu cão ou gato — por texto ou
 voz — e indica se o caso deve ser tratado como **emergência**, **não
-emergência** ou **incerto**, com justificativa ancorada em protocolos
-veterinários recuperados de uma base local. Roda inteiro na máquina, com um
-modelo de linguagem pequeno (`llama3.2:3b` via Ollama). Não diagnostica nem
-prescreve, e não substitui a avaliação de um médico-veterinário.
+emergência** ou **incerto**, com justificativa ancorada em **fichas de
+triagem** escritas a partir do mapa de assuntos e de documentos veterinários
+aprovados. O atendente padrão é o Gemini (`gemini-3.5-flash-lite`); o
+`qwen3:8b` (local, via Ollama, com GPU) e o `llama3.2:3b` ficam como opções, e
+o sistema nunca troca de modelo em silêncio. Não diagnostica nem prescreve, e
+não substitui a avaliação de um médico-veterinário.
 
 ---
 
 ## Como o sistema funciona
 
 ```
-relato do tutor (texto, ou voz transcrita pelo Whisper)
+relato do tutor (texto, ou voz transcrita pelo Whisper), cru
    │
-   ├─ etapa de consulta ......... reescrita clínica → multi-query → HyDE
-   ├─ busca vetorial ............ ChromaDB, embeddings multilíngues
-   ├─ re-ranking ................ (hoje só reordena pelo score)
-   └─ classificação ancorada .... o modelo lê o relato original + os trechos
-                                  recuperados e devolve JSON estruturado
-                                  (classificação, justificativa, sinais,
-                                  recomendação, fontes citadas)
+   ├─ busca vetorial ............ bge-m3 nas 61 fichas de BUSCA (uma por quadro
+   │                              do mapa, escrita para casar com o jeito do
+   │                              tutor contar); as 3 mais próximas, sempre
+   └─ classificação ancorada .... o atendente lê o relato + as 3 fichas de
+                                  LEITURA dos mesmos quadros (a ficha do mapa,
+                                  com a conduta fixa pela urgência) e devolve
+                                  JSON estruturado (classificação, justificativa,
+                                  sinais, recomendação, fontes citadas)
 ```
+
+A resposta cita a ficha usada e o documento aprovado por trás dela, com o
+título real, e diz quem respondeu (provedor, modelo, versão). A arquitetura e
+o porquê de cada peça estão nas rodadas 14 a 21 do João (a
+[rodada 21](evidencias/joao/2026-09-24-22-arquitetura-proposta-contra-a-de-hoje.md)
+resume); a implementação, nas rodadas 22 a 26. A etapa de consulta (reescrita,
+multi-query, HyDE), o roteador lexical, o reranker e a base acadêmica de 3.481
+trechos continuam no código, desligados por padrão, como braços da ablação.
 
 **Cada etapa pode ser ligada ou desligada por requisição**, sem reiniciar o
 serviço. Com a busca desligada o sistema roda como "LLM puro", que é a linha
 de base contra a qual o RAG é medido. As chaves e seus donos estão em
 [`docs/CONTRATOS.md`](docs/CONTRATOS.md).
 
-**Estado medido em 04/09/2026**, sobre 98 relatos: a melhor configuração é
-o prompt atual **sem** RAG (0,893 de acurácia balanceada); com a base de
-conhecimento atual, ligar o RAG **piora** o resultado em 20 pontos. O porquê
-e os dados estão na
-[rodada 4 do trilho B2](evidencias/joao/2026-09-04-05-runner-de-avaliacao.md).
+**Estado medido em 25/09/2026**, pela API, com o runner do time
+([rodada 26 do João](evidencias/joao/2026-09-25-27-atendente-gemini-e-replica.md)),
+em emergências perdidas · falsos alarmes:
+
+| | Prova 1 + régua (74 emergências · 58 leves) | Relatos de quem não viu o mapa (76 · 46) |
+|---|---|---|
+| **Sistema atual, Gemini** | **2 · 1** | **6 · 3** |
+| Sistema atual, qwen3:8b local | 2 · 1 | 5 · 7 |
+| O de 24/09 (artigos, MiniLM, porta 0,72, llama) | 15 · 4 | 40 · 22 (medido na autópsia) |
+
+A prova 1 é fácil para os sistemas bons (entrega a classe pelas palavras): o
+número final sai da **prova 2**, com rótulos validados por veterinários, ainda
+por fazer. O porquê de cada peça está nas rodadas 14 a 21 do João; o histórico
+de 04/09 (o RAG com a base antiga piorava o resultado em 20 pontos), na
+[rodada 4](evidencias/joao/2026-09-04-05-runner-de-avaliacao.md).
 
 ---
 
@@ -68,14 +89,30 @@ resposta cai de minutos para segundos:
 docker compose -f docker-compose.yml -f docker-compose.gpu.yml up -d
 ```
 
-**3. Baixe o modelo dentro do container** (uma vez; fica no volume):
+**3. O atendente.** O padrão é o Gemini: ponha a sua `GEMINI_API_KEY` no
+`.env` (nunca no `.env.example`). Sem chave, o `/chat/` responde **503**
+(`attendant_unavailable`) em vez de trocar de modelo escondido. Para rodar só
+local, use `ATTENDANT_PROVIDER=ollama` no `.env` (ou o preset `local_qwen` no
+runner) e baixe o modelo (uma vez; fica no volume). O qwen precisa de GPU:
 
 ```bash
-docker compose exec ollama ollama pull llama3.2:3b
+docker compose exec ollama ollama pull qwen3:8b
 ```
 
-**4. Prepare a base de conhecimento.** A operação segura cria uma coleção
-versionada em staging; não troca a base ativa por acidente:
+**4. A base de conhecimento já vem pronta**: a coleção das 61 fichas de
+triagem está versionada em `backend/chroma_db/`, com o ponteiro ativo, e o
+bge-m3 é baixado no primeiro uso (~2,2 GB; fica no volume `hf_cache`). Para
+regerar as fichas depois de mudar o mapa ou os rascunhos, e reindexar:
+
+```bash
+python scripts/sync_fichas.py
+docker compose exec backend python -m app.database.ingest_documents \
+  --profile fichas --activate
+```
+
+A base acadêmica (perfis `curated`, `experimental`) continua disponível para
+a ablação. A operação segura cria uma coleção versionada em staging; não troca
+a base ativa por acidente:
 
 ```bash
 docker compose exec backend python -m app.database.ingest_documents \
@@ -158,6 +195,10 @@ curl -s -X POST localhost:8000/chat/ \
   -d '{"question": "...", "options": {"retrieval_enabled": false}}'
 ```
 
+A resposta traz também `provenance` (quem respondeu). Para escolher o
+atendente na requisição: `"options": {"attendant_provider": "ollama",
+"llm_model": "qwen3:8b"}`.
+
 Outras rotas: `POST /search/` (só a busca), `POST /voice/` (transcrição de
 áudio), `GET /health/`, `GET /health/fingerprint`.
 
@@ -196,20 +237,38 @@ python -m pytest scripts/tests -q
 A contagem é obtida pela própria coleta do pytest e não é mantida manualmente.
 
 No Windows, prefixe os comandos do host com `$env:PYTHONUTF8=1;` (PowerShell)
-para os acentos dos arquivos serem lidos corretamente.
+para os acentos dos arquivos serem lidos corretamente. O CI também confere
+que os arquivos gerados estão em dia:
+
+```bash
+python scripts/sync_retrieval_terms.py --check
+python scripts/sync_fichas.py --check
+```
 
 ---
 
 ## Medindo o sistema
 
-O runner roda os 98 relatos do conjunto de avaliação contra a API e grava
-uma rodada versionável, com manifesto do que executou e teste estatístico
-para comparar duas rodadas. Passo a passo em
+O runner roda um lote de relatos contra a API e grava uma rodada
+versionável, com manifesto do que executou (inclusive quem respondeu cada
+linha) e teste estatístico para comparar duas rodadas. Passo a passo em
 [`data/evaluation/README.md`](data/evaluation/README.md).
 
 ```bash
-python scripts/run_evaluation.py --preset naive_rag --subset full --name minha_rodada
+# um lote no formato da prova (id, text, expected_class), com um preset
+python scripts/run_evaluation.py --cases data/prova/casos_oficiais.csv --split dev \
+    --preset producao --name minha_rodada
 ```
+
+Presets principais em [`scripts/presets.json`](scripts/presets.json):
+`producao` (Gemini), `local_qwen`, `local_llama`, e os braços da ablação
+(`fichas_com_porta_0_72`, `fichas_tradutor`, `hoje_academico_llama`,
+`hoje_academico_llama_tradutor`). Sem `--cases`, o runner roda o conjunto
+antigo de 98 listas de sintomas em inglês, como antes. O lote `teste` da
+prova 1 está congelado ([`data/prova/README.md`](data/prova/README.md)); a
+prova 2, com os 330 relatos que vão dar o número final, está em
+[`data/prova2/`](data/prova2/README.md), aguardando a validação dos
+veterinários.
 
 ---
 
@@ -227,7 +286,9 @@ backend/
     core/         configuração, cliente Ollama, logger
     database/     ChromaDB e ingestão dos documentos (A)
   supabase_schema.sql  DDL de tutors/pets — rodar uma vez no projeto Supabase
-  data/documents/ a base de conhecimento: PDFs + metadados em JSON
+  data/documents/ os documentos aprovados: PDFs/TXT + metadados em JSON (com o título real)
+  data/fichas.json as 61 fichas de triagem (busca + leitura), geradas por scripts/sync_fichas.py
+  chroma_db/      a coleção ativa (as fichas no bge-m3), versionada, com o ponteiro
   tests/          testes do backend
 frontend/         interface Streamlit real (o compose sobe main.py)
 scripts/          limpeza de dados, data augmentation, avaliação → README próprio

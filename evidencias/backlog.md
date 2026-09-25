@@ -65,8 +65,8 @@ aqui.
 | [B-15](#b-15) | Relatos de avaliação em inglês contra base em português | Trilho B2 + especialista | Média | Aberto |
 | [B-16](#b-16) | Rótulo do data augmentation não descreve o método real | Time (escrita) | Média | Aberto |
 | [B-17](#b-17) | `RERANK_TOP_K` e `CONTEXT_TOP_K` se sobrepõem | Trilho A + B2 | Baixa | Aberto |
-| [B-18](#b-18) | Código morto e duplicado | Vários (lista no item) | Baixa | Em andamento — órfãos de Whisper apagados em 08/09 |
-| [B-19](#b-19) | Arquivos ainda apontam para a rota `/triagem`, removida | Frontend / mock (dono a definir) | Baixa | Aberto |
+| [B-18](#b-18) | Código morto e duplicado | Vários (lista no item) | Baixa | Em andamento — órfãos de Whisper apagados em 08/09; `frontend/streamlit_app.py` apagado na branch da implementação (25/09) |
+| [B-19](#b-19) | Arquivos ainda apontam para a rota `/triagem`, removida | Frontend / mock (dono a definir) | Baixa | Aberto — critério atendido na branch da implementação (25/09); fecha quando subir |
 | [B-20](#b-20) | Frontend não exibe a triagem estruturada nem as fontes | Frontend (dono a definir) | Baixa | Aberto (geladeira, outubro) |
 | [B-21](#b-21) | Métricas RAGAs previstas no artigo | Trilho B2 | Baixa | Aberto (geladeira, outubro) |
 | [B-22](#b-22) | Métrica de sinal alucinado na resposta | Trilho B2 | Baixa | Aberto |
@@ -122,6 +122,8 @@ aqui.
 | [B-72](#b-72) | Documentos aprovados que tratam de outro assunto, e autoria errada em sidecars | A definir | Média | Aberto |
 | [B-73](#b-73) | Abrir o Chroma versionado altera os arquivos binários do repositório | A definir | Média | Aberto |
 | [B-74](#b-74) | "Respondido por" na tela, e o erro do atendente tratado no frontend | A definir | Média | Aberto |
+| [B-75](#b-75) | Decidir os direitos das capturas da VCA e das páginas com todos os direitos reservados | A definir | Média | Aberto |
+| [B-76](#b-76) | O manifesto da coleção de fichas identifica o arquivo inteiro, e não só o que foi indexado | A definir | Baixa | Aberto |
 
 ---
 
@@ -691,6 +693,14 @@ arquivo errado.
 
 **O que resolveria.** Apagar; o Git guarda a história.
 
+**Atualização 25/09, madrugada ([rodada 29](joao/2026-09-25-30-fechamento-da-rodada-noturna.md)).**
+Na branch da implementação, o `frontend/streamlit_app.py` saiu, e o `CHROMA_PATH`
+deixou de ser "sem uso": aponta para `chroma_db`, onde a coleção das fichas está
+versionada ([B-57](#b-57)). Continuam: `base_client.py`, `log_messages.py`,
+`seed_chroma.py`, `frontend/pages/chat.py`, `send_voice`, `OPENAI_API_KEY` e
+`VECTOR_DB`. O `mock/` fica: é o protótipo de demonstração, tem teste e sobe em
+porta própria.
+
 ### B-19
 
 **Arquivos ainda apontam para a rota `/triagem`, removida**
@@ -702,6 +712,13 @@ chamam `POST /triagem`, que não existe desde a rodada 3.
 
 **O que resolveria.** Apagar os dois (o compose sobe `frontend/main.py`).
 Critério: `grep -r triagem` fora de `evidencias/` não retornar nada.
+
+**Atualização 25/09, madrugada ([rodada 29](joao/2026-09-25-30-fechamento-da-rodada-noturna.md)).**
+O `mock/streamlit_app_mock.py` já não chama a rota (virou demonstração sem
+backend). Com o `frontend/streamlit_app.py` apagado na branch, `grep -rn "/triagem"`
+fora de `evidencias/` só encontra a linha do `docs/CONTRATOS.md` que registra a
+rota como removida. (O `grep -r triagem` sem a barra encontra a palavra em
+comentários e não serve de critério.) Fecha quando a branch subir.
 
 ### B-20
 
@@ -2529,6 +2546,17 @@ ficha de leitura é uma rodada medida**, porque o número do sistema depende des
 texto. Critério: nenhuma ficha de leitura com texto não validado e a rodada
 depois da mudança dentro do ruído (ou melhor) na régua do momento.
 
+**Atualização 25/09, madrugada ([rodada 23](joao/2026-09-25-24-fichas-de-busca-e-de-leitura.md)
+e [rodada 27](joao/2026-09-25-28-fontes-para-tutor-etapa-2.md)).** A folha
+`CERTIFICACAO.md` está versionada com as fichas de busca, e o mapa ganhou a coluna
+`por_que_importa`, vazia: é onde os especialistas escrevem o texto que substitui as
+notas internas (item 3). No item 4, **36 das 53 frases `geral` ganharam trecho
+literal** de uma fonte capturada (a aprovar), 16 têm fonte parcial e 1 ficou sem
+fonte ("Sangra muito ou a ferida é funda", mordida de gato); a folha marca cada
+uma. A conferência do trecho de cada item de documento contra o documento fica no
+`conferencia.json` da curadoria e não no CI: levar ao CI exigiria extrair os 66
+documentos a cada commit.
+
 ### B-62
 
 **Fonte escrita para tutor nos quadros em que o documento não descreve o que o tutor vê**
@@ -2554,6 +2582,16 @@ a fonte, sem indexar o texto inteiro. Com o repositório privado
 ([B-52](#b-52)), as fontes para tutor que ficaram de fora por licença podem
 voltar. Critério: os 8 quadros com ao menos uma fonte validada que descreva os
 sinais em casa.
+
+**Atualização 25/09, madrugada ([rodada 27](joao/2026-09-25-28-fontes-para-tutor-etapa-2.md)).**
+Quatro agentes pesquisadores capturaram 45 fontes pelo `capturar_fonte.py` para os
+27 quadros com frases `geral`, entre eles **7 dos 8 quadros insuficientes** (duas
+fontes em cada: briga de gato, insuficiência cardíaca, ofegação após exercício,
+ferida pequena, parto normal, bebe e urina mais, mordida de morcego). O caroço de
+crescimento lento ficou fora: a ficha de busca dele não tem frase `geral`. As 45
+nascem `pending_specialist` em `PARA-VALIDAR.md` e ainda não ganharam id `R..` em
+`referencias.md`; o critério continua aberto até a validação. Direitos de cinco
+delas: [B-75](#b-75).
 
 ### B-63
 
@@ -2695,6 +2733,16 @@ lotes dev, calibração e régua e nos relatos independentes; o `compare` aponta
 mudanças por caso. Critério: a linha de base reproduz 107/129 e 123/129 (prova +
 régua, 1º e entre as 3) e 74/122 e 94/122 (independentes), ±1 caso.
 
+**Atualização 25/09, madrugada ([rodada 24](joao/2026-09-25-25-busca-por-fichas-com-bge-m3.md)).**
+A régua já lê a receita pelo manifesto e tem `--mode vector`; rodou uma vez nas
+fichas (0,879 em 1º, MRR 0,932, nos 66 casos `b..`). A busca da API foi conferida
+caso a caso contra a autópsia (296 de 296 trios iguais), mas com um script do
+diário da noite, não com a régua. Faltam: o "entre as 3" como métrica principal
+(é o que entra no prompt), os lotes da autópsia como casos da régua, a linha de
+base citada, e o `benchmark_retrieval_variants.py`, que ainda abre a coleção com o
+embedding padrão em vez de ler a receita. O limiar de 0,70 da régua não serve às
+fichas: com a ficha certa em 1º, a nota do bge-m3 fica perto de 0,6.
+
 ### B-68
 
 **Uma lista de sinais de alarme gerais, escrita e validada pelos especialistas**
@@ -2733,6 +2781,11 @@ ajudar na arquitetura nova, e vale registrar para a ablação não esquecer.
 **O que resolveria.** Um braço medido na prova 2: tradutor condicional ×
 desligado, com o limiar calibrado só na calibração. Critério: subir o "entre as
 3" dos relatos independentes em ≥ 3 pontos sem piorar a decisão.
+
+**Nota 25/09 ([rodada 25](joao/2026-09-25-26-resposta-com-ficha-e-fonte.md)).** O
+`think` configurável chegou só ao atendente. Se a etapa de consulta voltar a rodar
+com o qwen, ela precisa do mesmo `think=False`, senão o qwen pensa antes de cada
+consulta (mais lento e com a saída diferente).
 
 ### B-70
 
@@ -2775,9 +2828,7 @@ ponteiro ativo ([rodada 24](joao/2026-09-25-25-busca-por-fichas-com-bge-m3.md)).
 **Por que importa.** Quem roda a suíte do CI no Windows vê uma falha falsa e pode
 "consertar" regenerando o arquivo, o que grava um hash que o CI recusa.
 
-**O que resolveria.** Normalizar `
-` → `
-` antes do hash no
+**O que resolveria.** Normalizar `\r\n` → `\n` antes do hash no
 `sync_retrieval_terms.py` (o `sync_fichas.py` da rodada 23 já faz isso) e gravar
 caminhos com `as_posix()` no `prova_freeze.py`; ou um `.gitattributes` com
 `* text=auto eol=lf` para os arquivos de dados. Critério: o `--check` passa num
@@ -2852,6 +2903,48 @@ mensagem que diga para procurar o veterinário.
 **O que resolveria.** Uma linha "Respondido por <modelo>" a partir de
 `provenance.attendant`, e uma mensagem de indisponibilidade no 503. Junto com a
 [B-64](#b-64) (LGPD: aviso de que o relato vai a um serviço externo).
+
+### B-75
+
+**Decidir os direitos das capturas da VCA e das páginas com todos os direitos reservados**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 27](joao/2026-09-25-28-fontes-para-tutor-etapa-2.md), 25/09 · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** Das 45 fontes capturadas para as frases gerais das fichas
+de busca, cinco são da VCA, cujo rodapé proíbe cópia e redistribuição sem
+consentimento escrito e o uso de IA para reescrever ou republicar; MSD e AKC
+declaram todos os direitos reservados. As capturas são literais e estão na
+curadoria (`data/curadoria/fontes/capturas/`), num repositório público. O João
+combinou que direitos não bloqueiam a curadoria; o sidecar de cada uma registra o
+que o site declara (`rights.status = pending`).
+
+**Por que importa.** Uma fonte só vai para a base (e para a citação ao tutor)
+depois do aval do especialista e de direitos compatíveis.
+
+**O que resolveria.** Decidir, com o orientador, se as capturas ficam no
+repositório público ou saem (ficando só o link e o trecho curto no dossiê).
+Critério: nenhuma captura com redistribuição proibida no repositório público, ou
+a decisão registrada.
+
+### B-76
+
+**O manifesto da coleção de fichas identifica o arquivo inteiro, e não só o que foi indexado**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 27](joao/2026-09-25-28-fontes-para-tutor-etapa-2.md), 25/09 · **Responsável:** A definir · **Prioridade:** Baixa · **Status:** Aberto
+
+**O que observamos.** O manifesto da coleção das fichas guarda o sha256 do
+`backend/data/fichas.json` inteiro. O arquivo tem o hash dos rascunhos e dos
+sidecars no cabeçalho, então uma mudança que não mexe em texto nenhum (a rodada 27
+só marcou frases como `documento`) muda o hash do arquivo, e o manifesto da
+coleção versionada passa a apontar para uma versão anterior. O conteúdo indexado
+é o mesmo (conferido: `content_sha256` idêntico).
+
+**Por que importa.** Pouco: quem conferir o manifesto contra o arquivo atual vê
+uma diferença que não é de conteúdo.
+
+**O que resolveria.** A identidade da fonte no manifesto das fichas passar a ser
+o hash dos registros indexados (texto de busca, leitura, metadados), e não do
+arquivo. Critério: mudar só a curadoria não muda a identidade da coleção.
 
 ---
 
