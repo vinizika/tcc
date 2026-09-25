@@ -1,0 +1,104 @@
+{
+  "topico": "anticoagulant_rodenticide_poisoning",
+  "titulo": "Intoxicação por raticida anticoagulante",
+  "nome_leigo": "veneno de rato",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Comeu veneno de rato.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Achei a isca de rato roída; ele comeu, mas por enquanto tá normal.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá sangrando pelo nariz.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Apareceram manchas roxas na pele.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A gengiva tá pálida, branquinha.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá tossindo sangue.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá fraco, sem força.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá quieto e parou de comer.",
+      "origem": "documento",
+      "trecho": "such as lethargy, anorexia, and pallor",
+      "fonte": "anticoagulant_rodenticide_poisoning__frontiers_2022_bleeding.pdf"
+    },
+    {
+      "texto": "Vomitou sangue, o cocô saiu preto ou tem sangue no xixi.",
+      "origem": "documento",
+      "trecho": "on the presence of hematemesis, melena or hematochezia, urinary tract hemorrhage was based on presence of hematuria",
+      "fonte": "anticoagulant_rodenticide_poisoning__frontiers_2022_bleeding.pdf"
+    },
+    {
+      "texto": "Comeu faz uns dias e só agora começou a sangrar.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Respiração difícil ou tosse com sangue.",
+      "origem": "documento",
+      "trecho": "such as dyspnea, coughing/hemoptysis, lethargy",
+      "fonte": "anticoagulant_rodenticide_poisoning__frontiers_2022_bleeding.pdf"
+    },
+    {
+      "texto": "Gengiva branca e muita fraqueza.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Sangue saindo pelo nariz, pela boca, pelos olhos ou no xixi.",
+      "origem": "documento",
+      "trecho": "oral cavity (13%), nasal cavity (11%), ocular (8%), and urinary tract (7%)",
+      "fonte": "anticoagulant_rodenticide_poisoning__frontiers_2022_bleeding.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "dietary_indiscretion_mild",
+      "texto": "Comer uma sobra ou mexer no lixo e seguir comendo e brincando é outro quadro; com veneno de rato o animal pode parecer normal por dias antes de sangrar, então o que pesa é ter tido acesso ao veneno.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "O veneno tira do sangue a capacidade de coagular, e o sangramento forte costuma aparecer só 3 a 5 dias depois.",
+    "origem": "documento",
+    "trecho": "The body’s supply of active coagulation factors II, VII, IX, and X become depleted and result in signiﬁcant hemorrhage after 3–5 days",
+    "fonte": "anticoagulant_rodenticide_poisoning__frontiers_2022_bleeding.pdf"
+  },
+  "notas_para_o_especialista": "Documento: estudo retrospectivo de 62 cães com sangramento por raticida anticoagulante; é só de cães, mas os locais de sangramento foram mantidos genéricos para cão e gato, validar. O documento diz que o número e o local dos sangramentos não se associaram à sobrevida, por isso não pus 'sangrar em vários lugares' como alarme. A frequência de 8% a 16% nas casuísticas brasileiras (motivo do mapa) não entrou na ficha. Nenhum item 'geral'. Trechos copiados do .txt completo; no de por_que_importa a palavra 'significant' vem com a ligadura tipográfica do PDF (ﬁ); no texto indexado aparece com 'fi' normal."
+}

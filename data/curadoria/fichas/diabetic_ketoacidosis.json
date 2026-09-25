@@ -1,0 +1,116 @@
+{
+  "topico": "diabetic_ketoacidosis",
+  "titulo": "Cetoacidose diabética",
+  "nome_leigo": "diabetes descompensado",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Tá bebendo muita água e fazendo muito xixi.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A vasilha de água esvazia rápido e a caixa de areia fica encharcada.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Agora começou a vomitar.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá prostrado, largado, sem ânimo.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá fraco e emagrecendo.",
+      "origem": "documento",
+      "trecho": "Animals with diabetes and DKA exhibit lethargy, vomiting, weakness, and weight loss.",
+      "fonte": "diabetic_ketoacidosis__arshi_2025_feline_dka.pdf"
+    },
+    {
+      "texto": "Vomitou sangue e tá comendo pouco.",
+      "origem": "documento",
+      "trecho": "The blind, fully vaccinated cat showed hematemesis, reduced ap- petite, and respiratory difficulty for two days.",
+      "fonte": "diabetic_ketoacidosis__arshi_2025_feline_dka.pdf"
+    },
+    {
+      "texto": "Tá respirando rápido, com dificuldade.",
+      "origem": "documento",
+      "trecho": "A 7-year-old castrated male cat presented with dyspnea, vomiting, marked dehydration, and hypothermia.",
+      "fonte": "diabetic_ketoacidosis__arshi_2025_feline_dka.pdf"
+    },
+    {
+      "texto": "Ele é diabético.",
+      "origem": "documento",
+      "trecho": "DKA is a severe DM complication",
+      "fonte": "diabetic_ketoacidosis__arshi_2025_feline_dka.pdf"
+    },
+    {
+      "texto": "Nem sabia que ele tinha diabetes.",
+      "origem": "documento",
+      "trecho": "There was no endocrine or renal disease.",
+      "fonte": "diabetic_ketoacidosis__arshi_2025_feline_dka.pdf"
+    },
+    {
+      "texto": "É um gato gordinho.",
+      "origem": "documento",
+      "trecho": "and obesity as a major predisposing factor",
+      "fonte": "diabetic_ketoacidosis__arshi_2025_feline_dka.pdf"
+    },
+    {
+      "texto": "O hálito tá com cheiro doce, de acetona.",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Respiração difícil.",
+      "origem": "documento",
+      "trecho": "Cats with critical signs, such as dyspnea, poor tissue perfusion",
+      "fonte": "diabetic_ketoacidosis__arshi_2025_feline_dka.pdf"
+    },
+    {
+      "texto": "Gengiva pálida.",
+      "origem": "documento",
+      "trecho": "Impaired perfusion in cats typically manifests as pale mucous membranes",
+      "fonte": "diabetic_ketoacidosis__arshi_2025_feline_dka.pdf"
+    },
+    {
+      "texto": "Tá meio fora do ar, sem reagir direito.",
+      "origem": "documento",
+      "trecho": "The cat showed depression and obtundation",
+      "fonte": "diabetic_ketoacidosis__arshi_2025_feline_dka.pdf"
+    },
+    {
+      "texto": "Tão prostrado que não levanta.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "polyuria_polydipsia_investigate",
+      "texto": "Quando só bebe e urina muito, o animal segue comendo, ativo e sem vomitar; na cetoacidose, além de beber e urinar muito, ele vomita e fica prostrado.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "A cetoacidose é uma complicação do diabetes que ameaça a vida.",
+    "origem": "documento",
+    "trecho": "Diabetic ketoacidosis (DKA) is a life-threatening metabolic complication secondary to diabetes mellitus (DM)",
+    "fonte": "diabetic_ketoacidosis__arshi_2025_feline_dka.pdf"
+  },
+  "notas_para_o_especialista": "O documento é o relato de caso de um único gato (cetoacidose com doença renal crônica); a introdução traz sinais gerais (letargia, vômito, fraqueza, perda de peso) que valem para cão e gato. Vômito com sangue, apetite reduzido, dificuldade respiratória, gengiva pálida e 'não sabia que era diabético' vêm desse caso ou de frases sobre gatos, validar para o cão. 'Bebe e urina muito' vem do motivo do mapa; o documento não cita sede nem urina aumentadas. Obesidade aparece como fator de risco para diabetes em gatos. Item 'geral' (1): hálito com cheiro de acetona. Temperatura, desidratação em %, glicose e cetonas são medidas pelo veterinário; não usei. O trecho 'reduced ap- petite' está assim no .txt completo (hifenização do PDF); no texto indexado aparece 'reduced appetite'."
+}

@@ -1,0 +1,108 @@
+{
+  "topico": "burns_and_electrical_injury",
+  "titulo": "Queimadura e choque elétrico",
+  "nome_leigo": "choque no fio",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "O filhote mordeu o fio da tomada",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O gatinho mastigou o fio do carregador e levou choque",
+      "origem": "documento",
+      "trecho": "especially in puppies and kittens",
+      "fonte": "burns_and_electrical_injury__bmc_2024_electrocution.pdf"
+    },
+    {
+      "texto": "Ficou com a boca presa no fio, sem conseguir soltar",
+      "origem": "documento",
+      "trecho": "prolonged exposure to the electrical source resulting from tetanic contraction of the masticatory muscles",
+      "fonte": "burns_and_electrical_injury__bmc_2024_electrocution.pdf"
+    },
+    {
+      "texto": "Levou choque e apagou por um instante, depois voltou",
+      "origem": "documento",
+      "trecho": "the puppy momentarily lost consciousness after chewing on a household electrical cord",
+      "fonte": "burns_and_electrical_injury__bmc_2024_electrocution.pdf"
+    },
+    {
+      "texto": "Depois do choque ficou agitado",
+      "origem": "documento",
+      "trecho": "the dog remained agitated",
+      "fonte": "burns_and_electrical_injury__bmc_2024_electrocution.pdf"
+    },
+    {
+      "texto": "Tá babando muito depois do choque",
+      "origem": "documento",
+      "trecho": "a 3-month-old Yorkshire with excessive salivation",
+      "fonte": "burns_and_electrical_injury__bmc_2024_electrocution.pdf"
+    },
+    {
+      "texto": "Ficou uma ferida de queimadura na boca ou na língua",
+      "origem": "documento",
+      "trecho": "the puppy had an oral electrical burn",
+      "fonte": "burns_and_electrical_injury__bmc_2024_electrocution.pdf"
+    },
+    {
+      "texto": "Caiu água fervendo ou óleo quente nele",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A gata pulou no fogão quente e queimou as patinhas",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Encostou em produto químico forte e a pele queimou",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O pelo ficou chamuscado ou caiu, e a pele embaixo ficou vermelha ou escura",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Ficou mole, quase sem reagir",
+      "origem": "documento",
+      "trecho": "with minimal reaction to stimuli",
+      "fonte": "burns_and_electrical_injury__bmc_2024_electrocution.pdf"
+    },
+    {
+      "texto": "Respira com dificuldade, sentado ou em pé, sem conseguir deitar",
+      "origem": "documento",
+      "trecho": "On admission, the puppy showed an orthopneic position with moderate respiratory distress",
+      "fonte": "burns_and_electrical_injury__bmc_2024_electrocution.pdf"
+    },
+    {
+      "texto": "A língua ou a gengiva está ficando roxa",
+      "origem": "documento",
+      "trecho": "the patient worsened and developed cyanosis",
+      "fonte": "burns_and_electrical_injury__bmc_2024_electrocution.pdf"
+    },
+    {
+      "texto": "Parecia bem depois do choque, mas a respiração foi piorando",
+      "origem": "documento",
+      "trecho": "the patient showed marked worsening of respiratory status",
+      "fonte": "burns_and_electrical_injury__bmc_2024_electrocution.pdf"
+    }
+  ],
+  "como_diferenciar": [],
+  "por_que_importa": {
+    "texto": "Mesmo quando o animal parece recuperado, o choque elétrico pode encher o pulmão de líquido, uma complicação que ameaça a vida.",
+    "origem": "documento",
+    "trecho": "pulmonary edema should be considered a potentially life-threatening complication of electrical shock",
+    "fonte": "burns_and_electrical_injury__bmc_2024_electrocution.pdf"
+  },
+  "notas_para_o_especialista": "O documento é um relato de caso único (labrador de 3 meses, fio de 110 V) com edema pulmonar neurogênico após morder fio; cita outros dois relatos com salivação excessiva, prostração e dificuldade respiratória. Não cobre queimadura térmica nem química: 'água fervendo ou óleo quente', 'gata pulou no fogão' e 'produto químico forte' são exemplos leigos das queimaduras térmicas e químicas citadas no motivo do mapa, e a descrição da pele queimada (pelo chamuscado ou caindo, pele vermelha ou escura) é conhecimento geral. 'Boca presa no fio' vem de um trecho do documento que cita a literatura humana (contração tetânica dos músculos da mastigação prolongando o contato com o fio). Gatos aparecem só na frase final do documento ('puppies and kittens'). Não há gêmeo. Pupila dilatada (midríase), saturação, frequência respiratória medida e ultrassom são achados de exame e não entraram. O documento cita convulsão em um relato, mas o trecho está quebrado no texto extraído e não o usei."
+}

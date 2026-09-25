@@ -1,0 +1,92 @@
+{
+  "topico": "gastrointestinal_foreign_body",
+  "titulo": "Corpo estranho no tubo digestivo",
+  "nome_leigo": "engoliu um objeto, intestino entupido",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "O gato engoliu barbante, linha ou fita.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tava brincando com linha de costura e sumiu um pedaço.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Engoliu meia, brinquedo, tampinha, caroço ou osso.",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Vomita toda vez que come ou bebe água.",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá vomitando desde ontem, várias vezes.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Parou de comer e tá quieto, sem brincar.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A barriga tá dolorida, reclama quando encosto.",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tem um fio saindo da boca ou pelo bumbum.",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Vômito com sangue.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Barriga inchada ou muito dolorida.",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Muito fraco e prostrado.",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "single_vomiting_or_mild_diarrhea",
+      "texto": "Vômito isolado em animal que segue comendo, brincando e ativo é outro quadro; no corpo estranho o vômito se repete, passa de um dia, pode ter sangue e o animal para de comer, ainda mais se engoliu algo (no gato, barbante ou linha).",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "No gato, barbante, linha ou fita engolidos podem necrosar o intestino em poucas horas.",
+    "origem": "mapa",
+    "trecho": "",
+    "fonte": ""
+  },
+  "notas_para_o_especialista": "O documento aprovado é um estudo de concordância entre exames de imagem e achados cirúrgicos (35 gatos e 60 cães operados por sinais gastrointestinais); não descreve nenhum sinal que o tutor perceba nem histórico de ingestão. Por isso os sinais vêm do mapa (motivo sobre corpo estranho linear no gato; 'vomitando desde ontem', 'parou de comer e tá quieto' e 'vômito com sangue' derivam do discriminador do gêmeo: continua comendo e ativo? tem sangue? passou de 24 h?) ou são 'geral' (6 itens: objetos engolidos, vômito a cada refeição/água, dor abdominal, fio saindo da boca ou do ânus, barriga inchada, prostração). O único dado útil do documento é que corpo estranho foi o achado cirúrgico mais comum (49 de 95), não usado na ficha. Sugiro trocar ou complementar o documento por um que descreva a apresentação clínica."
+}

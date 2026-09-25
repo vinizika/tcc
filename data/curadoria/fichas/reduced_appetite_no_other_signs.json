@@ -1,0 +1,106 @@
+{
+  "topico": "reduced_appetite_no_other_signs",
+  "titulo": "Comendo menos, sem outros sinais",
+  "nome_leigo": "sem fome",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Tá comendo menos que o normal",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Recusou a refeição de hoje",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá bebendo água normalmente",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá ativo, brincando como sempre",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Não vomitou",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Não teve diarreia",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Parece enjoado da ração, come um pouco e larga",
+      "origem": "documento",
+      "trecho": "Inappetence and anorexia are nonspecific clinical signs very common in feline",
+      "fonte": "reduced_appetite_no_other_signs__animals_2025_feline_inappetence.pdf"
+    },
+    {
+      "texto": "Desde ontem à noite não quis comer",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "É gato adulto e já passou de 24 horas sem comer",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "É filhote com menos de 6 semanas e está há 12 horas sem comer",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Começou a vomitar, ficou apático ou parece sentir dor",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "vomiting_and_diarrhea",
+      "texto": "Aqui só caiu o apetite: sem vômito, sem diarreia, bebendo água e ativo. Vômito várias vezes, diarreia com sangue, animal quietinho ou sem beber água é o outro quadro.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "gemea": "parvovirus_panleukopenia",
+      "texto": "Parvovirose e panleucopenia costumam ser em filhote não vacinado ou com vacina incompleta, com vômito, diarreia com sangue e cheiro forte, e prostração; aqui o animal está ativo e sem vômito ou diarreia.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "gemea": "collapse_and_pale_gums",
+      "texto": "No colapso o animal desmaia ou fica muito fraco de repente, com gengiva branca; aqui ele está alerta, ativo e com a gengiva rosada.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "No gato, comer menos muitas vezes é o primeiro sinal de doença que o tutor percebe.",
+    "origem": "documento",
+    "trecho": "frequently being the first clinical sign identified by caregivers",
+    "fonte": "reduced_appetite_no_other_signs__animals_2025_feline_inappetence.pdf"
+  },
+  "notas_para_o_especialista": "O documento é sobre mirtazapina transdérmica em gatos (tratamento e percepção dos tutores). A única informação aproveitável é a da introdução: falta de apetite é sinal inespecífico e muitas vezes o primeiro que o tutor nota. Não há nada sobre cães. Todo o resto vem do mapa, incluindo os limites de 24 horas (gato adulto) e 12 horas (filhote com menos de 6 semanas), que ficaram nos sinais de alarme. 'Desde ontem à noite' é a resposta do tutor à pergunta do discriminador sobre há quantas horas o animal está sem comer. Nenhum item geral."
+}

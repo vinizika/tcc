@@ -1,0 +1,99 @@
+{
+  "topico": "exertional_panting_mild",
+  "titulo": "Ofegação após exercício",
+  "nome_leigo": "cansaço depois de correr",
+  "especie": "cão",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Depois de correr ele fica ofegante, com a língua pra fora",
+      "origem": "documento",
+      "trecho": "The combination of exercise and evaporative cooling through panting",
+      "fonte": "exertional_panting_mild__frontiers_2018_working_dogs.pdf"
+    },
+    {
+      "texto": "Brincou muito de bolinha e agora tá bufando",
+      "origem": "documento",
+      "trecho": "The ball retrieve component consisted of dogs retrieving a ball or toy",
+      "fonte": "exertional_panting_mild__frontiers_2018_working_dogs.pdf"
+    },
+    {
+      "texto": "Tava calor e ele fez bastante exercício",
+      "origem": "documento",
+      "trecho": "performing in a warm and moderately humid ambient environment",
+      "fonte": "exertional_panting_mild__frontiers_2018_working_dogs.pdf"
+    },
+    {
+      "texto": "Respira rápido, de boca aberta, logo depois do passeio",
+      "origem": "documento",
+      "trecho": "Temperature regulation in dogs is primarily a function of respiratory exchange and associated evaporative heat loss",
+      "fonte": "exertional_panting_mild__frontiers_2018_working_dogs.pdf"
+    },
+    {
+      "texto": "Quando para e descansa na sombra, a respiração vai acalmando",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá ofegante, mas esperto, anda normal e atende quando chamo",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "É cachorro ativo, de esporte, e sempre fica assim depois do treino",
+      "origem": "documento",
+      "trecho": "Dogs are natural athletes",
+      "fonte": "exertional_panting_mild__frontiers_2018_working_dogs.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Continua ofegando sem parar mesmo descansando na sombra",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Cambaleia, fica muito quente ao toque ou a língua fica vermelho-escura",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Ofega com a língua enrolada, procura sombra e fica lento",
+      "origem": "documento",
+      "trecho": "The exercise test was stopped if dogs showed signs of curled tongue while panting, seeking shade, or slowing of retrieve",
+      "fonte": "exertional_panting_mild__frontiers_2018_working_dogs.pdf"
+    },
+    {
+      "texto": "Antes disso ficou no sol forte ou fechado no carro",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "canine_heatstroke",
+      "texto": "Na ofegação normal houve exercício e ela vai passando quando ele descansa na sombra; na intermação ele ficou no sol ou no carro, ofega sem parar, fica muito quente ao toque, cambaleia e a língua fica vermelho-escura.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "gemea": "congestive_heart_failure",
+      "texto": "Na insuficiência cardíaca a respiração fica acelerada mesmo em repouso ou dormindo, sem ter feito esforço, e pode vir com tosse; a ofegação normal só aparece depois de exercício ou calor.",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Ofegar é o jeito normal do cão perder calor; o risco é confundir isso com intermação.",
+    "origem": "mapa",
+    "trecho": "",
+    "fonte": ""
+  },
+  "notas_para_o_especialista": "O documento estuda hidratação e temperatura de cães de trabalho treinados após até 30 min de exercício em clima quente; quase tudo é medido (temperatura por cápsula e ouvido, pulso, gasometria). Sinais visíveis pelo tutor: a ofegação após o esforço e os critérios de parada do teste (língua enrolada ao ofegar, procurar sombra, ficar lento na brincadeira), usados aqui como alarme. A volta da temperatura ao normal em até 60 min foi medida com sensor e não entrou como sinal. A linha do mapa não tem sinais nem discriminador; 'melhora ao descansar na sombra' e os sinais de alarme vêm da linha do gêmeo intermação. O gêmeo insuficiência cardíaca não tem sinais no mapa, então a diferenciação com ele é conhecimento geral. 'Anda normal e atende quando chamo' também é geral."
+}

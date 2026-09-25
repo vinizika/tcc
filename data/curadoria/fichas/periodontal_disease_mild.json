@@ -1,0 +1,102 @@
+{
+  "topico": "periodontal_disease_mild",
+  "titulo": "Tártaro e mau hálito (doença periodontal leve)",
+  "nome_leigo": "bafo e tártaro nos dentes",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Tá com um bafo muito forte",
+      "origem": "documento",
+      "trecho": "volatile sulfur compounds, which lead to halitosis",
+      "fonte": "periodontal_disease_mild__antibiotics_2022_periodontal.pdf"
+    },
+    {
+      "texto": "A boca tá com cheiro de podre",
+      "origem": "documento",
+      "trecho": "volatile sulfur compounds, which lead to halitosis",
+      "fonte": "periodontal_disease_mild__antibiotics_2022_periodontal.pdf"
+    },
+    {
+      "texto": "Sinto o cheiro da boca dele de longe",
+      "origem": "documento",
+      "trecho": "volatile sulfur compounds, which lead to halitosis",
+      "fonte": "periodontal_disease_mild__antibiotics_2022_periodontal.pdf"
+    },
+    {
+      "texto": "Tem tártaro, uma crosta amarela ou marrom nos dentes",
+      "origem": "documento",
+      "trecho": "dental plaque and calculus accumulation",
+      "fonte": "periodontal_disease_mild__antibiotics_2022_periodontal.pdf"
+    },
+    {
+      "texto": "Os dentes do fundo estão cheios de pedra, escurecidos",
+      "origem": "documento",
+      "trecho": "dental plaque and calculus accumulation",
+      "fonte": "periodontal_disease_mild__antibiotics_2022_periodontal.pdf"
+    },
+    {
+      "texto": "A gengiva tá vermelha e inchadinha perto dos dentes",
+      "origem": "documento",
+      "trecho": "It affects the periodontium, leading to gingivitis and/or several degrees of periodontitis",
+      "fonte": "periodontal_disease_mild__antibiotics_2022_periodontal.pdf"
+    },
+    {
+      "texto": "Às vezes sai um pouquinho de sangue da gengiva",
+      "origem": "documento",
+      "trecho": "dental plaque, calculus, gingival bleeding, and oral volatile sulfur compounds in dogs",
+      "fonte": "periodontal_disease_mild__antibiotics_2022_periodontal.pdf"
+    },
+    {
+      "texto": "Vi sangue no brinquedo depois que ele mastigou",
+      "origem": "documento",
+      "trecho": "dental plaque, calculus, gingival bleeding, and oral volatile sulfur compounds in dogs",
+      "fonte": "periodontal_disease_mild__antibiotics_2022_periodontal.pdf"
+    },
+    {
+      "texto": "É de raça pequena e já tá mais velhinho",
+      "origem": "documento",
+      "trecho": "PD incidence increases with age and in small breeds",
+      "fonte": "periodontal_disease_mild__antibiotics_2022_periodontal.pdf"
+    },
+    {
+      "texto": "Só come comida caseira ou ração úmida",
+      "origem": "documento",
+      "trecho": "soft food such as the home diet is frequently associated with higher PD incidence",
+      "fonte": "periodontal_disease_mild__antibiotics_2022_periodontal.pdf"
+    },
+    {
+      "texto": "Tá comendo e brincando normal, só o bafo que incomoda",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Dente mole ou balançando",
+      "origem": "documento",
+      "trecho": "increased dental mobility",
+      "fonte": "periodontal_disease_mild__antibiotics_2022_periodontal.pdf"
+    },
+    {
+      "texto": "Gengiva retraída, aparecendo a raiz do dente",
+      "origem": "documento",
+      "trecho": "attachment loss with bone destruction",
+      "fonte": "periodontal_disease_mild__antibiotics_2022_periodontal.pdf"
+    },
+    {
+      "texto": "Parou de comer, mastiga de um lado só ou o rosto inchou",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "como_diferenciar": [],
+  "por_que_importa": {
+    "texto": "Sem controle, a inflamação avança e as bactérias da placa podem cair no sangue e afetar rins, fígado e coração.",
+    "origem": "documento",
+    "trecho": "Systemically, bacteria and their toxins can spread via the bloodstream (bacteremia) from dental plaque, together with inflammatory mediators produced against periodontal bacterial aggression, leading to renal, hepatic, or cardiac consequences",
+    "fonte": "periodontal_disease_mild__antibiotics_2022_periodontal.pdf"
+  },
+  "notas_para_o_especialista": "O documento é só de cães e focado em prevenção e tratamento. Sinais que ele documenta: halitose, placa e tártaro, gengivite, sangramento gengival, mobilidade dentária e perda de inserção. Não há dados de gatos (só o motivo do mapa cita 70% dos gatos aos 3 anos); os sinais usados valem para as duas espécies. Dois itens gerais para validar: 'comendo e brincando normal' e 'parou de comer, mastiga de um lado só ou o rosto inchou'. 'Pedra' é o nome popular do tártaro. A prevalência do mapa (80% dos cães e 70% dos gatos aos 3 anos) não entrou no texto. Não há gêmeos; para chegar perto de 150 palavras, entraram mais variações de mau hálito e tártaro, que são os sinais principais."
+}

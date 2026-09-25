@@ -1,0 +1,113 @@
+{
+  "topico": "tremors_without_seizure",
+  "titulo": "Tremor sem convulsão",
+  "nome_leigo": "tremedeira",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Tá tremendo de frio, ainda mais depois do banho.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Treme de medo com fogos, trovão ou no veterinário.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Treme, mas tá acordado, me olhando, e atende quando chamo.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Mesmo tremendo, anda normal.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O corpo todo treme, mas ele continua consciente.",
+      "origem": "documento",
+      "trecho": "generalized body tremors without loss of consciousness",
+      "fonte": "tremors_without_seizure__frontiers_2024_dyskinesia.pdf"
+    },
+    {
+      "texto": "Não babou nem fez xixi, e não pareceu sentir dor.",
+      "origem": "documento",
+      "trecho": "A PD does not cause pain, the dog is conscious, and there are no autonomic signs visible.",
+      "fonte": "tremors_without_seizure__frontiers_2024_dyskinesia.pdf"
+    },
+    {
+      "texto": "Começou e parou de repente, e logo depois já tava normal.",
+      "origem": "documento",
+      "trecho": "A PD can last seconds, minutes, or hours, commencing and ending abruptly. In principle, there is no post-ictal phase",
+      "fonte": "tremors_without_seizure__frontiers_2024_dyskinesia.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Caiu de lado, pedalou, babou ou parou de responder.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O tremor durou mais de 2 minutos.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Gato tremendo depois de contato com antipulgas de cachorro.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tremor junto com vômito, diarreia ou dificuldade pra respirar.",
+      "origem": "documento",
+      "trecho": "Acute intoxications are often accompanied by gastrointestinal and/or respiratory signs.",
+      "fonte": "tremors_without_seizure__frontiers_2024_dyskinesia.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "seizures",
+      "texto": "Na convulsão o animal apaga: cai de lado, pedala, baba ou faz xixi e não responde; no tremor comum segue acordado e atende quando chamado.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "gemea": "permethrin_toxicosis_cats",
+      "texto": "Gato que recebeu antipulgas de cachorro ou dorme com cão recém-tratado e treme, baba ou anda estranho aponta para intoxicação, não para frio ou medo.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "gemea": "hypoglycemia_toy_puppy",
+      "texto": "Filhote de raça pequena com menos de 3 meses que treme e fica fraco, molinho, depois de jejum, frio ou estresse pode estar com açúcar baixo; no tremor comum o animal fica atento e anda normal.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "gemea": "carbamate_organophosphate_poisoning",
+      "texto": "Tremor com muita baba, pupila bem pequena, diarreia ou xixi escapando, depois de acesso a rua, quintal ou isca de veneno, aponta para chumbinho; o tremor de frio ou medo vem sozinho.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "'Tá tremendo' serve para frio ou susto e também para convulsão ou intoxicação; o risco é confundir um com o outro.",
+    "origem": "mapa",
+    "trecho": "",
+    "fonte": ""
+  },
+  "notas_para_o_especialista": "O documento aprovado é uma revisão sobre discinesia paroxística em cães (crises de movimentos involuntários); não fala de tremor de frio ou de medo. Usei dele só critérios gerais de episódio não convulsivo (consciência preservada, sem baba/xixi, sem dor, início e fim abruptos, sem fase pós-crise) e a frase de que intoxicação aguda costuma vir com sinais gastrointestinais/respiratórios. O documento é só de cães; estendi esses critérios ao gato por serem gerais, validar. Os exemplos de situação (banho, fogos, trovão, veterinário) são ilustrações dos sinais do mapa. O gêmeo de hipoglicemia não tem sinais nem discriminador no mapa; usei o motivo da linha dele (filhote toy com menos de 3 meses, jejum, frio, estresse). Não usei a parte sobre tremor de cabeça porque o documento a associa a lesão cerebral. Nenhum item 'geral'."
+}

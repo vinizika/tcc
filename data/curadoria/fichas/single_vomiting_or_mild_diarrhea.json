@@ -1,0 +1,125 @@
+{
+  "topico": "single_vomiting_or_mild_diarrhea",
+  "titulo": "Vômito isolado ou fezes moles em animal ativo",
+  "nome_leigo": "vomitou uma vez, cocô mole",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Vomitou uma vez só",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá com as fezes moles",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Continua comendo normal",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá brincando, ativo como sempre",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O gato vomitou bola de pelo",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Quando vomitou, saiu comida",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Não tem sangue no vômito nem no cocô",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Foi hoje, faz poucas horas",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Sangue no vômito ou nas fezes",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Parou de comer ou ficou quieto, desanimado",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tenta vomitar e não sai nada",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Já passou de 24 horas",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Apareceu outro sinal além do vômito e da diarreia",
+      "origem": "documento",
+      "trecho": "Dogs presenting with an impaired mentation or with additional clinical signs other than diarrhea, were more likely to be in the COM group.",
+      "fonte": "single_vomiting_or_mild_diarrhea__frontiers_2023_uncomplicated_vomiting.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "vomiting_and_diarrhea",
+      "texto": "Vômitos repetidos no dia, diarreia com sangue, animal prostrado ou sem beber água é o quadro persistente; aqui foi uma vez e ele segue comendo e brincando.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "gemea": "gastric_dilatation_volvulus",
+      "texto": "Na torção o cão tenta vomitar e não sai nada, com barriga estufada e dura, inquieto e babando; aqui o vômito sai e a barriga está normal.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "gemea": "parvovirus_panleukopenia",
+      "texto": "Filhote sem vacinas completas, com diarreia com sangue ou cheiro muito forte e prostrado, aponta para parvovirose ou panleucopenia.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "gemea": "gastrointestinal_foreign_body",
+      "texto": "Se alguém viu o animal engolir um objeto (brinquedo, meia, osso), o quadro é de corpo estranho, não de vômito isolado.",
+      "origem": "documento",
+      "trecho": "Dogs with witnessed intake of foreign bodies, with copremesis",
+      "fonte": "single_vomiting_or_mild_diarrhea__frontiers_2023_uncomplicated_vomiting.pdf"
+    }
+  ],
+  "por_que_importa": {
+    "texto": "A maioria das gastroenterites leves melhora em 1 a 2 dias; vômito repetido, sangue, apatia ou mais de 24 horas mudam o quadro.",
+    "origem": "mapa",
+    "trecho": "",
+    "fonte": ""
+  },
+  "notas_para_o_especialista": "O documento é um estudo só com cães (vômito no pronto-atendimento de clínica médica); a linha do mapa vale para cão e gato, então o item 'outro sinal além da diarreia' foi generalizado para as duas espécies. O corpo estranho aparece no documento só como 'ingestão testemunhada' (casos excluídos do estudo); os exemplos brinquedo, meia e osso são ilustrações leigas. A torção gástrica foi descrita como 'cão' por ser quadro típico de cão. Nenhum item geral."
+}

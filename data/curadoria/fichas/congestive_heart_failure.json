@@ -1,0 +1,104 @@
+{
+  "topico": "congestive_heart_failure",
+  "titulo": "Insuficiência cardíaca descompensada",
+  "nome_leigo": "água no pulmão, tosse do coração",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Tosse mais à noite, de madrugada.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Acorda tossindo e não consegue dormir.",
+      "origem": "documento",
+      "trecho": "are unable to sleep at night from chronic cough",
+      "fonte": "congestive_heart_failure__frontiers_2020_cough.pdf"
+    },
+    {
+      "texto": "Faz força pra respirar, a barriga mexe muito.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá ofegante, respirando rápido.",
+      "origem": "documento",
+      "trecho": "stridor, stertor, cough, increased panting, tachypnea",
+      "fonte": "congestive_heart_failure__frontiers_2020_cough.pdf"
+    },
+    {
+      "texto": "Respira rápido até quando tá dormindo.",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O veterinário já tinha dito que ele tem sopro no coração.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "É cachorro pequeno com problema de válvula no coração.",
+      "origem": "documento",
+      "trecho": "Commonly, small breed dogs have both chronic mitral regurgitation and airway disease.",
+      "fonte": "congestive_heart_failure__frontiers_2020_cough.pdf"
+    },
+    {
+      "texto": "A barriga ficou inchada, parece que tem água.",
+      "origem": "documento",
+      "trecho": "If the patient has jugular pulses, hepatomegaly, and/or ascites, right-sided heart failure",
+      "fonte": "congestive_heart_failure__frontiers_2020_cough.pdf"
+    },
+    {
+      "texto": "O gato não tosse, mas respira rápido e com esforço.",
+      "origem": "documento",
+      "trecho": "Coughing is frequently reported in dogs with cardiac disease . However, it is not a common clinical sign in cats with cardiac disease",
+      "fonte": "congestive_heart_failure__frontiers_2020_cough.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Muita força pra respirar, mesmo parado.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Língua ou gengiva arroxeada.",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Não consegue deitar, fica sentado pra conseguir respirar.",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Desmaiou numa crise de tosse.",
+      "origem": "documento",
+      "trecho": "Some dogs become syncopa l or are unable to sleep at night from chronic cough",
+      "fonte": "congestive_heart_failure__frontiers_2020_cough.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "kennel_cough_mild",
+      "texto": "Sem sopro no coração, a tosse tende a vir das vias respiratórias, como na tosse dos canis; em cão com sopro já conhecido, tosse pior à noite com esforço pra respirar aponta para o coração.",
+      "origem": "documento",
+      "trecho": "A patient without a heart murmur will less likely have cardiac disease and be more likely to have a primary respiratory problem.",
+      "fonte": "congestive_heart_failure__frontiers_2020_cough.pdf"
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Tosse noturna com esforço pra respirar em cão com sopro pode ser água no pulmão (edema pulmonar).",
+    "origem": "mapa",
+    "trecho": "",
+    "fonte": ""
+  },
+  "notas_para_o_especialista": "O documento é uma revisão sobre tosse em cães e gatos, centrada em exame físico, imagem e exames; quase não descreve o que o tutor vê em casa. Tosse noturna, esforço respiratório e sopro conhecido vêm do motivo do mapa. Itens 'geral' (3): respiração rápida durante o sono, língua/gengiva roxa e não conseguir deitar para respirar. Para o gato, o documento só diz que tosse não é sinal comum da doença cardíaca felina; a respiração rápida e com esforço no gato é inferência, validar. O desmaio por tosse e a insônia por tosse aparecem no documento para tosse crônica em geral, não só cardíaca. No gêmeo (tosse dos canis) o mapa não tem sinais nem discriminador; usei o trecho sobre ausência de sopro, e a parte 'pior à noite com esforço' vem do mapa. Trechos copiados literalmente do .txt completo, que tem palavras quebradas pela extração do PDF ('syncopa l', 'disease .')."
+}

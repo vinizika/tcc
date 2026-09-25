@@ -1,0 +1,105 @@
+{
+  "topico": "polyuria_polydipsia_investigate",
+  "titulo": "Bebe e urina mais que o normal",
+  "nome_leigo": "sede demais, xixi demais",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Tá bebendo muita água, bem mais que o normal",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Esvazia o pote de água toda hora, encho várias vezes por dia",
+      "origem": "documento",
+      "trecho": "Polydipsia is defined by a water consumption >100 mL/kg/24 h in dogs, and > 45 mL/kg/24 h in cats",
+      "fonte": "polyuria_polydipsia_investigate__frontiers_2025_water_balance.pdf"
+    },
+    {
+      "texto": "Medi a água: passa de 100 mL por kg por dia no cão, ou 45 no gato",
+      "origem": "documento",
+      "trecho": "Polydipsia is defined by a water consumption >100 mL/kg/24 h in dogs, and > 45 mL/kg/24 h in cats",
+      "fonte": "polyuria_polydipsia_investigate__frontiers_2025_water_balance.pdf"
+    },
+    {
+      "texto": "Tá fazendo xixi demais, umas poças enormes",
+      "origem": "documento",
+      "trecho": "Polyuria is defined by a urine production >50 mL/kg/24 h (or > 2 mL/kg/h) in both dogs and cats",
+      "fonte": "polyuria_polydipsia_investigate__frontiers_2025_water_balance.pdf"
+    },
+    {
+      "texto": "A caixa de areia do gato fica encharcada, com torrões enormes",
+      "origem": "documento",
+      "trecho": "Polyuria is defined by a urine production >50 mL/kg/24 h (or > 2 mL/kg/h) in both dogs and cats",
+      "fonte": "polyuria_polydipsia_investigate__frontiers_2025_water_balance.pdf"
+    },
+    {
+      "texto": "Começou a fazer xixi pela casa ou pede pra sair de madrugada",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Bebe muita água e tá emagrecendo, mesmo comendo",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá tomando corticoide e passou a beber muita água",
+      "origem": "documento",
+      "trecho": "reported causes of acquired NDI include hyperadrenocorticism, drugs (e.g., glucocorticoids, aminoglycosides, amphotericin B), hypercalcemia",
+      "fonte": "polyuria_polydipsia_investigate__frontiers_2025_water_balance.pdf"
+    },
+    {
+      "texto": "Fora a sede, tá comendo, ativo e sem vômito",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Fêmea não castrada com pus na vulva ou cio há poucas semanas",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Vômito que não para",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Fraqueza, desmaio ou colapso",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "pyometra",
+      "texto": "Em fêmea não castrada, sede com cio há poucas semanas, pus pela vulva, apatia, falta de apetite ou barriga inchada aponta para piometra.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "gemea": "diabetic_ketoacidosis",
+      "texto": "Sede com vômito, prostração ou fraqueza, principalmente em animal diabético, aponta para cetoacidose; só beber e urinar mais, ativo e comendo, é este quadro.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Beber e urinar demais costuma ter uma doença por trás, como problema nos rins, diabete ou alteração hormonal.",
+    "origem": "documento",
+    "trecho": "common causes of PUPD include chronic renal disease, hyperadrenocorticism, diabetes mellitus, hyperthyroidism",
+    "fonte": "polyuria_polydipsia_investigate__frontiers_2025_water_balance.pdf"
+  },
+  "notas_para_o_especialista": "A linha do mapa não tem sinais nem discriminador; usei o motivo (consumo excessivo de água; vira emergência com piometra, colapso ou vômito persistente) e os sinais do gêmeo piometra. O documento é uma revisão de fisiologia (vasopressina/copeptina) sem descrição do que o tutor vê; aproveitei só as definições de polidipsia (>100 mL/kg/dia no cão, >45 no gato) e poliúria (>50 mL/kg/dia) e a lista de causas. Validar se o item 'medi a água' com esses números serve ao tutor. O corticoide aparece só como histórico de exposição. Itens gerais (2): xixi pela casa ou de madrugada; emagrecer apesar de comer. Cetoacidose não tem sinais no mapa: o 'como diferenciar' usa o motivo do mapa (vômito persistente, colapso); 'animal diabético' é conhecimento geral."
+}

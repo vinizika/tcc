@@ -1,0 +1,104 @@
+{
+  "topico": "minor_wound",
+  "titulo": "Ferida superficial pequena",
+  "nome_leigo": "arranhão ou machucadinho",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Tem um arranhão na pata ou no focinho",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Fez um cortinho pequeno na pele, coisa pouca",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Sangrou um pouquinho e já parou",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "É só por cima, não é fundo",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Ralou a pele brincando, ficou esfolado",
+      "origem": "documento",
+      "trecho": "a superficial lesion caused by friction or shearing",
+      "fonte": "minor_wound__vetsci_2026_wound_healing.pdf"
+    },
+    {
+      "texto": "Raspou o focinho em algum lugar e ficou ralado",
+      "origem": "documento",
+      "trecho": "a superficial lesion caused by friction or shearing",
+      "fonte": "minor_wound__vetsci_2026_wound_healing.pdf"
+    },
+    {
+      "texto": "Tá vermelhinho, meio inchado e dói quando encosto",
+      "origem": "documento",
+      "trecho": "resulting in pain, redness, and edema",
+      "fonte": "minor_wound__vetsci_2026_wound_healing.pdf"
+    },
+    {
+      "texto": "Ele fica lambendo o machucado",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Fora isso, tá andando e brincando normal",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Voltou a sangrar ou o sangue não para",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Ficou uma aba de pele solta",
+      "origem": "documento",
+      "trecho": "Avulsion occurs with the separation of tissues at their point of attachment, which may result in flaps",
+      "fonte": "minor_wound__vetsci_2026_wound_healing.pdf"
+    },
+    {
+      "texto": "Saindo secreção ou pus, com a pele escura em volta",
+      "origem": "documento",
+      "trecho": "The clinical signs associated with biofilm presence include exudate, necrosis, and desquamation",
+      "fonte": "minor_wound__vetsci_2026_wound_healing.pdf"
+    },
+    {
+      "texto": "Não sara e vai piorando com os dias",
+      "origem": "documento",
+      "trecho": "When not properly managed or when neglected, an acute lesion may evolve into a chronic condition",
+      "fonte": "minor_wound__vetsci_2026_wound_healing.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "trauma_and_bleeding",
+      "texto": "Aqui é arranhão ou corte pequeno, sem sangue escorrendo, e o animal apoia as quatro patas. Se houve atropelamento, queda, briga com outro animal, ferida funda ou sangue que não para, é o outro quadro.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Mesmo pequena, uma ferida que não cicatriza bem pode virar crônica, com dor e demora para sarar.",
+    "origem": "documento",
+    "trecho": "In small animals, untreated wounds can become chronic, causing pain and delayed healing.",
+    "fonte": "minor_wound__vetsci_2026_wound_healing.pdf"
+  },
+  "notas_para_o_especialista": "O documento é uma revisão de terapias integrativas para feridas: traz tipos de ferida e fases da cicatrização, mas quase nada na linguagem do tutor e nada específico de cão ou gato. Não define o que é ferida 'pequena'. Dois itens gerais para validar: 'fica lambendo o machucado' e 'tá andando e brincando normal'. O critério 'apoia as quatro patas' e a lista do outro quadro (atropelamento, queda, briga, ferida funda, sangue que não para) vêm da linha do mapa do gêmeo trauma_and_bleeding. A parte de primeiros socorros do documento (pressão, curativo, limpeza) ficou de fora por ser conduta."
+}

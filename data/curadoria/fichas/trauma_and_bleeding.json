@@ -1,0 +1,110 @@
+{
+  "topico": "trauma_and_bleeding",
+  "titulo": "Trauma, atropelamento e hemorragia",
+  "nome_leigo": "atropelamento",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Foi atropelado, o carro pegou ele",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Caiu de altura, da janela ou da varanda",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá sangrando muito",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O sangue não para",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tem uma ferida funda",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Brigou com outro animal e tá todo mordido",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Levou uma pancada forte",
+      "origem": "documento",
+      "trecho": "Blunt trauma (e.g., hit by vehicle, fall from height)",
+      "fonte": "trauma_and_bleeding__frontiers_2021_hemorrhage.pdf"
+    },
+    {
+      "texto": "Tá saindo sangue da boca ou do nariz depois da batida",
+      "origem": "documento",
+      "trecho": "External blood loss (e.g., oral, facial or skin wounds or lacerations)",
+      "fonte": "trauma_and_bleeding__frontiers_2021_hemorrhage.pdf"
+    },
+    {
+      "texto": "Tem um corte grande na pele",
+      "origem": "documento",
+      "trecho": "External blood loss (e.g., oral, facial or skin wounds or lacerations)",
+      "fonte": "trauma_and_bleeding__frontiers_2021_hemorrhage.pdf"
+    },
+    {
+      "texto": "Foi atropelado, mas não vi sangue nenhum",
+      "origem": "documento",
+      "trecho": "Internal blood loss - Gastrointestinal - Abdomen - Retroperitoneum - Thorax - Pericardium",
+      "fonte": "trauma_and_bleeding__frontiers_2021_hemorrhage.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "O sangue não para nem com pressão",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Não consegue ficar em pé ou apoiar as quatro patas",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Ficou sonolento, desligado, não responde direito",
+      "origem": "documento",
+      "trecho": "Glasgow Coma Scale score ↔ ↔ ↓ ↓",
+      "fonte": "trauma_and_bleeding__frontiers_2021_hemorrhage.pdf"
+    },
+    {
+      "texto": "Gengiva branca ou muito pálida",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "mild_lameness",
+      "texto": "Na claudicação leve ele manca de leve, ainda apoia a pata, sem inchaço e comendo normal, geralmente depois de correr. Impacto ou queda, sangue que não para com pressão, perna inchada ou torta, grito ao toque ou não apoiar a pata apontam para trauma.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Uma perda grande de sangue pode levar à parada do coração.",
+    "origem": "documento",
+    "trecho": "While impacted by the rate of loss, in dogs, cardiac arrest occurs when ∼60–90% of blood is lost",
+    "fonte": "trauma_and_bleeding__frontiers_2021_hemorrhage.pdf"
+  },
+  "notas_para_o_especialista": "Documento é revisão sobre reposição de volume no paciente que sangra, voltada ao veterinário; quase nada é observável pelo tutor. Aproveitei os tipos de trauma e sangramento da Tabela 1 (atropelamento, queda, mordida, sangue pela boca ou rosto, sangramento interno) e a queda do nível de consciência da Tabela 2. Frequência cardíaca, pressão, lactato e escala de Glasgow são medidos pelo veterinário. Item geral: gengiva branca; o documento cita a cor da mucosa só como parâmetro de reavaliação, sem dizer 'pálida'. O dado de parada cardíaca com 60–90% de perda é de cães."
+}

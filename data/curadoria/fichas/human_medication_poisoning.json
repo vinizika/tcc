@@ -1,0 +1,114 @@
+{
+  "topico": "human_medication_poisoning",
+  "titulo": "Intoxicação por medicamento humano",
+  "nome_leigo": "remédio de gente",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Dei remédio de gente pra ele, por conta própria",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Dei dipirona pra febre ou dor",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Dei paracetamol pra dor",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Dei anti-inflamatório, tipo diclofenaco",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Dei cetoprofeno ou ibuprofeno que tinha em casa",
+      "origem": "documento",
+      "trecho": "Constatou-se que a maioria das intoxicações por AINES, independentemente da espécie, abrangeu o cetoprofeno, o ibuprofeno e o diclofenaco",
+      "fonte": "human_medication_poisoning__scielo_2012_aines_pdf.pdf"
+    },
+    {
+      "texto": "O gato tomou ibuprofeno",
+      "origem": "documento",
+      "trecho": "60% dos acidentes em gatos foram ocasionados pelo ibuprofeno",
+      "fonte": "human_medication_poisoning__scielo_2012_aines_pdf.pdf"
+    },
+    {
+      "texto": "Dei um remédio meu pra aliviar a dor dele",
+      "origem": "documento",
+      "trecho": "em pequenos animais podem ser consideradas acidentais, pois a maioria dos proprietários administra tais fármacos com o intuito de aliviar",
+      "fonte": "human_medication_poisoning__scielo_2012_aines_pdf.pdf"
+    },
+    {
+      "texto": "Comeu comprimido que caiu no chão ou mastigou a cartela",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A língua ou a gengiva ficou arroxeada",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O rosto inchou",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá vomitando depois do remédio",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Não quer comer, tá com dor na barriga e diarreia",
+      "origem": "documento",
+      "trecho": "anorexia, êmese, hematêmese, dor abdominal, diarreia, melena",
+      "fonte": "human_medication_poisoning__scielo_2012_aines_pdf.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "É gato e tomou paracetamol: um quarto de comprimido pode matar",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Vômito com sangue ou cor de borra de café, ou cocô preto",
+      "origem": "documento",
+      "trecho": "anorexia, êmese, hematêmese, dor abdominal, diarreia, melena",
+      "fonte": "human_medication_poisoning__scielo_2012_aines_pdf.pdf"
+    },
+    {
+      "texto": "Olhos ou gengiva amarelados",
+      "origem": "documento",
+      "trecho": "icterícia, elevação das enzimas hepáticas",
+      "fonte": "human_medication_poisoning__scielo_2012_aines_pdf.pdf"
+    },
+    {
+      "texto": "Convulsão, muito abatido ou comportamento diferente",
+      "origem": "documento",
+      "trecho": "depressão, convulsão, coma, mudança de comportamento",
+      "fonte": "human_medication_poisoning__scielo_2012_aines_pdf.pdf"
+    }
+  ],
+  "como_diferenciar": [],
+  "por_que_importa": {
+    "texto": "Cães e gatos são mais sensíveis que as pessoas aos anti-inflamatórios de uso humano.",
+    "origem": "documento",
+    "trecho": "Os animais de companhia possuem maior sensibilidade aos AINES, quando comparados aos humanos.",
+    "fonte": "human_medication_poisoning__scielo_2012_aines_pdf.pdf"
+  },
+  "notas_para_o_especialista": "O documento trata só de anti-inflamatórios (cetoprofeno, ibuprofeno, diclofenaco), com dados do CIT/RS; não fala de paracetamol nem de dipirona. Por isso a gengiva/língua arroxeada, o rosto inchado e o alerta do paracetamol no gato vêm só do mapa. Item geral (1): ingestão acidental de comprimido ou cartela. O PDF extraído tem palavras quebradas e trocou os travessões entre as categorias de sinais por um caractere de símbolo (U+F02D); os trechos foram escolhidos em partes íntegras, e o da lista de princípios ativos veio do resumo indexado. 'Borra de café' é a descrição leiga da hematêmese. Remédios aparecem só como histórico de exposição, sem dose nem conduta. Sem gêmeos listados."
+}

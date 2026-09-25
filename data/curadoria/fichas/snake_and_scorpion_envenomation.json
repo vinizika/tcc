@@ -1,0 +1,120 @@
+{
+  "topico": "snake_and_scorpion_envenomation",
+  "titulo": "Acidente com cobra, escorpião ou aranha",
+  "nome_leigo": "picada de cobra ou escorpião",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Meu cachorro foi picado por uma cobra.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Ele tava latindo e mordendo uma cobra no quintal.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Acho que foi jararaca ou cascavel.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Aconteceu no sítio, no mato.",
+      "origem": "documento",
+      "trecho": "Most bites occur in rural or peri-urban outside environments",
+      "fonte": "snake_and_scorpion_envenomation__toxins_2024_zootoxins.pdf"
+    },
+    {
+      "texto": "O focinho e a cara incharam; no gato, foi a pata.",
+      "origem": "documento",
+      "trecho": "The predilection sites of bites are the muzzle and face in dogs and horses, limbs in cats",
+      "fonte": "snake_and_scorpion_envenomation__toxins_2024_zootoxins.pdf"
+    },
+    {
+      "texto": "O lugar da picada ficou inchado e inflamado.",
+      "origem": "documento",
+      "trecho": "Overall, Vipera bites caused local swelling and inflammation",
+      "fonte": "snake_and_scorpion_envenomation__toxins_2024_zootoxins.pdf"
+    },
+    {
+      "texto": "Tem dois furinhos na pele, onde picou.",
+      "origem": "documento",
+      "trecho": "the clinical signs reported in dogs included fang marks, edema, lethargy",
+      "fonte": "snake_and_scorpion_envenomation__toxins_2024_zootoxins.pdf"
+    },
+    {
+      "texto": "Ficou mole, sem energia.",
+      "origem": "documento",
+      "trecho": "the clinical signs reported in dogs included fang marks, edema, lethargy",
+      "fonte": "snake_and_scorpion_envenomation__toxins_2024_zootoxins.pdf"
+    },
+    {
+      "texto": "Tá chorando de dor, vomitou e teve diarreia.",
+      "origem": "documento",
+      "trecho": "pain, vomiting, and diarrhea",
+      "fonte": "snake_and_scorpion_envenomation__toxins_2024_zootoxins.pdf"
+    },
+    {
+      "texto": "Acho que um escorpião picou ele, achei o bicho em casa.",
+      "origem": "documento",
+      "trecho": "scorpion stings can occur in domestic dogs and cats",
+      "fonte": "snake_and_scorpion_envenomation__toxins_2024_zootoxins.pdf"
+    },
+    {
+      "texto": "Depois do escorpião, grita de dor, baba e vomita.",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Uma aranha picou ele.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Desmaiou, ficou caído e não consegue levantar.",
+      "origem": "documento",
+      "trecho": "tachycardia, hyperthermia, cardiac arrhythmia, and collapse",
+      "fonte": "snake_and_scorpion_envenomation__toxins_2024_zootoxins.pdf"
+    },
+    {
+      "texto": "Respiração fraca ou com dificuldade.",
+      "origem": "documento",
+      "trecho": "more severe symptoms, including hemolytic anemia, respiratory depression, myonecrosis",
+      "fonte": "snake_and_scorpion_envenomation__toxins_2024_zootoxins.pdf"
+    },
+    {
+      "texto": "A picada no cachorro foi na perna.",
+      "origem": "documento",
+      "trecho": "Bites on limbs may lead to more severe clinical cases in dogs",
+      "fonte": "snake_and_scorpion_envenomation__toxins_2024_zootoxins.pdf"
+    },
+    {
+      "texto": "Sangra pelos furinhos, pelo nariz ou pela gengiva.",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Quase não inchou, mas ficou fraco, com as pálpebras caídas ou xixi escuro.",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "como_diferenciar": [],
+  "por_que_importa": {
+    "texto": "O veneno de cobra pode causar inchaço, queda de pressão e choque.",
+    "origem": "documento",
+    "trecho": "The venom may stimulate the release of cytokines. resulting in vasodilation, increased vascular permeability, and edema, which can cause hypovolemia and distributive shock",
+    "fonte": "snake_and_scorpion_envenomation__toxins_2024_zootoxins.pdf"
+  },
+  "notas_para_o_especialista": "Documento europeu (víboras do gênero Vipera); não cobre as espécies brasileiras (jararaca, cascavel, coral, escorpião-amarelo, aranhas). Para escorpião, só diz que picadas podem ocorrer em cães e gatos fora da Europa; para aranhas, que não há relatos em animais. Marquei como geral: dor intensa, baba e vômito após escorpião; sangramento pelos furinhos, nariz ou gengiva (típico de jararaca); pouco inchaço com fraqueza, pálpebras caídas e urina escura (típico de cascavel). O item 'Acho que foi jararaca ou cascavel' marquei como mapa por ser só o tutor nomeando a cobra do quadro. Nenhum sinal específico de aranha entrou. Sinais do mapa vazios e sem gêmeos; o número da UFF citado no motivo não foi usado. Taquicardia, arritmia e hipertermia do documento são achados medidos e ficaram de fora."
+}

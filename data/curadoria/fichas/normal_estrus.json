@@ -1,0 +1,110 @@
+{
+  "topico": "normal_estrus",
+  "titulo": "Cio normal",
+  "nome_leigo": "cio",
+  "especie": "cão",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Tá saindo sangue pela vulva.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá pingando sangue pela casa.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A vulva tá inchada, maior que o normal.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Ficou mais carente, grudada na gente.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Os machos da rua não saem do portão.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Ela tá ativa, comendo e brincando normal.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Ela não é castrada.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Ela entra no cio uma ou duas vezes por ano.",
+      "origem": "documento",
+      "trecho": "females enter estrus once or twice a year",
+      "fonte": "normal_estrus__animals_2021_reproductive_biology.pdf"
+    },
+    {
+      "texto": "Tá no cio faz mais ou menos uma semana.",
+      "origem": "documento",
+      "trecho": "an extended period of proestrus and then estrus (~1 week each)",
+      "fonte": "normal_estrus__animals_2021_reproductive_biology.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "O corrimento virou pus, branco ou amarelado.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Ficou apática, largada.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá bebendo muita água.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Parou de comer ou a barriga inchou.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Sai sangue da vulva mesmo ela sendo castrada.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "pyometra",
+      "texto": "No cio sai sangue da vulva inchada e ela continua ativa e comendo. Na piometra sai pus (corrimento branco ou purulento), em geral semanas depois do cio, e ela fica apática, bebe muita água e pode parar de comer ou ficar com a barriga inchada.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "O tutor chama de corrimento tanto o sangue do cio quanto o pus da piometra, e confundir os dois atrasa o reconhecimento da piometra.",
+    "origem": "mapa",
+    "trecho": "",
+    "fonte": ""
+  },
+  "notas_para_o_especialista": "O documento é uma revisão de biologia reprodutiva de canídeos, com foco em espécies silvestres; não descreve sangramento, vulva inchada, comportamento nem corrimento no cio. Dele usei só a frequência do cio (uma ou duas vezes por ano) e a duração aproximada das fases (proestro e estro, cerca de uma semana cada). Todo o resto veio do mapa. O documento não traz sinais de alarme nem a relação com piometra; os alarmes saíram do discriminador do mapa e dos sinais do gêmeo. Nenhum item geral."
+}

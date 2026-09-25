@@ -1,0 +1,98 @@
+{
+  "topico": "distemper_neurological",
+  "titulo": "Cinomose com sinais neurológicos",
+  "nome_leigo": "cinomose",
+  "especie": "cão",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Tá com um tique: a perna ou a cabeça dá uns trancos repetidos",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Um músculo fica pulando o tempo todo e não para, até deitado",
+      "origem": "documento",
+      "trecho": "Persistent myoclonus",
+      "fonte": "distemper_neurological__viruses_2022_distemper.pdf"
+    },
+    {
+      "texto": "Tá andando cambaleando, parece bêbado",
+      "origem": "documento",
+      "trecho": "neurological symptoms predominantly manifest as myoclonus, nystagmus, ataxia",
+      "fonte": "distemper_neurological__viruses_2022_distemper.pdf"
+    },
+    {
+      "texto": "Os olhos ficam tremendo de um lado pro outro",
+      "origem": "documento",
+      "trecho": "neurological symptoms predominantly manifest as myoclonus, nystagmus, ataxia",
+      "fonte": "distemper_neurological__viruses_2022_distemper.pdf"
+    },
+    {
+      "texto": "Tá perdendo a força nas patas",
+      "origem": "documento",
+      "trecho": "Tetraparesis or plegia",
+      "fonte": "distemper_neurological__viruses_2022_distemper.pdf"
+    },
+    {
+      "texto": "Antes teve remela, olho vermelho, nariz escorrendo e ficou sem comer",
+      "origem": "documento",
+      "trecho": "Serous nasal and ocular discharge; Conjunctivitis; Anorexia",
+      "fonte": "distemper_neurological__viruses_2022_distemper.pdf"
+    },
+    {
+      "texto": "Teve tosse e febre antes",
+      "origem": "documento",
+      "trecho": "is characterized by fever, pneumonia",
+      "fonte": "distemper_neurological__viruses_2022_distemper.pdf"
+    },
+    {
+      "texto": "Apareceram umas bolinhas na pele",
+      "origem": "documento",
+      "trecho": "Cutaneous rash",
+      "fonte": "distemper_neurological__viruses_2022_distemper.pdf"
+    },
+    {
+      "texto": "É filhote e não completou as vacinas",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Teve convulsão, às vezes mastigando no vazio e babando",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Não consegue mais ficar em pé",
+      "origem": "documento",
+      "trecho": "Tetraparesis or plegia",
+      "fonte": "distemper_neurological__viruses_2022_distemper.pdf"
+    },
+    {
+      "texto": "Respira com dificuldade",
+      "origem": "documento",
+      "trecho": "Interstitial pneumonia",
+      "fonte": "distemper_neurological__viruses_2022_distemper.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "tremors_without_seizure",
+      "texto": "Na cinomose o tranco se repete no mesmo músculo e não passa quando o cão se aquece ou se acalma; costuma vir com cambaleio, fraqueza ou secreção no olho e no nariz. Tremor de frio ou medo passa, e o cão fica alerta e anda normal.",
+      "origem": "documento",
+      "trecho": "Persistent myoclonus; CNS disturbances",
+      "fonte": "distemper_neurological__viruses_2022_distemper.pdf"
+    }
+  ],
+  "por_que_importa": {
+    "texto": "A cinomose é uma doença grave e muitas vezes fatal.",
+    "origem": "documento",
+    "trecho": "This results in a severe and frequently lethal disease in a large number of carnivores",
+    "fonte": "distemper_neurological__viruses_2022_distemper.pdf"
+  },
+  "notas_para_o_especialista": "O documento é sobre neuropatogenia e receptores do vírus; os sinais clínicos estão só numa tabela (fase aguda: exantema, secreção nasal e ocular, conjuntivite, anorexia, mioclonia, nistagmo, ataxia, tetraparesia ou plegia; fase tardia: mioclonia persistente) e numa frase da introdução (febre, pneumonia). Convulsões não aparecem no documento. Dois itens gerais para validar: 'convulsão, às vezes mastigando no vazio e babando' e 'filhote que não completou as vacinas'. 'Até deitado' é a minha leitura leiga de 'persistent myoclonus'. 'Tosse' e 'respira com dificuldade' são a tradução leiga de pneumonia. A hiperqueratose (coxim duro) aparece no documento só como achado anatomopatológico, sem local, e não entrou."
+}

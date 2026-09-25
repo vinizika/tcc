@@ -1,0 +1,120 @@
+{
+  "topico": "fading_neonate",
+  "titulo": "Filhote recém-nascido que não mama",
+  "nome_leigo": "filhote definhando",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "O filhote (ou gatinho) recém-nascido tá molinho, sem força.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Não quer mamar, não pega a teta.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A boquinha dele tá fria quando ponho o dedo.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá geladinho quando pego na mão.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Chora muito, sem parar.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Parou de se mexer, fica largado no cantinho.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tenta mamar, mas golfa o leite e a barriga incha.",
+      "origem": "documento",
+      "trecho": "The newborn still tries to breastfeed, but the milk may not be properly digested due to reduced motility of the gastrointestinal tract (paralytic ileus), which can cause regurgitation, aspiration pneumonia, gas production, and gastrointestinal dilation",
+      "fonte": "fading_neonate__animals_2024_neonatal_triage.txt"
+    },
+    {
+      "texto": "A mãe parece sem leite ou rejeitou o filhote.",
+      "origem": "documento",
+      "trecho": "maternal changes, such as agalactia, hypogalactia, or failure of maternal instinct",
+      "fonte": "fading_neonate__animals_2024_neonatal_triage.txt"
+    },
+    {
+      "texto": "Nasceu bem menor e mais fraquinho que os irmãos.",
+      "origem": "documento",
+      "trecho": "a rapid decline in glycemia may occur before this period in fragile, sick, premature, or low-birth-weight neonates",
+      "fonte": "fading_neonate__animals_2024_neonatal_triage.txt"
+    },
+    {
+      "texto": "O xixi tá amarelo escuro.",
+      "origem": "documento",
+      "trecho": "Shades of yellow suggest dehydration; the darker the urine is, the more dehydrated the newborn is.",
+      "fonte": "fading_neonate__animals_2024_neonatal_triage.txt"
+    },
+    {
+      "texto": "A boquinha tá vermelho-escura por dentro.",
+      "origem": "documento",
+      "trecho": "The color of mucous membranes can be used to assess hydration; the dark red color is indicative of dehydration in newborns",
+      "fonte": "fading_neonate__animals_2024_neonatal_triage.txt"
+    },
+    {
+      "texto": "Fica separado dos irmãos, longe da mãe.",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Parou até de tentar mamar e fica largado, sem reação.",
+      "origem": "documento",
+      "trecho": "In severe hypothermia, neonatal clinical depression occurs, and newborns become extremely lethargic, interrupting attempts to breastfeed.",
+      "fonte": "fading_neonate__animals_2024_neonatal_triage.txt"
+    },
+    {
+      "texto": "Respira devagar, fraquinho.",
+      "origem": "documento",
+      "trecho": "There is a decrease in cardiorespiratory function (bradycardia and bradypnea)",
+      "fonte": "fading_neonate__animals_2024_neonatal_triage.txt"
+    },
+    {
+      "texto": "Teve convulsão.",
+      "origem": "documento",
+      "trecho": "Severe hypoglycemia can lead to bradycardia, seizures, coma, and death.",
+      "fonte": "fading_neonate__animals_2024_neonatal_triage.txt"
+    },
+    {
+      "texto": "Já tá há muitas horas sem mamar.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá piorando de uma hora pra outra.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "como_diferenciar": [],
+  "por_que_importa": {
+    "texto": "O recém-nascido é imaturo e cai fácil na tríade: esfria, fica sem açúcar no sangue e desidrata.",
+    "origem": "documento",
+    "trecho": "One of the main consequences of physiological immaturity is the greater risk of manifestation of the neonatal triad (hypothermia, hypoglycemia, and dehydration).",
+    "fonte": "fading_neonate__animals_2024_neonatal_triage.txt"
+  },
+  "notas_para_o_especialista": "O documento cita uma 'Table 13' com os sinais de risco que o tutor pode observar, mas a tabela não veio no texto completo nem no indexado; os sinais vieram do mapa e dos trechos sobre hipotermia, hipoglicemia e desidratação. Cor do xixi e da boca exigem estimular o filhote a urinar e olhar a boca, o que tutor de ninhada costuma fazer. Temperatura retal, glicemia e densidade urinária são medidas com instrumento; não usei. Item 'geral' (1): filhote que se afasta dos irmãos e da mãe. Sem quadro gêmeo na entrada, por isso 'como_diferenciar' vazio e ficha mais curta. O motivo do mapa cita um caso de teste; não usei essa referência."
+}

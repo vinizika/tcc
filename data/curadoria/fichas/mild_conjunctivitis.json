@@ -1,0 +1,116 @@
+{
+  "topico": "mild_conjunctivitis",
+  "titulo": "Conjuntivite leve",
+  "nome_leigo": "olho vermelho com remela",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "O olho tá vermelho.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá lacrimejando muito.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá com remela.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O olho não tá inchado.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Abre o olho normal, sem apertar.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Enxerga normal, não esbarra nas coisas.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá comendo e brincando.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A remela é aguada ou amarelada.",
+      "origem": "documento",
+      "trecho": "epiphora, seromucoid to mucopurulent discharge and keratitis",
+      "fonte": "mild_conjunctivitis__bmc_2023_allergic_conjunctivitis.pdf"
+    },
+    {
+      "texto": "No cachorro, pegou os dois olhos.",
+      "origem": "documento",
+      "trecho": "all presented with a bilateral form of the disease",
+      "fonte": "mild_conjunctivitis__bmc_2023_allergic_conjunctivitis.pdf"
+    },
+    {
+      "texto": "O cachorro tem alergia de pele e agora ficou com o olho vermelho.",
+      "origem": "documento",
+      "trecho": "manifestations associated with canine atopic dermatitis (cAD)",
+      "fonte": "mild_conjunctivitis__bmc_2023_allergic_conjunctivitis.pdf"
+    },
+    {
+      "texto": "No gato, veio junto com espirro e remela.",
+      "origem": "documento",
+      "trecho": "Clinical symptoms of C. felis infection in cats include fever, eye discharge, and sneeze.",
+      "fonte": "mild_conjunctivitis__ovj_2024_feline_chlamydophila_excerpt.txt"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Fecha ou aperta o olho.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O olho ficou opaco, esbranquiçado ou azulado.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Esfrega o olho ou parece sentir dor.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Levou pancada ou se machucou em briga.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "ocular_emergency",
+      "texto": "Na conjuntivite leve o olho fica vermelho, com lágrima ou remela, mas aberto, sem inchaço, e ele enxerga normal. No quadro ocular grave o olho fica fechado ou apertado de dor, opaco ou azulado, saltado para fora ou machucado em briga, e ele pode esbarrar nas coisas.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Conjuntivite que se arrasta pode atingir a córnea (ceratite), o que é mais comum quanto mais grave e antiga ela for.",
+    "origem": "documento",
+    "trecho": "The degree of keratitis showed a positive correlation with both severity and chronicity of cAC",
+    "fonte": "mild_conjunctivitis__bmc_2023_allergic_conjunctivitis.pdf"
+  },
+  "notas_para_o_especialista": "Possíveis conflitos com o mapa: o artigo de conjuntivite alérgica em cães cita quemose (inchaço da conjuntiva) em 84% e coceira no olho em 79% dos casos (o cão esfrega a cabeça no sofá, no tapete, nas pernas do dono), e o de gatos cita blefaroespasmo (olho apertado). O mapa trata inchaço, esfregar e olho apertado como sinais de emergência ocular; segui o mapa e não pus esses itens como sinais do quadro leve. Febre em gatos é medida e ficou de fora. O artigo diz que formas leves podem passar despercebidas pelo tutor. Nenhum item geral."
+}

@@ -1,0 +1,104 @@
+{
+  "topico": "mild_upper_respiratory_signs",
+  "titulo": "Espirro e coriza leves",
+  "nome_leigo": "resfriado",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Tá espirrando de vez em quando",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O nariz tá escorrendo",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Deu uns espirros esquisitos que passaram sozinhos",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá comendo bem",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Continua brincando normal",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A secreção do nariz é transparente ou meio amarelada",
+      "origem": "documento",
+      "trecho": "serous, mucoid or mucopurulent nasal discharge; sneezing;",
+      "fonte": "mild_upper_respiratory_signs__vetsci_2024_feline_uri.pdf"
+    },
+    {
+      "texto": "O gato espirra e o olho lacrimeja, com remela",
+      "origem": "documento",
+      "trecho": "conjunctivitis and ocular discharge",
+      "fonte": "mild_upper_respiratory_signs__vetsci_2024_feline_uri.pdf"
+    },
+    {
+      "texto": "Adotei o gatinho de um abrigo e ele começou a espirrar",
+      "origem": "documento",
+      "trecho": "higher-density settings such as shelters showed a higher rate of infection when compared with private households",
+      "fonte": "mild_upper_respiratory_signs__vetsci_2024_feline_uri.pdf"
+    },
+    {
+      "texto": "O cachorro puxa o ar pelo nariz com barulho de ronco e logo volta ao normal",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Faz esforço pra respirar ou respira de boca aberta",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A gengiva ou a língua ficou azulada",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O gato parou de comer ou de beber",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "É gatinho filhote, ainda sem vacina",
+      "origem": "documento",
+      "trecho": "very young kittens are especially susceptible before they have had a chance to be vaccinated",
+      "fonte": "mild_upper_respiratory_signs__vetsci_2024_feline_uri.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "respiratory_distress",
+      "texto": "No espirro e coriza leves ele respira tranquilo, come e brinca; na dificuldade respiratória a barriga sobe e desce rápido, ele estica o pescoço, o gato respira de boca aberta e a língua ou gengiva fica roxa.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "No gato, a infecção pode ficar crônica e deixar sequela no nariz, com sinusite e infecções que voltam.",
+    "origem": "documento",
+    "trecho": "This chronicity of the disease can cause permanent scarring of nasal passages, leading to chronic sinusitis and recurrent bacterial infections of the upper respiratory tract",
+    "fonte": "mild_upper_respiratory_signs__vetsci_2024_feline_uri.pdf"
+  },
+  "notas_para_o_especialista": "O documento é uma revisão sobre infecção respiratória felina (principalmente em abrigos); só gato, sem dados de cães. O espirro reverso do cão, citado no motivo do mapa, não aparece no documento: a descrição 'puxa o ar pelo nariz com barulho de ronco e volta ao normal' é conhecimento geral. O documento lista também dispneia, úlceras em lábios, língua e gengiva, úlcera de córnea e tosse como sinais comuns; não incluí úlceras nem tosse para não atrair relatos de estomatite ou tosse dos canis, e a dispneia entrou como alarme pelo discriminador do mapa. 'Filhote ainda sem vacina' é fator de risco citado no documento, não um sinal clínico."
+}

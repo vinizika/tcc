@@ -1,0 +1,117 @@
+{
+  "topico": "collapse_and_pale_gums",
+  "titulo": "Colapso e gengiva pálida",
+  "nome_leigo": "desmaio, gengiva branca",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Desmaiou do nada",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Caiu e não consegue levantar",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A gengiva tá branca ou muito pálida",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A gengiva ficou azulada",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá respirando rápido",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá frio, gelado ao toque",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A barriga inchou de repente",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Ficou muito fraco de uma hora pra outra",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá largado, quase não responde",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Não tem machucado nenhum, mas ficou fraco e pálido",
+      "origem": "documento",
+      "trecho": "These are patients that are experiencing blood loss as a result of vascular defects caused by neoplasia (e.g., splenic hemangiosarcoma) or underlying disease (e.g., gastric ulcer, mast cell tumor).",
+      "fonte": "collapse_and_pale_gums__frontiers_2021_volume_status.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Não responde ou está desacordado",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Gengiva branca ou azulada",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Continua fraco, não volta ao normal em segundos",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Barriga crescendo, cada vez mais inchada",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "reduced_appetite_no_other_signs",
+      "texto": "Só comer menos, com o animal ativo e gengiva rosada, é outro quadro; aqui há fraqueza súbita, desmaio ou gengiva branca.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "gemea": "osteoarthritis_stiffness",
+      "texto": "Na artrose o idoso custa a levantar, mas melhora depois que anda e vem piorando devagar há meses; aqui a fraqueza é de repente, com gengiva pálida.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Gengiva pálida com fraqueza súbita é o sinal comum a choque, sangramento interno e anemia grave.",
+    "origem": "mapa",
+    "trecho": "",
+    "fonte": ""
+  },
+  "notas_para_o_especialista": "O documento é uma revisão sobre reposição de volume na hemorragia aguda (cão e gato); quase tudo nele é achado que só o veterinário mede (frequência cardíaca, pressão, lactato, déficit de base), por isso a ficha se apoia no mapa. Único item do documento: sangramento sem ferimento visível (tumor no baço, úlcera), que o artigo diz ser mais difícil de reconhecer como choque hemorrágico. 'Gengiva azulada' e 'quase não responde' vêm do discriminador do mapa. Nenhum item geral."
+}

@@ -1,0 +1,104 @@
+{
+  "topico": "allium_toxicosis",
+  "titulo": "Intoxicação por cebola e alho",
+  "nome_leigo": "comeu cebola ou alho",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Comeu cebola ou alho",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Comeu sobra temperada, tipo molho, refogado ou arroz com alho, mesmo cozida ou com tempero em pó",
+      "origem": "documento",
+      "trecho": "Cooking, drying, and processing do not eliminate the toxic effect of Allium spp.",
+      "fonte": "allium_toxicosis__frontiers_2016_allium_section.txt"
+    },
+    {
+      "texto": "Comeu cebolinha ou alho-poró",
+      "origem": "documento",
+      "trecho": "Onion (Allium cepa), garlic (Allium sativum), leek (Allium porrum), and chives (Allium schoenoprasum) are all members of the genus Allium",
+      "fonte": "allium_toxicosis__frontiers_2016_allium_section.txt"
+    },
+    {
+      "texto": "Tá sem energia, desanimado",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A gengiva tá pálida",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O xixi ficou escuro",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Vomitou, teve diarreia, dor na barriga e não quer comer",
+      "origem": "documento",
+      "trecho": "Common clinical signs initially include vomiting, diarrhea, abdominal pain, loss of appetite, and depression.",
+      "fonte": "allium_toxicosis__frontiers_2016_allium_section.txt"
+    },
+    {
+      "texto": "Comeu ontem e só hoje ficou mole",
+      "origem": "documento",
+      "trecho": "Clinical signs of Allium toxicosis may appear 1 day or several days after consumption depending on the amounts ingested.",
+      "fonte": "allium_toxicosis__frontiers_2016_allium_section.txt"
+    },
+    {
+      "texto": "Comeu há alguns dias e agora ficou fraco e pálido",
+      "origem": "documento",
+      "trecho": "Clinical signs of Allium toxicosis may appear 1 day or several days after consumption depending on the amounts ingested.",
+      "fonte": "allium_toxicosis__frontiers_2016_allium_section.txt"
+    },
+    {
+      "texto": "Os olhos ficaram amarelados",
+      "origem": "documento",
+      "trecho": "Due to the developing anemia, pale mucous membranes, weakness, rapid respiratory and heart rates, jaundice, and dark urine (reddish or brown) indicating hemoglobinuria are subsequently observed",
+      "fonte": "allium_toxicosis__frontiers_2016_allium_section.txt"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Gengiva pálida ou amarelada",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Xixi vermelho ou marrom",
+      "origem": "documento",
+      "trecho": "Due to the developing anemia, pale mucous membranes, weakness, rapid respiratory and heart rates, jaundice, and dark urine (reddish or brown) indicating hemoglobinuria are subsequently observed",
+      "fonte": "allium_toxicosis__frontiers_2016_allium_section.txt"
+    },
+    {
+      "texto": "Fraqueza, cansaço e respiração acelerada",
+      "origem": "documento",
+      "trecho": "Due to the developing anemia, pale mucous membranes, weakness, rapid respiratory and heart rates, jaundice, and dark urine (reddish or brown) indicating hemoglobinuria are subsequently observed",
+      "fonte": "allium_toxicosis__frontiers_2016_allium_section.txt"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "dietary_indiscretion_mild",
+      "texto": "O que pesa é a comida ter cebola ou alho: aí contam quanto comeu e há quanto tempo, e gengiva pálida ou amarelada indica que o sangue já está sendo destruído.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Pouca quantidade já altera o sangue: cerca de 5 g/kg de cebola no gato e 15–30 g/kg no cão.",
+    "origem": "documento",
+    "trecho": "Dogs and cats are highly susceptible to Allium toxicosis and the ingestion of 5 g/kg of onions by cats and 15–30 g/kg by dogs is enough to cause clinically important hematologic changes",
+    "fonte": "allium_toxicosis__frontiers_2016_allium_section.txt"
+  },
+  "notas_para_o_especialista": "O documento cobre bem os sinais e vale para cão e gato. 'Tempero em pó' e os exemplos de sobra (molho, refogado, arroz com alho) são a variação leiga de 'cooking, drying, and processing'. O documento cita raças japonesas (Akita, Shiba, Jindo) como mais sensíveis; não coloquei na ficha. O motivo do mapa diz que o gato é mais suscetível, e os números do documento (5 g/kg no gato contra 15–30 g/kg no cão) confirmam. Nenhum item geral."
+}

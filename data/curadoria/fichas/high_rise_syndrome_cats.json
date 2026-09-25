@@ -1,0 +1,98 @@
+{
+  "topico": "high_rise_syndrome_cats",
+  "titulo": "Queda de altura em gato",
+  "nome_leigo": "gato paraquedista",
+  "especie": "gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Meu gato caiu da janela do apartamento, da varanda ou do telhado",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Caiu, levantou e parece bem",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Deu uma cambaleada, mas logo saiu andando",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Caiu ontem e só hoje tá respirando diferente",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá mancando, não apoia uma pata ou a pata ficou torta",
+      "origem": "documento",
+      "trecho": "Feline high-rise syndrome itself may result in a heterogeneous spectrum of injuries, including extremity fractures, pneumothorax, pulmonary contusions, and other forms of thoracic trauma",
+      "fonte": "high_rise_syndrome_cats__animals_2026_trauma_shock.pdf"
+    },
+    {
+      "texto": "Tá respirando rápido, ofegante",
+      "origem": "documento",
+      "trecho": "stress- or pain-related rapid breathing could not be systematically distinguished from tachypnea associated with hypoxia, hypoperfusion, or traumatic respiratory injury",
+      "fonte": "high_rise_syndrome_cats__animals_2026_trauma_shock.pdf"
+    },
+    {
+      "texto": "Ficou quietinho e parado depois da queda",
+      "origem": "documento",
+      "trecho": "altered mentation (e.g., obtunded or stuporous)",
+      "fonte": "high_rise_syndrome_cats__animals_2026_trauma_shock.pdf"
+    },
+    {
+      "texto": "Tá gelado ao toque",
+      "origem": "documento",
+      "trecho": "prolonged capillary refill time (>2 s), weak or absent peripheral pulses, hypothermia",
+      "fonte": "high_rise_syndrome_cats__animals_2026_trauma_shock.pdf"
+    },
+    {
+      "texto": "Sangrou pelo nariz ou pela boca, machucou o queixo ou quebrou dente",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Respira com esforço ou de boca aberta",
+      "origem": "documento",
+      "trecho": "Feline high-rise syndrome itself may result in a heterogeneous spectrum of injuries, including extremity fractures, pneumothorax, pulmonary contusions, and other forms of thoracic trauma",
+      "fonte": "high_rise_syndrome_cats__animals_2026_trauma_shock.pdf"
+    },
+    {
+      "texto": "Gengiva pálida ou acinzentada",
+      "origem": "documento",
+      "trecho": "pale or muddy mucous membranes",
+      "fonte": "high_rise_syndrome_cats__animals_2026_trauma_shock.pdf"
+    },
+    {
+      "texto": "Muito abobado, sem reagir",
+      "origem": "documento",
+      "trecho": "altered mentation (e.g., obtunded or stuporous)",
+      "fonte": "high_rise_syndrome_cats__animals_2026_trauma_shock.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "mild_lameness",
+      "texto": "Depois de queda de altura, mancar pode ser só o que aparece, com lesão no peito ainda escondida. Mancar leve sem queda, apoiando a pata e sem inchaço, é outro quadro.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Mesmo com o gato parecendo bem, lesões no pulmão e em órgãos internos podem levar horas ou dias para dar sinais.",
+    "origem": "mapa",
+    "trecho": "",
+    "fonte": ""
+  },
+  "notas_para_o_especialista": "A linha do mapa não tem sinais nem discriminador; os três primeiros itens vêm do motivo do mapa. O documento é um estudo prognóstico de choque traumático em gatos (68% por queda de altura), quase todo com medidas de veterinário (lactato, gradiente de temperatura, escore ATT). Dele aproveitei: fraturas de membros e trauma de tórax (pneumotórax, contusão pulmonar), respiração rápida, alteração de consciência, hipotermia (escrita como 'gelado ao toque', sem medir temperatura) e mucosa pálida ou 'barrenta' (muddy). Item geral (1): sangramento pelo nariz/boca, queixo e dentes (trauma facial típico da queda), que o documento não cita. 'Gato paraquedista' é o nome popular no Brasil."
+}

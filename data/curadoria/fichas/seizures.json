@@ -1,0 +1,116 @@
+{
+  "topico": "seizures",
+  "titulo": "Convulsão",
+  "nome_leigo": "ataque, crise",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Caiu de lado de repente",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Ficou tremendo e se debatendo",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Pedalava as patas",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Babou muito, parecia espuma",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Fez xixi sem querer durante a crise",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Não respondia quando eu chamava",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Fez cocô durante a crise",
+      "origem": "documento",
+      "trecho": "May have autonomic signs (urination, defecation, salivation)",
+      "fonte": "seizures__vetsci_2024_emergency_seizures.pdf"
+    },
+    {
+      "texto": "Antes da crise ficou estranho, inquieto, grudado em mim",
+      "origem": "documento",
+      "trecho": "May have pre-ictal behavior(s)",
+      "fonte": "seizures__vetsci_2024_emergency_seizures.pdf"
+    },
+    {
+      "texto": "Depois ficou desorientado, meio perdido, por um tempo",
+      "origem": "documento",
+      "trecho": "Generalized seizures should typically have a post-ictal phase of abnormal mentation/behavior that may last minutes to days",
+      "fonte": "seizures__vetsci_2024_emergency_seizures.pdf"
+    },
+    {
+      "texto": "No gato: pulos do nada, rosnado, mordendo o rabo, mastigando no vazio, tremor na cara",
+      "origem": "documento",
+      "trecho": "Cats: tonic-clonic movements often accompanied by explosive/unpredictable muscular movements (jumping), growling, chewing at the tail, hypersalivation, mydriasis, facial twitching, chomping",
+      "fonte": "seizures__vetsci_2024_emergency_seizures.pdf"
+    },
+    {
+      "texto": "Pode ter comido veneno de rato, lesmicida ou algo com xilitol",
+      "origem": "documento",
+      "trecho": "Is there any way your pet could have gotten into any toxins (marijuana, xylitol-containing foods, rat/mice bait, snail bait, antifreeze, etc.)?",
+      "fonte": "seizures__vetsci_2024_emergency_seizures.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "A crise durou mais de 2 minutos",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Repetiu: duas ou mais crises em 24 horas",
+      "origem": "documento",
+      "trecho": "Cluster seizures Two or more seizures within a 24 h period",
+      "fonte": "seizures__vetsci_2024_emergency_seizures.pdf"
+    },
+    {
+      "texto": "Uma crise emenda na outra sem ele acordar no meio",
+      "origem": "documento",
+      "trecho": "Continuous seizure activity lasting longer than 5 min, or greater than one sequential seizure without full recovery of consciousness in between seizures",
+      "fonte": "seizures__vetsci_2024_emergency_seizures.pdf"
+    },
+    {
+      "texto": "É a primeira convulsão da vida dele",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "tremors_without_seizure",
+      "texto": "No tremor de frio ou de medo o animal continua acordado, olhando para você, e anda normal. Na convulsão ele perde a consciência, cai de lado, pedala ou baba.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Crises longas ou seguidas podem causar morte de neurônios no cérebro.",
+    "origem": "documento",
+    "trecho": "Ongoing and prolonged seizure activity can cause neuronal necrosis which in turn leads to increased inflammatory mediators, permeability of cerebral vessels, and cellular death.",
+    "fonte": "seizures__vetsci_2024_emergency_seizures.pdf"
+  },
+  "notas_para_o_especialista": "O documento cobre bem o reconhecimento em casa: perguntas ao tutor (Tabela 4) e sinais da crise e dos quadros que a imitam (Tabela 5). Os sinais do gato (pulos, rosnado, morder o rabo, mastigar) vêm da Tabela 5. O documento define estado de mal epiléptico como crise acima de 5 min; o discriminador do mapa usa 2 min, e mantive os 2 min do mapa. Síncope e síndrome vestibular também imitam convulsão no documento, mas não são gêmeas listadas e não entraram. Antipulgas de cão no gato aparece só no discriminador da gêmea (tremor), e no documento como causa de tremor, não de convulsão; não virou item. Nenhum item geral."
+}

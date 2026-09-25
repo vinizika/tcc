@@ -1,0 +1,110 @@
+{
+  "topico": "mild_lameness",
+  "titulo": "Claudicação leve",
+  "nome_leigo": "mancando",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Tá mancando de leve.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Ainda apoia a pata no chão.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Começou depois de correr e brincar.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A pata não tá inchada.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá comendo normal.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Anda e brinca, só manca um pouco.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Pisa com cuidado, poupando a pata.",
+      "origem": "documento",
+      "trecho": "the patients usually unload the affected limb to prevent further damage and assuage the pain",
+      "fonte": "mild_lameness__bmc_2018_short_term_lameness.pdf"
+    },
+    {
+      "texto": "Parece que dói um pouco quando ele pisa.",
+      "origem": "documento",
+      "trecho": "the patients usually unload the affected limb to prevent further damage and assuage the pain",
+      "fonte": "mild_lameness__bmc_2018_short_term_lameness.pdf"
+    },
+    {
+      "texto": "Acho que pisou em alguma coisa ou machucou a unha.",
+      "origem": "documento",
+      "trecho": "They have stepped into things, have lacerations, fractured toes or injured their claws.",
+      "fonte": "mild_lameness__bmc_2018_short_term_lameness.pdf"
+    },
+    {
+      "texto": "Tem um cortinho na almofadinha da pata.",
+      "origem": "documento",
+      "trecho": "They have stepped into things, have lacerations, fractured toes or injured their claws.",
+      "fonte": "mild_lameness__bmc_2018_short_term_lameness.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Não apoia a pata no chão de jeito nenhum.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A perna tá inchada ou torta, num ângulo estranho.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Grita ou chora quando encosta na perna.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Foi atropelado, caiu de altura ou brigou.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "trauma_and_bleeding",
+      "texto": "Na claudicação leve ele manca mas apoia a pata, não houve batida forte e não há sangramento. No trauma houve atropelamento, queda ou briga, pode haver sangramento que não para ou ferida funda, e ele pode não apoiar as quatro patas.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Mancar pode ser só um machucado na pata, mas também aparece em problema de quadril ou de ligamento do joelho.",
+    "origem": "documento",
+    "trecho": "dogs with orthopaedic pathologies such as hip dysplasia or cranial crucial ligament rupture have to biomechanically circumvent the reduction in limb function and consequently adjust their gait",
+    "fonte": "mild_lameness__bmc_2018_short_term_lameness.pdf"
+  },
+  "notas_para_o_especialista": "O documento é um estudo biomecânico (cinemática em esteira) de claudicação induzida em cães saudáveis; não traz sinais caseiros além das lesões de pata citadas na introdução (pisou em algo, cortes, unha) e de o animal poupar a pata. 'Dedos fraturados' também aparece no texto, mas não virou item por não combinar com quadro leve. Não há dados de gatos. Os sinais de alarme vêm do discriminador do mapa e do gêmeo (trauma). Nenhum item geral."
+}

@@ -1,0 +1,92 @@
+{
+  "topico": "airway_foreign_body_choking",
+  "titulo": "Engasgo com obstrução de via aérea",
+  "nome_leigo": "engasgo",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Engasgou do nada e começou uma tosse forte e seca.",
+      "origem": "documento",
+      "trecho": "apresenta episódio agudo de tosse forçada e seca, dispneia e cianose",
+      "fonte": "airway_foreign_body_choking__cab_2010_tracheal_obstruction.txt"
+    },
+    {
+      "texto": "Tá com dificuldade pra respirar, puxando o ar.",
+      "origem": "documento",
+      "trecho": "apresenta episódio agudo de tosse forçada e seca, dispneia e cianose",
+      "fonte": "airway_foreign_body_choking__cab_2010_tracheal_obstruction.txt"
+    },
+    {
+      "texto": "A língua ficou roxa, azulada.",
+      "origem": "documento",
+      "trecho": "Ao exame físico constataram-se dispneia, tosse improdutiva e cianose na mucosa oral.",
+      "fonte": "airway_foreign_body_choking__cab_2010_tracheal_obstruction.txt"
+    },
+    {
+      "texto": "Desmaiou depois de comer ração.",
+      "origem": "documento",
+      "trecho": "trazida à consulta por apresentar síncope e cianose após ingestão de ração comercial",
+      "fonte": "airway_foreign_body_choking__cab_2010_tracheal_obstruction.txt"
+    },
+    {
+      "texto": "Engasgou com pedrinha, bolinha de gude, alfinete ou capim.",
+      "origem": "documento",
+      "trecho": "Os corpos estranhos traqueais como pedras, dentes, bola de gude, alfinetes e fragmentos de capim são mais frequentes em animais jovens",
+      "fonte": "airway_foreign_body_choking__cab_2010_tracheal_obstruction.txt"
+    },
+    {
+      "texto": "Tá com dificuldade pra engolir.",
+      "origem": "documento",
+      "trecho": "O paciente permanecia com tosse e disfagia",
+      "fonte": "airway_foreign_body_choking__cab_2010_tracheal_obstruction.txt"
+    },
+    {
+      "texto": "Faz ânsia, parece engasgado e até vomita.",
+      "origem": "documento",
+      "trecho": "Eventualmente, são observados corrimento nasal piossanguinolento, engasgo e até mesmo vômito",
+      "fonte": "airway_foreign_body_choking__cab_2010_tracheal_obstruction.txt"
+    },
+    {
+      "texto": "Fica passando a pata na boca, agoniado.",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Faz força pra respirar, de boca aberta ou com a gengiva azulada.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Não consegue puxar o ar e a tosse não para.",
+      "origem": "documento",
+      "trecho": "Os principais sinais clínicos são dispneia, tosse e cianose",
+      "fonte": "airway_foreign_body_choking__cab_2010_tracheal_obstruction.txt"
+    },
+    {
+      "texto": "Desmaiou.",
+      "origem": "documento",
+      "trecho": "trazida à consulta por apresentar síncope e cianose após ingestão de ração comercial",
+      "fonte": "airway_foreign_body_choking__cab_2010_tracheal_obstruction.txt"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "mild_upper_respiratory_signs",
+      "texto": "No resfriado leve o animal espirra e o nariz escorre, mas come, brinca e respira sem esforço; no engasgo a tosse forte começa de repente, com esforço pra respirar, boca aberta ou gengiva azulada.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "O objeto pode bloquear a passagem do ar, e a falta de ar com língua roxa pode levar à morte.",
+    "origem": "documento",
+    "trecho": "Os principais sinais clínicos são dispneia, tosse e cianose, que podem levar o animal a óbito.",
+    "fonte": "airway_foreign_body_choking__cab_2010_tracheal_obstruction.txt"
+  },
+  "notas_para_o_especialista": "Documento em português: relato de caso de bola de gude na traqueia de uma cadela Rottweiler, com revisão curta na introdução; os sinais (tosse forçada e seca, dispneia, cianose, desmaio após comer, dificuldade para engolir, ânsia/vômito) vêm dali. O documento é de cão; os sinais de engasgo foram mantidos genéricos para cão e gato, validar. Ânsia/vômito e corrimento nasal aparecem no documento como achados de casos crônicos. O mapa não tem sinais nem discriminador para este quadro e o motivo fala de primeiros socorros, que não entram na ficha; o alarme 'força pra respirar, boca aberta, gengiva azulada' vem do discriminador do gêmeo. Item 'geral' (1): passar a pata na boca."
+}

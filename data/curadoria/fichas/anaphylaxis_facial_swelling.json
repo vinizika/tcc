@@ -1,0 +1,122 @@
+{
+  "topico": "anaphylaxis_facial_swelling",
+  "titulo": "Reação alérgica grave com inchaço de face",
+  "nome_leigo": "choque alérgico, cara inchada",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Foi picado por abelha",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Levou picada de marimbondo",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O focinho tá inchando rápido",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Os olhos incharam",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A orelha inchou",
+      "origem": "documento",
+      "trecho": "Dogs and cats frequently present facial, periorbital, and/or aural edema",
+      "fonte": "anaphylaxis_facial_swelling__toxins_2024_bees_wasps_excerpt.txt"
+    },
+    {
+      "texto": "Apareceram caroços pelo corpo",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá se coçando muito",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A respiração ficou barulhenta",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Foi atacado por um enxame, levou várias picadas",
+      "origem": "documento",
+      "trecho": "the victim may sustain multiple stings if they are attacked by a large number of bees",
+      "fonte": "anaphylaxis_facial_swelling__toxins_2024_bees_wasps_excerpt.txt"
+    },
+    {
+      "texto": "Vomitou e fez xixi sem querer",
+      "origem": "documento",
+      "trecho": "Urticaria, pruritus, angioedema, vomiting, and urination are also seen",
+      "fonte": "anaphylaxis_facial_swelling__toxins_2024_bees_wasps_excerpt.txt"
+    },
+    {
+      "texto": "No gato: baba muito, cambaleia e cai",
+      "origem": "documento",
+      "trecho": "Anaphylactic shock in cats is characterized by pruritus, hypersalivation, ataxia, and collapse",
+      "fonte": "anaphylaxis_facial_swelling__toxins_2024_bees_wasps_excerpt.txt"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Inchaço crescendo e chegando ao focinho ou ao pescoço",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Dificuldade para respirar",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Fraqueza ou desmaio",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "No cão, convulsão",
+      "origem": "documento",
+      "trecho": "Anaphylactic shock in dogs is characterized by local upper airway edema and respiratory obstruction, cardiovascular compromise, seizures, and weakness.",
+      "fonte": "anaphylaxis_facial_swelling__toxins_2024_bees_wasps_excerpt.txt"
+    },
+    {
+      "texto": "Depois de muitas picadas: vômito ou diarreia com sangue, xixi com sangue",
+      "origem": "documento",
+      "trecho": "Prostration, hyperthermia, hematemesis, bloody diarrhea, intravascular hemolysis, thrombocytopenia, hematuria, and incoordination are other clinical signs associated with multiple stings",
+      "fonte": "anaphylaxis_facial_swelling__toxins_2024_bees_wasps_excerpt.txt"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "flea_dermatitis_pruritus",
+      "texto": "Na dermatite há coceira com casquinhas e falhas no pelo, e o animal come bem; aqui há inchaço crescendo no focinho ou pescoço, caroços pelo corpo ou respiração alterada.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "O risco é a via aérea fechar, não a pele: uma única picada de marimbondo já matou gato por anafilaxia.",
+    "origem": "mapa",
+    "trecho": "",
+    "fonte": ""
+  },
+  "notas_para_o_especialista": "O documento (trecho de revisão sobre abelhas e vespas) cobre bem os sinais que o tutor vê. Espécie: os sinais de choque próprios do gato (baba, cambaleio, colapso) estão marcados 'no gato'; convulsão e obstrução da via aérea são descritas no cão. 'Marimbondo' vem do motivo do mapa. O documento diz que a anafilaxia não depende da dose (número de picadas), o que casa com o motivo do mapa. Nenhum item geral."
+}

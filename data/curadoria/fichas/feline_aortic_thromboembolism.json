@@ -1,0 +1,98 @@
+{
+  "topico": "feline_aortic_thromboembolism",
+  "titulo": "Tromboembolismo aórtico felino",
+  "nome_leigo": "trombose nas patas de trás",
+  "especie": "gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Meu gato tá arrastando as patas de trás",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "De repente ele parou de mexer as pernas de trás",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá gritando, miando alto de dor",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá respirando rápido, ofegante",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "As patas de trás estão geladas",
+      "origem": "documento",
+      "trecho": "poikilothermy (ie, cold extremities)",
+      "fonte": "feline_aortic_thromboembolism__jfms_2024_fate.pdf"
+    },
+    {
+      "texto": "As almofadinhas das patas ficaram roxas ou pálidas",
+      "origem": "documento",
+      "trecho": "the purple/pale discoloration of the paw pads",
+      "fonte": "feline_aortic_thromboembolism__jfms_2024_fate.pdf"
+    },
+    {
+      "texto": "De manhã estava normal e quando cheguei do trabalho ele não andava",
+      "origem": "documento",
+      "trecho": "after his owners returned from work to find him unable to use his hindlimbs. They reported that he had been normal in the morning",
+      "fonte": "feline_aortic_thromboembolism__jfms_2024_fate.pdf"
+    },
+    {
+      "texto": "Pensei que ele tinha levado uma mordida de outro gato",
+      "origem": "documento",
+      "trecho": "His owners thought he had suffered a cat bite, as he was an indoor cat living with three other cats.",
+      "fonte": "feline_aortic_thromboembolism__jfms_2024_fate.pdf"
+    },
+    {
+      "texto": "Às vezes é uma pata só, até uma da frente, mole e fria",
+      "origem": "documento",
+      "trecho": "the remaining cases have either right or left forelimb involvement",
+      "fonte": "feline_aortic_thromboembolism__jfms_2024_fate.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Não mexe nenhuma das duas patas de trás",
+      "origem": "documento",
+      "trecho": "both pelvic limbs are involved",
+      "fonte": "feline_aortic_thromboembolism__jfms_2024_fate.pdf"
+    },
+    {
+      "texto": "Respirando com dificuldade, de boca aberta",
+      "origem": "documento",
+      "trecho": "signs of cardiac disease and congestive heart failure (CHF), such as dyspnea",
+      "fonte": "feline_aortic_thromboembolism__jfms_2024_fate.pdf"
+    },
+    {
+      "texto": "Dor forte, grita quando encostam nas patas",
+      "origem": "documento",
+      "trecho": "paralysis/paresis and pain",
+      "fonte": "feline_aortic_thromboembolism__jfms_2024_fate.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "osteoarthritis_stiffness",
+      "texto": "No trombo o gato estava bem e de repente arrasta as patas de trás, grita de dor e as patas ficam frias. Na artrose ele custa a levantar, melhora depois que anda e vem piorando devagar há meses.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "É um quadro devastador, com dor intensa e paralisia súbita das patas atingidas.",
+    "origem": "documento",
+    "trecho": "FATE is a devastating syndrome, with short-term consequences characterized by acute pain, paralysis and rhabdomyolysis in the affected limb(s)",
+    "fonte": "feline_aortic_thromboembolism__jfms_2024_fate.pdf"
+  },
+  "notas_para_o_especialista": "Os sinais do tutor juntam o motivo do mapa (arrasta as patas de trás, grita, respira rápido, início súbito) com os '5P' do documento que o tutor consegue perceber: patas frias, almofadas roxas ou pálidas, paralisia e dor. Ausência de pulso, Doppler, lactato e exames ficaram de fora. As duas histórias de tutor ('normal de manhã' e 'acharam que foi mordida de gato') vêm dos casos clínicos do documento. 'De boca aberta' é a leitura leiga de dispneia. O documento cita vômito antes do quadro em 10 a 20% dos gatos; não entrou por ser pouco específico. Nenhum item geral."
+}

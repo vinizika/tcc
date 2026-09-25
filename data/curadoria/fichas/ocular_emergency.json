@@ -1,0 +1,110 @@
+{
+  "topico": "ocular_emergency",
+  "titulo": "Emergência ocular",
+  "nome_leigo": "olho saltado ou machucado",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "O olho saltou pra fora",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá com o olho fechado, apertando",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Fica esfregando o olho com a pata",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O olho ficou opaco, meio azulado",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A pupila tá muito grande",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá esbarrando nas coisas, parece que não enxerga",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Machucou o olho numa briga",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Outro cachorro mordeu e o olho saiu do lugar",
+      "origem": "documento",
+      "trecho": "Seventy-seven dogs had traumatic proptosis secondary to bite wounds",
+      "fonte": "ocular_emergency__frontiers_2024_traumatic_proptosis.pdf"
+    },
+    {
+      "texto": "Levou uma pancada ou caiu e o olho saltou",
+      "origem": "documento",
+      "trecho": "15 due to blunt trauma, three secondary to choking, one after falling from a height",
+      "fonte": "ocular_emergency__frontiers_2024_traumatic_proptosis.pdf"
+    },
+    {
+      "texto": "Meu shih tzu (ou chihuahua) tá com o olho pra fora",
+      "origem": "documento",
+      "trecho": "The most commonly reported breeds were Chihuahua (20), Shih tzu (19)",
+      "fonte": "ocular_emergency__frontiers_2024_traumatic_proptosis.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "O olho saiu da órbita",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O olho ficou opaco ou azulado",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Não enxerga, esbarra nas coisas",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Além do olho, tem outras mordidas ou ficou meio tonto depois da briga",
+      "origem": "documento",
+      "trecho": "In conclusion, dogs presenting with traumatic ocular proptosis may have concurrent non-ocular injuries",
+      "fonte": "ocular_emergency__frontiers_2024_traumatic_proptosis.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "mild_conjunctivitis",
+      "texto": "Na conjuntivite leve o olho fica vermelho, lacrimejando ou com remela, mas aberto, sem ficar opaco, e o animal enxerga e brinca normal; no quadro grave o olho fica fechado e apertado de dor, opaco ou azulado, saltado, ou veio de pancada ou briga.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Úlcera profunda, glaucoma agudo e olho saltado podem fazer o animal perder o olho em poucas horas.",
+    "origem": "mapa",
+    "trecho": "",
+    "fonte": ""
+  },
+  "notas_para_o_especialista": "O documento trata só de proptose traumática em cães (100 casos); os sinais de úlcera e glaucoma (olho fechado de dor, opaco ou azulado, pupila grande, esbarrando nas coisas) vêm só do mapa. Não há dados de gatos. As raças citadas (chihuahua, shih tzu) são as mais frequentes no estudo. Lesões associadas (mordidas na cabeça e pescoço, trauma craniano em 8%) estão no documento; 'ficou meio tonto' é a versão leiga do trauma craniano. Frequência cardíaca, temperatura e exames de sangue do estudo não entraram. O título mantém o nome do quadro no mapa."
+}

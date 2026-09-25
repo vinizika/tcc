@@ -1,0 +1,116 @@
+{
+  "topico": "eclampsia",
+  "titulo": "Eclâmpsia puerperal",
+  "nome_leigo": "febre do leite",
+  "especie": "cão",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Minha cadela tá amamentando e começou a tremer.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá com o corpo duro, as patas esticadas.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá agitada, inquieta, não para quieta.",
+      "origem": "documento",
+      "trecho": "hypocalcaemia which will be manifested as restlessness, increased body temperature, rapid heartbeat, muscle tremors, incoordination, and convulsions",
+      "fonte": "eclampsia__ijvsah_2025_management.pdf"
+    },
+    {
+      "texto": "Fica batendo os dentes, mexendo a boca.",
+      "origem": "documento",
+      "trecho": "muscular tremors (100%), and jaw chattering (100%)",
+      "fonte": "eclampsia__ijvsah_2025_management.pdf"
+    },
+    {
+      "texto": "Tá ofegante demais.",
+      "origem": "documento",
+      "trecho": "excessive panting (33.3%)",
+      "fonte": "eclampsia__ijvsah_2025_management.pdf"
+    },
+    {
+      "texto": "Anda cambaleando, sem coordenação.",
+      "origem": "documento",
+      "trecho": "hypocalcaemia which will be manifested as restlessness, increased body temperature, rapid heartbeat, muscle tremors, incoordination, and convulsions",
+      "fonte": "eclampsia__ijvsah_2025_management.pdf"
+    },
+    {
+      "texto": "Ela teve filhotes há poucas semanas.",
+      "origem": "documento",
+      "trecho": "The disorder typically occurs one to three weeks after whelping",
+      "fonte": "eclampsia__ijvsah_2025_management.pdf"
+    },
+    {
+      "texto": "Ainda tá prenha, no fim da gestação, e começou a tremer.",
+      "origem": "documento",
+      "trecho": "although it can sometimes occur in the later stages of pregnancy",
+      "fonte": "eclampsia__ijvsah_2025_management.pdf"
+    },
+    {
+      "texto": "É pequena, novinha e teve muitos filhotes.",
+      "origem": "documento",
+      "trecho": "small body size (as smaller breeds have higher calcium demands relative to their size), young age combined with large litter size",
+      "fonte": "eclampsia__ijvsah_2025_management.pdf"
+    },
+    {
+      "texto": "Come comida caseira com muita carne.",
+      "origem": "documento",
+      "trecho": "Homemade diets high in meat and low in calcium are a major predisposing factor",
+      "fonte": "eclampsia__ijvsah_2025_management.pdf"
+    },
+    {
+      "texto": "Os filhotes tão bem, só a mãe tá mal.",
+      "origem": "documento",
+      "trecho": "Interestingly, the puppies generally remain unaffected",
+      "fonte": "eclampsia__ijvsah_2025_management.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Teve convulsão.",
+      "origem": "documento",
+      "trecho": "hypocalcaemia which will be manifested as restlessness, increased body temperature, rapid heartbeat, muscle tremors, incoordination, and convulsions",
+      "fonte": "eclampsia__ijvsah_2025_management.pdf"
+    },
+    {
+      "texto": "Caiu de lado e não consegue levantar.",
+      "origem": "documento",
+      "trecho": "lateral recumbency (33.3%), respiratory distress (50%)",
+      "fonte": "eclampsia__ijvsah_2025_management.pdf"
+    },
+    {
+      "texto": "Respirando com dificuldade.",
+      "origem": "documento",
+      "trecho": "lateral recumbency (33.3%), respiratory distress (50%)",
+      "fonte": "eclampsia__ijvsah_2025_management.pdf"
+    },
+    {
+      "texto": "O corpo todo trava, rígido.",
+      "origem": "documento",
+      "trecho": "presenting with tremors, muscle rigidity, restlessness, and tetany",
+      "fonte": "eclampsia__ijvsah_2025_management.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "tremors_without_seizure",
+      "texto": "O tremor de frio ou de medo vem em animal atento que anda normal; na eclâmpsia é a cadela que está amamentando que treme e fica rígida.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "É uma queda de cálcio no sangue da cadela que amamenta, grave e que pode matar.",
+    "origem": "documento",
+    "trecho": "Eclampsia is a serious and potentially fatal condition caused by hypocalcaemia, most commonly seen in lactating bitches",
+    "fonte": "eclampsia__ijvsah_2025_management.pdf"
+  },
+  "notas_para_o_especialista": "Documento: série de 6 cadelas pequenas com eclâmpsia 25 a 30 dias após o parto, com introdução geral. Temperatura muito alta e taquicardia foram medidas pelo veterinário; não usei como sinal do tutor. O documento dá como período típico 1 a 3 semanas após o parto (e fala em 10 a 30 dias e até 40 dias em outros pontos); escrevi 'há poucas semanas' para não fixar número. Nenhum item 'geral'. 'Febre do leite' como nome leigo é uso popular no Brasil, não vem do documento."
+}

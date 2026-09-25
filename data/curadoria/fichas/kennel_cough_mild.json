@@ -1,0 +1,99 @@
+{
+  "topico": "kennel_cough_mild",
+  "titulo": "Tosse dos canis leve",
+  "nome_leigo": "gripe canina",
+  "especie": "cão",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Tá com uma tosse seca",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Começou depois do hotelzinho, da creche ou de brincar com outros cachorros",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tosse, mas continua ativo e comendo normal",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tosse forte, como se tivesse algo engasgado na garganta",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "No fim da tosse faz ânsia, parece que vai vomitar",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá espirrando e com o nariz escorrendo",
+      "origem": "documento",
+      "trecho": "1 (mild) Cough or sneeze or nasal discharge",
+      "fonte": "kennel_cough_mild__plos_one_2019_respiratory_microbiota.pdf"
+    },
+    {
+      "texto": "Ficou em canil com muitos cachorros",
+      "origem": "documento",
+      "trecho": "CIRD is most common when dogs are kept in large groups",
+      "fonte": "kennel_cough_mild__plos_one_2019_respiratory_microbiota.pdf"
+    },
+    {
+      "texto": "Ele é vacinado e mesmo assim pegou tosse",
+      "origem": "documento",
+      "trecho": "despite the widespread use of vaccines to prevent CIRD, clinical disease is still common in vaccinated dogs",
+      "fonte": "kennel_cough_mild__plos_one_2019_respiratory_microbiota.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Ficou abatido, desanimado ou parou de comer",
+      "origem": "documento",
+      "trecho": "Cough or sneeze or nasal discharge, in addition to one of the following signs:Fever or lethargy/depression or inappetance or pneumonia",
+      "fonte": "kennel_cough_mild__plos_one_2019_respiratory_microbiota.pdf"
+    },
+    {
+      "texto": "Respira com esforço ou rápido mesmo parado",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Gengiva ou língua arroxeada",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "respiratory_distress",
+      "texto": "Na tosse dos canis o cão tosse, mas entre as crises respira sem esforço. Barriga subindo e descendo rápido, língua ou gengiva roxa, pescoço esticado ou boca aberta indicam dificuldade respiratória.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "gemea": "congestive_heart_failure",
+      "texto": "A tosse do coração costuma vir em cão mais velho, muitas vezes com sopro já conhecido, que cansa fácil e respira rápido até dormindo. Na tosse dos canis houve contato com outros cães e o cão segue ativo e comendo.",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Filhotes e cães com várias infecções ao mesmo tempo têm mais chance de ficar graves.",
+    "origem": "documento",
+    "trecho": "Key findings were that younger dogs and those with a higher number of co-infections are more likely to develop severe clinical signs",
+    "fonte": "kennel_cough_mild__plos_one_2019_respiratory_microbiota.pdf"
+  },
+  "notas_para_o_especialista": "Documento é estudo de PCR dos agentes da doença respiratória infecciosa canina (EUA). Traz os sinais só em lista e na Tabela 2: tosse, espirro ou secreção nasal no quadro leve; febre, apatia, falta de apetite ou pneumonia no moderado/grave. Não descreve o tipo de tosse: 'engasgo' e 'ânsia no fim da tosse' são gerais. Mapa sem sinais nem discriminador: tosse seca, contato social, ativo e comendo vêm do motivo. Os alarmes de respiração vêm dos sinais da gêmea respiratory_distress no mapa. A diferenciação com insuficiência cardíaca é geral: o documento não fala de coração e a linha da gêmea está vazia. Febre ficou de fora (medida)."
+}

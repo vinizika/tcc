@@ -1,0 +1,98 @@
+{
+  "topico": "respiratory_distress",
+  "titulo": "Dificuldade respiratória",
+  "nome_leigo": "falta de ar",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Tá respirando com dificuldade, fazendo força pra puxar o ar",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A barriga sobe e desce muito rápido",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A língua ou a gengiva ficou roxa, azulada",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Fica com o pescoço esticado pra respirar",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O gato tá respirando de boca aberta",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá respirando muito rápido, mesmo parado",
+      "origem": "documento",
+      "trecho": "Animals showing any kind of breathing difficulties, such as tachypnea, polypnea, labored breathing, increased work of breathing or increased respiratory effort",
+      "fonte": "respiratory_distress__frontiers_2026_lung_ultrasound.pdf"
+    },
+    {
+      "texto": "A respiração tá pesada, puxada",
+      "origem": "documento",
+      "trecho": "Animals showing any kind of breathing difficulties, such as tachypnea, polypnea, labored breathing, increased work of breathing or increased respiratory effort",
+      "fonte": "respiratory_distress__frontiers_2026_lung_ultrasound.pdf"
+    },
+    {
+      "texto": "O cachorro tá ofegando muito, com esforço pra respirar",
+      "origem": "documento",
+      "trecho": "Reasons why auscultation of the heart was not or only partially possible were severely increased respiratory effort, panting or intensified lung sounds.",
+      "fonte": "respiratory_distress__frontiers_2026_lung_ultrasound.pdf"
+    },
+    {
+      "texto": "Não consegue deitar, fica sentado ou em pé pra respirar",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Língua ou gengiva roxa ou azulada",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Piora quando é pego no colo ou fica estressado, principalmente o gato",
+      "origem": "documento",
+      "trecho": "This is particularly important in cats which are highly sensitive to stress and respiratory compromise. Forced positioning may worsen respiratory compromise",
+      "fonte": "respiratory_distress__frontiers_2026_lung_ultrasound.pdf"
+    },
+    {
+      "texto": "Desmaiou ou parece que vai parar de respirar",
+      "origem": "documento",
+      "trecho": "and, in severe cases, precipitate respiratory or cardiac arrest",
+      "fonte": "respiratory_distress__frontiers_2026_lung_ultrasound.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "mild_upper_respiratory_signs",
+      "texto": "No espirro e coriza leves o animal espirra de vez em quando e o nariz escorre, mas respira sem esforço, come e brinca. Esforço para respirar, boca aberta ou gengiva azulada indicam dificuldade respiratória.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Nos casos graves pode haver parada respiratória ou cardíaca, e o gato é muito sensível ao estresse.",
+    "origem": "documento",
+    "trecho": "This is particularly important in cats which are highly sensitive to stress and respiratory compromise. Forced positioning may worsen respiratory compromise and, in severe cases, precipitate respiratory or cardiac arrest.",
+    "fonte": "respiratory_distress__frontiers_2026_lung_ultrasound.pdf"
+  },
+  "notas_para_o_especialista": "Documento é estudo de imagem (ultrassom x raio-X de tórax) em pacientes já no hospital. Descreve os sinais só como critério de inclusão (respiração rápida, difícil, com esforço) e cita ofegação. Cor da língua, pescoço esticado, barriga e boca aberta vêm do mapa. Item geral: não conseguir deitar (ortopneia). Sopro, ausculta e exames ficaram de fora. O estudo excluiu dor, trauma, calor, anemia e vias aéreas superiores como causa, então não cobre esses cenários."
+}

@@ -1,0 +1,116 @@
+{
+  "topico": "canine_heatstroke",
+  "titulo": "Intermação (golpe de calor)",
+  "nome_leigo": "insolação",
+  "especie": "cão",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Ficou no sol forte ou preso no carro no calor",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá ofegante sem parar, mesmo deitado na sombra",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá muito quente ao toque, pelando",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá cambaleando, com as pernas bambas",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A língua ficou vermelha escura",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá babando muito",
+      "origem": "documento",
+      "trecho": "while hypersalivation increases the evaporative efficiency",
+      "fonte": "pathophysiology_heatstroke_dogs_2017.pdf"
+    },
+    {
+      "texto": "Caiu de repente enquanto corria ou brincava no calor",
+      "origem": "documento",
+      "trecho": "In fact, dogs may collapse acutely during playful activities.",
+      "fonte": "pathophysiology_heatstroke_dogs_2017.pdf"
+    },
+    {
+      "texto": "Achei ele caído no quintal, no sol, sem água",
+      "origem": "documento",
+      "trecho": "In dogs kept in open premises, under harsh environmental heat stress, with limited access to water and shade, the owners may discover the animal collapsed",
+      "fonte": "pathophysiology_heatstroke_dogs_2017.pdf"
+    },
+    {
+      "texto": "Tá desorientado, meio perdido",
+      "origem": "documento",
+      "trecho": "Mild cases may show milder central nervous system (CNS) signs, such as disorientation or ‘delirium-like’ behavior.",
+      "fonte": "pathophysiology_heatstroke_dogs_2017.pdf"
+    },
+    {
+      "texto": "É buldogue, pug, labrador ou tá acima do peso",
+      "origem": "documento",
+      "trecho": "In dogs, these include hot, especially highly humid environments, excessive physical activity, obesity, large (>15 kg) body weight, being of certain breed (e.g., Labrador retrievers and brachycephalic breeds)",
+      "fonte": "pathophysiology_heatstroke_dogs_2017.pdf"
+    },
+    {
+      "texto": "O dia tava muito quente e abafado",
+      "origem": "documento",
+      "trecho": "In dogs, these include hot, especially highly humid environments, excessive physical activity, obesity, large (>15 kg) body weight, being of certain breed (e.g., Labrador retrievers and brachycephalic breeds)",
+      "fonte": "pathophysiology_heatstroke_dogs_2017.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Desmaiou ou não consegue levantar",
+      "origem": "documento",
+      "trecho": "The most common clinical signs in dogs include acute collapse, tachypnea, spontaneous bleeding, shock signs and mental abnormalities",
+      "fonte": "pathophysiology_heatstroke_dogs_2017.pdf"
+    },
+    {
+      "texto": "Teve convulsão ou não acorda",
+      "origem": "documento",
+      "trecho": "including depression, disorientation or delirium, seizures, stupor and coma",
+      "fonte": "pathophysiology_heatstroke_dogs_2017.pdf"
+    },
+    {
+      "texto": "Vomitou sangue ou fez diarreia com sangue",
+      "origem": "documento",
+      "trecho": "massive hemorrhagic diarrhea and hematemesis that rapidly ensue in dogs with severe heatstroke",
+      "fonte": "pathophysiology_heatstroke_dogs_2017.pdf"
+    },
+    {
+      "texto": "Apareceram pintinhas roxas na pele, sangue no xixi ou fezes pretas",
+      "origem": "documento",
+      "trecho": "clinical signs of DIC (i.e., petechiae, ecchymoses, melena, hematochezia and hematuria)",
+      "fonte": "pathophysiology_heatstroke_dogs_2017.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "exertional_panting_mild",
+      "texto": "Ofegar depois de exercício é normal quando para com descanso na sombra e o cão volta ao normal. Na intermação, depois de calor ou exercício, ele segue ofegante sem parar, muito quente ao toque e cambaleando.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Cerca de metade dos cães com intermação morre.",
+    "origem": "documento",
+    "trecho": "the mortality rate is around 50%, similar to that of human heatstroke victims",
+    "fonte": "pathophysiology_heatstroke_dogs_2017.pdf"
+  },
+  "notas_para_o_especialista": "Documento é revisão de fisiopatologia, escrita para veterinários. 'Língua vermelha escura', 'muito quente ao toque' e 'ofegação que não para na sombra' vêm só do mapa: o documento não fala da cor da língua. 'Babando muito' se apoia no trecho que descreve a hipersalivação como mecanismo de resfriamento, não como sinal clínico; confirmar se serve. 'Pug' foi dado como exemplo leigo de raça braquicefálica (o documento cita buldogue inglês). Ficaram de fora a temperatura acima de 41 °C e os exames (hemácias nucleadas, CK), que só o veterinário mede. Nenhum item geral."
+}

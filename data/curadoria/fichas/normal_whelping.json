@@ -1,0 +1,98 @@
+{
+  "topico": "normal_whelping",
+  "titulo": "Parto normal",
+  "nome_leigo": "parindo normalmente",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Minha cadela tá prenha há uns 63 dias e começou a parir",
+      "origem": "documento",
+      "trecho": "Pregnancy in dams usually lasts 63 days",
+      "fonte": "normal_whelping__frontiers_2023_uterine_dynamics.pdf"
+    },
+    {
+      "texto": "Antes de começar ficou inquieta, diferente do normal",
+      "origem": "documento",
+      "trecho": "Stage 1 is characterized by intermittent uterine contractions associated with cervical dilation and behavioral changes",
+      "fonte": "normal_whelping__frontiers_2023_uterine_dynamics.pdf"
+    },
+    {
+      "texto": "Ficou cavando e arrumando um cantinho, fazendo ninho",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Apareceu a bolsa na vulva e logo depois saiu o filhote",
+      "origem": "documento",
+      "trecho": "the chorioallantois membranes could be observed in the vulva",
+      "fonte": "normal_whelping__frontiers_2023_uterine_dynamics.pdf"
+    },
+    {
+      "texto": "A cadela ou a gata faz força com a barriga e os filhotes vão nascendo",
+      "origem": "documento",
+      "trecho": "Stage 2 includes intensified uterine contractions accompanied by abdominal efforts and the Ferguson reflex, which produces fetal expulsion",
+      "fonte": "normal_whelping__frontiers_2023_uterine_dynamics.pdf"
+    },
+    {
+      "texto": "Depois de cada filhote sai a placenta",
+      "origem": "documento",
+      "trecho": "Stage 3 is characterized by placental expulsion",
+      "fonte": "normal_whelping__frontiers_2023_uterine_dynamics.pdf"
+    },
+    {
+      "texto": "Entre um filhote e outro leva de alguns minutos até umas 2 horas",
+      "origem": "documento",
+      "trecho": "The average interval length is between 5 min and 2 h",
+      "fonte": "normal_whelping__frontiers_2023_uterine_dynamics.pdf"
+    },
+    {
+      "texto": "É a primeira cria e tá demorando mais entre um filhote e outro",
+      "origem": "documento",
+      "trecho": "The average expulsion interval between puppies was significantly longer in primiparous dams",
+      "fonte": "normal_whelping__frontiers_2023_uterine_dynamics.pdf"
+    },
+    {
+      "texto": "O parto já tá levando horas, mas os filhotes continuam nascendo",
+      "origem": "documento",
+      "trecho": "the larger the litter size was, the longer the expulsion phase duration",
+      "fonte": "normal_whelping__frontiers_2023_uterine_dynamics.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Passou de 2 horas e o próximo filhote não nasce",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A mãe parece exausta, faz força e o filhote não sai",
+      "origem": "documento",
+      "trecho": "the increase in the interpup interval has been related to physiological exhaustion of the bitch, ineffective myometrial contractions",
+      "fonte": "normal_whelping__frontiers_2023_uterine_dynamics.pdf"
+    },
+    {
+      "texto": "Filhote nasce com a boca roxinha e bem fraquinho",
+      "origem": "documento",
+      "trecho": "Fetal asphyxia, hypoxia, and cyanotic mucous membranes are indicators of low vitality scores in several domestic species",
+      "fonte": "normal_whelping__frontiers_2023_uterine_dynamics.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "dystocia",
+      "texto": "No parto normal os filhotes vão nascendo com intervalo de até 2 horas entre um e outro; no parto difícil (distocia) passa de 2 horas sem nascer o próximo filhote.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Em cães, a morte de filhotes em torno do parto é alta, relatada entre 17% e 30%.",
+    "origem": "documento",
+    "trecho": "For example, in dogs (Canis lupus familiaris), mortality rates of 17–30% have been reported",
+    "fonte": "normal_whelping__frontiers_2023_uterine_dynamics.pdf"
+  },
+  "notas_para_o_especialista": "O documento é um estudo de monitorização eletrônica do parto em cadelas sem distocia; quase todos os achados são medidos (contrações em mmHg, frequência cardíaca fetal, gasometria). Não há dados de gatas: os itens valem para as duas espécies, exceto os 63 dias de gestação, que ficaram atribuídos à cadela. O documento só diz 'mudanças de comportamento' no primeiro estágio; 'fazer ninho' é conhecimento geral (marcado como geral). Filhotes roxinhos, hipotérmicos e sem vigor aparecem no documento como achados neonatais; usei como sinal de alarme. O gêmeo distocia não tem sinais no mapa; a diferenciação usa só o intervalo de 2 horas do motivo do mapa. O documento cita também intervalos de 12–16 h entre o primeiro e o último filhote como distocia; não usei para não conflitar com a regra das 2 horas."
+}

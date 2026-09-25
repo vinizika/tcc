@@ -1,0 +1,117 @@
+{
+  "topico": "parvovirus_panleukopenia",
+  "titulo": "Parvovirose e panleucopenia",
+  "nome_leigo": "parvo",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "É filhote, tem poucos meses",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Não tomou todas as vacinas ou nunca foi vacinado",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá vomitando muito",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A diarreia tá saindo com sangue",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O cocô tem um cheiro muito forte, diferente",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Não quer comer nada",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá apático, largado, sem brincar",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Parece desidratado",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Meu gatinho filhote parou de comer, vomita e tá prostrado",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Passeou na rua ou cheirou cocô de outro cachorro antes de fechar as vacinas",
+      "origem": "documento",
+      "trecho": "The most common route of transmission for CPV is fecal-oral contact or exposure to contaminated surfaces.",
+      "fonte": "parvovirus_panleukopenia__mdpi_2025_canine_parvovirus.pdf"
+    },
+    {
+      "texto": "Veio de canil ou pet shop",
+      "origem": "documento",
+      "trecho": "with high pet trade activity or dense breeding populations, outbreaks may occur",
+      "fonte": "parvovirus_panleukopenia__mdpi_2025_canine_parvovirus.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Tá prostrado, quase não levanta",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Vomita e tem diarreia com sangue ao mesmo tempo",
+      "origem": "documento",
+      "trecho": "Vomiting and acute hemorrhagic gastroenteritis are the main clinical symptoms of CPV infection.",
+      "fonte": "parvovirus_panleukopenia__mdpi_2025_canine_parvovirus.pdf"
+    },
+    {
+      "texto": "Filhote de cachorro de 2 a 4 meses",
+      "origem": "documento",
+      "trecho": "puppies aged 2 to 4 months are a high-risk group for the virus infection. This age group not only experiences higher morbidity but also faces an increased mortality rate.",
+      "fonte": "parvovirus_panleukopenia__mdpi_2025_canine_parvovirus.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "single_vomiting_or_mild_diarrhea",
+      "texto": "No vômito isolado o animal vomitou uma vez ou tem só fezes moles, e continua comendo e brincando. Na parvovirose ou panleucopenia o filhote vomita, tem diarreia com sangue ou cheiro muito forte e fica prostrado.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "gemea": "reduced_appetite_no_other_signs",
+      "texto": "Comer menos, com o animal ativo, bebendo água e sem vômito nem diarreia, é outro quadro. Filhote com vacina incompleta que para de comer e tem vômito, diarreia ou apatia junto aponta para parvovirose ou panleucopenia.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Em filhotes de cachorro não vacinados a mortalidade pode chegar a 91%.",
+    "origem": "documento",
+    "trecho": "The mortality rate in unvaccinated puppies can be as high as 91%",
+    "fonte": "parvovirus_panleukopenia__mdpi_2025_canine_parvovirus.pdf"
+  },
+  "notas_para_o_especialista": "Documento é revisão de pesquisa sobre o parvovírus canino (variantes, vacinas, diagnóstico), só cães e com pouca clínica: vômito e gastroenterite hemorrágica, filhotes de 2 a 4 meses, transmissão fecal-oral, surtos onde há comércio e criação de cães, mortalidade de até 91% em não vacinados. Não há sinais de panleucopenia felina; para o gato usei os sinais do mapa, que vale para as duas espécies. Cheiro forte, desidratação e apatia vêm só do mapa. 'Veio de canil ou pet shop' é leitura leiga do trecho sobre regiões com comércio e criação intensa; confirmar. Miocardite e leucopenia ficaram de fora (não observáveis). Nenhum item geral."
+}

@@ -1,0 +1,116 @@
+{
+  "topico": "vomiting_and_diarrhea",
+  "titulo": "Vômito e diarreia persistentes",
+  "nome_leigo": "vômito e diarreia sem parar",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Tá vomitando várias vezes",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A diarreia tá com sangue",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O cocô tá muito fedido",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Ficou quietinho, largado",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Não quer levantar",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Não tá bebendo água",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Vomitou várias vezes hoje de manhã e só sai espuma amarela",
+      "origem": "documento",
+      "trecho": "This morning has been sick 5 times, bile content.",
+      "fonte": "vomiting_and_diarrhea__frontiers_2023_gastrointestinal_presentations.pdf"
+    },
+    {
+      "texto": "Vomita tudo que come, já faz um ou dois dias",
+      "origem": "documento",
+      "trecho": "O [Owner] reports been v + [vomiting] after eating over past 24/48 h.",
+      "fonte": "vomiting_and_diarrhea__frontiers_2023_gastrointestinal_presentations.pdf"
+    },
+    {
+      "texto": "A diarreia tá bem líquida e toda hora",
+      "origem": "documento",
+      "trecho": "still d + [diarrhoea] watery and frequent",
+      "fonte": "vomiting_and_diarrhea__frontiers_2023_gastrointestinal_presentations.pdf"
+    },
+    {
+      "texto": "Vomitou com sangue ou o cocô ficou preto, tipo borra de café",
+      "origem": "documento",
+      "trecho": "Vomiting with blood; Melaena",
+      "fonte": "vomiting_and_diarrhea__frontiers_2023_gastrointestinal_presentations.pdf"
+    },
+    {
+      "texto": "Não quer comer nada",
+      "origem": "documento",
+      "trecho": "Poor appetite",
+      "fonte": "vomiting_and_diarrhea__frontiers_2023_gastrointestinal_presentations.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Tem sangue no vômito ou na diarreia",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Vomita ou tem diarreia muitas vezes em 24 horas, sem controle",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá prostrado e não bebe água",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "É filhote",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "single_vomiting_or_mild_diarrhea",
+      "texto": "No vômito isolado ele vomitou uma vez ou tem fezes moles, mas continua comendo e brincando, sem sangue; no quadro persistente vomita várias vezes em 24 horas, tem sangue, fica prostrado, não bebe água ou é filhote.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Vômito e diarreia podem vir de algo simples, como comer besteira, até doenças que matam, como a parvovirose.",
+    "origem": "documento",
+    "trecho": "spanning from self-limiting factors (e.g., dietary indiscretion) to potentially life-threatening causes (e.g., canine and feline parvoviruses)",
+    "fonte": "vomiting_and_diarrhea__frontiers_2023_gastrointestinal_presentations.pdf"
+  },
+  "notas_para_o_especialista": "O documento é sobre prescrição de antibiótico em consultas gastrointestinais de cães e gatos no Reino Unido; os sinais aparecem como categorias do questionário (diarreia ou vômito com e sem sangue, melena, apetite ruim) e em trechos de prontuário (vômito de bile, diarreia líquida e frequente). A gravidade no documento é só 'leve / moderada / gravemente doente ou debilitado', sem critério observável; prostração, não beber água, contagem em 24 horas e filhote vêm do mapa. O documento não descreve sinais de desidratação. 'Espuma amarela' é a versão leiga de vômito de bile, e 'cocô preto tipo borra de café' é a versão leiga de melena."
+}

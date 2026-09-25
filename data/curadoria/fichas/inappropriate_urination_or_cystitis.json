@@ -1,0 +1,104 @@
+{
+  "topico": "inappropriate_urination_or_cystitis",
+  "titulo": "Xixi fora do lugar e cistite",
+  "nome_leigo": "xixi fora do lugar",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Tá fazendo xixi fora da caixa de areia",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O cachorro começou a fazer xixi pela casa, fora do lugar",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O xixi saiu com um pouco de sangue, meio rosado",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá indo mais vezes à caixa ou ao banheiro",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Sai xixi em quantidade normal, sem fazer força",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Não parece sentir dor",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "No gato, começou depois que mudamos de casa",
+      "origem": "documento",
+      "trecho": "and changes in cats’ life like house moving",
+      "fonte": "inappropriate_urination_or_cystitis__frontiers_2022_feline_cystitis.pdf"
+    },
+    {
+      "texto": "Briga ou se estressa com o outro gato da casa",
+      "origem": "documento",
+      "trecho": "cats who live with other cats or animals are prone to develop FIC",
+      "fonte": "inappropriate_urination_or_cystitis__frontiers_2022_feline_cystitis.pdf"
+    },
+    {
+      "texto": "Come só ração seca e bebe pouca água",
+      "origem": "documento",
+      "trecho": "cats with FIC are more likely to eat dry food ( 21, 36), and drink less water than the control cats",
+      "fonte": "inappropriate_urination_or_cystitis__frontiers_2022_feline_cystitis.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Faz força na caixa e sai só um pouquinho ou gotinhas",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Vai na caixa e não sai nada",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Chora quando tenta, lambe muito a região ou a barriga tá dura",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "É gato macho castrado, que tem a uretra estreita",
+      "origem": "documento",
+      "trecho": "UO occurs with higher frequency in castrated male cats compared with female cats because of their extremely narrow penile urethra",
+      "fonte": "inappropriate_urination_or_cystitis__frontiers_2022_feline_cystitis.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "urethral_obstruction",
+      "texto": "Aqui a urina sai em quantidade normal, sem esforço e sem dor aparente. Se o gato faz força, solta só gotinhas ou não sai nada, o quadro já não é este: pode ser obstrução uretral, mesmo que ainda saia algo.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "O tutor descreve cistite e obstrução uretral com as mesmas palavras; confundir as duas é o erro mais letal, e a cistite só se resolve quando o gato está urinando.",
+    "origem": "mapa",
+    "trecho": "",
+    "fonte": ""
+  },
+  "notas_para_o_especialista": "Documento é revisão sobre cistite idiopática felina (só gatos). Ele lista disúria e estrangúria (fazer força), miado durante e lambedura depois do xixi como sinais da cistite, mas o mapa põe esforço, choro e lambedura na obstrução uretral e define este quadro como 'sem esforço, sem dor aparente'. Segui o mapa: esses sinais só entraram como alarme. Fatores de risco (mudança de casa, convivência com outros gatos, ração seca, macho castrado) vêm do documento. Para cães só o título do mapa ('xixi fora do lugar') cobre; o documento não trata de cães. Nenhum item geral."
+}

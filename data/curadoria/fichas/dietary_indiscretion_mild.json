@@ -1,0 +1,113 @@
+{
+  "topico": "dietary_indiscretion_mild",
+  "titulo": "Comeu algo fora da dieta, sem sinais",
+  "nome_leigo": "comeu besteira",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Comeu uma sobra de comida.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Mexeu no lixo.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Comeu só um pedacinho.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá normal, não vomitou nem teve diarreia.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá comendo e brincando.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Pegou coisa do chão na rua ou roubou comida da mesa.",
+      "origem": "documento",
+      "trecho": "The most commonly recorded suspected trigger or explanation for the acute diarrhoea were scavenging/dietary indiscretion",
+      "fonte": "dietary_indiscretion_mild__plos_2025_acute_diarrhoea.txt"
+    },
+    {
+      "texto": "Comeu agora há pouco, foi um restinho de comida.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Começou a vomitar.",
+      "origem": "documento",
+      "trecho": "The most common comorbid clinical signs with acute diarrhoea included vomiting",
+      "fonte": "dietary_indiscretion_mild__plos_2025_acute_diarrhoea.txt"
+    },
+    {
+      "texto": "Diarreia, principalmente com sangue.",
+      "origem": "documento",
+      "trecho": "Overall, 538 (29.32%) cases were recorded as haemorrhagic diarrhoea.",
+      "fonte": "dietary_indiscretion_mild__plos_2025_acute_diarrhoea.txt"
+    },
+    {
+      "texto": "Ficou desanimado ou parou de comer.",
+      "origem": "documento",
+      "trecho": "reduced appetite (508, 27.68%) and lethargy (444, 24.20%)",
+      "fonte": "dietary_indiscretion_mild__plos_2025_acute_diarrhoea.txt"
+    },
+    {
+      "texto": "O que comeu foi chocolate, cebola, alho, veneno de rato ou chumbinho.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "chocolate_toxicosis",
+      "texto": "Se foi chocolate, o risco depende do tipo, da quantidade e do peso, e o cálculo é do veterinário; tremor, agitação, vômito ou coração acelerado indicam intoxicação.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "gemea": "allium_toxicosis",
+      "texto": "Se comeu cebola ou alho, pode ficar sem energia, com gengiva pálida ou amarelada e urina escura.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "gemea": "carbamate_organophosphate_poisoning",
+      "texto": "No chumbinho ou inseticida ele baba muito e treme ao mesmo tempo, com pupila pequena, diarreia, xixi solto, convulsão ou respiração difícil; costuma ter tido acesso a quintal, rua ou isca.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "gemea": "anticoagulant_rodenticide_poisoning",
+      "texto": "No veneno de rato ele pode parecer normal no começo; depois surgem sangue pelo nariz, manchas roxas, gengiva pálida e fraqueza. Só ter tido acesso ao veneno já separa do quadro leve.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Comer lixo ou comida fora da dieta é uma das causas mais registradas de diarreia aguda em cães.",
+    "origem": "documento",
+    "trecho": "The most commonly recorded suspected trigger or explanation for the acute diarrhoea were scavenging/dietary indiscretion",
+    "fonte": "dietary_indiscretion_mild__plos_2025_acute_diarrhoea.txt"
+  },
+  "notas_para_o_especialista": "O documento é um estudo epidemiológico de diarreia aguda em cães no Reino Unido: só informa que revirar lixo/indiscrição alimentar é um gatilho comum e quais sinais acompanham a diarreia (vômito, apetite reduzido, letargia, diarreia com sangue), que usei como sinais de alarme. Não há dados de gatos nem do quadro 'sem sinais'. A diferenciação dos quatro gêmeos saiu das linhas do mapa de cada um. Nenhum item geral."
+}

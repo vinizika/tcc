@@ -1,0 +1,98 @@
+{
+  "topico": "gastric_dilatation_volvulus",
+  "titulo": "Dilatação e torção gástrica",
+  "nome_leigo": "estômago virado",
+  "especie": "cão",
+  "como_o_tutor_conta": [
+    {
+      "texto": "A barriga ficou muito inchada e dura",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tenta vomitar e não sai nada",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá inquieto",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá babando",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Anda de um lado pro outro, não para",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "É cachorro grande, tipo pastor alemão",
+      "origem": "documento",
+      "trecho": "The study confirms that large and giant breeds are more predisposed to GDV , with a significant percentage of mixed-breed dogs (23%). However, the German Shepherd, the most frequently observed breed",
+      "fonte": "gastric_dilatation_volvulus__animals_2025_gdv.pdf"
+    },
+    {
+      "texto": "Começou depois que ele comeu e foi correr ou brincar",
+      "origem": "documento",
+      "trecho": "dietary habits (intake of dry food or large amounts of liquids), and activity after meals",
+      "fonte": "gastric_dilatation_volvulus__animals_2025_gdv.pdf"
+    },
+    {
+      "texto": "Tomou muita água de uma vez e depois a barriga inchou",
+      "origem": "documento",
+      "trecho": "the patients had not eaten but had instead ingested large amounts of water",
+      "fonte": "gastric_dilatation_volvulus__animals_2025_gdv.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Faz força pra vomitar várias vezes e não sai nada, com a barriga estufada e dura",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá respirando rápido",
+      "origem": "documento",
+      "trecho": "Respiratory rate Polypnea",
+      "fonte": "gastric_dilatation_volvulus__animals_2025_gdv.pdf"
+    },
+    {
+      "texto": "A gengiva ficou muito vermelha ou pálida",
+      "origem": "documento",
+      "trecho": "Mucous membranes Congested 40 out of 78 51.3% Mucous membranes Pale",
+      "fonte": "gastric_dilatation_volvulus__animals_2025_gdv.pdf"
+    },
+    {
+      "texto": "Ficou largado, meio fora do ar",
+      "origem": "documento",
+      "trecho": "State of consciousness Depressed",
+      "fonte": "gastric_dilatation_volvulus__animals_2025_gdv.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "single_vomiting_or_mild_diarrhea",
+      "texto": "No vômito isolado sai conteúdo, como comida ou bola de pelo, e ele continua comendo e ativo; na torção ele faz força pra vomitar e não sai nada, a barriga fica estufada e dura e ele fica inquieto e babando.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "O estômago gira sobre o próprio eixo e corta a circulação, podendo necrosar a parede do estômago e comprometer o coração.",
+    "origem": "documento",
+    "trecho": "characterized by the rotation of the stomach around its own axis, compromising vascularization both locally and systemically. This can cause problems, such as gastric wall necrosis, impaired cardiac function",
+    "fonte": "gastric_dilatation_volvulus__animals_2025_gdv.pdf"
+  },
+  "notas_para_o_especialista": "O documento é um estudo retrospectivo de 130 cães operados em Turim; não descreve os sinais que o tutor vê em casa (inchaço, ânsia sem vômito e inquietação vêm do mapa). A tabela de apresentação é de exame (polipneia, mucosas congestas ou pálidas, consciência deprimida, choque, taquicardia, temperatura); usei como alarme só os que o tutor consegue ver, em versão leiga. Raças grandes e gigantes, pastor alemão, atividade depois da refeição e ingestão de muita água vêm do documento. O documento também aponta machos inteiros e idade de 5 a 10 anos como mais frequentes; não usei como sinal. A frase sobre morte do paciente está cortada por quebra de página no texto extraído, por isso o trecho para em 'impaired cardiac function'."
+}

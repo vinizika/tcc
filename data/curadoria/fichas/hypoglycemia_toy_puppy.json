@@ -1,0 +1,104 @@
+{
+  "topico": "hypoglycemia_toy_puppy",
+  "titulo": "Hipoglicemia em filhote de raça pequena",
+  "nome_leigo": "açúcar baixo no filhote",
+  "especie": "cão",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Meu filhote de raça pequena, com menos de 3 meses, tá tremendo.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "É filhote de yorkshire, chihuahua, pinscher ou spitz, bem pequenininho.",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Ficou molinho, fraco, sem força.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Ficou muitas horas sem comer.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Pegou frio e ficou geladinho.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Piorou depois de viagem, mudança de casa ou muita agitação.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá chorando e irritado.",
+      "origem": "documento",
+      "trecho": "Hypoglycemic neonates may manifest vocalization, irritability, lethargy, decrease or absence of the suckling reflex and interruption of breastfeeding",
+      "fonte": "hypoglycemia_toy_puppy__frontiers_2024_neonatal_hypoglycemia.pdf"
+    },
+    {
+      "texto": "Tá largado, sem vontade de nada, e não quer comer nem mamar.",
+      "origem": "documento",
+      "trecho": "Hypoglycemic neonates may manifest vocalization, irritability, lethargy, decrease or absence of the suckling reflex and interruption of breastfeeding",
+      "fonte": "hypoglycemia_toy_puppy__frontiers_2024_neonatal_hypoglycemia.pdf"
+    },
+    {
+      "texto": "Tá cambaleando, andando como se estivesse bêbado.",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Teve convulsão: ficou duro, pedalando e babando.",
+      "origem": "documento",
+      "trecho": "Seizures in neonatal patients can be identified by muscle rigidity or pedaling movements, opisthotonos, and sialorrhea.",
+      "fonte": "hypoglycemia_toy_puppy__frontiers_2024_neonatal_hypoglycemia.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Apagou e não acorda.",
+      "origem": "documento",
+      "trecho": "Severe hypoglycemia can lead to bradycardia, cyanosis, seizures, coma and death",
+      "fonte": "hypoglycemia_toy_puppy__frontiers_2024_neonatal_hypoglycemia.pdf"
+    },
+    {
+      "texto": "Língua ou gengiva roxa.",
+      "origem": "documento",
+      "trecho": "Severe hypoglycemia can lead to bradycardia, cyanosis, seizures, coma and death",
+      "fonte": "hypoglycemia_toy_puppy__frontiers_2024_neonatal_hypoglycemia.pdf"
+    },
+    {
+      "texto": "Tão fraco que não fica em pé.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "tremors_without_seizure",
+      "texto": "No tremor de frio ou de medo o filhote fica atento e anda normal; na hipoglicemia o filhote de raça pequena treme e fica molinho, fraco, sem querer comer, em geral depois de jejum, frio ou estresse.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Na hipoglicemia grave o filhote pode ter convulsão, entrar em coma e morrer.",
+    "origem": "documento",
+    "trecho": "Severe hypoglycemia can lead to bradycardia, cyanosis, seizures, coma and death",
+    "fonte": "hypoglycemia_toy_puppy__frontiers_2024_neonatal_hypoglycemia.pdf"
+  },
+  "notas_para_o_especialista": "O documento aprovado trata de hipoglicemia NEONATAL (primeiras 3 a 4 semanas); sobre o filhote de raça toy ele traz só um parágrafo (hipoglicemia juvenil transitória, predisposição até 3 a 4 meses; o mapa diz menos de 3 meses). Os sinais do documento (choro, irritabilidade, letargia, parar de mamar, convulsão, cianose, coma) foram descritos em recém-nascidos e aqui estendidos ao filhote toy, validar. Tremor, fraqueza, jejum, frio e estresse vêm do motivo do mapa; tremor não aparece como sinal no documento. Itens 'geral' (2): exemplos de raças toy e andar cambaleante (ataxia). Glicemia e frequência cardíaca são medidas pelo veterinário; não usei."
+}

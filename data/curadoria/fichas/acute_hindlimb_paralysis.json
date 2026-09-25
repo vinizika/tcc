@@ -1,0 +1,110 @@
+{
+  "topico": "acute_hindlimb_paralysis",
+  "titulo": "Paralisia aguda das patas traseiras",
+  "nome_leigo": "travou as patas de trás",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Amanheceu sem conseguir levantar as patas de trás",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá se arrastando com as patas de trás",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá gritando de dor",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Parece que não sente as patas",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Fez xixi sem querer",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "As patas de trás tão geladas",
+      "origem": "documento",
+      "trecho": "extremidade de membros pélvicos frias",
+      "fonte": "acute_hindlimb_paralysis__pvb_2017_canine_ischemic_neuromyopathy_excerpt.txt"
+    },
+    {
+      "texto": "No gato, as almofadinhas e os dedos ficaram roxos ou pálidos",
+      "origem": "documento",
+      "trecho": "purple, cyanotic or pale toes",
+      "fonte": "acute_hindlimb_paralysis__jfms_2024_feline_ate.txt"
+    },
+    {
+      "texto": "No gato, às vezes pega uma pata só, até uma da frente",
+      "origem": "documento",
+      "trecho": "whereas 10-15% of affected cats have only one pelvic limb involved; the remaining cases have either right or left forelimb involvement",
+      "fonte": "acute_hindlimb_paralysis__jfms_2024_feline_ate.txt"
+    },
+    {
+      "texto": "O gato vomitou antes de travar as patas",
+      "origem": "documento",
+      "trecho": "for vomiting to occur in cats prior to presentation with FATE",
+      "fonte": "acute_hindlimb_paralysis__jfms_2024_feline_ate.txt"
+    },
+    {
+      "texto": "No cachorro, já vinha mancando antes de parar de andar",
+      "origem": "documento",
+      "trecho": "foi relatada claudicação previamente à disfunção motora",
+      "fonte": "acute_hindlimb_paralysis__pvb_2017_canine_ischemic_neuromyopathy_excerpt.txt"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Foi de repente: estava bem e do nada parou de mexer as patas",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Perdeu o controle das patas ou do xixi",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O gato está gritando e ofegante",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Também respira com dificuldade ou a língua fica roxa",
+      "origem": "documento",
+      "trecho": "such as dyspnea, pulmonary crackles and cyanosis",
+      "fonte": "acute_hindlimb_paralysis__jfms_2024_feline_ate.txt"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "osteoarthritis_stiffness",
+      "texto": "Na artrose do idoso a dificuldade vem devagar, há meses, ele custa a levantar e melhora depois que anda; na paralisia aguda começa de repente, ele arrasta as patas, grita de dor ou perde o controle do xixi.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "No gato, a causa costuma ser um coágulo que entope a artéria, e em 80% dos casos há doença do coração ainda não descoberta.",
+    "origem": "documento",
+    "trecho": "80% of cats with FATE have a hitherto unrecognized cardiomyopathy as a cause of the thromboembolism",
+    "fonte": "acute_hindlimb_paralysis__jfms_2024_feline_ate.txt"
+  },
+  "notas_para_o_especialista": "Os documentos cobrem tromboembolismo aórtico no gato (JFMS) e neuromiopatia isquêmica no cão (PVB, 5 cadelas com 11 anos ou mais). Outras causas de paralisia súbita (hérnia de disco, trauma de coluna) não são cobertas, como o próprio motivo do mapa registra. Pulso femoral ausente, Doppler, glicose e lactato do membro e ausência de dor profunda são achados de exame e não entraram; 'não sente as patas' vem do mapa. Patas geladas estão nos dois documentos; dedos roxos ou pálidos, pata só e membro da frente são descritos só para o gato, por isso o item diz a espécie. Mancar antes da paralisia foi relatado em 2 dos 5 cães."
+}

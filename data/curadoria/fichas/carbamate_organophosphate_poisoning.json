@@ -1,0 +1,116 @@
+{
+  "topico": "carbamate_organophosphate_poisoning",
+  "titulo": "Intoxicação por chumbinho e inseticidas agrícolas",
+  "nome_leigo": "chumbinho",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Tá babando muito",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá tremendo",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Teve convulsão",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A pupila ficou pequenininha",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá com diarreia",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá fazendo xixi sem controle",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá respirando com dificuldade",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Acho que comeu chumbinho",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Fica solto no quintal ou na rua e pode ter pegado isca de veneno",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Os músculos ficam pulando, tremendo por baixo da pele",
+      "origem": "documento",
+      "trecho": "the cats presenting excessive salivation, muscular fasciculation, disorientation, and vomiting",
+      "fonte": "carbamate_organophosphate_poisoning__scielo_2021_feline_poisoning.txt"
+    },
+    {
+      "texto": "Tá desorientado e vomitando",
+      "origem": "documento",
+      "trecho": "the cats presenting excessive salivation, muscular fasciculation, disorientation, and vomiting",
+      "fonte": "carbamate_organophosphate_poisoning__scielo_2021_feline_poisoning.txt"
+    },
+    {
+      "texto": "O gato caça bicho e vive se lambendo, pode ter pegado veneno",
+      "origem": "documento",
+      "trecho": "the behavioral characteristics of cats, such as intensive hunting, investigative behavior that leads to crawling underthings, and their habit of licking their fur, may lead to increased exposure to toxins",
+      "fonte": "carbamate_organophosphate_poisoning__scielo_2021_feline_poisoning.txt"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Babando e tremendo ao mesmo tempo",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Teve convulsão ou não consegue respirar direito",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Pupila bem pequena, com baba, diarreia ou xixi solto",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "dietary_indiscretion_mild",
+      "texto": "Quando só comeu uma sobra ou mexeu no lixo, ele segue normal, comendo e brincando; no chumbinho aparece baba em excesso junto com tremor, pupila pequena, diarreia ou xixi solto, geralmente depois de acesso a quintal, rua ou isca de veneno.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Em gatos no Brasil, a intoxicação por pesticidas e produtos de limpeza matou 18,8% dos animais atendidos.",
+    "origem": "documento",
+    "trecho": "The mortality rate was 18.8% (45 cats) with pesticides and household cleaning supplies",
+    "fonte": "carbamate_organophosphate_poisoning__scielo_2021_feline_poisoning.txt"
+  },
+  "notas_para_o_especialista": "O documento é um inquérito com veterinários sobre intoxicação em gatos no Brasil (543 casos); os organofosforados foram o principal agente da classe pesticidas. Carbamatos e o aldicarb ('chumbinho') só aparecem citados na discussão e nas referências; os sinais do documento (salivação excessiva, fasciculação muscular, desorientação, vômito) são descritos para organofosforados em gatos, e usei-os para as duas espécies por serem os mesmos da síndrome colinérgica. Não há dados de cães. As tabelas de sinais clínicos por agente não vieram no texto extraído. A mortalidade de 18,8% é da classe inteira 'pesticidas e produtos de limpeza', não só do chumbinho."
+}

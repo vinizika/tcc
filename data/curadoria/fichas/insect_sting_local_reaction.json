@@ -1,0 +1,104 @@
+{
+  "topico": "insect_sting_local_reaction",
+  "titulo": "Picada de inseto com reação local",
+  "nome_leigo": "picada de abelha",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Foi picado por abelha, marimbondo ou formiga",
+      "origem": "documento",
+      "trecho": "triggered by stings from honeybees, wasps, or ants",
+      "fonte": "insect_sting_local_reaction__animals_2024_hymenoptera_allergy.pdf"
+    },
+    {
+      "texto": "Inchou só um pouquinho no lugar da picada",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O inchaço não aumentou, continua do mesmo tamanho",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Continua ativo, brincando normal",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Parece doer onde foi picado, fica lambendo o lugar",
+      "origem": "documento",
+      "trecho": "The injected allergens can potentially lead to local pain and swelling",
+      "fonte": "insect_sting_local_reaction__animals_2024_hymenoptera_allergy.pdf"
+    },
+    {
+      "texto": "Levou uma picada na pata",
+      "origem": "documento",
+      "trecho": "with the face (63, 39%), paw (46, 28%), and the oral cavity (35, 21%) being the most frequent sites",
+      "fonte": "insect_sting_local_reaction__animals_2024_hymenoptera_allergy.pdf"
+    },
+    {
+      "texto": "Ficou um carocinho no rosto onde a abelha picou",
+      "origem": "documento",
+      "trecho": "with the face (63, 39%), paw (46, 28%), and the oral cavity (35, 21%) being the most frequent sites",
+      "fonte": "insect_sting_local_reaction__animals_2024_hymenoptera_allergy.pdf"
+    },
+    {
+      "texto": "Foi picado no passeio ou no quintal",
+      "origem": "documento",
+      "trecho": "dogs were stung while on a walk, 16 (11%) in the garden",
+      "fonte": "insect_sting_local_reaction__animals_2024_hymenoptera_allergy.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "O inchaço tá crescendo e chegou no focinho, nos olhos ou no pescoço",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Apareceram caroços pelo corpo e ele se coça muito",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Respiração barulhenta ou difícil, ou começou a vomitar",
+      "origem": "documento",
+      "trecho": "Dyspnea, stridor, wheeze, nausea, vomiting and/or abdominal pain",
+      "fonte": "insect_sting_local_reaction__animals_2024_hymenoptera_allergy.pdf"
+    },
+    {
+      "texto": "Ficou mole, com gengiva pálida ou roxa, ou desmaiou",
+      "origem": "documento",
+      "trecho": "Cyanosis, pallor, SpO2 < 92%, hypotension *, collapse, loss of consciousness, incontinence",
+      "fonte": "insect_sting_local_reaction__animals_2024_hymenoptera_allergy.pdf"
+    },
+    {
+      "texto": "Foi picado dentro da boca",
+      "origem": "documento",
+      "trecho": "dogs that were stung in the oral cavity were at a greater risk of developing SSRs",
+      "fonte": "insect_sting_local_reaction__animals_2024_hymenoptera_allergy.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "anaphylaxis_facial_swelling",
+      "texto": "Na reação local o inchaço é pequeno, fica só no ponto da picada, não cresce e o animal segue ativo; na reação grave o inchaço cresce rápido e toma focinho, olhos ou pescoço, surgem caroços pelo corpo e coceira, respiração barulhenta ou desmaio.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "A picada pode dar só dor e inchaço no local, mas o mesmo veneno também pode causar reação grave no corpo todo.",
+    "origem": "documento",
+    "trecho": "The injected allergens can potentially lead to local pain and swelling, larger regional reactions or severe systemic reactions (SSRs)",
+    "fonte": "insect_sting_local_reaction__animals_2024_hymenoptera_allergy.pdf"
+  },
+  "notas_para_o_especialista": "O documento é um estudo de 178 cães atendidos em hospital (Zurique) por picada de abelha ou vespa; não há dados de gatos. A reação só local quase não é descrita: o grau 1 do estudo já é pele generalizada (urticária, angioedema). Por isso 'inchaço pequeno que não cresce, animal ativo' vem do motivo do mapa, e os sinais de alarme de pele vêm da linha do gêmeo. Picada na boca, peso abaixo de 10 kg, idade abaixo de 2 anos e raça pura foram fatores de risco para reação grave; só a picada na boca entrou como alarme, porque o tutor a observa. O documento também diz que mais de 40% dos cães com reação só local tiveram reação grave ao serem picados de novo; não usei como sinal. 'Fica lambendo o lugar' é a versão leiga de dor local."
+}

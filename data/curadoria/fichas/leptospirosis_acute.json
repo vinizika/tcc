@@ -1,0 +1,108 @@
+{
+  "topico": "leptospirosis_acute",
+  "titulo": "Leptospirose aguda",
+  "nome_leigo": "doença do rato",
+  "especie": "cão",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Ficou amarelado: o branco do olho, a gengiva ou a pele amarelos",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá com febre, o corpo quente, começou de repente",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá quietinho, sem energia e não quer comer",
+      "origem": "documento",
+      "trecho": "Affected dogs may show inappetence, lethargy, vomiting, increased thirst and urination because of non-oliguric renal dysfunction, fever, or some combination of these signs.",
+      "fonte": "leptospirosis_acute__acvim_2023_leptospirosis.pdf"
+    },
+    {
+      "texto": "Tá bebendo muita água e fazendo muito xixi",
+      "origem": "documento",
+      "trecho": "Affected dogs may show inappetence, lethargy, vomiting, increased thirst and urination because of non-oliguric renal dysfunction, fever, or some combination of these signs.",
+      "fonte": "leptospirosis_acute__acvim_2023_leptospirosis.pdf"
+    },
+    {
+      "texto": "Tá vomitando, com diarreia e dor na barriga",
+      "origem": "documento",
+      "trecho": "Vomiting, diarrhea, abdominal pain",
+      "fonte": "leptospirosis_acute__acvim_2023_leptospirosis.pdf"
+    },
+    {
+      "texto": "Tá desidratado, com a boca seca e o olho fundo",
+      "origem": "documento",
+      "trecho": "Vomiting, diarrhea, dehydration, lethargy, inappetence",
+      "fonte": "leptospirosis_acute__acvim_2023_leptospirosis.pdf"
+    },
+    {
+      "texto": "Não quer se mexer, parece todo dolorido",
+      "origem": "documento",
+      "trecho": "Myositis Reluctance to move",
+      "fonte": "leptospirosis_acute__acvim_2023_leptospirosis.pdf"
+    },
+    {
+      "texto": "Os olhos ficaram vermelhos",
+      "origem": "documento",
+      "trecho": "Uveitis, conjunctivitis, retinal hemorrhages",
+      "fonte": "leptospirosis_acute__acvim_2023_leptospirosis.pdf"
+    },
+    {
+      "texto": "Tem rato no quintal ou ele caçou um rato",
+      "origem": "documento",
+      "trecho": "reservoir hosts are rodents, especially Rattus norvegicus",
+      "fonte": "leptospirosis_acute__acvim_2023_leptospirosis.pdf"
+    },
+    {
+      "texto": "Andou ou bebeu água de enchente, poça ou lama",
+      "origem": "documento",
+      "trecho": "Organisms contaminate soil and water and can remain viable in the environment for weeks to months when conditions are optimal.",
+      "fonte": "leptospirosis_acute__acvim_2023_leptospirosis.pdf"
+    },
+    {
+      "texto": "Começou depois de uma época de muita chuva",
+      "origem": "documento",
+      "trecho": "Leptospirosis is especially prevalent in regions with higher annual rainfall and warm climates.",
+      "fonte": "leptospirosis_acute__acvim_2023_leptospirosis.pdf"
+    },
+    {
+      "texto": "Não tomou vacina contra leptospirose",
+      "origem": "documento",
+      "trecho": "leptospirosis has been recognized predominantly in unvaccinated dogs or dogs vaccinated with 2-serovar vaccines",
+      "fonte": "leptospirosis_acute__acvim_2023_leptospirosis.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Faz pouco xixi ou parou de fazer xixi",
+      "origem": "documento",
+      "trecho": "polyuria, polydipsia, oliguria, anuria, abdominal pain",
+      "fonte": "leptospirosis_acute__acvim_2023_leptospirosis.pdf"
+    },
+    {
+      "texto": "Manchas roxas na pele, sangue no nariz, no xixi ou no vômito, ou cocô preto",
+      "origem": "documento",
+      "trecho": "Petechiae, ecchymoses, hematuria, melena, hematemesis, epistaxis",
+      "fonte": "leptospirosis_acute__acvim_2023_leptospirosis.pdf"
+    },
+    {
+      "texto": "Respiração rápida ou tosse com sangue",
+      "origem": "documento",
+      "trecho": "Tachypnea, hemoptysis, increased breath sounds",
+      "fonte": "leptospirosis_acute__acvim_2023_leptospirosis.pdf"
+    }
+  ],
+  "como_diferenciar": [],
+  "por_que_importa": {
+    "texto": "A leptospirose começa com febre súbita e pode evoluir rápido para lesão aguda nos rins.",
+    "origem": "documento",
+    "trecho": "Because leptospirosis can progress rapidly to acute kidney injury (AKI), the disease should be considered in dogs with acute onset of febrile illness",
+    "fonte": "leptospirosis_acute__acvim_2023_leptospirosis.pdf"
+  },
+  "notas_para_o_especialista": "A linha do mapa não tem sinais nem discriminador; 'amarelado' e 'febre' vêm do motivo do mapa, o resto do consenso ACVIM (Tabela 1, definição de caso e fase febril inicial). 'Olhos vermelhos' é leitura leiga de uveíte/conjuntivite. O risco zoonótico citado no motivo do mapa ficou fora do corpo da ficha (não é sinal que o tutor observa e 'por que importa' comporta uma frase só): avaliar se deve substituir a frase sobre os rins. Sem gêmeos listados. Nenhum item geral."
+}

@@ -1,0 +1,116 @@
+{
+  "topico": "pyometra",
+  "titulo": "Piometra",
+  "nome_leigo": "infecção no útero",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Ela não é castrada.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Minha gata não castrada tá soltando pus.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá saindo pus pela vulva, sujou a caminha.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O corrimento é amarelado, com pus, às vezes meio sangue.",
+      "origem": "documento",
+      "trecho": "secreção vaginal mucopurulenta a serossanguinolenta",
+      "fonte": "pyometra__scielo_2013_cadelas_gatas.pdf"
+    },
+    {
+      "texto": "Tá bebendo muita água.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Vomitou e tá fazendo muito xixi.",
+      "origem": "documento",
+      "trecho": "êmese, anorexia, polidipsia e poliúria",
+      "fonte": "pyometra__scielo_2013_cadelas_gatas.pdf"
+    },
+    {
+      "texto": "Tá apática, desanimada, só deitada.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Não quer comer.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A barriga tá inchada.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Teve cio faz mais ou menos um mês.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O cio foi há uns dois, três meses.",
+      "origem": "documento",
+      "trecho": "generally appearing between two and four-months post-estrus",
+      "fonte": "pyometra__mdpi_2023_review.pdf"
+    },
+    {
+      "texto": "Ela já tomou injeção de anticoncepcional.",
+      "origem": "documento",
+      "trecho": "fizeram uso de anticoncepcional e apresentaram piometra",
+      "fonte": "pyometra__scielo_2013_cadelas_gatas.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "A barriga tá inchando e não sai corrimento nenhum.",
+      "origem": "documento",
+      "trecho": "dogs with a closed cervix often exhibit abdominal distention owing to the lack of uterine content drainage",
+      "fonte": "pyometra__mdpi_2023_review.pdf"
+    },
+    {
+      "texto": "Gengiva pálida, branquinha.",
+      "origem": "documento",
+      "trecho": "moderate to severe general depression and pale mucous membranes are linked to extended hospitalization periods",
+      "fonte": "pyometra__mdpi_2023_review.pdf"
+    },
+    {
+      "texto": "Muito prostrada, quase sem reagir.",
+      "origem": "documento",
+      "trecho": "moderate to severe general depression and pale mucous membranes are linked to extended hospitalization periods",
+      "fonte": "pyometra__mdpi_2023_review.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "normal_estrus",
+      "texto": "No cio normal sai sangue da vulva inchada e ela segue ativa e comendo. Na piometra, a fêmea não castrada que teve cio há poucas semanas solta pus ou corrimento purulento, fica apática, bebe muita água, não come e pode ficar com a barriga inchada.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "A piometra pode romper o útero e causar peritonite e infecção generalizada (sepse), com risco de morte.",
+    "origem": "documento",
+    "trecho": "Pyometra is a life-threatening condition because of the potential for complications such as uterine rupture, nephropathy, peritonitis, endotoxemia, and, particularly, sepsis",
+    "fonte": "pyometra__mdpi_2023_review.pdf"
+  },
+  "notas_para_o_especialista": "O mapa diz cio 'há cerca de um mês'; o artigo MDPI diz que os sinais aparecem em geral 2 a 4 meses após o cio. Mantive os dois. Os documentos não citam cheiro do corrimento nem lambedura da vulva, então não entraram. Febre, hipotermia, taquicardia e desidratação são achados de exame. O artigo brasileiro cobre cadelas e gatas; o MDPI, só cadelas. Na piometra fechada pode não sair corrimento, por isso 'barriga inchando sem corrimento' ficou como alarme. Nenhum item geral."
+}

@@ -1,0 +1,110 @@
+{
+  "topico": "ticks_found_no_signs",
+  "titulo": "Carrapatos no animal, sem sinais",
+  "nome_leigo": "carrapato",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Achei um carrapato no meu cachorro.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Encontrei carrapato no meu gato.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tirei uns carrapatos grudados nele.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Vi um carrapato andando no pelo dele.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tinha carrapato na orelha, no pescoço e entre os dedos.",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Achei uma bolinha cinza grudada na pele, era um carrapato cheio.",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Ele tá normal, comendo e brincando.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tô com medo de ser doença do carrapato.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Ele vive no quintal e passeia no mato.",
+      "origem": "documento",
+      "trecho": "the incidence of VBDs in dogs living outdoors was higher than that for those living in a house, which indicates that the former are at a greater risk of exposure to ticks",
+      "fonte": "ticks_found_no_signs__vetsci_2024_vector_borne_pathogens.pdf"
+    },
+    {
+      "texto": "Faz tempo que ele tá sem proteção contra carrapato.",
+      "origem": "documento",
+      "trecho": "these positivities are related to the irregular use of specific treatments—thus increasing the risk of ectoparasite infestations",
+      "fonte": "ticks_found_no_signs__vetsci_2024_vector_borne_pathogens.pdf"
+    },
+    {
+      "texto": "Tô vendo carrapato pela casa e no quintal.",
+      "origem": "documento",
+      "trecho": "favoring the presence of infected arthropods in domestic environments and households",
+      "fonte": "ticks_found_no_signs__vetsci_2024_vector_borne_pathogens.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Ficou desanimado, está emagrecendo ou começou a mancar.",
+      "origem": "documento",
+      "trecho": "generic clinical signs (i.e., fever, lethargy, weight loss, lymphadenomegaly, and mild lameness)",
+      "fonte": "ticks_found_no_signs__vetsci_2024_vector_borne_pathogens.pdf"
+    },
+    {
+      "texto": "Parou de comer.",
+      "origem": "documento",
+      "trecho": "fever, depression, anorexia lymphoadenomegaly, splenomegaly",
+      "fonte": "ticks_found_no_signs__vetsci_2024_vector_borne_pathogens.pdf"
+    },
+    {
+      "texto": "Gengiva pálida, sangue pelo nariz ou manchinhas roxas na pele.",
+      "origem": "documento",
+      "trecho": "hemorrhagic tendencies, pale mucosa, weight loss",
+      "fonte": "ticks_found_no_signs__vetsci_2024_vector_borne_pathogens.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "tick_borne_disease_anemia",
+      "texto": "Aqui só apareceu o carrapato e o animal está bem: come, brinca e tem gengiva rosada. Na doença do carrapato ele fica apático, sem apetite, emagrece e pode ter gengiva pálida ou sangramentos.",
+      "origem": "documento",
+      "trecho": "fever, depression, anorexia lymphoadenomegaly, splenomegaly, hemorrhagic tendencies, pale mucosa, weight loss, ophthalmologic lesions",
+      "fonte": "ticks_found_no_signs__vetsci_2024_vector_borne_pathogens.pdf"
+    }
+  ],
+  "por_que_importa": {
+    "texto": "O carrapato transmite doenças que, em alguns casos, derrubam as plaquetas e podem matar.",
+    "origem": "documento",
+    "trecho": "such as thrombocytopenia and/or death in Ehrlichia and Anaplasma infections",
+    "fonte": "ticks_found_no_signs__vetsci_2024_vector_borne_pathogens.pdf"
+  },
+  "notas_para_o_especialista": "O documento é um estudo sorológico de doenças transmitidas por vetores em cães da Sardenha; não traz nada sobre gatos nem sobre o que o tutor vê ao achar carrapato. Exposição e 'está normal' vieram do mapa (quadro e motivo; os sinais do mapa estão vazios). Marquei como geral: os locais onde o carrapato costuma grudar (orelha, pescoço, entre os dedos) e o carrapato cheio parecendo uma bolinha na pele. Sinais de alarme e diferenciação saíram da descrição da erliquiose e dos sinais gerais das doenças por vetores no documento; ele não fala especificamente de anemia (o gêmeo), e febre ficou de fora por ser medida. Sinais e discriminador do gêmeo estão vazios no mapa."
+}

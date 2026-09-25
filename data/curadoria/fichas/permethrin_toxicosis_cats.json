@@ -1,0 +1,110 @@
+{
+  "topico": "permethrin_toxicosis_cats",
+  "titulo": "Intoxicação por permetrina em gato",
+  "nome_leigo": "antipulgas de cachorro no gato",
+  "especie": "gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Passei antipulgas de cachorro no meu gato",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Usei só um pouquinho da pipeta do cachorro nele",
+      "origem": "documento",
+      "trecho": "You must not use any of these products on your cat, not even a small part of the pipette or tube.",
+      "fonte": "permethrin_toxicosis_cats__vmd_2014.pdf"
+    },
+    {
+      "texto": "O gato dorme junto com o cachorro que tomou antipulgas",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Ele lambeu o cachorro que acabou de receber o antipulgas",
+      "origem": "documento",
+      "trecho": "prevent cats from licking or grooming a newly treated dog",
+      "fonte": "permethrin_toxicosis_cats__vmd_2014.pdf"
+    },
+    {
+      "texto": "Vive se esfregando no cachorro que tomou antipulgas ontem",
+      "origem": "documento",
+      "trecho": "keep any cats away from a newly treated dog",
+      "fonte": "permethrin_toxicosis_cats__vmd_2014.pdf"
+    },
+    {
+      "texto": "Tá tremendo muito",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Teve convulsão",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá andando estranho, cambaleando",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá salivando, babando",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Ficou mais quietinho que o normal",
+      "origem": "documento",
+      "trecho": "become quieter than usual",
+      "fonte": "permethrin_toxicosis_cats__vmd_2014.pdf"
+    },
+    {
+      "texto": "Vomitou depois do antipulgas",
+      "origem": "documento",
+      "trecho": "be sick",
+      "fonte": "permethrin_toxicosis_cats__vmd_2014.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Convulsão ou tremores fortes que não param",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Não consegue andar direito, cai",
+      "origem": "documento",
+      "trecho": "stagger and have difficulty walking",
+      "fonte": "permethrin_toxicosis_cats__vmd_2014.pdf"
+    },
+    {
+      "texto": "Piorou rápido depois do contato com o produto",
+      "origem": "documento",
+      "trecho": "Cats that have contact with these products can quickly become unwell.",
+      "fonte": "permethrin_toxicosis_cats__vmd_2014.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "tremors_without_seizure",
+      "texto": "Pergunta-chave: o produto era de cachorro ou o gato teve contato com cão recém-tratado? Tremor de frio ou medo passa, e o gato fica acordado, olhando e andando normal; na permetrina o tremor vem com baba, cambaleio ou convulsão.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Mesmo uma pequena parte da pipeta de cachorro pode deixar o gato muito doente rapidamente e até matar.",
+    "origem": "documento",
+    "trecho": "Even if you use only a small part of the pipette or tube on your cat, it could quickly become very unwell and may even die.",
+    "fonte": "permethrin_toxicosis_cats__vmd_2014.pdf"
+  },
+  "notas_para_o_especialista": "O documento é um folheto do VMD (Reino Unido) para tutores, com os sinais já em linguagem leiga. 'Be sick' foi lido como vômito (inglês britânico). Todos os sinais do mapa entraram. A parte do discriminador 'não há antídoto' não entrou por ser informação de tratamento, e as instruções do folheto (lavar o gato, levar a embalagem) ficaram de fora por serem conduta. Nenhum item geral."
+}

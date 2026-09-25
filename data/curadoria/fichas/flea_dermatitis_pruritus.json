@@ -1,0 +1,122 @@
+{
+  "topico": "flea_dermatitis_pruritus",
+  "titulo": "Coceira e dermatite (alergia à picada de pulga)",
+  "nome_leigo": "coceira de pulga",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Tá se coçando muito, não para.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Apareceram casquinhas na pele.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá perdendo pelo, com falhas.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Vive coçando a orelha.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá comendo bem, normal.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Vi pulga nele, perto do rabo.",
+      "origem": "documento",
+      "trecho": "presença de pulgas na região lombossacra",
+      "fonte": "flea_dermatitis_pruritus__pvb_2017_dermatite_alergica.pdf"
+    },
+    {
+      "texto": "Morde e coça o fim das costas e a base do rabo.",
+      "origem": "documento",
+      "trecho": "as lesões, nos cães, localizam-se com maior frequência na região lombossacra, dorsocaudal, na base da cauda",
+      "fonte": "flea_dermatitis_pruritus__pvb_2017_dermatite_alergica.pdf"
+    },
+    {
+      "texto": "Tem uns pontinhos pretos no pelo, tipo sujeirinha.",
+      "origem": "documento",
+      "trecho": "Evidence of flea exposure including “flea dirt” or the presence of live fleas may or may not be apparent",
+      "fonte": "flea_dermatitis_pruritus__vetsci_2017_feline_fad.pdf"
+    },
+    {
+      "texto": "O gato tá cheio de casquinhas pequenas nas costas.",
+      "origem": "documento",
+      "trecho": "dorsal lumbosacral pruritus with miliary dermatitis",
+      "fonte": "flea_dermatitis_pruritus__vetsci_2017_feline_fad.pdf"
+    },
+    {
+      "texto": "O gato se lambe tanto que a barriga ficou pelada.",
+      "origem": "documento",
+      "trecho": "bilaterally symmetrical self-induced alopecia, ventral abdominal alopecia",
+      "fonte": "flea_dermatitis_pruritus__vetsci_2017_feline_fad.pdf"
+    },
+    {
+      "texto": "Não acho pulga, mas o gato vive se lambendo.",
+      "origem": "documento",
+      "trecho": "This may be further complicated by the fastidious grooming behavior in cats",
+      "fonte": "flea_dermatitis_pruritus__vetsci_2017_feline_fad.pdf"
+    },
+    {
+      "texto": "Fez ferida de tanto se coçar.",
+      "origem": "documento",
+      "trecho": "prurido localizado associado a ferimento ulcerado com exsudação",
+      "fonte": "flea_dermatitis_pruritus__pvb_2017_dermatite_alergica.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "O focinho, os olhos ou o pescoço começaram a inchar.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Apareceram caroços pelo corpo de repente.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A respiração mudou, ficou difícil ou barulhenta.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Ferida úmida, soltando secreção.",
+      "origem": "documento",
+      "trecho": "prurido localizado associado a ferimento ulcerado com exsudação",
+      "fonte": "flea_dermatitis_pruritus__pvb_2017_dermatite_alergica.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "anaphylaxis_facial_swelling",
+      "texto": "Na dermatite a coceira vem com casquinhas e falhas de pelo, sem inchaço no rosto, e o animal respira normal e come bem. Na reação alérgica grave o focinho, os olhos ou o pescoço incham rápido, surgem caroços pelo corpo e a respiração fica barulhenta, muitas vezes depois de picada de abelha.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "A coceira forte faz o animal se machucar, com feridas de tanto lamber, morder e coçar.",
+    "origem": "documento",
+    "trecho": "lesões auto-traumáticas induzidas pelo prurido",
+    "fonte": "flea_dermatitis_pruritus__pvb_2017_dermatite_alergica.pdf"
+  },
+  "notas_para_o_especialista": "O artigo brasileiro (cães) descreve só um caso de DAPP; a distribuição lombossacra e na base da cauda vem da introdução. O artigo felino diz que pulgas e 'sujeira de pulga' podem não ser vistas porque o gato se lambe muito. 'Coçando a orelha' está no mapa, mas os documentos associam a orelha mais à dermatite atópica e alimentar do que à pulga. Os sinais de alarme repetem o discriminador do mapa (inchaço crescente no focinho ou pescoço, caroços, respiração) e a ferida com secreção (no caso do artigo havia piodermite). O título junta 'Coceira e dermatite' do mapa com a causa principal citada no motivo. Nenhum item geral."
+}

@@ -1,0 +1,98 @@
+{
+  "topico": "slow_growing_lump",
+  "titulo": "Caroço de crescimento lento",
+  "nome_leigo": "caroço ou bolinha na pele",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Tem um caroço na pele que o veterinário já examinou",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá crescendo bem devagar, faz meses que tá ali",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Apareceu uma bolinha na pele",
+      "origem": "documento",
+      "trecho": "Clinically, canine MCTs can manifest as formations of different sizes and aspects, with widely variable presentation",
+      "fonte": "slow_growing_lump__cells_2022_mast_cell_consensus.pdf"
+    },
+    {
+      "texto": "É embaixo da pele, dá pra sentir com a mão",
+      "origem": "documento",
+      "trecho": "Cutaneous and subcutaneous manifestations are macroscopically similar",
+      "fonte": "slow_growing_lump__cells_2022_mast_cell_consensus.pdf"
+    },
+    {
+      "texto": "É um caroço só",
+      "origem": "documento",
+      "trecho": "MCTs most commonly develop as solitary lesions",
+      "fonte": "slow_growing_lump__cells_2022_mast_cell_consensus.pdf"
+    },
+    {
+      "texto": "É molinho, parece uma gordurinha",
+      "origem": "documento",
+      "trecho": "Some cases may present with irregular, elevated formations, with a soft consistency",
+      "fonte": "slow_growing_lump__cells_2022_mast_cell_consensus.pdf"
+    },
+    {
+      "texto": "Fica na barriga, na virilha ou numa pata",
+      "origem": "documento",
+      "trecho": "about 50% of canine MCTs develop in the trunk, perineum, and inguino-genital regions, 40% occur in the limbs, and 10% in the head and neck",
+      "fonte": "slow_growing_lump__cells_2022_mast_cell_consensus.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Cresceu rápido de uma semana pra outra",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Mudou de textura, ficou mais duro ou irregular",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Começou a sangrar ou abriu uma ferida em cima",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Apareceram outros caroços, ou ficou vermelho e coçando",
+      "origem": "documento",
+      "trecho": "other factors that have previously been associated with a worse prognosis also include the presence of multiple lesions, erythema, pruritus, tumor ulceration, and the presence of systemic clinical signs",
+      "fonte": "slow_growing_lump__cells_2022_mast_cell_consensus.pdf"
+    },
+    {
+      "texto": "Vômito com sangue, fezes pretas ou falta de apetite",
+      "origem": "documento",
+      "trecho": "clinical signs of hematemesis, anorexia, hematochezia, melena, anemia, abdominal pain",
+      "fonte": "slow_growing_lump__cells_2022_mast_cell_consensus.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "collapse_and_pale_gums",
+      "texto": "Com o caroço de crescimento lento o animal segue consciente, disposto e com a gengiva rosada. Desmaio, fraqueza de uma hora para outra, gengiva branca ou barriga inchando de repente é o outro quadro.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "A aparência engana: no cão, um tumor de mastócitos pode parecer um simples caroço de gordura, mole e sem vermelhidão nem ferida.",
+    "origem": "documento",
+    "trecho": "without erythema and ulceration, and may macroscopically appear to be cutaneous lipomas",
+    "fonte": "slow_growing_lump__cells_2022_mast_cell_consensus.pdf"
+  },
+  "notas_para_o_especialista": "O documento trata só de mastocitoma cutâneo e subcutâneo em cães: não há nada sobre gatos nem sobre velocidade de crescimento. 'Já avaliado', 'cresce devagar' e os sinais de alerta (mudança rápida de tamanho, de textura, sangramento) vêm só do motivo do mapa. Coceira e vermelhidão ficaram como alarme, e não como sinal comum, porque o documento as liga a pior prognóstico. Não usei o sinal de Darier (vermelhidão e inchaço ao manipular o nódulo), que o documento descreve como achado do exame físico. O gêmeo (colapso e gengiva pálida) tem pouca ligação clínica direta; o colapso circulatório raro por liberação de histamina, citado no documento, não entrou. Nenhum item geral."
+}

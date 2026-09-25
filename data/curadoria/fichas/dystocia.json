@@ -1,0 +1,110 @@
+{
+  "topico": "dystocia",
+  "titulo": "Distocia (parto difícil)",
+  "nome_leigo": "parto travado",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "A cadela tá em trabalho de parto e parece que travou.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá fazendo força há mais de meia hora e não sai filhote.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Nasceu um filhote e já faz mais de 2 horas que não vem o próximo.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tem um filhote preso, aparecendo na vulva, e não sai.",
+      "origem": "documento",
+      "trecho": "A visibly stuck foetus is an obvious sign of dystocia",
+      "fonte": "dystocia__acta_2025_feline_dystocia.pdf"
+    },
+    {
+      "texto": "A gata tá parindo, a bolsa estourou faz horas e nada de filhote.",
+      "origem": "documento",
+      "trecho": "Prolonged contractions or expulsion of foetal fluids > 4 h",
+      "fonte": "dystocia__acta_2025_feline_dystocia.pdf"
+    },
+    {
+      "texto": "As contrações ficaram fracas ou pararam.",
+      "origem": "documento",
+      "trecho": "prolonged or ceased contractions",
+      "fonte": "dystocia__acta_2025_feline_dystocia.pdf"
+    },
+    {
+      "texto": "Tá saindo um líquido verde-escuro, com pus, sangue ou cheiro ruim.",
+      "origem": "documento",
+      "trecho": "purulent, discoloured, foul or haemorrhagic discharge",
+      "fonte": "dystocia__acta_2025_feline_dystocia.pdf"
+    },
+    {
+      "texto": "Ela tá exausta, cansada, sofrendo.",
+      "origem": "documento",
+      "trecho": "Queen described as tired or distressed",
+      "fonte": "dystocia__acta_2025_feline_dystocia.pdf"
+    },
+    {
+      "texto": "Já passou da data e o parto não começou.",
+      "origem": "documento",
+      "trecho": "Day 72 without birth",
+      "fonte": "dystocia__acta_2025_feline_dystocia.pdf"
+    },
+    {
+      "texto": "Nasceu um filhote morto em casa.",
+      "origem": "documento",
+      "trecho": "One stillborn kitten at home",
+      "fonte": "dystocia__acta_2025_feline_dystocia.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Força forte sem sair nada por mais de 30 minutos.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Filhote entalado que não sai.",
+      "origem": "documento",
+      "trecho": "A visibly stuck foetus is an obvious sign of dystocia",
+      "fonte": "dystocia__acta_2025_feline_dystocia.pdf"
+    },
+    {
+      "texto": "Corrimento com pus, escuro ou com cheiro ruim.",
+      "origem": "documento",
+      "trecho": "purulent, discoloured, foul or haemorrhagic discharge",
+      "fonte": "dystocia__acta_2025_feline_dystocia.pdf"
+    },
+    {
+      "texto": "Mãe exausta, fraca ou muito aflita.",
+      "origem": "documento",
+      "trecho": "Queen described as tired or distressed",
+      "fonte": "dystocia__acta_2025_feline_dystocia.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "normal_whelping",
+      "texto": "No parto normal os filhotes vão nascendo um depois do outro, sem corrimento estranho. Na distocia há força forte por mais de 30 minutos sem sair filhote, contrações fracas que se arrastam, mais de 2 horas sem vir o próximo, filhote preso ou corrimento com pus ou cheiro ruim.",
+      "origem": "documento",
+      "trecho": "abnormal in both the dog and the cat, such as abnormal vaginal discharge, prolonged weak contractions, or strong non-productive contractions > 30 min",
+      "fonte": "dystocia__acta_2025_feline_dystocia.pdf"
+    }
+  ],
+  "por_que_importa": {
+    "texto": "O parto travado prejudica a mãe e aumenta muito a morte dos filhotes.",
+    "origem": "documento",
+    "trecho": "dystocia affects the well-being of the pregnant queen and is associated with increased kitten mortality compared with natural parturition",
+    "fonte": "dystocia__acta_2025_feline_dystocia.pdf"
+  },
+  "notas_para_o_especialista": "Documento só de gatas (hospital universitário na Suécia). Usei os sinais que o próprio texto diz valerem para cadela e gata (corrimento anormal, contrações fracas prolongadas ou fortes e improdutivas por mais de 30 min) e os da Tabela 2 (líquido fetal há mais de 4 h, filhote preso, mãe cansada ou aflita, filhote natimorto). O documento diz que na gata o intervalo entre filhotes varia muito (filhotes vivos mesmo após mais de 40 h) e que a duração do parto não se associou à mortalidade; isso relativiza o critério de 2 horas entre filhotes do motivo do mapa, que mantive. 'Passou da data' ficou sem número porque o documento só cita dia 70/72 em gatas. Hipocalcemia e hiperglicemia são exames. Sinais e discriminador do gêmeo (parto normal) estão vazios no mapa."
+}

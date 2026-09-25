@@ -1,0 +1,104 @@
+{
+  "topico": "grape_xylitol_toxicosis",
+  "titulo": "Intoxicação por uva, uva-passa ou xilitol",
+  "nome_leigo": "comeu uva, passa ou chiclete sem açúcar",
+  "especie": "cão",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Meu cachorro comeu uva",
+      "origem": "documento",
+      "trecho": "Grapes, the fruits of Vitis vinifera, and their dried products (raisins, sultanas, and currants) have been reported to cause renal failure in dogs.",
+      "fonte": "grape_xylitol_toxicosis__frontiers_2016_toxic_foods.pdf"
+    },
+    {
+      "texto": "Comeu um punhado de uva-passa",
+      "origem": "documento",
+      "trecho": "some animals were reported to remain asymptomatic after ingesting up to 1 kg of raisins while others died following the ingestion of just a handful",
+      "fonte": "grape_xylitol_toxicosis__frontiers_2016_toxic_foods.pdf"
+    },
+    {
+      "texto": "Comeu um pedaço de panetone ou bolo com passas",
+      "origem": "documento",
+      "trecho": "The fruits may be ingested raw or cooked as ingredients of fruit cake, mince pies, malt loaf, snack bars, scones, and other baked goods",
+      "fonte": "grape_xylitol_toxicosis__frontiers_2016_toxic_foods.pdf"
+    },
+    {
+      "texto": "Mastigou chiclete sem açúcar ou comeu bala diet",
+      "origem": "documento",
+      "trecho": "Xylitol is a five-carbon sugar alcohol primarily used as an artificial sweetener in many products, including sugar-free gum, candy, bread, cookies, and other baked goods.",
+      "fonte": "grape_xylitol_toxicosis__frontiers_2016_toxic_foods.pdf"
+    },
+    {
+      "texto": "Comeu bolo ou biscoito adoçado com xilitol",
+      "origem": "documento",
+      "trecho": "It can also be purchased as a granulated powder for cooking and baking.",
+      "fonte": "grape_xylitol_toxicosis__frontiers_2016_toxic_foods.pdf"
+    },
+    {
+      "texto": "Comeu faz pouco tempo e por enquanto parece normal",
+      "origem": "documento",
+      "trecho": "may develop within 30–60 min after ingestion or may be delayed up to 12 h after ingestion",
+      "fonte": "grape_xylitol_toxicosis__frontiers_2016_toxic_foods.pdf"
+    },
+    {
+      "texto": "Começou a vomitar depois que comeu",
+      "origem": "documento",
+      "trecho": "Vomiting within 24 h of ingestion is the typical clinical sign observed.",
+      "fonte": "grape_xylitol_toxicosis__frontiers_2016_toxic_foods.pdf"
+    },
+    {
+      "texto": "Vomitou e tinha pedaço de uva no vômito",
+      "origem": "documento",
+      "trecho": "Partially digested grapes and grape products may be present in the vomit, fecal material, or both",
+      "fonte": "grape_xylitol_toxicosis__frontiers_2016_toxic_foods.pdf"
+    },
+    {
+      "texto": "Ficou mole, sem fome, com diarreia e dor na barriga",
+      "origem": "documento",
+      "trecho": "Diarrhea, anorexia, lethargy, and abdominal pain have also been reported",
+      "fonte": "grape_xylitol_toxicosis__frontiers_2016_toxic_foods.pdf"
+    },
+    {
+      "texto": "Tá bebendo muita água",
+      "origem": "documento",
+      "trecho": "signs of renal insufficiency or failure (oliguria, anuria, polydipsia, proteinuria",
+      "fonte": "grape_xylitol_toxicosis__frontiers_2016_toxic_foods.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Tá fraco, cambaleando, desmaiou ou teve convulsão",
+      "origem": "documento",
+      "trecho": "Clinical signs of hypoglycemia, including lethargy, ataxia, collapse, and seizures",
+      "fonte": "grape_xylitol_toxicosis__frontiers_2016_toxic_foods.pdf"
+    },
+    {
+      "texto": "Quase não faz xixi ou parou de fazer xixi",
+      "origem": "documento",
+      "trecho": "In cases of dogs with oliguria or anuria, the prognosis is generally poor",
+      "fonte": "grape_xylitol_toxicosis__frontiers_2016_toxic_foods.pdf"
+    },
+    {
+      "texto": "Olho ou pele amarelados, manchas roxas na pele ou sangue no vômito ou nas fezes",
+      "origem": "documento",
+      "trecho": "lethargy, icterus, vomiting, and coagulopathic signs, such as petechiae, ecchymoses, and gastrointestinal hemorrhages",
+      "fonte": "grape_xylitol_toxicosis__frontiers_2016_toxic_foods.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "dietary_indiscretion_mild",
+      "texto": "O que decide é o que ele comeu: sobra comum com o cão normal é o outro quadro; uva, uva-passa ou algo com xilitol conta mesmo em pouca quantidade e mesmo que ele ainda pareça bem.",
+      "origem": "documento",
+      "trecho": "the ingestion of any quantity of grapes or grape products by dogs should be handled aggressively",
+      "fonte": "grape_xylitol_toxicosis__frontiers_2016_toxic_foods.pdf"
+    }
+  ],
+  "por_que_importa": {
+    "texto": "O xilitol pode derrubar o açúcar do sangue de forma extrema em 30 a 60 minutos.",
+    "origem": "mapa",
+    "trecho": "",
+    "fonte": ""
+  },
+  "notas_para_o_especialista": "A linha do mapa não traz sinais nem discriminador, então todos os itens do tutor vêm do documento (revisão sobre alimentos tóxicos; os sinais de uva e xilitol descritos são só de cães). 'Panetone' e 'bala diet' são equivalentes brasileiros de 'fruit cake' e 'candy' sem açúcar citados no texto. O risco renal da uva ficou nos sinais de alarme (pouco ou nenhum xixi); por_que_importa usa só o motivo do mapa (xilitol). O documento não dá prazo exato para os sinais renais além de 'within a short period'. Nenhum item geral."
+}

@@ -1,0 +1,122 @@
+{
+  "topico": "toad_bufotoxin_poisoning",
+  "titulo": "Envenenamento por sapo",
+  "nome_leigo": "mordeu sapo",
+  "especie": "cão",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Meu cachorro mordeu um sapo no quintal",
+      "origem": "documento",
+      "trecho": "a intoxicação ocorre quando os cães ingerem ou mordem os sapos",
+      "fonte": "toad_bufotoxin_poisoning__pubvet_2024_bufotoxin_case.pdf"
+    },
+    {
+      "texto": "Ele foi atrás de um sapo à noite e pegou com a boca",
+      "origem": "documento",
+      "trecho": "os cães são frequentemente vítimas dessas intoxicações devido à sua curiosidade natural e atração pelo movimento dos sapos, especialmente à noite",
+      "fonte": "toad_bufotoxin_poisoning__pubvet_2024_bufotoxin_case.pdf"
+    },
+    {
+      "texto": "Achei um sapo morto e machucado perto dele",
+      "origem": "documento",
+      "trecho": "o proprietário relatou o achado do corpo de um sapo com ferimentos mutilantes",
+      "fonte": "toad_bufotoxin_poisoning__pubvet_2024_bufotoxin_case.pdf"
+    },
+    {
+      "texto": "Um sapo entrou no pote de água dele",
+      "origem": "documento",
+      "trecho": "pela contaminação de comedouros e bebedouros com sua toxina",
+      "fonte": "toad_bufotoxin_poisoning__pubvet_2024_bufotoxin_case.pdf"
+    },
+    {
+      "texto": "Começou a babar muito logo depois, espumando",
+      "origem": "documento",
+      "trecho": "Hipersalivação, sinal visto imediatamente",
+      "fonte": "toad_bufotoxin_poisoning__pubvet_2024_bufotoxin_case.pdf"
+    },
+    {
+      "texto": "Fica sacudindo a cabeça sem parar",
+      "origem": "documento",
+      "trecho": "Sacudir cabeça constantemente",
+      "fonte": "toad_bufotoxin_poisoning__pubvet_2024_bufotoxin_case.pdf"
+    },
+    {
+      "texto": "A gengiva ficou bem vermelha",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá vomitando",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá agitado, ansioso, chorando",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Parece que não tá enxergando",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá cambaleando e caindo",
+      "origem": "documento",
+      "trecho": "o animal frequentemente fica cambaleando e caindo (intoxicação moderada)",
+      "fonte": "toad_bufotoxin_poisoning__pubvet_2024_bufotoxin_case.pdf"
+    },
+    {
+      "texto": "Tá andando em círculo",
+      "origem": "documento",
+      "trecho": "Em casos moderados, temos também vômitos, depressão, fraqueza, ataxia, sinais neurológicos como andar em círculo",
+      "fonte": "toad_bufotoxin_poisoning__pubvet_2024_bufotoxin_case.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Não consegue ficar em pé ou andar",
+      "origem": "documento",
+      "trecho": "Inabilidade para estar de pé ou andar (envenenamento mais sério)",
+      "fonte": "toad_bufotoxin_poisoning__pubvet_2024_bufotoxin_case.pdf"
+    },
+    {
+      "texto": "Teve convulsão",
+      "origem": "documento",
+      "trecho": "Convulsões e morte podem acontecer em casos muito sérios",
+      "fonte": "toad_bufotoxin_poisoning__pubvet_2024_bufotoxin_case.pdf"
+    },
+    {
+      "texto": "Olhar desorientado, pescoço duro, cocô sem controle ou respiração acelerada",
+      "origem": "documento",
+      "trecho": "A dona da cadela relatou que, antes de buscar ajuda médica, notou que a cadela apresentava um quadro de distensão abdominal, olhar desorientado, rigidez na cabeça e no pescoço, movimentos convulsivos, defecação sem controle, respiração acelerada e salivação excessiva.",
+      "fonte": "toad_bufotoxin_poisoning__pubvet_2024_bufotoxin_case.pdf"
+    },
+    {
+      "texto": "Língua ou gengiva roxa, com dificuldade para respirar",
+      "origem": "documento",
+      "trecho": "pode haver diarreia, dor abdominal, decúbito esternal, pupilas não responsivas à luz, convulsões, edema pulmonar, cianose, podendo evoluir para óbito",
+      "fonte": "toad_bufotoxin_poisoning__pubvet_2024_bufotoxin_case.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "dietary_indiscretion_mild",
+      "texto": "Aqui houve contato com sapo (mordeu, lambeu ou achou um sapo perto) e a baba começa logo, junto com sacudir a cabeça. Quem só comeu uma sobra ou mexeu no lixo continua normal, comendo e brincando.",
+      "origem": "documento",
+      "trecho": "Hipersalivação, sinal visto imediatamente; 2. Sacudir cabeça constantemente",
+      "fonte": "toad_bufotoxin_poisoning__pubvet_2024_bufotoxin_case.pdf"
+    }
+  ],
+  "por_que_importa": {
+    "texto": "O veneno do sapo age no coração como um digitálico e pode matar por arritmia.",
+    "origem": "mapa",
+    "trecho": "",
+    "fonte": ""
+  },
+  "notas_para_o_especialista": "Documento em português (relato de caso e revisão, PUBVET). Gengiva vermelha, vômito, ansiedade e cegueira vêm do motivo do mapa (relato da UFRGS); o documento não cita cegueira. 'Espumando' é variação leiga de hipersalivação. O item 'olhar desorientado, pescoço duro...' vem do que a tutora do caso relatou antes do atendimento. As tabelas de tratamento e a frase de conclusão sobre emergência ficaram de fora por serem conduta. Nenhum item geral."
+}

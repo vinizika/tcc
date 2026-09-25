@@ -1,0 +1,96 @@
+{
+  "topico": "rabies_exposure_wild_animal_bite",
+  "titulo": "Mordida de morcego ou animal silvestre (risco de raiva)",
+  "nome_leigo": "contato com morcego ou bicho do mato",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Meu gato caçou um morcego e ficou brincando com ele",
+      "origem": "documento",
+      "trecho": "Cat behaviors, in particular bat predation",
+      "fonte": "rabies_exposure_wild_animal_bite__viruses_2024_rabies_cats.pdf"
+    },
+    {
+      "texto": "Vi o gato com um morcego na boca",
+      "origem": "documento",
+      "trecho": "predation by cats is the first cause of rescue for bats",
+      "fonte": "rabies_exposure_wild_animal_bite__viruses_2024_rabies_cats.pdf"
+    },
+    {
+      "texto": "Achei um morcego caído e o cachorro pegou com a boca",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Meu cachorro matou um morcego no quintal e ficou mastigando",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Acho que um morcego mordeu meu gato",
+      "origem": "documento",
+      "trecho": "In South America, predation by vampire bats is also a concern and an emergent means for infection of cats",
+      "fonte": "rabies_exposure_wild_animal_bite__viruses_2024_rabies_cats.pdf"
+    },
+    {
+      "texto": "Foi mordido por um sagui ou por um cachorro-do-mato",
+      "origem": "documento",
+      "trecho": "1 was transmitted by marmoset ( Callithrix jacchus), and 2 by crab-eating foxes (Cerdocyon thous)",
+      "fonte": "rabies_exposure_wild_animal_bite__viruses_2024_rabies_cats.pdf"
+    },
+    {
+      "texto": "Brigou com um bicho do mato, tipo raposa",
+      "origem": "documento",
+      "trecho": "from transmission by other mesocarnivores, such as rabid dogs, foxes, jackals, raccoons, and skunks",
+      "fonte": "rabies_exposure_wild_animal_bite__viruses_2024_rabies_cats.pdf"
+    },
+    {
+      "texto": "Ele sai sozinho pra rua e vive caçando bicho",
+      "origem": "documento",
+      "trecho": "the propensity for cat owners to permit unsupervised outdoor access",
+      "fonte": "rabies_exposure_wild_animal_bite__viruses_2024_rabies_cats.pdf"
+    },
+    {
+      "texto": "Não sei se a vacina de raiva tá em dia",
+      "origem": "documento",
+      "trecho": "the growing population of owned and unowned cats unlikely to be vaccinated against rabies",
+      "fonte": "rabies_exposure_wild_animal_bite__viruses_2024_rabies_cats.pdf"
+    },
+    {
+      "texto": "Tô assustado, mas ele parece normal",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Mudou o comportamento: ficou bravo, agressivo, agitado ou estranho do nada",
+      "origem": "documento",
+      "trecho": "Clinical signs of these infections varied from furious rabies encephalitis to atypical signs",
+      "fonte": "rabies_exposure_wild_animal_bite__viruses_2024_rabies_cats.pdf"
+    },
+    {
+      "texto": "Andando cambaleando, com convulsão ou outro sinal neurológico",
+      "origem": "documento",
+      "trecho": "Such risks posed by cats exhibiting neurologic signs may be largely under appreciated by the public",
+      "fonte": "rabies_exposure_wild_animal_bite__viruses_2024_rabies_cats.pdf"
+    },
+    {
+      "texto": "Babando muito ou com dificuldade de engolir",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "como_diferenciar": [],
+  "por_que_importa": {
+    "texto": "Mesmo parecendo normal, o animal infectado pode eliminar o vírus da raiva na saliva vários dias antes de adoecer.",
+    "origem": "documento",
+    "trecho": "Felids are effective vectors of rabies virus (RABV), with salivary excretion several days before illness, like dogs (Canis lupus familiaris)",
+    "fonte": "rabies_exposure_wild_animal_bite__viruses_2024_rabies_cats.pdf"
+  },
+  "notas_para_o_especialista": "O documento é epidemiológico e trata só de gatos: não descreve em detalhe os sinais clínicos da raiva nem período de observação, e não traz nada específico de cães. As situações com cachorro vêm do motivo do mapa (cães e gatos seguem suscetíveis às variantes de morcego). Sagui e cachorro-do-mato aparecem no documento como transmissores de raiva a pessoas no Brasil, não a cães ou gatos. 'Raposa' vem da lista do resumo (raposas, chacais, guaxinins e cangambás como fonte para gatos). Não incluí gambá (Didelphis), que o documento não cita. Um item geral para validar: 'babando muito ou com dificuldade de engolir'. O motivo do mapa cita reforço vacinal, observação e notificação: não entrou por ser conduta. Não há gêmeos, então quase todo o texto está na forma como o tutor conta a exposição."
+}

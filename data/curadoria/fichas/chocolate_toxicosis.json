@@ -1,0 +1,122 @@
+{
+  "topico": "chocolate_toxicosis",
+  "titulo": "Intoxicação por chocolate",
+  "nome_leigo": "comeu chocolate",
+  "especie": "cão",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Meu cachorro comeu chocolate.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Comeu um ovo de Páscoa que tava em casa.",
+      "origem": "documento",
+      "trecho": "Poisoning episodes frequently occur around holidays when there is a higher occurrence of chocolate products in the home",
+      "fonte": "chocolate_toxicosis__frontiers_2016_chocolate_section.txt"
+    },
+    {
+      "texto": "Comeu brigadeiro, bolo de chocolate, bombom.",
+      "origem": "documento",
+      "trecho": "Theobromine occurs in cacao seeds (Theobroma cacao) and in products manufactured from these seeds, such as chocolate",
+      "fonte": "chocolate_toxicosis__frontiers_2016_chocolate_section.txt"
+    },
+    {
+      "texto": "Foi chocolate amargo, de cozinha ou cacau em pó.",
+      "origem": "documento",
+      "trecho": "Unsweetened baking chocolate and cocoa powder usually contain more than 14 mg of theobromine per gram",
+      "fonte": "chocolate_toxicosis__frontiers_2016_chocolate_section.txt"
+    },
+    {
+      "texto": "Tá tremendo.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá vomitando.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Comeu uma barra inteira de chocolate ao leite.",
+      "origem": "documento",
+      "trecho": "Semisweet dark chocolate and milk chocolate often contain around 5 and 2 mg of theobromine per gram",
+      "fonte": "chocolate_toxicosis__frontiers_2016_chocolate_section.txt"
+    },
+    {
+      "texto": "Tá agitado, não para quieto.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá elétrico, muito excitado.",
+      "origem": "documento",
+      "trecho": "Dogs can be in an excited state and show marked hyperthermia and tachycardia",
+      "fonte": "chocolate_toxicosis__frontiers_2016_chocolate_section.txt"
+    },
+    {
+      "texto": "O coração tá acelerado, disparado.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá bebendo muita água, fazendo xixi sem controle e com diarreia.",
+      "origem": "documento",
+      "trecho": "restlessness, polydipsia, urinary incontinence, vomiting, and perhaps diarrhea",
+      "fonte": "chocolate_toxicosis__frontiers_2016_chocolate_section.txt"
+    },
+    {
+      "texto": "Começou umas horas depois que ele comeu.",
+      "origem": "documento",
+      "trecho": "Initial clinical signs are generally observed within 2–4 h after ingestion",
+      "fonte": "chocolate_toxicosis__frontiers_2016_chocolate_section.txt"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Ficou com o corpo duro, rígido.",
+      "origem": "documento",
+      "trecho": "As intoxication progresses, hypertension, cardiac arrhythmias, premature ventricular contractions, muscular rigidity, ataxia, seizures, and coma may be observed",
+      "fonte": "chocolate_toxicosis__frontiers_2016_chocolate_section.txt"
+    },
+    {
+      "texto": "Tá cambaleando, sem equilíbrio.",
+      "origem": "documento",
+      "trecho": "As intoxication progresses, hypertension, cardiac arrhythmias, premature ventricular contractions, muscular rigidity, ataxia, seizures, and coma may be observed",
+      "fonte": "chocolate_toxicosis__frontiers_2016_chocolate_section.txt"
+    },
+    {
+      "texto": "Teve convulsão.",
+      "origem": "documento",
+      "trecho": "As intoxication progresses, hypertension, cardiac arrhythmias, premature ventricular contractions, muscular rigidity, ataxia, seizures, and coma may be observed",
+      "fonte": "chocolate_toxicosis__frontiers_2016_chocolate_section.txt"
+    },
+    {
+      "texto": "Desmaiou, não responde mais.",
+      "origem": "documento",
+      "trecho": "As intoxication progresses, hypertension, cardiac arrhythmias, premature ventricular contractions, muscular rigidity, ataxia, seizures, and coma may be observed",
+      "fonte": "chocolate_toxicosis__frontiers_2016_chocolate_section.txt"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "dietary_indiscretion_mild",
+      "texto": "Chocolate não é uma sobra qualquer: o risco depende do tipo, da quantidade e do peso do cão, e esse cálculo é do veterinário. Na indiscrição leve ele comeu uma sobra comum e segue normal, comendo e brincando; tremor, agitação, vômito ou coração acelerado depois de chocolate apontam para intoxicação.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "O chocolate pode levar à morte por arritmia no coração ou falha da respiração.",
+    "origem": "documento",
+    "trecho": "Death may occur from cardiac arrhythmia or respiratory failure",
+    "fonte": "chocolate_toxicosis__frontiers_2016_chocolate_section.txt"
+  },
+  "notas_para_o_especialista": "O documento traz limiares de teobromina em mg/kg e o teor por tipo de chocolate; não pus números de dose (o mapa diz que o cálculo é do veterinário). Ele também diz que o chocolate branco é fonte insignificante de teobromina; isso não virou item para não induzir a descartar o caso sem o cálculo. Hipertermia, taquicardia e arritmia são achados medidos; usei o 'coração acelerado' do mapa. Segundo o documento, os sinais começam em 2 a 4 h. Nenhum item geral."
+}

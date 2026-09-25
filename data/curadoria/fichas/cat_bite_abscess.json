@@ -1,0 +1,84 @@
+{
+  "topico": "cat_bite_abscess",
+  "titulo": "Ferida de briga de gato",
+  "nome_leigo": "abscesso de briga",
+  "especie": "gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Saiu pra rua, brigou com outro gato e voltou machucado",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A briga foi hoje, faz poucas horas",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Achei um furinho na pele, escondido no pelo, parece mordida",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Uns dias depois da briga apareceu um caroço mole, inchado",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Inchou perto do rabo, numa pata ou na cara",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O caroço estourou e saiu pus com cheiro ruim",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá mancando da pata que foi mordida",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Não deixa encostar no lugar, reclama de dor",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Acho que tá com febre, tá quentinho",
+      "origem": "documento",
+      "trecho": "A 4-year-old spayed indoor cat presented with a one-week history of fever and anorexia.",
+      "fonte": "cat_bite_abscess__frontiers_2025_feline_abscess.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Ficou prostrado, escondido e sem comer",
+      "origem": "documento",
+      "trecho": "with a one-week history of anorexia and lethargy (day 1)",
+      "fonte": "cat_bite_abscess__frontiers_2025_feline_abscess.pdf"
+    },
+    {
+      "texto": "Sangra muito ou a ferida é funda",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "como_diferenciar": [],
+  "por_que_importa": {
+    "texto": "A mordida pode virar abscesso; feridas tratadas em até 6 horas têm a melhor chance de cicatrizar sem abscesso.",
+    "origem": "mapa",
+    "trecho": "",
+    "fonte": ""
+  },
+  "notas_para_o_especialista": "O documento aprovado não trata de mordida: é relato de caso de abscessos em linfonodos dentro do abdômen (S. aureus) numa gata de apartamento. Dele só aproveitei falta de apetite, apatia e febre percebida pelo tutor. A linha do mapa não tem sinais nem discriminador; do motivo vieram a briga e a janela de 6 horas ('a briga foi hoje'). Por isso os sinais típicos de abscesso por mordida (furinho escondido no pelo, caroço mole dias depois, inchaço perto do rabo, pata ou cara, pus com cheiro, mancar, dor ao toque) são gerais e precisam de validação item a item. O alarme 'sangra muito ou ferida funda' também é geral, mas repete sinais da linha validada de trauma_and_bleeding, que tem 'briga com outro animal'; serve para separar mordida simples de trauma. Sugiro trocar o documento por um sobre abscesso subcutâneo felino."
+}

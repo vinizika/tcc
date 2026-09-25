@@ -1,0 +1,110 @@
+{
+  "topico": "osteoarthritis_stiffness",
+  "titulo": "Rigidez de artrose em idoso",
+  "nome_leigo": "artrose, reumatismo",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Custa a levantar depois que fica muito tempo deitado.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Levanta duro, mas melhora depois que anda um pouco.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Não sobe mais no sofá nem na cama.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "O gato não pula mais na janela nem no armário.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá mais devagar faz meses.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Não quer mais pular no carro.",
+      "origem": "documento",
+      "trecho": "rising or laying down, reluctance to jump into car",
+      "fonte": "osteoarthritis_stiffness__frontiers_2022_canine_oa.pdf"
+    },
+    {
+      "texto": "Sofre pra subir escada.",
+      "origem": "documento",
+      "trecho": "young dogs not able to keep up with others, and diﬃcultie s with stairs",
+      "fonte": "osteoarthritis_stiffness__frontiers_2022_canine_oa.pdf"
+    },
+    {
+      "texto": "Demora pra deitar, parece que dói.",
+      "origem": "documento",
+      "trecho": "Some diﬃculties in rising or laying down are present.",
+      "fonte": "osteoarthritis_stiffness__frontiers_2022_canine_oa.pdf"
+    },
+    {
+      "texto": "Senta torto, jogando o peso pra um lado.",
+      "origem": "documento",
+      "trecho": "Signs in the early stages (Stages 1 and 2) can be subtle like asymmetric posture when standing or sitting",
+      "fonte": "osteoarthritis_stiffness__frontiers_2022_canine_oa.pdf"
+    },
+    {
+      "texto": "Tá perdendo músculo, as patas tão mais fininhas.",
+      "origem": "documento",
+      "trecho": "muscle atrophy can be seen",
+      "fonte": "osteoarthritis_stiffness__frontiers_2022_canine_oa.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Piorou de repente, de um dia pro outro.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Perdeu o controle das patas ou faz xixi sem perceber.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Grita de dor.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Manca muito e quase não quer se mexer.",
+      "origem": "documento",
+      "trecho": "lameness with a reluctance to move",
+      "fonte": "osteoarthritis_stiffness__frontiers_2022_canine_oa.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "acute_hindlimb_paralysis",
+      "texto": "A artrose piora devagar, há meses, e o animal melhora depois que anda; na paralisia aguda é de repente: amanheceu arrastando as patas de trás, grita de dor ou faz xixi sem querer.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "A artrose é progressiva e pode chegar a deixar o animal bem debilitado.",
+    "origem": "documento",
+    "trecho": "OA can progress to a severe debilitating disease",
+    "fonte": "osteoarthritis_stiffness__frontiers_2022_canine_oa.pdf"
+  },
+  "notas_para_o_especialista": "Documento: diretrizes canadenses de tratamento da artrose em cães; os sinais que o tutor vê estão num parágrafo sobre estágios iniciais (dificuldade para levantar/deitar, relutância em pular no carro, escadas, postura assimétrica) e nas descrições dos estágios 3 e 4 (atrofia muscular, claudicação com relutância em se mover). O documento é só de cães; para o gato usei o sinal do mapa 'não sobe mais' aplicado a pular em lugares altos, validar. Os 80% acima de 8 anos (motivo do mapa) não entraram na ficha. Nenhum item 'geral'. Trechos copiados do .txt completo, que tem ligaduras e palavras quebradas pela extração do PDF ('diﬃcultie s'); no texto indexado as mesmas frases aparecem limpas."
+}

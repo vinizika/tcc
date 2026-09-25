@@ -1,0 +1,86 @@
+{
+  "topico": "lily_toxicosis_cats",
+  "titulo": "Intoxicação por lírio em gato",
+  "nome_leigo": "gato que mexeu no lírio",
+  "especie": "gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Meu gato mordeu um pedacinho da folha do lírio",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Ficou com pólen de lírio no pelo e se lambeu",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Bebeu a água do vaso do lírio",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tinha lírio ou hemerocale (lírio-de-um-dia) no buquê ou no vaso",
+      "origem": "documento",
+      "trecho": "Lilies, including the genera Lilium and Hemerocallis, are known to cause acute kidney injury (AKI) in cats",
+      "fonte": "lily_toxicosis_cats__frontiers_2023_lily.pdf"
+    },
+    {
+      "texto": "Tá vomitando e desanimado depois de mexer na flor",
+      "origem": "documento",
+      "trecho": "acute onset of vomiting and lethargy over a 12-h duration",
+      "fonte": "lily_toxicosis_cats__frontiers_2023_lily.pdf"
+    },
+    {
+      "texto": "Tá babando e não quer comer",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá bebendo muita água e fazendo muito xixi",
+      "origem": "documento",
+      "trecho": "associated with lily toxicity consist of gastrointestinal signs, lethargy, polyuria, polydipsia, azotemia, glucosuria, proteinuria, and in severe cases, oliguria or anuria",
+      "fonte": "lily_toxicosis_cats__frontiers_2023_lily.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Vomita já nas primeiras horas depois do contato",
+      "origem": "documento",
+      "trecho": "Clinical signs are acute, starting with gastrointestinal signs within 1–3 h post-exposure, polyuria within 12–30 h, and anuria can occur starting from 24 to 48 h",
+      "fonte": "lily_toxicosis_cats__frontiers_2023_lily.pdf"
+    },
+    {
+      "texto": "De 12 a 30 horas depois, passa a beber e urinar muito",
+      "origem": "documento",
+      "trecho": "Polyuric AKI occurs 12–30 h following ingestion, and anuric AKI may develop between 24 and 48 h",
+      "fonte": "lily_toxicosis_cats__frontiers_2023_lily.pdf"
+    },
+    {
+      "texto": "De 24 a 48 horas depois, faz pouco xixi ou a caixa de areia fica seca",
+      "origem": "documento",
+      "trecho": "Polyuric AKI occurs 12–30 h following ingestion, and anuric AKI may develop between 24 and 48 h",
+      "fonte": "lily_toxicosis_cats__frontiers_2023_lily.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "dietary_indiscretion_mild",
+      "texto": "Com lírio não vale o 'está normal, comendo e brincando': menos de uma folha, o pólen lambido ou a água do vaso já lesam os rins. Comer uma sobra comum é outro quadro.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Muito pouco lírio, até o pólen ou a água do vaso, causa insuficiência renal fatal no gato.",
+    "origem": "mapa",
+    "trecho": "",
+    "fonte": ""
+  },
+  "notas_para_o_especialista": "A linha do mapa não tem sinais nem discriminador; as formas de exposição (folha, pólen, água do vaso) vêm do motivo do mapa. O documento é o relato de um caso (filhote de 12 semanas) com revisão curta; dele saíram vômito, apatia, poliúria/polidipsia e depois oligúria/anúria, com a linha do tempo 1–3 h, 12–30 h e 24–48 h. O prazo de cerca de 18 h do motivo do mapa ficou fora porque trata do tempo de tratamento. Item geral (1): babar e recusar comida. Atenção: 'lírio-da-paz' e 'copo-de-leite', comuns em casa, não são lírios verdadeiros (Lilium/Hemerocallis) e não aparecem no documento; se o tutor usar esses nomes a busca pode trazer esta ficha, vale o especialista decidir como tratar."
+}

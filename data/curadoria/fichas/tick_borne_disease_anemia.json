@@ -1,0 +1,104 @@
+{
+  "topico": "tick_borne_disease_anemia",
+  "titulo": "Doença do carrapato com anemia",
+  "nome_leigo": "doença do carrapato",
+  "especie": "cão",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Ele tem carrapato ou teve carrapato",
+      "origem": "documento",
+      "trecho": "Canine monocytic ehrlichiosis (CME) is an endemic disease in Brazil, transmitted by Rhipicephalus sanguineus sensu lato ticks",
+      "fonte": "tick_borne_disease_anemia__vetsci_2023_ehrlichia_canis.pdf"
+    },
+    {
+      "texto": "Não quer comer nada, nem petisco",
+      "origem": "documento",
+      "trecho": "Anorexia 112 89.6 86 60 26 16",
+      "fonte": "tick_borne_disease_anemia__vetsci_2023_ehrlichia_canis.pdf"
+    },
+    {
+      "texto": "Tá apático, desanimado, dormindo o dia todo",
+      "origem": "documento",
+      "trecho": "Apathy 73 58.4 54 45 17 11",
+      "fonte": "tick_borne_disease_anemia__vetsci_2023_ehrlichia_canis.pdf"
+    },
+    {
+      "texto": "A gengiva e a língua tão branquinhas, pálidas",
+      "origem": "documento",
+      "trecho": "Mucosal pallor 54 43.2 41 32 6 11",
+      "fonte": "tick_borne_disease_anemia__vetsci_2023_ehrlichia_canis.pdf"
+    },
+    {
+      "texto": "O nariz sangrou do nada",
+      "origem": "documento",
+      "trecho": "Epistaxis 10 8 10 11 3 3",
+      "fonte": "tick_borne_disease_anemia__vetsci_2023_ehrlichia_canis.pdf"
+    },
+    {
+      "texto": "Tá vomitando ou com diarreia",
+      "origem": "documento",
+      "trecho": "Vomit 15 12 14 9 5 0 Diarrhea 15 12 11 8 2 3",
+      "fonte": "tick_borne_disease_anemia__vetsci_2023_ehrlichia_canis.pdf"
+    },
+    {
+      "texto": "Parece desidratado",
+      "origem": "documento",
+      "trecho": "Dehydration 55 44 45 28 8 9",
+      "fonte": "tick_borne_disease_anemia__vetsci_2023_ehrlichia_canis.pdf"
+    },
+    {
+      "texto": "Tá andando torto, sem coordenação",
+      "origem": "documento",
+      "trecho": "neurological alterations such as convulsions and motor incoordination",
+      "fonte": "tick_borne_disease_anemia__vetsci_2023_ehrlichia_canis.pdf"
+    },
+    {
+      "texto": "O xixi ficou escuro, cor de café",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Gengiva muito branca, quase sem cor",
+      "origem": "documento",
+      "trecho": "Mucosal pallor 54 43.2 41 32 6 11",
+      "fonte": "tick_borne_disease_anemia__vetsci_2023_ehrlichia_canis.pdf"
+    },
+    {
+      "texto": "Sangue saindo pelo nariz",
+      "origem": "documento",
+      "trecho": "Epistaxis 10 8 10 11 3 3",
+      "fonte": "tick_borne_disease_anemia__vetsci_2023_ehrlichia_canis.pdf"
+    },
+    {
+      "texto": "Teve convulsão",
+      "origem": "documento",
+      "trecho": "neurological alterations such as convulsions and motor incoordination",
+      "fonte": "tick_borne_disease_anemia__vetsci_2023_ehrlichia_canis.pdf"
+    },
+    {
+      "texto": "Apareceram manchinhas roxas ou pontinhos vermelhos na barriga",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "ticks_found_no_signs",
+      "texto": "Achar carrapato num cão que come, brinca e tem a gengiva rosada é outro quadro. Na doença do carrapato com anemia o cão fica apático e com a gengiva pálida, e muitas vezes já não tem carrapato à vista.",
+      "origem": "documento",
+      "trecho": "Apathy 73 58.4 54 45 17 11 Fever 55 44 39 27 13 13 * Dehydration 55 44 45 28 8 9 Mucosal pallor 54 43.2 41 32 6 11 Presence of ticks 37 29.6 28 16 † 6 8",
+      "fonte": "tick_borne_disease_anemia__vetsci_2023_ehrlichia_canis.pdf"
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Erliquiose e babesiose são frequentes no Brasil e chegam ao pronto-socorro como anemia grave.",
+    "origem": "mapa",
+    "trecho": "",
+    "fonte": ""
+  },
+  "notas_para_o_especialista": "Documento trata só de erliquiose (genótipos de E. canis em cães de Mineiros-GO); não cobre babesiose. Sinais tirados da Tabela 4 (anorexia, apatia, desidratação, palidez de mucosa, carrapatos, vômito, diarreia, epistaxe) e da discussão (convulsões e incoordenação). Os percentuais da tabela vêm de cães selecionados por já terem anemia ou trombocitopenia, por isso não os usei como frequência; a única exceção é a presença de carrapato na consulta (29,6%), usada para dizer que muitas vezes já não há carrapato à vista. Ficaram de fora febre, linfonodos aumentados e alterações oftálmicas (achados de exame). Itens gerais: xixi escuro, cor de café (babesiose, que o mapa inclui) e manchinhas roxas na pele (plaquetas baixas). A linha do mapa não tem sinais nem discriminador, e a gêmea também está vazia; a diferenciação usa os sinais do documento."
+}

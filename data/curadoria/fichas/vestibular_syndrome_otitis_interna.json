@@ -1,0 +1,110 @@
+{
+  "topico": "vestibular_syndrome_otitis_interna",
+  "titulo": "Síndrome vestibular",
+  "nome_leigo": "labirintite, cabeça torta",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Do nada ficou com a cabeça torta",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá cambaleando, parece bêbado, cai pro lado",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Os olhos ficam tremendo, indo de um lado pro outro",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Um olho parece desviado, meio vesgo",
+      "origem": "documento",
+      "trecho": "with affected animals displaying a head tilt towards the side of the lesion, pathological nystagmus, positional strabismus, and vestibular ataxia",
+      "fonte": "vestibular_syndrome_otitis_interna__frontiers_2023_idiopathic_vestibular.pdf"
+    },
+    {
+      "texto": "Não consegue ficar em pé direito, tomba",
+      "origem": "documento",
+      "trecho": "with affected animals displaying a head tilt towards the side of the lesion, pathological nystagmus, positional strabismus, and vestibular ataxia",
+      "fonte": "vestibular_syndrome_otitis_interna__frontiers_2023_idiopathic_vestibular.pdf"
+    },
+    {
+      "texto": "Anda em círculos ou rola pro mesmo lado",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Tá enjoado e vomitou",
+      "origem": "documento",
+      "trecho": "Nausea and emesis may also occur",
+      "fonte": "vestibular_syndrome_otitis_interna__frontiers_2023_idiopathic_vestibular.pdf"
+    },
+    {
+      "texto": "Tá babando e não quer beber água",
+      "origem": "documento",
+      "trecho": "animals experiencing nausea and vomiting exhibit increased water loss and hypersalivation, leading to reduced water intake",
+      "fonte": "vestibular_syndrome_otitis_interna__frontiers_2023_idiopathic_vestibular.pdf"
+    },
+    {
+      "texto": "Meu cachorro idoso amanheceu assim",
+      "origem": "documento",
+      "trecho": "Idiopathic vestibular syndrome (IVS) is a common neurological disorder observed in dogs over the age of nine, elderly cats, and cats with any age",
+      "fonte": "vestibular_syndrome_otitis_interna__frontiers_2023_idiopathic_vestibular.pdf"
+    },
+    {
+      "texto": "Tinha otite e agora a cabeça ficou torta",
+      "origem": "documento",
+      "trecho": "Important differential diagnoses for peripheral causes are otitis media and interna, canine hypothyroidism, infections, neuritis, vascular insults, trauma, and neoplasia",
+      "fonte": "vestibular_syndrome_otitis_interna__frontiers_2023_idiopathic_vestibular.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Piora ou não melhora nos primeiros dias",
+      "origem": "documento",
+      "trecho": "The rapid improvement of clinical signs is a distinguishing factor that sets IVS apart from other causes of vestibular disease",
+      "fonte": "vestibular_syndrome_otitis_interna__frontiers_2023_idiopathic_vestibular.pdf"
+    },
+    {
+      "texto": "Vomita muito e não consegue beber água",
+      "origem": "documento",
+      "trecho": "animals experiencing nausea and vomiting exhibit increased water loss and hypersalivation, leading to reduced water intake",
+      "fonte": "vestibular_syndrome_otitis_interna__frontiers_2023_idiopathic_vestibular.pdf"
+    },
+    {
+      "texto": "Pálpebra caída ou a terceira pálpebra aparecendo de um lado",
+      "origem": "documento",
+      "trecho": "the main difference of IVS compared to other conditions affecting the vestibular system is that they do improve and do not present with Horner’s syndrome",
+      "fonte": "vestibular_syndrome_otitis_interna__frontiers_2023_idiopathic_vestibular.pdf"
+    },
+    {
+      "texto": "Fica sonolento, confuso ou com fraqueza nas patas",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "otitis_externa_mild",
+      "texto": "Otite externa leve dá coceira e o animal balança a cabeça, mas anda normal. Cabeça torta com desequilíbrio, quedas ou olhos tremendo é sinal vestibular.",
+      "origem": "documento",
+      "trecho": "Clinical manifestations of IVS typically manifest acutely, with affected animals displaying a head tilt towards the side of the lesion, pathological nystagmus, positional strabismus, and vestibular ataxia.",
+      "fonte": "vestibular_syndrome_otitis_interna__frontiers_2023_idiopathic_vestibular.pdf"
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Em casa não dá pra saber se a causa está no ouvido interno ou no cérebro, onde pode ser derrame ou tumor.",
+    "origem": "mapa",
+    "trecho": "",
+    "fonte": ""
+  },
+  "notas_para_o_especialista": "A linha do mapa não tem sinais nem discriminador; usei o motivo do mapa (cabeça torta, desequilíbrio, olhos tremendo, início súbito) e o artigo, que é sobre a forma idiopática em cão e gato. O documento não descreve a otite externa: a parte 'coceira, balança a cabeça, anda normal' do 'como diferenciar' é conhecimento geral; o trecho citado sustenta só os sinais vestibulares. 'Pálpebra caída/terceira pálpebra' é minha tradução leiga da síndrome de Horner, que o artigo só nomeia. Itens gerais (2): andar em círculos/rolar; sonolência, confusão ou fraqueza nas patas (sinais de lesão central, não descritos no artigo). 'Labirintite' é o nome popular por analogia com a doença humana."
+}

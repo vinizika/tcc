@@ -1,0 +1,122 @@
+{
+  "topico": "otitis_externa_mild",
+  "titulo": "Otite externa leve",
+  "nome_leigo": "infecção no ouvido",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Tá balançando a cabeça toda hora",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Fica coçando a orelha com a pata",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Anda normal, sem perder o equilíbrio",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A orelha tá com cheiro ruim",
+      "origem": "documento",
+      "trecho": "(increased discharge with a purulent exudate, malodour, and irritation or pain)",
+      "fonte": "otitis_externa_mild__microorganisms_2023_otitis.pdf"
+    },
+    {
+      "texto": "Tá saindo secreção da orelha, às vezes parece pus",
+      "origem": "documento",
+      "trecho": "(increased discharge with a purulent exudate, malodour, and irritation or pain)",
+      "fonte": "otitis_externa_mild__microorganisms_2023_otitis.pdf"
+    },
+    {
+      "texto": "Chora ou reclama quando mexo na orelha",
+      "origem": "documento",
+      "trecho": "The disease can be painful and/or pruritic, acute, or chronic, and may affect one or both ears.",
+      "fonte": "otitis_externa_mild__microorganisms_2023_otitis.pdf"
+    },
+    {
+      "texto": "Esfrega a orelha no chão ou no sofá",
+      "origem": "documento",
+      "trecho": "The disease can be painful and/or pruritic, acute, or chronic, and may affect one or both ears.",
+      "fonte": "otitis_externa_mild__microorganisms_2023_otitis.pdf"
+    },
+    {
+      "texto": "A orelha tá vermelha e inchada por dentro",
+      "origem": "documento",
+      "trecho": "a composite score of erythema, oedema/swelling, erosion/ulceration, and exudate",
+      "fonte": "otitis_externa_mild__microorganisms_2023_otitis.pdf"
+    },
+    {
+      "texto": "Começou depois que ele nadou ou entrou água no ouvido",
+      "origem": "documento",
+      "trecho": "External factors, such as swimming and over-treatment with aqueous ear cleaners, may similarly disrupt normal functioning by increasing moisture within the ear canal",
+      "fonte": "otitis_externa_mild__microorganisms_2023_otitis.pdf"
+    },
+    {
+      "texto": "Cachorro com alergia de pele, vive com problema de ouvido",
+      "origem": "documento",
+      "trecho": "Between 70 and 80% of dogs suffering from allergic skin disease (food and environmental allergy) have OE",
+      "fonte": "otitis_externa_mild__microorganisms_2023_otitis.pdf"
+    },
+    {
+      "texto": "Cachorro de orelha caída e peluda",
+      "origem": "documento",
+      "trecho": "Predisposing factors include the physical traits of the dogs such as long, pendulous, hairy, or V-shaped drop pinna, as well as narrow external canals.",
+      "fonte": "otitis_externa_mild__microorganisms_2023_otitis.pdf"
+    },
+    {
+      "texto": "Acho que entrou alguma coisa na orelha",
+      "origem": "documento",
+      "trecho": "The most common are allergy, presence of foreign bodies",
+      "fonte": "otitis_externa_mild__microorganisms_2023_otitis.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Perdeu o equilíbrio, cambaleia ou cai para um lado",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Ficou com a cabeça torta ou os olhos mexendo sozinhos",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Pus e cheiro cada vez piores, com muita dor",
+      "origem": "documento",
+      "trecho": "Secondary infection usually causes a marked increase in the clinical signs experienced",
+      "fonte": "otitis_externa_mild__microorganisms_2023_otitis.pdf"
+    },
+    {
+      "texto": "Parece não estar ouvindo direito",
+      "origem": "documento",
+      "trecho": "In severe cases, medical management may fail, requiring surgical intervention and resulting in hearing loss",
+      "fonte": "otitis_externa_mild__microorganisms_2023_otitis.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "vestibular_syndrome_otitis_interna",
+      "texto": "Na otite externa leve o animal balança a cabeça e coça a orelha, mas anda normal, sem desequilíbrio. Se cambalear, cair para um lado ou não conseguir se equilibrar, aponta para síndrome vestibular.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "O acúmulo de secreção pode romper o tímpano e levar a infecção para o ouvido médio.",
+    "origem": "documento",
+    "trecho": "Bacterial toxins and physical accumulation of discharge can cause the rupture of the tympanic membrane, allowing infection to spread to the middle ear, resulting in otitis media (OM)",
+    "fonte": "otitis_externa_mild__microorganisms_2023_otitis.pdf"
+  },
+  "notas_para_o_especialista": "Documento trata de Pseudomonas na otite externa canina: só cães, foco microbiológico. Não menciona balançar a cabeça; esse sinal, coçar a orelha e 'sem desequilíbrio' vêm do motivo do mapa (a linha não tem sinais nem discriminador). Cheiro, secreção, dor, coceira, vermelhidão e inchaço vêm do documento e valem para cão e gato; orelha caída e alergia de pele são dados de cães e estão marcados assim. Item geral: cabeça torta e olhos mexendo sozinhos (sinais vestibulares), que o documento não descreve. Ácaro de ouvido (Otodectes), comum em gatos, aparece no documento só como causa, sem sinais; não virou item."
+}

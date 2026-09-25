@@ -1,0 +1,110 @@
+{
+  "topico": "urethral_obstruction",
+  "titulo": "Obstrução uretral",
+  "nome_leigo": "xixi preso",
+  "especie": "cão e gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Vai na caixinha toda hora e não sai nada.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Fica fazendo força pra fazer xixi.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Só sai umas gotinhas.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Chora e mia quando tenta fazer xixi.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Lambe muito a região do pipi.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A barriga tá dura e dói quando encosto.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Achei que era intestino preso, fica agachado fazendo força.",
+      "origem": "documento",
+      "trecho": "Straining to urinate (may be misinterpreted by caregivers as straining to defecate)",
+      "fonte": "urethral_obstruction__icatcare_2025_lower_urinary.pdf"
+    },
+    {
+      "texto": "Meu gato é macho e tá nessa agonia na caixa de areia.",
+      "origem": "documento",
+      "trecho": "which occurs almost exclusively in male cats",
+      "fonte": "urethral_obstruction__icatcare_2025_lower_urinary.pdf"
+    },
+    {
+      "texto": "Antes tava fazendo xixi fora da caixa, várias vezes, com sangue.",
+      "origem": "documento",
+      "trecho": "Pollakiuria, periuria and haem aturia may be seen before complete",
+      "fonte": "urethral_obstruction__icatcare_2025_lower_urinary.pdf"
+    },
+    {
+      "texto": "No cachorro: faz força pra urinar e só pinga.",
+      "origem": "documento",
+      "trecho": "exhibited severe stranguria, only dribbling small amounts of urine",
+      "fonte": "urethral_obstruction__frontiers_2023_canine_obstruction.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Não sai nenhuma gota de xixi.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Começou a vomitar e parou de comer.",
+      "origem": "documento",
+      "trecho": "signs of systemic illness develop, including vomiting, anorexia, lethargy, altered mentation, weakness and stupor",
+      "fonte": "urethral_obstruction__icatcare_2025_lower_urinary.pdf"
+    },
+    {
+      "texto": "Tá muito mole, fraco, meio aéreo.",
+      "origem": "documento",
+      "trecho": "signs of systemic illness develop, including vomiting, anorexia, lethargy, altered mentation, weakness and stupor",
+      "fonte": "urethral_obstruction__icatcare_2025_lower_urinary.pdf"
+    },
+    {
+      "texto": "Ficou deitado de lado, sem conseguir levantar.",
+      "origem": "documento",
+      "trecho": "may present collapsed in lateral recumbency",
+      "fonte": "urethral_obstruction__icatcare_2025_lower_urinary.pdf"
+    }
+  ],
+  "como_diferenciar": [
+    {
+      "gemea": "inappropriate_urination_or_cystitis",
+      "texto": "Na obstrução ele faz força várias vezes e não sai nada, ou só gotinhas, e sente dor. Na cistite ou no xixi fora do lugar, a urina sai em quantidade normal, sem esforço e sem dor aparente.",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "por_que_importa": {
+    "texto": "Sem conseguir urinar, o animal pode morrer em menos de 24 a 48 horas.",
+    "origem": "mapa",
+    "trecho": "",
+    "fonte": ""
+  },
+  "notas_para_o_especialista": "Possível conflito no mapa: o discriminador diz 'se sai um pouco, é outro quadro', mas os sinais do próprio mapa incluem 'sai só gotinhas', e o discriminador do gêmeo diz que gato que faz força ou solta só um pouco também não pode esperar. Na diferenciação usei 'nada ou só gotinhas, com força e dor' contra 'quantidade normal, sem esforço'. Achados de exame (bexiga firme e distendida, bradicardia, hipotermia, potássio) ficaram de fora. O documento canino são três relatos de caso (um com tumor de uretra). O documento felino diz que os sinais sistêmicos aparecem após mais de 24 h de obstrução; não pus esse prazo nos itens. Nenhum item geral."
+}
