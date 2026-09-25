@@ -1,0 +1,279 @@
+{
+  "rows_evaluated": 98,
+  "rows_with_error": 0,
+  "classification": {
+    "n": 98,
+    "balanced_accuracy": 0.8740219092331768,
+    "accuracy_strict": 0.8673469387755102,
+    "accuracy_strict_ci95": [
+      0.7862,
+      0.9208
+    ],
+    "coverage": 0.9795918367346939,
+    "accuracy_decided": 0.8854166666666666,
+    "macro_f1": 0.8586315128688009,
+    "per_class": {
+      "EMERGENCIA": {
+        "support": 71,
+        "true_positive": 61,
+        "false_positive": 3,
+        "false_negative": 10,
+        "precision": 0.953125,
+        "recall": 0.8591549295774648,
+        "recall_ci95": [
+          0.7598,
+          0.9217
+        ],
+        "f1": 0.9037037037037037
+      },
+      "NAO_EMERGENCIA": {
+        "support": 27,
+        "true_positive": 24,
+        "false_positive": 8,
+        "false_negative": 3,
+        "precision": 0.75,
+        "recall": 0.8888888888888888,
+        "recall_ci95": [
+          0.7194,
+          0.9615
+        ],
+        "f1": 0.8135593220338982
+      }
+    },
+    "confusion_matrix": {
+      "EMERGENCIA": {
+        "EMERGENCIA": 61,
+        "NAO_EMERGENCIA": 8,
+        "INCERTO": 2,
+        "INVALID_JSON": 0,
+        "OTHER": 0
+      },
+      "NAO_EMERGENCIA": {
+        "EMERGENCIA": 3,
+        "NAO_EMERGENCIA": 24,
+        "INCERTO": 0,
+        "INVALID_JSON": 0,
+        "OTHER": 0
+      }
+    },
+    "false_non_urgent": 8,
+    "false_non_urgent_rate": 0.11267605633802817,
+    "false_urgent": 3,
+    "false_urgent_rate": 0.1111111111111111,
+    "incerto_rate": 0.02040816326530612,
+    "emergencia_para_incerto": 2,
+    "nao_emergencia_para_incerto": 0,
+    "invalid_rate": 0.0,
+    "other_rate": 0.0,
+    "accuracy_single_attempt": 0.8673469387755102
+  },
+  "baselines": {
+    "always_emergencia": 0.7244897959183674,
+    "rule_few_symptoms": 0.9897959183673469,
+    "rule_only_mild_symptoms": 1.0
+  },
+  "strata": {
+    "by_source": {
+      "llm_data_augmentation": {
+        "n": 27,
+        "labels": [
+          "NAO_EMERGENCIA"
+        ],
+        "recall": 0.8888888888888888,
+        "recall_ci95": [
+          0.7194,
+          0.9615
+        ],
+        "incerto_rate": 0.0,
+        "invalid_rate": 0.0,
+        "precision": null,
+        "f1": null,
+        "note": "estrato contém um único rótulo; precisão e F1 não se aplicam"
+      },
+      "original": {
+        "n": 71,
+        "labels": [
+          "EMERGENCIA"
+        ],
+        "recall": 0.8591549295774648,
+        "recall_ci95": [
+          0.7598,
+          0.9217
+        ],
+        "incerto_rate": 0.028169014084507043,
+        "invalid_rate": 0.0,
+        "precision": null,
+        "f1": null,
+        "note": "estrato contém um único rótulo; precisão e F1 não se aplicam"
+      }
+    },
+    "by_animal": {
+      "Cat": {
+        "n": 49,
+        "balanced_accuracy": 0.875,
+        "accuracy_strict": 0.8163265306122449,
+        "accuracy_strict_ci95": [
+          0.6864,
+          0.9002
+        ],
+        "coverage": 0.9591836734693877,
+        "accuracy_decided": 0.851063829787234,
+        "macro_f1": 0.8225108225108225,
+        "per_class": {
+          "EMERGENCIA": {
+            "support": 36,
+            "true_positive": 27,
+            "false_positive": 0,
+            "false_negative": 9,
+            "precision": 1.0,
+            "recall": 0.75,
+            "recall_ci95": [
+              0.5893,
+              0.8625
+            ],
+            "f1": 0.8571428571428571
+          },
+          "NAO_EMERGENCIA": {
+            "support": 13,
+            "true_positive": 13,
+            "false_positive": 7,
+            "false_negative": 0,
+            "precision": 0.65,
+            "recall": 1.0,
+            "recall_ci95": [
+              0.7719,
+              1.0
+            ],
+            "f1": 0.787878787878788
+          }
+        },
+        "confusion_matrix": {
+          "EMERGENCIA": {
+            "EMERGENCIA": 27,
+            "NAO_EMERGENCIA": 7,
+            "INCERTO": 2,
+            "INVALID_JSON": 0,
+            "OTHER": 0
+          },
+          "NAO_EMERGENCIA": {
+            "EMERGENCIA": 0,
+            "NAO_EMERGENCIA": 13,
+            "INCERTO": 0,
+            "INVALID_JSON": 0,
+            "OTHER": 0
+          }
+        },
+        "false_non_urgent": 7,
+        "false_non_urgent_rate": 0.19444444444444445,
+        "false_urgent": 0,
+        "false_urgent_rate": 0.0,
+        "incerto_rate": 0.04081632653061224,
+        "emergencia_para_incerto": 2,
+        "nao_emergencia_para_incerto": 0,
+        "invalid_rate": 0.0,
+        "other_rate": 0.0,
+        "accuracy_single_attempt": 0.8163265306122449
+      },
+      "Dog": {
+        "n": 49,
+        "balanced_accuracy": 0.8785714285714286,
+        "accuracy_strict": 0.9183673469387755,
+        "accuracy_strict_ci95": [
+          0.8081,
+          0.9678
+        ],
+        "coverage": 1.0,
+        "accuracy_decided": 0.9183673469387755,
+        "macro_f1": 0.8952991452991453,
+        "per_class": {
+          "EMERGENCIA": {
+            "support": 35,
+            "true_positive": 34,
+            "false_positive": 3,
+            "false_negative": 1,
+            "precision": 0.918918918918919,
+            "recall": 0.9714285714285714,
+            "recall_ci95": [
+              0.8547,
+              0.9949
+            ],
+            "f1": 0.9444444444444445
+          },
+          "NAO_EMERGENCIA": {
+            "support": 14,
+            "true_positive": 11,
+            "false_positive": 1,
+            "false_negative": 3,
+            "precision": 0.9166666666666666,
+            "recall": 0.7857142857142857,
+            "recall_ci95": [
+              0.5241,
+              0.9243
+            ],
+            "f1": 0.8461538461538461
+          }
+        },
+        "confusion_matrix": {
+          "EMERGENCIA": {
+            "EMERGENCIA": 34,
+            "NAO_EMERGENCIA": 1,
+            "INCERTO": 0,
+            "INVALID_JSON": 0,
+            "OTHER": 0
+          },
+          "NAO_EMERGENCIA": {
+            "EMERGENCIA": 3,
+            "NAO_EMERGENCIA": 11,
+            "INCERTO": 0,
+            "INVALID_JSON": 0,
+            "OTHER": 0
+          }
+        },
+        "false_non_urgent": 1,
+        "false_non_urgent_rate": 0.02857142857142857,
+        "false_urgent": 3,
+        "false_urgent_rate": 0.21428571428571427,
+        "incerto_rate": 0.0,
+        "emergencia_para_incerto": 0,
+        "nao_emergencia_para_incerto": 0,
+        "invalid_rate": 0.0,
+        "other_rate": 0.0,
+        "accuracy_single_attempt": 0.9183673469387755
+      }
+    }
+  },
+  "latency": {
+    "rows_with_model_load": 0,
+    "query_s": {
+      "mean": 0.0,
+      "median": 0.0,
+      "p95": 0.0
+    },
+    "retrieval_s": {
+      "mean": 0.0,
+      "median": 0.0,
+      "p95": 0.0
+    },
+    "generation_s": {
+      "mean": 1.825,
+      "median": 1.829,
+      "p95": 2.188
+    },
+    "total_s": {
+      "mean": 1.825,
+      "median": 1.83,
+      "p95": 2.188
+    },
+    "client_s": {
+      "mean": 1.839,
+      "median": 1.852,
+      "p95": 2.208
+    },
+    "prompt_tokens_mean": 432.2,
+    "completion_tokens_mean": 169.3,
+    "completion_tokens_p95": 202,
+    "completion_tokens_max": 227
+  },
+  "grounding": null,
+  "repeats": null
+}

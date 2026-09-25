@@ -1,0 +1,33 @@
+{
+ "t_idx": 687.0050681000575,
+ "res": {
+  "dev": {
+   "n": 47,
+   "p1": 25,
+   "certo_no_prompt": 8,
+   "vazio": 39,
+   "so_errado": 0
+  },
+  "calib": {
+   "n": 16,
+   "p1": 10,
+   "certo_no_prompt": 3,
+   "vazio": 13,
+   "so_errado": 0
+  },
+  "regua": {
+   "n": 66,
+   "p1": 42,
+   "certo_no_prompt": 18,
+   "vazio": 46,
+   "so_errado": 2
+  },
+  "indep": {
+   "n": 61,
+   "p1": 22,
+   "certo_no_prompt": 3,
+   "vazio": 58,
+   "so_errado": 0
+  }
+ }
+}

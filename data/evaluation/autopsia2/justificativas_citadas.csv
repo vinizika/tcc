@@ -1,0 +1,1342 @@
+condicao,lote,atendente,id,esperado,previsto,justificativa
+oraculo_academico,dev,llama3.2-3b,p19,EMERGENCIA,EMERGENCIA,"Sinais de alerta: tremendo, coração disparado, incontinência e possivelmente vômito e diarreia."
+oraculo_academico,dev,llama3.2-3b,p20,EMERGENCIA,EMERGENCIA,"Sinal de risco à vida: gato caído sem vontade de andar e gengiva branca, indicando possivel anemia grave."
+oraculo_academico,dev,llama3.2-3b,p21,EMERGENCIA,EMERGENCIA,"Sinal de Respiratory Distress em gato, com sinais de dificuldade respiratória e aumento da frequência respiratória."
+oraculo_academico,dev,llama3.2-3b,p22,EMERGENCIA,EMERGENCIA,"Sinais de alerta: pernas se mexendo sozinhas, babuindade, urinação, movimentos explosivos, hipersalivação, miopatia, movimentos faciais anormais."
+oraculo_academico,dev,llama3.2-3b,p23,EMERGENCIA,NAO_EMERGENCIA,"Sinal de sangramento, mas não há menção a perda significativa de sangue ou sintomas graves."
+oraculo_academico,dev,llama3.2-3b,p24,EMERGENCIA,EMERGENCIA,"Sinal grave de obstrução urinária, com sintomas de dor e dificuldade para urinar."
+oraculo_academico,dev,llama3.2-3b,p25,EMERGENCIA,EMERGENCIA,Sinal de sangue na diarreia e comportamento alterado
+oraculo_academico,dev,llama3.2-3b,p26,EMERGENCIA,EMERGENCIA,"Sinais de risco à vida, como cambaleio, ofegamento intenso e língua vermelha escura, indicam necessidade de atendimento imediato."
+oraculo_academico,dev,llama3.2-3b,p27,EMERGENCIA,EMERGENCIA,Sinal de risco à vida: barriga estufada e tentativa de vômito
+oraculo_academico,dev,llama3.2-3b,p28,EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, possivelmente hipotermia, mas não há risco à vida ou sofrimento intenso."
+oraculo_academico,dev,llama3.2-3b,p29,EMERGENCIA,EMERGENCIA,Sinal de dor intensa e incapacidade repentina
+oraculo_academico,dev,llama3.2-3b,p30,EMERGENCIA,EMERGENCIA,Sangue saindo do nariz sem motivo é sinal de risco à vida
+oraculo_academico,dev,llama3.2-3b,p31,EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, possivelmente causados por medicamento não apropriado."
+oraculo_academico,dev,llama3.2-3b,p32,EMERGENCIA,EMERGENCIA,Sinal de respiração ruidosa e edema facial indicam risco à vida.
+oraculo_academico,dev,llama3.2-3b,p33,EMERGENCIA,EMERGENCIA,"Sinal de risco à vida: tossir de noite e cansaço, indicando possivel problema cardíaco grave"
+oraculo_academico,dev,llama3.2-3b,p34,EMERGENCIA,EMERGENCIA,"Sinais de alerta: fraqueza repentina, falta de movimento, gengiva branca, risco à vida"
+oraculo_academico,dev,llama3.2-3b,p35,EMERGENCIA,EMERGENCIA,Sinal de risco à vida devido à paralisia muscular e diarreia com sangue
+oraculo_academico,dev,llama3.2-3b,p36,EMERGENCIA,EMERGENCIA,Sinal de dor intenso e possibilidade de lesão ocular grave
+oraculo_academico,dev,llama3.2-3b,p37,EMERGENCIA,EMERGENCIA,"Sinais graves de exposição à permetrina, como tremendo, babando e dificuldade de andar, indicam risco à vida."
+oraculo_academico,dev,llama3.2-3b,p38,EMERGENCIA,EMERGENCIA,"Sinais de alerta: vômitos repetidos, perda de apetite, possibilidade de obstrução intestinal."
+oraculo_academico,dev,llama3.2-3b,p39,EMERGENCIA,EMERGENCIA,Sinais de dificuldade respiratória e dificuldade para latir
+oraculo_academico,dev,llama3.2-3b,p40,EMERGENCIA,EMERGENCIA,"Sinal de força e distorção, necessitando de atendimento imediato."
+oraculo_academico,dev,llama3.2-3b,p41,EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, possivelmente uma infecção viral, mas sem sintomas graves."
+oraculo_academico,dev,llama3.2-3b,p42,EMERGENCIA,INCERTO,Não foi possível analisar o relato com segurança.
+oraculo_academico,dev,llama3.2-3b,p43,EMERGENCIA,EMERGENCIA,"Sinais de alerta: rigidez, tremendo muito, dificuldade para se manter em pé, indicando hipocalcaemia e possíveis convulsões."
+oraculo_academico,dev,llama3.2-3b,p44,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem menção a risco à vida ou sofrimento intenso."
+oraculo_academico,dev,llama3.2-3b,p45,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem sintomas graves ou risco à vida."
+oraculo_academico,dev,llama3.2-3b,p46,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, possivelmente relacionados a um problema de saúde, mas não há risco imediato à vida."
+oraculo_academico,dev,llama3.2-3b,p47,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem perda de equilibrio ou caída, indicando apenas desconforto."
+oraculo_academico,dev,llama3.2-3b,p48,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem sintomas graves ou risco à vida."
+oraculo_academico,dev,llama3.2-3b,p49,NAO_EMERGENCIA,EMERGENCIA,"Sinal de dificuldade em levantar, indicando dor e limitação de movimento"
+oraculo_academico,dev,llama3.2-3b,p50,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinal leve, sem sintomas graves ou risco à vida."
+oraculo_academico,dev,llama3.2-3b,p51,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem sintomas graves ou risco à vida."
+oraculo_academico,dev,llama3.2-3b,p52,NAO_EMERGENCIA,EMERGENCIA,"Sinal de vermelhidão e remela no olho, indicando infecção ocular grave."
+oraculo_academico,dev,llama3.2-3b,p53,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem menção a sintomas graves ou risco à vida."
+oraculo_academico,dev,llama3.2-3b,p54,NAO_EMERGENCIA,EMERGENCIA,"Sinais de alerta: tremendo, movimentos involuntários, agitação."
+oraculo_academico,dev,llama3.2-3b,p55,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem dor intensa ou risco à vida."
+oraculo_academico,dev,llama3.2-3b,p56,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem sintomas graves ou risco à vida."
+oraculo_academico,dev,llama3.2-3b,p57,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem risco à vida ou sofrimento intenso"
+oraculo_academico,dev,llama3.2-3b,p58,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinal de mordida sem inchaço ou sinal de infecção
+oraculo_academico,dev,llama3.2-3b,p59,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais de alerta: bebendo mais água do que o normal, frequência aumentada. Não há outros sintomas mencionados."
+oraculo_academico,dev,llama3.2-3b,p60,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinal de corte, mas parou de sangrar rapidinho"
+oraculo_academico,dev,llama3.2-3b,p61,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem dor ou sintomas graves"
+oraculo_academico,dev,llama3.2-3b,p62,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais leves e sem mudança no tamanho do carocinho
+oraculo_academico,dev,llama3.2-3b,p63,NAO_EMERGENCIA,EMERGENCIA,Sinal de raiva de morcego pode transmitir rabies
+oraculo_academico,dev,llama3.2-3b,p64,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem sintomas graves ou risco à vida."
+oraculo_academico,dev,llama3.2-3b,p65,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem risco à vida ou sofrimento intenso."
+oraculo_academico,calib,llama3.2-3b,p01,EMERGENCIA,EMERGENCIA,"Sinais de alerta: convulsão, tremer e babar muito, indicando risco à vida."
+oraculo_academico,calib,llama3.2-3b,p02,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem perda de equilíbrio ou outros sintomas preocupantes."
+oraculo_academico,calib,llama3.2-3b,p03,EMERGENCIA,EMERGENCIA,"Sinais graves indicam risco à vida e sofrimento intenso, necessitando de atendimento imediato."
+oraculo_academico,calib,llama3.2-3b,p04,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem sintomas graves ou risco à vida."
+oraculo_academico,calib,llama3.2-3b,p05,EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, possivelmente causados por medicamento anti-inflamatório"
+oraculo_academico,calib,llama3.2-3b,p06,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinal leve, sem sintomas graves ou risco à vida."
+oraculo_academico,calib,llama3.2-3b,p07,EMERGENCIA,EMERGENCIA,Sinal de risco à vida: Gastric Dilatation-Volvulus (GDV) pode ser fatal se não for tratado rapidamente.
+oraculo_academico,calib,llama3.2-3b,p08,EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, possivelmente relacionados a uma obstrução urinária, mas sem sinais graves de risco à vida."
+oraculo_academico,calib,llama3.2-3b,p09,NAO_EMERGENCIA,EMERGENCIA,"Sinais de alerta: frequência urinária aumentada, urinação excessiva, ausência de dor ou força, indicando FLUTD grave."
+oraculo_academico,calib,llama3.2-3b,p10,EMERGENCIA,EMERGENCIA,"Sinal de corrimento com pus saindo pela vulva, indicando possibilidade de pyometra"
+oraculo_academico,calib,llama3.2-3b,p11,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem risco à vida ou sofrimento intenso"
+oraculo_academico,calib,llama3.2-3b,p12,EMERGENCIA,EMERGENCIA,"Sinais de alerta: dor intensa, dificuldade respiratória e aceleração da respiração."
+oraculo_academico,calib,llama3.2-3b,p13,NAO_EMERGENCIA,EMERGENCIA,"Sinal de dificuldade para levantar, indicando dor e limitação de movimento"
+oraculo_academico,calib,llama3.2-3b,p14,EMERGENCIA,EMERGENCIA,Sinal de lesão grave e sinal de risco à vida
+oraculo_academico,calib,llama3.2-3b,p17,EMERGENCIA,EMERGENCIA,Sinal de trauma ocular grave com proptose e dor ao fechar a pálpebra
+oraculo_academico,calib,llama3.2-3b,p18,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem dor ou sintomas graves"
+oraculo_academico,regua,llama3.2-3b,b01,EMERGENCIA,EMERGENCIA,"Sinais de alerta: tremendo, vômitar, incontinência urinária"
+oraculo_academico,regua,llama3.2-3b,b02,EMERGENCIA,EMERGENCIA,Sinais de dor e dificuldade para urinar indicam risco à vida
+oraculo_academico,regua,llama3.2-3b,b03,EMERGENCIA,EMERGENCIA,"Sinal de Respiratory Distress, ausência de outros sintomas"
+oraculo_academico,regua,llama3.2-3b,b04,EMERGENCIA,EMERGENCIA,"Sinais de alerta: convulsão, tremor, incontinência urinária, possíveis movimentos musculares explosivos"
+oraculo_academico,regua,llama3.2-3b,b05,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem risco à vida ou sofrimento intenso"
+oraculo_academico,regua,llama3.2-3b,b06,EMERGENCIA,NAO_EMERGENCIA,"Sangramento leve, sem menção a outros sintomas graves."
+oraculo_academico,regua,llama3.2-3b,b07,EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, possivelmente causados por bactérias ou alergias alimentares."
+oraculo_academico,regua,llama3.2-3b,b08,EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, possivelmente causados por ingestão de cebola e alho, mas não há risco imediato à vida."
+oraculo_academico,regua,llama3.2-3b,b09,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem erupções graves ou sintomas graves"
+oraculo_academico,regua,llama3.2-3b,b10,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinal leve de mancar de pata, sem outros sintomas mencionados."
+oraculo_academico,regua,llama3.2-3b,b11,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais leves e possíveis causa conhecida
+oraculo_academico,regua,llama3.2-3b,b12,EMERGENCIA,EMERGENCIA,"Sinais de alerta: barriga inchada e dura, inquieto, tentando vomitar sem sair nada"
+oraculo_academico,regua,llama3.2-3b,b13,EMERGENCIA,EMERGENCIA,Sangramento intenso e não parado há 10 minutos
+oraculo_academico,regua,llama3.2-3b,b14,EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, possivelmente relacionados a hipotermia ou fadiga, mas não há risco à vida ou sofrimento intenso."
+oraculo_academico,regua,llama3.2-3b,b15,EMERGENCIA,EMERGENCIA,Sinal de obstrução urinária grave
+oraculo_academico,regua,llama3.2-3b,b16,EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, possivelmente de picada de abelha, sem menção a outros sintomas graves."
+oraculo_academico,regua,llama3.2-3b,b17,EMERGENCIA,EMERGENCIA,"Sinais de alerta: dor profunda nos membros pélvicos, ausência de pulso femoral, ofegante, dificuldade para levantar as pernas de trás."
+oraculo_academico,regua,llama3.2-3b,b18,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem febre ou outros sintomas graves"
+oraculo_academico,regua,llama3.2-3b,b19,EMERGENCIA,EMERGENCIA,"Sinal de ingestão de paracetamol, que pode causar necrose hepática grave."
+oraculo_academico,regua,llama3.2-3b,b20,EMERGENCIA,EMERGENCIA,"Sinais de alerta: tremendo, pupilas pequenas, babar muito, indicando possivel envenenamento"
+oraculo_academico,regua,llama3.2-3b,b21,EMERGENCIA,EMERGENCIA,"Sinais de alerta: tremer e andar estranho, indicando possíveis efeitos tóxicos de permetrina na gata."
+oraculo_academico,regua,llama3.2-3b,b22,EMERGENCIA,EMERGENCIA,Sinais de sangramento e fraqueza grave indicam risco à vida.
+oraculo_academico,regua,llama3.2-3b,b23,EMERGENCIA,EMERGENCIA,"Sinais de alerta: vômito, diarreia de sangue, quieta e falta de apetite, indicando risco à vida."
+oraculo_academico,regua,llama3.2-3b,b24,EMERGENCIA,EMERGENCIA,"Sinais de alerta: apatia, pus pela vulva, hemorragia, falta de uterine contento, sinal de infecção, sinal de dor, sinal de risco à vida"
+oraculo_academico,regua,llama3.2-3b,b25,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem sintomas graves ou risco à vida."
+oraculo_academico,regua,llama3.2-3b,b26,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem força, sem sangue ou urina estranha"
+oraculo_academico,regua,llama3.2-3b,b27,EMERGENCIA,EMERGENCIA,"Sinais de choque e perda de sangue, necessitando de atendimento imediato."
+oraculo_academico,regua,llama3.2-3b,b28,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem menção a dor ou dificuldade significativa"
+oraculo_academico,regua,llama3.2-3b,b29,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem sinal de risco à vida ou sofrimento intenso."
+oraculo_academico,regua,llama3.2-3b,b30,EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, possivelmente uma ingestão de objeto não digestível"
+oraculo_academico,regua,llama3.2-3b,b31,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem sintomas graves ou risco à vida."
+oraculo_academico,regua,llama3.2-3b,b32,EMERGENCIA,EMERGENCIA,"Tosse aguda e respiração rápida, indicando possível insuficiência cardíaca grave."
+oraculo_academico,regua,llama3.2-3b,b33,EMERGENCIA,EMERGENCIA,"Sinais graves de desidratação, vômito e dificuldade respiratória"
+oraculo_academico,regua,llama3.2-3b,b34,EMERGENCIA,EMERGENCIA,"Sinais de alerta: secreção no olho e no nariz, contrações repetidas nas pernas, indicando risco à vida e sofrimento intenso."
+oraculo_academico,regua,llama3.2-3b,b35,EMERGENCIA,EMERGENCIA,Sinal de força prolongada e ausência de nascimento de filhotes
+oraculo_academico,regua,llama3.2-3b,b36,EMERGENCIA,EMERGENCIA,"Sinal de paralisia e frieza em duas patas, além de respiração rápida, indicam risco à vida."
+oraculo_academico,regua,llama3.2-3b,b37,EMERGENCIA,EMERGENCIA,"Sinais de alerta: febre, vômito, olhos amarelados, abatimento; presença de Leptospira spp. em urina do cachorro"
+oraculo_academico,regua,llama3.2-3b,b38,EMERGENCIA,EMERGENCIA,Sinal de risco à vida: vômito e silêncio após ingestão de lírio
+oraculo_academico,regua,llama3.2-3b,b39,EMERGENCIA,EMERGENCIA,Sintomas graves indicam risco à vida imediato
+oraculo_academico,regua,llama3.2-3b,b40,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem convulsões ou perda de consciência"
+oraculo_academico,regua,llama3.2-3b,b41,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem indicação de risco à vida ou sofrimento intenso."
+oraculo_academico,regua,llama3.2-3b,b42,EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, possivelmente de desmaio e brancura de gengiva, sem menção a outros sintomas graves."
+oraculo_academico,regua,llama3.2-3b,b43,EMERGENCIA,EMERGENCIA,Sinal de dor intensa e opacidade do olho fechado indicam risco à vida.
+oraculo_academico,regua,llama3.2-3b,b44,EMERGENCIA,EMERGENCIA,Sinal de dificuldade respiratória e língua azul indicam risco à vida.
+oraculo_academico,regua,llama3.2-3b,b45,EMERGENCIA,EMERGENCIA,"Sinal de risco à vida devido à picada de cobra, com sintomas graves como inchaço rápido e fraqueza."
+oraculo_academico,regua,llama3.2-3b,b46,EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, possivelmente infestações de carrapatos, sem menção a sintomas graves."
+oraculo_academico,regua,llama3.2-3b,b47,EMERGENCIA,EMERGENCIA,"Sinais de alerta: falta de alimentação, mole, tremendo, falta de resposta, risco de hipoglicemia"
+oraculo_academico,regua,llama3.2-3b,b48,EMERGENCIA,EMERGENCIA,"Sinais de alerta: cabeça torta, olhos mexendo rápido, perda de equilíbrio"
+oraculo_academico,regua,llama3.2-3b,b49,EMERGENCIA,EMERGENCIA,Sinal de risco à vida: respirando mais rápido
+oraculo_academico,regua,llama3.2-3b,b50,EMERGENCIA,EMERGENCIA,"Sinais de alerta: dificuldade para respirar, boca queimada, choque"
+oraculo_academico,regua,llama3.2-3b,b51,EMERGENCIA,EMERGENCIA,"Sinais de alerta: inquietação, ofegamento, tremores e dor nas pernas, indicando hipocalcaemia e possíveis convulsões."
+oraculo_academico,regua,llama3.2-3b,b52,EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem menção a quantidades toxicas ou sintomas graves."
+oraculo_academico,regua,llama3.2-3b,b53,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem força ou outros sintomas graves"
+oraculo_academico,regua,llama3.2-3b,b54,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinal leve, sem sintomas graves ou risco à vida"
+oraculo_academico,regua,llama3.2-3b,b55,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem sintomas graves ou risco à vida."
+oraculo_academico,regua,llama3.2-3b,b56,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem vômitos ou outros sintomas graves"
+oraculo_academico,regua,llama3.2-3b,b57,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem risco à vida ou sofrimento intenso"
+oraculo_academico,regua,llama3.2-3b,b58,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinal de corte superficial que parou de sangrar e a gata está normal
+oraculo_academico,regua,llama3.2-3b,b59,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem dor ou sintomas graves"
+oraculo_academico,regua,llama3.2-3b,b60,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais leves e não há risco à vida ou sofrimento intenso.
+oraculo_academico,regua,llama3.2-3b,b61,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais de recuperação rápida após exercício e melhora em poucos minutos
+oraculo_academico,regua,llama3.2-3b,b62,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem ferimento grande e comportamento normal"
+oraculo_academico,regua,llama3.2-3b,b63,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem risco à vida ou sofrimento intenso"
+oraculo_academico,regua,llama3.2-3b,b64,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem sintomas graves ou risco à vida."
+oraculo_academico,regua,llama3.2-3b,b65,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais leves e recuperação rápida sem tratamento médico.
+oraculo_academico,regua,llama3.2-3b,b66,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem sangue ou outros sintomas graves"
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p19,EMERGENCIA,EMERGENCIA,"O cão comeu chocolate e apresenta tremores e coração acelerado, indicando risco grave e imediato."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p20,EMERGENCIA,EMERGENCIA,"O gato comeu cebola e apresenta fraqueza e gengiva pálida, indicando risco grave."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p21,EMERGENCIA,EMERGENCIA,"Seu gato apresenta dificuldade respiratória grave, demonstrada pela respiração de boca aberta e movimento rápido do peito."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p22,EMERGENCIA,EMERGENCIA,O cachorro apresentou episódios de convulsão com perda de consciência e salivação intensa.
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p23,EMERGENCIA,EMERGENCIA,Houve atropelamento e o animal apresenta sangramento intenso que não cessa.
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p24,EMERGENCIA,EMERGENCIA,"O cão faz força repetida sem conseguir urinar, acompanhado de dor e choro, indicando risco grave."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p25,EMERGENCIA,EMERGENCIA,"Seu gato apresenta vômitos frequentes, diarreia com sangue e prostração, indicando risco grave à vida."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p26,EMERGENCIA,EMERGENCIA,O cão sofreu golpe de calor e apresenta sinais graves de risco iminente à vida.
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p27,EMERGENCIA,EMERGENCIA,A barriga estufada e a tentativa de vomitar sem sucesso indicam risco grave e necessitam atendimento imediato.
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p28,EMERGENCIA,EMERGENCIA,"O filhote recém-nascido está molinho, gelado e sem mamar, indicando risco imediato à vida."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p29,EMERGENCIA,EMERGENCIA,O cachorro perdeu o movimento das patas traseiras subitamente e sente muita dor.
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p30,EMERGENCIA,EMERGENCIA,"O cão teve acesso a raticida e agora apresenta sangramento nasal, indicando risco grave."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p31,EMERGENCIA,EMERGENCIA,"O gato recebeu paracetamol e apresenta gengiva arroxeada, indicando intoxicação grave com risco de vida."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p32,EMERGENCIA,EMERGENCIA,O inchaco no focinho e a respiracao ruidosa apos picada indicam risco de via aerea.
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p33,EMERGENCIA,INCERTO,"O relato menciona tosse e cansaço, mas faltam detalhes para definir a gravidade."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p34,EMERGENCIA,EMERGENCIA,"Seu gato apresenta fraqueza súbita e gengiva pálida, indicando risco grave à vida."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p35,EMERGENCIA,EMERGENCIA,"O filhote apresenta diarreia com sangue e apatia extrema, indicando risco grave e necessidade de atendimento imediato."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p36,EMERGENCIA,EMERGENCIA,Problemas oculares graves com dor e alteracao na cor do olho exigem atendimento veterinario imediato.
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p37,EMERGENCIA,EMERGENCIA,"O gato apresenta tremores, salivação excessiva e dificuldade para andar após contato com antipulgas de cão."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p38,EMERGENCIA,INCERTO,"O relato menciona vômito e falta de apetite, mas não há informação suficiente para decidir."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p39,EMERGENCIA,EMERGENCIA,O cachorro apresenta dificuldade respiratória aguda e alteração no latido.
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p40,EMERGENCIA,INCERTO,"O relato trata de dificuldade no parto, assunto não abordado no trecho de protocolo fornecido."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p41,EMERGENCIA,INCERTO,O relato não traz informações suficientes para definir a gravidade com segurança.
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p42,EMERGENCIA,EMERGENCIA,"O filhote esta molinho e tremendo, indicando risco grave que exige atendimento veterinario imediato."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p43,EMERGENCIA,EMERGENCIA,"Sua cadela apresenta tremores e rigidez enquanto amamenta, indicando uma emergencia veterinaria grave."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p44,NAO_EMERGENCIA,NAO_EMERGENCIA,O gato comeu pouco e esta com comportamento normal hoje de manha.
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p45,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato apresenta apenas espirros leves e coriza, mantendo o apetite e comportamento normal."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p46,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato vai mais vezes ao banheiro, mas urina normalmente sem fazer força, indicando caso leve."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p47,NAO_EMERGENCIA,NAO_EMERGENCIA,Os sintomas relatados são leves e não indicam risco iminente à vida.
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p48,NAO_EMERGENCIA,NAO_EMERGENCIA,O cachorro vomitou apenas uma vez e continua comendo e agindo normalmente.
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p49,NAO_EMERGENCIA,NAO_EMERGENCIA,"A dificuldade para levantar ocorre há meses e melhora após caminhar, indicando um quadro crônico e leve."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p50,NAO_EMERGENCIA,NAO_EMERGENCIA,"O inchaço é pequeno e local, sem sinais graves ou risco imediato."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p51,NAO_EMERGENCIA,NAO_EMERGENCIA,A tosse é leve e o cão continua ativo e comendo normalmente.
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p52,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato apresenta olho vermelho sem dor e consegue abrir o olho normalmente, sem sinais graves."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p53,NAO_EMERGENCIA,NAO_EMERGENCIA,O intervalo entre os filhotes esta dentro do tempo considerado normal.
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p54,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cachorro está apenas tremendo devido aos trovões, sem sinais de risco imediato à vida."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p55,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal manca levemente, ainda apoia a pata e está sem inchaço, o que não indica urgência imediata."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p56,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato apresenta coceira leve e casquinhas, mas come bem e brinca normal."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p57,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal está se alimentando, bebe água normalmente e não apresenta vômitos ou diarreia."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p58,NAO_EMERGENCIA,NAO_EMERGENCIA,"O ferimento não é uma emergência imediata, mas deve ser avaliado nas próximas vinte e quatro horas."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p59,NAO_EMERGENCIA,NAO_EMERGENCIA,Beber muita água sem outros sintomas graves não é uma emergência imediata.
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p60,NAO_EMERGENCIA,NAO_EMERGENCIA,"O corte é pequeno, parou de sangrar sozinho e o animal está bem."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p61,NAO_EMERGENCIA,NAO_EMERGENCIA,O tártaro e o mau hálito são sinais leves que podem aguardar uma consulta de rotina.
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p62,NAO_EMERGENCIA,NAO_EMERGENCIA,"O carocinho na barriga está estável e já foi avaliado anteriormente, sem sinais de urgência."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p63,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cao esta bem e sem sinais graves, mas precisa de consulta veterinaria em breve."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p64,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato tem carrapatos mas está se comportando normalmente, sem nenhum sinal de alerta."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p65,NAO_EMERGENCIA,NAO_EMERGENCIA,"A respiração do cão normalizou após descanso na sombra, indicando quadro leve."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p66,NAO_EMERGENCIA,INCERTO,"O relato não traz informações sobre sintomas ou urgência, apenas pede dica sobre ração."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p67,NAO_EMERGENCIA,NAO_EMERGENCIA,"O relato trata apenas de dúvida sobre a data da vacinação anual, sem apresentar nenhum sinal grave."
+e5_fichas_top1,dev,gemini-3.5-flash-lite,p68,INCERTO,INCERTO,O relato não traz informações suficientes sobre sintomas claros para definir a gravidade do caso.
+e5_fichas_top1,calib,gemini-3.5-flash-lite,p01,EMERGENCIA,EMERGENCIA,"O animal apresenta tremores, convulsão e salivação excessiva após possível envenenamento."
+e5_fichas_top1,calib,gemini-3.5-flash-lite,p02,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal apresenta sintomas leves, mantendo-se ativo e comendo normalmente, sem risco imediato à vida."
+e5_fichas_top1,calib,gemini-3.5-flash-lite,p03,EMERGENCIA,EMERGENCIA,"O animal apresenta cabeça torta, desequilíbrio e olhos tremendo de início súbito."
+e5_fichas_top1,calib,gemini-3.5-flash-lite,p04,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal comeu algo fora da dieta mas continua normal e brincando, sem sinais graves."
+e5_fichas_top1,calib,gemini-3.5-flash-lite,p05,EMERGENCIA,EMERGENCIA,Intoxicação por medicamento humano e gengiva arroxeada são sinais de risco grave.
+e5_fichas_top1,calib,gemini-3.5-flash-lite,p06,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato vomitou apenas uma vez, continua ativo e comendo normalmente, indicando um quadro leve."
+e5_fichas_top1,calib,gemini-3.5-flash-lite,p07,EMERGENCIA,EMERGENCIA,"O cão tenta vomitar sem sucesso e está com a barriga estufada, indicando risco grave."
+e5_fichas_top1,calib,gemini-3.5-flash-lite,p08,EMERGENCIA,EMERGENCIA,"Fazer força para urinar sem conseguir é sinal de obstrução urinária, risco grave à vida."
+e5_fichas_top1,calib,gemini-3.5-flash-lite,p09,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato vai mais vezes à caixa, mas urina normalmente e sem dor."
+e5_fichas_top1,calib,gemini-3.5-flash-lite,p10,EMERGENCIA,EMERGENCIA,"O corrimento purulento após o cio indica risco grave de piometra, exigindo atendimento imediato."
+e5_fichas_top1,calib,gemini-3.5-flash-lite,p11,NAO_EMERGENCIA,NAO_EMERGENCIA,"A cadela esta ativa, comendo bem e brincando, sem sinais graves relatados."
+e5_fichas_top1,calib,gemini-3.5-flash-lite,p12,EMERGENCIA,EMERGENCIA,"O gato apresenta paralisia repentina, dor intensa e respiração acelerada, indicando risco grave."
+e5_fichas_top1,calib,gemini-3.5-flash-lite,p13,NAO_EMERGENCIA,NAO_EMERGENCIA,"A dificuldade para levantar ocorre há meses e melhora com o movimento, sendo um sinal leve."
+e5_fichas_top1,calib,gemini-3.5-flash-lite,p14,EMERGENCIA,INCERTO,O relato não traz informação suficiente para decidir a urgência com base nos protocolos fornecidos.
+e5_fichas_top1,calib,gemini-3.5-flash-lite,p15,INCERTO,INCERTO,O relato não traz informações suficientes sobre os sintomas do animal para definir a urgência.
+e5_fichas_top1,calib,gemini-3.5-flash-lite,p16,NAO_EMERGENCIA,INCERTO,O relato não traz informações suficientes sobre sintomas físicos do animal para decidir a urgência.
+e5_fichas_top1,calib,gemini-3.5-flash-lite,p17,EMERGENCIA,EMERGENCIA,"O olho do seu cachorro saltou para fora após uma briga, configurando uma grave emergência."
+e5_fichas_top1,calib,gemini-3.5-flash-lite,p18,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato apresenta apenas olho vermelho e remela, sem dor e mantendo o comportamento normal."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b01,EMERGENCIA,EMERGENCIA,Ingestão de chocolate com tremores e vômitos indica risco e exige atendimento veterinário imediato.
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b02,EMERGENCIA,EMERGENCIA,"Sua gata tenta urinar sem sucesso e chora de dor, indicando risco grave."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b03,EMERGENCIA,EMERGENCIA,"O cão apresenta dificuldade para respirar, o que indica risco imediato à vida."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b04,EMERGENCIA,EMERGENCIA,"O cão apresentou convulsão com perda de consciência e tremores, sendo um risco grave que exige atendimento imediato."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b05,NAO_EMERGENCIA,NAO_EMERGENCIA,"A gata apresenta apenas espirros leves, comendo e brincando bem, sem sinais de gravidade."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b06,EMERGENCIA,EMERGENCIA,"O cão foi atropelado e apresenta sangramento e dificuldade para apoiar a pata, exigindo atendimento imediato."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b07,EMERGENCIA,EMERGENCIA,"O cão apresenta vômito e diarreia persistentes acompanhados de prostração, indicando risco imediato."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b08,EMERGENCIA,EMERGENCIA,"O animal ingeriu cebola e alho e apresenta fraqueza e gengiva pálida, indicando risco grave."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b09,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal apresenta coceira e casquinha na pele, mas está comendo bem e não há sinais graves."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b10,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cão manca de leve, mas ainda apoia o pé no chão e come normalmente."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b11,NAO_EMERGENCIA,NAO_EMERGENCIA,"A gata apresenta apenas lacrimejamento e remela leves, sem inchaço, indicando um quadro que pode aguardar consulta."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b12,EMERGENCIA,EMERGENCIA,"O cão apresenta barriga inchada e dura tentando vomitar sem sucesso, indicando risco grave à vida."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b13,EMERGENCIA,EMERGENCIA,O sangramento intenso e contínuo após um corte indica risco e necessita de atendimento imediato.
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b14,EMERGENCIA,EMERGENCIA,"O filhote está molinho, sem mamar e com a boca fria, indicando risco grave à vida."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b15,EMERGENCIA,EMERGENCIA,"Fazer força para urinar sem conseguir e chorar são sinais de obstrução, exigindo atendimento urgente."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b16,EMERGENCIA,EMERGENCIA,O inchaco rapido no focinho apos picada de abelha indica risco grave.
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b17,EMERGENCIA,EMERGENCIA,"Sua cadela apresenta paralisia súbita e está ofegante, indicando risco grave à vida."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b18,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato apresenta apenas espirro e coriza leves, comendo bem e sem sinais de alarme."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b19,EMERGENCIA,EMERGENCIA,A ingestão de paracetamol e os sintomas de vômito e rosto inchado indicam uma emergência grave.
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b20,EMERGENCIA,EMERGENCIA,"O animal apresenta tremores, salivação excessiva e pupilas pequenas após acesso ao quintal."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b21,EMERGENCIA,EMERGENCIA,O uso de antipulgas de cão em gato causa intoxicação grave e risco à vida.
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b22,EMERGENCIA,EMERGENCIA,"O cão ingeriu veneno de rato e apresenta sangramento, indicando risco grave à vida."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b23,EMERGENCIA,EMERGENCIA,"A gatinha é filhote, apresenta vômito, diarreia com sangue e apatia, indicando alto risco à vida."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b24,EMERGENCIA,EMERGENCIA,Sua cadela apresenta sintomas graves como pus na vulva e apatia após o cio.
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b25,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cão comeu lixo mas continua normal, comendo e brincando."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b26,NAO_EMERGENCIA,NAO_EMERGENCIA,"A gata urina normalmente e sem esforço, sem sinais de gravidade imediata."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b27,EMERGENCIA,EMERGENCIA,"O cão apresenta colapso e gengiva muito pálida, indicando risco grave à vida."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b28,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal apresenta apenas dificuldade leve ao levantar que melhora após andar, sem outros sintomas graves."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b29,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sua gata comeu menos hoje mas está ativa e sem outros sintomas, podendo aguardar atendimento."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b30,EMERGENCIA,EMERGENCIA,"Sua gata apresenta vômitos frequentes e dor abdominal após possível ingestão de barbante, exigindo atendimento urgente."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b31,NAO_EMERGENCIA,NAO_EMERGENCIA,O gato tem um abscesso por mordida mas respira normalmente sem outros sinais graves.
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b32,EMERGENCIA,EMERGENCIA,"O cão apresenta tosse noturna com esforço respiratório e respiração rápida, indicando risco grave."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b33,EMERGENCIA,EMERGENCIA,"Sua cadela está vomitando muito, fraca e com respiração rápida, o que indica risco imediato."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b34,EMERGENCIA,EMERGENCIA,"O filhote apresenta contrações repetidas nas pernas, indicando risco e necessidade de atendimento imediato."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b35,EMERGENCIA,EMERGENCIA,"Mais de 30 minutos de esforço sem filhote indica distocia, que é uma emergência veterinária."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b36,EMERGENCIA,EMERGENCIA,"O gato apresenta paralisia repentina, dor intensa, dificuldade para respirar e patas frias."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b37,EMERGENCIA,EMERGENCIA,"O cão apresenta febre, vômitos intensos, apatia e olhos amarelados após contato com água de enchente."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b38,EMERGENCIA,EMERGENCIA,A ingestão de lírio em gatos causa insuficiência renal fatal e é uma emergência médica.
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b39,EMERGENCIA,EMERGENCIA,"O contato com sapo libera veneno perigoso, causando sintomas graves como salivação excessiva, vômito e tremores."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b40,NAO_EMERGENCIA,NAO_EMERGENCIA,"O tremor é leve, o cão está consciente e anda normalmente, podendo aguardar consulta comum."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b41,NAO_EMERGENCIA,NAO_EMERGENCIA,"A cadela esta ativa e comendo bem, indicando um quadro leve que pode aguardar consulta."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b42,EMERGENCIA,EMERGENCIA,"O gato desmaiou, não fica em pé e apresenta gengiva muito branca, indicando risco grave."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b43,EMERGENCIA,EMERGENCIA,"A pancada no rosto, olho fechado, opaco e com dor indicam risco e exigem atendimento veterinário imediato."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b44,EMERGENCIA,EMERGENCIA,"Sua gata apresenta dificuldade respiratória grave com língua azul, o que indica risco imediato à vida."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b45,EMERGENCIA,EMERGENCIA,Picada de cobra com inchaço rápido e fraqueza indica risco iminente à vida do animal.
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b46,EMERGENCIA,EMERGENCIA,A fraqueza intensa e a gengiva quase branca indicam risco grave e necessitam de atendimento imediato.
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b47,EMERGENCIA,EMERGENCIA,"O filhote está muito fraco, tremendo e quase sem responder, indicando risco grave à vida."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b48,EMERGENCIA,INCERTO,O relato menciona sintomas neurológicos que não constam nas fontes disponíveis para decisão.
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b49,EMERGENCIA,EMERGENCIA,A queda de altura e a respiração rápida indicam risco iminente à vida e exigem atendimento imediato.
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b50,EMERGENCIA,EMERGENCIA,"Choque elétrico, queimadura e dificuldade respiratória indicam risco iminente à vida."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b51,EMERGENCIA,EMERGENCIA,"Sua cadela apresenta tremores, rigidez e inquietação enquanto amamenta, indicando uma urgência obstétrica grave."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b52,EMERGENCIA,EMERGENCIA,Ingestão de uva passa e xilitol causa intoxicação grave e risco à vida.
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b53,NAO_EMERGENCIA,NAO_EMERGENCIA,"A cadela está calma, cuidando dos filhotes e sem fazer esforço há uma hora."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b54,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato foi picado, mas apresenta apenas um pequeno caroço e comportamento normal."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b55,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal apresenta tosse leve, mas continua ativo, comendo e respirando bem."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b56,NAO_EMERGENCIA,NAO_EMERGENCIA,"Os sinais relatados são leves, mantendo a gata ativa e sem vômitos."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b57,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal apresenta sinais leves de coceira e vermelhidão, mantendo-se ativo e sem alterações graves."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b58,NAO_EMERGENCIA,NAO_EMERGENCIA,"O corte é superficial, parou de sangrar e a gata está bem."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b59,NAO_EMERGENCIA,NAO_EMERGENCIA,O tártaro e o mau hálito são problemas leves que podem aguardar uma consulta de rotina.
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b60,NAO_EMERGENCIA,NAO_EMERGENCIA,"O caroço cresce devagar há meses, não causa dor e o animal está bem."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b61,NAO_EMERGENCIA,NAO_EMERGENCIA,Os sinais relatados foram leves e passageiros após descanso na sombra.
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b62,NAO_EMERGENCIA,NAO_EMERGENCIA,"Seu gato foi mordido por um morcego, mas não é emergência imediata e pode aguardar consulta veterinária."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b63,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cão está ativo, comendo e com gengiva saudável, indicando sinais leves sem risco imediato."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b64,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cachorro vomitou apenas uma vez, mas continua comendo e brincando normalmente."
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b65,NAO_EMERGENCIA,NAO_EMERGENCIA,Sua gata teve um vômito isolado e continua ativa e comendo bem.
+e5_fichas_top1,regua,gemini-3.5-flash-lite,b66,NAO_EMERGENCIA,NAO_EMERGENCIA,Fezes moles isoladas em animal ativo e comendo bem indicam um caso leve que pode aguardar.
+sem_rag,dev,gemini-3.5-flash-lite,p19,EMERGENCIA,EMERGENCIA,Ingestão de chocolate causa intoxicação grave e os sintomas indicam sofrimento imediato.
+sem_rag,dev,gemini-3.5-flash-lite,p20,EMERGENCIA,EMERGENCIA,A ingestão de cebola e os sintomas graves de fraqueza e gengiva pálida indicam risco imediato à vida.
+sem_rag,dev,gemini-3.5-flash-lite,p21,EMERGENCIA,EMERGENCIA,Respirar com a boca aberta e movimento rápido do peito são sinais de grave falta de ar.
+sem_rag,dev,gemini-3.5-flash-lite,p22,EMERGENCIA,EMERGENCIA,"Os sintomas indicam uma possível crise convulsiva súbita, exigindo avaliação veterinária imediata para garantir a segurança do cão."
+sem_rag,dev,gemini-3.5-flash-lite,p23,EMERGENCIA,EMERGENCIA,O sangramento intenso e contínuo após atropelamento indica risco iminente à vida.
+sem_rag,dev,gemini-3.5-flash-lite,p24,EMERGENCIA,EMERGENCIA,O esforço para urinar acompanhado de gemidos indica dor intensa e risco grave de obstrução urinária.
+sem_rag,dev,gemini-3.5-flash-lite,p25,EMERGENCIA,EMERGENCIA,"O gato apresenta vômitos frequentes, diarreia com sangue e prostração severa, indicando risco imediato à vida."
+sem_rag,dev,gemini-3.5-flash-lite,p26,EMERGENCIA,EMERGENCIA,"Os sintomas indicam superaquecimento grave e risco de vida, exigindo atendimento veterinário imediato."
+sem_rag,dev,gemini-3.5-flash-lite,p27,EMERGENCIA,EMERGENCIA,Barriga estufada e tentativa frustrada de vomito indicam risco grave de torcao gastrica.
+sem_rag,dev,gemini-3.5-flash-lite,p28,EMERGENCIA,EMERGENCIA,"Filhote muito fraco, gelado e sem mamar apresenta risco iminente de vida."
+sem_rag,dev,gemini-3.5-flash-lite,p29,EMERGENCIA,EMERGENCIA,O cão apresenta paralisia súbita nas patas traseiras acompanhada de choro por dor intensa.
+sem_rag,dev,gemini-3.5-flash-lite,p30,EMERGENCIA,EMERGENCIA,O sangramento nasal após possível contato com veneno de rato indica risco grave à vida.
+sem_rag,dev,gemini-3.5-flash-lite,p31,EMERGENCIA,EMERGENCIA,O paracetamol é altamente tóxico para gatos e causa alteração grave na cor das mucosas.
+sem_rag,dev,gemini-3.5-flash-lite,p32,EMERGENCIA,EMERGENCIA,O inchaço rápido pelo rosto e a respiração ruidosa indicam reação alérgica grave e risco à vida.
+sem_rag,dev,gemini-3.5-flash-lite,p33,EMERGENCIA,EMERGENCIA,A tosse noturna associada ao cansaço em cão com histórico cardíaco indica risco de insuficiência cardíaca.
+sem_rag,dev,gemini-3.5-flash-lite,p34,EMERGENCIA,EMERGENCIA,A fraqueza extrema e a gengiva quase branca indicam risco iminente à vida.
+sem_rag,dev,gemini-3.5-flash-lite,p35,EMERGENCIA,EMERGENCIA,Filhote não vacinado com diarreia com sangue e apatia corre sério risco de vida.
+sem_rag,dev,gemini-3.5-flash-lite,p36,EMERGENCIA,EMERGENCIA,"O olho esbranquiçado, fechado e com dor indica lesão ocular grave que necessita de avaliação veterinária imediata."
+sem_rag,dev,gemini-3.5-flash-lite,p37,EMERGENCIA,EMERGENCIA,"O gato apresenta tremores, salivação excessiva e fraqueza após contato com produto para cães, indicando possível intoxicação grave."
+sem_rag,dev,gemini-3.5-flash-lite,p38,EMERGENCIA,EMERGENCIA,Ingestão de linha com vômitos frequentes e falta de apetite indica risco grave.
+sem_rag,dev,gemini-3.5-flash-lite,p39,EMERGENCIA,EMERGENCIA,"O cão apresenta dificuldade respiratória aguda e sinais de obstrução na boca, indicando risco imediato à vida."
+sem_rag,dev,gemini-3.5-flash-lite,p40,EMERGENCIA,EMERGENCIA,"Mais de duas horas fazendo força sem sucesso indica distocia, que é risco à vida."
+sem_rag,dev,gemini-3.5-flash-lite,p41,EMERGENCIA,EMERGENCIA,"Os tiques na boca e o desequilíbrio indicam risco à vida, exigindo atendimento veterinário imediato."
+sem_rag,dev,gemini-3.5-flash-lite,p42,EMERGENCIA,EMERGENCIA,"O filhote esta muito fraco e tremendo, o que indica risco grave para sua vida."
+sem_rag,dev,gemini-3.5-flash-lite,p43,EMERGENCIA,EMERGENCIA,"A cadela apresenta rigidez e tremores graves logo após o parto, indicando risco iminente à vida."
+sem_rag,dev,gemini-3.5-flash-lite,p44,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato comeu pouco e está se comportando normalmente, sem apresentar sinais graves."
+sem_rag,dev,gemini-3.5-flash-lite,p45,NAO_EMERGENCIA,NAO_EMERGENCIA,Os sintomas são leves e o gato continua comendo e brincando normalmente.
+sem_rag,dev,gemini-3.5-flash-lite,p46,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato vai mais vezes à caixa, mas urina normalmente sem fazer força, indicando um caso leve."
+sem_rag,dev,gemini-3.5-flash-lite,p47,NAO_EMERGENCIA,NAO_EMERGENCIA,O cão coça a orelha há dias sem sinais graves como perda de equilíbrio.
+sem_rag,dev,gemini-3.5-flash-lite,p48,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cão vomitou apenas uma vez, mas continua comendo bem e com comportamento normal."
+sem_rag,dev,gemini-3.5-flash-lite,p49,NAO_EMERGENCIA,NAO_EMERGENCIA,"A dificuldade para levantar ocorre há meses e melhora após caminhar, indicando um quadro crônico e leve."
+sem_rag,dev,gemini-3.5-flash-lite,p50,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cão apresenta apenas um inchaço pequeno e continua brincando normalmente, sem sinais de sofrimento."
+sem_rag,dev,gemini-3.5-flash-lite,p51,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cão apresenta tosse seca, mas continua ativo e disposto, indicando um caso leve."
+sem_rag,dev,gemini-3.5-flash-lite,p52,NAO_EMERGENCIA,NAO_EMERGENCIA,"Os sintomas oculares são leves e o gato consegue abrir o olho normalmente, sem sinais de dor intensa."
+sem_rag,dev,gemini-3.5-flash-lite,p53,NAO_EMERGENCIA,INCERTO,O relato não traz informações suficientes sobre complicações para decidir com certeza.
+sem_rag,dev,gemini-3.5-flash-lite,p54,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cão está apenas tremendo devido aos trovões, mas permanece consciente, ativo e responsivo."
+sem_rag,dev,gemini-3.5-flash-lite,p55,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cão manca levemente, mas ainda apoia a pata e não apresenta cortes aparentes."
+sem_rag,dev,gemini-3.5-flash-lite,p56,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato apresenta coceira leve e casquinhas, mas come e brinca normalmente, sem risco imediato."
+sem_rag,dev,gemini-3.5-flash-lite,p57,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cão comeu parte da ração, bebe água normalmente e não apresenta vômitos ou diarreia."
+sem_rag,dev,gemini-3.5-flash-lite,p58,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato tem uma marca de mordida limpa e sem inchapo, sendo um caso leve."
+sem_rag,dev,gemini-3.5-flash-lite,p59,NAO_EMERGENCIA,NAO_EMERGENCIA,O aumento da sede e micção são leves e o gato continua ativo.
+sem_rag,dev,gemini-3.5-flash-lite,p60,NAO_EMERGENCIA,NAO_EMERGENCIA,"O corte é pequeno, parou de sangrar rapidamente e o animal não demonstra desconforto."
+sem_rag,dev,gemini-3.5-flash-lite,p61,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato come normalmente e sem dor, indicando um problema dentario leve que pode aguardar consulta."
+sem_rag,dev,gemini-3.5-flash-lite,p62,NAO_EMERGENCIA,NAO_EMERGENCIA,"O carocinho é antigo e está estável, sem indicar risco iminente à vida do animal."
+sem_rag,dev,gemini-3.5-flash-lite,p63,NAO_EMERGENCIA,EMERGENCIA,"Contato com morcego apresenta risco grave de raiva, exigindo atendimento imediato e avaliação do médico veterinário."
+sem_rag,dev,gemini-3.5-flash-lite,p64,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato foi encontrado com carrapatos, mas apresenta comportamento totalmente normal e sem sintomas."
+sem_rag,dev,gemini-3.5-flash-lite,p65,NAO_EMERGENCIA,NAO_EMERGENCIA,O animal ofegou após correr mas normalizou rapidamente após descanso e água.
+sem_rag,dev,gemini-3.5-flash-lite,p66,NAO_EMERGENCIA,NAO_EMERGENCIA,"O relato trata apenas de orientacao sobre racao para emagrecimento, sem sinais de doenca ou sofrimento."
+sem_rag,dev,gemini-3.5-flash-lite,p67,NAO_EMERGENCIA,NAO_EMERGENCIA,"O relato trata apenas de dúvida sobre o prazo da vacina, sem apresentar nenhum sintoma."
+sem_rag,dev,gemini-3.5-flash-lite,p68,INCERTO,INCERTO,O relato não traz informações suficientes para definir a urgência do atendimento.
+sem_rag,calib,gemini-3.5-flash-lite,p01,EMERGENCIA,EMERGENCIA,"O cão ingeriu isca suspeita e apresenta tremores e convulsão, indicando risco grave à vida."
+sem_rag,calib,gemini-3.5-flash-lite,p02,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal apresenta coceira leve, sem outros sintomas graves, mantendo apetite e comportamento normais."
+sem_rag,calib,gemini-3.5-flash-lite,p03,EMERGENCIA,EMERGENCIA,Os sintomas súbitos indicam grave alteração neurológica e exigem atendimento veterinário imediato.
+sem_rag,calib,gemini-3.5-flash-lite,p04,NAO_EMERGENCIA,NAO_EMERGENCIA,O cachorro comeu bolo mas está comendo e brincando normalmente.
+sem_rag,calib,gemini-3.5-flash-lite,p05,EMERGENCIA,EMERGENCIA,"O gato recebeu medicação humana e apresenta vômito e gengiva arroxeada, indicando risco grave."
+sem_rag,calib,gemini-3.5-flash-lite,p06,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato vomitou uma vez, mas está comendo e brincando normalmente."
+sem_rag,calib,gemini-3.5-flash-lite,p07,EMERGENCIA,EMERGENCIA,Tentativa de vomitar sem sucesso e barriga estufada indicam risco grave de torção gástrica.
+sem_rag,calib,gemini-3.5-flash-lite,p08,EMERGENCIA,EMERGENCIA,"A dificuldade para urinar com dor indica possível obstrução urinária, que é grave e fatal."
+sem_rag,calib,gemini-3.5-flash-lite,p09,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato vai mais à caixa, mas urina normalmente sem dor ou esforço."
+sem_rag,calib,gemini-3.5-flash-lite,p10,EMERGENCIA,EMERGENCIA,"Corrimento com pus após o cio e apatia indicam infecção uterina grave, exigindo atendimento veterinário imediato."
+sem_rag,calib,gemini-3.5-flash-lite,p11,NAO_EMERGENCIA,NAO_EMERGENCIA,"A cadela apresenta sangramento e inchaço, mas continua ativa, comendo e brincando normalmente."
+sem_rag,calib,gemini-3.5-flash-lite,p12,EMERGENCIA,EMERGENCIA,"O gato apresenta paralisia súbita, dor intensa e respiração acelerada, indicando risco imediato à vida."
+sem_rag,calib,gemini-3.5-flash-lite,p13,NAO_EMERGENCIA,NAO_EMERGENCIA,"A dificuldade para levantar ocorre há meses e melhora ao andar, indicando um quadro crônico sem urgência."
+sem_rag,calib,gemini-3.5-flash-lite,p14,EMERGENCIA,EMERGENCIA,O inchaço rápido na pata pode indicar picada de animal peçonhento ou grave lesão.
+sem_rag,calib,gemini-3.5-flash-lite,p15,INCERTO,INCERTO,O relato não traz informações suficientes sobre os sintomas do animal para definir a urgência.
+sem_rag,calib,gemini-3.5-flash-lite,p16,NAO_EMERGENCIA,NAO_EMERGENCIA,O comportamento relatado é leve e não indica risco à vida ou sofrimento imediato.
+sem_rag,calib,gemini-3.5-flash-lite,p17,EMERGENCIA,EMERGENCIA,O deslocamento do globo ocular é gravíssimo e exige atendimento veterinário imediato para evitar danos irreversíveis.
+sem_rag,calib,gemini-3.5-flash-lite,p18,NAO_EMERGENCIA,NAO_EMERGENCIA,"Os sintomas oculares são leves e o gato está ativo, sem sinais de sofrimento."
+sem_rag,regua,gemini-3.5-flash-lite,b01,EMERGENCIA,EMERGENCIA,Ingestão de chocolate com tremores e vômitos indica intoxicação grave que exige atendimento veterinário imediato.
+sem_rag,regua,gemini-3.5-flash-lite,b02,EMERGENCIA,EMERGENCIA,"A gata tenta urinar sem sucesso desde ontem e mia de dor, indicando risco grave à vida."
+sem_rag,regua,gemini-3.5-flash-lite,b03,EMERGENCIA,EMERGENCIA,A dificuldade respiratória grave e a língua roxa indicam risco iminente à vida.
+sem_rag,regua,gemini-3.5-flash-lite,b04,EMERGENCIA,EMERGENCIA,A convulsão indica risco à vida e exige atendimento veterinário imediato.
+sem_rag,regua,gemini-3.5-flash-lite,b05,NAO_EMERGENCIA,NAO_EMERGENCIA,Os espirros ocasionais são leves e a gata mantém bom apetite e comportamento normal.
+sem_rag,regua,gemini-3.5-flash-lite,b06,EMERGENCIA,EMERGENCIA,"Atropelamentos causam risco de vida e dor intensa, exigindo atendimento veterinário imediato."
+sem_rag,regua,gemini-3.5-flash-lite,b07,EMERGENCIA,EMERGENCIA,Vômitos e diarreia frequentes com apatia indicam risco de desidratação e exigem atendimento imediato.
+sem_rag,regua,gemini-3.5-flash-lite,b08,EMERGENCIA,EMERGENCIA,"A ingestão de cebola e alho, junto com fraqueza e gengiva pálida, indica possível intoxicação grave."
+sem_rag,regua,gemini-3.5-flash-lite,b09,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal apresenta coceira e casquinha leves, mas continua comendo bem e sem risco imediato."
+sem_rag,regua,gemini-3.5-flash-lite,b10,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cão manca levemente e ainda apoia o pé no chão, indicando um sinal leve."
+sem_rag,regua,gemini-3.5-flash-lite,b11,NAO_EMERGENCIA,NAO_EMERGENCIA,"Os sintomas oculares são leves e sem sinais de gravidade, podendo aguardar consulta comum."
+sem_rag,regua,gemini-3.5-flash-lite,b12,EMERGENCIA,EMERGENCIA,Barriga inchada e dura com tentativa de vomitar sem sucesso indica risco grave de torção gástrica.
+sem_rag,regua,gemini-3.5-flash-lite,b13,EMERGENCIA,EMERGENCIA,O sangramento intenso e contínuo na pata indica risco de perda excessiva de sangue.
+sem_rag,regua,gemini-3.5-flash-lite,b14,EMERGENCIA,EMERGENCIA,"O filhote apresenta fraqueza extrema, recusa para mamar e hipotermia, indicando risco grave à vida."
+sem_rag,regua,gemini-3.5-flash-lite,b15,EMERGENCIA,EMERGENCIA,"A dificuldade para urinar com dor e choro indica obstrução urinária grave, necessitando de atendimento imediato."
+sem_rag,regua,gemini-3.5-flash-lite,b16,EMERGENCIA,EMERGENCIA,O inchaço rápido no focinho após picada de abelha indica risco de reação alérgica grave.
+sem_rag,regua,gemini-3.5-flash-lite,b17,EMERGENCIA,EMERGENCIA,A dificuldade súbita para mover as pernas traseiras associada à of Fegamento indica risco grave.
+sem_rag,regua,gemini-3.5-flash-lite,b18,NAO_EMERGENCIA,NAO_EMERGENCIA,Os sintomas relatados são leves e o gato continua comendo bem.
+sem_rag,regua,gemini-3.5-flash-lite,b19,EMERGENCIA,EMERGENCIA,Ingestão de paracetamol e sintomas como vômito e inchaço indicam risco grave à vida.
+sem_rag,regua,gemini-3.5-flash-lite,b20,EMERGENCIA,EMERGENCIA,Esses sinais súbitos indicam risco grave e o cão precisa de atendimento veterinário imediato.
+sem_rag,regua,gemini-3.5-flash-lite,b21,EMERGENCIA,EMERGENCIA,O uso de produto para cães em gatos causa forte intoxicação e risco à vida.
+sem_rag,regua,gemini-3.5-flash-lite,b22,EMERGENCIA,EMERGENCIA,"O cão apresenta sinais graves de sangramento e fraqueza após possível intoxicação, exigindo atendimento imediato."
+sem_rag,regua,gemini-3.5-flash-lite,b23,EMERGENCIA,EMERGENCIA,"O animal apresenta vômito, diarreia com sangue e apatia severa, indicando alto risco à vida."
+sem_rag,regua,gemini-3.5-flash-lite,b24,EMERGENCIA,EMERGENCIA,"Pus na vulva e apatia pós-cio indicam infecção uterina grave chamada piometra, exigindo atendimento imediato."
+sem_rag,regua,gemini-3.5-flash-lite,b25,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cachorro comeu lixo, mas está ativo, comendo e brincando normalmente, sem sinais graves."
+sem_rag,regua,gemini-3.5-flash-lite,b26,NAO_EMERGENCIA,NAO_EMERGENCIA,"A gata apresenta alteração urinária leve, mas está bem disposta e sem sinais de sofrimento intenso."
+sem_rag,regua,gemini-3.5-flash-lite,b27,EMERGENCIA,EMERGENCIA,"O cão apresenta fraqueza extrema, incapacidade de levantar e gengivas pálidas, indicando risco grave à vida."
+sem_rag,regua,gemini-3.5-flash-lite,b28,NAO_EMERGENCIA,NAO_EMERGENCIA,"A dificuldade para levantar é leve e ele continua comendo normalmente, podendo aguardar consulta comum."
+sem_rag,regua,gemini-3.5-flash-lite,b29,NAO_EMERGENCIA,NAO_EMERGENCIA,"A gata está ativa, bebe água e não apresenta vômitos ou diarreia, sendo um caso leve."
+sem_rag,regua,gemini-3.5-flash-lite,b30,EMERGENCIA,EMERGENCIA,Ingestão de barbante com vômitos e dor abdominal indica risco de obstrução intestinal.
+sem_rag,regua,gemini-3.5-flash-lite,b31,NAO_EMERGENCIA,EMERGENCIA,O caroço quente com pus indica infecção grave decorrente de briga que exige atendimento rápido.
+sem_rag,regua,gemini-3.5-flash-lite,b32,EMERGENCIA,EMERGENCIA,A respiração rápida e a tosse indicam risco à vida e sofrimento intenso para um cão cardíaco.
+sem_rag,regua,gemini-3.5-flash-lite,b33,EMERGENCIA,EMERGENCIA,A cadela apresenta múltiplos sintomas graves de risco à vida e exige atendimento imediato.
+sem_rag,regua,gemini-3.5-flash-lite,b34,EMERGENCIA,EMERGENCIA,"As contrações repetidas nas pernas indicam risco e sofrimento intenso, exigindo atendimento veterinário imediato."
+sem_rag,regua,gemini-3.5-flash-lite,b35,EMERGENCIA,EMERGENCIA,Fazer força por muito tempo sem sucesso no parto indica sofrimento e risco para a cadela.
+sem_rag,regua,gemini-3.5-flash-lite,b36,EMERGENCIA,EMERGENCIA,"O gato apresenta paralisia súbita nas patas traseiras e respiração rápida, indicando risco grave à vida."
+sem_rag,regua,gemini-3.5-flash-lite,b37,EMERGENCIA,EMERGENCIA,"Os sintomas indicam risco à vida e sofrimento intenso, exigindo atendimento imediato."
+sem_rag,regua,gemini-3.5-flash-lite,b38,EMERGENCIA,EMERGENCIA,Lírios são altamente tóxicos para gatos e o vômito indica risco grave à vida.
+sem_rag,regua,gemini-3.5-flash-lite,b39,EMERGENCIA,EMERGENCIA,O contato com sapo causa sintomas graves de intoxicação que exigem atendimento veterinário imediato.
+sem_rag,regua,gemini-3.5-flash-lite,b40,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cachorro está consciente, anda normalmente e não teve convulsão, indicando um quadro leve."
+sem_rag,regua,gemini-3.5-flash-lite,b41,NAO_EMERGENCIA,NAO_EMERGENCIA,"A cadela apresenta sangramento e inchaço, mas está ativa e comendo bem, sem sinais de gravidade."
+sem_rag,regua,gemini-3.5-flash-lite,b42,EMERGENCIA,EMERGENCIA,"O gato desmaiou, não fica em pé e apresenta gengiva branca, indicando risco grave à vida."
+sem_rag,regua,gemini-3.5-flash-lite,b43,EMERGENCIA,EMERGENCIA,"O trauma facial com olho fechado, opaco e dor indica lesão ocular grave que requer atendimento imediato."
+sem_rag,regua,gemini-3.5-flash-lite,b44,EMERGENCIA,EMERGENCIA,"A gata apresenta dificuldade respiratória grave com cianose, indicando risco imediato à vida."
+sem_rag,regua,gemini-3.5-flash-lite,b45,EMERGENCIA,EMERGENCIA,"Picada de cobra é grave, causa inchaço rápido e fraqueza, exigindo atendimento veterinário imediato."
+sem_rag,regua,gemini-3.5-flash-lite,b46,EMERGENCIA,EMERGENCIA,"A gengiva quase branca, a fraqueza extrema e a febre indicam risco grave à vida."
+sem_rag,regua,gemini-3.5-flash-lite,b47,EMERGENCIA,EMERGENCIA,"O filhote está muito fraco e quase sem resposta, indicando risco grave à vida."
+sem_rag,regua,gemini-3.5-flash-lite,b48,EMERGENCIA,EMERGENCIA,"A cabeça torta, os movimentos rápidos dos olhos e a falta de equilíbrio indicam risco neurológico grave."
+sem_rag,regua,gemini-3.5-flash-lite,b49,EMERGENCIA,EMERGENCIA,A queda de altura elevada associada à respiração rápida indica risco iminente à vida.
+sem_rag,regua,gemini-3.5-flash-lite,b50,EMERGENCIA,EMERGENCIA,O choque elétrico e a dificuldade respiratória indicam risco iminente à vida do filhote.
+sem_rag,regua,gemini-3.5-flash-lite,b51,EMERGENCIA,EMERGENCIA,"A cadela apresenta sinais graves de eclampsia pós-parto, indicando risco à vida."
+sem_rag,regua,gemini-3.5-flash-lite,b52,EMERGENCIA,EMERGENCIA,Ingestão de uvas passas e xilitol é altamente tóxica para cães e exige atendimento veterinário imediato.
+sem_rag,regua,gemini-3.5-flash-lite,b53,NAO_EMERGENCIA,NAO_EMERGENCIA,"A cadela está calma, cuidando dos filhotes e sem fazer força há uma hora."
+sem_rag,regua,gemini-3.5-flash-lite,b54,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato foi picado, mas apresenta apenas um caroço pequeno e comportamento normal."
+sem_rag,regua,gemini-3.5-flash-lite,b55,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cachorro apresenta apenas tosse seca, mas continua ativo, comendo e respirando normalmente."
+sem_rag,regua,gemini-3.5-flash-lite,b56,NAO_EMERGENCIA,NAO_EMERGENCIA,"A gata bebe e urina mais, mas está ativa e sem vômitos, indicando sinais leves."
+sem_rag,regua,gemini-3.5-flash-lite,b57,NAO_EMERGENCIA,NAO_EMERGENCIA,"Os sintomas indicam inflamação leve na orelha, sem risco iminente à vida do animal."
+sem_rag,regua,gemini-3.5-flash-lite,b58,NAO_EMERGENCIA,NAO_EMERGENCIA,"O corte é pequeno, superficial e parou de sangrar, e a gata está se comportando normalmente."
+sem_rag,regua,gemini-3.5-flash-lite,b59,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal apresenta apenas tártaro e mau hálito, mas come bem e não sente dor."
+sem_rag,regua,gemini-3.5-flash-lite,b60,NAO_EMERGENCIA,NAO_EMERGENCIA,"O caroço cresce devagar há meses, não causa dor e o animal continua bem."
+sem_rag,regua,gemini-3.5-flash-lite,b61,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cão ficou ofegante após correr, mas recuperou-se rapidamente na sombra e age normalmente."
+sem_rag,regua,gemini-3.5-flash-lite,b62,NAO_EMERGENCIA,EMERGENCIA,Mordedura de morcego apresenta alto risco de transmissão de raiva e exige avaliação veterinária urgente.
+sem_rag,regua,gemini-3.5-flash-lite,b63,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal apresenta carrapatos, mas está ativo, comendo bem e com gengivas saudáveis."
+sem_rag,regua,gemini-3.5-flash-lite,b64,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cão vomitou apenas uma vez, mas já voltou a comer e continua brincando normalmente."
+sem_rag,regua,gemini-3.5-flash-lite,b65,NAO_EMERGENCIA,NAO_EMERGENCIA,"A gata vomitou mas está comendo e brincando normalmente, indicando um quadro leve."
+sem_rag,regua,gemini-3.5-flash-lite,b66,NAO_EMERGENCIA,NAO_EMERGENCIA,As fezes moles isoladas sem outros sintomas indicam um caso leve que pode aguardar consulta.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i01,EMERGENCIA,EMERGENCIA,"Lamber sapo causa envenenamento grave com risco de morte por arritmia, exigindo atendimento imediato."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i02,EMERGENCIA,INCERTO,"O relato menciona corrimento de pus e apatia, mas faltam detalhes para definir a urgência exata."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i03,EMERGENCIA,EMERGENCIA,O olho saltado para fora é uma emergência grave que pode causar a perda da visão rapidamente.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i04,EMERGENCIA,EMERGENCIA,A ingestão de uvas passas associada a vômito e fraqueza indica risco grave à vida.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i05,EMERGENCIA,INCERTO,O relato menciona pele amarelada mas nao traz informacoes suficientes para decidir a gravidade.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i06,EMERGENCIA,EMERGENCIA,Mais de 30 minutos de esforço sem sair filhote indica distocia grave e risco de vida.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i07,EMERGENCIA,EMERGENCIA,"Sua gata apresenta desequilíbrio e olhos tremendo de início súbito, o que indica uma emergência veterinária."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i08,EMERGENCIA,EMERGENCIA,O choque elétrico com dificuldade respiratória indica risco grave e necessidade de atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i09,EMERGENCIA,EMERGENCIA,"Gengivas muito brancas indicam risco grave e choque após atropelamento, exigindo atendimento imediato."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i10,EMERGENCIA,EMERGENCIA,"O cão desmaiou de repente e apresenta a gengiva muito pálida, indicando risco grave e necessidade de atendimento imediato."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i11,EMERGENCIA,EMERGENCIA,Ingestão de medicamento humano com tremores e fraqueza indica risco grave à vida.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i12,EMERGENCIA,EMERGENCIA,"O animal apresenta engasgo e língua roxa, indicando risco grave à vida e necessidade de atendimento imediato."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i13,EMERGENCIA,EMERGENCIA,O sangramento nasal após ingestão de raticida indica intoxicação grave que exige atendimento veterinário imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i14,EMERGENCIA,EMERGENCIA,"O gato faz forca sem conseguir urinar, o que indica uma obstrucao uretral grave e risco de morte."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i15,EMERGENCIA,EMERGENCIA,Ingestão de lírio em gatos causa insuficiência renal fatal e fraqueza severa exige atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i16,EMERGENCIA,EMERGENCIA,"A gata apresenta dificuldade respiratoria grave com boca aberta e respiracao acelerada, exigindo atendimento imediato."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i17,EMERGENCIA,INCERTO,"O relato menciona diabetes e hálito adocicado, mas não traz dados suficientes para confirmar urgência."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i18,EMERGENCIA,EMERGENCIA,"O gato recebeu antipulgas de cachorro e apresenta convulsões e tremores severos, indicando risco grave à vida."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i19,EMERGENCIA,EMERGENCIA,"O animal apresenta vômito, diarreia com sangue e prostração, indicando necessidade de atendimento imediato."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i20,EMERGENCIA,EMERGENCIA,Os sintomas indicam risco grave e necessitam de atendimento veterinário imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i21,EMERGENCIA,EMERGENCIA,"A gengiva branquinha indica choque, hemorragia ou anemia grave, exigindo atendimento veterinário imediato."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i22,EMERGENCIA,EMERGENCIA,"O cão apresenta sinais graves de intermação após exposição ao sol, exigindo atendimento imediato."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i23,EMERGENCIA,EMERGENCIA,A gengiva pálida indica risco grave e necessidade de atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i24,EMERGENCIA,EMERGENCIA,"O filhote apresenta tremores severos e perda de consciência, indicando risco grave à vida."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i25,EMERGENCIA,EMERGENCIA,"O cão apresentou convulsão, o que indica risco à vida e exige atendimento veterinário imediato."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i26,EMERGENCIA,EMERGENCIA,A paralisia súbita das patas traseiras indica risco grave e sofrimento intenso.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i27,EMERGENCIA,EMERGENCIA,Respiração de boca aberta após queda indica risco grave e necessita atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i28,EMERGENCIA,EMERGENCIA,Paralisia súbita das patas traseiras com extremidades geladas indica risco grave e exige atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i29,EMERGENCIA,EMERGENCIA,O inchaco no rosto e a alteracao na respiracao indicam reacao alergica grave com risco.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i30,EMERGENCIA,EMERGENCIA,"O gato comeu um fio e apresenta vômitos constantes e fraqueza, indicando alto risco de necrose intestinal."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i31,EMERGENCIA,NAO_EMERGENCIA,"O tutor relata apenas tremores leves na face, sem sinais graves associados."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i32,EMERGENCIA,EMERGENCIA,"O gato apresenta inchaco na pata, baba em excesso e incapacidade de levantar, indicando risco grave."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i33,EMERGENCIA,EMERGENCIA,A presença de diarreia com sangue e apatia em filhote indica urgência veterinária imediata.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i34,EMERGENCIA,EMERGENCIA,"O animal apresenta dificuldade respiratória grave com cianose, indicando risco imediato à vida."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i35,EMERGENCIA,EMERGENCIA,"O cão caiu e apresentou tremores com salivação, o que indica uma convulsão e exige atendimento veterinário imediato."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i36,EMERGENCIA,EMERGENCIA,"O filhote recém-nascido está frio e não quer mamar, indicando risco grave à vida."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i37,EMERGENCIA,EMERGENCIA,Tremores e rigidez em cadela amamentando indicam quadro grave que requer atendimento veterinário imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i38,EMERGENCIA,EMERGENCIA,"O cão comeu chocolate e apresenta agitação e vômito, indicando intoxicação e risco grave."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i39,NAO_EMERGENCIA,NAO_EMERGENCIA,"Feridas de briga sem sinais graves não são emergências imediatas, mas exigem consulta nas próximas 24 horas."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i40,NAO_EMERGENCIA,NAO_EMERGENCIA,"A exposicao a morcegos nao e emergencia imediata, mas exige consulta veterinaria nas proximas 24 horas."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i41,NAO_EMERGENCIA,NAO_EMERGENCIA,Coçar a orelha sem desequilíbrio é um sinal leve que pode aguardar consulta comum.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i42,NAO_EMERGENCIA,NAO_EMERGENCIA,A gata come menos mas continua ativa e sem outros sintomas.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i43,NAO_EMERGENCIA,NAO_EMERGENCIA,O tártaro e o mau hálito são problemas comuns e eletivos que podem aguardar uma consulta de rotina.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i44,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal apresentou apenas vômito isolado e fezes moles, mas continua ativo e brincalhão."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i45,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato apresenta olho vermelho e remela, indicando um quadro leve que pode aguardar consulta."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i46,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cachorro apresenta tremores leves, anda normal e está bem disposto, indicando um caso sem gravidade imediata."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i47,NAO_EMERGENCIA,INCERTO,"O relato menciona dificuldade para levantar, mas faltam detalhes para diferenciar artrose de paralisia."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i48,NAO_EMERGENCIA,NAO_EMERGENCIA,"Beber e urinar mais que o normal não é uma emergência imediata, mas precisa de consulta."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i49,NAO_EMERGENCIA,NAO_EMERGENCIA,Coceira intensa e pele vermelha são sinais leves que podem aguardar consulta de rotina.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i50,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal apresenta apenas espirros leves e coriza, mantendo bom apetite e comportamento normal."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i51,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cachorro esta mancando de leve apos um passo errado, o que indica claudicacao leve."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i52,NAO_EMERGENCIA,NAO_EMERGENCIA,A ofegação ocorre após o exercício e o cão melhora ao descansar na sombra.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i53,NAO_EMERGENCIA,NAO_EMERGENCIA,O nódulo de crescimento lento é um achado que pode aguardar uma consulta de rotina.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i54,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cachorro tem carrapatos mas está agindo normalmente, sem nenhum sinal clínico grave."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i55,NAO_EMERGENCIA,INCERTO,O relato não descreve sintomas específicos suficientes para definir a gravidade do caso.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i56,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato urina fora do lugar com frequência maior, mas sem esforço ou dor aparente."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i57,NAO_EMERGENCIA,NAO_EMERGENCIA,O relato menciona apenas um pequeno corte superficial sem sinais graves de risco.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i58,NAO_EMERGENCIA,INCERTO,"O cão comeu passas, mas está normal e o relato não traz dados suficientes sobre a quantidade ingerida."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i59,NAO_EMERGENCIA,EMERGENCIA,"O relato menciona sangramento ativo na caminha e agitação intensa, indicando um quadro que requer atendimento veterinário imediato."
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i60,NAO_EMERGENCIA,NAO_EMERGENCIA,A tosse leve apos contato social em animal ativo comendo bem nao indica urgencia imediata.
+ctxarq_bgecl_leitura_mapa_top3,indep,gemini-3.5-flash-lite,i61,NAO_EMERGENCIA,NAO_EMERGENCIA,"O relato menciona apenas um caroço vermelho e lambedura, sem sinais graves reais."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j01,EMERGENCIA,EMERGENCIA,"O animal apresenta sede excessiva combinada com dificuldade respiratória rápida e estranha, indicando risco grave."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j02,EMERGENCIA,EMERGENCIA,"O cachorro apresenta vomito com sangue e prostracao intensa, indicando risco grave e imediato a vida."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j03,EMERGENCIA,INCERTO,"O relato menciona apenas que babou um pouco após comer algo, sem clareza sobre veneno."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j04,EMERGENCIA,EMERGENCIA,O gato comeu um comprimido desconhecido e apresenta tremores intensos e incapacidade de ficar em pé.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j05,EMERGENCIA,EMERGENCIA,Corpo estranho linear ingerido por gato causa necrose intestinal e exige atendimento veterinário imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j06,EMERGENCIA,EMERGENCIA,A gengiva branca e a fraqueza intensa indicam risco grave e necessitam de atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j07,EMERGENCIA,EMERGENCIA,O inchaco no rosto do gato indica possivel reacao alergica grave com risco respiratorio.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j08,EMERGENCIA,EMERGENCIA,"O gato apresenta olho saltado, fechado e com muita dor, indicando gravidade ocular."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j09,EMERGENCIA,EMERGENCIA,"O filhote está molinho e não quer saber de nada após brincar, indicando risco grave à vida."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j10,EMERGENCIA,EMERGENCIA,"O animal apresenta esforço urinário sem sucesso, dor intensa e sangramento, indicando uma obstrução urinária grave."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j11,EMERGENCIA,EMERGENCIA,Ingestão de lírio em gatos causa insuficiência renal fatal e exige atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j12,EMERGENCIA,EMERGENCIA,A prostração intensa associada a olhos amarelados e urina escura indica risco grave à vida.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j13,EMERGENCIA,EMERGENCIA,A paralisia súbita das patas traseiras com dor e miados indica risco grave e exige atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j14,EMERGENCIA,EMERGENCIA,"O gato sofreu um atropelamento grave com hemorragia intensa e dificuldade respiratória, indicando risco imediato à vida."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j15,EMERGENCIA,EMERGENCIA,Choque elétrico e queimaduras são emergências graves que exigem atendimento veterinário imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j16,EMERGENCIA,EMERGENCIA,"O gato apresenta vômito persistente, diarreia e fraqueza intensa, indicando risco grave à vida."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j17,EMERGENCIA,EMERGENCIA,"O animal apresentou perda de consciência com batimento de pernas e salivação, indicando convulsão."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j18,EMERGENCIA,EMERGENCIA,"O cão apresenta convulsão e perda de controle corporal, indicando risco grave e imediato."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j19,EMERGENCIA,EMERGENCIA,O inchaco no focinho e na face com respiracao barulhenta indica reacao alergica grave com risco respiratorio.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j20,EMERGENCIA,EMERGENCIA,"Mais de 30 minutos de esforço sem sair filhote indica distocia, que é uma emergência."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j21,EMERGENCIA,EMERGENCIA,"Contato com sapo causa envenenamento grave com risco de morte por arritmia, exigindo atendimento imediato."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j22,EMERGENCIA,EMERGENCIA,"O gato apresenta tremores intensos, convulsões e salivação após contato com antipulgas, indicando intoxicação grave."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j23,EMERGENCIA,EMERGENCIA,"Tremores e rigidez muscular em cadela amamentando indicam eclâmpsia puerperal, uma emergência médica."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j24,EMERGENCIA,EMERGENCIA,"Seu gato apresenta paralisia repentina nas patas traseiras, indicando uma situação de emergência."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j25,EMERGENCIA,EMERGENCIA,"Gengivas brancas e fraqueza indicam risco grave de choque ou anemia, necessitando de atendimento imediato."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j26,EMERGENCIA,EMERGENCIA,"O filhote está gelado, não mama e está fraco, indicando risco grave à vida."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j27,EMERGENCIA,EMERGENCIA,Ingestão de chocolate é considerada uma emergência veterinária que exige atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j28,EMERGENCIA,EMERGENCIA,O consumo de uvas e os sintomas de vômito indicam risco grave e necessitam de atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j29,EMERGENCIA,EMERGENCIA,Quedas de altura exigem atendimento imediato devido ao risco de lesoes internas graves e silenciosas.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j30,EMERGENCIA,EMERGENCIA,"O gato apresenta dificuldade respiratória grave com língua roxa, indicando risco imediato à vida."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j31,EMERGENCIA,EMERGENCIA,"O contato com raticida e o sangramento indicam intoxicação grave, exigindo atendimento imediato."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j32,EMERGENCIA,EMERGENCIA,Desequilíbrio súbito e movimentos involuntários nos olhos indicam urgência neurológica que exige atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j33,EMERGENCIA,INCERTO,O relato não traz informações suficientes sobre a secreção para definir o quadro com segurança.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j34,EMERGENCIA,EMERGENCIA,O gato apresenta sinais graves de sofrimento respiratório e alteração neurológica.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j35,EMERGENCIA,EMERGENCIA,"O animal ficou exposto ao sol e apresenta calor excessivo e prostração, indicando intermação."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j36,EMERGENCIA,EMERGENCIA,A queda de altura combinada com paralisia e dor indica risco grave à vida.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j37,EMERGENCIA,EMERGENCIA,"O animal apresenta abdômen estufado e duro, além de tentativas frustradas de vômito, indicando risco grave."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j38,EMERGENCIA,EMERGENCIA,O cachorro apresenta língua roxa e grave dificuldade respiratória após engolir um osso.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j39,NAO_EMERGENCIA,EMERGENCIA,A ingestão de chocolate é uma intoxicação grave que exige atendimento veterinário imediato conforme o protocolo.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j40,NAO_EMERGENCIA,NAO_EMERGENCIA,"A gata teve um filhote e está tranquila, o que indica um parto normal sem sinais de urgência."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j41,NAO_EMERGENCIA,NAO_EMERGENCIA,Os tremores nas patas traseiras ocorrem apenas em repouso e o gato continua andando e comendo normalmente.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j42,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cachorro vomitou apenas uma vez, continua ativo, comendo e brincando normalmente."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j43,NAO_EMERGENCIA,NAO_EMERGENCIA,"O relato descreve apenas uma ferida superficial pequena com sangramento leve, que não configura urgência."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j44,NAO_EMERGENCIA,NAO_EMERGENCIA,O tártaro e o mau hálito são problemas crônicos comuns que podem aguardar consulta de rotina.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j45,NAO_EMERGENCIA,NAO_EMERGENCIA,O gato comeu menos mas continua ativo e bebendo agua.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j46,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal apresenta apenas coceira leve e perda de pelos, sem sinais graves associados."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j47,NAO_EMERGENCIA,EMERGENCIA,O inchaço enorme na face indica reação alérgica grave com risco às vias aéreas.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j48,NAO_EMERGENCIA,INCERTO,"O relato menciona sangramento e inchaço, mas não fornece detalhes suficientes para uma avaliação segura."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j49,NAO_EMERGENCIA,NAO_EMERGENCIA,"Feridas de brigas devem ser avaliadas em até 24 horas, não configurando uma emergência imediata."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j50,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cao bebe e urina mais que o normal, mas esta ativo e sem outros sintomas graves."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j51,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato foi exposto a um morcego mas esta bem, exigindo consulta nas proximas vinte e quatro horas."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j52,NAO_EMERGENCIA,NAO_EMERGENCIA,O cão apresenta sinais leves de otite e pode aguardar uma consulta de rotina.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j53,NAO_EMERGENCIA,NAO_EMERGENCIA,Os sinais de rigidez ao levantar e dificuldade para subir no sofá indicam um quadro crônico comum em animais idosos.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j54,NAO_EMERGENCIA,NAO_EMERGENCIA,"O nódulo cresce devagar e o animal está ativo, sem sinais de urgência."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j55,NAO_EMERGENCIA,NAO_EMERGENCIA,"O tutor relata que o cachorro faz xixi pela casa toda com frequência, sem sinais de esforço para urinar."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j56,NAO_EMERGENCIA,NAO_EMERGENCIA,A respiração acelerada após exercício é normal e o cão está descansando.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j57,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato apresenta claudicação leve na pata traseira, sem sinais de paralisia ou dor intensa que configurem emergência."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j58,NAO_EMERGENCIA,NAO_EMERGENCIA,A tosse é leve e o cão continua comendo e brincando normalmente.
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j59,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato apresenta remela e o olho meio fechado, indicando conjuntivite leve sem urgência extrema."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j60,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cachorro tem apenas carrapatos, mas está sem nenhum sinal clínico e ativo."
+ctxarq_bgecl_leitura_mapa_top3,indep2,gemini-3.5-flash-lite,j61,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cachorro apresenta espirro e coriza leves, o que não representa uma situação de risco imediato."
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i01,EMERGENCIA,EMERGENCIA,Sinais de envenenamento por sapo exigem atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i02,EMERGENCIA,EMERGENCIA,Sinais de dor e possível infecção urinária exigem atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i03,EMERGENCIA,EMERGENCIA,"O olho saltado e inchado indica possivel proptose, que requer atendimento imediato."
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i04,EMERGENCIA,EMERGENCIA,Intoxicação por uva passa pode causar hipoglicemia e sofrimento intenso.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i05,EMERGENCIA,NAO_EMERGENCIA,Os sinais relatados são leves e não indicam risco imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i06,EMERGENCIA,EMERGENCIA,O relato indica parto dificil com risco à vida da cadela.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i07,EMERGENCIA,EMERGENCIA,Sinais de desequilibrio e olhos tremendo indicam emergencia.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i08,EMERGENCIA,EMERGENCIA,O relato descreve sinais de emergência que exigem atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i09,EMERGENCIA,EMERGENCIA,"Gengiva branca pode indicar anemia ou choque, exigindo atendimento imediato."
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i10,EMERGENCIA,EMERGENCIA,"Sinais indicam colapso e gengiva palida, que são sinais de emergência."
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i11,EMERGENCIA,EMERGENCIA,Intoxicação por medicamento humano pode ser grave e requer atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i12,EMERGENCIA,EMERGENCIA,Sinais de engasgo e dificuldade respiratória exigem atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i13,EMERGENCIA,EMERGENCIA,Sangramento nasal pode indicar intoxicação por raticida anticoagulante.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i14,EMERGENCIA,EMERGENCIA,Sinais de dor e dificuldade para urinar indicam emergência.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i15,EMERGENCIA,EMERGENCIA,Intoxicação por lirio pode causar insuficiência renal fatal.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i16,EMERGENCIA,EMERGENCIA,Dificuldade respiratória e comportamento anormal exigem atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i17,EMERGENCIA,EMERGENCIA,Sinais de cetoacidose diabetica exigem atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i18,EMERGENCIA,EMERGENCIA,Convulsões e tremores indicam emergência imediata.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i19,EMERGENCIA,EMERGENCIA,"Sinais de vomito, diarreia com sangue e letargia indicam risco imediato."
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i20,EMERGENCIA,EMERGENCIA,"Sinais indicam dilatação e torção gastrica, que é uma emergência."
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i21,EMERGENCIA,EMERGENCIA,Gengiva branca e comportamento preguiçoso indicam possível anemia ou choque.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i22,EMERGENCIA,EMERGENCIA,Sinais de intermacao indicam risco à vida e exigem atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i23,EMERGENCIA,EMERGENCIA,Gengiva pálida e desanimado indicam possível choque ou anemia.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i24,EMERGENCIA,EMERGENCIA,Tremores e perda de consciência indicam emergência.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i25,EMERGENCIA,EMERGENCIA,Convulsão e tremores podem indicar intoxicação ou emergência neurológica.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i26,EMERGENCIA,EMERGENCIA,Sinais de paralisia aguda e sofrimento indicam emergência
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i27,EMERGENCIA,EMERGENCIA,A respiração ofegante e a boca aberta indicam possível dificuldade respiratória.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i28,EMERGENCIA,EMERGENCIA,"Sinais indicam tromboembolismo aortico, que é uma emergência."
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i29,EMERGENCIA,EMERGENCIA,Inchaco facial e dificuldade respiratória indicam reação alérgica grave.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i30,EMERGENCIA,EMERGENCIA,Vomito intenso e sinais de sofrimento indicam risco imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i31,EMERGENCIA,NAO_EMERGENCIA,O tremor é leve e pode ser causado por cansaço ou frio.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i32,EMERGENCIA,EMERGENCIA,Inchaco e dificuldade de movimento indicam reacao alergica ou intoxicao.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i33,EMERGENCIA,EMERGENCIA,"Sangramento nas fezes indica emergência, mesmo que o animal pareça quieto."
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i34,EMERGENCIA,EMERGENCIA,Sinais de dificuldade respiratória exigem atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i35,EMERGENCIA,EMERGENCIA,O relato descreve sinais de convulsao que exigem atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i36,EMERGENCIA,EMERGENCIA,"O filhote não mama e está frio, sinais de risco que exigem atendimento imediato."
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i37,EMERGENCIA,EMERGENCIA,"Tremores e rigidez podem indicar eclampsia puerperal, que é uma emergência."
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i38,EMERGENCIA,EMERGENCIA,O relato indica intoxicação por chocolate com sinais de emergência.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i39,NAO_EMERGENCIA,NAO_EMERGENCIA,A ferida não apresenta sinais de infecção ou sofrimento intenso.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i40,NAO_EMERGENCIA,EMERGENCIA,Mordida por morcego exige atenção imediata por risco de raiva.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i41,NAO_EMERGENCIA,NAO_EMERGENCIA,Coceira na orelha e alteração de cor podem ser sinais leves de otite externa.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i42,NAO_EMERGENCIA,NAO_EMERGENCIA,Falta de apetite sem outros sinais e comportamento normal.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i43,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam problemas de higiene bucal, mas não indicam risco à vida imediato."
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i44,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal está ativo e comendo normal, indicando quadro leve."
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i45,NAO_EMERGENCIA,NAO_EMERGENCIA,"O relato indica conjuntivite leve, que não é emergência imediata."
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i46,NAO_EMERGENCIA,NAO_EMERGENCIA,"Tremores leves sem sinais de alerta, animal bem disposto."
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i47,NAO_EMERGENCIA,EMERGENCIA,Sinais de dor e dificuldade para levantar indicam risco imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i48,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam aumento de ingestão de água, mas não há sinais de emergência imediata."
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i49,NAO_EMERGENCIA,NAO_EMERGENCIA,"A coceira intensa e vermelhidão podem ser sinais de alergia, mas não indicam risco imediato."
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i50,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais são leves e não indicam risco imediato à vida.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i51,NAO_EMERGENCIA,NAO_EMERGENCIA,"A mancagem leve pode ser um trauma, mas não indica risco imediato à vida."
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i52,NAO_EMERGENCIA,NAO_EMERGENCIA,"O relato descreve ofegação após exercício, que pode ser normal em cães."
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i53,NAO_EMERGENCIA,NAO_EMERGENCIA,O caroco é lento e não há sinais de emergência.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i54,NAO_EMERGENCIA,NAO_EMERGENCIA,Carrapatos sem sinais clínicos não exigem atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i55,NAO_EMERGENCIA,INCERTO,O relato não fornece informações suficientes para classificar com certeza.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i56,NAO_EMERGENCIA,NAO_EMERGENCIA,"O relato indica xixi fora do lugar, mas sem sinais de dor ou obstrução."
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i57,NAO_EMERGENCIA,NAO_EMERGENCIA,Sangramento leve e sem sinais de sofrimento ou risco imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i58,NAO_EMERGENCIA,NAO_EMERGENCIA,O cachorro está normal e não apresenta sinais de intoxicação.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i59,NAO_EMERGENCIA,EMERGENCIA,Sangramento intenso e agitaçāo indicam risco de vida.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i60,NAO_EMERGENCIA,NAO_EMERGENCIA,O relato indica sintomas leves que podem aguardar uma consulta.
+ctxarq_bgecl_leitura_mapa_top3,indep,qwen3-8b,i61,NAO_EMERGENCIA,EMERGENCIA,A picada de animal venenoso pode causar reacao alergica grave.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j01,EMERGENCIA,EMERGENCIA,Sinais de desidratação e alterações respiratórias exigem atenção imediata.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j02,EMERGENCIA,EMERGENCIA,Sinais de vomito com sangue e prostração indicam risco imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j03,EMERGENCIA,NAO_EMERGENCIA,Sinais leves e comportamento normal indicam não emergência.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j04,EMERGENCIA,EMERGENCIA,Sinais de convulsão e tremor indicam emergência veterinária.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j05,EMERGENCIA,EMERGENCIA,Corpo estranho no tubo digestivo pode causar necrose intestinal.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j06,EMERGENCIA,EMERGENCIA,Sinais de gengiva branca e fraqueza indicam emergência.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j07,EMERGENCIA,NAO_EMERGENCIA,"O inchaco local é leve e o animal está ativo, sem sinais de emergência."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j08,EMERGENCIA,EMERGENCIA,Sinais indicam lesão ocular grave que pode causar perda do olho.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j09,EMERGENCIA,EMERGENCIA,"Filhote parou de se mexer e está molinho, sinais de risco de emergência."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j10,EMERGENCIA,EMERGENCIA,Sinais indicam obstrução uretral com risco à vida.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j11,EMERGENCIA,EMERGENCIA,"Intoxicação por lirio pode causar insuficiência renal fatal, mesmo com pouca ingestão."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j12,EMERGENCIA,EMERGENCIA,Sinais de icterus e urina escura indicam possível insuficiência hepática ou obstrução urinária.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j13,EMERGENCIA,EMERGENCIA,Sinais de dor e imobilidade das patas traseiras indicam emergência.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j14,EMERGENCIA,EMERGENCIA,Sangramento intenso e sinais de sofrimento indicam emergência.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j15,EMERGENCIA,EMERGENCIA,"Mordida de fio pode causar queimadura e choque elétrico, que são emergências."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j16,EMERGENCIA,EMERGENCIA,Sinais de desidratação e prostração indicam risco imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j17,EMERGENCIA,EMERGENCIA,Sinais de convulsao indicam risco imediato de saúde.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j18,EMERGENCIA,EMERGENCIA,"Sinais indicam convulsão e sofrimento intenso, exigindo atendimento imediato."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j19,EMERGENCIA,EMERGENCIA,Sinais de reacao alergica grave com risco de via aerea.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j20,EMERGENCIA,EMERGENCIA,O relato indica sinais de parto dificil que exigem atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j21,EMERGENCIA,EMERGENCIA,"O relato menciona babar espuma grossa, sinal de envenenamento por sapo."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j22,EMERGENCIA,EMERGENCIA,Sinais de convulsão e tremor indicam risco imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j23,EMERGENCIA,EMERGENCIA,"Sinais de tremores e rigidez podem indicar eclampsia puerperal, emergência obstétrica."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j24,EMERGENCIA,EMERGENCIA,Sinais indicam paralisia aguda e necessitam de atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j25,EMERGENCIA,EMERGENCIA,Gengiva branca e comportamento fraco indicam possível choque ou anemia.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j26,EMERGENCIA,EMERGENCIA,Sinais de risco indicam necessidade de atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j27,EMERGENCIA,EMERGENCIA,"Coma de chocolate pode causar intoxicação grave, mesmo em pequenas quantidades."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j28,EMERGENCIA,EMERGENCIA,Intoxicação por uva pode causar hipoglicemia e risco à vida.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j29,EMERGENCIA,EMERGENCIA,"Queda de altura pode causar lesões internas, mesmo que o animal pareça bem."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j30,EMERGENCIA,EMERGENCIA,Sinais de dificuldade respiratória e oxigenação insuficiente exigem atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j31,EMERGENCIA,EMERGENCIA,Sangramento nas fezes pode indicar intoxicação grave por raticida anticoagulante.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j32,EMERGENCIA,EMERGENCIA,Sinais de desequilibrio e olhos tremendo indicam emergencia.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j33,EMERGENCIA,NAO_EMERGENCIA,"A secreção branca pode ser uma limpeza normal, sem sinais de emergência."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j34,EMERGENCIA,EMERGENCIA,Sinais de convulsão e sofrimento intenso indicam emergência.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j35,EMERGENCIA,EMERGENCIA,"Ofegacao e calor podem indicar golpe de calor, que é uma emergência."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j36,EMERGENCIA,EMERGENCIA,Queda de altura com sinais de dor e incapacidade de levantar patas traseiras indica risco grave.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j37,EMERGENCIA,EMERGENCIA,Sinais de distensão abdominal e vômito ineficaz indicam emergência.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j38,EMERGENCIA,EMERGENCIA,Sinais de dificuldade respiratória e possível engasgo exigem atendimento imediato.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j39,NAO_EMERGENCIA,EMERGENCIA,"Risco de intoxicação por chocolate, que pode ser fatal."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j40,NAO_EMERGENCIA,NAO_EMERGENCIA,"O parto está normal, com sinais de cuidado da mãe e ausência de sinais de alerta."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j41,NAO_EMERGENCIA,NAO_EMERGENCIA,O relato descreve tremor leve e não indica sinais de emergência.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j42,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal continua ativo e comendo, sem sinais de alerta graves."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j43,NAO_EMERGENCIA,NAO_EMERGENCIA,A ferida é superficial e não apresenta sinais de emergência.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j44,NAO_EMERGENCIA,NAO_EMERGENCIA,"Os sinais indicam problema de higiene bucal, que pode aguardar consulta de rotina."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j45,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato ainda está ativo e bebe água, indicando que não há sintomas graves."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j46,NAO_EMERGENCIA,NAO_EMERGENCIA,Os sinais são leves e não indicam risco imediato à vida.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j47,NAO_EMERGENCIA,EMERGENCIA,Inchaço facial intenso pode indicar reacao alergica grave.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j48,NAO_EMERGENCIA,NAO_EMERGENCIA,Sangramento leve e inchaço local sem sinais de sofrimento ou risco à vida.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j49,NAO_EMERGENCIA,NAO_EMERGENCIA,"A ferida não apresenta sinais de emergência, mas requer avaliação veterinária em até 24 horas."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j50,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam consumo excessivo de água e micção frequente, mas sem sinais de gravidade."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j51,NAO_EMERGENCIA,NAO_EMERGENCIA,"A situação não apresenta sinais de emergência, mas requer atenção médica."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j52,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam otite externa leve, que não é emergência."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j53,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam rigidez articular, mas não indicam emergência."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j54,NAO_EMERGENCIA,NAO_EMERGENCIA,O caroco cresce devagar e não causa desconforto ao animal.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j55,NAO_EMERGENCIA,NAO_EMERGENCIA,"O relato indica xixi fora do lugar, mas sem sinais de dor ou obstrução."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j56,NAO_EMERGENCIA,NAO_EMERGENCIA,"O relato descreve ofegação após atividade, sem sinais de alerta graves."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j57,NAO_EMERGENCIA,NAO_EMERGENCIA,"O relato descreve manca leve e dor, que podem aguardar avaliação veterinária."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j58,NAO_EMERGENCIA,NAO_EMERGENCIA,Tosse seca leve com atividade normal não indica emergência imediata.
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j59,NAO_EMERGENCIA,EMERGENCIA,"O olho está fechado e há remela, indicando possivelmente lesão ocular grave."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j60,NAO_EMERGENCIA,NAO_EMERGENCIA,"Não há sinais de alerta, pode aguardar consulta de rotina."
+ctxarq_bgecl_leitura_mapa_top3,indep2,qwen3-8b,j61,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam espirro e coriza leves, que podem aguardar consulta."
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i01,EMERGENCIA,EMERGENCIA,Sinais de envenenamento por sapo exigem atendimento imediato.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i02,EMERGENCIA,EMERGENCIA,Sinais de dor e possível infecção urinária exigem atendimento imediato.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i03,EMERGENCIA,EMERGENCIA,"O olho saltado e inchado indica proptose, que requer atendimento imediato."
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i04,EMERGENCIA,EMERGENCIA,Intoxicação por uva passa requer atendimento imediato devido ao risco de hipoglicemia.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i05,EMERGENCIA,NAO_EMERGENCIA,Sinais leves e não indicam risco imediato à vida.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i06,EMERGENCIA,EMERGENCIA,"A cadela está tentando parir há 6 horas sem sair filhote, indicando distocia."
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i07,EMERGENCIA,NAO_EMERGENCIA,"Sinais sugerem tontura e nistagmo, que podem ser leves e transitórios."
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i08,EMERGENCIA,EMERGENCIA,Sinais de queimadura e dificuldade respiratória indicam risco imediato.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i09,EMERGENCIA,EMERGENCIA,"Gengiva branca indica possível choque ou anemia grave, que requer atendimento imediato."
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i10,EMERGENCIA,EMERGENCIA,Sinais de colapso e gengiva palida indicam emergência.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i11,EMERGENCIA,EMERGENCIA,Intoxicação por medicamento humano pode causar danos graves.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i12,EMERGENCIA,EMERGENCIA,Sinais de dificuldade respiratória e possível obstrução da via aérea exigem atendimento imediato.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i13,EMERGENCIA,EMERGENCIA,Sangramento nasal pode indicar intoxicação por raticida anticoagulante.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i14,EMERGENCIA,EMERGENCIA,Sinais de dor e obstrução urinária indicam emergência.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i15,EMERGENCIA,EMERGENCIA,Intoxicação por lirio pode causar insuficiência renal fatal.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i16,EMERGENCIA,EMERGENCIA,Dificuldade respiratória e comportamento anormal exigem atendimento imediato.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i17,EMERGENCIA,NAO_EMERGENCIA,Sinais leves que podem aguardar avaliação clínica.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i18,EMERGENCIA,EMERGENCIA,Convulsões e tremores indicam emergência imediata.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i19,EMERGENCIA,EMERGENCIA,"Vomito, diarreia com sangue e letargia indicam risco imediato."
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i20,EMERGENCIA,EMERGENCIA,"Sinais indicam dilatação e torção gastrica, que é uma emergência."
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i21,EMERGENCIA,EMERGENCIA,Gengiva branca e preguiça podem indicar intoxicação por alho ou cebola.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i22,EMERGENCIA,EMERGENCIA,Sinais de golpe de calor e colapso exigem atendimento imediato.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i23,EMERGENCIA,EMERGENCIA,Gengiva pálida e desanimamento indicam possível choque ou anemia.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i24,EMERGENCIA,EMERGENCIA,Sinais de tremor e inconsciência indicam risco imediato.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i25,EMERGENCIA,EMERGENCIA,Tremores e convulsão indicam possível intoxicação por veneno.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i26,EMERGENCIA,EMERGENCIA,Sinais de paralisia aguda e sofrimento indicam emergência.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i27,EMERGENCIA,EMERGENCIA,A respiração ofegante e a boca aberta indicam possível lesão interna.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i28,EMERGENCIA,EMERGENCIA,Paralisia aguda das patas traseiras e geladez são sinais de emergência.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i29,EMERGENCIA,EMERGENCIA,Inchaco facial e dificuldade respiratória indicam reação alérgica grave.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i30,EMERGENCIA,EMERGENCIA,Vomito intenso e sinais de sofrimento indicam risco imediato.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i31,EMERGENCIA,NAO_EMERGENCIA,O relato descreve tremores leves e sem sinais de emergência.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i32,EMERGENCIA,EMERGENCIA,Inchaco e dificuldade de movimento indicam risco imediato.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i33,EMERGENCIA,EMERGENCIA,"Sangramento nas fezes indica emergência, precisa de atendimento imediato."
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i34,EMERGENCIA,EMERGENCIA,Sinais de dificuldade respiratória exigem atendimento imediato.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i35,EMERGENCIA,EMERGENCIA,O relato descreve sinais de convulsao que exigem atendimento imediato.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i36,EMERGENCIA,EMERGENCIA,Sinais de risco indicam necessidade de atendimento imediato.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i37,EMERGENCIA,EMERGENCIA,"Tremores e rigidez em cadela amamentando indicam eclampsia puerperal, emergência obstétrica."
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i38,EMERGENCIA,EMERGENCIA,O relato indica intoxicação por chocolate com sinais de emergência.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i39,NAO_EMERGENCIA,NAO_EMERGENCIA,A ferida não apresenta sinais de infecção ou sofrimento intenso.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i40,NAO_EMERGENCIA,EMERGENCIA,Mordida por morcego exige atenção imediata por risco de raiva.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i41,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam otite, mas não há sinais de emergência."
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i42,NAO_EMERGENCIA,NAO_EMERGENCIA,Redução de apetite sem outros sinais e comportamento normal.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i43,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam preocupação, mas não indicam risco imediato à vida."
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i44,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal está ativo e comendo normal, indicando quadro leve."
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i45,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam conjuntivite leve, não emergência."
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i46,NAO_EMERGENCIA,NAO_EMERGENCIA,"Tremores leves sem sinais de alerta, animal bem disposto."
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i47,NAO_EMERGENCIA,EMERGENCIA,Sinais de dor e dificuldade para levantar podem indicar emergência.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i48,NAO_EMERGENCIA,NAO_EMERGENCIA,Aumento da ingestão de água e urina pode ser sinal de condições não urgentes.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i49,NAO_EMERGENCIA,NAO_EMERGENCIA,"A coceira intensa e a vermelhidão podem ser sinais de dermatite alergica, que não é emergência."
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i50,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais são leves e não indicam risco imediato à vida.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i51,NAO_EMERGENCIA,NAO_EMERGENCIA,"O relato indica mancada leve, sem sinais de dor ou lesão grave."
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i52,NAO_EMERGENCIA,NAO_EMERGENCIA,"O relato indica ofegação após exercício, que pode ser normal em cães."
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i53,NAO_EMERGENCIA,NAO_EMERGENCIA,O caroco é lento e não há sinais de emergência.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i54,NAO_EMERGENCIA,NAO_EMERGENCIA,Carrapatos sem sinais clínicos não exigem atendimento imediato.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i55,NAO_EMERGENCIA,INCERTO,"Relato genérico de comportamento anormal, mas não há sinais específicos de emergência."
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i56,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam xixi fora do lugar, mas sem dor ou dificuldade para urinar."
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i57,NAO_EMERGENCIA,NAO_EMERGENCIA,Sangramento leve e sem sinais de sofrimento intenso.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i58,NAO_EMERGENCIA,NAO_EMERGENCIA,O animal está normal e sem sinais de intoxicação.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i59,NAO_EMERGENCIA,EMERGENCIA,Sangramento intenso e agitaçāo indicam risco de vida.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i60,NAO_EMERGENCIA,EMERGENCIA,Tosse com suspeita de obstrução de via aerea requer atendimento imediato.
+ctxarq_bge_fichas_top3,indep,qwen3-8b,i61,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam preocupação, mas não indicam risco imediato à vida."
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j01,EMERGENCIA,EMERGENCIA,Sinais de desidratação e ofegação indicam risco imediato.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j02,EMERGENCIA,EMERGENCIA,Sinais de vomito com sangue e prostração indicam risco imediato.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j03,EMERGENCIA,EMERGENCIA,Babando e movimento normal indicam intoxicação por chumbinho ou inseticida.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j04,EMERGENCIA,EMERGENCIA,Sinais de convulsão e tremor indicam intoxicação grave.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j05,EMERGENCIA,EMERGENCIA,Vomito de fio e recusa de alimentar indicam risco imediato.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j06,EMERGENCIA,EMERGENCIA,Sinais de gengiva branca e fraqueza indicam emergência.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j07,EMERGENCIA,NAO_EMERGENCIA,"O inchaco local é leve e o animal está ativo, sem sinais de alerta."
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j08,EMERGENCIA,EMERGENCIA,Sinais indicam lesão ocular grave que pode comprometer o olho.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j09,EMERGENCIA,EMERGENCIA,Filhote molinho e inativo pode indicar risco de vida.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j10,EMERGENCIA,EMERGENCIA,Sinais de dor intensa e obstrução urinária exigem atendimento imediato.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j11,EMERGENCIA,EMERGENCIA,"Intoxicação por lirio pode causar insuficiência renal fatal, mesmo com pouca ingestão."
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j12,EMERGENCIA,EMERGENCIA,"Sinais de prostracao, ictericia e urina marrom indicam possivel insuficiencia renal ou hepatica."
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j13,EMERGENCIA,EMERGENCIA,Sinais de paralisia aguda nas patas traseiras exigem atendimento imediato.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j14,EMERGENCIA,EMERGENCIA,Sangramento intenso e respiração anormal indicam risco imediato.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j15,EMERGENCIA,EMERGENCIA,Mordida por fio e sinais de queimadura exigem atendimento imediato.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j16,EMERGENCIA,EMERGENCIA,"Sinais de vomito persistente, diarreia e prostração indicam risco imediato."
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j17,EMERGENCIA,EMERGENCIA,O relato descreve sinais de convulsao que exigem atendimento imediato.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j18,EMERGENCIA,EMERGENCIA,"Espasmos, babar e perda de controle do corpo indicam emergência."
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j19,EMERGENCIA,EMERGENCIA,Sinais de reacao alergica grave com risco de via aerea
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j20,EMERGENCIA,EMERGENCIA,O relato indica parto dificil com risco à vida da mãe e filhotes.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j21,EMERGENCIA,EMERGENCIA,"O relato menciona espuma grossa, que pode indicar envenenamento por sapo."
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j22,EMERGENCIA,EMERGENCIA,Sinais de convulsão e tremor indicam intoxicação grave e necessitam de atendimento imediato.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j23,EMERGENCIA,EMERGENCIA,"Sinais indicam possivel eclampsia puerperal, emergencia obstetrica."
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j24,EMERGENCIA,EMERGENCIA,Paralisia aguda das patas traseiras pode indicar emergência.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j25,EMERGENCIA,EMERGENCIA,Gengiva branca e comportamento fraco indicam possível choque ou anemia.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j26,EMERGENCIA,EMERGENCIA,Sinais de risco indicam necessidade de atendimento imediato.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j27,EMERGENCIA,EMERGENCIA,O chocolate meio amargo é tóxico e pode causar intoxicação grave.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j28,EMERGENCIA,EMERGENCIA,Vomito intenso e ausencia de xixi indicam risco imediato.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j29,EMERGENCIA,EMERGENCIA,"Dificuldade respiratória pode ser confundida com susto, mas precisa ser avaliada com urgência."
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j30,EMERGENCIA,EMERGENCIA,Sinais de dificuldade respiratória e oxigenação insuficiente exigem atendimento imediato.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j31,EMERGENCIA,EMERGENCIA,Sangramento nas fezes pode indicar intoxicação por raticida anticoagulante.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j32,EMERGENCIA,INCERTO,"Sinais podem indicar problema neurológico, mas não há informações suficientes para confirmar emergência."
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j33,EMERGENCIA,NAO_EMERGENCIA,"O relato não menciona sinais de emergência, apenas secreção branca e quietude."
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j34,EMERGENCIA,EMERGENCIA,Sinais de dificuldade respiratória exigem atendimento imediato.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j35,EMERGENCIA,EMERGENCIA,Sinais de golpe de calor exigem atendimento imediato.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j36,EMERGENCIA,EMERGENCIA,Queda de altura e paralisia aguda das patas traseiras indicam risco imediato.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j37,EMERGENCIA,EMERGENCIA,Sinais de distensão abdominal e vômito ineficaz indicam risco imediato.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j38,EMERGENCIA,EMERGENCIA,Sinais de dificuldade respiratória e corpos estranhos podem indicar emergência.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j39,NAO_EMERGENCIA,EMERGENCIA,"Coma de chocolate pode causar intoxicação grave, mesmo sem sinais imediatos."
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j40,NAO_EMERGENCIA,NAO_EMERGENCIA,"O parto está normal, com sinais de tranquilidade e cuidado da mãe."
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j41,NAO_EMERGENCIA,NAO_EMERGENCIA,O tremor não está associado a sinais de emergência descritos.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j42,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal continua ativo e comendo, sem sinais de alerta."
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j43,NAO_EMERGENCIA,NAO_EMERGENCIA,A ferida é superficial e não apresenta sinais de gravidade.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j44,NAO_EMERGENCIA,NAO_EMERGENCIA,Os sinais relatados são leves e não indicam risco imediato à vida.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j45,NAO_EMERGENCIA,NAO_EMERGENCIA,Falta de apetite sem outros sinais graves e comportamento normal.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j46,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais são leves e não indicam risco imediato à vida.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j47,NAO_EMERGENCIA,EMERGENCIA,Inchaço facial rápido pode indicar reação alérgica grave.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j48,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais descritos são compatíveis com cio normal e não indicam risco imediato.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j49,NAO_EMERGENCIA,NAO_EMERGENCIA,A ferida não apresenta sinais de infecção ou sofrimento imediato.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j50,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais são leves e não indicam risco imediato à vida.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j51,NAO_EMERGENCIA,NAO_EMERGENCIA,"A situação não apresenta sinais de emergência imediata, mas requer atenção médica."
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j52,NAO_EMERGENCIA,NAO_EMERGENCIA,Os sinais relatados são leves e não indicam risco imediato à vida.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j53,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam desconforto, mas não indicam risco imediato à vida."
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j54,NAO_EMERGENCIA,NAO_EMERGENCIA,O caroco cresce devagar e não causa desconforto ao animal.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j55,NAO_EMERGENCIA,NAO_EMERGENCIA,"O relato indica comportamento de xixi fora do lugar, mas sem sinais de dor ou obstrução."
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j56,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais leves e sem indicação de risco imediato.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j57,NAO_EMERGENCIA,NAO_EMERGENCIA,"O relato descreve manca leve e dor, que podem aguardar avaliação veterinária."
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j58,NAO_EMERGENCIA,NAO_EMERGENCIA,Tosse seca leve com atividade normal não indica emergência imediata.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j59,NAO_EMERGENCIA,EMERGENCIA,O olho fechado e a remela indicam possivel lesão ocular.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j60,NAO_EMERGENCIA,NAO_EMERGENCIA,Carrapatos sem sinais clínicos não exigem atendimento imediato.
+ctxarq_bge_fichas_top3,indep2,qwen3-8b,j61,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais são leves e não indicam risco imediato à vida.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i01,EMERGENCIA,EMERGENCIA,Sinais de envenenamento por sapo indicam risco imediato à vida.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i02,EMERGENCIA,EMERGENCIA,Sinais de dor e possível infecção grave exigem atendimento imediato.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i03,EMERGENCIA,EMERGENCIA,"O olho saltou para fora e está inchado, indicando risco imediato ao olho."
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i04,EMERGENCIA,EMERGENCIA,Uva-passa pode causar intoxicação grave e necessita de atendimento imediato.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i05,EMERGENCIA,NAO_EMERGENCIA,Os sinais relatados são leves e não indicam risco imediato.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i06,EMERGENCIA,EMERGENCIA,Força forte sem sair filhote por mais de 30 minutos indica parto difícil.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i07,EMERGENCIA,NAO_EMERGENCIA,Sinais leves e possivelmente relacionados a brincadeira.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i08,EMERGENCIA,EMERGENCIA,Choque elétrico e dificuldade respiratória indicam risco imediato.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i09,EMERGENCIA,EMERGENCIA,Gengiva branca e fraqueza súbita indicam possível choque ou anemia.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i10,EMERGENCIA,EMERGENCIA,Desmaio e gengiva pálida indicam emergência imediata.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i11,EMERGENCIA,EMERGENCIA,Intoxicação por medicamento humano pode causar tremores e debilidade graves.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i12,EMERGENCIA,EMERGENCIA,Sinais de engasgo e dificuldade respiratória indicam risco imediato.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i13,EMERGENCIA,NAO_EMERGENCIA,Sinais leves e não indicam risco imediato à vida.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i14,EMERGENCIA,EMERGENCIA,Sinais de dor e obstrução uretral exigem atendimento imediato.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i15,EMERGENCIA,EMERGENCIA,Vomito e incapacidade de levantar indicam intoxicação grave por lírio.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i16,EMERGENCIA,EMERGENCIA,Sinais de dificuldade respiratória exigem atendimento imediato.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i17,EMERGENCIA,EMERGENCIA,Sinais de cetoacidose diabética exigem atendimento imediato.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i18,EMERGENCIA,EMERGENCIA,Convulsão e tremores indicam risco imediato à vida do animal.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i19,EMERGENCIA,EMERGENCIA,"Sinais de alerta indicam risco de emergência, como sangue nas fezes e comportamento anormal."
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i20,EMERGENCIA,EMERGENCIA,"Sinais indicam possível torção gástrica, que é uma emergência."
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i21,EMERGENCIA,EMERGENCIA,Gengiva branca e preguiça súbita podem indicar choque ou anemia.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i22,EMERGENCIA,EMERGENCIA,Sinais de intermação indicam risco à vida e exigem atendimento imediato.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i23,EMERGENCIA,EMERGENCIA,Gengiva pálida e desânimo são sinais de alerta para emergência.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i24,EMERGENCIA,EMERGENCIA,Sinais de hipoglicemia grave exigem atendimento imediato.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i25,EMERGENCIA,EMERGENCIA,Convulsão rápida pode indicar intoxicação ou problema grave.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i26,EMERGENCIA,EMERGENCIA,Paralisia aguda das patas traseiras com sofrimento intenso
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i27,EMERGENCIA,EMERGENCIA,Respiração com boca aberta pode indicar dificuldade respiratória grave.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i28,EMERGENCIA,EMERGENCIA,Sinais de paralisia súbita e geladez nas patas indicam emergência.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i29,EMERGENCIA,EMERGENCIA,Inchaço facial e dificuldade respiratória indicam reação alérgica grave.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i30,EMERGENCIA,EMERGENCIA,Vômito intenso e desidratação exigem atendimento imediato.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i31,EMERGENCIA,NAO_EMERGENCIA,Tremor leve e não há sinais de alerta que indiquem risco imediato.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i32,EMERGENCIA,EMERGENCIA,Inchaço intenso e dificuldade de levantar indicam risco imediato.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i33,EMERGENCIA,EMERGENCIA,Sangue no cocô e quietude indicam risco imediato.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i34,EMERGENCIA,EMERGENCIA,Sinais de dificuldade respiratória e língua roxa indicam risco imediato.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i35,EMERGENCIA,EMERGENCIA,"Caiu, tremer e babar são sinais de convulsão, que requerem atendimento imediato."
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i36,EMERGENCIA,EMERGENCIA,"Filhote não mama, está gelado e sem reação, sinais de emergência"
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i37,EMERGENCIA,NAO_EMERGENCIA,Sinais descritos são leves e não indicam risco imediato à vida.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i38,EMERGENCIA,EMERGENCIA,Sinais de intoxicação por chocolate indicam risco à vida.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i39,NAO_EMERGENCIA,NAO_EMERGENCIA,"A briga foi há poucas horas e a ferida é superficial, sem sinais de infecção ou dor intensa."
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i40,NAO_EMERGENCIA,NAO_EMERGENCIA,O relato não menciona sinais de alerta ou risco imediato à vida.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i41,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam otite externa leve, que não é emergência."
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i42,NAO_EMERGENCIA,NAO_EMERGENCIA,"Mimi está comendo menos, mas ainda brincando e usando a areia normalmente."
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i43,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam problema de boca, mas não há sinais de emergência."
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i44,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal está ativo, comendo e brincando, sem sinais de alerta."
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i45,NAO_EMERGENCIA,NAO_EMERGENCIA,"O relato descreve conjuntivite leve, sem sinais de emergência."
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i46,NAO_EMERGENCIA,NAO_EMERGENCIA,Tremores leves sem sinais de alerta ou desconforto.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i47,NAO_EMERGENCIA,EMERGENCIA,Sinais de dor e incapacidade de movimento indicam emergência.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i48,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam aumento de ingestão de água e urina, mas sem sinais de gravidade."
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i49,NAO_EMERGENCIA,NAO_EMERGENCIA,"A coceira intensa pode ser alérgica, mas não há sinais de risco à vida."
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i50,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais são leves e não indicam risco imediato à vida.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i51,NAO_EMERGENCIA,NAO_EMERGENCIA,A manca é leve e não há sinais de dor intensa ou incapacidade de apoiar a pata.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i52,NAO_EMERGENCIA,NAO_EMERGENCIA,"O relato descreve ofegação após exercício, que é normal e não apresenta sinais de alerta."
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i53,NAO_EMERGENCIA,NAO_EMERGENCIA,O caroço cresce devagar e não há sinais de alerta.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i54,NAO_EMERGENCIA,NAO_EMERGENCIA,"Não há sinais de alerta, o animal está normal."
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i55,NAO_EMERGENCIA,INCERTO,Relato não fornece sinais específicos de emergência ou urgência.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i56,NAO_EMERGENCIA,NAO_EMERGENCIA,O relato não menciona sinais de dor ou dificuldade para urinar.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i57,NAO_EMERGENCIA,NAO_EMERGENCIA,"Há sangramento leve e risco de infecção, mas não há sinais de emergência."
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i58,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cachorro está normal e brincando, sem sinais de intoxicação."
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i59,NAO_EMERGENCIA,EMERGENCIA,Sangramento intenso pode levar à parada cardíaca.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i60,NAO_EMERGENCIA,NAO_EMERGENCIA,A tosse é leve e o animal mantém apetite e hidratação.
+ctxarq_bge_fichascl_top3,indep,qwen3-8b,i61,NAO_EMERGENCIA,EMERGENCIA,Caroço vermelho e lamber intenso podem indicar reação alérgica grave.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j01,EMERGENCIA,EMERGENCIA,Sinais de sede e urinação excessiva podem indicar doença renal ou diabete.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j02,EMERGENCIA,EMERGENCIA,Sinais de alerta indicam risco à vida e necessidade de atendimento imediato.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j03,EMERGENCIA,NAO_EMERGENCIA,Sinais são leves e não indicam risco imediato à vida.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j04,EMERGENCIA,EMERGENCIA,Sinais de convulsão e tremores indicam risco imediato.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j05,EMERGENCIA,EMERGENCIA,"O gato engoliu fio e parou de comer, sinais de corpo estranho no intestino."
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j06,EMERGENCIA,EMERGENCIA,Sinais de alerta indicam emergência imediata.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j07,EMERGENCIA,NAO_EMERGENCIA,"O inchaço é leve e o animal está ativo, sem sinais de alerta."
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j08,EMERGENCIA,EMERGENCIA,O olho saltado e a dor indicam risco imediato ao olho.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j09,EMERGENCIA,EMERGENCIA,"Filhote parou de se mexer e está molinho, sinais de desidratação e fraqueza."
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j10,EMERGENCIA,EMERGENCIA,Sinais de dor e dificuldade para urinar indicam risco imediato.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j11,EMERGENCIA,EMERGENCIA,Vomito e contato com lírio indicam risco de insuficiência renal.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j12,EMERGENCIA,EMERGENCIA,Sinais de icterícia e prostração indicam possível problema grave.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j13,EMERGENCIA,NAO_EMERGENCIA,Sinais leves e não indicam risco imediato à vida.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j14,EMERGENCIA,EMERGENCIA,Sangramento intenso e sinais de sofrimento exigem atendimento imediato.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j15,EMERGENCIA,EMERGENCIA,Choque elétrico pode causar complicações respiratórias graves.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j16,EMERGENCIA,EMERGENCIA,Sinais de prostração e desidratação indicam risco imediato.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j17,EMERGENCIA,EMERGENCIA,A crise durou mais de 2 minutos e apresentou sinais de convulsão.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j18,EMERGENCIA,EMERGENCIA,"Sinais indicam convulsão e sofrimento intenso, exigindo atendimento imediato."
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j19,EMERGENCIA,EMERGENCIA,Inchaço facial e respiração barulhenta indicam reação alérgica grave.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j20,EMERGENCIA,EMERGENCIA,Sinais de força sem saída e cansaço indicam risco imediato.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j21,EMERGENCIA,EMERGENCIA,"Baba espumante pode indicar envenenamento por sapo, que é uma emergência."
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j22,EMERGENCIA,EMERGENCIA,Convulsões e tremores fortes indicam risco imediato à vida do animal.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j23,EMERGENCIA,NAO_EMERGENCIA,Sinais descritos são leves e podem aguardar avaliação clínica.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j24,EMERGENCIA,EMERGENCIA,Paralisia súbita das patas traseiras com dor e incapacidade de movimento.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j25,EMERGENCIA,EMERGENCIA,Gengiva branca e fraqueza súbita indicam possível choque ou anemia grave.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j26,EMERGENCIA,EMERGENCIA,Sinais de fraqueza e geladeira indicam risco imediato.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j27,EMERGENCIA,EMERGENCIA,Intoxicação por chocolate pode causar arritmia ou falha respiratória.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j28,EMERGENCIA,EMERGENCIA,"Intoxicação por uva pode causar vômito e falta de micção, sinais de alerta."
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j29,EMERGENCIA,NAO_EMERGENCIA,O relato não indica sinais de emergência ou sofrimento intenso.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j30,EMERGENCIA,EMERGENCIA,Sinais de dificuldade respiratória e língua roxa indicam risco imediato.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j31,EMERGENCIA,NAO_EMERGENCIA,Sinais são leves e podem aguardar avaliação veterinária.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j32,EMERGENCIA,EMERGENCIA,Sinais de desequilíbrio e tremores nos olhos indicam possível síndrome vestibular.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j33,EMERGENCIA,NAO_EMERGENCIA,A secreção branca e o comportamento quieto não indicam urgência.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j34,EMERGENCIA,EMERGENCIA,Sinais de crise respiratória e possível convulsão exigem atendimento imediato.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j35,EMERGENCIA,NAO_EMERGENCIA,"O relato descreve cansaço após exercício, sem sinais de alerta graves."
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j36,EMERGENCIA,EMERGENCIA,A queda de altura com paralisia das patas traseiras e dor indica risco imediato.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j37,EMERGENCIA,EMERGENCIA,Sinais de estômago virado exigem atendimento imediato.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j38,EMERGENCIA,EMERGENCIA,Sinais de dificuldade respiratória e oxigenação comprometida exigem atendimento imediato.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j39,NAO_EMERGENCIA,NAO_EMERGENCIA,"Não há sinais de emergência relatados, apenas consumo de chocolate."
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j40,NAO_EMERGENCIA,NAO_EMERGENCIA,A gata está tendo parto normal e cuidando dos filhotes.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j41,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato não apresenta sinais de emergência, apenas tremores leves."
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j42,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal continua ativo e comendo, sem sinais de alerta graves."
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j43,NAO_EMERGENCIA,NAO_EMERGENCIA,A ferida é superficial e não apresenta sinais de infecção ou sangramento intenso.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j44,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam doença periodontal leve, que pode aguardar consulta."
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j45,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato está ativo, bebendo água e brincando, sem sinais de gravidade."
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j46,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais são leves e não indicam risco imediato à vida.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j47,NAO_EMERGENCIA,EMERGENCIA,Inchaço na cara pode indicar reação alérgica grave ou picada de inseto venenoso.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j48,NAO_EMERGENCIA,EMERGENCIA,Sangramento e inchaço podem indicar ferida grave ou reação alérgica.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j49,NAO_EMERGENCIA,EMERGENCIA,A briga recente e o furinho no pescoço podem indicar abscesso grave.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j50,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais são leves e não indicam risco imediato à vida.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j51,NAO_EMERGENCIA,NAO_EMERGENCIA,"O relato não menciona sinais de alerta graves, apenas preocupação do tutor."
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j52,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais descritos são leves e não indicam risco imediato à vida.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j53,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam dor e dificuldade de movimento, mas não indicam risco imediato à vida."
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j54,NAO_EMERGENCIA,NAO_EMERGENCIA,"O caroço cresce devagar e o animal está ativo, sem sinais de alerta."
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j55,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam xixi fora do lugar, não obstrução uretral."
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j56,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cachorro está ofegante após exercício, mas acalma-se na sombra."
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j57,NAO_EMERGENCIA,NAO_EMERGENCIA,"Mancar leve pode ser sinal de lesão, mas não indica risco imediato à vida."
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j58,NAO_EMERGENCIA,NAO_EMERGENCIA,A tosse é leve e o animal mantém atividade normal.
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j59,NAO_EMERGENCIA,NAO_EMERGENCIA,"O relato descreve sintomas leves de conjuntivite, sem sinais de emergência."
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j60,NAO_EMERGENCIA,NAO_EMERGENCIA,"Não há sinais de alerta, o animal está normal."
+ctxarq_bge_fichascl_top3,indep2,qwen3-8b,j61,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam resfriado, não há dificuldade respiratória ou sinais de gravidade."
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i01,EMERGENCIA,EMERGENCIA,Sinais de envenenamento por sapo indicam risco à vida.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i02,EMERGENCIA,EMERGENCIA,Sinais de piometra exigem atendimento imediato para evitar complicações graves.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i03,EMERGENCIA,EMERGENCIA,"O olho saltou pra fora e está inchado, indicando emergência ocular."
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i04,EMERGENCIA,EMERGENCIA,A ingestão de uva-passa pode causar intoxicação grave e necessita de atendimento imediato.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i05,EMERGENCIA,EMERGENCIA,"A amarelamento da pele pode indicar danos hepáticos, que requerem atendimento imediato."
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i06,EMERGENCIA,EMERGENCIA,"A cadela está em trabalho de parto há mais de 6 horas sem sair filhote, indicando distocia."
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i07,EMERGENCIA,NAO_EMERGENCIA,Sinais são leves e podem aguardar avaliação veterinária.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i08,EMERGENCIA,EMERGENCIA,Choque elétrico e dificuldade respiratória indicam risco à vida.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i09,EMERGENCIA,EMERGENCIA,Sangramento intenso e sinais de choque podem indicar emergência.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i10,EMERGENCIA,EMERGENCIA,Sinais de alerta indicam risco à vida e necessidade de atendimento imediato.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i11,EMERGENCIA,EMERGENCIA,A gatinha pode ter ingerido medicamento tóxico e apresenta sinais de alerta.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i12,EMERGENCIA,EMERGENCIA,Sinais de engasgo com risco à vida exigem atendimento imediato.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i13,EMERGENCIA,EMERGENCIA,Sangramento nasal pode indicar intoxicação por veneno de rato.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i14,EMERGENCIA,EMERGENCIA,Sinais de dor e incapacidade de urinar indicam risco à vida.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i15,EMERGENCIA,EMERGENCIA,A gata apresenta sinais de intoxicação por lírio que exigem atendimento imediato.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i16,EMERGENCIA,EMERGENCIA,A gata apresenta sinais de dificuldade respiratória que exigem atendimento imediato.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i17,EMERGENCIA,NAO_EMERGENCIA,Sinais leves que podem aguardar avaliação veterinária.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i18,EMERGENCIA,EMERGENCIA,Convulsão e tremores fortes indicam risco à vida.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i19,EMERGENCIA,EMERGENCIA,Sinais de prostração e sangue no cocô indicam risco imediato.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i20,EMERGENCIA,EMERGENCIA,Sinais de torção gástrica exigem atendimento imediato.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i21,EMERGENCIA,EMERGENCIA,A gengiva pálida indica possível dano ao sangue causado por cebola ou alho.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i22,EMERGENCIA,EMERGENCIA,Sinais de intermação exigem atendimento imediato para evitar morte.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i23,EMERGENCIA,EMERGENCIA,Sinais de anemia e desidratação exigem atendimento imediato.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i24,EMERGENCIA,EMERGENCIA,Sinais de hipoglicemia grave exigem atendimento imediato.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i25,EMERGENCIA,EMERGENCIA,Sinais de intoxicação por chumbinho exigem atendimento imediato.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i26,EMERGENCIA,EMERGENCIA,Paralisia aguda das patas traseiras e patas geladas indicam emergência.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i27,EMERGENCIA,EMERGENCIA,A respiração com boca aberta e ofegante indica possível lesão interna.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i28,EMERGENCIA,EMERGENCIA,Sinais de tromboembolismo aórtico exigem atendimento imediato.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i29,EMERGENCIA,EMERGENCIA,Inchaço facial e dificuldade respiratória indicam reação alérgica grave.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i30,EMERGENCIA,EMERGENCIA,"O gato engoliu linha e vomita constantemente, sinal de emergência."
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i31,EMERGENCIA,EMERGENCIA,Sinais de tremor e possível cinomose exigem atendimento imediato.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i32,EMERGENCIA,EMERGENCIA,Inchaço intenso e dificuldade de movimento indicam emergência.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i33,EMERGENCIA,EMERGENCIA,"Sinais de parvo incluem vômito, diarreia com sangue e prostração."
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i34,EMERGENCIA,EMERGENCIA,Sinais de dificuldade respiratória e oxigenação insuficiente indicam risco à vida.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i35,EMERGENCIA,EMERGENCIA,A crise durou mais de 2 minutos e pode ter causado danos cerebrais.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i36,EMERGENCIA,EMERGENCIA,"O filhote não mama, está gelado e com baixa atividade, sinais de emergência."
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i37,EMERGENCIA,EMERGENCIA,Sinais de tremores e rigidez indicam possível eclâmpsia puerperal.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i38,EMERGENCIA,EMERGENCIA,O animal apresenta sinais de intoxicação por chocolate com risco à vida.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i39,NAO_EMERGENCIA,NAO_EMERGENCIA,A briga ocorreu há poucas horas e não há sinais de sofrimento intenso ou risco à vida.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i40,NAO_EMERGENCIA,NAO_EMERGENCIA,Não há sinais de sofrimento ou risco imediato à vida.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i41,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam otite externa leve, que não é urgente."
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i42,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal está comendo menos, mas ainda é ativo e não apresenta sinais graves."
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i43,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam doença periodontal leve, mas não há sinais de emergência."
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i44,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal está ativo, comendo e brincando, sem sinais de alerta."
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i45,NAO_EMERGENCIA,NAO_EMERGENCIA,"O relato descreve conjuntivite leve, sem sinais de emergência."
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i46,NAO_EMERGENCIA,NAO_EMERGENCIA,Tremores leves sem sinais de alerta ou sofrimento intenso.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i47,NAO_EMERGENCIA,EMERGENCIA,"O animal apresenta dificuldade para levantar e sofre, indicando possível sofrimento intenso."
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i48,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam aumento de ingestão e micção, mas sem sinais de alerta graves."
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i49,NAO_EMERGENCIA,NAO_EMERGENCIA,"A coceira intensa e a vermelhidão indicam dermatite, mas não há sinais de risco à vida."
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i50,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais são leves e não indicam risco imediato à vida.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i51,NAO_EMERGENCIA,NAO_EMERGENCIA,A manca é leve e não há sinais de sofrimento intenso ou risco à vida.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i52,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cão está ofegante após exercício, mas volta ao normal ao descansar."
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i53,NAO_EMERGENCIA,NAO_EMERGENCIA,O relato descreve um caroço que cresce devagar e não apresenta sinais de alerta.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i54,NAO_EMERGENCIA,NAO_EMERGENCIA,"Não há sinais de alerta, apenas presença de carrapatos e comportamento normal."
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i55,NAO_EMERGENCIA,NAO_EMERGENCIA,"O relato descreve comportamento estranho, mas não sinais de risco à vida imediato."
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i56,NAO_EMERGENCIA,NAO_EMERGENCIA,O relato descreve sintomas leves que podem aguardar avaliação veterinária.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i57,NAO_EMERGENCIA,EMERGENCIA,A ferida está sangrando e há risco de infecção.
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i58,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal está comendo e brincando, sem sinais de alerta."
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i59,NAO_EMERGENCIA,NAO_EMERGENCIA,"O relato descreve sangramento durante cio, que é normal e não indica emergência."
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i60,NAO_EMERGENCIA,NAO_EMERGENCIA,"A tosse é leve e o animal mantém apetite, indicando não emergência."
+ctxarq_oraculo_fichascl,indep,qwen3-8b,i61,NAO_EMERGENCIA,NAO_EMERGENCIA,"O relato descreve uma reação local com caroço e lambida, sem sinais de emergência."
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j01,EMERGENCIA,EMERGENCIA,Sinais de desidratação e respiração rápida indicam emergência.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j02,EMERGENCIA,EMERGENCIA,Sinais de alerta indicam risco à vida e necessidade de atendimento imediato.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j03,EMERGENCIA,EMERGENCIA,Babando e tremendo são sinais de alerta que indicam intoxicação grave.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j04,EMERGENCIA,EMERGENCIA,O tremor intenso e a incapacidade de ficar de pé indicam uma condição grave.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j05,EMERGENCIA,EMERGENCIA,"O gato engoliu fio e apresenta sinais de dor abdominal e anorexia, indicando risco imediato."
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j06,EMERGENCIA,EMERGENCIA,Sinais de alerta indicam risco à vida e necessidade de atendimento imediato.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j07,EMERGENCIA,NAO_EMERGENCIA,"O relato descreve inchaço leve e comportamento normal, sem sinais de gravidade."
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j08,EMERGENCIA,EMERGENCIA,O olho saltado e a dor indicam risco imediato ao olho.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j09,EMERGENCIA,NAO_EMERGENCIA,O relato descreve comportamento leve e pode ser atribuído a fadiga.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j10,EMERGENCIA,EMERGENCIA,Sinais de dor e dificuldade para urinar indicam risco imediato.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j11,EMERGENCIA,EMERGENCIA,"O relato menciona intoxicação por lírio e vomitando, sinais de alerta para emergência."
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j12,EMERGENCIA,EMERGENCIA,Sinais de leptospirose aguda exigem atendimento imediato.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j13,EMERGENCIA,NAO_EMERGENCIA,Sinais são leves e podem aguardar avaliação veterinária.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j14,EMERGENCIA,EMERGENCIA,Sangramento intenso e sinais de desmaio indicam risco à vida.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j15,EMERGENCIA,EMERGENCIA,Choque elétrico pode causar complicações graves mesmo que o animal pareça bem.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j16,EMERGENCIA,EMERGENCIA,Sinais de prostração e ausência de ingestão de água indicam risco imediato.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j17,EMERGENCIA,NAO_EMERGENCIA,"O relato descreve uma crise breve e sem repetição, sem sinais de alerta graves."
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j18,EMERGENCIA,EMERGENCIA,Sinais de convulsão e perda de controle corporal indicam emergência.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j19,EMERGENCIA,EMERGENCIA,Inchaço facial e respiração barulhenta indicam risco de obstrução respiratória.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j20,EMERGENCIA,EMERGENCIA,Sinais de força forte sem sair filhote e cansaço indicam risco imediato.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j21,EMERGENCIA,EMERGENCIA,"O cachorro apresenta sinais de envenenamento por sapo, como espuma na boca e comportamento anormal."
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j22,EMERGENCIA,EMERGENCIA,Sinais de convulsão e tremores fortes indicam risco imediato à vida.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j23,EMERGENCIA,EMERGENCIA,Sinais de tremores e rigidez indicam possível eclâmpsia puerperal.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j24,EMERGENCIA,EMERGENCIA,Paralisia aguda das patas traseiras e dificuldade para se mover indicam emergência.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j25,EMERGENCIA,EMERGENCIA,Sinais de anemia grave indicam risco à vida e exigem atendimento imediato.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j26,EMERGENCIA,EMERGENCIA,"Sinais de frieza, fraqueza e falta de interesse em mamar indicam risco imediato."
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j27,EMERGENCIA,NAO_EMERGENCIA,O relato não menciona sinais de alerta ou risco à vida.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j28,EMERGENCIA,EMERGENCIA,O cachorro comeu uva e apresenta sinais de vomito e incontinência urinária.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j29,EMERGENCIA,EMERGENCIA,Gengiva branca e fraqueza súbita indicam possível choque ou anemia.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j30,EMERGENCIA,EMERGENCIA,Sinais de dificuldade respiratória e oxigenação insuficiente exigem atendimento imediato.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j31,EMERGENCIA,EMERGENCIA,Sangramento no cocô pode indicar intoxicação por veneno de rato.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j32,EMERGENCIA,EMERGENCIA,Sinais de desequilíbrio e tremores nos olhos indicam possível síndrome vestibular.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j33,EMERGENCIA,EMERGENCIA,A secreção purulenta e o comportamento apático indicam risco de piometra.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j34,EMERGENCIA,EMERGENCIA,Sinais de dificuldade respiratória e pânico indicam risco imediato.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j35,EMERGENCIA,NAO_EMERGENCIA,"O relato descreve cansaço após exercício, sem sinais de emergência."
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j36,EMERGENCIA,EMERGENCIA,Queda de altura com incapacidade de levantar patas traseiras e dor indica risco grave.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j37,EMERGENCIA,EMERGENCIA,Sinais de torção gástrica exigem atendimento imediato.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j38,EMERGENCIA,EMERGENCIA,Sinais de obstrução respiratória e possível engasgo exigem atendimento imediato.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j39,NAO_EMERGENCIA,EMERGENCIA,"Risco de intoxicação por chocolate, mesmo que os sinais pareçam leves."
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j40,NAO_EMERGENCIA,NAO_EMERGENCIA,"O parto está dentro do normal, com filhotes nascendo com intervalo adequado."
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j41,NAO_EMERGENCIA,NAO_EMERGENCIA,O tremor é leve e o animal mantém normalidade e consciência.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j42,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal continua ativo e comendo, sem sinais de alerta."
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j43,NAO_EMERGENCIA,NAO_EMERGENCIA,"A ferida é superficial e o sangramento parou, não indicando risco imediato."
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j44,NAO_EMERGENCIA,NAO_EMERGENCIA,"Os sinais indicam doença periodontal leve, que não representa risco imediato."
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j45,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato está comendo menos, mas bebe água e é ativo, sem sinais de gravidade."
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j46,NAO_EMERGENCIA,NAO_EMERGENCIA,Os sinais são leves e não indicam risco imediato à vida.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j47,NAO_EMERGENCIA,EMERGENCIA,Inchaço grande na cara pode indicar reação alérgica grave.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j48,NAO_EMERGENCIA,NAO_EMERGENCIA,Os sinais são leves e compatíveis com cio normal.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j49,NAO_EMERGENCIA,NAO_EMERGENCIA,O relato não menciona sinais de sofrimento intenso ou risco à vida.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j50,NAO_EMERGENCIA,NAO_EMERGENCIA,Sintomas leves que podem aguardar avaliação veterinária.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j51,NAO_EMERGENCIA,NAO_EMERGENCIA,"O relato não menciona sinais de emergência, apenas preocupação com possível raiva."
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j52,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam otite externa leve, que não é urgente."
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j53,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam desconforto, mas não indicam risco à vida ou sofrimento intenso."
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j54,NAO_EMERGENCIA,NAO_EMERGENCIA,O caroço cresce devagar e o animal não apresenta sinais de alerta.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j55,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cachorro faz xixi com frequência, mas não apresenta sinais de dor ou sofrimento intenso."
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j56,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cachorro está ofegante após exercício, mas acalma-se na sombra sem sinais de alerta."
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j57,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato manca, mas ainda apoia a pata, não há sinais de sofrimento intenso ou risco à vida."
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j58,NAO_EMERGENCIA,NAO_EMERGENCIA,A tosse é leve e o animal mantém atividade normal.
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j59,NAO_EMERGENCIA,NAO_EMERGENCIA,"O olho do gato está remelado e meio fechado, mas não há sinais de dor ou comprometimento visual."
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j60,NAO_EMERGENCIA,NAO_EMERGENCIA,"Não há sinais de alerta, o animal está se comportando normalmente."
+ctxarq_oraculo_fichascl,indep2,qwen3-8b,j61,NAO_EMERGENCIA,NAO_EMERGENCIA,Os sintomas são leves e não indicam risco imediato à vida.
+sem_rag,indep,qwen3-8b,i01,EMERGENCIA,NAO_EMERGENCIA,"Sinais leves e passageiros, sem risco imediato à vida."
+sem_rag,indep,qwen3-8b,i02,EMERGENCIA,EMERGENCIA,Sinais de infecção e debilidade indicam risco à vida.
+sem_rag,indep,qwen3-8b,i03,EMERGENCIA,EMERGENCIA,Olho salto e inchaço indicam lesão grave que requer avaliação imediata.
+sem_rag,indep,qwen3-8b,i04,EMERGENCIA,EMERGENCIA,Vomito e incapacidade de levantar indicam risco à vida.
+sem_rag,indep,qwen3-8b,i05,EMERGENCIA,NAO_EMERGENCIA,"A pele amarelada pode ser uma alteração leve, sem sinais de sofrimento ou risco à vida."
+sem_rag,indep,qwen3-8b,i06,EMERGENCIA,EMERGENCIA,Parto prolongado e sofrimento intenso exigem atendimento imediato.
+sem_rag,indep,qwen3-8b,i07,EMERGENCIA,NAO_EMERGENCIA,Sinais leves e possivelmente relacionados a brincadeira.
+sem_rag,indep,qwen3-8b,i08,EMERGENCIA,EMERGENCIA,Sinais de queimadura e dificuldade respiratória indicam risco imediato.
+sem_rag,indep,qwen3-8b,i09,EMERGENCIA,EMERGENCIA,Gengivas brancas e susto podem indicar trauma ou hemorragia interna.
+sem_rag,indep,qwen3-8b,i10,EMERGENCIA,EMERGENCIA,Desmaio e alteração na cor da boca indicam risco imediato à vida.
+sem_rag,indep,qwen3-8b,i11,EMERGENCIA,EMERGENCIA,Comportamento anormal e tremores podem indicar intoxicação grave.
+sem_rag,indep,qwen3-8b,i12,EMERGENCIA,EMERGENCIA,Sinais de dificuldade respiratória e possível obstrução respiratória exigem atendimento imediato.
+sem_rag,indep,qwen3-8b,i13,EMERGENCIA,NAO_EMERGENCIA,Sangramento leve e não há sinais de sofrimento ou risco à vida.
+sem_rag,indep,qwen3-8b,i14,EMERGENCIA,EMERGENCIA,Sinais de dor intensa e incapacidade de urinar indicam emergência.
+sem_rag,indep,qwen3-8b,i15,EMERGENCIA,EMERGENCIA,"A gata apresenta sinais de dor e imobilidade, possivelmente por envenenamento."
+sem_rag,indep,qwen3-8b,i16,EMERGENCIA,EMERGENCIA,Respiração ofegante e falta de apetite indicam possível dificuldade respiratória.
+sem_rag,indep,qwen3-8b,i17,EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, possivelmente relacionados à condição pré-existente."
+sem_rag,indep,qwen3-8b,i18,EMERGENCIA,EMERGENCIA,Convulsões e tremores indicam risco à vida e necessitam de atendimento imediato.
+sem_rag,indep,qwen3-8b,i19,EMERGENCIA,EMERGENCIA,Sangue no cocô e vômito podem indicar problema grave.
+sem_rag,indep,qwen3-8b,i20,EMERGENCIA,EMERGENCIA,"Sinais como vômito, inchaço abdominal e agitação indicam risco imediato."
+sem_rag,indep,qwen3-8b,i21,EMERGENCIA,NAO_EMERGENCIA,Sinais leves e sem risco imediato à vida.
+sem_rag,indep,qwen3-8b,i22,EMERGENCIA,EMERGENCIA,Sinais de sofrimento intenso e risco à vida exigem atendimento imediato.
+sem_rag,indep,qwen3-8b,i23,EMERGENCIA,EMERGENCIA,Gengiva pálida e desânimo podem indicar anemia ou problema grave.
+sem_rag,indep,qwen3-8b,i24,EMERGENCIA,EMERGENCIA,Sinais como tremores e inconsciência indicam risco à vida.
+sem_rag,indep,qwen3-8b,i25,EMERGENCIA,EMERGENCIA,Tremores e convulsão podem indicar intoxicação ou problema grave.
+sem_rag,indep,qwen3-8b,i26,EMERGENCIA,EMERGENCIA,Sinais de dor intensa e incapacidade motora exigem atendimento imediato.
+sem_rag,indep,qwen3-8b,i27,EMERGENCIA,EMERGENCIA,Respiração ofegante pode indicar trauma interno ou lesão pulmonar.
+sem_rag,indep,qwen3-8b,i28,EMERGENCIA,EMERGENCIA,Perna gelada e inabilidade de andar indicam possível problema grave.
+sem_rag,indep,qwen3-8b,i29,EMERGENCIA,EMERGENCIA,Inchaço facial e dificuldade respiratória indicam reação alérgica grave.
+sem_rag,indep,qwen3-8b,i30,EMERGENCIA,EMERGENCIA,Vomito intenso e desidratação exigem atendimento imediato.
+sem_rag,indep,qwen3-8b,i31,EMERGENCIA,NAO_EMERGENCIA,Sinais leves e sem indicação de risco à vida.
+sem_rag,indep,qwen3-8b,i32,EMERGENCIA,EMERGENCIA,"Inchaço intenso, babar e incapacidade de levantar indicam sofrimento e risco."
+sem_rag,indep,qwen3-8b,i33,EMERGENCIA,NAO_EMERGENCIA,"Sangue nas fezes pode indicar problema, mas sem sinais de sofrimento ou risco imediato."
+sem_rag,indep,qwen3-8b,i34,EMERGENCIA,EMERGENCIA,Sinais de dificuldade respiratória e oxigenação insuficiente exigem atendimento imediato.
+sem_rag,indep,qwen3-8b,i35,EMERGENCIA,EMERGENCIA,Sinais como tremores e baba podem indicar problema grave que requer atenção imediata.
+sem_rag,indep,qwen3-8b,i36,EMERGENCIA,EMERGENCIA,"Recém-nascido não mama, está gelado e com baixa interação, sinal de risco à vida."
+sem_rag,indep,qwen3-8b,i37,EMERGENCIA,NAO_EMERGENCIA,Sinais leves e possíveis de monitorar em casa.
+sem_rag,indep,qwen3-8b,i38,EMERGENCIA,EMERGENCIA,Comportamento agitado e vômito indicam risco imediato à vida.
+sem_rag,indep,qwen3-8b,i39,NAO_EMERGENCIA,NAO_EMERGENCIA,Lesão na orelha sem sinais de sofrimento ou risco à vida.
+sem_rag,indep,qwen3-8b,i40,NAO_EMERGENCIA,NAO_EMERGENCIA,Furinho pequeno e comportamento normal indicam risco mínimo.
+sem_rag,indep,qwen3-8b,i41,NAO_EMERGENCIA,NAO_EMERGENCIA,Sintomas locais e não sinais de sofrimento ou risco à vida.
+sem_rag,indep,qwen3-8b,i42,NAO_EMERGENCIA,NAO_EMERGENCIA,Redução de apetite sem outros sinais de alerta indica caso leve.
+sem_rag,indep,qwen3-8b,i43,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam preocupação, mas não indicam risco imediato à vida."
+sem_rag,indep,qwen3-8b,i44,NAO_EMERGENCIA,NAO_EMERGENCIA,Sintomas leves e comportamento normal indicam não emergência.
+sem_rag,indep,qwen3-8b,i45,NAO_EMERGENCIA,NAO_EMERGENCIA,Sintomas locais podem ser tratados com cuidados básicos e avaliação veterinária.
+sem_rag,indep,qwen3-8b,i46,NAO_EMERGENCIA,NAO_EMERGENCIA,Tremores leves e comportamento normal indicam não emergência.
+sem_rag,indep,qwen3-8b,i47,NAO_EMERGENCIA,EMERGENCIA,Dor intensa e dificuldade para se mover indicam sofrimento grave.
+sem_rag,indep,qwen3-8b,i48,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais são leves e não indicam risco imediato à vida.
+sem_rag,indep,qwen3-8b,i49,NAO_EMERGENCIA,EMERGENCIA,Coceira intensa e vermelhidão na pele indicam sofrimento e possíveis complicações.
+sem_rag,indep,qwen3-8b,i50,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais leves e sem sinais de sofrimento ou risco à vida.
+sem_rag,indep,qwen3-8b,i51,NAO_EMERGENCIA,NAO_EMERGENCIA,"A mancha pode ser fratura, mas não há sinais de sofrimento intenso ou risco à vida."
+sem_rag,indep,qwen3-8b,i52,NAO_EMERGENCIA,NAO_EMERGENCIA,O fato de o cão se recuperar após descanso indica que não há risco imediato.
+sem_rag,indep,qwen3-8b,i53,NAO_EMERGENCIA,NAO_EMERGENCIA,A presença de um carocinho não indica risco imediato à vida.
+sem_rag,indep,qwen3-8b,i54,NAO_EMERGENCIA,NAO_EMERGENCIA,Carrapatos não indicam risco imediato à vida.
+sem_rag,indep,qwen3-8b,i55,NAO_EMERGENCIA,EMERGENCIA,Comportamento anormal e miar intenso podem indicar dor ou sofrimento intenso.
+sem_rag,indep,qwen3-8b,i56,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais são leves e não indicam risco imediato à vida.
+sem_rag,indep,qwen3-8b,i57,NAO_EMERGENCIA,EMERGENCIA,Sangramento externo pode indicar risco à vida e necessidade de atendimento imediato.
+sem_rag,indep,qwen3-8b,i58,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal está comendo e brincando normalmente, sem sinais de inconforto."
+sem_rag,indep,qwen3-8b,i59,NAO_EMERGENCIA,EMERGENCIA,Sangramento intenso e agitação indicam risco à vida.
+sem_rag,indep,qwen3-8b,i60,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem sinais de sofrimento ou risco à vida."
+sem_rag,indep,qwen3-8b,i61,NAO_EMERGENCIA,EMERGENCIA,Sinal de alerta para reação alérgica grave e sofrimento do animal.
+sem_rag,indep2,qwen3-8b,j01,EMERGENCIA,EMERGENCIA,"Sinais como polidria, poliúria e respiração acelerada indicam possível emergência."
+sem_rag,indep2,qwen3-8b,j02,EMERGENCIA,EMERGENCIA,Sinais de sangue na vomitação e sinais de sofrimento indicam risco à vida.
+sem_rag,indep2,qwen3-8b,j03,EMERGENCIA,NAO_EMERGENCIA,Babando leve e brincadeira indicam não urgência.
+sem_rag,indep2,qwen3-8b,j04,EMERGENCIA,EMERGENCIA,Sinais de convulsão e incapacidade de manter-se em pé indicam emergência.
+sem_rag,indep2,qwen3-8b,j05,EMERGENCIA,NAO_EMERGENCIA,O gato apresenta sintomas leves e pode aguardar avaliação clínica.
+sem_rag,indep2,qwen3-8b,j06,EMERGENCIA,EMERGENCIA,"Sinais como gengiva branca, fraqueza e incapacidade de andar indicam risco à vida."
+sem_rag,indep2,qwen3-8b,j07,EMERGENCIA,NAO_EMERGENCIA,Inchaço leve e comportamento normal indicam não emergência.
+sem_rag,indep2,qwen3-8b,j08,EMERGENCIA,EMERGENCIA,"Sinal de emergência: olho saltado, dor intensa e íris deslocada."
+sem_rag,indep2,qwen3-8b,j09,EMERGENCIA,NAO_EMERGENCIA,"O animal apresenta comportamento de cansaço após brincadeira, sem sinais de sofrimento ou risco à vida."
+sem_rag,indep2,qwen3-8b,j10,EMERGENCIA,EMERGENCIA,"Sinais de dor intensa, sangue na urina e comportamento agitado indicam emergência."
+sem_rag,indep2,qwen3-8b,j11,EMERGENCIA,EMERGENCIA,"Mastigação de lírio pode causar intoxicação grave, mesmo que o animal pareça bem."
+sem_rag,indep2,qwen3-8b,j12,EMERGENCIA,EMERGENCIA,"Sinais como prostração, urina marrom e icterícia indicam possível insuficiência hepática ou obstrução biliar."
+sem_rag,indep2,qwen3-8b,j13,EMERGENCIA,EMERGENCIA,Patas traseiras imóveis e miando baixo indicam possível sofrimento ou paralisia.
+sem_rag,indep2,qwen3-8b,j14,EMERGENCIA,EMERGENCIA,Sangramento intenso e respiração anormal indicam risco à vida.
+sem_rag,indep2,qwen3-8b,j15,EMERGENCIA,NAO_EMERGENCIA,"Sintomas leves, sem sinais de sofrimento ou risco à vida."
+sem_rag,indep2,qwen3-8b,j16,EMERGENCIA,EMERGENCIA,Sinais de desidratação e fraqueza indicam risco à vida.
+sem_rag,indep2,qwen3-8b,j17,EMERGENCIA,NAO_EMERGENCIA,Sinais são leves e o animal já recuperou-se rapidamente.
+sem_rag,indep2,qwen3-8b,j18,EMERGENCIA,EMERGENCIA,"Espasmos, babar excessivo e perda de controle indicam emergência."
+sem_rag,indep2,qwen3-8b,j19,EMERGENCIA,EMERGENCIA,Inchaço facial e respiração ofegante podem indicar reação alérgica grave.
+sem_rag,indep2,qwen3-8b,j20,EMERGENCIA,EMERGENCIA,"A cachorra está cansada, ofegante e com parto bloqueado, indicando risco imediato."
+sem_rag,indep2,qwen3-8b,j21,EMERGENCIA,NAO_EMERGENCIA,"Babando espuma, mas brincando normalmente, indica possível irritação sem risco imediato."
+sem_rag,indep2,qwen3-8b,j22,EMERGENCIA,EMERGENCIA,Sinais de convulsões e tremores indicam uma situação grave que requer atendimento imediato.
+sem_rag,indep2,qwen3-8b,j23,EMERGENCIA,NAO_EMERGENCIA,Sinais são leves e podem ser atribuídos ao cansaço pós-parto.
+sem_rag,indep2,qwen3-8b,j24,EMERGENCIA,EMERGENCIA,A incapacidade de mover as patas traseiras pode indicar lesão grave ou paralisia.
+sem_rag,indep2,qwen3-8b,j25,EMERGENCIA,EMERGENCIA,Gengivas brancas e comportamento anormal indicam possível anemia ou choque.
+sem_rag,indep2,qwen3-8b,j26,EMERGENCIA,EMERGENCIA,"Sinais de hipotermia, fraqueza e recusa em mamar indicam risco imediato de vida."
+sem_rag,indep2,qwen3-8b,j27,EMERGENCIA,NAO_EMERGENCIA,"O animal não apresenta sinais de alerta, apesar do consumo de chocolate."
+sem_rag,indep2,qwen3-8b,j28,EMERGENCIA,EMERGENCIA,"Sinais como vômito, falta de apetite e incontinência urinária indicam risco imediato."
+sem_rag,indep2,qwen3-8b,j29,EMERGENCIA,NAO_EMERGENCIA,Sinais são leves e não indicam risco imediato à vida.
+sem_rag,indep2,qwen3-8b,j30,EMERGENCIA,EMERGENCIA,Sinais de dificuldade respiratória e cianose indicam risco imediato à vida.
+sem_rag,indep2,qwen3-8b,j31,EMERGENCIA,EMERGENCIA,Sangramento retal pode indicar intoxicação grave e risco à vida.
+sem_rag,indep2,qwen3-8b,j32,EMERGENCIA,EMERGENCIA,Sinais indicam possível problema neurológico grave que requer atendimento imediato.
+sem_rag,indep2,qwen3-8b,j33,EMERGENCIA,NAO_EMERGENCIA,Secreção branca e comportamento calmo não indicam emergência imediata.
+sem_rag,indep2,qwen3-8b,j34,EMERGENCIA,EMERGENCIA,Sinais de dificuldade respiratória e possível colapso indicam risco imediato.
+sem_rag,indep2,qwen3-8b,j35,EMERGENCIA,NAO_EMERGENCIA,Sinais são leves e não indicam risco imediato à vida.
+sem_rag,indep2,qwen3-8b,j36,EMERGENCIA,EMERGENCIA,Fracasso motor e dor intensa indicam lesão grave que requer atendimento imediato.
+sem_rag,indep2,qwen3-8b,j37,EMERGENCIA,EMERGENCIA,Barriga estufada e dura com tentativa de vômito pode indicar obstrução intestinal.
+sem_rag,indep2,qwen3-8b,j38,EMERGENCIA,EMERGENCIA,Sinais de dificuldade respiratória e coloração anormal indicam risco imediato.
+sem_rag,indep2,qwen3-8b,j39,NAO_EMERGENCIA,EMERGENCIA,Chocolate é tóxico para cães e pode causar graves complicações.
+sem_rag,indep2,qwen3-8b,j40,NAO_EMERGENCIA,NAO_EMERGENCIA,"A gata está tranquila e cuidando do filhote, com apenas ofegância leve."
+sem_rag,indep2,qwen3-8b,j41,NAO_EMERGENCIA,NAO_EMERGENCIA,Tremor isolado e não há sinais de sofrimento ou risco à vida.
+sem_rag,indep2,qwen3-8b,j42,NAO_EMERGENCIA,NAO_EMERGENCIA,Sintomas leves e sem sinais de sofrimento ou risco à vida.
+sem_rag,indep2,qwen3-8b,j43,NAO_EMERGENCIA,NAO_EMERGENCIA,"Lesão superficial com sangramento leve, não há sinais de sofrimento intenso ou risco à vida."
+sem_rag,indep2,qwen3-8b,j44,NAO_EMERGENCIA,NAO_EMERGENCIA,"Placa amarela e bafo forte podem indicar problemas dentários, mas não são sinais de emergência."
+sem_rag,indep2,qwen3-8b,j45,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato mantém comportamentos normais, apesar da mudança de alimentação."
+sem_rag,indep2,qwen3-8b,j46,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem risco à vida ou sofrimento intenso."
+sem_rag,indep2,qwen3-8b,j47,NAO_EMERGENCIA,EMERGENCIA,Inchaço facial intenso pode indicar reação alérgica grave ou trauma.
+sem_rag,indep2,qwen3-8b,j48,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sangramento e inchaço leves, sem sinais de sofrimento ou risco à vida."
+sem_rag,indep2,qwen3-8b,j49,NAO_EMERGENCIA,EMERGENCIA,Furúnculo no pescoço pode causar infecção grave e comprometer a vida do animal.
+sem_rag,indep2,qwen3-8b,j50,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais são leves e não indicam risco imediato à vida.
+sem_rag,indep2,qwen3-8b,j51,NAO_EMERGENCIA,NAO_EMERGENCIA,Não há sinais de sofrimento ou risco imediato à vida do animal.
+sem_rag,indep2,qwen3-8b,j52,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem risco à vida ou sofrimento intenso."
+sem_rag,indep2,qwen3-8b,j53,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sintomas sugerem dor articular, mas não indicam risco imediato à vida."
+sem_rag,indep2,qwen3-8b,j54,NAO_EMERGENCIA,NAO_EMERGENCIA,"Carocinho pequeno e sem sintomas graves, não indica risco imediato."
+sem_rag,indep2,qwen3-8b,j55,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sintomas são incomuns, mas não indicam risco à vida imediato."
+sem_rag,indep2,qwen3-8b,j56,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves e passageiros, sem risco à vida."
+sem_rag,indep2,qwen3-8b,j57,NAO_EMERGENCIA,NAO_EMERGENCIA,"Mancar e dor podem ser sinais de lesão, mas não indicam risco imediato à vida."
+sem_rag,indep2,qwen3-8b,j58,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais são leves e não indicam risco imediato à vida.
+sem_rag,indep2,qwen3-8b,j59,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais são leves e não indicam risco imediato à vida.
+sem_rag,indep2,qwen3-8b,j60,NAO_EMERGENCIA,NAO_EMERGENCIA,"Carrapatos não indicam risco imediato, comportamento normal."
+sem_rag,indep2,qwen3-8b,j61,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais são leves e não indicam risco à vida imediato.
+rag_full,indep,llama3.2-3b,i01,EMERGENCIA,NAO_EMERGENCIA,"Sinal de agitação, mas não há sintomas graves."
+rag_full,indep,llama3.2-3b,i02,EMERGENCIA,EMERGENCIA,Sinal de pus e falta de apetite indicam infecção grave
+rag_full,indep,llama3.2-3b,i03,EMERGENCIA,NAO_EMERGENCIA,"Sinal de susto, não há sinais de lesão grave"
+rag_full,indep,llama3.2-3b,i04,EMERGENCIA,EMERGENCIA,Vômito e dificuldade para levantar indicam risco à vida
+rag_full,indep,llama3.2-3b,i05,EMERGENCIA,NAO_EMERGENCIA,"Sinal de amarelecimento, mas fome mantém o caso leve."
+rag_full,indep,llama3.2-3b,i06,EMERGENCIA,EMERGENCIA,Sinal de paro de parto prolongado e força absurda
+rag_full,indep,llama3.2-3b,i07,EMERGENCIA,NAO_EMERGENCIA,"Sinais de alerta: olhos mexendo sozinhos, possivel lesão cerebral ou convulsão."
+rag_full,indep,llama3.2-3b,i08,EMERGENCIA,EMERGENCIA,Sinal de choque e dificuldade respiratória indicam risco à vida imediato.
+rag_full,indep,llama3.2-3b,i09,EMERGENCIA,NAO_EMERGENCIA,"Sinais de susto, mas não há sinais graves de lesão."
+rag_full,indep,llama3.2-3b,i10,EMERGENCIA,EMERGENCIA,Sinal de desmaio grave e mudança de cor da boca
+rag_full,indep,llama3.2-3b,i11,EMERGENCIA,NAO_EMERGENCIA,Sinais de inchaço ou dificuldade para respirar não foram mencionados.
+rag_full,indep,llama3.2-3b,i12,EMERGENCIA,EMERGENCIA,Sinal de engasgo grave e dificuldade para tossir
+rag_full,indep,llama3.2-3b,i13,EMERGENCIA,NAO_EMERGENCIA,"Sanguezinho no nariz, provavelmente machucado, e o cão comeu uma isca de rato."
+rag_full,indep,llama3.2-3b,i14,EMERGENCIA,EMERGENCIA,Sinal de dor intensa e falta de urinação há horas
+rag_full,indep,llama3.2-3b,i15,EMERGENCIA,NAO_EMERGENCIA,"Sinais de sono e mordidas leves, sem sintomas graves."
+rag_full,indep,llama3.2-3b,i16,EMERGENCIA,EMERGENCIA,Sinal de dificuldade respiratória e comportamento agitado
+rag_full,indep,llama3.2-3b,i17,EMERGENCIA,NAO_EMERGENCIA,"Sinal de diabetes, mas hálito normal para a idade do gato."
+rag_full,indep,llama3.2-3b,i18,EMERGENCIA,EMERGENCIA,Convulsões e tremore indicam risco à vida imediato.
+rag_full,indep,llama3.2-3b,i19,EMERGENCIA,NAO_EMERGENCIA,"Sinais de mal estar e vômito, mas sem outros sintomas graves."
+rag_full,indep,llama3.2-3b,i20,EMERGENCIA,EMERGENCIA,Sinal de vômito e dor abdominal intensa
+rag_full,indep,llama3.2-3b,i21,EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, possivelmente causados por uma pequena ingestão de tempero."
+rag_full,indep,llama3.2-3b,i22,EMERGENCIA,EMERGENCIA,Sinal de desmaio e língua roxa indicam risco à vida.
+rag_full,indep,llama3.2-3b,i23,EMERGENCIA,NAO_EMERGENCIA,"Sinais de desanimamento e falta de apetite, mas ausência de sintomas graves."
+rag_full,indep,llama3.2-3b,i24,EMERGENCIA,EMERGENCIA,Tremer e apagão intensos indicam risco à vida.
+rag_full,indep,llama3.2-3b,i25,EMERGENCIA,NAO_EMERGENCIA,"Sinal de convulsão, mas acredita-se ser apenas um susto."
+rag_full,indep,llama3.2-3b,i26,EMERGENCIA,EMERGENCIA,Sinal de dor intenso e imobilidade repentina
+rag_full,indep,llama3.2-3b,i27,EMERGENCIA,NAO_EMERGENCIA,"Sinal de susto, sem sintomas graves"
+rag_full,indep,llama3.2-3b,i28,EMERGENCIA,NAO_EMERGENCIA,"Sinal de incomodidade, mas ausência de outros sintomas graves"
+rag_full,indep,llama3.2-3b,i29,EMERGENCIA,EMERGENCIA,Sinal de dificuldade respiratória grave
+rag_full,indep,llama3.2-3b,i30,EMERGENCIA,EMERGENCIA,Sinal de risco à vida devido à ingestão de linha e vômitos intensos
+rag_full,indep,llama3.2-3b,i31,EMERGENCIA,NAO_EMERGENCIA,Sinais de tremor e piscar rápido podem ser causados por cansaço ou frio.
+rag_full,indep,llama3.2-3b,i32,EMERGENCIA,EMERGENCIA,Sinal de risco à vida devido à inchaço e incapacidade de levantar
+rag_full,indep,llama3.2-3b,i33,EMERGENCIA,NAO_EMERGENCIA,"Sinal de sangue no cocô, mas considerado provável ingesta de algo ruim na rua."
+rag_full,indep,llama3.2-3b,i34,EMERGENCIA,EMERGENCIA,Sinal de dificuldade respiratória grave
+rag_full,indep,llama3.2-3b,i35,EMERGENCIA,NAO_EMERGENCIA,"Sinal de susto, sem sintomas graves ou persistente"
+rag_full,indep,llama3.2-3b,i36,EMERGENCIA,NAO_EMERGENCIA,"Sinal de falta de fome, mas ausência de outros sintomas graves"
+rag_full,indep,llama3.2-3b,i37,EMERGENCIA,NAO_EMERGENCIA,"Sinais de cansaço e possivel dor, mas não há risco imediato à vida."
+rag_full,indep,llama3.2-3b,i38,EMERGENCIA,EMERGENCIA,Sinal de risco à vida devido à ingestão de chocolate e comportamento agressivo.
+rag_full,indep,llama3.2-3b,i39,NAO_EMERGENCIA,EMERGENCIA,Sinal de risco à vida devido ao rasgo na orelha
+rag_full,indep,llama3.2-3b,i40,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem informações sobre ferimento ou sintomas graves."
+rag_full,indep,llama3.2-3b,i41,NAO_EMERGENCIA,EMERGENCIA,Sinal de dor intensa e preocupação com possíveis consequências graves
+rag_full,indep,llama3.2-3b,i42,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinal de redução de apetite, mas sem outros sintomas graves"
+rag_full,indep,llama3.2-3b,i43,NAO_EMERGENCIA,EMERGENCIA,"Sinal grave de hálito insuportável e amarelo, indicando possíveis problemas dentários urgentes."
+rag_full,indep,llama3.2-3b,i44,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem sintomas graves ou risco à vida."
+rag_full,indep,llama3.2-3b,i45,NAO_EMERGENCIA,EMERGENCIA,Olho vermelho e remela estranha indicam condição grave que requer atendimento imediato.
+rag_full,indep,llama3.2-3b,i46,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, possivelmente causados por uma reação alérgica ou desconforto leve."
+rag_full,indep,llama3.2-3b,i47,NAO_EMERGENCIA,EMERGENCIA,Sinal de dor intensa e incapacidade física
+rag_full,indep,llama3.2-3b,i48,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais indicam mudança no comportamento, mas não há sintomas graves."
+rag_full,indep,llama3.2-3b,i49,NAO_EMERGENCIA,EMERGENCIA,Sinal de dor intensa e desconforto no cachorro
+rag_full,indep,llama3.2-3b,i50,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem dor ou dificuldade respiratória aparente."
+rag_full,indep,llama3.2-3b,i51,NAO_EMERGENCIA,EMERGENCIA,"Sinal de risco à vida: 'tô desesperada com isso', indicando sofrimento intenso."
+rag_full,indep,llama3.2-3b,i52,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinal de ofegamento leve, sem outros sintomas, não indica risco à vida."
+rag_full,indep,llama3.2-3b,i53,NAO_EMERGENCIA,EMERGENCIA,Sinal de preocupação intensa e ausência de informações sobre o objeto encontrado
+rag_full,indep,llama3.2-3b,i54,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem sintomas de dor ou desconforto"
+rag_full,indep,llama3.2-3b,i55,NAO_EMERGENCIA,EMERGENCIA,Sinal de agitação intensa e miar persistente indicam sofrimento intenso
+rag_full,indep,llama3.2-3b,i56,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem sintomas graves ou risco à vida."
+rag_full,indep,llama3.2-3b,i57,NAO_EMERGENCIA,EMERGENCIA,Sangramento significativo e preocupação com infecção
+rag_full,indep,llama3.2-3b,i58,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais normais após ingestão de pão com passas
+rag_full,indep,llama3.2-3b,i59,NAO_EMERGENCIA,EMERGENCIA,Sangramento grave e agitação intensa
+rag_full,indep,llama3.2-3b,i60,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinal leve de tosse sem outros sintomas graves
+rag_full,indep,llama3.2-3b,i61,NAO_EMERGENCIA,EMERGENCIA,Sinal de choque anafilático iminente
+rag_full,indep2,llama3.2-3b,j01,EMERGENCIA,NAO_EMERGENCIA,"Sinais de calor e possível urinação excessiva, mas respiração rápida pode ser causada por calor ou estresse."
+rag_full,indep2,llama3.2-3b,j02,EMERGENCIA,EMERGENCIA,Sinal de sangue no vômito e falta de movimento indicam risco à vida imediato.
+rag_full,indep2,llama3.2-3b,j03,EMERGENCIA,NAO_EMERGENCIA,"Sinal de desconforto leve, aguardar observação"
+rag_full,indep2,llama3.2-3b,j04,EMERGENCIA,EMERGENCIA,"Tremer muito e ataque, sinal grave que requer atendimento imediato."
+rag_full,indep2,llama3.2-3b,j05,EMERGENCIA,NAO_EMERGENCIA,"Sinal de dor de barriga, mas ausência de outros sintomas graves"
+rag_full,indep2,llama3.2-3b,j06,EMERGENCIA,EMERGENCIA,"Sinal grave de ingestão de alho, que pode causar necrose bucal grave."
+rag_full,indep2,llama3.2-3b,j07,EMERGENCIA,NAO_EMERGENCIA,"Sinal leve de picada, sem sintomas graves"
+rag_full,indep2,llama3.2-3b,j08,EMERGENCIA,EMERGENCIA,Sinal grave de dor e possivel lesão ocular
+rag_full,indep2,llama3.2-3b,j09,EMERGENCIA,NAO_EMERGENCIA,"Sinal de sono, não há preocupação imediata."
+rag_full,indep2,llama3.2-3b,j10,EMERGENCIA,EMERGENCIA,Sinal de dor intensa e sangramento
+rag_full,indep2,llama3.2-3b,j11,EMERGENCIA,NAO_EMERGENCIA,"Sinal de vômito, mas o gato está bem e melhora rapidamente."
+rag_full,indep2,llama3.2-3b,j12,EMERGENCIA,EMERGENCIA,Sinais de insuficiência renal aguda e possíveis sintomas de doença renal crônica
+rag_full,indep2,llama3.2-3b,j13,EMERGENCIA,NAO_EMERGENCIA,"Sinal de dor ou desconforto, mas pode ser um problema temporário"
+rag_full,indep2,llama3.2-3b,j14,EMERGENCIA,EMERGENCIA,Sinal de sangramento profuso e dificuldade respiratória
+rag_full,indep2,llama3.2-3b,j15,EMERGENCIA,NAO_EMERGENCIA,"Sinal de susto, sem sinais graves de lesão"
+rag_full,indep2,llama3.2-3b,j16,EMERGENCIA,EMERGENCIA,Sintomas graves que indicam risco à vida
+rag_full,indep2,llama3.2-3b,j17,EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, possivelmente um pesadelo ou assustação"
+rag_full,indep2,llama3.2-3b,j18,EMERGENCIA,EMERGENCIA,"Sinais de convulsão e perda de controle, necessitando de atendimento imediato."
+rag_full,indep2,llama3.2-3b,j19,EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, possivelmente uma reação a picada de abelha."
+rag_full,indep2,llama3.2-3b,j20,EMERGENCIA,EMERGENCIA,"Sinal de parir complicado e sangramento, necessitando atendimento imediato."
+rag_full,indep2,llama3.2-3b,j21,EMERGENCIA,NAO_EMERGENCIA,"Sinal de gosto ruim, mas não há sinais de sofrimento intenso ou risco à vida."
+rag_full,indep2,llama3.2-3b,j22,EMERGENCIA,EMERGENCIA,Convulsões desesperadoras e tremento intenso indicam risco à vida imediato.
+rag_full,indep2,llama3.2-3b,j23,EMERGENCIA,NAO_EMERGENCIA,"Sinais de cansaço e possivel esgotamento, mas não há sinais de dor ou sofrimento intenso."
+rag_full,indep2,llama3.2-3b,j24,EMERGENCIA,EMERGENCIA,Sinal de paralisia muscular grave
+rag_full,indep2,llama3.2-3b,j25,EMERGENCIA,NAO_EMERGENCIA,"Sinais de sangramento e perda de apetite preocupantes, mas possíveis causas naturais"
+rag_full,indep2,llama3.2-3b,j26,EMERGENCIA,EMERGENCIA,Sinal de risco à vida: gatinho recém-nascido gelado e fraquinho
+rag_full,indep2,llama3.2-3b,j27,EMERGENCIA,NAO_EMERGENCIA,"Sinal de risco leve, mas ausência de sintomas graves"
+rag_full,indep2,llama3.2-3b,j28,EMERGENCIA,EMERGENCIA,Sinal de vômito e falta de urinação indicam possibilidade de intoxicação por uvas
+rag_full,indep2,llama3.2-3b,j29,EMERGENCIA,NAO_EMERGENCIA,"Sinal de susto leve, sem sintomas graves"
+rag_full,indep2,llama3.2-3b,j30,EMERGENCIA,EMERGENCIA,Sinal de dificuldade respiratória grave e língua envermelhada
+rag_full,indep2,llama3.2-3b,j31,EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem evidências de ingestão de veneno ou lesão grave."
+rag_full,indep2,llama3.2-3b,j32,EMERGENCIA,NAO_EMERGENCIA,"Sinais de perda de equilíbrio e olheiras, mas não há menção a dor ou dificuldade respiratória."
+rag_full,indep2,llama3.2-3b,j33,EMERGENCIA,NAO_EMERGENCIA,"Sinal de limpeza normal, sem sinais de dor ou desconforto"
+rag_full,indep2,llama3.2-3b,j34,EMERGENCIA,EMERGENCIA,Sinal de pânico e respiração agitada indicam risco à vida imediato.
+rag_full,indep2,llama3.2-3b,j35,EMERGENCIA,NAO_EMERGENCIA,"Sinais de cansaço e calor, mas não há risco à vida ou sofrimento intenso."
+rag_full,indep2,llama3.2-3b,j36,EMERGENCIA,EMERGENCIA,Sinal de dor intensa e incapacidade de levantar as patas
+rag_full,indep2,llama3.2-3b,j37,EMERGENCIA,NAO_EMERGENCIA,"Sinais de gases e desconforto, mas não há risco imediato à vida."
+rag_full,indep2,llama3.2-3b,j38,EMERGENCIA,EMERGENCIA,Sinal de dificuldade respiratória e agonia intensa
+rag_full,indep2,llama3.2-3b,j39,NAO_EMERGENCIA,EMERGENCIA,Sinal de choque e preocupação com possíveis consequências graves.
+rag_full,indep2,llama3.2-3b,j40,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais de ofegamento, mas tudo parece estar bem com o filhote."
+rag_full,indep2,llama3.2-3b,j41,NAO_EMERGENCIA,EMERGENCIA,Tremor nas patinhas de trás pode ser sinal de parada cardíaca aguda.
+rag_full,indep2,llama3.2-3b,j42,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, sem sintomas graves ou risco à vida."
+rag_full,indep2,llama3.2-3b,j43,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinal de sangramento, mas superficial e cortinho"
+rag_full,indep2,llama3.2-3b,j44,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, não há risco à vida ou sofrimento intenso"
+rag_full,indep2,llama3.2-3b,j45,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinal de pranto, mas não há outros sintomas graves mencionados."
+rag_full,indep2,llama3.2-3b,j46,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinais leves, possivelmente apenas coceira com reação de pele"
+rag_full,indep2,llama3.2-3b,j47,NAO_EMERGENCIA,EMERGENCIA,Sinal grave de dor e medo intensos
+rag_full,indep2,llama3.2-3b,j48,NAO_EMERGENCIA,EMERGENCIA,"Sangramento e inchaço suscitam preocupação, necessitando de atendimento veterinário imediato."
+rag_full,indep2,llama3.2-3b,j49,NAO_EMERGENCIA,EMERGENCIA,"Sinal de ferimento grave no pescoço, necessitando de atendimento imediato."
+rag_full,indep2,llama3.2-3b,j50,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinal de aumento de urinação sem outros sintomas graves
+rag_full,indep2,llama3.2-3b,j51,NAO_EMERGENCIA,EMERGENCIA,"Sinal de choque e medo intenso, indicando necessidade de atendimento imediato."
+rag_full,indep2,llama3.2-3b,j52,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinal leve de sujeira, sem dor ou outros sintomas preocupantes."
+rag_full,indep2,llama3.2-3b,j53,NAO_EMERGENCIA,EMERGENCIA,Sinal de dor intensa e dificuldade para se mover
+rag_full,indep2,llama3.2-3b,j54,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinal leve, sem sintomas graves ou preocupantes"
+rag_full,indep2,llama3.2-3b,j55,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinal de desconforto, mas não há risco à vida ou sofrimento intenso."
+rag_full,indep2,llama3.2-3b,j56,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinal de leve agitação e respiração mais rápida, mas sem outros sintomas graves."
+rag_full,indep2,llama3.2-3b,j57,NAO_EMERGENCIA,EMERGENCIA,Sinal de dor intensa e incapacidade de andar
+rag_full,indep2,llama3.2-3b,j58,NAO_EMERGENCIA,NAO_EMERGENCIA,"Sinal leve, sem outros sintomas preocupantes"
+rag_full,indep2,llama3.2-3b,j59,NAO_EMERGENCIA,EMERGENCIA,"Sinal de olheira fechada, preocupação com a visão do gato"
+rag_full,indep2,llama3.2-3b,j60,NAO_EMERGENCIA,NAO_EMERGENCIA,Sinais normais após passeio no parque
+rag_full,indep2,llama3.2-3b,j61,NAO_EMERGENCIA,EMERGENCIA,Sinal de dor intenso e sofrimento
+sem_rag,piloto,gemini-3.5-flash-lite,pA01,EMERGENCIA,INCERTO,Não foi possível analisar o relato com segurança.
+sem_rag,piloto,gemini-3.5-flash-lite,pA02,NAO_EMERGENCIA,NAO_EMERGENCIA,"A cadela está ativa e correndo normalmente, indicando que o sangramento e o inchaço são sinais leves de cio."
+sem_rag,piloto,gemini-3.5-flash-lite,pA03,EMERGENCIA,EMERGENCIA,"A dificuldade para urinar com dor e vômito indica risco grave de obstrução urinária, exigindo atendimento imediato."
+sem_rag,piloto,gemini-3.5-flash-lite,pA04,NAO_EMERGENCIA,NAO_EMERGENCIA,"Os sintomas indicam possível infecção urinária leve, pois ela continua ativa e sem dor intensa."
+sem_rag,piloto,gemini-3.5-flash-lite,pA05,EMERGENCIA,EMERGENCIA,"A gata apresenta sinais graves de intoxicação por produto de cão, necessitando de atendimento imediato."
+sem_rag,piloto,gemini-3.5-flash-lite,pA06,EMERGENCIA,EMERGENCIA,O cão teve episódios repetidos de convulsão com perda de consciência hoje.
+sem_rag,piloto,gemini-3.5-flash-lite,pA07,NAO_EMERGENCIA,NAO_EMERGENCIA,"Os sintomas relatados são leves e o animal está ativo, sem sinais de risco iminente."
+sem_rag,piloto,gemini-3.5-flash-lite,pA08,EMERGENCIA,EMERGENCIA,"A gata apresenta apatia, vômitos, barriga dura e corrimento com mau cheiro, indicando risco grave à vida."
+sem_rag,piloto,gemini-3.5-flash-lite,pA09,NAO_EMERGENCIA,NAO_EMERGENCIA,Os tremores nas pernas traseiras ocorrem apenas em pé e o cão continua ativo e interativo.
+sem_rag,piloto,gemini-3.5-flash-lite,pA10,EMERGENCIA,EMERGENCIA,"A ingestão de raticida é grave e exige atendimento veterinário imediato, mesmo que o cão pareça bem."
+sem_rag,piloto,gemini-3.5-flash-lite,pA11,NAO_EMERGENCIA,EMERGENCIA,A presença de sangue na urina e dificuldade para urinar indicam dor intensa e risco grave.
+sem_rag,piloto,gemini-3.5-flash-lite,pA12,EMERGENCIA,EMERGENCIA,"A incapacidade de urinar, sangue na urina e vômitos indicam risco grave à vida e dor intensa."
+sem_rag,piloto,gemini-3.5-flash-lite,pA13,NAO_EMERGENCIA,NAO_EMERGENCIA,Os sintomas relatados são normais do período de cio e não indicam risco imediato à vida.
+sem_rag,piloto,gemini-3.5-flash-lite,pA14,NAO_EMERGENCIA,NAO_EMERGENCIA,"A tremedeira ocorre em situações específicas e a gata interage normalmente, sem outros sinais de gravidade."
+sem_rag,piloto,gemini-3.5-flash-lite,pA15,EMERGENCIA,EMERGENCIA,"O gato apresentou crises convulsivas repetidas e confusão mental persistente, o que indica risco grave."
+sem_rag,piloto,gemini-3.5-flash-lite,pA16,EMERGENCIA,EMERGENCIA,"O uso de produto para cães em gatos causou intoxicação grave, exigindo atendimento veterinário imediato."
+sem_rag,piloto,gemini-3.5-flash-lite,pA17,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal apresenta apenas espirros leves e secreção clara, mantendo energia normal."
+sem_rag,piloto,gemini-3.5-flash-lite,pA18,EMERGENCIA,EMERGENCIA,"O animal apresenta sangramentos, fraqueza extrema e suspeita de intoxicação grave por raticida."
+sem_rag,piloto,gemini-3.5-flash-lite,pA19,EMERGENCIA,EMERGENCIA,"A secreção vaginal com cheiro forte, muita sede e apatia indicam infecção uterina grave, que requer atendimento imediato."
+sem_rag,piloto,gemini-3.5-flash-lite,pA20,EMERGENCIA,EMERGENCIA,"O animal apresenta dificuldade respiratória grave, língua roxa e tosse contínua, indicando risco imediato à vida."
+sem_rag,piloto,gemini-3.5-flash-lite,pB01,EMERGENCIA,EMERGENCIA,"O cão engoliu pano, vomita repetidamente, não retém água, está apático e sem defecar."
+sem_rag,piloto,gemini-3.5-flash-lite,pB02,EMERGENCIA,EMERGENCIA,A ingestão de linha de costura com vômitos e esforço para defecar indica alto risco de obstrução intestinal.
+sem_rag,piloto,gemini-3.5-flash-lite,pB03,EMERGENCIA,EMERGENCIA,A dificuldade para respirar e a língua roxa indicam risco imediato à vida do animal.
+sem_rag,piloto,gemini-3.5-flash-lite,pB04,EMERGENCIA,EMERGENCIA,"A respiração muito rápida, o esforço abdominal e a respiração de boca aberta indicam grave risco à vida."
+sem_rag,piloto,gemini-3.5-flash-lite,pB05,NAO_EMERGENCIA,NAO_EMERGENCIA,"Apesar da tosse com espuma, o cão mantém o apetite e energia normais entre as crises."
+sem_rag,piloto,gemini-3.5-flash-lite,pB06,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal tosse mas está ativo, comendo e brincando normalmente."
+sem_rag,piloto,gemini-3.5-flash-lite,pB07,EMERGENCIA,EMERGENCIA,O trabalho de parto prolongado com força sem sucesso e o líquido verde indicam sofrimento fetal e risco grave.
+sem_rag,piloto,gemini-3.5-flash-lite,pB08,EMERGENCIA,EMERGENCIA,O filhote está entalado no canal do parto há vinte minutos com sinais de sofrimento fetal.
+sem_rag,piloto,gemini-3.5-flash-lite,pB09,NAO_EMERGENCIA,EMERGENCIA,"A cadela gestante apresenta tremores intensos, ofofego e corrimento, indicando trabalho de parto complicado ou sofrimento."
+sem_rag,piloto,gemini-3.5-flash-lite,pB10,NAO_EMERGENCIA,NAO_EMERGENCIA,"A gata está calma, ronronando e cuidando dos filhotes, o que indica que o intervalo no parto pode ser normal."
+sem_rag,piloto,gemini-3.5-flash-lite,pB11,EMERGENCIA,EMERGENCIA,"O cão apresenta tremores contínuos, convulsão, salivação e desequilíbrio, indicando grave risco à vida."
+sem_rag,piloto,gemini-3.5-flash-lite,pB12,EMERGENCIA,EMERGENCIA,"O filhote apresentou convulsão, espasmos musculares e desequilíbrio, indicando alto risco neurológico que exige atendimento veterinário imediato."
+sem_rag,piloto,gemini-3.5-flash-lite,pB13,EMERGENCIA,EMERGENCIA,"O contato com sapo cururu causa intoxicação grave com salivação intensa, vermelhidão na gengiva e tremores."
+sem_rag,piloto,gemini-3.5-flash-lite,pB14,EMERGENCIA,EMERGENCIA,"O contato com sapo causou convulsões, vômitos e espumação intensa, indicando risco grave à vida."
+sem_rag,piloto,gemini-3.5-flash-lite,pB15,EMERGENCIA,EMERGENCIA,"O gato arrasta as patas traseiras, não fica em pé e sente dor intensa ao toque."
+sem_rag,piloto,gemini-3.5-flash-lite,pB16,EMERGENCIA,EMERGENCIA,"A gata apresenta paralisia súbita nas patas traseiras, extremidades frias e roxas, e dificuldade respiratória."
+sem_rag,piloto,gemini-3.5-flash-lite,pB17,NAO_EMERGENCIA,NAO_EMERGENCIA,"O animal está brincando e pulando normalmente, sem sinais de sofrimento ou risco iminente."
+sem_rag,piloto,gemini-3.5-flash-lite,pB18,NAO_EMERGENCIA,NAO_EMERGENCIA,A presença de um único carrapato sem outros sintomas graves é um caso leve que pode aguardar.
+sem_rag,piloto,gemini-3.5-flash-lite,pB19,NAO_EMERGENCIA,NAO_EMERGENCIA,"O sangramento parou rapidamente e o corte é pequeno, indicando um caso leve que pode aguardar atendimento comum."
+sem_rag,piloto,gemini-3.5-flash-lite,pB20,NAO_EMERGENCIA,NAO_EMERGENCIA,"O gato tem ferimentos leves que já pararam de sangrar, sem risco imediato à vida."
+cot_sem_rag,dev,llama3.2-3b,p19,EMERGENCIA,EMERGENCIA,"Sinais de choque e hipoglicemia, necessitam de atendimento imediato."
+cot_sem_rag,dev,llama3.2-3b,p20,EMERGENCIA,INCERTO,Falta de informações sobre a caída e a gengiva branca
+cot_sem_rag,dev,llama3.2-3b,p21,EMERGENCIA,EMERGENCIA,Sinal de dificuldade respiratória grave
+cot_sem_rag,dev,llama3.2-3b,p22,EMERGENCIA,EMERGENCIA,Sinal de paralisia muscular temporária ou lesão nos nervos
+cot_sem_rag,dev,llama3.2-3b,p23,EMERGENCIA,EMERGENCIA,Sinal grave de risco à vida devido ao sanguinamento persistente
+cot_sem_rag,dev,llama3.2-3b,p24,EMERGENCIA,EMERGENCIA,Sinal de dor intensa e possibilidade de infecção
+cot_sem_rag,dev,llama3.2-3b,p25,EMERGENCIA,EMERGENCIA,"Sinais graves de desidratação, desnutrição e condição grave que requerem atendimento veterinário imediato."
+cot_sem_rag,dev,llama3.2-3b,p26,EMERGENCIA,EMERGENCIA,Sinais graves indicam risco à vida e necessidade de atendimento imediato.
+cot_sem_rag,dev,llama3.2-3b,p27,EMERGENCIA,INCERTO,Falta de informações sobre a gravidade do vômito e a duração do silêncio do cachorro.
+cot_sem_rag,dev,llama3.2-3b,p28,EMERGENCIA,NAO_EMERGENCIA,"O gato não apresenta sinais graves de doença, mas a falta de interesse em mamar é uma preocupação que deve ser avaliada por um profissional veterinário."
+cot_sem_rag,dev,llama3.2-3b,p29,EMERGENCIA,EMERGENCIA,Sinal grave de dor intensa e incapacidade de se mover
+cot_sem_rag,dev,llama3.2-3b,p30,EMERGENCIA,EMERGENCIA,Sangue saindo do nariz é sinal de risco à vida
+cot_sem_rag,dev,llama3.2-3b,p31,EMERGENCIA,EMERGENCIA,Sinal de dor e sinais de infecção óssea ou auditiva
+cot_sem_rag,dev,llama3.2-3b,p32,EMERGENCIA,EMERGENCIA,Sinal de respiração ruidosa indica sofrimento intenso e necessidade de atendimento imediato.
+cot_sem_rag,dev,llama3.2-3b,p33,EMERGENCIA,INCERTO,Falta de informações sobre a gravidade dos sintomas
+cot_sem_rag,dev,llama3.2-3b,p34,EMERGENCIA,EMERGENCIA,Sinais de desnutrição e possíveis problemas dentários que exigem atendimento veterinário urgente.
+cot_sem_rag,dev,llama3.2-3b,p35,EMERGENCIA,EMERGENCIA,Sintomas graves indicam risco à vida
+cot_sem_rag,dev,llama3.2-3b,p36,EMERGENCIA,EMERGENCIA,Sinal de dor intensa e possível infeção ou lesão no olho.
+cot_sem_rag,dev,llama3.2-3b,p37,EMERGENCIA,EMERGENCIA,"Sinal de tremendo indica risco à vida, necessitando de atendimento imediato."
+cot_sem_rag,dev,llama3.2-3b,p38,EMERGENCIA,INCERTO,Falta de informações sobre os sintomas e a gravidade do caso
+cot_sem_rag,dev,llama3.2-3b,p39,EMERGENCIA,EMERGENCIA,Sinais de dificuldade respiratória e paralisia muscular indicam necessidade de atendimento veterinário urgente.
+cot_sem_rag,dev,llama3.2-3b,p40,EMERGENCIA,EMERGENCIA,Sinal de forca prolongada e ausência de outros sintomas indicam risco à vida
+cot_sem_rag,dev,llama3.2-3b,p41,EMERGENCIA,EMERGENCIA,"Sinais de infecção e desequilíbrio, necessitando de atendimento veterinário imediato."
+cot_sem_rag,dev,llama3.2-3b,p42,EMERGENCIA,EMERGENCIA,Sinais de desidratação e hipotermia intensa
+cot_sem_rag,dev,llama3.2-3b,p43,EMERGENCIA,EMERGENCIA,"Sinais de dor e dificuldade para se mover, com tremendo muito e rigidez, indicam risco à vida."
+cot_sem_rag,dev,llama3.2-3b,p44,NAO_EMERGENCIA,INCERTO,Falta de informações sobre sintomas específicos
+cot_sem_rag,dev,llama3.2-3b,p45,NAO_EMERGENCIA,INCERTO,Falta de informações sobre a gravidade dos sintomas
+cot_sem_rag,dev,llama3.2-3b,p46,NAO_EMERGENCIA,INCERTO,Falta de informações sobre a frequência e a quantidade de urinação
+cot_sem_rag,dev,llama3.2-3b,p47,NAO_EMERGENCIA,INCERTO,Falta de informações sobre sintomas graves
+cot_sem_rag,dev,llama3.2-3b,p48,NAO_EMERGENCIA,INCERTO,Falta de informações sobre o estado do animal após o vômito
+cot_sem_rag,dev,llama3.2-3b,p49,NAO_EMERGENCIA,INCERTO,Falta de informações sobre a gravidade da dificuldade e a duração do melhora
+cot_sem_rag,dev,llama3.2-3b,p50,NAO_EMERGENCIA,NAO_EMERGENCIA,O incharinho pequeno não indica risco à vida e o animal continua brincando normalmente.
+cot_sem_rag,dev,llama3.2-3b,p51,NAO_EMERGENCIA,INCERTO,Falta de informações sobre a gravidade da tosse seca
+cot_sem_rag,dev,llama3.2-3b,p52,NAO_EMERGENCIA,EMERGENCIA,Sinal de olho vermelho indica risco à vida e necessidade de atendimento imediato.
+cot_sem_rag,dev,llama3.2-3b,p53,NAO_EMERGENCIA,INCERTO,Falta de informações sobre a saúde da cadela e os filhotes
+cot_sem_rag,dev,llama3.2-3b,p54,NAO_EMERGENCIA,EMERGENCIA,"Sinal de tremendo indica risco à vida, especialmente se acompanhado de outros sintomas como dificuldade para respirar ou convulsões."
+cot_sem_rag,dev,llama3.2-3b,p55,NAO_EMERGENCIA,INCERTO,Falta de informações sobre a gravidade da lesão
+cot_sem_rag,dev,llama3.2-3b,p56,NAO_EMERGENCIA,INCERTO,"Embora o gato esteja comendo e brincando normalmente, a presença de casquinhas na pele e o comportamento de cocar excessivamente na base do rabo são sinais que requerem atenção veterinária."
+cot_sem_rag,dev,llama3.2-3b,p57,NAO_EMERGENCIA,INCERTO,"Falta de apetite não é suficiente para classificar como EMERGENCIA, mas ausência de outros sintomas também não é suficiente para classificar como NAO_EMERGENCIA."
+cot_sem_rag,dev,llama3.2-3b,p58,NAO_EMERGENCIA,NAO_EMERGENCIA,A mordida não está incharcida e o local já foi limpo.
+cot_sem_rag,dev,llama3.2-3b,p59,NAO_EMERGENCIA,INCERTO,Falta de informações sobre outros sintomas ou mudanças no comportamento do gato
+cot_sem_rag,dev,llama3.2-3b,p60,NAO_EMERGENCIA,NAO_EMERGENCIA,O corte parou de sangrar rapidamente e o cachorro não mostrou sinais de dor ou desconforto.
+cot_sem_rag,dev,llama3.2-3b,p61,NAO_EMERGENCIA,INCERTO,Falta de informações sobre a gravidade do halito e a presença de dor.
+cot_sem_rag,dev,llama3.2-3b,p62,NAO_EMERGENCIA,INCERTO,"Falta de informações sobre o carocinho, não há sinais de dor ou desconforto."
+cot_sem_rag,dev,llama3.2-3b,p63,NAO_EMERGENCIA,INCERTO,Falta de informações sobre o comportamento do cachorro após o encontro com o morcego
+cot_sem_rag,dev,llama3.2-3b,p64,NAO_EMERGENCIA,INCERTO,Falta de informações sobre os sintomas do gato
+cot_sem_rag,dev,llama3.2-3b,p65,NAO_EMERGENCIA,NAO_EMERGENCIA,"O cachorro está se recuperando de um esforço físico intenso, mas sem sinais de dor ou distress grave."
+cot_sem_rag,dev,llama3.2-3b,p66,NAO_EMERGENCIA,NAO_EMERGENCIA,"A condição de sobrepeso é uma questão de saúde a ser monitorada, mas não há sinais de emergência imediata."
+cot_sem_rag,dev,llama3.2-3b,p67,NAO_EMERGENCIA,INCERTO,Falta de informações sobre a vacinação do gato.
+cot_sem_rag,dev,llama3.2-3b,p68,INCERTO,INCERTO,Falta de informações sobre os sintomas do gato
