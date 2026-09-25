@@ -95,3 +95,33 @@ def test_linha_grava_a_procedencia_do_atendente():
     assert linha["attendant_model_version"] == "v1"
     assert linha["attendant_fallback_from"] is None
     assert linha["used_topics"] == ["chocolate_toxicosis"]
+
+
+def test_cota_esgotada_para_a_rodada_com_a_dica_do_resume(tmp_path, monkeypatch):
+    import requests
+
+    class Resposta503:
+        status_code = 503
+        text = "cota"
+
+        def json(self):
+            return {"code": "quota_exhausted", "details": {"provider": "gemini"}}
+
+    class ClienteSemCota(ClienteFalso):
+        def classify(self, relato, options):
+            if len(self.chamadas) >= 1:
+                erro = requests.HTTPError("HTTP 503")
+                erro.response = Resposta503()
+                self.chamadas.append({"relato": relato})
+                raise erro
+            return super().classify(relato, options)
+
+    caminho = _csv(tmp_path, [
+        {"id": "p01", "text": "a", "expected_class": "EMERGENCIA"},
+        {"id": "p02", "text": "b", "expected_class": "NAO_EMERGENCIA"},
+    ])
+    monkeypatch.setattr(runner, "DIRETORIO_RODADAS", tmp_path / "runs")
+    monkeypatch.setattr(runner, "ApiClient", lambda *a, **k: ClienteSemCota())
+
+    with pytest.raises(SystemExit, match="--resume"):
+        runner.main(["--cases", str(caminho), "--preset", "producao", "--name", "t"])

@@ -27,6 +27,9 @@ CoTPosition = Literal["first", "last"]
 # lexical, reranker, âncoras e veto de espécie.
 RetrievalMode = Literal["vector", "routed_rerank"]
 
+AttendantProvider = Literal["gemini", "ollama"]
+AttendantFallback = Literal["none", "ollama"]
+
 
 class PipelineOptions(BaseModel):
     """
@@ -58,6 +61,9 @@ class PipelineOptions(BaseModel):
     self_refine_enabled: Optional[bool] = None
 
     # Geração
+    attendant_provider: Optional[AttendantProvider] = None
+    # O modelo local (Ollama) desta requisição; não vale para o Gemini.
+    llm_model: Optional[str] = Field(default=None, min_length=1, max_length=100)
     prompt_version: Optional[PromptVersion] = None
     structured_output_mode: Optional[StructuredOutputMode] = None
     think: Optional[bool] = None
@@ -96,6 +102,8 @@ class EffectiveConfig(BaseModel):
     num_ctx: int
     num_predict: int
     think: Optional[bool] = False
+    attendant_provider: AttendantProvider = "ollama"
+    attendant_fallback: AttendantFallback = "none"
 
 
 class AttendantProvenance(BaseModel):

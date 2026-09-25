@@ -16,7 +16,9 @@ async def app_exception_handler(
             success=False,
             error=exc.__class__.__name__,
             message=exc.message,
-        ).model_dump(),
+            code=getattr(exc, "code", None),
+            details=getattr(exc, "details", None),
+        ).model_dump(exclude_none=True),
     )
 
 

@@ -43,7 +43,19 @@ class Settings(BaseSettings):
     # backend fora do container.
     OLLAMA_HOST: str = "http://localhost:11434"
 
-    LLM_MODEL: str = "llama3.2:3b"
+    # O modelo local (Ollama). Desde 25/09 é o qwen3:8b, a alternativa local
+    # medida na autópsia 2; o llama3.2:3b (o sistema até 24/09) continua pelo
+    # preset local_llama ou por llm_model na requisição.
+    LLM_MODEL: str = "qwen3:8b"
+
+    # Quem classifica a urgência (rodada 26 do João). "gemini" é a decisão de
+    # produto do João de 25/09; "ollama" usa o LLM_MODEL local. Sem troca
+    # silenciosa: com ATTENDANT_FALLBACK="none" (o padrão), se o provedor
+    # escolhido falhar a API responde 503 dizendo qual e por quê; com
+    # "ollama", responde pelo modelo local e registra a troca na procedência
+    # e no texto da resposta.
+    ATTENDANT_PROVIDER: str = "gemini"
+    ATTENDANT_FALLBACK: str = "none"
 
     # Temperatura zero e seed fixa deixam as rodadas de avaliação
     # reproduzíveis: a mesma entrada devolve a mesma classificação.
@@ -63,17 +75,19 @@ class Settings(BaseSettings):
     LLM_THINK: bool | None = False
 
     # ==========================
-    # Gemini (experimental — comparação com Ollama na etapa de consulta)
+    # Gemini
     # ==========================
-    # Nada no pipeline de produção lê estas duas. Existem só para
-    # backend/app/clients/gemini_query_client.py e o script de comparação
-    # em backend/app/database/compare_query_providers.py — o teste pedido
-    # pelo grupo em 22/09 para ver se um modelo maior ajuda a reescrita, o
-    # multi-query e o HyDE. Sem chave configurada, o cliente recusa a
-    # chamada com uma mensagem clara em vez de falhar tarde, na API do
-    # Google.
+    # Desde 25/09 o Gemini é o atendente padrão (ATTENDANT_PROVIDER acima) e
+    # continua sendo o primeiro provedor da etapa de consulta quando ela está
+    # ligada (HybridQueryClient). A chave vem só do ambiente (.env local,
+    # nunca o .env.example) e nunca é registrada em log nem no retrato.
     GEMINI_API_KEY: str = ""
     GEMINI_MODEL: str = "gemini-3.5-flash-lite"
+    GEMINI_TIMEOUT_S: float = 60.0
+    # Espaço mínimo entre chamadas: a cota gratuita tem limite por minuto.
+    GEMINI_MIN_INTERVAL_S: float = 4.0
+    GEMINI_MAX_RETRIES_429: int = 8
+    GEMINI_MAX_RETRIES_503: int = 6
 
     LLM_TIMEOUT_S: int = 600
     LLM_KEEP_ALIVE: str = "10m"

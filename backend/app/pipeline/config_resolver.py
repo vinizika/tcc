@@ -87,6 +87,21 @@ def resolve(
             "classificação."
         )
 
+    attendant_provider = _pick(
+        options.attendant_provider,
+        settings.ATTENDANT_PROVIDER,
+    )
+    if attendant_provider not in ("gemini", "ollama"):
+        raise UnsupportedOptionException(
+            f"ATTENDANT_PROVIDER inválido: {attendant_provider!r} "
+            "(use 'gemini' ou 'ollama')."
+        )
+    if options.llm_model and attendant_provider == "gemini":
+        raise UnsupportedOptionException(
+            "llm_model escolhe o modelo local; com attendant_provider='gemini' "
+            "ele não teria efeito. Peça attendant_provider='ollama'."
+        )
+
     query_rewriting_enabled = _pick(
         options.query_rewriting_enabled,
         settings.QUERY_REWRITING_ENABLED,
@@ -135,7 +150,13 @@ def resolve(
         self_refine_enabled=False,
         prompt_version=prompt_version,
         structured_output_mode=structured_output_mode,
-        model=settings.LLM_MODEL,
+        model=(
+            settings.GEMINI_MODEL
+            if attendant_provider == "gemini"
+            else _pick(options.llm_model, settings.LLM_MODEL)
+        ),
+        attendant_provider=attendant_provider,
+        attendant_fallback=settings.ATTENDANT_FALLBACK,
         temperature=_pick(
             options.temperature,
             settings.LLM_TEMPERATURE,

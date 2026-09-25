@@ -11,6 +11,7 @@ import time
 from concurrent.futures import ThreadPoolExecutor
 
 from app.clients.hybrid_query_client import QUERY_TRACE, HybridQueryClient
+from app.clients.gemini_llm_client import GeminiLLMClient
 from app.clients.llm_client import LLMClient
 from app.clients.reranker_client import RerankerClient
 from app.clients.retrieval_client import RetrievalClient
@@ -18,6 +19,7 @@ from app.constants.pipeline import DEFAULT_SCORE_THRESHOLD
 from app.core.config import settings
 from app.core.logger import setup_logger
 from app.core.ollama import default_options
+from app.exceptions.attendant_exception import AttendantUnavailableException
 from app.models.retrieved_document import RetrievedDocument
 from app.pipeline.answer_renderer import render
 from app.pipeline.config_resolver import resolve
@@ -101,7 +103,20 @@ class ChatPipeline:
         self.query_client = query_client
         self.retrieval_client = retrieval_client
         self.reranker = reranker
-        self.llm_client = llm_client or LLMClient()
+        # Um cliente passado aqui (testes, ferramentas) atende toda chamada.
+        # Sem ele, o atendente é escolhido a cada chamada pela configuração
+        # efetiva (rodada 26 do João): o Gemini ou o Ollama.
+        self.llm_client = llm_client
+        self._atendentes: dict[str, object] = {}
+
+    def _attendant(self, provider: str):
+        if self.llm_client is not None:
+            return self.llm_client
+        if provider not in self._atendentes:
+            self._atendentes[provider] = (
+                GeminiLLMClient() if provider == "gemini" else LLMClient()
+            )
+        return self._atendentes[provider]
 
     # ------------------------------------------------------------------
     # Etapa de consulta (fronteira com o trilho B1)
@@ -338,9 +353,7 @@ class ChatPipeline:
             animal_context,
         )
 
-        call = self.llm_client.classify(
-            messages,
-            output_model,
+        chamada = dict(
             mode=config.structured_output_mode,
             options=default_options(
                 temperature=config.temperature,
@@ -350,6 +363,27 @@ class ChatPipeline:
             ),
             think=config.think,
         )
+
+        try:
+            call = self._attendant(config.attendant_provider).classify(
+                messages, output_model, model=config.model, **chamada
+            )
+        except AttendantUnavailableException as erro:
+            # Sem troca silenciosa: só troca se a configuração permitir, e a
+            # troca fica registrada na procedência e no texto da resposta.
+            if (
+                config.attendant_fallback != "ollama"
+                or config.attendant_provider == "ollama"
+            ):
+                raise
+            logger.warning(
+                f"Atendente {config.attendant_provider} falhou ({erro.message}); "
+                "respondendo pelo Ollama, como a configuração permite"
+            )
+            call = self._attendant("ollama").classify(
+                messages, output_model, model=settings.LLM_MODEL, **chamada
+            )
+            call.fallback_from = f"{config.attendant_provider}:{config.model}"
 
         if call.output is None:
             # Duas tentativas sem resposta válida. Em vez de arriscar uma
@@ -501,6 +535,13 @@ class ChatPipeline:
             )
 
             answer = render(triage)
+
+            if getattr(call, "fallback_from", None):
+                answer += (
+                    "\n\n_Aviso: o atendente configurado ("
+                    f"{call.fallback_from}) não respondeu; esta resposta veio do "
+                    f"modelo local {call.model}._"
+                )
 
             generation_seconds = time.perf_counter() - generation_start
 

@@ -19,7 +19,7 @@ from pydantic import BaseModel, ValidationError
 from app.core.config import settings
 from app.core.logger import setup_logger
 from app.core.ollama import default_options, get_ollama_client
-from app.exceptions.llm_exception import LLMException
+from app.exceptions.attendant_exception import AttendantUnavailableException
 
 logger = setup_logger("LLMClient")
 
@@ -49,6 +49,9 @@ class LLMCallResult:
     model: str = ""
     model_version: Optional[str] = None
     thinking: Optional[bool] = None
+    # Preenchido pelo pipeline quando o provedor escolhido falhou e a troca
+    # estava permitida: "gemini:gemini-3.5-flash-lite", por exemplo.
+    fallback_from: Optional[str] = None
 
 
 class LLMClient:
@@ -83,11 +86,12 @@ class LLMClient:
         options: Optional[dict[str, Any]] = None,
         keep_alive: Optional[str] = None,
         think: Optional[bool] = None,
+        model: Optional[str] = None,
     ) -> LLMCallResult:
 
         options = dict(options or default_options())
         keep_alive = keep_alive or settings.LLM_KEEP_ALIVE
-        modelo = settings.LLM_MODEL
+        modelo = model or settings.LLM_MODEL
         extra = {} if think is None else {"think": think}
         pensou = None
 
@@ -126,15 +130,20 @@ class LLMClient:
                 )
 
             except (httpx.ConnectError, httpx.ReadTimeout) as erro:
-                raise LLMException(
+                raise AttendantUnavailableException(
                     f"Não foi possível falar com o Ollama em "
-                    f"{settings.OLLAMA_HOST}: {erro}"
+                    f"{settings.OLLAMA_HOST}: {erro}",
+                    provider=self.provider,
+                    model=modelo,
+                    reason=type(erro).__name__,
                 ) from erro
 
             except ResponseError as erro:
-                raise LLMException(
-                    f"O Ollama recusou a chamada ao modelo "
-                    f"{settings.LLM_MODEL}: {erro}"
+                raise AttendantUnavailableException(
+                    f"O Ollama recusou a chamada ao modelo {modelo}: {erro}",
+                    provider=self.provider,
+                    model=modelo,
+                    reason="ollama_response_error",
                 ) from erro
 
             decorrido = time.perf_counter() - inicio

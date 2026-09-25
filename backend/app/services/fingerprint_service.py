@@ -420,5 +420,15 @@ class FingerprintService:
                 "think": settings.LLM_THINK,
                 "gemini_model": settings.GEMINI_MODEL,
             },
+            # Quem responde (rodada 26 do João). A chave nunca aparece: só se
+            # está configurada.
+            "attendant": {
+                "provider": settings.ATTENDANT_PROVIDER,
+                "fallback": settings.ATTENDANT_FALLBACK,
+                "gemini_model": settings.GEMINI_MODEL,
+                "gemini_key_configured": bool(settings.GEMINI_API_KEY),
+                "ollama_model": settings.LLM_MODEL,
+                "gemini_min_interval_s": settings.GEMINI_MIN_INTERVAL_S,
+            },
             "overridden_by_env": _vindas_do_ambiente(),
         }

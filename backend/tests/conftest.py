@@ -73,6 +73,7 @@ def settings() -> Settings:
         # rota): os testes que exercitam essas etapas as ligam aqui. Os
         # padrões novos têm teste próprio em test_config_resolver.py.
         RETRIEVAL_MODE="routed_rerank",
+        ATTENDANT_PROVIDER="ollama",
         COT_ENABLED=False,
         SELF_REFINE_ENABLED=False,
         REWRITTEN_HINT_ENABLED=False,

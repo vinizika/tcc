@@ -1,6 +1,86 @@
 {
   "_comment": "Configurações nomeadas dos braços de avaliação. Cada preset é um conjunto de opções enviado ao POST /chat/. O runner registra no manifesto tanto o que foi pedido quanto o que a API respondeu ter usado, porque algumas opções são forçadas pelo servidor (o modo legado desliga a busca, por exemplo).",
 
+  "producao": {
+    "_descricao": "A arquitetura da autópsia 2 como padrão (rodada 26 do João): relato cru, bge-m3 nas 61 fichas de busca, as 3 mais próximas sem porta, a ficha de leitura no prompt, e o Gemini como atendente. Igual aos padrões das settings, escrito por extenso para a rodada não depender do ambiente.",
+    "retrieval_enabled": true,
+    "retrieval_mode": "vector",
+    "context_min_score": 0.0,
+    "query_rewriting_enabled": false,
+    "multi_query_enabled": false,
+    "hyde_enabled": false,
+    "prompt_version": "v1_grounded",
+    "attendant_provider": "gemini"
+  },
+
+  "local_qwen": {
+    "_descricao": "A mesma arquitetura com o atendente local qwen3:8b, sem pensar. Precisa de GPU (sem ela, ~34 s por caso).",
+    "retrieval_enabled": true,
+    "retrieval_mode": "vector",
+    "context_min_score": 0.0,
+    "query_rewriting_enabled": false,
+    "multi_query_enabled": false,
+    "hyde_enabled": false,
+    "prompt_version": "v1_grounded",
+    "attendant_provider": "ollama",
+    "llm_model": "qwen3:8b",
+    "think": false
+  },
+
+  "local_llama": {
+    "_descricao": "A mesma arquitetura com o llama3.2:3b, o atendente do sistema até 24/09. Na autópsia 2 ele decide pelo tom (rodada 18).",
+    "retrieval_enabled": true,
+    "retrieval_mode": "vector",
+    "context_min_score": 0.0,
+    "query_rewriting_enabled": false,
+    "multi_query_enabled": false,
+    "hyde_enabled": false,
+    "prompt_version": "v1_grounded",
+    "attendant_provider": "ollama",
+    "llm_model": "llama3.2:3b",
+    "think": false
+  },
+
+  "fichas_tradutor": {
+    "_descricao": "Braço da ablação: as fichas com o tradutor ligado (reescrita, multi-query e HyDE). Sem a chave do Gemini, a etapa de consulta cai para o Ollama, e a procedência registra a queda. Atendente qwen, como na tabela 2×2 da rodada 17.",
+    "retrieval_enabled": true,
+    "retrieval_mode": "vector",
+    "context_min_score": 0.0,
+    "query_rewriting_enabled": true,
+    "multi_query_enabled": true,
+    "hyde_enabled": true,
+    "prompt_version": "v1_grounded",
+    "attendant_provider": "ollama",
+    "llm_model": "qwen3:8b",
+    "think": false
+  },
+
+  "hoje_academico_llama": {
+    "_descricao": "O sistema até 24/09, para a ablação: exige a coleção acadêmica ativa (--rollback veterinary_documents__20260920T160842289762Z__388f518d e reiniciar o backend), rota + reranker + porta de 0,72, tradutor desligado, llama3.2:3b.",
+    "retrieval_enabled": true,
+    "retrieval_mode": "routed_rerank",
+    "context_min_score": 0.72,
+    "query_rewriting_enabled": false,
+    "multi_query_enabled": false,
+    "hyde_enabled": false,
+    "prompt_version": "v1_grounded",
+    "attendant_provider": "ollama",
+    "llm_model": "llama3.2:3b"
+  },
+
+  "hoje_academico_llama_tradutor": {
+    "_descricao": "O mesmo, com o tradutor ligado (como o sistema rodava até 24/09 sem a chave do Gemini: a consulta pelo llama).",
+    "retrieval_enabled": true,
+    "retrieval_mode": "routed_rerank",
+    "context_min_score": 0.72,
+    "query_rewriting_enabled": true,
+    "multi_query_enabled": true,
+    "hyde_enabled": true,
+    "prompt_version": "v1_grounded",
+    "attendant_provider": "ollama",
+    "llm_model": "llama3.2:3b"
+  },
+
   "legacy": {
     "_descricao": "Reproduz de forma aproximada a medição de 04/05: prompt antigo, sem documentos, saída apenas em JSON. Diferenças conhecidas estão no README da avaliação. Usar com --set temperature=0.8 --repeat 3 para obter a faixa de ruído daquele dia.",
     "prompt_version": "v0_legacy"

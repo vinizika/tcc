@@ -218,6 +218,8 @@ OPCOES_VALIDAS = {
     "prompt_version",
     "structured_output_mode",
     "think",
+    "attendant_provider",
+    "llm_model",
     "temperature",
     "seed",
     "num_predict",
@@ -831,6 +833,22 @@ def executar_rodada(
                 except requests.HTTPError as erro:
                     codigo = erro.response.status_code
 
+                    try:
+                        corpo_do_erro = erro.response.json()
+                    except Exception:
+                        corpo_do_erro = {}
+
+                    # A cota do dia acabou: a rodada para aqui, e não com
+                    # metade das linhas em erro (rodada 26 do João).
+                    if (corpo_do_erro or {}).get("code") == "quota_exhausted":
+                        raise SystemExit(
+                            "A cota diária do atendente acabou "
+                            f"({(corpo_do_erro.get('details') or {}).get('provider')}). "
+                            "O que foi feito está gravado; continue com "
+                            f"--resume {diretorio} depois da virada da cota "
+                            "ou com outra chave na API."
+                        )
+
                     if codigo in (400, 422):
                         raise SystemExit(
                             f"A API recusou a configuração (HTTP {codigo}): "
@@ -895,6 +913,11 @@ def finalizar(diretorio: Path, manifesto: dict) -> dict:
         columns=[c for c in colunas_longas if c in df.columns]
     ).to_csv(diretorio / "predictions.csv", index=False, encoding="utf-8")
 
+    # Linhas respondidas por troca de atendente (permitida pela
+    # configuração). Numa rodada de réplica, tem de ser zero.
+    manifesto["attendant_fallback_lines"] = sum(
+        1 for registro in registros if registro.get("attendant_fallback_from")
+    )
     manifesto["finished_at"] = agora()
     manifesto["status"] = "done"
 

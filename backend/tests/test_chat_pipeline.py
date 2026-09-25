@@ -311,7 +311,10 @@ def test_tempos_e_configuracao_efetiva_sao_reportados():
     resultado = pipeline.execute("relato")
 
     assert resultado.timings.total_s >= 0.0
-    assert resultado.config.model == "llama3.2:3b"
+    # Desde 25/09 o atendente padrão é o Gemini (rodada 26 do João); o
+    # dublê atende a chamada, e a configuração diz o que foi pedido.
+    assert resultado.config.attendant_provider == "gemini"
+    assert resultado.config.model == "gemini-3.5-flash-lite"
     assert resultado.config.retrieval_enabled is True
 
 
