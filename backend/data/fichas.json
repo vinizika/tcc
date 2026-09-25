@@ -6,7 +6,7 @@
     "drafts": "data/curadoria/fichas/",
     "drafts_sha256": "76dd7b1c083463155c02577ac7e4cd5156026a99b373515ee46c766bfa8bfdca",
     "documents": "backend/data/documents/*.json",
-    "documents_sha256": "78b8a8aa40866d16e9aec356b502baf640b01b32769867df548bb99a277705bb"
+    "documents_sha256": "fc739e6c35d9620accd11d8a29d10b928847e4f8676e0f3297c8cf714b9cc2ce"
   },
   "count": 61,
   "fichas": [
