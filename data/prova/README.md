@@ -205,7 +205,41 @@ que eles peguem algum sinal nessas palavras, e isso não invalida a prova —
 só significa que a acurácia do baseline não vai ser zero, e o critério do
 B-05 (abaixo de 0,90) segue sendo o que decide se é problema.
 
+---
+
+## O lote `teste` congelado (25/09)
+
+Congelado em 25/09/2026, 02h27, com `scripts/prova_freeze.py`, por decisão
+da [rodada 20 do João](../../evidencias/joao/2026-09-24-21-prova-2-desenho-e-piloto.md)
+(decisão 7: congelar e guardar, sem uso). Registro na
+[rodada 22 do João](../../evidencias/joao/2026-09-25-23-preparacao-da-implementacao.md).
+
+| | |
+|---|---|
+| Manifesto | [`casos_oficiais.teste.freeze.json`](casos_oficiais.teste.freeze.json) |
+| Linhas | 100 (52 `EMERGENCIA`, 46 `NAO_EMERGENCIA`, 2 `INCERTO`) |
+| sha256 (linhas inteiras, todas as colunas) | `d370a0a51d5974d124a9dbd3139710a73db3dbca1bf2185b8e6dce868fa18781` |
+| Conferir | `python scripts/prova_freeze.py --cases data/prova/casos_oficiais.csv --split teste` |
+| **Vezes que o lote foi usado numa medição** | **0** |
+
+**A ressalva que vai junto.** O saco de palavras (Naive Bayes, validação
+cruzada) acerta **0,847** só neste lote e 0,912 nos 150 casos
+([B-05](../../evidencias/backlog.md#b-05)): um autor único deixa tiques de
+escrita que um modelo sem nenhum conhecimento veterinário aprende. Por isso
+o número final do TCC sai da prova 2 ([B-63](../../evidencias/backlog.md#b-63)),
+e este lote fica como instrumento histórico.
+
+**O contador.** A autópsia 2 (23–24/09) não usou o `teste`: mediu `dev`,
+calibração e régua. Quem rodar uma medição neste lote soma 1 na linha acima,
+no mesmo commit, com o link da rodada. O valor de um lote teste é ser usado
+uma vez, pela configuração final.
+
 ## Próximo passo
+
+> **Atualização 25/09:** o congelamento abaixo foi feito (seção anterior), e
+> os baselines triviais foram medidos em 22/09
+> ([rodada 13 do Ryu](../../evidencias/ryu/2026-09-22-13-baselines-triviais-e-congelamento.md)).
+> O texto original fica como estava.
 
 **Congelar o lote `teste` por hash**, agora que as verificações automáticas
 (id, pares, sobreposição interna, sobreposição com a base, rótulo batendo
