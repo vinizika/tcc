@@ -1,0 +1,34 @@
+{
+  "title": "Dispneia na doenca cardiaca",
+  "source": "Tufts Cummings School HeartSmart",
+  "document_type": "owner_guidance",
+  "validation_status": "pending_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog_and_cat",
+  "topic": "congestive_heart_failure",
+  "language": "en",
+  "source_url": "https://vet.tufts.edu/foster-hospital-small-animals/specialty-services/cardiology/heartsmart/heart-disease-symptoms/difficulty-breathing-dyspnea",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "5ecd7d5363c3db52c02b26b3bdf6b3f76927dd445d05e965d68a71c944b8e05b",
+  "map_line": "congestive_heart_failure",
+  "specialist": {
+    "verdict": "",
+    "name": "",
+    "date": ""
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: \"© Tufts University 2026\" no rodapé; nenhuma licença de reutilização declarada. A página não traz data de publicação (o ano do copyright não é ano de publicação, por isso ano = null).",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "full_title": "Difficulty Breathing (Dyspnea) — HeartSmart, Heart Disease Symptoms",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de congestive_heart_failure (rodada 27); autoridade alta; aguardando especialista."
+}

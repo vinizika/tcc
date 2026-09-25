@@ -1,0 +1,36 @@
+{
+  "title": "Insuficiencia cardiaca congestiva em caes",
+  "source": "VCA Animal Hospitals",
+  "document_type": "owner_guidance",
+  "validation_status": "pending_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog",
+  "topic": "congestive_heart_failure",
+  "language": "en",
+  "source_url": "https://vcahospitals.com/know-your-pet/congestive-heart-failure-in-dogs",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "7228ddc8d68968e3d1fd2f06ea278cfebf2a270e27731ae1baff0a07c22d66f5",
+  "map_line": "congestive_heart_failure",
+  "specialist": {
+    "verdict": "",
+    "name": "",
+    "date": ""
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: \"© Copyright 2023 LifeLearn Inc. This content was written by LifeLearn Animal Health (LifeLearn Inc.) and is licensed to this practice for the personal use of its clients. Copying, printing, or further distributing this material is prohibited without LifeLearn’s express written consent.\" O mesmo aviso proíbe o uso de IA ou ferramentas automatizadas para reescrever, republicar ou adaptar o conteúdo — ponto a levar à revisão de direitos antes da ingestão.",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2023,
+  "authors": "Tammy Hunter; Malcolm Weir; Ernest Ward",
+  "full_title": "Congestive Heart Failure in Dogs",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de congestive_heart_failure (rodada 27); autoridade media; aguardando especialista."
+}

@@ -42,15 +42,19 @@
     },
     {
       "texto": "A barriga tá dolorida, reclama quando encosto.",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "They also typically have abdominal pain when they are palpated.",
+      "fonte": "capturas/gastrointestinal_foreign_body__medvet_gi_fb.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
       "texto": "Tem um fio saindo da boca ou pelo bumbum.",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "In cases of linear foreign bodies, a string may be observed wrapped around the base of the tongue (Figure 2) or coming out of the anus.",
+      "fonte": "capturas/gastrointestinal_foreign_body__acvs_gi_fb.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
   "sinais_de_alarme": [
@@ -62,9 +66,11 @@
     },
     {
       "texto": "Barriga inchada ou muito dolorida.",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "If the blockage is in the intestines, the pet may experience more severe signs, such as dehydration, shock, and a distended abdomen in addition to vomiting.",
+      "fonte": "capturas/gastrointestinal_foreign_body__medvet_gi_fb.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
       "texto": "Muito fraco e prostrado.",

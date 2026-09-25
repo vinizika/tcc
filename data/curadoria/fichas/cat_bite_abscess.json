@@ -18,9 +18,11 @@
     },
     {
       "texto": "Achei um furinho na pele, escondido no pelo, parece mordida",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "particularly if the wounds are in areas with a lot of fur. Puncture wounds can close over quickly and can easily be missed, especially in the first few days after a bite.",
+      "fonte": "capturas/cat_bite_abscess__vca_fight_wound.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
       "texto": "Uns dias depois da briga apareceu um caroço mole, inchado",
@@ -30,27 +32,35 @@
     },
     {
       "texto": "Inchou perto do rabo, numa pata ou na cara",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "Commonly affected areas are the tail, face, head, neck and legs.",
+      "fonte": "capturas/cat_bite_abscess__icatcare.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
       "texto": "O caroço estourou e saiu pus com cheiro ruim",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "If it bursts, you will see pus and may notice a bad smell",
+      "fonte": "capturas/cat_bite_abscess__icatcare.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
       "texto": "Tá mancando da pata que foi mordida",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "Limping, if bitten on one of the legs",
+      "fonte": "capturas/cat_bite_abscess__icatcare.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
       "texto": "Não deixa encostar no lugar, reclama de dor",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "Abscesses are usually very painful, so your cat may be reluctant to be touched.",
+      "fonte": "capturas/cat_bite_abscess__icatcare.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
       "texto": "Acho que tá com febre, tá quentinho",

@@ -1,0 +1,35 @@
+{
+  "title": "Raiva: morcegos transmissores no Brasil",
+  "source": "CRMV-SP",
+  "document_type": "technical_bulletin",
+  "validation_status": "pending_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog_and_cat",
+  "topic": "rabies_exposure_wild_animal_bite",
+  "language": "pt",
+  "source_url": "https://crmvsp.gov.br/dia-mundial-contra-a-raiva-morcegos-sao-os-principais-transmissores-no-brasil/",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "clinico",
+  "access_date": "2026-09-25",
+  "captured_sha256": "dc0b36a51d2d672314b5dad18aadcad4ea1778a49ecaf2ea5bf62efa9aac4fce",
+  "map_line": "rabies_exposure_wild_animal_bite",
+  "specialist": {
+    "verdict": "",
+    "name": "",
+    "date": ""
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: Todos os direitos reservados ao Conselho Regional de Medicina Veterinária do Estado de São Paulo",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2025,
+  "full_title": "Dia Mundial contra a Raiva: morcegos são os principais transmissores no Brasil",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de rabies_exposure_wild_animal_bite (rodada 27); autoridade alta; aguardando especialista."
+}

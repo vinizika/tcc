@@ -1,0 +1,36 @@
+{
+  "title": "Espirro reverso em caes",
+  "source": "VCA Animal Hospitals",
+  "document_type": "owner_guidance",
+  "validation_status": "pending_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog",
+  "topic": "mild_upper_respiratory_signs",
+  "language": "en",
+  "source_url": "https://vcahospitals.com/know-your-pet/reverse-sneeze-in-dogs",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "6ca73a693b6ce643ea8b7cad9bf97c17e5060b96e5335863c9ed27da9219bd96",
+  "map_line": "mild_upper_respiratory_signs",
+  "specialist": {
+    "verdict": "",
+    "name": "",
+    "date": ""
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: \"© Copyright 2022 LifeLearn Inc. This content was written by LifeLearn Animal Health (LifeLearn Inc.) and is licensed to this practice for the personal use of its clients. Copying, printing, or further distributing this material is prohibited without LifeLearn’s express written consent.\" O mesmo aviso proíbe o uso de IA ou ferramentas automatizadas para reescrever, republicar ou adaptar o conteúdo — ponto a levar à revisão de direitos antes da ingestão.",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2022,
+  "authors": "Malcolm Weir; Krista Williams; Ernest Ward",
+  "full_title": "Reverse Sneeze in Dogs",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de mild_upper_respiratory_signs (rodada 27); autoridade media; aguardando especialista."
+}

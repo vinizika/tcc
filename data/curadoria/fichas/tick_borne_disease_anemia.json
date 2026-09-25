@@ -54,9 +54,11 @@
     },
     {
       "texto": "O xixi ficou escuro, cor de café",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "Achados clínicos incluem membranas mucosas pálidas, desidratação, icterícia e hepatoesplenomegalia, petéquias e equimoses, urina vermelha, marrom ou amarelo-laranja (hemoglobinúria), vômito e diarreia.",
+      "fonte": "capturas/tick_borne_disease_anemia__troccap_2019_endoparasitos.pdf",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
   "sinais_de_alarme": [

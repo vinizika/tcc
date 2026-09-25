@@ -54,9 +54,11 @@
     },
     {
       "texto": "O cachorro puxa o ar pelo nariz com barulho de ronco e logo volta ao normal",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "With this condition, the dog rapidly pulls air into the nose, whereas in a regular sneeze, the air is rapidly pushed out through the nose. The dog makes a snorting sound and seems to be trying to inhale while sneezing.",
+      "fonte": "capturas/mild_upper_respiratory_signs__vca_espirro_reverso.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
   "sinais_de_alarme": [

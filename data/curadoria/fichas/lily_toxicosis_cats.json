@@ -36,9 +36,11 @@
     },
     {
       "texto": "Tá babando e não quer comer",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "Early signs of lily toxicity in cats include decreased activity level, drooling, vomiting, and loss of appetite.",
+      "fonte": "capturas/lily_toxicosis_cats__fda_lilies.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
       "texto": "Tá bebendo muita água e fazendo muito xixi",

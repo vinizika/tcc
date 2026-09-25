@@ -1,0 +1,36 @@
+{
+  "title": "Doença periodontal: os sinais (BluePearl)",
+  "source": "BluePearl Pet Hospital",
+  "document_type": "owner_guidance",
+  "validation_status": "pending_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog_and_cat",
+  "topic": "periodontal_disease_mild",
+  "language": "en",
+  "source_url": "https://bluepearlvet.com/pet-blog/periodontal-disease-in-pets-know-the-signs/",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "268a317d782533eca996a34bdd26b15525933c40defccd3e4fdf098a15e5da39",
+  "map_line": "periodontal_disease_mild",
+  "specialist": {
+    "verdict": "",
+    "name": "",
+    "date": ""
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: © 2026 BluePearl Holdings LLC. All rights reserved.; publicada 2020-02-12, modificada 2023-10-02",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2020,
+  "authors": "Donnell Hansen, DVM, DAVDC (entrevistada)",
+  "full_title": "Periodontal Disease in Dogs & Cats (Periodontal Disease in Pets: Know the Signs)",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de periodontal_disease_mild (rodada 27); autoridade media; aguardando especialista."
+}

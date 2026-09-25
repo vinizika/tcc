@@ -86,9 +86,11 @@
     },
     {
       "texto": "Gengiva branca ou muito pálida",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "Signs of shock include rapid heart rate, pale gums, low blood pressure, low urine output, and weak pulses.",
+      "fonte": "capturas/trauma_and_bleeding__msd_emergencies.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
   "como_diferenciar": [

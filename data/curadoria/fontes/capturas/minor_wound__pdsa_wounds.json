@@ -1,0 +1,35 @@
+{
+  "title": "Wounds and skin injuries",
+  "source": "PDSA",
+  "document_type": "owner_guidance",
+  "validation_status": "pending_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog_and_cat",
+  "topic": "minor_wound",
+  "language": "en",
+  "source_url": "https://www.pdsa.org.uk/pet-help-and-advice/pet-health-hub/symptoms/wounds-and-skin-injuries",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "ba1a718b743a8e18d1757a6b56b3473720d9f55acdef1efffbd62ab88c7dcbe5",
+  "map_line": "minor_wound",
+  "specialist": {
+    "verdict": "",
+    "name": "",
+    "date": ""
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: © The People's Dispensary for Sick Animals. Registered charity nos. 208217 & SC037585; licença de reuso não declarada",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2020,
+  "full_title": "Wounds and skin injuries",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de minor_wound (rodada 27); autoridade alta; aguardando especialista."
+}

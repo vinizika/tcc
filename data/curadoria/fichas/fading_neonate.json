@@ -72,9 +72,11 @@
     },
     {
       "texto": "Fica separado dos irmãos, longe da mãe.",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "These puppies have a tendency to remain separate from the mother and the rest of the litter.",
+      "fonte": "capturas/fading_neonate__vca_filhote_definhando.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
   "sinais_de_alarme": [

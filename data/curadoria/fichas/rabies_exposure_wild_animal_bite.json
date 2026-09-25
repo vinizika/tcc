@@ -80,9 +80,11 @@
     },
     {
       "texto": "Babando muito ou com dificuldade de engolir",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "The paralytic form of rabies (or \"dumb rabies\") usually involves paralysis of the throat and jaw muscles, often with excess salivation and inability to swallow.",
+      "fonte": "capturas/rabies_exposure_wild_animal_bite__msd_rabies_dogs.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
   "como_diferenciar": [],

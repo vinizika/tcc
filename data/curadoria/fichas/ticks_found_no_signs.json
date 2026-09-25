@@ -36,9 +36,11 @@
     },
     {
       "texto": "Achei uma bolinha cinza grudada na pele, era um carrapato cheio.",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "it will grow to the size of a small pea as it feeds. At first you might mistake a tick for a skin tag or a lump",
+      "fonte": "capturas/ticks_found_no_signs__pdsa_ticks_on_dogs.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
       "texto": "Ele tá normal, comendo e brincando.",

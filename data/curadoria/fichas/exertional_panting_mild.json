@@ -84,9 +84,11 @@
     {
       "gemea": "congestive_heart_failure",
       "texto": "Na insuficiência cardíaca a respiração fica acelerada mesmo em repouso ou dormindo, sem ter feito esforço, e pode vir com tosse; a ofegação normal só aparece depois de exercício ou calor.",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "differentiate a dog’s normal panting (quick, shallow, open-mouth breathing after exercise or when they are hot) from an increased breathing rate due to heart failure (noted as fast breathing or extra breathing effort present even at rest).",
+      "fonte": "capturas/exertional_panting_mild__tufts_dispneia.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
   "por_que_importa": {

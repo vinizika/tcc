@@ -1,0 +1,36 @@
+{
+  "title": "Animais peçonhentos, Caderno Técnico 75",
+  "source": "Cadernos Técnicos de Veterinária e Zootecnia (UFMG/CRMV-MG)",
+  "document_type": "technical_bulletin",
+  "validation_status": "pending_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog_and_cat",
+  "topic": "snake_and_scorpion_envenomation",
+  "language": "pt",
+  "source_url": "https://vet.ufmg.br/wp-content/uploads/2019/06/Caderno-T%C3%A9cnico-75.pdf",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "clinico",
+  "access_date": "2026-09-25",
+  "captured_sha256": "a16b6660f5e515a5659f82934bb20a26be86b0b6bfc039f4ce134cec29cc7b96",
+  "map_line": "snake_and_scorpion_envenomation",
+  "specialist": {
+    "verdict": "",
+    "name": "",
+    "date": ""
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: 'Permite-se a reprodução total ou parcial, sem consulta prévia, desde que seja citada a fonte.'",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2014,
+  "authors": "Benito Soto Blanco; Marília Martins Melo; Guilherme de Caro Martins",
+  "full_title": "Cadernos Técnicos de Veterinária e Zootecnia nº 75 – Animais Peçonhentos (dezembro de 2014)",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de snake_and_scorpion_envenomation (rodada 27); autoridade alta; aguardando especialista."
+}

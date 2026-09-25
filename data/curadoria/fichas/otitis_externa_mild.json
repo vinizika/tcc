@@ -86,9 +86,11 @@
     },
     {
       "texto": "Ficou com a cabeça torta ou os olhos mexendo sozinhos",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "Severe ear problems that affect deep inside the ear can also cause symptoms such as loss of balance, a head tilt, and flickering eye movements.",
+      "fonte": "capturas/otitis_externa_mild__pdsa_ear_problems_dogs.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
       "texto": "Pus e cheiro cada vez piores, com muita dor",

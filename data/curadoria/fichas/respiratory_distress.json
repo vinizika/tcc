@@ -54,9 +54,11 @@
     },
     {
       "texto": "Não consegue deitar, fica sentado ou em pé pra respirar",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "Many dogs with severe difficulty breathing will refuse to lie down on their side because it is harder for them to breathe in this position. Instead, they will prefer to sit or stand.",
+      "fonte": "capturas/respiratory_distress__tufts_dispneia.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
   "sinais_de_alarme": [

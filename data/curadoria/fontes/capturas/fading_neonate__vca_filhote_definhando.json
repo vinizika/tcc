@@ -1,0 +1,36 @@
+{
+  "title": "Sindrome do filhote definhando",
+  "source": "VCA Animal Hospitals",
+  "document_type": "owner_guidance",
+  "validation_status": "pending_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog",
+  "topic": "fading_neonate",
+  "language": "en",
+  "source_url": "https://vcahospitals.com/know-your-pet/fading-puppy-syndrome",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "0d98300272b3255ab8e490f48d167b1e8ef0bd037af2a3499eae105fd6520f55",
+  "map_line": "fading_neonate",
+  "specialist": {
+    "verdict": "",
+    "name": "",
+    "date": ""
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: \"© Copyright 2023 LifeLearn Inc. This content was written by LifeLearn Animal Health (LifeLearn Inc.) and is licensed to this practice for the personal use of its clients. Copying, printing, or further distributing this material is prohibited without LifeLearn’s express written consent.\" O mesmo aviso proíbe o uso de IA ou ferramentas automatizadas para reescrever, republicar ou adaptar o conteúdo — ponto a levar à revisão de direitos antes da ingestão.",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2023,
+  "authors": "Ryan Llera; Krista Williams; Ernest Ward",
+  "full_title": "Fading Puppy Syndrome in Dogs",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de fading_neonate (rodada 27); autoridade media; aguardando especialista."
+}

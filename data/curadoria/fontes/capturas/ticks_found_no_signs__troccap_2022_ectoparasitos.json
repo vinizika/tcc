@@ -1,0 +1,35 @@
+{
+  "title": "Diretrizes TroCCAP para ectoparasitos",
+  "source": "TroCCAP (Tropical Council for Companion Animal Parasites)",
+  "document_type": "guideline",
+  "validation_status": "pending_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog_and_cat",
+  "topic": "ticks_found_no_signs",
+  "language": "pt",
+  "source_url": "https://www.troccap.com/wp-content/uploads/2022/09/ecto_portuguese_v1.pdf",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "clinico",
+  "access_date": "2026-09-25",
+  "captured_sha256": "b506fa5cf108fb625772b22b9326458d8d06dd732775b4757cb705619f051fa6",
+  "map_line": "ticks_found_no_signs",
+  "specialist": {
+    "verdict": "",
+    "name": "",
+    "date": ""
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: PDF não declara licença (diz apenas 'disponíveis gratuitamente'); site: 'Copyright © 2026 Troccap - All rights reserved'",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2022,
+  "full_title": "TroCCAP: Diretrizes para o controle de ectoparasitos de cães e gatos nos trópicos. Primeira edição, Agosto 2022",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de ticks_found_no_signs (rodada 27); autoridade alta; aguardando especialista."
+}

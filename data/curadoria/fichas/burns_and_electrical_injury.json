@@ -66,9 +66,11 @@
     },
     {
       "texto": "O pelo ficou chamuscado ou caiu, e a pele embaixo ficou vermelha ou escura",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "Initially, it may start as the skin itself just looks a little red or inflamed, while more severe burns can cause burning or singeing of the coat.",
+      "fonte": "capturas/burns_and_electrical_injury__tamu_pet_burns.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
   "sinais_de_alarme": [

@@ -30,9 +30,11 @@
     },
     {
       "texto": "Respira rápido até quando tá dormindo.",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "Other signs associated with heart failure include coughing when at rest or sleeping, an increased resting respiratory rate or excessive panting",
+      "fonte": "capturas/congestive_heart_failure__vca_icc.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
       "texto": "O veterinário já tinha dito que ele tem sopro no coração.",
@@ -68,15 +70,19 @@
     },
     {
       "texto": "Língua ou gengiva arroxeada.",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "A dog with severe difficulty breathing may have a tongue that looks purple/blue instead of pink, showing that they are not getting enough oxygen.",
+      "fonte": "capturas/congestive_heart_failure__tufts_dispneia.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
       "texto": "Não consegue deitar, fica sentado pra conseguir respirar.",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "Many dogs with severe difficulty breathing will refuse to lie down on their side because it is harder for them to breathe in this position. Instead, they will prefer to sit or stand.",
+      "fonte": "capturas/congestive_heart_failure__tufts_dispneia.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
       "texto": "Desmaiou numa crise de tosse.",

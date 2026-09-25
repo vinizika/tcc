@@ -66,9 +66,11 @@
     },
     {
       "texto": "Depois do escorpião, grita de dor, baba e vomita.",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "Além da dor local intensa, outros sinais clínicos nos casos moderados incluem náuseas, vômitos, sialorreia, agitação ou sonolência, taquicardia, taquipneia e picos hipertensivos.",
+      "fonte": "capturas/snake_and_scorpion_envenomation__ufmg_ct75_2014_peconhentos.pdf",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
       "texto": "Uma aranha picou ele.",
@@ -104,9 +106,11 @@
     },
     {
       "texto": "Quase não inchou, mas ficou fraco, com as pálpebras caídas ou xixi escuro.",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "Frequentemente não há alteração no local da picada, o que impossibilita sua localização",
+      "fonte": "capturas/snake_and_scorpion_envenomation__ufmg_ct75_2014_peconhentos.pdf",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
   "como_diferenciar": [],

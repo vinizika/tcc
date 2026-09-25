@@ -1,0 +1,36 @@
+{
+  "title": "Bordetelose tosse dos canis",
+  "source": "Cornell Riney Canine Health Center",
+  "document_type": "owner_guidance",
+  "validation_status": "pending_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog",
+  "topic": "kennel_cough_mild",
+  "language": "en",
+  "source_url": "https://www.vet.cornell.edu/departments-centers-and-institutes/riney-canine-health-center/canine-health-information/bordetellosis",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "e86730777fe353b2a73e0e86c67ca514e10b0b872f12cfb815f33ec44ab0c672",
+  "map_line": "kennel_cough_mild",
+  "specialist": {
+    "verdict": "",
+    "name": "",
+    "date": ""
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: \"©2026\" Cornell University no rodapé; nenhuma licença de reutilização declarada. Página atualizada em 20/11/2025.",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2025,
+  "authors": "Brian Collins",
+  "full_title": "Bordetellosis",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de kennel_cough_mild (rodada 27); autoridade alta; aguardando especialista."
+}

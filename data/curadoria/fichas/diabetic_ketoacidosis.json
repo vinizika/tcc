@@ -66,9 +66,11 @@
     },
     {
       "texto": "O hálito tá com cheiro doce, de acetona.",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "Breath that smells sweet (like nail polish remover or pear drops)",
+      "fonte": "capturas/diabetic_ketoacidosis__pdsa_diabetes_dogs.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
   "sinais_de_alarme": [

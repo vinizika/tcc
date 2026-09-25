@@ -1,0 +1,36 @@
+{
+  "title": "Síndrome do gato paraquedista, relato",
+  "source": "Universidade Federal de Santa Catarina (TCC)",
+  "document_type": "case_report",
+  "validation_status": "pending_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "cat",
+  "topic": "high_rise_syndrome_cats",
+  "language": "pt",
+  "source_url": "https://repositorio.ufsc.br/bitstream/handle/123456789/246889/S%C3%ADndrome%20do%20Gato%20Paraquedista%20-%20Relato%20de%20Caso.pdf?sequence=1&isAllowed=y",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "academico",
+  "access_date": "2026-09-25",
+  "captured_sha256": "b1077d5cf7450d36c58a0f6c67c2774f9b8f161314b14363d0133c113e882cb1",
+  "map_line": "high_rise_syndrome_cats",
+  "specialist": {
+    "verdict": "",
+    "name": "",
+    "date": ""
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: não declara no PDF (a página do repositório não foi conferida)",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2022,
+  "authors": "Taynara Regina Machado",
+  "full_title": "Síndrome do Gato Paraquedista – Relato de Caso (Trabalho de Conclusão de Curso de Graduação em Medicina Veterinária)",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de high_rise_syndrome_cats (rodada 27); autoridade alta; aguardando especialista."
+}

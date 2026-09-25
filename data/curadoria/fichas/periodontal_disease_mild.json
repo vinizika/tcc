@@ -66,9 +66,11 @@
     },
     {
       "texto": "Tá comendo e brincando normal, só o bafo que incomoda",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "The truth is most patients won’t show signs of oral pain and will continue to go on playing and eating.",
+      "fonte": "capturas/periodontal_disease_mild__bluepearl_periodontal.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
   "sinais_de_alarme": [

@@ -24,15 +24,19 @@
     },
     {
       "texto": "Tosse forte, como se tivesse algo engasgado na garganta",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "The most common feature is a loud, high-pitched, persistent “honking” cough. Dog owners may initially feel that their dog is trying to clear something from their throat.",
+      "fonte": "capturas/kennel_cough_mild__cornell_bordetelose.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
       "texto": "No fim da tosse faz ânsia, parece que vai vomitar",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "The most common sign is spasms of harsh, dry coughing, which may be followed by retching and gagging.",
+      "fonte": "capturas/kennel_cough_mild__msd_traqueobronquite.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
       "texto": "Tá espirrando e com o nariz escorrendo",

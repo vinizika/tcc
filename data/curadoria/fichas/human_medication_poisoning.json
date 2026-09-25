@@ -48,9 +48,11 @@
     },
     {
       "texto": "Comeu comprimido que caiu no chão ou mastigou a cartela",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "Dogs are especially prone to grabbing pills that drop on the floor or chewing medication bottles and eating some or all of the pills in them.",
+      "fonte": "capturas/human_medication_poisoning__pph_prevent_exposures.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
       "texto": "A língua ou a gengiva ficou arroxeada",

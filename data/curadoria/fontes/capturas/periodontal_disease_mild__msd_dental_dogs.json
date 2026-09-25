@@ -1,0 +1,36 @@
+{
+  "title": "Doenças dentárias do cão (MSD)",
+  "source": "Merck Veterinary Manual",
+  "document_type": "owner_guidance",
+  "validation_status": "pending_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog",
+  "topic": "periodontal_disease_mild",
+  "language": "en",
+  "source_url": "https://www.merckvetmanual.com/dog-owners/digestive-disorders-of-dogs/dental-disorders-of-dogs",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "ca19398ffff39bb3f6a6ae47890527513e647555c4565d3f8c60b22b323da9a9",
+  "map_line": "periodontal_disease_mild",
+  "specialist": {
+    "verdict": "",
+    "name": "",
+    "date": ""
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.; 'Last updated: Oct 2025'",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2025,
+  "authors": "Alexander M. Reiter, Dipl. Tzt., DEVDC, DAVDC",
+  "full_title": "Dental Disorders of Dogs (Merck Veterinary Manual, versão para tutores)",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de periodontal_disease_mild (rodada 27); autoridade alta; aguardando especialista."
+}

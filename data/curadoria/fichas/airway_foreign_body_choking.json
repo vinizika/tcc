@@ -48,9 +48,11 @@
     },
     {
       "texto": "Fica passando a pata na boca, agoniado.",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "A choking pet will have difficulty breathing, will make choking sounds, might paw at their mouth and you might see their lips, gums and tongue turning blue.",
+      "fonte": "capturas/airway_foreign_body_choking__pdsa_choking.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
   "sinais_de_alarme": [

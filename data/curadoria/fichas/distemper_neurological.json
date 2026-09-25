@@ -54,17 +54,21 @@
     },
     {
       "texto": "É filhote e não completou as vacinas",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "However, puppies younger than four months are the most vulnerable to CDV because their immune systems are still developing, and antibody protection from their mother fades before they are fully vaccinated.",
+      "fonte": "capturas/distemper_neurological__tvmdl_2026_distemper.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
   "sinais_de_alarme": [
     {
       "texto": "Teve convulsão, às vezes mastigando no vazio e babando",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "seizures, often with drooling and chewing motions of the jaw (called “chewing-gum fits”)",
+      "fonte": "capturas/distemper_neurological__msd_owner_distemper.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
       "texto": "Não consegue mais ficar em pé",

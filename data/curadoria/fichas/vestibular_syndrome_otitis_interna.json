@@ -36,9 +36,11 @@
     },
     {
       "texto": "Anda em círculos ou rola pro mesmo lado",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "Falling, rolling or circling to one side",
+      "fonte": "capturas/vestibular_syndrome_otitis_interna__vca_feline_vestibular.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
       "texto": "Tá enjoado e vomitou",
@@ -86,9 +88,11 @@
     },
     {
       "texto": "Fica sonolento, confuso ou com fraqueza nas patas",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "The most reliable indication of central vestibular disease is depressed mental status (e.g. poorly interactive and disorientated) and postural deficits i.e. loss of strength and proprioception",
+      "fonte": "capturas/vestibular_syndrome_otitis_interna__fitzpatrick_vestibular.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
   "como_diferenciar": [

@@ -1,0 +1,36 @@
+{
+  "title": "Dog and Cat Emergencies",
+  "source": "MSD Veterinary Manual",
+  "document_type": "professional_manual",
+  "validation_status": "pending_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog_and_cat",
+  "topic": "trauma_and_bleeding",
+  "language": "en",
+  "source_url": "https://www.msdvetmanual.com/special-pet-topics/emergencies/evaluation-and-initial-treatment-of-dog-and-cat-emergencies",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "8afcdbdb216721daf2a99a4910000274cc4f855448a1d2cbda87565db2e263e0",
+  "map_line": "trauma_and_bleeding",
+  "specialist": {
+    "verdict": "",
+    "name": "",
+    "date": ""
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2025,
+  "authors": "Jamie Textor",
+  "full_title": "Evaluation and Initial Treatment of Dog and Cat Emergencies (MSD Veterinary Manual, Pet Owner Version)",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de trauma_and_bleeding (rodada 27); autoridade alta; aguardando especialista."
+}

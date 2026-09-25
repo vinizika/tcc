@@ -1,0 +1,35 @@
+{
+  "title": "Guardar remédios longe do pet",
+  "source": "U.S. Food and Drug Administration",
+  "document_type": "owner_guidance",
+  "validation_status": "pending_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog_and_cat",
+  "topic": "human_medication_poisoning",
+  "language": "en",
+  "source_url": "https://www.fda.gov/animal-veterinary/animal-health-literacy/properly-store-medications-keep-your-pet-safe",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "d9f4608a3ec8c6f09f485828ac5a3055e83592ee57766a1d4e120bde1a37fdb4",
+  "map_line": "human_medication_poisoning",
+  "specialist": {
+    "verdict": "",
+    "name": "",
+    "date": ""
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: não declara na página; obra do governo federal dos EUA, em geral domínio público. 'Content current as of 06/14/2024'",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2024,
+  "full_title": "Properly Store Medications to Keep Your Pet Safe",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de human_medication_poisoning (rodada 27); autoridade alta; aguardando especialista."
+}

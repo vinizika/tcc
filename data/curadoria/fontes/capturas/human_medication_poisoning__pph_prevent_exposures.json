@@ -1,0 +1,36 @@
+{
+  "title": "Prevenir ingestão acidental de remédios",
+  "source": "Pet Poison Helpline",
+  "document_type": "owner_guidance",
+  "validation_status": "pending_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog_and_cat",
+  "topic": "human_medication_poisoning",
+  "language": "en",
+  "source_url": "https://www.petpoisonhelpline.com/uncategorized/preventing-accidental-medication-exposures/",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "225075bca8c28f7fb2863a20d3d8c897280fbb8f2e14ee9388c8e37f65a5cd3a",
+  "map_line": "human_medication_poisoning",
+  "specialist": {
+    "verdict": "",
+    "name": "",
+    "date": ""
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: ©2026 Pet Poison Helpline® (sem licença de reuso declarada); publicada 2014-05-22, modificada 2026-05-27",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2014,
+  "authors": "Pamela Huyck, CVT",
+  "full_title": "Preventing Accidental Medication Exposures",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de human_medication_poisoning (rodada 27); autoridade media; aguardando especialista."
+}

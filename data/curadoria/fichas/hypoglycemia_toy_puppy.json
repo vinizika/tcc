@@ -54,9 +54,11 @@
     },
     {
       "texto": "Tá cambaleando, andando como se estivesse bêbado.",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "These puppies present for extreme lethargy, incoordination, unconsciousness or seizures.",
+      "fonte": "capturas/hypoglycemia_toy_puppy__akc_hipoglicemia.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
       "texto": "Teve convulsão: ficou duro, pedalando e babando.",

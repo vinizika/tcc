@@ -42,9 +42,11 @@
     },
     {
       "texto": "Bebe muita água e tá emagrecendo, mesmo comendo",
-      "origem": "geral",
-      "trecho": "",
-      "fonte": ""
+      "origem": "documento",
+      "trecho": "The two most common signs of diabetes noticed by owners at home are weight loss despite a good appetite and increased thirst and urination.",
+      "fonte": "capturas/polyuria_polydipsia_investigate__cornell_feline_diabetes.txt",
+      "aprovacao": "pendente",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
       "texto": "Tá tomando corticoide e passou a beber muita água",

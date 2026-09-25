@@ -1,0 +1,35 @@
+{
+  "title": "Ear problems in dogs",
+  "source": "PDSA",
+  "document_type": "owner_guidance",
+  "validation_status": "pending_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog",
+  "topic": "otitis_externa_mild",
+  "language": "en",
+  "source_url": "https://www.pdsa.org.uk/pet-help-and-advice/pet-health-hub/symptoms/ear-problems-in-dogs",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "269f7324fe326e2922388e25f7577cde5c0ef9ac8ed16f5f9eccd0464b8fcd16",
+  "map_line": "otitis_externa_mild",
+  "specialist": {
+    "verdict": "",
+    "name": "",
+    "date": ""
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: © The People's Dispensary for Sick Animals (sem licença de reuso declarada)",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2021,
+  "full_title": "Ears problems in dogs - an overview",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de otitis_externa_mild (rodada 27); autoridade alta; aguardando especialista."
+}

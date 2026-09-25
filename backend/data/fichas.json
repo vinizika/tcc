@@ -4,7 +4,7 @@
     "map": "data/curadoria/mapa-de-assuntos.csv",
     "map_sha256": "9665b47b80221191a93b4a8bf5084a9974c76d3a3ee165c7f7a38718ba8db616",
     "drafts": "data/curadoria/fichas/",
-    "drafts_sha256": "76dd7b1c083463155c02577ac7e4cd5156026a99b373515ee46c766bfa8bfdca",
+    "drafts_sha256": "da8ab7cba9abd1629405dc5a8f6cd17da9923f80193b9e623997dcdcc8bd0b4c",
     "documents": "backend/data/documents/*.json",
     "documents_sha256": "490919ba71c162f919ef33490381331b964110fd0ca3aeede0e4be8ae605a7cf"
   },
