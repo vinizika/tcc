@@ -6,10 +6,11 @@ Ollama e sem banco vetorial. Os padrões são os clientes reais, então quem
 usa em produção não precisa saber disso.
 """
 
+import contextvars
 import time
 from concurrent.futures import ThreadPoolExecutor
 
-from app.clients.hybrid_query_client import HybridQueryClient
+from app.clients.hybrid_query_client import QUERY_TRACE, HybridQueryClient
 from app.clients.llm_client import LLMClient
 from app.clients.reranker_client import RerankerClient
 from app.clients.retrieval_client import RetrievalClient
@@ -21,9 +22,10 @@ from app.models.retrieved_document import RetrievedDocument
 from app.pipeline.answer_renderer import render
 from app.pipeline.config_resolver import resolve
 from app.pipeline.result import ContextDocument, PipelineResult, QueryPlan
-from app.prompts.triage import build_triage_messages
+from app.prompts.triage import build_triage_messages, documentos_que_cabem
 from app.schemas.triage_output import (
     CitedSource,
+    SourceReference,
     LegacyTriageLLMOutput,
     TriageLLMOutput,
     TriageLLMOutputCoT,
@@ -34,10 +36,13 @@ from app.schemas.triage_output import (
     TriageResult,
 )
 from app.schemas.triage import (
+    AttendantProvenance,
     DebugInfo,
     DebugSource,
     EffectiveConfig,
     PipelineOptions,
+    Provenance,
+    QueryStageProvenance,
     RetrievalInfo,
     Timings,
 )
@@ -190,11 +195,16 @@ class ChatPipeline:
             )
             return [], hypothetical_document
 
+        # As threads herdam o contexto da requisição, para o rastro da etapa
+        # de consulta (procedência) enxergar as duas chamadas.
         with ThreadPoolExecutor(max_workers=2) as executor:
             variations_future = executor.submit(
-                self.query_client.generate_queries, rewritten
+                contextvars.copy_context().run,
+                self.query_client.generate_queries,
+                rewritten,
             )
             hyde_future = executor.submit(
+                contextvars.copy_context().run,
                 self.query_client.generate_hypothetical_document,
                 rewritten,
             )
@@ -314,6 +324,10 @@ class ChatPipeline:
         misturaria a etapa de consulta dentro da decisão.
         """
 
+        # Só o que cabe no bloco de contexto é fonte: o modelo não pode citar
+        # um trecho que não viu (rodada 25 do João).
+        documents = documentos_que_cabem(documents)
+
         output_model = _modelo_de_saida(config, bool(documents))
 
         messages = build_triage_messages(
@@ -334,6 +348,7 @@ class ChatPipeline:
                 num_predict=config.num_predict,
                 num_ctx=config.num_ctx,
             ),
+            think=config.think,
         )
 
         if call.output is None:
@@ -380,6 +395,18 @@ class ChatPipeline:
                         chunk_id=documento.chunk_id,
                         title=documento.title,
                         source=documento.source,
+                        display_title=documento.display_title,
+                        references=[
+                            SourceReference(
+                                **{
+                                    chave: referencia.get(chave)
+                                    for chave in ("title", "journal", "year", "doi", "url")
+                                    if referencia.get(chave) is not None
+                                }
+                            )
+                            for referencia in documento.references
+                            if referencia.get("title")
+                        ],
                     )
                 )
             else:
@@ -431,13 +458,18 @@ class ChatPipeline:
 
         query_seconds = 0.0
         retrieval_seconds = 0.0
+        query_trace: list[dict] = []
 
         try:
 
             if config.retrieval_enabled:
 
                 query_start = time.perf_counter()
-                plan = self._build_queries(question, config)
+                token = QUERY_TRACE.set(query_trace)
+                try:
+                    plan = self._build_queries(question, config)
+                finally:
+                    QUERY_TRACE.reset(token)
                 query_seconds = time.perf_counter() - query_start
 
                 retrieval_start = time.perf_counter()
@@ -454,6 +486,11 @@ class ChatPipeline:
                 )
 
             generation_start = time.perf_counter()
+
+            # O que não coube no bloco de contexto não é fonte nem conta como
+            # usado (rodada 25 do João).
+            for_context = documentos_que_cabem(for_context)
+            retrieval_info.used_count = len(for_context)
 
             triage, call = self._classify(
                 question,
@@ -522,6 +559,21 @@ class ChatPipeline:
                 ),
                 retrieval=retrieval_info,
                 debug=debug,
+                provenance=Provenance(
+                    attendant=AttendantProvenance(
+                        provider=getattr(call, "provider", "ollama") or "ollama",
+                        model=getattr(call, "model", "") or config.model,
+                        model_version=getattr(call, "model_version", None),
+                        thinking=getattr(call, "thinking", None),
+                        fallback_from=getattr(call, "fallback_from", None),
+                    ),
+                    query_stage=QueryStageProvenance(
+                        rewriting=config.query_rewriting_enabled,
+                        multi_query=config.multi_query_enabled,
+                        hyde=config.hyde_enabled,
+                        calls=query_trace,
+                    ),
+                ),
             )
 
         except Exception as error:

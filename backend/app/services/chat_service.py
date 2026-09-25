@@ -65,6 +65,13 @@ class ChatService:
                     score=round(item.document.score, 4),
                     chunk_id=item.document.chunk_id,
                     cited=item.cited,
+                    topic=item.document.topic,
+                    display_title=item.document.display_title,
+                    references=[
+                        referencia
+                        for referencia in item.document.references
+                        if referencia.get("title")
+                    ],
                 )
                 for item in result.sources
             ],
@@ -72,5 +79,6 @@ class ChatService:
             retrieval=result.retrieval,
             timings=result.timings,
             debug=result.debug,
+            provenance=result.provenance,
             conversation_id=conversation_id,
         )

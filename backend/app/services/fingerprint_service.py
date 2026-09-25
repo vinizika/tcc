@@ -65,6 +65,37 @@ def _hash_de_conteudo(
     return _sha256("".join(sorted(linhas)))
 
 
+def _referencias_do_molde():
+    from app.models.retrieved_document import RetrievedDocument
+    from app.schemas.triage import EffectiveConfig
+
+    documento = RetrievedDocument(
+        id="ref", chunk_id="ref", title="Ficha de triagem: Teste",
+        content="Ficha de triagem: Teste (cao). Conduta: teste.",
+        source="teste", score=0.5,
+    )
+    config = EffectiveConfig(
+        query_rewriting_enabled=False, multi_query_enabled=False,
+        hyde_enabled=False, retrieval_enabled=True, context_top_k=3,
+        context_min_score=0.0, rewritten_hint_enabled=False,
+        cot_enabled=False, cot_position="first", self_refine_enabled=False,
+        prompt_version="v1_grounded", structured_output_mode="schema",
+        model="teste", temperature=0.0, seed=42, num_ctx=4096, num_predict=600,
+    )
+    return documento, config
+
+
+_DOCUMENTO_DE_REFERENCIA, _CONFIG_DE_REFERENCIA = _referencias_do_molde()
+
+# Configurações que o retrato lista como vindas do ambiente. Só o nome: o
+# valor de uma chave ou de um endereço com senha não entra no manifesto.
+def _vindas_do_ambiente() -> list[str]:
+    try:
+        return sorted(settings.model_fields_set)
+    except Exception:
+        return []
+
+
 class FingerprintService:
 
     @staticmethod
@@ -343,6 +374,21 @@ class FingerprintService:
                 "v1_grounded_cot_posthoc_sha256": _sha256(
                     triage.SISTEMA_ANCORADO_COT_POSTHOC
                 ),
+                # O formato do bloco de contexto (cabeçalho, numeração, título
+                # + texto, marcador de encaminhamento, teto de caracteres),
+                # medido num documento fixo: muda se o molde mudar.
+                "context_block_sha256": _sha256(
+                    triage.CONTEXT_MAX_CHARS.__str__()
+                    + "\n"
+                    + "\n\n".join(
+                        m["content"]
+                        for m in triage.build_triage_messages(
+                            "relato de teste",
+                            [_DOCUMENTO_DE_REFERENCIA],
+                            _CONFIG_DE_REFERENCIA,
+                        )
+                    )
+                ),
             }
 
         except Exception as erro:
@@ -371,5 +417,8 @@ class FingerprintService:
                 "query_rewriting_enabled": settings.QUERY_REWRITING_ENABLED,
                 "multi_query_enabled": settings.MULTI_QUERY_ENABLED,
                 "hyde_enabled": settings.HYDE_ENABLED,
+                "think": settings.LLM_THINK,
+                "gemini_model": settings.GEMINI_MODEL,
             },
+            "overridden_by_env": _vindas_do_ambiente(),
         }

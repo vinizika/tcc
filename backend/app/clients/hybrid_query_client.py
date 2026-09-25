@@ -24,12 +24,29 @@ receio: nunca foram desativados por qualidade, só têm uma versão mais
 precisa disponível agora.
 """
 
+from contextvars import ContextVar
+
 from app.clients.gemini_query_client import GeminiQueryClient
 from app.clients.query_client import QueryClient
 from app.core.logger import setup_logger
 from app.exceptions.llm_exception import LLMException
 
 logger = setup_logger("HybridQueryClient")
+
+# Rastro das chamadas da requisição em curso (rodada 25 do João). A queda do
+# Gemini para o Ollama continua acontecendo — é decisão do trilho B1 —, mas
+# deixa de ser invisível: o pipeline lê este rastro e o põe na procedência da
+# resposta. ContextVar, e não atributo de classe, porque requisições correm
+# em paralelo.
+QUERY_TRACE: ContextVar[list | None] = ContextVar("query_trace", default=None)
+
+
+def _registrar(etapa: str, provedor: str, caiu_de: str | None = None) -> None:
+    rastro = QUERY_TRACE.get()
+    if rastro is not None:
+        rastro.append(
+            {"step": etapa, "provider": provedor, "fallback_from": caiu_de}
+        )
 
 
 class HybridQueryClient:
@@ -38,32 +55,41 @@ class HybridQueryClient:
     def rewrite(question: str) -> str:
 
         try:
-            return GeminiQueryClient.rewrite(question)
+            resposta = GeminiQueryClient.rewrite(question)
+            _registrar("rewrite", "gemini")
+            return resposta
         except LLMException as erro:
             logger.warning(
                 f"Gemini falhou na reescrita, caindo para Ollama: {erro}"
             )
+            _registrar("rewrite", "ollama", caiu_de="gemini")
             return QueryClient.rewrite(question)
 
     @staticmethod
     def generate_queries(question: str) -> list[str]:
 
         try:
-            return GeminiQueryClient.generate_queries(question)
+            resposta = GeminiQueryClient.generate_queries(question)
+            _registrar("multi_query", "gemini")
+            return resposta
         except LLMException as erro:
             logger.warning(
                 f"Gemini falhou no Multi-Query, caindo para Ollama: {erro}"
             )
+            _registrar("multi_query", "ollama", caiu_de="gemini")
             return QueryClient.generate_queries(question)
 
     @staticmethod
     def generate_hypothetical_document(question: str) -> str:
 
         try:
-            return GeminiQueryClient.generate_hypothetical_document(question)
+            resposta = GeminiQueryClient.generate_hypothetical_document(question)
+            _registrar("hyde", "gemini")
+            return resposta
         except LLMException as erro:
             logger.warning(
                 "Gemini falhou no HyDE — seguindo sem documento hipotético "
                 f"nesta consulta (não cai para o Ollama, ver B-09): {erro}"
             )
+            _registrar("hyde", "nenhum", caiu_de="gemini")
             return ""

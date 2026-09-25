@@ -60,6 +60,7 @@ class PipelineOptions(BaseModel):
     # Geração
     prompt_version: Optional[PromptVersion] = None
     structured_output_mode: Optional[StructuredOutputMode] = None
+    think: Optional[bool] = None
     temperature: Optional[float] = Field(default=None, ge=0.0, le=2.0)
     seed: Optional[int] = None
     num_predict: Optional[int] = Field(default=None, ge=-1)
@@ -94,6 +95,37 @@ class EffectiveConfig(BaseModel):
     seed: int
     num_ctx: int
     num_predict: int
+    think: Optional[bool] = False
+
+
+class AttendantProvenance(BaseModel):
+    """Quem respondeu a classificação, desta vez (rodada 25 do João)."""
+
+    provider: str
+    model: str
+    # Digest do modelo no Ollama; versão devolvida pela API no Gemini.
+    model_version: Optional[str] = None
+    thinking: Optional[bool] = None
+    # Preenchido só quando uma troca de provedor aconteceu e foi permitida
+    # pela configuração. Troca silenciosa não existe.
+    fallback_from: Optional[str] = None
+
+
+class QueryStageProvenance(BaseModel):
+    """Quem gerou cada etapa de consulta (reescrita, multi-query, HyDE)."""
+
+    rewriting: bool = False
+    multi_query: bool = False
+    hyde: bool = False
+    # Uma entrada por chamada: etapa, provedor que respondeu e, quando o
+    # primeiro provedor falhou, de qual ele caiu.
+    calls: list[dict] = []
+
+
+class Provenance(BaseModel):
+
+    attendant: Optional[AttendantProvenance] = None
+    query_stage: Optional[QueryStageProvenance] = None
 
 
 class RetrievalInfo(BaseModel):

@@ -54,6 +54,35 @@ def escapar(texto: str) -> str:
     return MARCADOR_NUMERADO.sub(r"\1\\\2\3", texto)
 
 
+def _referencia(referencia) -> str:
+    detalhes = ", ".join(
+        str(parte)
+        for parte in (referencia.journal, referencia.year)
+        if parte not in (None, "")
+    )
+    texto = escapar(referencia.title)
+    if detalhes:
+        texto += f" ({escapar(detalhes)})"
+    texto += "."
+    if referencia.url:
+        texto += f" {escapar(referencia.url)}"
+    return texto
+
+
+def _linha_da_fonte(fonte) -> str:
+    """
+    Numa ficha de triagem: a ficha e o documento aprovado por trás dela, com
+    o título real (rodada 25 do João). Num trecho da base acadêmica: o título
+    e a fonte, como antes.
+    """
+
+    if fonte.references:
+        nome = escapar(fonte.display_title or fonte.title)
+        referencias = "; ".join(_referencia(r) for r in fonte.references)
+        return f"- {nome} — fonte: {referencias}"
+    return f"- {escapar(fonte.title)} ({escapar(fonte.source)})"
+
+
 def render(triage: TriageResult, sources: list | None = None) -> str:
 
     titulo = TITULOS.get(triage.classificacao, triage.classificacao)
@@ -85,10 +114,7 @@ def render(triage: TriageResult, sources: list | None = None) -> str:
     if triage.fontes:
         linhas.append("**Baseado em**")
         linhas.append(
-            "\n".join(
-                f"- {escapar(fonte.title)} ({escapar(fonte.source)})"
-                for fonte in triage.fontes
-            )
+            "\n".join(_linha_da_fonte(fonte) for fonte in triage.fontes)
         )
 
     linhas.append(f"_{AVISO}_")

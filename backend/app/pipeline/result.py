@@ -13,6 +13,7 @@ from app.models.retrieved_document import RetrievedDocument
 from app.schemas.triage import (
     DebugInfo,
     EffectiveConfig,
+    Provenance,
     RetrievalInfo,
     Timings,
 )
@@ -50,3 +51,4 @@ class PipelineResult:
     retrieval: RetrievalInfo
     triage: Optional[object] = None
     debug: Optional[DebugInfo] = None
+    provenance: Optional[Provenance] = None

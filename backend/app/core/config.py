@@ -56,6 +56,12 @@ class Settings(BaseSettings):
     LLM_NUM_CTX: int = 4096
     LLM_NUM_PREDICT: int = 600
 
+    # O qwen3 "pensa" (escreve um raciocínio oculto) antes de responder, a
+    # menos que a chamada diga que não. A autópsia 2 mediu o qwen sem pensar
+    # (rodada 18 do João), e pensar custa dezenas de segundos por caso. O
+    # llama ignora o parâmetro. None = não mandar nada ao Ollama.
+    LLM_THINK: bool | None = False
+
     # ==========================
     # Gemini (experimental — comparação com Ollama na etapa de consulta)
     # ==========================

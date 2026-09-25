@@ -44,12 +44,35 @@ class LLMCallResult:
     completion_tokens: int = 0
     eval_duration_s: Optional[float] = None
     load_duration_s: Optional[float] = None
+    # Procedência (rodada 25 do João): quem respondeu, desta vez.
+    provider: str = "ollama"
+    model: str = ""
+    model_version: Optional[str] = None
+    thinking: Optional[bool] = None
 
 
 class LLMClient:
 
+    provider = "ollama"
+
     def __init__(self, client=None):
         self._client = client or get_ollama_client()
+        self._digests: dict[str, Optional[str]] = {}
+
+    def model_version(self, model: str) -> Optional[str]:
+        """O digest do modelo no Ollama, consultado uma vez por modelo."""
+
+        if model not in self._digests:
+            digest = None
+            try:
+                for item in self._client.list().models:
+                    if item.model == model:
+                        digest = item.digest
+                        break
+            except Exception as erro:  # a procedência não pode derrubar a triagem
+                logger.warning(f"Não foi possível ler o digest de {model}: {erro}")
+            self._digests[model] = digest
+        return self._digests[model]
 
     def classify(
         self,
@@ -59,10 +82,14 @@ class LLMClient:
         mode: str = "schema",
         options: Optional[dict[str, Any]] = None,
         keep_alive: Optional[str] = None,
+        think: Optional[bool] = None,
     ) -> LLMCallResult:
 
         options = dict(options or default_options())
         keep_alive = keep_alive or settings.LLM_KEEP_ALIVE
+        modelo = settings.LLM_MODEL
+        extra = {} if think is None else {"think": think}
+        pensou = None
 
         # "schema" restringe a decodificação ao formato esperado, então os
         # nomes de campo e os valores de classificação saem exatos. "json"
@@ -90,11 +117,12 @@ class LLMClient:
 
             try:
                 resposta = self._client.chat(
-                    model=settings.LLM_MODEL,
+                    model=modelo,
                     messages=mensagens,
                     format=formato,
                     options=options,
                     keep_alive=keep_alive,
+                    **extra,
                 )
 
             except (httpx.ConnectError, httpx.ReadTimeout) as erro:
@@ -113,6 +141,10 @@ class LLMClient:
 
             bruto = (resposta["message"]["content"] or "").strip()
             done_reason = getattr(resposta, "done_reason", None)
+            try:
+                pensou = bool(resposta["message"].get("thinking"))
+            except Exception:
+                pensou = None
 
             prompt_tokens = getattr(resposta, "prompt_eval_count", 0) or 0
             completion_tokens = getattr(resposta, "eval_count", 0) or 0
@@ -158,6 +190,10 @@ class LLMClient:
                         completion_tokens=completion_tokens,
                         eval_duration_s=eval_duration_s,
                         load_duration_s=load_duration_s,
+                        provider=self.provider,
+                        model=modelo,
+                        model_version=self.model_version(modelo),
+                        thinking=pensou,
                     )
 
                 except ValidationError as erro:
@@ -216,4 +252,8 @@ class LLMClient:
             completion_tokens=completion_tokens,
             eval_duration_s=eval_duration_s,
             load_duration_s=load_duration_s,
+            provider=self.provider,
+            model=modelo,
+            model_version=self.model_version(modelo),
+            thinking=pensou,
         )
