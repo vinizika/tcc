@@ -68,20 +68,98 @@ lotes, a medida de "mesmo autor") fica para depois, com a validação.
 
 ## Resultado obtido
 
-_(preenchido ao montar)_
+**A prova 2 está escrita, com a composição exata.** Os nove autores
+trabalharam das 03h10 às 03h40, em paralelo, cada um numa pasta isolada.
+
+| Checagem (`python scripts/prova2_montar.py`) | Esperado | Obtido |
+|---|---|---|
+| Relatos | 330 | **330** (ids iguais aos pedidos, um por pedido) |
+| Do mapa: emergências · leves | 190 · 115, em 61 quadros | **190 · 115, em 61 quadros** |
+| Especiais | 10 · 8 · 7 | **10 · 8 · 7** |
+| Com os especiais: emergências · leves · INCERTO | 194 · 126 · 10 | **194 · 126 · 10** |
+| "mas", por classe | 40% ± 5 | **78 de 194 (40%) · 50 de 126 (40%)** |
+| Textos repetidos | 0 | **0** |
+| Relato que diz "é emergência" ou "não é emergência" | 0 | **0** |
+| Pares do mesmo quadro com 6+ palavras seguidas em comum | 0 | **9** (ver Observações) |
+| Tamanho | — | 18 a 117 palavras, mediana 68,5 |
+| Cadernos de linguagem | um por quadro | **86** (61 quadros + 25 especiais) |
+
+Os tons saíram como pedidos: nas emergências, 77 calmos (76 dos quadros e 1
+especial), 39 aflitos, 40 neutros e 38 parecidos com a gêmea; nas leves, 48
+aflitos, 53 neutros e 23 parecidos com a gêmea.
+
+**Os autores conferiram, cada um no seu lote:** o JSON abre, um relato por
+pedido, a regra do "mas" bate nos 330, nenhum relato repete 6 palavras de
+uma citação anotada no caderno (seis autores acharam e reescreveram de 1 a 6
+relatos na primeira conferência), e, nos pedidos sem palpite, o tutor não dá
+nome de doença.
 
 ## O que mudou no repositório
 
-_(preenchido ao montar)_
+| Arquivo | Mudança |
+|---|---|
+| `scripts/prova2_pedidos.py` | **novo**: os 330 pedidos a partir do mapa (commit anterior) |
+| `scripts/prova2_montar.py` | **novo**: monta o `casos.csv` e faz a conferência mínima; `--check` |
+| `scripts/tests/test_prova2_pedidos.py` | **novo**: 5 testes (composição, tons, "mas" e palpite por quadro, o que o autor não vê, arquivos em dia) |
+| `data/prova2/geracao/pedidos/` | os 9 lotes, completos e na versão do autor |
+| `data/prova2/geracao/autores/lote_<n>/` | o que cada autor devolveu (`relatos.json`, `RESUMO.md`) |
+| `data/prova2/geracao/cadernos/` | os 86 cadernos de linguagem |
+| `data/prova2/casos.csv` | a prova 2, com rótulo provisório e `split` vazio |
+| `data/prova2/README.md` | **novo**: o que é, a composição, a autoria e o que falta antes de usar |
+| `.gitignore` | `data/prova2/geracao/bruto/` |
+
+Commits: `7778f9e` (abre a rodada: os pedidos) e este.
 
 ## Observações
 
-_(preenchido ao montar)_
+**1. A pesquisa foi mais fraca que a do piloto.** A ferramenta de busca na web
+tem um limite de 200 buscas por sessão, **dividido entre todos os agentes da
+noite** (os 9 autores e os 4 pesquisadores da
+[rodada 27](2026-09-25-28-fontes-para-tutor-etapa-2.md)), e ele acabou cedo:
+vários autores fizeram de 4 a 20 buscas e seguiram abrindo páginas por
+endereço e pelos índices dos sites. Resultado: as fontes se concentram em
+poucos sites brasileiros de tutor (comentários de leitores do Perito Animal e
+do blog da Cobasi) e em páginas de orientação de clínicas; fala de tutor em
+primeira pessoa quase não apareceu em vários quadros (cardíaco, queda, parto,
+trombo, lírio, leptospirose), e nesses a linguagem é mais do autor. Não
+contornaram bloqueios (JustAnswer, Reddit, Petz e Petlove recusaram).
+
+**2. Nove pares de relatos do mesmo quadro repetem 6 ou mais palavras
+seguidas** (ex.: "o xixi que ele fez no", "a cabeça dele fica dando uns",
+"vomitou duas vezes, fez cocô mole"). São fórmulas do mesmo autor dentro do
+mesmo quadro, não cópia de fonte. Não editei: texto de autor só muda na
+revisão.
+
+**3. Rótulos que os próprios autores estranharam** (estão nos `RESUMO.md`, e
+nenhum foi mudado): convulsão única curta em cão epiléptico rotulada
+imediata (L1Q03, o autor pôs um critério de urgência em cada relato);
+"mas come normal" na torção (q046) e no filhote hipoglicêmico (q287);
+otite com dor e cheiro como rotina (q302, q304); picada na bochecha como
+rotina (q155); gata não castrada bebendo muito um mês depois do cio como 24 h
+(q080); "desde ontem" num pedido de informação insuficiente (L9Q03). São
+exatamente os casos para os veterinários olharem primeiro.
+
+**4. O isolamento se manteve.** Cada autor recebeu só o próprio
+`pedidos.json`, numa pasta fora do repositório, sem o tópico do mapa nem a
+urgência codificada; nenhum relatou ter aberto outro arquivo. O quadro
+leigo que eles viram é texto do script, e a gêmea, o nome leigo da outra
+linha do mapa (sem a coluna de sinais).
 
 ## Deixado para depois
 
-_(preenchido ao montar)_
+- **A prova 2 até o uso** ([B-63](../backlog.md#b-63)): a conferência completa
+  (palavras em comum com as fichas, Naive Bayes entre lotes, o "mesmo autor"
+  no top 3 contra os relatos independentes), a planilha cega para os
+  veterinários, a validação, a divisão por assunto (66/264) e o congelamento.
+- **Os 9 pares com fórmula repetida** e os rótulos estranhados pelos autores:
+  para a revisão junto com a validação.
+- **Uma segunda passada de pesquisa** nos quadros com pouca fala de tutor, se
+  a conferência mostrar vocabulário muito próximo das fichas.
 
 ## Próximo passo
 
-_(preenchido ao montar)_
+A conferência completa, antes da planilha dos veterinários:
+
+```
+python scripts/prova2_montar.py --check
+```

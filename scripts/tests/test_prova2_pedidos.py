@@ -51,3 +51,14 @@ def test_o_autor_nao_ve_o_topico_nem_a_urgencia_do_mapa():
 
 def test_arquivos_versionados_em_dia():
     prova2_pedidos.main(["--check"])
+
+
+def test_casos_da_prova_2_em_dia_e_com_a_composicao_da_rodada_20():
+    import prova2_montar
+
+    prova2_montar.main(["--check"])
+    _, conferencia = prova2_montar.montar()
+    assert conferencia["n"] == 330
+    assert conferencia["do_mapa_por_classe"] == {"EMERGENCIA": 190, "NAO_EMERGENCIA": 115}
+    assert conferencia["quadros"] == 61
+    assert conferencia["textos_repetidos"] == 0

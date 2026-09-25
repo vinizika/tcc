@@ -2580,6 +2580,14 @@ antes da primeira rodada; README com a autoria e a validação. Critério: o
 arquivo congelado, com 100% dos rótulos validados, e o vazamento conferido
 (Naive Bayes entre lotes perto do acaso).
 
+**Atualização 25/09, madrugada — a geração está feita**
+([rodada 28](joao/2026-09-25-29-prova-2-geracao.md)): `data/prova2/casos.csv`
+com os 330 relatos (190 · 115 · 25, "mas" em 40% de cada classe), rótulos
+provisórios. Falta tudo o que vem depois da geração: a conferência completa,
+a planilha dos veterinários, a validação, a divisão e o congelamento. A
+pesquisa dos autores foi mais fraca que a do piloto (a busca na web acabou
+cedo), o que torna a medida do "mesmo autor" mais importante.
+
 ### B-64
 
 **LGPD com o Gemini como atendente padrão: o relato do tutor sai da máquina**
