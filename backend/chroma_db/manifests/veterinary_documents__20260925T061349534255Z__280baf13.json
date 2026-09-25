@@ -1,0 +1,124 @@
+{
+  "chunking": {
+    "dimensions": 1024,
+    "embedding_text_fields": [
+      "search_text"
+    ],
+    "max_tokens": 512,
+    "model": "BAAI/bge-m3",
+    "overlap_tokens": null,
+    "recipe_sha256": "3bfd745d110ea09f939b0353c2f8e8d94903140c9a3dfa7002b435aa2a7aa739",
+    "revision": "5617a9f61b028005a4858fdac845db406aefb181",
+    "target_tokens": null,
+    "version": "triage-cards-v1"
+  },
+  "chunks": {
+    "content_sha256": "9274aff4254398f6a50789381514ab6994d6f0ad75de828ccb1f37d399a2fffd",
+    "count": 61,
+    "ids_sha256": "232184405e9bd9bbaf64ed96b13fa2693f1fb5b37396f686d171a97109f1e8d6",
+    "tokens": {
+      "max": 485,
+      "mean": 325.59,
+      "median": 315,
+      "min": 244
+    }
+  },
+  "collection_name": "veterinary_documents__20260925T061349534255Z__280baf13",
+  "created_at": "2026-09-25T06:15:08.473607+00:00",
+  "embedding": {
+    "dimensions": 1024,
+    "model": "BAAI/bge-m3",
+    "recipe_key": "bge-m3-fichas-v1",
+    "revision": "5617a9f61b028005a4858fdac845db406aefb181"
+  },
+  "profile": "fichas",
+  "quality": {
+    "corrupt_document_count": 0,
+    "fallback_count": 0,
+    "species_counts": {
+      "cat": 5,
+      "dog": 13,
+      "dog_and_cat": 43
+    },
+    "topic_counts": {
+      "acute_hindlimb_paralysis": 1,
+      "airway_foreign_body_choking": 1,
+      "allium_toxicosis": 1,
+      "anaphylaxis_facial_swelling": 1,
+      "anticoagulant_rodenticide_poisoning": 1,
+      "burns_and_electrical_injury": 1,
+      "canine_heatstroke": 1,
+      "carbamate_organophosphate_poisoning": 1,
+      "cat_bite_abscess": 1,
+      "chocolate_toxicosis": 1,
+      "collapse_and_pale_gums": 1,
+      "congestive_heart_failure": 1,
+      "diabetic_ketoacidosis": 1,
+      "dietary_indiscretion_mild": 1,
+      "distemper_neurological": 1,
+      "dystocia": 1,
+      "eclampsia": 1,
+      "exertional_panting_mild": 1,
+      "fading_neonate": 1,
+      "feline_aortic_thromboembolism": 1,
+      "flea_dermatitis_pruritus": 1,
+      "gastric_dilatation_volvulus": 1,
+      "gastrointestinal_foreign_body": 1,
+      "grape_xylitol_toxicosis": 1,
+      "high_rise_syndrome_cats": 1,
+      "human_medication_poisoning": 1,
+      "hypoglycemia_toy_puppy": 1,
+      "inappropriate_urination_or_cystitis": 1,
+      "insect_sting_local_reaction": 1,
+      "kennel_cough_mild": 1,
+      "leptospirosis_acute": 1,
+      "lily_toxicosis_cats": 1,
+      "mild_conjunctivitis": 1,
+      "mild_lameness": 1,
+      "mild_upper_respiratory_signs": 1,
+      "minor_wound": 1,
+      "normal_estrus": 1,
+      "normal_whelping": 1,
+      "ocular_emergency": 1,
+      "osteoarthritis_stiffness": 1,
+      "otitis_externa_mild": 1,
+      "parvovirus_panleukopenia": 1,
+      "periodontal_disease_mild": 1,
+      "permethrin_toxicosis_cats": 1,
+      "polyuria_polydipsia_investigate": 1,
+      "pyometra": 1,
+      "rabies_exposure_wild_animal_bite": 1,
+      "reduced_appetite_no_other_signs": 1,
+      "respiratory_distress": 1,
+      "seizures": 1,
+      "single_vomiting_or_mild_diarrhea": 1,
+      "slow_growing_lump": 1,
+      "snake_and_scorpion_envenomation": 1,
+      "tick_borne_disease_anemia": 1,
+      "ticks_found_no_signs": 1,
+      "toad_bufotoxin_poisoning": 1,
+      "trauma_and_bleeding": 1,
+      "tremors_without_seizure": 1,
+      "urethral_obstruction": 1,
+      "vestibular_syndrome_otitis_interna": 1,
+      "vomiting_and_diarrhea": 1
+    },
+    "validation_status_counts": {
+      "reading_card_from_validated_map": 61
+    },
+    "warning_count": 0
+  },
+  "schema_version": 1,
+  "sources": {
+    "document_count": 1,
+    "documents": [
+      {
+        "chunk_count": 61,
+        "path": "fichas.json",
+        "sidecar_sha256": "",
+        "source_sha256": "afa1a0b66445325ed202cf59ea0acc589407a4edf30269ce2f24b9e9b06b4d03"
+      }
+    ],
+    "source_set_sha256": "280baf13749ad2d913d0a66d013e37917440ab7c71910ff305aa192eaabe612f"
+  }
+}
