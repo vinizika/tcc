@@ -100,5 +100,11 @@
     "trecho": "Dogs and cats are highly susceptible to Allium toxicosis and the ingestion of 5 g/kg of onions by cats and 15–30 g/kg by dogs is enough to cause clinically important hematologic changes",
     "fonte": "allium_toxicosis__frontiers_2016_allium_section.txt"
   },
-  "notas_para_o_especialista": "O documento cobre bem os sinais e vale para cão e gato. 'Tempero em pó' e os exemplos de sobra (molho, refogado, arroz com alho) são a variação leiga de 'cooking, drying, and processing'. O documento cita raças japonesas (Akita, Shiba, Jindo) como mais sensíveis; não coloquei na ficha. O motivo do mapa diz que o gato é mais suscetível, e os números do documento (5 g/kg no gato contra 15–30 g/kg no cão) confirmam. Nenhum item geral."
+  "notas_para_o_especialista": "O documento cobre bem os sinais e vale para cão e gato. 'Tempero em pó' e os exemplos de sobra (molho, refogado, arroz com alho) são a variação leiga de 'cooking, drying, and processing'. O documento cita raças japonesas (Akita, Shiba, Jindo) como mais sensíveis; não coloquei na ficha. O motivo do mapa diz que o gato é mais suscetível, e os números do documento (5 g/kg no gato contra 15–30 g/kg no cão) confirmam. Nenhum item geral.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

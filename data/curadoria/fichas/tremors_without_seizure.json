@@ -109,5 +109,11 @@
     "trecho": "",
     "fonte": ""
   },
-  "notas_para_o_especialista": "O documento aprovado é uma revisão sobre discinesia paroxística em cães (crises de movimentos involuntários); não fala de tremor de frio ou de medo. Usei dele só critérios gerais de episódio não convulsivo (consciência preservada, sem baba/xixi, sem dor, início e fim abruptos, sem fase pós-crise) e a frase de que intoxicação aguda costuma vir com sinais gastrointestinais/respiratórios. O documento é só de cães; estendi esses critérios ao gato por serem gerais, validar. Os exemplos de situação (banho, fogos, trovão, veterinário) são ilustrações dos sinais do mapa. O gêmeo de hipoglicemia não tem sinais nem discriminador no mapa; usei o motivo da linha dele (filhote toy com menos de 3 meses, jejum, frio, estresse). Não usei a parte sobre tremor de cabeça porque o documento a associa a lesão cerebral. Nenhum item 'geral'."
+  "notas_para_o_especialista": "O documento aprovado é uma revisão sobre discinesia paroxística em cães (crises de movimentos involuntários); não fala de tremor de frio ou de medo. Usei dele só critérios gerais de episódio não convulsivo (consciência preservada, sem baba/xixi, sem dor, início e fim abruptos, sem fase pós-crise) e a frase de que intoxicação aguda costuma vir com sinais gastrointestinais/respiratórios. O documento é só de cães; estendi esses critérios ao gato por serem gerais, validar. Os exemplos de situação (banho, fogos, trovão, veterinário) são ilustrações dos sinais do mapa. O gêmeo de hipoglicemia não tem sinais nem discriminador no mapa; usei o motivo da linha dele (filhote toy com menos de 3 meses, jejum, frio, estresse). Não usei a parte sobre tremor de cabeça porque o documento a associa a lesão cerebral. Nenhum item 'geral'.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

@@ -33,7 +33,7 @@
       "origem": "documento",
       "trecho": "Other signs associated with heart failure include coughing when at rest or sleeping, an increased resting respiratory rate or excessive panting",
       "fonte": "capturas/congestive_heart_failure__vca_icc.txt",
-      "aprovacao": "pendente",
+      "aprovacao": "aprovada",
       "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
@@ -73,7 +73,7 @@
       "origem": "documento",
       "trecho": "A dog with severe difficulty breathing may have a tongue that looks purple/blue instead of pink, showing that they are not getting enough oxygen.",
       "fonte": "capturas/congestive_heart_failure__tufts_dispneia.txt",
-      "aprovacao": "pendente",
+      "aprovacao": "aprovada",
       "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
@@ -81,7 +81,7 @@
       "origem": "documento",
       "trecho": "Many dogs with severe difficulty breathing will refuse to lie down on their side because it is harder for them to breathe in this position. Instead, they will prefer to sit or stand.",
       "fonte": "capturas/congestive_heart_failure__tufts_dispneia.txt",
-      "aprovacao": "pendente",
+      "aprovacao": "aprovada",
       "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
@@ -106,5 +106,11 @@
     "trecho": "",
     "fonte": ""
   },
-  "notas_para_o_especialista": "O documento é uma revisão sobre tosse em cães e gatos, centrada em exame físico, imagem e exames; quase não descreve o que o tutor vê em casa. Tosse noturna, esforço respiratório e sopro conhecido vêm do motivo do mapa. Itens 'geral' (3): respiração rápida durante o sono, língua/gengiva roxa e não conseguir deitar para respirar. Para o gato, o documento só diz que tosse não é sinal comum da doença cardíaca felina; a respiração rápida e com esforço no gato é inferência, validar. O desmaio por tosse e a insônia por tosse aparecem no documento para tosse crônica em geral, não só cardíaca. No gêmeo (tosse dos canis) o mapa não tem sinais nem discriminador; usei o trecho sobre ausência de sopro, e a parte 'pior à noite com esforço' vem do mapa. Trechos copiados literalmente do .txt completo, que tem palavras quebradas pela extração do PDF ('syncopa l', 'disease .')."
+  "notas_para_o_especialista": "O documento é uma revisão sobre tosse em cães e gatos, centrada em exame físico, imagem e exames; quase não descreve o que o tutor vê em casa. Tosse noturna, esforço respiratório e sopro conhecido vêm do motivo do mapa. Itens 'geral' (3): respiração rápida durante o sono, língua/gengiva roxa e não conseguir deitar para respirar. Para o gato, o documento só diz que tosse não é sinal comum da doença cardíaca felina; a respiração rápida e com esforço no gato é inferência, validar. O desmaio por tosse e a insônia por tosse aparecem no documento para tosse crônica em geral, não só cardíaca. No gêmeo (tosse dos canis) o mapa não tem sinais nem discriminador; usei o trecho sobre ausência de sopro, e a parte 'pior à noite com esforço' vem do mapa. Trechos copiados literalmente do .txt completo, que tem palavras quebradas pela extração do PDF ('syncopa l', 'disease .').",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

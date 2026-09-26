@@ -9,8 +9,10 @@ Entrada:
   escreveu: `id`, `texto`, `inspiracao`.
 
 Saída: `data/prova2/casos.csv`, uma linha por relato, e a conferência mínima
-impressa (composição, ids, duplicatas, "mas" por classe). Os rótulos são
-**provisórios**: valem depois da validação dos veterinários.
+impressa (composição, ids, duplicatas, "mas" por classe). Os rótulos valem
+depois da validação dos veterinários, registrada em `data/prova2/validacao.json`
+(rodada 30): com o registro, o `marked_by` diz quem validou e quando; sem ele,
+que o rótulo é provisório.
 
     python scripts/prova2_montar.py            # grava o casos.csv
     python scripts/prova2_montar.py --check    # confere que está em dia
@@ -27,6 +29,7 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parents[1]
 GERACAO = RAIZ / "data" / "prova2" / "geracao"
 DESTINO = RAIZ / "data" / "prova2" / "casos.csv"
+VALIDACAO = RAIZ / "data" / "prova2" / "validacao.json"
 LOTES = range(1, 10)
 
 COLUNAS = [
@@ -42,7 +45,16 @@ def _ler_json(caminho: Path):
     return json.loads(caminho.read_text(encoding="utf-8"))
 
 
+def marcado_por(lote: int, validacao: dict | None) -> str:
+    autor = f"IA (agente isolado, lote {lote})"
+    if validacao and validacao.get("rotulos") == "validados":
+        ano, mes, dia = validacao["data"].split("-")
+        return f"{autor} - rotulo validado por especialista ({validacao['por']}, {dia}/{mes}/{ano})"
+    return f"{autor} - provisorio, aguardando validacao de especialista"
+
+
 def montar() -> tuple[str, dict]:
+    validacao = _ler_json(VALIDACAO) if VALIDACAO.exists() else None
     linhas = []
     problemas = []
     for lote in LOTES:
@@ -76,7 +88,7 @@ def montar() -> tuple[str, dict]:
                 "source_reference": (
                     f"data/curadoria/mapa-de-assuntos.csv#{pedido['topic']}" if pedido["topic"] else ""
                 ),
-                "marked_by": f"IA (agente isolado, lote {lote}) - provisorio, aguardando validacao de especialista",
+                "marked_by": marcado_por(lote, validacao),
                 "split": "",
             })
 

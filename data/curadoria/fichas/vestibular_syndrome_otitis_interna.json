@@ -39,7 +39,7 @@
       "origem": "documento",
       "trecho": "Falling, rolling or circling to one side",
       "fonte": "capturas/vestibular_syndrome_otitis_interna__vca_feline_vestibular.txt",
-      "aprovacao": "pendente",
+      "aprovacao": "aprovada",
       "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
@@ -91,7 +91,7 @@
       "origem": "documento",
       "trecho": "The most reliable indication of central vestibular disease is depressed mental status (e.g. poorly interactive and disorientated) and postural deficits i.e. loss of strength and proprioception",
       "fonte": "capturas/vestibular_syndrome_otitis_interna__fitzpatrick_vestibular.txt",
-      "aprovacao": "pendente",
+      "aprovacao": "aprovada",
       "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
@@ -110,5 +110,11 @@
     "trecho": "",
     "fonte": ""
   },
-  "notas_para_o_especialista": "A linha do mapa não tem sinais nem discriminador; usei o motivo do mapa (cabeça torta, desequilíbrio, olhos tremendo, início súbito) e o artigo, que é sobre a forma idiopática em cão e gato. O documento não descreve a otite externa: a parte 'coceira, balança a cabeça, anda normal' do 'como diferenciar' é conhecimento geral; o trecho citado sustenta só os sinais vestibulares. 'Pálpebra caída/terceira pálpebra' é minha tradução leiga da síndrome de Horner, que o artigo só nomeia. Itens gerais (2): andar em círculos/rolar; sonolência, confusão ou fraqueza nas patas (sinais de lesão central, não descritos no artigo). 'Labirintite' é o nome popular por analogia com a doença humana."
+  "notas_para_o_especialista": "A linha do mapa não tem sinais nem discriminador; usei o motivo do mapa (cabeça torta, desequilíbrio, olhos tremendo, início súbito) e o artigo, que é sobre a forma idiopática em cão e gato. O documento não descreve a otite externa: a parte 'coceira, balança a cabeça, anda normal' do 'como diferenciar' é conhecimento geral; o trecho citado sustenta só os sinais vestibulares. 'Pálpebra caída/terceira pálpebra' é minha tradução leiga da síndrome de Horner, que o artigo só nomeia. Itens gerais (2): andar em círculos/rolar; sonolência, confusão ou fraqueza nas patas (sinais de lesão central, não descritos no artigo). 'Labirintite' é o nome popular por analogia com a doença humana.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

@@ -112,5 +112,11 @@
     "trecho": "Ongoing and prolonged seizure activity can cause neuronal necrosis which in turn leads to increased inflammatory mediators, permeability of cerebral vessels, and cellular death.",
     "fonte": "seizures__vetsci_2024_emergency_seizures.pdf"
   },
-  "notas_para_o_especialista": "O documento cobre bem o reconhecimento em casa: perguntas ao tutor (Tabela 4) e sinais da crise e dos quadros que a imitam (Tabela 5). Os sinais do gato (pulos, rosnado, morder o rabo, mastigar) vêm da Tabela 5. O documento define estado de mal epiléptico como crise acima de 5 min; o discriminador do mapa usa 2 min, e mantive os 2 min do mapa. Síncope e síndrome vestibular também imitam convulsão no documento, mas não são gêmeas listadas e não entraram. Antipulgas de cão no gato aparece só no discriminador da gêmea (tremor), e no documento como causa de tremor, não de convulsão; não virou item. Nenhum item geral."
+  "notas_para_o_especialista": "O documento cobre bem o reconhecimento em casa: perguntas ao tutor (Tabela 4) e sinais da crise e dos quadros que a imitam (Tabela 5). Os sinais do gato (pulos, rosnado, morder o rabo, mastigar) vêm da Tabela 5. O documento define estado de mal epiléptico como crise acima de 5 min; o discriminador do mapa usa 2 min, e mantive os 2 min do mapa. Síncope e síndrome vestibular também imitam convulsão no documento, mas não são gêmeas listadas e não entraram. Antipulgas de cão no gato aparece só no discriminador da gêmea (tremor), e no documento como causa de tremor, não de convulsão; não virou item. Nenhum item geral.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

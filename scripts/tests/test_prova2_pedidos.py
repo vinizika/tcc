@@ -53,6 +53,17 @@ def test_arquivos_versionados_em_dia():
     prova2_pedidos.main(["--check"])
 
 
+def test_marked_by_diz_quem_validou_so_quando_ha_registro():
+    import prova2_montar
+
+    registro = {"rotulos": "validados", "por": "ASAVET", "data": "2026-09-26"}
+    assert prova2_montar.marcado_por(3, registro) == (
+        "IA (agente isolado, lote 3) - rotulo validado por especialista (ASAVET, 26/09/2026)"
+    )
+    assert prova2_montar.marcado_por(3, None).endswith("provisorio, aguardando validacao de especialista")
+    assert prova2_montar.marcado_por(3, {"rotulos": "em andamento"}).endswith("aguardando validacao de especialista")
+
+
 def test_casos_da_prova_2_em_dia_e_com_a_composicao_da_rodada_20():
     import prova2_montar
 

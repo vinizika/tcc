@@ -2,7 +2,7 @@
   "title": "Sindrome do filhote definhando",
   "source": "VCA Animal Hospitals",
   "document_type": "owner_guidance",
-  "validation_status": "pending_specialist",
+  "validation_status": "approved_by_specialist",
   "ingestion_scope": "curated_candidate",
   "species": "dog",
   "topic": "fading_neonate",
@@ -19,9 +19,9 @@
   "captured_sha256": "0d98300272b3255ab8e490f48d167b1e8ef0bd037af2a3499eae105fd6520f55",
   "map_line": "fading_neonate",
   "specialist": {
-    "verdict": "",
-    "name": "",
-    "date": ""
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
   },
   "rights": {
     "status": "pending",
@@ -32,5 +32,5 @@
   "year": 2023,
   "authors": "Ryan Llera; Krista Williams; Ernest Ward",
   "full_title": "Fading Puppy Syndrome in Dogs",
-  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de fading_neonate (rodada 27); autoridade media; aguardando especialista."
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de fading_neonate (rodada 27); autoridade media. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
 }

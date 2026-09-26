@@ -69,7 +69,7 @@
       "origem": "documento",
       "trecho": "Além da dor local intensa, outros sinais clínicos nos casos moderados incluem náuseas, vômitos, sialorreia, agitação ou sonolência, taquicardia, taquipneia e picos hipertensivos.",
       "fonte": "capturas/snake_and_scorpion_envenomation__ufmg_ct75_2014_peconhentos.pdf",
-      "aprovacao": "pendente",
+      "aprovacao": "aprovada",
       "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
@@ -109,7 +109,7 @@
       "origem": "documento",
       "trecho": "Frequentemente não há alteração no local da picada, o que impossibilita sua localização",
       "fonte": "capturas/snake_and_scorpion_envenomation__ufmg_ct75_2014_peconhentos.pdf",
-      "aprovacao": "pendente",
+      "aprovacao": "aprovada",
       "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
@@ -120,5 +120,11 @@
     "trecho": "The venom may stimulate the release of cytokines. resulting in vasodilation, increased vascular permeability, and edema, which can cause hypovolemia and distributive shock",
     "fonte": "snake_and_scorpion_envenomation__toxins_2024_zootoxins.pdf"
   },
-  "notas_para_o_especialista": "Documento europeu (víboras do gênero Vipera); não cobre as espécies brasileiras (jararaca, cascavel, coral, escorpião-amarelo, aranhas). Para escorpião, só diz que picadas podem ocorrer em cães e gatos fora da Europa; para aranhas, que não há relatos em animais. Marquei como geral: dor intensa, baba e vômito após escorpião; sangramento pelos furinhos, nariz ou gengiva (típico de jararaca); pouco inchaço com fraqueza, pálpebras caídas e urina escura (típico de cascavel). O item 'Acho que foi jararaca ou cascavel' marquei como mapa por ser só o tutor nomeando a cobra do quadro. Nenhum sinal específico de aranha entrou. Sinais do mapa vazios e sem gêmeos; o número da UFF citado no motivo não foi usado. Taquicardia, arritmia e hipertermia do documento são achados medidos e ficaram de fora."
+  "notas_para_o_especialista": "Documento europeu (víboras do gênero Vipera); não cobre as espécies brasileiras (jararaca, cascavel, coral, escorpião-amarelo, aranhas). Para escorpião, só diz que picadas podem ocorrer em cães e gatos fora da Europa; para aranhas, que não há relatos em animais. Marquei como geral: dor intensa, baba e vômito após escorpião; sangramento pelos furinhos, nariz ou gengiva (típico de jararaca); pouco inchaço com fraqueza, pálpebras caídas e urina escura (típico de cascavel). O item 'Acho que foi jararaca ou cascavel' marquei como mapa por ser só o tutor nomeando a cobra do quadro. Nenhum sinal específico de aranha entrou. Sinais do mapa vazios e sem gêmeos; o número da UFF citado no motivo não foi usado. Taquicardia, arritmia e hipertermia do documento são achados medidos e ficaram de fora.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

@@ -112,5 +112,11 @@
     "trecho": "the mortality rate is around 50%, similar to that of human heatstroke victims",
     "fonte": "pathophysiology_heatstroke_dogs_2017.pdf"
   },
-  "notas_para_o_especialista": "Documento é revisão de fisiopatologia, escrita para veterinários. 'Língua vermelha escura', 'muito quente ao toque' e 'ofegação que não para na sombra' vêm só do mapa: o documento não fala da cor da língua. 'Babando muito' se apoia no trecho que descreve a hipersalivação como mecanismo de resfriamento, não como sinal clínico; confirmar se serve. 'Pug' foi dado como exemplo leigo de raça braquicefálica (o documento cita buldogue inglês). Ficaram de fora a temperatura acima de 41 °C e os exames (hemácias nucleadas, CK), que só o veterinário mede. Nenhum item geral."
+  "notas_para_o_especialista": "Documento é revisão de fisiopatologia, escrita para veterinários. 'Língua vermelha escura', 'muito quente ao toque' e 'ofegação que não para na sombra' vêm só do mapa: o documento não fala da cor da língua. 'Babando muito' se apoia no trecho que descreve a hipersalivação como mecanismo de resfriamento, não como sinal clínico; confirmar se serve. 'Pug' foi dado como exemplo leigo de raça braquicefálica (o documento cita buldogue inglês). Ficaram de fora a temperatura acima de 41 °C e os exames (hemácias nucleadas, CK), que só o veterinário mede. Nenhum item geral.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

@@ -113,5 +113,11 @@
     "trecho": "",
     "fonte": ""
   },
-  "notas_para_o_especialista": "O documento é uma revisão sobre reposição de volume na hemorragia aguda (cão e gato); quase tudo nele é achado que só o veterinário mede (frequência cardíaca, pressão, lactato, déficit de base), por isso a ficha se apoia no mapa. Único item do documento: sangramento sem ferimento visível (tumor no baço, úlcera), que o artigo diz ser mais difícil de reconhecer como choque hemorrágico. 'Gengiva azulada' e 'quase não responde' vêm do discriminador do mapa. Nenhum item geral."
+  "notas_para_o_especialista": "O documento é uma revisão sobre reposição de volume na hemorragia aguda (cão e gato); quase tudo nele é achado que só o veterinário mede (frequência cardíaca, pressão, lactato, déficit de base), por isso a ficha se apoia no mapa. Único item do documento: sangramento sem ferimento visível (tumor no baço, úlcera), que o artigo diz ser mais difícil de reconhecer como choque hemorrágico. 'Gengiva azulada' e 'quase não responde' vêm do discriminador do mapa. Nenhum item geral.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

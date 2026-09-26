@@ -2,7 +2,7 @@
   "title": "Cão bebendo e urinando demais (PDSA)",
   "source": "PDSA",
   "document_type": "owner_guidance",
-  "validation_status": "pending_specialist",
+  "validation_status": "approved_by_specialist",
   "ingestion_scope": "curated_candidate",
   "species": "dog",
   "topic": "polyuria_polydipsia_investigate",
@@ -19,9 +19,9 @@
   "captured_sha256": "9b26b66dbeb11af6430d1c1fb5ba350d2c2cb35d4dd322d69e5e55ba6a47e6c5",
   "map_line": "polyuria_polydipsia_investigate",
   "specialist": {
-    "verdict": "",
-    "name": "",
-    "date": ""
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
   },
   "rights": {
     "status": "pending",
@@ -31,5 +31,5 @@
   },
   "year": 2024,
   "full_title": "Why is my dog drinking lots of water and weeing more than usual?",
-  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de polyuria_polydipsia_investigate (rodada 27); autoridade alta; aguardando especialista."
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de polyuria_polydipsia_investigate (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
 }

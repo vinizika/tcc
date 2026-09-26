@@ -2,7 +2,7 @@
   "title": "Ofegacao excessiva em caes",
   "source": "PDSA",
   "document_type": "owner_guidance",
-  "validation_status": "pending_specialist",
+  "validation_status": "approved_by_specialist",
   "ingestion_scope": "curated_candidate",
   "species": "dog",
   "topic": "exertional_panting_mild",
@@ -19,9 +19,9 @@
   "captured_sha256": "4f035791d3963f02a0112c95e3d1ff6d8d66ca8b83329bf91b89d7dda33541d8",
   "map_line": "exertional_panting_mild",
   "specialist": {
-    "verdict": "",
-    "name": "",
-    "date": ""
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
   },
   "rights": {
     "status": "pending",
@@ -31,5 +31,5 @@
   },
   "year": 2021,
   "full_title": "Vet Q&A: Is my dog is panting too much?",
-  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de exertional_panting_mild (rodada 27); autoridade alta; aguardando especialista."
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de exertional_panting_mild (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
 }

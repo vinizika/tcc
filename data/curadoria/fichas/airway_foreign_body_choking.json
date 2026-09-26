@@ -51,7 +51,7 @@
       "origem": "documento",
       "trecho": "A choking pet will have difficulty breathing, will make choking sounds, might paw at their mouth and you might see their lips, gums and tongue turning blue.",
       "fonte": "capturas/airway_foreign_body_choking__pdsa_choking.txt",
-      "aprovacao": "pendente",
+      "aprovacao": "aprovada",
       "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
@@ -90,5 +90,11 @@
     "trecho": "Os principais sinais clínicos são dispneia, tosse e cianose, que podem levar o animal a óbito.",
     "fonte": "airway_foreign_body_choking__cab_2010_tracheal_obstruction.txt"
   },
-  "notas_para_o_especialista": "Documento em português: relato de caso de bola de gude na traqueia de uma cadela Rottweiler, com revisão curta na introdução; os sinais (tosse forçada e seca, dispneia, cianose, desmaio após comer, dificuldade para engolir, ânsia/vômito) vêm dali. O documento é de cão; os sinais de engasgo foram mantidos genéricos para cão e gato, validar. Ânsia/vômito e corrimento nasal aparecem no documento como achados de casos crônicos. O mapa não tem sinais nem discriminador para este quadro e o motivo fala de primeiros socorros, que não entram na ficha; o alarme 'força pra respirar, boca aberta, gengiva azulada' vem do discriminador do gêmeo. Item 'geral' (1): passar a pata na boca."
+  "notas_para_o_especialista": "Documento em português: relato de caso de bola de gude na traqueia de uma cadela Rottweiler, com revisão curta na introdução; os sinais (tosse forçada e seca, dispneia, cianose, desmaio após comer, dificuldade para engolir, ânsia/vômito) vêm dali. O documento é de cão; os sinais de engasgo foram mantidos genéricos para cão e gato, validar. Ânsia/vômito e corrimento nasal aparecem no documento como achados de casos crônicos. O mapa não tem sinais nem discriminador para este quadro e o motivo fala de primeiros socorros, que não entram na ficha; o alarme 'força pra respirar, boca aberta, gengiva azulada' vem do discriminador do gêmeo. Item 'geral' (1): passar a pata na boca.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

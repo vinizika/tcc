@@ -2,7 +2,7 @@
   "title": "Ehrlichiosis and Related Infections in Dogs",
   "source": "MSD Veterinary Manual",
   "document_type": "owner_guidance",
-  "validation_status": "pending_specialist",
+  "validation_status": "approved_by_specialist",
   "ingestion_scope": "curated_candidate",
   "species": "dog",
   "topic": "tick_borne_disease_anemia",
@@ -19,9 +19,9 @@
   "captured_sha256": "d9bdaebc0f6ce381bf875c8ca9cc8eed117395fc41b18e653ccb6c3dfcba155e",
   "map_line": "tick_borne_disease_anemia",
   "specialist": {
-    "verdict": "",
-    "name": "",
-    "date": ""
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
   },
   "rights": {
     "status": "pending",
@@ -32,5 +32,5 @@
   "year": 2026,
   "authors": "Nick Roman",
   "full_title": "Ehrlichiosis and Related Infections in Dogs - Dog Owners - MSD Veterinary Manual",
-  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de tick_borne_disease_anemia (rodada 27); autoridade alta; aguardando especialista."
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de tick_borne_disease_anemia (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
 }

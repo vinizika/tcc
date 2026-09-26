@@ -2,7 +2,7 @@
   "title": "Guardar remédios longe do pet",
   "source": "U.S. Food and Drug Administration",
   "document_type": "owner_guidance",
-  "validation_status": "pending_specialist",
+  "validation_status": "approved_by_specialist",
   "ingestion_scope": "curated_candidate",
   "species": "dog_and_cat",
   "topic": "human_medication_poisoning",
@@ -19,9 +19,9 @@
   "captured_sha256": "d9f4608a3ec8c6f09f485828ac5a3055e83592ee57766a1d4e120bde1a37fdb4",
   "map_line": "human_medication_poisoning",
   "specialist": {
-    "verdict": "",
-    "name": "",
-    "date": ""
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
   },
   "rights": {
     "status": "pending",
@@ -31,5 +31,5 @@
   },
   "year": 2024,
   "full_title": "Properly Store Medications to Keep Your Pet Safe",
-  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de human_medication_poisoning (rodada 27); autoridade alta; aguardando especialista."
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de human_medication_poisoning (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
 }

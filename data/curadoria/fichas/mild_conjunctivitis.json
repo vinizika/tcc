@@ -112,5 +112,11 @@
     "trecho": "The degree of keratitis showed a positive correlation with both severity and chronicity of cAC",
     "fonte": "mild_conjunctivitis__bmc_2023_allergic_conjunctivitis.pdf"
   },
-  "notas_para_o_especialista": "Possíveis conflitos com o mapa: o artigo de conjuntivite alérgica em cães cita quemose (inchaço da conjuntiva) em 84% e coceira no olho em 79% dos casos (o cão esfrega a cabeça no sofá, no tapete, nas pernas do dono), e o de gatos cita blefaroespasmo (olho apertado). O mapa trata inchaço, esfregar e olho apertado como sinais de emergência ocular; segui o mapa e não pus esses itens como sinais do quadro leve. Febre em gatos é medida e ficou de fora. O artigo diz que formas leves podem passar despercebidas pelo tutor. Nenhum item geral."
+  "notas_para_o_especialista": "Possíveis conflitos com o mapa: o artigo de conjuntivite alérgica em cães cita quemose (inchaço da conjuntiva) em 84% e coceira no olho em 79% dos casos (o cão esfrega a cabeça no sofá, no tapete, nas pernas do dono), e o de gatos cita blefaroespasmo (olho apertado). O mapa trata inchaço, esfregar e olho apertado como sinais de emergência ocular; segui o mapa e não pus esses itens como sinais do quadro leve. Febre em gatos é medida e ficou de fora. O artigo diz que formas leves podem passar despercebidas pelo tutor. Nenhum item geral.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

@@ -2,7 +2,7 @@
   "title": "Animais peçonhentos, Caderno Técnico 75",
   "source": "Cadernos Técnicos de Veterinária e Zootecnia (UFMG/CRMV-MG)",
   "document_type": "technical_bulletin",
-  "validation_status": "pending_specialist",
+  "validation_status": "approved_by_specialist",
   "ingestion_scope": "curated_candidate",
   "species": "dog_and_cat",
   "topic": "snake_and_scorpion_envenomation",
@@ -19,9 +19,9 @@
   "captured_sha256": "a16b6660f5e515a5659f82934bb20a26be86b0b6bfc039f4ce134cec29cc7b96",
   "map_line": "snake_and_scorpion_envenomation",
   "specialist": {
-    "verdict": "",
-    "name": "",
-    "date": ""
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
   },
   "rights": {
     "status": "pending",
@@ -32,5 +32,5 @@
   "year": 2014,
   "authors": "Benito Soto Blanco; Marília Martins Melo; Guilherme de Caro Martins",
   "full_title": "Cadernos Técnicos de Veterinária e Zootecnia nº 75 – Animais Peçonhentos (dezembro de 2014)",
-  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de snake_and_scorpion_envenomation (rodada 27); autoridade alta; aguardando especialista."
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de snake_and_scorpion_envenomation (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
 }

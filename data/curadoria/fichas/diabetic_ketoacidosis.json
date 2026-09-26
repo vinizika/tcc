@@ -69,7 +69,7 @@
       "origem": "documento",
       "trecho": "Breath that smells sweet (like nail polish remover or pear drops)",
       "fonte": "capturas/diabetic_ketoacidosis__pdsa_diabetes_dogs.txt",
-      "aprovacao": "pendente",
+      "aprovacao": "aprovada",
       "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
@@ -114,5 +114,11 @@
     "trecho": "Diabetic ketoacidosis (DKA) is a life-threatening metabolic complication secondary to diabetes mellitus (DM)",
     "fonte": "diabetic_ketoacidosis__arshi_2025_feline_dka.pdf"
   },
-  "notas_para_o_especialista": "O documento é o relato de caso de um único gato (cetoacidose com doença renal crônica); a introdução traz sinais gerais (letargia, vômito, fraqueza, perda de peso) que valem para cão e gato. Vômito com sangue, apetite reduzido, dificuldade respiratória, gengiva pálida e 'não sabia que era diabético' vêm desse caso ou de frases sobre gatos, validar para o cão. 'Bebe e urina muito' vem do motivo do mapa; o documento não cita sede nem urina aumentadas. Obesidade aparece como fator de risco para diabetes em gatos. Item 'geral' (1): hálito com cheiro de acetona. Temperatura, desidratação em %, glicose e cetonas são medidas pelo veterinário; não usei. O trecho 'reduced ap- petite' está assim no .txt completo (hifenização do PDF); no texto indexado aparece 'reduced appetite'."
+  "notas_para_o_especialista": "O documento é o relato de caso de um único gato (cetoacidose com doença renal crônica); a introdução traz sinais gerais (letargia, vômito, fraqueza, perda de peso) que valem para cão e gato. Vômito com sangue, apetite reduzido, dificuldade respiratória, gengiva pálida e 'não sabia que era diabético' vêm desse caso ou de frases sobre gatos, validar para o cão. 'Bebe e urina muito' vem do motivo do mapa; o documento não cita sede nem urina aumentadas. Obesidade aparece como fator de risco para diabetes em gatos. Item 'geral' (1): hálito com cheiro de acetona. Temperatura, desidratação em %, glicose e cetonas são medidas pelo veterinário; não usei. O trecho 'reduced ap- petite' está assim no .txt completo (hifenização do PDF); no texto indexado aparece 'reduced appetite'.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

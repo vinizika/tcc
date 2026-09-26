@@ -100,5 +100,11 @@
     "trecho": "",
     "fonte": ""
   },
-  "notas_para_o_especialista": "A linha do mapa não traz sinais nem discriminador, então todos os itens do tutor vêm do documento (revisão sobre alimentos tóxicos; os sinais de uva e xilitol descritos são só de cães). 'Panetone' e 'bala diet' são equivalentes brasileiros de 'fruit cake' e 'candy' sem açúcar citados no texto. O risco renal da uva ficou nos sinais de alarme (pouco ou nenhum xixi); por_que_importa usa só o motivo do mapa (xilitol). O documento não dá prazo exato para os sinais renais além de 'within a short period'. Nenhum item geral."
+  "notas_para_o_especialista": "A linha do mapa não traz sinais nem discriminador, então todos os itens do tutor vêm do documento (revisão sobre alimentos tóxicos; os sinais de uva e xilitol descritos são só de cães). 'Panetone' e 'bala diet' são equivalentes brasileiros de 'fruit cake' e 'candy' sem açúcar citados no texto. O risco renal da uva ficou nos sinais de alarme (pouco ou nenhum xixi); por_que_importa usa só o motivo do mapa (xilitol). O documento não dá prazo exato para os sinais renais além de 'within a short period'. Nenhum item geral.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

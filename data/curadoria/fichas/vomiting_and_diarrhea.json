@@ -112,5 +112,11 @@
     "trecho": "spanning from self-limiting factors (e.g., dietary indiscretion) to potentially life-threatening causes (e.g., canine and feline parvoviruses)",
     "fonte": "vomiting_and_diarrhea__frontiers_2023_gastrointestinal_presentations.pdf"
   },
-  "notas_para_o_especialista": "O documento é sobre prescrição de antibiótico em consultas gastrointestinais de cães e gatos no Reino Unido; os sinais aparecem como categorias do questionário (diarreia ou vômito com e sem sangue, melena, apetite ruim) e em trechos de prontuário (vômito de bile, diarreia líquida e frequente). A gravidade no documento é só 'leve / moderada / gravemente doente ou debilitado', sem critério observável; prostração, não beber água, contagem em 24 horas e filhote vêm do mapa. O documento não descreve sinais de desidratação. 'Espuma amarela' é a versão leiga de vômito de bile, e 'cocô preto tipo borra de café' é a versão leiga de melena."
+  "notas_para_o_especialista": "O documento é sobre prescrição de antibiótico em consultas gastrointestinais de cães e gatos no Reino Unido; os sinais aparecem como categorias do questionário (diarreia ou vômito com e sem sangue, melena, apetite ruim) e em trechos de prontuário (vômito de bile, diarreia líquida e frequente). A gravidade no documento é só 'leve / moderada / gravemente doente ou debilitado', sem critério observável; prostração, não beber água, contagem em 24 horas e filhote vêm do mapa. O documento não descreve sinais de desidratação. 'Espuma amarela' é a versão leiga de vômito de bile, e 'cocô preto tipo borra de café' é a versão leiga de melena.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

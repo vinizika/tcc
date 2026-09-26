@@ -102,5 +102,11 @@
     "trecho": "frequently being the first clinical sign identified by caregivers",
     "fonte": "reduced_appetite_no_other_signs__animals_2025_feline_inappetence.pdf"
   },
-  "notas_para_o_especialista": "O documento é sobre mirtazapina transdérmica em gatos (tratamento e percepção dos tutores). A única informação aproveitável é a da introdução: falta de apetite é sinal inespecífico e muitas vezes o primeiro que o tutor nota. Não há nada sobre cães. Todo o resto vem do mapa, incluindo os limites de 24 horas (gato adulto) e 12 horas (filhote com menos de 6 semanas), que ficaram nos sinais de alarme. 'Desde ontem à noite' é a resposta do tutor à pergunta do discriminador sobre há quantas horas o animal está sem comer. Nenhum item geral."
+  "notas_para_o_especialista": "O documento é sobre mirtazapina transdérmica em gatos (tratamento e percepção dos tutores). A única informação aproveitável é a da introdução: falta de apetite é sinal inespecífico e muitas vezes o primeiro que o tutor nota. Não há nada sobre cães. Todo o resto vem do mapa, incluindo os limites de 24 horas (gato adulto) e 12 horas (filhote com menos de 6 semanas), que ficaram nos sinais de alarme. 'Desde ontem à noite' é a resposta do tutor à pergunta do discriminador sobre há quantas horas o animal está sem comer. Nenhum item geral.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

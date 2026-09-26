@@ -2,7 +2,7 @@
   "title": "Doenças dentárias do cão (MSD)",
   "source": "Merck Veterinary Manual",
   "document_type": "owner_guidance",
-  "validation_status": "pending_specialist",
+  "validation_status": "approved_by_specialist",
   "ingestion_scope": "curated_candidate",
   "species": "dog",
   "topic": "periodontal_disease_mild",
@@ -19,9 +19,9 @@
   "captured_sha256": "ca19398ffff39bb3f6a6ae47890527513e647555c4565d3f8c60b22b323da9a9",
   "map_line": "periodontal_disease_mild",
   "specialist": {
-    "verdict": "",
-    "name": "",
-    "date": ""
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
   },
   "rights": {
     "status": "pending",
@@ -32,5 +32,5 @@
   "year": 2025,
   "authors": "Alexander M. Reiter, Dipl. Tzt., DEVDC, DAVDC",
   "full_title": "Dental Disorders of Dogs (Merck Veterinary Manual, versão para tutores)",
-  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de periodontal_disease_mild (rodada 27); autoridade alta; aguardando especialista."
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de periodontal_disease_mild (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
 }

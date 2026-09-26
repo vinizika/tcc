@@ -39,7 +39,7 @@
       "origem": "documento",
       "trecho": "Early signs of lily toxicity in cats include decreased activity level, drooling, vomiting, and loss of appetite.",
       "fonte": "capturas/lily_toxicosis_cats__fda_lilies.txt",
-      "aprovacao": "pendente",
+      "aprovacao": "aprovada",
       "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
@@ -84,5 +84,11 @@
     "trecho": "",
     "fonte": ""
   },
-  "notas_para_o_especialista": "A linha do mapa não tem sinais nem discriminador; as formas de exposição (folha, pólen, água do vaso) vêm do motivo do mapa. O documento é o relato de um caso (filhote de 12 semanas) com revisão curta; dele saíram vômito, apatia, poliúria/polidipsia e depois oligúria/anúria, com a linha do tempo 1–3 h, 12–30 h e 24–48 h. O prazo de cerca de 18 h do motivo do mapa ficou fora porque trata do tempo de tratamento. Item geral (1): babar e recusar comida. Atenção: 'lírio-da-paz' e 'copo-de-leite', comuns em casa, não são lírios verdadeiros (Lilium/Hemerocallis) e não aparecem no documento; se o tutor usar esses nomes a busca pode trazer esta ficha, vale o especialista decidir como tratar."
+  "notas_para_o_especialista": "A linha do mapa não tem sinais nem discriminador; as formas de exposição (folha, pólen, água do vaso) vêm do motivo do mapa. O documento é o relato de um caso (filhote de 12 semanas) com revisão curta; dele saíram vômito, apatia, poliúria/polidipsia e depois oligúria/anúria, com a linha do tempo 1–3 h, 12–30 h e 24–48 h. O prazo de cerca de 18 h do motivo do mapa ficou fora porque trata do tempo de tratamento. Item geral (1): babar e recusar comida. Atenção: 'lírio-da-paz' e 'copo-de-leite', comuns em casa, não são lírios verdadeiros (Lilium/Hemerocallis) e não aparecem no documento; se o tutor usar esses nomes a busca pode trazer esta ficha, vale o especialista decidir como tratar.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

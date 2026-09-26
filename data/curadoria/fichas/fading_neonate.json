@@ -75,7 +75,7 @@
       "origem": "documento",
       "trecho": "These puppies have a tendency to remain separate from the mother and the rest of the litter.",
       "fonte": "capturas/fading_neonate__vca_filhote_definhando.txt",
-      "aprovacao": "pendente",
+      "aprovacao": "aprovada",
       "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
@@ -118,5 +118,11 @@
     "trecho": "One of the main consequences of physiological immaturity is the greater risk of manifestation of the neonatal triad (hypothermia, hypoglycemia, and dehydration).",
     "fonte": "fading_neonate__animals_2024_neonatal_triage.txt"
   },
-  "notas_para_o_especialista": "O documento cita uma 'Table 13' com os sinais de risco que o tutor pode observar, mas a tabela não veio no texto completo nem no indexado; os sinais vieram do mapa e dos trechos sobre hipotermia, hipoglicemia e desidratação. Cor do xixi e da boca exigem estimular o filhote a urinar e olhar a boca, o que tutor de ninhada costuma fazer. Temperatura retal, glicemia e densidade urinária são medidas com instrumento; não usei. Item 'geral' (1): filhote que se afasta dos irmãos e da mãe. Sem quadro gêmeo na entrada, por isso 'como_diferenciar' vazio e ficha mais curta. O motivo do mapa cita um caso de teste; não usei essa referência."
+  "notas_para_o_especialista": "O documento cita uma 'Table 13' com os sinais de risco que o tutor pode observar, mas a tabela não veio no texto completo nem no indexado; os sinais vieram do mapa e dos trechos sobre hipotermia, hipoglicemia e desidratação. Cor do xixi e da boca exigem estimular o filhote a urinar e olhar a boca, o que tutor de ninhada costuma fazer. Temperatura retal, glicemia e densidade urinária são medidas com instrumento; não usei. Item 'geral' (1): filhote que se afasta dos irmãos e da mãe. Sem quadro gêmeo na entrada, por isso 'como_diferenciar' vazio e ficha mais curta. O motivo do mapa cita um caso de teste; não usei essa referência.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

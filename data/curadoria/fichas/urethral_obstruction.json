@@ -106,5 +106,11 @@
     "trecho": "",
     "fonte": ""
   },
-  "notas_para_o_especialista": "Possível conflito no mapa: o discriminador diz 'se sai um pouco, é outro quadro', mas os sinais do próprio mapa incluem 'sai só gotinhas', e o discriminador do gêmeo diz que gato que faz força ou solta só um pouco também não pode esperar. Na diferenciação usei 'nada ou só gotinhas, com força e dor' contra 'quantidade normal, sem esforço'. Achados de exame (bexiga firme e distendida, bradicardia, hipotermia, potássio) ficaram de fora. O documento canino são três relatos de caso (um com tumor de uretra). O documento felino diz que os sinais sistêmicos aparecem após mais de 24 h de obstrução; não pus esse prazo nos itens. Nenhum item geral."
+  "notas_para_o_especialista": "Possível conflito no mapa: o discriminador diz 'se sai um pouco, é outro quadro', mas os sinais do próprio mapa incluem 'sai só gotinhas', e o discriminador do gêmeo diz que gato que faz força ou solta só um pouco também não pode esperar. Na diferenciação usei 'nada ou só gotinhas, com força e dor' contra 'quantidade normal, sem esforço'. Achados de exame (bexiga firme e distendida, bradicardia, hipotermia, potássio) ficaram de fora. O documento canino são três relatos de caso (um com tumor de uretra). O documento felino diz que os sinais sistêmicos aparecem após mais de 24 h de obstrução; não pus esse prazo nos itens. Nenhum item geral.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

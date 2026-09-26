@@ -1,10 +1,11 @@
-# Fichas de busca (rascunho, aguardando certificação)
+# Fichas de busca (certificadas pela ASAVET em 26/09/2026)
 
 As 61 fichas de busca da arquitetura da autópsia 2, uma por linha do mapa de
 assuntos (`<topic>.json`), escritas em 24/09 por um modelo de IA (Claude, seis
 instâncias em paralelo) a partir do texto completo dos documentos aprovados de
-cada assunto e da linha do mapa. **Estado: rascunho.** Os itens que não vêm do
-mapa aguardam a certificação dos especialistas (`CERTIFICACAO.md`).
+cada assunto e da linha do mapa. **Estado: certificadas.** A ASAVET aceitou, em
+26/09/2026, todos os itens que não vêm do mapa, sem correções (`CERTIFICACAO.md`;
+[rodada 30 do João](../../../evidencias/joao/2026-09-26-31-validacao-dos-especialistas.md)).
 
 ## Duas camadas
 

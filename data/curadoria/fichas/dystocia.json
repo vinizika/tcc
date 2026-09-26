@@ -106,5 +106,11 @@
     "trecho": "dystocia affects the well-being of the pregnant queen and is associated with increased kitten mortality compared with natural parturition",
     "fonte": "dystocia__acta_2025_feline_dystocia.pdf"
   },
-  "notas_para_o_especialista": "Documento só de gatas (hospital universitário na Suécia). Usei os sinais que o próprio texto diz valerem para cadela e gata (corrimento anormal, contrações fracas prolongadas ou fortes e improdutivas por mais de 30 min) e os da Tabela 2 (líquido fetal há mais de 4 h, filhote preso, mãe cansada ou aflita, filhote natimorto). O documento diz que na gata o intervalo entre filhotes varia muito (filhotes vivos mesmo após mais de 40 h) e que a duração do parto não se associou à mortalidade; isso relativiza o critério de 2 horas entre filhotes do motivo do mapa, que mantive. 'Passou da data' ficou sem número porque o documento só cita dia 70/72 em gatas. Hipocalcemia e hiperglicemia são exames. Sinais e discriminador do gêmeo (parto normal) estão vazios no mapa."
+  "notas_para_o_especialista": "Documento só de gatas (hospital universitário na Suécia). Usei os sinais que o próprio texto diz valerem para cadela e gata (corrimento anormal, contrações fracas prolongadas ou fortes e improdutivas por mais de 30 min) e os da Tabela 2 (líquido fetal há mais de 4 h, filhote preso, mãe cansada ou aflita, filhote natimorto). O documento diz que na gata o intervalo entre filhotes varia muito (filhotes vivos mesmo após mais de 40 h) e que a duração do parto não se associou à mortalidade; isso relativiza o critério de 2 horas entre filhotes do motivo do mapa, que mantive. 'Passou da data' ficou sem número porque o documento só cita dia 70/72 em gatas. Hipocalcemia e hiperglicemia são exames. Sinais e discriminador do gêmeo (parto normal) estão vazios no mapa.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

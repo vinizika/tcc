@@ -118,5 +118,11 @@
     "trecho": "",
     "fonte": ""
   },
-  "notas_para_o_especialista": "O documento (trecho de revisão sobre abelhas e vespas) cobre bem os sinais que o tutor vê. Espécie: os sinais de choque próprios do gato (baba, cambaleio, colapso) estão marcados 'no gato'; convulsão e obstrução da via aérea são descritas no cão. 'Marimbondo' vem do motivo do mapa. O documento diz que a anafilaxia não depende da dose (número de picadas), o que casa com o motivo do mapa. Nenhum item geral."
+  "notas_para_o_especialista": "O documento (trecho de revisão sobre abelhas e vespas) cobre bem os sinais que o tutor vê. Espécie: os sinais de choque próprios do gato (baba, cambaleio, colapso) estão marcados 'no gato'; convulsão e obstrução da via aérea são descritas no cão. 'Marimbondo' vem do motivo do mapa. O documento diz que a anafilaxia não depende da dose (número de picadas), o que casa com o motivo do mapa. Nenhum item geral.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

@@ -2,7 +2,7 @@
   "title": "Understanding canine distemper virus",
   "source": "Texas A&M Veterinary Medical Diagnostic Laboratory",
   "document_type": "owner_guidance",
-  "validation_status": "pending_specialist",
+  "validation_status": "approved_by_specialist",
   "ingestion_scope": "curated_candidate",
   "species": "dog",
   "topic": "distemper_neurological",
@@ -19,9 +19,9 @@
   "captured_sha256": "32c9675f643224c4571cb81ced1cabeb6923867dba32d9aea1b621bae568e9f4",
   "map_line": "distemper_neurological",
   "specialist": {
-    "verdict": "",
-    "name": "",
-    "date": ""
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
   },
   "rights": {
     "status": "pending",
@@ -31,5 +31,5 @@
   },
   "year": 2026,
   "full_title": "Understanding canine distemper virus and increased risk during summer",
-  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de distemper_neurological (rodada 27); autoridade alta; aguardando especialista."
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de distemper_neurological (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
 }

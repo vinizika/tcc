@@ -57,7 +57,7 @@
       "origem": "documento",
       "trecho": "Achados clínicos incluem membranas mucosas pálidas, desidratação, icterícia e hepatoesplenomegalia, petéquias e equimoses, urina vermelha, marrom ou amarelo-laranja (hemoglobinúria), vômito e diarreia.",
       "fonte": "capturas/tick_borne_disease_anemia__troccap_2019_endoparasitos.pdf",
-      "aprovacao": "pendente",
+      "aprovacao": "aprovada",
       "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
@@ -102,5 +102,11 @@
     "trecho": "",
     "fonte": ""
   },
-  "notas_para_o_especialista": "Documento trata só de erliquiose (genótipos de E. canis em cães de Mineiros-GO); não cobre babesiose. Sinais tirados da Tabela 4 (anorexia, apatia, desidratação, palidez de mucosa, carrapatos, vômito, diarreia, epistaxe) e da discussão (convulsões e incoordenação). Os percentuais da tabela vêm de cães selecionados por já terem anemia ou trombocitopenia, por isso não os usei como frequência; a única exceção é a presença de carrapato na consulta (29,6%), usada para dizer que muitas vezes já não há carrapato à vista. Ficaram de fora febre, linfonodos aumentados e alterações oftálmicas (achados de exame). Itens gerais: xixi escuro, cor de café (babesiose, que o mapa inclui) e manchinhas roxas na pele (plaquetas baixas). A linha do mapa não tem sinais nem discriminador, e a gêmea também está vazia; a diferenciação usa os sinais do documento."
+  "notas_para_o_especialista": "Documento trata só de erliquiose (genótipos de E. canis em cães de Mineiros-GO); não cobre babesiose. Sinais tirados da Tabela 4 (anorexia, apatia, desidratação, palidez de mucosa, carrapatos, vômito, diarreia, epistaxe) e da discussão (convulsões e incoordenação). Os percentuais da tabela vêm de cães selecionados por já terem anemia ou trombocitopenia, por isso não os usei como frequência; a única exceção é a presença de carrapato na consulta (29,6%), usada para dizer que muitas vezes já não há carrapato à vista. Ficaram de fora febre, linfonodos aumentados e alterações oftálmicas (achados de exame). Itens gerais: xixi escuro, cor de café (babesiose, que o mapa inclui) e manchinhas roxas na pele (plaquetas baixas). A linha do mapa não tem sinais nem discriminador, e a gêmea também está vazia; a diferenciação usa os sinais do documento.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

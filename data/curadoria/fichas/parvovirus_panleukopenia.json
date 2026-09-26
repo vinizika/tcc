@@ -113,5 +113,11 @@
     "trecho": "The mortality rate in unvaccinated puppies can be as high as 91%",
     "fonte": "parvovirus_panleukopenia__mdpi_2025_canine_parvovirus.pdf"
   },
-  "notas_para_o_especialista": "Documento é revisão de pesquisa sobre o parvovírus canino (variantes, vacinas, diagnóstico), só cães e com pouca clínica: vômito e gastroenterite hemorrágica, filhotes de 2 a 4 meses, transmissão fecal-oral, surtos onde há comércio e criação de cães, mortalidade de até 91% em não vacinados. Não há sinais de panleucopenia felina; para o gato usei os sinais do mapa, que vale para as duas espécies. Cheiro forte, desidratação e apatia vêm só do mapa. 'Veio de canil ou pet shop' é leitura leiga do trecho sobre regiões com comércio e criação intensa; confirmar. Miocardite e leucopenia ficaram de fora (não observáveis). Nenhum item geral."
+  "notas_para_o_especialista": "Documento é revisão de pesquisa sobre o parvovírus canino (variantes, vacinas, diagnóstico), só cães e com pouca clínica: vômito e gastroenterite hemorrágica, filhotes de 2 a 4 meses, transmissão fecal-oral, surtos onde há comércio e criação de cães, mortalidade de até 91% em não vacinados. Não há sinais de panleucopenia felina; para o gato usei os sinais do mapa, que vale para as duas espécies. Cheiro forte, desidratação e apatia vêm só do mapa. 'Veio de canil ou pet shop' é leitura leiga do trecho sobre regiões com comércio e criação intensa; confirmar. Miocardite e leucopenia ficaram de fora (não observáveis). Nenhum item geral.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

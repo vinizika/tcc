@@ -104,5 +104,11 @@
     "trecho": "Because leptospirosis can progress rapidly to acute kidney injury (AKI), the disease should be considered in dogs with acute onset of febrile illness",
     "fonte": "leptospirosis_acute__acvim_2023_leptospirosis.pdf"
   },
-  "notas_para_o_especialista": "A linha do mapa não tem sinais nem discriminador; 'amarelado' e 'febre' vêm do motivo do mapa, o resto do consenso ACVIM (Tabela 1, definição de caso e fase febril inicial). 'Olhos vermelhos' é leitura leiga de uveíte/conjuntivite. O risco zoonótico citado no motivo do mapa ficou fora do corpo da ficha (não é sinal que o tutor observa e 'por que importa' comporta uma frase só): avaliar se deve substituir a frase sobre os rins. Sem gêmeos listados. Nenhum item geral."
+  "notas_para_o_especialista": "A linha do mapa não tem sinais nem discriminador; 'amarelado' e 'febre' vêm do motivo do mapa, o resto do consenso ACVIM (Tabela 1, definição de caso e fase febril inicial). 'Olhos vermelhos' é leitura leiga de uveíte/conjuntivite. O risco zoonótico citado no motivo do mapa ficou fora do corpo da ficha (não é sinal que o tutor observa e 'por que importa' comporta uma frase só): avaliar se deve substituir a frase sobre os rins. Sem gêmeos listados. Nenhum item geral.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

@@ -94,5 +94,11 @@
     "trecho": "without erythema and ulceration, and may macroscopically appear to be cutaneous lipomas",
     "fonte": "slow_growing_lump__cells_2022_mast_cell_consensus.pdf"
   },
-  "notas_para_o_especialista": "O documento trata só de mastocitoma cutâneo e subcutâneo em cães: não há nada sobre gatos nem sobre velocidade de crescimento. 'Já avaliado', 'cresce devagar' e os sinais de alerta (mudança rápida de tamanho, de textura, sangramento) vêm só do motivo do mapa. Coceira e vermelhidão ficaram como alarme, e não como sinal comum, porque o documento as liga a pior prognóstico. Não usei o sinal de Darier (vermelhidão e inchaço ao manipular o nódulo), que o documento descreve como achado do exame físico. O gêmeo (colapso e gengiva pálida) tem pouca ligação clínica direta; o colapso circulatório raro por liberação de histamina, citado no documento, não entrou. Nenhum item geral."
+  "notas_para_o_especialista": "O documento trata só de mastocitoma cutâneo e subcutâneo em cães: não há nada sobre gatos nem sobre velocidade de crescimento. 'Já avaliado', 'cresce devagar' e os sinais de alerta (mudança rápida de tamanho, de textura, sangramento) vêm só do motivo do mapa. Coceira e vermelhidão ficaram como alarme, e não como sinal comum, porque o documento as liga a pior prognóstico. Não usei o sinal de Darier (vermelhidão e inchaço ao manipular o nódulo), que o documento descreve como achado do exame físico. O gêmeo (colapso e gengiva pálida) tem pouca ligação clínica direta; o colapso circulatório raro por liberação de histamina, citado no documento, não entrou. Nenhum item geral.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

@@ -2,7 +2,7 @@
   "title": "Raiva: morcegos transmissores no Brasil",
   "source": "CRMV-SP",
   "document_type": "technical_bulletin",
-  "validation_status": "pending_specialist",
+  "validation_status": "approved_by_specialist",
   "ingestion_scope": "curated_candidate",
   "species": "dog_and_cat",
   "topic": "rabies_exposure_wild_animal_bite",
@@ -19,9 +19,9 @@
   "captured_sha256": "dc0b36a51d2d672314b5dad18aadcad4ea1778a49ecaf2ea5bf62efa9aac4fce",
   "map_line": "rabies_exposure_wild_animal_bite",
   "specialist": {
-    "verdict": "",
-    "name": "",
-    "date": ""
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
   },
   "rights": {
     "status": "pending",
@@ -31,5 +31,5 @@
   },
   "year": 2025,
   "full_title": "Dia Mundial contra a Raiva: morcegos são os principais transmissores no Brasil",
-  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de rabies_exposure_wild_animal_bite (rodada 27); autoridade alta; aguardando especialista."
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de rabies_exposure_wild_animal_bite (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
 }

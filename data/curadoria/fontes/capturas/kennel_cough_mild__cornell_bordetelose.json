@@ -2,7 +2,7 @@
   "title": "Bordetelose tosse dos canis",
   "source": "Cornell Riney Canine Health Center",
   "document_type": "owner_guidance",
-  "validation_status": "pending_specialist",
+  "validation_status": "approved_by_specialist",
   "ingestion_scope": "curated_candidate",
   "species": "dog",
   "topic": "kennel_cough_mild",
@@ -19,9 +19,9 @@
   "captured_sha256": "e86730777fe353b2a73e0e86c67ca514e10b0b872f12cfb815f33ec44ab0c672",
   "map_line": "kennel_cough_mild",
   "specialist": {
-    "verdict": "",
-    "name": "",
-    "date": ""
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
   },
   "rights": {
     "status": "pending",
@@ -32,5 +32,5 @@
   "year": 2025,
   "authors": "Brian Collins",
   "full_title": "Bordetellosis",
-  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de kennel_cough_mild (rodada 27); autoridade alta; aguardando especialista."
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de kennel_cough_mild (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
 }

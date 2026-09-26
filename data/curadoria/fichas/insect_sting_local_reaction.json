@@ -100,5 +100,11 @@
     "trecho": "The injected allergens can potentially lead to local pain and swelling, larger regional reactions or severe systemic reactions (SSRs)",
     "fonte": "insect_sting_local_reaction__animals_2024_hymenoptera_allergy.pdf"
   },
-  "notas_para_o_especialista": "O documento é um estudo de 178 cães atendidos em hospital (Zurique) por picada de abelha ou vespa; não há dados de gatos. A reação só local quase não é descrita: o grau 1 do estudo já é pele generalizada (urticária, angioedema). Por isso 'inchaço pequeno que não cresce, animal ativo' vem do motivo do mapa, e os sinais de alarme de pele vêm da linha do gêmeo. Picada na boca, peso abaixo de 10 kg, idade abaixo de 2 anos e raça pura foram fatores de risco para reação grave; só a picada na boca entrou como alarme, porque o tutor a observa. O documento também diz que mais de 40% dos cães com reação só local tiveram reação grave ao serem picados de novo; não usei como sinal. 'Fica lambendo o lugar' é a versão leiga de dor local."
+  "notas_para_o_especialista": "O documento é um estudo de 178 cães atendidos em hospital (Zurique) por picada de abelha ou vespa; não há dados de gatos. A reação só local quase não é descrita: o grau 1 do estudo já é pele generalizada (urticária, angioedema). Por isso 'inchaço pequeno que não cresce, animal ativo' vem do motivo do mapa, e os sinais de alarme de pele vêm da linha do gêmeo. Picada na boca, peso abaixo de 10 kg, idade abaixo de 2 anos e raça pura foram fatores de risco para reação grave; só a picada na boca entrou como alarme, porque o tutor a observa. O documento também diz que mais de 40% dos cães com reação só local tiveram reação grave ao serem picados de novo; não usei como sinal. 'Fica lambendo o lugar' é a versão leiga de dor local.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

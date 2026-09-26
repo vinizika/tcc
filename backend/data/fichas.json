@@ -2,9 +2,9 @@
   "generator": "scripts/sync_fichas.py",
   "sources": {
     "map": "data/curadoria/mapa-de-assuntos.csv",
-    "map_sha256": "9665b47b80221191a93b4a8bf5084a9974c76d3a3ee165c7f7a38718ba8db616",
+    "map_sha256": "3084636177c4c9a5fd5f703a1c9634591f828ad2d20f000183315cb5c1f9eb53",
     "drafts": "data/curadoria/fichas/",
-    "drafts_sha256": "da8ab7cba9abd1629405dc5a8f6cd17da9923f80193b9e623997dcdcc8bd0b4c",
+    "drafts_sha256": "407f59b4df97a7b708d6f67f2a34727860c78378bba954abf09af46820d046e5",
     "documents": "backend/data/documents/*.json",
     "documents_sha256": "490919ba71c162f919ef33490381331b964110fd0ca3aeede0e4be8ae605a7cf"
   },

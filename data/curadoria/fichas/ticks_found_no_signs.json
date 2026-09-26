@@ -39,7 +39,7 @@
       "origem": "documento",
       "trecho": "it will grow to the size of a small pea as it feeds. At first you might mistake a tick for a skin tag or a lump",
       "fonte": "capturas/ticks_found_no_signs__pdsa_ticks_on_dogs.txt",
-      "aprovacao": "pendente",
+      "aprovacao": "aprovada",
       "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
@@ -108,5 +108,11 @@
     "trecho": "such as thrombocytopenia and/or death in Ehrlichia and Anaplasma infections",
     "fonte": "ticks_found_no_signs__vetsci_2024_vector_borne_pathogens.pdf"
   },
-  "notas_para_o_especialista": "O documento é um estudo sorológico de doenças transmitidas por vetores em cães da Sardenha; não traz nada sobre gatos nem sobre o que o tutor vê ao achar carrapato. Exposição e 'está normal' vieram do mapa (quadro e motivo; os sinais do mapa estão vazios). Marquei como geral: os locais onde o carrapato costuma grudar (orelha, pescoço, entre os dedos) e o carrapato cheio parecendo uma bolinha na pele. Sinais de alarme e diferenciação saíram da descrição da erliquiose e dos sinais gerais das doenças por vetores no documento; ele não fala especificamente de anemia (o gêmeo), e febre ficou de fora por ser medida. Sinais e discriminador do gêmeo estão vazios no mapa."
+  "notas_para_o_especialista": "O documento é um estudo sorológico de doenças transmitidas por vetores em cães da Sardenha; não traz nada sobre gatos nem sobre o que o tutor vê ao achar carrapato. Exposição e 'está normal' vieram do mapa (quadro e motivo; os sinais do mapa estão vazios). Marquei como geral: os locais onde o carrapato costuma grudar (orelha, pescoço, entre os dedos) e o carrapato cheio parecendo uma bolinha na pele. Sinais de alarme e diferenciação saíram da descrição da erliquiose e dos sinais gerais das doenças por vetores no documento; ele não fala especificamente de anemia (o gêmeo), e febre ficou de fora por ser medida. Sinais e discriminador do gêmeo estão vazios no mapa.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

@@ -112,5 +112,11 @@
     "trecho": "Pyometra is a life-threatening condition because of the potential for complications such as uterine rupture, nephropathy, peritonitis, endotoxemia, and, particularly, sepsis",
     "fonte": "pyometra__mdpi_2023_review.pdf"
   },
-  "notas_para_o_especialista": "O mapa diz cio 'há cerca de um mês'; o artigo MDPI diz que os sinais aparecem em geral 2 a 4 meses após o cio. Mantive os dois. Os documentos não citam cheiro do corrimento nem lambedura da vulva, então não entraram. Febre, hipotermia, taquicardia e desidratação são achados de exame. O artigo brasileiro cobre cadelas e gatas; o MDPI, só cadelas. Na piometra fechada pode não sair corrimento, por isso 'barriga inchando sem corrimento' ficou como alarme. Nenhum item geral."
+  "notas_para_o_especialista": "O mapa diz cio 'há cerca de um mês'; o artigo MDPI diz que os sinais aparecem em geral 2 a 4 meses após o cio. Mantive os dois. Os documentos não citam cheiro do corrimento nem lambedura da vulva, então não entraram. Febre, hipotermia, taquicardia e desidratação são achados de exame. O artigo brasileiro cobre cadelas e gatas; o MDPI, só cadelas. Na piometra fechada pode não sair corrimento, por isso 'barriga inchando sem corrimento' ficou como alarme. Nenhum item geral.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

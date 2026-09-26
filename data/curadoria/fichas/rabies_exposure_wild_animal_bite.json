@@ -83,7 +83,7 @@
       "origem": "documento",
       "trecho": "The paralytic form of rabies (or \"dumb rabies\") usually involves paralysis of the throat and jaw muscles, often with excess salivation and inability to swallow.",
       "fonte": "capturas/rabies_exposure_wild_animal_bite__msd_rabies_dogs.txt",
-      "aprovacao": "pendente",
+      "aprovacao": "aprovada",
       "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
@@ -94,5 +94,11 @@
     "trecho": "Felids are effective vectors of rabies virus (RABV), with salivary excretion several days before illness, like dogs (Canis lupus familiaris)",
     "fonte": "rabies_exposure_wild_animal_bite__viruses_2024_rabies_cats.pdf"
   },
-  "notas_para_o_especialista": "O documento é epidemiológico e trata só de gatos: não descreve em detalhe os sinais clínicos da raiva nem período de observação, e não traz nada específico de cães. As situações com cachorro vêm do motivo do mapa (cães e gatos seguem suscetíveis às variantes de morcego). Sagui e cachorro-do-mato aparecem no documento como transmissores de raiva a pessoas no Brasil, não a cães ou gatos. 'Raposa' vem da lista do resumo (raposas, chacais, guaxinins e cangambás como fonte para gatos). Não incluí gambá (Didelphis), que o documento não cita. Um item geral para validar: 'babando muito ou com dificuldade de engolir'. O motivo do mapa cita reforço vacinal, observação e notificação: não entrou por ser conduta. Não há gêmeos, então quase todo o texto está na forma como o tutor conta a exposição."
+  "notas_para_o_especialista": "O documento é epidemiológico e trata só de gatos: não descreve em detalhe os sinais clínicos da raiva nem período de observação, e não traz nada específico de cães. As situações com cachorro vêm do motivo do mapa (cães e gatos seguem suscetíveis às variantes de morcego). Sagui e cachorro-do-mato aparecem no documento como transmissores de raiva a pessoas no Brasil, não a cães ou gatos. 'Raposa' vem da lista do resumo (raposas, chacais, guaxinins e cangambás como fonte para gatos). Não incluí gambá (Didelphis), que o documento não cita. Um item geral para validar: 'babando muito ou com dificuldade de engolir'. O motivo do mapa cita reforço vacinal, observação e notificação: não entrou por ser conduta. Não há gêmeos, então quase todo o texto está na forma como o tutor conta a exposição.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

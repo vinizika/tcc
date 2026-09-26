@@ -118,5 +118,11 @@
     "trecho": "",
     "fonte": ""
   },
-  "notas_para_o_especialista": "Documento em português (relato de caso e revisão, PUBVET). Gengiva vermelha, vômito, ansiedade e cegueira vêm do motivo do mapa (relato da UFRGS); o documento não cita cegueira. 'Espumando' é variação leiga de hipersalivação. O item 'olhar desorientado, pescoço duro...' vem do que a tutora do caso relatou antes do atendimento. As tabelas de tratamento e a frase de conclusão sobre emergência ficaram de fora por serem conduta. Nenhum item geral."
+  "notas_para_o_especialista": "Documento em português (relato de caso e revisão, PUBVET). Gengiva vermelha, vômito, ansiedade e cegueira vêm do motivo do mapa (relato da UFRGS); o documento não cita cegueira. 'Espumando' é variação leiga de hipersalivação. O item 'olhar desorientado, pescoço duro...' vem do que a tutora do caso relatou antes do atendimento. As tabelas de tratamento e a frase de conclusão sobre emergência ficaram de fora por serem conduta. Nenhum item geral.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

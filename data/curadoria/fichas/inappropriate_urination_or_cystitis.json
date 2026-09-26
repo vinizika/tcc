@@ -100,5 +100,11 @@
     "trecho": "",
     "fonte": ""
   },
-  "notas_para_o_especialista": "Documento é revisão sobre cistite idiopática felina (só gatos). Ele lista disúria e estrangúria (fazer força), miado durante e lambedura depois do xixi como sinais da cistite, mas o mapa põe esforço, choro e lambedura na obstrução uretral e define este quadro como 'sem esforço, sem dor aparente'. Segui o mapa: esses sinais só entraram como alarme. Fatores de risco (mudança de casa, convivência com outros gatos, ração seca, macho castrado) vêm do documento. Para cães só o título do mapa ('xixi fora do lugar') cobre; o documento não trata de cães. Nenhum item geral."
+  "notas_para_o_especialista": "Documento é revisão sobre cistite idiopática felina (só gatos). Ele lista disúria e estrangúria (fazer força), miado durante e lambedura depois do xixi como sinais da cistite, mas o mapa põe esforço, choro e lambedura na obstrução uretral e define este quadro como 'sem esforço, sem dor aparente'. Segui o mapa: esses sinais só entraram como alarme. Fatores de risco (mudança de casa, convivência com outros gatos, ração seca, macho castrado) vêm do documento. Para cães só o título do mapa ('xixi fora do lugar') cobre; o documento não trata de cães. Nenhum item geral.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

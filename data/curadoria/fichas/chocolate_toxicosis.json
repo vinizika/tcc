@@ -118,5 +118,11 @@
     "trecho": "Death may occur from cardiac arrhythmia or respiratory failure",
     "fonte": "chocolate_toxicosis__frontiers_2016_chocolate_section.txt"
   },
-  "notas_para_o_especialista": "O documento traz limiares de teobromina em mg/kg e o teor por tipo de chocolate; não pus números de dose (o mapa diz que o cálculo é do veterinário). Ele também diz que o chocolate branco é fonte insignificante de teobromina; isso não virou item para não induzir a descartar o caso sem o cálculo. Hipertermia, taquicardia e arritmia são achados medidos; usei o 'coração acelerado' do mapa. Segundo o documento, os sinais começam em 2 a 4 h. Nenhum item geral."
+  "notas_para_o_especialista": "O documento traz limiares de teobromina em mg/kg e o teor por tipo de chocolate; não pus números de dose (o mapa diz que o cálculo é do veterinário). Ele também diz que o chocolate branco é fonte insignificante de teobromina; isso não virou item para não induzir a descartar o caso sem o cálculo. Hipertermia, taquicardia e arritmia são achados medidos; usei o 'coração acelerado' do mapa. Segundo o documento, os sinais começam em 2 a 4 h. Nenhum item geral.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

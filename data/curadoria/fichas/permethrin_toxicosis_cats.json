@@ -106,5 +106,11 @@
     "trecho": "Even if you use only a small part of the pipette or tube on your cat, it could quickly become very unwell and may even die.",
     "fonte": "permethrin_toxicosis_cats__vmd_2014.pdf"
   },
-  "notas_para_o_especialista": "O documento é um folheto do VMD (Reino Unido) para tutores, com os sinais já em linguagem leiga. 'Be sick' foi lido como vômito (inglês britânico). Todos os sinais do mapa entraram. A parte do discriminador 'não há antídoto' não entrou por ser informação de tratamento, e as instruções do folheto (lavar o gato, levar a embalagem) ficaram de fora por serem conduta. Nenhum item geral."
+  "notas_para_o_especialista": "O documento é um folheto do VMD (Reino Unido) para tutores, com os sinais já em linguagem leiga. 'Be sick' foi lido como vômito (inglês britânico). Todos os sinais do mapa entraram. A parte do discriminador 'não há antídoto' não entrou por ser informação de tratamento, e as instruções do folheto (lavar o gato, levar a embalagem) ficaram de fora por serem conduta. Nenhum item geral.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

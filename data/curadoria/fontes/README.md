@@ -86,7 +86,7 @@ ficha, e a coluna `validacao` da linha no mapa.
 
 | Quadro | Estado | Dossiê |
 |---|---|---|
-| Torção gástrica | fonte CC BY inspecionada e na ingestão experimental; arquivo novo aguarda validação ASAVET | [gastric_dilatation_volvulus.md](gastric_dilatation_volvulus.md) |
+| Torção gástrica | `fonte_aprovada` — ASAVET (o arquivo CC BY em 26/09), ainda restrita ao perfil experimental | [gastric_dilatation_volvulus.md](gastric_dilatation_volvulus.md) |
 | Medicamento humano | `fonte_aprovada` — ASAVET, ainda restrita ao perfil experimental | [human_medication_poisoning.md](human_medication_poisoning.md) |
 | Carbamato/organofosforado | `fonte_aprovada` — ASAVET, ainda restrita ao perfil experimental | [carbamate_organophosphate_poisoning.md](carbamate_organophosphate_poisoning.md) |
 | Permetrina em gato | `fonte_aprovada` — ASAVET, ainda restrita ao perfil experimental | [permethrin_toxicosis_cats.md](permethrin_toxicosis_cats.md) |
@@ -102,7 +102,7 @@ ficha, e a coluna `validacao` da linha no mapa.
 | Xixi fora do lugar e cistite | `fonte_aprovada` — ASAVET, ainda restrita ao perfil experimental | [inappropriate_urination_or_cystitis.md](inappropriate_urination_or_cystitis.md) |
 | Conjuntivite leve | fontes canina e felina aprovadas pela ASAVET; ambas experimentais | [mild_conjunctivitis.md](mild_conjunctivitis.md) |
 | Colapso e gengiva pálida | `fonte_aprovada` — ASAVET, com limitação de escopo preservada | [collapse_and_pale_gums.md](collapse_and_pale_gums.md) |
-| Vômito isolado/diarreia leve | fonte CC BY inspecionada e na ingestão experimental; arquivo novo aguarda validação ASAVET | [single_vomiting_or_mild_diarrhea.md](single_vomiting_or_mild_diarrhea.md) |
+| Vômito isolado/diarreia leve | `fonte_aprovada` — ASAVET (o arquivo CC BY em 26/09), ainda restrita ao perfil experimental | [single_vomiting_or_mild_diarrhea.md](single_vomiting_or_mild_diarrhea.md) |
 | Intoxicação por chocolate | `fonte_aprovada` — ASAVET; captura real experimental | [chocolate_toxicosis.md](chocolate_toxicosis.md) |
 | Intoxicação por cebola/alho | `fonte_aprovada` — ASAVET; captura real experimental | [allium_toxicosis.md](allium_toxicosis.md) |
 | Dificuldade respiratória | `fonte_aprovada` — ASAVET; captura real experimental | [respiratory_distress.md](respiratory_distress.md) |

@@ -100,5 +100,11 @@
     "trecho": "In small animals, untreated wounds can become chronic, causing pain and delayed healing.",
     "fonte": "minor_wound__vetsci_2026_wound_healing.pdf"
   },
-  "notas_para_o_especialista": "O documento é uma revisão de terapias integrativas para feridas: traz tipos de ferida e fases da cicatrização, mas quase nada na linguagem do tutor e nada específico de cão ou gato. Não define o que é ferida 'pequena'. Dois itens gerais para validar: 'fica lambendo o machucado' e 'tá andando e brincando normal'. O critério 'apoia as quatro patas' e a lista do outro quadro (atropelamento, queda, briga, ferida funda, sangue que não para) vêm da linha do mapa do gêmeo trauma_and_bleeding. A parte de primeiros socorros do documento (pressão, curativo, limpeza) ficou de fora por ser conduta."
+  "notas_para_o_especialista": "O documento é uma revisão de terapias integrativas para feridas: traz tipos de ferida e fases da cicatrização, mas quase nada na linguagem do tutor e nada específico de cão ou gato. Não define o que é ferida 'pequena'. Dois itens gerais para validar: 'fica lambendo o machucado' e 'tá andando e brincando normal'. O critério 'apoia as quatro patas' e a lista do outro quadro (atropelamento, queda, briga, ferida funda, sangue que não para) vêm da linha do mapa do gêmeo trauma_and_bleeding. A parte de primeiros socorros do documento (pressão, curativo, limpeza) ficou de fora por ser conduta.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

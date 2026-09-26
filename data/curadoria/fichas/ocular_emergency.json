@@ -106,5 +106,11 @@
     "trecho": "",
     "fonte": ""
   },
-  "notas_para_o_especialista": "O documento trata só de proptose traumática em cães (100 casos); os sinais de úlcera e glaucoma (olho fechado de dor, opaco ou azulado, pupila grande, esbarrando nas coisas) vêm só do mapa. Não há dados de gatos. As raças citadas (chihuahua, shih tzu) são as mais frequentes no estudo. Lesões associadas (mordidas na cabeça e pescoço, trauma craniano em 8%) estão no documento; 'ficou meio tonto' é a versão leiga do trauma craniano. Frequência cardíaca, temperatura e exames de sangue do estudo não entraram. O título mantém o nome do quadro no mapa."
+  "notas_para_o_especialista": "O documento trata só de proptose traumática em cães (100 casos); os sinais de úlcera e glaucoma (olho fechado de dor, opaco ou azulado, pupila grande, esbarrando nas coisas) vêm só do mapa. Não há dados de gatos. As raças citadas (chihuahua, shih tzu) são as mais frequentes no estudo. Lesões associadas (mordidas na cabeça e pescoço, trauma craniano em 8%) estão no documento; 'ficou meio tonto' é a versão leiga do trauma craniano. Frequência cardíaca, temperatura e exames de sangue do estudo não entraram. O título mantém o nome do quadro no mapa.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

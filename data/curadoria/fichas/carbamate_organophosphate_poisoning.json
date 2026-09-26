@@ -112,5 +112,11 @@
     "trecho": "The mortality rate was 18.8% (45 cats) with pesticides and household cleaning supplies",
     "fonte": "carbamate_organophosphate_poisoning__scielo_2021_feline_poisoning.txt"
   },
-  "notas_para_o_especialista": "O documento é um inquérito com veterinários sobre intoxicação em gatos no Brasil (543 casos); os organofosforados foram o principal agente da classe pesticidas. Carbamatos e o aldicarb ('chumbinho') só aparecem citados na discussão e nas referências; os sinais do documento (salivação excessiva, fasciculação muscular, desorientação, vômito) são descritos para organofosforados em gatos, e usei-os para as duas espécies por serem os mesmos da síndrome colinérgica. Não há dados de cães. As tabelas de sinais clínicos por agente não vieram no texto extraído. A mortalidade de 18,8% é da classe inteira 'pesticidas e produtos de limpeza', não só do chumbinho."
+  "notas_para_o_especialista": "O documento é um inquérito com veterinários sobre intoxicação em gatos no Brasil (543 casos); os organofosforados foram o principal agente da classe pesticidas. Carbamatos e o aldicarb ('chumbinho') só aparecem citados na discussão e nas referências; os sinais do documento (salivação excessiva, fasciculação muscular, desorientação, vômito) são descritos para organofosforados em gatos, e usei-os para as duas espécies por serem os mesmos da síndrome colinérgica. Não há dados de cães. As tabelas de sinais clínicos por agente não vieram no texto extraído. A mortalidade de 18,8% é da classe inteira 'pesticidas e produtos de limpeza', não só do chumbinho.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

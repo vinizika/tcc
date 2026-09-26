@@ -106,5 +106,11 @@
     "trecho": "OA can progress to a severe debilitating disease",
     "fonte": "osteoarthritis_stiffness__frontiers_2022_canine_oa.pdf"
   },
-  "notas_para_o_especialista": "Documento: diretrizes canadenses de tratamento da artrose em cães; os sinais que o tutor vê estão num parágrafo sobre estágios iniciais (dificuldade para levantar/deitar, relutância em pular no carro, escadas, postura assimétrica) e nas descrições dos estágios 3 e 4 (atrofia muscular, claudicação com relutância em se mover). O documento é só de cães; para o gato usei o sinal do mapa 'não sobe mais' aplicado a pular em lugares altos, validar. Os 80% acima de 8 anos (motivo do mapa) não entraram na ficha. Nenhum item 'geral'. Trechos copiados do .txt completo, que tem ligaduras e palavras quebradas pela extração do PDF ('diﬃcultie s'); no texto indexado as mesmas frases aparecem limpas."
+  "notas_para_o_especialista": "Documento: diretrizes canadenses de tratamento da artrose em cães; os sinais que o tutor vê estão num parágrafo sobre estágios iniciais (dificuldade para levantar/deitar, relutância em pular no carro, escadas, postura assimétrica) e nas descrições dos estágios 3 e 4 (atrofia muscular, claudicação com relutância em se mover). O documento é só de cães; para o gato usei o sinal do mapa 'não sobe mais' aplicado a pular em lugares altos, validar. Os 80% acima de 8 anos (motivo do mapa) não entraram na ficha. Nenhum item 'geral'. Trechos copiados do .txt completo, que tem ligaduras e palavras quebradas pela extração do PDF ('diﬃcultie s'); no texto indexado as mesmas frases aparecem limpas.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

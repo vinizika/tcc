@@ -100,5 +100,11 @@
     "trecho": "The body’s supply of active coagulation factors II, VII, IX, and X become depleted and result in signiﬁcant hemorrhage after 3–5 days",
     "fonte": "anticoagulant_rodenticide_poisoning__frontiers_2022_bleeding.pdf"
   },
-  "notas_para_o_especialista": "Documento: estudo retrospectivo de 62 cães com sangramento por raticida anticoagulante; é só de cães, mas os locais de sangramento foram mantidos genéricos para cão e gato, validar. O documento diz que o número e o local dos sangramentos não se associaram à sobrevida, por isso não pus 'sangrar em vários lugares' como alarme. A frequência de 8% a 16% nas casuísticas brasileiras (motivo do mapa) não entrou na ficha. Nenhum item 'geral'. Trechos copiados do .txt completo; no de por_que_importa a palavra 'significant' vem com a ligadura tipográfica do PDF (ﬁ); no texto indexado aparece com 'fi' normal."
+  "notas_para_o_especialista": "Documento: estudo retrospectivo de 62 cães com sangramento por raticida anticoagulante; é só de cães, mas os locais de sangramento foram mantidos genéricos para cão e gato, validar. O documento diz que o número e o local dos sangramentos não se associaram à sobrevida, por isso não pus 'sangrar em vários lugares' como alarme. A frequência de 8% a 16% nas casuísticas brasileiras (motivo do mapa) não entrou na ficha. Nenhum item 'geral'. Trechos copiados do .txt completo; no de por_que_importa a palavra 'significant' vem com a ligadura tipográfica do PDF (ﬁ); no texto indexado aparece com 'fi' normal.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

@@ -94,5 +94,11 @@
     "trecho": "characterized by the rotation of the stomach around its own axis, compromising vascularization both locally and systemically. This can cause problems, such as gastric wall necrosis, impaired cardiac function",
     "fonte": "gastric_dilatation_volvulus__animals_2025_gdv.pdf"
   },
-  "notas_para_o_especialista": "O documento é um estudo retrospectivo de 130 cães operados em Turim; não descreve os sinais que o tutor vê em casa (inchaço, ânsia sem vômito e inquietação vêm do mapa). A tabela de apresentação é de exame (polipneia, mucosas congestas ou pálidas, consciência deprimida, choque, taquicardia, temperatura); usei como alarme só os que o tutor consegue ver, em versão leiga. Raças grandes e gigantes, pastor alemão, atividade depois da refeição e ingestão de muita água vêm do documento. O documento também aponta machos inteiros e idade de 5 a 10 anos como mais frequentes; não usei como sinal. A frase sobre morte do paciente está cortada por quebra de página no texto extraído, por isso o trecho para em 'impaired cardiac function'."
+  "notas_para_o_especialista": "O documento é um estudo retrospectivo de 130 cães operados em Turim; não descreve os sinais que o tutor vê em casa (inchaço, ânsia sem vômito e inquietação vêm do mapa). A tabela de apresentação é de exame (polipneia, mucosas congestas ou pálidas, consciência deprimida, choque, taquicardia, temperatura); usei como alarme só os que o tutor consegue ver, em versão leiga. Raças grandes e gigantes, pastor alemão, atividade depois da refeição e ingestão de muita água vêm do documento. O documento também aponta machos inteiros e idade de 5 a 10 anos como mais frequentes; não usei como sinal. A frase sobre morte do paciente está cortada por quebra de página no texto extraído, por isso o trecho para em 'impaired cardiac function'.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

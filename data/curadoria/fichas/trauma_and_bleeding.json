@@ -89,7 +89,7 @@
       "origem": "documento",
       "trecho": "Signs of shock include rapid heart rate, pale gums, low blood pressure, low urine output, and weak pulses.",
       "fonte": "capturas/trauma_and_bleeding__msd_emergencies.txt",
-      "aprovacao": "pendente",
+      "aprovacao": "aprovada",
       "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
@@ -108,5 +108,11 @@
     "trecho": "While impacted by the rate of loss, in dogs, cardiac arrest occurs when ∼60–90% of blood is lost",
     "fonte": "trauma_and_bleeding__frontiers_2021_hemorrhage.pdf"
   },
-  "notas_para_o_especialista": "Documento é revisão sobre reposição de volume no paciente que sangra, voltada ao veterinário; quase nada é observável pelo tutor. Aproveitei os tipos de trauma e sangramento da Tabela 1 (atropelamento, queda, mordida, sangue pela boca ou rosto, sangramento interno) e a queda do nível de consciência da Tabela 2. Frequência cardíaca, pressão, lactato e escala de Glasgow são medidos pelo veterinário. Item geral: gengiva branca; o documento cita a cor da mucosa só como parâmetro de reavaliação, sem dizer 'pálida'. O dado de parada cardíaca com 60–90% de perda é de cães."
+  "notas_para_o_especialista": "Documento é revisão sobre reposição de volume no paciente que sangra, voltada ao veterinário; quase nada é observável pelo tutor. Aproveitei os tipos de trauma e sangramento da Tabela 1 (atropelamento, queda, mordida, sangue pela boca ou rosto, sangramento interno) e a queda do nível de consciência da Tabela 2. Frequência cardíaca, pressão, lactato e escala de Glasgow são medidos pelo veterinário. Item geral: gengiva branca; o documento cita a cor da mucosa só como parâmetro de reavaliação, sem dizer 'pálida'. O dado de parada cardíaca com 60–90% de perda é de cães.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

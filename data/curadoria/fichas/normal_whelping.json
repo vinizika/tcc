@@ -94,5 +94,11 @@
     "trecho": "For example, in dogs (Canis lupus familiaris), mortality rates of 17–30% have been reported",
     "fonte": "normal_whelping__frontiers_2023_uterine_dynamics.pdf"
   },
-  "notas_para_o_especialista": "O documento é um estudo de monitorização eletrônica do parto em cadelas sem distocia; quase todos os achados são medidos (contrações em mmHg, frequência cardíaca fetal, gasometria). Não há dados de gatas: os itens valem para as duas espécies, exceto os 63 dias de gestação, que ficaram atribuídos à cadela. O documento só diz 'mudanças de comportamento' no primeiro estágio; 'fazer ninho' é conhecimento geral (marcado como geral). Filhotes roxinhos, hipotérmicos e sem vigor aparecem no documento como achados neonatais; usei como sinal de alarme. O gêmeo distocia não tem sinais no mapa; a diferenciação usa só o intervalo de 2 horas do motivo do mapa. O documento cita também intervalos de 12–16 h entre o primeiro e o último filhote como distocia; não usei para não conflitar com a regra das 2 horas."
+  "notas_para_o_especialista": "O documento é um estudo de monitorização eletrônica do parto em cadelas sem distocia; quase todos os achados são medidos (contrações em mmHg, frequência cardíaca fetal, gasometria). Não há dados de gatas: os itens valem para as duas espécies, exceto os 63 dias de gestação, que ficaram atribuídos à cadela. O documento só diz 'mudanças de comportamento' no primeiro estágio; 'fazer ninho' é conhecimento geral (marcado como geral). Filhotes roxinhos, hipotérmicos e sem vigor aparecem no documento como achados neonatais; usei como sinal de alarme. O gêmeo distocia não tem sinais no mapa; a diferenciação usa só o intervalo de 2 horas do motivo do mapa. O documento cita também intervalos de 12–16 h entre o primeiro e o último filhote como distocia; não usei para não conflitar com a regra das 2 horas.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

@@ -2,7 +2,7 @@
   "title": "Ear problems in dogs",
   "source": "PDSA",
   "document_type": "owner_guidance",
-  "validation_status": "pending_specialist",
+  "validation_status": "approved_by_specialist",
   "ingestion_scope": "curated_candidate",
   "species": "dog",
   "topic": "otitis_externa_mild",
@@ -19,9 +19,9 @@
   "captured_sha256": "269f7324fe326e2922388e25f7577cde5c0ef9ac8ed16f5f9eccd0464b8fcd16",
   "map_line": "otitis_externa_mild",
   "specialist": {
-    "verdict": "",
-    "name": "",
-    "date": ""
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
   },
   "rights": {
     "status": "pending",
@@ -31,5 +31,5 @@
   },
   "year": 2021,
   "full_title": "Ears problems in dogs - an overview",
-  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de otitis_externa_mild (rodada 27); autoridade alta; aguardando especialista."
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de otitis_externa_mild (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
 }

@@ -106,5 +106,11 @@
     "trecho": "dogs with orthopaedic pathologies such as hip dysplasia or cranial crucial ligament rupture have to biomechanically circumvent the reduction in limb function and consequently adjust their gait",
     "fonte": "mild_lameness__bmc_2018_short_term_lameness.pdf"
   },
-  "notas_para_o_especialista": "O documento é um estudo biomecânico (cinemática em esteira) de claudicação induzida em cães saudáveis; não traz sinais caseiros além das lesões de pata citadas na introdução (pisou em algo, cortes, unha) e de o animal poupar a pata. 'Dedos fraturados' também aparece no texto, mas não virou item por não combinar com quadro leve. Não há dados de gatos. Os sinais de alarme vêm do discriminador do mapa e do gêmeo (trauma). Nenhum item geral."
+  "notas_para_o_especialista": "O documento é um estudo biomecânico (cinemática em esteira) de claudicação induzida em cães saudáveis; não traz sinais caseiros além das lesões de pata citadas na introdução (pisou em algo, cortes, unha) e de o animal poupar a pata. 'Dedos fraturados' também aparece no texto, mas não virou item por não combinar com quadro leve. Não há dados de gatos. Os sinais de alarme vêm do discriminador do mapa e do gêmeo (trauma). Nenhum item geral.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

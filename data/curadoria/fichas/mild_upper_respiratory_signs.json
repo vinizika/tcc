@@ -57,7 +57,7 @@
       "origem": "documento",
       "trecho": "With this condition, the dog rapidly pulls air into the nose, whereas in a regular sneeze, the air is rapidly pushed out through the nose. The dog makes a snorting sound and seems to be trying to inhale while sneezing.",
       "fonte": "capturas/mild_upper_respiratory_signs__vca_espirro_reverso.txt",
-      "aprovacao": "pendente",
+      "aprovacao": "aprovada",
       "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
@@ -102,5 +102,11 @@
     "trecho": "This chronicity of the disease can cause permanent scarring of nasal passages, leading to chronic sinusitis and recurrent bacterial infections of the upper respiratory tract",
     "fonte": "mild_upper_respiratory_signs__vetsci_2024_feline_uri.pdf"
   },
-  "notas_para_o_especialista": "O documento é uma revisão sobre infecção respiratória felina (principalmente em abrigos); só gato, sem dados de cães. O espirro reverso do cão, citado no motivo do mapa, não aparece no documento: a descrição 'puxa o ar pelo nariz com barulho de ronco e volta ao normal' é conhecimento geral. O documento lista também dispneia, úlceras em lábios, língua e gengiva, úlcera de córnea e tosse como sinais comuns; não incluí úlceras nem tosse para não atrair relatos de estomatite ou tosse dos canis, e a dispneia entrou como alarme pelo discriminador do mapa. 'Filhote ainda sem vacina' é fator de risco citado no documento, não um sinal clínico."
+  "notas_para_o_especialista": "O documento é uma revisão sobre infecção respiratória felina (principalmente em abrigos); só gato, sem dados de cães. O espirro reverso do cão, citado no motivo do mapa, não aparece no documento: a descrição 'puxa o ar pelo nariz com barulho de ronco e volta ao normal' é conhecimento geral. O documento lista também dispneia, úlceras em lábios, língua e gengiva, úlcera de córnea e tosse como sinais comuns; não incluí úlceras nem tosse para não atrair relatos de estomatite ou tosse dos canis, e a dispneia entrou como alarme pelo discriminador do mapa. 'Filhote ainda sem vacina' é fator de risco citado no documento, não um sinal clínico.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

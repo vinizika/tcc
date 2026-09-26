@@ -69,7 +69,7 @@
       "origem": "documento",
       "trecho": "The truth is most patients won’t show signs of oral pain and will continue to go on playing and eating.",
       "fonte": "capturas/periodontal_disease_mild__bluepearl_periodontal.txt",
-      "aprovacao": "pendente",
+      "aprovacao": "aprovada",
       "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
@@ -100,5 +100,11 @@
     "trecho": "Systemically, bacteria and their toxins can spread via the bloodstream (bacteremia) from dental plaque, together with inflammatory mediators produced against periodontal bacterial aggression, leading to renal, hepatic, or cardiac consequences",
     "fonte": "periodontal_disease_mild__antibiotics_2022_periodontal.pdf"
   },
-  "notas_para_o_especialista": "O documento é só de cães e focado em prevenção e tratamento. Sinais que ele documenta: halitose, placa e tártaro, gengivite, sangramento gengival, mobilidade dentária e perda de inserção. Não há dados de gatos (só o motivo do mapa cita 70% dos gatos aos 3 anos); os sinais usados valem para as duas espécies. Dois itens gerais para validar: 'comendo e brincando normal' e 'parou de comer, mastiga de um lado só ou o rosto inchou'. 'Pedra' é o nome popular do tártaro. A prevalência do mapa (80% dos cães e 70% dos gatos aos 3 anos) não entrou no texto. Não há gêmeos; para chegar perto de 150 palavras, entraram mais variações de mau hálito e tártaro, que são os sinais principais."
+  "notas_para_o_especialista": "O documento é só de cães e focado em prevenção e tratamento. Sinais que ele documenta: halitose, placa e tártaro, gengivite, sangramento gengival, mobilidade dentária e perda de inserção. Não há dados de gatos (só o motivo do mapa cita 70% dos gatos aos 3 anos); os sinais usados valem para as duas espécies. Dois itens gerais para validar: 'comendo e brincando normal' e 'parou de comer, mastiga de um lado só ou o rosto inchou'. 'Pedra' é o nome popular do tártaro. A prevalência do mapa (80% dos cães e 70% dos gatos aos 3 anos) não entrou no texto. Não há gêmeos; para chegar perto de 150 palavras, entraram mais variações de mau hálito e tártaro, que são os sinais principais.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

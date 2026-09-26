@@ -94,5 +94,11 @@
     "trecho": "FATE is a devastating syndrome, with short-term consequences characterized by acute pain, paralysis and rhabdomyolysis in the affected limb(s)",
     "fonte": "feline_aortic_thromboembolism__jfms_2024_fate.pdf"
   },
-  "notas_para_o_especialista": "Os sinais do tutor juntam o motivo do mapa (arrasta as patas de trás, grita, respira rápido, início súbito) com os '5P' do documento que o tutor consegue perceber: patas frias, almofadas roxas ou pálidas, paralisia e dor. Ausência de pulso, Doppler, lactato e exames ficaram de fora. As duas histórias de tutor ('normal de manhã' e 'acharam que foi mordida de gato') vêm dos casos clínicos do documento. 'De boca aberta' é a leitura leiga de dispneia. O documento cita vômito antes do quadro em 10 a 20% dos gatos; não entrou por ser pouco específico. Nenhum item geral."
+  "notas_para_o_especialista": "Os sinais do tutor juntam o motivo do mapa (arrasta as patas de trás, grita, respira rápido, início súbito) com os '5P' do documento que o tutor consegue perceber: patas frias, almofadas roxas ou pálidas, paralisia e dor. Ausência de pulso, Doppler, lactato e exames ficaram de fora. As duas histórias de tutor ('normal de manhã' e 'acharam que foi mordida de gato') vêm dos casos clínicos do documento. 'De boca aberta' é a leitura leiga de dispneia. O documento cita vômito antes do quadro em 10 a 20% dos gatos; não entrou por ser pouco específico. Nenhum item geral.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

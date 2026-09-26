@@ -4,15 +4,17 @@ O conjunto que vai dar os números finais do TCC
 ([rodada 20 do João](../../evidencias/joao/2026-09-24-21-prova-2-desenho-e-piloto.md),
 gerado na [rodada 28](../../evidencias/joao/2026-09-25-29-prova-2-geracao.md)).
 São 330 relatos de tutor, escritos por nove agentes de IA isolados (instâncias
-do Claude) que não viram o mapa, as fichas nem a prova 1. **Os rótulos ainda
-não foram validados**: a prova só é usada depois da validação dos
-veterinários, da divisão por assunto e do congelamento por hash.
+do Claude) que não viram o mapa, as fichas nem a prova 1. **Os rótulos foram
+validados** pelos veterinários da ASAVET em 26/09/2026, sem ver o rótulo, e
+nenhum mudou (`validacao.json`). A prova só é usada depois da divisão por
+assunto e do congelamento por hash.
 
 ## O que tem aqui
 
 | Arquivo | O que é |
 |---|---|
 | `casos.csv` | os 330 relatos, no formato da prova 1 mais `tone`, `persona`, `author` e `confusion_pair_topic`. Gerado por `python scripts/prova2_montar.py` |
+| `validacao.json` | o registro da validação dos rótulos (quem, quando, como, e o sha256 do `casos.csv` validado); o `prova2_montar.py` escreve o `marked_by` a partir dele |
 | `geracao/pedidos/lote_<n>.json` | o pedido de cada relato, completo (com o tópico do mapa e o rótulo), gerado por `python scripts/prova2_pedidos.py` |
 | `geracao/pedidos/lote_<n>.instancia.json` | só o que o autor do lote viu: o quadro em linguagem leiga, a espécie, a gravidade, o tom, a persona e as marcas de estilo |
 | `geracao/autores/lote_<n>/` | o que cada autor devolveu: `relatos.json` e o `RESUMO.md` (fontes, dificuldades e os pedidos em que o rótulo lhe pareceu estranho) |
@@ -39,8 +41,9 @@ pedidos marcaram.
 
 1. A conferência completa: palavras em comum com as fichas, Naive Bayes entre
    lotes, o "mesmo autor" no top 3 contra os relatos independentes.
-2. A planilha para os veterinários validarem sem ver o rótulo; onde o
-   veterinário discordar do mapa, vale o veterinário (e o mapa é revisto).
+2. ~~A validação dos rótulos pelos veterinários, sem ver o rótulo~~: feita em
+   26/09, sem nenhuma discordância do mapa
+   ([rodada 30](../../evidencias/joao/2026-09-26-31-validacao-dos-especialistas.md)).
 3. A divisão por assunto (66 de calibração, 264 de teste) e o congelamento com
    `scripts/prova_freeze.py`.
 

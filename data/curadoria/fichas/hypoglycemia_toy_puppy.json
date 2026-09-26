@@ -57,7 +57,7 @@
       "origem": "documento",
       "trecho": "These puppies present for extreme lethargy, incoordination, unconsciousness or seizures.",
       "fonte": "capturas/hypoglycemia_toy_puppy__akc_hipoglicemia.txt",
-      "aprovacao": "pendente",
+      "aprovacao": "aprovada",
       "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
@@ -102,5 +102,11 @@
     "trecho": "Severe hypoglycemia can lead to bradycardia, cyanosis, seizures, coma and death",
     "fonte": "hypoglycemia_toy_puppy__frontiers_2024_neonatal_hypoglycemia.pdf"
   },
-  "notas_para_o_especialista": "O documento aprovado trata de hipoglicemia NEONATAL (primeiras 3 a 4 semanas); sobre o filhote de raça toy ele traz só um parágrafo (hipoglicemia juvenil transitória, predisposição até 3 a 4 meses; o mapa diz menos de 3 meses). Os sinais do documento (choro, irritabilidade, letargia, parar de mamar, convulsão, cianose, coma) foram descritos em recém-nascidos e aqui estendidos ao filhote toy, validar. Tremor, fraqueza, jejum, frio e estresse vêm do motivo do mapa; tremor não aparece como sinal no documento. Itens 'geral' (2): exemplos de raças toy e andar cambaleante (ataxia). Glicemia e frequência cardíaca são medidas pelo veterinário; não usei."
+  "notas_para_o_especialista": "O documento aprovado trata de hipoglicemia NEONATAL (primeiras 3 a 4 semanas); sobre o filhote de raça toy ele traz só um parágrafo (hipoglicemia juvenil transitória, predisposição até 3 a 4 meses; o mapa diz menos de 3 meses). Os sinais do documento (choro, irritabilidade, letargia, parar de mamar, convulsão, cianose, coma) foram descritos em recém-nascidos e aqui estendidos ao filhote toy, validar. Tremor, fraqueza, jejum, frio e estresse vêm do motivo do mapa; tremor não aparece como sinal no documento. Itens 'geral' (2): exemplos de raças toy e andar cambaleante (ataxia). Glicemia e frequência cardíaca são medidas pelo veterinário; não usei.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

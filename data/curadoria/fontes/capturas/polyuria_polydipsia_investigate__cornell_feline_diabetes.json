@@ -2,7 +2,7 @@
   "title": "Diabetes felino (Cornell)",
   "source": "Cornell Feline Health Center",
   "document_type": "owner_guidance",
-  "validation_status": "pending_specialist",
+  "validation_status": "approved_by_specialist",
   "ingestion_scope": "curated_candidate",
   "species": "cat",
   "topic": "polyuria_polydipsia_investigate",
@@ -19,9 +19,9 @@
   "captured_sha256": "9c54dc05faad38ea380e8f2a221054f265399bd80c405f57b8a00ed304bf9f85",
   "map_line": "polyuria_polydipsia_investigate",
   "specialist": {
-    "verdict": "",
-    "name": "",
-    "date": ""
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
   },
   "rights": {
     "status": "pending",
@@ -31,5 +31,5 @@
   },
   "year": 2024,
   "full_title": "Feline Diabetes",
-  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de polyuria_polydipsia_investigate (rodada 27); autoridade alta; aguardando especialista."
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de polyuria_polydipsia_investigate (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
 }

@@ -89,7 +89,7 @@
       "origem": "documento",
       "trecho": "Severe ear problems that affect deep inside the ear can also cause symptoms such as loss of balance, a head tilt, and flickering eye movements.",
       "fonte": "capturas/otitis_externa_mild__pdsa_ear_problems_dogs.txt",
-      "aprovacao": "pendente",
+      "aprovacao": "aprovada",
       "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
@@ -120,5 +120,11 @@
     "trecho": "Bacterial toxins and physical accumulation of discharge can cause the rupture of the tympanic membrane, allowing infection to spread to the middle ear, resulting in otitis media (OM)",
     "fonte": "otitis_externa_mild__microorganisms_2023_otitis.pdf"
   },
-  "notas_para_o_especialista": "Documento trata de Pseudomonas na otite externa canina: só cães, foco microbiológico. Não menciona balançar a cabeça; esse sinal, coçar a orelha e 'sem desequilíbrio' vêm do motivo do mapa (a linha não tem sinais nem discriminador). Cheiro, secreção, dor, coceira, vermelhidão e inchaço vêm do documento e valem para cão e gato; orelha caída e alergia de pele são dados de cães e estão marcados assim. Item geral: cabeça torta e olhos mexendo sozinhos (sinais vestibulares), que o documento não descreve. Ácaro de ouvido (Otodectes), comum em gatos, aparece no documento só como causa, sem sinais; não virou item."
+  "notas_para_o_especialista": "Documento trata de Pseudomonas na otite externa canina: só cães, foco microbiológico. Não menciona balançar a cabeça; esse sinal, coçar a orelha e 'sem desequilíbrio' vêm do motivo do mapa (a linha não tem sinais nem discriminador). Cheiro, secreção, dor, coceira, vermelhidão e inchaço vêm do documento e valem para cão e gato; orelha caída e alergia de pele são dados de cães e estão marcados assim. Item geral: cabeça torta e olhos mexendo sozinhos (sinais vestibulares), que o documento não descreve. Ácaro de ouvido (Otodectes), comum em gatos, aparece no documento só como causa, sem sinais; não virou item.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

@@ -106,5 +106,11 @@
     "trecho": "80% of cats with FATE have a hitherto unrecognized cardiomyopathy as a cause of the thromboembolism",
     "fonte": "acute_hindlimb_paralysis__jfms_2024_feline_ate.txt"
   },
-  "notas_para_o_especialista": "Os documentos cobrem tromboembolismo aórtico no gato (JFMS) e neuromiopatia isquêmica no cão (PVB, 5 cadelas com 11 anos ou mais). Outras causas de paralisia súbita (hérnia de disco, trauma de coluna) não são cobertas, como o próprio motivo do mapa registra. Pulso femoral ausente, Doppler, glicose e lactato do membro e ausência de dor profunda são achados de exame e não entraram; 'não sente as patas' vem do mapa. Patas geladas estão nos dois documentos; dedos roxos ou pálidos, pata só e membro da frente são descritos só para o gato, por isso o item diz a espécie. Mancar antes da paralisia foi relatado em 2 dos 5 cães."
+  "notas_para_o_especialista": "Os documentos cobrem tromboembolismo aórtico no gato (JFMS) e neuromiopatia isquêmica no cão (PVB, 5 cadelas com 11 anos ou mais). Outras causas de paralisia súbita (hérnia de disco, trauma de coluna) não são cobertas, como o próprio motivo do mapa registra. Pulso femoral ausente, Doppler, glicose e lactato do membro e ausência de dor profunda são achados de exame e não entraram; 'não sente as patas' vem do mapa. Patas geladas estão nos dois documentos; dedos roxos ou pálidos, pata só e membro da frente são descritos só para o gato, por isso o item diz a espécie. Mancar antes da paralisia foi relatado em 2 dos 5 cães.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

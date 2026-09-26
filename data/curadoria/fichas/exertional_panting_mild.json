@@ -87,7 +87,7 @@
       "origem": "documento",
       "trecho": "differentiate a dog’s normal panting (quick, shallow, open-mouth breathing after exercise or when they are hot) from an increased breathing rate due to heart failure (noted as fast breathing or extra breathing effort present even at rest).",
       "fonte": "capturas/exertional_panting_mild__tufts_dispneia.txt",
-      "aprovacao": "pendente",
+      "aprovacao": "aprovada",
       "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
@@ -97,5 +97,11 @@
     "trecho": "",
     "fonte": ""
   },
-  "notas_para_o_especialista": "O documento estuda hidratação e temperatura de cães de trabalho treinados após até 30 min de exercício em clima quente; quase tudo é medido (temperatura por cápsula e ouvido, pulso, gasometria). Sinais visíveis pelo tutor: a ofegação após o esforço e os critérios de parada do teste (língua enrolada ao ofegar, procurar sombra, ficar lento na brincadeira), usados aqui como alarme. A volta da temperatura ao normal em até 60 min foi medida com sensor e não entrou como sinal. A linha do mapa não tem sinais nem discriminador; 'melhora ao descansar na sombra' e os sinais de alarme vêm da linha do gêmeo intermação. O gêmeo insuficiência cardíaca não tem sinais no mapa, então a diferenciação com ele é conhecimento geral. 'Anda normal e atende quando chamo' também é geral."
+  "notas_para_o_especialista": "O documento estuda hidratação e temperatura de cães de trabalho treinados após até 30 min de exercício em clima quente; quase tudo é medido (temperatura por cápsula e ouvido, pulso, gasometria). Sinais visíveis pelo tutor: a ofegação após o esforço e os critérios de parada do teste (língua enrolada ao ofegar, procurar sombra, ficar lento na brincadeira), usados aqui como alarme. A volta da temperatura ao normal em até 60 min foi medida com sensor e não entrou como sinal. A linha do mapa não tem sinais nem discriminador; 'melhora ao descansar na sombra' e os sinais de alarme vêm da linha do gêmeo intermação. O gêmeo insuficiência cardíaca não tem sinais no mapa, então a diferenciação com ele é conhecimento geral. 'Anda normal e atende quando chamo' também é geral.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

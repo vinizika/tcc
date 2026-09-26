@@ -2,7 +2,7 @@
   "title": "Canine Distemper (Hardpad Disease)",
   "source": "MSD Veterinary Manual",
   "document_type": "owner_guidance",
-  "validation_status": "pending_specialist",
+  "validation_status": "approved_by_specialist",
   "ingestion_scope": "curated_candidate",
   "species": "dog",
   "topic": "distemper_neurological",
@@ -19,9 +19,9 @@
   "captured_sha256": "a27feeb4590166f4750793a0ea20c07b0255c651fa375ce5dc7017a1b739c2f0",
   "map_line": "distemper_neurological",
   "specialist": {
-    "verdict": "",
-    "name": "",
-    "date": ""
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
   },
   "rights": {
     "status": "pending",
@@ -32,5 +32,5 @@
   "year": 2026,
   "authors": "Nick Roman",
   "full_title": "Canine Distemper (Hardpad Disease) - Dog Owners - MSD Veterinary Manual",
-  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de distemper_neurological (rodada 27); autoridade alta; aguardando especialista."
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de distemper_neurological (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
 }

@@ -57,7 +57,7 @@
       "origem": "documento",
       "trecho": "Many dogs with severe difficulty breathing will refuse to lie down on their side because it is harder for them to breathe in this position. Instead, they will prefer to sit or stand.",
       "fonte": "capturas/respiratory_distress__tufts_dispneia.txt",
-      "aprovacao": "pendente",
+      "aprovacao": "aprovada",
       "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
@@ -96,5 +96,11 @@
     "trecho": "This is particularly important in cats which are highly sensitive to stress and respiratory compromise. Forced positioning may worsen respiratory compromise and, in severe cases, precipitate respiratory or cardiac arrest.",
     "fonte": "respiratory_distress__frontiers_2026_lung_ultrasound.pdf"
   },
-  "notas_para_o_especialista": "Documento é estudo de imagem (ultrassom x raio-X de tórax) em pacientes já no hospital. Descreve os sinais só como critério de inclusão (respiração rápida, difícil, com esforço) e cita ofegação. Cor da língua, pescoço esticado, barriga e boca aberta vêm do mapa. Item geral: não conseguir deitar (ortopneia). Sopro, ausculta e exames ficaram de fora. O estudo excluiu dor, trauma, calor, anemia e vias aéreas superiores como causa, então não cobre esses cenários."
+  "notas_para_o_especialista": "Documento é estudo de imagem (ultrassom x raio-X de tórax) em pacientes já no hospital. Descreve os sinais só como critério de inclusão (respiração rápida, difícil, com esforço) e cita ofegação. Cor da língua, pescoço esticado, barriga e boca aberta vêm do mapa. Item geral: não conseguir deitar (ortopneia). Sopro, ausculta e exames ficaram de fora. O estudo excluiu dor, trauma, calor, anemia e vias aéreas superiores como causa, então não cobre esses cenários.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

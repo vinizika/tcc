@@ -69,7 +69,7 @@
       "origem": "documento",
       "trecho": "Initially, it may start as the skin itself just looks a little red or inflamed, while more severe burns can cause burning or singeing of the coat.",
       "fonte": "capturas/burns_and_electrical_injury__tamu_pet_burns.txt",
-      "aprovacao": "pendente",
+      "aprovacao": "aprovada",
       "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
@@ -106,5 +106,11 @@
     "trecho": "pulmonary edema should be considered a potentially life-threatening complication of electrical shock",
     "fonte": "burns_and_electrical_injury__bmc_2024_electrocution.pdf"
   },
-  "notas_para_o_especialista": "O documento é um relato de caso único (labrador de 3 meses, fio de 110 V) com edema pulmonar neurogênico após morder fio; cita outros dois relatos com salivação excessiva, prostração e dificuldade respiratória. Não cobre queimadura térmica nem química: 'água fervendo ou óleo quente', 'gata pulou no fogão' e 'produto químico forte' são exemplos leigos das queimaduras térmicas e químicas citadas no motivo do mapa, e a descrição da pele queimada (pelo chamuscado ou caindo, pele vermelha ou escura) é conhecimento geral. 'Boca presa no fio' vem de um trecho do documento que cita a literatura humana (contração tetânica dos músculos da mastigação prolongando o contato com o fio). Gatos aparecem só na frase final do documento ('puppies and kittens'). Não há gêmeo. Pupila dilatada (midríase), saturação, frequência respiratória medida e ultrassom são achados de exame e não entraram. O documento cita convulsão em um relato, mas o trecho está quebrado no texto extraído e não o usei."
+  "notas_para_o_especialista": "O documento é um relato de caso único (labrador de 3 meses, fio de 110 V) com edema pulmonar neurogênico após morder fio; cita outros dois relatos com salivação excessiva, prostração e dificuldade respiratória. Não cobre queimadura térmica nem química: 'água fervendo ou óleo quente', 'gata pulou no fogão' e 'produto químico forte' são exemplos leigos das queimaduras térmicas e químicas citadas no motivo do mapa, e a descrição da pele queimada (pelo chamuscado ou caindo, pele vermelha ou escura) é conhecimento geral. 'Boca presa no fio' vem de um trecho do documento que cita a literatura humana (contração tetânica dos músculos da mastigação prolongando o contato com o fio). Gatos aparecem só na frase final do documento ('puppies and kittens'). Não há gêmeo. Pupila dilatada (midríase), saturação, frequência respiratória medida e ultrassom são achados de exame e não entraram. O documento cita convulsão em um relato, mas o trecho está quebrado no texto extraído e não o usei.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

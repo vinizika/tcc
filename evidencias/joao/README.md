@@ -46,19 +46,22 @@ Self-Refine, e a régua de avaliação do sistema (runner de métricas).
 | 27 | 25/09 | [Fontes para as frases sem fonte das fichas de busca](2026-09-25-28-fontes-para-tutor-etapa-2.md) | Quatro agentes pesquisadores capturaram 45 fontes pelo script do time. **36 das 53 frases "geral" ganharam trecho literal (68%)**, 16 têm fonte parcial, 1 ficou sem; os 52 trechos conferidos por programa. Nenhuma frase mudou (a coleção reindexada seria idêntica). Cinco capturas são da VCA, que proíbe redistribuir |
 | 28 | 25/09 | [Prova 2: a geração](2026-09-25-29-prova-2-geracao.md) | Nove agentes isolados escreveram os **330 relatos, com a composição exata** (190 emergências e 115 leves de 61 quadros, mais 25 especiais), "mas" em 40% de cada classe e nenhum texto repetido. Rótulos provisórios; a validação dos veterinários, a divisão e o congelamento vêm depois. A pesquisa foi mais fraca que a do piloto: a busca na web acabou cedo |
 | 29 | 25/09 | [Fechamento da implementação](2026-09-25-30-fechamento-da-rodada-noturna.md) | Documentação, sem código de sistema: README, `.env.example`, contratos e estado atual descrevem o sistema que o código roda; a interface antiga sai; o backlog ganha B-74 a B-76 e registra o que as rodadas 22 a 28 deixaram para depois |
+| 30 | 26/09 | [A validação dos especialistas, registrada](2026-09-26-31-validacao-dos-especialistas.md) | Registro, sem mudar o sistema: a ASAVET aceitou os 513 itens da folha das fichas, as 47 fontes que esperavam especialista e os seis documentos de outro assunto como estão, e validou **os 330 rótulos da prova 2, sem nenhuma mudança**. Os textos que o sistema lê ficaram iguais (61 de 61). Levar o conteúdo certificado à ficha de leitura é a próxima rodada, medida |
 
 ## Estado atual
 
-**25/09 — a arquitetura da autópsia 2 está no código e replicada** (rodadas
-22 a 29, na branch `autopsia2-implementacao`, a validar). O relato cru vai à
+**26/09 — a arquitetura da autópsia 2 está no código, replicada e validada
+pelo João** (rodadas 22 a 29), e a validação dos especialistas está registrada
+(rodada 30). O relato cru vai à
 busca vetorial (bge-m3) nas 61 fichas de busca; as 3 mais próximas entram no
 prompt como fichas de leitura; o Gemini responde por padrão, sem troca
 silenciosa de modelo, e o qwen e o llama ficam como opções. O runner do time,
-pela API, reproduz a autópsia caso a caso. Suíte: backend 285, scripts 216.
+pela API, reproduz a autópsia caso a caso. Suíte: backend 285, scripts 217.
 
-A próxima entrega é **a prova 2 até o uso** ([B-63](../backlog.md#b-63)) e, em
-paralelo, a certificação das fichas pelos especialistas
-([B-61](../backlog.md#b-61)). A ablação completa fica para quando o projeto
+A próxima entrega: levar o conteúdo certificado das fichas à ficha de leitura,
+medido contra a réplica ([B-61](../backlog.md#b-61)), e **a prova 2 até o uso**
+— o resto da conferência, a divisão e o congelamento
+([B-63](../backlog.md#b-63)). A ablação completa fica para quando o projeto
 estiver completo ([B-66](../backlog.md#b-66)).
 
 O roteiro completo, com marcos e os sete bloqueios abertos, está em

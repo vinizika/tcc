@@ -108,9 +108,9 @@ aqui.
 | [B-58](#b-58) | A tag `tcc-backend:latest` local pode estar desatualizada e derrubar o backend num restart | Time | Média | Aberto |
 | [B-59](#b-59) | Fim de linha CRLF no Windows quebra os hashes das fontes `.txt` e `.csv` | A definir | Média | Aberto |
 | [B-60](#b-60) | Os runners contam INCERTO de jeitos diferentes: falta uma semântica só de métrica | A definir | Média | Aberto |
-| [B-61](#b-61) | Validação clínica das fichas de leitura e de busca | A definir | Alta | Aberto |
-| [B-62](#b-62) | Fonte escrita para tutor nos quadros em que o documento não descreve o que o tutor vê | A definir | Média | Aberto |
-| [B-63](#b-63) | Prova 2: da geração ao congelamento | A definir | Alta | Aberto |
+| [B-61](#b-61) | Validação clínica das fichas de leitura e de busca | A definir | Alta | Em andamento — certificado pela ASAVET em 26/09; falta levar ao mapa (rodada medida) |
+| [B-62](#b-62) | Fonte escrita para tutor nos quadros em que o documento não descreve o que o tutor vê | A definir | Média | Em andamento — 7 de 8 quadros com fonte validada (26/09); faltam o caroço, os ids `R..` e a decisão de direitos |
+| [B-63](#b-63) | Prova 2: da geração ao congelamento | A definir | Alta | Em andamento — gerada (25/09) e rótulos validados (26/09); faltam conferência, divisão e congelamento |
 | [B-64](#b-64) | LGPD com o Gemini como atendente padrão: o relato do tutor sai da máquina | A definir | Média | Aberto |
 | [B-65](#b-65) | Latência na demonstração: a cauda do Gemini e o qwen sem placa de vídeo | A definir | Média | Aberto |
 | [B-66](#b-66) | Ablação final na arquitetura da autópsia 2 | A definir | Média | Aberto |
@@ -119,7 +119,7 @@ aqui.
 | [B-69](#b-69) | Tradutor só quando a busca estiver insegura (ideia não testada) | A definir | Baixa | Aberto |
 | [B-70](#b-70) | Self-Refine como checagem de que o contexto é do assunto do relato | A definir | Baixa | Em espera — CoT e Self-Refine voltam depois do RAG consolidado |
 | [B-71](#b-71) | Checagens por hash de arquivo falham num clone no Windows (CRLF) | A definir | Baixa | Aberto |
-| [B-72](#b-72) | Documentos aprovados que tratam de outro assunto, e autoria errada em sidecars | A definir | Média | Aberto |
+| [B-72](#b-72) | Documentos aprovados que tratam de outro assunto, e autoria errada em sidecars | A definir | Média | Aberto — os seis mantidos pela ASAVET (26/09); falta corrigir a autoria |
 | [B-73](#b-73) | Abrir o Chroma versionado altera os arquivos binários do repositório | A definir | Média | Aberto |
 | [B-74](#b-74) | "Respondido por" na tela, e o erro do atendente tratado no frontend | A definir | Média | Aberto |
 | [B-75](#b-75) | Decidir os direitos das capturas da VCA e das páginas com todos os direitos reservados | A definir | Média | Aberto |
@@ -2557,6 +2557,16 @@ uma. A conferência do trecho de cada item de documento contra o documento fica 
 `conferencia.json` da curadoria e não no CI: levar ao CI exigiria extrair os 66
 documentos a cada commit.
 
+**Atualização 26/09 ([rodada 30](joao/2026-09-26-31-validacao-dos-especialistas.md)).** A ASAVET certificou a folha inteira,
+por intermédio do Vinicius: os 513 itens aceitos como estão, sem correções — os de
+documento (com os textos propostos para `por_que_importa`), os 17 `geral` (16 com
+fonte parcial e a frase sem fonte), as 36 frases com fonte nova e os rascunhos da
+etapa 2; os conflitos ficam como cada ficha os trata. **Falta levar esse conteúdo
+à ficha de leitura**: preencher no mapa as 60 células da etapa 2 (sinais e
+discriminador) e a coluna `por_que_importa`, o que tira as notas internas das 11
+fichas. Isso muda o texto que o atendente lê, então é rodada medida contra a
+réplica da [rodada 26](joao/2026-09-25-27-atendente-gemini-e-replica.md).
+
 ### B-62
 
 **Fonte escrita para tutor nos quadros em que o documento não descreve o que o tutor vê**
@@ -2593,6 +2603,12 @@ nascem `pending_specialist` em `PARA-VALIDAR.md` e ainda não ganharam id `R..` 
 `referencias.md`; o critério continua aberto até a validação. Direitos de cinco
 delas: [B-75](#b-75).
 
+**Atualização 26/09 ([rodada 30](joao/2026-09-26-31-validacao-dos-especialistas.md)).** As 45 fontes foram validadas pela
+ASAVET: 7 dos 8 quadros insuficientes têm agora fonte validada que descreve o que o
+tutor vê em casa (o caroço de crescimento lento continua sem). Seguem fora de
+`backend/data/documents/` até a decisão de direitos ([B-75](#b-75)), e ainda sem
+id `R..` em `referencias.md`.
+
 ### B-63
 
 **Prova 2: da geração ao congelamento**
@@ -2626,6 +2642,16 @@ provisórios. Falta tudo o que vem depois da geração: a conferência completa,
 a planilha dos veterinários, a validação, a divisão e o congelamento. A
 pesquisa dos autores foi mais fraca que a do piloto (a busca na web acabou
 cedo), o que torna a medida do "mesmo autor" mais importante.
+
+**Atualização 26/09 ([rodada 30](joao/2026-09-26-31-validacao-dos-especialistas.md)).** Os 330 rótulos foram validados pela
+ASAVET — segundo o João, sem ver o rótulo, como combinado — e nenhum mudou:
+`data/prova2/validacao.json` guarda o registro e o sha256 do arquivo validado, e o
+`marked_by` de cada linha diz quem validou. Uma parte da conferência já foi medida
+(observação 3 da rodada 30): a busca acha a ficha certa em 1º em 54% dos relatos
+com quadro do mapa e entre as 3 em 79%, entre o piloto (40% · 80%) e os relatos
+independentes (61% · 77%) e longe da prova 1 + régua (83% · 95%). Faltam: o resto
+da conferência (Naive Bayes entre lotes, o "mesmo autor"), a divisão por assunto
+(66/264) e o congelamento.
 
 ### B-64
 
@@ -2860,6 +2886,12 @@ busca foram escritos a partir deles.
 (as fontes capturadas na [rodada 27](joao/2026-09-25-28-fontes-para-tutor-etapa-2.md)
 são candidatas em vários), e a autoria corrigida pelo Crossref. Critério: cada
 documento citado trata do quadro em que está.
+
+**Atualização 26/09 ([rodada 30](joao/2026-09-26-31-validacao-dos-especialistas.md)).** Segundo o João, a ASAVET validou os
+seis como estão. O critério literal (cada documento trata do quadro em que está)
+fica sem atender por decisão dos especialistas, que os mantiveram; o registro fica
+aqui. Falta a autoria pelo Crossref (a da cinomose e os cinco primeiros nomes), que
+é correção nossa.
 
 ### B-73
 

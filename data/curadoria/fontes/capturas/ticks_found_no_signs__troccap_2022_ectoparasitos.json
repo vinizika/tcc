@@ -2,7 +2,7 @@
   "title": "Diretrizes TroCCAP para ectoparasitos",
   "source": "TroCCAP (Tropical Council for Companion Animal Parasites)",
   "document_type": "guideline",
-  "validation_status": "pending_specialist",
+  "validation_status": "approved_by_specialist",
   "ingestion_scope": "curated_candidate",
   "species": "dog_and_cat",
   "topic": "ticks_found_no_signs",
@@ -19,9 +19,9 @@
   "captured_sha256": "b506fa5cf108fb625772b22b9326458d8d06dd732775b4757cb705619f051fa6",
   "map_line": "ticks_found_no_signs",
   "specialist": {
-    "verdict": "",
-    "name": "",
-    "date": ""
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
   },
   "rights": {
     "status": "pending",
@@ -31,5 +31,5 @@
   },
   "year": 2022,
   "full_title": "TroCCAP: Diretrizes para o controle de ectoparasitos de cães e gatos nos trópicos. Primeira edição, Agosto 2022",
-  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de ticks_found_no_signs (rodada 27); autoridade alta; aguardando especialista."
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de ticks_found_no_signs (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
 }

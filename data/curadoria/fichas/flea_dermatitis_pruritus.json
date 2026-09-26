@@ -118,5 +118,11 @@
     "trecho": "lesões auto-traumáticas induzidas pelo prurido",
     "fonte": "flea_dermatitis_pruritus__pvb_2017_dermatite_alergica.pdf"
   },
-  "notas_para_o_especialista": "O artigo brasileiro (cães) descreve só um caso de DAPP; a distribuição lombossacra e na base da cauda vem da introdução. O artigo felino diz que pulgas e 'sujeira de pulga' podem não ser vistas porque o gato se lambe muito. 'Coçando a orelha' está no mapa, mas os documentos associam a orelha mais à dermatite atópica e alimentar do que à pulga. Os sinais de alarme repetem o discriminador do mapa (inchaço crescente no focinho ou pescoço, caroços, respiração) e a ferida com secreção (no caso do artigo havia piodermite). O título junta 'Coceira e dermatite' do mapa com a causa principal citada no motivo. Nenhum item geral."
+  "notas_para_o_especialista": "O artigo brasileiro (cães) descreve só um caso de DAPP; a distribuição lombossacra e na base da cauda vem da introdução. O artigo felino diz que pulgas e 'sujeira de pulga' podem não ser vistas porque o gato se lambe muito. 'Coçando a orelha' está no mapa, mas os documentos associam a orelha mais à dermatite atópica e alimentar do que à pulga. Os sinais de alarme repetem o discriminador do mapa (inchaço crescente no focinho ou pescoço, caroços, respiração) e a ferida com secreção (no caso do artigo havia piodermite). O título junta 'Coceira e dermatite' do mapa com a causa principal citada no motivo. Nenhum item geral.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

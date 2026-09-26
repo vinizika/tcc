@@ -57,7 +57,7 @@
       "origem": "documento",
       "trecho": "However, puppies younger than four months are the most vulnerable to CDV because their immune systems are still developing, and antibody protection from their mother fades before they are fully vaccinated.",
       "fonte": "capturas/distemper_neurological__tvmdl_2026_distemper.txt",
-      "aprovacao": "pendente",
+      "aprovacao": "aprovada",
       "fonte_encontrada_em": "rodada 27 (25/09)"
     }
   ],
@@ -67,7 +67,7 @@
       "origem": "documento",
       "trecho": "seizures, often with drooling and chewing motions of the jaw (called “chewing-gum fits”)",
       "fonte": "capturas/distemper_neurological__msd_owner_distemper.txt",
-      "aprovacao": "pendente",
+      "aprovacao": "aprovada",
       "fonte_encontrada_em": "rodada 27 (25/09)"
     },
     {
@@ -98,5 +98,11 @@
     "trecho": "This results in a severe and frequently lethal disease in a large number of carnivores",
     "fonte": "distemper_neurological__viruses_2022_distemper.pdf"
   },
-  "notas_para_o_especialista": "O documento é sobre neuropatogenia e receptores do vírus; os sinais clínicos estão só numa tabela (fase aguda: exantema, secreção nasal e ocular, conjuntivite, anorexia, mioclonia, nistagmo, ataxia, tetraparesia ou plegia; fase tardia: mioclonia persistente) e numa frase da introdução (febre, pneumonia). Convulsões não aparecem no documento. Dois itens gerais para validar: 'convulsão, às vezes mastigando no vazio e babando' e 'filhote que não completou as vacinas'. 'Até deitado' é a minha leitura leiga de 'persistent myoclonus'. 'Tosse' e 'respira com dificuldade' são a tradução leiga de pneumonia. A hiperqueratose (coxim duro) aparece no documento só como achado anatomopatológico, sem local, e não entrou."
+  "notas_para_o_especialista": "O documento é sobre neuropatogenia e receptores do vírus; os sinais clínicos estão só numa tabela (fase aguda: exantema, secreção nasal e ocular, conjuntivite, anorexia, mioclonia, nistagmo, ataxia, tetraparesia ou plegia; fase tardia: mioclonia persistente) e numa frase da introdução (febre, pneumonia). Convulsões não aparecem no documento. Dois itens gerais para validar: 'convulsão, às vezes mastigando no vazio e babando' e 'filhote que não completou as vacinas'. 'Até deitado' é a minha leitura leiga de 'persistent myoclonus'. 'Tosse' e 'respira com dificuldade' são a tradução leiga de pneumonia. A hiperqueratose (coxim duro) aparece no documento só como achado anatomopatológico, sem local, e não entrou.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

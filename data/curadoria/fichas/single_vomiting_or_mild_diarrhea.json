@@ -121,5 +121,11 @@
     "trecho": "",
     "fonte": ""
   },
-  "notas_para_o_especialista": "O documento é um estudo só com cães (vômito no pronto-atendimento de clínica médica); a linha do mapa vale para cão e gato, então o item 'outro sinal além da diarreia' foi generalizado para as duas espécies. O corpo estranho aparece no documento só como 'ingestão testemunhada' (casos excluídos do estudo); os exemplos brinquedo, meia e osso são ilustrações leigas. A torção gástrica foi descrita como 'cão' por ser quadro típico de cão. Nenhum item geral."
+  "notas_para_o_especialista": "O documento é um estudo só com cães (vômito no pronto-atendimento de clínica médica); a linha do mapa vale para cão e gato, então o item 'outro sinal além da diarreia' foi generalizado para as duas espécies. O corpo estranho aparece no documento só como 'ingestão testemunhada' (casos excluídos do estudo); os exemplos brinquedo, meia e osso são ilustrações leigas. A torção gástrica foi descrita como 'cão' por ser quadro típico de cão. Nenhum item geral.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

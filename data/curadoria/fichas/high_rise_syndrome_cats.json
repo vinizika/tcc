@@ -94,5 +94,11 @@
     "trecho": "",
     "fonte": ""
   },
-  "notas_para_o_especialista": "A linha do mapa não tem sinais nem discriminador; os três primeiros itens vêm do motivo do mapa. O documento é um estudo prognóstico de choque traumático em gatos (68% por queda de altura), quase todo com medidas de veterinário (lactato, gradiente de temperatura, escore ATT). Dele aproveitei: fraturas de membros e trauma de tórax (pneumotórax, contusão pulmonar), respiração rápida, alteração de consciência, hipotermia (escrita como 'gelado ao toque', sem medir temperatura) e mucosa pálida ou 'barrenta' (muddy). Item geral (1): sangramento pelo nariz/boca, queixo e dentes (trauma facial típico da queda), que o documento não cita. 'Gato paraquedista' é o nome popular no Brasil."
+  "notas_para_o_especialista": "A linha do mapa não tem sinais nem discriminador; os três primeiros itens vêm do motivo do mapa. O documento é um estudo prognóstico de choque traumático em gatos (68% por queda de altura), quase todo com medidas de veterinário (lactato, gradiente de temperatura, escore ATT). Dele aproveitei: fraturas de membros e trauma de tórax (pneumotórax, contusão pulmonar), respiração rápida, alteração de consciência, hipotermia (escrita como 'gelado ao toque', sem medir temperatura) e mucosa pálida ou 'barrenta' (muddy). Item geral (1): sangramento pelo nariz/boca, queixo e dentes (trauma facial típico da queda), que o documento não cita. 'Gato paraquedista' é o nome popular no Brasil.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
 }

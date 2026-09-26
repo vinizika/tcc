@@ -2,7 +2,7 @@
   "title": "Diretrizes TroCCAP para endoparasitos caninos",
   "source": "TroCCAP (Tropical Council for Companion Animal Parasites)",
   "document_type": "guideline",
-  "validation_status": "pending_specialist",
+  "validation_status": "approved_by_specialist",
   "ingestion_scope": "curated_candidate",
   "species": "dog",
   "topic": "tick_borne_disease_anemia",
@@ -19,9 +19,9 @@
   "captured_sha256": "c1ba3a71b305aa506dcd9f8d6f4579f01d64f65a4563b3b4039cbc5da483c49d",
   "map_line": "tick_borne_disease_anemia",
   "specialist": {
-    "verdict": "",
-    "name": "",
-    "date": ""
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
   },
   "rights": {
     "status": "pending",
@@ -31,5 +31,5 @@
   },
   "year": 2019,
   "full_title": "TroCCAP: Diretrizes para o diagnóstico, tratamento e controle de endoparasitos caninos nos trópicos. Segunda edição, 17 de março de 2019",
-  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de tick_borne_disease_anemia (rodada 27); autoridade alta; aguardando especialista."
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de tick_borne_disease_anemia (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
 }
