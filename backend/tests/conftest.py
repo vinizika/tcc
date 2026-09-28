@@ -49,6 +49,17 @@ from app.clients.llm_client import LLMCallResult  # noqa: E402
 from app.models.retrieved_document import RetrievedDocument  # noqa: E402
 
 
+@pytest.fixture(autouse=True)
+def isolated_workflow_configuration(monkeypatch):
+    """Legacy tests must never inherit live Maps/identity settings from .env."""
+    from app.core.config import settings as runtime
+    monkeypatch.setattr(runtime, "WORKFLOW_MODE", "demo")
+    monkeypatch.setattr(runtime, "AUTH_PROVIDER", "supabase")
+    monkeypatch.setattr(runtime, "MAPS_PROVIDER", "fixtures")
+    monkeypatch.setattr(runtime, "POC_QUICK_LOGIN_ENABLED", False)
+    monkeypatch.setattr(runtime, "POC_RAG_COLLECTION", "")
+
+
 @pytest.fixture
 def settings() -> Settings:
     """

@@ -15,6 +15,9 @@ e re-ranking.
 
 ## Rodadas
 
+- [POC utilizável e identidade visual (25/09)](2026-09-25-12-poc-utilizavel.md):
+  workspace persistente, integração Google, consentimentos e testes.
+
 | # | Data | Rodada | Resultado |
 |---|---|---|---|
 | 1 | 07/09 | [Auditoria do repositório e estado do trilho A](2026-09-07-01-auditoria-do-repositorio.md) | Repositório sincronizado; achados anteriores separados dos novos; base local confirmada com 18 chunks de 7 protocolos; próximos passos do trilho definidos |
@@ -29,6 +32,9 @@ e re-ranking.
 | 10 | 16/09 | [Lote 04 — pares clínicos experimentais](2026-09-16-04-lote-clinicos-experimental.md) | Seis fontes capturadas; diversidade da busca corrigida; 5/5 tópicos documentados encontráveis; candidata de 350 chunks mantida inativa |
 | 11 | 19/09 | [Lote 05 — dermatologia, artrose e apetite](2026-09-19-05-lote-dermatologia-artrose-apetite-experimental.md) | Cinco fontes capturadas; três recortes levados a staging; dermatite recuperada, artrose fraca e distorção da consulta de apetite documentadas; candidata de 312 chunks mantida inativa |
 | 12 | 22/09 | [Benchmark dos componentes do RAG](2026-09-22-10-benchmark-componentes-rag.md) | 66 relatos e quatro arranjos de busca medidos contra 3.481 chunks; pipeline atual chegou a 51,5% no top 1 e 66,7% no top 5; overlap 0 preservado como resultado parcial não comparável por diferença no conjunto documental |
+| 13 | 24/09 | [Segunda etapa integrada](2026-09-24-11-segunda-etapa-fluxo-integrado.md) | React/TypeScript, autenticação real/demo explícita, descoberta de clínicas, encaminhamento idempotente, estados auditáveis, dashboard e chat humano |
+| 14 | 27/09 | [Auditoria do backend e da prova nova do Ryu](2026-09-27-14-auditoria-backend-e-prova-do-ryu.md) | Sete commits auditados sem integração: prova com 150 casos e cobertura 61/61, B-05 ainda reprovado em 0,9116, Gemini híbrido apenas na consulta e divergência confirmada entre `origin/main`, workspace React e imagem local em execução |
+| 15 | 27/09 | [Auditoria das mudanças de João Peterutto](2026-09-27-15-auditoria-joao-peterutto.md) | Auditoria corrigida após atualizar `origin/main`: 31 commits e nova arquitetura com 61 fichas/BGE-M3, top 3 sem porta, tradutor desligado e Gemini como atendente; réplica experimental confirmada e impactos/conflitos com a POC React mapeados |
 
 ## Estado atual
 

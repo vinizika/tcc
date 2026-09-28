@@ -80,6 +80,28 @@ class Settings(BaseSettings):
     MONGODB_URI: str = "mongodb://localhost:27017"
     MONGODB_DB_NAME: str = "vetai"
 
+    # Segunda etapa. ``demo`` usa apenas identidades e clínicas fictícias;
+    # ``real`` exige Supabase Auth e nunca cai silenciosamente no demo.
+    WORKFLOW_MODE: str = "demo"
+    AUTH_PROVIDER: str = "supabase"
+    POC_QUICK_LOGIN_ENABLED: bool = False
+    MAPS_PROVIDER: str = "auto"
+    MAPS_KEY_KIND: str = "demo"
+    POC_RAG_PATH: str = ""
+    POC_RAG_COLLECTION: str = ""
+    SESSION_TTL_HOURS: int = 24
+    FRONTEND_ORIGINS: str = "http://localhost:3000,http://localhost:5173"
+    WORKFLOW_POLL_INTERVAL_S: int = 8
+
+    # Chaves separadas por finalidade. A chave web é injetada no frontend e
+    # deve ter restrição de domínio; a chave de servidor chama Places/
+    # Geocoding e não é enviada ao navegador.
+    GOOGLE_MAPS_SERVER_KEY: str = ""
+    GOOGLE_MAPS_WEB_KEY: str = ""
+    GOOGLE_MAP_ID: str = "DEMO_MAP_ID"
+    GOOGLE_MAPS_LANGUAGE: str = "pt-BR"
+    GOOGLE_MAPS_REGION: str = "BR"
+
     # ==========================
     # Transcrição de voz (Whisper)
     # ==========================

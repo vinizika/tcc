@@ -20,6 +20,7 @@ from app.exceptions.conversation_exception import ConversationNotFoundException
 from app.exceptions.persistence_exception import MongoNotConfiguredException
 from app.schemas.conversation import ConversationMessage, ConversationResponse
 from app.schemas.triage_output import TriageResult
+from app.services.tutor_service import TutorService
 
 logger = setup_logger("ConversationService")
 
@@ -122,3 +123,11 @@ class ConversationService:
                 for mensagem in documento["messages"]
             ],
         )
+
+    @staticmethod
+    def get_owned(conversation_id: str, user_id: str) -> ConversationResponse:
+        conversation = ConversationService.get(conversation_id)
+        if not conversation.tutor_id:
+            raise ConversationNotFoundException(conversation_id)
+        TutorService.get_owned(conversation.tutor_id, user_id)
+        return conversation

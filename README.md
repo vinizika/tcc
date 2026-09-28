@@ -96,19 +96,21 @@ ocorre após contagem, manifesto e hashes serem validados. Consulte o
 > Como preparar e inspecionar um documento novo está em
 > [`backend/data/documents/README.md`](backend/data/documents/README.md).
 
-**5. (Opcional) Cadastro de tutor/pet e histórico de conversa.** O compose já
-sobe um MongoDB local (histórico de conversa funciona de graça). Tutores e
-pets ficam no Supabase, que é externo: crie um projeto em
+**5. Persistência e identidade.** O compose já sobe o MongoDB usado pelo
+histórico, encaminhamentos, eventos e mensagens. No modo demonstrativo isso é
+suficiente. Contas e dados reais de tutor/pet usam Supabase: crie um projeto em
 [supabase.com](https://supabase.com), rode
 [`backend/supabase_schema.sql`](backend/supabase_schema.sql) no SQL Editor
-dele, e preencha `SUPABASE_URL`/`SUPABASE_KEY` no `.env`. Sem isso, `/chat/`
-funciona normalmente — só `/tutors/` e `/pets/` respondem 503.
+dele, preencha `SUPABASE_URL`/`SUPABASE_KEY` e mude `WORKFLOW_MODE=real`.
+Sem isso, `/chat/` e a demonstração funcionam; o modo real falha
+explicitamente. Detalhes em [`docs/segunda-etapa.md`](docs/segunda-etapa.md).
 
 **6. Acesse:**
 
 | O quê | Onde |
 |---|---|
-| Interface | <http://localhost:8501> |
+| Interface React principal | <http://localhost:3000> |
+| Streamlit legado (`--profile legacy`) | <http://localhost:8501> |
 | API | <http://localhost:8000> |
 | Saúde | <http://localhost:8000/health/> |
 | Identidade da versão (modelo, base, prompts) | <http://localhost:8000/health/fingerprint> |
@@ -132,8 +134,9 @@ pip install -r requirements.txt -r requirements-dev.txt
 uvicorn app.main:app --reload
 ```
 
-O frontend, hoje, **só funciona pelo compose**: ele tem o hostname `backend`
-fixo no código (item [B-23](evidencias/backlog.md#b-23) do backlog).
+O React pode rodar fora do Compose, em `frontend-react/`, com
+`VITE_API_URL=http://localhost:8000 npm run dev`; o Nginx do Compose usa
+`/api` e proxy interno.
 
 ---
 
@@ -161,8 +164,10 @@ curl -s -X POST localhost:8000/chat/ \
 Outras rotas: `POST /search/` (só a busca), `POST /voice/` (transcrição de
 áudio), `GET /health/`, `GET /health/fingerprint`.
 
-**Tutor, pet e histórico de conversa** (precisa do Supabase configurado —
-passo 5 acima; o histórico usa só o Mongo, que já vem no compose):
+**API de tutor, pet e histórico de pré-triagem** (precisa do Supabase
+configurado — passo 5 acima; o histórico usa só o Mongo, que já vem no
+compose). No modo real, envie `Authorization: Bearer <token>` em todas estas
+operações; os exemplos curtos abaixo destinam-se ao modo demonstrativo legado:
 
 ```bash
 # cadastra o tutor e o pet
@@ -229,7 +234,8 @@ backend/
   supabase_schema.sql  DDL de tutors/pets — rodar uma vez no projeto Supabase
   data/documents/ a base de conhecimento: PDFs + metadados em JSON
   tests/          testes do backend
-frontend/         interface Streamlit real (o compose sobe main.py)
+frontend/         interface Streamlit legada (perfil opcional `legacy`)
+frontend-react/   interface React/TypeScript principal da segunda etapa
 scripts/          limpeza de dados, data augmentation, avaliação → README próprio
 data/             datasets, processados e rodadas de avaliação → README próprio
 docs/             divisão de trabalho, contratos, diário inicial → README próprio
@@ -243,6 +249,19 @@ O fluxo navegável com clínicas fictícias, consentimento antes do encaminhamen
 e dashboard isolado por clínica vive em [`mock/`](mock/README.md). Ele é uma
 demonstração independente, executada na porta 8502, e não substitui nem chama o
 frontend/backend reais do Compose.
+
+### Segunda etapa integrada
+
+O fluxo funcional tutor → clínica usa o frontend React, autenticação por papel,
+descoberta de clínicas, consentimento, encaminhamento idempotente, dashboard,
+máquina de estados e chat humano persistente. A POC atual também oferece
+contas próprias locais, animais e chat RAG persistentes, Google real e
+acessos acadêmicos independentes do provedor de mapas. Veja
+[`docs/poc-utilizavel.md`](docs/poc-utilizavel.md) para executar e testar e
+[`docs/brand-book.md`](docs/brand-book.md) para marca, fontes e decisões de UX.
+Não se trata de uma implantação pública de serviço veterinário. Configuração anterior,
+custos, verificação institucional, estados e limitações estão em
+[`docs/segunda-etapa.md`](docs/segunda-etapa.md).
 
 ---
 
