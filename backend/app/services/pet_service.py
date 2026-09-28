@@ -38,6 +38,20 @@ class PetService:
         return PetResponse(**resultado.data[0])
 
     @staticmethod
+    def get_owned(pet_id: str, user_id: str) -> PetResponse:
+        client = get_supabase_client()
+        resultado = (
+            client.table(PetService.TABLE)
+            .select("*, tutors!inner(user_id)")
+            .eq("id", pet_id)
+            .eq("tutors.user_id", user_id)
+            .execute()
+        )
+        if not resultado.data:
+            raise PetNotFoundException(pet_id)
+        return PetResponse(**resultado.data[0])
+
+    @staticmethod
     def list_by_tutor(tutor_id: str) -> list[PetResponse]:
 
         client = get_supabase_client()
@@ -73,4 +87,22 @@ class PetService:
         if not resultado.data:
             raise PetNotFoundException(pet_id)
 
+        return PetResponse(**resultado.data[0])
+
+    @staticmethod
+    def update_owned(pet_id: str, data: PetUpdate, user_id: str) -> PetResponse:
+        pet = PetService.get_owned(pet_id, user_id)
+        payload = data.model_dump(mode="json", exclude_none=True)
+        if not payload:
+            return pet
+        resultado = (
+            get_supabase_client()
+            .table(PetService.TABLE)
+            .update(payload)
+            .eq("id", pet_id)
+            .eq("tutor_id", pet.tutor_id)
+            .execute()
+        )
+        if not resultado.data:
+            raise PetNotFoundException(pet_id)
         return PetResponse(**resultado.data[0])

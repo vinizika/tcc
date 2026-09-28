@@ -188,10 +188,36 @@ Duas regras de comportamento:
 | `POST /voice/` | B1 | Transcrição de áudio. Campo `audio` (multipart). Recusa o que não é áudio (415) e acima de `MAX_AUDIO_UPLOAD_MB` (413); o arquivo é gravado com nome gerado no servidor e apagado após a resposta |
 | `GET /health/` | — | Verificação de saúde |
 | `GET /health/fingerprint` | B2 | Identidade da versão que respondeu: modelo com digest, hash dos prompts e do molde do bloco de contexto, o atendente (provedor, troca permitida, modelos, se a chave do Gemini está configurada — nunca a chave), os padrões (incluindo `retrieval_mode`, `think` e as flags do tradutor), os nomes das configurações vindas do ambiente e, da base vetorial, a contagem, o hash dos ids (**recorte**), o hash do conteúdo (**texto e metadados**), a **receita** do embedding lida do manifesto da coleção ativa e os parâmetros de chunking. O runner grava no manifesto de cada rodada e o `compare` avisa quando algo difere |
-| `POST /tutors/`, `GET /tutors/{id}`, `GET /tutors/{id}/pets` | B1 | Cadastro do tutor (Supabase). Sem autenticação nesta fase — `id` é a única credencial |
-| `POST /pets/`, `GET /pets/{id}`, `PATCH /pets/{id}` | B1 | Cadastro do pet (Supabase). `pet_id` em `POST /chat/` injeta o cadastro no prompt de triagem (`PetResponse.to_triage_context`) |
-| `GET /conversations/{id}` | B1 | Histórico de uma conversa (MongoDB) |
+| `POST /tutors/`, `GET /tutors/{id}`, `GET /tutors/{id}/pets` | B1 | Cadastro do tutor (Supabase). Em `real`, exige sessão tutor e vínculo `tutors.user_id`; em `demo`, preserva a compatibilidade legada |
+| `POST /pets/`, `GET /pets/{id}`, `PATCH /pets/{id}` | B1 | Cadastro do pet (Supabase). Em `real`, valida o titular pelo tutor vinculado. `pet_id` em `POST /chat/` injeta o cadastro no prompt |
+| `GET /conversations/{id}` | B1 | Histórico no MongoDB; em `real`, somente o tutor titular |
 | ~~`POST /triagem`~~ | — | **Removida.** Era o classificador antigo, sem RAG |
+
+### Segunda etapa (contrato v1)
+
+As rotas abaixo usam `Authorization: Bearer <token>`, exceto descoberta e
+geocodificação. Em `demo`, o token é emitido por `POST /auth/demo` e só
+representa personas fictícias. Em `real`, `POST /auth/login` valida Supabase
+Auth. Um ID no corpo ou na URL nunca substitui a sessão.
+
+| Rota | Acesso | Função |
+|---|---|---|
+| `POST /auth/demo` | público, só demo | sessão fictícia explícita |
+| `POST /auth/signup`, `POST /auth/login` | público, só real | Supabase Auth |
+| `POST /clinics/search` | público | lista pública por localização |
+| `POST /clinics/geocode` | público | alternativa manual à geolocalização |
+| `POST /clinics/register` | conta clínica | cria cadastro institucional pendente |
+| `POST /referrals/` | tutor | snapshot `triage_snapshot.v1`, consentimento e idempotência |
+| `GET /referrals/`, `GET /referrals/{id}` | proprietário | lista/detalhe filtrado por tutor ou clínica |
+| `POST /referrals/{id}/status` | conforme transição | máquina de estados e evento auditável |
+| `POST /referrals/{id}/messages` | proprietário | mensagem humana persistente |
+| `POST /referrals/{id}/close-chat` | proprietário | encerra o canal |
+| `GET /referrals/dashboard` | clínica verificada | indicadores e fila da própria unidade |
+
+O snapshot preserva relato original, classificação, justificativa, sinais,
+recomendação, resumo revisado, pet e somente o contato consentido. A resposta
+de descoberta informa `source`, `participant`, `verified` e
+`digital_referral_enabled`; somente o último habilita envio.
 
 **Sobre `POST /chat/`:** três campos opcionais e independentes —
 `tutor_id`, `pet_id`, `conversation_id`. `pet_id` busca o cadastro do pet e
@@ -200,13 +226,43 @@ relato do tutor. Qualquer um dos três presentes já grava o turno no
 histórico de conversa e a resposta devolve `conversation_id` para o
 próximo turno reaproveitar. Sem nenhum dos três (o caso do runner de
 avaliação), nada disso roda — comportamento idêntico a antes desta
-extensão existir. Sem Supabase configurado, `pet_id` devolve 503; sem
+extensão existir. Em modo `real`, usar qualquer um desses identificadores
+exige Bearer de tutor e prova de titularidade; a pré-triagem anônima sem IDs
+continua pública. Sem Supabase configurado, `pet_id` devolve 503; sem
 MongoDB, o histórico simplesmente não é gravado (`conversation_id` volta
 `null`), sem quebrar a triagem.
 
 ---
 
 ## Pendências
+
+### Complemento: workspace da POC (25/09/2026)
+
+O contrato científico `POST /chat/` permanece. A interface nova usa:
+
+| Rota | Acesso / contrato |
+| --- | --- |
+| `GET /auth/config` | Configuração pública e chave web Maps; nunca chave servidor |
+| `GET /auth/me`, `POST /auth/logout` | Validar/revogar sessão |
+| `GET/POST /workspace/pets`, `PUT /workspace/pets/{id}` | Tutor proprietário; nome/espécie obrigatórios |
+| `GET/POST /workspace/conversations` | Lista paginada/criação; `pet_id` opcional |
+| `GET/PATCH /workspace/conversations/{id}` | Histórico/troca de animal do titular |
+| `POST /workspace/conversations/{id}/messages` | `content` + `request_id`; 202, persistência antes da análise |
+| `GET /clinics/participants` | Unidades habilitadas apropriadas ao tipo de conta |
+| `PUT /referrals/{id}/location` | Tutor proprietário; consentimento; só a caminho |
+
+`WORKFLOW_MODE=poc` protege também recursos pessoais legados. Identidade local
+ou Supabase por `AUTH_PROVIDER`; acesso acadêmico é opt-in separado, com tokens
+opacos/revogáveis no modo POC, não `demo:ID`.
+
+Fora do modo legado demo, envio exige `conversation_id` do titular; conteúdo
+automático vem do servidor. `pet` pode ser null; `share_full_conversation=false`
+por padrão. Quando true, envia cópia autorizada no instante do encaminhamento.
+Posição é ocultada após 120 s sem atualização. Dashboard aceita `offset`,
+`limit`, `active_only`; indicadores abrangem todos os casos da unidade.
+Detalhes no [guia](poc-utilizavel.md).
+
+### Backlog entre trilhos
 
 As pendências entre trilhos vivem no [backlog do projeto](../evidencias/backlog.md),
 com detalhe, responsável, prioridade e status — este documento trata só das

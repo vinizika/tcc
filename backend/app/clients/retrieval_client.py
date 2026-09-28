@@ -45,6 +45,7 @@ class RetrievalClient:
         queries: list[str],
         *,
         routing_query: str | None = None,
+        collection=None,
     ) -> list[RetrievedDocument]:
 
         logger.info("Consultando o ChromaDB")
@@ -59,7 +60,7 @@ class RetrievalClient:
             logger.warning("Nenhuma consulta válida recebida")
             return []
 
-        collection = ChromaDBClient.get_collection()
+        collection = collection if collection is not None else ChromaDBClient.get_collection()
 
         document_count = collection.count()
 

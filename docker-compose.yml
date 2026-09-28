@@ -38,21 +38,35 @@ services:
 
   frontend:
     build:
-      context: ./frontend
+      context: ./frontend-react
+      args:
+        VITE_API_URL: /api
 
     container_name: frontend-app
 
     ports:
-      - "8501:8501"
-
-    volumes:
-      - ./frontend:/app
+      - "3000:80"
 
     depends_on:
       backend:
         condition: service_healthy
 
     restart: unless-stopped
+
+  # Interface anterior preservada durante a migração. Só sobe quando pedida:
+  # docker compose --profile legacy up frontend-legacy
+  frontend-legacy:
+    profiles: ["legacy"]
+    build:
+      context: ./frontend
+    container_name: frontend-streamlit-legacy
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      backend:
+        condition: service_healthy
 
   ollama:
     image: ollama/ollama:0.33.3
@@ -76,7 +90,7 @@ services:
     container_name: mongo
 
     ports:
-      - "27017:27017"
+      - "127.0.0.1:27017:27017"
 
     volumes:
       - mongo_data:/data/db

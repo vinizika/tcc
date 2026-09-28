@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.exceptions.handlers import (
     app_exception_handler,
@@ -16,6 +17,8 @@ from app.api import chat
 from app.api import pets
 from app.api import search
 from app.api import tutors
+from app.api import auth, clinics, referrals
+from app.api import workspace
 
 app = FastAPI(
     title=settings.API_NAME,
@@ -23,6 +26,15 @@ app = FastAPI(
 )
 
 app.add_middleware(LoggingMiddleware)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        item.strip() for item in settings.FRONTEND_ORIGINS.split(",") if item.strip()
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.add_exception_handler(
     BaseAppException,
@@ -41,3 +53,7 @@ app.include_router(voice.router)
 app.include_router(tutors.router)
 app.include_router(pets.router)
 app.include_router(conversations.router)
+app.include_router(auth.router)
+app.include_router(clinics.router)
+app.include_router(referrals.router)
+app.include_router(workspace.router)
