@@ -34,6 +34,7 @@ export function TutorFlow({
     sessionStorage.removeItem("vetai.notice");
   }, []);
   const [busy, setBusy] = useState(false);
+  const [provider, setProvider] = useState<"gemini" | "ollama">("gemini");
   const [editPet, setEditPet] = useState<Pet | null | undefined>(undefined);
   const [clinic, setClinic] = useState<Clinic | null>(null);
   const [referral, setReferral] = useState<Referral | null>(null);
@@ -136,7 +137,13 @@ export function TutorFlow({
       setConversation(c);
       if (!pending.current || pending.current.content !== content)
         pending.current = { content, id: crypto.randomUUID() };
-      const updated = await api.turn(c.id, content, pending.current.id, token);
+      const updated = await api.turn(
+        c.id,
+        content,
+        pending.current.id,
+        token,
+        provider,
+      );
       setConversation(updated);
       setDraft("");
       pending.current = null;
@@ -353,7 +360,7 @@ export function TutorFlow({
                           {m.triage.classificacao === "EMERGENCIA"
                             ? "Procure atendimento agora"
                             : m.triage.classificacao === "INCERTO"
-                              ? "Precisamos de mais informações"
+                              ? "Não foi possível determinar a urgência"
                               : "Orientação inicial"}
                         </strong>
                         <p>{m.triage.recomendacao}</p>
@@ -383,18 +390,45 @@ export function TutorFlow({
                         <summary>
                           {m.retrieval.used_count > 0
                             ? m.retrieval.used_count +
-                              " trechos de referência usados"
+                              " referências usadas na análise"
                             : "Nenhuma referência relevante utilizada"}
                         </summary>
                         <p>
                           A consulta à base não garante que a orientação esteja
                           correta.
                         </p>
-                        {m.sources?.map((s, i) => (
-                          <p key={i}>
-                            {s.title || s.source}
-                            {s.cited ? " · citado na resposta" : ""}
+                        {m.provenance?.attendant && (
+                          <p>
+                            Modelo: {m.provenance.attendant.provider} ·{" "}
+                            {m.provenance.attendant.model}
+                            {m.provenance.attendant.fallback_from &&
+                              ` · substituiu ${m.provenance.attendant.fallback_from}`}
                           </p>
+                        )}
+                        {m.sources?.map((s, i) => (
+                          <div key={i}>
+                            <p>
+                              {s.display_title || s.title || s.source}
+                              {s.cited ? " · citado na resposta" : ""}
+                            </p>
+                            {s.references?.map((r, j) => (
+                              <p key={j}>
+                                {r.url && /^https?:\/\//i.test(r.url) ? (
+                                  <a
+                                    href={r.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                  >
+                                    {r.title}
+                                  </a>
+                                ) : (
+                                  r.title
+                                )}
+                                {r.journal && ` · ${r.journal}`}
+                                {r.year && ` (${r.year})`}
+                              </p>
+                            ))}
+                          </div>
                         ))}
                       </details>
                     )}
@@ -408,8 +442,8 @@ export function TutorFlow({
                         Analisando seu relato e consultando a base…
                       </strong>
                       <p>
-                        O processamento local pode levar alguns minutos. Seu
-                        relato está salvo; você pode voltar depois.
+                        A análise pode levar alguns minutos. Seu relato está
+                        salvo; você pode voltar depois.
                       </p>
                       <button
                         className="text-button"
@@ -440,6 +474,25 @@ export function TutorFlow({
               </div>
             )}
             <div className="composer-wrap">
+              <label>
+                Análise por{" "}
+                <select
+                  aria-label="Provedor da análise"
+                  value={provider}
+                  disabled={busy || processing}
+                  onChange={(e) =>
+                    setProvider(e.target.value as "gemini" | "ollama")
+                  }
+                >
+                  <option value="gemini">Gemini · nuvem</option>
+                  <option value="ollama">Modelo local · Ollama</option>
+                </select>
+              </label>
+              <p className="muted">
+                {provider === "gemini"
+                  ? "Ao enviar, seu relato e os dados do animal são enviados ao Google Gemini para análise. Evite dados pessoais. Para processar no servidor local, escolha Ollama."
+                  : "A análise é processada no servidor local com Ollama. O modelo precisa estar instalado e pode levar mais tempo."}
+              </p>
               <form
                 className="composer"
                 onSubmit={(e) => {

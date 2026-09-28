@@ -15,6 +15,10 @@ e re-ranking.
 
 ## Rodadas
 
+- [Integração React + backend do João em e365f3e (27/09)](2026-09-27-16-integracao-react-backend-joao.md):
+  conflitos resolvidos, fichas/Gemini reais, 315 testes backend, 217 scripts
+  e cinco fluxos de navegador validados.
+
 - [POC utilizável e identidade visual (25/09)](2026-09-25-12-poc-utilizavel.md):
   workspace persistente, integração Google, consentimentos e testes.
 

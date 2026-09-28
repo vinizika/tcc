@@ -332,6 +332,19 @@ class LegacyTriageLLMOutput(BaseModel):
         return cls.model_validate(dados)
 
 
+class SourceReference(BaseModel):
+    """
+    Um documento aprovado por trás de uma ficha de triagem (rodada 25 do
+    João). É o que a resposta mostra ao tutor como fonte.
+    """
+
+    title: str
+    journal: str = ""
+    year: Optional[int] = None
+    doi: str = ""
+    url: str = ""
+
+
 class CitedSource(BaseModel):
     """
     Um trecho citado pelo modelo, já resolvido para o documento real.
@@ -341,6 +354,10 @@ class CitedSource(BaseModel):
     chunk_id: str
     title: str
     source: str
+    # Nas fichas de triagem: o nome da ficha para o tutor e os documentos
+    # aprovados por trás dela. Vazios nos trechos da base acadêmica.
+    display_title: str = ""
+    references: list[SourceReference] = []
 
 
 class TriageResult(BaseModel):

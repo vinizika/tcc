@@ -1,6 +1,7 @@
 """Persistent conversation workspace. The research pipeline remains independent."""
 from datetime import datetime, timedelta, timezone
 from functools import lru_cache
+import logging
 from uuid import uuid4
 
 from fastapi import HTTPException
@@ -8,6 +9,7 @@ from app.clients.mongo_client import get_mongo_database
 from app.core.config import settings
 from app.schemas.auth import Principal
 from app.schemas.workspace import AnimalInput, TurnInput
+from app.exceptions.attendant_exception import AttendantUnavailableException, QuotaExhaustedException
 
 
 def now():
@@ -99,10 +101,17 @@ class WorkspaceService:
         if len(doc["messages"]) >= 100:
             raise HTTPException(409, "Esta conversa atingiu 50 respostas. Inicie uma nova conversa.")
         message = {"id": data.request_id, "role": "tutor", "content": data.content, "created_at": now()}
+        retry = (doc["status"] == "failed" and doc["messages"]
+                 and doc["messages"][-1]["role"] == "tutor"
+                 and doc["messages"][-1]["content"] == data.content)
+        update = {"$set": {"status": "processing", "request_id": data.request_id, "error": None, "error_code": None,
+                          "attendant_provider": data.attendant_provider or settings.ATTENDANT_PROVIDER, "updated_at": now(),
+                          "title": data.content[:64] if not doc["messages"] else doc["title"]}}
+        if not retry:
+            update["$push"] = {"messages": message}
         result = WorkspaceService.db().poc_conversations.update_one(
             scope(principal) | {"id": conversation_id, "status": {"$ne": "processing"}, "messages.id": {"$ne": data.request_id}},
-            {"$set": {"status": "processing", "request_id": data.request_id, "error": None, "updated_at": now(),
-                      "title": data.content[:64] if not doc["messages"] else doc["title"]}, "$push": {"messages": message}})
+            update)
         if not result.modified_count:
             raise HTTPException(409, "Este envio já foi recebido. Atualize a conversa.")
         return WorkspaceService.get(principal, conversation_id), True
@@ -131,19 +140,38 @@ class WorkspaceService:
                                     if key in {"name", "species", "age", "weight_kg", "breed", "relevant_history"} and value is not None)
             from app.schemas.triage import PipelineOptions
             result = (pipeline or poc_pipeline()).execute(question, PipelineOptions(
-                retrieval_enabled=True, query_rewriting_enabled=False, multi_query_enabled=False, hyde_enabled=False), animal_context=context)
+                retrieval_enabled=True, query_rewriting_enabled=False, multi_query_enabled=False, hyde_enabled=False,
+                attendant_provider=doc.get("attendant_provider", settings.ATTENDANT_PROVIDER)), animal_context=context)
             message = {"id": str(uuid4()), "role": "assistant", "content": result.answer, "created_at": now(),
                        "triage": result.triage.model_dump(mode="json"),
                        "retrieval": result.retrieval.model_dump(mode="json"),
-                       "sources": [{"title": s.document.title, "source": s.document.source, "cited": s.cited} for s in result.sources],
+                       "sources": [{"title": s.document.title, "display_title": s.document.display_title,
+                                    "topic": s.document.topic, "references": list(s.document.references),
+                                    "source": s.document.source, "cited": s.cited} for s in result.sources],
+                       "provenance": result.provenance.model_dump(mode="json") if result.provenance else None,
                        "config": result.config.model_dump(mode="json"), "timings": result.timings.model_dump(mode="json"),
-                       "rag_collection": settings.POC_RAG_COLLECTION or settings.CHROMA_COLLECTION}
+                       "rag_collection": active_collection_name()}
             db.poc_conversations.update_one(selector, {"$push": {"messages": message},
                 "$set": {"status": "idle", "error": None, "updated_at": now()}})
-        except Exception:
+        except AttendantUnavailableException as error:
+            message = ("A cota do serviço de análise foi esgotada. Seu relato está salvo. Procure atendimento se houver piora."
+                       if isinstance(error, QuotaExhaustedException) else
+                       "O serviço de análise está indisponível. Seu relato está salvo. Tente novamente ou procure atendimento.")
+            db.poc_conversations.update_one(selector, {"$set": {"status": "failed", "updated_at": now(),
+                "error": message, "error_code": error.code}})
+        except Exception as error:
+            logging.getLogger(__name__).error("Workspace analysis failed (%s)", type(error).__name__)
             # Never put upstream credentials or raw exception text in a patient response.
             db.poc_conversations.update_one(selector, {"$set": {"status": "failed", "updated_at": now(),
                 "error": "Não conseguimos concluir a análise. Seu relato está salvo. Tente novamente ou procure atendimento."}})
+
+
+def active_collection_name():
+    from app.database.chroma_client import ChromaDBClient
+    if settings.POC_RAG_COLLECTION:
+        return settings.POC_RAG_COLLECTION
+    pointer = ChromaDBClient.load_active_pointer()
+    return pointer["collection_name"] if pointer else settings.CHROMA_COLLECTION
 
 
 @lru_cache(maxsize=1)

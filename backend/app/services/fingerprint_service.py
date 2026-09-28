@@ -65,6 +65,37 @@ def _hash_de_conteudo(
     return _sha256("".join(sorted(linhas)))
 
 
+def _referencias_do_molde():
+    from app.models.retrieved_document import RetrievedDocument
+    from app.schemas.triage import EffectiveConfig
+
+    documento = RetrievedDocument(
+        id="ref", chunk_id="ref", title="Ficha de triagem: Teste",
+        content="Ficha de triagem: Teste (cao). Conduta: teste.",
+        source="teste", score=0.5,
+    )
+    config = EffectiveConfig(
+        query_rewriting_enabled=False, multi_query_enabled=False,
+        hyde_enabled=False, retrieval_enabled=True, context_top_k=3,
+        context_min_score=0.0, rewritten_hint_enabled=False,
+        cot_enabled=False, cot_position="first", self_refine_enabled=False,
+        prompt_version="v1_grounded", structured_output_mode="schema",
+        model="teste", temperature=0.0, seed=42, num_ctx=4096, num_predict=600,
+    )
+    return documento, config
+
+
+_DOCUMENTO_DE_REFERENCIA, _CONFIG_DE_REFERENCIA = _referencias_do_molde()
+
+# Configurações que o retrato lista como vindas do ambiente. Só o nome: o
+# valor de uma chave ou de um endereço com senha não entra no manifesto.
+def _vindas_do_ambiente() -> list[str]:
+    try:
+        return sorted(settings.model_fields_set)
+    except Exception:
+        return []
+
+
 class FingerprintService:
 
     @staticmethod
@@ -156,6 +187,7 @@ class FingerprintService:
             "content_sha256": None,
             "embedding_model": None,
             "embedding_revision": None,
+            "embedding_recipe": None,
             "recipe_sha256": None,
             "chunking": None,
             "topic_counts": {},
@@ -180,8 +212,12 @@ class FingerprintService:
                 embedding_recipe_sha256,
             )
 
+            # Valores da receita acadêmica, que é a da coleção-base legada. Se
+            # a coleção ativa tem manifesto, a receita dele substitui estes
+            # valores logo abaixo: cada coleção diz com que modelo foi feita.
             informacoes["embedding_model"] = EMBEDDING_MODEL_NAME
             informacoes["embedding_revision"] = EMBEDDING_MODEL_REVISION
+            informacoes["embedding_recipe"] = "minilm-academic-v1"
             informacoes["recipe_sha256"] = embedding_recipe_sha256()
             informacoes["chunking"] = {
                 "target_tokens": CHUNK_TARGET_TOKENS,
@@ -294,6 +330,19 @@ class FingerprintService:
                     (manifest.get("sources") or {}).get("source_set_sha256")
                 )
 
+                from app.database.embedding_config import recipe_from_manifest
+
+                receita = recipe_from_manifest(manifest)
+                informacoes["embedding_model"] = receita.model
+                informacoes["embedding_revision"] = receita.revision
+                informacoes["embedding_recipe"] = receita.key
+                informacoes["recipe_sha256"] = receita.sha256()
+                informacoes["chunking"] = {
+                    "target_tokens": receita.target_tokens,
+                    "overlap_tokens": receita.overlap_tokens,
+                    "max_tokens": receita.max_tokens,
+                }
+
         except Exception as erro:
             logger.warning(f"Não foi possível consultar a base: {erro}")
             informacoes["error"] = str(erro)
@@ -325,6 +374,21 @@ class FingerprintService:
                 "v1_grounded_cot_posthoc_sha256": _sha256(
                     triage.SISTEMA_ANCORADO_COT_POSTHOC
                 ),
+                # O formato do bloco de contexto (cabeçalho, numeração, título
+                # + texto, marcador de encaminhamento, teto de caracteres),
+                # medido num documento fixo: muda se o molde mudar.
+                "context_block_sha256": _sha256(
+                    triage.CONTEXT_MAX_CHARS.__str__()
+                    + "\n"
+                    + "\n\n".join(
+                        m["content"]
+                        for m in triage.build_triage_messages(
+                            "relato de teste",
+                            [_DOCUMENTO_DE_REFERENCIA],
+                            _CONFIG_DE_REFERENCIA,
+                        )
+                    )
+                ),
             }
 
         except Exception as erro:
@@ -349,5 +413,22 @@ class FingerprintService:
                 "context_top_k": settings.CONTEXT_TOP_K,
                 "context_min_score": settings.CONTEXT_MIN_SCORE,
                 "prompt_version": settings.TRIAGE_PROMPT_VERSION,
+                "retrieval_mode": settings.RETRIEVAL_MODE,
+                "query_rewriting_enabled": settings.QUERY_REWRITING_ENABLED,
+                "multi_query_enabled": settings.MULTI_QUERY_ENABLED,
+                "hyde_enabled": settings.HYDE_ENABLED,
+                "think": settings.LLM_THINK,
+                "gemini_model": settings.GEMINI_MODEL,
             },
+            # Quem responde (rodada 26 do João). A chave nunca aparece: só se
+            # está configurada.
+            "attendant": {
+                "provider": settings.ATTENDANT_PROVIDER,
+                "fallback": settings.ATTENDANT_FALLBACK,
+                "gemini_model": settings.GEMINI_MODEL,
+                "gemini_key_configured": bool(settings.GEMINI_API_KEY),
+                "ollama_model": settings.LLM_MODEL,
+                "gemini_min_interval_s": settings.GEMINI_MIN_INTERVAL_S,
+            },
+            "overridden_by_env": _vindas_do_ambiente(),
         }

@@ -29,7 +29,10 @@ class Settings(BaseSettings):
     # Banco Vetorial
     # ==========================
     VECTOR_DB: str = "chromadb"
-    CHROMA_PATH: str = "data/chroma"
+    # A pasta versionada no repositório (backend/chroma_db), com o ponteiro da
+    # coleção ativa. Até 25/09 o padrão era data/chroma, uma pasta fora do Git:
+    # um clone limpo subia com a coleção vazia (evidencias/backlog.md#b-57).
+    CHROMA_PATH: str = "chroma_db"
     CHROMA_COLLECTION: str = "veterinary_documents"
 
     # ==========================
@@ -40,7 +43,19 @@ class Settings(BaseSettings):
     # backend fora do container.
     OLLAMA_HOST: str = "http://localhost:11434"
 
-    LLM_MODEL: str = "llama3.2:3b"
+    # O modelo local (Ollama). Desde 25/09 é o qwen3:8b, a alternativa local
+    # medida na autópsia 2; o llama3.2:3b (o sistema até 24/09) continua pelo
+    # preset local_llama ou por llm_model na requisição.
+    LLM_MODEL: str = "qwen3:8b"
+
+    # Quem classifica a urgência (rodada 26 do João). "gemini" é a decisão de
+    # produto do João de 25/09; "ollama" usa o LLM_MODEL local. Sem troca
+    # silenciosa: com ATTENDANT_FALLBACK="none" (o padrão), se o provedor
+    # escolhido falhar a API responde 503 dizendo qual e por quê; com
+    # "ollama", responde pelo modelo local e registra a troca na procedência
+    # e no texto da resposta.
+    ATTENDANT_PROVIDER: str = "gemini"
+    ATTENDANT_FALLBACK: str = "none"
 
     # Temperatura zero e seed fixa deixam as rodadas de avaliação
     # reproduzíveis: a mesma entrada devolve a mesma classificação.
@@ -52,6 +67,27 @@ class Settings(BaseSettings):
     # explícito, e não o padrão implícito da biblioteca.
     LLM_NUM_CTX: int = 4096
     LLM_NUM_PREDICT: int = 600
+
+    # O qwen3 "pensa" (escreve um raciocínio oculto) antes de responder, a
+    # menos que a chamada diga que não. A autópsia 2 mediu o qwen sem pensar
+    # (rodada 18 do João), e pensar custa dezenas de segundos por caso. O
+    # llama ignora o parâmetro. None = não mandar nada ao Ollama.
+    LLM_THINK: bool | None = False
+
+    # ==========================
+    # Gemini
+    # ==========================
+    # Desde 25/09 o Gemini é o atendente padrão (ATTENDANT_PROVIDER acima) e
+    # continua sendo o primeiro provedor da etapa de consulta quando ela está
+    # ligada (HybridQueryClient). A chave vem só do ambiente (.env local,
+    # nunca o .env.example) e nunca é registrada em log nem no retrato.
+    GEMINI_API_KEY: str = ""
+    GEMINI_MODEL: str = "gemini-3.5-flash-lite"
+    GEMINI_TIMEOUT_S: float = 60.0
+    # Espaço mínimo entre chamadas: a cota gratuita tem limite por minuto.
+    GEMINI_MIN_INTERVAL_S: float = 4.0
+    GEMINI_MAX_RETRIES_429: int = 8
+    GEMINI_MAX_RETRIES_503: int = 6
 
     LLM_TIMEOUT_S: int = 600
     LLM_KEEP_ALIVE: str = "10m"
@@ -123,30 +159,43 @@ class Settings(BaseSettings):
     TOP_K: int = 5
     RERANK_TOP_K: int = 3
 
-    # Flags de liga/desliga das etapas de consulta,
-    # usadas no estudo de ablação. Dono: trilho B1 (docs/CONTRATOS.md, item 4).
-    QUERY_REWRITING_ENABLED: bool = True
-    MULTI_QUERY_ENABLED: bool = True
-
-    # Desligado por padrão desde 17/09. Medido contra três coleções reais
-    # (evidencias/ryu/2026-09-17-06-medindo-consulta-nas-candidatas.md):
-    # em nenhum dos três lotes o HyDE melhorou Precision@1/MRR sobre a
-    # reescrita fundida com o multi-query, e no lote 2 piorou (1,0 -> 0,667).
-    # É a chamada mais lenta da etapa de consulta e a que já se sabia
-    # inventar diagnóstico sem âncora (evidencias/backlog.md#b-09). Segue
-    # implementado e medível — liga por requisição ou pelo preset
-    # rag_query — só não é mais o padrão.
+    # Flags de liga/desliga das etapas de consulta (o "tradutor"), usadas no
+    # estudo de ablação. Dono: trilho B1 (docs/CONTRATOS.md, item 4).
+    #
+    # Desligadas por padrão desde 25/09 (rodada 24 do João). A autópsia 2
+    # mediu que, nas fichas de triagem, toda técnica piora a busca (a ficha
+    # certa em 1º cai de 107 para 84 em 129 casos) e que, com o qwen, fichas
+    # sem tradutor é a melhor célula da 2×2 (rodada 17). Os presets
+    # `fichas_tradutor` e `hoje_academico_*` religam as três.
+    #
+    # Histórico do HyDE: ligado de novo em 23/09 (estava desligado desde
+    # 17/09, evidencias/backlog.md#b-09) com o HybridQueryClient
+    # (evidencias/ryu/2026-09-23-16-integracao-gemini-com-fallback.md).
+    QUERY_REWRITING_ENABLED: bool = False
+    MULTI_QUERY_ENABLED: bool = False
     HYDE_ENABLED: bool = False
 
     # Flags de liga/desliga das etapas de decisão, também usadas no estudo
     # de ablação. Com RETRIEVAL_ENABLED desligado o sistema roda como LLM
     # puro, que é a linha de base contra a qual o RAG é medido.
     RETRIEVAL_ENABLED: bool = True
+
+    # Como a busca ordena o que achou (rodada 24 do João):
+    # - "vector": só a similaridade do embedding, em ordem. É o padrão, e é a
+    #   busca medida na autópsia 2 sobre as fichas de triagem;
+    # - "routed_rerank": o caminho até 24/09 — rota lexical pelo vocabulário do
+    #   mapa, reranker lexical, âncoras e veto de espécie. Fica para o braço
+    #   acadêmico da ablação.
+    RETRIEVAL_MODE: str = "vector"
     CONTEXT_TOP_K: int = 3
     COT_ENABLED: bool = False
     SELF_REFINE_ENABLED: bool = False
 
     # Score minimo para um trecho recuperado entrar no prompt.
+    #
+    # Desde 25/09 o padrão é 0.0: com as fichas de triagem entram sempre as 3
+    # mais próximas (ver app/constants/pipeline.py). O histórico abaixo é da
+    # base acadêmica, onde o corte continua valendo pelos presets.
     #
     # Ficou em 0.0 de 04/09 a 12/09, de proposito: naquele momento nenhum
     # documento atingia o limiar de relevancia, e descartar todos faria o

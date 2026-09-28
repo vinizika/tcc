@@ -1,0 +1,110 @@
+{
+  "rows_evaluated": 122,
+  "rows_with_error": 0,
+  "classification": {
+    "n": 122,
+    "balanced_accuracy": 0.7640160183066362,
+    "accuracy_strict": 0.7540983606557377,
+    "accuracy_strict_ci95": [
+      0.6707,
+      0.822
+    ],
+    "coverage": 1.0,
+    "accuracy_decided": 0.7540983606557377,
+    "macro_f1": 0.7486263736263736,
+    "per_class": {
+      "EMERGENCIA": {
+        "support": 76,
+        "true_positive": 55,
+        "false_positive": 9,
+        "false_negative": 21,
+        "precision": 0.859375,
+        "recall": 0.7236842105263158,
+        "recall_ci95": [
+          0.6142,
+          0.8116
+        ],
+        "f1": 0.7857142857142857
+      },
+      "NAO_EMERGENCIA": {
+        "support": 46,
+        "true_positive": 37,
+        "false_positive": 21,
+        "false_negative": 9,
+        "precision": 0.6379310344827587,
+        "recall": 0.8043478260869565,
+        "recall_ci95": [
+          0.6683,
+          0.8935
+        ],
+        "f1": 0.7115384615384616
+      }
+    },
+    "confusion_matrix": {
+      "EMERGENCIA": {
+        "EMERGENCIA": 55,
+        "NAO_EMERGENCIA": 21,
+        "INCERTO": 0,
+        "INVALID_JSON": 0,
+        "OTHER": 0
+      },
+      "NAO_EMERGENCIA": {
+        "EMERGENCIA": 9,
+        "NAO_EMERGENCIA": 37,
+        "INCERTO": 0,
+        "INVALID_JSON": 0,
+        "OTHER": 0
+      }
+    },
+    "false_non_urgent": 21,
+    "false_non_urgent_rate": 0.27631578947368424,
+    "false_urgent": 9,
+    "false_urgent_rate": 0.1956521739130435,
+    "incerto_rate": 0.0,
+    "emergencia_para_incerto": 0,
+    "nao_emergencia_para_incerto": 0,
+    "invalid_rate": 0.0,
+    "other_rate": 0.0,
+    "accuracy_single_attempt": 0.7540983606557377
+  },
+  "baselines": {
+    "always_emergencia": 0.6229508196721312,
+    "rule_few_symptoms": null,
+    "rule_only_mild_symptoms": null
+  },
+  "strata": {},
+  "latency": {
+    "rows_with_model_load": 0,
+    "query_s": {
+      "mean": 0.0,
+      "median": 0.0,
+      "p95": 0.0
+    },
+    "retrieval_s": {
+      "mean": 0.0,
+      "median": 0.0,
+      "p95": 0.0
+    },
+    "generation_s": {
+      "mean": 2.135,
+      "median": 2.151,
+      "p95": 2.414
+    },
+    "total_s": {
+      "mean": 2.136,
+      "median": 2.152,
+      "p95": 2.414
+    },
+    "client_s": {
+      "mean": 2.146,
+      "median": 2.167,
+      "p95": 2.431
+    },
+    "prompt_tokens_mean": 466.0,
+    "completion_tokens_mean": 95.5,
+    "completion_tokens_p95": 107,
+    "completion_tokens_max": 120
+  },
+  "grounding": null,
+  "repeats": null
+}

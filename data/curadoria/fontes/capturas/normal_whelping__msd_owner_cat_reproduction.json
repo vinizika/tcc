@@ -1,0 +1,36 @@
+{
+  "title": "Management of Reproduction of Cats",
+  "source": "MSD Veterinary Manual",
+  "document_type": "owner_guidance",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "cat",
+  "topic": "normal_whelping",
+  "language": "en",
+  "source_url": "https://www.msdvetmanual.com/cat-owners/reproductive-disorders-of-cats/management-of-reproduction-of-cats",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "208714b71d99244c34e3b690fa040d4972827ceadcb7995f37d71dd105d32212",
+  "map_line": "normal_whelping",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2018,
+  "authors": "Autumn P. Davidson",
+  "full_title": "Management of Reproduction of Cats - Cat Owners - MSD Veterinary Manual",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de normal_whelping (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
+}

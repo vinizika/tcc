@@ -28,8 +28,11 @@ from app.database.embedding_config import (
     EMBEDDING_MAX_TOKENS,
     EMBEDDING_MODEL_NAME,
     EMBEDDING_MODEL_REVISION,
+    MINILM_ACADEMIC,
+    EmbeddingRecipe,
     embedding_recipe,
     embedding_recipe_sha256,
+    recipe_for_profile,
 )
 
 
@@ -38,10 +41,13 @@ logger = setup_logger("DocumentIngestion")
 BACKEND_DIRECTORY = Path(__file__).resolve().parents[2]
 REPOSITORY_DIRECTORY = BACKEND_DIRECTORY.parent
 DOCUMENTS_DIRECTORY = BACKEND_DIRECTORY / "data" / "documents"
+# As fichas de triagem, geradas por scripts/sync_fichas.py a partir do mapa e
+# dos rascunhos de busca (rodada 23 do João).
+FICHAS_PATH = BACKEND_DIRECTORY / "data" / "fichas.json"
 TOPIC_MAP_PATH = REPOSITORY_DIRECTORY / "data" / "curadoria" / "mapa-de-assuntos.csv"
 SUPPORTED_EXTENSIONS = {".pdf", ".txt"}
 UPSERT_BATCH_SIZE = 100
-INGESTION_PROFILES = {"curated", "experimental", "legacy_rechunk"}
+INGESTION_PROFILES = {"curated", "experimental", "legacy_rechunk", "fichas"}
 CANONICAL_SPECIES = {"dog", "cat", "dog_and_cat"}
 CURATED_DOCUMENT_TYPES = {
     "owner_guidance",
@@ -75,6 +81,20 @@ class PreparedIngestion:
     documents: tuple[PreparedDocument, ...]
     source_set_sha256: str
     warning_count: int
+
+
+@dataclass(frozen=True)
+class PreparedFichas:
+    """As 61 fichas prontas para virar coleção: um registro por quadro."""
+
+    profile: str
+    recipe: EmbeddingRecipe
+    ids: tuple[str, ...]
+    documents: tuple[str, ...]
+    metadatas: tuple[dict, ...]
+    token_counts: tuple[int, ...]
+    source_sha256: str
+    source_set_sha256: str
 
 
 def _sha256_bytes(payload: bytes) -> str:
@@ -488,6 +508,136 @@ def prepare_ingestion(
     )
 
 
+def load_recipe_tokenizer(recipe: EmbeddingRecipe) -> Tokenizer:
+    """O tokenizer do modelo da receita, carregado só quando é preciso."""
+
+    from transformers import AutoTokenizer
+
+    return AutoTokenizer.from_pretrained(
+        recipe.model,
+        revision=recipe.revision,
+        use_fast=True,
+    )
+
+
+def prepare_fichas_ingestion(
+    *,
+    tokenizer: Tokenizer | None = None,
+    fichas_path: Path | None = None,
+) -> PreparedFichas:
+    """Valida as fichas de triagem antes de abrir o ChromaDB.
+
+    O texto vetorizado é o texto de busca, sem prefixo (é o que a autópsia 2
+    mediu); o texto de leitura e o seu título vão aos metadados, e são eles
+    que o `RetrievalClient` põe no prompt. Uma ficha acima do limite de tokens
+    da receita falha aqui: truncar em silêncio mudaria o vetor sem ninguém ver.
+    """
+
+    fichas_path = fichas_path or FICHAS_PATH
+    if not fichas_path.exists():
+        raise IngestionValidationError(
+            f"{fichas_path} não existe; rode python scripts/sync_fichas.py"
+        )
+    raw = fichas_path.read_bytes().replace(b"\r\n", b"\n")
+    payload = json.loads(raw.decode("utf-8"))
+    fichas = payload.get("fichas") or []
+    recipe = recipe_for_profile("fichas")
+    known_topics = _known_topics()
+
+    errors: list[str] = []
+    topics = [str(ficha.get("topic", "")) for ficha in fichas]
+    if len(set(topics)) != len(topics):
+        errors.append("tópico repetido nas fichas")
+    if known_topics and set(topics) != known_topics:
+        faltando = sorted(known_topics - set(topics))
+        sobrando = sorted(set(topics) - known_topics)
+        errors.append(
+            f"as fichas não cobrem o mapa: faltam {faltando}, sobram {sobrando}"
+        )
+
+    active_tokenizer = tokenizer or load_recipe_tokenizer(recipe)
+    ids: list[str] = []
+    documents: list[str] = []
+    metadatas: list[dict] = []
+    token_counts: list[int] = []
+    for ficha in fichas:
+        topic = str(ficha.get("topic", ""))
+        search_text = str(ficha.get("search_text") or "")
+        reading_text = str(ficha.get("reading_text") or "")
+        if not search_text or not reading_text:
+            errors.append(f"{topic}: texto de busca ou de leitura vazio")
+            continue
+        for field_name, text in (
+            ("search_text", search_text),
+            ("reading_text", reading_text),
+        ):
+            if ficha.get(f"{field_name}_sha256") != _sha256_bytes(
+                text.encode("utf-8")
+            ):
+                errors.append(f"{topic}: {field_name}_sha256 não confere")
+        token_count = len(
+            active_tokenizer.encode(
+                search_text, add_special_tokens=True, truncation=False
+            )
+        )
+        if token_count > recipe.max_tokens:
+            errors.append(
+                f"{topic}: {token_count} tokens, acima do limite de "
+                f"{recipe.max_tokens} da receita {recipe.key}"
+            )
+        ids.append(f"ficha__{topic}")
+        documents.append(search_text)
+        token_counts.append(token_count)
+        metadatas.append(
+            {
+                "title": str(ficha["reading_title"]),
+                "body": reading_text,
+                "display_title": str(ficha.get("display_title") or ""),
+                "source": "Ficha de triagem do time (mapa de assuntos)",
+                "document_type": "triage_card",
+                "validation_status": "reading_card_from_validated_map",
+                "species": str(ficha.get("species") or "dog_and_cat"),
+                "topic": topic,
+                "urgency": str(ficha.get("urgency") or ""),
+                "classe": str(ficha.get("classe") or ""),
+                "etapa": str(ficha.get("etapa") or ""),
+                "source_file": fichas_path.name,
+                "file_type": ".json",
+                "section": "Ficha",
+                "chunk_index": 0,
+                "token_count": token_count,
+                "references": json.dumps(
+                    ficha.get("references") or [],
+                    ensure_ascii=False,
+                    separators=(",", ":"),
+                ),
+                "search_text_sha256": str(ficha.get("search_text_sha256")),
+                "reading_text_sha256": str(ficha.get("reading_text_sha256")),
+            }
+        )
+
+    if errors:
+        raise IngestionValidationError(
+            "Fichas recusadas:\n" + "\n".join(f"- {error}" for error in errors)
+        )
+    source_sha256 = _sha256_bytes(raw)
+    source_identity = [
+        {"path": fichas_path.name, "source_sha256": source_sha256, "sidecar_sha256": ""}
+    ]
+    return PreparedFichas(
+        profile="fichas",
+        recipe=recipe,
+        ids=tuple(ids),
+        documents=tuple(documents),
+        metadatas=tuple(metadatas),
+        token_counts=tuple(token_counts),
+        source_sha256=source_sha256,
+        source_set_sha256=_sha256_bytes(
+            _canonical_json(source_identity).encode("utf-8")
+        ),
+    )
+
+
 def _materialize_document(
     prepared: PreparedDocument,
 ) -> tuple[list[str], list[str], list[dict]]:
@@ -567,6 +717,7 @@ def _build_manifest(
             "model": EMBEDDING_MODEL_NAME,
             "revision": EMBEDDING_MODEL_REVISION,
             "dimensions": EMBEDDING_DIMENSIONS,
+            "recipe_key": MINILM_ACADEMIC.key,
         },
         "chunking": {
             **embedding_recipe(),
@@ -615,6 +766,143 @@ def _build_manifest(
     }
 
 
+def _build_fichas_manifest(
+    collection_name: str,
+    prepared: PreparedFichas,
+) -> dict:
+    from app.database.chroma_client import (
+        chunk_content_sha256,
+        chunk_ids_sha256,
+    )
+
+    recipe = prepared.recipe
+    metadatas = list(prepared.metadatas)
+    return {
+        "schema_version": 1,
+        "collection_name": collection_name,
+        "created_at": datetime.now(timezone.utc).isoformat(),
+        "profile": prepared.profile,
+        "embedding": {
+            "model": recipe.model,
+            "revision": recipe.revision,
+            "dimensions": recipe.dimensions,
+            "recipe_key": recipe.key,
+        },
+        "chunking": {
+            **recipe.as_dict(),
+            "recipe_sha256": recipe.sha256(),
+        },
+        "sources": {
+            "document_count": 1,
+            "source_set_sha256": prepared.source_set_sha256,
+            "documents": [
+                {
+                    "path": FICHAS_PATH.name,
+                    "source_sha256": prepared.source_sha256,
+                    "sidecar_sha256": "",
+                    "chunk_count": len(prepared.ids),
+                }
+            ],
+        },
+        "chunks": {
+            "count": len(prepared.ids),
+            "ids_sha256": chunk_ids_sha256(list(prepared.ids)),
+            "content_sha256": chunk_content_sha256(
+                list(prepared.ids), list(prepared.documents), metadatas
+            ),
+            "tokens": {
+                "min": min(prepared.token_counts),
+                "mean": round(statistics.mean(prepared.token_counts), 3),
+                "median": statistics.median(prepared.token_counts),
+                "max": max(prepared.token_counts),
+            },
+        },
+        "quality": {
+            "warning_count": 0,
+            "fallback_count": 0,
+            "corrupt_document_count": 0,
+            "topic_counts": dict(sorted(Counter(m["topic"] for m in metadatas).items())),
+            "species_counts": dict(sorted(Counter(m["species"] for m in metadatas).items())),
+            "validation_status_counts": dict(
+                sorted(Counter(m["validation_status"] for m in metadatas).items())
+            ),
+        },
+    }
+
+
+def stage_fichas(
+    prepared: PreparedFichas,
+    *,
+    activate: bool = False,
+) -> dict:
+    """A coleção das fichas: candidata, manifesto, conferência e ativação."""
+
+    from app.database.chroma_client import ChromaDBClient
+
+    collection_name = _collection_name(
+        ChromaDBClient.base_collection_name(), prepared
+    )
+    collection = ChromaDBClient.create_staging_collection(
+        collection_name, profile=prepared.profile, recipe=prepared.recipe
+    )
+    try:
+        _upsert_batches(
+            collection,
+            list(prepared.ids),
+            list(prepared.documents),
+            list(prepared.metadatas),
+        )
+        manifest = _build_fichas_manifest(collection_name, prepared)
+        manifest_sha256 = ChromaDBClient.write_manifest(collection_name, manifest)
+        ChromaDBClient.validate_collection_integrity(
+            collection_name, manifest=manifest
+        )
+    except BaseException:
+        ChromaDBClient.get_client().delete_collection(collection_name)
+        ChromaDBClient.manifest_path(collection_name).unlink(missing_ok=True)
+        raise
+    return _finish_staging(
+        collection_name,
+        prepared.profile,
+        manifest,
+        manifest_sha256,
+        len(prepared.ids),
+        activate,
+    )
+
+
+def _finish_staging(
+    collection_name: str,
+    profile: str,
+    manifest: dict,
+    manifest_sha256: str,
+    chunk_count: int,
+    activate: bool,
+) -> dict:
+    from app.database.chroma_client import ChromaDBClient, atomic_write_json
+
+    pointer = (
+        ChromaDBClient.activate_collection(collection_name) if activate else None
+    )
+    receipt = {
+        "schema_version": 1,
+        "collection_name": collection_name,
+        "profile": profile,
+        "created_at": datetime.now(timezone.utc).isoformat(),
+        "manifest_sha256": manifest_sha256,
+        "chunk_count": chunk_count,
+        "activated": bool(pointer),
+        "active_pointer": pointer,
+    }
+    receipt_path = (
+        ChromaDBClient.chroma_path()
+        / "receipts"
+        / f"{collection_name}.json"
+    )
+    atomic_write_json(receipt_path, receipt)
+    return {"manifest": manifest, "receipt": receipt, "receipt_path": receipt_path}
+
+
 def stage_ingestion(
     prepared: PreparedIngestion,
     *,
@@ -622,13 +910,15 @@ def stage_ingestion(
 ) -> dict:
     """Materializa candidata; ativação é uma segunda etapa explícita."""
 
-    from app.database.chroma_client import ChromaDBClient, atomic_write_json
+    from app.database.chroma_client import ChromaDBClient
 
     collection_name = _collection_name(
         ChromaDBClient.base_collection_name(), prepared
     )
     collection = ChromaDBClient.create_staging_collection(
-        collection_name, profile=prepared.profile
+        collection_name,
+        profile=prepared.profile,
+        recipe=recipe_for_profile(prepared.profile),
     )
     all_ids: list[str] = []
     all_documents: list[str] = []
@@ -661,26 +951,14 @@ def stage_ingestion(
         ChromaDBClient.manifest_path(collection_name).unlink(missing_ok=True)
         raise
 
-    pointer = (
-        ChromaDBClient.activate_collection(collection_name) if activate else None
+    return _finish_staging(
+        collection_name,
+        prepared.profile,
+        manifest,
+        manifest_sha256,
+        len(all_ids),
+        activate,
     )
-    receipt = {
-        "schema_version": 1,
-        "collection_name": collection_name,
-        "profile": prepared.profile,
-        "created_at": datetime.now(timezone.utc).isoformat(),
-        "manifest_sha256": manifest_sha256,
-        "chunk_count": len(all_ids),
-        "activated": bool(pointer),
-        "active_pointer": pointer,
-    }
-    receipt_path = (
-        ChromaDBClient.chroma_path()
-        / "receipts"
-        / f"{collection_name}.json"
-    )
-    atomic_write_json(receipt_path, receipt)
-    return {"manifest": manifest, "receipt": receipt, "receipt_path": receipt_path}
 
 
 def ingest_documents(
@@ -696,6 +974,10 @@ def ingest_documents(
         raise IngestionValidationError(
             "--reset foi removido: use staging e ativação explícita."
         )
+    if profile == "fichas":
+        return stage_fichas(
+            prepare_fichas_ingestion(tokenizer=tokenizer), activate=activate
+        )
     prepared = prepare_ingestion(profile=profile, tokenizer=tokenizer)
     return stage_ingestion(prepared, activate=activate)
 
@@ -708,7 +990,11 @@ def build_argument_parser() -> argparse.ArgumentParser:
         "--profile",
         choices=sorted(INGESTION_PROFILES),
         default="curated",
-        help="Política de seleção documental (padrão seguro: curated).",
+        help=(
+            "Política de seleção documental (padrão seguro: curated). "
+            "'fichas' indexa as 61 fichas de triagem de backend/data/fichas.json "
+            "com o bge-m3."
+        ),
     )
     parser.add_argument(
         "--activate",

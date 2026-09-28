@@ -1,0 +1,146 @@
+{
+  "rows_evaluated": 66,
+  "rows_with_error": 0,
+  "classification": {
+    "n": 66,
+    "balanced_accuracy": 0.925,
+    "accuracy_strict": 0.9090909090909091,
+    "accuracy_strict_ci95": [
+      0.8155,
+      0.9577
+    ],
+    "coverage": 1.0,
+    "accuracy_decided": 0.9090909090909091,
+    "macro_f1": 0.907735321528425,
+    "per_class": {
+      "EMERGENCIA": {
+        "support": 40,
+        "true_positive": 34,
+        "false_positive": 0,
+        "false_negative": 6,
+        "precision": 1.0,
+        "recall": 0.85,
+        "recall_ci95": [
+          0.7093,
+          0.9294
+        ],
+        "f1": 0.9189189189189189
+      },
+      "NAO_EMERGENCIA": {
+        "support": 26,
+        "true_positive": 26,
+        "false_positive": 6,
+        "false_negative": 0,
+        "precision": 0.8125,
+        "recall": 1.0,
+        "recall_ci95": [
+          0.8713,
+          1.0
+        ],
+        "f1": 0.896551724137931
+      }
+    },
+    "confusion_matrix": {
+      "EMERGENCIA": {
+        "EMERGENCIA": 34,
+        "NAO_EMERGENCIA": 6,
+        "INCERTO": 0,
+        "INVALID_JSON": 0,
+        "OTHER": 0
+      },
+      "NAO_EMERGENCIA": {
+        "EMERGENCIA": 0,
+        "NAO_EMERGENCIA": 26,
+        "INCERTO": 0,
+        "INVALID_JSON": 0,
+        "OTHER": 0
+      }
+    },
+    "false_non_urgent": 6,
+    "false_non_urgent_rate": 0.15,
+    "false_urgent": 0,
+    "false_urgent_rate": 0.0,
+    "incerto_rate": 0.0,
+    "emergencia_para_incerto": 0,
+    "nao_emergencia_para_incerto": 0,
+    "invalid_rate": 0.0,
+    "other_rate": 0.0,
+    "accuracy_single_attempt": 0.9090909090909091
+  },
+  "baselines": {
+    "always_emergencia": 0.6060606060606061,
+    "rule_few_symptoms": null,
+    "rule_only_mild_symptoms": null
+  },
+  "strata": {},
+  "latency": {
+    "rows_with_model_load": 0,
+    "query_s": {
+      "mean": 0.965,
+      "median": 0.942,
+      "p95": 1.253
+    },
+    "retrieval_s": {
+      "mean": 0.33,
+      "median": 0.328,
+      "p95": 0.351
+    },
+    "generation_s": {
+      "mean": 1.147,
+      "median": 1.166,
+      "p95": 1.376
+    },
+    "total_s": {
+      "mean": 2.442,
+      "median": 2.436,
+      "p95": 2.861
+    },
+    "client_s": {
+      "mean": 2.452,
+      "median": 2.447,
+      "p95": 2.865
+    },
+    "prompt_tokens_mean": 704.4,
+    "completion_tokens_mean": 105.2,
+    "completion_tokens_p95": 126,
+    "completion_tokens_max": 137
+  },
+  "grounding": {
+    "mean_cited_sources": 0.47,
+    "share_rows_with_citation": 0.42424242424242425,
+    "share_rows_invalid_citation": 0.015151515151515152,
+    "share_rows_max_score_below_0_70": 0.16666666666666666,
+    "mean_max_score": 0.746,
+    "share_rows_with_context": 0.9090909090909091,
+    "share_rows_rag_silent": 0.09090909090909091,
+    "rows_used_below_min_score": 0,
+    "citations_per_chunk": {
+      "bd885b06280b0948f83390a982b027df76cd732d97d667024309e21f2e149b0f": 4,
+      "60ad3676349bcd15252c657741b51092c22591ac202b789ae27b54c59d9b9d40": 2,
+      "db4b7b1a81a42e13e074cede25439160bd46117665137029e42fa5b8a97a72b9": 2,
+      "e841cded367182a0cc1d7ce13ae2f71a59792f30d606912abe1f11b3d040064f": 2,
+      "38782633482e7e36c57dd5e0f1361c304d29ae7bd1c3a0d7663217eb3751fe30": 1,
+      "def48ef4458aeff891e1734043fe74ea571afbfb85d7c26ccf8ae1d75d6f1e66": 1,
+      "490e17845885f38fe38c6df10c94e3d266248337bfbb54d7a85d92e80ac09129": 1,
+      "a6bd3dda52cd29c9cc23bd927d3ed29052d9f2ac95a348e30b560d3ec3160ea1": 1,
+      "3f16bee993d6c9340b7e7cb0d968d2b15428a8c66e5792adc9f4b1f81897008c": 1,
+      "9231f5eca7a6f3694b0ce6347da7ac8c65059aad7f2f70031debf740e738f66e": 1,
+      "e5a37e1736d6421def79923d6218aeae890603a3c18da75595eca393b23d5b44": 1,
+      "4471495693940a3570b69a103dab84ad72def21d4e503496475a1eb6d453f0f1": 1,
+      "cb2d8192e043ed85f11d4ca8e81c6e9958dbac2f544771b5c061674457c2e0ec": 1,
+      "a31021b007a458acc3758f6b4b6e8809c6f193fc24bb480973d96227c2631ec9": 1,
+      "14826358def9745576e10f59850754554de2e1db2946ed285f8d4771acbdc5b3": 1,
+      "68eb0af357b92fa202e8c0e22fd6a9c3ae208ab67ef2b3030cc8c949130a8de2": 1,
+      "f68b7022100567df38d7877636ef8aa266b85b67471a7d28f9930a602f51f1eb": 1,
+      "9977d596bfe20badd6f840d309c96bf28b3df18adf350ddeb58eda02544f0575": 1,
+      "982120e259ce17c5b61ab4005313b4ea7750bf0d3c97a677d6bbf235cf6cfb35": 1,
+      "c542d0eb86cc8bec2be580c6dc0d0a0171c6cd2a7699cf7ce5ae9979368ceb92": 1,
+      "55b62b809ad396ab44a9234af72087e43ffbdc2aae78d4bf4e08d65fc1abd091": 1,
+      "c6461911f4764b463fcf3559fe97cbcc18aa0c381d47566ed9eb592d6e215f69": 1,
+      "999c6b3dbc71677734571d471652310b6e59577527a8585cadbb47deaf2afc12": 1,
+      "3b1fde75f776bac3e9dc16cda3426872a7c058920da9e67e4e399ff28a0300f1": 1,
+      "f6cddd7647b2abca443d1a0baf702eacf0ba5f3e79fa833561f24833bd7b669b": 1
+    }
+  },
+  "repeats": null
+}

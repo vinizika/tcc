@@ -1,0 +1,10 @@
+{
+  "rotulos": "validados",
+  "por": "ASAVET",
+  "data": "2026-09-26",
+  "escopo": "os 330 rótulos (expected_class e expected_urgency), incluindo os 25 especiais",
+  "resultado": "todos confirmados, nenhum rótulo mudou",
+  "como": "sem ver o rótulo, como combinado na rodada 20",
+  "casos_validados_sha256": "937c872442ee11ea395d36007ff0fce0574712c0a4cd3116492e893ba9d7d2c6",
+  "registro": "rodada 30 do João"
+}

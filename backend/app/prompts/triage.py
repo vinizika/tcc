@@ -303,6 +303,33 @@ def _sistema_para(config: EffectiveConfig, com_documentos: bool) -> str:
     )
 
 
+def documentos_que_cabem(
+    documents: list[RetrievedDocument],
+) -> list[RetrievedDocument]:
+    """
+    Os trechos que de fato entram no bloco de contexto.
+
+    O bloco tem teto de CONTEXT_MAX_CHARS; o trecho que passa do teto é
+    cortado, e os seguintes ficam de fora. Até 25/09 os que ficavam de fora
+    continuavam listados como fonte e contados como usados, e o modelo podia
+    "citar" um número que não tinha visto (rodada 14 do João). O trecho
+    cortado pela metade conta como visto: o modelo leu parte dele.
+    """
+
+    cabem = []
+    total = 0
+
+    for documento in documents:
+        conteudo = " ".join(documento.content.split())
+        restante = max(0, CONTEXT_MAX_CHARS - total)
+        if not conteudo[:restante]:
+            break
+        cabem.append(documento)
+        total += len(conteudo[:restante])
+
+    return cabem
+
+
 def montar_bloco_de_contexto(
     documents: list[RetrievedDocument],
 ) -> str:

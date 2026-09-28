@@ -1,0 +1,36 @@
+{
+  "title": "Ehrlichiosis and Related Infections in Dogs",
+  "source": "MSD Veterinary Manual",
+  "document_type": "owner_guidance",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog",
+  "topic": "tick_borne_disease_anemia",
+  "language": "en",
+  "source_url": "https://www.msdvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/ehrlichiosis-and-related-infections-in-dogs",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "d9bdaebc0f6ce381bf875c8ca9cc8eed117395fc41b18e653ccb6c3dfcba155e",
+  "map_line": "tick_borne_disease_anemia",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2026,
+  "authors": "Nick Roman",
+  "full_title": "Ehrlichiosis and Related Infections in Dogs - Dog Owners - MSD Veterinary Manual",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de tick_borne_disease_anemia (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
+}

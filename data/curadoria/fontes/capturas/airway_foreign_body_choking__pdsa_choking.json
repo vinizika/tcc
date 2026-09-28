@@ -1,0 +1,35 @@
+{
+  "title": "Primeiros socorros no engasgo (PDSA)",
+  "source": "PDSA",
+  "document_type": "owner_guidance",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog_and_cat",
+  "topic": "airway_foreign_body_choking",
+  "language": "en",
+  "source_url": "https://www.pdsa.org.uk/pet-help-and-advice/pet-health-hub/other-veterinary-advice/first-aid-for-choking",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "0eea613e92a8051c82a171980ffa11b8d156eadf8229c9ecd649ef485a875207",
+  "map_line": "airway_foreign_body_choking",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: © The People's Dispensary for Sick Animals (sem licença de reuso declarada); 'This advice is for UK pets only'",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2020,
+  "full_title": "First aid for choking",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de airway_foreign_body_choking (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
+}

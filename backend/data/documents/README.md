@@ -23,7 +23,8 @@ Campos principais suportados:
 
 ```json
 {
-  "title": "Título da fonte",
+  "title": "Rótulo curto da fonte",
+  "full_title": "Título completo, como publicado",
   "source": "Instituição ou periódico",
   "document_type": "peer_reviewed_review",
   "validation_status": "published_not_locally_validated",
@@ -41,7 +42,6 @@ Campos principais suportados:
     "redistribution_allowed": false
   },
   "indexing": {
-    "retrieval_anchors": ["chocolate", "cacau", "cocoa"],
     "include_sections": [],
     "exclude_sections": ["Supplementary material"],
     "exclude_pages": []
@@ -55,9 +55,19 @@ Campos principais suportados:
   Bibliography, conflitos, financiamento, contribuições e agradecimentos.
 - `exclude_pages` é um fallback para páginas editoriais ou PDFs cuja estrutura
   não possa ser interpretada. A numeração começa em 1 para PDF; TXT usa 0.
-- `retrieval_anchors` restringe fontes dependentes de uma exposição ou contexto
-  explícito. Ao menos um termo precisa aparecer no relato para a fonte ser
-  elegível; isso evita recuperar intoxicação apenas por sintomas genéricos.
+- `title` é curto (até seis palavras) porque entra no começo de **todo**
+  trecho indexado; o título como publicado vai em `full_title`, e é ele que a
+  resposta mostra ao tutor como fonte (via `backend/data/fichas.json`). Os dois
+  campos existem desde 25/09
+  ([rodada 23 do João](../../../evidencias/joao/2026-09-25-24-fichas-de-busca-e-de-leitura.md)).
+- `indexing.retrieval_anchors` (opcional) restringe fontes dependentes de uma
+  exposição ou contexto explícito: ao menos um termo precisa aparecer no relato
+  para a fonte ser elegível. **Desde 25/09 nenhum documento desta pasta tem
+  âncoras**: elas escondiam a obstrução uretral quando o tutor não dizia
+  "xixi" (rodadas 14 e 16 do João), e a busca padrão passou a ser vetorial nas
+  fichas de triagem. O campo continua aceito pelo código, para o braço roteado
+  da ablação; a coleção acadêmica `…388f518d`, indexada antes, guarda as âncoras
+  que tinha.
 - Nomes de seção são comparados sem diferenciar maiúsculas de minúsculas.
 - Uma seção configurada e não encontrada produz warning para revisão.
 

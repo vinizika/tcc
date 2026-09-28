@@ -1,0 +1,1649 @@
+{
+ "dev:p19": {
+  "top5": [
+   "chocolate_toxicosis",
+   "airway_foreign_body_choking",
+   "toad_bufotoxin_poisoning",
+   "chocolate_toxicosis",
+   "chocolate_toxicosis"
+  ],
+  "ctx": []
+ },
+ "dev:p20": {
+  "top5": [
+   "mild_upper_respiratory_signs",
+   "lily_toxicosis_cats",
+   "diabetic_ketoacidosis",
+   "allium_toxicosis",
+   "inappropriate_urination_or_cystitis"
+  ],
+  "ctx": []
+ },
+ "dev:p21": {
+  "top5": [
+   "respiratory_distress",
+   "mild_upper_respiratory_signs",
+   "diabetic_ketoacidosis",
+   "high_rise_syndrome_cats",
+   "congestive_heart_failure"
+  ],
+  "ctx": []
+ },
+ "dev:p22": {
+  "top5": [
+   "airway_foreign_body_choking",
+   "acute_hindlimb_paralysis",
+   "tremors_without_seizure",
+   "leptospirosis_acute",
+   "burns_and_electrical_injury"
+  ],
+  "ctx": []
+ },
+ "dev:p23": {
+  "top5": [
+   "airway_foreign_body_choking",
+   "ocular_emergency",
+   "leptospirosis_acute",
+   "mild_lameness",
+   "slow_growing_lump"
+  ],
+  "ctx": []
+ },
+ "dev:p24": {
+  "top5": [
+   "airway_foreign_body_choking",
+   "urethral_obstruction",
+   "tremors_without_seizure",
+   "slow_growing_lump",
+   "mild_lameness"
+  ],
+  "ctx": []
+ },
+ "dev:p25": {
+  "top5": [
+   "vomiting_and_diarrhea",
+   "vomiting_and_diarrhea",
+   "vomiting_and_diarrhea",
+   "inappropriate_urination_or_cystitis",
+   "acute_hindlimb_paralysis"
+  ],
+  "ctx": [
+   "vomiting_and_diarrhea",
+   "vomiting_and_diarrhea",
+   "vomiting_and_diarrhea"
+  ]
+ },
+ "dev:p26": {
+  "top5": [
+   "canine_heatstroke",
+   "canine_heatstroke",
+   "canine_heatstroke",
+   "tremors_without_seizure",
+   "airway_foreign_body_choking"
+  ],
+  "ctx": [
+   "canine_heatstroke",
+   "canine_heatstroke",
+   "canine_heatstroke"
+  ]
+ },
+ "dev:p27": {
+  "top5": [
+   "single_vomiting_or_mild_diarrhea",
+   "dietary_indiscretion_mild",
+   "airway_foreign_body_choking",
+   "congestive_heart_failure",
+   "tremors_without_seizure"
+  ],
+  "ctx": []
+ },
+ "dev:p28": {
+  "top5": [
+   "rabies_exposure_wild_animal_bite",
+   "fading_neonate",
+   "dystocia",
+   "lily_toxicosis_cats",
+   "mild_upper_respiratory_signs"
+  ],
+  "ctx": []
+ },
+ "dev:p29": {
+  "top5": [
+   "acute_hindlimb_paralysis",
+   "acute_hindlimb_paralysis",
+   "acute_hindlimb_paralysis",
+   "burns_and_electrical_injury",
+   "tremors_without_seizure"
+  ],
+  "ctx": [
+   "acute_hindlimb_paralysis",
+   "acute_hindlimb_paralysis",
+   "acute_hindlimb_paralysis"
+  ]
+ },
+ "dev:p30": {
+  "top5": [
+   "anticoagulant_rodenticide_poisoning",
+   "kennel_cough_mild",
+   "airway_foreign_body_choking",
+   "toad_bufotoxin_poisoning",
+   "insect_sting_local_reaction"
+  ],
+  "ctx": []
+ },
+ "dev:p31": {
+  "top5": [
+   "human_medication_poisoning",
+   "human_medication_poisoning",
+   "human_medication_poisoning",
+   "lily_toxicosis_cats",
+   "permethrin_toxicosis_cats"
+  ],
+  "ctx": [
+   "human_medication_poisoning",
+   "human_medication_poisoning",
+   "human_medication_poisoning"
+  ]
+ },
+ "dev:p32": {
+  "top5": [
+   "anaphylaxis_facial_swelling",
+   "anaphylaxis_facial_swelling",
+   "anaphylaxis_facial_swelling",
+   "insect_sting_local_reaction",
+   "otitis_externa_mild"
+  ],
+  "ctx": [
+   "anaphylaxis_facial_swelling",
+   "anaphylaxis_facial_swelling",
+   "anaphylaxis_facial_swelling"
+  ]
+ },
+ "dev:p33": {
+  "top5": [
+   "airway_foreign_body_choking",
+   "kennel_cough_mild",
+   "congestive_heart_failure",
+   "dietary_indiscretion_mild",
+   "toad_bufotoxin_poisoning"
+  ],
+  "ctx": []
+ },
+ "dev:p34": {
+  "top5": [
+   "mild_upper_respiratory_signs",
+   "diabetic_ketoacidosis",
+   "lily_toxicosis_cats",
+   "flea_dermatitis_pruritus",
+   "cat_bite_abscess"
+  ],
+  "ctx": []
+ },
+ "dev:p35": {
+  "top5": [
+   "fading_neonate",
+   "kennel_cough_mild",
+   "hypoglycemia_toy_puppy",
+   "parvovirus_panleukopenia",
+   "dietary_indiscretion_mild"
+  ],
+  "ctx": []
+ },
+ "dev:p36": {
+  "top5": [
+   "ocular_emergency",
+   "leptospirosis_acute",
+   "slow_growing_lump",
+   "airway_foreign_body_choking",
+   "tremors_without_seizure"
+  ],
+  "ctx": []
+ },
+ "dev:p37": {
+  "top5": [
+   "respiratory_distress",
+   "seizures",
+   "chocolate_toxicosis",
+   "vestibular_syndrome_otitis_interna",
+   "trauma_and_bleeding"
+  ],
+  "ctx": []
+ },
+ "dev:p38": {
+  "top5": [
+   "lily_toxicosis_cats",
+   "inappropriate_urination_or_cystitis",
+   "diabetic_ketoacidosis",
+   "cat_bite_abscess",
+   "acute_hindlimb_paralysis"
+  ],
+  "ctx": []
+ },
+ "dev:p39": {
+  "top5": [
+   "airway_foreign_body_choking",
+   "burns_and_electrical_injury",
+   "congestive_heart_failure",
+   "tremors_without_seizure",
+   "kennel_cough_mild"
+  ],
+  "ctx": []
+ },
+ "dev:p40": {
+  "top5": [
+   "airway_foreign_body_choking",
+   "hypoglycemia_toy_puppy",
+   "eclampsia",
+   "acute_hindlimb_paralysis",
+   "normal_whelping"
+  ],
+  "ctx": []
+ },
+ "dev:p41": {
+  "top5": [
+   "parvovirus_panleukopenia",
+   "leptospirosis_acute",
+   "kennel_cough_mild",
+   "airway_foreign_body_choking",
+   "tremors_without_seizure"
+  ],
+  "ctx": []
+ },
+ "dev:p42": {
+  "top5": [
+   "fading_neonate",
+   "hypoglycemia_toy_puppy",
+   "tremors_without_seizure",
+   "osteoarthritis_stiffness",
+   "fading_neonate"
+  ],
+  "ctx": []
+ },
+ "dev:p43": {
+  "top5": [
+   "hypoglycemia_toy_puppy",
+   "airway_foreign_body_choking",
+   "ocular_emergency",
+   "tremors_without_seizure",
+   "eclampsia"
+  ],
+  "ctx": []
+ },
+ "dev:p44": {
+  "top5": [
+   "lily_toxicosis_cats",
+   "flea_dermatitis_pruritus",
+   "carbamate_organophosphate_poisoning",
+   "cat_bite_abscess",
+   "diabetic_ketoacidosis"
+  ],
+  "ctx": []
+ },
+ "dev:p45": {
+  "top5": [
+   "mild_upper_respiratory_signs",
+   "mild_upper_respiratory_signs",
+   "mild_upper_respiratory_signs",
+   "lily_toxicosis_cats",
+   "carbamate_organophosphate_poisoning"
+  ],
+  "ctx": [
+   "mild_upper_respiratory_signs",
+   "mild_upper_respiratory_signs",
+   "mild_upper_respiratory_signs"
+  ]
+ },
+ "dev:p46": {
+  "top5": [
+   "inappropriate_urination_or_cystitis",
+   "lily_toxicosis_cats",
+   "urethral_obstruction",
+   "dystocia",
+   "reduced_appetite_no_other_signs"
+  ],
+  "ctx": []
+ },
+ "dev:p47": {
+  "top5": [
+   "airway_foreign_body_choking",
+   "burns_and_electrical_injury",
+   "congestive_heart_failure",
+   "tremors_without_seizure",
+   "exertional_panting_mild"
+  ],
+  "ctx": []
+ },
+ "dev:p48": {
+  "top5": [
+   "single_vomiting_or_mild_diarrhea",
+   "dietary_indiscretion_mild",
+   "allium_toxicosis",
+   "airway_foreign_body_choking",
+   "exertional_panting_mild"
+  ],
+  "ctx": []
+ },
+ "dev:p49": {
+  "top5": [
+   "osteoarthritis_stiffness",
+   "osteoarthritis_stiffness",
+   "osteoarthritis_stiffness",
+   "exertional_panting_mild",
+   "mild_lameness"
+  ],
+  "ctx": [
+   "osteoarthritis_stiffness",
+   "osteoarthritis_stiffness",
+   "osteoarthritis_stiffness"
+  ]
+ },
+ "dev:p50": {
+  "top5": [
+   "anaphylaxis_facial_swelling",
+   "airway_foreign_body_choking",
+   "insect_sting_local_reaction",
+   "leptospirosis_acute",
+   "tremors_without_seizure"
+  ],
+  "ctx": []
+ },
+ "dev:p51": {
+  "top5": [
+   "kennel_cough_mild",
+   "airway_foreign_body_choking",
+   "dietary_indiscretion_mild",
+   "congestive_heart_failure",
+   "canine_heatstroke"
+  ],
+  "ctx": []
+ },
+ "dev:p52": {
+  "top5": [
+   "mild_conjunctivitis",
+   "diabetic_ketoacidosis",
+   "lily_toxicosis_cats",
+   "dystocia",
+   "cat_bite_abscess"
+  ],
+  "ctx": []
+ },
+ "dev:p53": {
+  "top5": [
+   "hypoglycemia_toy_puppy",
+   "normal_whelping",
+   "fading_neonate",
+   "tremors_without_seizure",
+   "eclampsia"
+  ],
+  "ctx": []
+ },
+ "dev:p54": {
+  "top5": [
+   "congestive_heart_failure",
+   "tremors_without_seizure",
+   "airway_foreign_body_choking",
+   "burns_and_electrical_injury",
+   "respiratory_distress"
+  ],
+  "ctx": []
+ },
+ "dev:p55": {
+  "top5": [
+   "mild_lameness",
+   "mild_lameness",
+   "mild_lameness",
+   "airway_foreign_body_choking",
+   "acute_hindlimb_paralysis"
+  ],
+  "ctx": [
+   "mild_lameness",
+   "mild_lameness",
+   "mild_lameness"
+  ]
+ },
+ "dev:p56": {
+  "top5": [
+   "flea_dermatitis_pruritus",
+   "mild_upper_respiratory_signs",
+   "carbamate_organophosphate_poisoning",
+   "rabies_exposure_wild_animal_bite",
+   "diabetic_ketoacidosis"
+  ],
+  "ctx": []
+ },
+ "dev:p57": {
+  "top5": [
+   "exertional_panting_mild",
+   "dietary_indiscretion_mild",
+   "vomiting_and_diarrhea",
+   "exertional_panting_mild",
+   "exertional_panting_mild"
+  ],
+  "ctx": []
+ },
+ "dev:p58": {
+  "top5": [
+   "rabies_exposure_wild_animal_bite",
+   "carbamate_organophosphate_poisoning",
+   "flea_dermatitis_pruritus",
+   "cat_bite_abscess",
+   "lily_toxicosis_cats"
+  ],
+  "ctx": []
+ },
+ "dev:p59": {
+  "top5": [
+   "lily_toxicosis_cats",
+   "reduced_appetite_no_other_signs",
+   "acute_hindlimb_paralysis",
+   "inappropriate_urination_or_cystitis",
+   "diabetic_ketoacidosis"
+  ],
+  "ctx": []
+ },
+ "dev:p60": {
+  "top5": [
+   "airway_foreign_body_choking",
+   "burns_and_electrical_injury",
+   "leptospirosis_acute",
+   "slow_growing_lump",
+   "trauma_and_bleeding"
+  ],
+  "ctx": []
+ },
+ "dev:p61": {
+  "top5": [
+   "diabetic_ketoacidosis",
+   "reduced_appetite_no_other_signs",
+   "mild_upper_respiratory_signs",
+   "flea_dermatitis_pruritus",
+   "rabies_exposure_wild_animal_bite"
+  ],
+  "ctx": []
+ },
+ "dev:p62": {
+  "top5": [
+   "airway_foreign_body_choking",
+   "polyuria_polydipsia_investigate",
+   "periodontal_disease_mild",
+   "dietary_indiscretion_mild",
+   "kennel_cough_mild"
+  ],
+  "ctx": []
+ },
+ "dev:p63": {
+  "top5": [
+   "tremors_without_seizure",
+   "toad_bufotoxin_poisoning",
+   "airway_foreign_body_choking",
+   "kennel_cough_mild",
+   "congestive_heart_failure"
+  ],
+  "ctx": []
+ },
+ "dev:p64": {
+  "top5": [
+   "flea_dermatitis_pruritus",
+   "acute_hindlimb_paralysis",
+   "inappropriate_urination_or_cystitis",
+   "rabies_exposure_wild_animal_bite",
+   "cat_bite_abscess"
+  ],
+  "ctx": []
+ },
+ "dev:p65": {
+  "top5": [
+   "exertional_panting_mild",
+   "canine_heatstroke",
+   "tremors_without_seizure",
+   "burns_and_electrical_injury",
+   "mild_lameness"
+  ],
+  "ctx": []
+ },
+ "dev:p66": {
+  "top5": [
+   "osteoarthritis_stiffness",
+   "airway_foreign_body_choking",
+   "exertional_panting_mild",
+   "dietary_indiscretion_mild",
+   "tremors_without_seizure"
+  ],
+  "ctx": []
+ },
+ "dev:p67": {
+  "top5": [
+   "cat_bite_abscess",
+   "permethrin_toxicosis_cats",
+   "rabies_exposure_wild_animal_bite",
+   "mild_upper_respiratory_signs",
+   "reduced_appetite_no_other_signs"
+  ],
+  "ctx": []
+ },
+ "dev:p68": {
+  "top5": [
+   "carbamate_organophosphate_poisoning",
+   "inappropriate_urination_or_cystitis",
+   "lily_toxicosis_cats",
+   "diabetic_ketoacidosis",
+   "mild_upper_respiratory_signs"
+  ],
+  "ctx": []
+ },
+ "calib:p01": {
+  "top5": [
+   "seizures",
+   "tremors_without_seizure",
+   "airway_foreign_body_choking",
+   "congestive_heart_failure",
+   "toad_bufotoxin_poisoning"
+  ],
+  "ctx": []
+ },
+ "calib:p02": {
+  "top5": [
+   "tremors_without_seizure",
+   "burns_and_electrical_injury",
+   "dietary_indiscretion_mild",
+   "congestive_heart_failure",
+   "airway_foreign_body_choking"
+  ],
+  "ctx": []
+ },
+ "calib:p03": {
+  "top5": [
+   "canine_heatstroke",
+   "tremors_without_seizure",
+   "acute_hindlimb_paralysis",
+   "airway_foreign_body_choking",
+   "burns_and_electrical_injury"
+  ],
+  "ctx": []
+ },
+ "calib:p04": {
+  "top5": [
+   "dietary_indiscretion_mild",
+   "dietary_indiscretion_mild",
+   "dietary_indiscretion_mild",
+   "single_vomiting_or_mild_diarrhea",
+   "mild_conjunctivitis"
+  ],
+  "ctx": [
+   "dietary_indiscretion_mild",
+   "dietary_indiscretion_mild",
+   "dietary_indiscretion_mild"
+  ]
+ },
+ "calib:p05": {
+  "top5": [
+   "carbamate_organophosphate_poisoning",
+   "lily_toxicosis_cats",
+   "human_medication_poisoning",
+   "permethrin_toxicosis_cats",
+   "inappropriate_urination_or_cystitis"
+  ],
+  "ctx": []
+ },
+ "calib:p06": {
+  "top5": [
+   "lily_toxicosis_cats",
+   "feline_aortic_thromboembolism",
+   "mild_upper_respiratory_signs",
+   "flea_dermatitis_pruritus",
+   "acute_hindlimb_paralysis"
+  ],
+  "ctx": []
+ },
+ "calib:p07": {
+  "top5": [
+   "single_vomiting_or_mild_diarrhea",
+   "dietary_indiscretion_mild",
+   "airway_foreign_body_choking",
+   "tremors_without_seizure",
+   "kennel_cough_mild"
+  ],
+  "ctx": [
+   "single_vomiting_or_mild_diarrhea"
+  ]
+ },
+ "calib:p08": {
+  "top5": [
+   "inappropriate_urination_or_cystitis",
+   "flea_dermatitis_pruritus",
+   "urethral_obstruction",
+   "lily_toxicosis_cats",
+   "carbamate_organophosphate_poisoning"
+  ],
+  "ctx": []
+ },
+ "calib:p09": {
+  "top5": [
+   "inappropriate_urination_or_cystitis",
+   "urethral_obstruction",
+   "acute_hindlimb_paralysis",
+   "permethrin_toxicosis_cats",
+   "cat_bite_abscess"
+  ],
+  "ctx": []
+ },
+ "calib:p10": {
+  "top5": [
+   "pyometra",
+   "pyometra",
+   "pyometra",
+   "dietary_indiscretion_mild",
+   "airway_foreign_body_choking"
+  ],
+  "ctx": [
+   "pyometra",
+   "pyometra",
+   "pyometra"
+  ]
+ },
+ "calib:p11": {
+  "top5": [
+   "pyometra",
+   "dietary_indiscretion_mild",
+   "leptospirosis_acute",
+   "single_vomiting_or_mild_diarrhea",
+   "trauma_and_bleeding"
+  ],
+  "ctx": []
+ },
+ "calib:p12": {
+  "top5": [
+   "acute_hindlimb_paralysis",
+   "respiratory_distress",
+   "high_rise_syndrome_cats",
+   "diabetic_ketoacidosis",
+   "lily_toxicosis_cats"
+  ],
+  "ctx": []
+ },
+ "calib:p13": {
+  "top5": [
+   "osteoarthritis_stiffness",
+   "osteoarthritis_stiffness",
+   "osteoarthritis_stiffness",
+   "airway_foreign_body_choking",
+   "exertional_panting_mild"
+  ],
+  "ctx": [
+   "osteoarthritis_stiffness",
+   "osteoarthritis_stiffness",
+   "osteoarthritis_stiffness"
+  ]
+ },
+ "calib:p14": {
+  "top5": [
+   "airway_foreign_body_choking",
+   "mild_lameness",
+   "tremors_without_seizure",
+   "burns_and_electrical_injury",
+   "ocular_emergency"
+  ],
+  "ctx": []
+ },
+ "calib:p15": {
+  "top5": [
+   "permethrin_toxicosis_cats",
+   "carbamate_organophosphate_poisoning",
+   "flea_dermatitis_pruritus",
+   "lily_toxicosis_cats",
+   "diabetic_ketoacidosis"
+  ],
+  "ctx": []
+ },
+ "calib:p16": {
+  "top5": [
+   "single_vomiting_or_mild_diarrhea",
+   "dietary_indiscretion_mild",
+   "airway_foreign_body_choking",
+   "leptospirosis_acute",
+   "kennel_cough_mild"
+  ],
+  "ctx": []
+ },
+ "calib:p17": {
+  "top5": [
+   "ocular_emergency",
+   "airway_foreign_body_choking",
+   "burns_and_electrical_injury",
+   "slow_growing_lump",
+   "otitis_externa_mild"
+  ],
+  "ctx": []
+ },
+ "calib:p18": {
+  "top5": [
+   "mild_conjunctivitis",
+   "lily_toxicosis_cats",
+   "diabetic_ketoacidosis",
+   "inappropriate_urination_or_cystitis",
+   "flea_dermatitis_pruritus"
+  ],
+  "ctx": []
+ },
+ "regua:b01": {
+  "top5": [
+   "chocolate_toxicosis",
+   "dietary_indiscretion_mild",
+   "single_vomiting_or_mild_diarrhea",
+   "leptospirosis_acute",
+   "toad_bufotoxin_poisoning"
+  ],
+  "ctx": [
+   "chocolate_toxicosis",
+   "dietary_indiscretion_mild"
+  ]
+ },
+ "regua:b02": {
+  "top5": [
+   "urethral_obstruction",
+   "inappropriate_urination_or_cystitis",
+   "acute_hindlimb_paralysis",
+   "lily_toxicosis_cats",
+   "carbamate_organophosphate_poisoning"
+  ],
+  "ctx": []
+ },
+ "regua:b03": {
+  "top5": [
+   "respiratory_distress",
+   "airway_foreign_body_choking",
+   "congestive_heart_failure",
+   "tremors_without_seizure",
+   "canine_heatstroke"
+  ],
+  "ctx": []
+ },
+ "regua:b04": {
+  "top5": [
+   "burns_and_electrical_injury",
+   "tremors_without_seizure",
+   "airway_foreign_body_choking",
+   "seizures",
+   "acute_hindlimb_paralysis"
+  ],
+  "ctx": []
+ },
+ "regua:b05": {
+  "top5": [
+   "mild_upper_respiratory_signs",
+   "mild_conjunctivitis",
+   "lily_toxicosis_cats",
+   "carbamate_organophosphate_poisoning",
+   "diabetic_ketoacidosis"
+  ],
+  "ctx": []
+ },
+ "regua:b06": {
+  "top5": [
+   "trauma_and_bleeding",
+   "leptospirosis_acute",
+   "anticoagulant_rodenticide_poisoning",
+   "airway_foreign_body_choking",
+   "ocular_emergency"
+  ],
+  "ctx": []
+ },
+ "regua:b07": {
+  "top5": [
+   "vomiting_and_diarrhea",
+   "vomiting_and_diarrhea",
+   "vomiting_and_diarrhea",
+   "dietary_indiscretion_mild",
+   "single_vomiting_or_mild_diarrhea"
+  ],
+  "ctx": [
+   "vomiting_and_diarrhea",
+   "vomiting_and_diarrhea",
+   "vomiting_and_diarrhea"
+  ]
+ },
+ "regua:b08": {
+  "top5": [
+   "allium_toxicosis",
+   "allium_toxicosis",
+   "allium_toxicosis",
+   "toad_bufotoxin_poisoning",
+   "dietary_indiscretion_mild"
+  ],
+  "ctx": [
+   "allium_toxicosis",
+   "allium_toxicosis",
+   "allium_toxicosis"
+  ]
+ },
+ "regua:b09": {
+  "top5": [
+   "flea_dermatitis_pruritus",
+   "flea_dermatitis_pruritus",
+   "flea_dermatitis_pruritus",
+   "otitis_externa_mild",
+   "airway_foreign_body_choking"
+  ],
+  "ctx": [
+   "flea_dermatitis_pruritus",
+   "flea_dermatitis_pruritus",
+   "flea_dermatitis_pruritus"
+  ]
+ },
+ "regua:b10": {
+  "top5": [
+   "mild_lameness",
+   "mild_lameness",
+   "mild_lameness",
+   "airway_foreign_body_choking",
+   "canine_heatstroke"
+  ],
+  "ctx": [
+   "mild_lameness",
+   "mild_lameness",
+   "mild_lameness"
+  ]
+ },
+ "regua:b11": {
+  "top5": [
+   "mild_conjunctivitis",
+   "mild_conjunctivitis",
+   "mild_conjunctivitis",
+   "lily_toxicosis_cats",
+   "diabetic_ketoacidosis"
+  ],
+  "ctx": [
+   "mild_conjunctivitis",
+   "mild_conjunctivitis",
+   "mild_conjunctivitis"
+  ]
+ },
+ "regua:b12": {
+  "top5": [
+   "airway_foreign_body_choking",
+   "dietary_indiscretion_mild",
+   "single_vomiting_or_mild_diarrhea",
+   "congestive_heart_failure",
+   "gastric_dilatation_volvulus"
+  ],
+  "ctx": []
+ },
+ "regua:b13": {
+  "top5": [
+   "slow_growing_lump",
+   "airway_foreign_body_choking",
+   "trauma_and_bleeding",
+   "anticoagulant_rodenticide_poisoning",
+   "leptospirosis_acute"
+  ],
+  "ctx": []
+ },
+ "regua:b14": {
+  "top5": [
+   "fading_neonate",
+   "fading_neonate",
+   "fading_neonate",
+   "hypoglycemia_toy_puppy",
+   "parvovirus_panleukopenia"
+  ],
+  "ctx": [
+   "fading_neonate",
+   "fading_neonate",
+   "fading_neonate"
+  ]
+ },
+ "regua:b15": {
+  "top5": [
+   "airway_foreign_body_choking",
+   "urethral_obstruction",
+   "congestive_heart_failure",
+   "tremors_without_seizure",
+   "ocular_emergency"
+  ],
+  "ctx": []
+ },
+ "regua:b16": {
+  "top5": [
+   "anaphylaxis_facial_swelling",
+   "anaphylaxis_facial_swelling",
+   "anaphylaxis_facial_swelling",
+   "insect_sting_local_reaction",
+   "toad_bufotoxin_poisoning"
+  ],
+  "ctx": [
+   "anaphylaxis_facial_swelling",
+   "anaphylaxis_facial_swelling",
+   "anaphylaxis_facial_swelling"
+  ]
+ },
+ "regua:b17": {
+  "top5": [
+   "acute_hindlimb_paralysis",
+   "acute_hindlimb_paralysis",
+   "acute_hindlimb_paralysis",
+   "airway_foreign_body_choking",
+   "tremors_without_seizure"
+  ],
+  "ctx": [
+   "acute_hindlimb_paralysis",
+   "acute_hindlimb_paralysis",
+   "acute_hindlimb_paralysis"
+  ]
+ },
+ "regua:b18": {
+  "top5": [
+   "mild_upper_respiratory_signs",
+   "mild_conjunctivitis",
+   "flea_dermatitis_pruritus",
+   "cat_bite_abscess",
+   "congestive_heart_failure"
+  ],
+  "ctx": [
+   "mild_upper_respiratory_signs"
+  ]
+ },
+ "regua:b19": {
+  "top5": [
+   "lily_toxicosis_cats",
+   "permethrin_toxicosis_cats",
+   "carbamate_organophosphate_poisoning",
+   "human_medication_poisoning",
+   "mild_conjunctivitis"
+  ],
+  "ctx": []
+ },
+ "regua:b20": {
+  "top5": [
+   "airway_foreign_body_choking",
+   "tremors_without_seizure",
+   "burns_and_electrical_injury",
+   "congestive_heart_failure",
+   "acute_hindlimb_paralysis"
+  ],
+  "ctx": []
+ },
+ "regua:b21": {
+  "top5": [
+   "seizures",
+   "congestive_heart_failure",
+   "respiratory_distress",
+   "congestive_heart_failure",
+   "congestive_heart_failure"
+  ],
+  "ctx": []
+ },
+ "regua:b22": {
+  "top5": [
+   "anticoagulant_rodenticide_poisoning",
+   "anticoagulant_rodenticide_poisoning",
+   "anticoagulant_rodenticide_poisoning",
+   "allium_toxicosis",
+   "toad_bufotoxin_poisoning"
+  ],
+  "ctx": [
+   "anticoagulant_rodenticide_poisoning",
+   "anticoagulant_rodenticide_poisoning",
+   "anticoagulant_rodenticide_poisoning"
+  ]
+ },
+ "regua:b23": {
+  "top5": [
+   "vomiting_and_diarrhea",
+   "cat_bite_abscess",
+   "diabetic_ketoacidosis",
+   "mild_conjunctivitis",
+   "flea_dermatitis_pruritus"
+  ],
+  "ctx": []
+ },
+ "regua:b24": {
+  "top5": [
+   "pyometra",
+   "pyometra",
+   "pyometra",
+   "exertional_panting_mild",
+   "dietary_indiscretion_mild"
+  ],
+  "ctx": [
+   "pyometra",
+   "pyometra",
+   "pyometra"
+  ]
+ },
+ "regua:b25": {
+  "top5": [
+   "dietary_indiscretion_mild",
+   "dietary_indiscretion_mild",
+   "dietary_indiscretion_mild",
+   "single_vomiting_or_mild_diarrhea",
+   "airway_foreign_body_choking"
+  ],
+  "ctx": [
+   "dietary_indiscretion_mild",
+   "dietary_indiscretion_mild",
+   "dietary_indiscretion_mild"
+  ]
+ },
+ "regua:b26": {
+  "top5": [
+   "inappropriate_urination_or_cystitis",
+   "inappropriate_urination_or_cystitis",
+   "inappropriate_urination_or_cystitis",
+   "urethral_obstruction",
+   "diabetic_ketoacidosis"
+  ],
+  "ctx": [
+   "inappropriate_urination_or_cystitis",
+   "inappropriate_urination_or_cystitis",
+   "inappropriate_urination_or_cystitis"
+  ]
+ },
+ "regua:b27": {
+  "top5": [
+   "collapse_and_pale_gums",
+   "collapse_and_pale_gums",
+   "collapse_and_pale_gums",
+   "airway_foreign_body_choking",
+   "tremors_without_seizure"
+  ],
+  "ctx": [
+   "collapse_and_pale_gums",
+   "collapse_and_pale_gums",
+   "collapse_and_pale_gums"
+  ]
+ },
+ "regua:b28": {
+  "top5": [
+   "exertional_panting_mild",
+   "osteoarthritis_stiffness",
+   "periodontal_disease_mild",
+   "mild_lameness",
+   "exertional_panting_mild"
+  ],
+  "ctx": []
+ },
+ "regua:b29": {
+  "top5": [
+   "reduced_appetite_no_other_signs",
+   "diabetic_ketoacidosis",
+   "lily_toxicosis_cats",
+   "fading_neonate",
+   "cat_bite_abscess"
+  ],
+  "ctx": []
+ },
+ "regua:b30": {
+  "top5": [
+   "inappropriate_urination_or_cystitis",
+   "lily_toxicosis_cats",
+   "carbamate_organophosphate_poisoning",
+   "feline_aortic_thromboembolism",
+   "vomiting_and_diarrhea"
+  ],
+  "ctx": []
+ },
+ "regua:b31": {
+  "top5": [
+   "mild_upper_respiratory_signs",
+   "carbamate_organophosphate_poisoning",
+   "respiratory_distress",
+   "rabies_exposure_wild_animal_bite",
+   "lily_toxicosis_cats"
+  ],
+  "ctx": []
+ },
+ "regua:b32": {
+  "top5": [
+   "congestive_heart_failure",
+   "respiratory_distress",
+   "kennel_cough_mild",
+   "collapse_and_pale_gums",
+   "canine_heatstroke"
+  ],
+  "ctx": []
+ },
+ "regua:b33": {
+  "top5": [
+   "dietary_indiscretion_mild",
+   "collapse_and_pale_gums",
+   "hypoglycemia_toy_puppy",
+   "leptospirosis_acute",
+   "congestive_heart_failure"
+  ],
+  "ctx": []
+ },
+ "regua:b34": {
+  "top5": [
+   "leptospirosis_acute",
+   "kennel_cough_mild",
+   "mild_conjunctivitis",
+   "airway_foreign_body_choking",
+   "parvovirus_panleukopenia"
+  ],
+  "ctx": []
+ },
+ "regua:b35": {
+  "top5": [
+   "hypoglycemia_toy_puppy",
+   "airway_foreign_body_choking",
+   "tremors_without_seizure",
+   "burns_and_electrical_injury",
+   "eclampsia"
+  ],
+  "ctx": []
+ },
+ "regua:b36": {
+  "top5": [
+   "acute_hindlimb_paralysis",
+   "respiratory_distress",
+   "anaphylaxis_facial_swelling",
+   "lily_toxicosis_cats",
+   "diabetic_ketoacidosis"
+  ],
+  "ctx": []
+ },
+ "regua:b37": {
+  "top5": [
+   "single_vomiting_or_mild_diarrhea",
+   "otitis_externa_mild",
+   "dietary_indiscretion_mild",
+   "toad_bufotoxin_poisoning",
+   "kennel_cough_mild"
+  ],
+  "ctx": []
+ },
+ "regua:b38": {
+  "top5": [
+   "lily_toxicosis_cats",
+   "flea_dermatitis_pruritus",
+   "anaphylaxis_facial_swelling",
+   "carbamate_organophosphate_poisoning",
+   "inappropriate_urination_or_cystitis"
+  ],
+  "ctx": []
+ },
+ "regua:b39": {
+  "top5": [
+   "otitis_externa_mild",
+   "single_vomiting_or_mild_diarrhea",
+   "dietary_indiscretion_mild",
+   "airway_foreign_body_choking",
+   "periodontal_disease_mild"
+  ],
+  "ctx": []
+ },
+ "regua:b40": {
+  "top5": [
+   "tremors_without_seizure",
+   "seizures",
+   "burns_and_electrical_injury",
+   "congestive_heart_failure",
+   "acute_hindlimb_paralysis"
+  ],
+  "ctx": []
+ },
+ "regua:b41": {
+  "top5": [
+   "pyometra",
+   "leptospirosis_acute",
+   "dietary_indiscretion_mild",
+   "airway_foreign_body_choking",
+   "tremors_without_seizure"
+  ],
+  "ctx": []
+ },
+ "regua:b42": {
+  "top5": [
+   "collapse_and_pale_gums",
+   "collapse_and_pale_gums",
+   "collapse_and_pale_gums",
+   "diabetic_ketoacidosis",
+   "mild_upper_respiratory_signs"
+  ],
+  "ctx": [
+   "collapse_and_pale_gums",
+   "collapse_and_pale_gums",
+   "collapse_and_pale_gums"
+  ]
+ },
+ "regua:b43": {
+  "top5": [
+   "ocular_emergency",
+   "slow_growing_lump",
+   "leptospirosis_acute",
+   "tremors_without_seizure",
+   "airway_foreign_body_choking"
+  ],
+  "ctx": []
+ },
+ "regua:b44": {
+  "top5": [
+   "lily_toxicosis_cats",
+   "mild_upper_respiratory_signs",
+   "carbamate_organophosphate_poisoning",
+   "anaphylaxis_facial_swelling",
+   "mild_conjunctivitis"
+  ],
+  "ctx": []
+ },
+ "regua:b45": {
+  "top5": [
+   "snake_and_scorpion_envenomation",
+   "airway_foreign_body_choking",
+   "mild_lameness",
+   "anaphylaxis_facial_swelling",
+   "ocular_emergency"
+  ],
+  "ctx": []
+ },
+ "regua:b46": {
+  "top5": [
+   "collapse_and_pale_gums",
+   "collapse_and_pale_gums",
+   "collapse_and_pale_gums",
+   "ticks_found_no_signs",
+   "otitis_externa_mild"
+  ],
+  "ctx": [
+   "collapse_and_pale_gums",
+   "collapse_and_pale_gums",
+   "collapse_and_pale_gums"
+  ]
+ },
+ "regua:b47": {
+  "top5": [
+   "hypoglycemia_toy_puppy",
+   "fading_neonate",
+   "dietary_indiscretion_mild",
+   "seizures",
+   "canine_heatstroke"
+  ],
+  "ctx": []
+ },
+ "regua:b48": {
+  "top5": [
+   "acute_hindlimb_paralysis",
+   "anaphylaxis_facial_swelling",
+   "collapse_and_pale_gums",
+   "tremors_without_seizure",
+   "airway_foreign_body_choking"
+  ],
+  "ctx": []
+ },
+ "regua:b49": {
+  "top5": [
+   "collapse_and_pale_gums",
+   "collapse_and_pale_gums",
+   "collapse_and_pale_gums",
+   "respiratory_distress",
+   "mild_upper_respiratory_signs"
+  ],
+  "ctx": [
+   "collapse_and_pale_gums",
+   "collapse_and_pale_gums",
+   "collapse_and_pale_gums"
+  ]
+ },
+ "regua:b50": {
+  "top5": [
+   "burns_and_electrical_injury",
+   "fading_neonate",
+   "hypoglycemia_toy_puppy",
+   "respiratory_distress",
+   "toad_bufotoxin_poisoning"
+  ],
+  "ctx": []
+ },
+ "regua:b51": {
+  "top5": [
+   "tremors_without_seizure",
+   "dietary_indiscretion_mild",
+   "canine_heatstroke",
+   "airway_foreign_body_choking",
+   "single_vomiting_or_mild_diarrhea"
+  ],
+  "ctx": []
+ },
+ "regua:b52": {
+  "top5": [
+   "grape_xylitol_toxicosis",
+   "tremors_without_seizure",
+   "periodontal_disease_mild",
+   "otitis_externa_mild",
+   "dietary_indiscretion_mild"
+  ],
+  "ctx": []
+ },
+ "regua:b53": {
+  "top5": [
+   "airway_foreign_body_choking",
+   "eclampsia",
+   "burns_and_electrical_injury",
+   "tremors_without_seizure",
+   "hypoglycemia_toy_puppy"
+  ],
+  "ctx": []
+ },
+ "regua:b54": {
+  "top5": [
+   "anaphylaxis_facial_swelling",
+   "rabies_exposure_wild_animal_bite",
+   "lily_toxicosis_cats",
+   "diabetic_ketoacidosis",
+   "cat_bite_abscess"
+  ],
+  "ctx": []
+ },
+ "regua:b55": {
+  "top5": [
+   "kennel_cough_mild",
+   "single_vomiting_or_mild_diarrhea",
+   "dietary_indiscretion_mild",
+   "airway_foreign_body_choking",
+   "congestive_heart_failure"
+  ],
+  "ctx": []
+ },
+ "regua:b56": {
+  "top5": [
+   "carbamate_organophosphate_poisoning",
+   "lily_toxicosis_cats",
+   "diabetic_ketoacidosis",
+   "inappropriate_urination_or_cystitis",
+   "reduced_appetite_no_other_signs"
+  ],
+  "ctx": []
+ },
+ "regua:b57": {
+  "top5": [
+   "otitis_externa_mild",
+   "congestive_heart_failure",
+   "canine_heatstroke",
+   "tremors_without_seizure",
+   "airway_foreign_body_choking"
+  ],
+  "ctx": []
+ },
+ "regua:b58": {
+  "top5": [
+   "cat_bite_abscess",
+   "minor_wound",
+   "lily_toxicosis_cats",
+   "dystocia",
+   "high_rise_syndrome_cats"
+  ],
+  "ctx": []
+ },
+ "regua:b59": {
+  "top5": [
+   "tremors_without_seizure",
+   "dietary_indiscretion_mild",
+   "single_vomiting_or_mild_diarrhea",
+   "periodontal_disease_mild",
+   "leptospirosis_acute"
+  ],
+  "ctx": []
+ },
+ "regua:b60": {
+  "top5": [
+   "airway_foreign_body_choking",
+   "slow_growing_lump",
+   "tremors_without_seizure",
+   "osteoarthritis_stiffness",
+   "leptospirosis_acute"
+  ],
+  "ctx": []
+ },
+ "regua:b61": {
+  "top5": [
+   "canine_heatstroke",
+   "tremors_without_seizure",
+   "exertional_panting_mild",
+   "airway_foreign_body_choking",
+   "mild_lameness"
+  ],
+  "ctx": []
+ },
+ "regua:b62": {
+  "top5": [
+   "rabies_exposure_wild_animal_bite",
+   "carbamate_organophosphate_poisoning",
+   "diabetic_ketoacidosis",
+   "cat_bite_abscess",
+   "flea_dermatitis_pruritus"
+  ],
+  "ctx": []
+ },
+ "regua:b63": {
+  "top5": [
+   "ticks_found_no_signs",
+   "airway_foreign_body_choking",
+   "toad_bufotoxin_poisoning",
+   "single_vomiting_or_mild_diarrhea",
+   "dietary_indiscretion_mild"
+  ],
+  "ctx": []
+ },
+ "regua:b64": {
+  "top5": [
+   "single_vomiting_or_mild_diarrhea",
+   "dietary_indiscretion_mild",
+   "airway_foreign_body_choking",
+   "leptospirosis_acute",
+   "exertional_panting_mild"
+  ],
+  "ctx": [
+   "single_vomiting_or_mild_diarrhea",
+   "dietary_indiscretion_mild"
+  ]
+ },
+ "regua:b65": {
+  "top5": [
+   "lily_toxicosis_cats",
+   "mild_upper_respiratory_signs",
+   "flea_dermatitis_pruritus",
+   "mild_conjunctivitis",
+   "inappropriate_urination_or_cystitis"
+  ],
+  "ctx": []
+ },
+ "regua:b66": {
+  "top5": [
+   "single_vomiting_or_mild_diarrhea",
+   "dietary_indiscretion_mild",
+   "tremors_without_seizure",
+   "airway_foreign_body_choking",
+   "leptospirosis_acute"
+  ],
+  "ctx": []
+ },
+ "extra:x_uo1": {
+  "top5": [
+   "urethral_obstruction",
+   "urethral_obstruction",
+   "urethral_obstruction",
+   "inappropriate_urination_or_cystitis",
+   "lily_toxicosis_cats"
+  ],
+  "ctx": [
+   "urethral_obstruction",
+   "urethral_obstruction",
+   "urethral_obstruction"
+  ]
+ },
+ "extra:x_uo2": {
+  "top5": [
+   "urethral_obstruction",
+   "urethral_obstruction",
+   "urethral_obstruction",
+   "respiratory_distress",
+   "acute_hindlimb_paralysis"
+  ],
+  "ctx": [
+   "urethral_obstruction",
+   "urethral_obstruction",
+   "urethral_obstruction"
+  ]
+ },
+ "extra:x_uo3": {
+  "top5": [
+   "inappropriate_urination_or_cystitis",
+   "lily_toxicosis_cats",
+   "cat_bite_abscess",
+   "flea_dermatitis_pruritus",
+   "permethrin_toxicosis_cats"
+  ],
+  "ctx": []
+ },
+ "extra:x_uo4": {
+  "top5": [
+   "urethral_obstruction",
+   "urethral_obstruction",
+   "urethral_obstruction",
+   "diabetic_ketoacidosis",
+   "carbamate_organophosphate_poisoning"
+  ],
+  "ctx": [
+   "urethral_obstruction",
+   "urethral_obstruction",
+   "urethral_obstruction"
+  ]
+ },
+ "extra:x_uo5": {
+  "top5": [
+   "urethral_obstruction",
+   "urethral_obstruction",
+   "urethral_obstruction",
+   "lily_toxicosis_cats",
+   "inappropriate_urination_or_cystitis"
+  ],
+  "ctx": [
+   "urethral_obstruction",
+   "urethral_obstruction",
+   "urethral_obstruction"
+  ]
+ },
+ "extra:x_uo6": {
+  "top5": [
+   "urethral_obstruction",
+   "inappropriate_urination_or_cystitis",
+   "acute_hindlimb_paralysis",
+   "lily_toxicosis_cats",
+   "carbamate_organophosphate_poisoning"
+  ],
+  "ctx": []
+ },
+ "extra:x_gr1": {
+  "top5": [
+   "grape_xylitol_toxicosis",
+   "chocolate_toxicosis",
+   "allium_toxicosis",
+   "anticoagulant_rodenticide_poisoning",
+   "grape_xylitol_toxicosis"
+  ],
+  "ctx": []
+ },
+ "extra:x_gr2": {
+  "top5": [
+   "anticoagulant_rodenticide_poisoning",
+   "anticoagulant_rodenticide_poisoning",
+   "anticoagulant_rodenticide_poisoning",
+   "chocolate_toxicosis",
+   "allium_toxicosis"
+  ],
+  "ctx": [
+   "anticoagulant_rodenticide_poisoning",
+   "anticoagulant_rodenticide_poisoning",
+   "anticoagulant_rodenticide_poisoning"
+  ]
+ },
+ "extra:x_sn1": {
+  "top5": [
+   "snake_and_scorpion_envenomation",
+   "airway_foreign_body_choking",
+   "toad_bufotoxin_poisoning",
+   "slow_growing_lump",
+   "anaphylaxis_facial_swelling"
+  ],
+  "ctx": []
+ },
+ "extra:x_sn2": {
+  "top5": [
+   "mild_lameness",
+   "airway_foreign_body_choking",
+   "dietary_indiscretion_mild",
+   "slow_growing_lump",
+   "toad_bufotoxin_poisoning"
+  ],
+  "ctx": []
+ },
+ "extra:x_tk1": {
+  "top5": [
+   "airway_foreign_body_choking",
+   "ticks_found_no_signs",
+   "slow_growing_lump",
+   "tremors_without_seizure",
+   "ocular_emergency"
+  ],
+  "ctx": []
+ },
+ "extra:x_tk2": {
+  "top5": [
+   "flea_dermatitis_pruritus",
+   "flea_dermatitis_pruritus",
+   "flea_dermatitis_pruritus",
+   "otitis_externa_mild",
+   "slow_growing_lump"
+  ],
+  "ctx": [
+   "flea_dermatitis_pruritus",
+   "flea_dermatitis_pruritus",
+   "flea_dermatitis_pruritus"
+  ]
+ },
+ "extra:x_fl1": {
+  "top5": [
+   "flea_dermatitis_pruritus",
+   "anaphylaxis_facial_swelling",
+   "carbamate_organophosphate_poisoning",
+   "rabies_exposure_wild_animal_bite",
+   "permethrin_toxicosis_cats"
+  ],
+  "ctx": [
+   "flea_dermatitis_pruritus"
+  ]
+ },
+ "extra:x_fl2": {
+  "top5": [
+   "airway_foreign_body_choking",
+   "slow_growing_lump",
+   "dietary_indiscretion_mild",
+   "tremors_without_seizure",
+   "ocular_emergency"
+  ],
+  "ctx": []
+ },
+ "extra:x_no1": {
+  "top5": [
+   "single_vomiting_or_mild_diarrhea",
+   "dietary_indiscretion_mild",
+   "airway_foreign_body_choking",
+   "congestive_heart_failure",
+   "burns_and_electrical_injury"
+  ],
+  "ctx": [
+   "single_vomiting_or_mild_diarrhea",
+   "dietary_indiscretion_mild"
+  ]
+ },
+ "extra:x_no2": {
+  "top5": [
+   "polyuria_polydipsia_investigate",
+   "anticoagulant_rodenticide_poisoning",
+   "leptospirosis_acute",
+   "trauma_and_bleeding",
+   "exertional_panting_mild"
+  ],
+  "ctx": []
+ }
+}

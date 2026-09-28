@@ -1,0 +1,35 @@
+{
+  "title": "Espirro reverso em caes",
+  "source": "Cornell Riney Canine Health Center",
+  "document_type": "owner_guidance",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog",
+  "topic": "mild_upper_respiratory_signs",
+  "language": "en",
+  "source_url": "https://www.vet.cornell.edu/departments-centers-and-institutes/riney-canine-health-center/canine-health-topics/reverse-sneezing",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "9eeb0f21e4aa0a96c745d7f654646eb3632b8cf4c5571155ffcdf4d8beda007d",
+  "map_line": "mild_upper_respiratory_signs",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: \"©2026\" Cornell University no rodapé; nenhuma licença de reutilização declarada. Sem data de publicação na página.",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "authors": "Brian Collins",
+  "full_title": "Reverse Sneezing",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de mild_upper_respiratory_signs (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
+}

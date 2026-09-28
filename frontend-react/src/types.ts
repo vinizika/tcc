@@ -38,7 +38,25 @@ export type ChatMessage = {
   created_at: string;
   triage?: Triage;
   retrieval?: { used_count: number; returned_count: number };
-  sources?: { title: string; source: string; cited: boolean }[];
+  sources?: {
+    title: string;
+    display_title?: string;
+    source: string;
+    cited: boolean;
+    references?: {
+      title: string;
+      url?: string;
+      year?: number | string;
+      journal?: string;
+    }[];
+  }[];
+  provenance?: {
+    attendant?: {
+      provider: string;
+      model: string;
+      fallback_from?: string | null;
+    };
+  } | null;
 };
 export type Conversation = {
   id: string;

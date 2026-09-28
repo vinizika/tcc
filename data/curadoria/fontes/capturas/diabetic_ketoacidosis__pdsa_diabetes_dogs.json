@@ -1,0 +1,35 @@
+{
+  "title": "Diabetes no cão (PDSA)",
+  "source": "PDSA",
+  "document_type": "owner_guidance",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog",
+  "topic": "diabetic_ketoacidosis",
+  "language": "en",
+  "source_url": "https://www.pdsa.org.uk/pet-help-and-advice/pet-health-hub/conditions/diabetes-in-dogs",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "70d620fd55c784a05ae5b47c266a0a72dec7d099cfd8d6cf3da1777951547249",
+  "map_line": "diabetic_ketoacidosis",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: © The People's Dispensary for Sick Animals (sem licença de reuso declarada); 'Published: December 2020'",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2020,
+  "full_title": "Diabetes in dogs",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de diabetic_ketoacidosis (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
+}

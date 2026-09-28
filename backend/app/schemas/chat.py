@@ -6,10 +6,11 @@ from app.schemas.triage import (
     DebugInfo,
     EffectiveConfig,
     PipelineOptions,
+    Provenance,
     RetrievalInfo,
     Timings,
 )
-from app.schemas.triage_output import TriageResult
+from app.schemas.triage_output import SourceReference, TriageResult
 
 
 class ChatRequest(BaseModel):
@@ -55,6 +56,12 @@ class SourceResponse(BaseModel):
     # Se o modelo citou este trecho na resposta.
     cited: bool = False
 
+    # Nas fichas de triagem (rodada 25 do João): o assunto do mapa, o nome da
+    # ficha para o tutor e os documentos aprovados por trás dela.
+    topic: str = ""
+    display_title: str = ""
+    references: list[SourceReference] = []
+
 
 class ChatResponse(BaseModel):
 
@@ -71,6 +78,10 @@ class ChatResponse(BaseModel):
     retrieval: Optional[RetrievalInfo] = None
     timings: Optional[Timings] = None
     debug: Optional[DebugInfo] = None
+
+    # Quem respondeu, desta vez: provedor, modelo e versão do atendente, e o
+    # provedor de cada etapa de consulta (rodada 25 do João).
+    provenance: Optional[Provenance] = None
 
     # Preenchido quando o turno foi gravado no histórico de conversa (Mongo
     # configurado e algum de tutor_id/pet_id/conversation_id informado).

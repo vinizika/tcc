@@ -1,0 +1,36 @@
+{
+  "title": "Rabies in Dogs",
+  "source": "MSD Veterinary Manual",
+  "document_type": "professional_manual",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog",
+  "topic": "rabies_exposure_wild_animal_bite",
+  "language": "en",
+  "source_url": "https://www.msdvetmanual.com/dog-owners/brain-spinal-cord-and-nerve-disorders-of-dogs/rabies-in-dogs",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "d7055922825c3d530c0d35949ac55e184cc138dcaed292c0b264e52c7e7ed2be",
+  "map_line": "rabies_exposure_wild_animal_bite",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2024,
+  "authors": "Charles E. Rupprecht",
+  "full_title": "Rabies in Dogs (MSD Veterinary Manual, Pet Owner Version)",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de rabies_exposure_wild_animal_bite (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
+}

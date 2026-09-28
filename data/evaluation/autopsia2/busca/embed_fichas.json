@@ -1,0 +1,8150 @@
+{
+ "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2": {
+  "dim": 384,
+  "indexar_s": 50.5,
+  "params_M": 118,
+  "dev": {
+   "todos": {
+    "P@1": 0.234,
+    "P@3": 0.447,
+    "MRR": 0.39,
+    "n": 47
+   },
+   "etapa1": {
+    "P@1": 0.214,
+    "P@3": 0.429,
+    "MRR": 0.375,
+    "n": 28
+   },
+   "etapa2": {
+    "P@1": 0.263,
+    "P@3": 0.474,
+    "MRR": 0.412,
+    "n": 19
+   }
+  },
+  "calib": {
+   "todos": {
+    "P@1": 0.125,
+    "P@3": 0.375,
+    "MRR": 0.262,
+    "n": 16
+   },
+   "etapa1": {
+    "P@1": 0.154,
+    "P@3": 0.462,
+    "MRR": 0.298,
+    "n": 13
+   },
+   "etapa2": {
+    "P@1": 0.0,
+    "P@3": 0.0,
+    "MRR": 0.103,
+    "n": 3
+   }
+  },
+  "regua": {
+   "todos": {
+    "P@1": 0.258,
+    "P@3": 0.409,
+    "MRR": 0.389,
+    "n": 66
+   },
+   "etapa1": {
+    "P@1": 0.194,
+    "P@3": 0.306,
+    "MRR": 0.326,
+    "n": 36
+   },
+   "etapa2": {
+    "P@1": 0.333,
+    "P@3": 0.533,
+    "MRR": 0.464,
+    "n": 30
+   }
+  },
+  "ms_por_consulta": 13.5,
+  "casos": {
+   "dev:p19": [
+    [
+     "lily_toxicosis_cats",
+     "rabies_exposure_wild_animal_bite",
+     "dietary_indiscretion_mild",
+     "kennel_cough_mild",
+     "permethrin_toxicosis_cats"
+    ],
+    7
+   ],
+   "dev:p20": [
+    [
+     "lily_toxicosis_cats",
+     "allium_toxicosis",
+     "gastrointestinal_foreign_body",
+     "urethral_obstruction",
+     "permethrin_toxicosis_cats"
+    ],
+    1
+   ],
+   "dev:p21": [
+    [
+     "respiratory_distress",
+     "high_rise_syndrome_cats",
+     "gastrointestinal_foreign_body",
+     "permethrin_toxicosis_cats",
+     "mild_upper_respiratory_signs"
+    ],
+    0
+   ],
+   "dev:p22": [
+    [
+     "kennel_cough_mild",
+     "high_rise_syndrome_cats",
+     "feline_aortic_thromboembolism",
+     "dystocia",
+     "lily_toxicosis_cats"
+    ],
+    8
+   ],
+   "dev:p23": [
+    [
+     "feline_aortic_thromboembolism",
+     "high_rise_syndrome_cats",
+     "minor_wound",
+     "kennel_cough_mild",
+     "snake_and_scorpion_envenomation"
+    ],
+    9
+   ],
+   "dev:p24": [
+    [
+     "feline_aortic_thromboembolism",
+     "high_rise_syndrome_cats",
+     "eclampsia",
+     "hypoglycemia_toy_puppy",
+     "congestive_heart_failure"
+    ],
+    null
+   ],
+   "dev:p25": [
+    [
+     "gastrointestinal_foreign_body",
+     "lily_toxicosis_cats",
+     "vomiting_and_diarrhea",
+     "diabetic_ketoacidosis",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    2
+   ],
+   "dev:p26": [
+    [
+     "high_rise_syndrome_cats",
+     "feline_aortic_thromboembolism",
+     "kennel_cough_mild",
+     "dystocia",
+     "hypoglycemia_toy_puppy"
+    ],
+    null
+   ],
+   "dev:p27": [
+    [
+     "congestive_heart_failure",
+     "kennel_cough_mild",
+     "hypoglycemia_toy_puppy",
+     "high_rise_syndrome_cats",
+     "lily_toxicosis_cats"
+    ],
+    null
+   ],
+   "dev:p28": [
+    [
+     "gastrointestinal_foreign_body",
+     "fading_neonate",
+     "normal_whelping",
+     "lily_toxicosis_cats",
+     "respiratory_distress"
+    ],
+    1
+   ],
+   "dev:p29": [
+    [
+     "feline_aortic_thromboembolism",
+     "hypoglycemia_toy_puppy",
+     "congestive_heart_failure",
+     "eclampsia",
+     "high_rise_syndrome_cats"
+    ],
+    9
+   ],
+   "dev:p30": [
+    [
+     "anticoagulant_rodenticide_poisoning",
+     "lily_toxicosis_cats",
+     "rabies_exposure_wild_animal_bite",
+     "high_rise_syndrome_cats",
+     "snake_and_scorpion_envenomation"
+    ],
+    0
+   ],
+   "dev:p31": [
+    [
+     "permethrin_toxicosis_cats",
+     "human_medication_poisoning",
+     "lily_toxicosis_cats",
+     "cat_bite_abscess",
+     "high_rise_syndrome_cats"
+    ],
+    1
+   ],
+   "dev:p32": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     "insect_sting_local_reaction",
+     "kennel_cough_mild",
+     "anaphylaxis_facial_swelling",
+     "high_rise_syndrome_cats"
+    ],
+    3
+   ],
+   "dev:p33": [
+    [
+     "congestive_heart_failure",
+     "kennel_cough_mild",
+     "high_rise_syndrome_cats",
+     "lily_toxicosis_cats",
+     "feline_aortic_thromboembolism"
+    ],
+    0
+   ],
+   "dev:p34": [
+    [
+     "collapse_and_pale_gums",
+     "gastrointestinal_foreign_body",
+     "permethrin_toxicosis_cats",
+     "lily_toxicosis_cats",
+     "respiratory_distress"
+    ],
+    0
+   ],
+   "dev:p35": [
+    [
+     "parvovirus_panleukopenia",
+     "anticoagulant_rodenticide_poisoning",
+     "single_vomiting_or_mild_diarrhea",
+     "fading_neonate",
+     "toad_bufotoxin_poisoning"
+    ],
+    0
+   ],
+   "dev:p36": [
+    [
+     "ocular_emergency",
+     "vestibular_syndrome_otitis_interna",
+     "mild_conjunctivitis",
+     "eclampsia",
+     "high_rise_syndrome_cats"
+    ],
+    0
+   ],
+   "dev:p37": [
+    [
+     "high_rise_syndrome_cats",
+     "permethrin_toxicosis_cats",
+     "feline_aortic_thromboembolism",
+     "congestive_heart_failure",
+     "airway_foreign_body_choking"
+    ],
+    1
+   ],
+   "dev:p38": [
+    [
+     "lily_toxicosis_cats",
+     "gastrointestinal_foreign_body",
+     "permethrin_toxicosis_cats",
+     "reduced_appetite_no_other_signs",
+     "allium_toxicosis"
+    ],
+    1
+   ],
+   "dev:p39": [
+    [
+     "feline_aortic_thromboembolism",
+     "congestive_heart_failure",
+     "hypoglycemia_toy_puppy",
+     "eclampsia",
+     "lily_toxicosis_cats"
+    ],
+    null
+   ],
+   "dev:p40": [
+    [
+     "kennel_cough_mild",
+     "dystocia",
+     "hypoglycemia_toy_puppy",
+     "high_rise_syndrome_cats",
+     "fading_neonate"
+    ],
+    1
+   ],
+   "dev:p41": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     "congestive_heart_failure",
+     "hypoglycemia_toy_puppy",
+     "feline_aortic_thromboembolism",
+     "otitis_externa_mild"
+    ],
+    null
+   ],
+   "dev:p42": [
+    [
+     "fading_neonate",
+     "single_vomiting_or_mild_diarrhea",
+     "lily_toxicosis_cats",
+     "hypoglycemia_toy_puppy",
+     "reduced_appetite_no_other_signs"
+    ],
+    3
+   ],
+   "dev:p43": [
+    [
+     "feline_aortic_thromboembolism",
+     "hypoglycemia_toy_puppy",
+     "dystocia",
+     "kennel_cough_mild",
+     "eclampsia"
+    ],
+    4
+   ],
+   "dev:p44": [
+    [
+     "gastrointestinal_foreign_body",
+     "allium_toxicosis",
+     "urethral_obstruction",
+     "permethrin_toxicosis_cats",
+     "lily_toxicosis_cats"
+    ],
+    7
+   ],
+   "dev:p45": [
+    [
+     "gastrointestinal_foreign_body",
+     "reduced_appetite_no_other_signs",
+     "permethrin_toxicosis_cats",
+     "lily_toxicosis_cats",
+     "respiratory_distress"
+    ],
+    6
+   ],
+   "dev:p46": [
+    [
+     "gastrointestinal_foreign_body",
+     "high_rise_syndrome_cats",
+     "permethrin_toxicosis_cats",
+     "lily_toxicosis_cats",
+     "dystocia"
+    ],
+    8
+   ],
+   "dev:p47": [
+    [
+     "feline_aortic_thromboembolism",
+     "hypoglycemia_toy_puppy",
+     "high_rise_syndrome_cats",
+     "kennel_cough_mild",
+     "congestive_heart_failure"
+    ],
+    6
+   ],
+   "dev:p48": [
+    [
+     "lily_toxicosis_cats",
+     "kennel_cough_mild",
+     "single_vomiting_or_mild_diarrhea",
+     "congestive_heart_failure",
+     "rabies_exposure_wild_animal_bite"
+    ],
+    2
+   ],
+   "dev:p49": [
+    [
+     "kennel_cough_mild",
+     "high_rise_syndrome_cats",
+     "feline_aortic_thromboembolism",
+     "osteoarthritis_stiffness",
+     "hypoglycemia_toy_puppy"
+    ],
+    3
+   ],
+   "dev:p50": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     "kennel_cough_mild",
+     "high_rise_syndrome_cats",
+     "hypoglycemia_toy_puppy",
+     "insect_sting_local_reaction"
+    ],
+    4
+   ],
+   "dev:p51": [
+    [
+     "kennel_cough_mild",
+     "high_rise_syndrome_cats",
+     "congestive_heart_failure",
+     "hypoglycemia_toy_puppy",
+     "lily_toxicosis_cats"
+    ],
+    0
+   ],
+   "dev:p52": [
+    [
+     "mild_conjunctivitis",
+     "ocular_emergency",
+     "vestibular_syndrome_otitis_interna",
+     "cat_bite_abscess",
+     "otitis_externa_mild"
+    ],
+    0
+   ],
+   "dev:p53": [
+    [
+     "kennel_cough_mild",
+     "dystocia",
+     "fading_neonate",
+     "hypoglycemia_toy_puppy",
+     "normal_whelping"
+    ],
+    4
+   ],
+   "dev:p54": [
+    [
+     "kennel_cough_mild",
+     "feline_aortic_thromboembolism",
+     "congestive_heart_failure",
+     "high_rise_syndrome_cats",
+     "hypoglycemia_toy_puppy"
+    ],
+    null
+   ],
+   "dev:p55": [
+    [
+     "feline_aortic_thromboembolism",
+     "hypoglycemia_toy_puppy",
+     "high_rise_syndrome_cats",
+     "eclampsia",
+     "acute_hindlimb_paralysis"
+    ],
+    6
+   ],
+   "dev:p56": [
+    [
+     "gastrointestinal_foreign_body",
+     "lily_toxicosis_cats",
+     "high_rise_syndrome_cats",
+     "cat_bite_abscess",
+     "periodontal_disease_mild"
+    ],
+    5
+   ],
+   "dev:p57": [
+    [
+     "lily_toxicosis_cats",
+     "kennel_cough_mild",
+     "single_vomiting_or_mild_diarrhea",
+     "grape_xylitol_toxicosis",
+     "reduced_appetite_no_other_signs"
+    ],
+    4
+   ],
+   "dev:p58": [
+    [
+     "cat_bite_abscess",
+     "high_rise_syndrome_cats",
+     "gastrointestinal_foreign_body",
+     "otitis_externa_mild",
+     "permethrin_toxicosis_cats"
+    ],
+    0
+   ],
+   "dev:p59": [
+    [
+     "lily_toxicosis_cats",
+     "diabetic_ketoacidosis",
+     "polyuria_polydipsia_investigate",
+     "gastrointestinal_foreign_body",
+     "permethrin_toxicosis_cats"
+    ],
+    2
+   ],
+   "dev:p60": [
+    [
+     "high_rise_syndrome_cats",
+     "minor_wound",
+     "feline_aortic_thromboembolism",
+     "kennel_cough_mild",
+     "cat_bite_abscess"
+    ],
+    1
+   ],
+   "dev:p61": [
+    [
+     "periodontal_disease_mild",
+     "gastrointestinal_foreign_body",
+     "lily_toxicosis_cats",
+     "vestibular_syndrome_otitis_interna",
+     "high_rise_syndrome_cats"
+    ],
+    0
+   ],
+   "dev:p62": [
+    [
+     "high_rise_syndrome_cats",
+     "feline_aortic_thromboembolism",
+     "kennel_cough_mild",
+     "congestive_heart_failure",
+     "rabies_exposure_wild_animal_bite"
+    ],
+    null
+   ],
+   "dev:p63": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     "kennel_cough_mild",
+     "insect_sting_local_reaction",
+     "high_rise_syndrome_cats",
+     "hypoglycemia_toy_puppy"
+    ],
+    0
+   ],
+   "dev:p64": [
+    [
+     "vestibular_syndrome_otitis_interna",
+     "otitis_externa_mild",
+     "gastrointestinal_foreign_body",
+     "permethrin_toxicosis_cats",
+     "tremors_without_seizure"
+    ],
+    null
+   ],
+   "dev:p65": [
+    [
+     "kennel_cough_mild",
+     "high_rise_syndrome_cats",
+     "dystocia",
+     "congestive_heart_failure",
+     "feline_aortic_thromboembolism"
+    ],
+    null
+   ],
+   "calib:p01": [
+    [
+     "hypoglycemia_toy_puppy",
+     "eclampsia",
+     "congestive_heart_failure",
+     "rabies_exposure_wild_animal_bite",
+     "insect_sting_local_reaction"
+    ],
+    null
+   ],
+   "calib:p02": [
+    [
+     "hypoglycemia_toy_puppy",
+     "feline_aortic_thromboembolism",
+     "kennel_cough_mild",
+     "high_rise_syndrome_cats",
+     "congestive_heart_failure"
+    ],
+    5
+   ],
+   "calib:p03": [
+    [
+     "eclampsia",
+     "hypoglycemia_toy_puppy",
+     "feline_aortic_thromboembolism",
+     "high_rise_syndrome_cats",
+     "congestive_heart_failure"
+    ],
+    6
+   ],
+   "calib:p04": [
+    [
+     "lily_toxicosis_cats",
+     "dietary_indiscretion_mild",
+     "kennel_cough_mild",
+     "single_vomiting_or_mild_diarrhea",
+     "allium_toxicosis"
+    ],
+    1
+   ],
+   "calib:p05": [
+    [
+     "lily_toxicosis_cats",
+     "permethrin_toxicosis_cats",
+     "urethral_obstruction",
+     "human_medication_poisoning",
+     "periodontal_disease_mild"
+    ],
+    3
+   ],
+   "calib:p06": [
+    [
+     "gastrointestinal_foreign_body",
+     "lily_toxicosis_cats",
+     "single_vomiting_or_mild_diarrhea",
+     "permethrin_toxicosis_cats",
+     "urethral_obstruction"
+    ],
+    2
+   ],
+   "calib:p07": [
+    [
+     "kennel_cough_mild",
+     "congestive_heart_failure",
+     "single_vomiting_or_mild_diarrhea",
+     "lily_toxicosis_cats",
+     "rabies_exposure_wild_animal_bite"
+    ],
+    null
+   ],
+   "calib:p08": [
+    [
+     "gastrointestinal_foreign_body",
+     "permethrin_toxicosis_cats",
+     "urethral_obstruction",
+     "high_rise_syndrome_cats",
+     "respiratory_distress"
+    ],
+    2
+   ],
+   "calib:p09": [
+    [
+     "gastrointestinal_foreign_body",
+     "high_rise_syndrome_cats",
+     "acute_hindlimb_paralysis",
+     "permethrin_toxicosis_cats",
+     "urethral_obstruction"
+    ],
+    null
+   ],
+   "calib:p10": [
+    [
+     "lily_toxicosis_cats",
+     "kennel_cough_mild",
+     "congestive_heart_failure",
+     "diabetic_ketoacidosis",
+     "high_rise_syndrome_cats"
+    ],
+    null
+   ],
+   "calib:p11": [
+    [
+     "lily_toxicosis_cats",
+     "kennel_cough_mild",
+     "high_rise_syndrome_cats",
+     "single_vomiting_or_mild_diarrhea",
+     "diabetic_ketoacidosis"
+    ],
+    null
+   ],
+   "calib:p12": [
+    [
+     "acute_hindlimb_paralysis",
+     "feline_aortic_thromboembolism",
+     "permethrin_toxicosis_cats",
+     "high_rise_syndrome_cats",
+     "respiratory_distress"
+    ],
+    0
+   ],
+   "calib:p13": [
+    [
+     "high_rise_syndrome_cats",
+     "kennel_cough_mild",
+     "osteoarthritis_stiffness",
+     "congestive_heart_failure",
+     "feline_aortic_thromboembolism"
+    ],
+    2
+   ],
+   "calib:p14": [
+    [
+     "feline_aortic_thromboembolism",
+     "high_rise_syndrome_cats",
+     "hypoglycemia_toy_puppy",
+     "eclampsia",
+     "kennel_cough_mild"
+    ],
+    null
+   ],
+   "calib:p17": [
+    [
+     "feline_aortic_thromboembolism",
+     "high_rise_syndrome_cats",
+     "kennel_cough_mild",
+     "eclampsia",
+     "vestibular_syndrome_otitis_interna"
+    ],
+    7
+   ],
+   "calib:p18": [
+    [
+     "mild_conjunctivitis",
+     "ocular_emergency",
+     "vestibular_syndrome_otitis_interna",
+     "gastrointestinal_foreign_body",
+     "lily_toxicosis_cats"
+    ],
+    0
+   ],
+   "regua:b01": [
+    [
+     "chocolate_toxicosis",
+     "single_vomiting_or_mild_diarrhea",
+     "lily_toxicosis_cats",
+     "kennel_cough_mild",
+     "congestive_heart_failure"
+    ],
+    0
+   ],
+   "regua:b02": [
+    [
+     "cat_bite_abscess",
+     "gastrointestinal_foreign_body",
+     "urethral_obstruction",
+     "high_rise_syndrome_cats",
+     "permethrin_toxicosis_cats"
+    ],
+    2
+   ],
+   "regua:b03": [
+    [
+     "feline_aortic_thromboembolism",
+     "high_rise_syndrome_cats",
+     "congestive_heart_failure",
+     "kennel_cough_mild",
+     "hypoglycemia_toy_puppy"
+    ],
+    7
+   ],
+   "regua:b04": [
+    [
+     "kennel_cough_mild",
+     "hypoglycemia_toy_puppy",
+     "eclampsia",
+     "high_rise_syndrome_cats",
+     "congestive_heart_failure"
+    ],
+    6
+   ],
+   "regua:b05": [
+    [
+     "respiratory_distress",
+     "lily_toxicosis_cats",
+     "gastrointestinal_foreign_body",
+     "permethrin_toxicosis_cats",
+     "mild_upper_respiratory_signs"
+    ],
+    4
+   ],
+   "regua:b06": [
+    [
+     "minor_wound",
+     "high_rise_syndrome_cats",
+     "kennel_cough_mild",
+     "congestive_heart_failure",
+     "feline_aortic_thromboembolism"
+    ],
+    6
+   ],
+   "regua:b07": [
+    [
+     "kennel_cough_mild",
+     "congestive_heart_failure",
+     "hypoglycemia_toy_puppy",
+     "lily_toxicosis_cats",
+     "eclampsia"
+    ],
+    8
+   ],
+   "regua:b08": [
+    [
+     "lily_toxicosis_cats",
+     "allium_toxicosis",
+     "kennel_cough_mild",
+     "grape_xylitol_toxicosis",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    1
+   ],
+   "regua:b09": [
+    [
+     "kennel_cough_mild",
+     "feline_aortic_thromboembolism",
+     "lily_toxicosis_cats",
+     "flea_dermatitis_pruritus",
+     "congestive_heart_failure"
+    ],
+    3
+   ],
+   "regua:b10": [
+    [
+     "feline_aortic_thromboembolism",
+     "kennel_cough_mild",
+     "high_rise_syndrome_cats",
+     "hypoglycemia_toy_puppy",
+     "acute_hindlimb_paralysis"
+    ],
+    5
+   ],
+   "regua:b11": [
+    [
+     "cat_bite_abscess",
+     "vestibular_syndrome_otitis_interna",
+     "high_rise_syndrome_cats",
+     "lily_toxicosis_cats",
+     "mild_conjunctivitis"
+    ],
+    4
+   ],
+   "regua:b12": [
+    [
+     "congestive_heart_failure",
+     "kennel_cough_mild",
+     "feline_aortic_thromboembolism",
+     "eclampsia",
+     "hypoglycemia_toy_puppy"
+    ],
+    null
+   ],
+   "regua:b13": [
+    [
+     "cat_bite_abscess",
+     "kennel_cough_mild",
+     "high_rise_syndrome_cats",
+     "minor_wound",
+     "lily_toxicosis_cats"
+    ],
+    6
+   ],
+   "regua:b14": [
+    [
+     "fading_neonate",
+     "hypoglycemia_toy_puppy",
+     "normal_whelping",
+     "burns_and_electrical_injury",
+     "congestive_heart_failure"
+    ],
+    0
+   ],
+   "regua:b15": [
+    [
+     "congestive_heart_failure",
+     "feline_aortic_thromboembolism",
+     "kennel_cough_mild",
+     "high_rise_syndrome_cats",
+     "rabies_exposure_wild_animal_bite"
+    ],
+    null
+   ],
+   "regua:b16": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     "kennel_cough_mild",
+     "feline_aortic_thromboembolism",
+     "snake_and_scorpion_envenomation",
+     "high_rise_syndrome_cats"
+    ],
+    7
+   ],
+   "regua:b17": [
+    [
+     "feline_aortic_thromboembolism",
+     "congestive_heart_failure",
+     "hypoglycemia_toy_puppy",
+     "kennel_cough_mild",
+     "high_rise_syndrome_cats"
+    ],
+    7
+   ],
+   "regua:b18": [
+    [
+     "gastrointestinal_foreign_body",
+     "respiratory_distress",
+     "lily_toxicosis_cats",
+     "congestive_heart_failure",
+     "mild_upper_respiratory_signs"
+    ],
+    4
+   ],
+   "regua:b19": [
+    [
+     "human_medication_poisoning",
+     "lily_toxicosis_cats",
+     "permethrin_toxicosis_cats",
+     "anticoagulant_rodenticide_poisoning",
+     "urethral_obstruction"
+    ],
+    0
+   ],
+   "regua:b20": [
+    [
+     "hypoglycemia_toy_puppy",
+     "eclampsia",
+     "feline_aortic_thromboembolism",
+     "high_rise_syndrome_cats",
+     "kennel_cough_mild"
+    ],
+    null
+   ],
+   "regua:b21": [
+    [
+     "high_rise_syndrome_cats",
+     "hypoglycemia_toy_puppy",
+     "eclampsia",
+     "feline_aortic_thromboembolism",
+     "permethrin_toxicosis_cats"
+    ],
+    4
+   ],
+   "regua:b22": [
+    [
+     "anticoagulant_rodenticide_poisoning",
+     "rabies_exposure_wild_animal_bite",
+     "toad_bufotoxin_poisoning",
+     "lily_toxicosis_cats",
+     "insect_sting_local_reaction"
+    ],
+    0
+   ],
+   "regua:b23": [
+    [
+     "parvovirus_panleukopenia",
+     "lily_toxicosis_cats",
+     "gastrointestinal_foreign_body",
+     "anticoagulant_rodenticide_poisoning",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    0
+   ],
+   "regua:b24": [
+    [
+     "lily_toxicosis_cats",
+     "kennel_cough_mild",
+     "polyuria_polydipsia_investigate",
+     "congestive_heart_failure",
+     "eclampsia"
+    ],
+    null
+   ],
+   "regua:b25": [
+    [
+     "kennel_cough_mild",
+     "lily_toxicosis_cats",
+     "single_vomiting_or_mild_diarrhea",
+     "dietary_indiscretion_mild",
+     "allium_toxicosis"
+    ],
+    3
+   ],
+   "regua:b26": [
+    [
+     "gastrointestinal_foreign_body",
+     "high_rise_syndrome_cats",
+     "permethrin_toxicosis_cats",
+     "urethral_obstruction",
+     "inappropriate_urination_or_cystitis"
+    ],
+    4
+   ],
+   "regua:b27": [
+    [
+     "high_rise_syndrome_cats",
+     "kennel_cough_mild",
+     "lily_toxicosis_cats",
+     "hypoglycemia_toy_puppy",
+     "congestive_heart_failure"
+    ],
+    6
+   ],
+   "regua:b28": [
+    [
+     "kennel_cough_mild",
+     "lily_toxicosis_cats",
+     "single_vomiting_or_mild_diarrhea",
+     "high_rise_syndrome_cats",
+     "congestive_heart_failure"
+    ],
+    null
+   ],
+   "regua:b29": [
+    [
+     "reduced_appetite_no_other_signs",
+     "lily_toxicosis_cats",
+     "single_vomiting_or_mild_diarrhea",
+     "polyuria_polydipsia_investigate",
+     "diabetic_ketoacidosis"
+    ],
+    0
+   ],
+   "regua:b30": [
+    [
+     "gastrointestinal_foreign_body",
+     "lily_toxicosis_cats",
+     "permethrin_toxicosis_cats",
+     "single_vomiting_or_mild_diarrhea",
+     "urethral_obstruction"
+    ],
+    0
+   ],
+   "regua:b31": [
+    [
+     "high_rise_syndrome_cats",
+     "respiratory_distress",
+     "gastrointestinal_foreign_body",
+     "lily_toxicosis_cats",
+     "cat_bite_abscess"
+    ],
+    4
+   ],
+   "regua:b32": [
+    [
+     "congestive_heart_failure",
+     "feline_aortic_thromboembolism",
+     "kennel_cough_mild",
+     "high_rise_syndrome_cats",
+     "hypoglycemia_toy_puppy"
+    ],
+    0
+   ],
+   "regua:b33": [
+    [
+     "lily_toxicosis_cats",
+     "congestive_heart_failure",
+     "diabetic_ketoacidosis",
+     "single_vomiting_or_mild_diarrhea",
+     "kennel_cough_mild"
+    ],
+    2
+   ],
+   "regua:b34": [
+    [
+     "leptospirosis_acute",
+     "rabies_exposure_wild_animal_bite",
+     "parvovirus_panleukopenia",
+     "feline_aortic_thromboembolism",
+     "congestive_heart_failure"
+    ],
+    null
+   ],
+   "regua:b35": [
+    [
+     "kennel_cough_mild",
+     "dystocia",
+     "high_rise_syndrome_cats",
+     "hypoglycemia_toy_puppy",
+     "feline_aortic_thromboembolism"
+    ],
+    1
+   ],
+   "regua:b36": [
+    [
+     "respiratory_distress",
+     "permethrin_toxicosis_cats",
+     "feline_aortic_thromboembolism",
+     "tremors_without_seizure",
+     "high_rise_syndrome_cats"
+    ],
+    2
+   ],
+   "regua:b37": [
+    [
+     "eclampsia",
+     "kennel_cough_mild",
+     "congestive_heart_failure",
+     "hypoglycemia_toy_puppy",
+     "anaphylaxis_facial_swelling"
+    ],
+    null
+   ],
+   "regua:b38": [
+    [
+     "lily_toxicosis_cats",
+     "permethrin_toxicosis_cats",
+     "anaphylaxis_facial_swelling",
+     "respiratory_distress",
+     "mild_upper_respiratory_signs"
+    ],
+    0
+   ],
+   "regua:b39": [
+    [
+     "lily_toxicosis_cats",
+     "rabies_exposure_wild_animal_bite",
+     "flea_dermatitis_pruritus",
+     "hypoglycemia_toy_puppy",
+     "toad_bufotoxin_poisoning"
+    ],
+    4
+   ],
+   "regua:b40": [
+    [
+     "hypoglycemia_toy_puppy",
+     "eclampsia",
+     "congestive_heart_failure",
+     "kennel_cough_mild",
+     "feline_aortic_thromboembolism"
+    ],
+    null
+   ],
+   "regua:b41": [
+    [
+     "lily_toxicosis_cats",
+     "congestive_heart_failure",
+     "kennel_cough_mild",
+     "high_rise_syndrome_cats",
+     "gastrointestinal_foreign_body"
+    ],
+    null
+   ],
+   "regua:b42": [
+    [
+     "lily_toxicosis_cats",
+     "high_rise_syndrome_cats",
+     "urethral_obstruction",
+     "collapse_and_pale_gums",
+     "periodontal_disease_mild"
+    ],
+    3
+   ],
+   "regua:b43": [
+    [
+     "vestibular_syndrome_otitis_interna",
+     "eclampsia",
+     "ocular_emergency",
+     "cat_bite_abscess",
+     "high_rise_syndrome_cats"
+    ],
+    2
+   ],
+   "regua:b44": [
+    [
+     "permethrin_toxicosis_cats",
+     "gastrointestinal_foreign_body",
+     "respiratory_distress",
+     "otitis_externa_mild",
+     "mild_upper_respiratory_signs"
+    ],
+    null
+   ],
+   "regua:b45": [
+    [
+     "snake_and_scorpion_envenomation",
+     "feline_aortic_thromboembolism",
+     "high_rise_syndrome_cats",
+     "lily_toxicosis_cats",
+     "rabies_exposure_wild_animal_bite"
+    ],
+    0
+   ],
+   "regua:b46": [
+    [
+     "kennel_cough_mild",
+     "hypoglycemia_toy_puppy",
+     "flea_dermatitis_pruritus",
+     "congestive_heart_failure",
+     "tick_borne_disease_anemia"
+    ],
+    4
+   ],
+   "regua:b47": [
+    [
+     "fading_neonate",
+     "hypoglycemia_toy_puppy",
+     "kennel_cough_mild",
+     "lily_toxicosis_cats",
+     "reduced_appetite_no_other_signs"
+    ],
+    1
+   ],
+   "regua:b48": [
+    [
+     "feline_aortic_thromboembolism",
+     "hypoglycemia_toy_puppy",
+     "eclampsia",
+     "congestive_heart_failure",
+     "high_rise_syndrome_cats"
+    ],
+    5
+   ],
+   "regua:b49": [
+    [
+     "high_rise_syndrome_cats",
+     "respiratory_distress",
+     "permethrin_toxicosis_cats",
+     "mild_upper_respiratory_signs",
+     "dystocia"
+    ],
+    0
+   ],
+   "regua:b50": [
+    [
+     "burns_and_electrical_injury",
+     "hypoglycemia_toy_puppy",
+     "minor_wound",
+     "eclampsia",
+     "anaphylaxis_facial_swelling"
+    ],
+    0
+   ],
+   "regua:b51": [
+    [
+     "eclampsia",
+     "hypoglycemia_toy_puppy",
+     "congestive_heart_failure",
+     "kennel_cough_mild",
+     "feline_aortic_thromboembolism"
+    ],
+    0
+   ],
+   "regua:b52": [
+    [
+     "grape_xylitol_toxicosis",
+     "lily_toxicosis_cats",
+     "allium_toxicosis",
+     "chocolate_toxicosis",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    0
+   ],
+   "regua:b53": [
+    [
+     "kennel_cough_mild",
+     "dystocia",
+     "high_rise_syndrome_cats",
+     "hypoglycemia_toy_puppy",
+     "congestive_heart_failure"
+    ],
+    6
+   ],
+   "regua:b54": [
+    [
+     "lily_toxicosis_cats",
+     "high_rise_syndrome_cats",
+     "insect_sting_local_reaction",
+     "gastrointestinal_foreign_body",
+     "permethrin_toxicosis_cats"
+    ],
+    2
+   ],
+   "regua:b55": [
+    [
+     "kennel_cough_mild",
+     "congestive_heart_failure",
+     "lily_toxicosis_cats",
+     "high_rise_syndrome_cats",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    0
+   ],
+   "regua:b56": [
+    [
+     "lily_toxicosis_cats",
+     "diabetic_ketoacidosis",
+     "reduced_appetite_no_other_signs",
+     "periodontal_disease_mild",
+     "permethrin_toxicosis_cats"
+    ],
+    5
+   ],
+   "regua:b57": [
+    [
+     "feline_aortic_thromboembolism",
+     "congestive_heart_failure",
+     "high_rise_syndrome_cats",
+     "otitis_externa_mild",
+     "kennel_cough_mild"
+    ],
+    3
+   ],
+   "regua:b58": [
+    [
+     "cat_bite_abscess",
+     "minor_wound",
+     "high_rise_syndrome_cats",
+     "gastrointestinal_foreign_body",
+     "lily_toxicosis_cats"
+    ],
+    1
+   ],
+   "regua:b59": [
+    [
+     "lily_toxicosis_cats",
+     "kennel_cough_mild",
+     "hypoglycemia_toy_puppy",
+     "congestive_heart_failure",
+     "eclampsia"
+    ],
+    null
+   ],
+   "regua:b60": [
+    [
+     "high_rise_syndrome_cats",
+     "kennel_cough_mild",
+     "hypoglycemia_toy_puppy",
+     "lily_toxicosis_cats",
+     "feline_aortic_thromboembolism"
+    ],
+    9
+   ],
+   "regua:b61": [
+    [
+     "kennel_cough_mild",
+     "high_rise_syndrome_cats",
+     "dystocia",
+     "congestive_heart_failure",
+     "hypoglycemia_toy_puppy"
+    ],
+    null
+   ],
+   "regua:b62": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     "cat_bite_abscess",
+     "high_rise_syndrome_cats",
+     "lily_toxicosis_cats",
+     "insect_sting_local_reaction"
+    ],
+    0
+   ],
+   "regua:b63": [
+    [
+     "lily_toxicosis_cats",
+     "kennel_cough_mild",
+     "rabies_exposure_wild_animal_bite",
+     "flea_dermatitis_pruritus",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    null
+   ],
+   "regua:b64": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "kennel_cough_mild",
+     "lily_toxicosis_cats",
+     "congestive_heart_failure",
+     "gastrointestinal_foreign_body"
+    ],
+    0
+   ],
+   "regua:b65": [
+    [
+     "gastrointestinal_foreign_body",
+     "lily_toxicosis_cats",
+     "single_vomiting_or_mild_diarrhea",
+     "permethrin_toxicosis_cats",
+     "allium_toxicosis"
+    ],
+    2
+   ],
+   "regua:b66": [
+    [
+     "lily_toxicosis_cats",
+     "congestive_heart_failure",
+     "kennel_cough_mild",
+     "single_vomiting_or_mild_diarrhea",
+     "tick_borne_disease_anemia"
+    ],
+    3
+   ]
+  }
+ },
+ "sentence-transformers/paraphrase-multilingual-mpnet-base-v2": {
+  "dim": 768,
+  "indexar_s": 48.1,
+  "params_M": 278,
+  "dev": {
+   "todos": {
+    "P@1": 0.362,
+    "P@3": 0.723,
+    "MRR": 0.547,
+    "n": 47
+   },
+   "etapa1": {
+    "P@1": 0.429,
+    "P@3": 0.786,
+    "MRR": 0.61,
+    "n": 28
+   },
+   "etapa2": {
+    "P@1": 0.263,
+    "P@3": 0.632,
+    "MRR": 0.454,
+    "n": 19
+   }
+  },
+  "calib": {
+   "todos": {
+    "P@1": 0.25,
+    "P@3": 0.5,
+    "MRR": 0.417,
+    "n": 16
+   },
+   "etapa1": {
+    "P@1": 0.308,
+    "P@3": 0.538,
+    "MRR": 0.472,
+    "n": 13
+   },
+   "etapa2": {
+    "P@1": 0.0,
+    "P@3": 0.333,
+    "MRR": 0.178,
+    "n": 3
+   }
+  },
+  "regua": {
+   "todos": {
+    "P@1": 0.439,
+    "P@3": 0.682,
+    "MRR": 0.584,
+    "n": 66
+   },
+   "etapa1": {
+    "P@1": 0.417,
+    "P@3": 0.722,
+    "MRR": 0.589,
+    "n": 36
+   },
+   "etapa2": {
+    "P@1": 0.467,
+    "P@3": 0.633,
+    "MRR": 0.577,
+    "n": 30
+   }
+  },
+  "ms_por_consulta": 29.1,
+  "casos": {
+   "dev:p19": [
+    [
+     "permethrin_toxicosis_cats",
+     "gastrointestinal_foreign_body",
+     "toad_bufotoxin_poisoning",
+     "dietary_indiscretion_mild",
+     "lily_toxicosis_cats"
+    ],
+    5
+   ],
+   "dev:p20": [
+    [
+     "lily_toxicosis_cats",
+     "high_rise_syndrome_cats",
+     "allium_toxicosis",
+     "gastrointestinal_foreign_body",
+     "permethrin_toxicosis_cats"
+    ],
+    2
+   ],
+   "dev:p21": [
+    [
+     "high_rise_syndrome_cats",
+     "feline_aortic_thromboembolism",
+     "respiratory_distress",
+     "permethrin_toxicosis_cats",
+     "acute_hindlimb_paralysis"
+    ],
+    2
+   ],
+   "dev:p22": [
+    [
+     "seizures",
+     "acute_hindlimb_paralysis",
+     "permethrin_toxicosis_cats",
+     "hypoglycemia_toy_puppy",
+     "trauma_and_bleeding"
+    ],
+    0
+   ],
+   "dev:p23": [
+    [
+     "trauma_and_bleeding",
+     "minor_wound",
+     "burns_and_electrical_injury",
+     "snake_and_scorpion_envenomation",
+     "feline_aortic_thromboembolism"
+    ],
+    0
+   ],
+   "dev:p24": [
+    [
+     "inappropriate_urination_or_cystitis",
+     "kennel_cough_mild",
+     "urethral_obstruction",
+     "osteoarthritis_stiffness",
+     "seizures"
+    ],
+    2
+   ],
+   "dev:p25": [
+    [
+     "lily_toxicosis_cats",
+     "gastrointestinal_foreign_body",
+     "vomiting_and_diarrhea",
+     "high_rise_syndrome_cats",
+     "permethrin_toxicosis_cats"
+    ],
+    2
+   ],
+   "dev:p26": [
+    [
+     "burns_and_electrical_injury",
+     "seizures",
+     "dystocia",
+     "collapse_and_pale_gums",
+     "airway_foreign_body_choking"
+    ],
+    5
+   ],
+   "dev:p27": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "gastrointestinal_foreign_body",
+     "gastric_dilatation_volvulus",
+     "vomiting_and_diarrhea",
+     "kennel_cough_mild"
+    ],
+    2
+   ],
+   "dev:p28": [
+    [
+     "fading_neonate",
+     "high_rise_syndrome_cats",
+     "slow_growing_lump",
+     "reduced_appetite_no_other_signs",
+     "dystocia"
+    ],
+    0
+   ],
+   "dev:p29": [
+    [
+     "acute_hindlimb_paralysis",
+     "osteoarthritis_stiffness",
+     "seizures",
+     "mild_lameness",
+     "hypoglycemia_toy_puppy"
+    ],
+    0
+   ],
+   "dev:p30": [
+    [
+     "anticoagulant_rodenticide_poisoning",
+     "toad_bufotoxin_poisoning",
+     "rabies_exposure_wild_animal_bite",
+     "permethrin_toxicosis_cats",
+     "lily_toxicosis_cats"
+    ],
+    0
+   ],
+   "dev:p31": [
+    [
+     "human_medication_poisoning",
+     "permethrin_toxicosis_cats",
+     "lily_toxicosis_cats",
+     "high_rise_syndrome_cats",
+     "anticoagulant_rodenticide_poisoning"
+    ],
+    0
+   ],
+   "dev:p32": [
+    [
+     "anaphylaxis_facial_swelling",
+     "insect_sting_local_reaction",
+     "rabies_exposure_wild_animal_bite",
+     "burns_and_electrical_injury",
+     "kennel_cough_mild"
+    ],
+    0
+   ],
+   "dev:p33": [
+    [
+     "kennel_cough_mild",
+     "congestive_heart_failure",
+     "mild_upper_respiratory_signs",
+     "airway_foreign_body_choking",
+     "rabies_exposure_wild_animal_bite"
+    ],
+    1
+   ],
+   "dev:p34": [
+    [
+     "high_rise_syndrome_cats",
+     "acute_hindlimb_paralysis",
+     "slow_growing_lump",
+     "collapse_and_pale_gums",
+     "lily_toxicosis_cats"
+    ],
+    3
+   ],
+   "dev:p35": [
+    [
+     "parvovirus_panleukopenia",
+     "vomiting_and_diarrhea",
+     "fading_neonate",
+     "single_vomiting_or_mild_diarrhea",
+     "carbamate_organophosphate_poisoning"
+    ],
+    0
+   ],
+   "dev:p36": [
+    [
+     "vestibular_syndrome_otitis_interna",
+     "ocular_emergency",
+     "mild_conjunctivitis",
+     "otitis_externa_mild",
+     "anaphylaxis_facial_swelling"
+    ],
+    1
+   ],
+   "dev:p37": [
+    [
+     "permethrin_toxicosis_cats",
+     "high_rise_syndrome_cats",
+     "feline_aortic_thromboembolism",
+     "lily_toxicosis_cats",
+     "burns_and_electrical_injury"
+    ],
+    0
+   ],
+   "dev:p38": [
+    [
+     "lily_toxicosis_cats",
+     "gastrointestinal_foreign_body",
+     "permethrin_toxicosis_cats",
+     "high_rise_syndrome_cats",
+     "reduced_appetite_no_other_signs"
+    ],
+    1
+   ],
+   "dev:p39": [
+    [
+     "gastrointestinal_foreign_body",
+     "hypoglycemia_toy_puppy",
+     "airway_foreign_body_choking",
+     "permethrin_toxicosis_cats",
+     "acute_hindlimb_paralysis"
+    ],
+    2
+   ],
+   "dev:p40": [
+    [
+     "fading_neonate",
+     "dystocia",
+     "kennel_cough_mild",
+     "hypoglycemia_toy_puppy",
+     "eclampsia"
+    ],
+    1
+   ],
+   "dev:p41": [
+    [
+     "kennel_cough_mild",
+     "parvovirus_panleukopenia",
+     "vestibular_syndrome_otitis_interna",
+     "otitis_externa_mild",
+     "hypoglycemia_toy_puppy"
+    ],
+    null
+   ],
+   "dev:p42": [
+    [
+     "fading_neonate",
+     "hypoglycemia_toy_puppy",
+     "reduced_appetite_no_other_signs",
+     "vomiting_and_diarrhea",
+     "grape_xylitol_toxicosis"
+    ],
+    1
+   ],
+   "dev:p43": [
+    [
+     "fading_neonate",
+     "hypoglycemia_toy_puppy",
+     "osteoarthritis_stiffness",
+     "acute_hindlimb_paralysis",
+     "seizures"
+    ],
+    6
+   ],
+   "dev:p44": [
+    [
+     "lily_toxicosis_cats",
+     "allium_toxicosis",
+     "high_rise_syndrome_cats",
+     "permethrin_toxicosis_cats",
+     "inappropriate_urination_or_cystitis"
+    ],
+    7
+   ],
+   "dev:p45": [
+    [
+     "mild_upper_respiratory_signs",
+     "reduced_appetite_no_other_signs",
+     "lily_toxicosis_cats",
+     "high_rise_syndrome_cats",
+     "respiratory_distress"
+    ],
+    0
+   ],
+   "dev:p46": [
+    [
+     "high_rise_syndrome_cats",
+     "inappropriate_urination_or_cystitis",
+     "lily_toxicosis_cats",
+     "reduced_appetite_no_other_signs",
+     "permethrin_toxicosis_cats"
+    ],
+    1
+   ],
+   "dev:p47": [
+    [
+     "seizures",
+     "hypoglycemia_toy_puppy",
+     "osteoarthritis_stiffness",
+     "kennel_cough_mild",
+     "dystocia"
+    ],
+    6
+   ],
+   "dev:p48": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "gastrointestinal_foreign_body",
+     "kennel_cough_mild",
+     "reduced_appetite_no_other_signs",
+     "vomiting_and_diarrhea"
+    ],
+    0
+   ],
+   "dev:p49": [
+    [
+     "osteoarthritis_stiffness",
+     "acute_hindlimb_paralysis",
+     "kennel_cough_mild",
+     "dystocia",
+     "mild_lameness"
+    ],
+    0
+   ],
+   "dev:p50": [
+    [
+     "insect_sting_local_reaction",
+     "rabies_exposure_wild_animal_bite",
+     "cat_bite_abscess",
+     "kennel_cough_mild",
+     "dystocia"
+    ],
+    0
+   ],
+   "dev:p51": [
+    [
+     "kennel_cough_mild",
+     "airway_foreign_body_choking",
+     "mild_upper_respiratory_signs",
+     "rabies_exposure_wild_animal_bite",
+     "respiratory_distress"
+    ],
+    0
+   ],
+   "dev:p52": [
+    [
+     "vestibular_syndrome_otitis_interna",
+     "mild_conjunctivitis",
+     "cat_bite_abscess",
+     "ocular_emergency",
+     "otitis_externa_mild"
+    ],
+    1
+   ],
+   "dev:p53": [
+    [
+     "fading_neonate",
+     "dystocia",
+     "normal_whelping",
+     "eclampsia",
+     "kennel_cough_mild"
+    ],
+    2
+   ],
+   "dev:p54": [
+    [
+     "hypoglycemia_toy_puppy",
+     "seizures",
+     "eclampsia",
+     "acute_hindlimb_paralysis",
+     "tremors_without_seizure"
+    ],
+    4
+   ],
+   "dev:p55": [
+    [
+     "osteoarthritis_stiffness",
+     "mild_lameness",
+     "acute_hindlimb_paralysis",
+     "rabies_exposure_wild_animal_bite",
+     "hypoglycemia_toy_puppy"
+    ],
+    1
+   ],
+   "dev:p56": [
+    [
+     "high_rise_syndrome_cats",
+     "reduced_appetite_no_other_signs",
+     "lily_toxicosis_cats",
+     "mild_upper_respiratory_signs",
+     "periodontal_disease_mild"
+    ],
+    5
+   ],
+   "dev:p57": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "grape_xylitol_toxicosis",
+     "reduced_appetite_no_other_signs",
+     "diabetic_ketoacidosis",
+     "lily_toxicosis_cats"
+    ],
+    2
+   ],
+   "dev:p58": [
+    [
+     "high_rise_syndrome_cats",
+     "rabies_exposure_wild_animal_bite",
+     "permethrin_toxicosis_cats",
+     "burns_and_electrical_injury",
+     "insect_sting_local_reaction"
+    ],
+    6
+   ],
+   "dev:p59": [
+    [
+     "lily_toxicosis_cats",
+     "reduced_appetite_no_other_signs",
+     "inappropriate_urination_or_cystitis",
+     "high_rise_syndrome_cats",
+     "polyuria_polydipsia_investigate"
+    ],
+    4
+   ],
+   "dev:p60": [
+    [
+     "minor_wound",
+     "trauma_and_bleeding",
+     "burns_and_electrical_injury",
+     "cat_bite_abscess",
+     "feline_aortic_thromboembolism"
+    ],
+    0
+   ],
+   "dev:p61": [
+    [
+     "periodontal_disease_mild",
+     "high_rise_syndrome_cats",
+     "lily_toxicosis_cats",
+     "feline_aortic_thromboembolism",
+     "slow_growing_lump"
+    ],
+    0
+   ],
+   "dev:p62": [
+    [
+     "vestibular_syndrome_otitis_interna",
+     "periodontal_disease_mild",
+     "slow_growing_lump",
+     "dystocia",
+     "gastrointestinal_foreign_body"
+    ],
+    2
+   ],
+   "dev:p63": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     "insect_sting_local_reaction",
+     "permethrin_toxicosis_cats",
+     "high_rise_syndrome_cats",
+     "airway_foreign_body_choking"
+    ],
+    0
+   ],
+   "dev:p64": [
+    [
+     "high_rise_syndrome_cats",
+     "slow_growing_lump",
+     "vestibular_syndrome_otitis_interna",
+     "feline_aortic_thromboembolism",
+     "periodontal_disease_mild"
+    ],
+    null
+   ],
+   "dev:p65": [
+    [
+     "kennel_cough_mild",
+     "dystocia",
+     "airway_foreign_body_choking",
+     "polyuria_polydipsia_investigate",
+     "rabies_exposure_wild_animal_bite"
+    ],
+    null
+   ],
+   "calib:p01": [
+    [
+     "permethrin_toxicosis_cats",
+     "hypoglycemia_toy_puppy",
+     "seizures",
+     "distemper_neurological",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "calib:p02": [
+    [
+     "kennel_cough_mild",
+     "vestibular_syndrome_otitis_interna",
+     "dystocia",
+     "hypoglycemia_toy_puppy",
+     "otitis_externa_mild"
+    ],
+    4
+   ],
+   "calib:p03": [
+    [
+     "seizures",
+     "acute_hindlimb_paralysis",
+     "vestibular_syndrome_otitis_interna",
+     "hypoglycemia_toy_puppy",
+     "distemper_neurological"
+    ],
+    2
+   ],
+   "calib:p04": [
+    [
+     "dietary_indiscretion_mild",
+     "reduced_appetite_no_other_signs",
+     "single_vomiting_or_mild_diarrhea",
+     "kennel_cough_mild",
+     "gastrointestinal_foreign_body"
+    ],
+    0
+   ],
+   "calib:p05": [
+    [
+     "permethrin_toxicosis_cats",
+     "lily_toxicosis_cats",
+     "human_medication_poisoning",
+     "anticoagulant_rodenticide_poisoning",
+     "inappropriate_urination_or_cystitis"
+    ],
+    2
+   ],
+   "calib:p06": [
+    [
+     "gastrointestinal_foreign_body",
+     "lily_toxicosis_cats",
+     "permethrin_toxicosis_cats",
+     "high_rise_syndrome_cats",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    4
+   ],
+   "calib:p07": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "gastric_dilatation_volvulus",
+     "gastrointestinal_foreign_body",
+     "vomiting_and_diarrhea",
+     "kennel_cough_mild"
+    ],
+    1
+   ],
+   "calib:p08": [
+    [
+     "high_rise_syndrome_cats",
+     "periodontal_disease_mild",
+     "inappropriate_urination_or_cystitis",
+     "lily_toxicosis_cats",
+     "urethral_obstruction"
+    ],
+    4
+   ],
+   "calib:p09": [
+    [
+     "high_rise_syndrome_cats",
+     "reduced_appetite_no_other_signs",
+     "lily_toxicosis_cats",
+     "inappropriate_urination_or_cystitis",
+     "permethrin_toxicosis_cats"
+    ],
+    3
+   ],
+   "calib:p10": [
+    [
+     "inappropriate_urination_or_cystitis",
+     "kennel_cough_mild",
+     "urethral_obstruction",
+     "lily_toxicosis_cats",
+     "pyometra"
+    ],
+    4
+   ],
+   "calib:p11": [
+    [
+     "kennel_cough_mild",
+     "pyometra",
+     "dystocia",
+     "inappropriate_urination_or_cystitis",
+     "periodontal_disease_mild"
+    ],
+    7
+   ],
+   "calib:p12": [
+    [
+     "feline_aortic_thromboembolism",
+     "high_rise_syndrome_cats",
+     "acute_hindlimb_paralysis",
+     "permethrin_toxicosis_cats",
+     "seizures"
+    ],
+    2
+   ],
+   "calib:p13": [
+    [
+     "osteoarthritis_stiffness",
+     "acute_hindlimb_paralysis",
+     "high_rise_syndrome_cats",
+     "inappropriate_urination_or_cystitis",
+     "reduced_appetite_no_other_signs"
+    ],
+    0
+   ],
+   "calib:p14": [
+    [
+     "acute_hindlimb_paralysis",
+     "feline_aortic_thromboembolism",
+     "seizures",
+     "osteoarthritis_stiffness",
+     "trauma_and_bleeding"
+    ],
+    null
+   ],
+   "calib:p17": [
+    [
+     "ocular_emergency",
+     "vestibular_syndrome_otitis_interna",
+     "rabies_exposure_wild_animal_bite",
+     "mild_conjunctivitis",
+     "burns_and_electrical_injury"
+    ],
+    0
+   ],
+   "calib:p18": [
+    [
+     "mild_conjunctivitis",
+     "vestibular_syndrome_otitis_interna",
+     "high_rise_syndrome_cats",
+     "ocular_emergency",
+     "cat_bite_abscess"
+    ],
+    0
+   ],
+   "regua:b01": [
+    [
+     "chocolate_toxicosis",
+     "gastrointestinal_foreign_body",
+     "permethrin_toxicosis_cats",
+     "grape_xylitol_toxicosis",
+     "toad_bufotoxin_poisoning"
+    ],
+    0
+   ],
+   "regua:b02": [
+    [
+     "lily_toxicosis_cats",
+     "high_rise_syndrome_cats",
+     "acute_hindlimb_paralysis",
+     "permethrin_toxicosis_cats",
+     "inappropriate_urination_or_cystitis"
+    ],
+    6
+   ],
+   "regua:b03": [
+    [
+     "respiratory_distress",
+     "kennel_cough_mild",
+     "airway_foreign_body_choking",
+     "gastrointestinal_foreign_body",
+     "congestive_heart_failure"
+    ],
+    0
+   ],
+   "regua:b04": [
+    [
+     "seizures",
+     "hypoglycemia_toy_puppy",
+     "permethrin_toxicosis_cats",
+     "trauma_and_bleeding",
+     "tremors_without_seizure"
+    ],
+    0
+   ],
+   "regua:b05": [
+    [
+     "mild_upper_respiratory_signs",
+     "respiratory_distress",
+     "reduced_appetite_no_other_signs",
+     "high_rise_syndrome_cats",
+     "lily_toxicosis_cats"
+    ],
+    0
+   ],
+   "regua:b06": [
+    [
+     "trauma_and_bleeding",
+     "acute_hindlimb_paralysis",
+     "mild_lameness",
+     "minor_wound",
+     "osteoarthritis_stiffness"
+    ],
+    0
+   ],
+   "regua:b07": [
+    [
+     "vomiting_and_diarrhea",
+     "kennel_cough_mild",
+     "single_vomiting_or_mild_diarrhea",
+     "parvovirus_panleukopenia",
+     "distemper_neurological"
+    ],
+    0
+   ],
+   "regua:b08": [
+    [
+     "allium_toxicosis",
+     "grape_xylitol_toxicosis",
+     "lily_toxicosis_cats",
+     "kennel_cough_mild",
+     "toad_bufotoxin_poisoning"
+    ],
+    0
+   ],
+   "regua:b09": [
+    [
+     "kennel_cough_mild",
+     "vestibular_syndrome_otitis_interna",
+     "dystocia",
+     "periodontal_disease_mild",
+     "flea_dermatitis_pruritus"
+    ],
+    4
+   ],
+   "regua:b10": [
+    [
+     "osteoarthritis_stiffness",
+     "acute_hindlimb_paralysis",
+     "mild_lameness",
+     "feline_aortic_thromboembolism",
+     "hypoglycemia_toy_puppy"
+    ],
+    2
+   ],
+   "regua:b11": [
+    [
+     "high_rise_syndrome_cats",
+     "lily_toxicosis_cats",
+     "respiratory_distress",
+     "vestibular_syndrome_otitis_interna",
+     "mild_upper_respiratory_signs"
+    ],
+    null
+   ],
+   "regua:b12": [
+    [
+     "gastric_dilatation_volvulus",
+     "gastrointestinal_foreign_body",
+     "vomiting_and_diarrhea",
+     "single_vomiting_or_mild_diarrhea",
+     "kennel_cough_mild"
+    ],
+    0
+   ],
+   "regua:b13": [
+    [
+     "cat_bite_abscess",
+     "trauma_and_bleeding",
+     "kennel_cough_mild",
+     "minor_wound",
+     "burns_and_electrical_injury"
+    ],
+    1
+   ],
+   "regua:b14": [
+    [
+     "fading_neonate",
+     "hypoglycemia_toy_puppy",
+     "kennel_cough_mild",
+     "gastric_dilatation_volvulus",
+     "respiratory_distress"
+    ],
+    0
+   ],
+   "regua:b15": [
+    [
+     "inappropriate_urination_or_cystitis",
+     "kennel_cough_mild",
+     "urethral_obstruction",
+     "polyuria_polydipsia_investigate",
+     "vomiting_and_diarrhea"
+    ],
+    2
+   ],
+   "regua:b16": [
+    [
+     "insect_sting_local_reaction",
+     "anaphylaxis_facial_swelling",
+     "burns_and_electrical_injury",
+     "rabies_exposure_wild_animal_bite",
+     "kennel_cough_mild"
+    ],
+    1
+   ],
+   "regua:b17": [
+    [
+     "acute_hindlimb_paralysis",
+     "osteoarthritis_stiffness",
+     "hypoglycemia_toy_puppy",
+     "feline_aortic_thromboembolism",
+     "seizures"
+    ],
+    0
+   ],
+   "regua:b18": [
+    [
+     "lily_toxicosis_cats",
+     "mild_upper_respiratory_signs",
+     "high_rise_syndrome_cats",
+     "respiratory_distress",
+     "otitis_externa_mild"
+    ],
+    1
+   ],
+   "regua:b19": [
+    [
+     "permethrin_toxicosis_cats",
+     "human_medication_poisoning",
+     "lily_toxicosis_cats",
+     "anticoagulant_rodenticide_poisoning",
+     "high_rise_syndrome_cats"
+    ],
+    1
+   ],
+   "regua:b20": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     "vestibular_syndrome_otitis_interna",
+     "acute_hindlimb_paralysis",
+     "seizures",
+     "hypoglycemia_toy_puppy"
+    ],
+    null
+   ],
+   "regua:b21": [
+    [
+     "permethrin_toxicosis_cats",
+     "tremors_without_seizure",
+     "seizures",
+     "high_rise_syndrome_cats",
+     "feline_aortic_thromboembolism"
+    ],
+    0
+   ],
+   "regua:b22": [
+    [
+     "toad_bufotoxin_poisoning",
+     "anticoagulant_rodenticide_poisoning",
+     "carbamate_organophosphate_poisoning",
+     "lily_toxicosis_cats",
+     "rabies_exposure_wild_animal_bite"
+    ],
+    1
+   ],
+   "regua:b23": [
+    [
+     "vomiting_and_diarrhea",
+     "parvovirus_panleukopenia",
+     "lily_toxicosis_cats",
+     "single_vomiting_or_mild_diarrhea",
+     "gastrointestinal_foreign_body"
+    ],
+    1
+   ],
+   "regua:b24": [
+    [
+     "kennel_cough_mild",
+     "lily_toxicosis_cats",
+     "inappropriate_urination_or_cystitis",
+     "polyuria_polydipsia_investigate",
+     "diabetic_ketoacidosis"
+    ],
+    7
+   ],
+   "regua:b25": [
+    [
+     "gastrointestinal_foreign_body",
+     "single_vomiting_or_mild_diarrhea",
+     "reduced_appetite_no_other_signs",
+     "kennel_cough_mild",
+     "dietary_indiscretion_mild"
+    ],
+    4
+   ],
+   "regua:b26": [
+    [
+     "inappropriate_urination_or_cystitis",
+     "high_rise_syndrome_cats",
+     "lily_toxicosis_cats",
+     "permethrin_toxicosis_cats",
+     "reduced_appetite_no_other_signs"
+    ],
+    0
+   ],
+   "regua:b27": [
+    [
+     "acute_hindlimb_paralysis",
+     "seizures",
+     "trauma_and_bleeding",
+     "collapse_and_pale_gums",
+     "osteoarthritis_stiffness"
+    ],
+    3
+   ],
+   "regua:b28": [
+    [
+     "kennel_cough_mild",
+     "reduced_appetite_no_other_signs",
+     "osteoarthritis_stiffness",
+     "dystocia",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    2
+   ],
+   "regua:b29": [
+    [
+     "reduced_appetite_no_other_signs",
+     "lily_toxicosis_cats",
+     "diabetic_ketoacidosis",
+     "vomiting_and_diarrhea",
+     "polyuria_polydipsia_investigate"
+    ],
+    0
+   ],
+   "regua:b30": [
+    [
+     "gastrointestinal_foreign_body",
+     "lily_toxicosis_cats",
+     "single_vomiting_or_mild_diarrhea",
+     "reduced_appetite_no_other_signs",
+     "permethrin_toxicosis_cats"
+    ],
+    0
+   ],
+   "regua:b31": [
+    [
+     "high_rise_syndrome_cats",
+     "respiratory_distress",
+     "mild_upper_respiratory_signs",
+     "feline_aortic_thromboembolism",
+     "lily_toxicosis_cats"
+    ],
+    5
+   ],
+   "regua:b32": [
+    [
+     "congestive_heart_failure",
+     "feline_aortic_thromboembolism",
+     "respiratory_distress",
+     "airway_foreign_body_choking",
+     "hypoglycemia_toy_puppy"
+    ],
+    0
+   ],
+   "regua:b33": [
+    [
+     "diabetic_ketoacidosis",
+     "lily_toxicosis_cats",
+     "kennel_cough_mild",
+     "hypoglycemia_toy_puppy",
+     "vomiting_and_diarrhea"
+    ],
+    0
+   ],
+   "regua:b34": [
+    [
+     "parvovirus_panleukopenia",
+     "kennel_cough_mild",
+     "vestibular_syndrome_otitis_interna",
+     "airway_foreign_body_choking",
+     "otitis_externa_mild"
+    ],
+    8
+   ],
+   "regua:b35": [
+    [
+     "dystocia",
+     "fading_neonate",
+     "hypoglycemia_toy_puppy",
+     "kennel_cough_mild",
+     "eclampsia"
+    ],
+    0
+   ],
+   "regua:b36": [
+    [
+     "high_rise_syndrome_cats",
+     "feline_aortic_thromboembolism",
+     "tremors_without_seizure",
+     "acute_hindlimb_paralysis",
+     "permethrin_toxicosis_cats"
+    ],
+    1
+   ],
+   "regua:b37": [
+    [
+     "leptospirosis_acute",
+     "toad_bufotoxin_poisoning",
+     "parvovirus_panleukopenia",
+     "distemper_neurological",
+     "kennel_cough_mild"
+    ],
+    0
+   ],
+   "regua:b38": [
+    [
+     "lily_toxicosis_cats",
+     "high_rise_syndrome_cats",
+     "permethrin_toxicosis_cats",
+     "mild_upper_respiratory_signs",
+     "gastrointestinal_foreign_body"
+    ],
+    0
+   ],
+   "regua:b39": [
+    [
+     "toad_bufotoxin_poisoning",
+     "gastrointestinal_foreign_body",
+     "carbamate_organophosphate_poisoning",
+     "anticoagulant_rodenticide_poisoning",
+     "seizures"
+    ],
+    0
+   ],
+   "regua:b40": [
+    [
+     "hypoglycemia_toy_puppy",
+     "seizures",
+     "tremors_without_seizure",
+     "distemper_neurological",
+     "eclampsia"
+    ],
+    2
+   ],
+   "regua:b41": [
+    [
+     "dystocia",
+     "gastrointestinal_foreign_body",
+     "kennel_cough_mild",
+     "pyometra",
+     "ticks_found_no_signs"
+    ],
+    null
+   ],
+   "regua:b42": [
+    [
+     "high_rise_syndrome_cats",
+     "lily_toxicosis_cats",
+     "acute_hindlimb_paralysis",
+     "permethrin_toxicosis_cats",
+     "collapse_and_pale_gums"
+    ],
+    4
+   ],
+   "regua:b43": [
+    [
+     "vestibular_syndrome_otitis_interna",
+     "ocular_emergency",
+     "mild_conjunctivitis",
+     "trauma_and_bleeding",
+     "otitis_externa_mild"
+    ],
+    1
+   ],
+   "regua:b44": [
+    [
+     "respiratory_distress",
+     "high_rise_syndrome_cats",
+     "mild_upper_respiratory_signs",
+     "permethrin_toxicosis_cats",
+     "gastrointestinal_foreign_body"
+    ],
+    6
+   ],
+   "regua:b45": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     "burns_and_electrical_injury",
+     "trauma_and_bleeding",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    7
+   ],
+   "regua:b46": [
+    [
+     "kennel_cough_mild",
+     "leptospirosis_acute",
+     "parvovirus_panleukopenia",
+     "vestibular_syndrome_otitis_interna",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "regua:b47": [
+    [
+     "fading_neonate",
+     "reduced_appetite_no_other_signs",
+     "vomiting_and_diarrhea",
+     "gastric_dilatation_volvulus",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    5
+   ],
+   "regua:b48": [
+    [
+     "vestibular_syndrome_otitis_interna",
+     "seizures",
+     "acute_hindlimb_paralysis",
+     "hypoglycemia_toy_puppy",
+     "distemper_neurological"
+    ],
+    0
+   ],
+   "regua:b49": [
+    [
+     "high_rise_syndrome_cats",
+     "permethrin_toxicosis_cats",
+     "respiratory_distress",
+     "tremors_without_seizure",
+     "acute_hindlimb_paralysis"
+    ],
+    0
+   ],
+   "regua:b50": [
+    [
+     "anaphylaxis_facial_swelling",
+     "burns_and_electrical_injury",
+     "anticoagulant_rodenticide_poisoning",
+     "fading_neonate",
+     "collapse_and_pale_gums"
+    ],
+    1
+   ],
+   "regua:b51": [
+    [
+     "hypoglycemia_toy_puppy",
+     "eclampsia",
+     "seizures",
+     "fading_neonate",
+     "acute_hindlimb_paralysis"
+    ],
+    1
+   ],
+   "regua:b52": [
+    [
+     "grape_xylitol_toxicosis",
+     "toad_bufotoxin_poisoning",
+     "lily_toxicosis_cats",
+     "allium_toxicosis",
+     "anticoagulant_rodenticide_poisoning"
+    ],
+    0
+   ],
+   "regua:b53": [
+    [
+     "fading_neonate",
+     "dystocia",
+     "kennel_cough_mild",
+     "hypoglycemia_toy_puppy",
+     "eclampsia"
+    ],
+    null
+   ],
+   "regua:b54": [
+    [
+     "high_rise_syndrome_cats",
+     "slow_growing_lump",
+     "insect_sting_local_reaction",
+     "anaphylaxis_facial_swelling",
+     "otitis_externa_mild"
+    ],
+    2
+   ],
+   "regua:b55": [
+    [
+     "kennel_cough_mild",
+     "mild_upper_respiratory_signs",
+     "airway_foreign_body_choking",
+     "respiratory_distress",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    0
+   ],
+   "regua:b56": [
+    [
+     "lily_toxicosis_cats",
+     "reduced_appetite_no_other_signs",
+     "inappropriate_urination_or_cystitis",
+     "high_rise_syndrome_cats",
+     "diabetic_ketoacidosis"
+    ],
+    6
+   ],
+   "regua:b57": [
+    [
+     "otitis_externa_mild",
+     "kennel_cough_mild",
+     "vestibular_syndrome_otitis_interna",
+     "airway_foreign_body_choking",
+     "dystocia"
+    ],
+    0
+   ],
+   "regua:b58": [
+    [
+     "slow_growing_lump",
+     "minor_wound",
+     "high_rise_syndrome_cats",
+     "cat_bite_abscess",
+     "feline_aortic_thromboembolism"
+    ],
+    1
+   ],
+   "regua:b59": [
+    [
+     "kennel_cough_mild",
+     "vestibular_syndrome_otitis_interna",
+     "gastrointestinal_foreign_body",
+     "lily_toxicosis_cats",
+     "grape_xylitol_toxicosis"
+    ],
+    7
+   ],
+   "regua:b60": [
+    [
+     "slow_growing_lump",
+     "osteoarthritis_stiffness",
+     "vestibular_syndrome_otitis_interna",
+     "kennel_cough_mild",
+     "inappropriate_urination_or_cystitis"
+    ],
+    0
+   ],
+   "regua:b61": [
+    [
+     "mild_lameness",
+     "kennel_cough_mild",
+     "osteoarthritis_stiffness",
+     "rabies_exposure_wild_animal_bite",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "regua:b62": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     "high_rise_syndrome_cats",
+     "insect_sting_local_reaction",
+     "cat_bite_abscess",
+     "anaphylaxis_facial_swelling"
+    ],
+    0
+   ],
+   "regua:b63": [
+    [
+     "toad_bufotoxin_poisoning",
+     "kennel_cough_mild",
+     "anticoagulant_rodenticide_poisoning",
+     "gastrointestinal_foreign_body",
+     "allium_toxicosis"
+    ],
+    null
+   ],
+   "regua:b64": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "gastrointestinal_foreign_body",
+     "vomiting_and_diarrhea",
+     "reduced_appetite_no_other_signs",
+     "gastric_dilatation_volvulus"
+    ],
+    0
+   ],
+   "regua:b65": [
+    [
+     "gastrointestinal_foreign_body",
+     "lily_toxicosis_cats",
+     "reduced_appetite_no_other_signs",
+     "single_vomiting_or_mild_diarrhea",
+     "mild_upper_respiratory_signs"
+    ],
+    3
+   ],
+   "regua:b66": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "gastrointestinal_foreign_body",
+     "kennel_cough_mild",
+     "reduced_appetite_no_other_signs",
+     "inappropriate_urination_or_cystitis"
+    ],
+    0
+   ]
+  }
+ },
+ "intfloat/multilingual-e5-small": {
+  "dim": 384,
+  "indexar_s": 25.0,
+  "params_M": 118,
+  "dev": {
+   "todos": {
+    "P@1": 0.553,
+    "P@3": 0.787,
+    "MRR": 0.677,
+    "n": 47
+   },
+   "etapa1": {
+    "P@1": 0.607,
+    "P@3": 0.893,
+    "MRR": 0.747,
+    "n": 28
+   },
+   "etapa2": {
+    "P@1": 0.474,
+    "P@3": 0.632,
+    "MRR": 0.573,
+    "n": 19
+   }
+  },
+  "calib": {
+   "todos": {
+    "P@1": 0.75,
+    "P@3": 0.938,
+    "MRR": 0.823,
+    "n": 16
+   },
+   "etapa1": {
+    "P@1": 0.923,
+    "P@3": 1.0,
+    "MRR": 0.962,
+    "n": 13
+   },
+   "etapa2": {
+    "P@1": 0.0,
+    "P@3": 0.667,
+    "MRR": 0.222,
+    "n": 3
+   }
+  },
+  "regua": {
+   "todos": {
+    "P@1": 0.667,
+    "P@3": 0.833,
+    "MRR": 0.758,
+    "n": 66
+   },
+   "etapa1": {
+    "P@1": 0.861,
+    "P@3": 1.0,
+    "MRR": 0.917,
+    "n": 36
+   },
+   "etapa2": {
+    "P@1": 0.433,
+    "P@3": 0.633,
+    "MRR": 0.567,
+    "n": 30
+   }
+  },
+  "ms_por_consulta": 16.9,
+  "casos": {
+   "dev:p19": [
+    [
+     "dietary_indiscretion_mild",
+     "carbamate_organophosphate_poisoning",
+     "chocolate_toxicosis",
+     "anticoagulant_rodenticide_poisoning",
+     "anaphylaxis_facial_swelling"
+    ],
+    2
+   ],
+   "dev:p20": [
+    [
+     "collapse_and_pale_gums",
+     "anticoagulant_rodenticide_poisoning",
+     "acute_hindlimb_paralysis",
+     "allium_toxicosis",
+     "carbamate_organophosphate_poisoning"
+    ],
+    3
+   ],
+   "dev:p21": [
+    [
+     "respiratory_distress",
+     "mild_upper_respiratory_signs",
+     "collapse_and_pale_gums",
+     "congestive_heart_failure",
+     "anaphylaxis_facial_swelling"
+    ],
+    0
+   ],
+   "dev:p22": [
+    [
+     "carbamate_organophosphate_poisoning",
+     "pyometra",
+     "seizures",
+     "acute_hindlimb_paralysis",
+     "urethral_obstruction"
+    ],
+    2
+   ],
+   "dev:p23": [
+    [
+     "trauma_and_bleeding",
+     "mild_lameness",
+     "minor_wound",
+     "anticoagulant_rodenticide_poisoning",
+     "snake_and_scorpion_envenomation"
+    ],
+    0
+   ],
+   "dev:p24": [
+    [
+     "carbamate_organophosphate_poisoning",
+     "urethral_obstruction",
+     "acute_hindlimb_paralysis",
+     "collapse_and_pale_gums",
+     "dietary_indiscretion_mild"
+    ],
+    1
+   ],
+   "dev:p25": [
+    [
+     "vomiting_and_diarrhea",
+     "reduced_appetite_no_other_signs",
+     "parvovirus_panleukopenia",
+     "dietary_indiscretion_mild",
+     "carbamate_organophosphate_poisoning"
+    ],
+    0
+   ],
+   "dev:p26": [
+    [
+     "carbamate_organophosphate_poisoning",
+     "dietary_indiscretion_mild",
+     "canine_heatstroke",
+     "mild_conjunctivitis",
+     "seizures"
+    ],
+    2
+   ],
+   "dev:p27": [
+    [
+     "gastric_dilatation_volvulus",
+     "dietary_indiscretion_mild",
+     "carbamate_organophosphate_poisoning",
+     "reduced_appetite_no_other_signs",
+     "vomiting_and_diarrhea"
+    ],
+    0
+   ],
+   "dev:p28": [
+    [
+     "fading_neonate",
+     "dystocia",
+     "periodontal_disease_mild",
+     "trauma_and_bleeding",
+     "carbamate_organophosphate_poisoning"
+    ],
+    0
+   ],
+   "dev:p29": [
+    [
+     "osteoarthritis_stiffness",
+     "acute_hindlimb_paralysis",
+     "trauma_and_bleeding",
+     "dystocia",
+     "mild_lameness"
+    ],
+    1
+   ],
+   "dev:p30": [
+    [
+     "anticoagulant_rodenticide_poisoning",
+     "carbamate_organophosphate_poisoning",
+     "dietary_indiscretion_mild",
+     "rabies_exposure_wild_animal_bite",
+     "parvovirus_panleukopenia"
+    ],
+    0
+   ],
+   "dev:p31": [
+    [
+     "human_medication_poisoning",
+     "allium_toxicosis",
+     "feline_aortic_thromboembolism",
+     "trauma_and_bleeding",
+     "collapse_and_pale_gums"
+    ],
+    0
+   ],
+   "dev:p32": [
+    [
+     "anaphylaxis_facial_swelling",
+     "carbamate_organophosphate_poisoning",
+     "dystocia",
+     "dietary_indiscretion_mild",
+     "insect_sting_local_reaction"
+    ],
+    0
+   ],
+   "dev:p33": [
+    [
+     "congestive_heart_failure",
+     "dietary_indiscretion_mild",
+     "carbamate_organophosphate_poisoning",
+     "anticoagulant_rodenticide_poisoning",
+     "respiratory_distress"
+    ],
+    0
+   ],
+   "dev:p34": [
+    [
+     "collapse_and_pale_gums",
+     "respiratory_distress",
+     "mild_upper_respiratory_signs",
+     "anticoagulant_rodenticide_poisoning",
+     "allium_toxicosis"
+    ],
+    0
+   ],
+   "dev:p35": [
+    [
+     "parvovirus_panleukopenia",
+     "vomiting_and_diarrhea",
+     "reduced_appetite_no_other_signs",
+     "dietary_indiscretion_mild",
+     "anticoagulant_rodenticide_poisoning"
+    ],
+    0
+   ],
+   "dev:p36": [
+    [
+     "ocular_emergency",
+     "mild_conjunctivitis",
+     "anaphylaxis_facial_swelling",
+     "dietary_indiscretion_mild",
+     "carbamate_organophosphate_poisoning"
+    ],
+    0
+   ],
+   "dev:p37": [
+    [
+     "carbamate_organophosphate_poisoning",
+     "permethrin_toxicosis_cats",
+     "tremors_without_seizure",
+     "anaphylaxis_facial_swelling",
+     "trauma_and_bleeding"
+    ],
+    1
+   ],
+   "dev:p38": [
+    [
+     "reduced_appetite_no_other_signs",
+     "dietary_indiscretion_mild",
+     "anticoagulant_rodenticide_poisoning",
+     "vomiting_and_diarrhea",
+     "carbamate_organophosphate_poisoning"
+    ],
+    6
+   ],
+   "dev:p39": [
+    [
+     "respiratory_distress",
+     "collapse_and_pale_gums",
+     "mild_upper_respiratory_signs",
+     "dietary_indiscretion_mild",
+     "anaphylaxis_facial_swelling"
+    ],
+    null
+   ],
+   "dev:p40": [
+    [
+     "dystocia",
+     "collapse_and_pale_gums",
+     "normal_whelping",
+     "reduced_appetite_no_other_signs",
+     "fading_neonate"
+    ],
+    0
+   ],
+   "dev:p41": [
+    [
+     "parvovirus_panleukopenia",
+     "carbamate_organophosphate_poisoning",
+     "fading_neonate",
+     "vomiting_and_diarrhea",
+     "pyometra"
+    ],
+    null
+   ],
+   "dev:p42": [
+    [
+     "fading_neonate",
+     "hypoglycemia_toy_puppy",
+     "tremors_without_seizure",
+     "vomiting_and_diarrhea",
+     "reduced_appetite_no_other_signs"
+    ],
+    1
+   ],
+   "dev:p43": [
+    [
+     "acute_hindlimb_paralysis",
+     "osteoarthritis_stiffness",
+     "dystocia",
+     "fading_neonate",
+     "reduced_appetite_no_other_signs"
+    ],
+    7
+   ],
+   "dev:p44": [
+    [
+     "allium_toxicosis",
+     "dietary_indiscretion_mild",
+     "carbamate_organophosphate_poisoning",
+     "feline_aortic_thromboembolism",
+     "anticoagulant_rodenticide_poisoning"
+    ],
+    1
+   ],
+   "dev:p45": [
+    [
+     "mild_upper_respiratory_signs",
+     "dietary_indiscretion_mild",
+     "carbamate_organophosphate_poisoning",
+     "respiratory_distress",
+     "reduced_appetite_no_other_signs"
+    ],
+    0
+   ],
+   "dev:p46": [
+    [
+     "inappropriate_urination_or_cystitis",
+     "urethral_obstruction",
+     "dystocia",
+     "carbamate_organophosphate_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    0
+   ],
+   "dev:p47": [
+    [
+     "otitis_externa_mild",
+     "dietary_indiscretion_mild",
+     "collapse_and_pale_gums",
+     "trauma_and_bleeding",
+     "anaphylaxis_facial_swelling"
+    ],
+    0
+   ],
+   "dev:p48": [
+    [
+     "anticoagulant_rodenticide_poisoning",
+     "dietary_indiscretion_mild",
+     "vomiting_and_diarrhea",
+     "gastric_dilatation_volvulus",
+     "carbamate_organophosphate_poisoning"
+    ],
+    5
+   ],
+   "dev:p49": [
+    [
+     "osteoarthritis_stiffness",
+     "kennel_cough_mild",
+     "congestive_heart_failure",
+     "collapse_and_pale_gums",
+     "mild_lameness"
+    ],
+    0
+   ],
+   "dev:p50": [
+    [
+     "anaphylaxis_facial_swelling",
+     "insect_sting_local_reaction",
+     "pyometra",
+     "dietary_indiscretion_mild",
+     "carbamate_organophosphate_poisoning"
+    ],
+    1
+   ],
+   "dev:p51": [
+    [
+     "kennel_cough_mild",
+     "anticoagulant_rodenticide_poisoning",
+     "dietary_indiscretion_mild",
+     "rabies_exposure_wild_animal_bite",
+     "carbamate_organophosphate_poisoning"
+    ],
+    0
+   ],
+   "dev:p52": [
+    [
+     "mild_conjunctivitis",
+     "ocular_emergency",
+     "tremors_without_seizure",
+     "anaphylaxis_facial_swelling",
+     "mild_upper_respiratory_signs"
+    ],
+    0
+   ],
+   "dev:p53": [
+    [
+     "normal_whelping",
+     "dystocia",
+     "trauma_and_bleeding",
+     "fading_neonate",
+     "collapse_and_pale_gums"
+    ],
+    0
+   ],
+   "dev:p54": [
+    [
+     "trauma_and_bleeding",
+     "dietary_indiscretion_mild",
+     "mild_lameness",
+     "dystocia",
+     "collapse_and_pale_gums"
+    ],
+    null
+   ],
+   "dev:p55": [
+    [
+     "mild_lameness",
+     "trauma_and_bleeding",
+     "collapse_and_pale_gums",
+     "dietary_indiscretion_mild",
+     "pyometra"
+    ],
+    0
+   ],
+   "dev:p56": [
+    [
+     "anaphylaxis_facial_swelling",
+     "flea_dermatitis_pruritus",
+     "dietary_indiscretion_mild",
+     "collapse_and_pale_gums",
+     "dystocia"
+    ],
+    1
+   ],
+   "dev:p57": [
+    [
+     "reduced_appetite_no_other_signs",
+     "dietary_indiscretion_mild",
+     "anticoagulant_rodenticide_poisoning",
+     "vomiting_and_diarrhea",
+     "gastric_dilatation_volvulus"
+    ],
+    0
+   ],
+   "dev:p58": [
+    [
+     "cat_bite_abscess",
+     "rabies_exposure_wild_animal_bite",
+     "anticoagulant_rodenticide_poisoning",
+     "insect_sting_local_reaction",
+     "acute_hindlimb_paralysis"
+    ],
+    0
+   ],
+   "dev:p59": [
+    [
+     "urethral_obstruction",
+     "inappropriate_urination_or_cystitis",
+     "reduced_appetite_no_other_signs",
+     "pyometra",
+     "vomiting_and_diarrhea"
+    ],
+    6
+   ],
+   "dev:p60": [
+    [
+     "minor_wound",
+     "trauma_and_bleeding",
+     "mild_lameness",
+     "pyometra",
+     "anticoagulant_rodenticide_poisoning"
+    ],
+    0
+   ],
+   "dev:p61": [
+    [
+     "periodontal_disease_mild",
+     "dietary_indiscretion_mild",
+     "reduced_appetite_no_other_signs",
+     "osteoarthritis_stiffness",
+     "acute_hindlimb_paralysis"
+    ],
+    0
+   ],
+   "dev:p62": [
+    [
+     "carbamate_organophosphate_poisoning",
+     "dietary_indiscretion_mild",
+     "gastric_dilatation_volvulus",
+     "collapse_and_pale_gums",
+     "pyometra"
+    ],
+    6
+   ],
+   "dev:p63": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     "anticoagulant_rodenticide_poisoning",
+     "carbamate_organophosphate_poisoning",
+     "dietary_indiscretion_mild",
+     "fading_neonate"
+    ],
+    0
+   ],
+   "dev:p64": [
+    [
+     "anaphylaxis_facial_swelling",
+     "insect_sting_local_reaction",
+     "ticks_found_no_signs",
+     "dietary_indiscretion_mild",
+     "flea_dermatitis_pruritus"
+    ],
+    2
+   ],
+   "dev:p65": [
+    [
+     "congestive_heart_failure",
+     "reduced_appetite_no_other_signs",
+     "dietary_indiscretion_mild",
+     "dystocia",
+     "polyuria_polydipsia_investigate"
+    ],
+    null
+   ],
+   "calib:p01": [
+    [
+     "carbamate_organophosphate_poisoning",
+     "seizures",
+     "trauma_and_bleeding",
+     "tremors_without_seizure",
+     "rabies_exposure_wild_animal_bite"
+    ],
+    0
+   ],
+   "calib:p02": [
+    [
+     "dietary_indiscretion_mild",
+     "collapse_and_pale_gums",
+     "otitis_externa_mild",
+     "dystocia",
+     "vestibular_syndrome_otitis_interna"
+    ],
+    2
+   ],
+   "calib:p03": [
+    [
+     "carbamate_organophosphate_poisoning",
+     "trauma_and_bleeding",
+     "vestibular_syndrome_otitis_interna",
+     "dietary_indiscretion_mild",
+     "ocular_emergency"
+    ],
+    2
+   ],
+   "calib:p04": [
+    [
+     "dietary_indiscretion_mild",
+     "anticoagulant_rodenticide_poisoning",
+     "allium_toxicosis",
+     "reduced_appetite_no_other_signs",
+     "insect_sting_local_reaction"
+    ],
+    0
+   ],
+   "calib:p05": [
+    [
+     "human_medication_poisoning",
+     "congestive_heart_failure",
+     "diabetic_ketoacidosis",
+     "vomiting_and_diarrhea",
+     "polyuria_polydipsia_investigate"
+    ],
+    0
+   ],
+   "calib:p06": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "dietary_indiscretion_mild",
+     "reduced_appetite_no_other_signs",
+     "vomiting_and_diarrhea",
+     "gastric_dilatation_volvulus"
+    ],
+    0
+   ],
+   "calib:p07": [
+    [
+     "gastric_dilatation_volvulus",
+     "vomiting_and_diarrhea",
+     "chocolate_toxicosis",
+     "carbamate_organophosphate_poisoning",
+     "dietary_indiscretion_mild"
+    ],
+    0
+   ],
+   "calib:p08": [
+    [
+     "urethral_obstruction",
+     "inappropriate_urination_or_cystitis",
+     "carbamate_organophosphate_poisoning",
+     "dystocia",
+     "acute_hindlimb_paralysis"
+    ],
+    0
+   ],
+   "calib:p09": [
+    [
+     "urethral_obstruction",
+     "inappropriate_urination_or_cystitis",
+     "acute_hindlimb_paralysis",
+     "carbamate_organophosphate_poisoning",
+     "dystocia"
+    ],
+    1
+   ],
+   "calib:p10": [
+    [
+     "pyometra",
+     "normal_estrus",
+     "reduced_appetite_no_other_signs",
+     "diabetic_ketoacidosis",
+     "congestive_heart_failure"
+    ],
+    0
+   ],
+   "calib:p11": [
+    [
+     "normal_estrus",
+     "pyometra",
+     "anticoagulant_rodenticide_poisoning",
+     "reduced_appetite_no_other_signs",
+     "parvovirus_panleukopenia"
+    ],
+    0
+   ],
+   "calib:p12": [
+    [
+     "acute_hindlimb_paralysis",
+     "respiratory_distress",
+     "trauma_and_bleeding",
+     "anaphylaxis_facial_swelling",
+     "feline_aortic_thromboembolism"
+    ],
+    0
+   ],
+   "calib:p13": [
+    [
+     "osteoarthritis_stiffness",
+     "carbamate_organophosphate_poisoning",
+     "congestive_heart_failure",
+     "kennel_cough_mild",
+     "dietary_indiscretion_mild"
+    ],
+    0
+   ],
+   "calib:p14": [
+    [
+     "dietary_indiscretion_mild",
+     "carbamate_organophosphate_poisoning",
+     "trauma_and_bleeding",
+     "collapse_and_pale_gums",
+     "anticoagulant_rodenticide_poisoning"
+    ],
+    null
+   ],
+   "calib:p17": [
+    [
+     "ocular_emergency",
+     "trauma_and_bleeding",
+     "mild_conjunctivitis",
+     "collapse_and_pale_gums",
+     "dietary_indiscretion_mild"
+    ],
+    0
+   ],
+   "calib:p18": [
+    [
+     "mild_conjunctivitis",
+     "tremors_without_seizure",
+     "ocular_emergency",
+     "reduced_appetite_no_other_signs",
+     "allium_toxicosis"
+    ],
+    0
+   ],
+   "regua:b01": [
+    [
+     "chocolate_toxicosis",
+     "dietary_indiscretion_mild",
+     "vomiting_and_diarrhea",
+     "gastric_dilatation_volvulus",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    0
+   ],
+   "regua:b02": [
+    [
+     "inappropriate_urination_or_cystitis",
+     "acute_hindlimb_paralysis",
+     "urethral_obstruction",
+     "pyometra",
+     "osteoarthritis_stiffness"
+    ],
+    2
+   ],
+   "regua:b03": [
+    [
+     "respiratory_distress",
+     "collapse_and_pale_gums",
+     "gastric_dilatation_volvulus",
+     "carbamate_organophosphate_poisoning",
+     "anaphylaxis_facial_swelling"
+    ],
+    0
+   ],
+   "regua:b04": [
+    [
+     "seizures",
+     "carbamate_organophosphate_poisoning",
+     "hypoglycemia_toy_puppy",
+     "tremors_without_seizure",
+     "dystocia"
+    ],
+    0
+   ],
+   "regua:b05": [
+    [
+     "mild_upper_respiratory_signs",
+     "reduced_appetite_no_other_signs",
+     "respiratory_distress",
+     "polyuria_polydipsia_investigate",
+     "dietary_indiscretion_mild"
+    ],
+    0
+   ],
+   "regua:b06": [
+    [
+     "trauma_and_bleeding",
+     "mild_lameness",
+     "anticoagulant_rodenticide_poisoning",
+     "minor_wound",
+     "feline_aortic_thromboembolism"
+    ],
+    0
+   ],
+   "regua:b07": [
+    [
+     "vomiting_and_diarrhea",
+     "parvovirus_panleukopenia",
+     "reduced_appetite_no_other_signs",
+     "dietary_indiscretion_mild",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    0
+   ],
+   "regua:b08": [
+    [
+     "allium_toxicosis",
+     "collapse_and_pale_gums",
+     "anticoagulant_rodenticide_poisoning",
+     "dietary_indiscretion_mild",
+     "reduced_appetite_no_other_signs"
+    ],
+    0
+   ],
+   "regua:b09": [
+    [
+     "flea_dermatitis_pruritus",
+     "dietary_indiscretion_mild",
+     "anaphylaxis_facial_swelling",
+     "kennel_cough_mild",
+     "otitis_externa_mild"
+    ],
+    0
+   ],
+   "regua:b10": [
+    [
+     "mild_lameness",
+     "trauma_and_bleeding",
+     "congestive_heart_failure",
+     "kennel_cough_mild",
+     "osteoarthritis_stiffness"
+    ],
+    0
+   ],
+   "regua:b11": [
+    [
+     "mild_conjunctivitis",
+     "insect_sting_local_reaction",
+     "anaphylaxis_facial_swelling",
+     "ocular_emergency",
+     "reduced_appetite_no_other_signs"
+    ],
+    0
+   ],
+   "regua:b12": [
+    [
+     "gastric_dilatation_volvulus",
+     "vomiting_and_diarrhea",
+     "carbamate_organophosphate_poisoning",
+     "reduced_appetite_no_other_signs",
+     "parvovirus_panleukopenia"
+    ],
+    0
+   ],
+   "regua:b13": [
+    [
+     "dystocia",
+     "vomiting_and_diarrhea",
+     "trauma_and_bleeding",
+     "anticoagulant_rodenticide_poisoning",
+     "collapse_and_pale_gums"
+    ],
+    2
+   ],
+   "regua:b14": [
+    [
+     "fading_neonate",
+     "hypoglycemia_toy_puppy",
+     "parvovirus_panleukopenia",
+     "reduced_appetite_no_other_signs",
+     "dystocia"
+    ],
+    0
+   ],
+   "regua:b15": [
+    [
+     "urethral_obstruction",
+     "carbamate_organophosphate_poisoning",
+     "acute_hindlimb_paralysis",
+     "dietary_indiscretion_mild",
+     "dystocia"
+    ],
+    0
+   ],
+   "regua:b16": [
+    [
+     "anaphylaxis_facial_swelling",
+     "flea_dermatitis_pruritus",
+     "insect_sting_local_reaction",
+     "carbamate_organophosphate_poisoning",
+     "collapse_and_pale_gums"
+    ],
+    0
+   ],
+   "regua:b17": [
+    [
+     "acute_hindlimb_paralysis",
+     "congestive_heart_failure",
+     "osteoarthritis_stiffness",
+     "collapse_and_pale_gums",
+     "eclampsia"
+    ],
+    0
+   ],
+   "regua:b18": [
+    [
+     "mild_upper_respiratory_signs",
+     "reduced_appetite_no_other_signs",
+     "respiratory_distress",
+     "parvovirus_panleukopenia",
+     "anaphylaxis_facial_swelling"
+    ],
+    0
+   ],
+   "regua:b19": [
+    [
+     "human_medication_poisoning",
+     "congestive_heart_failure",
+     "anaphylaxis_facial_swelling",
+     "permethrin_toxicosis_cats",
+     "anticoagulant_rodenticide_poisoning"
+    ],
+    0
+   ],
+   "regua:b20": [
+    [
+     "carbamate_organophosphate_poisoning",
+     "seizures",
+     "ocular_emergency",
+     "pyometra",
+     "parvovirus_panleukopenia"
+    ],
+    0
+   ],
+   "regua:b21": [
+    [
+     "permethrin_toxicosis_cats",
+     "tremors_without_seizure",
+     "gastrointestinal_foreign_body",
+     "carbamate_organophosphate_poisoning",
+     "congestive_heart_failure"
+    ],
+    0
+   ],
+   "regua:b22": [
+    [
+     "anticoagulant_rodenticide_poisoning",
+     "collapse_and_pale_gums",
+     "carbamate_organophosphate_poisoning",
+     "rabies_exposure_wild_animal_bite",
+     "parvovirus_panleukopenia"
+    ],
+    0
+   ],
+   "regua:b23": [
+    [
+     "parvovirus_panleukopenia",
+     "vomiting_and_diarrhea",
+     "reduced_appetite_no_other_signs",
+     "carbamate_organophosphate_poisoning",
+     "gastric_dilatation_volvulus"
+    ],
+    0
+   ],
+   "regua:b24": [
+    [
+     "pyometra",
+     "reduced_appetite_no_other_signs",
+     "diabetic_ketoacidosis",
+     "parvovirus_panleukopenia",
+     "normal_estrus"
+    ],
+    0
+   ],
+   "regua:b25": [
+    [
+     "dietary_indiscretion_mild",
+     "reduced_appetite_no_other_signs",
+     "polyuria_polydipsia_investigate",
+     "single_vomiting_or_mild_diarrhea",
+     "carbamate_organophosphate_poisoning"
+    ],
+    0
+   ],
+   "regua:b26": [
+    [
+     "inappropriate_urination_or_cystitis",
+     "urethral_obstruction",
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "dystocia"
+    ],
+    0
+   ],
+   "regua:b27": [
+    [
+     "collapse_and_pale_gums",
+     "respiratory_distress",
+     "congestive_heart_failure",
+     "anticoagulant_rodenticide_poisoning",
+     "trauma_and_bleeding"
+    ],
+    0
+   ],
+   "regua:b28": [
+    [
+     "reduced_appetite_no_other_signs",
+     "dietary_indiscretion_mild",
+     "osteoarthritis_stiffness",
+     "polyuria_polydipsia_investigate",
+     "collapse_and_pale_gums"
+    ],
+    2
+   ],
+   "regua:b29": [
+    [
+     "reduced_appetite_no_other_signs",
+     "vomiting_and_diarrhea",
+     "polyuria_polydipsia_investigate",
+     "dietary_indiscretion_mild",
+     "diabetic_ketoacidosis"
+    ],
+    0
+   ],
+   "regua:b30": [
+    [
+     "gastric_dilatation_volvulus",
+     "reduced_appetite_no_other_signs",
+     "vomiting_and_diarrhea",
+     "single_vomiting_or_mild_diarrhea",
+     "gastrointestinal_foreign_body"
+    ],
+    4
+   ],
+   "regua:b31": [
+    [
+     "respiratory_distress",
+     "collapse_and_pale_gums",
+     "anaphylaxis_facial_swelling",
+     "burns_and_electrical_injury",
+     "mild_upper_respiratory_signs"
+    ],
+    7
+   ],
+   "regua:b32": [
+    [
+     "congestive_heart_failure",
+     "collapse_and_pale_gums",
+     "kennel_cough_mild",
+     "respiratory_distress",
+     "parvovirus_panleukopenia"
+    ],
+    0
+   ],
+   "regua:b33": [
+    [
+     "diabetic_ketoacidosis",
+     "vomiting_and_diarrhea",
+     "reduced_appetite_no_other_signs",
+     "parvovirus_panleukopenia",
+     "collapse_and_pale_gums"
+    ],
+    0
+   ],
+   "regua:b34": [
+    [
+     "parvovirus_panleukopenia",
+     "anaphylaxis_facial_swelling",
+     "ocular_emergency",
+     "distemper_neurological",
+     "snake_and_scorpion_envenomation"
+    ],
+    3
+   ],
+   "regua:b35": [
+    [
+     "dystocia",
+     "fading_neonate",
+     "normal_whelping",
+     "reduced_appetite_no_other_signs",
+     "collapse_and_pale_gums"
+    ],
+    0
+   ],
+   "regua:b36": [
+    [
+     "acute_hindlimb_paralysis",
+     "feline_aortic_thromboembolism",
+     "collapse_and_pale_gums",
+     "respiratory_distress",
+     "mild_upper_respiratory_signs"
+    ],
+    1
+   ],
+   "regua:b37": [
+    [
+     "vomiting_and_diarrhea",
+     "carbamate_organophosphate_poisoning",
+     "anaphylaxis_facial_swelling",
+     "parvovirus_panleukopenia",
+     "ocular_emergency"
+    ],
+    null
+   ],
+   "regua:b38": [
+    [
+     "lily_toxicosis_cats",
+     "carbamate_organophosphate_poisoning",
+     "parvovirus_panleukopenia",
+     "gastrointestinal_foreign_body",
+     "vomiting_and_diarrhea"
+    ],
+    0
+   ],
+   "regua:b39": [
+    [
+     "carbamate_organophosphate_poisoning",
+     "toad_bufotoxin_poisoning",
+     "congestive_heart_failure",
+     "gastric_dilatation_volvulus",
+     "collapse_and_pale_gums"
+    ],
+    1
+   ],
+   "regua:b40": [
+    [
+     "tremors_without_seizure",
+     "seizures",
+     "dietary_indiscretion_mild",
+     "hypoglycemia_toy_puppy",
+     "distemper_neurological"
+    ],
+    0
+   ],
+   "regua:b41": [
+    [
+     "pyometra",
+     "normal_estrus",
+     "reduced_appetite_no_other_signs",
+     "parvovirus_panleukopenia",
+     "anticoagulant_rodenticide_poisoning"
+    ],
+    1
+   ],
+   "regua:b42": [
+    [
+     "collapse_and_pale_gums",
+     "respiratory_distress",
+     "congestive_heart_failure",
+     "periodontal_disease_mild",
+     "allium_toxicosis"
+    ],
+    0
+   ],
+   "regua:b43": [
+    [
+     "ocular_emergency",
+     "mild_conjunctivitis",
+     "anaphylaxis_facial_swelling",
+     "flea_dermatitis_pruritus",
+     "parvovirus_panleukopenia"
+    ],
+    0
+   ],
+   "regua:b44": [
+    [
+     "respiratory_distress",
+     "mild_upper_respiratory_signs",
+     "acute_hindlimb_paralysis",
+     "collapse_and_pale_gums",
+     "feline_aortic_thromboembolism"
+    ],
+    null
+   ],
+   "regua:b45": [
+    [
+     "anaphylaxis_facial_swelling",
+     "carbamate_organophosphate_poisoning",
+     "insect_sting_local_reaction",
+     "snake_and_scorpion_envenomation",
+     "trauma_and_bleeding"
+    ],
+    3
+   ],
+   "regua:b46": [
+    [
+     "collapse_and_pale_gums",
+     "respiratory_distress",
+     "anticoagulant_rodenticide_poisoning",
+     "parvovirus_panleukopenia",
+     "anaphylaxis_facial_swelling"
+    ],
+    5
+   ],
+   "regua:b47": [
+    [
+     "reduced_appetite_no_other_signs",
+     "hypoglycemia_toy_puppy",
+     "single_vomiting_or_mild_diarrhea",
+     "fading_neonate",
+     "vomiting_and_diarrhea"
+    ],
+    1
+   ],
+   "regua:b48": [
+    [
+     "vestibular_syndrome_otitis_interna",
+     "ocular_emergency",
+     "anaphylaxis_facial_swelling",
+     "hypoglycemia_toy_puppy",
+     "carbamate_organophosphate_poisoning"
+    ],
+    0
+   ],
+   "regua:b49": [
+    [
+     "collapse_and_pale_gums",
+     "respiratory_distress",
+     "high_rise_syndrome_cats",
+     "congestive_heart_failure",
+     "tremors_without_seizure"
+    ],
+    2
+   ],
+   "regua:b50": [
+    [
+     "burns_and_electrical_injury",
+     "hypoglycemia_toy_puppy",
+     "respiratory_distress",
+     "trauma_and_bleeding",
+     "collapse_and_pale_gums"
+    ],
+    0
+   ],
+   "regua:b51": [
+    [
+     "eclampsia",
+     "tremors_without_seizure",
+     "seizures",
+     "congestive_heart_failure",
+     "acute_hindlimb_paralysis"
+    ],
+    0
+   ],
+   "regua:b52": [
+    [
+     "grape_xylitol_toxicosis",
+     "dietary_indiscretion_mild",
+     "carbamate_organophosphate_poisoning",
+     "reduced_appetite_no_other_signs",
+     "pyometra"
+    ],
+    0
+   ],
+   "regua:b53": [
+    [
+     "dystocia",
+     "collapse_and_pale_gums",
+     "hypoglycemia_toy_puppy",
+     "reduced_appetite_no_other_signs",
+     "trauma_and_bleeding"
+    ],
+    6
+   ],
+   "regua:b54": [
+    [
+     "anaphylaxis_facial_swelling",
+     "insect_sting_local_reaction",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus"
+    ],
+    1
+   ],
+   "regua:b55": [
+    [
+     "kennel_cough_mild",
+     "reduced_appetite_no_other_signs",
+     "single_vomiting_or_mild_diarrhea",
+     "vomiting_and_diarrhea",
+     "parvovirus_panleukopenia"
+    ],
+    0
+   ],
+   "regua:b56": [
+    [
+     "reduced_appetite_no_other_signs",
+     "inappropriate_urination_or_cystitis",
+     "pyometra",
+     "urethral_obstruction",
+     "polyuria_polydipsia_investigate"
+    ],
+    4
+   ],
+   "regua:b57": [
+    [
+     "otitis_externa_mild",
+     "parvovirus_panleukopenia",
+     "mild_conjunctivitis",
+     "flea_dermatitis_pruritus",
+     "anaphylaxis_facial_swelling"
+    ],
+    0
+   ],
+   "regua:b58": [
+    [
+     "minor_wound",
+     "collapse_and_pale_gums",
+     "trauma_and_bleeding",
+     "pyometra",
+     "insect_sting_local_reaction"
+    ],
+    0
+   ],
+   "regua:b59": [
+    [
+     "reduced_appetite_no_other_signs",
+     "parvovirus_panleukopenia",
+     "periodontal_disease_mild",
+     "dietary_indiscretion_mild",
+     "vomiting_and_diarrhea"
+    ],
+    2
+   ],
+   "regua:b60": [
+    [
+     "slow_growing_lump",
+     "hypoglycemia_toy_puppy",
+     "anaphylaxis_facial_swelling",
+     "pyometra",
+     "carbamate_organophosphate_poisoning"
+    ],
+    0
+   ],
+   "regua:b61": [
+    [
+     "canine_heatstroke",
+     "mild_lameness",
+     "polyuria_polydipsia_investigate",
+     "dystocia",
+     "hypoglycemia_toy_puppy"
+    ],
+    null
+   ],
+   "regua:b62": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     "trauma_and_bleeding",
+     "pyometra",
+     "minor_wound",
+     "mild_lameness"
+    ],
+    0
+   ],
+   "regua:b63": [
+    [
+     "anticoagulant_rodenticide_poisoning",
+     "collapse_and_pale_gums",
+     "respiratory_distress",
+     "allium_toxicosis",
+     "parvovirus_panleukopenia"
+    ],
+    null
+   ],
+   "regua:b64": [
+    [
+     "dietary_indiscretion_mild",
+     "single_vomiting_or_mild_diarrhea",
+     "reduced_appetite_no_other_signs",
+     "anticoagulant_rodenticide_poisoning",
+     "vomiting_and_diarrhea"
+    ],
+    1
+   ],
+   "regua:b65": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "reduced_appetite_no_other_signs",
+     "gastrointestinal_foreign_body",
+     "dietary_indiscretion_mild",
+     "vomiting_and_diarrhea"
+    ],
+    0
+   ],
+   "regua:b66": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "vomiting_and_diarrhea",
+     "gastrointestinal_foreign_body",
+     "reduced_appetite_no_other_signs",
+     "gastric_dilatation_volvulus"
+    ],
+    0
+   ]
+  }
+ },
+ "intfloat/multilingual-e5-base": {
+  "dim": 768,
+  "indexar_s": 10.5,
+  "params_M": 278,
+  "dev": {
+   "todos": {
+    "P@1": 0.681,
+    "P@3": 0.851,
+    "MRR": 0.773,
+    "n": 47
+   },
+   "etapa1": {
+    "P@1": 0.857,
+    "P@3": 0.929,
+    "MRR": 0.903,
+    "n": 28
+   },
+   "etapa2": {
+    "P@1": 0.421,
+    "P@3": 0.737,
+    "MRR": 0.582,
+    "n": 19
+   }
+  },
+  "calib": {
+   "todos": {
+    "P@1": 0.75,
+    "P@3": 0.875,
+    "MRR": 0.825,
+    "n": 16
+   },
+   "etapa1": {
+    "P@1": 0.846,
+    "P@3": 1.0,
+    "MRR": 0.923,
+    "n": 13
+   },
+   "etapa2": {
+    "P@1": 0.333,
+    "P@3": 0.333,
+    "MRR": 0.4,
+    "n": 3
+   }
+  },
+  "regua": {
+   "todos": {
+    "P@1": 0.652,
+    "P@3": 0.848,
+    "MRR": 0.757,
+    "n": 66
+   },
+   "etapa1": {
+    "P@1": 0.889,
+    "P@3": 1.0,
+    "MRR": 0.94,
+    "n": 36
+   },
+   "etapa2": {
+    "P@1": 0.367,
+    "P@3": 0.667,
+    "MRR": 0.537,
+    "n": 30
+   }
+  },
+  "ms_por_consulta": 31.1,
+  "casos": {
+   "dev:p19": [
+    [
+     "chocolate_toxicosis",
+     "dietary_indiscretion_mild",
+     "gastric_dilatation_volvulus",
+     "carbamate_organophosphate_poisoning",
+     "anaphylaxis_facial_swelling"
+    ],
+    0
+   ],
+   "dev:p20": [
+    [
+     "allium_toxicosis",
+     "collapse_and_pale_gums",
+     "respiratory_distress",
+     "dietary_indiscretion_mild",
+     "flea_dermatitis_pruritus"
+    ],
+    0
+   ],
+   "dev:p21": [
+    [
+     "respiratory_distress",
+     "mild_upper_respiratory_signs",
+     "urethral_obstruction",
+     "seizures",
+     "gastric_dilatation_volvulus"
+    ],
+    0
+   ],
+   "dev:p22": [
+    [
+     "seizures",
+     "dietary_indiscretion_mild",
+     "urethral_obstruction",
+     "canine_heatstroke",
+     "tremors_without_seizure"
+    ],
+    0
+   ],
+   "dev:p23": [
+    [
+     "trauma_and_bleeding",
+     "minor_wound",
+     "burns_and_electrical_injury",
+     "cat_bite_abscess",
+     "ocular_emergency"
+    ],
+    0
+   ],
+   "dev:p24": [
+    [
+     "urethral_obstruction",
+     "inappropriate_urination_or_cystitis",
+     "gastric_dilatation_volvulus",
+     "diabetic_ketoacidosis",
+     "canine_heatstroke"
+    ],
+    0
+   ],
+   "dev:p25": [
+    [
+     "vomiting_and_diarrhea",
+     "reduced_appetite_no_other_signs",
+     "seizures",
+     "parvovirus_panleukopenia",
+     "polyuria_polydipsia_investigate"
+    ],
+    0
+   ],
+   "dev:p26": [
+    [
+     "canine_heatstroke",
+     "collapse_and_pale_gums",
+     "gastric_dilatation_volvulus",
+     "dietary_indiscretion_mild",
+     "seizures"
+    ],
+    0
+   ],
+   "dev:p27": [
+    [
+     "gastric_dilatation_volvulus",
+     "diabetic_ketoacidosis",
+     "dietary_indiscretion_mild",
+     "vomiting_and_diarrhea",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    0
+   ],
+   "dev:p28": [
+    [
+     "fading_neonate",
+     "canine_heatstroke",
+     "dystocia",
+     "mild_lameness",
+     "vomiting_and_diarrhea"
+    ],
+    0
+   ],
+   "dev:p29": [
+    [
+     "acute_hindlimb_paralysis",
+     "osteoarthritis_stiffness",
+     "seizures",
+     "trauma_and_bleeding",
+     "urethral_obstruction"
+    ],
+    0
+   ],
+   "dev:p30": [
+    [
+     "anticoagulant_rodenticide_poisoning",
+     "permethrin_toxicosis_cats",
+     "lily_toxicosis_cats",
+     "toad_bufotoxin_poisoning",
+     "trauma_and_bleeding"
+    ],
+    0
+   ],
+   "dev:p31": [
+    [
+     "human_medication_poisoning",
+     "allium_toxicosis",
+     "anticoagulant_rodenticide_poisoning",
+     "permethrin_toxicosis_cats",
+     "urethral_obstruction"
+    ],
+    0
+   ],
+   "dev:p32": [
+    [
+     "anaphylaxis_facial_swelling",
+     "canine_heatstroke",
+     "flea_dermatitis_pruritus",
+     "rabies_exposure_wild_animal_bite",
+     "carbamate_organophosphate_poisoning"
+    ],
+    0
+   ],
+   "dev:p33": [
+    [
+     "gastric_dilatation_volvulus",
+     "canine_heatstroke",
+     "congestive_heart_failure",
+     "vomiting_and_diarrhea",
+     "chocolate_toxicosis"
+    ],
+    2
+   ],
+   "dev:p34": [
+    [
+     "collapse_and_pale_gums",
+     "respiratory_distress",
+     "allium_toxicosis",
+     "mild_upper_respiratory_signs",
+     "pyometra"
+    ],
+    0
+   ],
+   "dev:p35": [
+    [
+     "parvovirus_panleukopenia",
+     "vomiting_and_diarrhea",
+     "reduced_appetite_no_other_signs",
+     "gastric_dilatation_volvulus",
+     "dietary_indiscretion_mild"
+    ],
+    0
+   ],
+   "dev:p36": [
+    [
+     "ocular_emergency",
+     "mild_conjunctivitis",
+     "anaphylaxis_facial_swelling",
+     "gastric_dilatation_volvulus",
+     "flea_dermatitis_pruritus"
+    ],
+    0
+   ],
+   "dev:p37": [
+    [
+     "permethrin_toxicosis_cats",
+     "carbamate_organophosphate_poisoning",
+     "tremors_without_seizure",
+     "seizures",
+     "dystocia"
+    ],
+    0
+   ],
+   "dev:p38": [
+    [
+     "lily_toxicosis_cats",
+     "diabetic_ketoacidosis",
+     "gastrointestinal_foreign_body",
+     "reduced_appetite_no_other_signs",
+     "dietary_indiscretion_mild"
+    ],
+    2
+   ],
+   "dev:p39": [
+    [
+     "dietary_indiscretion_mild",
+     "flea_dermatitis_pruritus",
+     "seizures",
+     "anaphylaxis_facial_swelling",
+     "respiratory_distress"
+    ],
+    null
+   ],
+   "dev:p40": [
+    [
+     "urethral_obstruction",
+     "dystocia",
+     "normal_whelping",
+     "inappropriate_urination_or_cystitis",
+     "pyometra"
+    ],
+    1
+   ],
+   "dev:p41": [
+    [
+     "hypoglycemia_toy_puppy",
+     "dietary_indiscretion_mild",
+     "parvovirus_panleukopenia",
+     "rabies_exposure_wild_animal_bite",
+     "anticoagulant_rodenticide_poisoning"
+    ],
+    null
+   ],
+   "dev:p42": [
+    [
+     "fading_neonate",
+     "hypoglycemia_toy_puppy",
+     "dietary_indiscretion_mild",
+     "canine_heatstroke",
+     "polyuria_polydipsia_investigate"
+    ],
+    1
+   ],
+   "dev:p43": [
+    [
+     "eclampsia",
+     "pyometra",
+     "dystocia",
+     "normal_whelping",
+     "diabetic_ketoacidosis"
+    ],
+    0
+   ],
+   "dev:p44": [
+    [
+     "allium_toxicosis",
+     "dietary_indiscretion_mild",
+     "flea_dermatitis_pruritus",
+     "diabetic_ketoacidosis",
+     "mild_lameness"
+    ],
+    1
+   ],
+   "dev:p45": [
+    [
+     "mild_upper_respiratory_signs",
+     "respiratory_distress",
+     "dietary_indiscretion_mild",
+     "urethral_obstruction",
+     "flea_dermatitis_pruritus"
+    ],
+    0
+   ],
+   "dev:p46": [
+    [
+     "inappropriate_urination_or_cystitis",
+     "urethral_obstruction",
+     "dietary_indiscretion_mild",
+     "pyometra",
+     "polyuria_polydipsia_investigate"
+    ],
+    0
+   ],
+   "dev:p47": [
+    [
+     "seizures",
+     "dietary_indiscretion_mild",
+     "hypoglycemia_toy_puppy",
+     "canine_heatstroke",
+     "otitis_externa_mild"
+    ],
+    4
+   ],
+   "dev:p48": [
+    [
+     "dietary_indiscretion_mild",
+     "gastric_dilatation_volvulus",
+     "toad_bufotoxin_poisoning",
+     "chocolate_toxicosis",
+     "diabetic_ketoacidosis"
+    ],
+    5
+   ],
+   "dev:p49": [
+    [
+     "osteoarthritis_stiffness",
+     "kennel_cough_mild",
+     "canine_heatstroke",
+     "rabies_exposure_wild_animal_bite",
+     "seizures"
+    ],
+    0
+   ],
+   "dev:p50": [
+    [
+     "anaphylaxis_facial_swelling",
+     "canine_heatstroke",
+     "dietary_indiscretion_mild",
+     "flea_dermatitis_pruritus",
+     "insect_sting_local_reaction"
+    ],
+    4
+   ],
+   "dev:p51": [
+    [
+     "kennel_cough_mild",
+     "vomiting_and_diarrhea",
+     "dietary_indiscretion_mild",
+     "canine_heatstroke",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    0
+   ],
+   "dev:p52": [
+    [
+     "mild_conjunctivitis",
+     "ocular_emergency",
+     "respiratory_distress",
+     "mild_upper_respiratory_signs",
+     "vestibular_syndrome_otitis_interna"
+    ],
+    0
+   ],
+   "dev:p53": [
+    [
+     "normal_whelping",
+     "dystocia",
+     "dietary_indiscretion_mild",
+     "pyometra",
+     "canine_heatstroke"
+    ],
+    0
+   ],
+   "dev:p54": [
+    [
+     "dietary_indiscretion_mild",
+     "seizures",
+     "gastric_dilatation_volvulus",
+     "canine_heatstroke",
+     "carbamate_organophosphate_poisoning"
+    ],
+    8
+   ],
+   "dev:p55": [
+    [
+     "mild_lameness",
+     "dietary_indiscretion_mild",
+     "trauma_and_bleeding",
+     "canine_heatstroke",
+     "rabies_exposure_wild_animal_bite"
+    ],
+    0
+   ],
+   "dev:p56": [
+    [
+     "flea_dermatitis_pruritus",
+     "dietary_indiscretion_mild",
+     "pyometra",
+     "anaphylaxis_facial_swelling",
+     "periodontal_disease_mild"
+    ],
+    0
+   ],
+   "dev:p57": [
+    [
+     "dietary_indiscretion_mild",
+     "reduced_appetite_no_other_signs",
+     "gastric_dilatation_volvulus",
+     "vomiting_and_diarrhea",
+     "diabetic_ketoacidosis"
+    ],
+    1
+   ],
+   "dev:p58": [
+    [
+     "cat_bite_abscess",
+     "rabies_exposure_wild_animal_bite",
+     "dietary_indiscretion_mild",
+     "pyometra",
+     "urethral_obstruction"
+    ],
+    0
+   ],
+   "dev:p59": [
+    [
+     "polyuria_polydipsia_investigate",
+     "inappropriate_urination_or_cystitis",
+     "urethral_obstruction",
+     "reduced_appetite_no_other_signs",
+     "vomiting_and_diarrhea"
+    ],
+    0
+   ],
+   "dev:p60": [
+    [
+     "trauma_and_bleeding",
+     "minor_wound",
+     "mild_lameness",
+     "dietary_indiscretion_mild",
+     "rabies_exposure_wild_animal_bite"
+    ],
+    1
+   ],
+   "dev:p61": [
+    [
+     "periodontal_disease_mild",
+     "dietary_indiscretion_mild",
+     "acute_hindlimb_paralysis",
+     "mild_upper_respiratory_signs",
+     "gastrointestinal_foreign_body"
+    ],
+    0
+   ],
+   "dev:p62": [
+    [
+     "gastric_dilatation_volvulus",
+     "dietary_indiscretion_mild",
+     "rabies_exposure_wild_animal_bite",
+     "pyometra",
+     "flea_dermatitis_pruritus"
+    ],
+    null
+   ],
+   "dev:p63": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     "toad_bufotoxin_poisoning",
+     "anaphylaxis_facial_swelling",
+     "permethrin_toxicosis_cats",
+     "dietary_indiscretion_mild"
+    ],
+    0
+   ],
+   "dev:p64": [
+    [
+     "ticks_found_no_signs",
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "inappropriate_urination_or_cystitis",
+     "anticoagulant_rodenticide_poisoning"
+    ],
+    0
+   ],
+   "dev:p65": [
+    [
+     "canine_heatstroke",
+     "exertional_panting_mild",
+     "polyuria_polydipsia_investigate",
+     "dietary_indiscretion_mild",
+     "kennel_cough_mild"
+    ],
+    1
+   ],
+   "calib:p01": [
+    [
+     "carbamate_organophosphate_poisoning",
+     "dietary_indiscretion_mild",
+     "rabies_exposure_wild_animal_bite",
+     "permethrin_toxicosis_cats",
+     "gastric_dilatation_volvulus"
+    ],
+    0
+   ],
+   "calib:p02": [
+    [
+     "dietary_indiscretion_mild",
+     "seizures",
+     "polyuria_polydipsia_investigate",
+     "flea_dermatitis_pruritus",
+     "otitis_externa_mild"
+    ],
+    4
+   ],
+   "calib:p03": [
+    [
+     "vestibular_syndrome_otitis_interna",
+     "seizures",
+     "dietary_indiscretion_mild",
+     "carbamate_organophosphate_poisoning",
+     "trauma_and_bleeding"
+    ],
+    0
+   ],
+   "calib:p04": [
+    [
+     "dietary_indiscretion_mild",
+     "polyuria_polydipsia_investigate",
+     "grape_xylitol_toxicosis",
+     "chocolate_toxicosis",
+     "rabies_exposure_wild_animal_bite"
+    ],
+    0
+   ],
+   "calib:p05": [
+    [
+     "human_medication_poisoning",
+     "permethrin_toxicosis_cats",
+     "allium_toxicosis",
+     "pyometra",
+     "lily_toxicosis_cats"
+    ],
+    0
+   ],
+   "calib:p06": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "dietary_indiscretion_mild",
+     "polyuria_polydipsia_investigate",
+     "vomiting_and_diarrhea",
+     "diabetic_ketoacidosis"
+    ],
+    0
+   ],
+   "calib:p07": [
+    [
+     "gastric_dilatation_volvulus",
+     "dietary_indiscretion_mild",
+     "polyuria_polydipsia_investigate",
+     "diabetic_ketoacidosis",
+     "vomiting_and_diarrhea"
+    ],
+    0
+   ],
+   "calib:p08": [
+    [
+     "urethral_obstruction",
+     "inappropriate_urination_or_cystitis",
+     "polyuria_polydipsia_investigate",
+     "pyometra",
+     "vomiting_and_diarrhea"
+    ],
+    0
+   ],
+   "calib:p09": [
+    [
+     "urethral_obstruction",
+     "inappropriate_urination_or_cystitis",
+     "polyuria_polydipsia_investigate",
+     "seizures",
+     "acute_hindlimb_paralysis"
+    ],
+    1
+   ],
+   "calib:p10": [
+    [
+     "pyometra",
+     "normal_estrus",
+     "diabetic_ketoacidosis",
+     "polyuria_polydipsia_investigate",
+     "urethral_obstruction"
+    ],
+    0
+   ],
+   "calib:p11": [
+    [
+     "pyometra",
+     "normal_estrus",
+     "allium_toxicosis",
+     "mild_lameness",
+     "parvovirus_panleukopenia"
+    ],
+    1
+   ],
+   "calib:p12": [
+    [
+     "acute_hindlimb_paralysis",
+     "seizures",
+     "osteoarthritis_stiffness",
+     "trauma_and_bleeding",
+     "feline_aortic_thromboembolism"
+    ],
+    0
+   ],
+   "calib:p13": [
+    [
+     "osteoarthritis_stiffness",
+     "dietary_indiscretion_mild",
+     "kennel_cough_mild",
+     "trauma_and_bleeding",
+     "rabies_exposure_wild_animal_bite"
+    ],
+    0
+   ],
+   "calib:p14": [
+    [
+     "canine_heatstroke",
+     "seizures",
+     "flea_dermatitis_pruritus",
+     "anaphylaxis_facial_swelling",
+     "trauma_and_bleeding"
+    ],
+    null
+   ],
+   "calib:p17": [
+    [
+     "ocular_emergency",
+     "canine_heatstroke",
+     "mild_conjunctivitis",
+     "rabies_exposure_wild_animal_bite",
+     "gastric_dilatation_volvulus"
+    ],
+    0
+   ],
+   "calib:p18": [
+    [
+     "mild_conjunctivitis",
+     "ocular_emergency",
+     "seizures",
+     "allium_toxicosis",
+     "respiratory_distress"
+    ],
+    0
+   ],
+   "regua:b01": [
+    [
+     "chocolate_toxicosis",
+     "dietary_indiscretion_mild",
+     "gastric_dilatation_volvulus",
+     "diabetic_ketoacidosis",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    0
+   ],
+   "regua:b02": [
+    [
+     "urethral_obstruction",
+     "inappropriate_urination_or_cystitis",
+     "acute_hindlimb_paralysis",
+     "lily_toxicosis_cats",
+     "seizures"
+    ],
+    0
+   ],
+   "regua:b03": [
+    [
+     "respiratory_distress",
+     "gastric_dilatation_volvulus",
+     "collapse_and_pale_gums",
+     "hypoglycemia_toy_puppy",
+     "anaphylaxis_facial_swelling"
+    ],
+    0
+   ],
+   "regua:b04": [
+    [
+     "seizures",
+     "permethrin_toxicosis_cats",
+     "urethral_obstruction",
+     "carbamate_organophosphate_poisoning",
+     "hypoglycemia_toy_puppy"
+    ],
+    0
+   ],
+   "regua:b05": [
+    [
+     "mild_upper_respiratory_signs",
+     "respiratory_distress",
+     "pyometra",
+     "dietary_indiscretion_mild",
+     "permethrin_toxicosis_cats"
+    ],
+    0
+   ],
+   "regua:b06": [
+    [
+     "trauma_and_bleeding",
+     "mild_lameness",
+     "anticoagulant_rodenticide_poisoning",
+     "permethrin_toxicosis_cats",
+     "parvovirus_panleukopenia"
+    ],
+    0
+   ],
+   "regua:b07": [
+    [
+     "vomiting_and_diarrhea",
+     "parvovirus_panleukopenia",
+     "gastric_dilatation_volvulus",
+     "reduced_appetite_no_other_signs",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    0
+   ],
+   "regua:b08": [
+    [
+     "allium_toxicosis",
+     "collapse_and_pale_gums",
+     "dietary_indiscretion_mild",
+     "toad_bufotoxin_poisoning",
+     "anticoagulant_rodenticide_poisoning"
+    ],
+    0
+   ],
+   "regua:b09": [
+    [
+     "flea_dermatitis_pruritus",
+     "dietary_indiscretion_mild",
+     "anaphylaxis_facial_swelling",
+     "diabetic_ketoacidosis",
+     "toad_bufotoxin_poisoning"
+    ],
+    0
+   ],
+   "regua:b10": [
+    [
+     "mild_lameness",
+     "trauma_and_bleeding",
+     "seizures",
+     "acute_hindlimb_paralysis",
+     "canine_heatstroke"
+    ],
+    0
+   ],
+   "regua:b11": [
+    [
+     "mild_conjunctivitis",
+     "seizures",
+     "pyometra",
+     "permethrin_toxicosis_cats",
+     "mild_lameness"
+    ],
+    0
+   ],
+   "regua:b12": [
+    [
+     "gastric_dilatation_volvulus",
+     "vomiting_and_diarrhea",
+     "diabetic_ketoacidosis",
+     "carbamate_organophosphate_poisoning",
+     "hypoglycemia_toy_puppy"
+    ],
+    0
+   ],
+   "regua:b13": [
+    [
+     "trauma_and_bleeding",
+     "mild_lameness",
+     "seizures",
+     "urethral_obstruction",
+     "parvovirus_panleukopenia"
+    ],
+    0
+   ],
+   "regua:b14": [
+    [
+     "fading_neonate",
+     "vomiting_and_diarrhea",
+     "gastric_dilatation_volvulus",
+     "hypoglycemia_toy_puppy",
+     "reduced_appetite_no_other_signs"
+    ],
+    0
+   ],
+   "regua:b15": [
+    [
+     "urethral_obstruction",
+     "inappropriate_urination_or_cystitis",
+     "gastric_dilatation_volvulus",
+     "permethrin_toxicosis_cats",
+     "dietary_indiscretion_mild"
+    ],
+    0
+   ],
+   "regua:b16": [
+    [
+     "anaphylaxis_facial_swelling",
+     "flea_dermatitis_pruritus",
+     "canine_heatstroke",
+     "ocular_emergency",
+     "insect_sting_local_reaction"
+    ],
+    0
+   ],
+   "regua:b17": [
+    [
+     "acute_hindlimb_paralysis",
+     "canine_heatstroke",
+     "osteoarthritis_stiffness",
+     "trauma_and_bleeding",
+     "seizures"
+    ],
+    0
+   ],
+   "regua:b18": [
+    [
+     "mild_upper_respiratory_signs",
+     "respiratory_distress",
+     "flea_dermatitis_pruritus",
+     "reduced_appetite_no_other_signs",
+     "inappropriate_urination_or_cystitis"
+    ],
+    0
+   ],
+   "regua:b19": [
+    [
+     "human_medication_poisoning",
+     "permethrin_toxicosis_cats",
+     "anaphylaxis_facial_swelling",
+     "lily_toxicosis_cats",
+     "anticoagulant_rodenticide_poisoning"
+    ],
+    0
+   ],
+   "regua:b20": [
+    [
+     "carbamate_organophosphate_poisoning",
+     "gastric_dilatation_volvulus",
+     "permethrin_toxicosis_cats",
+     "seizures",
+     "dietary_indiscretion_mild"
+    ],
+    0
+   ],
+   "regua:b21": [
+    [
+     "permethrin_toxicosis_cats",
+     "tremors_without_seizure",
+     "seizures",
+     "dystocia",
+     "hypoglycemia_toy_puppy"
+    ],
+    0
+   ],
+   "regua:b22": [
+    [
+     "anticoagulant_rodenticide_poisoning",
+     "toad_bufotoxin_poisoning",
+     "parvovirus_panleukopenia",
+     "allium_toxicosis",
+     "collapse_and_pale_gums"
+    ],
+    0
+   ],
+   "regua:b23": [
+    [
+     "parvovirus_panleukopenia",
+     "vomiting_and_diarrhea",
+     "reduced_appetite_no_other_signs",
+     "single_vomiting_or_mild_diarrhea",
+     "gastric_dilatation_volvulus"
+    ],
+    0
+   ],
+   "regua:b24": [
+    [
+     "pyometra",
+     "diabetic_ketoacidosis",
+     "normal_estrus",
+     "inappropriate_urination_or_cystitis",
+     "parvovirus_panleukopenia"
+    ],
+    0
+   ],
+   "regua:b25": [
+    [
+     "dietary_indiscretion_mild",
+     "single_vomiting_or_mild_diarrhea",
+     "reduced_appetite_no_other_signs",
+     "carbamate_organophosphate_poisoning",
+     "chocolate_toxicosis"
+    ],
+    0
+   ],
+   "regua:b26": [
+    [
+     "inappropriate_urination_or_cystitis",
+     "urethral_obstruction",
+     "pyometra",
+     "diabetic_ketoacidosis",
+     "dystocia"
+    ],
+    0
+   ],
+   "regua:b27": [
+    [
+     "collapse_and_pale_gums",
+     "seizures",
+     "trauma_and_bleeding",
+     "respiratory_distress",
+     "allium_toxicosis"
+    ],
+    0
+   ],
+   "regua:b28": [
+    [
+     "dietary_indiscretion_mild",
+     "osteoarthritis_stiffness",
+     "single_vomiting_or_mild_diarrhea",
+     "reduced_appetite_no_other_signs",
+     "kennel_cough_mild"
+    ],
+    1
+   ],
+   "regua:b29": [
+    [
+     "reduced_appetite_no_other_signs",
+     "polyuria_polydipsia_investigate",
+     "vomiting_and_diarrhea",
+     "single_vomiting_or_mild_diarrhea",
+     "dietary_indiscretion_mild"
+    ],
+    0
+   ],
+   "regua:b30": [
+    [
+     "gastric_dilatation_volvulus",
+     "gastrointestinal_foreign_body",
+     "reduced_appetite_no_other_signs",
+     "urethral_obstruction",
+     "pyometra"
+    ],
+    1
+   ],
+   "regua:b31": [
+    [
+     "anaphylaxis_facial_swelling",
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "respiratory_distress",
+     "mild_lameness"
+    ],
+    9
+   ],
+   "regua:b32": [
+    [
+     "congestive_heart_failure",
+     "kennel_cough_mild",
+     "gastric_dilatation_volvulus",
+     "permethrin_toxicosis_cats",
+     "vomiting_and_diarrhea"
+    ],
+    0
+   ],
+   "regua:b33": [
+    [
+     "vomiting_and_diarrhea",
+     "reduced_appetite_no_other_signs",
+     "gastric_dilatation_volvulus",
+     "diabetic_ketoacidosis",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    3
+   ],
+   "regua:b34": [
+    [
+     "parvovirus_panleukopenia",
+     "permethrin_toxicosis_cats",
+     "distemper_neurological",
+     "hypoglycemia_toy_puppy",
+     "diabetic_ketoacidosis"
+    ],
+    2
+   ],
+   "regua:b35": [
+    [
+     "dystocia",
+     "normal_whelping",
+     "fading_neonate",
+     "eclampsia",
+     "pyometra"
+    ],
+    0
+   ],
+   "regua:b36": [
+    [
+     "acute_hindlimb_paralysis",
+     "feline_aortic_thromboembolism",
+     "trauma_and_bleeding",
+     "respiratory_distress",
+     "seizures"
+    ],
+    1
+   ],
+   "regua:b37": [
+    [
+     "parvovirus_panleukopenia",
+     "toad_bufotoxin_poisoning",
+     "gastric_dilatation_volvulus",
+     "vomiting_and_diarrhea",
+     "anaphylaxis_facial_swelling"
+    ],
+    null
+   ],
+   "regua:b38": [
+    [
+     "lily_toxicosis_cats",
+     "gastrointestinal_foreign_body",
+     "permethrin_toxicosis_cats",
+     "pyometra",
+     "collapse_and_pale_gums"
+    ],
+    0
+   ],
+   "regua:b39": [
+    [
+     "toad_bufotoxin_poisoning",
+     "allium_toxicosis",
+     "carbamate_organophosphate_poisoning",
+     "gastric_dilatation_volvulus",
+     "collapse_and_pale_gums"
+    ],
+    0
+   ],
+   "regua:b40": [
+    [
+     "tremors_without_seizure",
+     "hypoglycemia_toy_puppy",
+     "seizures",
+     "permethrin_toxicosis_cats",
+     "eclampsia"
+    ],
+    0
+   ],
+   "regua:b41": [
+    [
+     "pyometra",
+     "allium_toxicosis",
+     "normal_estrus",
+     "parvovirus_panleukopenia",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    2
+   ],
+   "regua:b42": [
+    [
+     "collapse_and_pale_gums",
+     "allium_toxicosis",
+     "seizures",
+     "respiratory_distress",
+     "diabetic_ketoacidosis"
+    ],
+    0
+   ],
+   "regua:b43": [
+    [
+     "mild_conjunctivitis",
+     "ocular_emergency",
+     "anaphylaxis_facial_swelling",
+     "flea_dermatitis_pruritus",
+     "gastric_dilatation_volvulus"
+    ],
+    1
+   ],
+   "regua:b44": [
+    [
+     "respiratory_distress",
+     "mild_upper_respiratory_signs",
+     "collapse_and_pale_gums",
+     "seizures",
+     "dietary_indiscretion_mild"
+    ],
+    null
+   ],
+   "regua:b45": [
+    [
+     "anaphylaxis_facial_swelling",
+     "trauma_and_bleeding",
+     "snake_and_scorpion_envenomation",
+     "anticoagulant_rodenticide_poisoning",
+     "rabies_exposure_wild_animal_bite"
+    ],
+    2
+   ],
+   "regua:b46": [
+    [
+     "parvovirus_panleukopenia",
+     "hypoglycemia_toy_puppy",
+     "collapse_and_pale_gums",
+     "tick_borne_disease_anemia",
+     "anticoagulant_rodenticide_poisoning"
+    ],
+    3
+   ],
+   "regua:b47": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "reduced_appetite_no_other_signs",
+     "hypoglycemia_toy_puppy",
+     "dietary_indiscretion_mild",
+     "vomiting_and_diarrhea"
+    ],
+    2
+   ],
+   "regua:b48": [
+    [
+     "ocular_emergency",
+     "vestibular_syndrome_otitis_interna",
+     "hypoglycemia_toy_puppy",
+     "anaphylaxis_facial_swelling",
+     "seizures"
+    ],
+    1
+   ],
+   "regua:b49": [
+    [
+     "respiratory_distress",
+     "seizures",
+     "high_rise_syndrome_cats",
+     "trauma_and_bleeding",
+     "collapse_and_pale_gums"
+    ],
+    2
+   ],
+   "regua:b50": [
+    [
+     "burns_and_electrical_injury",
+     "anaphylaxis_facial_swelling",
+     "flea_dermatitis_pruritus",
+     "collapse_and_pale_gums",
+     "trauma_and_bleeding"
+    ],
+    0
+   ],
+   "regua:b51": [
+    [
+     "eclampsia",
+     "permethrin_toxicosis_cats",
+     "seizures",
+     "gastric_dilatation_volvulus",
+     "hypoglycemia_toy_puppy"
+    ],
+    0
+   ],
+   "regua:b52": [
+    [
+     "grape_xylitol_toxicosis",
+     "dietary_indiscretion_mild",
+     "allium_toxicosis",
+     "diabetic_ketoacidosis",
+     "toad_bufotoxin_poisoning"
+    ],
+    0
+   ],
+   "regua:b53": [
+    [
+     "dystocia",
+     "normal_whelping",
+     "tremors_without_seizure",
+     "reduced_appetite_no_other_signs",
+     "fading_neonate"
+    ],
+    1
+   ],
+   "regua:b54": [
+    [
+     "anaphylaxis_facial_swelling",
+     "trauma_and_bleeding",
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "mild_lameness"
+    ],
+    5
+   ],
+   "regua:b55": [
+    [
+     "kennel_cough_mild",
+     "dietary_indiscretion_mild",
+     "single_vomiting_or_mild_diarrhea",
+     "gastric_dilatation_volvulus",
+     "parvovirus_panleukopenia"
+    ],
+    0
+   ],
+   "regua:b56": [
+    [
+     "inappropriate_urination_or_cystitis",
+     "reduced_appetite_no_other_signs",
+     "pyometra",
+     "diabetic_ketoacidosis",
+     "polyuria_polydipsia_investigate"
+    ],
+    4
+   ],
+   "regua:b57": [
+    [
+     "dietary_indiscretion_mild",
+     "flea_dermatitis_pruritus",
+     "anaphylaxis_facial_swelling",
+     "allium_toxicosis",
+     "gastric_dilatation_volvulus"
+    ],
+    null
+   ],
+   "regua:b58": [
+    [
+     "minor_wound",
+     "trauma_and_bleeding",
+     "high_rise_syndrome_cats",
+     "mild_lameness",
+     "cat_bite_abscess"
+    ],
+    0
+   ],
+   "regua:b59": [
+    [
+     "periodontal_disease_mild",
+     "gastric_dilatation_volvulus",
+     "dietary_indiscretion_mild",
+     "reduced_appetite_no_other_signs",
+     "tick_borne_disease_anemia"
+    ],
+    0
+   ],
+   "regua:b60": [
+    [
+     "hypoglycemia_toy_puppy",
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "anaphylaxis_facial_swelling",
+     "tick_borne_disease_anemia"
+    ],
+    5
+   ],
+   "regua:b61": [
+    [
+     "canine_heatstroke",
+     "exertional_panting_mild",
+     "hypoglycemia_toy_puppy",
+     "single_vomiting_or_mild_diarrhea",
+     "kennel_cough_mild"
+    ],
+    1
+   ],
+   "regua:b62": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     "minor_wound",
+     "mild_lameness",
+     "trauma_and_bleeding",
+     "cat_bite_abscess"
+    ],
+    0
+   ],
+   "regua:b63": [
+    [
+     "anticoagulant_rodenticide_poisoning",
+     "allium_toxicosis",
+     "collapse_and_pale_gums",
+     "dietary_indiscretion_mild",
+     "tick_borne_disease_anemia"
+    ],
+    6
+   ],
+   "regua:b64": [
+    [
+     "dietary_indiscretion_mild",
+     "single_vomiting_or_mild_diarrhea",
+     "gastric_dilatation_volvulus",
+     "vomiting_and_diarrhea",
+     "diabetic_ketoacidosis"
+    ],
+    1
+   ],
+   "regua:b65": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "dietary_indiscretion_mild",
+     "pyometra",
+     "lily_toxicosis_cats",
+     "reduced_appetite_no_other_signs"
+    ],
+    0
+   ],
+   "regua:b66": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "vomiting_and_diarrhea",
+     "gastrointestinal_foreign_body",
+     "gastric_dilatation_volvulus",
+     "dietary_indiscretion_mild"
+    ],
+    0
+   ]
+  }
+ },
+ "intfloat/multilingual-e5-large": {
+  "dim": 1024,
+  "indexar_s": 79.7,
+  "params_M": 560,
+  "dev": {
+   "todos": {
+    "P@1": 0.723,
+    "P@3": 0.894,
+    "MRR": 0.818,
+    "n": 47
+   },
+   "etapa1": {
+    "P@1": 0.786,
+    "P@3": 0.964,
+    "MRR": 0.874,
+    "n": 28
+   },
+   "etapa2": {
+    "P@1": 0.632,
+    "P@3": 0.789,
+    "MRR": 0.737,
+    "n": 19
+   }
+  },
+  "calib": {
+   "todos": {
+    "P@1": 0.875,
+    "P@3": 0.938,
+    "MRR": 0.906,
+    "n": 16
+   },
+   "etapa1": {
+    "P@1": 0.923,
+    "P@3": 1.0,
+    "MRR": 0.962,
+    "n": 13
+   },
+   "etapa2": {
+    "P@1": 0.667,
+    "P@3": 0.667,
+    "MRR": 0.667,
+    "n": 3
+   }
+  },
+  "regua": {
+   "todos": {
+    "P@1": 0.788,
+    "P@3": 0.909,
+    "MRR": 0.85,
+    "n": 66
+   },
+   "etapa1": {
+    "P@1": 1.0,
+    "P@3": 1.0,
+    "MRR": 1.0,
+    "n": 36
+   },
+   "etapa2": {
+    "P@1": 0.533,
+    "P@3": 0.8,
+    "MRR": 0.67,
+    "n": 30
+   }
+  },
+  "ms_por_consulta": 98.9,
+  "casos": {
+   "dev:p19": [
+    [
+     "chocolate_toxicosis",
+     "dietary_indiscretion_mild",
+     "carbamate_organophosphate_poisoning",
+     "canine_heatstroke",
+     "gastric_dilatation_volvulus"
+    ],
+    0
+   ],
+   "dev:p20": [
+    [
+     "allium_toxicosis",
+     "collapse_and_pale_gums",
+     "dietary_indiscretion_mild",
+     "anticoagulant_rodenticide_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    0
+   ],
+   "dev:p21": [
+    [
+     "respiratory_distress",
+     "collapse_and_pale_gums",
+     "acute_hindlimb_paralysis",
+     "mild_upper_respiratory_signs",
+     "urethral_obstruction"
+    ],
+    0
+   ],
+   "dev:p22": [
+    [
+     "seizures",
+     "acute_hindlimb_paralysis",
+     "carbamate_organophosphate_poisoning",
+     "dietary_indiscretion_mild",
+     "urethral_obstruction"
+    ],
+    0
+   ],
+   "dev:p23": [
+    [
+     "trauma_and_bleeding",
+     "mild_lameness",
+     "minor_wound",
+     "ocular_emergency",
+     "rabies_exposure_wild_animal_bite"
+    ],
+    0
+   ],
+   "dev:p24": [
+    [
+     "urethral_obstruction",
+     "vomiting_and_diarrhea",
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "inappropriate_urination_or_cystitis"
+    ],
+    0
+   ],
+   "dev:p25": [
+    [
+     "vomiting_and_diarrhea",
+     "reduced_appetite_no_other_signs",
+     "parvovirus_panleukopenia",
+     "urethral_obstruction",
+     "acute_hindlimb_paralysis"
+    ],
+    0
+   ],
+   "dev:p26": [
+    [
+     "canine_heatstroke",
+     "carbamate_organophosphate_poisoning",
+     "mild_conjunctivitis",
+     "collapse_and_pale_gums",
+     "dietary_indiscretion_mild"
+    ],
+    0
+   ],
+   "dev:p27": [
+    [
+     "gastric_dilatation_volvulus",
+     "dietary_indiscretion_mild",
+     "urethral_obstruction",
+     "single_vomiting_or_mild_diarrhea",
+     "pyometra"
+    ],
+    0
+   ],
+   "dev:p28": [
+    [
+     "fading_neonate",
+     "reduced_appetite_no_other_signs",
+     "pyometra",
+     "dystocia",
+     "rabies_exposure_wild_animal_bite"
+    ],
+    0
+   ],
+   "dev:p29": [
+    [
+     "osteoarthritis_stiffness",
+     "acute_hindlimb_paralysis",
+     "seizures",
+     "mild_lameness",
+     "pyometra"
+    ],
+    1
+   ],
+   "dev:p30": [
+    [
+     "anticoagulant_rodenticide_poisoning",
+     "carbamate_organophosphate_poisoning",
+     "dietary_indiscretion_mild",
+     "rabies_exposure_wild_animal_bite",
+     "parvovirus_panleukopenia"
+    ],
+    0
+   ],
+   "dev:p31": [
+    [
+     "human_medication_poisoning",
+     "allium_toxicosis",
+     "collapse_and_pale_gums",
+     "permethrin_toxicosis_cats",
+     "seizures"
+    ],
+    0
+   ],
+   "dev:p32": [
+    [
+     "anaphylaxis_facial_swelling",
+     "carbamate_organophosphate_poisoning",
+     "canine_heatstroke",
+     "insect_sting_local_reaction",
+     "rabies_exposure_wild_animal_bite"
+    ],
+    0
+   ],
+   "dev:p33": [
+    [
+     "congestive_heart_failure",
+     "osteoarthritis_stiffness",
+     "polyuria_polydipsia_investigate",
+     "kennel_cough_mild",
+     "urethral_obstruction"
+    ],
+    0
+   ],
+   "dev:p34": [
+    [
+     "collapse_and_pale_gums",
+     "respiratory_distress",
+     "allium_toxicosis",
+     "anticoagulant_rodenticide_poisoning",
+     "mild_conjunctivitis"
+    ],
+    0
+   ],
+   "dev:p35": [
+    [
+     "parvovirus_panleukopenia",
+     "vomiting_and_diarrhea",
+     "reduced_appetite_no_other_signs",
+     "carbamate_organophosphate_poisoning",
+     "dietary_indiscretion_mild"
+    ],
+    0
+   ],
+   "dev:p36": [
+    [
+     "mild_conjunctivitis",
+     "ocular_emergency",
+     "canine_heatstroke",
+     "anaphylaxis_facial_swelling",
+     "pyometra"
+    ],
+    1
+   ],
+   "dev:p37": [
+    [
+     "permethrin_toxicosis_cats",
+     "carbamate_organophosphate_poisoning",
+     "tremors_without_seizure",
+     "seizures",
+     "acute_hindlimb_paralysis"
+    ],
+    0
+   ],
+   "dev:p38": [
+    [
+     "dietary_indiscretion_mild",
+     "gastrointestinal_foreign_body",
+     "carbamate_organophosphate_poisoning",
+     "single_vomiting_or_mild_diarrhea",
+     "human_medication_poisoning"
+    ],
+    1
+   ],
+   "dev:p39": [
+    [
+     "dietary_indiscretion_mild",
+     "collapse_and_pale_gums",
+     "respiratory_distress",
+     "canine_heatstroke",
+     "anaphylaxis_facial_swelling"
+    ],
+    null
+   ],
+   "dev:p40": [
+    [
+     "dystocia",
+     "normal_whelping",
+     "pyometra",
+     "urethral_obstruction",
+     "parvovirus_panleukopenia"
+    ],
+    0
+   ],
+   "dev:p41": [
+    [
+     "parvovirus_panleukopenia",
+     "dietary_indiscretion_mild",
+     "rabies_exposure_wild_animal_bite",
+     "pyometra",
+     "carbamate_organophosphate_poisoning"
+    ],
+    null
+   ],
+   "dev:p42": [
+    [
+     "hypoglycemia_toy_puppy",
+     "fading_neonate",
+     "canine_heatstroke",
+     "single_vomiting_or_mild_diarrhea",
+     "vomiting_and_diarrhea"
+    ],
+    0
+   ],
+   "dev:p43": [
+    [
+     "eclampsia",
+     "pyometra",
+     "osteoarthritis_stiffness",
+     "parvovirus_panleukopenia",
+     "gastric_dilatation_volvulus"
+    ],
+    0
+   ],
+   "dev:p44": [
+    [
+     "allium_toxicosis",
+     "dietary_indiscretion_mild",
+     "acute_hindlimb_paralysis",
+     "anticoagulant_rodenticide_poisoning",
+     "pyometra"
+    ],
+    1
+   ],
+   "dev:p45": [
+    [
+     "mild_upper_respiratory_signs",
+     "respiratory_distress",
+     "dietary_indiscretion_mild",
+     "urethral_obstruction",
+     "inappropriate_urination_or_cystitis"
+    ],
+    0
+   ],
+   "dev:p46": [
+    [
+     "inappropriate_urination_or_cystitis",
+     "urethral_obstruction",
+     "pyometra",
+     "polyuria_polydipsia_investigate",
+     "dietary_indiscretion_mild"
+    ],
+    0
+   ],
+   "dev:p47": [
+    [
+     "otitis_externa_mild",
+     "seizures",
+     "flea_dermatitis_pruritus",
+     "vestibular_syndrome_otitis_interna",
+     "dietary_indiscretion_mild"
+    ],
+    0
+   ],
+   "dev:p48": [
+    [
+     "dietary_indiscretion_mild",
+     "single_vomiting_or_mild_diarrhea",
+     "vomiting_and_diarrhea",
+     "polyuria_polydipsia_investigate",
+     "gastric_dilatation_volvulus"
+    ],
+    1
+   ],
+   "dev:p49": [
+    [
+     "osteoarthritis_stiffness",
+     "mild_lameness",
+     "acute_hindlimb_paralysis",
+     "polyuria_polydipsia_investigate",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    0
+   ],
+   "dev:p50": [
+    [
+     "anaphylaxis_facial_swelling",
+     "insect_sting_local_reaction",
+     "mild_lameness",
+     "canine_heatstroke",
+     "rabies_exposure_wild_animal_bite"
+    ],
+    1
+   ],
+   "dev:p51": [
+    [
+     "kennel_cough_mild",
+     "congestive_heart_failure",
+     "rabies_exposure_wild_animal_bite",
+     "canine_heatstroke",
+     "flea_dermatitis_pruritus"
+    ],
+    0
+   ],
+   "dev:p52": [
+    [
+     "mild_conjunctivitis",
+     "ocular_emergency",
+     "seizures",
+     "human_medication_poisoning",
+     "respiratory_distress"
+    ],
+    0
+   ],
+   "dev:p53": [
+    [
+     "normal_whelping",
+     "dystocia",
+     "eclampsia",
+     "pyometra",
+     "rabies_exposure_wild_animal_bite"
+    ],
+    0
+   ],
+   "dev:p54": [
+    [
+     "carbamate_organophosphate_poisoning",
+     "canine_heatstroke",
+     "seizures",
+     "dietary_indiscretion_mild",
+     "vestibular_syndrome_otitis_interna"
+    ],
+    7
+   ],
+   "dev:p55": [
+    [
+     "mild_lameness",
+     "canine_heatstroke",
+     "minor_wound",
+     "trauma_and_bleeding",
+     "dietary_indiscretion_mild"
+    ],
+    0
+   ],
+   "dev:p56": [
+    [
+     "flea_dermatitis_pruritus",
+     "anaphylaxis_facial_swelling",
+     "dietary_indiscretion_mild",
+     "otitis_externa_mild",
+     "pyometra"
+    ],
+    0
+   ],
+   "dev:p57": [
+    [
+     "dietary_indiscretion_mild",
+     "polyuria_polydipsia_investigate",
+     "reduced_appetite_no_other_signs",
+     "vomiting_and_diarrhea",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    2
+   ],
+   "dev:p58": [
+    [
+     "cat_bite_abscess",
+     "rabies_exposure_wild_animal_bite",
+     "mild_conjunctivitis",
+     "human_medication_poisoning",
+     "minor_wound"
+    ],
+    0
+   ],
+   "dev:p59": [
+    [
+     "polyuria_polydipsia_investigate",
+     "inappropriate_urination_or_cystitis",
+     "pyometra",
+     "urethral_obstruction",
+     "dietary_indiscretion_mild"
+    ],
+    0
+   ],
+   "dev:p60": [
+    [
+     "minor_wound",
+     "trauma_and_bleeding",
+     "mild_lameness",
+     "dietary_indiscretion_mild",
+     "pyometra"
+    ],
+    0
+   ],
+   "dev:p61": [
+    [
+     "periodontal_disease_mild",
+     "osteoarthritis_stiffness",
+     "dietary_indiscretion_mild",
+     "anticoagulant_rodenticide_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    0
+   ],
+   "dev:p62": [
+    [
+     "pyometra",
+     "dietary_indiscretion_mild",
+     "rabies_exposure_wild_animal_bite",
+     "slow_growing_lump",
+     "osteoarthritis_stiffness"
+    ],
+    3
+   ],
+   "dev:p63": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     "canine_heatstroke",
+     "dietary_indiscretion_mild",
+     "carbamate_organophosphate_poisoning",
+     "anticoagulant_rodenticide_poisoning"
+    ],
+    0
+   ],
+   "dev:p64": [
+    [
+     "pyometra",
+     "dietary_indiscretion_mild",
+     "flea_dermatitis_pruritus",
+     "ticks_found_no_signs",
+     "inappropriate_urination_or_cystitis"
+    ],
+    3
+   ],
+   "dev:p65": [
+    [
+     "canine_heatstroke",
+     "exertional_panting_mild",
+     "dietary_indiscretion_mild",
+     "mild_conjunctivitis",
+     "parvovirus_panleukopenia"
+    ],
+    1
+   ],
+   "calib:p01": [
+    [
+     "carbamate_organophosphate_poisoning",
+     "canine_heatstroke",
+     "permethrin_toxicosis_cats",
+     "seizures",
+     "rabies_exposure_wild_animal_bite"
+    ],
+    0
+   ],
+   "calib:p02": [
+    [
+     "otitis_externa_mild",
+     "dietary_indiscretion_mild",
+     "seizures",
+     "vestibular_syndrome_otitis_interna",
+     "flea_dermatitis_pruritus"
+    ],
+    0
+   ],
+   "calib:p03": [
+    [
+     "vestibular_syndrome_otitis_interna",
+     "seizures",
+     "carbamate_organophosphate_poisoning",
+     "canine_heatstroke",
+     "mild_conjunctivitis"
+    ],
+    0
+   ],
+   "calib:p04": [
+    [
+     "dietary_indiscretion_mild",
+     "single_vomiting_or_mild_diarrhea",
+     "polyuria_polydipsia_investigate",
+     "rabies_exposure_wild_animal_bite",
+     "pyometra"
+    ],
+    0
+   ],
+   "calib:p05": [
+    [
+     "human_medication_poisoning",
+     "allium_toxicosis",
+     "collapse_and_pale_gums",
+     "permethrin_toxicosis_cats",
+     "anticoagulant_rodenticide_poisoning"
+    ],
+    0
+   ],
+   "calib:p06": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "dietary_indiscretion_mild",
+     "human_medication_poisoning",
+     "permethrin_toxicosis_cats",
+     "diabetic_ketoacidosis"
+    ],
+    0
+   ],
+   "calib:p07": [
+    [
+     "gastric_dilatation_volvulus",
+     "vomiting_and_diarrhea",
+     "pyometra",
+     "urethral_obstruction",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    0
+   ],
+   "calib:p08": [
+    [
+     "urethral_obstruction",
+     "inappropriate_urination_or_cystitis",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "polyuria_polydipsia_investigate"
+    ],
+    0
+   ],
+   "calib:p09": [
+    [
+     "inappropriate_urination_or_cystitis",
+     "urethral_obstruction",
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "seizures"
+    ],
+    0
+   ],
+   "calib:p10": [
+    [
+     "pyometra",
+     "normal_estrus",
+     "parvovirus_panleukopenia",
+     "polyuria_polydipsia_investigate",
+     "urethral_obstruction"
+    ],
+    0
+   ],
+   "calib:p11": [
+    [
+     "pyometra",
+     "normal_estrus",
+     "mild_lameness",
+     "rabies_exposure_wild_animal_bite",
+     "dietary_indiscretion_mild"
+    ],
+    1
+   ],
+   "calib:p12": [
+    [
+     "acute_hindlimb_paralysis",
+     "osteoarthritis_stiffness",
+     "feline_aortic_thromboembolism",
+     "human_medication_poisoning",
+     "seizures"
+    ],
+    0
+   ],
+   "calib:p13": [
+    [
+     "osteoarthritis_stiffness",
+     "acute_hindlimb_paralysis",
+     "mild_lameness",
+     "seizures",
+     "polyuria_polydipsia_investigate"
+    ],
+    0
+   ],
+   "calib:p14": [
+    [
+     "mild_lameness",
+     "canine_heatstroke",
+     "anaphylaxis_facial_swelling",
+     "collapse_and_pale_gums",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "calib:p17": [
+    [
+     "ocular_emergency",
+     "mild_conjunctivitis",
+     "canine_heatstroke",
+     "anaphylaxis_facial_swelling",
+     "trauma_and_bleeding"
+    ],
+    0
+   ],
+   "calib:p18": [
+    [
+     "mild_conjunctivitis",
+     "ocular_emergency",
+     "diabetic_ketoacidosis",
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus"
+    ],
+    0
+   ],
+   "regua:b01": [
+    [
+     "chocolate_toxicosis",
+     "dietary_indiscretion_mild",
+     "carbamate_organophosphate_poisoning",
+     "gastric_dilatation_volvulus",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    0
+   ],
+   "regua:b02": [
+    [
+     "urethral_obstruction",
+     "inappropriate_urination_or_cystitis",
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "seizures"
+    ],
+    0
+   ],
+   "regua:b03": [
+    [
+     "respiratory_distress",
+     "collapse_and_pale_gums",
+     "canine_heatstroke",
+     "gastric_dilatation_volvulus",
+     "anaphylaxis_facial_swelling"
+    ],
+    0
+   ],
+   "regua:b04": [
+    [
+     "seizures",
+     "carbamate_organophosphate_poisoning",
+     "hypoglycemia_toy_puppy",
+     "tremors_without_seizure",
+     "acute_hindlimb_paralysis"
+    ],
+    0
+   ],
+   "regua:b05": [
+    [
+     "mild_upper_respiratory_signs",
+     "respiratory_distress",
+     "inappropriate_urination_or_cystitis",
+     "single_vomiting_or_mild_diarrhea",
+     "dietary_indiscretion_mild"
+    ],
+    0
+   ],
+   "regua:b06": [
+    [
+     "trauma_and_bleeding",
+     "mild_lameness",
+     "minor_wound",
+     "acute_hindlimb_paralysis",
+     "rabies_exposure_wild_animal_bite"
+    ],
+    0
+   ],
+   "regua:b07": [
+    [
+     "vomiting_and_diarrhea",
+     "parvovirus_panleukopenia",
+     "single_vomiting_or_mild_diarrhea",
+     "gastric_dilatation_volvulus",
+     "dietary_indiscretion_mild"
+    ],
+    0
+   ],
+   "regua:b08": [
+    [
+     "allium_toxicosis",
+     "collapse_and_pale_gums",
+     "dietary_indiscretion_mild",
+     "parvovirus_panleukopenia",
+     "anticoagulant_rodenticide_poisoning"
+    ],
+    0
+   ],
+   "regua:b09": [
+    [
+     "flea_dermatitis_pruritus",
+     "dietary_indiscretion_mild",
+     "canine_heatstroke",
+     "otitis_externa_mild",
+     "anaphylaxis_facial_swelling"
+    ],
+    0
+   ],
+   "regua:b10": [
+    [
+     "mild_lameness",
+     "canine_heatstroke",
+     "acute_hindlimb_paralysis",
+     "collapse_and_pale_gums",
+     "osteoarthritis_stiffness"
+    ],
+    0
+   ],
+   "regua:b11": [
+    [
+     "mild_conjunctivitis",
+     "pyometra",
+     "anaphylaxis_facial_swelling",
+     "seizures",
+     "mild_lameness"
+    ],
+    0
+   ],
+   "regua:b12": [
+    [
+     "gastric_dilatation_volvulus",
+     "urethral_obstruction",
+     "pyometra",
+     "vomiting_and_diarrhea",
+     "parvovirus_panleukopenia"
+    ],
+    0
+   ],
+   "regua:b13": [
+    [
+     "trauma_and_bleeding",
+     "mild_lameness",
+     "cat_bite_abscess",
+     "minor_wound",
+     "urethral_obstruction"
+    ],
+    0
+   ],
+   "regua:b14": [
+    [
+     "fading_neonate",
+     "canine_heatstroke",
+     "parvovirus_panleukopenia",
+     "collapse_and_pale_gums",
+     "reduced_appetite_no_other_signs"
+    ],
+    0
+   ],
+   "regua:b15": [
+    [
+     "urethral_obstruction",
+     "inappropriate_urination_or_cystitis",
+     "pyometra",
+     "vomiting_and_diarrhea",
+     "polyuria_polydipsia_investigate"
+    ],
+    0
+   ],
+   "regua:b16": [
+    [
+     "anaphylaxis_facial_swelling",
+     "flea_dermatitis_pruritus",
+     "insect_sting_local_reaction",
+     "canine_heatstroke",
+     "collapse_and_pale_gums"
+    ],
+    0
+   ],
+   "regua:b17": [
+    [
+     "acute_hindlimb_paralysis",
+     "osteoarthritis_stiffness",
+     "collapse_and_pale_gums",
+     "canine_heatstroke",
+     "feline_aortic_thromboembolism"
+    ],
+    0
+   ],
+   "regua:b18": [
+    [
+     "mild_upper_respiratory_signs",
+     "respiratory_distress",
+     "parvovirus_panleukopenia",
+     "inappropriate_urination_or_cystitis",
+     "mild_conjunctivitis"
+    ],
+    0
+   ],
+   "regua:b19": [
+    [
+     "human_medication_poisoning",
+     "permethrin_toxicosis_cats",
+     "seizures",
+     "carbamate_organophosphate_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    0
+   ],
+   "regua:b20": [
+    [
+     "carbamate_organophosphate_poisoning",
+     "ocular_emergency",
+     "hypoglycemia_toy_puppy",
+     "seizures",
+     "canine_heatstroke"
+    ],
+    0
+   ],
+   "regua:b21": [
+    [
+     "permethrin_toxicosis_cats",
+     "tremors_without_seizure",
+     "seizures",
+     "carbamate_organophosphate_poisoning",
+     "human_medication_poisoning"
+    ],
+    0
+   ],
+   "regua:b22": [
+    [
+     "anticoagulant_rodenticide_poisoning",
+     "allium_toxicosis",
+     "collapse_and_pale_gums",
+     "carbamate_organophosphate_poisoning",
+     "parvovirus_panleukopenia"
+    ],
+    0
+   ],
+   "regua:b23": [
+    [
+     "parvovirus_panleukopenia",
+     "vomiting_and_diarrhea",
+     "reduced_appetite_no_other_signs",
+     "carbamate_organophosphate_poisoning",
+     "anticoagulant_rodenticide_poisoning"
+    ],
+    0
+   ],
+   "regua:b24": [
+    [
+     "pyometra",
+     "normal_estrus",
+     "diabetic_ketoacidosis",
+     "parvovirus_panleukopenia",
+     "gastric_dilatation_volvulus"
+    ],
+    0
+   ],
+   "regua:b25": [
+    [
+     "dietary_indiscretion_mild",
+     "single_vomiting_or_mild_diarrhea",
+     "carbamate_organophosphate_poisoning",
+     "polyuria_polydipsia_investigate",
+     "gastrointestinal_foreign_body"
+    ],
+    0
+   ],
+   "regua:b26": [
+    [
+     "inappropriate_urination_or_cystitis",
+     "urethral_obstruction",
+     "pyometra",
+     "dietary_indiscretion_mild",
+     "polyuria_polydipsia_investigate"
+    ],
+    0
+   ],
+   "regua:b27": [
+    [
+     "collapse_and_pale_gums",
+     "allium_toxicosis",
+     "slow_growing_lump",
+     "seizures",
+     "respiratory_distress"
+    ],
+    0
+   ],
+   "regua:b28": [
+    [
+     "osteoarthritis_stiffness",
+     "single_vomiting_or_mild_diarrhea",
+     "reduced_appetite_no_other_signs",
+     "acute_hindlimb_paralysis",
+     "collapse_and_pale_gums"
+    ],
+    0
+   ],
+   "regua:b29": [
+    [
+     "reduced_appetite_no_other_signs",
+     "single_vomiting_or_mild_diarrhea",
+     "dietary_indiscretion_mild",
+     "vomiting_and_diarrhea",
+     "polyuria_polydipsia_investigate"
+    ],
+    0
+   ],
+   "regua:b30": [
+    [
+     "carbamate_organophosphate_poisoning",
+     "gastric_dilatation_volvulus",
+     "dietary_indiscretion_mild",
+     "human_medication_poisoning",
+     "urethral_obstruction"
+    ],
+    9
+   ],
+   "regua:b31": [
+    [
+     "cat_bite_abscess",
+     "anaphylaxis_facial_swelling",
+     "respiratory_distress",
+     "flea_dermatitis_pruritus",
+     "pyometra"
+    ],
+    0
+   ],
+   "regua:b32": [
+    [
+     "congestive_heart_failure",
+     "respiratory_distress",
+     "kennel_cough_mild",
+     "collapse_and_pale_gums",
+     "anaphylaxis_facial_swelling"
+    ],
+    0
+   ],
+   "regua:b33": [
+    [
+     "diabetic_ketoacidosis",
+     "vomiting_and_diarrhea",
+     "collapse_and_pale_gums",
+     "reduced_appetite_no_other_signs",
+     "parvovirus_panleukopenia"
+    ],
+    0
+   ],
+   "regua:b34": [
+    [
+     "parvovirus_panleukopenia",
+     "carbamate_organophosphate_poisoning",
+     "pyometra",
+     "eclampsia",
+     "vomiting_and_diarrhea"
+    ],
+    null
+   ],
+   "regua:b35": [
+    [
+     "dystocia",
+     "pyometra",
+     "normal_whelping",
+     "eclampsia",
+     "urethral_obstruction"
+    ],
+    0
+   ],
+   "regua:b36": [
+    [
+     "acute_hindlimb_paralysis",
+     "feline_aortic_thromboembolism",
+     "osteoarthritis_stiffness",
+     "respiratory_distress",
+     "collapse_and_pale_gums"
+    ],
+    1
+   ],
+   "regua:b37": [
+    [
+     "mild_conjunctivitis",
+     "parvovirus_panleukopenia",
+     "carbamate_organophosphate_poisoning",
+     "canine_heatstroke",
+     "vomiting_and_diarrhea"
+    ],
+    null
+   ],
+   "regua:b38": [
+    [
+     "lily_toxicosis_cats",
+     "carbamate_organophosphate_poisoning",
+     "permethrin_toxicosis_cats",
+     "allium_toxicosis",
+     "anticoagulant_rodenticide_poisoning"
+    ],
+    0
+   ],
+   "regua:b39": [
+    [
+     "carbamate_organophosphate_poisoning",
+     "toad_bufotoxin_poisoning",
+     "allium_toxicosis",
+     "permethrin_toxicosis_cats",
+     "collapse_and_pale_gums"
+    ],
+    1
+   ],
+   "regua:b40": [
+    [
+     "tremors_without_seizure",
+     "seizures",
+     "hypoglycemia_toy_puppy",
+     "eclampsia",
+     "distemper_neurological"
+    ],
+    0
+   ],
+   "regua:b41": [
+    [
+     "normal_estrus",
+     "pyometra",
+     "parvovirus_panleukopenia",
+     "gastric_dilatation_volvulus",
+     "dietary_indiscretion_mild"
+    ],
+    0
+   ],
+   "regua:b42": [
+    [
+     "collapse_and_pale_gums",
+     "allium_toxicosis",
+     "respiratory_distress",
+     "seizures",
+     "parvovirus_panleukopenia"
+    ],
+    0
+   ],
+   "regua:b43": [
+    [
+     "ocular_emergency",
+     "mild_conjunctivitis",
+     "anaphylaxis_facial_swelling",
+     "canine_heatstroke",
+     "collapse_and_pale_gums"
+    ],
+    0
+   ],
+   "regua:b44": [
+    [
+     "respiratory_distress",
+     "collapse_and_pale_gums",
+     "dietary_indiscretion_mild",
+     "mild_upper_respiratory_signs",
+     "carbamate_organophosphate_poisoning"
+    ],
+    null
+   ],
+   "regua:b45": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     "anaphylaxis_facial_swelling",
+     "mild_lameness",
+     "carbamate_organophosphate_poisoning",
+     "canine_heatstroke"
+    ],
+    5
+   ],
+   "regua:b46": [
+    [
+     "collapse_and_pale_gums",
+     "tick_borne_disease_anemia",
+     "parvovirus_panleukopenia",
+     "leptospirosis_acute",
+     "allium_toxicosis"
+    ],
+    1
+   ],
+   "regua:b47": [
+    [
+     "hypoglycemia_toy_puppy",
+     "single_vomiting_or_mild_diarrhea",
+     "reduced_appetite_no_other_signs",
+     "vomiting_and_diarrhea",
+     "fading_neonate"
+    ],
+    0
+   ],
+   "regua:b48": [
+    [
+     "vestibular_syndrome_otitis_interna",
+     "collapse_and_pale_gums",
+     "seizures",
+     "hypoglycemia_toy_puppy",
+     "canine_heatstroke"
+    ],
+    0
+   ],
+   "regua:b49": [
+    [
+     "collapse_and_pale_gums",
+     "respiratory_distress",
+     "high_rise_syndrome_cats",
+     "seizures",
+     "cat_bite_abscess"
+    ],
+    2
+   ],
+   "regua:b50": [
+    [
+     "burns_and_electrical_injury",
+     "canine_heatstroke",
+     "anaphylaxis_facial_swelling",
+     "collapse_and_pale_gums",
+     "rabies_exposure_wild_animal_bite"
+    ],
+    0
+   ],
+   "regua:b51": [
+    [
+     "eclampsia",
+     "gastric_dilatation_volvulus",
+     "acute_hindlimb_paralysis",
+     "carbamate_organophosphate_poisoning",
+     "vomiting_and_diarrhea"
+    ],
+    0
+   ],
+   "regua:b52": [
+    [
+     "grape_xylitol_toxicosis",
+     "dietary_indiscretion_mild",
+     "carbamate_organophosphate_poisoning",
+     "allium_toxicosis",
+     "hypoglycemia_toy_puppy"
+    ],
+    0
+   ],
+   "regua:b53": [
+    [
+     "dystocia",
+     "normal_whelping",
+     "eclampsia",
+     "pyometra",
+     "hypoglycemia_toy_puppy"
+    ],
+    1
+   ],
+   "regua:b54": [
+    [
+     "anaphylaxis_facial_swelling",
+     "insect_sting_local_reaction",
+     "mild_lameness",
+     "pyometra",
+     "cat_bite_abscess"
+    ],
+    1
+   ],
+   "regua:b55": [
+    [
+     "kennel_cough_mild",
+     "single_vomiting_or_mild_diarrhea",
+     "dietary_indiscretion_mild",
+     "congestive_heart_failure",
+     "collapse_and_pale_gums"
+    ],
+    0
+   ],
+   "regua:b56": [
+    [
+     "inappropriate_urination_or_cystitis",
+     "urethral_obstruction",
+     "polyuria_polydipsia_investigate",
+     "pyometra",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    2
+   ],
+   "regua:b57": [
+    [
+     "otitis_externa_mild",
+     "vestibular_syndrome_otitis_interna",
+     "canine_heatstroke",
+     "flea_dermatitis_pruritus",
+     "parvovirus_panleukopenia"
+    ],
+    0
+   ],
+   "regua:b58": [
+    [
+     "minor_wound",
+     "trauma_and_bleeding",
+     "cat_bite_abscess",
+     "pyometra",
+     "mild_lameness"
+    ],
+    0
+   ],
+   "regua:b59": [
+    [
+     "periodontal_disease_mild",
+     "dietary_indiscretion_mild",
+     "parvovirus_panleukopenia",
+     "gastric_dilatation_volvulus",
+     "reduced_appetite_no_other_signs"
+    ],
+    0
+   ],
+   "regua:b60": [
+    [
+     "slow_growing_lump",
+     "pyometra",
+     "dietary_indiscretion_mild",
+     "flea_dermatitis_pruritus",
+     "anaphylaxis_facial_swelling"
+    ],
+    0
+   ],
+   "regua:b61": [
+    [
+     "canine_heatstroke",
+     "exertional_panting_mild",
+     "mild_conjunctivitis",
+     "single_vomiting_or_mild_diarrhea",
+     "mild_lameness"
+    ],
+    1
+   ],
+   "regua:b62": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     "cat_bite_abscess",
+     "minor_wound",
+     "trauma_and_bleeding",
+     "mild_lameness"
+    ],
+    0
+   ],
+   "regua:b63": [
+    [
+     "collapse_and_pale_gums",
+     "allium_toxicosis",
+     "slow_growing_lump",
+     "dietary_indiscretion_mild",
+     "tick_borne_disease_anemia"
+    ],
+    5
+   ],
+   "regua:b64": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "dietary_indiscretion_mild",
+     "vomiting_and_diarrhea",
+     "gastric_dilatation_volvulus",
+     "parvovirus_panleukopenia"
+    ],
+    0
+   ],
+   "regua:b65": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "dietary_indiscretion_mild",
+     "gastrointestinal_foreign_body",
+     "permethrin_toxicosis_cats",
+     "vomiting_and_diarrhea"
+    ],
+    0
+   ],
+   "regua:b66": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "vomiting_and_diarrhea",
+     "dietary_indiscretion_mild",
+     "polyuria_polydipsia_investigate",
+     "gastrointestinal_foreign_body"
+    ],
+    0
+   ]
+  }
+ },
+ "BAAI/bge-m3": {
+  "dim": 1024,
+  "indexar_s": 127.5,
+  "params_M": 568,
+  "dev": {
+   "todos": {
+    "P@1": 0.83,
+    "P@3": 0.957,
+    "MRR": 0.894,
+    "n": 47
+   },
+   "etapa1": {
+    "P@1": 0.929,
+    "P@3": 1.0,
+    "MRR": 0.964,
+    "n": 28
+   },
+   "etapa2": {
+    "P@1": 0.684,
+    "P@3": 0.895,
+    "MRR": 0.789,
+    "n": 19
+   }
+  },
+  "calib": {
+   "todos": {
+    "P@1": 0.812,
+    "P@3": 0.938,
+    "MRR": 0.875,
+    "n": 16
+   },
+   "etapa1": {
+    "P@1": 0.923,
+    "P@3": 1.0,
+    "MRR": 0.962,
+    "n": 13
+   },
+   "etapa2": {
+    "P@1": 0.333,
+    "P@3": 0.667,
+    "MRR": 0.5,
+    "n": 3
+   }
+  },
+  "regua": {
+   "todos": {
+    "P@1": 0.788,
+    "P@3": 0.909,
+    "MRR": 0.851,
+    "n": 66
+   },
+   "etapa1": {
+    "P@1": 0.944,
+    "P@3": 1.0,
+    "MRR": 0.972,
+    "n": 36
+   },
+   "etapa2": {
+    "P@1": 0.6,
+    "P@3": 0.8,
+    "MRR": 0.706,
+    "n": 30
+   }
+  },
+  "ms_por_consulta": 118.9,
+  "casos": {
+   "dev:p19": [
+    [
+     "chocolate_toxicosis",
+     "dietary_indiscretion_mild",
+     "anaphylaxis_facial_swelling",
+     "gastrointestinal_foreign_body",
+     "snake_and_scorpion_envenomation"
+    ],
+    0
+   ],
+   "dev:p20": [
+    [
+     "allium_toxicosis",
+     "collapse_and_pale_gums",
+     "dietary_indiscretion_mild",
+     "anticoagulant_rodenticide_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    0
+   ],
+   "dev:p21": [
+    [
+     "respiratory_distress",
+     "high_rise_syndrome_cats",
+     "mild_upper_respiratory_signs",
+     "feline_aortic_thromboembolism",
+     "vestibular_syndrome_otitis_interna"
+    ],
+    0
+   ],
+   "dev:p22": [
+    [
+     "acute_hindlimb_paralysis",
+     "seizures",
+     "high_rise_syndrome_cats",
+     "collapse_and_pale_gums",
+     "urethral_obstruction"
+    ],
+    1
+   ],
+   "dev:p23": [
+    [
+     "trauma_and_bleeding",
+     "minor_wound",
+     "burns_and_electrical_injury",
+     "acute_hindlimb_paralysis",
+     "cat_bite_abscess"
+    ],
+    0
+   ],
+   "dev:p24": [
+    [
+     "urethral_obstruction",
+     "vomiting_and_diarrhea",
+     "acute_hindlimb_paralysis",
+     "gastric_dilatation_volvulus",
+     "inappropriate_urination_or_cystitis"
+    ],
+    0
+   ],
+   "dev:p25": [
+    [
+     "vomiting_and_diarrhea",
+     "single_vomiting_or_mild_diarrhea",
+     "reduced_appetite_no_other_signs",
+     "gastric_dilatation_volvulus",
+     "urethral_obstruction"
+    ],
+    0
+   ],
+   "dev:p26": [
+    [
+     "canine_heatstroke",
+     "allium_toxicosis",
+     "collapse_and_pale_gums",
+     "gastric_dilatation_volvulus",
+     "ocular_emergency"
+    ],
+    0
+   ],
+   "dev:p27": [
+    [
+     "gastric_dilatation_volvulus",
+     "vomiting_and_diarrhea",
+     "single_vomiting_or_mild_diarrhea",
+     "fading_neonate",
+     "urethral_obstruction"
+    ],
+    0
+   ],
+   "dev:p28": [
+    [
+     "fading_neonate",
+     "reduced_appetite_no_other_signs",
+     "normal_whelping",
+     "dystocia",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    0
+   ],
+   "dev:p29": [
+    [
+     "acute_hindlimb_paralysis",
+     "feline_aortic_thromboembolism",
+     "osteoarthritis_stiffness",
+     "urethral_obstruction",
+     "high_rise_syndrome_cats"
+    ],
+    0
+   ],
+   "dev:p30": [
+    [
+     "anticoagulant_rodenticide_poisoning",
+     "lily_toxicosis_cats",
+     "gastrointestinal_foreign_body",
+     "permethrin_toxicosis_cats",
+     "human_medication_poisoning"
+    ],
+    0
+   ],
+   "dev:p31": [
+    [
+     "human_medication_poisoning",
+     "permethrin_toxicosis_cats",
+     "anticoagulant_rodenticide_poisoning",
+     "allium_toxicosis",
+     "vestibular_syndrome_otitis_interna"
+    ],
+    0
+   ],
+   "dev:p32": [
+    [
+     "anaphylaxis_facial_swelling",
+     "insect_sting_local_reaction",
+     "snake_and_scorpion_envenomation",
+     "ocular_emergency",
+     "carbamate_organophosphate_poisoning"
+    ],
+    0
+   ],
+   "dev:p33": [
+    [
+     "congestive_heart_failure",
+     "gastric_dilatation_volvulus",
+     "vomiting_and_diarrhea",
+     "mild_upper_respiratory_signs",
+     "respiratory_distress"
+    ],
+    0
+   ],
+   "dev:p34": [
+    [
+     "collapse_and_pale_gums",
+     "respiratory_distress",
+     "allium_toxicosis",
+     "high_rise_syndrome_cats",
+     "slow_growing_lump"
+    ],
+    0
+   ],
+   "dev:p35": [
+    [
+     "parvovirus_panleukopenia",
+     "vomiting_and_diarrhea",
+     "fading_neonate",
+     "carbamate_organophosphate_poisoning",
+     "anticoagulant_rodenticide_poisoning"
+    ],
+    0
+   ],
+   "dev:p36": [
+    [
+     "ocular_emergency",
+     "mild_conjunctivitis",
+     "anaphylaxis_facial_swelling",
+     "canine_heatstroke",
+     "burns_and_electrical_injury"
+    ],
+    0
+   ],
+   "dev:p37": [
+    [
+     "permethrin_toxicosis_cats",
+     "carbamate_organophosphate_poisoning",
+     "tremors_without_seizure",
+     "feline_aortic_thromboembolism",
+     "acute_hindlimb_paralysis"
+    ],
+    0
+   ],
+   "dev:p38": [
+    [
+     "gastrointestinal_foreign_body",
+     "single_vomiting_or_mild_diarrhea",
+     "dietary_indiscretion_mild",
+     "vomiting_and_diarrhea",
+     "lily_toxicosis_cats"
+    ],
+    0
+   ],
+   "dev:p39": [
+    [
+     "gastrointestinal_foreign_body",
+     "respiratory_distress",
+     "feline_aortic_thromboembolism",
+     "gastric_dilatation_volvulus",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "dev:p40": [
+    [
+     "dystocia",
+     "normal_whelping",
+     "urethral_obstruction",
+     "fading_neonate",
+     "gastric_dilatation_volvulus"
+    ],
+    0
+   ],
+   "dev:p41": [
+    [
+     "fading_neonate",
+     "vomiting_and_diarrhea",
+     "parvovirus_panleukopenia",
+     "hypoglycemia_toy_puppy",
+     "kennel_cough_mild"
+    ],
+    null
+   ],
+   "dev:p42": [
+    [
+     "fading_neonate",
+     "hypoglycemia_toy_puppy",
+     "reduced_appetite_no_other_signs",
+     "polyuria_polydipsia_investigate",
+     "vomiting_and_diarrhea"
+    ],
+    1
+   ],
+   "dev:p43": [
+    [
+     "eclampsia",
+     "dystocia",
+     "hypoglycemia_toy_puppy",
+     "osteoarthritis_stiffness",
+     "feline_aortic_thromboembolism"
+    ],
+    0
+   ],
+   "dev:p44": [
+    [
+     "allium_toxicosis",
+     "dietary_indiscretion_mild",
+     "permethrin_toxicosis_cats",
+     "anticoagulant_rodenticide_poisoning",
+     "human_medication_poisoning"
+    ],
+    1
+   ],
+   "dev:p45": [
+    [
+     "mild_upper_respiratory_signs",
+     "inappropriate_urination_or_cystitis",
+     "dietary_indiscretion_mild",
+     "airway_foreign_body_choking",
+     "polyuria_polydipsia_investigate"
+    ],
+    0
+   ],
+   "dev:p46": [
+    [
+     "inappropriate_urination_or_cystitis",
+     "urethral_obstruction",
+     "polyuria_polydipsia_investigate",
+     "diabetic_ketoacidosis",
+     "gastrointestinal_foreign_body"
+    ],
+    0
+   ],
+   "dev:p47": [
+    [
+     "kennel_cough_mild",
+     "otitis_externa_mild",
+     "tremors_without_seizure",
+     "periodontal_disease_mild",
+     "gastric_dilatation_volvulus"
+    ],
+    1
+   ],
+   "dev:p48": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "vomiting_and_diarrhea",
+     "dietary_indiscretion_mild",
+     "gastric_dilatation_volvulus",
+     "kennel_cough_mild"
+    ],
+    0
+   ],
+   "dev:p49": [
+    [
+     "osteoarthritis_stiffness",
+     "kennel_cough_mild",
+     "mild_lameness",
+     "feline_aortic_thromboembolism",
+     "high_rise_syndrome_cats"
+    ],
+    0
+   ],
+   "dev:p50": [
+    [
+     "anaphylaxis_facial_swelling",
+     "insect_sting_local_reaction",
+     "cat_bite_abscess",
+     "snake_and_scorpion_envenomation",
+     "kennel_cough_mild"
+    ],
+    1
+   ],
+   "dev:p51": [
+    [
+     "kennel_cough_mild",
+     "congestive_heart_failure",
+     "vomiting_and_diarrhea",
+     "mild_upper_respiratory_signs",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    0
+   ],
+   "dev:p52": [
+    [
+     "mild_conjunctivitis",
+     "ocular_emergency",
+     "vestibular_syndrome_otitis_interna",
+     "respiratory_distress",
+     "otitis_externa_mild"
+    ],
+    0
+   ],
+   "dev:p53": [
+    [
+     "normal_whelping",
+     "dystocia",
+     "eclampsia",
+     "fading_neonate",
+     "kennel_cough_mild"
+    ],
+    0
+   ],
+   "dev:p54": [
+    [
+     "tremors_without_seizure",
+     "acute_hindlimb_paralysis",
+     "seizures",
+     "feline_aortic_thromboembolism",
+     "ocular_emergency"
+    ],
+    0
+   ],
+   "dev:p55": [
+    [
+     "mild_lameness",
+     "acute_hindlimb_paralysis",
+     "trauma_and_bleeding",
+     "pyometra",
+     "inappropriate_urination_or_cystitis"
+    ],
+    0
+   ],
+   "dev:p56": [
+    [
+     "flea_dermatitis_pruritus",
+     "anaphylaxis_facial_swelling",
+     "otitis_externa_mild",
+     "vestibular_syndrome_otitis_interna",
+     "permethrin_toxicosis_cats"
+    ],
+    0
+   ],
+   "dev:p57": [
+    [
+     "reduced_appetite_no_other_signs",
+     "dietary_indiscretion_mild",
+     "single_vomiting_or_mild_diarrhea",
+     "polyuria_polydipsia_investigate",
+     "vomiting_and_diarrhea"
+    ],
+    0
+   ],
+   "dev:p58": [
+    [
+     "cat_bite_abscess",
+     "permethrin_toxicosis_cats",
+     "burns_and_electrical_injury",
+     "anticoagulant_rodenticide_poisoning",
+     "rabies_exposure_wild_animal_bite"
+    ],
+    0
+   ],
+   "dev:p59": [
+    [
+     "polyuria_polydipsia_investigate",
+     "diabetic_ketoacidosis",
+     "reduced_appetite_no_other_signs",
+     "dietary_indiscretion_mild",
+     "inappropriate_urination_or_cystitis"
+    ],
+    0
+   ],
+   "dev:p60": [
+    [
+     "cat_bite_abscess",
+     "minor_wound",
+     "trauma_and_bleeding",
+     "rabies_exposure_wild_animal_bite",
+     "mild_lameness"
+    ],
+    1
+   ],
+   "dev:p61": [
+    [
+     "periodontal_disease_mild",
+     "gastrointestinal_foreign_body",
+     "reduced_appetite_no_other_signs",
+     "anticoagulant_rodenticide_poisoning",
+     "feline_aortic_thromboembolism"
+    ],
+    0
+   ],
+   "dev:p62": [
+    [
+     "slow_growing_lump",
+     "gastric_dilatation_volvulus",
+     "periodontal_disease_mild",
+     "rabies_exposure_wild_animal_bite",
+     "tick_borne_disease_anemia"
+    ],
+    0
+   ],
+   "dev:p63": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     "permethrin_toxicosis_cats",
+     "canine_heatstroke",
+     "snake_and_scorpion_envenomation",
+     "anaphylaxis_facial_swelling"
+    ],
+    0
+   ],
+   "dev:p64": [
+    [
+     "ticks_found_no_signs",
+     "permethrin_toxicosis_cats",
+     "inappropriate_urination_or_cystitis",
+     "insect_sting_local_reaction",
+     "tremors_without_seizure"
+    ],
+    0
+   ],
+   "dev:p65": [
+    [
+     "exertional_panting_mild",
+     "kennel_cough_mild",
+     "mild_lameness",
+     "canine_heatstroke",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    0
+   ],
+   "calib:p01": [
+    [
+     "carbamate_organophosphate_poisoning",
+     "seizures",
+     "permethrin_toxicosis_cats",
+     "tremors_without_seizure",
+     "anaphylaxis_facial_swelling"
+    ],
+    0
+   ],
+   "calib:p02": [
+    [
+     "dietary_indiscretion_mild",
+     "otitis_externa_mild",
+     "tremors_without_seizure",
+     "gastric_dilatation_volvulus",
+     "mild_lameness"
+    ],
+    1
+   ],
+   "calib:p03": [
+    [
+     "vestibular_syndrome_otitis_interna",
+     "ocular_emergency",
+     "acute_hindlimb_paralysis",
+     "feline_aortic_thromboembolism",
+     "tremors_without_seizure"
+    ],
+    0
+   ],
+   "calib:p04": [
+    [
+     "dietary_indiscretion_mild",
+     "single_vomiting_or_mild_diarrhea",
+     "reduced_appetite_no_other_signs",
+     "kennel_cough_mild",
+     "rabies_exposure_wild_animal_bite"
+    ],
+    0
+   ],
+   "calib:p05": [
+    [
+     "human_medication_poisoning",
+     "permethrin_toxicosis_cats",
+     "lily_toxicosis_cats",
+     "allium_toxicosis",
+     "anticoagulant_rodenticide_poisoning"
+    ],
+    0
+   ],
+   "calib:p06": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "vomiting_and_diarrhea",
+     "dietary_indiscretion_mild",
+     "permethrin_toxicosis_cats",
+     "allium_toxicosis"
+    ],
+    0
+   ],
+   "calib:p07": [
+    [
+     "gastric_dilatation_volvulus",
+     "vomiting_and_diarrhea",
+     "urethral_obstruction",
+     "single_vomiting_or_mild_diarrhea",
+     "inappropriate_urination_or_cystitis"
+    ],
+    0
+   ],
+   "calib:p08": [
+    [
+     "urethral_obstruction",
+     "gastric_dilatation_volvulus",
+     "inappropriate_urination_or_cystitis",
+     "gastrointestinal_foreign_body",
+     "vomiting_and_diarrhea"
+    ],
+    0
+   ],
+   "calib:p09": [
+    [
+     "inappropriate_urination_or_cystitis",
+     "urethral_obstruction",
+     "vomiting_and_diarrhea",
+     "gastrointestinal_foreign_body",
+     "otitis_externa_mild"
+    ],
+    0
+   ],
+   "calib:p10": [
+    [
+     "pyometra",
+     "normal_estrus",
+     "vomiting_and_diarrhea",
+     "eclampsia",
+     "diabetic_ketoacidosis"
+    ],
+    0
+   ],
+   "calib:p11": [
+    [
+     "normal_estrus",
+     "pyometra",
+     "mild_lameness",
+     "minor_wound",
+     "eclampsia"
+    ],
+    0
+   ],
+   "calib:p12": [
+    [
+     "feline_aortic_thromboembolism",
+     "acute_hindlimb_paralysis",
+     "urethral_obstruction",
+     "high_rise_syndrome_cats",
+     "osteoarthritis_stiffness"
+    ],
+    1
+   ],
+   "calib:p13": [
+    [
+     "osteoarthritis_stiffness",
+     "feline_aortic_thromboembolism",
+     "high_rise_syndrome_cats",
+     "mild_lameness",
+     "kennel_cough_mild"
+    ],
+    0
+   ],
+   "calib:p14": [
+    [
+     "lily_toxicosis_cats",
+     "acute_hindlimb_paralysis",
+     "anaphylaxis_facial_swelling",
+     "gastrointestinal_foreign_body",
+     "canine_heatstroke"
+    ],
+    null
+   ],
+   "calib:p17": [
+    [
+     "ocular_emergency",
+     "mild_conjunctivitis",
+     "vestibular_syndrome_otitis_interna",
+     "otitis_externa_mild",
+     "anaphylaxis_facial_swelling"
+    ],
+    0
+   ],
+   "calib:p18": [
+    [
+     "mild_conjunctivitis",
+     "ocular_emergency",
+     "vestibular_syndrome_otitis_interna",
+     "anticoagulant_rodenticide_poisoning",
+     "otitis_externa_mild"
+    ],
+    0
+   ],
+   "regua:b01": [
+    [
+     "chocolate_toxicosis",
+     "vomiting_and_diarrhea",
+     "gastric_dilatation_volvulus",
+     "dietary_indiscretion_mild",
+     "diabetic_ketoacidosis"
+    ],
+    0
+   ],
+   "regua:b02": [
+    [
+     "urethral_obstruction",
+     "acute_hindlimb_paralysis",
+     "gastric_dilatation_volvulus",
+     "inappropriate_urination_or_cystitis",
+     "respiratory_distress"
+    ],
+    0
+   ],
+   "regua:b03": [
+    [
+     "respiratory_distress",
+     "gastric_dilatation_volvulus",
+     "mild_upper_respiratory_signs",
+     "urethral_obstruction",
+     "feline_aortic_thromboembolism"
+    ],
+    0
+   ],
+   "regua:b04": [
+    [
+     "seizures",
+     "acute_hindlimb_paralysis",
+     "tremors_without_seizure",
+     "hypoglycemia_toy_puppy",
+     "high_rise_syndrome_cats"
+    ],
+    0
+   ],
+   "regua:b05": [
+    [
+     "mild_upper_respiratory_signs",
+     "inappropriate_urination_or_cystitis",
+     "single_vomiting_or_mild_diarrhea",
+     "polyuria_polydipsia_investigate",
+     "vomiting_and_diarrhea"
+    ],
+    0
+   ],
+   "regua:b06": [
+    [
+     "trauma_and_bleeding",
+     "mild_lameness",
+     "acute_hindlimb_paralysis",
+     "minor_wound",
+     "feline_aortic_thromboembolism"
+    ],
+    0
+   ],
+   "regua:b07": [
+    [
+     "vomiting_and_diarrhea",
+     "single_vomiting_or_mild_diarrhea",
+     "mild_upper_respiratory_signs",
+     "congestive_heart_failure",
+     "kennel_cough_mild"
+    ],
+    0
+   ],
+   "regua:b08": [
+    [
+     "allium_toxicosis",
+     "collapse_and_pale_gums",
+     "lily_toxicosis_cats",
+     "grape_xylitol_toxicosis",
+     "diabetic_ketoacidosis"
+    ],
+    0
+   ],
+   "regua:b09": [
+    [
+     "flea_dermatitis_pruritus",
+     "anaphylaxis_facial_swelling",
+     "diabetic_ketoacidosis",
+     "dietary_indiscretion_mild",
+     "otitis_externa_mild"
+    ],
+    0
+   ],
+   "regua:b10": [
+    [
+     "mild_lameness",
+     "acute_hindlimb_paralysis",
+     "high_rise_syndrome_cats",
+     "osteoarthritis_stiffness",
+     "congestive_heart_failure"
+    ],
+    0
+   ],
+   "regua:b11": [
+    [
+     "mild_conjunctivitis",
+     "ocular_emergency",
+     "cat_bite_abscess",
+     "anaphylaxis_facial_swelling",
+     "trauma_and_bleeding"
+    ],
+    0
+   ],
+   "regua:b12": [
+    [
+     "gastric_dilatation_volvulus",
+     "urethral_obstruction",
+     "vomiting_and_diarrhea",
+     "gastrointestinal_foreign_body",
+     "anaphylaxis_facial_swelling"
+    ],
+    0
+   ],
+   "regua:b13": [
+    [
+     "trauma_and_bleeding",
+     "acute_hindlimb_paralysis",
+     "urethral_obstruction",
+     "cat_bite_abscess",
+     "vomiting_and_diarrhea"
+    ],
+    0
+   ],
+   "regua:b14": [
+    [
+     "fading_neonate",
+     "single_vomiting_or_mild_diarrhea",
+     "reduced_appetite_no_other_signs",
+     "vomiting_and_diarrhea",
+     "hypoglycemia_toy_puppy"
+    ],
+    0
+   ],
+   "regua:b15": [
+    [
+     "urethral_obstruction",
+     "vomiting_and_diarrhea",
+     "inappropriate_urination_or_cystitis",
+     "acute_hindlimb_paralysis",
+     "gastric_dilatation_volvulus"
+    ],
+    0
+   ],
+   "regua:b16": [
+    [
+     "anaphylaxis_facial_swelling",
+     "flea_dermatitis_pruritus",
+     "insect_sting_local_reaction",
+     "ocular_emergency",
+     "carbamate_organophosphate_poisoning"
+    ],
+    0
+   ],
+   "regua:b17": [
+    [
+     "osteoarthritis_stiffness",
+     "acute_hindlimb_paralysis",
+     "eclampsia",
+     "collapse_and_pale_gums",
+     "congestive_heart_failure"
+    ],
+    1
+   ],
+   "regua:b18": [
+    [
+     "mild_upper_respiratory_signs",
+     "inappropriate_urination_or_cystitis",
+     "respiratory_distress",
+     "otitis_externa_mild",
+     "gastrointestinal_foreign_body"
+    ],
+    0
+   ],
+   "regua:b19": [
+    [
+     "human_medication_poisoning",
+     "anticoagulant_rodenticide_poisoning",
+     "permethrin_toxicosis_cats",
+     "carbamate_organophosphate_poisoning",
+     "lily_toxicosis_cats"
+    ],
+    0
+   ],
+   "regua:b20": [
+    [
+     "carbamate_organophosphate_poisoning",
+     "seizures",
+     "ocular_emergency",
+     "tremors_without_seizure",
+     "acute_hindlimb_paralysis"
+    ],
+    0
+   ],
+   "regua:b21": [
+    [
+     "permethrin_toxicosis_cats",
+     "acute_hindlimb_paralysis",
+     "feline_aortic_thromboembolism",
+     "gastrointestinal_foreign_body",
+     "seizures"
+    ],
+    0
+   ],
+   "regua:b22": [
+    [
+     "anticoagulant_rodenticide_poisoning",
+     "lily_toxicosis_cats",
+     "allium_toxicosis",
+     "permethrin_toxicosis_cats",
+     "collapse_and_pale_gums"
+    ],
+    0
+   ],
+   "regua:b23": [
+    [
+     "vomiting_and_diarrhea",
+     "parvovirus_panleukopenia",
+     "single_vomiting_or_mild_diarrhea",
+     "anticoagulant_rodenticide_poisoning",
+     "gastric_dilatation_volvulus"
+    ],
+    1
+   ],
+   "regua:b24": [
+    [
+     "pyometra",
+     "diabetic_ketoacidosis",
+     "normal_estrus",
+     "gastric_dilatation_volvulus",
+     "urethral_obstruction"
+    ],
+    0
+   ],
+   "regua:b25": [
+    [
+     "dietary_indiscretion_mild",
+     "single_vomiting_or_mild_diarrhea",
+     "kennel_cough_mild",
+     "polyuria_polydipsia_investigate",
+     "gastrointestinal_foreign_body"
+    ],
+    0
+   ],
+   "regua:b26": [
+    [
+     "inappropriate_urination_or_cystitis",
+     "urethral_obstruction",
+     "acute_hindlimb_paralysis",
+     "otitis_externa_mild",
+     "gastric_dilatation_volvulus"
+    ],
+    0
+   ],
+   "regua:b27": [
+    [
+     "collapse_and_pale_gums",
+     "high_rise_syndrome_cats",
+     "hypoglycemia_toy_puppy",
+     "acute_hindlimb_paralysis",
+     "mild_lameness"
+    ],
+    0
+   ],
+   "regua:b28": [
+    [
+     "osteoarthritis_stiffness",
+     "single_vomiting_or_mild_diarrhea",
+     "kennel_cough_mild",
+     "mild_lameness",
+     "reduced_appetite_no_other_signs"
+    ],
+    0
+   ],
+   "regua:b29": [
+    [
+     "reduced_appetite_no_other_signs",
+     "single_vomiting_or_mild_diarrhea",
+     "dietary_indiscretion_mild",
+     "vomiting_and_diarrhea",
+     "polyuria_polydipsia_investigate"
+    ],
+    0
+   ],
+   "regua:b30": [
+    [
+     "gastric_dilatation_volvulus",
+     "vomiting_and_diarrhea",
+     "single_vomiting_or_mild_diarrhea",
+     "gastrointestinal_foreign_body",
+     "carbamate_organophosphate_poisoning"
+    ],
+    3
+   ],
+   "regua:b31": [
+    [
+     "permethrin_toxicosis_cats",
+     "respiratory_distress",
+     "cat_bite_abscess",
+     "canine_heatstroke",
+     "burns_and_electrical_injury"
+    ],
+    2
+   ],
+   "regua:b32": [
+    [
+     "congestive_heart_failure",
+     "respiratory_distress",
+     "feline_aortic_thromboembolism",
+     "vomiting_and_diarrhea",
+     "diabetic_ketoacidosis"
+    ],
+    0
+   ],
+   "regua:b33": [
+    [
+     "gastric_dilatation_volvulus",
+     "diabetic_ketoacidosis",
+     "vomiting_and_diarrhea",
+     "single_vomiting_or_mild_diarrhea",
+     "congestive_heart_failure"
+    ],
+    1
+   ],
+   "regua:b34": [
+    [
+     "parvovirus_panleukopenia",
+     "vomiting_and_diarrhea",
+     "vestibular_syndrome_otitis_interna",
+     "hypoglycemia_toy_puppy",
+     "feline_aortic_thromboembolism"
+    ],
+    null
+   ],
+   "regua:b35": [
+    [
+     "dystocia",
+     "fading_neonate",
+     "eclampsia",
+     "normal_whelping",
+     "urethral_obstruction"
+    ],
+    0
+   ],
+   "regua:b36": [
+    [
+     "feline_aortic_thromboembolism",
+     "acute_hindlimb_paralysis",
+     "respiratory_distress",
+     "mild_upper_respiratory_signs",
+     "tremors_without_seizure"
+    ],
+    0
+   ],
+   "regua:b37": [
+    [
+     "anaphylaxis_facial_swelling",
+     "ocular_emergency",
+     "vomiting_and_diarrhea",
+     "canine_heatstroke",
+     "carbamate_organophosphate_poisoning"
+    ],
+    null
+   ],
+   "regua:b38": [
+    [
+     "lily_toxicosis_cats",
+     "allium_toxicosis",
+     "permethrin_toxicosis_cats",
+     "single_vomiting_or_mild_diarrhea",
+     "anticoagulant_rodenticide_poisoning"
+    ],
+    0
+   ],
+   "regua:b39": [
+    [
+     "carbamate_organophosphate_poisoning",
+     "allium_toxicosis",
+     "toad_bufotoxin_poisoning",
+     "vomiting_and_diarrhea",
+     "permethrin_toxicosis_cats"
+    ],
+    2
+   ],
+   "regua:b40": [
+    [
+     "tremors_without_seizure",
+     "hypoglycemia_toy_puppy",
+     "eclampsia",
+     "seizures",
+     "mild_lameness"
+    ],
+    0
+   ],
+   "regua:b41": [
+    [
+     "normal_estrus",
+     "pyometra",
+     "gastric_dilatation_volvulus",
+     "diabetic_ketoacidosis",
+     "allium_toxicosis"
+    ],
+    0
+   ],
+   "regua:b42": [
+    [
+     "collapse_and_pale_gums",
+     "acute_hindlimb_paralysis",
+     "respiratory_distress",
+     "urethral_obstruction",
+     "vomiting_and_diarrhea"
+    ],
+    0
+   ],
+   "regua:b43": [
+    [
+     "ocular_emergency",
+     "mild_conjunctivitis",
+     "anaphylaxis_facial_swelling",
+     "insect_sting_local_reaction",
+     "canine_heatstroke"
+    ],
+    0
+   ],
+   "regua:b44": [
+    [
+     "respiratory_distress",
+     "allium_toxicosis",
+     "collapse_and_pale_gums",
+     "mild_upper_respiratory_signs",
+     "anaphylaxis_facial_swelling"
+    ],
+    null
+   ],
+   "regua:b45": [
+    [
+     "anaphylaxis_facial_swelling",
+     "snake_and_scorpion_envenomation",
+     "collapse_and_pale_gums",
+     "insect_sting_local_reaction",
+     "cat_bite_abscess"
+    ],
+    1
+   ],
+   "regua:b46": [
+    [
+     "tick_borne_disease_anemia",
+     "ticks_found_no_signs",
+     "collapse_and_pale_gums",
+     "parvovirus_panleukopenia",
+     "leptospirosis_acute"
+    ],
+    0
+   ],
+   "regua:b47": [
+    [
+     "fading_neonate",
+     "reduced_appetite_no_other_signs",
+     "single_vomiting_or_mild_diarrhea",
+     "hypoglycemia_toy_puppy",
+     "vomiting_and_diarrhea"
+    ],
+    3
+   ],
+   "regua:b48": [
+    [
+     "vestibular_syndrome_otitis_interna",
+     "ocular_emergency",
+     "feline_aortic_thromboembolism",
+     "diabetic_ketoacidosis",
+     "hypoglycemia_toy_puppy"
+    ],
+    0
+   ],
+   "regua:b49": [
+    [
+     "high_rise_syndrome_cats",
+     "respiratory_distress",
+     "cat_bite_abscess",
+     "collapse_and_pale_gums",
+     "mild_lameness"
+    ],
+    0
+   ],
+   "regua:b50": [
+    [
+     "burns_and_electrical_injury",
+     "canine_heatstroke",
+     "anaphylaxis_facial_swelling",
+     "fading_neonate",
+     "anticoagulant_rodenticide_poisoning"
+    ],
+    0
+   ],
+   "regua:b51": [
+    [
+     "eclampsia",
+     "feline_aortic_thromboembolism",
+     "canine_heatstroke",
+     "gastric_dilatation_volvulus",
+     "acute_hindlimb_paralysis"
+    ],
+    0
+   ],
+   "regua:b52": [
+    [
+     "grape_xylitol_toxicosis",
+     "dietary_indiscretion_mild",
+     "diabetic_ketoacidosis",
+     "inappropriate_urination_or_cystitis",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    0
+   ],
+   "regua:b53": [
+    [
+     "normal_whelping",
+     "dystocia",
+     "kennel_cough_mild",
+     "eclampsia",
+     "fading_neonate"
+    ],
+    0
+   ],
+   "regua:b54": [
+    [
+     "anaphylaxis_facial_swelling",
+     "insect_sting_local_reaction",
+     "high_rise_syndrome_cats",
+     "cat_bite_abscess",
+     "otitis_externa_mild"
+    ],
+    1
+   ],
+   "regua:b55": [
+    [
+     "kennel_cough_mild",
+     "single_vomiting_or_mild_diarrhea",
+     "congestive_heart_failure",
+     "mild_upper_respiratory_signs",
+     "dietary_indiscretion_mild"
+    ],
+    0
+   ],
+   "regua:b56": [
+    [
+     "polyuria_polydipsia_investigate",
+     "inappropriate_urination_or_cystitis",
+     "single_vomiting_or_mild_diarrhea",
+     "diabetic_ketoacidosis",
+     "reduced_appetite_no_other_signs"
+    ],
+    0
+   ],
+   "regua:b57": [
+    [
+     "respiratory_distress",
+     "vomiting_and_diarrhea",
+     "mild_upper_respiratory_signs",
+     "anaphylaxis_facial_swelling",
+     "urethral_obstruction"
+    ],
+    5
+   ],
+   "regua:b58": [
+    [
+     "minor_wound",
+     "cat_bite_abscess",
+     "trauma_and_bleeding",
+     "mild_lameness",
+     "inappropriate_urination_or_cystitis"
+    ],
+    0
+   ],
+   "regua:b59": [
+    [
+     "periodontal_disease_mild",
+     "gastrointestinal_foreign_body",
+     "single_vomiting_or_mild_diarrhea",
+     "vomiting_and_diarrhea",
+     "gastric_dilatation_volvulus"
+    ],
+    0
+   ],
+   "regua:b60": [
+    [
+     "slow_growing_lump",
+     "hypoglycemia_toy_puppy",
+     "periodontal_disease_mild",
+     "mild_lameness",
+     "kennel_cough_mild"
+    ],
+    0
+   ],
+   "regua:b61": [
+    [
+     "exertional_panting_mild",
+     "canine_heatstroke",
+     "mild_lameness",
+     "single_vomiting_or_mild_diarrhea",
+     "kennel_cough_mild"
+    ],
+    0
+   ],
+   "regua:b62": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     "cat_bite_abscess",
+     "permethrin_toxicosis_cats",
+     "minor_wound",
+     "mild_lameness"
+    ],
+    0
+   ],
+   "regua:b63": [
+    [
+     "allium_toxicosis",
+     "tick_borne_disease_anemia",
+     "ticks_found_no_signs",
+     "collapse_and_pale_gums",
+     "slow_growing_lump"
+    ],
+    2
+   ],
+   "regua:b64": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "vomiting_and_diarrhea",
+     "dietary_indiscretion_mild",
+     "polyuria_polydipsia_investigate",
+     "diabetic_ketoacidosis"
+    ],
+    0
+   ],
+   "regua:b65": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "dietary_indiscretion_mild",
+     "cat_bite_abscess",
+     "vomiting_and_diarrhea",
+     "inappropriate_urination_or_cystitis"
+    ],
+    0
+   ],
+   "regua:b66": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "inappropriate_urination_or_cystitis",
+     "kennel_cough_mild",
+     "vomiting_and_diarrhea",
+     "diabetic_ketoacidosis"
+    ],
+    0
+   ]
+  }
+ }
+}

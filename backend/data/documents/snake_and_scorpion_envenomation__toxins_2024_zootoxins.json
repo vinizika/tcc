@@ -1,5 +1,6 @@
 {
   "title": "Zootoxins and Domestic Animals: A European View",
+  "full_title": "Zootoxins and Domestic Animals: A European View",
   "source": "Toxins",
   "document_type": "peer_reviewed_review",
   "validation_status": "approved_by_specialist",
@@ -9,7 +10,6 @@
   "language": "en",
   "source_url": "https://doi.org/10.3390/toxins16010048",
   "indexing": {
-    "retrieval_anchors": ["snake", "serpent", "cobra", "scorpion", "escorpiao", "escorpião"],
     "include_sections": [
 
     ],

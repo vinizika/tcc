@@ -6,24 +6,28 @@ Ollama e sem banco vetorial. Os padrões são os clientes reais, então quem
 usa em produção não precisa saber disso.
 """
 
+import contextvars
 import time
 from concurrent.futures import ThreadPoolExecutor
 
+from app.clients.hybrid_query_client import QUERY_TRACE, HybridQueryClient
+from app.clients.gemini_llm_client import GeminiLLMClient
 from app.clients.llm_client import LLMClient
-from app.clients.query_client import QueryClient
 from app.clients.reranker_client import RerankerClient
 from app.clients.retrieval_client import RetrievalClient
 from app.constants.pipeline import DEFAULT_SCORE_THRESHOLD
 from app.core.config import settings
 from app.core.logger import setup_logger
 from app.core.ollama import default_options
+from app.exceptions.attendant_exception import AttendantUnavailableException
 from app.models.retrieved_document import RetrievedDocument
 from app.pipeline.answer_renderer import render
 from app.pipeline.config_resolver import resolve
 from app.pipeline.result import ContextDocument, PipelineResult, QueryPlan
-from app.prompts.triage import build_triage_messages
+from app.prompts.triage import build_triage_messages, documentos_que_cabem
 from app.schemas.triage_output import (
     CitedSource,
+    SourceReference,
     LegacyTriageLLMOutput,
     TriageLLMOutput,
     TriageLLMOutputCoT,
@@ -34,10 +38,13 @@ from app.schemas.triage_output import (
     TriageResult,
 )
 from app.schemas.triage import (
+    AttendantProvenance,
     DebugInfo,
     DebugSource,
     EffectiveConfig,
     PipelineOptions,
+    Provenance,
+    QueryStageProvenance,
     RetrievalInfo,
     Timings,
 )
@@ -88,7 +95,7 @@ class ChatPipeline:
 
     def __init__(
         self,
-        query_client=QueryClient,
+        query_client=HybridQueryClient,
         retrieval_client=RetrievalClient,
         reranker=RerankerClient,
         llm_client=None,
@@ -96,7 +103,20 @@ class ChatPipeline:
         self.query_client = query_client
         self.retrieval_client = retrieval_client
         self.reranker = reranker
-        self.llm_client = llm_client or LLMClient()
+        # Um cliente passado aqui (testes, ferramentas) atende toda chamada.
+        # Sem ele, o atendente é escolhido a cada chamada pela configuração
+        # efetiva (rodada 26 do João): o Gemini ou o Ollama.
+        self.llm_client = llm_client
+        self._atendentes: dict[str, object] = {}
+
+    def _attendant(self, provider: str):
+        if self.llm_client is not None:
+            return self.llm_client
+        if provider not in self._atendentes:
+            self._atendentes[provider] = (
+                GeminiLLMClient() if provider == "gemini" else LLMClient()
+            )
+        return self._atendentes[provider]
 
     # ------------------------------------------------------------------
     # Etapa de consulta (fronteira com o trilho B1)
@@ -110,8 +130,11 @@ class ChatPipeline:
         """
         Transforma o relato do tutor nas consultas que vão à busca vetorial.
 
-        É o único ponto que conhece a interface do QueryClient, para que uma
-        mudança daquele trilho tenha um lugar só para ser absorvida.
+        É o único ponto que conhece a interface do cliente de consulta
+        (hoje `HybridQueryClient`, Gemini com fallback para Ollama — ver
+        evidencias/ryu/2026-09-23-16-integracao-gemini-com-fallback.md),
+        para que uma mudança daquele trilho tenha um lugar só para ser
+        absorvida.
         """
 
         if config.query_rewriting_enabled:
@@ -187,11 +210,16 @@ class ChatPipeline:
             )
             return [], hypothetical_document
 
+        # As threads herdam o contexto da requisição, para o rastro da etapa
+        # de consulta (procedência) enxergar as duas chamadas.
         with ThreadPoolExecutor(max_workers=2) as executor:
             variations_future = executor.submit(
-                self.query_client.generate_queries, rewritten
+                contextvars.copy_context().run,
+                self.query_client.generate_queries,
+                rewritten,
             )
             hyde_future = executor.submit(
+                contextvars.copy_context().run,
                 self.query_client.generate_hypothetical_document,
                 rewritten,
             )
@@ -220,18 +248,33 @@ class ChatPipeline:
         para distinguir "a geração errou" de "a busca não trouxe nada útil".
         """
 
-        retrieved = self.retrieval_client.retrieve(
-            queries,
-            routing_query=original_question,
-        )
+        if config.retrieval_mode == "vector":
+            # Busca pura: a ordem é a da similaridade do embedding, sem rota
+            # lexical, sem reranker, sem âncoras e sem veto de espécie. É a
+            # busca medida na autópsia 2 (rodada 16 do João).
+            retrieved = self.retrieval_client.retrieve(
+                queries,
+                routing_query=None,
+            )
+            logger.info(f"{len(retrieved)} documentos recuperados (vetor)")
+            ranked = sorted(
+                retrieved,
+                key=lambda document: document.score,
+                reverse=True,
+            )
+        else:
+            retrieved = self.retrieval_client.retrieve(
+                queries,
+                routing_query=original_question,
+            )
 
-        logger.info(f"{len(retrieved)} documentos recuperados")
+            logger.info(f"{len(retrieved)} documentos recuperados")
 
-        ranked = self.reranker.rerank(
-            queries,
-            retrieved,
-            eligibility_query=original_question,
-        )
+            ranked = self.reranker.rerank(
+                queries,
+                retrieved,
+                eligibility_query=original_question,
+            )
 
         def context_score(document: RetrievedDocument) -> float:
             return (
@@ -296,6 +339,10 @@ class ChatPipeline:
         misturaria a etapa de consulta dentro da decisão.
         """
 
+        # Só o que cabe no bloco de contexto é fonte: o modelo não pode citar
+        # um trecho que não viu (rodada 25 do João).
+        documents = documentos_que_cabem(documents)
+
         output_model = _modelo_de_saida(config, bool(documents))
 
         messages = build_triage_messages(
@@ -306,9 +353,7 @@ class ChatPipeline:
             animal_context,
         )
 
-        call = self.llm_client.classify(
-            messages,
-            output_model,
+        chamada = dict(
             mode=config.structured_output_mode,
             options=default_options(
                 temperature=config.temperature,
@@ -316,7 +361,29 @@ class ChatPipeline:
                 num_predict=config.num_predict,
                 num_ctx=config.num_ctx,
             ),
+            think=config.think,
         )
+
+        try:
+            call = self._attendant(config.attendant_provider).classify(
+                messages, output_model, model=config.model, **chamada
+            )
+        except AttendantUnavailableException as erro:
+            # Sem troca silenciosa: só troca se a configuração permitir, e a
+            # troca fica registrada na procedência e no texto da resposta.
+            if (
+                config.attendant_fallback != "ollama"
+                or config.attendant_provider == "ollama"
+            ):
+                raise
+            logger.warning(
+                f"Atendente {config.attendant_provider} falhou ({erro.message}); "
+                "respondendo pelo Ollama, como a configuração permite"
+            )
+            call = self._attendant("ollama").classify(
+                messages, output_model, model=settings.LLM_MODEL, **chamada
+            )
+            call.fallback_from = f"{config.attendant_provider}:{config.model}"
 
         if call.output is None:
             # Duas tentativas sem resposta válida. Em vez de arriscar uma
@@ -362,6 +429,18 @@ class ChatPipeline:
                         chunk_id=documento.chunk_id,
                         title=documento.title,
                         source=documento.source,
+                        display_title=documento.display_title,
+                        references=[
+                            SourceReference(
+                                **{
+                                    chave: referencia.get(chave)
+                                    for chave in ("title", "journal", "year", "doi", "url")
+                                    if referencia.get(chave) is not None
+                                }
+                            )
+                            for referencia in documento.references
+                            if referencia.get("title")
+                        ],
                     )
                 )
             else:
@@ -413,13 +492,18 @@ class ChatPipeline:
 
         query_seconds = 0.0
         retrieval_seconds = 0.0
+        query_trace: list[dict] = []
 
         try:
 
             if config.retrieval_enabled:
 
                 query_start = time.perf_counter()
-                plan = self._build_queries(question, config)
+                token = QUERY_TRACE.set(query_trace)
+                try:
+                    plan = self._build_queries(question, config)
+                finally:
+                    QUERY_TRACE.reset(token)
                 query_seconds = time.perf_counter() - query_start
 
                 retrieval_start = time.perf_counter()
@@ -437,6 +521,11 @@ class ChatPipeline:
 
             generation_start = time.perf_counter()
 
+            # O que não coube no bloco de contexto não é fonte nem conta como
+            # usado (rodada 25 do João).
+            for_context = documentos_que_cabem(for_context)
+            retrieval_info.used_count = len(for_context)
+
             triage, call = self._classify(
                 question,
                 for_context,
@@ -446,6 +535,13 @@ class ChatPipeline:
             )
 
             answer = render(triage)
+
+            if getattr(call, "fallback_from", None):
+                answer += (
+                    "\n\n_Aviso: o atendente configurado ("
+                    f"{call.fallback_from}) não respondeu; esta resposta veio do "
+                    f"modelo local {call.model}._"
+                )
 
             generation_seconds = time.perf_counter() - generation_start
 
@@ -504,6 +600,21 @@ class ChatPipeline:
                 ),
                 retrieval=retrieval_info,
                 debug=debug,
+                provenance=Provenance(
+                    attendant=AttendantProvenance(
+                        provider=getattr(call, "provider", "ollama") or "ollama",
+                        model=getattr(call, "model", "") or config.model,
+                        model_version=getattr(call, "model_version", None),
+                        thinking=getattr(call, "thinking", None),
+                        fallback_from=getattr(call, "fallback_from", None),
+                    ),
+                    query_stage=QueryStageProvenance(
+                        rewriting=config.query_rewriting_enabled,
+                        multi_query=config.multi_query_enabled,
+                        hyde=config.hyde_enabled,
+                        calls=query_trace,
+                    ),
+                ),
             )
 
         except Exception as error:

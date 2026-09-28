@@ -42,3 +42,10 @@ class RetrievedDocument:
     # Termos que precisam aparecer no relato para uma fonte dependente de
     # exposição/contexto ser elegível. A tupla vazia mantém fontes gerais.
     retrieval_anchors: tuple[str, ...] = ()
+
+    # Nas fichas de triagem (rodada 24 do João): o título para mostrar ao
+    # tutor (o `title` é o da ficha de leitura, que vai ao prompt) e os
+    # documentos aprovados por trás da ficha, com título real, periódico, ano
+    # e DOI. Não vão ao prompt; vão à citação da resposta.
+    display_title: str = ""
+    references: tuple[dict, ...] = ()

@@ -1,0 +1,36 @@
+{
+  "title": "Fight Wound Infections in Cats",
+  "source": "VCA Animal Hospitals",
+  "document_type": "owner_guidance",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "cat",
+  "topic": "cat_bite_abscess",
+  "language": "en",
+  "source_url": "https://vcahospitals.com/know-your-pet/wounds-fight-wound-infections-in-cats",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "9d43d0db88889b7b32fd496a9eec5d9b7cd7fb00852c77a959df81efb2b6b4e3",
+  "map_line": "cat_bite_abscess",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: © Copyright 2026 LifeLearn Inc.; cópia, impressão ou redistribuição proibidas sem consentimento escrito; proíbe uso de IA/ferramentas automatizadas para reescrever ou republicar o conteúdo",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2026,
+  "authors": "Courtney Barnes; Malcolm Weir; Ryan Llera; Ernest Ward",
+  "full_title": "Fight Wound Infections in Cats",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de cat_bite_abscess (rodada 27); autoridade media. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
+}

@@ -1,0 +1,35 @@
+{
+  "title": "Pet Burns",
+  "source": "Texas A&M University College of Veterinary Medicine",
+  "document_type": "owner_guidance",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog_and_cat",
+  "topic": "burns_and_electrical_injury",
+  "language": "en",
+  "source_url": "https://vetmed.tamu.edu/news/pet-talk/pet-burns",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "b3acf4d6f1e08ca287ea2672e82a55bacaa86a90c8c21abbc2329d97edc12820",
+  "map_line": "burns_and_electrical_injury",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: © 2026 Texas A&M University; licença de reuso não declarada",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2011,
+  "full_title": "Pet Burns (Pet Talk)",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de burns_and_electrical_injury (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
+}

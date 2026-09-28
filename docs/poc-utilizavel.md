@@ -10,7 +10,8 @@ Na raiz do repositório:
 
 ```sh
 docker compose up -d --build
-docker compose exec ollama ollama pull llama3.2:3b
+# Opcional: habilita a alternativa local à análise pelo Gemini.
+docker compose exec ollama ollama pull qwen3:8b
 ```
 
 Abra <http://localhost:3000>. Para desenvolvimento frontend fora do Docker,
@@ -26,8 +27,14 @@ MAPS_PROVIDER=google
 MAPS_KEY_KIND=demo
 GOOGLE_MAPS_SERVER_KEY=preencher-localmente
 GOOGLE_MAPS_WEB_KEY=preencher-localmente
-POC_RAG_PATH=/app/chroma_db
-POC_RAG_COLLECTION=nome-da-colecao-existente-validada
+POC_RAG_PATH=
+POC_RAG_COLLECTION=
+ATTENDANT_PROVIDER=gemini
+ATTENDANT_FALLBACK=none
+GEMINI_API_KEY=preencher-localmente
+RETRIEVAL_MODE=vector
+CONTEXT_TOP_K=3
+CONTEXT_MIN_SCORE=0.0
 ```
 
 Não copie uma chave para Git, Markdown, screenshots ou evidências.
@@ -67,10 +74,23 @@ ou metadados enviados pelo cliente para conceder verificação.
 202. O navegador consulta o estado a cada 2,5 s; o backend executa a análise em
 background. Isso remove o acoplamento entre o tempo da LLM e o timeout HTTP.
 
-Pipeline científico reaproveitado, sem mudanças de taxonomia/prompts: retrieval
-ligado, consulta original, rewriting/multi-query/HyDE desligados apenas neste
-workspace. O adaptador usa uma coleção configurada explicitamente e verifica
-integridade antes de consultá-la. Não altera o ponteiro ativo da pesquisa.
+Pipeline científico do João em `e365f3e` reaproveitado, sem mudanças de
+taxonomia/prompts: busca vetorial BGE-M3, três fichas, sem corte por score,
+rewriting/multi-query/HyDE desligados. Por padrão o workspace acompanha o
+ponteiro ativo do Chroma (61 fichas), sem duplicar ou reingerir a base.
+Deixe `POC_RAG_COLLECTION` vazio; um valor explícito é um desvio experimental.
+Para não modificar o snapshot versionado durante a execução, com o backend
+parado copie `backend/chroma_db` para um diretório novo dentro de
+`backend/data/chroma/` (ignorado) e ajuste `CHROMA_PATH` para esse caminho
+relativo a `backend/`. Nesta integração local foi usado
+`data/chroma/runtime-joao-e365f3e`. Uma nova atualização do snapshot exige
+uma nova cópia explícita; nunca sobrescreva uma base em uso.
+O primeiro uso baixa o BGE-M3 no volume persistente `hf_cache` e pode demorar.
+O chat permite Gemini (nuvem) ou Ollama (servidor local) e avisa sobre o envio
+do relato e contexto do animal ao Google. Não ocorre troca silenciosa.
+Resposta, provedor/modelo, fontes bibliográficas, configuração e coleção
+são persistidos; as referências e a procedência aparecem no chat.
+Falhas de provedor e cota não se transformam em orientação clínica.
 Coleções em revisão continuam **base experimental**, não conhecimento validado.
 
 Nova mensagem preserva o relato atual integralmente e acrescenta um trecho

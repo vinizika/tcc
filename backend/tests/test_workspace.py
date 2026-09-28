@@ -27,6 +27,7 @@ def env(monkeypatch):
     monkeypatch.setattr(settings, "AUTH_PROVIDER", "local")
     monkeypatch.setattr(settings, "POC_QUICK_LOGIN_ENABLED", True)
     monkeypatch.setattr(workspace_service, "get_mongo_database", lambda: db)
+    monkeypatch.setattr(workspace_service, "active_collection_name", lambda: "fichas-test-collection")
     monkeypatch.setattr(poc_identity, "get_mongo_database", lambda: db)
     monkeypatch.setattr(workflow_repository, "get_mongo_database", lambda: db)
     repo = workflow_repository.MongoWorkflowRepository()
@@ -255,6 +256,8 @@ def test_worker_uses_current_report_without_truncation_and_records_real_metadata
     assert len(result["messages"]) == 2
     assert result["messages"][-1]["retrieval"]["used_count"] == 1
     assert result["messages"][-1]["config"]["query_rewriting_enabled"] is False
+    assert result["messages"][-1]["rag_collection"] == "fichas-test-collection"
+    assert result["messages"][-1]["provenance"] is not None
     assert "SINAL_IMPORTANTE_NO_FINAL" in str(llm.chamadas[0]["messages"])
 
 
@@ -265,3 +268,35 @@ def test_expired_location_is_physically_removed_when_read(env):
         "latitude":0,"longitude":0,"updated_at":(datetime.now(timezone.utc)-timedelta(minutes=3)).isoformat()}}})
     assert env.repo.get_referral(r.id)["location"] is None
     assert env.repo.referrals.find_one({"id":r.id})["location"] is None
+
+
+@pytest.mark.parametrize("provider", ["gemini", "ollama"])
+def test_workspace_persists_explicit_provider(env, provider):
+    c = Workspace.create(env.tutor)
+    doc, created = Workspace.submit(env.tutor, c["id"], TurnInput(
+        content="Relato de teste", request_id="provider-test-123", attendant_provider=provider))
+    assert created
+    assert doc["attendant_provider"] == provider
+
+
+@pytest.mark.parametrize("quota", [False, True])
+def test_workspace_provider_failure_is_safe_and_actionable(env, quota):
+    from app.exceptions.attendant_exception import AttendantUnavailableException, QuotaExhaustedException
+    error_type = QuotaExhaustedException if quota else AttendantUnavailableException
+    class BrokenPipeline:
+        def execute(self, *args, **kwargs):
+            raise error_type("SECRET_UPSTREAM_TEXT", provider="gemini", model="test", reason="SECRET")
+    c = Workspace.create(env.tutor)
+    Workspace.submit(env.tutor, c["id"], TurnInput(content="Relato de teste", request_id="failure-test-123"))
+    Workspace.process(env.tutor, c["id"], "failure-test-123", pipeline=BrokenPipeline())
+    result = Workspace.get(env.tutor, c["id"])
+    assert result["status"] == "failed"
+    assert result["error_code"] == ("quota_exhausted" if quota else "attendant_unavailable")
+    assert "SECRET" not in str(result)
+    assert len(result["messages"]) == 1
+    retried, created = Workspace.submit(env.tutor, c["id"], TurnInput(
+        content="Relato de teste", request_id="retry-test-456", attendant_provider="ollama"))
+    assert created
+    assert retried["error_code"] is None
+    assert retried["attendant_provider"] == "ollama"
+    assert len(retried["messages"]) == 1

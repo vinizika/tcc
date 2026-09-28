@@ -1,0 +1,100 @@
+{
+  "topico": "cat_bite_abscess",
+  "titulo": "Ferida de briga de gato",
+  "nome_leigo": "abscesso de briga",
+  "especie": "gato",
+  "como_o_tutor_conta": [
+    {
+      "texto": "Saiu pra rua, brigou com outro gato e voltou machucado",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "A briga foi hoje, faz poucas horas",
+      "origem": "mapa",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Achei um furinho na pele, escondido no pelo, parece mordida",
+      "origem": "documento",
+      "trecho": "particularly if the wounds are in areas with a lot of fur. Puncture wounds can close over quickly and can easily be missed, especially in the first few days after a bite.",
+      "fonte": "capturas/cat_bite_abscess__vca_fight_wound.txt",
+      "aprovacao": "aprovada",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
+    },
+    {
+      "texto": "Uns dias depois da briga apareceu um caroço mole, inchado",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    },
+    {
+      "texto": "Inchou perto do rabo, numa pata ou na cara",
+      "origem": "documento",
+      "trecho": "Commonly affected areas are the tail, face, head, neck and legs.",
+      "fonte": "capturas/cat_bite_abscess__icatcare.txt",
+      "aprovacao": "aprovada",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
+    },
+    {
+      "texto": "O caroço estourou e saiu pus com cheiro ruim",
+      "origem": "documento",
+      "trecho": "If it bursts, you will see pus and may notice a bad smell",
+      "fonte": "capturas/cat_bite_abscess__icatcare.txt",
+      "aprovacao": "aprovada",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
+    },
+    {
+      "texto": "Tá mancando da pata que foi mordida",
+      "origem": "documento",
+      "trecho": "Limping, if bitten on one of the legs",
+      "fonte": "capturas/cat_bite_abscess__icatcare.txt",
+      "aprovacao": "aprovada",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
+    },
+    {
+      "texto": "Não deixa encostar no lugar, reclama de dor",
+      "origem": "documento",
+      "trecho": "Abscesses are usually very painful, so your cat may be reluctant to be touched.",
+      "fonte": "capturas/cat_bite_abscess__icatcare.txt",
+      "aprovacao": "aprovada",
+      "fonte_encontrada_em": "rodada 27 (25/09)"
+    },
+    {
+      "texto": "Acho que tá com febre, tá quentinho",
+      "origem": "documento",
+      "trecho": "A 4-year-old spayed indoor cat presented with a one-week history of fever and anorexia.",
+      "fonte": "cat_bite_abscess__frontiers_2025_feline_abscess.pdf"
+    }
+  ],
+  "sinais_de_alarme": [
+    {
+      "texto": "Ficou prostrado, escondido e sem comer",
+      "origem": "documento",
+      "trecho": "with a one-week history of anorexia and lethargy (day 1)",
+      "fonte": "cat_bite_abscess__frontiers_2025_feline_abscess.pdf"
+    },
+    {
+      "texto": "Sangra muito ou a ferida é funda",
+      "origem": "geral",
+      "trecho": "",
+      "fonte": ""
+    }
+  ],
+  "como_diferenciar": [],
+  "por_que_importa": {
+    "texto": "A mordida pode virar abscesso; feridas tratadas em até 6 horas têm a melhor chance de cicatrizar sem abscesso.",
+    "origem": "mapa",
+    "trecho": "",
+    "fonte": ""
+  },
+  "notas_para_o_especialista": "O documento aprovado não trata de mordida: é relato de caso de abscessos em linfonodos dentro do abdômen (S. aureus) numa gata de apartamento. Dele só aproveitei falta de apetite, apatia e febre percebida pelo tutor. A linha do mapa não tem sinais nem discriminador; do motivo vieram a briga e a janela de 6 horas ('a briga foi hoje'). Por isso os sinais típicos de abscesso por mordida (furinho escondido no pelo, caroço mole dias depois, inchaço perto do rabo, pata ou cara, pus com cheiro, mancar, dor ao toque) são gerais e precisam de validação item a item. O alarme 'sangra muito ou ferida funda' também é geral, mas repete sinais da linha validada de trauma_and_bleeding, que tem 'briga com outro animal'; serve para separar mordida simples de trauma. Sugiro trocar o documento por um sobre abscesso subcutâneo felino.",
+  "certificacao": {
+    "por": "ASAVET",
+    "data": "2026-09-26",
+    "resultado": "todos os itens que não vêm do mapa aceitos, sem correções",
+    "registro": "rodada 30 do João"
+  }
+}

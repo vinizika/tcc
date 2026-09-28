@@ -9,7 +9,7 @@ sangue? Passou de 24 horas?*
 **Estado:** as duas primárias e a alternativa foram validadas clinicamente
 pela ASAVET em 20/09/2026, mas permanecem fora da ingestão por licença
 indefinida. Uma fonte substituta CC BY foi capturada e inspecionada para o
-perfil experimental; o arquivo novo ainda aguarda validação da ASAVET.
+perfil experimental; o arquivo novo foi validado pela ASAVET em 26/09/2026.
 
 > **Segunda linha levada de ponta a ponta, e a primeira do lado leve.** O que
 > ela testa não é o pesquisador em geral — é a seção "Linha leve" do roteiro,
@@ -191,6 +191,6 @@ separação entre vômito simples e complicado. O recorte foi inspecionado e
 preserva o texto original. SHA-256:
 `482a69011e47d209b75bd3d38dc5e0ef7332faf73690edaed0a3c7e2e0a15008`.
 
-O arquivo entrou somente no perfil `experimental` e permanece
+O arquivo entrou somente no perfil `experimental` e ficou
 `pending_specialist`, pois foi produzido depois da validação das fontes
-anteriores.
+anteriores, até a ASAVET validá-lo em 26/09/2026 ([rodada 30 do João](../../../evidencias/joao/2026-09-26-31-validacao-dos-especialistas.md)).

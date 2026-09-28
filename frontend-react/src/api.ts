@@ -105,10 +105,16 @@ export const api = {
       { method: "PATCH", body: JSON.stringify({ pet_id }) },
       token,
     ),
-  turn: (id: string, content: string, request_id: string, token: string) =>
+  turn: (
+    id: string,
+    content: string,
+    request_id: string,
+    token: string,
+    attendant_provider: "gemini" | "ollama" = "gemini",
+  ) =>
     request<Conversation>(
       "/workspace/conversations/" + id + "/messages",
-      body({ content, request_id }),
+      body({ content, request_id, attendant_provider }),
       token,
     ),
   voice: (file: Blob) => {

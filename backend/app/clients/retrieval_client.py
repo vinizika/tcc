@@ -24,6 +24,20 @@ def _retrieval_anchors(metadata: dict) -> tuple[str, ...]:
     return tuple(str(anchor).strip() for anchor in anchors if str(anchor).strip())
 
 
+def _references(metadata: dict) -> tuple[dict, ...]:
+    raw = metadata.get("references")
+    if not raw:
+        return ()
+    try:
+        references = json.loads(raw) if isinstance(raw, str) else raw
+    except (TypeError, json.JSONDecodeError):
+        logger.warning("references inválido no registro; ignorando")
+        return ()
+    if not isinstance(references, list):
+        return ()
+    return tuple(item for item in references if isinstance(item, dict))
+
+
 class RetrievalClient:
 
     @staticmethod
@@ -114,6 +128,8 @@ class RetrievalClient:
                         species=metadata.get("species", ""),
                         chunk_index=metadata.get("chunk_index"),
                         retrieval_anchors=_retrieval_anchors(metadata),
+                        display_title=metadata.get("display_title", ""),
+                        references=_references(metadata),
                     )
 
                     previous_document = best_documents.get(document_id)

@@ -1,0 +1,7 @@
+{
+  "cases_file": "data/prova/casos_oficiais.csv",
+  "split": "teste",
+  "row_count": 100,
+  "sha256": "d370a0a51d5974d124a9dbd3139710a73db3dbca1bf2185b8e6dce868fa18781",
+  "frozen_at": "2026-09-25T02:27:20.653066-03:00"
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Hipoglicemia em caes",
+  "source": "American Kennel Club",
+  "document_type": "owner_guidance",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog",
+  "topic": "hypoglycemia_toy_puppy",
+  "language": "en",
+  "source_url": "https://www.akc.org/expert-advice/health/hypoglycemia-in-dogs/",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "8e4fe711c3d4b64984786b2758685033216476b140bf8bcbd193dd70ab90d1eb",
+  "map_line": "hypoglycemia_toy_puppy",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: \"© The American Kennel Club, Inc. 2026. All rights reserved.\" Tem aviso de que o texto é orientação geral, não conselho profissional. Publicado em 19/11/2024.",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2024,
+  "authors": "Caroline Coile",
+  "full_title": "Hypoglycemia in Dogs: Signs, Symptoms, and Treatments",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de hypoglycemia_toy_puppy (rodada 27); autoridade media. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
+}

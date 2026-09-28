@@ -50,3 +50,8 @@ data/retrieval/runs/
 # Recibos locais dos ciclos de ingestao. Somente evidencias promovidas e
 # reproduzidas devem ser versionadas.
 data/retrieval/cycles/
+
+# Prova 2: o que os autores devolvem antes da montagem (relatos, cadernos e
+# resumos brutos). Entram no repositorio os pedidos, o casos.csv montado e os
+# cadernos de linguagem.
+data/prova2/geracao/bruto/

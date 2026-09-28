@@ -33,6 +33,11 @@ CARACTERES_INLINE = re.compile(r"([\\`*_\[\]<>|~$:])")
 MARCADOR_SIMBOLO = re.compile(r"^([#>+-])(\s)")
 MARCADOR_NUMERADO = re.compile(r"^(\d+)(\.)(\s)")
 
+# O endereço da fonte vem do sidecar da curadoria, não do modelo. Escapado,
+# "https\://" deixa de ser link; entre < > é um link automático do markdown,
+# sem formatação dentro. O que não tem cara de endereço http é escapado.
+URL_SEGURA = re.compile(r"^https?://[^\s<>]+$")
+
 
 def escapar(texto: str) -> str:
     """
@@ -52,6 +57,36 @@ def escapar(texto: str) -> str:
 
     # Numa lista numerada, quem cria a estrutura é o ponto, não o dígito.
     return MARCADOR_NUMERADO.sub(r"\1\\\2\3", texto)
+
+
+def _referencia(referencia) -> str:
+    detalhes = ", ".join(
+        str(parte)
+        for parte in (referencia.journal, referencia.year)
+        if parte not in (None, "")
+    )
+    texto = escapar(referencia.title)
+    if detalhes:
+        texto += f" ({escapar(detalhes)})"
+    texto += "."
+    if referencia.url:
+        url = str(referencia.url).strip()
+        texto += f" <{url}>" if URL_SEGURA.match(url) else f" {escapar(url)}"
+    return texto
+
+
+def _linha_da_fonte(fonte) -> str:
+    """
+    Numa ficha de triagem: a ficha e o documento aprovado por trás dela, com
+    o título real (rodada 25 do João). Num trecho da base acadêmica: o título
+    e a fonte, como antes.
+    """
+
+    if fonte.references:
+        nome = escapar(fonte.display_title or fonte.title)
+        referencias = "; ".join(_referencia(r) for r in fonte.references)
+        return f"- {nome} — fonte: {referencias}"
+    return f"- {escapar(fonte.title)} ({escapar(fonte.source)})"
 
 
 def render(triage: TriageResult, sources: list | None = None) -> str:
@@ -85,10 +120,7 @@ def render(triage: TriageResult, sources: list | None = None) -> str:
     if triage.fontes:
         linhas.append("**Baseado em**")
         linhas.append(
-            "\n".join(
-                f"- {escapar(fonte.title)} ({escapar(fonte.source)})"
-                for fonte in triage.fontes
-            )
+            "\n".join(_linha_da_fonte(fonte) for fonte in triage.fontes)
         )
 
     linhas.append(f"_{AVISO}_")

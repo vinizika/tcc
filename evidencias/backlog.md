@@ -65,8 +65,8 @@ aqui.
 | [B-15](#b-15) | Relatos de avaliação em inglês contra base em português | Trilho B2 + especialista | Média | Aberto |
 | [B-16](#b-16) | Rótulo do data augmentation não descreve o método real | Time (escrita) | Média | Aberto |
 | [B-17](#b-17) | `RERANK_TOP_K` e `CONTEXT_TOP_K` se sobrepõem | Trilho A + B2 | Baixa | Aberto |
-| [B-18](#b-18) | Código morto e duplicado | Vários (lista no item) | Baixa | Em andamento — órfãos de Whisper apagados em 08/09 |
-| [B-19](#b-19) | Arquivos ainda apontam para a rota `/triagem`, removida | Frontend / mock (dono a definir) | Baixa | Aberto |
+| [B-18](#b-18) | Código morto e duplicado | Vários (lista no item) | Baixa | Em andamento — órfãos de Whisper apagados em 08/09; `frontend/streamlit_app.py` apagado na branch da implementação (25/09) |
+| [B-19](#b-19) | Arquivos ainda apontam para a rota `/triagem`, removida | Frontend / mock (dono a definir) | Baixa | Aberto — critério atendido na branch da implementação (25/09); fecha quando subir |
 | [B-20](#b-20) | Frontend não exibe a triagem estruturada nem as fontes | Frontend (dono a definir) | Baixa | Aberto (geladeira, outubro) |
 | [B-21](#b-21) | Métricas RAGAs previstas no artigo | Trilho B2 | Baixa | Aberto (geladeira, outubro) |
 | [B-22](#b-22) | Métrica de sinal alucinado na resposta | Trilho B2 | Baixa | Aberto |
@@ -105,6 +105,25 @@ aqui.
 | [B-56](#b-56) | Cadastro de tutor/pet sem autenticação real e com política aberta no Supabase | Trilho B1 | Média | Aberto |
 | [B-57](#b-57) | O snapshot versionado do ChromaDB não é o caminho que o backend real lê | Trilho A | Alta | Aberto |
 | [B-52](#b-52) | Fonte de terceiro versionada em repositório público | Time | Alta | Aberto |
+| [B-58](#b-58) | A tag `tcc-backend:latest` local pode estar desatualizada e derrubar o backend num restart | Time | Média | Aberto |
+| [B-59](#b-59) | Fim de linha CRLF no Windows quebra os hashes das fontes `.txt` e `.csv` | A definir | Média | Aberto |
+| [B-60](#b-60) | Os runners contam INCERTO de jeitos diferentes: falta uma semântica só de métrica | A definir | Média | Aberto |
+| [B-61](#b-61) | Validação clínica das fichas de leitura e de busca | A definir | Alta | Em andamento — certificado pela ASAVET em 26/09; falta levar ao mapa (rodada medida) |
+| [B-62](#b-62) | Fonte escrita para tutor nos quadros em que o documento não descreve o que o tutor vê | A definir | Média | Em andamento — 7 de 8 quadros com fonte validada (26/09); faltam o caroço, os ids `R..` e a decisão de direitos |
+| [B-63](#b-63) | Prova 2: da geração ao congelamento | A definir | Alta | Em andamento — gerada (25/09) e rótulos validados (26/09); faltam conferência, divisão e congelamento |
+| [B-64](#b-64) | LGPD com o Gemini como atendente padrão: o relato do tutor sai da máquina | A definir | Média | Aberto |
+| [B-65](#b-65) | Latência na demonstração: a cauda do Gemini e o qwen sem placa de vídeo | A definir | Média | Aberto |
+| [B-66](#b-66) | Ablação final na arquitetura da autópsia 2 | A definir | Média | Aberto |
+| [B-67](#b-67) | A régua de recuperação nas fichas como instrumento oficial | A definir | Média | Aberto |
+| [B-68](#b-68) | Uma lista de sinais de alarme gerais, escrita e validada pelos especialistas | A definir | Baixa | Aberto |
+| [B-69](#b-69) | Tradutor só quando a busca estiver insegura (ideia não testada) | A definir | Baixa | Aberto |
+| [B-70](#b-70) | Self-Refine como checagem de que o contexto é do assunto do relato | A definir | Baixa | Em espera — CoT e Self-Refine voltam depois do RAG consolidado |
+| [B-71](#b-71) | Checagens por hash de arquivo falham num clone no Windows (CRLF) | A definir | Baixa | Aberto |
+| [B-72](#b-72) | Documentos aprovados que tratam de outro assunto, e autoria errada em sidecars | A definir | Média | Aberto — os seis mantidos pela ASAVET (26/09); falta corrigir a autoria |
+| [B-73](#b-73) | Abrir o Chroma versionado altera os arquivos binários do repositório | A definir | Média | Aberto |
+| [B-74](#b-74) | "Respondido por" na tela, e o erro do atendente tratado no frontend | A definir | Média | Aberto |
+| [B-75](#b-75) | Decidir os direitos das capturas da VCA e das páginas com todos os direitos reservados | A definir | Média | Aberto |
+| [B-76](#b-76) | O manifesto da coleção de fichas identifica o arquivo inteiro, e não só o que foi indexado | A definir | Baixa | Aberto |
 
 ---
 
@@ -140,6 +159,18 @@ condições leves ([B-03](#b-03)), e ordenação que separe assunto
 superar o `llm_only` em acurácia balanceada **e** em falsos não urgentes,
 sobre os 98 relatos.
 
+**Atualização 25/09 — a autópsia 2 mediu o mecanismo e uma saída.** Com a base
+de 3.481 trechos, o RAG continua sem ajudar (conserta 2 e quebra 8 em 232 casos
+pareados, p = 0,11) e 116 de 122 relatos de quem não viu o mapa chegam ao
+atendente sem trecho nenhum ([rodada 14](joao/2026-09-23-15-autopsia-do-sistema-de-hoje.md)).
+Mesmo com o trecho acadêmico certo, o llama perde 16 de 74 emergências (sem
+nada, 14); com a ficha de triagem certa, 0 ([rodada 15](joao/2026-09-23-16-fichas-no-lugar-dos-artigos.md)).
+Com a arquitetura proposta — fichas em duas camadas, bge-m3, as 3 mais próximas
+—, o RAG passa a ajudar: nos relatos de quem não viu o mapa, o qwen vai de 21
+para 5 emergências perdidas (16 × 0, p < 0,0001;
+[rodada 17](joao/2026-09-24-18-tradutor-desligado.md)). O item se resolve quando
+a implementação reproduzir isso pelo runner.
+
 ### B-02
 
 **Ordenação da busca não separa assunto**
@@ -165,6 +196,14 @@ documentos, prefixo de título/tema/espécie em cada chunk e re-ranking real.
 Critério: documento correto em primeiro nos três casos de referência
 (chocolate, obstrução urinária, e nenhum protocolo de emergência para o
 espirro leve).
+
+**Atualização 25/09 — o problema era o embedding e o conteúdo.** Nas fichas, o
+MiniLM põe a ficha certa em 1º em ~20% dos casos; o bge-m3, em ~80% (prova +
+régua) e ~50–60% (relatos independentes), com a certa entre as 3 primeiras em
+93–95% e 76–77% ([rodada 16](joao/2026-09-24-17-busca-bge-m3-e-tres-fichas.md)).
+A arquitetura nova manda as 3 mais próximas ao atendente, o que torna o 1º
+lugar menos decisivo. Re-ranking por cross-encoder não foi testado; o que ele
+poderia melhorar é o "entre as 3" dos relatos independentes (77%).
 
 ### B-03
 
@@ -193,6 +232,13 @@ para quadro sem fonte utilizável. O critério acima continua valendo, e o
 [mapa de assuntos](#b-50) é o instrumento que diz quando ele foi cumprido: a
 coluna de status mostra, quadro a quadro, o que já tem documento. Plano
 completo em [`docs/plano-base-e-prova.md`](../docs/plano-base-e-prova.md).
+
+**Atualização 25/09 — a base passa a ser de fichas.** A arquitetura da autópsia
+2 troca os trechos acadêmicos no prompt por 61 fichas de triagem, uma por quadro
+do mapa, em duas camadas (busca e leitura); os documentos aprovados ficam por
+trás das fichas, como fonte citada ([rodadas 15](joao/2026-09-23-16-fichas-no-lugar-dos-artigos.md)
+e [19](joao/2026-09-24-20-fichas-em-duas-camadas.md)). O que falta de conteúdo
+clínico está no [B-61](#b-61) e no [B-62](#b-62).
 
 ### B-04
 
@@ -249,6 +295,44 @@ precisam de substitutos (saco de palavras com validação cruzada, palavra de
 alarme, comprimento), senão o time perde justamente o instrumento que detectou
 este problema. Ver [`docs/plano-base-e-prova.md`](../docs/plano-base-e-prova.md).
 
+**Medido em 22/09 contra a prova nova (150 casos) — parcialmente reprovado.**
+`scripts/prova_baselines.py` implementou os três substitutos previstos acima
+e rodou contra `data/prova/casos_oficiais.csv`
+([evidência](ryu/2026-09-22-13-baselines-triviais-e-congelamento.md)):
+
+| Baseline | Acurácia (150 casos) | Acurácia (só `dev`, 50) | Acurácia (só `teste`, 100) |
+|---|---:|---:|---:|
+| Palavra de alarme | 0,571 | 0,633 | 0,541 |
+| Comprimento do relato (limiar por validação cruzada) | 0,592 | 0,673 | 0,582 |
+| Saco de palavras (Naive Bayes, validação cruzada) | **0,912** | 0,673 | 0,847 |
+
+Os dois primeiros baselines continuam bem abaixo do critério, inclusive no
+conjunto combinado. O terceiro **passa de 0,90 quando os dois lotes rodam
+juntos**, mesmo ficando abaixo em cada lote separado — o efeito cresce com o
+volume de exemplos, porque um autor único deixa tiques de escrita (conectivos,
+pronomes, frases de tranquilização) que um modelo estatístico simples consegue
+aprender sem entender nada de veterinária. Duas palavras de conteúdo
+("agora", "comendo") concentradas 100% numa classe só foram encontradas e
+reescritas sem mudar rótulo nem fato clínico, o que reduziu a acurácia de
+0,925 para 0,912 — melhora real, mas o sinal residual está espalhado por
+dezenas de palavras funcionais (`mas`, `se`, `continua`, `sempre`, `vez`),
+não concentrado em alvos fáceis de corrigir um a um.
+
+**O que resolveria, de verdade.** Diversificar autoria — pelo menos parte
+dos casos escritos por outra pessoa do time ou por um especialista, quebrando
+o padrão de estilo de um autor único. É a mesma razão da "muralha" já existir
+entre quem escreve a base e quem escreve a prova, agora aplicada a
+"quem escreve o quê dentro da prova". Registrado como pendência; não bloqueia
+o uso do conjunto, mas deveria ser considerado antes de citar este número
+como definitivo no artigo.
+
+**Atualização 25/09 — a prova de 150 casos também, e a prova 2 foi desenhada.**
+Na prova do B1, um Naive Bayes só com palavras acerta 0,91 com divisão aleatória
+e 0,79 com divisão por assunto; "tem 'mas' ⇒ leve" acerta 0,77; há 3 casos de
+emergência contada com calma. A especificação da prova 2 e o piloto estão na
+[rodada 20](joao/2026-09-24-21-prova-2-desenho-e-piloto.md); o trabalho que falta,
+no [B-63](#b-63).
+
 ### B-06
 
 **Falsos não urgentes subiram de 3 para 8 com o prompt novo**
@@ -300,6 +384,12 @@ quase certamente foi medido com GPU disponível (o time tem rodadas citando
 `native_gpu_reranker`). Falta repetir a medição num ambiente com GPU para
 fechar o item.
 
+**Atualização 25/09 — medido na GPU.** Na RTX 4060, nos 98 casos antigos, a
+etapa de consulta local (reescrita e multi-query, sem HyDE) leva 0,92 s de
+mediana, abaixo do critério de 1,5 s ([rodada 14](joao/2026-09-23-15-autopsia-do-sistema-de-hoje.md)).
+Na arquitetura da autópsia 2 a etapa fica desligada por padrão
+([rodada 17](joao/2026-09-24-18-tradutor-desligado.md)).
+
 ### B-08
 
 **Reescrita de consulta adiciona julgamento clínico**
@@ -333,6 +423,12 @@ lugar. Isso garante o critério por construção (zero inserções), não só
 por prompt. 2 testes novos em `test_query_client.py` travam o
 comportamento (descarta quando o termo é injetado; mantém quando o termo
 já vinha do tutor). Testes: 205 → 207.
+
+**Atualização 25/09 — a trava vigia a peça certa só em parte.** A urgência
+inserida na reescrita ficou em 0–2%; no HyDE ela é de 25% a 64% das saídas
+(llama e Gemini), e o multi-query de 6% a 12% — os dois sem trava. A reescrita
+do llama inventa ou distorce sinais em 54% dos casos; a do Gemini é fiel
+([rodada 17](joao/2026-09-24-18-tradutor-desligado.md)).
 
 ### B-09
 
@@ -369,6 +465,22 @@ cru e tem a maior taxa de casos acima do corte de 0,70 empatada com o
 pipeline completo, **sem precisar do HyDE**. `HYDE_ENABLED` passou a `False`
 por padrão. Amostra pequena (9 casos, 3 por lote) — repetir quando a régua
 crescer.
+
+**Atualização 23/09 — `HYDE_ENABLED` voltou a `True`, por um caminho
+diferente.** O diagnóstico original (Ollama sem âncora inventa termo)
+continua verdadeiro e não foi revisto — o que mudou é que a etapa de
+consulta passou a tentar o Gemini primeiro
+([`HybridQueryClient`](ryu/2026-09-23-16-integracao-gemini-com-fallback.md)),
+que não alucinou em nenhum dos 25 casos revisados nas rodadas 14-15. Se o
+Gemini falhar (sem chave, limite atingido), o HyDE **não cai para o
+Ollama** — a consulta segue sem documento hipotético nesta chamada, para
+não reintroduzir em silêncio o problema que esta ficha descreve.
+
+**Atualização 25/09 — medido com os dois geradores.** O HyDE nomeia um
+diagnóstico em 86% das saídas com o llama e em 90% com o Gemini, fala de conduta
+em ~100% e insere urgência em 25–64%. Nas fichas, piora a busca (0,81 → 0,64 no
+1º lugar). Na arquitetura da autópsia 2 fica desligado por padrão, como braço
+da ablação ([rodada 17](joao/2026-09-24-18-tradutor-desligado.md)).
 
 ### B-10
 
@@ -416,6 +528,14 @@ de que faltavam documentos, quando o provável era a base vazia
 
 **O que resolveria.** Medir por posição (Precision@1, MRR) na régua de
 recuperação, não por score absoluto; rever o limiar só depois do re-ranking.
+
+**Atualização 25/09 — o limiar sai do caminho padrão.** Na base de 3.481 trechos,
+nenhum trecho passa de 0,72 por mérito (máximo 0,709); 15 dos 18 casos da régua
+com contexto entram pelo piso de 0,721. Com bge-m3 e fichas, a porta vira uma
+"porta de confiança" que vai bem na prova e barra a ficha certa nos relatos
+independentes; as 3 fichas mais próximas sem porta ganham por 15 × 1
+([rodada 16](joao/2026-09-24-17-busca-bge-m3-e-tres-fichas.md)). A porta fica como
+braço da ablação.
 
 ### B-12
 
@@ -504,6 +624,11 @@ de ser o caminho: o conjunto novo já nasce na língua certa. O que permanece é
 **Dono proposto: trilho B1**, junto com a prova. Troca de dono é acordo entre
 os dois (regra 3 deste arquivo) — a confirmar com o Ryu.
 
+**Atualização 25/09.** Na arquitetura da autópsia 2 a língua da base é a do tutor:
+fichas em português. Com o mesmo conteúdo em inglês, a busca perde de 6 a 25
+pontos no 1º lugar e o qwen passa de 6 para 10 emergências perdidas
+([rodada 15](joao/2026-09-23-16-fichas-no-lugar-dos-artigos.md)).
+
 ### B-16
 
 **Rótulo do data augmentation não descreve o método real**
@@ -540,6 +665,11 @@ trechos de contexto devolverá 3 em silêncio.
 **O que resolveria.** Combinar qual dos dois manda, e documentar em
 `CONTRATOS.md`.
 
+**Atualização 25/09.** No caminho padrão da arquitetura da autópsia 2 (busca
+vetorial pura, as 3 mais próximas), o reranker sai do caminho e a sobreposição
+deixa de importar; ela continua valendo no modo com roteador e reranker, que
+fica como opção ([rodada 16](joao/2026-09-24-17-busca-bge-m3-e-tres-fichas.md)).
+
 ### B-18
 
 **Código morto e duplicado**
@@ -563,6 +693,14 @@ arquivo errado.
 
 **O que resolveria.** Apagar; o Git guarda a história.
 
+**Atualização 25/09, madrugada ([rodada 29](joao/2026-09-25-30-fechamento-da-rodada-noturna.md)).**
+Na branch da implementação, o `frontend/streamlit_app.py` saiu, e o `CHROMA_PATH`
+deixou de ser "sem uso": aponta para `chroma_db`, onde a coleção das fichas está
+versionada ([B-57](#b-57)). Continuam: `base_client.py`, `log_messages.py`,
+`seed_chroma.py`, `frontend/pages/chat.py`, `send_voice`, `OPENAI_API_KEY` e
+`VECTOR_DB`. O `mock/` fica: é o protótipo de demonstração, tem teste e sobe em
+porta própria.
+
 ### B-19
 
 **Arquivos ainda apontam para a rota `/triagem`, removida**
@@ -574,6 +712,13 @@ chamam `POST /triagem`, que não existe desde a rodada 3.
 
 **O que resolveria.** Apagar os dois (o compose sobe `frontend/main.py`).
 Critério: `grep -r triagem` fora de `evidencias/` não retornar nada.
+
+**Atualização 25/09, madrugada ([rodada 29](joao/2026-09-25-30-fechamento-da-rodada-noturna.md)).**
+O `mock/streamlit_app_mock.py` já não chama a rota (virou demonstração sem
+backend). Com o `frontend/streamlit_app.py` apagado na branch, `grep -rn "/triagem"`
+fora de `evidencias/` só encontra a linha do `docs/CONTRATOS.md` que registra a
+rota como removida. (O `grep -r triagem` sem a barra encontra a palavra em
+comentários e não serve de critério.) Fecha quando a branch subir.
 
 ### B-20
 
@@ -1593,6 +1738,12 @@ mas muda o tempo das rodadas e exige espaço em disco.
 
 ---
 
+**Atualização 25/09.** O CoT (checklist, `first`) piora o llama e o qwen também
+com fichas (no llama, 17 de 24 leves e 4 de 25 emergências viram INCERTO no
+dev). Não rodou com o Gemini. Fica adiado por decisão do João, para depois do
+RAG consolidado, e deve ser medido só no atendente escolhido e na configuração
+final ([rodada 18](joao/2026-09-24-19-atendente-llama-qwen-gemini.md)).
+
 ### B-43
 
 **A etapa de decisão não é reproduzível entre sessões**
@@ -1667,6 +1818,15 @@ a linha de base e o Chain-of-Thought: material direto para a seção de
 resultados, com os dados já em `data/evaluation/cited/`.
 
 ---
+
+**Atualização 25/09 — quatro divergências novas, com o porquê.** Base de
+protocolos → fichas de triagem em duas camadas
+([rodadas 15](joao/2026-09-23-16-fichas-no-lugar-dos-artigos.md) e
+[19](joao/2026-09-24-20-fichas-em-duas-camadas.md)); modelo local → Gemini como
+padrão, com o local como opção ([rodada 18](joao/2026-09-24-19-atendente-llama-qwen-gemini.md));
+reescrita, multi-query e HyDE → desligados por padrão
+([rodada 17](joao/2026-09-24-18-tradutor-desligado.md)); MiniLM → bge-m3
+([rodada 16](joao/2026-09-24-17-busca-bge-m3-e-tres-fichas.md)).
 
 ### B-45
 
@@ -1936,6 +2096,12 @@ lá, quem valida é o script de captura.
 
 ---
 
+**Atualização 25/09 — o que a autópsia 2 pede do mapa.** O mapa vira a ficha de
+leitura: o que o atendente lê. As 60 células da etapa 2 continuam vazias; os
+rascunhos estão na folha de certificação; 11 linhas têm, no `motivo`, notas
+internas que chegam ao atendente; 5 linhas têm conflito com o documento. Tudo
+isso está no [B-61](#b-61).
+
 ### B-51
 
 **O ciclo de ingestão não é um comando só, e a régua não diz o que mudou entre duas rodadas**
@@ -2038,6 +2204,10 @@ valendo como lembrete a cada fonte nova. Se o deploy previsto para
 outubro/novembro expuser as fontes ao usuário final, o assunto volta.
 
 ---
+
+**Atualização 25/09.** O João decidiu tornar o repositório privado quando o
+orientador liberar. Com isso, as fontes escritas para tutor que ficaram fora da
+ingestão por licença podem voltar ([B-62](#b-62)).
 
 ### B-53
 
@@ -2254,6 +2424,559 @@ apontar para `chroma_db` — as duas correções são de uma linha, mas são
 incompatíveis entre si e a escolha errada reintroduz o problema na próxima
 ingestão. Critério: um clone limpo, sem passos manuais, sobe com as
 coleções candidatas visíveis em `ChromaDBClient.get_client().list_collections()`.
+
+**Atualização 25/09, madrugada — critério atendido na branch da implementação
+([rodada 24](joao/2026-09-25-25-busca-por-fichas-com-bge-m3.md)).** O
+`CHROMA_PATH` padrão passou a ser `chroma_db` e o ponteiro ativo entrou no
+repositório: um clone limpo da branch abre a coleção das fichas sem passo
+manual (conferido). O item fecha quando a branch subir e o trilho A confirmar
+na máquina dele; efeito colateral no [B-73](#b-73).
+
+**Atualização 25/09.** Confirmado na autópsia 2: num clone limpo, seguindo o
+README, nenhum número com RAG se reproduz sem passos manuais
+([rodada 14](joao/2026-09-23-15-autopsia-do-sistema-de-hoje.md)). O plano de
+implementação da autópsia 2 prevê versionar a coleção de fichas e apontar o
+`CHROMA_PATH` para o caminho versionado; o item fecha quando um clone limpo
+subir com a coleção visível, como o critério pede.
+
+### B-58
+
+**A tag `tcc-backend:latest` local pode estar desatualizada e derrubar o backend num restart**
+
+**Identificado por:** Ryu (B1) · **Onde:** [rodada 16](ryu/2026-09-23-16-integracao-gemini-com-fallback.md), 23/09 · **Responsável:** Time · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** Depois de mudar `backend/requirements.txt`, rodei
+`docker compose up -d --force-recreate backend` para o container pegar as
+variáveis de ambiente novas. O container recriado usou a imagem local
+`tcc-backend:latest`, que estava **desatualizada** (build de 07/09, sem
+`pymongo` — dependência adicionada bem depois) mesmo o container que
+estava rodando até então funcionando perfeitamente com tudo presente. O
+backend caiu num loop de `ModuleNotFoundError` até eu rodar
+`docker compose build backend` (reconstrução completa, ~7 min) e subir de
+novo a partir da imagem nova.
+
+**Por que importa.** `docker compose restart` e `--force-recreate` **não
+reconstroem a imagem** — só recriam o container a partir do que já está
+taggeado como `latest` localmente. Se essa tag ficou parada num commit
+anterior (cada `docker compose up` normal, sem `--build`, não atualiza a
+tag), qualquer um que precisar reiniciar o backend por outro motivo
+qualquer (não só mudança de dependência) corre o risco de derrubar o
+serviço sem entender por quê — o container antigo, rodando, parecia
+saudável; só a recriação expôs a divergência.
+
+**O que resolveria.** Ou documentar no README que qualquer
+`--force-recreate`/`restart` do backend deve vir acompanhado de
+`docker compose build` quando `requirements.txt` mudou, ou (melhor)
+configurar o compose para sempre reconstruir (`docker compose up --build`)
+como o comando padrão documentado, em vez de assumir que a tag local está
+em dia. Critério: um `docker compose restart backend` ou `--force-recreate`
+nunca deveria conseguir subir um container com dependência faltando.
+
+### B-59
+
+**Fim de linha CRLF no Windows quebra os hashes das fontes `.txt` e `.csv`**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 14](joao/2026-09-23-15-autopsia-do-sistema-de-hoje.md), 23/09 · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** O Git no Windows converte `.txt` e `.csv` para CRLF no
+checkout, e o `.gitattributes` só protege os PDFs. Os hashes das fontes são
+calculados sobre os bytes crus. Numa máquina Windows, 10 fontes `.txt` falham na
+verificação de hash, o `sync_retrieval_terms.py --check` falha (e passa no Linux)
+e o conjunto de fontes sai diferente do de uma máquina Linux.
+
+**Por que importa.** A verificação de consenso entre as máquinas do time falha
+se alguém usar Windows, e um hash divergente parece corrupção de fonte.
+
+**O que resolveria.** `*.txt -text` e `*.csv -text` no `.gitattributes`, com um
+`git add --renormalize`. Critério: num clone limpo no Windows, os 10 hashes
+conferem e o `sync_retrieval_terms.py --check` passa.
+
+### B-60
+
+**Os runners contam INCERTO de jeitos diferentes: falta uma semântica só de métrica**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 14](joao/2026-09-23-15-autopsia-do-sistema-de-hoje.md), 23/09 · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** O `run_map_triage_eval.py` (prova) e o `run_evaluation.py`
+(B2) tratam o INCERTO dado a uma emergência de formas diferentes; o primeiro
+fixa o tradutor desligado nos dois modos e não confere o hash da base. A
+autópsia usou uma regra só nas rodadas 14 a 21: **emergência perdida =
+emergência respondida como NAO_EMERGENCIA ou INCERTO**.
+
+**Por que importa.** A ablação final compara braços medidos por runners
+diferentes. Com duas semânticas, a mesma resposta vira acerto num e perda
+noutro.
+
+**O que resolveria.** Uma função de métrica única, usada pelos dois runners (ou
+um runner só), com "emergências perdidas" incluindo INCERTO e o `compare`
+capaz de comparar por ela. Critério: as mesmas previsões dão os mesmos números
+nos dois caminhos.
+
+### B-61
+
+**Validação clínica das fichas de leitura e de busca**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 15](joao/2026-09-23-16-fichas-no-lugar-dos-artigos.md) e [rodada 19](joao/2026-09-24-20-fichas-em-duas-camadas.md), 24/09 · **Responsável:** A definir · **Prioridade:** Alta · **Status:** Aberto
+
+**O que observamos.** A arquitetura da autópsia 2 faz o atendente ler a **ficha
+de leitura** (a ficha curta do mapa) e a busca procurar na **ficha de busca**
+(escrita por IA, com a origem de cada frase). Faltam quatro coisas, todas de
+conteúdo clínico:
+1. **As 60 células vazias da etapa 2** no mapa (sinais que o tutor relata e
+   discriminador, 30 linhas). Os rascunhos estão na folha
+   `data/curadoria/fichas/CERTIFICACAO.md` (274 itens de documento e 48 `geral`
+   na etapa 2, ~2 horas).
+2. **Os 5 conflitos entre o mapa e o documento** que os autores anotaram:
+   convulsão (2 min no mapa × 5 min no documento), piometra (1 mês × 2 a 4 meses
+   depois do cio), conjuntivite, cistite, obstrução uretral.
+3. **As notas internas de curadoria** que o "Por que importa" mostra ao
+   atendente em 11 fichas de leitura ("Caso b14", "não encontrei artigo
+   primário, só um TCC", "a exposição pede reforço vacinal").
+4. **Os itens `geral`** das fichas de busca (53), que não têm documento por trás.
+
+**Por que importa.** A ficha de leitura é o que o atendente lê e o que a
+resposta cita: é conteúdo clínico, e hoje parte dele não passou por ninguém com
+formação. O erro numa ficha de busca custa menos (troca uma das 3 fichas
+trazidas), mas também precisa de revisão.
+
+**O que resolveria.** A folha de certificação respondida por veterinários
+(aceito / recuso / corrijo, item a item), as colunas da etapa 2 preenchidas no
+mapa e o "Por que importa" das 11 fichas reescrito. **Cada mudança de texto de
+ficha de leitura é uma rodada medida**, porque o número do sistema depende desse
+texto. Critério: nenhuma ficha de leitura com texto não validado e a rodada
+depois da mudança dentro do ruído (ou melhor) na régua do momento.
+
+**Atualização 25/09, madrugada ([rodada 23](joao/2026-09-25-24-fichas-de-busca-e-de-leitura.md)
+e [rodada 27](joao/2026-09-25-28-fontes-para-tutor-etapa-2.md)).** A folha
+`CERTIFICACAO.md` está versionada com as fichas de busca, e o mapa ganhou a coluna
+`por_que_importa`, vazia: é onde os especialistas escrevem o texto que substitui as
+notas internas (item 3). No item 4, **36 das 53 frases `geral` ganharam trecho
+literal** de uma fonte capturada (a aprovar), 16 têm fonte parcial e 1 ficou sem
+fonte ("Sangra muito ou a ferida é funda", mordida de gato); a folha marca cada
+uma. A conferência do trecho de cada item de documento contra o documento fica no
+`conferencia.json` da curadoria e não no CI: levar ao CI exigiria extrair os 66
+documentos a cada commit.
+
+**Atualização 26/09 ([rodada 30](joao/2026-09-26-31-validacao-dos-especialistas.md)).** A ASAVET certificou a folha inteira,
+por intermédio do Vinicius: os 513 itens aceitos como estão, sem correções — os de
+documento (com os textos propostos para `por_que_importa`), os 17 `geral` (16 com
+fonte parcial e a frase sem fonte), as 36 frases com fonte nova e os rascunhos da
+etapa 2; os conflitos ficam como cada ficha os trata. **Falta levar esse conteúdo
+à ficha de leitura**: preencher no mapa as 60 células da etapa 2 (sinais e
+discriminador) e a coluna `por_que_importa`, o que tira as notas internas das 11
+fichas. Isso muda o texto que o atendente lê, então é rodada medida contra a
+réplica da [rodada 26](joao/2026-09-25-27-atendente-gemini-e-replica.md).
+
+### B-62
+
+**Fonte escrita para tutor nos quadros em que o documento não descreve o que o tutor vê**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 15](joao/2026-09-23-16-fichas-no-lugar-dos-artigos.md), 24/09 · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** Na etapa 2, os documentos aprovados dão apoio suficiente
+para uma ficha em 7 quadros, parcial em 15 e **insuficiente em 8**: ferida de
+briga de gato, insuficiência cardíaca descompensada, ofegação após exercício,
+ferida pequena, parto normal, bebe e urina mais, mordida de morcego, caroço de
+crescimento lento. São artigos de pesquisa sobre outra coisa (o de parto normal
+é um estudo de monitoração fetal) ou, na insuficiência cardíaca, só exame
+clínico. É nesses quadros que as fichas de busca concentram os itens `geral`.
+
+**Por que importa.** Sem uma fonte que descreva o que o tutor vê, o item vira
+conhecimento geral, que só o especialista pode validar, e a citação ao tutor
+aponta para um documento que não fala do caso.
+
+**O que resolveria.** Uma fonte feita para tutor por quadro (página de
+orientação de hospital-escola, manual veterinário na versão para tutores),
+capturada pelo `capturar_fonte.py` e validada pelos especialistas; a ficha cita
+a fonte, sem indexar o texto inteiro. Com o repositório privado
+([B-52](#b-52)), as fontes para tutor que ficaram de fora por licença podem
+voltar. Critério: os 8 quadros com ao menos uma fonte validada que descreva os
+sinais em casa.
+
+**Atualização 25/09, madrugada ([rodada 27](joao/2026-09-25-28-fontes-para-tutor-etapa-2.md)).**
+Quatro agentes pesquisadores capturaram 45 fontes pelo `capturar_fonte.py` para os
+27 quadros com frases `geral`, entre eles **7 dos 8 quadros insuficientes** (duas
+fontes em cada: briga de gato, insuficiência cardíaca, ofegação após exercício,
+ferida pequena, parto normal, bebe e urina mais, mordida de morcego). O caroço de
+crescimento lento ficou fora: a ficha de busca dele não tem frase `geral`. As 45
+nascem `pending_specialist` em `PARA-VALIDAR.md` e ainda não ganharam id `R..` em
+`referencias.md`; o critério continua aberto até a validação. Direitos de cinco
+delas: [B-75](#b-75).
+
+**Atualização 26/09 ([rodada 30](joao/2026-09-26-31-validacao-dos-especialistas.md)).** As 45 fontes foram validadas pela
+ASAVET: 7 dos 8 quadros insuficientes têm agora fonte validada que descreve o que o
+tutor vê em casa (o caroço de crescimento lento continua sem). Seguem fora de
+`backend/data/documents/` até a decisão de direitos ([B-75](#b-75)), e ainda sem
+id `R..` em `referencias.md`.
+
+### B-63
+
+**Prova 2: da geração ao congelamento**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 20](joao/2026-09-24-21-prova-2-desenho-e-piloto.md), 24/09 · **Responsável:** A definir · **Prioridade:** Alta · **Status:** Aberto
+
+**O que observamos.** A prova 1 carrega a classe nas palavras (Naive Bayes 0,79
+mesmo sem assunto em comum; "mas" ⇒ leve acerta 0,77), foi escrita com o
+vocabulário do mapa (a busca cai de ~0,8 para ~0,5 com autores que não o viram)
+e tem 74 emergências somando dev, calibração e régua (0 perdas é compatível com
+até 4% de erro real). Na prova 1 a porta de confiança empata com as 3 fichas; nos
+relatos de quem não viu o mapa, perde por 15 × 1.
+
+**Por que importa.** O número final do TCC não pode sair da prova 1. Sem a
+prova 2, qualquer resultado com fichas é otimista, e não há poder para comparar
+atendentes bons entre si.
+
+**O que resolveria.** A prova 2 como especificada na rodada 20: 330 relatos (190
+emergências, 115 não emergências, 25 especiais), escritos por agentes de IA
+isolados (sem acesso ao mapa, às fichas e à prova 1), com as correções do piloto;
+conferência completa; planilha cega para os veterinários validarem os rótulos;
+divisão por assunto (66 de calibração, 264 de teste); congelamento por hash
+antes da primeira rodada; README com a autoria e a validação. Critério: o
+arquivo congelado, com 100% dos rótulos validados, e o vazamento conferido
+(Naive Bayes entre lotes perto do acaso).
+
+**Atualização 25/09, madrugada — a geração está feita**
+([rodada 28](joao/2026-09-25-29-prova-2-geracao.md)): `data/prova2/casos.csv`
+com os 330 relatos (190 · 115 · 25, "mas" em 40% de cada classe), rótulos
+provisórios. Falta tudo o que vem depois da geração: a conferência completa,
+a planilha dos veterinários, a validação, a divisão e o congelamento. A
+pesquisa dos autores foi mais fraca que a do piloto (a busca na web acabou
+cedo), o que torna a medida do "mesmo autor" mais importante.
+
+**Atualização 26/09 ([rodada 30](joao/2026-09-26-31-validacao-dos-especialistas.md)).** Os 330 rótulos foram validados pela
+ASAVET — segundo o João, sem ver o rótulo, como combinado — e nenhum mudou:
+`data/prova2/validacao.json` guarda o registro e o sha256 do arquivo validado, e o
+`marked_by` de cada linha diz quem validou. Uma parte da conferência já foi medida
+(observação 3 da rodada 30): a busca acha a ficha certa em 1º em 54% dos relatos
+com quadro do mapa e entre as 3 em 79%, entre o piloto (40% · 80%) e os relatos
+independentes (61% · 77%) e longe da prova 1 + régua (83% · 95%). Faltam: o resto
+da conferência (Naive Bayes entre lotes, o "mesmo autor"), a divisão por assunto
+(66/264) e o congelamento.
+
+### B-64
+
+**LGPD com o Gemini como atendente padrão: o relato do tutor sai da máquina**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 18](joao/2026-09-24-19-atendente-llama-qwen-gemini.md), 24–25/09 · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** Com o Gemini como atendente padrão (decisão do João, 25/09),
+todo relato vai para a API do Google. Na conta gratuita, os termos permitem que
+o Google use o conteúdo para melhorar os modelos. O README ainda diz que o
+sistema roda na máquina.
+
+**Por que importa.** O relato pode trazer dado pessoal (nome, telefone, endereço)
+e é dado de saúde animal ligado a uma pessoa. O TCC1 prometia modelo local.
+
+**O que resolveria.** Aviso claro ao tutor antes do envio; nada de dado pessoal
+no texto; uma opção "só local" (o qwen) documentada; o relato fora do
+`logger.info`; o README corrigido; e, se possível, a conta paga (onde o conteúdo
+não é usado para treinar). Critério: o fluxo com o Gemini só envia o relato
+depois do aviso, e o modo local funciona sem rede.
+
+### B-65
+
+**Latência na demonstração: a cauda do Gemini e o qwen sem placa de vídeo**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 18](joao/2026-09-24-19-atendente-llama-qwen-gemini.md), 24/09 · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** O Gemini responde em 1,1 s na mediana, mas 1 em cada 100
+chamadas passou de 20 s, e a pior, em 2.163 chamadas, levou 190 s; na conta
+gratuita há horas de sobrecarga (503) em que cada nova tentativa custa de
+segundos a minutos, e as recusas contam na cota diária. O qwen é estável na GPU
+(2,6 s) e leva **34 s por caso** só no processador.
+
+**Por que importa.** Numa apresentação ao vivo, uma chamada de 20 s parece
+falha; e a alternativa local só existe onde houver placa de vídeo.
+
+**O que resolveria.** Um tempo limite por chamada com mensagem clara ao tutor
+(sem troca silenciosa de modelo); a máquina da demonstração com GPU e o qwen
+aquecido como alternativa declarada; a latência medida na máquina da
+demonstração. Critério: 99% das respostas abaixo de 5 s na demonstração, ou a
+mensagem de indisponibilidade antes disso.
+
+**Atualização 25/09, madrugada ([rodada 26](joao/2026-09-25-27-atendente-gemini-e-replica.md)).**
+Pela API, na réplica, o Gemini levou ~4 s por caso na mediana, e esse número é
+quase todo o espaçamento de 4 s entre chamadas (`GEMINI_MIN_INTERVAL_S`), que
+existe para a rodada não esbarrar no limite por minuto da conta gratuita; o p95
+ficou entre 5 e 10 s por lote. Numa demonstração com uma pergunta por vez, o espaçamento não
+pesa, mas o limite por minuto e a cota diária (500 chamadas por conta) sim.
+
+### B-66
+
+**Ablação final na arquitetura da autópsia 2**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 21](joao/2026-09-24-22-arquitetura-proposta-contra-a-de-hoje.md), 24/09 · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** A autópsia mediu os braços com um executor próprio, nos
+lotes de desenvolvimento e nos relatos independentes. Faltam: a medição na prova
+2, pelo runner do repositório; o tradutor gerado pelo Gemini nas fichas, na
+decisão (só a busca foi medida); e uma tabela única com todos os braços. Por
+decisão do João, a ablação completa é a última etapa, depois de o projeto estar
+completo (CoT, Self-Refine).
+
+**Por que importa.** É a matriz que o artigo promete, e a única que sustenta
+"cada componente, ligado e desligado".
+
+**O que resolveria.** Um driver que roda a matriz na prova 2 congelada: sem
+contexto; artigos com e sem tradutor; fichas com e sem tradutor (llama e Gemini
+gerando); porta de confiança × 3 fichas; leitura na ficha do mapa × na ficha de
+busca; os três atendentes; o tom pareado; McNemar e IC 95%; uma semântica só de
+métrica ([B-60](#b-60)); e o pré-registro em `data/evaluation/README.md` refeito
+para a arquitetura nova. Critério: a tabela do artigo gerada por um comando, a
+partir de rodadas citadas.
+
+**Atualização 25/09, madrugada ([rodada 26](joao/2026-09-25-27-atendente-gemini-e-replica.md)).**
+O runner, pela API, reproduziu a autópsia caso a caso nos braços sem tradutor.
+O braço **artigos com o tradutor ligado** não reproduz (11 · 3 contra 8 · 3 na
+prova + régua), e por dois motivos que a ablação precisa tratar: (1) na autópsia,
+esse braço usou reescrita, multi-query **e HyDE** gerados pelo llama, mas o
+sistema sem a chave do Gemini não gera o HyDE (a queda descarta a etapa); (2) a
+reescrita do `llama3.2:3b` não é estável: com temperatura 0 e seed fixa, 6 de 16
+casos mudaram entre duas chamadas seguidas, e a de hoje difere da de 24/09 em 61
+de 134 casos. Na ablação, as consultas do tradutor devem ser geradas uma vez,
+guardadas e dadas a todos os braços que as usam (ou o braço roda com repetições),
+e o HyDE tem de estar declarado.
+
+### B-67
+
+**A régua de recuperação nas fichas como instrumento oficial**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 16](joao/2026-09-24-17-busca-bge-m3-e-tres-fichas.md), 24/09 · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** Toda a busca da autópsia (embeddings, porta, âncoras,
+fichas do Claude) foi medida com scripts próprios. A régua do time
+(`run_retrieval_eval.py`) mede a base acadêmica, com o recall em 5 e a
+ordenação de produção. Na arquitetura nova, o que importa é a ficha certa
+**entre as 3** que vão ao prompt.
+
+**Por que importa.** Sem a régua oficial nas fichas, a busca da arquitetura nova
+não tem linha de base citada, e a próxima mudança de ficha não tem com o que se
+comparar.
+
+**O que resolveria.** A régua lendo a coleção de fichas pela receita do
+manifesto, com `--recall-k 3` e o modo vetorial; uma linha de base citada nos
+lotes dev, calibração e régua e nos relatos independentes; o `compare` apontando
+mudanças por caso. Critério: a linha de base reproduz 107/129 e 123/129 (prova +
+régua, 1º e entre as 3) e 74/122 e 94/122 (independentes), ±1 caso.
+
+**Atualização 25/09, madrugada ([rodada 24](joao/2026-09-25-25-busca-por-fichas-com-bge-m3.md)).**
+A régua já lê a receita pelo manifesto e tem `--mode vector`; rodou uma vez nas
+fichas (0,879 em 1º, MRR 0,932, nos 66 casos `b..`). A busca da API foi conferida
+caso a caso contra a autópsia (296 de 296 trios iguais), mas com um script do
+diário da noite, não com a régua. Faltam: o "entre as 3" como métrica principal
+(é o que entra no prompt), os lotes da autópsia como casos da régua, a linha de
+base citada, e o `benchmark_retrieval_variants.py`, que ainda abre a coleção com o
+embedding padrão em vez de ler a receita. O limiar de 0,70 da régua não serve às
+fichas: com a ficha certa em 1º, a nota do bge-m3 fica perto de 0,6.
+
+### B-68
+
+**Uma lista de sinais de alarme gerais, escrita e validada pelos especialistas**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 18](joao/2026-09-24-19-atendente-llama-qwen-gemini.md), 24/09 · **Responsável:** A definir · **Prioridade:** Baixa · **Status:** Aberto
+
+**O que observamos.** Com a ficha certa no prompt, o qwen não cai no tom do
+tutor (0 de 76 emergências perdidas nos relatos independentes); o problema é
+quando ela não chega. Uma lista de sinais de alarme gerais, sempre presente,
+protegeria esses relatos — mas montada com os sinais do mapa, fora do contexto de
+cada quadro, ela vira "vomitando", "babando", "tremendo" = emergência, o que não
+é o que os especialistas validaram. A tentativa foi abandonada antes de rodar.
+
+**Por que importa.** É a defesa natural para o relato cuja ficha a busca não
+acha, no estilo dos discriminadores do protocolo de Manchester e da VTL.
+
+**O que resolveria.** Uma lista curta, escrita e validada pelos especialistas,
+medida como braço (com e sem a lista) na prova 2. Critério: menos emergências
+perdidas nos relatos cuja ficha não está entre as 3, sem subir os falsos alarmes
+além do ruído.
+
+### B-69
+
+**Tradutor só quando a busca estiver insegura (ideia não testada)**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 17](joao/2026-09-24-18-tradutor-desligado.md), 24/09 · **Responsável:** A definir · **Prioridade:** Baixa · **Status:** Aberto
+
+**O que observamos.** Nas fichas, toda técnica do tradutor piora a busca, com os
+dois geradores. Uma variante não testada: acionar o tradutor só quando a nota da
+1ª ficha for baixa. Sobra pouco para ganhar: o relato cru já põe a ficha certa
+entre as 3 primeiras em 95% da prova + régua e em 77% dos relatos independentes.
+
+**Por que importa.** Pouco, hoje. É o único jeito de o tradutor ainda poder
+ajudar na arquitetura nova, e vale registrar para a ablação não esquecer.
+
+**O que resolveria.** Um braço medido na prova 2: tradutor condicional ×
+desligado, com o limiar calibrado só na calibração. Critério: subir o "entre as
+3" dos relatos independentes em ≥ 3 pontos sem piorar a decisão.
+
+**Nota 25/09 ([rodada 25](joao/2026-09-25-26-resposta-com-ficha-e-fonte.md)).** O
+`think` configurável chegou só ao atendente. Se a etapa de consulta voltar a rodar
+com o qwen, ela precisa do mesmo `think=False`, senão o qwen pensa antes de cada
+consulta (mais lento e com a saída diferente).
+
+### B-70
+
+**Self-Refine como checagem de que o contexto é do assunto do relato**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 18](joao/2026-09-24-19-atendente-llama-qwen-gemini.md), 24/09 · **Responsável:** A definir · **Prioridade:** Baixa · **Status:** Em espera — CoT e Self-Refine voltam depois do RAG consolidado (decisão do João, 23/09)
+
+**O que observamos.** O Self-Refine não existe no código (só a chave, recusada
+pelo `config_resolver.py`). Com um atendente forte, o erro que sobra deixou de
+ser "raciocinar mal" e passou a ser o contexto errado: com a ficha de outro
+assunto, o Gemini responde INCERTO (6 de 27 emergências da etapa 2 com a ficha
+e5 mais próxima).
+
+**Por que importa.** Um Self-Refine que reescreve a resposta trata o problema
+errado; um que confere o contexto trata o certo.
+
+**O que resolveria.** Uma checagem de um passo: "a ficha usada é do mesmo
+problema do relato? a justificativa só usa sinais do relato?", medida como braço
+na prova 2. Critério: menos INCERTO por contexto errado, sem subir as
+emergências perdidas.
+
+### B-71
+
+**Checagens por hash de arquivo falham num clone no Windows (CRLF)**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 22](joao/2026-09-25-23-preparacao-da-implementacao.md), 25/09 · **Responsável:** A definir · **Prioridade:** Baixa · **Status:** Aberto
+
+**O que observamos.** Num clone limpo no Windows, com `core.autocrlf=true` (o
+padrão do Git para Windows), o `python scripts/sync_retrieval_terms.py --check`
+falha dizendo que `backend/data/retrieval_terms.json` está desatualizado sem nada
+ter mudado: o `source_sha256` é calculado sobre os bytes do mapa, e na pasta de
+trabalho o mapa está com CRLF. No CI (Linux, LF) passa. Na mesma linha, o
+`prova_freeze.py` grava `cases_file` com barra invertida quando roda no Windows.
+E o próprio `sync_retrieval_terms.py`, quando regenera o arquivo no Windows,
+grava com CRLF (`write_text` em modo texto), e o arquivo inteiro aparece como
+mudado no Git ([rodada 23](joao/2026-09-25-24-fichas-de-busca-e-de-leitura.md)).
+O `atomic_write_json` do `chroma_client.py` faz o mesmo com manifesto, recibo e
+ponteiro ativo ([rodada 24](joao/2026-09-25-25-busca-por-fichas-com-bge-m3.md)).
+
+**Por que importa.** Quem roda a suíte do CI no Windows vê uma falha falsa e pode
+"consertar" regenerando o arquivo, o que grava um hash que o CI recusa.
+
+**O que resolveria.** Normalizar `\r\n` → `\n` antes do hash no
+`sync_retrieval_terms.py` (o `sync_fichas.py` da rodada 23 já faz isso) e gravar
+caminhos com `as_posix()` no `prova_freeze.py`; ou um `.gitattributes` com
+`* text=auto eol=lf` para os arquivos de dados. Critério: o `--check` passa num
+clone limpo no Windows e no CI, sem regenerar nada.
+
+### B-72
+
+**Documentos aprovados que tratam de outro assunto, e autoria errada em sidecars**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 23](joao/2026-09-25-24-fichas-de-busca-e-de-leitura.md), 25/09 · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** Conferindo os títulos reais pelo DOI, seis documentos
+aprovados tratam de outra coisa que não o quadro do mapa em que estão:
+`cat_bite_abscess` (abscessos em linfonodos dentro do abdômen, não mordida),
+`flea_dermatitis_pruritus` (a revisão felina trata da dermatite não causada por
+pulga), `pyometra` (o SciELO 2013 é um estudo de castração),
+`osteoarthritis_stiffness` (consenso de tratamento), `vomiting_and_diarrhea`
+(Frontiers 2023, prescrição de antimicrobiano) e
+`single_vomiting_or_mild_diarrhea` (exames em cães atendidos na emergência).
+Nos metadados, a autoria da cinomose (Viruses 2022) está inteira errada, cinco
+sidecars têm um primeiro nome errado, e o `source` do GDV mistura periódico e
+afiliação.
+
+**Por que importa.** São esses documentos que a resposta cita ao tutor como
+"documento aprovado por trás da ficha", e os itens de documento das fichas de
+busca foram escritos a partir deles.
+
+**O que resolveria.** Os especialistas confirmarem ou trocarem cada um dos seis
+(as fontes capturadas na [rodada 27](joao/2026-09-25-28-fontes-para-tutor-etapa-2.md)
+são candidatas em vários), e a autoria corrigida pelo Crossref. Critério: cada
+documento citado trata do quadro em que está.
+
+**Atualização 26/09 ([rodada 30](joao/2026-09-26-31-validacao-dos-especialistas.md)).** Segundo o João, a ASAVET validou os
+seis como estão. O critério literal (cada documento trata do quadro em que está)
+fica sem atender por decisão dos especialistas, que os mantiveram; o registro fica
+aqui. Falta a autoria pelo Crossref (a da cinomose e os cinco primeiros nomes), que
+é correção nossa.
+
+### B-73
+
+**Abrir o Chroma versionado altera os arquivos binários do repositório**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 24](joao/2026-09-25-25-busca-por-fichas-com-bge-m3.md), 25/09 · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** Num clone limpo, a primeira consulta à coleção ativa muda
+o `backend/chroma_db/chroma.sqlite3` (e, na coleção das fichas, o `length.bin`
+do índice) sem mudar o conteúdo da coleção. Acontece também em `2d37a5e`, com a
+coleção acadêmica: o comportamento é do Chroma, não da rodada 24. Além disso, o
+arquivo binário tem 73 MB e cada coleção nova é mais uma versão dele no
+histórico.
+
+**Por que importa.** Quem roda o backend e faz `git add -A` commita um banco
+alterado sem querer, e o conteúdo real só se confere pelo manifesto.
+
+**O que resolveria.** Duas saídas: documentar no README o
+`git update-index --skip-worktree` para a pasta, ou deixar de versionar a
+coleção das fichas e gerá-la na subida a partir do `fichas.json` versionado
+(61 fichas, ~1,5 min de CPU), mantendo no repositório só o manifesto esperado.
+Critério: rodar o backend num clone limpo não deixa arquivo versionado
+alterado, e a coleção continua conferida por hash.
+
+### B-74
+
+**"Respondido por" na tela, e o erro do atendente tratado no frontend**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 25](joao/2026-09-25-26-resposta-com-ficha-e-fonte.md) e [rodada 26](joao/2026-09-25-27-atendente-gemini-e-replica.md), 25/09 · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** A API devolve a procedência de cada resposta (provedor,
+modelo, versão, e a troca, quando permitida) e responde 503 com
+`attendant_unavailable` ou `quota_exhausted` quando o atendente falha. O frontend
+mostra só o campo `answer` ([B-20](#b-20)) e não sabe o que fazer com o 503.
+
+**Por que importa.** "Nunca trocar de modelo em silêncio" é condição da decisão
+pelo Gemini ([rodada 18](joao/2026-09-24-19-atendente-llama-qwen-gemini.md)); na tela,
+o tutor e o avaliador precisam ver quem respondeu, e o 503 precisa virar uma
+mensagem que diga para procurar o veterinário.
+
+**O que resolveria.** Uma linha "Respondido por <modelo>" a partir de
+`provenance.attendant`, e uma mensagem de indisponibilidade no 503. Junto com a
+[B-64](#b-64) (LGPD: aviso de que o relato vai a um serviço externo).
+
+### B-75
+
+**Decidir os direitos das capturas da VCA e das páginas com todos os direitos reservados**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 27](joao/2026-09-25-28-fontes-para-tutor-etapa-2.md), 25/09 · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** Das 45 fontes capturadas para as frases gerais das fichas
+de busca, cinco são da VCA, cujo rodapé proíbe cópia e redistribuição sem
+consentimento escrito e o uso de IA para reescrever ou republicar; MSD e AKC
+declaram todos os direitos reservados. As capturas são literais e estão na
+curadoria (`data/curadoria/fontes/capturas/`), num repositório público. O João
+combinou que direitos não bloqueiam a curadoria; o sidecar de cada uma registra o
+que o site declara (`rights.status = pending`).
+
+**Por que importa.** Uma fonte só vai para a base (e para a citação ao tutor)
+depois do aval do especialista e de direitos compatíveis.
+
+**O que resolveria.** Decidir, com o orientador, se as capturas ficam no
+repositório público ou saem (ficando só o link e o trecho curto no dossiê).
+Critério: nenhuma captura com redistribuição proibida no repositório público, ou
+a decisão registrada.
+
+### B-76
+
+**O manifesto da coleção de fichas identifica o arquivo inteiro, e não só o que foi indexado**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 27](joao/2026-09-25-28-fontes-para-tutor-etapa-2.md), 25/09 · **Responsável:** A definir · **Prioridade:** Baixa · **Status:** Aberto
+
+**O que observamos.** O manifesto da coleção das fichas guarda o sha256 do
+`backend/data/fichas.json` inteiro. O arquivo tem o hash dos rascunhos e dos
+sidecars no cabeçalho, então uma mudança que não mexe em texto nenhum (a rodada 27
+só marcou frases como `documento`) muda o hash do arquivo, e o manifesto da
+coleção versionada passa a apontar para uma versão anterior. O conteúdo indexado
+é o mesmo (conferido: `content_sha256` idêntico).
+
+**Por que importa.** Pouco: quem conferir o manifesto contra o arquivo atual vê
+uma diferença que não é de conteúdo.
+
+**O que resolveria.** A identidade da fonte no manifesto das fichas passar a ser
+o hash dos registros indexados (texto de busca, leitura, metadados), e não do
+arquivo. Critério: mudar só a curadoria não muda a identidade da coleção.
 
 ---
 

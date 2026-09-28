@@ -1,6 +1,86 @@
 {
   "_comment": "Configurações nomeadas dos braços de avaliação. Cada preset é um conjunto de opções enviado ao POST /chat/. O runner registra no manifesto tanto o que foi pedido quanto o que a API respondeu ter usado, porque algumas opções são forçadas pelo servidor (o modo legado desliga a busca, por exemplo).",
 
+  "producao": {
+    "_descricao": "A arquitetura da autópsia 2 como padrão (rodada 26 do João): relato cru, bge-m3 nas 61 fichas de busca, as 3 mais próximas sem porta, a ficha de leitura no prompt, e o Gemini como atendente. Igual aos padrões das settings, escrito por extenso para a rodada não depender do ambiente.",
+    "retrieval_enabled": true,
+    "retrieval_mode": "vector",
+    "context_min_score": 0.0,
+    "query_rewriting_enabled": false,
+    "multi_query_enabled": false,
+    "hyde_enabled": false,
+    "prompt_version": "v1_grounded",
+    "attendant_provider": "gemini"
+  },
+
+  "local_qwen": {
+    "_descricao": "A mesma arquitetura com o atendente local qwen3:8b, sem pensar. Precisa de GPU (sem ela, ~34 s por caso).",
+    "retrieval_enabled": true,
+    "retrieval_mode": "vector",
+    "context_min_score": 0.0,
+    "query_rewriting_enabled": false,
+    "multi_query_enabled": false,
+    "hyde_enabled": false,
+    "prompt_version": "v1_grounded",
+    "attendant_provider": "ollama",
+    "llm_model": "qwen3:8b",
+    "think": false
+  },
+
+  "local_llama": {
+    "_descricao": "A mesma arquitetura com o llama3.2:3b, o atendente do sistema até 24/09. Na autópsia 2 ele decide pelo tom (rodada 18).",
+    "retrieval_enabled": true,
+    "retrieval_mode": "vector",
+    "context_min_score": 0.0,
+    "query_rewriting_enabled": false,
+    "multi_query_enabled": false,
+    "hyde_enabled": false,
+    "prompt_version": "v1_grounded",
+    "attendant_provider": "ollama",
+    "llm_model": "llama3.2:3b",
+    "think": false
+  },
+
+  "fichas_tradutor": {
+    "_descricao": "Braço da ablação: as fichas com o tradutor ligado (reescrita, multi-query e HyDE). Sem a chave do Gemini, a etapa de consulta cai para o Ollama, e a procedência registra a queda. Atendente qwen, como na tabela 2×2 da rodada 17.",
+    "retrieval_enabled": true,
+    "retrieval_mode": "vector",
+    "context_min_score": 0.0,
+    "query_rewriting_enabled": true,
+    "multi_query_enabled": true,
+    "hyde_enabled": true,
+    "prompt_version": "v1_grounded",
+    "attendant_provider": "ollama",
+    "llm_model": "qwen3:8b",
+    "think": false
+  },
+
+  "hoje_academico_llama": {
+    "_descricao": "O sistema até 24/09, para a ablação: exige a coleção acadêmica ativa (--rollback veterinary_documents__20260920T160842289762Z__388f518d e reiniciar o backend), rota + reranker + porta de 0,72, tradutor desligado, llama3.2:3b.",
+    "retrieval_enabled": true,
+    "retrieval_mode": "routed_rerank",
+    "context_min_score": 0.72,
+    "query_rewriting_enabled": false,
+    "multi_query_enabled": false,
+    "hyde_enabled": false,
+    "prompt_version": "v1_grounded",
+    "attendant_provider": "ollama",
+    "llm_model": "llama3.2:3b"
+  },
+
+  "hoje_academico_llama_tradutor": {
+    "_descricao": "O mesmo, com o tradutor ligado (como o sistema rodava até 24/09 sem a chave do Gemini: a consulta pelo llama).",
+    "retrieval_enabled": true,
+    "retrieval_mode": "routed_rerank",
+    "context_min_score": 0.72,
+    "query_rewriting_enabled": true,
+    "multi_query_enabled": true,
+    "hyde_enabled": true,
+    "prompt_version": "v1_grounded",
+    "attendant_provider": "ollama",
+    "llm_model": "llama3.2:3b"
+  },
+
   "legacy": {
     "_descricao": "Reproduz de forma aproximada a medição de 04/05: prompt antigo, sem documentos, saída apenas em JSON. Diferenças conhecidas estão no README da avaliação. Usar com --set temperature=0.8 --repeat 3 para obter a faixa de ruído daquele dia.",
     "prompt_version": "v0_legacy"
@@ -13,12 +93,14 @@
   },
 
   "naive_rag": {
-    "_descricao": "Recuperação ligada, otimização de consulta desligada. Determinístico, porque nenhuma chamada de consulta acontece. É o braço do Marco 1.",
+    "_descricao": "Recuperação ligada, otimização de consulta desligada. Determinístico, porque nenhuma chamada de consulta acontece. É o braço do Marco 1. Desde 25/09 o preset diz explicitamente o modo da busca e o corte que sempre usou (os padrões mudaram na rodada 24 do João); ele mede a coleção que estiver ativa, e a comparação com as rodadas antigas exige a coleção acadêmica ativa.",
     "retrieval_enabled": true,
     "query_rewriting_enabled": false,
     "multi_query_enabled": false,
     "hyde_enabled": false,
-    "prompt_version": "v1_grounded"
+    "prompt_version": "v1_grounded",
+    "retrieval_mode": "routed_rerank",
+    "context_min_score": 0.72
   },
 
   "llm_only_cot": {
@@ -40,7 +122,7 @@
   },
 
   "naive_rag_cot": {
-    "_descricao": "Recuperação ligada com Chain-of-Thought. O checklist ganha um passo que julga cada trecho recuperado ('descreve o caso deste relato?'), mirando os falsos não urgentes que o contexto induz (B-01). Compara com naive_rag.",
+    "_descricao": "Recuperação ligada com Chain-of-Thought. O checklist ganha um passo que julga cada trecho recuperado ('descreve o caso deste relato?'), mirando os falsos não urgentes que o contexto induz (B-01). Compara com naive_rag. Desde 25/09 o preset diz explicitamente o modo da busca e o corte que sempre usou (os padrões mudaram na rodada 24 do João); ele mede a coleção que estiver ativa, e a comparação com as rodadas antigas exige a coleção acadêmica ativa.",
     "retrieval_enabled": true,
     "query_rewriting_enabled": false,
     "multi_query_enabled": false,
@@ -48,25 +130,41 @@
     "prompt_version": "v1_grounded",
     "cot_enabled": true,
     "cot_position": "first",
-    "num_predict": 1024
+    "num_predict": 1024,
+    "retrieval_mode": "routed_rerank",
+    "context_min_score": 0.72
   },
 
   "naive_rag_sem_corte": {
-    "_descricao": "Reproduz o braço de setembro: a busca entrega os 3 trechos mais próximos mesmo quando nenhum passa do limiar de relevância. Era o padrão até 12/09, quando a rodada 9 mediu que isso injeta ruído em 98 de 98 linhas. Existe para a ablação comparar 'com corte' contra 'sem corte' e para reproduzir as rodadas citadas até 11/09.",
+    "_descricao": "Reproduz o braço de setembro: a busca entrega os 3 trechos mais próximos mesmo quando nenhum passa do limiar de relevância. Era o padrão até 12/09, quando a rodada 9 mediu que isso injeta ruído em 98 de 98 linhas. Existe para a ablação comparar 'com corte' contra 'sem corte' e para reproduzir as rodadas citadas até 11/09. Desde 25/09 o preset diz explicitamente o modo da busca e o corte que sempre usou (os padrões mudaram na rodada 24 do João); ele mede a coleção que estiver ativa, e a comparação com as rodadas antigas exige a coleção acadêmica ativa.",
     "retrieval_enabled": true,
     "query_rewriting_enabled": false,
     "multi_query_enabled": false,
     "hyde_enabled": false,
     "prompt_version": "v1_grounded",
-    "context_min_score": 0.0
+    "context_min_score": 0.0,
+    "retrieval_mode": "routed_rerank"
   },
 
   "rag_query": {
-    "_descricao": "Pipeline completo, com reescrita, multi-query e HyDE. Quase determinístico desde b907d6e (04/09): 6 das 98 linhas ainda oscilam entre execuções idênticas, por ruído numérico de GPU nas gerações longas (HyDE). Usar --repeat para reportar a faixa.",
+    "_descricao": "Pipeline completo, com reescrita, multi-query e HyDE. Quase determinístico desde b907d6e (04/09): 6 das 98 linhas ainda oscilam entre execuções idênticas, por ruído numérico de GPU nas gerações longas (HyDE). Usar --repeat para reportar a faixa. Desde 25/09 o preset diz explicitamente o modo da busca e o corte que sempre usou (os padrões mudaram na rodada 24 do João); ele mede a coleção que estiver ativa, e a comparação com as rodadas antigas exige a coleção acadêmica ativa.",
     "retrieval_enabled": true,
     "query_rewriting_enabled": true,
     "multi_query_enabled": true,
     "hyde_enabled": true,
-    "prompt_version": "v1_grounded"
+    "prompt_version": "v1_grounded",
+    "retrieval_mode": "routed_rerank",
+    "context_min_score": 0.72
+  },
+
+  "fichas_com_porta_0_72": {
+    "_descricao": "Braço da ablação (rodada 24 do João): as fichas de triagem com a porta de 0,72 calibrada no MiniLM. Na autópsia 2, com o bge-m3, a porta fechou 98 de 129 prompts e perdeu das 3 fichas sem porta nos relatos de quem não viu o mapa (rodada 16).",
+    "retrieval_enabled": true,
+    "retrieval_mode": "vector",
+    "query_rewriting_enabled": false,
+    "multi_query_enabled": false,
+    "hyde_enabled": false,
+    "prompt_version": "v1_grounded",
+    "context_min_score": 0.72
   }
 }

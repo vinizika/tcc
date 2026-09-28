@@ -12,4 +12,4 @@ router = APIRouter(
 @router.post("/", response_model=SearchResponse)
 def search_documents(request: SearchRequest):
 
-    return SearchService.search(request.question)
+    return SearchService.search(request.question, request.mode)

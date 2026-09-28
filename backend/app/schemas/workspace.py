@@ -20,6 +20,7 @@ class TurnInput(BaseModel):
     model_config = ConfigDict(str_strip_whitespace=True)
     content: str = Field(min_length=1, max_length=4000)
     request_id: str = Field(min_length=8, max_length=100)
+    attendant_provider: Literal["gemini", "ollama"] | None = None
 
 
 class LocationInput(BaseModel):

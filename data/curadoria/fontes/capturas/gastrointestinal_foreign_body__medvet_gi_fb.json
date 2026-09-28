@@ -1,0 +1,36 @@
+{
+  "title": "Corpo estranho gastrointestinal (MedVet)",
+  "source": "MedVet",
+  "document_type": "owner_guidance",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog_and_cat",
+  "topic": "gastrointestinal_foreign_body",
+  "language": "en",
+  "source_url": "https://www.medvet.com/gastrointestinal-foreign-bodies-in-cats-and-dogs/",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "020a04489ad7a7cd2c4d1dac60a126087ce77a5905e8cafe4e8593e122dc033d",
+  "map_line": "gastrointestinal_foreign_body",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: não declara direitos nem licença no HTML; publicada 2025-08-27",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2025,
+  "authors": "Karl C. Maritato, DVM, DACVS",
+  "full_title": "Gastrointestinal Foreign Bodies in Cats and Dogs: Signs, Treatment, and Prevention",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de gastrointestinal_foreign_body (rodada 27); autoridade media. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
+}

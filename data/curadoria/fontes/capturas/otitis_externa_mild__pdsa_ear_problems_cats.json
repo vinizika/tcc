@@ -1,0 +1,35 @@
+{
+  "title": "Ear problems in cats",
+  "source": "PDSA",
+  "document_type": "owner_guidance",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "cat",
+  "topic": "otitis_externa_mild",
+  "language": "en",
+  "source_url": "https://www.pdsa.org.uk/pet-help-and-advice/pet-health-hub/symptoms/ear-problems-in-cats",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "66db5c2e998ae89f42a6335d05641f97b41311abdccd84d6f19ae8142896d5d0",
+  "map_line": "otitis_externa_mild",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: © The People's Dispensary for Sick Animals (sem licença de reuso declarada)",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2023,
+  "full_title": "Ear problems in cats – an overview",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de otitis_externa_mild (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
+}

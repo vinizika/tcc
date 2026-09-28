@@ -22,6 +22,14 @@ StructuredOutputMode = Literal["schema", "json"]
 # braço de controle: separa o efeito da ordem do efeito da rubrica.
 CoTPosition = Literal["first", "last"]
 
+# Como a busca ordena o que achou. "vector" é a busca pura por similaridade
+# (padrão desde 25/09); "routed_rerank" é o caminho até 24/09, com rota
+# lexical, reranker, âncoras e veto de espécie.
+RetrievalMode = Literal["vector", "routed_rerank"]
+
+AttendantProvider = Literal["gemini", "ollama"]
+AttendantFallback = Literal["none", "ollama"]
+
 
 class PipelineOptions(BaseModel):
     """
@@ -44,6 +52,7 @@ class PipelineOptions(BaseModel):
 
     # Etapas de decisão (trilho B2)
     retrieval_enabled: Optional[bool] = None
+    retrieval_mode: Optional[RetrievalMode] = None
     context_top_k: Optional[int] = Field(default=None, ge=1, le=10)
     context_min_score: Optional[float] = Field(default=None, ge=0.0, le=1.0)
     rewritten_hint_enabled: Optional[bool] = None
@@ -52,8 +61,12 @@ class PipelineOptions(BaseModel):
     self_refine_enabled: Optional[bool] = None
 
     # Geração
+    attendant_provider: Optional[AttendantProvider] = None
+    # O modelo local (Ollama) desta requisição; não vale para o Gemini.
+    llm_model: Optional[str] = Field(default=None, min_length=1, max_length=100)
     prompt_version: Optional[PromptVersion] = None
     structured_output_mode: Optional[StructuredOutputMode] = None
+    think: Optional[bool] = None
     temperature: Optional[float] = Field(default=None, ge=0.0, le=2.0)
     seed: Optional[int] = None
     num_predict: Optional[int] = Field(default=None, ge=-1)
@@ -72,6 +85,7 @@ class EffectiveConfig(BaseModel):
     hyde_enabled: bool
 
     retrieval_enabled: bool
+    retrieval_mode: RetrievalMode = "vector"
     context_top_k: int
     context_min_score: float
     rewritten_hint_enabled: bool
@@ -87,6 +101,39 @@ class EffectiveConfig(BaseModel):
     seed: int
     num_ctx: int
     num_predict: int
+    think: Optional[bool] = False
+    attendant_provider: AttendantProvider = "ollama"
+    attendant_fallback: AttendantFallback = "none"
+
+
+class AttendantProvenance(BaseModel):
+    """Quem respondeu a classificação, desta vez (rodada 25 do João)."""
+
+    provider: str
+    model: str
+    # Digest do modelo no Ollama; versão devolvida pela API no Gemini.
+    model_version: Optional[str] = None
+    thinking: Optional[bool] = None
+    # Preenchido só quando uma troca de provedor aconteceu e foi permitida
+    # pela configuração. Troca silenciosa não existe.
+    fallback_from: Optional[str] = None
+
+
+class QueryStageProvenance(BaseModel):
+    """Quem gerou cada etapa de consulta (reescrita, multi-query, HyDE)."""
+
+    rewriting: bool = False
+    multi_query: bool = False
+    hyde: bool = False
+    # Uma entrada por chamada: etapa, provedor que respondeu e, quando o
+    # primeiro provedor falhou, de qual ele caiu.
+    calls: list[dict] = []
+
+
+class Provenance(BaseModel):
+
+    attendant: Optional[AttendantProvenance] = None
+    query_stage: Optional[QueryStageProvenance] = None
 
 
 class RetrievalInfo(BaseModel):

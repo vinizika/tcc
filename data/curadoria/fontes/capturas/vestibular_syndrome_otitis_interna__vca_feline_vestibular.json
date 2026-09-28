@@ -1,0 +1,35 @@
+{
+  "title": "Vestibular Disease in Cats",
+  "source": "VCA Animal Hospitals",
+  "document_type": "owner_guidance",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "cat",
+  "topic": "vestibular_syndrome_otitis_interna",
+  "language": "en",
+  "source_url": "https://vcahospitals.com/know-your-pet/feline-vestibular-disease",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "0cf6c62c3cc9affc116ee129cc4c2e11a89c46b4909c4ed43b24889965579d7a",
+  "map_line": "vestibular_syndrome_otitis_interna",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: © Copyright 2026 LifeLearn Inc.; licenciado para uso pessoal dos clientes; cópia, impressão ou redistribuição proibidas sem consentimento escrito; proíbe uso de IA para reescrever/republicar (texto no próprio arquivo capturado)",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "authors": "Tammy Hunter; Malcolm Weir; Ernest Ward",
+  "full_title": "Vestibular Disease in Cats",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de vestibular_syndrome_otitis_interna (rodada 27); autoridade media. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
+}

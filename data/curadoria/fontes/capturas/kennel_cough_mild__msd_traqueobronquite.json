@@ -1,0 +1,36 @@
+{
+  "title": "Traqueobronquite tosse dos canis",
+  "source": "MSD Veterinary Manual (Pet Owner Version)",
+  "document_type": "owner_guidance",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog",
+  "topic": "kennel_cough_mild",
+  "language": "en",
+  "source_url": "https://www.msdvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/tracheobronchitis-bronchitis-in-dogs",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "4707785a8dc7f333f5702c4441b4563ab8b0562375a5cd75294722f167ae0eb2",
+  "map_line": "kennel_cough_mild",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: \"Copyright © 2026 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.\" Revisão completa jun/2018, modificada set/2024.",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2024,
+  "authors": "Ned F. Kuehn",
+  "full_title": "Tracheobronchitis (Bronchitis) in Dogs — Dog Owners — MSD Veterinary Manual",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de kennel_cough_mild (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
+}

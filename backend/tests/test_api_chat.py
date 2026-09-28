@@ -99,7 +99,7 @@ def test_debug_pode_ser_pedido_por_requisicao(client):
         "/chat/",
         json={
             "question": "meu cão vomitou",
-            "options": {"include_debug": True},
+            "options": {"include_debug": True, "query_rewriting_enabled": True},
         },
     )
 

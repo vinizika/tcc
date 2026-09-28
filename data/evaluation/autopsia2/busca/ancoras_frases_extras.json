@@ -1,0 +1,112 @@
+[
+ [
+  "x_uo1",
+  "meu gato vai na caixa e não sai nada, faz força e mia",
+  [
+   "urethral_obstruction"
+  ]
+ ],
+ [
+  "x_uo2",
+  "meu gato não consegue mijar, fica tentando e chora",
+  [
+   "urethral_obstruction"
+  ]
+ ],
+ [
+  "x_uo3",
+  "meu gato entra e sai da caixa de areia toda hora e não sai nada",
+  [
+   "urethral_obstruction"
+  ]
+ ],
+ [
+  "x_uo4",
+  "o gato está fazendo força na caixinha e só sai umas gotinhas, e lambe muito embaixo do rabo",
+  [
+   "urethral_obstruction"
+  ]
+ ],
+ [
+  "x_uo5",
+  "meu gato macho tá agachado na caixa faz tempo, chora e a barriga está dura",
+  [
+   "urethral_obstruction"
+  ]
+ ],
+ [
+  "x_uo6",
+  "minha gata não consegue fazer xixi desde ontem fica tentando na caixa e miando de dor",
+  [
+   "urethral_obstruction"
+  ]
+ ],
+ [
+  "x_gr1",
+  "meu cachorro comeu um cacho de uvas agora há pouco",
+  [
+   "grape_xylitol_toxicosis"
+  ]
+ ],
+ [
+  "x_gr2",
+  "meu cachorro comeu um pacote de frutinhas secas roxas do panetone",
+  [
+   "grape_xylitol_toxicosis"
+  ]
+ ],
+ [
+  "x_sn1",
+  "meu cachorro foi picado por uma cobra no sítio e a pata está inchando",
+  [
+   "snake_and_scorpion_envenomation"
+  ]
+ ],
+ [
+  "x_sn2",
+  "uma jararaca mordeu meu cachorro no quintal e a pata está inchando",
+  [
+   "snake_and_scorpion_envenomation"
+  ]
+ ],
+ [
+  "x_tk1",
+  "achei uns carrapatos no meu cachorro, mas ele está bem",
+  [
+   "ticks_found_no_signs"
+  ]
+ ],
+ [
+  "x_tk2",
+  "achei uns bichinhos grudados na orelha do meu cachorro, parecem sementes, mas ele está bem",
+  [
+   "ticks_found_no_signs"
+  ]
+ ],
+ [
+  "x_fl1",
+  "meu gato está se coçando muito e tem pulgas",
+  [
+   "flea_dermatitis_pruritus"
+  ]
+ ],
+ [
+  "x_fl2",
+  "meu cachorro não para de se coçar e morder as costas perto do rabo, está com casquinhas",
+  [
+   "flea_dermatitis_pruritus"
+  ]
+ ],
+ [
+  "x_no1",
+  "meu cachorro está passando mal e vomitou uma vez, mas já está brincando",
+  []
+ ],
+ [
+  "x_no2",
+  "meu cachorro fez xixi com um pouco de sangue, mas faz a quantidade normal e está bem",
+  [
+   "inappropriate_urination_or_cystitis"
+  ]
+ ]
+]

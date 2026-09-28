@@ -1,0 +1,34 @@
+{
+  "title": "Vestibular disease",
+  "source": "Fitzpatrick Referrals",
+  "document_type": "owner_guidance",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog_and_cat",
+  "topic": "vestibular_syndrome_otitis_interna",
+  "language": "en",
+  "source_url": "https://www.fitzpatrickreferrals.co.uk/neurology/vestibular-disease/",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "898881946de0b910ce5fca0f482a0568d016f37b24eb7e4b9e6fa591a7945b68",
+  "map_line": "vestibular_syndrome_otitis_interna",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: © 2026 Fitzpatrick Referrals (sem licença de reuso declarada)",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "full_title": "Vestibular disease (Neurology service)",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de vestibular_syndrome_otitis_interna (rodada 27); autoridade media. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
+}

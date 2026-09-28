@@ -1,0 +1,83 @@
+If your dog has an abnormally low level of glucose in the blood, they may have a condition called Hypoglycemia. There are different signs and causes, but usually, it can be successfully treated. It’s important to seek treatment if diagnosed. If left untreated, hypoglycemia in dogs can lead to death.
+
+How Glucose Levels Work
+
+The dog’s body relies on glucose for energy. It gets glucose from several sources: absorbing it from eating carbohydrates, converting it from glyocogen that’s stored in the liver and muscles, and making glucose in the liver and kidneys.
+
+The body maintains a normal level of glucose by balancing insulin, which is a glucose-lowering hormone, with hormones that raise glucose. After eating, your dog’s glucose levels rise until the body releases insulin to lower them. Once low enough, other hormones take over to stabilize the level.
+
+Sometimes the body uses more glucose than it can take in or make. Usually either because the dog isn’t eating enough carbohydrates, or it’s using too much glucose because of increased exercise or cancer cells. This can also occur when the hormones needed to raise glucose aren’t working or because the liver isn’t working to convert glycogen to glucose.
+
+Causes of Hypoglycemia in Dogs
+
+Hypoglycemia can be caused by temporary conditions (physiological causes), or by disease (pathological causes).
+
+Physiological causes
+
+- Exercise-induced hypoglycemia (“hunting dog hypoglycemia”): This condition can occur in adult dogs after a long period of hard exercise.
+- Puppy or toy dog hypoglycemia: This condition can occur in very young or very small puppies, especially young toy puppies. Their limited fat and muscle mass, along with immature liver, leads to inability to store enough glycogen. Puppies can deplete their available glucose between meals, especially if they’re active, cold, or stressed.
+- Toxin-related: Drugs or toxins can cause over-secretion of insulin and overuse of glycogen, leading to depletion. Causes include insulin overdose, xylitol ingestion, beta blockers, or sulfonylureas.
+- Starvation: Failure of sufficient nutrient intake leads to depletion of glycogen stores. However, this is an uncommon cause of hypoglycemia in dogs.
+
+Pathological causes
+
+- Severe liver disease
+- Hypoadrenocorticism (Addison’s disease)
+- Hypopituitarism
+- Insulinoma
+- Islet cell hyperplasia
+- Chronic kidney failure
+- Pancreatitis
+- Tumors affecting the pancreas
+- Some infections including sepsis, babesiosis
+- Glycogen storage disease
+
+These conditions either cause too little glycogen to be released, too much glycogen due to an excess of insulin, or not enough enzymes needed to convert stored glycogen to available energy.
+
+Signs of Hypoglycemia in Dogs
+
+Because the brain relies so heavily on glucose to function, most signs include changes in alertness or behavior, such as:
+
+Weakness, muscle tremors, lack of balance, rapid breathing, rapid heart rate, impaired vision, and even gastrointestinal signs, such as vomiting, diarrhea, and drooling, may also be seen. Most dogs will have some, but not all of these signs. Dogs with repeated hypoglycemia may show fewer signs than dogs undergoing their first episode. Signs tend to occur when blood glucose levels dip lower than 2.2 mmol/L to 2.8 mmol/L (40 mg/dL to 50 mg/dL)—which is lower than the technical level used to diagnose hypoglycemia.
+
+Unfortunately, few people recognize the signs. The AKC’s Chief Veterinarian, Dr. Jerry Klein, DVM, explains: “In my experience as an emergency veterinarian, people who bring in their puppies or dogs, which eventually are found to be hypoglycemic, are usually unaware of the underlying problem when they present them to a veterinary hospital.
+
+“Puppies are often very young (under 12 weeks), newly acquired, and often toy breed-type puppies. These puppies present for extreme lethargy, incoordination, unconsciousness or seizures. They’re often also encumbered with other complications such as some form of intestinal parasites, such as coccidia, giardia, roundworms, bacterial infections; or severe stress following travel or shipment.”
+
+It’s not just puppies that can become hypoglycemic, though. “Adult dogs presenting to veterinary hospitals that eventually turn out to be hypoglycemic usually present for weakness, seizures or collapse,” says Dr. Klein. “Routine blood work uncovers hypoglycemia. Detailed history and further work up is needed to determine the cause of hypoglycemia.”
+
+Diagnosing Hypoglycemia in Dogs
+
+Canine hypoglycemia is defined as a blood glucose level of less than 3.3 mmol/L (60 mg/dL). The vet will confirm if a dog has hypoglycemia with a blood test. The vet may also suspect hypoglycemia if the dog is a tiny toy puppy or dog, has been running hard all day, has eaten certain toxins like xylitol, or is diabetic and recently had an insulin injection.
+
+Further blood tests may include a complete blood count (CBC) and blood chemistry. A vet may also conduct a urinalysis to check for sepsis, liver problems, or Addison’s Disease. Other tests may check for possible cancers that could be responsible. Finally, a basal cortisol/ACTH stimulating test, bile acid test, and a urinary culture may be run.
+
+Regardless of cause, emergency treatment is still largely the same.
+
+Treating Hypoglycemia in Dogs
+
+If you think your dog has hypoglycemia, but they’re conscious, alert and able to eat, an at-home treatment option is feeding them a carbohydrate and glucose-rich meal, such as cooked pasta with syrup or honey on it.
+
+“In small puppies, Karo corn syrup (light) or honey given orally can temporarily stabilize hypoglycemia,” says Klein. “But they should then be taken to veterinarian immediately for further care. Nutri-Cal can be given to very young puppies as directed by a veterinarian.” Even rubbing it on the gums will help.
+
+Other treatments will depend on the cause. “Nutri-Cal, Karo syrup or honey could also be given to an adult hypoglycemic dog who has already been diagnosed as being diabetic by their veterinarian (in instances of owners giving accidental insulin overdose), and then the dog should be taken promptly to a veterinarian for stabilization,” says Klein.
+
+“Dogs diagnosed with hypoglycemia can be due to various etiologies, such as malnutrition, hunting dog hypoglycemia, insulin overdose in diabetic dogs, portosystemic (liver) shunts, liver disease, kidney disease, sepsis, toxicity, such as ingestion of xylitol (present in certain types of sugarless gum or various baked products), and Addison’s Disease (hypoadrenocorticism).” Klein cautions that “none of these conditions suggest home remedies.”
+
+Emergency veterinary treatment consists of intravenous glucose or dextrose. The goal is to bring the dog back to a normal state of consciousness, without giving them so much that you create a rollercoaster effect. Careful glucose monitoring during treatment will help prevent this. Once the dog begins to act like themselves again, then feed a carb-rich meal.
+
+Preventing Hypoglycemia in Dogs
+
+Thankfully, there are some simple ways to prevent many cases of hypoglycemia in dogs:
+
+- Prevent your dogs from over-exercising, especially if they’re out of shape
+- Ensure that your tiny puppies don’t go too long between meals, especially if they are active, stressed, or cold
+- Make sure your dog is free of parasites
+- Keep xylitol out of reach
+- Measure insulin doses carefully
+- Feed your pregnant dog more than usual
+- Address any underlying disorders
+
+“There is no ‘special diet’ for dogs prone to hypoglycemia,” adds Dr. Klein. “In young puppies, feeding small, frequent meals is recommended as directed by a veterinarian. A complete and balanced diet appropriate for a dog or puppy’s age and growth or development stage, appropriate in the nutrients needed and palatable to that dog is always the recommended diet. The underlying issue causing hypoglycemia must be addressed and resolved to correct the problem of hypoglycemia.”
+
+This article is intended solely as general guidance, and does not constitute health or other professional advice. Individual situations and applicable laws vary by jurisdiction, and you are encouraged to obtain appropriate advice from qualified professionals in the applicable jurisdictions. We make no representations or warranties concerning any course of action taken by any person following or otherwise using the information offered or provided in this article, including any such information associated with and provided in connection with third-party products, and we will not be liable for any direct, indirect, consequential, special, exemplary or other damages that may result, including but not limited to economic loss, injury, illness or death.

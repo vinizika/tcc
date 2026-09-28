@@ -208,6 +208,7 @@ OPCOES_VALIDAS = {
     "multi_query_enabled",
     "hyde_enabled",
     "retrieval_enabled",
+    "retrieval_mode",
     "context_top_k",
     "context_min_score",
     "rewritten_hint_enabled",
@@ -216,6 +217,9 @@ OPCOES_VALIDAS = {
     "self_refine_enabled",
     "prompt_version",
     "structured_output_mode",
+    "think",
+    "attendant_provider",
+    "llm_model",
     "temperature",
     "seed",
     "num_predict",
@@ -272,6 +276,83 @@ def carregar_dataset() -> pd.DataFrame:
     df = pd.read_csv(DATASET)
 
     return df[df["AnimalName"].isin(ANIMAIS)].copy()
+
+
+# ----------------------------------------------------------------------
+# Lotes no formato da prova (--cases)
+# ----------------------------------------------------------------------
+
+COLUNAS_DOS_CASOS = ("id", "text", "expected_class")
+
+
+def carregar_casos(caminho: Path, split: str | None = None) -> pd.DataFrame:
+    """
+    Um lote no formato da prova: uma linha por relato, com `id`, `text` e
+    `expected_class` (rodada 25 do João). As outras colunas (tópico, tom,
+    espécie) seguem para a linha de resultado.
+
+    Com `--split`, fica só aquele lote. Se o lote tiver congelamento
+    (`<arquivo>.<split>.freeze.json`, de `prova_freeze.py`), o hash é
+    conferido antes de qualquer requisição: um lote teste alterado não roda.
+    """
+
+    df = pd.read_csv(caminho, dtype=str, keep_default_na=False)
+
+    faltando = [coluna for coluna in COLUNAS_DOS_CASOS if coluna not in df.columns]
+    if faltando:
+        raise SystemExit(
+            f"{caminho} não tem as colunas {', '.join(faltando)} "
+            f"(o formato é {', '.join(COLUNAS_DOS_CASOS)})."
+        )
+
+    if split is not None:
+        if "split" not in df.columns:
+            raise SystemExit(f"{caminho} não tem a coluna split.")
+        df = df[df["split"] == split]
+        if df.empty:
+            raise SystemExit(f"Nenhuma linha com split={split!r} em {caminho}.")
+
+        import prova_freeze
+
+        manifesto_congelado = prova_freeze.caminho_manifesto(caminho, split)
+        if manifesto_congelado.exists():
+            esperado = json.loads(
+                manifesto_congelado.read_text(encoding="utf-8")
+            )["sha256"]
+            atual = prova_freeze.hash_split(
+                prova_freeze.carregar_split(caminho, split)
+            )
+            if atual != esperado:
+                raise SystemExit(
+                    f"O lote {split!r} de {caminho} não bate com o "
+                    f"congelamento ({manifesto_congelado.name}). "
+                    "Recongele de propósito ou não rode."
+                )
+
+    if df["id"].duplicated().any():
+        raise SystemExit(f"{caminho} tem ids repetidos.")
+
+    return df.set_index("id", drop=False)
+
+
+def contexto_do_caso(linha, repeticao: int, seed) -> tuple[str, str, dict]:
+    """O relato e o contexto de uma linha do modo --cases."""
+
+    relato = str(linha["text"])
+    extras = {
+        coluna: linha[coluna]
+        for coluna in ("topic", "tone", "species", "difficulty_tag", "split")
+        if coluna in linha.index
+    }
+    return str(linha["id"]), relato, {
+        "row_id": str(linha["id"]),
+        "repeat": repeticao,
+        "seed_used": seed,
+        **extras,
+        "relato": relato,
+        "relato_sha1": hashlib.sha1(relato.encode("utf-8")).hexdigest()[:12],
+        "expected": str(linha["expected_class"]),
+    }
 
 
 def selecionar(df: pd.DataFrame, subset: str, limite: int | None):
@@ -428,6 +509,9 @@ def achatar(resposta: dict, contexto: dict) -> dict:
     tempos = resposta.get("timings") or {}
     depuracao = resposta.get("debug") or {}
     fontes = resposta.get("sources") or []
+    procedencia = resposta.get("provenance") or {}
+    atendente = procedencia.get("attendant") or {}
+    consulta = procedencia.get("query_stage") or {}
 
     classificacao = triagem.get("classificacao")
 
@@ -487,6 +571,15 @@ def achatar(resposta: dict, contexto: dict) -> dict:
         "queries": depuracao.get("queries"),
         "rewritten_question": depuracao.get("rewritten_question"),
         "raw_llm_output": depuracao.get("raw_llm_output"),
+        # Procedência (rodada 25 do João): quem respondeu, linha a linha. Uma
+        # troca de provedor no meio da rodada aparece aqui.
+        "used_topics": [f.get("topic") for f in fontes],
+        "attendant_provider": atendente.get("provider"),
+        "attendant_model": atendente.get("model"),
+        "attendant_model_version": atendente.get("model_version"),
+        "attendant_thinking": atendente.get("thinking"),
+        "attendant_fallback_from": atendente.get("fallback_from"),
+        "query_stage_calls": consulta.get("calls"),
     }
 
 
@@ -518,6 +611,15 @@ def git_estado() -> dict:
         "sha": executar("git", "rev-parse", "--short", "HEAD"),
         "dirty": bool(executar("git", "status", "--porcelain")),
     }
+
+
+def _caminho_relativo(caminho: Path) -> str:
+    """Relativo à raiz do repositório, com barra normal, quando der."""
+
+    try:
+        return caminho.resolve().relative_to(RAIZ).as_posix()
+    except ValueError:
+        return caminho.resolve().as_posix()
 
 
 def agora() -> str:
@@ -593,6 +695,7 @@ def executar_rodada(
     cliente: ApiClient,
     repeticoes: int,
     base_seed: int | None,
+    casos_livres: bool = False,
 ) -> None:
 
     caminho_previsoes = diretorio / "predictions.jsonl"
@@ -648,27 +751,34 @@ def executar_rodada(
 
         for _, linha in linhas.iterrows():
 
-            row_id = int(linha.name)
+            if casos_livres:
+                row_id, relato, contexto = contexto_do_caso(
+                    linha, repeticao, seed
+                )
+                if (row_id, repeticao) in ja_feitas:
+                    continue
+            else:
+                row_id = int(linha.name)
 
-            if (row_id, repeticao) in ja_feitas:
-                continue
+                if (row_id, repeticao) in ja_feitas:
+                    continue
 
-            relato = build_relato(linha)
+                relato = build_relato(linha)
 
-            contexto = {
-                "row_id": row_id,
-                "repeat": repeticao,
-                "seed_used": seed,
-                "animal": linha["AnimalName"],
-                "source": linha["Source"],
-                "n_symptoms": len(get_symptoms(linha)),
-                "symptoms": get_symptoms(linha),
-                "relato": relato,
-                "relato_sha1": hashlib.sha1(
-                    relato.encode("utf-8")
-                ).hexdigest()[:12],
-                "expected": get_expected_label(linha["Dangerous"]),
-            }
+                contexto = {
+                    "row_id": row_id,
+                    "repeat": repeticao,
+                    "seed_used": seed,
+                    "animal": linha["AnimalName"],
+                    "source": linha["Source"],
+                    "n_symptoms": len(get_symptoms(linha)),
+                    "symptoms": get_symptoms(linha),
+                    "relato": relato,
+                    "relato_sha1": hashlib.sha1(
+                        relato.encode("utf-8")
+                    ).hexdigest()[:12],
+                    "expected": get_expected_label(linha["Dangerous"]),
+                }
 
             opcoes = dict(opcoes_base)
 
@@ -723,6 +833,22 @@ def executar_rodada(
                 except requests.HTTPError as erro:
                     codigo = erro.response.status_code
 
+                    try:
+                        corpo_do_erro = erro.response.json()
+                    except Exception:
+                        corpo_do_erro = {}
+
+                    # A cota do dia acabou: a rodada para aqui, e não com
+                    # metade das linhas em erro (rodada 26 do João).
+                    if (corpo_do_erro or {}).get("code") == "quota_exhausted":
+                        raise SystemExit(
+                            "A cota diária do atendente acabou "
+                            f"({(corpo_do_erro.get('details') or {}).get('provider')}). "
+                            "O que foi feito está gravado; continue com "
+                            f"--resume {diretorio} depois da virada da cota "
+                            "ou com outra chave na API."
+                        )
+
                     if codigo in (400, 422):
                         raise SystemExit(
                             f"A API recusou a configuração (HTTP {codigo}): "
@@ -752,7 +878,7 @@ def executar_rodada(
             marca = registro.get("predicted") or registro.get("status")
 
             print(
-                f"  [{feitas:>3}/{total}] linha {row_id:>3} "
+                f"  [{feitas:>3}/{total}] linha {row_id!s:>3} "
                 f"esperado {contexto['expected']:<14} -> {marca}"
             )
 
@@ -787,6 +913,11 @@ def finalizar(diretorio: Path, manifesto: dict) -> dict:
         columns=[c for c in colunas_longas if c in df.columns]
     ).to_csv(diretorio / "predictions.csv", index=False, encoding="utf-8")
 
+    # Linhas respondidas por troca de atendente (permitida pela
+    # configuração). Numa rodada de réplica, tem de ser zero.
+    manifesto["attendant_fallback_lines"] = sum(
+        1 for registro in registros if registro.get("attendant_fallback_from")
+    )
     manifesto["finished_at"] = agora()
     manifesto["status"] = "done"
 
@@ -833,10 +964,27 @@ def main(argv=None) -> None:
     parser.add_argument("--resume", type=Path)
     parser.add_argument("--api-url", default="http://localhost:8000")
     parser.add_argument("--timeout", type=int, default=1500)
+    parser.add_argument(
+        "--cases",
+        type=Path,
+        help=(
+            "Roda um lote no formato da prova (colunas id, text, "
+            "expected_class) em vez do conjunto antigo. Sem esta opção, o "
+            "runner faz exatamente o que fazia."
+        ),
+    )
+    parser.add_argument(
+        "--split",
+        help="Com --cases: só as linhas deste split. Confere o congelamento, se houver.",
+    )
 
     argumentos = parser.parse_args(argv)
 
     cliente = ApiClient(argumentos.api_url, argumentos.timeout)
+    casos_livres = bool(argumentos.cases)
+
+    if argumentos.split and not argumentos.cases:
+        parser.error("--split só vale com --cases.")
 
     if argumentos.resume:
         diretorio = argumentos.resume
@@ -844,16 +992,28 @@ def main(argv=None) -> None:
             (diretorio / "manifest.json").read_text(encoding="utf-8")
         )
 
-        if sha256_arquivo(DATASET) != manifesto["dataset"]["sha256"]:
-            raise SystemExit(
-                "O dataset mudou desde que esta rodada começou. "
-                "Retomar misturaria dados diferentes na mesma medição."
-            )
+        casos_livres = "cases" in manifesto
+        if casos_livres:
+            caminho_casos = RAIZ / manifesto["cases"]["path"]
+            if sha256_arquivo(caminho_casos) != manifesto["cases"]["sha256"]:
+                raise SystemExit(
+                    "O arquivo de casos mudou desde que esta rodada começou. "
+                    "Retomar misturaria dados diferentes na mesma medição."
+                )
+            linhas = carregar_casos(
+                caminho_casos, manifesto["cases"].get("split")
+            ).loc[manifesto["row_ids"]]
+        else:
+            if sha256_arquivo(DATASET) != manifesto["dataset"]["sha256"]:
+                raise SystemExit(
+                    "O dataset mudou desde que esta rodada começou. "
+                    "Retomar misturaria dados diferentes na mesma medição."
+                )
+
+            df = carregar_dataset()
+            linhas = df.loc[manifesto["row_ids"]]
 
         manifesto.setdefault("resumed_at", []).append(agora())
-
-        df = carregar_dataset()
-        linhas = df.loc[manifesto["row_ids"]]
         repeticoes = manifesto["repeats"]
         base_seed = manifesto.get("base_seed")
 
@@ -862,8 +1022,14 @@ def main(argv=None) -> None:
     else:
         opcoes = montar_opcoes(argumentos.preset, argumentos.ajustes)
 
-        df = carregar_dataset()
-        linhas = selecionar(df, argumentos.subset, argumentos.limit)
+        if casos_livres:
+            caminho_casos = argumentos.cases.resolve()
+            linhas = carregar_casos(caminho_casos, argumentos.split)
+            if argumentos.limit:
+                linhas = linhas.head(argumentos.limit)
+        else:
+            df = carregar_dataset()
+            linhas = selecionar(df, argumentos.subset, argumentos.limit)
 
         if not cliente.health():
             raise SystemExit(
@@ -886,7 +1052,11 @@ def main(argv=None) -> None:
 
         try:
             resposta_aquecimento = cliente.classify(
-                build_relato(linhas.iloc[0]),
+                (
+                    str(linhas.iloc[0]["text"])
+                    if casos_livres
+                    else build_relato(linhas.iloc[0])
+                ),
                 {**opcoes, "include_debug": True},
             )
         except requests.HTTPError as erro:
@@ -921,23 +1091,42 @@ def main(argv=None) -> None:
             "hostname": socket.gethostname(),
             "python": platform.python_version(),
             "git": git_estado(),
-            "dataset": {
-                "path": str(DATASET.relative_to(RAIZ)),
-                "sha256": sha256_arquivo(DATASET),
-            },
-            "subset": argumentos.subset,
-            "limit": argumentos.limit,
-            "row_ids": [int(i) for i in linhas.index],
-            "label_distribution": linhas["Dangerous"]
-            .value_counts()
-            .to_dict(),
+            **(
+                {
+                    "cases": {
+                        "path": _caminho_relativo(caminho_casos),
+                        "sha256": sha256_arquivo(caminho_casos),
+                        "split": argumentos.split,
+                        "n": len(linhas),
+                    },
+                    "subset": None,
+                    "limit": argumentos.limit,
+                    "row_ids": [str(i) for i in linhas.index],
+                    "label_distribution": linhas["expected_class"]
+                    .value_counts()
+                    .to_dict(),
+                }
+                if casos_livres
+                else {
+                    "dataset": {
+                        "path": str(DATASET.relative_to(RAIZ)),
+                        "sha256": sha256_arquivo(DATASET),
+                    },
+                    "subset": argumentos.subset,
+                    "limit": argumentos.limit,
+                    "row_ids": [int(i) for i in linhas.index],
+                    "label_distribution": linhas["Dangerous"]
+                    .value_counts()
+                    .to_dict(),
+                }
+            ),
             "preset": argumentos.preset,
             "set": argumentos.ajustes,
             "requested_options": opcoes,
             "effective_config": None,
             "repeats": argumentos.repeat,
             "base_seed": argumentos.base_seed,
-            "relato_lang": "en",
+            "relato_lang": "pt" if casos_livres else "en",
             "api_url": argumentos.api_url,
             "presets_sha256": sha256_arquivo(PRESETS),
             "warmup_seconds": aquecimento,
@@ -959,7 +1148,8 @@ def main(argv=None) -> None:
         print(f"  linhas  : {len(linhas)} x {repeticoes} repetição(ões)\n")
 
     executar_rodada(
-        diretorio, manifesto, linhas, cliente, repeticoes, base_seed
+        diretorio, manifesto, linhas, cliente, repeticoes, base_seed,
+        casos_livres=casos_livres,
     )
 
     metricas = finalizar(diretorio, manifesto)

@@ -149,5 +149,6 @@ risco de necrose e fatores predisponentes. SHA-256:
 `3b4fd87a3b964e6d7a4989f6407cc81a838cc73386f18b4dc93ca11dde8f2424`.
 
 O arquivo foi inspecionado individualmente e entrou somente no perfil
-`experimental`. Como ele foi capturado depois da validação acima, permanece
-`pending_specialist` até a ASAVET avaliar este hash exato.
+`experimental`. Como ele foi capturado depois da validação acima, ficou
+`pending_specialist` até a ASAVET avaliar este hash exato, o que aconteceu em
+26/09/2026 ([rodada 30 do João](../../../evidencias/joao/2026-09-26-31-validacao-dos-especialistas.md)).

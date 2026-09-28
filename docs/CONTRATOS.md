@@ -20,8 +20,14 @@ Desde 17/09 (decisão do B-10), o pipeline monta essa lista assim:
    desligada) — **sempre** entra, é a primeira da lista;
 2. as variações geradas pelo multi-query, **se** ligado, sem duplicar a
    reescrita;
-3. o documento hipotético do HyDE, **se** ligado (desligado por padrão
-   desde 17/09 — ver `HYDE_ENABLED` em `backend/app/core/config.py`).
+3. o documento hipotético do HyDE, **se** ligado.
+
+**Desde 25/09 as três etapas vêm desligadas por padrão** (rodada 24 do João):
+nas fichas de triagem, toda técnica piora a busca, e o relato vai cru. Elas
+continuam no código como braço da ablação (presets `fichas_tradutor` e
+`hoje_academico_llama_tradutor`). Quando ligadas, o `HybridQueryClient` tenta o
+Gemini e cai para o Ollama; desde 25/09 a queda deixa de ser invisível: cada
+chamada aparece em `provenance.query_stage.calls` na resposta.
 
 "Ligado" é superconjunto de "desligado": multi-query ligado nunca produz uma
 lista de natureza diferente da de desligado, só mais itens. Validado contra
@@ -34,11 +40,12 @@ O que a busca devolve, por trecho:
 
 | Campo | Uso |
 |---|---|
-| `chunk_id` | Identifica o trecho exato; usado para marcar quais embasaram a resposta |
-| `title` | Vai ao prompt e aparece na resposta ao tutor |
-| `content` | Corpo limpo que entra no prompt; não inclui os prefixos de título/seção usados somente no embedding |
+| `chunk_id` | Identifica o trecho exato; usado para marcar quais embasaram a resposta. Nas fichas: `ficha__<topic>` |
+| `title` | Vai ao prompt. Nas fichas, é o título da **ficha de leitura** ("Ficha de triagem: <quadro>") |
+| `content` | Corpo limpo que entra no prompt; não inclui os prefixos de título/seção usados somente no embedding. Nas fichas, é a **ficha de leitura** (o texto vetorizado é a ficha de busca, que o atendente não lê) |
 | `source` | Arquivo de origem, exibido junto do título |
 | `score` | Similaridade; decide o corte e vai nas métricas |
+| `display_title`, `references` | Só nas fichas (desde 25/09): o nome da ficha para o tutor e os documentos aprovados por trás dela (título real, periódico, ano, DOI). Vão à citação, não ao prompt |
 | `topic` | **O assunto do documento.** Identificador estável, em inglês e snake_case (`chocolate_toxicosis`, `urethral_obstruction`). Vem do sidecar JSON da fonte. Acrescentado em 12/09 (`74c6dfa`) |
 | `source_file` | Caminho do arquivo de origem, relativo à pasta de documentos. Acrescentado no mesmo commit |
 
@@ -86,15 +93,16 @@ atual não quebrar; quem consome por programa deve ler de `triage`.
 {
   "answer": str,                    // markdown pronto para exibir
   "sources": [                      // apenas os trechos que o classificador viu
-    { "title", "source", "score", "chunk_id", "cited" }
+    { "title", "source", "score", "chunk_id", "cited",
+      "topic", "display_title", "references": [ { "title", "journal", "year", "doi", "url" } ] }
   ],
   "triage": {
     "classificacao": "EMERGENCIA" | "NAO_EMERGENCIA" | "INCERTO",
     "justificativa": str,
     "sinais_de_alerta": [str],
     "recomendacao": str,
-    "fontes": [ { "index", "chunk_id", "title", "source" } ],
-    "raciocinio": str | null,       // preenchido quando o CoT existir (E4)
+    "fontes": [ { "index", "chunk_id", "title", "source", "display_title", "references" } ],
+    "raciocinio": str | null,       // preenchido com o Chain-of-Thought ligado
     "json_parsed": bool,            // o modelo devolveu um JSON
     "schema_valid": bool,           // o JSON tinha o formato esperado
     "attempts": int,
@@ -110,9 +118,23 @@ atual não quebrar; quem consome por programa deve ler de `triage`.
     "query_s", "retrieval_s", "generation_s", "total_s",
     "prompt_tokens", "completion_tokens", "tokens_per_s", "load_duration_s"
   },
-  "debug": { ... } | null           // só quando pedido
+  "debug": { ... } | null,          // só quando pedido
+  "provenance": {                   // quem respondeu, desta vez (desde 25/09)
+    "attendant": { "provider", "model", "model_version", "thinking", "fallback_from" },
+    "query_stage": { "rewriting", "multi_query", "hyde", "calls": [ { "step", "provider", "fallback_from" } ] }
+  }
 }
 ```
+
+"Apenas os trechos que o classificador viu" vale ao pé da letra desde 25/09:
+um trecho que não coube no teto de 4.000 caracteres do bloco de contexto não
+é fonte nem conta em `used_count`.
+
+**Quando o atendente não responde**, a API devolve **503** com
+`{"code": "attendant_unavailable" | "quota_exhausted", "details": {"provider",
+"model", "reason"}}`. O sistema nunca troca de modelo em silêncio: com
+`ATTENDANT_FALLBACK=ollama`, a resposta vem pelo modelo local e diz isso em
+`provenance.attendant.fallback_from` e no texto.
 
 Três campos merecem explicação:
 
@@ -136,13 +158,17 @@ vier na requisição vence; o que vier vazio usa o padrão.
 | `multi_query_enabled` | B1 | Gera variações da consulta |
 | `hyde_enabled` | B1 | Gera um documento hipotético como consulta extra |
 | `retrieval_enabled` | B2 | Desligado = **LLM puro**, a linha de base da ablação |
-| `context_top_k` | B2 | Quantos trechos vão ao prompt |
-| `context_min_score` | B2 | Score mínimo para um trecho entrar no prompt. **Padrão 0,70 desde 12/09** (era 0,0): sem trecho acima do corte, o classificador recebe nada e o sistema responde como sem RAG. Valor provisório até a régua de recuperação medir o limiar certo. `RetrievalInfo` ecoa o corte aplicado e a trava `used_below_min_score` |
+| `retrieval_mode` | A | `vector` (padrão desde 25/09: similaridade pura, sem rota, reranker, âncoras nem veto de espécie) ou `routed_rerank` (o caminho até 24/09) |
+| `context_top_k` | B2 | Quantos trechos vão ao prompt (padrão 3) |
+| `context_min_score` | B2 | Score mínimo para um trecho entrar no prompt. **Padrão 0,0 desde 25/09**: com as fichas, as 3 mais próximas entram sempre. A porta de 0,72 é a da base acadêmica (`ACADEMIC_CONTEXT_MIN_SCORE`, presets `hoje_academico_*` e `fichas_com_porta_0_72`). `RetrievalInfo` ecoa o corte aplicado e a trava `used_below_min_score` |
 | `rewritten_hint_enabled` | B2 | Passa também a versão reescrita ao classificador |
+| `attendant_provider` | B2 | `gemini` (padrão desde 25/09) ou `ollama` |
+| `llm_model` | B2 | O modelo local desta requisição (com `attendant_provider=ollama`) |
+| `think` | B2 | Se o modelo local "pensa" antes de responder (padrão falso) |
 | `prompt_version` | B2 | `v1_grounded` ou `v0_legacy` |
 | `structured_output_mode` | B2 | `schema` ou `json` |
 | `temperature`, `seed`, `num_predict` | B2 | Parâmetros de geração |
-| `cot_enabled` | B2 | **Ainda não implementado**: erro 400 |
+| `cot_enabled`, `cot_position` | B2 | Chain-of-Thought (rodada 7 do João): o raciocínio antes (`first`) ou depois (`last`) da classificação |
 | `self_refine_enabled` | B2 | **Ainda não implementado**: erro 400 |
 
 Duas regras de comportamento:
@@ -158,10 +184,10 @@ Duas regras de comportamento:
 | Rota | Dono | Situação |
 |---|---|---|
 | `POST /chat/` | B2 | Triagem completa |
-| `POST /search/` | A | Busca pura, sem classificação |
+| `POST /search/` | A | Busca pura, sem classificação e sem corte. Aceita `mode` (`vector`, o padrão, ou `routed_rerank`) |
 | `POST /voice/` | B1 | Transcrição de áudio. Campo `audio` (multipart). Recusa o que não é áudio (415) e acima de `MAX_AUDIO_UPLOAD_MB` (413); o arquivo é gravado com nome gerado no servidor e apagado após a resposta |
 | `GET /health/` | — | Verificação de saúde |
-| `GET /health/fingerprint` | B2 | Identidade da versão que respondeu: modelo com digest, hash dos prompts e, da base vetorial, a contagem, o hash dos ids (**recorte**), o hash do conteúdo (**texto e metadados**), o embedder e os parâmetros de chunking. O runner grava no manifesto de cada rodada e o `compare` avisa quando algo difere |
+| `GET /health/fingerprint` | B2 | Identidade da versão que respondeu: modelo com digest, hash dos prompts e do molde do bloco de contexto, o atendente (provedor, troca permitida, modelos, se a chave do Gemini está configurada — nunca a chave), os padrões (incluindo `retrieval_mode`, `think` e as flags do tradutor), os nomes das configurações vindas do ambiente e, da base vetorial, a contagem, o hash dos ids (**recorte**), o hash do conteúdo (**texto e metadados**), a **receita** do embedding lida do manifesto da coleção ativa e os parâmetros de chunking. O runner grava no manifesto de cada rodada e o `compare` avisa quando algo difere |
 | `POST /tutors/`, `GET /tutors/{id}`, `GET /tutors/{id}/pets` | B1 | Cadastro do tutor (Supabase). Em `real`, exige sessão tutor e vínculo `tutors.user_id`; em `demo`, preserva a compatibilidade legada |
 | `POST /pets/`, `GET /pets/{id}`, `PATCH /pets/{id}` | B1 | Cadastro do pet (Supabase). Em `real`, valida o titular pelo tutor vinculado. `pet_id` em `POST /chat/` injeta o cadastro no prompt |
 | `GET /conversations/{id}` | B1 | Histórico no MongoDB; em `real`, somente o tutor titular |

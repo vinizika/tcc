@@ -1,0 +1,8150 @@
+{
+ "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2": {
+  "dim": 384,
+  "indexar_s": 62.0,
+  "params_M": 118,
+  "dev": {
+   "todos": {
+    "P@1": 0.191,
+    "P@3": 0.298,
+    "MRR": 0.276,
+    "n": 47
+   },
+   "etapa1": {
+    "P@1": 0.214,
+    "P@3": 0.286,
+    "MRR": 0.278,
+    "n": 28
+   },
+   "etapa2": {
+    "P@1": 0.158,
+    "P@3": 0.316,
+    "MRR": 0.275,
+    "n": 19
+   }
+  },
+  "calib": {
+   "todos": {
+    "P@1": 0.125,
+    "P@3": 0.188,
+    "MRR": 0.196,
+    "n": 16
+   },
+   "etapa1": {
+    "P@1": 0.154,
+    "P@3": 0.231,
+    "MRR": 0.228,
+    "n": 13
+   },
+   "etapa2": {
+    "P@1": 0.0,
+    "P@3": 0.0,
+    "MRR": 0.056,
+    "n": 3
+   }
+  },
+  "regua": {
+   "todos": {
+    "P@1": 0.197,
+    "P@3": 0.318,
+    "MRR": 0.302,
+    "n": 66
+   },
+   "etapa1": {
+    "P@1": 0.194,
+    "P@3": 0.278,
+    "MRR": 0.298,
+    "n": 36
+   },
+   "etapa2": {
+    "P@1": 0.2,
+    "P@3": 0.367,
+    "MRR": 0.306,
+    "n": 30
+   }
+  },
+  "ms_por_consulta": 15.5,
+  "casos": {
+   "dev:p19": [
+    [
+     "airway_foreign_body_choking",
+     "grape_xylitol_toxicosis",
+     "toad_bufotoxin_poisoning",
+     "chocolate_toxicosis",
+     "dietary_indiscretion_mild"
+    ],
+    3
+   ],
+   "dev:p20": [
+    [
+     "snake_and_scorpion_envenomation",
+     "lily_toxicosis_cats",
+     "diabetic_ketoacidosis",
+     "mild_upper_respiratory_signs",
+     "inappropriate_urination_or_cystitis"
+    ],
+    null
+   ],
+   "dev:p21": [
+    [
+     "respiratory_distress",
+     "mild_upper_respiratory_signs",
+     "lily_toxicosis_cats",
+     "diabetic_ketoacidosis",
+     "congestive_heart_failure"
+    ],
+    0
+   ],
+   "dev:p22": [
+    [
+     "airway_foreign_body_choking",
+     "leptospirosis_acute",
+     "tremors_without_seizure",
+     "acute_hindlimb_paralysis",
+     "burns_and_electrical_injury"
+    ],
+    null
+   ],
+   "dev:p23": [
+    [
+     "airway_foreign_body_choking",
+     "leptospirosis_acute",
+     "urethral_obstruction",
+     "slow_growing_lump",
+     "ocular_emergency"
+    ],
+    7
+   ],
+   "dev:p24": [
+    [
+     "airway_foreign_body_choking",
+     "tremors_without_seizure",
+     "toad_bufotoxin_poisoning",
+     "mild_lameness",
+     "ocular_emergency"
+    ],
+    null
+   ],
+   "dev:p25": [
+    [
+     "lily_toxicosis_cats",
+     "feline_aortic_thromboembolism",
+     "grape_xylitol_toxicosis",
+     "inappropriate_urination_or_cystitis",
+     "diabetic_ketoacidosis"
+    ],
+    null
+   ],
+   "dev:p26": [
+    [
+     "tremors_without_seizure",
+     "airway_foreign_body_choking",
+     "burns_and_electrical_injury",
+     "kennel_cough_mild",
+     "canine_heatstroke"
+    ],
+    4
+   ],
+   "dev:p27": [
+    [
+     "airway_foreign_body_choking",
+     "single_vomiting_or_mild_diarrhea",
+     "congestive_heart_failure",
+     "dietary_indiscretion_mild",
+     "kennel_cough_mild"
+    ],
+    null
+   ],
+   "dev:p28": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     "snake_and_scorpion_envenomation",
+     "dystocia",
+     "cat_bite_abscess",
+     "diabetic_ketoacidosis"
+    ],
+    9
+   ],
+   "dev:p29": [
+    [
+     "ocular_emergency",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "burns_and_electrical_injury",
+     "tremors_without_seizure"
+    ],
+    2
+   ],
+   "dev:p30": [
+    [
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "kennel_cough_mild",
+     "snake_and_scorpion_envenomation",
+     "ticks_found_no_signs"
+    ],
+    9
+   ],
+   "dev:p31": [
+    [
+     "lily_toxicosis_cats",
+     "permethrin_toxicosis_cats",
+     "reduced_appetite_no_other_signs",
+     "cat_bite_abscess",
+     "carbamate_organophosphate_poisoning"
+    ],
+    null
+   ],
+   "dev:p32": [
+    [
+     "anaphylaxis_facial_swelling",
+     "airway_foreign_body_choking",
+     "insect_sting_local_reaction",
+     "flea_dermatitis_pruritus",
+     "otitis_externa_mild"
+    ],
+    0
+   ],
+   "dev:p33": [
+    [
+     "airway_foreign_body_choking",
+     "congestive_heart_failure",
+     "toad_bufotoxin_poisoning",
+     "kennel_cough_mild",
+     "dietary_indiscretion_mild"
+    ],
+    1
+   ],
+   "dev:p34": [
+    [
+     "mild_upper_respiratory_signs",
+     "diabetic_ketoacidosis",
+     "lily_toxicosis_cats",
+     "flea_dermatitis_pruritus",
+     "urethral_obstruction"
+    ],
+    null
+   ],
+   "dev:p35": [
+    [
+     "kennel_cough_mild",
+     "fading_neonate",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "hypoglycemia_toy_puppy"
+    ],
+    null
+   ],
+   "dev:p36": [
+    [
+     "ocular_emergency",
+     "flea_dermatitis_pruritus",
+     "leptospirosis_acute",
+     "airway_foreign_body_choking",
+     "slow_growing_lump"
+    ],
+    0
+   ],
+   "dev:p37": [
+    [
+     "respiratory_distress",
+     "lily_toxicosis_cats",
+     "cat_bite_abscess",
+     "carbamate_organophosphate_poisoning",
+     "grape_xylitol_toxicosis"
+    ],
+    null
+   ],
+   "dev:p38": [
+    [
+     "lily_toxicosis_cats",
+     "grape_xylitol_toxicosis",
+     "cat_bite_abscess",
+     "diabetic_ketoacidosis",
+     "permethrin_toxicosis_cats"
+    ],
+    null
+   ],
+   "dev:p39": [
+    [
+     "airway_foreign_body_choking",
+     "burns_and_electrical_injury",
+     "congestive_heart_failure",
+     "tremors_without_seizure",
+     "kennel_cough_mild"
+    ],
+    0
+   ],
+   "dev:p40": [
+    [
+     "airway_foreign_body_choking",
+     "hypoglycemia_toy_puppy",
+     "eclampsia",
+     "tremors_without_seizure",
+     "normal_whelping"
+    ],
+    null
+   ],
+   "dev:p41": [
+    [
+     "airway_foreign_body_choking",
+     "kennel_cough_mild",
+     "flea_dermatitis_pruritus",
+     "leptospirosis_acute",
+     "ticks_found_no_signs"
+    ],
+    6
+   ],
+   "dev:p42": [
+    [
+     "hypoglycemia_toy_puppy",
+     "fading_neonate",
+     "grape_xylitol_toxicosis",
+     "diabetic_ketoacidosis",
+     "airway_foreign_body_choking"
+    ],
+    0
+   ],
+   "dev:p43": [
+    [
+     "airway_foreign_body_choking",
+     "hypoglycemia_toy_puppy",
+     "tremors_without_seizure",
+     "ocular_emergency",
+     "mild_lameness"
+    ],
+    5
+   ],
+   "dev:p44": [
+    [
+     "lily_toxicosis_cats",
+     "grape_xylitol_toxicosis",
+     "cat_bite_abscess",
+     "snake_and_scorpion_envenomation",
+     "diabetic_ketoacidosis"
+    ],
+    null
+   ],
+   "dev:p45": [
+    [
+     "lily_toxicosis_cats",
+     "grape_xylitol_toxicosis",
+     "permethrin_toxicosis_cats",
+     "cat_bite_abscess",
+     "carbamate_organophosphate_poisoning"
+    ],
+    null
+   ],
+   "dev:p46": [
+    [
+     "lily_toxicosis_cats",
+     "diabetic_ketoacidosis",
+     "dystocia",
+     "reduced_appetite_no_other_signs",
+     "high_rise_syndrome_cats"
+    ],
+    null
+   ],
+   "dev:p47": [
+    [
+     "airway_foreign_body_choking",
+     "congestive_heart_failure",
+     "burns_and_electrical_injury",
+     "exertional_panting_mild",
+     "tremors_without_seizure"
+    ],
+    6
+   ],
+   "dev:p48": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "grape_xylitol_toxicosis",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "exertional_panting_mild"
+    ],
+    0
+   ],
+   "dev:p49": [
+    [
+     "airway_foreign_body_choking",
+     "exertional_panting_mild",
+     "mild_lameness",
+     "leptospirosis_acute",
+     "burns_and_electrical_injury"
+    ],
+    null
+   ],
+   "dev:p50": [
+    [
+     "airway_foreign_body_choking",
+     "leptospirosis_acute",
+     "anaphylaxis_facial_swelling",
+     "ocular_emergency",
+     "toad_bufotoxin_poisoning"
+    ],
+    7
+   ],
+   "dev:p51": [
+    [
+     "airway_foreign_body_choking",
+     "kennel_cough_mild",
+     "congestive_heart_failure",
+     "exertional_panting_mild",
+     "canine_heatstroke"
+    ],
+    1
+   ],
+   "dev:p52": [
+    [
+     "mild_conjunctivitis",
+     "diabetic_ketoacidosis",
+     "cat_bite_abscess",
+     "permethrin_toxicosis_cats",
+     "lily_toxicosis_cats"
+    ],
+    0
+   ],
+   "dev:p53": [
+    [
+     "hypoglycemia_toy_puppy",
+     "normal_whelping",
+     "fading_neonate",
+     "eclampsia",
+     "airway_foreign_body_choking"
+    ],
+    1
+   ],
+   "dev:p54": [
+    [
+     "airway_foreign_body_choking",
+     "congestive_heart_failure",
+     "respiratory_distress",
+     "kennel_cough_mild",
+     "burns_and_electrical_injury"
+    ],
+    5
+   ],
+   "dev:p55": [
+    [
+     "airway_foreign_body_choking",
+     "mild_lameness",
+     "canine_heatstroke",
+     "acute_hindlimb_paralysis",
+     "burns_and_electrical_injury"
+    ],
+    1
+   ],
+   "dev:p56": [
+    [
+     "flea_dermatitis_pruritus",
+     "snake_and_scorpion_envenomation",
+     "mild_upper_respiratory_signs",
+     "carbamate_organophosphate_poisoning",
+     "rabies_exposure_wild_animal_bite"
+    ],
+    0
+   ],
+   "dev:p57": [
+    [
+     "exertional_panting_mild",
+     "grape_xylitol_toxicosis",
+     "single_vomiting_or_mild_diarrhea",
+     "tremors_without_seizure",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "dev:p58": [
+    [
+     "snake_and_scorpion_envenomation",
+     "rabies_exposure_wild_animal_bite",
+     "flea_dermatitis_pruritus",
+     "carbamate_organophosphate_poisoning",
+     "mild_upper_respiratory_signs"
+    ],
+    6
+   ],
+   "dev:p59": [
+    [
+     "lily_toxicosis_cats",
+     "diabetic_ketoacidosis",
+     "feline_aortic_thromboembolism",
+     "fading_neonate",
+     "high_rise_syndrome_cats"
+    ],
+    null
+   ],
+   "dev:p60": [
+    [
+     "airway_foreign_body_choking",
+     "leptospirosis_acute",
+     "ocular_emergency",
+     "trauma_and_bleeding",
+     "slow_growing_lump"
+    ],
+    null
+   ],
+   "dev:p61": [
+    [
+     "diabetic_ketoacidosis",
+     "reduced_appetite_no_other_signs",
+     "mild_upper_respiratory_signs",
+     "snake_and_scorpion_envenomation",
+     "urethral_obstruction"
+    ],
+    null
+   ],
+   "dev:p62": [
+    [
+     "airway_foreign_body_choking",
+     "periodontal_disease_mild",
+     "urethral_obstruction",
+     "kennel_cough_mild",
+     "dietary_indiscretion_mild"
+    ],
+    null
+   ],
+   "dev:p63": [
+    [
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "kennel_cough_mild",
+     "tremors_without_seizure",
+     "respiratory_distress"
+    ],
+    null
+   ],
+   "dev:p64": [
+    [
+     "flea_dermatitis_pruritus",
+     "snake_and_scorpion_envenomation",
+     "cat_bite_abscess",
+     "rabies_exposure_wild_animal_bite",
+     "permethrin_toxicosis_cats"
+    ],
+    null
+   ],
+   "dev:p65": [
+    [
+     "exertional_panting_mild",
+     "canine_heatstroke",
+     "airway_foreign_body_choking",
+     "burns_and_electrical_injury",
+     "tremors_without_seizure"
+    ],
+    0
+   ],
+   "calib:p01": [
+    [
+     "airway_foreign_body_choking",
+     "seizures",
+     "congestive_heart_failure",
+     "flea_dermatitis_pruritus",
+     "kennel_cough_mild"
+    ],
+    null
+   ],
+   "calib:p02": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "congestive_heart_failure",
+     "burns_and_electrical_injury",
+     "tremors_without_seizure"
+    ],
+    5
+   ],
+   "calib:p03": [
+    [
+     "airway_foreign_body_choking",
+     "ocular_emergency",
+     "acute_hindlimb_paralysis",
+     "tremors_without_seizure",
+     "burns_and_electrical_injury"
+    ],
+    null
+   ],
+   "calib:p04": [
+    [
+     "grape_xylitol_toxicosis",
+     "single_vomiting_or_mild_diarrhea",
+     "hypoglycemia_toy_puppy",
+     "leptospirosis_acute",
+     "airway_foreign_body_choking"
+    ],
+    9
+   ],
+   "calib:p05": [
+    [
+     "lily_toxicosis_cats",
+     "carbamate_organophosphate_poisoning",
+     "inappropriate_urination_or_cystitis",
+     "grape_xylitol_toxicosis",
+     "permethrin_toxicosis_cats"
+    ],
+    null
+   ],
+   "calib:p06": [
+    [
+     "lily_toxicosis_cats",
+     "feline_aortic_thromboembolism",
+     "grape_xylitol_toxicosis",
+     "cat_bite_abscess",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "calib:p07": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "airway_foreign_body_choking",
+     "dietary_indiscretion_mild",
+     "kennel_cough_mild",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "calib:p08": [
+    [
+     "lily_toxicosis_cats",
+     "permethrin_toxicosis_cats",
+     "flea_dermatitis_pruritus",
+     "cat_bite_abscess",
+     "snake_and_scorpion_envenomation"
+    ],
+    null
+   ],
+   "calib:p09": [
+    [
+     "inappropriate_urination_or_cystitis",
+     "urethral_obstruction",
+     "permethrin_toxicosis_cats",
+     "lily_toxicosis_cats",
+     "flea_dermatitis_pruritus"
+    ],
+    0
+   ],
+   "calib:p10": [
+    [
+     "airway_foreign_body_choking",
+     "urethral_obstruction",
+     "single_vomiting_or_mild_diarrhea",
+     "leptospirosis_acute",
+     "dietary_indiscretion_mild"
+    ],
+    5
+   ],
+   "calib:p11": [
+    [
+     "pyometra",
+     "leptospirosis_acute",
+     "airway_foreign_body_choking",
+     "trauma_and_bleeding",
+     "dietary_indiscretion_mild"
+    ],
+    null
+   ],
+   "calib:p12": [
+    [
+     "urethral_obstruction",
+     "high_rise_syndrome_cats",
+     "anaphylaxis_facial_swelling",
+     "respiratory_distress",
+     "acute_hindlimb_paralysis"
+    ],
+    4
+   ],
+   "calib:p13": [
+    [
+     "airway_foreign_body_choking",
+     "exertional_panting_mild",
+     "leptospirosis_acute",
+     "burns_and_electrical_injury",
+     "canine_heatstroke"
+    ],
+    null
+   ],
+   "calib:p14": [
+    [
+     "airway_foreign_body_choking",
+     "mild_lameness",
+     "tremors_without_seizure",
+     "leptospirosis_acute",
+     "urethral_obstruction"
+    ],
+    null
+   ],
+   "calib:p17": [
+    [
+     "airway_foreign_body_choking",
+     "ocular_emergency",
+     "leptospirosis_acute",
+     "toad_bufotoxin_poisoning",
+     "burns_and_electrical_injury"
+    ],
+    1
+   ],
+   "calib:p18": [
+    [
+     "mild_conjunctivitis",
+     "diabetic_ketoacidosis",
+     "permethrin_toxicosis_cats",
+     "lily_toxicosis_cats",
+     "cat_bite_abscess"
+    ],
+    0
+   ],
+   "regua:b01": [
+    [
+     "chocolate_toxicosis",
+     "grape_xylitol_toxicosis",
+     "single_vomiting_or_mild_diarrhea",
+     "dietary_indiscretion_mild",
+     "toad_bufotoxin_poisoning"
+    ],
+    0
+   ],
+   "regua:b02": [
+    [
+     "lily_toxicosis_cats",
+     "urethral_obstruction",
+     "inappropriate_urination_or_cystitis",
+     "diabetic_ketoacidosis",
+     "high_rise_syndrome_cats"
+    ],
+    1
+   ],
+   "regua:b03": [
+    [
+     "airway_foreign_body_choking",
+     "congestive_heart_failure",
+     "tremors_without_seizure",
+     "burns_and_electrical_injury",
+     "canine_heatstroke"
+    ],
+    8
+   ],
+   "regua:b04": [
+    [
+     "airway_foreign_body_choking",
+     "burns_and_electrical_injury",
+     "tremors_without_seizure",
+     "ocular_emergency",
+     "urethral_obstruction"
+    ],
+    null
+   ],
+   "regua:b05": [
+    [
+     "mild_upper_respiratory_signs",
+     "lily_toxicosis_cats",
+     "grape_xylitol_toxicosis",
+     "permethrin_toxicosis_cats",
+     "respiratory_distress"
+    ],
+    0
+   ],
+   "regua:b06": [
+    [
+     "leptospirosis_acute",
+     "airway_foreign_body_choking",
+     "ocular_emergency",
+     "trauma_and_bleeding",
+     "anticoagulant_rodenticide_poisoning"
+    ],
+    3
+   ],
+   "regua:b07": [
+    [
+     "dietary_indiscretion_mild",
+     "airway_foreign_body_choking",
+     "congestive_heart_failure",
+     "single_vomiting_or_mild_diarrhea",
+     "kennel_cough_mild"
+    ],
+    null
+   ],
+   "regua:b08": [
+    [
+     "grape_xylitol_toxicosis",
+     "toad_bufotoxin_poisoning",
+     "tremors_without_seizure",
+     "hypoglycemia_toy_puppy",
+     "allium_toxicosis"
+    ],
+    4
+   ],
+   "regua:b09": [
+    [
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "otitis_externa_mild",
+     "slow_growing_lump",
+     "congestive_heart_failure"
+    ],
+    0
+   ],
+   "regua:b10": [
+    [
+     "airway_foreign_body_choking",
+     "mild_lameness",
+     "canine_heatstroke",
+     "tremors_without_seizure",
+     "acute_hindlimb_paralysis"
+    ],
+    1
+   ],
+   "regua:b11": [
+    [
+     "lily_toxicosis_cats",
+     "diabetic_ketoacidosis",
+     "anaphylaxis_facial_swelling",
+     "cat_bite_abscess",
+     "permethrin_toxicosis_cats"
+    ],
+    7
+   ],
+   "regua:b12": [
+    [
+     "airway_foreign_body_choking",
+     "single_vomiting_or_mild_diarrhea",
+     "congestive_heart_failure",
+     "dietary_indiscretion_mild",
+     "tremors_without_seizure"
+    ],
+    null
+   ],
+   "regua:b13": [
+    [
+     "airway_foreign_body_choking",
+     "slow_growing_lump",
+     "leptospirosis_acute",
+     "ocular_emergency",
+     "periodontal_disease_mild"
+    ],
+    5
+   ],
+   "regua:b14": [
+    [
+     "fading_neonate",
+     "hypoglycemia_toy_puppy",
+     "normal_whelping",
+     "ticks_found_no_signs",
+     "congestive_heart_failure"
+    ],
+    0
+   ],
+   "regua:b15": [
+    [
+     "airway_foreign_body_choking",
+     "leptospirosis_acute",
+     "tremors_without_seizure",
+     "congestive_heart_failure",
+     "respiratory_distress"
+    ],
+    null
+   ],
+   "regua:b16": [
+    [
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "leptospirosis_acute",
+     "ocular_emergency",
+     "grape_xylitol_toxicosis"
+    ],
+    6
+   ],
+   "regua:b17": [
+    [
+     "airway_foreign_body_choking",
+     "tremors_without_seizure",
+     "burns_and_electrical_injury",
+     "acute_hindlimb_paralysis",
+     "urethral_obstruction"
+    ],
+    3
+   ],
+   "regua:b18": [
+    [
+     "mild_upper_respiratory_signs",
+     "congestive_heart_failure",
+     "cat_bite_abscess",
+     "grape_xylitol_toxicosis",
+     "lily_toxicosis_cats"
+    ],
+    0
+   ],
+   "regua:b19": [
+    [
+     "lily_toxicosis_cats",
+     "carbamate_organophosphate_poisoning",
+     "permethrin_toxicosis_cats",
+     "diabetic_ketoacidosis",
+     "allium_toxicosis"
+    ],
+    null
+   ],
+   "regua:b20": [
+    [
+     "airway_foreign_body_choking",
+     "tremors_without_seizure",
+     "burns_and_electrical_injury",
+     "congestive_heart_failure",
+     "ticks_found_no_signs"
+    ],
+    null
+   ],
+   "regua:b21": [
+    [
+     "airway_foreign_body_choking",
+     "seizures",
+     "tremors_without_seizure",
+     "kennel_cough_mild",
+     "respiratory_distress"
+    ],
+    null
+   ],
+   "regua:b22": [
+    [
+     "toad_bufotoxin_poisoning",
+     "snake_and_scorpion_envenomation",
+     "flea_dermatitis_pruritus",
+     "ticks_found_no_signs",
+     "airway_foreign_body_choking"
+    ],
+    8
+   ],
+   "regua:b23": [
+    [
+     "grape_xylitol_toxicosis",
+     "diabetic_ketoacidosis",
+     "mild_conjunctivitis",
+     "flea_dermatitis_pruritus",
+     "cat_bite_abscess"
+    ],
+    null
+   ],
+   "regua:b24": [
+    [
+     "airway_foreign_body_choking",
+     "exertional_panting_mild",
+     "single_vomiting_or_mild_diarrhea",
+     "dietary_indiscretion_mild",
+     "leptospirosis_acute"
+    ],
+    6
+   ],
+   "regua:b25": [
+    [
+     "grape_xylitol_toxicosis",
+     "airway_foreign_body_choking",
+     "single_vomiting_or_mild_diarrhea",
+     "dietary_indiscretion_mild",
+     "flea_dermatitis_pruritus"
+    ],
+    3
+   ],
+   "regua:b26": [
+    [
+     "diabetic_ketoacidosis",
+     "lily_toxicosis_cats",
+     "urethral_obstruction",
+     "cat_bite_abscess",
+     "permethrin_toxicosis_cats"
+    ],
+    5
+   ],
+   "regua:b27": [
+    [
+     "airway_foreign_body_choking",
+     "tremors_without_seizure",
+     "leptospirosis_acute",
+     "congestive_heart_failure",
+     "urethral_obstruction"
+    ],
+    null
+   ],
+   "regua:b28": [
+    [
+     "exertional_panting_mild",
+     "periodontal_disease_mild",
+     "airway_foreign_body_choking",
+     "grape_xylitol_toxicosis",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "regua:b29": [
+    [
+     "diabetic_ketoacidosis",
+     "grape_xylitol_toxicosis",
+     "fading_neonate",
+     "lily_toxicosis_cats",
+     "cat_bite_abscess"
+    ],
+    8
+   ],
+   "regua:b30": [
+    [
+     "lily_toxicosis_cats",
+     "grape_xylitol_toxicosis",
+     "inappropriate_urination_or_cystitis",
+     "feline_aortic_thromboembolism",
+     "cat_bite_abscess"
+    ],
+    null
+   ],
+   "regua:b31": [
+    [
+     "mild_upper_respiratory_signs",
+     "lily_toxicosis_cats",
+     "snake_and_scorpion_envenomation",
+     "carbamate_organophosphate_poisoning",
+     "permethrin_toxicosis_cats"
+    ],
+    9
+   ],
+   "regua:b32": [
+    [
+     "congestive_heart_failure",
+     "airway_foreign_body_choking",
+     "kennel_cough_mild",
+     "respiratory_distress",
+     "burns_and_electrical_injury"
+    ],
+    0
+   ],
+   "regua:b33": [
+    [
+     "hypoglycemia_toy_puppy",
+     "leptospirosis_acute",
+     "dietary_indiscretion_mild",
+     "congestive_heart_failure",
+     "toad_bufotoxin_poisoning"
+    ],
+    7
+   ],
+   "regua:b34": [
+    [
+     "leptospirosis_acute",
+     "kennel_cough_mild",
+     "flea_dermatitis_pruritus",
+     "ticks_found_no_signs",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "regua:b35": [
+    [
+     "airway_foreign_body_choking",
+     "hypoglycemia_toy_puppy",
+     "tremors_without_seizure",
+     "eclampsia",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "regua:b36": [
+    [
+     "lily_toxicosis_cats",
+     "diabetic_ketoacidosis",
+     "anaphylaxis_facial_swelling",
+     "respiratory_distress",
+     "high_rise_syndrome_cats"
+    ],
+    7
+   ],
+   "regua:b37": [
+    [
+     "airway_foreign_body_choking",
+     "otitis_externa_mild",
+     "toad_bufotoxin_poisoning",
+     "kennel_cough_mild",
+     "flea_dermatitis_pruritus"
+    ],
+    5
+   ],
+   "regua:b38": [
+    [
+     "lily_toxicosis_cats",
+     "anaphylaxis_facial_swelling",
+     "snake_and_scorpion_envenomation",
+     "flea_dermatitis_pruritus",
+     "permethrin_toxicosis_cats"
+    ],
+    0
+   ],
+   "regua:b39": [
+    [
+     "flea_dermatitis_pruritus",
+     "otitis_externa_mild",
+     "airway_foreign_body_choking",
+     "ticks_found_no_signs",
+     "grape_xylitol_toxicosis"
+    ],
+    6
+   ],
+   "regua:b40": [
+    [
+     "congestive_heart_failure",
+     "airway_foreign_body_choking",
+     "burns_and_electrical_injury",
+     "acute_hindlimb_paralysis",
+     "tremors_without_seizure"
+    ],
+    4
+   ],
+   "regua:b41": [
+    [
+     "airway_foreign_body_choking",
+     "leptospirosis_acute",
+     "tremors_without_seizure",
+     "pyometra",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    null
+   ],
+   "regua:b42": [
+    [
+     "urethral_obstruction",
+     "diabetic_ketoacidosis",
+     "mild_upper_respiratory_signs",
+     "inappropriate_urination_or_cystitis",
+     "lily_toxicosis_cats"
+    ],
+    null
+   ],
+   "regua:b43": [
+    [
+     "ocular_emergency",
+     "flea_dermatitis_pruritus",
+     "slow_growing_lump",
+     "airway_foreign_body_choking",
+     "urethral_obstruction"
+    ],
+    0
+   ],
+   "regua:b44": [
+    [
+     "lily_toxicosis_cats",
+     "mild_upper_respiratory_signs",
+     "mild_conjunctivitis",
+     "snake_and_scorpion_envenomation",
+     "anaphylaxis_facial_swelling"
+    ],
+    null
+   ],
+   "regua:b45": [
+    [
+     "airway_foreign_body_choking",
+     "snake_and_scorpion_envenomation",
+     "mild_lameness",
+     "ocular_emergency",
+     "leptospirosis_acute"
+    ],
+    1
+   ],
+   "regua:b46": [
+    [
+     "flea_dermatitis_pruritus",
+     "ticks_found_no_signs",
+     "airway_foreign_body_choking",
+     "otitis_externa_mild",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "regua:b47": [
+    [
+     "hypoglycemia_toy_puppy",
+     "fading_neonate",
+     "diabetic_ketoacidosis",
+     "eclampsia",
+     "grape_xylitol_toxicosis"
+    ],
+    0
+   ],
+   "regua:b48": [
+    [
+     "airway_foreign_body_choking",
+     "tremors_without_seizure",
+     "acute_hindlimb_paralysis",
+     "burns_and_electrical_injury",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "regua:b49": [
+    [
+     "respiratory_distress",
+     "lily_toxicosis_cats",
+     "mild_upper_respiratory_signs",
+     "cat_bite_abscess",
+     "high_rise_syndrome_cats"
+    ],
+    4
+   ],
+   "regua:b50": [
+    [
+     "burns_and_electrical_injury",
+     "fading_neonate",
+     "hypoglycemia_toy_puppy",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking"
+    ],
+    0
+   ],
+   "regua:b51": [
+    [
+     "airway_foreign_body_choking",
+     "tremors_without_seizure",
+     "acute_hindlimb_paralysis",
+     "single_vomiting_or_mild_diarrhea",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "regua:b52": [
+    [
+     "grape_xylitol_toxicosis",
+     "tremors_without_seizure",
+     "allium_toxicosis",
+     "periodontal_disease_mild",
+     "otitis_externa_mild"
+    ],
+    0
+   ],
+   "regua:b53": [
+    [
+     "airway_foreign_body_choking",
+     "eclampsia",
+     "respiratory_distress",
+     "exertional_panting_mild",
+     "hypoglycemia_toy_puppy"
+    ],
+    null
+   ],
+   "regua:b54": [
+    [
+     "anaphylaxis_facial_swelling",
+     "rabies_exposure_wild_animal_bite",
+     "lily_toxicosis_cats",
+     "snake_and_scorpion_envenomation",
+     "diabetic_ketoacidosis"
+    ],
+    null
+   ],
+   "regua:b55": [
+    [
+     "airway_foreign_body_choking",
+     "congestive_heart_failure",
+     "kennel_cough_mild",
+     "exertional_panting_mild",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    2
+   ],
+   "regua:b56": [
+    [
+     "lily_toxicosis_cats",
+     "diabetic_ketoacidosis",
+     "grape_xylitol_toxicosis",
+     "carbamate_organophosphate_poisoning",
+     "permethrin_toxicosis_cats"
+    ],
+    null
+   ],
+   "regua:b57": [
+    [
+     "congestive_heart_failure",
+     "otitis_externa_mild",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "tremors_without_seizure"
+    ],
+    1
+   ],
+   "regua:b58": [
+    [
+     "cat_bite_abscess",
+     "lily_toxicosis_cats",
+     "grape_xylitol_toxicosis",
+     "allium_toxicosis",
+     "dystocia"
+    ],
+    null
+   ],
+   "regua:b59": [
+    [
+     "tremors_without_seizure",
+     "airway_foreign_body_choking",
+     "single_vomiting_or_mild_diarrhea",
+     "leptospirosis_acute",
+     "flea_dermatitis_pruritus"
+    ],
+    null
+   ],
+   "regua:b60": [
+    [
+     "airway_foreign_body_choking",
+     "leptospirosis_acute",
+     "tremors_without_seizure",
+     "periodontal_disease_mild",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    5
+   ],
+   "regua:b61": [
+    [
+     "canine_heatstroke",
+     "airway_foreign_body_choking",
+     "exertional_panting_mild",
+     "tremors_without_seizure",
+     "leptospirosis_acute"
+    ],
+    2
+   ],
+   "regua:b62": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     "diabetic_ketoacidosis",
+     "carbamate_organophosphate_poisoning",
+     "cat_bite_abscess",
+     "snake_and_scorpion_envenomation"
+    ],
+    0
+   ],
+   "regua:b63": [
+    [
+     "grape_xylitol_toxicosis",
+     "ticks_found_no_signs",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "periodontal_disease_mild"
+    ],
+    1
+   ],
+   "regua:b64": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "grape_xylitol_toxicosis",
+     "airway_foreign_body_choking",
+     "dietary_indiscretion_mild",
+     "leptospirosis_acute"
+    ],
+    0
+   ],
+   "regua:b65": [
+    [
+     "lily_toxicosis_cats",
+     "grape_xylitol_toxicosis",
+     "cat_bite_abscess",
+     "feline_aortic_thromboembolism",
+     "inappropriate_urination_or_cystitis"
+    ],
+    null
+   ],
+   "regua:b66": [
+    [
+     "airway_foreign_body_choking",
+     "single_vomiting_or_mild_diarrhea",
+     "leptospirosis_acute",
+     "exertional_panting_mild",
+     "hypoglycemia_toy_puppy"
+    ],
+    1
+   ]
+  }
+ },
+ "sentence-transformers/paraphrase-multilingual-mpnet-base-v2": {
+  "dim": 768,
+  "indexar_s": 223.1,
+  "params_M": 278,
+  "dev": {
+   "todos": {
+    "P@1": 0.213,
+    "P@3": 0.468,
+    "MRR": 0.374,
+    "n": 47
+   },
+   "etapa1": {
+    "P@1": 0.25,
+    "P@3": 0.5,
+    "MRR": 0.401,
+    "n": 28
+   },
+   "etapa2": {
+    "P@1": 0.158,
+    "P@3": 0.421,
+    "MRR": 0.334,
+    "n": 19
+   }
+  },
+  "calib": {
+   "todos": {
+    "P@1": 0.062,
+    "P@3": 0.125,
+    "MRR": 0.172,
+    "n": 16
+   },
+   "etapa1": {
+    "P@1": 0.077,
+    "P@3": 0.154,
+    "MRR": 0.176,
+    "n": 13
+   },
+   "etapa2": {
+    "P@1": 0.0,
+    "P@3": 0.0,
+    "MRR": 0.156,
+    "n": 3
+   }
+  },
+  "regua": {
+   "todos": {
+    "P@1": 0.258,
+    "P@3": 0.455,
+    "MRR": 0.394,
+    "n": 66
+   },
+   "etapa1": {
+    "P@1": 0.25,
+    "P@3": 0.417,
+    "MRR": 0.384,
+    "n": 36
+   },
+   "etapa2": {
+    "P@1": 0.267,
+    "P@3": 0.5,
+    "MRR": 0.405,
+    "n": 30
+   }
+  },
+  "ms_por_consulta": 65.8,
+  "casos": {
+   "dev:p19": [
+    [
+     "chocolate_toxicosis",
+     "grape_xylitol_toxicosis",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "seizures"
+    ],
+    0
+   ],
+   "dev:p20": [
+    [
+     "lily_toxicosis_cats",
+     "permethrin_toxicosis_cats",
+     "diabetic_ketoacidosis",
+     "grape_xylitol_toxicosis",
+     "cat_bite_abscess"
+    ],
+    null
+   ],
+   "dev:p21": [
+    [
+     "cat_bite_abscess",
+     "respiratory_distress",
+     "urethral_obstruction",
+     "permethrin_toxicosis_cats",
+     "diabetic_ketoacidosis"
+    ],
+    1
+   ],
+   "dev:p22": [
+    [
+     "tremors_without_seizure",
+     "burns_and_electrical_injury",
+     "acute_hindlimb_paralysis",
+     "canine_heatstroke",
+     "seizures"
+    ],
+    4
+   ],
+   "dev:p23": [
+    [
+     "ocular_emergency",
+     "trauma_and_bleeding",
+     "leptospirosis_acute",
+     "acute_hindlimb_paralysis",
+     "burns_and_electrical_injury"
+    ],
+    1
+   ],
+   "dev:p24": [
+    [
+     "toad_bufotoxin_poisoning",
+     "tremors_without_seizure",
+     "airway_foreign_body_choking",
+     "urethral_obstruction",
+     "canine_heatstroke"
+    ],
+    3
+   ],
+   "dev:p25": [
+    [
+     "lily_toxicosis_cats",
+     "diabetic_ketoacidosis",
+     "permethrin_toxicosis_cats",
+     "urethral_obstruction",
+     "cat_bite_abscess"
+    ],
+    null
+   ],
+   "dev:p26": [
+    [
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "tremors_without_seizure",
+     "canine_heatstroke",
+     "seizures"
+    ],
+    3
+   ],
+   "dev:p27": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "airway_foreign_body_choking",
+     "urethral_obstruction",
+     "leptospirosis_acute",
+     "congestive_heart_failure"
+    ],
+    null
+   ],
+   "dev:p28": [
+    [
+     "fading_neonate",
+     "dystocia",
+     "cat_bite_abscess",
+     "lily_toxicosis_cats",
+     "hypoglycemia_toy_puppy"
+    ],
+    0
+   ],
+   "dev:p29": [
+    [
+     "acute_hindlimb_paralysis",
+     "tremors_without_seizure",
+     "airway_foreign_body_choking",
+     "mild_lameness",
+     "leptospirosis_acute"
+    ],
+    0
+   ],
+   "dev:p30": [
+    [
+     "toad_bufotoxin_poisoning",
+     "grape_xylitol_toxicosis",
+     "snake_and_scorpion_envenomation",
+     "leptospirosis_acute",
+     "acute_hindlimb_paralysis"
+    ],
+    8
+   ],
+   "dev:p31": [
+    [
+     "permethrin_toxicosis_cats",
+     "reduced_appetite_no_other_signs",
+     "human_medication_poisoning",
+     "lily_toxicosis_cats",
+     "carbamate_organophosphate_poisoning"
+    ],
+    2
+   ],
+   "dev:p32": [
+    [
+     "anaphylaxis_facial_swelling",
+     "snake_and_scorpion_envenomation",
+     "insect_sting_local_reaction",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus"
+    ],
+    0
+   ],
+   "dev:p33": [
+    [
+     "airway_foreign_body_choking",
+     "kennel_cough_mild",
+     "congestive_heart_failure",
+     "grape_xylitol_toxicosis",
+     "periodontal_disease_mild"
+    ],
+    2
+   ],
+   "dev:p34": [
+    [
+     "permethrin_toxicosis_cats",
+     "diabetic_ketoacidosis",
+     "urethral_obstruction",
+     "cat_bite_abscess",
+     "lily_toxicosis_cats"
+    ],
+    null
+   ],
+   "dev:p35": [
+    [
+     "fading_neonate",
+     "snake_and_scorpion_envenomation",
+     "hypoglycemia_toy_puppy",
+     "grape_xylitol_toxicosis",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "dev:p36": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "tremors_without_seizure",
+     "mild_conjunctivitis",
+     "toad_bufotoxin_poisoning"
+    ],
+    7
+   ],
+   "dev:p37": [
+    [
+     "seizures",
+     "permethrin_toxicosis_cats",
+     "snake_and_scorpion_envenomation",
+     "grape_xylitol_toxicosis",
+     "lily_toxicosis_cats"
+    ],
+    1
+   ],
+   "dev:p38": [
+    [
+     "lily_toxicosis_cats",
+     "cat_bite_abscess",
+     "diabetic_ketoacidosis",
+     "grape_xylitol_toxicosis",
+     "permethrin_toxicosis_cats"
+    ],
+    null
+   ],
+   "dev:p39": [
+    [
+     "airway_foreign_body_choking",
+     "tremors_without_seizure",
+     "burns_and_electrical_injury",
+     "congestive_heart_failure",
+     "acute_hindlimb_paralysis"
+    ],
+    0
+   ],
+   "dev:p40": [
+    [
+     "normal_whelping",
+     "eclampsia",
+     "hypoglycemia_toy_puppy",
+     "airway_foreign_body_choking",
+     "pyometra"
+    ],
+    8
+   ],
+   "dev:p41": [
+    [
+     "airway_foreign_body_choking",
+     "periodontal_disease_mild",
+     "kennel_cough_mild",
+     "flea_dermatitis_pruritus",
+     "distemper_neurological"
+    ],
+    4
+   ],
+   "dev:p42": [
+    [
+     "fading_neonate",
+     "hypoglycemia_toy_puppy",
+     "grape_xylitol_toxicosis",
+     "diabetic_ketoacidosis",
+     "cat_bite_abscess"
+    ],
+    1
+   ],
+   "dev:p43": [
+    [
+     "airway_foreign_body_choking",
+     "hypoglycemia_toy_puppy",
+     "acute_hindlimb_paralysis",
+     "tremors_without_seizure",
+     "normal_whelping"
+    ],
+    9
+   ],
+   "dev:p44": [
+    [
+     "lily_toxicosis_cats",
+     "grape_xylitol_toxicosis",
+     "permethrin_toxicosis_cats",
+     "diabetic_ketoacidosis",
+     "reduced_appetite_no_other_signs"
+    ],
+    null
+   ],
+   "dev:p45": [
+    [
+     "lily_toxicosis_cats",
+     "permethrin_toxicosis_cats",
+     "mild_upper_respiratory_signs",
+     "reduced_appetite_no_other_signs",
+     "diabetic_ketoacidosis"
+    ],
+    2
+   ],
+   "dev:p46": [
+    [
+     "lily_toxicosis_cats",
+     "reduced_appetite_no_other_signs",
+     "permethrin_toxicosis_cats",
+     "cat_bite_abscess",
+     "mild_upper_respiratory_signs"
+    ],
+    null
+   ],
+   "dev:p47": [
+    [
+     "tremors_without_seizure",
+     "airway_foreign_body_choking",
+     "seizures",
+     "vestibular_syndrome_otitis_interna",
+     "burns_and_electrical_injury"
+    ],
+    5
+   ],
+   "dev:p48": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "grape_xylitol_toxicosis",
+     "chocolate_toxicosis",
+     "vestibular_syndrome_otitis_interna",
+     "periodontal_disease_mild"
+    ],
+    0
+   ],
+   "dev:p49": [
+    [
+     "osteoarthritis_stiffness",
+     "periodontal_disease_mild",
+     "tremors_without_seizure",
+     "mild_lameness",
+     "airway_foreign_body_choking"
+    ],
+    0
+   ],
+   "dev:p50": [
+    [
+     "anaphylaxis_facial_swelling",
+     "burns_and_electrical_injury",
+     "leptospirosis_acute",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking"
+    ],
+    6
+   ],
+   "dev:p51": [
+    [
+     "airway_foreign_body_choking",
+     "kennel_cough_mild",
+     "burns_and_electrical_injury",
+     "periodontal_disease_mild",
+     "tremors_without_seizure"
+    ],
+    1
+   ],
+   "dev:p52": [
+    [
+     "mild_conjunctivitis",
+     "diabetic_ketoacidosis",
+     "cat_bite_abscess",
+     "permethrin_toxicosis_cats",
+     "flea_dermatitis_pruritus"
+    ],
+    0
+   ],
+   "dev:p53": [
+    [
+     "normal_whelping",
+     "eclampsia",
+     "hypoglycemia_toy_puppy",
+     "fading_neonate",
+     "tremors_without_seizure"
+    ],
+    0
+   ],
+   "dev:p54": [
+    [
+     "airway_foreign_body_choking",
+     "tremors_without_seizure",
+     "seizures",
+     "osteoarthritis_stiffness",
+     "acute_hindlimb_paralysis"
+    ],
+    1
+   ],
+   "dev:p55": [
+    [
+     "tremors_without_seizure",
+     "mild_lameness",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "ocular_emergency"
+    ],
+    1
+   ],
+   "dev:p56": [
+    [
+     "cat_bite_abscess",
+     "diabetic_ketoacidosis",
+     "lily_toxicosis_cats",
+     "permethrin_toxicosis_cats",
+     "reduced_appetite_no_other_signs"
+    ],
+    7
+   ],
+   "dev:p57": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "grape_xylitol_toxicosis",
+     "periodontal_disease_mild",
+     "exertional_panting_mild",
+     "hypoglycemia_toy_puppy"
+    ],
+    null
+   ],
+   "dev:p58": [
+    [
+     "snake_and_scorpion_envenomation",
+     "cat_bite_abscess",
+     "rabies_exposure_wild_animal_bite",
+     "anaphylaxis_facial_swelling",
+     "permethrin_toxicosis_cats"
+    ],
+    1
+   ],
+   "dev:p59": [
+    [
+     "lily_toxicosis_cats",
+     "reduced_appetite_no_other_signs",
+     "diabetic_ketoacidosis",
+     "permethrin_toxicosis_cats",
+     "cat_bite_abscess"
+    ],
+    null
+   ],
+   "dev:p60": [
+    [
+     "burns_and_electrical_injury",
+     "urethral_obstruction",
+     "canine_heatstroke",
+     "leptospirosis_acute",
+     "trauma_and_bleeding"
+    ],
+    7
+   ],
+   "dev:p61": [
+    [
+     "diabetic_ketoacidosis",
+     "cat_bite_abscess",
+     "reduced_appetite_no_other_signs",
+     "permethrin_toxicosis_cats",
+     "lily_toxicosis_cats"
+    ],
+    null
+   ],
+   "dev:p62": [
+    [
+     "periodontal_disease_mild",
+     "airway_foreign_body_choking",
+     "urethral_obstruction",
+     "gastrointestinal_foreign_body",
+     "leptospirosis_acute"
+    ],
+    5
+   ],
+   "dev:p63": [
+    [
+     "toad_bufotoxin_poisoning",
+     "rabies_exposure_wild_animal_bite",
+     "snake_and_scorpion_envenomation",
+     "airway_foreign_body_choking",
+     "seizures"
+    ],
+    1
+   ],
+   "dev:p64": [
+    [
+     "cat_bite_abscess",
+     "permethrin_toxicosis_cats",
+     "flea_dermatitis_pruritus",
+     "mild_conjunctivitis",
+     "mild_upper_respiratory_signs"
+    ],
+    null
+   ],
+   "dev:p65": [
+    [
+     "exertional_panting_mild",
+     "canine_heatstroke",
+     "burns_and_electrical_injury",
+     "airway_foreign_body_choking",
+     "periodontal_disease_mild"
+    ],
+    0
+   ],
+   "calib:p01": [
+    [
+     "seizures",
+     "airway_foreign_body_choking",
+     "canine_heatstroke",
+     "tremors_without_seizure",
+     "burns_and_electrical_injury"
+    ],
+    null
+   ],
+   "calib:p02": [
+    [
+     "airway_foreign_body_choking",
+     "tremors_without_seizure",
+     "burns_and_electrical_injury",
+     "urethral_obstruction",
+     "seizures"
+    ],
+    6
+   ],
+   "calib:p03": [
+    [
+     "seizures",
+     "tremors_without_seizure",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "canine_heatstroke"
+    ],
+    7
+   ],
+   "calib:p04": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "burns_and_electrical_injury",
+     "chocolate_toxicosis",
+     "periodontal_disease_mild",
+     "hypoglycemia_toy_puppy"
+    ],
+    null
+   ],
+   "calib:p05": [
+    [
+     "permethrin_toxicosis_cats",
+     "human_medication_poisoning",
+     "grape_xylitol_toxicosis",
+     "reduced_appetite_no_other_signs",
+     "lily_toxicosis_cats"
+    ],
+    1
+   ],
+   "calib:p06": [
+    [
+     "lily_toxicosis_cats",
+     "cat_bite_abscess",
+     "reduced_appetite_no_other_signs",
+     "grape_xylitol_toxicosis",
+     "mild_upper_respiratory_signs"
+    ],
+    null
+   ],
+   "calib:p07": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "airway_foreign_body_choking",
+     "leptospirosis_acute",
+     "urethral_obstruction",
+     "vestibular_syndrome_otitis_interna"
+    ],
+    null
+   ],
+   "calib:p08": [
+    [
+     "permethrin_toxicosis_cats",
+     "reduced_appetite_no_other_signs",
+     "cat_bite_abscess",
+     "mild_upper_respiratory_signs",
+     "lily_toxicosis_cats"
+    ],
+    null
+   ],
+   "calib:p09": [
+    [
+     "cat_bite_abscess",
+     "permethrin_toxicosis_cats",
+     "reduced_appetite_no_other_signs",
+     "lily_toxicosis_cats",
+     "diabetic_ketoacidosis"
+    ],
+    null
+   ],
+   "calib:p10": [
+    [
+     "urethral_obstruction",
+     "airway_foreign_body_choking",
+     "single_vomiting_or_mild_diarrhea",
+     "pyometra",
+     "leptospirosis_acute"
+    ],
+    3
+   ],
+   "calib:p11": [
+    [
+     "pyometra",
+     "airway_foreign_body_choking",
+     "leptospirosis_acute",
+     "urethral_obstruction",
+     "periodontal_disease_mild"
+    ],
+    null
+   ],
+   "calib:p12": [
+    [
+     "urethral_obstruction",
+     "seizures",
+     "permethrin_toxicosis_cats",
+     "diabetic_ketoacidosis",
+     "lily_toxicosis_cats"
+    ],
+    5
+   ],
+   "calib:p13": [
+    [
+     "osteoarthritis_stiffness",
+     "tremors_without_seizure",
+     "periodontal_disease_mild",
+     "airway_foreign_body_choking",
+     "dystocia"
+    ],
+    0
+   ],
+   "calib:p14": [
+    [
+     "tremors_without_seizure",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "canine_heatstroke",
+     "snake_and_scorpion_envenomation"
+    ],
+    4
+   ],
+   "calib:p17": [
+    [
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "tremors_without_seizure",
+     "canine_heatstroke"
+    ],
+    7
+   ],
+   "calib:p18": [
+    [
+     "cat_bite_abscess",
+     "diabetic_ketoacidosis",
+     "lily_toxicosis_cats",
+     "mild_conjunctivitis",
+     "permethrin_toxicosis_cats"
+    ],
+    3
+   ],
+   "regua:b01": [
+    [
+     "chocolate_toxicosis",
+     "grape_xylitol_toxicosis",
+     "airway_foreign_body_choking",
+     "single_vomiting_or_mild_diarrhea",
+     "seizures"
+    ],
+    0
+   ],
+   "regua:b02": [
+    [
+     "lily_toxicosis_cats",
+     "permethrin_toxicosis_cats",
+     "diabetic_ketoacidosis",
+     "cat_bite_abscess",
+     "urethral_obstruction"
+    ],
+    4
+   ],
+   "regua:b03": [
+    [
+     "airway_foreign_body_choking",
+     "congestive_heart_failure",
+     "canine_heatstroke",
+     "burns_and_electrical_injury",
+     "tremors_without_seizure"
+    ],
+    null
+   ],
+   "regua:b04": [
+    [
+     "seizures",
+     "burns_and_electrical_injury",
+     "toad_bufotoxin_poisoning",
+     "tremors_without_seizure",
+     "canine_heatstroke"
+    ],
+    0
+   ],
+   "regua:b05": [
+    [
+     "lily_toxicosis_cats",
+     "mild_upper_respiratory_signs",
+     "permethrin_toxicosis_cats",
+     "cat_bite_abscess",
+     "diabetic_ketoacidosis"
+    ],
+    1
+   ],
+   "regua:b06": [
+    [
+     "airway_foreign_body_choking",
+     "leptospirosis_acute",
+     "acute_hindlimb_paralysis",
+     "ocular_emergency",
+     "burns_and_electrical_injury"
+    ],
+    7
+   ],
+   "regua:b07": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "dietary_indiscretion_mild",
+     "airway_foreign_body_choking",
+     "grape_xylitol_toxicosis",
+     "leptospirosis_acute"
+    ],
+    5
+   ],
+   "regua:b08": [
+    [
+     "grape_xylitol_toxicosis",
+     "hypoglycemia_toy_puppy",
+     "canine_heatstroke",
+     "periodontal_disease_mild",
+     "diabetic_ketoacidosis"
+    ],
+    7
+   ],
+   "regua:b09": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "otitis_externa_mild",
+     "canine_heatstroke",
+     "hypoglycemia_toy_puppy"
+    ],
+    1
+   ],
+   "regua:b10": [
+    [
+     "mild_lameness",
+     "osteoarthritis_stiffness",
+     "tremors_without_seizure",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking"
+    ],
+    0
+   ],
+   "regua:b11": [
+    [
+     "permethrin_toxicosis_cats",
+     "lily_toxicosis_cats",
+     "diabetic_ketoacidosis",
+     "cat_bite_abscess",
+     "mild_conjunctivitis"
+    ],
+    4
+   ],
+   "regua:b12": [
+    [
+     "airway_foreign_body_choking",
+     "dietary_indiscretion_mild",
+     "grape_xylitol_toxicosis",
+     "single_vomiting_or_mild_diarrhea",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "regua:b13": [
+    [
+     "trauma_and_bleeding",
+     "leptospirosis_acute",
+     "canine_heatstroke",
+     "urethral_obstruction",
+     "ocular_emergency"
+    ],
+    0
+   ],
+   "regua:b14": [
+    [
+     "fading_neonate",
+     "hypoglycemia_toy_puppy",
+     "airway_foreign_body_choking",
+     "normal_whelping",
+     "grape_xylitol_toxicosis"
+    ],
+    0
+   ],
+   "regua:b15": [
+    [
+     "toad_bufotoxin_poisoning",
+     "grape_xylitol_toxicosis",
+     "leptospirosis_acute",
+     "chocolate_toxicosis",
+     "urethral_obstruction"
+    ],
+    4
+   ],
+   "regua:b16": [
+    [
+     "anaphylaxis_facial_swelling",
+     "snake_and_scorpion_envenomation",
+     "insect_sting_local_reaction",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus"
+    ],
+    0
+   ],
+   "regua:b17": [
+    [
+     "acute_hindlimb_paralysis",
+     "tremors_without_seizure",
+     "airway_foreign_body_choking",
+     "osteoarthritis_stiffness",
+     "leptospirosis_acute"
+    ],
+    0
+   ],
+   "regua:b18": [
+    [
+     "cat_bite_abscess",
+     "lily_toxicosis_cats",
+     "diabetic_ketoacidosis",
+     "mild_upper_respiratory_signs",
+     "permethrin_toxicosis_cats"
+    ],
+    3
+   ],
+   "regua:b19": [
+    [
+     "lily_toxicosis_cats",
+     "permethrin_toxicosis_cats",
+     "grape_xylitol_toxicosis",
+     "seizures",
+     "feline_aortic_thromboembolism"
+    ],
+    8
+   ],
+   "regua:b20": [
+    [
+     "airway_foreign_body_choking",
+     "tremors_without_seizure",
+     "canine_heatstroke",
+     "seizures",
+     "snake_and_scorpion_envenomation"
+    ],
+    null
+   ],
+   "regua:b21": [
+    [
+     "seizures",
+     "permethrin_toxicosis_cats",
+     "chocolate_toxicosis",
+     "lily_toxicosis_cats",
+     "grape_xylitol_toxicosis"
+    ],
+    1
+   ],
+   "regua:b22": [
+    [
+     "snake_and_scorpion_envenomation",
+     "toad_bufotoxin_poisoning",
+     "grape_xylitol_toxicosis",
+     "permethrin_toxicosis_cats",
+     "anticoagulant_rodenticide_poisoning"
+    ],
+    4
+   ],
+   "regua:b23": [
+    [
+     "grape_xylitol_toxicosis",
+     "lily_toxicosis_cats",
+     "cat_bite_abscess",
+     "permethrin_toxicosis_cats",
+     "chocolate_toxicosis"
+    ],
+    null
+   ],
+   "regua:b24": [
+    [
+     "urethral_obstruction",
+     "airway_foreign_body_choking",
+     "single_vomiting_or_mild_diarrhea",
+     "leptospirosis_acute",
+     "grape_xylitol_toxicosis"
+    ],
+    5
+   ],
+   "regua:b25": [
+    [
+     "grape_xylitol_toxicosis",
+     "single_vomiting_or_mild_diarrhea",
+     "periodontal_disease_mild",
+     "airway_foreign_body_choking",
+     "urethral_obstruction"
+    ],
+    null
+   ],
+   "regua:b26": [
+    [
+     "reduced_appetite_no_other_signs",
+     "permethrin_toxicosis_cats",
+     "lily_toxicosis_cats",
+     "cat_bite_abscess",
+     "diabetic_ketoacidosis"
+    ],
+    null
+   ],
+   "regua:b27": [
+    [
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "canine_heatstroke",
+     "leptospirosis_acute",
+     "tremors_without_seizure"
+    ],
+    null
+   ],
+   "regua:b28": [
+    [
+     "periodontal_disease_mild",
+     "osteoarthritis_stiffness",
+     "tremors_without_seizure",
+     "grape_xylitol_toxicosis",
+     "hypoglycemia_toy_puppy"
+    ],
+    1
+   ],
+   "regua:b29": [
+    [
+     "diabetic_ketoacidosis",
+     "cat_bite_abscess",
+     "lily_toxicosis_cats",
+     "reduced_appetite_no_other_signs",
+     "permethrin_toxicosis_cats"
+    ],
+    3
+   ],
+   "regua:b30": [
+    [
+     "grape_xylitol_toxicosis",
+     "lily_toxicosis_cats",
+     "cat_bite_abscess",
+     "diabetic_ketoacidosis",
+     "permethrin_toxicosis_cats"
+    ],
+    null
+   ],
+   "regua:b31": [
+    [
+     "mild_upper_respiratory_signs",
+     "cat_bite_abscess",
+     "diabetic_ketoacidosis",
+     "permethrin_toxicosis_cats",
+     "lily_toxicosis_cats"
+    ],
+    1
+   ],
+   "regua:b32": [
+    [
+     "congestive_heart_failure",
+     "airway_foreign_body_choking",
+     "canine_heatstroke",
+     "kennel_cough_mild",
+     "burns_and_electrical_injury"
+    ],
+    0
+   ],
+   "regua:b33": [
+    [
+     "diabetic_ketoacidosis",
+     "leptospirosis_acute",
+     "hypoglycemia_toy_puppy",
+     "airway_foreign_body_choking",
+     "dietary_indiscretion_mild"
+    ],
+    0
+   ],
+   "regua:b34": [
+    [
+     "airway_foreign_body_choking",
+     "kennel_cough_mild",
+     "flea_dermatitis_pruritus",
+     "periodontal_disease_mild",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "regua:b35": [
+    [
+     "normal_whelping",
+     "hypoglycemia_toy_puppy",
+     "eclampsia",
+     "airway_foreign_body_choking",
+     "normal_estrus"
+    ],
+    6
+   ],
+   "regua:b36": [
+    [
+     "urethral_obstruction",
+     "lily_toxicosis_cats",
+     "seizures",
+     "respiratory_distress",
+     "high_rise_syndrome_cats"
+    ],
+    null
+   ],
+   "regua:b37": [
+    [
+     "canine_heatstroke",
+     "snake_and_scorpion_envenomation",
+     "leptospirosis_acute",
+     "airway_foreign_body_choking",
+     "grape_xylitol_toxicosis"
+    ],
+    2
+   ],
+   "regua:b38": [
+    [
+     "lily_toxicosis_cats",
+     "permethrin_toxicosis_cats",
+     "grape_xylitol_toxicosis",
+     "reduced_appetite_no_other_signs",
+     "mild_conjunctivitis"
+    ],
+    0
+   ],
+   "regua:b39": [
+    [
+     "grape_xylitol_toxicosis",
+     "airway_foreign_body_choking",
+     "snake_and_scorpion_envenomation",
+     "toad_bufotoxin_poisoning",
+     "chocolate_toxicosis"
+    ],
+    3
+   ],
+   "regua:b40": [
+    [
+     "seizures",
+     "tremors_without_seizure",
+     "burns_and_electrical_injury",
+     "airway_foreign_body_choking",
+     "canine_heatstroke"
+    ],
+    1
+   ],
+   "regua:b41": [
+    [
+     "airway_foreign_body_choking",
+     "pyometra",
+     "leptospirosis_acute",
+     "urethral_obstruction",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    null
+   ],
+   "regua:b42": [
+    [
+     "urethral_obstruction",
+     "permethrin_toxicosis_cats",
+     "diabetic_ketoacidosis",
+     "lily_toxicosis_cats",
+     "cat_bite_abscess"
+    ],
+    null
+   ],
+   "regua:b43": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "ocular_emergency",
+     "acute_hindlimb_paralysis",
+     "mild_conjunctivitis"
+    ],
+    2
+   ],
+   "regua:b44": [
+    [
+     "mild_upper_respiratory_signs",
+     "airway_foreign_body_choking",
+     "burns_and_electrical_injury",
+     "lily_toxicosis_cats",
+     "permethrin_toxicosis_cats"
+    ],
+    1
+   ],
+   "regua:b45": [
+    [
+     "snake_and_scorpion_envenomation",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "canine_heatstroke",
+     "acute_hindlimb_paralysis"
+    ],
+    0
+   ],
+   "regua:b46": [
+    [
+     "kennel_cough_mild",
+     "airway_foreign_body_choking",
+     "snake_and_scorpion_envenomation",
+     "ticks_found_no_signs",
+     "flea_dermatitis_pruritus"
+    ],
+    null
+   ],
+   "regua:b47": [
+    [
+     "fading_neonate",
+     "hypoglycemia_toy_puppy",
+     "cat_bite_abscess",
+     "diabetic_ketoacidosis",
+     "grape_xylitol_toxicosis"
+    ],
+    1
+   ],
+   "regua:b48": [
+    [
+     "seizures",
+     "tremors_without_seizure",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis"
+    ],
+    6
+   ],
+   "regua:b49": [
+    [
+     "permethrin_toxicosis_cats",
+     "mild_upper_respiratory_signs",
+     "respiratory_distress",
+     "urethral_obstruction",
+     "lily_toxicosis_cats"
+    ],
+    null
+   ],
+   "regua:b50": [
+    [
+     "burns_and_electrical_injury",
+     "snake_and_scorpion_envenomation",
+     "airway_foreign_body_choking",
+     "anaphylaxis_facial_swelling",
+     "toad_bufotoxin_poisoning"
+    ],
+    0
+   ],
+   "regua:b51": [
+    [
+     "airway_foreign_body_choking",
+     "tremors_without_seizure",
+     "acute_hindlimb_paralysis",
+     "hypoglycemia_toy_puppy",
+     "chocolate_toxicosis"
+    ],
+    null
+   ],
+   "regua:b52": [
+    [
+     "grape_xylitol_toxicosis",
+     "periodontal_disease_mild",
+     "chocolate_toxicosis",
+     "tremors_without_seizure",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    0
+   ],
+   "regua:b53": [
+    [
+     "airway_foreign_body_choking",
+     "hypoglycemia_toy_puppy",
+     "normal_whelping",
+     "eclampsia",
+     "acute_hindlimb_paralysis"
+    ],
+    2
+   ],
+   "regua:b54": [
+    [
+     "anaphylaxis_facial_swelling",
+     "cat_bite_abscess",
+     "permethrin_toxicosis_cats",
+     "flea_dermatitis_pruritus",
+     "mild_conjunctivitis"
+    ],
+    null
+   ],
+   "regua:b55": [
+    [
+     "airway_foreign_body_choking",
+     "congestive_heart_failure",
+     "burns_and_electrical_injury",
+     "kennel_cough_mild",
+     "canine_heatstroke"
+    ],
+    3
+   ],
+   "regua:b56": [
+    [
+     "lily_toxicosis_cats",
+     "permethrin_toxicosis_cats",
+     "diabetic_ketoacidosis",
+     "cat_bite_abscess",
+     "reduced_appetite_no_other_signs"
+    ],
+    null
+   ],
+   "regua:b57": [
+    [
+     "otitis_externa_mild",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "burns_and_electrical_injury"
+    ],
+    0
+   ],
+   "regua:b58": [
+    [
+     "cat_bite_abscess",
+     "trauma_and_bleeding",
+     "minor_wound",
+     "diabetic_ketoacidosis",
+     "feline_aortic_thromboembolism"
+    ],
+    2
+   ],
+   "regua:b59": [
+    [
+     "airway_foreign_body_choking",
+     "single_vomiting_or_mild_diarrhea",
+     "congestive_heart_failure",
+     "kennel_cough_mild",
+     "tremors_without_seizure"
+    ],
+    8
+   ],
+   "regua:b60": [
+    [
+     "leptospirosis_acute",
+     "airway_foreign_body_choking",
+     "vestibular_syndrome_otitis_interna",
+     "slow_growing_lump",
+     "urethral_obstruction"
+    ],
+    3
+   ],
+   "regua:b61": [
+    [
+     "canine_heatstroke",
+     "exertional_panting_mild",
+     "tremors_without_seizure",
+     "burns_and_electrical_injury",
+     "periodontal_disease_mild"
+    ],
+    1
+   ],
+   "regua:b62": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     "anaphylaxis_facial_swelling",
+     "snake_and_scorpion_envenomation",
+     "cat_bite_abscess",
+     "diabetic_ketoacidosis"
+    ],
+    0
+   ],
+   "regua:b63": [
+    [
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "periodontal_disease_mild",
+     "grape_xylitol_toxicosis",
+     "snake_and_scorpion_envenomation"
+    ],
+    null
+   ],
+   "regua:b64": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "grape_xylitol_toxicosis",
+     "vestibular_syndrome_otitis_interna",
+     "chocolate_toxicosis",
+     "lily_toxicosis_cats"
+    ],
+    0
+   ],
+   "regua:b65": [
+    [
+     "lily_toxicosis_cats",
+     "cat_bite_abscess",
+     "reduced_appetite_no_other_signs",
+     "diabetic_ketoacidosis",
+     "permethrin_toxicosis_cats"
+    ],
+    null
+   ],
+   "regua:b66": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "leptospirosis_acute",
+     "hypoglycemia_toy_puppy",
+     "periodontal_disease_mild",
+     "urethral_obstruction"
+    ],
+    0
+   ]
+  }
+ },
+ "intfloat/multilingual-e5-small": {
+  "dim": 384,
+  "indexar_s": 70.6,
+  "params_M": 118,
+  "dev": {
+   "todos": {
+    "P@1": 0.064,
+    "P@3": 0.064,
+    "MRR": 0.075,
+    "n": 47
+   },
+   "etapa1": {
+    "P@1": 0.107,
+    "P@3": 0.107,
+    "MRR": 0.107,
+    "n": 28
+   },
+   "etapa2": {
+    "P@1": 0.0,
+    "P@3": 0.0,
+    "MRR": 0.027,
+    "n": 19
+   }
+  },
+  "calib": {
+   "todos": {
+    "P@1": 0.0,
+    "P@3": 0.125,
+    "MRR": 0.064,
+    "n": 16
+   },
+   "etapa1": {
+    "P@1": 0.0,
+    "P@3": 0.154,
+    "MRR": 0.071,
+    "n": 13
+   },
+   "etapa2": {
+    "P@1": 0.0,
+    "P@3": 0.0,
+    "MRR": 0.033,
+    "n": 3
+   }
+  },
+  "regua": {
+   "todos": {
+    "P@1": 0.045,
+    "P@3": 0.091,
+    "MRR": 0.103,
+    "n": 66
+   },
+   "etapa1": {
+    "P@1": 0.056,
+    "P@3": 0.111,
+    "MRR": 0.098,
+    "n": 36
+   },
+   "etapa2": {
+    "P@1": 0.033,
+    "P@3": 0.067,
+    "MRR": 0.109,
+    "n": 30
+   }
+  },
+  "ms_por_consulta": 17.5,
+  "casos": {
+   "dev:p19": [
+    [
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "dev:p20": [
+    [
+     "pyometra",
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "dev:p21": [
+    [
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "human_medication_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "dev:p22": [
+    [
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "dev:p23": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "pyometra",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "dev:p24": [
+    [
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "dev:p25": [
+    [
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "dev:p26": [
+    [
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus"
+    ],
+    null
+   ],
+   "dev:p27": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "pyometra"
+    ],
+    null
+   ],
+   "dev:p28": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "pyometra",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "dev:p29": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "pyometra",
+     "human_medication_poisoning"
+    ],
+    0
+   ],
+   "dev:p30": [
+    [
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "dev:p31": [
+    [
+     "human_medication_poisoning",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning"
+    ],
+    0
+   ],
+   "dev:p32": [
+    [
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "human_medication_poisoning",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "dev:p33": [
+    [
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "dev:p34": [
+    [
+     "human_medication_poisoning",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus"
+    ],
+    null
+   ],
+   "dev:p35": [
+    [
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "dev:p36": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "pyometra"
+    ],
+    null
+   ],
+   "dev:p37": [
+    [
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "dev:p38": [
+    [
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "pyometra"
+    ],
+    null
+   ],
+   "dev:p39": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "pyometra"
+    ],
+    3
+   ],
+   "dev:p40": [
+    [
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "dev:p41": [
+    [
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "dev:p42": [
+    [
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "dev:p43": [
+    [
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "dev:p44": [
+    [
+     "human_medication_poisoning",
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "dev:p45": [
+    [
+     "human_medication_poisoning",
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "dev:p46": [
+    [
+     "human_medication_poisoning",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "dev:p47": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning"
+    ],
+    9
+   ],
+   "dev:p48": [
+    [
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "dev:p49": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "airway_foreign_body_choking",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "dev:p50": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "dev:p51": [
+    [
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "pyometra"
+    ],
+    null
+   ],
+   "dev:p52": [
+    [
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "dev:p53": [
+    [
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning"
+    ],
+    5
+   ],
+   "dev:p54": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning",
+     "pyometra"
+    ],
+    null
+   ],
+   "dev:p55": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "human_medication_poisoning",
+     "pyometra"
+    ],
+    null
+   ],
+   "dev:p56": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning",
+     "pyometra",
+     "toad_bufotoxin_poisoning"
+    ],
+    0
+   ],
+   "dev:p57": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "dev:p58": [
+    [
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "pyometra",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "dev:p59": [
+    [
+     "human_medication_poisoning",
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "dev:p60": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "pyometra",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "dev:p61": [
+    [
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "pyometra"
+    ],
+    null
+   ],
+   "dev:p62": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning",
+     "pyometra"
+    ],
+    null
+   ],
+   "dev:p63": [
+    [
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "pyometra"
+    ],
+    null
+   ],
+   "dev:p64": [
+    [
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "dev:p65": [
+    [
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "calib:p01": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "pyometra",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "calib:p02": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "human_medication_poisoning",
+     "airway_foreign_body_choking"
+    ],
+    9
+   ],
+   "calib:p03": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning",
+     "pyometra"
+    ],
+    null
+   ],
+   "calib:p04": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning",
+     "pyometra",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "calib:p05": [
+    [
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning"
+    ],
+    3
+   ],
+   "calib:p06": [
+    [
+     "human_medication_poisoning",
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus"
+    ],
+    null
+   ],
+   "calib:p07": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "calib:p08": [
+    [
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "calib:p09": [
+    [
+     "human_medication_poisoning",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "calib:p10": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning"
+    ],
+    2
+   ],
+   "calib:p11": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "calib:p12": [
+    [
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning"
+    ],
+    2
+   ],
+   "calib:p13": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "pyometra",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "calib:p14": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning",
+     "pyometra",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "calib:p17": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "airway_foreign_body_choking",
+     "pyometra"
+    ],
+    null
+   ],
+   "calib:p18": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "pyometra",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "regua:b01": [
+    [
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "chocolate_toxicosis"
+    ],
+    4
+   ],
+   "regua:b02": [
+    [
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "human_medication_poisoning"
+    ],
+    8
+   ],
+   "regua:b03": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "regua:b04": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "pyometra",
+     "human_medication_poisoning"
+    ],
+    9
+   ],
+   "regua:b05": [
+    [
+     "pyometra",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "human_medication_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "regua:b06": [
+    [
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "regua:b07": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "human_medication_poisoning",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "regua:b08": [
+    [
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "regua:b09": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "otitis_externa_mild"
+    ],
+    0
+   ],
+   "regua:b10": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "pyometra"
+    ],
+    null
+   ],
+   "regua:b11": [
+    [
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "pyometra",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis"
+    ],
+    8
+   ],
+   "regua:b12": [
+    [
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "regua:b13": [
+    [
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "pyometra"
+    ],
+    null
+   ],
+   "regua:b14": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "regua:b15": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "pyometra",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "regua:b16": [
+    [
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "pyometra"
+    ],
+    null
+   ],
+   "regua:b17": [
+    [
+     "airway_foreign_body_choking",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus"
+    ],
+    2
+   ],
+   "regua:b18": [
+    [
+     "pyometra",
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "regua:b19": [
+    [
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "pyometra",
+     "acute_hindlimb_paralysis"
+    ],
+    0
+   ],
+   "regua:b20": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "burns_and_electrical_injury",
+     "pyometra",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "regua:b21": [
+    [
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "airway_foreign_body_choking",
+     "human_medication_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "regua:b22": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "regua:b23": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "human_medication_poisoning",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "regua:b24": [
+    [
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis"
+    ],
+    1
+   ],
+   "regua:b25": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "pyometra"
+    ],
+    null
+   ],
+   "regua:b26": [
+    [
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "regua:b27": [
+    [
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "regua:b28": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "pyometra",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "regua:b29": [
+    [
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "regua:b30": [
+    [
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "regua:b31": [
+    [
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning",
+     "pyometra"
+    ],
+    null
+   ],
+   "regua:b32": [
+    [
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "pyometra"
+    ],
+    null
+   ],
+   "regua:b33": [
+    [
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "diabetic_ketoacidosis"
+    ],
+    4
+   ],
+   "regua:b34": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "pyometra"
+    ],
+    null
+   ],
+   "regua:b35": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "normal_whelping"
+    ],
+    8
+   ],
+   "regua:b36": [
+    [
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "regua:b37": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "human_medication_poisoning"
+    ],
+    5
+   ],
+   "regua:b38": [
+    [
+     "pyometra",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "lily_toxicosis_cats",
+     "carbamate_organophosphate_poisoning"
+    ],
+    3
+   ],
+   "regua:b39": [
+    [
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis",
+     "otitis_externa_mild",
+     "airway_foreign_body_choking"
+    ],
+    1
+   ],
+   "regua:b40": [
+    [
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "regua:b41": [
+    [
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "regua:b42": [
+    [
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "regua:b43": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "regua:b44": [
+    [
+     "airway_foreign_body_choking",
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    0
+   ],
+   "regua:b45": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "burns_and_electrical_injury"
+    ],
+    null
+   ],
+   "regua:b46": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "leptospirosis_acute",
+     "mild_conjunctivitis"
+    ],
+    5
+   ],
+   "regua:b47": [
+    [
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "regua:b48": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "regua:b49": [
+    [
+     "pyometra",
+     "airway_foreign_body_choking",
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "regua:b50": [
+    [
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "burns_and_electrical_injury",
+     "toad_bufotoxin_poisoning"
+    ],
+    3
+   ],
+   "regua:b51": [
+    [
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "regua:b52": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking"
+    ],
+    6
+   ],
+   "regua:b53": [
+    [
+     "airway_foreign_body_choking",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning"
+    ],
+    7
+   ],
+   "regua:b54": [
+    [
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning",
+     "pyometra",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "regua:b55": [
+    [
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "pyometra"
+    ],
+    null
+   ],
+   "regua:b56": [
+    [
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "regua:b57": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "pyometra",
+     "toad_bufotoxin_poisoning"
+    ],
+    6
+   ],
+   "regua:b58": [
+    [
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "human_medication_poisoning",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "regua:b59": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "pyometra"
+    ],
+    null
+   ],
+   "regua:b60": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "regua:b61": [
+    [
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "toad_bufotoxin_poisoning"
+    ],
+    8
+   ],
+   "regua:b62": [
+    [
+     "human_medication_poisoning",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "regua:b63": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "otitis_externa_mild"
+    ],
+    9
+   ],
+   "regua:b64": [
+    [
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "pyometra"
+    ],
+    5
+   ],
+   "regua:b65": [
+    [
+     "pyometra",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus"
+    ],
+    null
+   ],
+   "regua:b66": [
+    [
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ]
+  }
+ },
+ "intfloat/multilingual-e5-base": {
+  "dim": 768,
+  "indexar_s": 168.4,
+  "params_M": 278,
+  "dev": {
+   "todos": {
+    "P@1": 0.0,
+    "P@3": 0.043,
+    "MRR": 0.041,
+    "n": 47
+   },
+   "etapa1": {
+    "P@1": 0.0,
+    "P@3": 0.036,
+    "MRR": 0.036,
+    "n": 28
+   },
+   "etapa2": {
+    "P@1": 0.0,
+    "P@3": 0.053,
+    "MRR": 0.048,
+    "n": 19
+   }
+  },
+  "calib": {
+   "todos": {
+    "P@1": 0.062,
+    "P@3": 0.188,
+    "MRR": 0.132,
+    "n": 16
+   },
+   "etapa1": {
+    "P@1": 0.077,
+    "P@3": 0.154,
+    "MRR": 0.124,
+    "n": 13
+   },
+   "etapa2": {
+    "P@1": 0.0,
+    "P@3": 0.333,
+    "MRR": 0.167,
+    "n": 3
+   }
+  },
+  "regua": {
+   "todos": {
+    "P@1": 0.061,
+    "P@3": 0.121,
+    "MRR": 0.115,
+    "n": 66
+   },
+   "etapa1": {
+    "P@1": 0.056,
+    "P@3": 0.111,
+    "MRR": 0.092,
+    "n": 36
+   },
+   "etapa2": {
+    "P@1": 0.067,
+    "P@3": 0.133,
+    "MRR": 0.141,
+    "n": 30
+   }
+  },
+  "ms_por_consulta": 36.0,
+  "casos": {
+   "dev:p19": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "human_medication_poisoning"
+    ],
+    9
+   ],
+   "dev:p20": [
+    [
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "carbamate_organophosphate_poisoning",
+     "airway_foreign_body_choking",
+     "pyometra"
+    ],
+    null
+   ],
+   "dev:p21": [
+    [
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning",
+     "otitis_externa_mild",
+     "leptospirosis_acute",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "dev:p22": [
+    [
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning"
+    ],
+    9
+   ],
+   "dev:p23": [
+    [
+     "flea_dermatitis_pruritus",
+     "otitis_externa_mild",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "dev:p24": [
+    [
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "dev:p25": [
+    [
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning",
+     "leptospirosis_acute",
+     "otitis_externa_mild"
+    ],
+    null
+   ],
+   "dev:p26": [
+    [
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "dev:p27": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "dev:p28": [
+    [
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning",
+     "dystocia",
+     "otitis_externa_mild"
+    ],
+    null
+   ],
+   "dev:p29": [
+    [
+     "otitis_externa_mild",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "leptospirosis_acute",
+     "toad_bufotoxin_poisoning"
+    ],
+    6
+   ],
+   "dev:p30": [
+    [
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "otitis_externa_mild",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "dev:p31": [
+    [
+     "otitis_externa_mild",
+     "human_medication_poisoning",
+     "carbamate_organophosphate_poisoning",
+     "acute_hindlimb_paralysis",
+     "pyometra"
+    ],
+    1
+   ],
+   "dev:p32": [
+    [
+     "otitis_externa_mild",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "dev:p33": [
+    [
+     "otitis_externa_mild",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "dev:p34": [
+    [
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "dev:p35": [
+    [
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "dev:p36": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "otitis_externa_mild"
+    ],
+    null
+   ],
+   "dev:p37": [
+    [
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "pyometra"
+    ],
+    null
+   ],
+   "dev:p38": [
+    [
+     "carbamate_organophosphate_poisoning",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "pyometra"
+    ],
+    null
+   ],
+   "dev:p39": [
+    [
+     "otitis_externa_mild",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning"
+    ],
+    1
+   ],
+   "dev:p40": [
+    [
+     "otitis_externa_mild",
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "dev:p41": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "otitis_externa_mild",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "dev:p42": [
+    [
+     "otitis_externa_mild",
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "leptospirosis_acute",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "dev:p43": [
+    [
+     "pyometra",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "dev:p44": [
+    [
+     "otitis_externa_mild",
+     "carbamate_organophosphate_poisoning",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "dev:p45": [
+    [
+     "otitis_externa_mild",
+     "leptospirosis_acute",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "carbamate_organophosphate_poisoning"
+    ],
+    null
+   ],
+   "dev:p46": [
+    [
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning",
+     "otitis_externa_mild",
+     "carbamate_organophosphate_poisoning",
+     "pyometra"
+    ],
+    null
+   ],
+   "dev:p47": [
+    [
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "otitis_externa_mild"
+    ],
+    4
+   ],
+   "dev:p48": [
+    [
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "otitis_externa_mild",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "dev:p49": [
+    [
+     "otitis_externa_mild",
+     "flea_dermatitis_pruritus",
+     "leptospirosis_acute",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "dev:p50": [
+    [
+     "toad_bufotoxin_poisoning",
+     "otitis_externa_mild",
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "dev:p51": [
+    [
+     "otitis_externa_mild",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus"
+    ],
+    null
+   ],
+   "dev:p52": [
+    [
+     "otitis_externa_mild",
+     "leptospirosis_acute",
+     "pyometra",
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus"
+    ],
+    null
+   ],
+   "dev:p53": [
+    [
+     "otitis_externa_mild",
+     "pyometra",
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis"
+    ],
+    8
+   ],
+   "dev:p54": [
+    [
+     "otitis_externa_mild",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "dev:p55": [
+    [
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "otitis_externa_mild",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "dev:p56": [
+    [
+     "otitis_externa_mild",
+     "acute_hindlimb_paralysis",
+     "carbamate_organophosphate_poisoning",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning"
+    ],
+    5
+   ],
+   "dev:p57": [
+    [
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "dev:p58": [
+    [
+     "otitis_externa_mild",
+     "carbamate_organophosphate_poisoning",
+     "human_medication_poisoning",
+     "acute_hindlimb_paralysis",
+     "pyometra"
+    ],
+    null
+   ],
+   "dev:p59": [
+    [
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "carbamate_organophosphate_poisoning"
+    ],
+    null
+   ],
+   "dev:p60": [
+    [
+     "otitis_externa_mild",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "dev:p61": [
+    [
+     "otitis_externa_mild",
+     "carbamate_organophosphate_poisoning",
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "dev:p62": [
+    [
+     "otitis_externa_mild",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "leptospirosis_acute",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "dev:p63": [
+    [
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "otitis_externa_mild"
+    ],
+    null
+   ],
+   "dev:p64": [
+    [
+     "acute_hindlimb_paralysis",
+     "carbamate_organophosphate_poisoning",
+     "leptospirosis_acute",
+     "otitis_externa_mild",
+     "human_medication_poisoning"
+    ],
+    9
+   ],
+   "dev:p65": [
+    [
+     "otitis_externa_mild",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "calib:p01": [
+    [
+     "acute_hindlimb_paralysis",
+     "otitis_externa_mild",
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "calib:p02": [
+    [
+     "airway_foreign_body_choking",
+     "otitis_externa_mild",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus"
+    ],
+    1
+   ],
+   "calib:p03": [
+    [
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "acute_hindlimb_paralysis",
+     "otitis_externa_mild"
+    ],
+    null
+   ],
+   "calib:p04": [
+    [
+     "otitis_externa_mild",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "calib:p05": [
+    [
+     "human_medication_poisoning",
+     "carbamate_organophosphate_poisoning",
+     "toad_bufotoxin_poisoning",
+     "otitis_externa_mild",
+     "pyometra"
+    ],
+    0
+   ],
+   "calib:p06": [
+    [
+     "carbamate_organophosphate_poisoning",
+     "acute_hindlimb_paralysis",
+     "otitis_externa_mild",
+     "toad_bufotoxin_poisoning",
+     "feline_aortic_thromboembolism"
+    ],
+    null
+   ],
+   "calib:p07": [
+    [
+     "otitis_externa_mild",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus"
+    ],
+    null
+   ],
+   "calib:p08": [
+    [
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning",
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "calib:p09": [
+    [
+     "otitis_externa_mild",
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning",
+     "carbamate_organophosphate_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "calib:p10": [
+    [
+     "otitis_externa_mild",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus"
+    ],
+    1
+   ],
+   "calib:p11": [
+    [
+     "pyometra",
+     "otitis_externa_mild",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus"
+    ],
+    null
+   ],
+   "calib:p12": [
+    [
+     "otitis_externa_mild",
+     "leptospirosis_acute",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning",
+     "carbamate_organophosphate_poisoning"
+    ],
+    8
+   ],
+   "calib:p13": [
+    [
+     "otitis_externa_mild",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "calib:p14": [
+    [
+     "otitis_externa_mild",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "calib:p17": [
+    [
+     "otitis_externa_mild",
+     "flea_dermatitis_pruritus",
+     "leptospirosis_acute",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "calib:p18": [
+    [
+     "otitis_externa_mild",
+     "leptospirosis_acute",
+     "carbamate_organophosphate_poisoning",
+     "pyometra",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "regua:b01": [
+    [
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "otitis_externa_mild"
+    ],
+    5
+   ],
+   "regua:b02": [
+    [
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning",
+     "pyometra",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "regua:b03": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "otitis_externa_mild",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "regua:b04": [
+    [
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning"
+    ],
+    5
+   ],
+   "regua:b05": [
+    [
+     "toad_bufotoxin_poisoning",
+     "pyometra",
+     "airway_foreign_body_choking",
+     "leptospirosis_acute",
+     "permethrin_toxicosis_cats"
+    ],
+    null
+   ],
+   "regua:b06": [
+    [
+     "flea_dermatitis_pruritus",
+     "otitis_externa_mild",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "regua:b07": [
+    [
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "leptospirosis_acute",
+     "flea_dermatitis_pruritus",
+     "otitis_externa_mild"
+    ],
+    null
+   ],
+   "regua:b08": [
+    [
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis",
+     "leptospirosis_acute"
+    ],
+    9
+   ],
+   "regua:b09": [
+    [
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "otitis_externa_mild",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning"
+    ],
+    0
+   ],
+   "regua:b10": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "otitis_externa_mild"
+    ],
+    null
+   ],
+   "regua:b11": [
+    [
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "regua:b12": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "regua:b13": [
+    [
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "otitis_externa_mild",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "regua:b14": [
+    [
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "otitis_externa_mild"
+    ],
+    null
+   ],
+   "regua:b15": [
+    [
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "regua:b16": [
+    [
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "otitis_externa_mild",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "regua:b17": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning"
+    ],
+    2
+   ],
+   "regua:b18": [
+    [
+     "airway_foreign_body_choking",
+     "leptospirosis_acute",
+     "pyometra",
+     "toad_bufotoxin_poisoning",
+     "carbamate_organophosphate_poisoning"
+    ],
+    null
+   ],
+   "regua:b19": [
+    [
+     "carbamate_organophosphate_poisoning",
+     "permethrin_toxicosis_cats",
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis"
+    ],
+    2
+   ],
+   "regua:b20": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "otitis_externa_mild"
+    ],
+    null
+   ],
+   "regua:b21": [
+    [
+     "pyometra",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "otitis_externa_mild"
+    ],
+    null
+   ],
+   "regua:b22": [
+    [
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "regua:b23": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "acute_hindlimb_paralysis",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "regua:b24": [
+    [
+     "pyometra",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning"
+    ],
+    0
+   ],
+   "regua:b25": [
+    [
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "leptospirosis_acute",
+     "toad_bufotoxin_poisoning",
+     "otitis_externa_mild"
+    ],
+    null
+   ],
+   "regua:b26": [
+    [
+     "toad_bufotoxin_poisoning",
+     "pyometra",
+     "airway_foreign_body_choking",
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus"
+    ],
+    null
+   ],
+   "regua:b27": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "regua:b28": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "regua:b29": [
+    [
+     "toad_bufotoxin_poisoning",
+     "pyometra",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "regua:b30": [
+    [
+     "carbamate_organophosphate_poisoning",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "regua:b31": [
+    [
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "carbamate_organophosphate_poisoning",
+     "permethrin_toxicosis_cats",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "regua:b32": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "leptospirosis_acute",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "regua:b33": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "pyometra",
+     "acute_hindlimb_paralysis"
+    ],
+    6
+   ],
+   "regua:b34": [
+    [
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "leptospirosis_acute",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "regua:b35": [
+    [
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "otitis_externa_mild"
+    ],
+    7
+   ],
+   "regua:b36": [
+    [
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "carbamate_organophosphate_poisoning"
+    ],
+    9
+   ],
+   "regua:b37": [
+    [
+     "flea_dermatitis_pruritus",
+     "leptospirosis_acute",
+     "otitis_externa_mild",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    1
+   ],
+   "regua:b38": [
+    [
+     "carbamate_organophosphate_poisoning",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "permethrin_toxicosis_cats"
+    ],
+    6
+   ],
+   "regua:b39": [
+    [
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "human_medication_poisoning"
+    ],
+    0
+   ],
+   "regua:b40": [
+    [
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning",
+     "airway_foreign_body_choking",
+     "leptospirosis_acute"
+    ],
+    8
+   ],
+   "regua:b41": [
+    [
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "pyometra",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "regua:b42": [
+    [
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "regua:b43": [
+    [
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "leptospirosis_acute",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "regua:b44": [
+    [
+     "airway_foreign_body_choking",
+     "carbamate_organophosphate_poisoning",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis"
+    ],
+    0
+   ],
+   "regua:b45": [
+    [
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "otitis_externa_mild",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "regua:b46": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "leptospirosis_acute",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    7
+   ],
+   "regua:b47": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "leptospirosis_acute",
+     "pyometra"
+    ],
+    null
+   ],
+   "regua:b48": [
+    [
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "regua:b49": [
+    [
+     "pyometra",
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "carbamate_organophosphate_poisoning"
+    ],
+    null
+   ],
+   "regua:b50": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "burns_and_electrical_injury",
+     "toad_bufotoxin_poisoning"
+    ],
+    3
+   ],
+   "regua:b51": [
+    [
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "regua:b52": [
+    [
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning",
+     "otitis_externa_mild"
+    ],
+    null
+   ],
+   "regua:b53": [
+    [
+     "pyometra",
+     "human_medication_poisoning",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis"
+    ],
+    9
+   ],
+   "regua:b54": [
+    [
+     "human_medication_poisoning",
+     "carbamate_organophosphate_poisoning",
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "regua:b55": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "otitis_externa_mild",
+     "leptospirosis_acute"
+    ],
+    8
+   ],
+   "regua:b56": [
+    [
+     "pyometra",
+     "carbamate_organophosphate_poisoning",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "regua:b57": [
+    [
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "otitis_externa_mild",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning"
+    ],
+    2
+   ],
+   "regua:b58": [
+    [
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "minor_wound"
+    ],
+    4
+   ],
+   "regua:b59": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "leptospirosis_acute",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "regua:b60": [
+    [
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "regua:b61": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "otitis_externa_mild"
+    ],
+    null
+   ],
+   "regua:b62": [
+    [
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning",
+     "carbamate_organophosphate_poisoning",
+     "pyometra",
+     "flea_dermatitis_pruritus"
+    ],
+    null
+   ],
+   "regua:b63": [
+    [
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "leptospirosis_acute"
+    ],
+    8
+   ],
+   "regua:b64": [
+    [
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "regua:b65": [
+    [
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "carbamate_organophosphate_poisoning",
+     "pyometra",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "regua:b66": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "leptospirosis_acute",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning"
+    ],
+    8
+   ]
+  }
+ },
+ "intfloat/multilingual-e5-large": {
+  "dim": 1024,
+  "indexar_s": 592.6,
+  "params_M": 560,
+  "dev": {
+   "todos": {
+    "P@1": 0.043,
+    "P@3": 0.064,
+    "MRR": 0.085,
+    "n": 47
+   },
+   "etapa1": {
+    "P@1": 0.071,
+    "P@3": 0.071,
+    "MRR": 0.099,
+    "n": 28
+   },
+   "etapa2": {
+    "P@1": 0.0,
+    "P@3": 0.053,
+    "MRR": 0.065,
+    "n": 19
+   }
+  },
+  "calib": {
+   "todos": {
+    "P@1": 0.062,
+    "P@3": 0.125,
+    "MRR": 0.11,
+    "n": 16
+   },
+   "etapa1": {
+    "P@1": 0.077,
+    "P@3": 0.154,
+    "MRR": 0.124,
+    "n": 13
+   },
+   "etapa2": {
+    "P@1": 0.0,
+    "P@3": 0.0,
+    "MRR": 0.048,
+    "n": 3
+   }
+  },
+  "regua": {
+   "todos": {
+    "P@1": 0.076,
+    "P@3": 0.182,
+    "MRR": 0.174,
+    "n": 66
+   },
+   "etapa1": {
+    "P@1": 0.083,
+    "P@3": 0.111,
+    "MRR": 0.157,
+    "n": 36
+   },
+   "etapa2": {
+    "P@1": 0.067,
+    "P@3": 0.267,
+    "MRR": 0.194,
+    "n": 30
+   }
+  },
+  "ms_por_consulta": 104.1,
+  "casos": {
+   "dev:p19": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "human_medication_poisoning"
+    ],
+    9
+   ],
+   "dev:p20": [
+    [
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus"
+    ],
+    null
+   ],
+   "dev:p21": [
+    [
+     "pyometra",
+     "human_medication_poisoning",
+     "leptospirosis_acute",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus"
+    ],
+    null
+   ],
+   "dev:p22": [
+    [
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "leptospirosis_acute",
+     "flea_dermatitis_pruritus",
+     "pyometra"
+    ],
+    9
+   ],
+   "dev:p23": [
+    [
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "dev:p24": [
+    [
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "leptospirosis_acute",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "dev:p25": [
+    [
+     "toad_bufotoxin_poisoning",
+     "pyometra",
+     "leptospirosis_acute",
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus"
+    ],
+    null
+   ],
+   "dev:p26": [
+    [
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "dev:p27": [
+    [
+     "flea_dermatitis_pruritus",
+     "leptospirosis_acute",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "dev:p28": [
+    [
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "dev:p29": [
+    [
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "leptospirosis_acute",
+     "acute_hindlimb_paralysis",
+     "otitis_externa_mild"
+    ],
+    3
+   ],
+   "dev:p30": [
+    [
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "dev:p31": [
+    [
+     "human_medication_poisoning",
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking"
+    ],
+    0
+   ],
+   "dev:p32": [
+    [
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "leptospirosis_acute",
+     "pyometra"
+    ],
+    9
+   ],
+   "dev:p33": [
+    [
+     "leptospirosis_acute",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "human_medication_poisoning",
+     "pyometra"
+    ],
+    null
+   ],
+   "dev:p34": [
+    [
+     "human_medication_poisoning",
+     "pyometra",
+     "leptospirosis_acute",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus"
+    ],
+    null
+   ],
+   "dev:p35": [
+    [
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "leptospirosis_acute",
+     "acute_hindlimb_paralysis",
+     "otitis_externa_mild"
+    ],
+    null
+   ],
+   "dev:p36": [
+    [
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "pyometra"
+    ],
+    null
+   ],
+   "dev:p37": [
+    [
+     "human_medication_poisoning",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "pyometra"
+    ],
+    9
+   ],
+   "dev:p38": [
+    [
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning",
+     "pyometra",
+     "carbamate_organophosphate_poisoning"
+    ],
+    null
+   ],
+   "dev:p39": [
+    [
+     "otitis_externa_mild",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "leptospirosis_acute",
+     "pyometra"
+    ],
+    1
+   ],
+   "dev:p40": [
+    [
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "leptospirosis_acute",
+     "toad_bufotoxin_poisoning",
+     "otitis_externa_mild"
+    ],
+    null
+   ],
+   "dev:p41": [
+    [
+     "flea_dermatitis_pruritus",
+     "leptospirosis_acute",
+     "otitis_externa_mild",
+     "pyometra",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "dev:p42": [
+    [
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "dev:p43": [
+    [
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking"
+    ],
+    9
+   ],
+   "dev:p44": [
+    [
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "dev:p45": [
+    [
+     "leptospirosis_acute",
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning",
+     "pyometra",
+     "flea_dermatitis_pruritus"
+    ],
+    null
+   ],
+   "dev:p46": [
+    [
+     "pyometra",
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "cat_bite_abscess"
+    ],
+    null
+   ],
+   "dev:p47": [
+    [
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "pyometra",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    5
+   ],
+   "dev:p48": [
+    [
+     "leptospirosis_acute",
+     "toad_bufotoxin_poisoning",
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "dev:p49": [
+    [
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "leptospirosis_acute",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "dev:p50": [
+    [
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "leptospirosis_acute",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "dev:p51": [
+    [
+     "flea_dermatitis_pruritus",
+     "leptospirosis_acute",
+     "airway_foreign_body_choking",
+     "pyometra",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "dev:p52": [
+    [
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "dev:p53": [
+    [
+     "pyometra",
+     "leptospirosis_acute",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "otitis_externa_mild"
+    ],
+    7
+   ],
+   "dev:p54": [
+    [
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning"
+    ],
+    8
+   ],
+   "dev:p55": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "otitis_externa_mild",
+     "pyometra",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "dev:p56": [
+    [
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning"
+    ],
+    0
+   ],
+   "dev:p57": [
+    [
+     "leptospirosis_acute",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "dev:p58": [
+    [
+     "pyometra",
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "cat_bite_abscess"
+    ],
+    4
+   ],
+   "dev:p59": [
+    [
+     "pyometra",
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "dev:p60": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "human_medication_poisoning",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "dev:p61": [
+    [
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning",
+     "cat_bite_abscess",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "dev:p62": [
+    [
+     "leptospirosis_acute",
+     "pyometra",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "dev:p63": [
+    [
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning",
+     "pyometra"
+    ],
+    null
+   ],
+   "dev:p64": [
+    [
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "leptospirosis_acute",
+     "carbamate_organophosphate_poisoning"
+    ],
+    null
+   ],
+   "dev:p65": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "leptospirosis_acute",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    6
+   ],
+   "calib:p01": [
+    [
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "leptospirosis_acute",
+     "flea_dermatitis_pruritus",
+     "pyometra"
+    ],
+    null
+   ],
+   "calib:p02": [
+    [
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "leptospirosis_acute"
+    ],
+    6
+   ],
+   "calib:p03": [
+    [
+     "toad_bufotoxin_poisoning",
+     "leptospirosis_acute",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus"
+    ],
+    null
+   ],
+   "calib:p04": [
+    [
+     "leptospirosis_acute",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "calib:p05": [
+    [
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning",
+     "pyometra",
+     "carbamate_organophosphate_poisoning",
+     "leptospirosis_acute"
+    ],
+    0
+   ],
+   "calib:p06": [
+    [
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "calib:p07": [
+    [
+     "leptospirosis_acute",
+     "flea_dermatitis_pruritus",
+     "otitis_externa_mild",
+     "pyometra",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "calib:p08": [
+    [
+     "pyometra",
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "calib:p09": [
+    [
+     "pyometra",
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "cat_bite_abscess"
+    ],
+    null
+   ],
+   "calib:p10": [
+    [
+     "leptospirosis_acute",
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    1
+   ],
+   "calib:p11": [
+    [
+     "pyometra",
+     "leptospirosis_acute",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "calib:p12": [
+    [
+     "pyometra",
+     "leptospirosis_acute",
+     "human_medication_poisoning",
+     "carbamate_organophosphate_poisoning",
+     "toad_bufotoxin_poisoning"
+    ],
+    8
+   ],
+   "calib:p13": [
+    [
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "leptospirosis_acute",
+     "otitis_externa_mild",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "calib:p14": [
+    [
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "leptospirosis_acute",
+     "pyometra",
+     "otitis_externa_mild"
+    ],
+    null
+   ],
+   "calib:p17": [
+    [
+     "leptospirosis_acute",
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "otitis_externa_mild",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "calib:p18": [
+    [
+     "pyometra",
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "carbamate_organophosphate_poisoning"
+    ],
+    null
+   ],
+   "regua:b01": [
+    [
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "chocolate_toxicosis",
+     "flea_dermatitis_pruritus"
+    ],
+    3
+   ],
+   "regua:b02": [
+    [
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus"
+    ],
+    7
+   ],
+   "regua:b03": [
+    [
+     "airway_foreign_body_choking",
+     "leptospirosis_acute",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "otitis_externa_mild"
+    ],
+    9
+   ],
+   "regua:b04": [
+    [
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "leptospirosis_acute",
+     "pyometra"
+    ],
+    7
+   ],
+   "regua:b05": [
+    [
+     "toad_bufotoxin_poisoning",
+     "leptospirosis_acute",
+     "pyometra",
+     "airway_foreign_body_choking",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "regua:b06": [
+    [
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "regua:b07": [
+    [
+     "leptospirosis_acute",
+     "airway_foreign_body_choking",
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "regua:b08": [
+    [
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "human_medication_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    7
+   ],
+   "regua:b09": [
+    [
+     "flea_dermatitis_pruritus",
+     "otitis_externa_mild",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking"
+    ],
+    0
+   ],
+   "regua:b10": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "airway_foreign_body_choking",
+     "leptospirosis_acute"
+    ],
+    8
+   ],
+   "regua:b11": [
+    [
+     "pyometra",
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "carbamate_organophosphate_poisoning"
+    ],
+    null
+   ],
+   "regua:b12": [
+    [
+     "leptospirosis_acute",
+     "airway_foreign_body_choking",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "regua:b13": [
+    [
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "leptospirosis_acute",
+     "airway_foreign_body_choking"
+    ],
+    9
+   ],
+   "regua:b14": [
+    [
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "pyometra"
+    ],
+    8
+   ],
+   "regua:b15": [
+    [
+     "airway_foreign_body_choking",
+     "pyometra",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis",
+     "leptospirosis_acute"
+    ],
+    8
+   ],
+   "regua:b16": [
+    [
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "leptospirosis_acute",
+     "human_medication_poisoning"
+    ],
+    8
+   ],
+   "regua:b17": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning"
+    ],
+    1
+   ],
+   "regua:b18": [
+    [
+     "leptospirosis_acute",
+     "toad_bufotoxin_poisoning",
+     "pyometra",
+     "human_medication_poisoning",
+     "cat_bite_abscess"
+    ],
+    9
+   ],
+   "regua:b19": [
+    [
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning",
+     "carbamate_organophosphate_poisoning",
+     "permethrin_toxicosis_cats",
+     "pyometra"
+    ],
+    0
+   ],
+   "regua:b20": [
+    [
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "pyometra",
+     "otitis_externa_mild"
+    ],
+    9
+   ],
+   "regua:b21": [
+    [
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "permethrin_toxicosis_cats"
+    ],
+    4
+   ],
+   "regua:b22": [
+    [
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "regua:b23": [
+    [
+     "toad_bufotoxin_poisoning",
+     "pyometra",
+     "leptospirosis_acute",
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "regua:b24": [
+    [
+     "pyometra",
+     "leptospirosis_acute",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    0
+   ],
+   "regua:b25": [
+    [
+     "leptospirosis_acute",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus"
+    ],
+    null
+   ],
+   "regua:b26": [
+    [
+     "pyometra",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "regua:b27": [
+    [
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "leptospirosis_acute",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "regua:b28": [
+    [
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "toad_bufotoxin_poisoning"
+    ],
+    7
+   ],
+   "regua:b29": [
+    [
+     "toad_bufotoxin_poisoning",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus"
+    ],
+    null
+   ],
+   "regua:b30": [
+    [
+     "toad_bufotoxin_poisoning",
+     "carbamate_organophosphate_poisoning",
+     "human_medication_poisoning",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus"
+    ],
+    null
+   ],
+   "regua:b31": [
+    [
+     "human_medication_poisoning",
+     "toad_bufotoxin_poisoning",
+     "cat_bite_abscess",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking"
+    ],
+    2
+   ],
+   "regua:b32": [
+    [
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "leptospirosis_acute",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning"
+    ],
+    7
+   ],
+   "regua:b33": [
+    [
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "diabetic_ketoacidosis"
+    ],
+    4
+   ],
+   "regua:b34": [
+    [
+     "flea_dermatitis_pruritus",
+     "leptospirosis_acute",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "regua:b35": [
+    [
+     "pyometra",
+     "airway_foreign_body_choking",
+     "leptospirosis_acute",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "regua:b36": [
+    [
+     "pyometra",
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "regua:b37": [
+    [
+     "toad_bufotoxin_poisoning",
+     "leptospirosis_acute",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "pyometra"
+    ],
+    1
+   ],
+   "regua:b38": [
+    [
+     "carbamate_organophosphate_poisoning",
+     "pyometra",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis"
+    ],
+    7
+   ],
+   "regua:b39": [
+    [
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "leptospirosis_acute",
+     "pyometra"
+    ],
+    0
+   ],
+   "regua:b40": [
+    [
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "seizures",
+     "airway_foreign_body_choking",
+     "pyometra"
+    ],
+    7
+   ],
+   "regua:b41": [
+    [
+     "leptospirosis_acute",
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "regua:b42": [
+    [
+     "human_medication_poisoning",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "leptospirosis_acute",
+     "pyometra"
+    ],
+    null
+   ],
+   "regua:b43": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "human_medication_poisoning",
+     "leptospirosis_acute"
+    ],
+    9
+   ],
+   "regua:b44": [
+    [
+     "airway_foreign_body_choking",
+     "toad_bufotoxin_poisoning",
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning"
+    ],
+    0
+   ],
+   "regua:b45": [
+    [
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "leptospirosis_acute",
+     "acute_hindlimb_paralysis",
+     "pyometra"
+    ],
+    null
+   ],
+   "regua:b46": [
+    [
+     "leptospirosis_acute",
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "otitis_externa_mild"
+    ],
+    7
+   ],
+   "regua:b47": [
+    [
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "pyometra",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning"
+    ],
+    7
+   ],
+   "regua:b48": [
+    [
+     "toad_bufotoxin_poisoning",
+     "leptospirosis_acute",
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "regua:b49": [
+    [
+     "pyometra",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus"
+    ],
+    8
+   ],
+   "regua:b50": [
+    [
+     "toad_bufotoxin_poisoning",
+     "burns_and_electrical_injury",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus"
+    ],
+    1
+   ],
+   "regua:b51": [
+    [
+     "pyometra",
+     "toad_bufotoxin_poisoning",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking"
+    ],
+    7
+   ],
+   "regua:b52": [
+    [
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "grape_xylitol_toxicosis",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning"
+    ],
+    2
+   ],
+   "regua:b53": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "pyometra",
+     "toad_bufotoxin_poisoning"
+    ],
+    6
+   ],
+   "regua:b54": [
+    [
+     "flea_dermatitis_pruritus",
+     "human_medication_poisoning",
+     "pyometra",
+     "cat_bite_abscess",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "regua:b55": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "regua:b56": [
+    [
+     "pyometra",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning",
+     "leptospirosis_acute",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "regua:b57": [
+    [
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "otitis_externa_mild",
+     "pyometra",
+     "acute_hindlimb_paralysis"
+    ],
+    2
+   ],
+   "regua:b58": [
+    [
+     "pyometra",
+     "acute_hindlimb_paralysis",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning"
+    ],
+    8
+   ],
+   "regua:b59": [
+    [
+     "airway_foreign_body_choking",
+     "leptospirosis_acute",
+     "flea_dermatitis_pruritus",
+     "toad_bufotoxin_poisoning",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "regua:b60": [
+    [
+     "flea_dermatitis_pruritus",
+     "airway_foreign_body_choking",
+     "leptospirosis_acute",
+     "pyometra",
+     "acute_hindlimb_paralysis"
+    ],
+    null
+   ],
+   "regua:b61": [
+    [
+     "toad_bufotoxin_poisoning",
+     "exertional_panting_mild",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "leptospirosis_acute"
+    ],
+    1
+   ],
+   "regua:b62": [
+    [
+     "human_medication_poisoning",
+     "cat_bite_abscess",
+     "toad_bufotoxin_poisoning",
+     "carbamate_organophosphate_poisoning",
+     "pyometra"
+    ],
+    7
+   ],
+   "regua:b63": [
+    [
+     "leptospirosis_acute",
+     "flea_dermatitis_pruritus",
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "human_medication_poisoning"
+    ],
+    null
+   ],
+   "regua:b64": [
+    [
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "acute_hindlimb_paralysis",
+     "leptospirosis_acute",
+     "flea_dermatitis_pruritus"
+    ],
+    7
+   ],
+   "regua:b65": [
+    [
+     "acute_hindlimb_paralysis",
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "pyometra",
+     "toad_bufotoxin_poisoning"
+    ],
+    null
+   ],
+   "regua:b66": [
+    [
+     "acute_hindlimb_paralysis",
+     "toad_bufotoxin_poisoning",
+     "airway_foreign_body_choking",
+     "leptospirosis_acute",
+     "pyometra"
+    ],
+    null
+   ]
+  }
+ },
+ "BAAI/bge-m3": {
+  "dim": 1024,
+  "indexar_s": 959.7,
+  "params_M": 568,
+  "dev": {
+   "todos": {
+    "P@1": 0.085,
+    "P@3": 0.404,
+    "MRR": 0.268,
+    "n": 47
+   },
+   "etapa1": {
+    "P@1": 0.107,
+    "P@3": 0.357,
+    "MRR": 0.269,
+    "n": 28
+   },
+   "etapa2": {
+    "P@1": 0.053,
+    "P@3": 0.474,
+    "MRR": 0.268,
+    "n": 19
+   }
+  },
+  "calib": {
+   "todos": {
+    "P@1": 0.188,
+    "P@3": 0.312,
+    "MRR": 0.328,
+    "n": 16
+   },
+   "etapa1": {
+    "P@1": 0.231,
+    "P@3": 0.385,
+    "MRR": 0.38,
+    "n": 13
+   },
+   "etapa2": {
+    "P@1": 0.0,
+    "P@3": 0.0,
+    "MRR": 0.104,
+    "n": 3
+   }
+  },
+  "regua": {
+   "todos": {
+    "P@1": 0.273,
+    "P@3": 0.394,
+    "MRR": 0.402,
+    "n": 66
+   },
+   "etapa1": {
+    "P@1": 0.194,
+    "P@3": 0.333,
+    "MRR": 0.344,
+    "n": 36
+   },
+   "etapa2": {
+    "P@1": 0.367,
+    "P@3": 0.467,
+    "MRR": 0.472,
+    "n": 30
+   }
+  },
+  "ms_por_consulta": 358.1,
+  "casos": {
+   "dev:p19": [
+    [
+     "grape_xylitol_toxicosis",
+     "chocolate_toxicosis",
+     "burns_and_electrical_injury",
+     "snake_and_scorpion_envenomation",
+     "airway_foreign_body_choking"
+    ],
+    1
+   ],
+   "dev:p20": [
+    [
+     "burns_and_electrical_injury",
+     "mild_upper_respiratory_signs",
+     "permethrin_toxicosis_cats",
+     "grape_xylitol_toxicosis",
+     "chocolate_toxicosis"
+    ],
+    null
+   ],
+   "dev:p21": [
+    [
+     "mild_upper_respiratory_signs",
+     "respiratory_distress",
+     "congestive_heart_failure",
+     "diabetic_ketoacidosis",
+     "seizures"
+    ],
+    1
+   ],
+   "dev:p22": [
+    [
+     "tremors_without_seizure",
+     "seizures",
+     "canine_heatstroke",
+     "urethral_obstruction",
+     "ocular_emergency"
+    ],
+    1
+   ],
+   "dev:p23": [
+    [
+     "ocular_emergency",
+     "burns_and_electrical_injury",
+     "minor_wound",
+     "trauma_and_bleeding",
+     "canine_heatstroke"
+    ],
+    3
+   ],
+   "dev:p24": [
+    [
+     "seizures",
+     "ocular_emergency",
+     "burns_and_electrical_injury",
+     "exertional_panting_mild",
+     "tremors_without_seizure"
+    ],
+    null
+   ],
+   "dev:p25": [
+    [
+     "lily_toxicosis_cats",
+     "single_vomiting_or_mild_diarrhea",
+     "grape_xylitol_toxicosis",
+     "permethrin_toxicosis_cats",
+     "dietary_indiscretion_mild"
+    ],
+    null
+   ],
+   "dev:p26": [
+    [
+     "canine_heatstroke",
+     "snake_and_scorpion_envenomation",
+     "burns_and_electrical_injury",
+     "congestive_heart_failure",
+     "urethral_obstruction"
+    ],
+    0
+   ],
+   "dev:p27": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "urethral_obstruction",
+     "airway_foreign_body_choking",
+     "vestibular_syndrome_otitis_interna",
+     "congestive_heart_failure"
+    ],
+    null
+   ],
+   "dev:p28": [
+    [
+     "dystocia",
+     "fading_neonate",
+     "hypoglycemia_toy_puppy",
+     "exertional_panting_mild",
+     "normal_estrus"
+    ],
+    1
+   ],
+   "dev:p29": [
+    [
+     "tremors_without_seizure",
+     "acute_hindlimb_paralysis",
+     "seizures",
+     "leptospirosis_acute",
+     "ocular_emergency"
+    ],
+    1
+   ],
+   "dev:p30": [
+    [
+     "permethrin_toxicosis_cats",
+     "toad_bufotoxin_poisoning",
+     "kennel_cough_mild",
+     "snake_and_scorpion_envenomation",
+     "cat_bite_abscess"
+    ],
+    null
+   ],
+   "dev:p31": [
+    [
+     "permethrin_toxicosis_cats",
+     "seizures",
+     "carbamate_organophosphate_poisoning",
+     "snake_and_scorpion_envenomation",
+     "burns_and_electrical_injury"
+    ],
+    5
+   ],
+   "dev:p32": [
+    [
+     "burns_and_electrical_injury",
+     "reduced_appetite_no_other_signs",
+     "rabies_exposure_wild_animal_bite",
+     "seizures",
+     "leptospirosis_acute"
+    ],
+    null
+   ],
+   "dev:p33": [
+    [
+     "kennel_cough_mild",
+     "congestive_heart_failure",
+     "leptospirosis_acute",
+     "reduced_appetite_no_other_signs",
+     "grape_xylitol_toxicosis"
+    ],
+    1
+   ],
+   "dev:p34": [
+    [
+     "airway_foreign_body_choking",
+     "mild_upper_respiratory_signs",
+     "seizures",
+     "diabetic_ketoacidosis",
+     "burns_and_electrical_injury"
+    ],
+    null
+   ],
+   "dev:p35": [
+    [
+     "grape_xylitol_toxicosis",
+     "snake_and_scorpion_envenomation",
+     "allium_toxicosis",
+     "chocolate_toxicosis",
+     "kennel_cough_mild"
+    ],
+    6
+   ],
+   "dev:p36": [
+    [
+     "airway_foreign_body_choking",
+     "flea_dermatitis_pruritus",
+     "burns_and_electrical_injury",
+     "congestive_heart_failure",
+     "canine_heatstroke"
+    ],
+    null
+   ],
+   "dev:p37": [
+    [
+     "anaphylaxis_facial_swelling",
+     "seizures",
+     "permethrin_toxicosis_cats",
+     "grape_xylitol_toxicosis",
+     "human_medication_poisoning"
+    ],
+    2
+   ],
+   "dev:p38": [
+    [
+     "lily_toxicosis_cats",
+     "grape_xylitol_toxicosis",
+     "single_vomiting_or_mild_diarrhea",
+     "permethrin_toxicosis_cats",
+     "cat_bite_abscess"
+    ],
+    null
+   ],
+   "dev:p39": [
+    [
+     "burns_and_electrical_injury",
+     "airway_foreign_body_choking",
+     "seizures",
+     "canine_heatstroke",
+     "congestive_heart_failure"
+    ],
+    1
+   ],
+   "dev:p40": [
+    [
+     "hypoglycemia_toy_puppy",
+     "normal_estrus",
+     "dystocia",
+     "normal_whelping",
+     "eclampsia"
+    ],
+    2
+   ],
+   "dev:p41": [
+    [
+     "congestive_heart_failure",
+     "hypoglycemia_toy_puppy",
+     "kennel_cough_mild",
+     "parvovirus_panleukopenia",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "dev:p42": [
+    [
+     "exertional_panting_mild",
+     "fading_neonate",
+     "canine_heatstroke",
+     "grape_xylitol_toxicosis",
+     "burns_and_electrical_injury"
+    ],
+    8
+   ],
+   "dev:p43": [
+    [
+     "fading_neonate",
+     "eclampsia",
+     "normal_whelping",
+     "hypoglycemia_toy_puppy",
+     "tremors_without_seizure"
+    ],
+    1
+   ],
+   "dev:p44": [
+    [
+     "grape_xylitol_toxicosis",
+     "burns_and_electrical_injury",
+     "mild_upper_respiratory_signs",
+     "chocolate_toxicosis",
+     "permethrin_toxicosis_cats"
+    ],
+    null
+   ],
+   "dev:p45": [
+    [
+     "grape_xylitol_toxicosis",
+     "permethrin_toxicosis_cats",
+     "seizures",
+     "mild_upper_respiratory_signs",
+     "cat_bite_abscess"
+    ],
+    3
+   ],
+   "dev:p46": [
+    [
+     "seizures",
+     "permethrin_toxicosis_cats",
+     "urethral_obstruction",
+     "trauma_and_bleeding",
+     "lily_toxicosis_cats"
+    ],
+    6
+   ],
+   "dev:p47": [
+    [
+     "periodontal_disease_mild",
+     "tremors_without_seizure",
+     "airway_foreign_body_choking",
+     "burns_and_electrical_injury",
+     "seizures"
+    ],
+    8
+   ],
+   "dev:p48": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "vestibular_syndrome_otitis_interna",
+     "ticks_found_no_signs",
+     "grape_xylitol_toxicosis",
+     "exertional_panting_mild"
+    ],
+    0
+   ],
+   "dev:p49": [
+    [
+     "airway_foreign_body_choking",
+     "periodontal_disease_mild",
+     "tremors_without_seizure",
+     "osteoarthritis_stiffness",
+     "vestibular_syndrome_otitis_interna"
+    ],
+    3
+   ],
+   "dev:p50": [
+    [
+     "permethrin_toxicosis_cats",
+     "burns_and_electrical_injury",
+     "snake_and_scorpion_envenomation",
+     "minor_wound",
+     "canine_heatstroke"
+    ],
+    8
+   ],
+   "dev:p51": [
+    [
+     "airway_foreign_body_choking",
+     "congestive_heart_failure",
+     "kennel_cough_mild",
+     "burns_and_electrical_injury",
+     "exertional_panting_mild"
+    ],
+    2
+   ],
+   "dev:p52": [
+    [
+     "mild_conjunctivitis",
+     "permethrin_toxicosis_cats",
+     "otitis_externa_mild",
+     "trauma_and_bleeding",
+     "flea_dermatitis_pruritus"
+    ],
+    0
+   ],
+   "dev:p53": [
+    [
+     "normal_estrus",
+     "normal_whelping",
+     "dystocia",
+     "hypoglycemia_toy_puppy",
+     "fading_neonate"
+    ],
+    1
+   ],
+   "dev:p54": [
+    [
+     "seizures",
+     "tremors_without_seizure",
+     "airway_foreign_body_choking",
+     "exertional_panting_mild",
+     "canine_heatstroke"
+    ],
+    1
+   ],
+   "dev:p55": [
+    [
+     "ocular_emergency",
+     "exertional_panting_mild",
+     "airway_foreign_body_choking",
+     "urethral_obstruction",
+     "tremors_without_seizure"
+    ],
+    null
+   ],
+   "dev:p56": [
+    [
+     "seizures",
+     "diabetic_ketoacidosis",
+     "snake_and_scorpion_envenomation",
+     "dystocia",
+     "permethrin_toxicosis_cats"
+    ],
+    null
+   ],
+   "dev:p57": [
+    [
+     "exertional_panting_mild",
+     "tremors_without_seizure",
+     "single_vomiting_or_mild_diarrhea",
+     "airway_foreign_body_choking",
+     "urethral_obstruction"
+    ],
+    null
+   ],
+   "dev:p58": [
+    [
+     "permethrin_toxicosis_cats",
+     "rabies_exposure_wild_animal_bite",
+     "snake_and_scorpion_envenomation",
+     "anaphylaxis_facial_swelling",
+     "minor_wound"
+    ],
+    null
+   ],
+   "dev:p59": [
+    [
+     "exertional_panting_mild",
+     "diabetic_ketoacidosis",
+     "seizures",
+     "permethrin_toxicosis_cats",
+     "collapse_and_pale_gums"
+    ],
+    null
+   ],
+   "dev:p60": [
+    [
+     "burns_and_electrical_injury",
+     "minor_wound",
+     "ocular_emergency",
+     "gastrointestinal_foreign_body",
+     "trauma_and_bleeding"
+    ],
+    1
+   ],
+   "dev:p61": [
+    [
+     "grape_xylitol_toxicosis",
+     "reduced_appetite_no_other_signs",
+     "periodontal_disease_mild",
+     "mild_upper_respiratory_signs",
+     "vomiting_and_diarrhea"
+    ],
+    2
+   ],
+   "dev:p62": [
+    [
+     "airway_foreign_body_choking",
+     "ticks_found_no_signs",
+     "gastric_dilatation_volvulus",
+     "kennel_cough_mild",
+     "snake_and_scorpion_envenomation"
+    ],
+    null
+   ],
+   "dev:p63": [
+    [
+     "toad_bufotoxin_poisoning",
+     "snake_and_scorpion_envenomation",
+     "grape_xylitol_toxicosis",
+     "rabies_exposure_wild_animal_bite",
+     "airway_foreign_body_choking"
+    ],
+    3
+   ],
+   "dev:p64": [
+    [
+     "permethrin_toxicosis_cats",
+     "leptospirosis_acute",
+     "cat_bite_abscess",
+     "vomiting_and_diarrhea",
+     "seizures"
+    ],
+    null
+   ],
+   "dev:p65": [
+    [
+     "exertional_panting_mild",
+     "burns_and_electrical_injury",
+     "seizures",
+     "tremors_without_seizure",
+     "airway_foreign_body_choking"
+    ],
+    0
+   ],
+   "calib:p01": [
+    [
+     "seizures",
+     "anaphylaxis_facial_swelling",
+     "eclampsia",
+     "burns_and_electrical_injury",
+     "snake_and_scorpion_envenomation"
+    ],
+    null
+   ],
+   "calib:p02": [
+    [
+     "seizures",
+     "tremors_without_seizure",
+     "periodontal_disease_mild",
+     "burns_and_electrical_injury",
+     "vestibular_syndrome_otitis_interna"
+    ],
+    8
+   ],
+   "calib:p03": [
+    [
+     "tremors_without_seizure",
+     "seizures",
+     "canine_heatstroke",
+     "feline_aortic_thromboembolism",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "calib:p04": [
+    [
+     "tremors_without_seizure",
+     "exertional_panting_mild",
+     "burns_and_electrical_injury",
+     "hypoglycemia_toy_puppy",
+     "airway_foreign_body_choking"
+    ],
+    null
+   ],
+   "calib:p05": [
+    [
+     "grape_xylitol_toxicosis",
+     "permethrin_toxicosis_cats",
+     "leptospirosis_acute",
+     "vestibular_syndrome_otitis_interna",
+     "snake_and_scorpion_envenomation"
+    ],
+    6
+   ],
+   "calib:p06": [
+    [
+     "lily_toxicosis_cats",
+     "single_vomiting_or_mild_diarrhea",
+     "burns_and_electrical_injury",
+     "grape_xylitol_toxicosis",
+     "exertional_panting_mild"
+    ],
+    1
+   ],
+   "calib:p07": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "urethral_obstruction",
+     "airway_foreign_body_choking",
+     "leptospirosis_acute",
+     "pyometra"
+    ],
+    null
+   ],
+   "calib:p08": [
+    [
+     "lily_toxicosis_cats",
+     "airway_foreign_body_choking",
+     "seizures",
+     "urethral_obstruction",
+     "cat_bite_abscess"
+    ],
+    3
+   ],
+   "calib:p09": [
+    [
+     "seizures",
+     "lily_toxicosis_cats",
+     "cat_bite_abscess",
+     "inappropriate_urination_or_cystitis",
+     "dystocia"
+    ],
+    3
+   ],
+   "calib:p10": [
+    [
+     "normal_estrus",
+     "pyometra",
+     "toad_bufotoxin_poisoning",
+     "urethral_obstruction",
+     "eclampsia"
+    ],
+    1
+   ],
+   "calib:p11": [
+    [
+     "normal_estrus",
+     "trauma_and_bleeding",
+     "kennel_cough_mild",
+     "urethral_obstruction",
+     "slow_growing_lump"
+    ],
+    0
+   ],
+   "calib:p12": [
+    [
+     "seizures",
+     "respiratory_distress",
+     "diabetic_ketoacidosis",
+     "high_rise_syndrome_cats",
+     "feline_aortic_thromboembolism"
+    ],
+    9
+   ],
+   "calib:p13": [
+    [
+     "osteoarthritis_stiffness",
+     "tremors_without_seizure",
+     "airway_foreign_body_choking",
+     "vestibular_syndrome_otitis_interna",
+     "urethral_obstruction"
+    ],
+    0
+   ],
+   "calib:p14": [
+    [
+     "tremors_without_seizure",
+     "reduced_appetite_no_other_signs",
+     "mild_lameness",
+     "leptospirosis_acute",
+     "snake_and_scorpion_envenomation"
+    ],
+    4
+   ],
+   "calib:p17": [
+    [
+     "ocular_emergency",
+     "canine_heatstroke",
+     "otitis_externa_mild",
+     "trauma_and_bleeding",
+     "leptospirosis_acute"
+    ],
+    0
+   ],
+   "calib:p18": [
+    [
+     "seizures",
+     "lily_toxicosis_cats",
+     "feline_aortic_thromboembolism",
+     "diabetic_ketoacidosis",
+     "mild_conjunctivitis"
+    ],
+    4
+   ],
+   "regua:b01": [
+    [
+     "chocolate_toxicosis",
+     "grape_xylitol_toxicosis",
+     "snake_and_scorpion_envenomation",
+     "airway_foreign_body_choking",
+     "seizures"
+    ],
+    0
+   ],
+   "regua:b02": [
+    [
+     "tremors_without_seizure",
+     "seizures",
+     "acute_hindlimb_paralysis",
+     "burns_and_electrical_injury",
+     "lily_toxicosis_cats"
+    ],
+    6
+   ],
+   "regua:b03": [
+    [
+     "congestive_heart_failure",
+     "respiratory_distress",
+     "airway_foreign_body_choking",
+     "canine_heatstroke",
+     "seizures"
+    ],
+    1
+   ],
+   "regua:b04": [
+    [
+     "tremors_without_seizure",
+     "seizures",
+     "eclampsia",
+     "burns_and_electrical_injury",
+     "urethral_obstruction"
+    ],
+    1
+   ],
+   "regua:b05": [
+    [
+     "seizures",
+     "cat_bite_abscess",
+     "inappropriate_urination_or_cystitis",
+     "mild_upper_respiratory_signs",
+     "permethrin_toxicosis_cats"
+    ],
+    3
+   ],
+   "regua:b06": [
+    [
+     "burns_and_electrical_injury",
+     "collapse_and_pale_gums",
+     "ocular_emergency",
+     "trauma_and_bleeding",
+     "canine_heatstroke"
+    ],
+    3
+   ],
+   "regua:b07": [
+    [
+     "vestibular_syndrome_otitis_interna",
+     "grape_xylitol_toxicosis",
+     "lily_toxicosis_cats",
+     "tremors_without_seizure",
+     "diabetic_ketoacidosis"
+    ],
+    null
+   ],
+   "regua:b08": [
+    [
+     "grape_xylitol_toxicosis",
+     "canine_heatstroke",
+     "burns_and_electrical_injury",
+     "allium_toxicosis",
+     "snake_and_scorpion_envenomation"
+    ],
+    3
+   ],
+   "regua:b09": [
+    [
+     "congestive_heart_failure",
+     "burns_and_electrical_injury",
+     "periodontal_disease_mild",
+     "airway_foreign_body_choking",
+     "exertional_panting_mild"
+    ],
+    6
+   ],
+   "regua:b10": [
+    [
+     "tremors_without_seizure",
+     "exertional_panting_mild",
+     "ticks_found_no_signs",
+     "mild_lameness",
+     "burns_and_electrical_injury"
+    ],
+    3
+   ],
+   "regua:b11": [
+    [
+     "mild_conjunctivitis",
+     "diabetic_ketoacidosis",
+     "lily_toxicosis_cats",
+     "seizures",
+     "eclampsia"
+    ],
+    0
+   ],
+   "regua:b12": [
+    [
+     "airway_foreign_body_choking",
+     "grape_xylitol_toxicosis",
+     "urethral_obstruction",
+     "canine_heatstroke",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    6
+   ],
+   "regua:b13": [
+    [
+     "ocular_emergency",
+     "collapse_and_pale_gums",
+     "trauma_and_bleeding",
+     "burns_and_electrical_injury",
+     "acute_hindlimb_paralysis"
+    ],
+    2
+   ],
+   "regua:b14": [
+    [
+     "fading_neonate",
+     "hypoglycemia_toy_puppy",
+     "exertional_panting_mild",
+     "periodontal_disease_mild",
+     "reduced_appetite_no_other_signs"
+    ],
+    0
+   ],
+   "regua:b15": [
+    [
+     "congestive_heart_failure",
+     "trauma_and_bleeding",
+     "seizures",
+     "acute_hindlimb_paralysis",
+     "urethral_obstruction"
+    ],
+    4
+   ],
+   "regua:b16": [
+    [
+     "reduced_appetite_no_other_signs",
+     "flea_dermatitis_pruritus",
+     "rabies_exposure_wild_animal_bite",
+     "burns_and_electrical_injury",
+     "snake_and_scorpion_envenomation"
+    ],
+    6
+   ],
+   "regua:b17": [
+    [
+     "tremors_without_seizure",
+     "reduced_appetite_no_other_signs",
+     "urethral_obstruction",
+     "hypoglycemia_toy_puppy",
+     "diabetic_ketoacidosis"
+    ],
+    null
+   ],
+   "regua:b18": [
+    [
+     "mild_upper_respiratory_signs",
+     "cat_bite_abscess",
+     "diabetic_ketoacidosis",
+     "seizures",
+     "congestive_heart_failure"
+    ],
+    0
+   ],
+   "regua:b19": [
+    [
+     "permethrin_toxicosis_cats",
+     "carbamate_organophosphate_poisoning",
+     "snake_and_scorpion_envenomation",
+     "grape_xylitol_toxicosis",
+     "human_medication_poisoning"
+    ],
+    4
+   ],
+   "regua:b20": [
+    [
+     "eclampsia",
+     "burns_and_electrical_injury",
+     "exertional_panting_mild",
+     "tremors_without_seizure",
+     "congestive_heart_failure"
+    ],
+    null
+   ],
+   "regua:b21": [
+    [
+     "seizures",
+     "permethrin_toxicosis_cats",
+     "anaphylaxis_facial_swelling",
+     "reduced_appetite_no_other_signs",
+     "insect_sting_local_reaction"
+    ],
+    1
+   ],
+   "regua:b22": [
+    [
+     "grape_xylitol_toxicosis",
+     "lily_toxicosis_cats",
+     "permethrin_toxicosis_cats",
+     "seizures",
+     "insect_sting_local_reaction"
+    ],
+    null
+   ],
+   "regua:b23": [
+    [
+     "lily_toxicosis_cats",
+     "grape_xylitol_toxicosis",
+     "chocolate_toxicosis",
+     "anaphylaxis_facial_swelling",
+     "snake_and_scorpion_envenomation"
+    ],
+    null
+   ],
+   "regua:b24": [
+    [
+     "cat_bite_abscess",
+     "normal_estrus",
+     "urethral_obstruction",
+     "otitis_externa_mild",
+     "normal_whelping"
+    ],
+    6
+   ],
+   "regua:b25": [
+    [
+     "burns_and_electrical_injury",
+     "grape_xylitol_toxicosis",
+     "seizures",
+     "airway_foreign_body_choking",
+     "exertional_panting_mild"
+    ],
+    null
+   ],
+   "regua:b26": [
+    [
+     "cat_bite_abscess",
+     "urethral_obstruction",
+     "seizures",
+     "dystocia",
+     "pyometra"
+    ],
+    5
+   ],
+   "regua:b27": [
+    [
+     "airway_foreign_body_choking",
+     "hypoglycemia_toy_puppy",
+     "tremors_without_seizure",
+     "burns_and_electrical_injury",
+     "canine_heatstroke"
+    ],
+    9
+   ],
+   "regua:b28": [
+    [
+     "exertional_panting_mild",
+     "hypoglycemia_toy_puppy",
+     "tremors_without_seizure",
+     "osteoarthritis_stiffness",
+     "airway_foreign_body_choking"
+    ],
+    3
+   ],
+   "regua:b29": [
+    [
+     "exertional_panting_mild",
+     "diabetic_ketoacidosis",
+     "hypoglycemia_toy_puppy",
+     "tremors_without_seizure",
+     "cat_bite_abscess"
+    ],
+    6
+   ],
+   "regua:b30": [
+    [
+     "grape_xylitol_toxicosis",
+     "lily_toxicosis_cats",
+     "chocolate_toxicosis",
+     "reduced_appetite_no_other_signs",
+     "snake_and_scorpion_envenomation"
+    ],
+    null
+   ],
+   "regua:b31": [
+    [
+     "mild_upper_respiratory_signs",
+     "burns_and_electrical_injury",
+     "diabetic_ketoacidosis",
+     "rabies_exposure_wild_animal_bite",
+     "grape_xylitol_toxicosis"
+    ],
+    6
+   ],
+   "regua:b32": [
+    [
+     "congestive_heart_failure",
+     "respiratory_distress",
+     "seizures",
+     "exertional_panting_mild",
+     "burns_and_electrical_injury"
+    ],
+    0
+   ],
+   "regua:b33": [
+    [
+     "diabetic_ketoacidosis",
+     "lily_toxicosis_cats",
+     "hypoglycemia_toy_puppy",
+     "grape_xylitol_toxicosis",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    0
+   ],
+   "regua:b34": [
+    [
+     "leptospirosis_acute",
+     "eclampsia",
+     "kennel_cough_mild",
+     "periodontal_disease_mild",
+     "seizures"
+    ],
+    8
+   ],
+   "regua:b35": [
+    [
+     "normal_estrus",
+     "eclampsia",
+     "normal_whelping",
+     "dystocia",
+     "hypoglycemia_toy_puppy"
+    ],
+    3
+   ],
+   "regua:b36": [
+    [
+     "seizures",
+     "respiratory_distress",
+     "eclampsia",
+     "permethrin_toxicosis_cats",
+     "urethral_obstruction"
+    ],
+    null
+   ],
+   "regua:b37": [
+    [
+     "snake_and_scorpion_envenomation",
+     "leptospirosis_acute",
+     "grape_xylitol_toxicosis",
+     "ticks_found_no_signs",
+     "anaphylaxis_facial_swelling"
+    ],
+    1
+   ],
+   "regua:b38": [
+    [
+     "lily_toxicosis_cats",
+     "grape_xylitol_toxicosis",
+     "burns_and_electrical_injury",
+     "mild_upper_respiratory_signs",
+     "allium_toxicosis"
+    ],
+    0
+   ],
+   "regua:b39": [
+    [
+     "toad_bufotoxin_poisoning",
+     "snake_and_scorpion_envenomation",
+     "burns_and_electrical_injury",
+     "insect_sting_local_reaction",
+     "grape_xylitol_toxicosis"
+    ],
+    0
+   ],
+   "regua:b40": [
+    [
+     "seizures",
+     "urethral_obstruction",
+     "tremors_without_seizure",
+     "burns_and_electrical_injury",
+     "insect_sting_local_reaction"
+    ],
+    2
+   ],
+   "regua:b41": [
+    [
+     "normal_estrus",
+     "cat_bite_abscess",
+     "ticks_found_no_signs",
+     "trauma_and_bleeding",
+     "urethral_obstruction"
+    ],
+    0
+   ],
+   "regua:b42": [
+    [
+     "urethral_obstruction",
+     "tremors_without_seizure",
+     "diabetic_ketoacidosis",
+     "eclampsia",
+     "seizures"
+    ],
+    null
+   ],
+   "regua:b43": [
+    [
+     "ocular_emergency",
+     "burns_and_electrical_injury",
+     "airway_foreign_body_choking",
+     "pyometra",
+     "minor_wound"
+    ],
+    0
+   ],
+   "regua:b44": [
+    [
+     "burns_and_electrical_injury",
+     "airway_foreign_body_choking",
+     "mild_upper_respiratory_signs",
+     "seizures",
+     "permethrin_toxicosis_cats"
+    ],
+    1
+   ],
+   "regua:b45": [
+    [
+     "burns_and_electrical_injury",
+     "ocular_emergency",
+     "grape_xylitol_toxicosis",
+     "reduced_appetite_no_other_signs",
+     "snake_and_scorpion_envenomation"
+    ],
+    4
+   ],
+   "regua:b46": [
+    [
+     "flea_dermatitis_pruritus",
+     "tick_borne_disease_anemia",
+     "kennel_cough_mild",
+     "leptospirosis_acute",
+     "ticks_found_no_signs"
+    ],
+    1
+   ],
+   "regua:b47": [
+    [
+     "grape_xylitol_toxicosis",
+     "burns_and_electrical_injury",
+     "canine_heatstroke",
+     "tremors_without_seizure",
+     "hypoglycemia_toy_puppy"
+    ],
+    4
+   ],
+   "regua:b48": [
+    [
+     "seizures",
+     "tremors_without_seizure",
+     "eclampsia",
+     "diabetic_ketoacidosis",
+     "canine_heatstroke"
+    ],
+    null
+   ],
+   "regua:b49": [
+    [
+     "respiratory_distress",
+     "congestive_heart_failure",
+     "mild_upper_respiratory_signs",
+     "seizures",
+     "burns_and_electrical_injury"
+    ],
+    null
+   ],
+   "regua:b50": [
+    [
+     "burns_and_electrical_injury",
+     "ocular_emergency",
+     "insect_sting_local_reaction",
+     "grape_xylitol_toxicosis",
+     "airway_foreign_body_choking"
+    ],
+    0
+   ],
+   "regua:b51": [
+    [
+     "eclampsia",
+     "urethral_obstruction",
+     "fading_neonate",
+     "normal_whelping",
+     "seizures"
+    ],
+    0
+   ],
+   "regua:b52": [
+    [
+     "grape_xylitol_toxicosis",
+     "tremors_without_seizure",
+     "single_vomiting_or_mild_diarrhea",
+     "chocolate_toxicosis",
+     "fading_neonate"
+    ],
+    0
+   ],
+   "regua:b53": [
+    [
+     "normal_whelping",
+     "dystocia",
+     "hypoglycemia_toy_puppy",
+     "normal_estrus",
+     "tremors_without_seizure"
+    ],
+    0
+   ],
+   "regua:b54": [
+    [
+     "cat_bite_abscess",
+     "permethrin_toxicosis_cats",
+     "rabies_exposure_wild_animal_bite",
+     "feline_aortic_thromboembolism",
+     "flea_dermatitis_pruritus"
+    ],
+    null
+   ],
+   "regua:b55": [
+    [
+     "exertional_panting_mild",
+     "burns_and_electrical_injury",
+     "congestive_heart_failure",
+     "seizures",
+     "diabetic_ketoacidosis"
+    ],
+    7
+   ],
+   "regua:b56": [
+    [
+     "exertional_panting_mild",
+     "lily_toxicosis_cats",
+     "seizures",
+     "normal_estrus",
+     "normal_whelping"
+    ],
+    null
+   ],
+   "regua:b57": [
+    [
+     "otitis_externa_mild",
+     "burns_and_electrical_injury",
+     "congestive_heart_failure",
+     "seizures",
+     "periodontal_disease_mild"
+    ],
+    0
+   ],
+   "regua:b58": [
+    [
+     "minor_wound",
+     "burns_and_electrical_injury",
+     "lily_toxicosis_cats",
+     "trauma_and_bleeding",
+     "collapse_and_pale_gums"
+    ],
+    0
+   ],
+   "regua:b59": [
+    [
+     "grape_xylitol_toxicosis",
+     "single_vomiting_or_mild_diarrhea",
+     "tremors_without_seizure",
+     "chocolate_toxicosis",
+     "congestive_heart_failure"
+    ],
+    7
+   ],
+   "regua:b60": [
+    [
+     "congestive_heart_failure",
+     "airway_foreign_body_choking",
+     "osteoarthritis_stiffness",
+     "slow_growing_lump",
+     "burns_and_electrical_injury"
+    ],
+    3
+   ],
+   "regua:b61": [
+    [
+     "exertional_panting_mild",
+     "burns_and_electrical_injury",
+     "tremors_without_seizure",
+     "canine_heatstroke",
+     "diabetic_ketoacidosis"
+    ],
+    0
+   ],
+   "regua:b62": [
+    [
+     "dystocia",
+     "cat_bite_abscess",
+     "permethrin_toxicosis_cats",
+     "seizures",
+     "burns_and_electrical_injury"
+    ],
+    null
+   ],
+   "regua:b63": [
+    [
+     "grape_xylitol_toxicosis",
+     "snake_and_scorpion_envenomation",
+     "vomiting_and_diarrhea",
+     "ticks_found_no_signs",
+     "anaphylaxis_facial_swelling"
+    ],
+    3
+   ],
+   "regua:b64": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     "exertional_panting_mild",
+     "vestibular_syndrome_otitis_interna",
+     "grape_xylitol_toxicosis",
+     "ticks_found_no_signs"
+    ],
+    0
+   ],
+   "regua:b65": [
+    [
+     "grape_xylitol_toxicosis",
+     "lily_toxicosis_cats",
+     "burns_and_electrical_injury",
+     "exertional_panting_mild",
+     "single_vomiting_or_mild_diarrhea"
+    ],
+    4
+   ],
+   "regua:b66": [
+    [
+     "exertional_panting_mild",
+     "collapse_and_pale_gums",
+     "tremors_without_seizure",
+     "single_vomiting_or_mild_diarrhea",
+     "urethral_obstruction"
+    ],
+    3
+   ]
+  }
+ }
+}

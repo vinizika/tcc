@@ -1,5 +1,6 @@
 {
   "title": "Canine Mechanical Urethral Obstruction",
+  "full_title": "Case report: Utility, complications, and short-term outcomes in three dogs managed with percutaneous pigtail cystostomy catheters for urethral obstruction",
   "source": "Frontiers in Veterinary Science",
   "document_type": "case_report",
   "validation_status": "approved_by_specialist",
@@ -9,7 +10,6 @@
   "language": "en",
   "source_url": "https://doi.org/10.3389/fvets.2023.1200406",
   "indexing": {
-    "retrieval_anchors": ["urine", "urinary", "urinate", "urination", "pee", "bladder", "dysuria", "stranguria", "urina", "urinar", "urinario", "urinário", "xixi", "bexiga"],
     "include_sections": [
       "Introduction"
     ],

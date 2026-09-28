@@ -1,0 +1,35 @@
+{
+  "title": "Ticks on dogs",
+  "source": "PDSA",
+  "document_type": "owner_guidance",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog",
+  "topic": "ticks_found_no_signs",
+  "language": "en",
+  "source_url": "https://www.pdsa.org.uk/pet-help-and-advice/pet-health-hub/conditions/ticks-on-dogs",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "556787c4bb8d09dfc731019e05e2770766e1527cfb51b9dff4eb9f622c3cbc29",
+  "map_line": "ticks_found_no_signs",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: © The People's Dispensary for Sick Animals (sem licença de reuso declarada)",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2022,
+  "full_title": "Ticks on dogs",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de ticks_found_no_signs (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
+}

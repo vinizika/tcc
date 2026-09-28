@@ -1,0 +1,35 @@
+{
+  "title": "Corpo estranho gastrointestinal (ACVS)",
+  "source": "American College of Veterinary Surgeons",
+  "document_type": "owner_guidance",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog_and_cat",
+  "topic": "gastrointestinal_foreign_body",
+  "language": "en",
+  "source_url": "https://www.acvs.org/small-animal/gastrointestinal-foreign-bodies",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "3eb4780c8ec9e547df3a4a4434a1ad99984fdb24754ba6b850b70ea03585ad7e",
+  "map_line": "gastrointestinal_foreign_body",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: © 2026 American College of Veterinary Surgeons (sem licença de reuso declarada); publicada 2023-05-16, modificada 2026-03-31",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2023,
+  "full_title": "Gastrointestinal Foreign Bodies",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de gastrointestinal_foreign_body (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
+}

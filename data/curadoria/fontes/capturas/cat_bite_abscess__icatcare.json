@@ -1,0 +1,35 @@
+{
+  "title": "Cat bites and abscesses",
+  "source": "International Cat Care",
+  "document_type": "owner_guidance",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "cat",
+  "topic": "cat_bite_abscess",
+  "language": "en",
+  "source_url": "https://icatcare.org/articles/cat-bites-and-abscesses",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "882ef08d23ef91874f11250dc623bd3299e757ab787d5754fd0dfab9ba8cc081",
+  "map_line": "cat_bite_abscess",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: © 2026 International Cat Care, Reg Charity 1117342 (England and Wales); licença de reuso não declarada",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2025,
+  "full_title": "Cat bites and abscesses",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de cat_bite_abscess (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
+}

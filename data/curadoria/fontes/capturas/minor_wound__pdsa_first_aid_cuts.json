@@ -1,0 +1,35 @@
+{
+  "title": "First aid for cuts and grazes",
+  "source": "PDSA",
+  "document_type": "owner_guidance",
+  "validation_status": "approved_by_specialist",
+  "ingestion_scope": "curated_candidate",
+  "species": "dog_and_cat",
+  "topic": "minor_wound",
+  "language": "en",
+  "source_url": "https://www.pdsa.org.uk/pet-help-and-advice/pet-health-hub/medications/first-aid-for-cuts-and-grazes",
+  "indexing": {
+    "include_sections": [],
+    "exclude_sections": [],
+    "exclude_pages": [],
+    "extraction_reviewed": false
+  },
+  "register": "tutor",
+  "access_date": "2026-09-25",
+  "captured_sha256": "f5bca04ab1ecf42833c134ffc33f8ce91b101dc23c4c5202ce1c05b1c5f8c06f",
+  "map_line": "minor_wound",
+  "specialist": {
+    "verdict": "approved",
+    "name": "ASAVET",
+    "date": "2026-09-26"
+  },
+  "rights": {
+    "status": "pending",
+    "basis": "O que o site declara: © The People's Dispensary for Sick Animals. Registered charity nos. 208217 & SC037585; licença de reuso não declarada",
+    "checked_by": "Claude (agente pesquisador, rodada 27 do João)",
+    "date": "2026-09-25"
+  },
+  "year": 2020,
+  "full_title": "First aid for wounds, cuts and grazes",
+  "curation_note": "Capturada para sustentar frases gerais da ficha de busca de minor_wound (rodada 27); autoridade alta. Aprovada pela ASAVET em 26/09/2026 (rodada 30)."
+}

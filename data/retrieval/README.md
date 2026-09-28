@@ -2,6 +2,17 @@
 
 Mede uma coisa só: **a busca traz o protocolo certo?**
 
+> **Atualização 25/09.** O `cases.csv` tem hoje **66 casos** (`b01`–`b66`); os
+> números "18" abaixo são do texto original, de 12/09. Desde a
+> [rodada 24 do João](../../evidencias/joao/2026-09-25-25-busca-por-fichas-com-bge-m3.md)
+> a busca padrão é vetorial pura nas 61 fichas de triagem (bge-m3), e a régua
+> aceita `--mode vector` ou `--mode routed_rerank` (sem a opção, vale o
+> `RETRIEVAL_MODE` da API). A rodada nas fichas está em
+> [`cited/20260925-031753_fichas_bge_m3_vector`](cited/20260925-031753_fichas_bge_m3_vector/report.md):
+> ficha certa em 1º em 0,879 dos casos e MRR 0,932. O "acima do limiar" de 0,70
+> (26%) não serve às fichas: as notas do bge-m3 ficam perto de 0,6 mesmo com a
+> ficha certa em 1º.
+
 É a régua do trilho A, e o irmão do runner de `data/evaluation/`. Os dois
 medem pedaços diferentes do sistema, e confundi-los leva a conclusões
 erradas:
@@ -11,7 +22,7 @@ erradas:
 | Testa | O sistema inteiro, do relato à decisão | Só a busca |
 | Pergunta | O caso foi classificado certo? | O protocolo certo veio em primeiro? |
 | Nota | Acurácia balanceada | Posição: Precision@1, MRR, Recall@5 |
-| Casos | 98 listas de sintomas em inglês | 18 relatos de tutor em português |
+| Casos | 98 listas de sintomas em inglês (e, desde 25/09, qualquer lote no formato da prova, com `--cases`) | 66 relatos de tutor em português |
 
 Sem esta régua, quando a classificação erra com RAG ligado não dá para
 saber se a busca trouxe o documento errado ou se o modelo leu mal o
@@ -35,6 +46,7 @@ Leva segundos: a busca não chama o modelo de linguagem.
 | `--name` | Sufixo do diretório da rodada |
 | `--limiar` | Nota mínima para contar como "trouxe algo relevante". Padrão 0,70, **provisório** — é esta régua que deve dizer o valor certo |
 | `--expect-base-hash` | Aborta se a base não for a esperada. **Use em toda rodada que for citada** |
+| `--mode` | `vector` ou `routed_rerank` (desde 25/09); sem a opção, vale o padrão da API |
 
 Rodadas vão para `runs/` (fora do Git). As citadas por alguma evidência são
 copiadas para `cited/`, como no runner de avaliação.

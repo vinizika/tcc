@@ -1,0 +1,8956 @@
+{
+ "t_idx": 25.43750060000457,
+ "corte_dev": 0.56,
+ "linhas": [
+  {
+   "conj": "dev",
+   "id": "p19",
+   "esp": [
+    "chocolate_toxicosis"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "chocolate_toxicosis",
+     0.616,
+     0.715
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.571,
+     0.616
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.563,
+     0.604
+    ],
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.534,
+     0.538
+    ],
+    [
+     "ocular_emergency",
+     0.521,
+     0.532
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p20",
+   "esp": [
+    "allium_toxicosis"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "allium_toxicosis",
+     0.648,
+     0.725
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.645,
+     0.709
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.556,
+     0.64
+    ],
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.553,
+     0.581
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.537,
+     0.57
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p21",
+   "esp": [
+    "respiratory_distress"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "respiratory_distress",
+     0.643,
+     0.769
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.577,
+     0.642
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.554,
+     0.629
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.592,
+     0.628
+    ],
+    [
+     "urethral_obstruction",
+     0.57,
+     0.618
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p22",
+   "esp": [
+    "seizures"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "seizures",
+     0.584,
+     0.691
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.597,
+     0.653
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.551,
+     0.61
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.544,
+     0.577
+    ],
+    [
+     "urethral_obstruction",
+     0.535,
+     0.57
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p23",
+   "esp": [
+    "trauma_and_bleeding"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "trauma_and_bleeding",
+     0.609,
+     0.679
+    ],
+    [
+     "mild_lameness",
+     0.547,
+     0.61
+    ],
+    [
+     "ocular_emergency",
+     0.539,
+     0.606
+    ],
+    [
+     "minor_wound",
+     0.582,
+     0.596
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.557,
+     0.588
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p24",
+   "esp": [
+    "urethral_obstruction"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "urethral_obstruction",
+     0.595,
+     0.705
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.58,
+     0.629
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.553,
+     0.623
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.547,
+     0.594
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.562,
+     0.589
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p25",
+   "esp": [
+    "vomiting_and_diarrhea"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "vomiting_and_diarrhea",
+     0.668,
+     0.845
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.606,
+     0.639
+    ],
+    [
+     "reduced_appetite_no_other_signs",
+     0.583,
+     0.636
+    ],
+    [
+     "parvovirus_panleukopenia",
+     0.524,
+     0.618
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.513,
+     0.603
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p26",
+   "esp": [
+    "canine_heatstroke"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "canine_heatstroke",
+     0.574,
+     0.727
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.548,
+     0.584
+    ],
+    [
+     "allium_toxicosis",
+     0.542,
+     0.564
+    ],
+    [
+     "ocular_emergency",
+     0.539,
+     0.557
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.53,
+     0.552
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p27",
+   "esp": [
+    "gastric_dilatation_volvulus"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "gastric_dilatation_volvulus",
+     0.618,
+     0.695
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.577,
+     0.652
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.585,
+     0.619
+    ],
+    [
+     "urethral_obstruction",
+     0.554,
+     0.609
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.527,
+     0.597
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p28",
+   "esp": [
+    "fading_neonate"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "fading_neonate",
+     0.651,
+     0.764
+    ],
+    [
+     "reduced_appetite_no_other_signs",
+     0.547,
+     0.556
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.473,
+     0.544
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.519,
+     0.537
+    ],
+    [
+     "normal_whelping",
+     0.505,
+     0.518
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p29",
+   "esp": [
+    "acute_hindlimb_paralysis"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "acute_hindlimb_paralysis",
+     0.607,
+     0.773
+    ],
+    [
+     "osteoarthritis_stiffness",
+     0.594,
+     0.666
+    ],
+    [
+     "seizures",
+     0.547,
+     0.595
+    ],
+    [
+     "trauma_and_bleeding",
+     0.542,
+     0.594
+    ],
+    [
+     "urethral_obstruction",
+     0.564,
+     0.589
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p30",
+   "esp": [
+    "anticoagulant_rodenticide_poisoning"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.614,
+     0.74
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.523,
+     0.608
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.518,
+     0.573
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.529,
+     0.56
+    ],
+    [
+     "urethral_obstruction",
+     0.521,
+     0.558
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p31",
+   "esp": [
+    "human_medication_poisoning"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "human_medication_poisoning",
+     0.651,
+     0.812
+    ],
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.578,
+     0.614
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.585,
+     0.585
+    ],
+    [
+     "allium_toxicosis",
+     0.553,
+     0.584
+    ],
+    [
+     "flea_dermatitis_pruritus",
+     0.52,
+     0.555
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p32",
+   "esp": [
+    "anaphylaxis_facial_swelling"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "anaphylaxis_facial_swelling",
+     0.73,
+     0.908
+    ],
+    [
+     "insect_sting_local_reaction",
+     0.592,
+     0.615
+    ],
+    [
+     "carbamate_organophosphate_poisoning",
+     0.548,
+     0.593
+    ],
+    [
+     "flea_dermatitis_pruritus",
+     0.561,
+     0.576
+    ],
+    [
+     "ocular_emergency",
+     0.565,
+     0.576
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p33",
+   "esp": [
+    "congestive_heart_failure"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "osteoarthritis_stiffness",
+     0.529,
+     0.666
+    ],
+    [
+     "chocolate_toxicosis",
+     0.523,
+     0.615
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.551,
+     0.61
+    ],
+    [
+     "congestive_heart_failure",
+     0.574,
+     0.592
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.547,
+     0.566
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p34",
+   "esp": [
+    "collapse_and_pale_gums"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "collapse_and_pale_gums",
+     0.696,
+     0.832
+    ],
+    [
+     "respiratory_distress",
+     0.609,
+     0.652
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.584,
+     0.642
+    ],
+    [
+     "allium_toxicosis",
+     0.595,
+     0.615
+    ],
+    [
+     "slow_growing_lump",
+     0.602,
+     0.61
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p35",
+   "esp": [
+    "parvovirus_panleukopenia"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "parvovirus_panleukopenia",
+     0.624,
+     0.761
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.604,
+     0.669
+    ],
+    [
+     "fading_neonate",
+     0.519,
+     0.584
+    ],
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.511,
+     0.538
+    ],
+    [
+     "reduced_appetite_no_other_signs",
+     0.502,
+     0.529
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p36",
+   "esp": [
+    "ocular_emergency"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "ocular_emergency",
+     0.664,
+     0.771
+    ],
+    [
+     "mild_conjunctivitis",
+     0.598,
+     0.64
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.593,
+     0.616
+    ],
+    [
+     "canine_heatstroke",
+     0.549,
+     0.602
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.511,
+     0.58
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p37",
+   "esp": [
+    "permethrin_toxicosis_cats"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "carbamate_organophosphate_poisoning",
+     0.58,
+     0.638
+    ],
+    [
+     "tremors_without_seizure",
+     0.566,
+     0.607
+    ],
+    [
+     "seizures",
+     0.542,
+     0.594
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.529,
+     0.535
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.526,
+     0.531
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p38",
+   "esp": [
+    "gastrointestinal_foreign_body"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.573,
+     0.637
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.558,
+     0.633
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.546,
+     0.63
+    ],
+    [
+     "urethral_obstruction",
+     0.519,
+     0.579
+    ],
+    [
+     "fading_neonate",
+     0.513,
+     0.577
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p39",
+   "esp": [
+    "airway_foreign_body_choking"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "respiratory_distress",
+     0.577,
+     0.623
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.549,
+     0.61
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.533,
+     0.606
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.562,
+     0.604
+    ],
+    [
+     "urethral_obstruction",
+     0.558,
+     0.6
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p40",
+   "esp": [
+    "dystocia"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "urethral_obstruction",
+     0.531,
+     0.637
+    ],
+    [
+     "dystocia",
+     0.582,
+     0.598
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.51,
+     0.585
+    ],
+    [
+     "fading_neonate",
+     0.516,
+     0.582
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.454,
+     0.556
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p41",
+   "esp": [
+    "distemper_neurological"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "fading_neonate",
+     0.54,
+     0.639
+    ],
+    [
+     "parvovirus_panleukopenia",
+     0.545,
+     0.627
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.525,
+     0.571
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.537,
+     0.569
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.518,
+     0.557
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p42",
+   "esp": [
+    "hypoglycemia_toy_puppy"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "fading_neonate",
+     0.587,
+     0.649
+    ],
+    [
+     "hypoglycemia_toy_puppy",
+     0.538,
+     0.578
+    ],
+    [
+     "tremors_without_seizure",
+     0.505,
+     0.573
+    ],
+    [
+     "reduced_appetite_no_other_signs",
+     0.512,
+     0.536
+    ],
+    [
+     "canine_heatstroke",
+     0.485,
+     0.535
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p43",
+   "esp": [
+    "eclampsia"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "osteoarthritis_stiffness",
+     0.554,
+     0.657
+    ],
+    [
+     "fading_neonate",
+     0.513,
+     0.631
+    ],
+    [
+     "eclampsia",
+     0.601,
+     0.614
+    ],
+    [
+     "seizures",
+     0.52,
+     0.582
+    ],
+    [
+     "hypoglycemia_toy_puppy",
+     0.536,
+     0.576
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p44",
+   "esp": [
+    "dietary_indiscretion_mild"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "dietary_indiscretion_mild",
+     0.546,
+     0.647
+    ],
+    [
+     "allium_toxicosis",
+     0.59,
+     0.636
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.52,
+     0.566
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.531,
+     0.531
+    ],
+    [
+     "flea_dermatitis_pruritus",
+     0.484,
+     0.531
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p45",
+   "esp": [
+    "mild_upper_respiratory_signs"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "mild_upper_respiratory_signs",
+     0.705,
+     0.878
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.596,
+     0.69
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.609,
+     0.669
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.569,
+     0.657
+    ],
+    [
+     "polyuria_polydipsia_investigate",
+     0.576,
+     0.622
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p46",
+   "esp": [
+    "inappropriate_urination_or_cystitis"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "inappropriate_urination_or_cystitis",
+     0.708,
+     0.875
+    ],
+    [
+     "urethral_obstruction",
+     0.64,
+     0.722
+    ],
+    [
+     "polyuria_polydipsia_investigate",
+     0.631,
+     0.681
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.614,
+     0.669
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.605,
+     0.658
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p47",
+   "esp": [
+    "otitis_externa_mild"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "seizures",
+     0.464,
+     0.55
+    ],
+    [
+     "flea_dermatitis_pruritus",
+     0.439,
+     0.537
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.46,
+     0.512
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.452,
+     0.506
+    ],
+    [
+     "tremors_without_seizure",
+     0.475,
+     0.495
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p48",
+   "esp": [
+    "single_vomiting_or_mild_diarrhea"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.583,
+     0.643
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.514,
+     0.587
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.534,
+     0.563
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.451,
+     0.542
+    ],
+    [
+     "chocolate_toxicosis",
+     0.476,
+     0.532
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p49",
+   "esp": [
+    "osteoarthritis_stiffness"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "osteoarthritis_stiffness",
+     0.653,
+     0.831
+    ],
+    [
+     "mild_lameness",
+     0.542,
+     0.576
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.505,
+     0.561
+    ],
+    [
+     "polyuria_polydipsia_investigate",
+     0.504,
+     0.547
+    ],
+    [
+     "respiratory_distress",
+     0.521,
+     0.546
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p50",
+   "esp": [
+    "insect_sting_local_reaction"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "anaphylaxis_facial_swelling",
+     0.608,
+     0.699
+    ],
+    [
+     "insect_sting_local_reaction",
+     0.547,
+     0.595
+    ],
+    [
+     "mild_lameness",
+     0.516,
+     0.571
+    ],
+    [
+     "minor_wound",
+     0.518,
+     0.542
+    ],
+    [
+     "mild_conjunctivitis",
+     0.464,
+     0.525
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p51",
+   "esp": [
+    "kennel_cough_mild"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "kennel_cough_mild",
+     0.642,
+     0.728
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.561,
+     0.638
+    ],
+    [
+     "reduced_appetite_no_other_signs",
+     0.532,
+     0.605
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.497,
+     0.576
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.568,
+     0.572
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p52",
+   "esp": [
+    "mild_conjunctivitis"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "mild_conjunctivitis",
+     0.68,
+     0.805
+    ],
+    [
+     "ocular_emergency",
+     0.645,
+     0.712
+    ],
+    [
+     "respiratory_distress",
+     0.592,
+     0.592
+    ],
+    [
+     "flea_dermatitis_pruritus",
+     0.554,
+     0.591
+    ],
+    [
+     "vestibular_syndrome_otitis_interna",
+     0.58,
+     0.585
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p53",
+   "esp": [
+    "normal_whelping"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "normal_whelping",
+     0.563,
+     0.576
+    ],
+    [
+     "dystocia",
+     0.529,
+     0.542
+    ],
+    [
+     "fading_neonate",
+     0.484,
+     0.514
+    ],
+    [
+     "reduced_appetite_no_other_signs",
+     0.441,
+     0.507
+    ],
+    [
+     "normal_estrus",
+     0.451,
+     0.489
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p54",
+   "esp": [
+    "tremors_without_seizure"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "tremors_without_seizure",
+     0.614,
+     0.68
+    ],
+    [
+     "seizures",
+     0.584,
+     0.639
+    ],
+    [
+     "ocular_emergency",
+     0.584,
+     0.623
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.555,
+     0.621
+    ],
+    [
+     "urethral_obstruction",
+     0.553,
+     0.593
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p55",
+   "esp": [
+    "mild_lameness"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "mild_lameness",
+     0.593,
+     0.771
+    ],
+    [
+     "pyometra",
+     0.52,
+     0.563
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.52,
+     0.542
+    ],
+    [
+     "trauma_and_bleeding",
+     0.509,
+     0.535
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.489,
+     0.532
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p56",
+   "esp": [
+    "flea_dermatitis_pruritus"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "flea_dermatitis_pruritus",
+     0.638,
+     0.791
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.563,
+     0.682
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.555,
+     0.643
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.59,
+     0.63
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.55,
+     0.625
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p57",
+   "esp": [
+    "reduced_appetite_no_other_signs"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "reduced_appetite_no_other_signs",
+     0.576,
+     0.721
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.561,
+     0.675
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.533,
+     0.643
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.545,
+     0.596
+    ],
+    [
+     "mild_lameness",
+     0.503,
+     0.56
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p58",
+   "esp": [
+    "cat_bite_abscess"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "cat_bite_abscess",
+     0.603,
+     0.61
+    ],
+    [
+     "mild_lameness",
+     0.503,
+     0.603
+    ],
+    [
+     "rabies_exposure_wild_animal_bite",
+     0.549,
+     0.587
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.58,
+     0.586
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.538,
+     0.57
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p59",
+   "esp": [
+    "polyuria_polydipsia_investigate"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "reduced_appetite_no_other_signs",
+     0.619,
+     0.705
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.587,
+     0.696
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.609,
+     0.695
+    ],
+    [
+     "polyuria_polydipsia_investigate",
+     0.621,
+     0.682
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.596,
+     0.64
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p60",
+   "esp": [
+    "minor_wound"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "minor_wound",
+     0.535,
+     0.575
+    ],
+    [
+     "trauma_and_bleeding",
+     0.487,
+     0.517
+    ],
+    [
+     "mild_lameness",
+     0.48,
+     0.49
+    ],
+    [
+     "rabies_exposure_wild_animal_bite",
+     0.458,
+     0.463
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.433,
+     0.459
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p61",
+   "esp": [
+    "periodontal_disease_mild"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "periodontal_disease_mild",
+     0.656,
+     0.71
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.582,
+     0.642
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.553,
+     0.625
+    ],
+    [
+     "osteoarthritis_stiffness",
+     0.563,
+     0.613
+    ],
+    [
+     "reduced_appetite_no_other_signs",
+     0.589,
+     0.602
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p62",
+   "esp": [
+    "slow_growing_lump"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "osteoarthritis_stiffness",
+     0.487,
+     0.611
+    ],
+    [
+     "urethral_obstruction",
+     0.492,
+     0.57
+    ],
+    [
+     "slow_growing_lump",
+     0.518,
+     0.57
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.526,
+     0.562
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.509,
+     0.547
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p63",
+   "esp": [
+    "rabies_exposure_wild_animal_bite"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     0.626,
+     0.691
+    ],
+    [
+     "mild_lameness",
+     0.491,
+     0.556
+    ],
+    [
+     "tremors_without_seizure",
+     0.463,
+     0.528
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.452,
+     0.515
+    ],
+    [
+     "canine_heatstroke",
+     0.485,
+     0.514
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p64",
+   "esp": [
+    "ticks_found_no_signs"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "ticks_found_no_signs",
+     0.571,
+     0.654
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.498,
+     0.627
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.545,
+     0.62
+    ],
+    [
+     "tremors_without_seizure",
+     0.526,
+     0.601
+    ],
+    [
+     "mild_lameness",
+     0.506,
+     0.582
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p65",
+   "esp": [
+    "exertional_panting_mild"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "mild_lameness",
+     0.53,
+     0.646
+    ],
+    [
+     "exertional_panting_mild",
+     0.562,
+     0.602
+    ],
+    [
+     "canine_heatstroke",
+     0.514,
+     0.558
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.516,
+     0.545
+    ],
+    [
+     "kennel_cough_mild",
+     0.536,
+     0.54
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p66",
+   "esp": [],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "dietary_indiscretion_mild",
+     0.553,
+     0.645
+    ],
+    [
+     "osteoarthritis_stiffness",
+     0.482,
+     0.625
+    ],
+    [
+     "polyuria_polydipsia_investigate",
+     0.524,
+     0.584
+    ],
+    [
+     "diabetic_ketoacidosis",
+     0.566,
+     0.571
+    ],
+    [
+     "chocolate_toxicosis",
+     0.542,
+     0.557
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p67",
+   "esp": [],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "parvovirus_panleukopenia",
+     0.533,
+     0.613
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.531,
+     0.605
+    ],
+    [
+     "urethral_obstruction",
+     0.495,
+     0.562
+    ],
+    [
+     "lily_toxicosis_cats",
+     0.546,
+     0.546
+    ],
+    [
+     "high_rise_syndrome_cats",
+     0.544,
+     0.544
+    ]
+   ]
+  },
+  {
+   "conj": "dev",
+   "id": "p68",
+   "esp": [],
+   "classe": "INCERTO",
+   "top": [
+    [
+     "dietary_indiscretion_mild",
+     0.61,
+     0.662
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.55,
+     0.662
+    ],
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.581,
+     0.625
+    ],
+    [
+     "reduced_appetite_no_other_signs",
+     0.609,
+     0.622
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.573,
+     0.615
+    ]
+   ]
+  },
+  {
+   "conj": "calib",
+   "id": "p01",
+   "esp": [
+    "carbamate_organophosphate_poisoning"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "carbamate_organophosphate_poisoning",
+     0.57,
+     0.678
+    ],
+    [
+     "seizures",
+     0.592,
+     0.662
+    ],
+    [
+     "tremors_without_seizure",
+     0.558,
+     0.627
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.541,
+     0.612
+    ],
+    [
+     "canine_heatstroke",
+     0.542,
+     0.576
+    ]
+   ]
+  },
+  {
+   "conj": "calib",
+   "id": "p02",
+   "esp": [
+    "otitis_externa_mild"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "dietary_indiscretion_mild",
+     0.528,
+     0.65
+    ],
+    [
+     "mild_lameness",
+     0.527,
+     0.594
+    ],
+    [
+     "flea_dermatitis_pruritus",
+     0.479,
+     0.59
+    ],
+    [
+     "mild_conjunctivitis",
+     0.482,
+     0.574
+    ],
+    [
+     "tremors_without_seizure",
+     0.518,
+     0.568
+    ]
+   ]
+  },
+  {
+   "conj": "calib",
+   "id": "p03",
+   "esp": [
+    "vestibular_syndrome_otitis_interna"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "seizures",
+     0.574,
+     0.649
+    ],
+    [
+     "tremors_without_seizure",
+     0.58,
+     0.632
+    ],
+    [
+     "canine_heatstroke",
+     0.511,
+     0.624
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.579,
+     0.619
+    ],
+    [
+     "ocular_emergency",
+     0.598,
+     0.611
+    ]
+   ]
+  },
+  {
+   "conj": "calib",
+   "id": "p04",
+   "esp": [
+    "dietary_indiscretion_mild"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "dietary_indiscretion_mild",
+     0.591,
+     0.827
+    ],
+    [
+     "mild_lameness",
+     0.499,
+     0.589
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.499,
+     0.587
+    ],
+    [
+     "reduced_appetite_no_other_signs",
+     0.512,
+     0.57
+    ],
+    [
+     "mild_conjunctivitis",
+     0.428,
+     0.554
+    ]
+   ]
+  },
+  {
+   "conj": "calib",
+   "id": "p05",
+   "esp": [
+    "human_medication_poisoning"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "human_medication_poisoning",
+     0.614,
+     0.743
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.588,
+     0.617
+    ],
+    [
+     "allium_toxicosis",
+     0.535,
+     0.572
+    ],
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.525,
+     0.565
+    ],
+    [
+     "lily_toxicosis_cats",
+     0.542,
+     0.55
+    ]
+   ]
+  },
+  {
+   "conj": "calib",
+   "id": "p06",
+   "esp": [
+    "single_vomiting_or_mild_diarrhea"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.628,
+     0.802
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.528,
+     0.619
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.53,
+     0.599
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.543,
+     0.569
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.475,
+     0.544
+    ]
+   ]
+  },
+  {
+   "conj": "calib",
+   "id": "p07",
+   "esp": [
+    "gastric_dilatation_volvulus"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "gastric_dilatation_volvulus",
+     0.64,
+     0.747
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.608,
+     0.692
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.578,
+     0.681
+    ],
+    [
+     "urethral_obstruction",
+     0.585,
+     0.671
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.585,
+     0.626
+    ]
+   ]
+  },
+  {
+   "conj": "calib",
+   "id": "p08",
+   "esp": [
+    "urethral_obstruction"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "urethral_obstruction",
+     0.636,
+     0.727
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.582,
+     0.702
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.557,
+     0.557
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.526,
+     0.555
+    ],
+    [
+     "gastrointestinal_foreign_body",
+     0.55,
+     0.55
+    ]
+   ]
+  },
+  {
+   "conj": "calib",
+   "id": "p09",
+   "esp": [
+    "inappropriate_urination_or_cystitis"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "inappropriate_urination_or_cystitis",
+     0.666,
+     0.819
+    ],
+    [
+     "urethral_obstruction",
+     0.614,
+     0.681
+    ],
+    [
+     "polyuria_polydipsia_investigate",
+     0.574,
+     0.633
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.57,
+     0.621
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.572,
+     0.621
+    ]
+   ]
+  },
+  {
+   "conj": "calib",
+   "id": "p10",
+   "esp": [
+    "pyometra"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "pyometra",
+     0.639,
+     0.831
+    ],
+    [
+     "normal_estrus",
+     0.619,
+     0.702
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.56,
+     0.6
+    ],
+    [
+     "urethral_obstruction",
+     0.556,
+     0.596
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.556,
+     0.583
+    ]
+   ]
+  },
+  {
+   "conj": "calib",
+   "id": "p11",
+   "esp": [
+    "normal_estrus"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "normal_estrus",
+     0.568,
+     0.7
+    ],
+    [
+     "pyometra",
+     0.537,
+     0.633
+    ],
+    [
+     "mild_lameness",
+     0.535,
+     0.578
+    ],
+    [
+     "minor_wound",
+     0.523,
+     0.553
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.517,
+     0.55
+    ]
+   ]
+  },
+  {
+   "conj": "calib",
+   "id": "p12",
+   "esp": [
+    "acute_hindlimb_paralysis"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "acute_hindlimb_paralysis",
+     0.644,
+     0.76
+    ],
+    [
+     "osteoarthritis_stiffness",
+     0.59,
+     0.655
+    ],
+    [
+     "feline_aortic_thromboembolism",
+     0.635,
+     0.652
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.564,
+     0.637
+    ],
+    [
+     "seizures",
+     0.56,
+     0.605
+    ]
+   ]
+  },
+  {
+   "conj": "calib",
+   "id": "p13",
+   "esp": [
+    "osteoarthritis_stiffness"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "osteoarthritis_stiffness",
+     0.638,
+     0.798
+    ],
+    [
+     "mild_lameness",
+     0.522,
+     0.576
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.484,
+     0.514
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.506,
+     0.51
+    ],
+    [
+     "respiratory_distress",
+     0.482,
+     0.505
+    ]
+   ]
+  },
+  {
+   "conj": "calib",
+   "id": "p14",
+   "esp": [
+    "snake_and_scorpion_envenomation"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "anaphylaxis_facial_swelling",
+     0.555,
+     0.617
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.543,
+     0.617
+    ],
+    [
+     "mild_lameness",
+     0.537,
+     0.614
+    ],
+    [
+     "canine_heatstroke",
+     0.525,
+     0.578
+    ],
+    [
+     "flea_dermatitis_pruritus",
+     0.527,
+     0.573
+    ]
+   ]
+  },
+  {
+   "conj": "calib",
+   "id": "p15",
+   "esp": [],
+   "classe": "INCERTO",
+   "top": [
+    [
+     "permethrin_toxicosis_cats",
+     0.559,
+     0.707
+    ],
+    [
+     "gastrointestinal_foreign_body",
+     0.601,
+     0.664
+    ],
+    [
+     "fading_neonate",
+     0.517,
+     0.649
+    ],
+    [
+     "urethral_obstruction",
+     0.549,
+     0.634
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.547,
+     0.632
+    ]
+   ]
+  },
+  {
+   "conj": "calib",
+   "id": "p16",
+   "esp": [],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.504,
+     0.627
+    ],
+    [
+     "polyuria_polydipsia_investigate",
+     0.493,
+     0.6
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.449,
+     0.575
+    ],
+    [
+     "mild_lameness",
+     0.514,
+     0.569
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.499,
+     0.554
+    ]
+   ]
+  },
+  {
+   "conj": "calib",
+   "id": "p17",
+   "esp": [
+    "ocular_emergency"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "ocular_emergency",
+     0.652,
+     0.746
+    ],
+    [
+     "mild_conjunctivitis",
+     0.556,
+     0.615
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.547,
+     0.58
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.496,
+     0.567
+    ],
+    [
+     "trauma_and_bleeding",
+     0.514,
+     0.565
+    ]
+   ]
+  },
+  {
+   "conj": "calib",
+   "id": "p18",
+   "esp": [
+    "mild_conjunctivitis"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "mild_conjunctivitis",
+     0.685,
+     0.848
+    ],
+    [
+     "ocular_emergency",
+     0.603,
+     0.64
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.527,
+     0.628
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.528,
+     0.597
+    ],
+    [
+     "mild_lameness",
+     0.527,
+     0.577
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b01",
+   "esp": [
+    "chocolate_toxicosis"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "chocolate_toxicosis",
+     0.653,
+     0.797
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.537,
+     0.65
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.566,
+     0.612
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.557,
+     0.595
+    ],
+    [
+     "carbamate_organophosphate_poisoning",
+     0.528,
+     0.585
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b02",
+   "esp": [
+    "urethral_obstruction"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "urethral_obstruction",
+     0.618,
+     0.764
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.586,
+     0.72
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.556,
+     0.712
+    ],
+    [
+     "osteoarthritis_stiffness",
+     0.53,
+     0.588
+    ],
+    [
+     "seizures",
+     0.503,
+     0.585
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b03",
+   "esp": [
+    "respiratory_distress"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "respiratory_distress",
+     0.667,
+     0.804
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.63,
+     0.656
+    ],
+    [
+     "urethral_obstruction",
+     0.6,
+     0.653
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.611,
+     0.641
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.573,
+     0.633
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b04",
+   "esp": [
+    "seizures"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "seizures",
+     0.676,
+     0.845
+    ],
+    [
+     "tremors_without_seizure",
+     0.6,
+     0.68
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.579,
+     0.652
+    ],
+    [
+     "carbamate_organophosphate_poisoning",
+     0.519,
+     0.64
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.547,
+     0.597
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b05",
+   "esp": [
+    "mild_upper_respiratory_signs"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "mild_upper_respiratory_signs",
+     0.631,
+     0.819
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.582,
+     0.72
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.547,
+     0.681
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.614,
+     0.657
+    ],
+    [
+     "polyuria_polydipsia_investigate",
+     0.564,
+     0.6
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b06",
+   "esp": [
+    "trauma_and_bleeding"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "trauma_and_bleeding",
+     0.64,
+     0.762
+    ],
+    [
+     "mild_lameness",
+     0.591,
+     0.67
+    ],
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.542,
+     0.583
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.561,
+     0.58
+    ],
+    [
+     "minor_wound",
+     0.566,
+     0.578
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b07",
+   "esp": [
+    "vomiting_and_diarrhea"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "vomiting_and_diarrhea",
+     0.647,
+     0.806
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.584,
+     0.616
+    ],
+    [
+     "parvovirus_panleukopenia",
+     0.539,
+     0.607
+    ],
+    [
+     "reduced_appetite_no_other_signs",
+     0.526,
+     0.594
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.542,
+     0.583
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b08",
+   "esp": [
+    "allium_toxicosis"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "allium_toxicosis",
+     0.701,
+     0.898
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.562,
+     0.63
+    ],
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.513,
+     0.602
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.505,
+     0.594
+    ],
+    [
+     "reduced_appetite_no_other_signs",
+     0.505,
+     0.532
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b09",
+   "esp": [
+    "flea_dermatitis_pruritus"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "flea_dermatitis_pruritus",
+     0.616,
+     0.836
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.584,
+     0.635
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.542,
+     0.616
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.522,
+     0.593
+    ],
+    [
+     "mild_lameness",
+     0.528,
+     0.571
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b10",
+   "esp": [
+    "mild_lameness"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "mild_lameness",
+     0.598,
+     0.826
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.557,
+     0.589
+    ],
+    [
+     "osteoarthritis_stiffness",
+     0.538,
+     0.568
+    ],
+    [
+     "kennel_cough_mild",
+     0.509,
+     0.543
+    ],
+    [
+     "congestive_heart_failure",
+     0.509,
+     0.515
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b11",
+   "esp": [
+    "mild_conjunctivitis"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "mild_conjunctivitis",
+     0.609,
+     0.793
+    ],
+    [
+     "ocular_emergency",
+     0.57,
+     0.623
+    ],
+    [
+     "mild_lameness",
+     0.55,
+     0.616
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.553,
+     0.599
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.497,
+     0.573
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b12",
+   "esp": [
+    "gastric_dilatation_volvulus"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "gastric_dilatation_volvulus",
+     0.654,
+     0.863
+    ],
+    [
+     "urethral_obstruction",
+     0.585,
+     0.714
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.589,
+     0.637
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.549,
+     0.597
+    ],
+    [
+     "ocular_emergency",
+     0.507,
+     0.568
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b13",
+   "esp": [
+    "trauma_and_bleeding"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "trauma_and_bleeding",
+     0.552,
+     0.632
+    ],
+    [
+     "urethral_obstruction",
+     0.537,
+     0.624
+    ],
+    [
+     "mild_lameness",
+     0.522,
+     0.589
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.533,
+     0.574
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.527,
+     0.568
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b14",
+   "esp": [
+    "fading_neonate"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "fading_neonate",
+     0.631,
+     0.846
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.485,
+     0.538
+    ],
+    [
+     "parvovirus_panleukopenia",
+     0.462,
+     0.534
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.52,
+     0.526
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.47,
+     0.516
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b15",
+   "esp": [
+    "urethral_obstruction"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "urethral_obstruction",
+     0.6,
+     0.742
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.564,
+     0.673
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.56,
+     0.56
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.525,
+     0.553
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.523,
+     0.546
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b16",
+   "esp": [
+    "anaphylaxis_facial_swelling"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "anaphylaxis_facial_swelling",
+     0.734,
+     0.954
+    ],
+    [
+     "flea_dermatitis_pruritus",
+     0.598,
+     0.686
+    ],
+    [
+     "ocular_emergency",
+     0.545,
+     0.582
+    ],
+    [
+     "insect_sting_local_reaction",
+     0.554,
+     0.579
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.528,
+     0.577
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b17",
+   "esp": [
+    "acute_hindlimb_paralysis"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "acute_hindlimb_paralysis",
+     0.557,
+     0.733
+    ],
+    [
+     "osteoarthritis_stiffness",
+     0.573,
+     0.619
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.526,
+     0.571
+    ],
+    [
+     "canine_heatstroke",
+     0.492,
+     0.565
+    ],
+    [
+     "mild_lameness",
+     0.502,
+     0.541
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b18",
+   "esp": [
+    "mild_upper_respiratory_signs"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "mild_upper_respiratory_signs",
+     0.682,
+     0.837
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.602,
+     0.687
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.532,
+     0.639
+    ],
+    [
+     "reduced_appetite_no_other_signs",
+     0.554,
+     0.62
+    ],
+    [
+     "flea_dermatitis_pruritus",
+     0.528,
+     0.604
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b19",
+   "esp": [
+    "human_medication_poisoning"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "human_medication_poisoning",
+     0.67,
+     0.802
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.591,
+     0.655
+    ],
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.593,
+     0.607
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.556,
+     0.593
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.535,
+     0.579
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b20",
+   "esp": [
+    "carbamate_organophosphate_poisoning"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "carbamate_organophosphate_poisoning",
+     0.548,
+     0.75
+    ],
+    [
+     "seizures",
+     0.563,
+     0.649
+    ],
+    [
+     "ocular_emergency",
+     0.541,
+     0.612
+    ],
+    [
+     "tremors_without_seizure",
+     0.549,
+     0.59
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.488,
+     0.566
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b21",
+   "esp": [
+    "permethrin_toxicosis_cats"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "tremors_without_seizure",
+     0.558,
+     0.599
+    ],
+    [
+     "seizures",
+     0.566,
+     0.599
+    ],
+    [
+     "gastrointestinal_foreign_body",
+     0.539,
+     0.595
+    ],
+    [
+     "mild_lameness",
+     0.518,
+     0.582
+    ],
+    [
+     "osteoarthritis_stiffness",
+     0.522,
+     0.57
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b22",
+   "esp": [
+    "anticoagulant_rodenticide_poisoning"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.63,
+     0.806
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.532,
+     0.633
+    ],
+    [
+     "allium_toxicosis",
+     0.543,
+     0.591
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.498,
+     0.547
+    ],
+    [
+     "human_medication_poisoning",
+     0.52,
+     0.543
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b23",
+   "esp": [
+    "parvovirus_panleukopenia"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "vomiting_and_diarrhea",
+     0.595,
+     0.72
+    ],
+    [
+     "parvovirus_panleukopenia",
+     0.567,
+     0.698
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.52,
+     0.579
+    ],
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.535,
+     0.572
+    ],
+    [
+     "reduced_appetite_no_other_signs",
+     0.509,
+     0.572
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b24",
+   "esp": [
+    "pyometra"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "pyometra",
+     0.63,
+     0.861
+    ],
+    [
+     "normal_estrus",
+     0.564,
+     0.648
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.525,
+     0.567
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.537,
+     0.561
+    ],
+    [
+     "diabetic_ketoacidosis",
+     0.551,
+     0.556
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b25",
+   "esp": [
+    "dietary_indiscretion_mild"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "dietary_indiscretion_mild",
+     0.555,
+     0.772
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.527,
+     0.62
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.514,
+     0.598
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.513,
+     0.584
+    ],
+    [
+     "mild_lameness",
+     0.506,
+     0.579
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b26",
+   "esp": [
+    "inappropriate_urination_or_cystitis"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "inappropriate_urination_or_cystitis",
+     0.692,
+     0.898
+    ],
+    [
+     "urethral_obstruction",
+     0.618,
+     0.698
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.536,
+     0.613
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.541,
+     0.579
+    ],
+    [
+     "mild_lameness",
+     0.524,
+     0.569
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b27",
+   "esp": [
+    "collapse_and_pale_gums"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "collapse_and_pale_gums",
+     0.67,
+     0.902
+    ],
+    [
+     "seizures",
+     0.544,
+     0.597
+    ],
+    [
+     "osteoarthritis_stiffness",
+     0.525,
+     0.591
+    ],
+    [
+     "trauma_and_bleeding",
+     0.513,
+     0.588
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.518,
+     0.577
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b28",
+   "esp": [
+    "osteoarthritis_stiffness"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "osteoarthritis_stiffness",
+     0.585,
+     0.735
+    ],
+    [
+     "mild_lameness",
+     0.536,
+     0.629
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.535,
+     0.599
+    ],
+    [
+     "reduced_appetite_no_other_signs",
+     0.507,
+     0.542
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.476,
+     0.533
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b29",
+   "esp": [
+    "reduced_appetite_no_other_signs"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "reduced_appetite_no_other_signs",
+     0.594,
+     0.725
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.559,
+     0.591
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.504,
+     0.589
+    ],
+    [
+     "pyometra",
+     0.473,
+     0.572
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.513,
+     0.548
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b30",
+   "esp": [
+    "gastrointestinal_foreign_body"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "vomiting_and_diarrhea",
+     0.547,
+     0.67
+    ],
+    [
+     "urethral_obstruction",
+     0.519,
+     0.606
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.552,
+     0.597
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.497,
+     0.557
+    ],
+    [
+     "fading_neonate",
+     0.478,
+     0.546
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b31",
+   "esp": [
+    "cat_bite_abscess"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "anaphylaxis_facial_swelling",
+     0.553,
+     0.622
+    ],
+    [
+     "respiratory_distress",
+     0.566,
+     0.607
+    ],
+    [
+     "mild_lameness",
+     0.555,
+     0.585
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.572,
+     0.578
+    ],
+    [
+     "cat_bite_abscess",
+     0.56,
+     0.571
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b32",
+   "esp": [
+    "congestive_heart_failure"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "respiratory_distress",
+     0.604,
+     0.676
+    ],
+    [
+     "congestive_heart_failure",
+     0.65,
+     0.656
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.531,
+     0.604
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.59,
+     0.603
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.562,
+     0.601
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b33",
+   "esp": [
+    "diabetic_ketoacidosis"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "gastric_dilatation_volvulus",
+     0.593,
+     0.65
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.578,
+     0.642
+    ],
+    [
+     "diabetic_ketoacidosis",
+     0.574,
+     0.623
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.529,
+     0.618
+    ],
+    [
+     "respiratory_distress",
+     0.534,
+     0.604
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b34",
+   "esp": [
+    "distemper_neurological"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "parvovirus_panleukopenia",
+     0.552,
+     0.618
+    ],
+    [
+     "ocular_emergency",
+     0.489,
+     0.563
+    ],
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.486,
+     0.539
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.504,
+     0.537
+    ],
+    [
+     "pyometra",
+     0.466,
+     0.526
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b35",
+   "esp": [
+    "dystocia"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "fading_neonate",
+     0.51,
+     0.568
+    ],
+    [
+     "dystocia",
+     0.534,
+     0.54
+    ],
+    [
+     "urethral_obstruction",
+     0.453,
+     0.509
+    ],
+    [
+     "pyometra",
+     0.451,
+     0.506
+    ],
+    [
+     "parvovirus_panleukopenia",
+     0.43,
+     0.487
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b36",
+   "esp": [
+    "feline_aortic_thromboembolism"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "acute_hindlimb_paralysis",
+     0.61,
+     0.718
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.545,
+     0.667
+    ],
+    [
+     "respiratory_distress",
+     0.564,
+     0.629
+    ],
+    [
+     "feline_aortic_thromboembolism",
+     0.605,
+     0.627
+    ],
+    [
+     "seizures",
+     0.567,
+     0.611
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b37",
+   "esp": [
+    "leptospirosis_acute"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "vomiting_and_diarrhea",
+     0.544,
+     0.683
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.571,
+     0.676
+    ],
+    [
+     "parvovirus_panleukopenia",
+     0.519,
+     0.609
+    ],
+    [
+     "ocular_emergency",
+     0.559,
+     0.609
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.496,
+     0.579
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b38",
+   "esp": [
+    "lily_toxicosis_cats"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "lily_toxicosis_cats",
+     0.632,
+     0.7
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.52,
+     0.574
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.497,
+     0.571
+    ],
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.508,
+     0.555
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.537,
+     0.544
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b39",
+   "esp": [
+    "toad_bufotoxin_poisoning"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "carbamate_organophosphate_poisoning",
+     0.528,
+     0.598
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.523,
+     0.594
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.522,
+     0.583
+    ],
+    [
+     "allium_toxicosis",
+     0.539,
+     0.578
+    ],
+    [
+     "canine_heatstroke",
+     0.495,
+     0.572
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b40",
+   "esp": [
+    "tremors_without_seizure"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "tremors_without_seizure",
+     0.668,
+     0.785
+    ],
+    [
+     "seizures",
+     0.584,
+     0.692
+    ],
+    [
+     "hypoglycemia_toy_puppy",
+     0.572,
+     0.591
+    ],
+    [
+     "mild_lameness",
+     0.544,
+     0.579
+    ],
+    [
+     "pyometra",
+     0.517,
+     0.572
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b41",
+   "esp": [
+    "normal_estrus"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "normal_estrus",
+     0.581,
+     0.706
+    ],
+    [
+     "pyometra",
+     0.574,
+     0.673
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.524,
+     0.596
+    ],
+    [
+     "mild_lameness",
+     0.533,
+     0.595
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.543,
+     0.591
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b42",
+   "esp": [
+    "collapse_and_pale_gums"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "collapse_and_pale_gums",
+     0.67,
+     0.889
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.53,
+     0.607
+    ],
+    [
+     "urethral_obstruction",
+     0.535,
+     0.603
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.554,
+     0.599
+    ],
+    [
+     "respiratory_distress",
+     0.546,
+     0.587
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b43",
+   "esp": [
+    "ocular_emergency"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "ocular_emergency",
+     0.609,
+     0.745
+    ],
+    [
+     "mild_conjunctivitis",
+     0.553,
+     0.628
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.561,
+     0.568
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.493,
+     0.539
+    ],
+    [
+     "mild_lameness",
+     0.539,
+     0.539
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b44",
+   "esp": [
+    "airway_foreign_body_choking"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "respiratory_distress",
+     0.585,
+     0.655
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.532,
+     0.607
+    ],
+    [
+     "urethral_obstruction",
+     0.511,
+     0.589
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.544,
+     0.582
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.506,
+     0.573
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b45",
+   "esp": [
+    "snake_and_scorpion_envenomation"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "anaphylaxis_facial_swelling",
+     0.571,
+     0.723
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.521,
+     0.604
+    ],
+    [
+     "mild_lameness",
+     0.521,
+     0.581
+    ],
+    [
+     "trauma_and_bleeding",
+     0.511,
+     0.565
+    ],
+    [
+     "snake_and_scorpion_envenomation",
+     0.526,
+     0.563
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b46",
+   "esp": [
+    "tick_borne_disease_anemia"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "collapse_and_pale_gums",
+     0.526,
+     0.721
+    ],
+    [
+     "tick_borne_disease_anemia",
+     0.56,
+     0.604
+    ],
+    [
+     "ticks_found_no_signs",
+     0.525,
+     0.569
+    ],
+    [
+     "parvovirus_panleukopenia",
+     0.524,
+     0.564
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.505,
+     0.544
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b47",
+   "esp": [
+    "hypoglycemia_toy_puppy"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "fading_neonate",
+     0.53,
+     0.607
+    ],
+    [
+     "reduced_appetite_no_other_signs",
+     0.514,
+     0.56
+    ],
+    [
+     "hypoglycemia_toy_puppy",
+     0.497,
+     0.545
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.466,
+     0.536
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.482,
+     0.534
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b48",
+   "esp": [
+    "vestibular_syndrome_otitis_interna"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "collapse_and_pale_gums",
+     0.508,
+     0.665
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.519,
+     0.648
+    ],
+    [
+     "vestibular_syndrome_otitis_interna",
+     0.566,
+     0.595
+    ],
+    [
+     "seizures",
+     0.546,
+     0.588
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.534,
+     0.576
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b49",
+   "esp": [
+    "high_rise_syndrome_cats"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "collapse_and_pale_gums",
+     0.54,
+     0.721
+    ],
+    [
+     "respiratory_distress",
+     0.555,
+     0.634
+    ],
+    [
+     "high_rise_syndrome_cats",
+     0.581,
+     0.588
+    ],
+    [
+     "seizures",
+     0.515,
+     0.563
+    ],
+    [
+     "trauma_and_bleeding",
+     0.509,
+     0.556
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b50",
+   "esp": [
+    "burns_and_electrical_injury"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "burns_and_electrical_injury",
+     0.635,
+     0.726
+    ],
+    [
+     "respiratory_distress",
+     0.5,
+     0.601
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.542,
+     0.581
+    ],
+    [
+     "fading_neonate",
+     0.51,
+     0.579
+    ],
+    [
+     "canine_heatstroke",
+     0.539,
+     0.577
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b51",
+   "esp": [
+    "eclampsia"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "eclampsia",
+     0.603,
+     0.627
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.531,
+     0.59
+    ],
+    [
+     "tremors_without_seizure",
+     0.529,
+     0.589
+    ],
+    [
+     "canine_heatstroke",
+     0.531,
+     0.586
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.537,
+     0.553
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b52",
+   "esp": [
+    "grape_xylitol_toxicosis"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "grape_xylitol_toxicosis",
+     0.608,
+     0.692
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.55,
+     0.645
+    ],
+    [
+     "mild_lameness",
+     0.504,
+     0.607
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.531,
+     0.6
+    ],
+    [
+     "mild_conjunctivitis",
+     0.497,
+     0.565
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b53",
+   "esp": [
+    "normal_whelping"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "normal_whelping",
+     0.507,
+     0.518
+    ],
+    [
+     "dystocia",
+     0.507,
+     0.517
+    ],
+    [
+     "fading_neonate",
+     0.471,
+     0.513
+    ],
+    [
+     "mild_lameness",
+     0.47,
+     0.503
+    ],
+    [
+     "hypoglycemia_toy_puppy",
+     0.455,
+     0.497
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b54",
+   "esp": [
+    "insect_sting_local_reaction"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "anaphylaxis_facial_swelling",
+     0.585,
+     0.653
+    ],
+    [
+     "mild_lameness",
+     0.536,
+     0.603
+    ],
+    [
+     "insect_sting_local_reaction",
+     0.536,
+     0.583
+    ],
+    [
+     "minor_wound",
+     0.525,
+     0.559
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.492,
+     0.528
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b55",
+   "esp": [
+    "kennel_cough_mild"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "kennel_cough_mild",
+     0.6,
+     0.677
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.57,
+     0.676
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.49,
+     0.608
+    ],
+    [
+     "reduced_appetite_no_other_signs",
+     0.489,
+     0.577
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.53,
+     0.573
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b56",
+   "esp": [
+    "polyuria_polydipsia_investigate"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "inappropriate_urination_or_cystitis",
+     0.567,
+     0.691
+    ],
+    [
+     "reduced_appetite_no_other_signs",
+     0.545,
+     0.624
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.565,
+     0.596
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.53,
+     0.582
+    ],
+    [
+     "polyuria_polydipsia_investigate",
+     0.544,
+     0.578
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b57",
+   "esp": [
+    "otitis_externa_mild"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "flea_dermatitis_pruritus",
+     0.522,
+     0.588
+    ],
+    [
+     "mild_conjunctivitis",
+     0.51,
+     0.576
+    ],
+    [
+     "parvovirus_panleukopenia",
+     0.496,
+     0.575
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.524,
+     0.554
+    ],
+    [
+     "canine_heatstroke",
+     0.493,
+     0.553
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b58",
+   "esp": [
+    "minor_wound"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "minor_wound",
+     0.615,
+     0.691
+    ],
+    [
+     "mild_lameness",
+     0.561,
+     0.598
+    ],
+    [
+     "trauma_and_bleeding",
+     0.552,
+     0.588
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.547,
+     0.583
+    ],
+    [
+     "cat_bite_abscess",
+     0.566,
+     0.572
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b59",
+   "esp": [
+    "periodontal_disease_mild"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "periodontal_disease_mild",
+     0.585,
+     0.69
+    ],
+    [
+     "parvovirus_panleukopenia",
+     0.526,
+     0.607
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.54,
+     0.603
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.535,
+     0.603
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.532,
+     0.583
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b60",
+   "esp": [
+    "slow_growing_lump"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "slow_growing_lump",
+     0.569,
+     0.657
+    ],
+    [
+     "osteoarthritis_stiffness",
+     0.477,
+     0.599
+    ],
+    [
+     "hypoglycemia_toy_puppy",
+     0.539,
+     0.576
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.486,
+     0.554
+    ],
+    [
+     "mild_lameness",
+     0.54,
+     0.553
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b61",
+   "esp": [
+    "exertional_panting_mild"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "mild_lameness",
+     0.522,
+     0.617
+    ],
+    [
+     "canine_heatstroke",
+     0.536,
+     0.607
+    ],
+    [
+     "exertional_panting_mild",
+     0.522,
+     0.546
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.515,
+     0.532
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.47,
+     0.527
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b62",
+   "esp": [
+    "rabies_exposure_wild_animal_bite"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     0.644,
+     0.747
+    ],
+    [
+     "mild_lameness",
+     0.527,
+     0.598
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.487,
+     0.587
+    ],
+    [
+     "tremors_without_seizure",
+     0.501,
+     0.565
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.488,
+     0.559
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b63",
+   "esp": [
+    "ticks_found_no_signs"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "collapse_and_pale_gums",
+     0.538,
+     0.598
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.502,
+     0.593
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.479,
+     0.59
+    ],
+    [
+     "tick_borne_disease_anemia",
+     0.528,
+     0.587
+    ],
+    [
+     "ticks_found_no_signs",
+     0.528,
+     0.579
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b64",
+   "esp": [
+    "single_vomiting_or_mild_diarrhea"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.606,
+     0.719
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.536,
+     0.661
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.554,
+     0.58
+    ],
+    [
+     "mild_lameness",
+     0.491,
+     0.559
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.473,
+     0.54
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b65",
+   "esp": [
+    "single_vomiting_or_mild_diarrhea"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.579,
+     0.788
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.507,
+     0.644
+    ],
+    [
+     "mild_conjunctivitis",
+     0.455,
+     0.557
+    ],
+    [
+     "mild_lameness",
+     0.484,
+     0.548
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.508,
+     0.54
+    ]
+   ]
+  },
+  {
+   "conj": "regua",
+   "id": "b66",
+   "esp": [
+    "single_vomiting_or_mild_diarrhea"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.646,
+     0.772
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.559,
+     0.658
+    ],
+    [
+     "mild_lameness",
+     0.554,
+     0.654
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.539,
+     0.633
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.545,
+     0.613
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i01",
+   "esp": [
+    "toad_bufotoxin_poisoning"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "mild_upper_respiratory_signs",
+     0.528,
+     0.577
+    ],
+    [
+     "toad_bufotoxin_poisoning",
+     0.531,
+     0.57
+    ],
+    [
+     "carbamate_organophosphate_poisoning",
+     0.514,
+     0.55
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.517,
+     0.547
+    ],
+    [
+     "respiratory_distress",
+     0.481,
+     0.538
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i02",
+   "esp": [
+    "pyometra"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "urethral_obstruction",
+     0.607,
+     0.734
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.532,
+     0.621
+    ],
+    [
+     "fading_neonate",
+     0.492,
+     0.61
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.539,
+     0.596
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.528,
+     0.581
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i03",
+   "esp": [
+    "ocular_emergency"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "ocular_emergency",
+     0.622,
+     0.704
+    ],
+    [
+     "mild_conjunctivitis",
+     0.546,
+     0.615
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.535,
+     0.567
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.499,
+     0.543
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.496,
+     0.54
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i04",
+   "esp": [
+    "grape_xylitol_toxicosis"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "vomiting_and_diarrhea",
+     0.543,
+     0.625
+    ],
+    [
+     "grape_xylitol_toxicosis",
+     0.55,
+     0.592
+    ],
+    [
+     "osteoarthritis_stiffness",
+     0.476,
+     0.59
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.528,
+     0.589
+    ],
+    [
+     "urethral_obstruction",
+     0.516,
+     0.587
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i05",
+   "esp": [
+    "leptospirosis_acute"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "mild_lameness",
+     0.535,
+     0.582
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.514,
+     0.56
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.481,
+     0.557
+    ],
+    [
+     "allium_toxicosis",
+     0.521,
+     0.536
+    ],
+    [
+     "canine_heatstroke",
+     0.523,
+     0.534
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i06",
+   "esp": [
+    "dystocia"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "urethral_obstruction",
+     0.531,
+     0.721
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.478,
+     0.561
+    ],
+    [
+     "dystocia",
+     0.552,
+     0.561
+    ],
+    [
+     "fading_neonate",
+     0.5,
+     0.553
+    ],
+    [
+     "eclampsia",
+     0.517,
+     0.522
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i07",
+   "esp": [
+    "vestibular_syndrome_otitis_interna"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "mild_upper_respiratory_signs",
+     0.541,
+     0.629
+    ],
+    [
+     "osteoarthritis_stiffness",
+     0.521,
+     0.617
+    ],
+    [
+     "mild_conjunctivitis",
+     0.566,
+     0.599
+    ],
+    [
+     "ocular_emergency",
+     0.59,
+     0.594
+    ],
+    [
+     "mild_lameness",
+     0.544,
+     0.581
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i08",
+   "esp": [
+    "burns_and_electrical_injury"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "burns_and_electrical_injury",
+     0.614,
+     0.701
+    ],
+    [
+     "respiratory_distress",
+     0.513,
+     0.614
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.537,
+     0.586
+    ],
+    [
+     "canine_heatstroke",
+     0.538,
+     0.583
+    ],
+    [
+     "carbamate_organophosphate_poisoning",
+     0.47,
+     0.532
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i09",
+   "esp": [
+    "trauma_and_bleeding"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "collapse_and_pale_gums",
+     0.569,
+     0.66
+    ],
+    [
+     "canine_heatstroke",
+     0.506,
+     0.552
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.488,
+     0.55
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.482,
+     0.549
+    ],
+    [
+     "mild_lameness",
+     0.533,
+     0.542
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i10",
+   "esp": [
+    "collapse_and_pale_gums"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "collapse_and_pale_gums",
+     0.592,
+     0.659
+    ],
+    [
+     "fading_neonate",
+     0.555,
+     0.648
+    ],
+    [
+     "urethral_obstruction",
+     0.555,
+     0.613
+    ],
+    [
+     "respiratory_distress",
+     0.54,
+     0.603
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.517,
+     0.574
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i11",
+   "esp": [
+    "human_medication_poisoning"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "permethrin_toxicosis_cats",
+     0.619,
+     0.657
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.528,
+     0.622
+    ],
+    [
+     "human_medication_poisoning",
+     0.568,
+     0.611
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.522,
+     0.596
+    ],
+    [
+     "seizures",
+     0.532,
+     0.591
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i12",
+   "esp": [
+    "airway_foreign_body_choking"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "respiratory_distress",
+     0.584,
+     0.648
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.563,
+     0.61
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.576,
+     0.591
+    ],
+    [
+     "airway_foreign_body_choking",
+     0.55,
+     0.584
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.567,
+     0.582
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i13",
+   "esp": [
+    "anticoagulant_rodenticide_poisoning"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.577,
+     0.712
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.51,
+     0.578
+    ],
+    [
+     "lily_toxicosis_cats",
+     0.521,
+     0.537
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.495,
+     0.536
+    ],
+    [
+     "ocular_emergency",
+     0.482,
+     0.533
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i14",
+   "esp": [
+    "urethral_obstruction"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "acute_hindlimb_paralysis",
+     0.601,
+     0.748
+    ],
+    [
+     "urethral_obstruction",
+     0.642,
+     0.718
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.572,
+     0.697
+    ],
+    [
+     "seizures",
+     0.557,
+     0.622
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.556,
+     0.589
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i15",
+   "esp": [
+    "lily_toxicosis_cats"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "lily_toxicosis_cats",
+     0.555,
+     0.6
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.483,
+     0.555
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.515,
+     0.549
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.49,
+     0.546
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.509,
+     0.541
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i16",
+   "esp": [
+    "respiratory_distress"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "respiratory_distress",
+     0.649,
+     0.78
+    ],
+    [
+     "fading_neonate",
+     0.568,
+     0.676
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.578,
+     0.672
+    ],
+    [
+     "urethral_obstruction",
+     0.597,
+     0.654
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.556,
+     0.623
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i17",
+   "esp": [
+    "diabetic_ketoacidosis"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "diabetic_ketoacidosis",
+     0.551,
+     0.598
+    ],
+    [
+     "gastrointestinal_foreign_body",
+     0.543,
+     0.587
+    ],
+    [
+     "periodontal_disease_mild",
+     0.534,
+     0.58
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.534,
+     0.575
+    ],
+    [
+     "parvovirus_panleukopenia",
+     0.498,
+     0.572
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i18",
+   "esp": [
+    "permethrin_toxicosis_cats"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "human_medication_poisoning",
+     0.614,
+     0.735
+    ],
+    [
+     "seizures",
+     0.598,
+     0.674
+    ],
+    [
+     "tremors_without_seizure",
+     0.578,
+     0.653
+    ],
+    [
+     "carbamate_organophosphate_poisoning",
+     0.544,
+     0.642
+    ],
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.574,
+     0.607
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i19",
+   "esp": [
+    "vomiting_and_diarrhea"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "vomiting_and_diarrhea",
+     0.547,
+     0.651
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.53,
+     0.61
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.569,
+     0.598
+    ],
+    [
+     "flea_dermatitis_pruritus",
+     0.545,
+     0.576
+    ],
+    [
+     "reduced_appetite_no_other_signs",
+     0.518,
+     0.549
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i20",
+   "esp": [
+    "gastric_dilatation_volvulus"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "gastric_dilatation_volvulus",
+     0.702,
+     0.855
+    ],
+    [
+     "urethral_obstruction",
+     0.609,
+     0.729
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.641,
+     0.679
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.575,
+     0.599
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.536,
+     0.596
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i21",
+   "esp": [
+    "allium_toxicosis"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "collapse_and_pale_gums",
+     0.552,
+     0.594
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.506,
+     0.562
+    ],
+    [
+     "allium_toxicosis",
+     0.53,
+     0.553
+    ],
+    [
+     "flea_dermatitis_pruritus",
+     0.517,
+     0.549
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.495,
+     0.547
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i22",
+   "esp": [
+    "canine_heatstroke"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "canine_heatstroke",
+     0.575,
+     0.698
+    ],
+    [
+     "respiratory_distress",
+     0.495,
+     0.56
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.499,
+     0.539
+    ],
+    [
+     "ocular_emergency",
+     0.506,
+     0.525
+    ],
+    [
+     "human_medication_poisoning",
+     0.464,
+     0.514
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i23",
+   "esp": [
+    "tick_borne_disease_anemia"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "collapse_and_pale_gums",
+     0.528,
+     0.626
+    ],
+    [
+     "canine_heatstroke",
+     0.515,
+     0.576
+    ],
+    [
+     "fading_neonate",
+     0.492,
+     0.569
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.499,
+     0.545
+    ],
+    [
+     "allium_toxicosis",
+     0.481,
+     0.541
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i24",
+   "esp": [
+    "hypoglycemia_toy_puppy"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "fading_neonate",
+     0.544,
+     0.66
+    ],
+    [
+     "hypoglycemia_toy_puppy",
+     0.579,
+     0.62
+    ],
+    [
+     "tremors_without_seizure",
+     0.525,
+     0.591
+    ],
+    [
+     "seizures",
+     0.528,
+     0.585
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.493,
+     0.577
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i25",
+   "esp": [
+    "carbamate_organophosphate_poisoning"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "tremors_without_seizure",
+     0.603,
+     0.65
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.575,
+     0.631
+    ],
+    [
+     "seizures",
+     0.572,
+     0.62
+    ],
+    [
+     "carbamate_organophosphate_poisoning",
+     0.559,
+     0.59
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.546,
+     0.577
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i26",
+   "esp": [
+    "acute_hindlimb_paralysis"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "acute_hindlimb_paralysis",
+     0.532,
+     0.671
+    ],
+    [
+     "urethral_obstruction",
+     0.489,
+     0.574
+    ],
+    [
+     "seizures",
+     0.498,
+     0.563
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.477,
+     0.562
+    ],
+    [
+     "osteoarthritis_stiffness",
+     0.495,
+     0.561
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i27",
+   "esp": [
+    "high_rise_syndrome_cats"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "respiratory_distress",
+     0.6,
+     0.687
+    ],
+    [
+     "high_rise_syndrome_cats",
+     0.624,
+     0.665
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.578,
+     0.653
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.576,
+     0.611
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.567,
+     0.594
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i28",
+   "esp": [
+    "feline_aortic_thromboembolism"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "acute_hindlimb_paralysis",
+     0.612,
+     0.682
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.553,
+     0.612
+    ],
+    [
+     "fading_neonate",
+     0.54,
+     0.601
+    ],
+    [
+     "high_rise_syndrome_cats",
+     0.581,
+     0.6
+    ],
+    [
+     "mild_lameness",
+     0.586,
+     0.59
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i29",
+   "esp": [
+    "anaphylaxis_facial_swelling"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "anaphylaxis_facial_swelling",
+     0.644,
+     0.719
+    ],
+    [
+     "flea_dermatitis_pruritus",
+     0.587,
+     0.591
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.519,
+     0.578
+    ],
+    [
+     "allium_toxicosis",
+     0.549,
+     0.576
+    ],
+    [
+     "chocolate_toxicosis",
+     0.545,
+     0.572
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i30",
+   "esp": [
+    "gastrointestinal_foreign_body"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "vomiting_and_diarrhea",
+     0.603,
+     0.697
+    ],
+    [
+     "lily_toxicosis_cats",
+     0.659,
+     0.678
+    ],
+    [
+     "urethral_obstruction",
+     0.601,
+     0.676
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.576,
+     0.658
+    ],
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.606,
+     0.653
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i31",
+   "esp": [
+    "distemper_neurological"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "tremors_without_seizure",
+     0.616,
+     0.704
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.515,
+     0.624
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.525,
+     0.604
+    ],
+    [
+     "hypoglycemia_toy_puppy",
+     0.586,
+     0.601
+    ],
+    [
+     "seizures",
+     0.56,
+     0.599
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i32",
+   "esp": [
+    "snake_and_scorpion_envenomation"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "anaphylaxis_facial_swelling",
+     0.6,
+     0.71
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.589,
+     0.644
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.569,
+     0.632
+    ],
+    [
+     "trauma_and_bleeding",
+     0.556,
+     0.626
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.553,
+     0.617
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i33",
+   "esp": [
+    "parvovirus_panleukopenia"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "vomiting_and_diarrhea",
+     0.552,
+     0.616
+    ],
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.55,
+     0.588
+    ],
+    [
+     "fading_neonate",
+     0.524,
+     0.575
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.521,
+     0.564
+    ],
+    [
+     "parvovirus_panleukopenia",
+     0.503,
+     0.56
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i34",
+   "esp": [
+    "congestive_heart_failure"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "respiratory_distress",
+     0.567,
+     0.707
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.54,
+     0.596
+    ],
+    [
+     "urethral_obstruction",
+     0.531,
+     0.587
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.471,
+     0.554
+    ],
+    [
+     "canine_heatstroke",
+     0.503,
+     0.542
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i35",
+   "esp": [
+    "seizures"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "seizures",
+     0.616,
+     0.706
+    ],
+    [
+     "tremors_without_seizure",
+     0.617,
+     0.658
+    ],
+    [
+     "trauma_and_bleeding",
+     0.537,
+     0.637
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.563,
+     0.598
+    ],
+    [
+     "mild_lameness",
+     0.539,
+     0.592
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i36",
+   "esp": [
+    "fading_neonate"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "fading_neonate",
+     0.656,
+     0.785
+    ],
+    [
+     "reduced_appetite_no_other_signs",
+     0.519,
+     0.537
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.462,
+     0.516
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.432,
+     0.503
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.457,
+     0.489
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i37",
+   "esp": [
+    "eclampsia"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "eclampsia",
+     0.6,
+     0.612
+    ],
+    [
+     "osteoarthritis_stiffness",
+     0.536,
+     0.6
+    ],
+    [
+     "hypoglycemia_toy_puppy",
+     0.55,
+     0.585
+    ],
+    [
+     "fading_neonate",
+     0.507,
+     0.566
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.521,
+     0.56
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i38",
+   "esp": [
+    "chocolate_toxicosis"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "chocolate_toxicosis",
+     0.627,
+     0.742
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.565,
+     0.622
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.538,
+     0.592
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.533,
+     0.579
+    ],
+    [
+     "human_medication_poisoning",
+     0.526,
+     0.577
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i39",
+   "esp": [
+    "cat_bite_abscess"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "cat_bite_abscess",
+     0.617,
+     0.662
+    ],
+    [
+     "trauma_and_bleeding",
+     0.577,
+     0.66
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.583,
+     0.626
+    ],
+    [
+     "ocular_emergency",
+     0.58,
+     0.625
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.582,
+     0.614
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i40",
+   "esp": [
+    "rabies_exposure_wild_animal_bite"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     0.642,
+     0.7
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.557,
+     0.652
+    ],
+    [
+     "minor_wound",
+     0.57,
+     0.621
+    ],
+    [
+     "respiratory_distress",
+     0.568,
+     0.617
+    ],
+    [
+     "high_rise_syndrome_cats",
+     0.609,
+     0.613
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i41",
+   "esp": [
+    "otitis_externa_mild"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "urethral_obstruction",
+     0.595,
+     0.661
+    ],
+    [
+     "ocular_emergency",
+     0.585,
+     0.626
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.556,
+     0.61
+    ],
+    [
+     "flea_dermatitis_pruritus",
+     0.561,
+     0.609
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.569,
+     0.607
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i42",
+   "esp": [
+    "reduced_appetite_no_other_signs"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "dietary_indiscretion_mild",
+     0.542,
+     0.69
+    ],
+    [
+     "reduced_appetite_no_other_signs",
+     0.544,
+     0.629
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.51,
+     0.623
+    ],
+    [
+     "polyuria_polydipsia_investigate",
+     0.504,
+     0.572
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.447,
+     0.555
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i43",
+   "esp": [
+    "periodontal_disease_mild"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "allium_toxicosis",
+     0.55,
+     0.636
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.481,
+     0.619
+    ],
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.506,
+     0.562
+    ],
+    [
+     "periodontal_disease_mild",
+     0.504,
+     0.561
+    ],
+    [
+     "chocolate_toxicosis",
+     0.499,
+     0.554
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i44",
+   "esp": [
+    "single_vomiting_or_mild_diarrhea"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.668,
+     0.808
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.579,
+     0.634
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.521,
+     0.609
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.566,
+     0.595
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.517,
+     0.555
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i45",
+   "esp": [
+    "mild_conjunctivitis"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "mild_conjunctivitis",
+     0.63,
+     0.732
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.618,
+     0.691
+    ],
+    [
+     "ocular_emergency",
+     0.647,
+     0.69
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.613,
+     0.639
+    ],
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.594,
+     0.62
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i46",
+   "esp": [
+    "tremors_without_seizure"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "tremors_without_seizure",
+     0.627,
+     0.709
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.558,
+     0.622
+    ],
+    [
+     "mild_lameness",
+     0.588,
+     0.62
+    ],
+    [
+     "chocolate_toxicosis",
+     0.549,
+     0.607
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.527,
+     0.594
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i47",
+   "esp": [
+    "osteoarthritis_stiffness"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "osteoarthritis_stiffness",
+     0.609,
+     0.794
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.493,
+     0.562
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.473,
+     0.546
+    ],
+    [
+     "polyuria_polydipsia_investigate",
+     0.452,
+     0.528
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.486,
+     0.519
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i48",
+   "esp": [
+    "polyuria_polydipsia_investigate"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "polyuria_polydipsia_investigate",
+     0.631,
+     0.709
+    ],
+    [
+     "diabetic_ketoacidosis",
+     0.627,
+     0.644
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.542,
+     0.625
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.563,
+     0.615
+    ],
+    [
+     "urethral_obstruction",
+     0.544,
+     0.599
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i49",
+   "esp": [
+    "flea_dermatitis_pruritus"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "flea_dermatitis_pruritus",
+     0.589,
+     0.715
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.558,
+     0.628
+    ],
+    [
+     "canine_heatstroke",
+     0.509,
+     0.569
+    ],
+    [
+     "urethral_obstruction",
+     0.522,
+     0.564
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.515,
+     0.556
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i50",
+   "esp": [
+    "mild_upper_respiratory_signs"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "mild_upper_respiratory_signs",
+     0.654,
+     0.811
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.573,
+     0.678
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.533,
+     0.645
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.565,
+     0.642
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.57,
+     0.614
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i51",
+   "esp": [
+    "mild_lameness"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "mild_lameness",
+     0.551,
+     0.721
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.551,
+     0.562
+    ],
+    [
+     "osteoarthritis_stiffness",
+     0.495,
+     0.555
+    ],
+    [
+     "trauma_and_bleeding",
+     0.53,
+     0.546
+    ],
+    [
+     "tick_borne_disease_anemia",
+     0.502,
+     0.518
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i52",
+   "esp": [
+    "exertional_panting_mild"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "canine_heatstroke",
+     0.584,
+     0.645
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.519,
+     0.628
+    ],
+    [
+     "exertional_panting_mild",
+     0.574,
+     0.621
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.546,
+     0.62
+    ],
+    [
+     "mild_lameness",
+     0.541,
+     0.579
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i53",
+   "esp": [
+    "slow_growing_lump"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "slow_growing_lump",
+     0.521,
+     0.608
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.513,
+     0.606
+    ],
+    [
+     "gastrointestinal_foreign_body",
+     0.503,
+     0.551
+    ],
+    [
+     "flea_dermatitis_pruritus",
+     0.501,
+     0.523
+    ],
+    [
+     "osteoarthritis_stiffness",
+     0.445,
+     0.51
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i54",
+   "esp": [
+    "ticks_found_no_signs"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "ticks_found_no_signs",
+     0.54,
+     0.595
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.525,
+     0.57
+    ],
+    [
+     "tick_borne_disease_anemia",
+     0.512,
+     0.567
+    ],
+    [
+     "parvovirus_panleukopenia",
+     0.475,
+     0.553
+    ],
+    [
+     "tremors_without_seizure",
+     0.488,
+     0.533
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i55",
+   "esp": [
+    "normal_whelping"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "urethral_obstruction",
+     0.578,
+     0.643
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.534,
+     0.643
+    ],
+    [
+     "trauma_and_bleeding",
+     0.548,
+     0.613
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.54,
+     0.605
+    ],
+    [
+     "fading_neonate",
+     0.508,
+     0.6
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i56",
+   "esp": [
+    "inappropriate_urination_or_cystitis"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "inappropriate_urination_or_cystitis",
+     0.613,
+     0.789
+    ],
+    [
+     "polyuria_polydipsia_investigate",
+     0.545,
+     0.639
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.534,
+     0.606
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.567,
+     0.604
+    ],
+    [
+     "urethral_obstruction",
+     0.558,
+     0.572
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i57",
+   "esp": [
+    "minor_wound"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.474,
+     0.576
+    ],
+    [
+     "urethral_obstruction",
+     0.486,
+     0.55
+    ],
+    [
+     "human_medication_poisoning",
+     0.483,
+     0.548
+    ],
+    [
+     "trauma_and_bleeding",
+     0.529,
+     0.533
+    ],
+    [
+     "lily_toxicosis_cats",
+     0.513,
+     0.521
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i58",
+   "esp": [
+    "dietary_indiscretion_mild"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "dietary_indiscretion_mild",
+     0.59,
+     0.727
+    ],
+    [
+     "mild_lameness",
+     0.548,
+     0.616
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.477,
+     0.604
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.501,
+     0.597
+    ],
+    [
+     "reduced_appetite_no_other_signs",
+     0.513,
+     0.548
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i59",
+   "esp": [
+    "normal_estrus"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "trauma_and_bleeding",
+     0.528,
+     0.612
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.488,
+     0.547
+    ],
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.457,
+     0.535
+    ],
+    [
+     "minor_wound",
+     0.487,
+     0.529
+    ],
+    [
+     "normal_estrus",
+     0.469,
+     0.515
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i60",
+   "esp": [
+    "kennel_cough_mild"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "mild_upper_respiratory_signs",
+     0.598,
+     0.652
+    ],
+    [
+     "polyuria_polydipsia_investigate",
+     0.58,
+     0.638
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.539,
+     0.633
+    ],
+    [
+     "kennel_cough_mild",
+     0.605,
+     0.618
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.56,
+     0.615
+    ]
+   ]
+  },
+  {
+   "conj": "indep",
+   "id": "i61",
+   "esp": [
+    "insect_sting_local_reaction"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "urethral_obstruction",
+     0.515,
+     0.59
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.55,
+     0.581
+    ],
+    [
+     "mild_lameness",
+     0.536,
+     0.573
+    ],
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.539,
+     0.571
+    ],
+    [
+     "trauma_and_bleeding",
+     0.548,
+     0.571
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j01",
+   "esp": [
+    "diabetic_ketoacidosis"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "canine_heatstroke",
+     0.567,
+     0.628
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.551,
+     0.609
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.554,
+     0.607
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.569,
+     0.594
+    ],
+    [
+     "polyuria_polydipsia_investigate",
+     0.552,
+     0.575
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j02",
+   "esp": [
+    "parvovirus_panleukopenia"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "vomiting_and_diarrhea",
+     0.567,
+     0.717
+    ],
+    [
+     "urethral_obstruction",
+     0.531,
+     0.604
+    ],
+    [
+     "parvovirus_panleukopenia",
+     0.496,
+     0.585
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.476,
+     0.558
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.495,
+     0.557
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j03",
+   "esp": [
+    "carbamate_organophosphate_poisoning"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "dietary_indiscretion_mild",
+     0.567,
+     0.649
+    ],
+    [
+     "carbamate_organophosphate_poisoning",
+     0.527,
+     0.569
+    ],
+    [
+     "mild_lameness",
+     0.524,
+     0.562
+    ],
+    [
+     "seizures",
+     0.49,
+     0.539
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.463,
+     0.537
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j04",
+   "esp": [
+    "human_medication_poisoning"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "permethrin_toxicosis_cats",
+     0.637,
+     0.751
+    ],
+    [
+     "seizures",
+     0.583,
+     0.702
+    ],
+    [
+     "trauma_and_bleeding",
+     0.559,
+     0.674
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.54,
+     0.655
+    ],
+    [
+     "carbamate_organophosphate_poisoning",
+     0.569,
+     0.648
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j05",
+   "esp": [
+    "gastrointestinal_foreign_body"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.614,
+     0.667
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.575,
+     0.64
+    ],
+    [
+     "reduced_appetite_no_other_signs",
+     0.597,
+     0.636
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.555,
+     0.634
+    ],
+    [
+     "fading_neonate",
+     0.542,
+     0.622
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j06",
+   "esp": [
+    "allium_toxicosis"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "collapse_and_pale_gums",
+     0.574,
+     0.732
+    ],
+    [
+     "allium_toxicosis",
+     0.585,
+     0.688
+    ],
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.511,
+     0.579
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.527,
+     0.557
+    ],
+    [
+     "chocolate_toxicosis",
+     0.508,
+     0.542
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j07",
+   "esp": [
+    "snake_and_scorpion_envenomation"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "anaphylaxis_facial_swelling",
+     0.656,
+     0.731
+    ],
+    [
+     "insect_sting_local_reaction",
+     0.647,
+     0.683
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.538,
+     0.622
+    ],
+    [
+     "mild_lameness",
+     0.575,
+     0.618
+    ],
+    [
+     "human_medication_poisoning",
+     0.562,
+     0.613
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j08",
+   "esp": [
+    "ocular_emergency"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "ocular_emergency",
+     0.67,
+     0.764
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.547,
+     0.663
+    ],
+    [
+     "mild_conjunctivitis",
+     0.581,
+     0.634
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.581,
+     0.633
+    ],
+    [
+     "urethral_obstruction",
+     0.571,
+     0.608
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j09",
+   "esp": [
+    "hypoglycemia_toy_puppy"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "fading_neonate",
+     0.519,
+     0.614
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.499,
+     0.526
+    ],
+    [
+     "polyuria_polydipsia_investigate",
+     0.441,
+     0.485
+    ],
+    [
+     "mild_conjunctivitis",
+     0.448,
+     0.481
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.408,
+     0.478
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j10",
+   "esp": [
+    "urethral_obstruction"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "urethral_obstruction",
+     0.601,
+     0.686
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.549,
+     0.651
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.55,
+     0.626
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.54,
+     0.595
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.558,
+     0.587
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j11",
+   "esp": [
+    "lily_toxicosis_cats"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "lily_toxicosis_cats",
+     0.644,
+     0.682
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.537,
+     0.591
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.561,
+     0.59
+    ],
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.56,
+     0.572
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.544,
+     0.572
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j12",
+   "esp": [
+    "leptospirosis_acute"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "urethral_obstruction",
+     0.585,
+     0.615
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.567,
+     0.597
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.533,
+     0.595
+    ],
+    [
+     "allium_toxicosis",
+     0.533,
+     0.594
+    ],
+    [
+     "polyuria_polydipsia_investigate",
+     0.531,
+     0.584
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j13",
+   "esp": [
+    "feline_aortic_thromboembolism"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "acute_hindlimb_paralysis",
+     0.592,
+     0.69
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.533,
+     0.638
+    ],
+    [
+     "seizures",
+     0.55,
+     0.603
+    ],
+    [
+     "high_rise_syndrome_cats",
+     0.585,
+     0.594
+    ],
+    [
+     "urethral_obstruction",
+     0.536,
+     0.586
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j14",
+   "esp": [
+    "trauma_and_bleeding"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "trauma_and_bleeding",
+     0.657,
+     0.761
+    ],
+    [
+     "respiratory_distress",
+     0.6,
+     0.663
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.562,
+     0.655
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.571,
+     0.646
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.561,
+     0.637
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j15",
+   "esp": [
+    "burns_and_electrical_injury"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "burns_and_electrical_injury",
+     0.554,
+     0.589
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.54,
+     0.563
+    ],
+    [
+     "mild_lameness",
+     0.548,
+     0.555
+    ],
+    [
+     "seizures",
+     0.525,
+     0.554
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.523,
+     0.553
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j16",
+   "esp": [
+    "vomiting_and_diarrhea"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "vomiting_and_diarrhea",
+     0.664,
+     0.76
+    ],
+    [
+     "reduced_appetite_no_other_signs",
+     0.613,
+     0.674
+    ],
+    [
+     "urethral_obstruction",
+     0.606,
+     0.648
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.585,
+     0.636
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.582,
+     0.629
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j17",
+   "esp": [
+    "seizures"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "tremors_without_seizure",
+     0.581,
+     0.605
+    ],
+    [
+     "seizures",
+     0.556,
+     0.581
+    ],
+    [
+     "mild_lameness",
+     0.53,
+     0.577
+    ],
+    [
+     "osteoarthritis_stiffness",
+     0.478,
+     0.55
+    ],
+    [
+     "normal_whelping",
+     0.505,
+     0.526
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j18",
+   "esp": [
+    "distemper_neurological"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "anaphylaxis_facial_swelling",
+     0.479,
+     0.584
+    ],
+    [
+     "seizures",
+     0.542,
+     0.577
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.522,
+     0.561
+    ],
+    [
+     "osteoarthritis_stiffness",
+     0.475,
+     0.549
+    ],
+    [
+     "ocular_emergency",
+     0.527,
+     0.535
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j19",
+   "esp": [
+    "anaphylaxis_facial_swelling"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "anaphylaxis_facial_swelling",
+     0.779,
+     0.915
+    ],
+    [
+     "insect_sting_local_reaction",
+     0.655,
+     0.694
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.62,
+     0.655
+    ],
+    [
+     "flea_dermatitis_pruritus",
+     0.623,
+     0.653
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.596,
+     0.647
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j20",
+   "esp": [
+    "dystocia"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "urethral_obstruction",
+     0.538,
+     0.675
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.517,
+     0.607
+    ],
+    [
+     "dystocia",
+     0.566,
+     0.576
+    ],
+    [
+     "fading_neonate",
+     0.526,
+     0.567
+    ],
+    [
+     "pyometra",
+     0.469,
+     0.519
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j21",
+   "esp": [
+    "toad_bufotoxin_poisoning"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "mild_upper_respiratory_signs",
+     0.507,
+     0.588
+    ],
+    [
+     "toad_bufotoxin_poisoning",
+     0.522,
+     0.573
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.476,
+     0.526
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.442,
+     0.514
+    ],
+    [
+     "fading_neonate",
+     0.403,
+     0.505
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j22",
+   "esp": [
+    "permethrin_toxicosis_cats"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "permethrin_toxicosis_cats",
+     0.674,
+     0.816
+    ],
+    [
+     "seizures",
+     0.586,
+     0.658
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.579,
+     0.638
+    ],
+    [
+     "carbamate_organophosphate_poisoning",
+     0.555,
+     0.626
+    ],
+    [
+     "tremors_without_seizure",
+     0.571,
+     0.625
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j23",
+   "esp": [
+    "eclampsia"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "osteoarthritis_stiffness",
+     0.576,
+     0.626
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.56,
+     0.593
+    ],
+    [
+     "fading_neonate",
+     0.546,
+     0.592
+    ],
+    [
+     "dystocia",
+     0.576,
+     0.586
+    ],
+    [
+     "hypoglycemia_toy_puppy",
+     0.547,
+     0.574
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j24",
+   "esp": [
+    "acute_hindlimb_paralysis"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "acute_hindlimb_paralysis",
+     0.644,
+     0.85
+    ],
+    [
+     "osteoarthritis_stiffness",
+     0.598,
+     0.663
+    ],
+    [
+     "seizures",
+     0.58,
+     0.631
+    ],
+    [
+     "mild_lameness",
+     0.593,
+     0.606
+    ],
+    [
+     "urethral_obstruction",
+     0.573,
+     0.594
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j25",
+   "esp": [
+    "tick_borne_disease_anemia"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "collapse_and_pale_gums",
+     0.614,
+     0.67
+    ],
+    [
+     "reduced_appetite_no_other_signs",
+     0.573,
+     0.651
+    ],
+    [
+     "mild_lameness",
+     0.565,
+     0.635
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.559,
+     0.632
+    ],
+    [
+     "canine_heatstroke",
+     0.546,
+     0.604
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j26",
+   "esp": [
+    "fading_neonate"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "fading_neonate",
+     0.666,
+     0.805
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.575,
+     0.618
+    ],
+    [
+     "urethral_obstruction",
+     0.53,
+     0.577
+    ],
+    [
+     "high_rise_syndrome_cats",
+     0.566,
+     0.572
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.524,
+     0.564
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j27",
+   "esp": [
+    "chocolate_toxicosis"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "chocolate_toxicosis",
+     0.614,
+     0.666
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.579,
+     0.644
+    ],
+    [
+     "mild_lameness",
+     0.54,
+     0.559
+    ],
+    [
+     "minor_wound",
+     0.486,
+     0.521
+    ],
+    [
+     "allium_toxicosis",
+     0.495,
+     0.518
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j28",
+   "esp": [
+    "grape_xylitol_toxicosis"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "urethral_obstruction",
+     0.524,
+     0.605
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.502,
+     0.599
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.518,
+     0.589
+    ],
+    [
+     "seizures",
+     0.491,
+     0.574
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.48,
+     0.556
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j29",
+   "esp": [
+    "collapse_and_pale_gums"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "respiratory_distress",
+     0.6,
+     0.68
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.596,
+     0.678
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.581,
+     0.656
+    ],
+    [
+     "high_rise_syndrome_cats",
+     0.585,
+     0.597
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.561,
+     0.597
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j30",
+   "esp": [
+    "respiratory_distress"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "respiratory_distress",
+     0.631,
+     0.758
+    ],
+    [
+     "urethral_obstruction",
+     0.562,
+     0.648
+    ],
+    [
+     "lily_toxicosis_cats",
+     0.596,
+     0.603
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.545,
+     0.599
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.56,
+     0.596
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j31",
+   "esp": [
+    "anticoagulant_rodenticide_poisoning"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.693,
+     0.815
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.54,
+     0.625
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.581,
+     0.613
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.565,
+     0.609
+    ],
+    [
+     "carbamate_organophosphate_poisoning",
+     0.574,
+     0.609
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j32",
+   "esp": [
+    "vestibular_syndrome_otitis_interna"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "collapse_and_pale_gums",
+     0.528,
+     0.581
+    ],
+    [
+     "ocular_emergency",
+     0.569,
+     0.577
+    ],
+    [
+     "seizures",
+     0.521,
+     0.572
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.532,
+     0.563
+    ],
+    [
+     "osteoarthritis_stiffness",
+     0.51,
+     0.558
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j33",
+   "esp": [
+    "pyometra"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "inappropriate_urination_or_cystitis",
+     0.624,
+     0.667
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.586,
+     0.617
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.536,
+     0.61
+    ],
+    [
+     "polyuria_polydipsia_investigate",
+     0.539,
+     0.594
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.545,
+     0.591
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j34",
+   "esp": [
+    "congestive_heart_failure"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "collapse_and_pale_gums",
+     0.58,
+     0.681
+    ],
+    [
+     "respiratory_distress",
+     0.597,
+     0.647
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.597,
+     0.64
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.569,
+     0.637
+    ],
+    [
+     "urethral_obstruction",
+     0.56,
+     0.627
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j35",
+   "esp": [
+    "canine_heatstroke"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "canine_heatstroke",
+     0.526,
+     0.617
+    ],
+    [
+     "mild_lameness",
+     0.5,
+     0.53
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.466,
+     0.517
+    ],
+    [
+     "exertional_panting_mild",
+     0.486,
+     0.515
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.465,
+     0.511
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j36",
+   "esp": [
+    "high_rise_syndrome_cats"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "acute_hindlimb_paralysis",
+     0.617,
+     0.766
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.584,
+     0.663
+    ],
+    [
+     "seizures",
+     0.575,
+     0.656
+    ],
+    [
+     "trauma_and_bleeding",
+     0.591,
+     0.647
+    ],
+    [
+     "osteoarthritis_stiffness",
+     0.566,
+     0.63
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j37",
+   "esp": [
+    "gastric_dilatation_volvulus"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "gastric_dilatation_volvulus",
+     0.62,
+     0.705
+    ],
+    [
+     "chocolate_toxicosis",
+     0.557,
+     0.612
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.542,
+     0.608
+    ],
+    [
+     "urethral_obstruction",
+     0.511,
+     0.58
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.549,
+     0.577
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j38",
+   "esp": [
+    "airway_foreign_body_choking"
+   ],
+   "classe": "EMERGENCIA",
+   "top": [
+    [
+     "respiratory_distress",
+     0.563,
+     0.676
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.547,
+     0.609
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.546,
+     0.608
+    ],
+    [
+     "urethral_obstruction",
+     0.529,
+     0.592
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.519,
+     0.585
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j39",
+   "esp": [
+    "dietary_indiscretion_mild"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "chocolate_toxicosis",
+     0.622,
+     0.669
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.533,
+     0.616
+    ],
+    [
+     "mild_lameness",
+     0.535,
+     0.563
+    ],
+    [
+     "trauma_and_bleeding",
+     0.498,
+     0.524
+    ],
+    [
+     "seizures",
+     0.497,
+     0.523
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j40",
+   "esp": [
+    "normal_whelping"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "fading_neonate",
+     0.53,
+     0.587
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.479,
+     0.552
+    ],
+    [
+     "urethral_obstruction",
+     0.473,
+     0.542
+    ],
+    [
+     "normal_whelping",
+     0.529,
+     0.537
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.479,
+     0.533
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j41",
+   "esp": [
+    "tremors_without_seizure"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "permethrin_toxicosis_cats",
+     0.637,
+     0.711
+    ],
+    [
+     "tremors_without_seizure",
+     0.628,
+     0.702
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.626,
+     0.661
+    ],
+    [
+     "seizures",
+     0.594,
+     0.62
+    ],
+    [
+     "mild_lameness",
+     0.57,
+     0.619
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j42",
+   "esp": [
+    "single_vomiting_or_mild_diarrhea"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.661,
+     0.807
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.579,
+     0.626
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.546,
+     0.613
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.518,
+     0.592
+    ],
+    [
+     "mild_lameness",
+     0.516,
+     0.586
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j43",
+   "esp": [
+    "minor_wound"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "minor_wound",
+     0.584,
+     0.623
+    ],
+    [
+     "anticoagulant_rodenticide_poisoning",
+     0.556,
+     0.595
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.54,
+     0.592
+    ],
+    [
+     "trauma_and_bleeding",
+     0.568,
+     0.591
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.58,
+     0.589
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j44",
+   "esp": [
+    "periodontal_disease_mild"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "osteoarthritis_stiffness",
+     0.556,
+     0.625
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.552,
+     0.62
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.564,
+     0.612
+    ],
+    [
+     "flea_dermatitis_pruritus",
+     0.537,
+     0.582
+    ],
+    [
+     "parvovirus_panleukopenia",
+     0.526,
+     0.574
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j45",
+   "esp": [
+    "reduced_appetite_no_other_signs"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "vomiting_and_diarrhea",
+     0.565,
+     0.652
+    ],
+    [
+     "reduced_appetite_no_other_signs",
+     0.581,
+     0.622
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.557,
+     0.596
+    ],
+    [
+     "lily_toxicosis_cats",
+     0.587,
+     0.59
+    ],
+    [
+     "polyuria_polydipsia_investigate",
+     0.548,
+     0.59
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j46",
+   "esp": [
+    "flea_dermatitis_pruritus"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "flea_dermatitis_pruritus",
+     0.591,
+     0.672
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.582,
+     0.643
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.518,
+     0.624
+    ],
+    [
+     "mild_upper_respiratory_signs",
+     0.519,
+     0.618
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.528,
+     0.606
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j47",
+   "esp": [
+    "insect_sting_local_reaction"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "anaphylaxis_facial_swelling",
+     0.588,
+     0.625
+    ],
+    [
+     "urethral_obstruction",
+     0.493,
+     0.569
+    ],
+    [
+     "ocular_emergency",
+     0.55,
+     0.559
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.517,
+     0.549
+    ],
+    [
+     "insect_sting_local_reaction",
+     0.537,
+     0.546
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j48",
+   "esp": [
+    "normal_estrus"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "normal_estrus",
+     0.57,
+     0.669
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.553,
+     0.638
+    ],
+    [
+     "polyuria_polydipsia_investigate",
+     0.52,
+     0.59
+    ],
+    [
+     "mild_lameness",
+     0.538,
+     0.59
+    ],
+    [
+     "trauma_and_bleeding",
+     0.54,
+     0.575
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j49",
+   "esp": [
+    "cat_bite_abscess"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "trauma_and_bleeding",
+     0.57,
+     0.641
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.573,
+     0.614
+    ],
+    [
+     "respiratory_distress",
+     0.559,
+     0.61
+    ],
+    [
+     "urethral_obstruction",
+     0.57,
+     0.605
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.561,
+     0.593
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j50",
+   "esp": [
+    "polyuria_polydipsia_investigate"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "inappropriate_urination_or_cystitis",
+     0.614,
+     0.717
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.601,
+     0.696
+    ],
+    [
+     "polyuria_polydipsia_investigate",
+     0.635,
+     0.692
+    ],
+    [
+     "diabetic_ketoacidosis",
+     0.609,
+     0.618
+    ],
+    [
+     "urethral_obstruction",
+     0.574,
+     0.609
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j51",
+   "esp": [
+    "rabies_exposure_wild_animal_bite"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "rabies_exposure_wild_animal_bite",
+     0.629,
+     0.673
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.59,
+     0.623
+    ],
+    [
+     "flea_dermatitis_pruritus",
+     0.517,
+     0.555
+    ],
+    [
+     "lily_toxicosis_cats",
+     0.547,
+     0.549
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.524,
+     0.533
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j52",
+   "esp": [
+    "otitis_externa_mild"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "mild_upper_respiratory_signs",
+     0.534,
+     0.624
+    ],
+    [
+     "urethral_obstruction",
+     0.528,
+     0.584
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.519,
+     0.565
+    ],
+    [
+     "osteoarthritis_stiffness",
+     0.477,
+     0.557
+    ],
+    [
+     "flea_dermatitis_pruritus",
+     0.511,
+     0.554
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j53",
+   "esp": [
+    "osteoarthritis_stiffness"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "osteoarthritis_stiffness",
+     0.648,
+     0.74
+    ],
+    [
+     "ocular_emergency",
+     0.59,
+     0.626
+    ],
+    [
+     "collapse_and_pale_gums",
+     0.593,
+     0.626
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.558,
+     0.625
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.614,
+     0.617
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j54",
+   "esp": [
+    "slow_growing_lump"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "flea_dermatitis_pruritus",
+     0.547,
+     0.595
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.543,
+     0.591
+    ],
+    [
+     "slow_growing_lump",
+     0.519,
+     0.571
+    ],
+    [
+     "hypoglycemia_toy_puppy",
+     0.537,
+     0.537
+    ],
+    [
+     "mild_lameness",
+     0.518,
+     0.521
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j55",
+   "esp": [
+    "inappropriate_urination_or_cystitis"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "inappropriate_urination_or_cystitis",
+     0.569,
+     0.635
+    ],
+    [
+     "urethral_obstruction",
+     0.573,
+     0.634
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.557,
+     0.608
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.506,
+     0.56
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.524,
+     0.548
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j56",
+   "esp": [
+    "exertional_panting_mild"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "respiratory_distress",
+     0.514,
+     0.598
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.501,
+     0.589
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.479,
+     0.574
+    ],
+    [
+     "canine_heatstroke",
+     0.532,
+     0.573
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.474,
+     0.548
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j57",
+   "esp": [
+    "mild_lameness"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "acute_hindlimb_paralysis",
+     0.655,
+     0.728
+    ],
+    [
+     "mild_lameness",
+     0.602,
+     0.685
+    ],
+    [
+     "high_rise_syndrome_cats",
+     0.618,
+     0.625
+    ],
+    [
+     "osteoarthritis_stiffness",
+     0.585,
+     0.622
+    ],
+    [
+     "feline_aortic_thromboembolism",
+     0.608,
+     0.616
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j58",
+   "esp": [
+    "kennel_cough_mild"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "mild_upper_respiratory_signs",
+     0.578,
+     0.708
+    ],
+    [
+     "single_vomiting_or_mild_diarrhea",
+     0.572,
+     0.697
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.539,
+     0.624
+    ],
+    [
+     "kennel_cough_mild",
+     0.602,
+     0.607
+    ],
+    [
+     "mild_lameness",
+     0.531,
+     0.58
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j59",
+   "esp": [
+    "mild_conjunctivitis"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "ocular_emergency",
+     0.659,
+     0.744
+    ],
+    [
+     "mild_conjunctivitis",
+     0.6,
+     0.666
+    ],
+    [
+     "permethrin_toxicosis_cats",
+     0.58,
+     0.62
+    ],
+    [
+     "anaphylaxis_facial_swelling",
+     0.555,
+     0.596
+    ],
+    [
+     "acute_hindlimb_paralysis",
+     0.585,
+     0.589
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j60",
+   "esp": [
+    "ticks_found_no_signs"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "ticks_found_no_signs",
+     0.579,
+     0.624
+    ],
+    [
+     "dietary_indiscretion_mild",
+     0.513,
+     0.592
+    ],
+    [
+     "mild_lameness",
+     0.514,
+     0.589
+    ],
+    [
+     "tick_borne_disease_anemia",
+     0.533,
+     0.578
+    ],
+    [
+     "inappropriate_urination_or_cystitis",
+     0.534,
+     0.568
+    ]
+   ]
+  },
+  {
+   "conj": "indep2",
+   "id": "j61",
+   "esp": [
+    "mild_upper_respiratory_signs"
+   ],
+   "classe": "NAO_EMERGENCIA",
+   "top": [
+    [
+     "mild_upper_respiratory_signs",
+     0.605,
+     0.728
+    ],
+    [
+     "vomiting_and_diarrhea",
+     0.586,
+     0.65
+    ],
+    [
+     "urethral_obstruction",
+     0.576,
+     0.636
+    ],
+    [
+     "gastric_dilatation_volvulus",
+     0.552,
+     0.617
+    ],
+    [
+     "respiratory_distress",
+     0.586,
+     0.59
+    ]
+   ]
+  }
+ ]
+}

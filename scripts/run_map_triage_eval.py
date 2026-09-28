@@ -13,6 +13,7 @@ from pathlib import Path
 
 import requests
 
+import prova_freeze
 from run_evaluation import agora, escrever_atomico, git_estado
 
 
@@ -56,6 +57,27 @@ def main() -> None:
         cases = list(csv.DictReader(source))
     if args.split:
         cases = [case for case in cases if case.get("split") == args.split]
+
+        # Fail-stop, sem flag: se o split já foi congelado (prova_freeze.py
+        # --freeze), qualquer edição não intencional derruba a rodada aqui,
+        # antes de gastar tempo de API — em vez de depender de alguém
+        # lembrar de passar --expect-hash (é a lição do B-39).
+        manifesto_path = prova_freeze.caminho_manifesto(args.cases, args.split)
+        if manifesto_path.exists():
+            linhas_congeladas = prova_freeze.carregar_split(
+                args.cases, args.split
+            )
+            hash_atual = prova_freeze.hash_split(linhas_congeladas)
+            manifesto = json.loads(manifesto_path.read_text(encoding="utf-8"))
+            if hash_atual != manifesto["sha256"]:
+                raise SystemExit(
+                    f"O split {args.split!r} não bate com o congelamento de "
+                    f"{manifesto['frozen_at']}. Rode "
+                    "`python scripts/prova_freeze.py --cases "
+                    f"{args.cases} --split {args.split}` para o diagnóstico "
+                    "completo antes de continuar."
+                )
+
     if args.limit:
         cases = cases[: args.limit]
 

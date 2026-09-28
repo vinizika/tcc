@@ -1,0 +1,73 @@
+{
+  "run_id": "20260921-210543_smoke_prova_dev",
+  "started_at": "2026-09-21T21:05:43.357387-03:00",
+  "mode": "no_rag",
+  "options": {
+    "retrieval_enabled": false,
+    "query_rewriting_enabled": false,
+    "multi_query_enabled": false,
+    "hyde_enabled": false,
+    "prompt_version": "v1_grounded",
+    "context_min_score": 0.72,
+    "include_debug": true
+  },
+  "cases_file": "data\\prova\\casos_oficiais.csv",
+  "split": "dev",
+  "case_count": 5,
+  "git": {
+    "sha": "f2b8311",
+    "dirty": true
+  },
+  "backend_fingerprint": {
+    "api_version": "1.0.0",
+    "model": {
+      "name": "llama3.2:3b",
+      "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+      "size_bytes": 2019393189,
+      "parameter_size": "3.2B",
+      "quantization": "Q4_K_M",
+      "loaded_in_vram_bytes": null
+    },
+    "ollama_version": "0.33.3",
+    "vector_store": {
+      "collection": "veterinary_documents",
+      "chunk_count": 0,
+      "chunk_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "embedding_revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+      "recipe_sha256": "1a93e1e7db9a5b5a7766ca11b54162cb74cb76bb4d4c2c02b2dc0d5c4319682b",
+      "chunking": {
+        "target_tokens": 96,
+        "overlap_tokens": 16,
+        "max_tokens": 128
+      },
+      "topic_counts": {},
+      "species_counts_by_topic": {},
+      "source_file_counts": {},
+      "validation_status_counts": {},
+      "manifest_sha256": null,
+      "profile": null,
+      "source_set_sha256": null,
+      "document_count": 0
+    },
+    "prompts": {
+      "v0_legacy_sha256": "15fa7b045d293f5dfdcb03ef18607fca72ca370776ef2df82687b6167b1423f4",
+      "v1_grounded_sha256": "a1e9cd51e0f618731926ce3f8de3bfa3b478f7e3fae8c8b6650041671ca912b5",
+      "v1_grounded_sem_contexto_sha256": "6084a79be5466da0066f23cd9dbd3716601b068fc65b7cebd311fca9c24510b7",
+      "v1_grounded_cot_sha256": "936cdc903895645dc6fb43cfd4465b1cb70fa10ec185e9f4d890841b8705c97b",
+      "v1_grounded_cot_sem_contexto_sha256": "18231ba795024b099c382e226b05a8767304cb2308cca3c24016eb57eeb4cd73",
+      "v1_grounded_cot_posthoc_sha256": "274fbab1850aa81af39aa7d1d02615f86fd0a4152d55ad9678089cf305a94d74"
+    },
+    "defaults": {
+      "temperature": 0.0,
+      "seed": 42,
+      "num_ctx": 4096,
+      "num_predict": 600,
+      "structured_output_mode": "schema",
+      "context_top_k": 3,
+      "context_min_score": 0.72,
+      "prompt_version": "v1_grounded"
+    }
+  }
+}
