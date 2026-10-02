@@ -39,20 +39,24 @@ def main():
             for name, report in [
                 ("immediate", "Meu gato está respirando com a boca aberta e faz muita força para respirar mesmo parado."),
                 ("resolved", "Meu gato está estranho, entra na caixa de areia muitas vezes. Não vi o que acontece lá."),
-                ("form", "Meu gato está diferente hoje. Não consigo explicar o que mudou.")]:
+                ("form", "Meu gato está diferente hoje. Não consigo explicar o que mudou."),
+                ("form_severe", "Meu gato está diferente quando vai à caixa de areia. Não consegui ver o que aconteceu.")]:
                 response = client.post("/workspace/conversations", json={})
                 response.raise_for_status()
                 cid = response.json()["id"]
                 doc = submit(cid, report)
                 if name == "resolved" and doc.get("followup", {}).get("state") == "asking":
                     doc = submit(cid, "Ele tenta fazer xixi várias vezes e não sai nenhuma gota de urina.")
-                if name == "form":
+                if name in {"form", "form_severe"}:
                     for _ in range(5):
                         state = doc.get("followup", {})
                         if doc["status"] == "failed" or state.get("state") not in {"asking", "form"}:
                             break
                         if state["state"] == "form":
-                            doc = submit(cid, "Não observei", {"origin": "form", "question_id": state["question_id"], "selected_option": "Não observei"})
+                            answer = "Não sai nenhum xixi" if name == "form_severe" else "Não observei"
+                            if answer not in state["options"]:
+                                raise AssertionError("Required truthful option absent from actual form")
+                            doc = submit(cid, answer, {"origin": "form", "question_id": state["question_id"], "selected_option": answer})
                             break
                         doc = submit(cid, "Não sei dizer")
                 results.append({"scenario": name, "provider_requested": args.provider,

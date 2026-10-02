@@ -1,0 +1,214 @@
+{
+  "utc": "2026-10-02T03:59:46.397538+00:00",
+  "frozen_inputs_identical": {
+    "cases.json": true,
+    "baseline_workspace.py": true,
+    "freeze.json": true
+  },
+  "source_or_data_changed_during_run": [],
+  "historical_artifacts_intact": true,
+  "research_data_unchanged_from_start_commit": true,
+  "final_tools_sha256": {
+    "scripts/run_conversation_eval.py": "d5f2f8b21878c2f6a2d98a08f8e9a2c9725be1bdbd67542fadb91eabc59fe59c",
+    "scripts/report_conversation_eval.py": "b993d059e2a81f2c1d45b00e4ed511627ccdbedd4f3a975d8081a8d706aed5e3",
+    "scripts/smoke_workspace_followup.py": "bf9e87eab2cf74ccc79682b5829596f39a1c575f2abfeabfd13448d80df41680",
+    "/Users/vinicius/Documents/tcc/scripts/audit_conversation_eval.py": "96f27e6b4583c16eafa1066efefc4efd1edc08320a40859ed602d10fc1cd6b17"
+  },
+  "collection_names": [
+    "veterinary_documents__20260925T061349534255Z__280baf13"
+  ],
+  "channel_pairs": [
+    {
+      "phase": "finish",
+      "case_id": "c01",
+      "repetition": 0,
+      "identical_prompt": true,
+      "same_class": true,
+      "both_idle": true
+    },
+    {
+      "phase": "finish",
+      "case_id": "c02",
+      "repetition": 0,
+      "identical_prompt": true,
+      "same_class": true,
+      "both_idle": true
+    },
+    {
+      "phase": "finish",
+      "case_id": "c04",
+      "repetition": 0,
+      "identical_prompt": true,
+      "same_class": true,
+      "both_idle": true
+    },
+    {
+      "phase": "finish",
+      "case_id": "c05",
+      "repetition": 0,
+      "identical_prompt": true,
+      "same_class": true,
+      "both_idle": true
+    },
+    {
+      "phase": "finish",
+      "case_id": "c06",
+      "repetition": 0,
+      "identical_prompt": true,
+      "same_class": true,
+      "both_idle": true
+    },
+    {
+      "phase": "finish",
+      "case_id": "c07",
+      "repetition": 0,
+      "identical_prompt": true,
+      "same_class": true,
+      "both_idle": true
+    },
+    {
+      "phase": "finish",
+      "case_id": "c08",
+      "repetition": 0,
+      "identical_prompt": true,
+      "same_class": true,
+      "both_idle": true
+    },
+    {
+      "phase": "finish",
+      "case_id": "c03",
+      "repetition": 0,
+      "identical_prompt": true,
+      "same_class": true,
+      "both_idle": true
+    },
+    {
+      "phase": "recheck",
+      "case_id": "c03",
+      "repetition": 0,
+      "identical_prompt": true,
+      "same_class": true,
+      "both_idle": true
+    },
+    {
+      "phase": "recheck",
+      "case_id": "c03",
+      "repetition": 1,
+      "identical_prompt": true,
+      "same_class": true,
+      "both_idle": true
+    },
+    {
+      "phase": "recheck",
+      "case_id": "c03",
+      "repetition": 2,
+      "identical_prompt": true,
+      "same_class": true,
+      "both_idle": true
+    },
+    {
+      "phase": "legacy_recheck",
+      "case_id": "c03",
+      "repetition": 0,
+      "identical_prompt": true,
+      "same_class": true,
+      "both_idle": true
+    },
+    {
+      "phase": "legacy_recheck",
+      "case_id": "c03",
+      "repetition": 1,
+      "identical_prompt": true,
+      "same_class": true,
+      "both_idle": true
+    },
+    {
+      "phase": "legacy_recheck",
+      "case_id": "c03",
+      "repetition": 2,
+      "identical_prompt": true,
+      "same_class": true,
+      "both_idle": true
+    }
+  ],
+  "historical_pr16_vs_corrected": {
+    "paired_predictions": 36,
+    "independent_case_clusters": 18,
+    "accuracy_delta": 0.1111111111111111,
+    "cluster_bootstrap_ci95": [
+      0.0,
+      0.2777777777777778
+    ],
+    "latency_delta_s": {
+      "n": 36,
+      "mean": -0.6498585444092492,
+      "median": -0.27081464597722515,
+      "p95": 2.9442422205174807,
+      "min": -37.21612335101236,
+      "max": 20.970614468009444
+    },
+    "retrieval_source_jaccard": {
+      "n": 36,
+      "mean": 0.2111111111111111,
+      "median": 0.2,
+      "p95": 0.5,
+      "min": 0.0,
+      "max": 0.5
+    },
+    "regressions": [],
+    "gains": [
+      [
+        "p11",
+        0
+      ],
+      [
+        "p11",
+        1
+      ],
+      [
+        "p14",
+        0
+      ],
+      [
+        "p14",
+        1
+      ]
+    ],
+    "changed_predictions": [
+      [
+        "p11",
+        0
+      ],
+      [
+        "p11",
+        1
+      ],
+      [
+        "p14",
+        0
+      ],
+      [
+        "p14",
+        1
+      ]
+    ]
+  },
+  "artifacts_sha256": {
+    "finish-runtime.log": "cee4890c55e9b08313bb0a7c5609e1f971bea3272b8190d6ac9761a075edfdc6",
+    "summary.json": "37ace52703de664eb1da4e04d691db2af80fc0bad78245e7153ef1376ceac7eb",
+    "auditoria-formularios.csv": "f25b7fc6096dabb4204fd02947e32cee8da28a205f9b8eb412aa413d211a7b8a",
+    "prepare-runtime.log": "14bcc9c04bf52cf41fc12f9489d1635cdd962220d7d18f1f3f2ee42ef4d59e95",
+    "baseline-runtime.log": "17692c822fa3f85789f013b37786eaf64fd8f57c41c41c83a05c11ded7e7604a",
+    "recheck-runtime.log": "edf0fd5c36db6744349084e52532ca5f96e66223cb05f7352de144e2dccd0a46",
+    "turns.csv": "51cf1c1bb62827073df889517265e25be02621abbfc61e1c1b4a9b30fa7ae97f",
+    "README.md": "4f10360abfb97045d626443d3f208d6ae11139025e008a1c09faf1454ec2e8f5",
+    "cases.json": "e4d4abb1acb37bb9b469ee4cc8101a3e4516fa82542f8e3d8de42b72ba62113b",
+    "code-and-data-fingerprint.json": "fca86dba908849dbe23f53a413250e3ca8db986d0dfbbe9f5d54b44caa0b2d7c",
+    "actions.json": "a215a29fba504a20121856fb6a55fdfe2ada26ebd700fcc920593c89b3266c7d",
+    "freeze.json": "ef055d7cd8e3cb6091cd920fc7639859535df9849f34903dd5ce1562c2fb112f",
+    "protocolo.md": "627e03d4b55b15ecf2e4fe362917754395cb6671c3231693cbd05adcbc6b2732",
+    "legacy_recheck-runtime.log": "3ad42927dfa2023abe5cae49b6e128e11d2f2b1035f7c5ad1f4048025220c148",
+    "baseline_workspace.py": "fc09d79e7ff8cddf23614e548ab1ac52daaf6b35598155f500c5b748dfab0e62",
+    "raw.jsonl": "c033e45b853d04625296d03402145b3eded092a8f34aa2626c51411ef30b727b"
+  }
+}

@@ -1,4 +1,4 @@
-# Pré-triagem conversacional v1
+# Pré-triagem conversacional v2
 
 A implementação usa o RAG existente e os clientes reais Gemini/Ollama.
 O acompanhamento se aplica somente a `workspace/conversations`. Não há
@@ -20,11 +20,16 @@ O formulário recebe uma resposta; se ela ainda não permite classificar, o
 acompanhamento termina. Novas mensagens continuam podendo mudar a classificação,
 mas não reabrem uma sequência infinita de perguntas.
 
-O backend valida a saída `FollowupPlan` com Pydantic. Ela contém o estado da
+O backend valida a seleção `FollowupSelection` e materializa `FollowupPlan`. Ela contém o estado da
 informação respondida, uma evidência literal, indicador de informação nova,
 chave semântica estável, informação faltante, uma pergunta, opções e um código
-curto de seleção. Não contém pensamento bruto. As perguntas são geradas pelo
-provedor, com as fichas efetivamente retornadas pelo pipeline. A UI não interpreta
+curto de seleção. Não contém pensamento bruto. O provedor escolhe uma observação
+pertinente usando o relato e as fichas efetivamente retornadas. A redação e as
+opções vêm de um catálogo versionado (`followup_questions.py`) com um assunto por
+chave, incluindo normalidade/negativa, alteração, alternativa livre e desconhecimento.
+A seleção `none` encerra como `insufficient` se não houver observação pertinente
+no catálogo. O catálogo limita a cobertura de perguntas; não contém regras de
+classificação nem substitui o RAG. A UI não interpreta
 texto livre para escolher perguntas ou opções.
 
 A distinção da informação é `reported`, `explicit_negative`, `unknown` e
@@ -43,8 +48,25 @@ O formulário é acionado por qualquer um destes motivos persistidos:
 A repetição pode antecipar o formulário antes da segunda resposta inútil.
 Informação nova zera a sequência de falta de progresso. O número de mensagens
 sozinho não diagnostica falta de progresso. O teto de tentativas é uma proteção
-separada, não uma regra clínica. A equivalência semântica das chaves depende da
-LLM; a normalização textual é uma proteção adicional, não uma prova semântica.
+separada, não uma regra clínica. Cada chave do catálogo tem sentido e redação
+estáveis. O modelo decide sua pertinência, mas não pode reutilizá-la para mudar
+de assunto nem acrescentar uma segunda pergunta.
+
+## Separação da informação clínica
+
+O primeiro relato entra no classificador sem envelope de orquestração, preservando
+o formato anterior. Nos turnos seguintes, perguntas anteriores dão contexto às
+respostas, explicitamente sem afirmar sintomas. A busca vetorial, o roteamento e
+o reranking recebem apenas os textos do tutor (`clinical_query`), sem instruções,
+JSON ou perguntas do assistente. `ChatPipeline.execute` aceita uma consulta de
+busca separada; chamadas científicas que omitem esse argumento mantêm o comportamento.
+
+Origem, IDs e opção selecionada são persistidos para auditoria e validação do envio,
+mas não entram no prompt clínico nem mudam a detecção de progresso. Mesmo histórico,
+texto e cadastro geram as mesmas entradas de modelo pelos dois canais. Isso remove
+a dependência do canal; não promete determinismo absoluto do provedor remoto.
+“Não observei — novo sinal descrito” pode trazer informação no complemento, tanto
+por texto quanto por formulário.
 
 ## Configuração e compatibilidade
 
@@ -135,9 +157,10 @@ Com Docker/API reais ativos e acesso rápido acadêmico habilitado:
   --provider gemini --output /tmp/pre-triagem-live.json
 ```
 
-Esse comando cria três conversas sintéticas, chama o provedor de verdade e salva
+Esse comando cria quatro conversas sintéticas, chama o provedor de verdade e salva
 as respostas efetivamente recebidas, sem credenciais. Não é um benchmark de
 acurácia nem promete reproduzir exatamente a redação/decisão de outra execução.
+Inclui uma emergência revelada apenas pela opção do formulário, sem complemento.
 A etapa de acompanhamento adiciona uma chamada ao provedor nos turnos INCERTO,
 com custo, latência e possibilidade de cota/indisponibilidade.
 

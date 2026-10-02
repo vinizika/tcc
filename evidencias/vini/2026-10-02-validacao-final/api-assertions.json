@@ -1,0 +1,41 @@
+{
+  "command": [
+    "/Users/vinicius/Documents/tcc/.venv/bin/python",
+    "scripts/smoke_workspace_followup.py",
+    "--provider",
+    "gemini",
+    "--output",
+    "/Users/vinicius/Documents/tcc/evidencias/vini/2026-10-02-validacao-final/api-smoke.json"
+  ],
+  "wall_s": 50.84276283302461,
+  "scenarios": [
+    {
+      "scenario": "immediate",
+      "status": "idle",
+      "classification": "EMERGENCIA",
+      "state": "completed",
+      "expected": "EMERGENCIA"
+    },
+    {
+      "scenario": "resolved",
+      "status": "idle",
+      "classification": "EMERGENCIA",
+      "state": "completed",
+      "expected": "EMERGENCIA"
+    },
+    {
+      "scenario": "form",
+      "status": "idle",
+      "classification": "INCERTO",
+      "state": "insufficient",
+      "expected": "INCERTO"
+    },
+    {
+      "scenario": "form_severe",
+      "status": "idle",
+      "classification": "EMERGENCIA",
+      "state": "completed",
+      "expected": "EMERGENCIA"
+    }
+  ]
+}

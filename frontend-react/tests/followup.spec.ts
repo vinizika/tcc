@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import type { Conversation, Followup } from "../src/types";
 
 // Isolated browser contract test with API fixtures, not a clinical/LLM evaluation.
-for (const choice of ["Não observei", "Tenta, mas não consegue"]) {
+for (const choice of ["Não observei", "Não comeu nada", "Comeu a quantidade habitual", "Nenhuma dessas opções descreve o que observei"]) {
   test(`form reload and single submission: ${choice}`, async ({ page }) => {
     const principal = {
       user_id: "followup-test",
@@ -13,11 +13,14 @@ for (const choice of ["Não observei", "Tenta, mas não consegue"]) {
     };
     const followup: Followup = {
       state: "form",
-      question_id: "urina-1",
-      question: "Ele está conseguindo urinar?",
+      question_id: "apetite-1",
+      question: "Quanto ele comeu em relação ao habitual?",
       options: [
-        "Sim, normalmente",
-        "Tenta, mas não consegue",
+        "Comeu a quantidade habitual",
+        "Comeu menos que o habitual",
+        "Não comeu nada",
+        "Comeu mais que o habitual",
+        "Nenhuma dessas opções descreve o que observei",
         "Não observei",
         "Não sei dizer",
       ],
@@ -64,8 +67,8 @@ for (const choice of ["Não observei", "Tenta, mas não consegue"]) {
       },
       { principal },
     );
-    await page.route("http://localhost:8000/**", async (route) => {
-      const path = new URL(route.request().url()).pathname;
+    await page.route((url) => url.origin === "http://localhost:8000" || url.pathname.startsWith("/api/"), async (route) => {
+      const path = new URL(route.request().url()).pathname.replace(/^\/api\//, "/");
       let body: unknown = [];
       if (path === "/auth/me") body = principal;
       else if (path === "/auth/config") body = {};
@@ -111,7 +114,7 @@ for (const choice of ["Não observei", "Tenta, mas não consegue"]) {
     expect(posts).toHaveLength(1);
     expect(posts[0]).toMatchObject({
       origin: "form",
-      question_id: "urina-1",
+      question_id: "apetite-1",
       selected_option: choice,
       content: choice + " — Observação do tutor",
     });

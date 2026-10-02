@@ -7,7 +7,7 @@ from uuid import uuid4
 from fastapi import HTTPException
 from app.clients.mongo_client import get_mongo_database
 from app.core.config import settings
-from app.services.followup_service import WorkspaceAttendant, advance, transcript
+from app.services.followup_service import WorkspaceAttendant, advance, transcript, clinical_query
 from app.schemas.auth import Principal
 from app.schemas.workspace import AnimalInput, TurnInput
 from app.exceptions.attendant_exception import AttendantUnavailableException, QuotaExhaustedException
@@ -150,7 +150,8 @@ class WorkspaceService:
             from app.schemas.triage import PipelineOptions
             result = (pipeline or poc_pipeline()).execute(question, PipelineOptions(
                 num_ctx=settings.WORKSPACE_NUM_CTX, retrieval_enabled=True, prompt_version="v1_grounded", cot_enabled=False, query_rewriting_enabled=False, multi_query_enabled=False, hyde_enabled=False,
-                attendant_provider=doc.get("attendant_provider", settings.ATTENDANT_PROVIDER)), animal_context=context)
+                attendant_provider=doc.get("attendant_provider", settings.ATTENDANT_PROVIDER)), animal_context=context,
+                retrieval_question=clinical_query(doc))
             checkpoint = db.poc_conversations.update_one(selector, {"$set": {
                 "latest_triage": result.triage.model_dump(mode="json", exclude={"raciocinio"})}})
             if not checkpoint.matched_count:

@@ -42,3 +42,15 @@ def test_exploratory_rechecks_do_not_inflate_main_form_sample():
     assert result['dialogs']['after_same_text']['n'] == 1
     assert result['form_vs_identical_text']['paired_predictions'] == 1
     assert result['exploratory_recheck']['after_form']['n'] == 1
+
+
+def test_legacy_recheck_does_not_change_primary_sample():
+    from report_conversation_eval import summarize
+    records = [row('c03', 'EMERGENCIA', 'EMERGENCIA') |
+               {'kind': 'turn', 'phase': 'legacy_recheck', 'arm': arm}
+               for arm in ('after_form', 'after_same_text')]
+    result = summarize(records)
+    assert result['legacy_recheck']['after_form']['n'] == 1
+    assert result['legacy_recheck']['after_same_text']['accuracy'] == 1
+    assert result['dialogs'] == {}
+    assert result['form_vs_identical_text']['paired_predictions'] == 0

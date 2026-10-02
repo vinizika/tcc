@@ -119,6 +119,9 @@ def summarize(records):
                    "completion_tokens": sum(c.get("completion_tokens",0) for r in turns for c in r["calls"] if c["stage"] == stage)} for stage in ["classification","followup"]}}
     results["exploratory_ablation"] = score([r for r in turns if r["phase"] == "ablation" and r["arm"] != "warmup"])
     results["exploratory_recheck"] = {arm: score([r for r in turns if r["phase"] == "recheck" and r["arm"] == arm]) for arm in ["after_form", "after_same_text"]}
+    if any(r["phase"] == "legacy_recheck" for r in turns):
+        results["legacy_recheck"] = {arm: score([r for r in turns if r["phase"] == "legacy_recheck" and r["arm"] == arm])
+                                     for arm in ["after_form", "after_same_text"]}
     results["journeys"] = []
     for prepared_case in prepared:
         case_id = prepared_case["case_id"]

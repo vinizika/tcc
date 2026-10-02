@@ -1,0 +1,9 @@
+case_id,alinhamento_relato_inicial,preset_compativel_fato_congelado,mudanca_semantica_mesma_chave,opcao_factual_ausente,nota
+c01,sim,sim,não,não,Uma observação sobre volume urinário; ausência e normalidade disponíveis.
+c02,sim,sim,não,não,Esforço respiratório preservado; não mudou para cor de mucosa.
+c03,indeterminado,sim,não,não,Relato inicial inespecífico; resposta ao chamado selecionada e compatível com o fato posterior.
+c04,sim,sim,não,não,Volume urinário normal disponível.
+c05,sim,sim,não,não,Quantidade de comida habitual disponível; corrige lacuna de normalidade.
+c06,sim,não,não,não,Pergunta única sobre tamanho da barriga; fato congelado não informa tamanho. Desconhecimento verdadeiro mais complemento sobre vômito.
+c07,indeterminado,não se aplica,não,não,Sem fatos novos; não inferir resposta ao chamado a partir de relato vago.
+c08,indeterminado,não se aplica,não,não,Sem fatos novos; não inferir mobilidade a partir de relato vago.

@@ -195,7 +195,7 @@ presumido nesta entrega.
 
 ## Acompanhamento de INCERTO
 
-O workspace agora usa [pré-triagem conversacional v1](pre-triagem-conversacional.md):
+O workspace agora usa [pré-triagem conversacional v2](pre-triagem-conversacional.md):
 pergunta objetiva, formulário quando não há progresso e encerramento explícito
 em INCERTO quando ainda faltam informações. O documento descreve configurações,
 contratos, recuperação de falhas e comandos de teste. O novo `followup.spec.ts`

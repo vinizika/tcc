@@ -1,0 +1,30 @@
+--- a/backend/app/services/followup_service.py
++++ b/backend/app/services/followup_service.py
+@@ -37,19 +37,14 @@
+ 
+ 
+ def transcript(doc):
+-    reports = [m for m in doc["messages"] if m["role"] == "tutor"]
+-    if len(reports) == 1 and not reports[0].get("answer_to"):
+-        return reports[0]["content"]
+-
+-    def report(message):
+-        question = message.get("answer_to")
+-        context = (f"Pergunta do assistente (não é observação do tutor): {question}\n"
+-                   if question else "")
+-        return context + "Resposta do tutor: " + message["content"]
+-
+-    history = "\n\n".join(report(m) for m in reports[:-1])
+-    return ("Relatos anteriores do tutor:\n" + history + "\n\n" if history else "") + \
+-        "Relato atual do tutor:\n" + report(reports[-1])
++    entries = []
++    for m in doc["messages"]:
++        if m["role"] == "tutor":
++            entries.append({"pergunta_respondida": m.get("answer_to"), "resposta_do_tutor": m["content"]})
++    # Preserve the original classifier input on the first turn, byte for byte.
++    if len(entries) == 1 and not entries[0]["pergunta_respondida"]:
++        return entries[0]["resposta_do_tutor"]
++    return RULES + json.dumps(entries, ensure_ascii=False)
+ 
+ 
+ def clinical_query(doc):

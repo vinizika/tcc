@@ -1,0 +1,99 @@
+[
+  {
+    "name": "backend",
+    "command": [
+      "/Users/vinicius/Documents/tcc/.venv/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "backend/tests"
+    ],
+    "cwd": "/Users/vinicius/Documents/tcc",
+    "exit_code": 0,
+    "wall_s": 6.50513929198496
+  },
+  {
+    "name": "scripts",
+    "command": [
+      "/Users/vinicius/Documents/tcc/.venv/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "scripts/tests"
+    ],
+    "cwd": "/Users/vinicius/Documents/tcc",
+    "exit_code": 0,
+    "wall_s": 2.8293492080119904
+  },
+  {
+    "name": "mock",
+    "command": [
+      "/Users/vinicius/Documents/tcc/.venv/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "mock/tests"
+    ],
+    "cwd": "/Users/vinicius/Documents/tcc",
+    "exit_code": 0,
+    "wall_s": 1.8274352079897653
+  },
+  {
+    "name": "typescript",
+    "command": [
+      "/Users/vinicius/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node",
+      "node_modules/typescript/bin/tsc",
+      "-b"
+    ],
+    "cwd": "/Users/vinicius/Documents/tcc/frontend-react",
+    "exit_code": 0,
+    "wall_s": 1.956023417005781
+  },
+  {
+    "name": "vite",
+    "command": [
+      "/Users/vinicius/.npm/_npx/52027bd8fc0022aa/node_modules/node/bin/node",
+      "node_modules/vite/bin/vite.js",
+      "build"
+    ],
+    "cwd": "/Users/vinicius/Documents/tcc/frontend-react",
+    "exit_code": 0,
+    "wall_s": 1.0816295839904342
+  },
+  {
+    "name": "fichas",
+    "command": [
+      "/Users/vinicius/Documents/tcc/.venv/bin/python",
+      "scripts/sync_fichas.py",
+      "--check"
+    ],
+    "cwd": "/Users/vinicius/Documents/tcc",
+    "exit_code": 0,
+    "wall_s": 0.08891329099424183
+  },
+  {
+    "name": "vocabulario",
+    "command": [
+      "/Users/vinicius/Documents/tcc/.venv/bin/python",
+      "scripts/sync_retrieval_terms.py",
+      "--check"
+    ],
+    "cwd": "/Users/vinicius/Documents/tcc",
+    "exit_code": 0,
+    "wall_s": 0.04542824998497963
+  },
+  {
+    "name": "compile",
+    "command": [
+      "/Users/vinicius/Documents/tcc/.venv/bin/python",
+      "-m",
+      "compileall",
+      "-q",
+      "backend/app",
+      "scripts"
+    ],
+    "cwd": "/Users/vinicius/Documents/tcc",
+    "exit_code": 0,
+    "wall_s": 0.07675495801959187
+  }
+]

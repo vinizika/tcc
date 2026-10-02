@@ -12,6 +12,12 @@ import sys
 MARKER = "EVAL_JSON "
 
 
+def completed_turns(records, phase):
+    """A recheck must never suppress a primary observation with the same case ID."""
+    return [[r["case_id"], r["arm"], r["repetition"]] for r in records
+            if r["kind"] == "turn" and r["phase"] == phase and r["status"] == "idle"]
+
+
 def worker(payload):
     import copy
     import hashlib
@@ -26,7 +32,7 @@ def worker(payload):
     from app.clients.gemini_llm_client import GeminiLLMClient
     from app.clients.llm_client import LLMClient
 
-    settings.MONGODB_DB_NAME = "tcc_followup_eval_20260928"
+    settings.MONGODB_DB_NAME = payload.get("mongo_database", "tcc_followup_eval_20260928")
     old_module = ModuleType("baseline_workspace")
     exec(compile(payload["baseline_source"], "baseline_workspace.py", "exec"), old_module.__dict__)
     old = old_module.WorkspaceService
@@ -47,7 +53,8 @@ def worker(payload):
         original = cls.classify
         def instrument(self, messages, output_model, _original=original, **kwargs):
             started = time.perf_counter()
-            item = {"stage": "followup" if output_model.__name__ == "FollowupPlan" else "classification",
+            item = {"stage": "followup" if output_model.__name__ in {"FollowupPlan", "FollowupSelection"} else "classification",
+                    "input_sha256": hashlib.sha256(json.dumps(messages, ensure_ascii=False, sort_keys=True).encode()).hexdigest(),
                     "provider": self.provider, "model": kwargs.get("model") or getattr(self, "model", settings.LLM_MODEL)}
             try:
                 result = _original(self, messages, output_model, **kwargs)
@@ -105,11 +112,17 @@ def worker(payload):
                     if key in payload.get("completed", []):
                         continue
                     turn(service, service.create(principal), case["text"], case["id"], arm, case["expected_class"], repetition)
-    elif payload["phase"] == "recheck":
+    elif payload["phase"] in {"recheck", "legacy_recheck"}:
         turn(old, old.create(principal), "Meu gato tem muita dificuldade para respirar de boca aberta.", "warmup", "warmup", "EMERGENCIA")
         case = next(c for c in payload["manifest"]["dialogs"] if c["id"] == "c03")
-        action = payload["actions"]["c03"]
-        original_doc = new.get(principal, action["conversation_id"])
+        if payload["phase"] == "legacy_recheck":
+            action = payload["legacy_action"]
+            prepared = payload["legacy_prepared"]
+            original_doc = new.create(principal)
+            original_doc.update(messages=prepared["messages"], followup=prepared["followup"])
+        else:
+            action = payload["actions"]["c03"]
+            original_doc = new.get(principal, action["conversation_id"])
         text = action["option"] + " — " + action["complement"]
         for repetition in range(3):
             arms = ["after_form", "after_same_text"] if repetition % 2 == 0 else ["after_same_text", "after_form"]
@@ -192,18 +205,27 @@ def worker(payload):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--phase", choices=["baseline", "prepare", "finish", "ablation", "recheck"], required=True)
+    parser.add_argument("--phase", choices=["baseline", "prepare", "finish", "ablation", "recheck", "legacy_recheck"], required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--mongo-database", default="tcc_followup_eval_20260928")
+    parser.add_argument("--legacy-dir", type=Path)
     args = parser.parse_args()
     directory = args.output_dir
     out = directory / "raw.jsonl"
     existing = [json.loads(line) for line in out.read_text().splitlines()] if out.exists() else []
-    payload = {"phase": args.phase, "manifest": json.loads((directory / "cases.json").read_text()),
+    payload = {"phase": args.phase, "mongo_database": args.mongo_database,
+               "manifest": json.loads((directory / "cases.json").read_text()),
                "baseline_source": (directory / "baseline_workspace.py").read_text(),
-               "completed": [[r["case_id"], r["arm"], r["repetition"]] for r in existing if r["kind"] == "turn" and r["status"] == "idle"],
+               "completed": completed_turns(existing, args.phase),
                "completed_phase": [[r["case_id"], r["arm"], r["repetition"]] for r in existing if r["kind"] == "turn" and r["phase"] == args.phase],
                "prepared": [r["case_id"] for r in existing if r["kind"] == "prepared"],
                "actions": json.loads((directory / "actions.json").read_text()) if (directory / "actions.json").exists() else {}}
+    if args.phase == "legacy_recheck":
+        if args.legacy_dir is None:
+            parser.error("legacy_recheck requires --legacy-dir")
+        payload["legacy_action"] = json.loads((args.legacy_dir / "actions.json").read_text())["c03"]
+        payload["legacy_prepared"] = next(r for r in map(json.loads, (args.legacy_dir / "raw.jsonl").read_text().splitlines())
+                                          if r["kind"] == "prepared" and r["case_id"] == "c03")
     source = Path(__file__).read_text().rsplit('if __name__ == "__main__":', 1)[0] + "\nworker(json.load(sys.stdin))\n"
     with (directory / (args.phase + "-runtime.log")).open("a") as log, out.open("a") as output:
         process = subprocess.Popen(["docker", "exec", "-i", "backend-api", "python", "-u", "-c", source],

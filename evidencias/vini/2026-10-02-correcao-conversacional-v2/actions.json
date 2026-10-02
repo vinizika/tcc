@@ -1,0 +1,50 @@
+{
+  "c01": {
+    "conversation_id": "008a332e-fa0b-48c4-a616-4186682c3156",
+    "option": "Não sai nenhum xixi",
+    "complement": "Ele tenta fazer xixi repetidamente há oito horas, faz força e não sai nenhuma gota de urina.",
+    "note": "Opção corresponde à ausência de urina congelada; complemento conserva esforço e duração."
+  },
+  "c02": {
+    "conversation_id": "855e2a2a-40e1-47c0-8e3d-ee42edfc493b",
+    "option": "Faz esforço para respirar",
+    "complement": "Ele respira com a boca aberta, faz muita força e não consegue se deitar de tanto esforço para respirar.",
+    "note": "Opção corresponde ao esforço; complemento preserva os demais fatos congelados."
+  },
+  "c03": {
+    "conversation_id": "adf8c8c0-9db4-4dd7-821a-e80453605aa9",
+    "option": "Não reage ao chamado",
+    "complement": "Agora ele está caído, não consegue levantar e não reage quando eu o chamo e toco nele.",
+    "note": "Opção corresponde à ausência de resposta ao chamado, sem acrescentar fato novo."
+  },
+  "c04": {
+    "conversation_id": "39c1b250-5ca3-4589-8a73-6721628a0e84",
+    "option": "Sai uma quantidade normal de xixi",
+    "complement": "Eu observei agora: ele urina uma quantidade normal, sem fazer força nem chorar. Está comendo e brincando normalmente, sem vômitos ou mudança na respiração.",
+    "note": "Normalidade disponível; complemento literal do fato congelado."
+  },
+  "c05": {
+    "conversation_id": "3ef048de-0df8-4203-affb-e8fba34549af",
+    "option": "Comeu a quantidade habitual",
+    "complement": "Observei agora que ele comeu a porção habitual inteira e bebeu água normalmente. Está ativo, brincando, sem vômitos, diarreia, dor ou dificuldade para respirar.",
+    "note": "Opção verdadeira ausente na rodada anterior está disponível; demais fatos preservados."
+  },
+  "c06": {
+    "conversation_id": "69cfefa3-f916-4568-937d-98c389e890d0",
+    "option": "Não observei",
+    "complement": "Ele vomitou uma única vez ontem depois de comer depressa. Desde então come e bebe normalmente, está ativo, não tem dor, não vomitou mais e não teve diarreia.",
+    "note": "Tamanho da barriga não consta do fato congelado. Não inferir normalidade; a informação útil vem do complemento."
+  },
+  "c07": {
+    "conversation_id": "c13afff8-3ad2-44e5-8ad7-d134c4039fba",
+    "option": "Não observei",
+    "complement": "",
+    "note": "Sem informação nova."
+  },
+  "c08": {
+    "conversation_id": "244a7f4f-2d78-41d8-a1fb-384a06e7eda7",
+    "option": "Não observei",
+    "complement": "",
+    "note": "Sem informação nova."
+  }
+}

@@ -93,6 +93,25 @@ def test_multi_query_desligado_busca_apenas_a_consulta_reescrita():
     assert retrieval_client.chamadas == [["consulta reescrita"]]
 
 
+def test_workspace_search_excludes_orchestration_from_all_retrieval_stages():
+    pipeline, _, _, llm = montar()
+    received = []
+
+    class Retrieval:
+        @staticmethod
+        def retrieve(queries, *, routing_query=None):
+            received.append((queries, routing_query))
+            return []
+
+    pipeline.retrieval_client = Retrieval
+    pipeline.execute("Regras de conversa e pergunta anterior: HISTORICO",
+        PipelineOptions(query_rewriting_enabled=False, multi_query_enabled=False,
+                        hyde_enabled=False, retrieval_mode="routed_rerank"),
+        retrieval_question="Meu gato não consegue urinar")
+    assert received == [(["Meu gato não consegue urinar"], "Meu gato não consegue urinar")]
+    assert "HISTORICO" in llm.chamadas[0]["messages"][-1]["content"]
+
+
 def test_multi_query_vazio_nao_deixa_a_busca_sem_consulta():
     """
     O modelo pode devolver nada. Buscar com lista vazia devolveria zero

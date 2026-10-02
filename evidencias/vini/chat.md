@@ -1437,3 +1437,27 @@ sistema como está, abrindo PR para a equipe. A queda medida pertence ao conjunt
 das mudanças na classificação inicial, não é prova de que o formulário isolado
 piorou o sistema. Busca, opções e consistência seguem como pendências explícitas.
 O frontend anterior já está na main pelo PR #15. Ver [rodada 19](2026-10-02-19-publicacao-estado-atual.md).
+
+### Correções antes da aprovação do PR #16 — 02/10/2026
+
+O usuário pediu que fossem removidas as regressões, repetida a avaliação congelada
+e registrados todos os testes/dados/decisões, inclusive falhas. Durante o trabalho,
+acrescentou o pedido de comparação com fases anteriores e explicação da etapa atual.
+
+A investigação confirmou que regras/JSON entravam na consulta vetorial e que
+`origem` chegava ao classificador. Também havia tratamento diferente do complemento
+quando a opção do formulário era desconhecimento. Separaram-se essas entradas e
+adotou-se um catálogo de perguntas de um único assunto, selecionadas pela LLM.
+
+A primeira tentativa recuperou a classificação inicial e os oito diálogos, mas
+teve uma decisão INCERTO em seis rechecagens da conversa antiga c03, com hashes
+de entrada iguais. Preservamos essa falha e simplificamos o histórico clínico,
+repetindo a avaliação em outro banco/pasta. A versão final recuperou 34/36 e 18/18
+emergências na calibração reexecutada; os resultados completos e limitações estão
+na [rodada 20](2026-10-02-20-correcao-regressoes-conversacionais.md).
+
+Decisão de entrega: atualizar o PR #16 existente com as correções, sem descartar
+o commit original ou confundir as duas avaliações. O [panorama da rodada 21](2026-10-02-21-panorama-historico-e-etapa-atual.md)
+distingue os 98 casos antigos, os 122 relatos independentes, os 134 de prova/régua
+e os 18 casos atuais de calibração. Não inferimos superioridade clínica comparando
+percentuais de conjuntos diferentes.

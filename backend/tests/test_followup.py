@@ -8,6 +8,7 @@ from test_workspace import env, headers
 from app.services.workspace_service import WorkspaceService as W
 from app.services.followup_service import advance, transcript
 from app.schemas.followup import FollowupPlan
+from app.schemas.followup_selection import FollowupSelection
 from app.schemas.workspace import TurnInput
 from app.schemas.triage_output import TriageResult
 from app.services.auth_service import DEMO_ACCOUNTS
@@ -177,13 +178,14 @@ def test_live_adapter_uses_validated_provider_contract_and_cards(monkeypatch):
     calls = []
     def classify(self, messages, output_model, **kwargs):
         calls.append((messages, output_model))
-        return SimpleNamespace(output=plan())
+        return SimpleNamespace(output=FollowupSelection(answer_status="unanswered", evidence="",
+            relevant_new_information=False, missing_key="urine_output", selection_reason="urgency_discriminator"))
     monkeypatch.setattr(GeminiLLMClient, "classify", classify)
     result = Pipeline().execute("relato")
     result.sources = [SimpleNamespace(document=SimpleNamespace(content="Ficha recuperada sobre urina"))]
     doc = {"attendant_provider": "gemini", "messages": [{"role": "tutor", "content": "Entra na caixa"}]}
-    assert select_plan(doc, result).missing_key == "urina"
-    assert calls[0][1] is FollowupPlan
+    assert select_plan(doc, result).missing_key == "urine_output"
+    assert calls[0][1] is FollowupSelection
     assert "Ficha recuperada sobre urina" in calls[0][0][1]["content"]
     assert "Entra na caixa" in calls[0][0][1]["content"]
 
@@ -229,3 +231,96 @@ def test_local_context_overflow_fails_without_truncating_or_calling_provider(mon
     with pytest.raises(AttendantUnavailableException) as error:
         WorkspaceAttendant(client).classify([{"content": "a" * 5000}], FollowupPlan)
     assert error.value.details["reason"] == "context_limit"
+
+
+def test_first_report_is_unchanged_and_questions_are_not_observed_facts():
+    from app.services.followup_service import clinical_query
+    doc = {"messages": [{"role": "tutor", "content": "Meu gato está diferente."}]}
+    assert transcript(doc) == "Meu gato está diferente."
+    doc["messages"].extend([
+        {"role": "assistant", "content": "Ele está vomitando?"},
+        {"role": "tutor", "content": "Não sei dizer", "answer_to": "Ele está vomitando?"},
+    ])
+    assert clinical_query(doc) == "Meu gato está diferente.\nNão sei dizer"
+    assert "Ele está vomitando?" in transcript(doc)
+    assert transcript(doc).endswith("Resposta do tutor: Não sei dizer")
+    assert "Relato atual do tutor:" in transcript(doc)
+    assert "Pré-triagem conversacional" not in transcript(doc)
+    assert "resposta_do_tutor" not in transcript(doc)
+
+
+@pytest.mark.parametrize("content", ["Não observei", "Não observei — agora ele caiu e não reage", "Comeu a quantidade habitual"])
+def test_channels_have_identical_classifier_and_planner_inputs(env, monkeypatch, content):
+    import copy
+    from app.services.followup_service import clinical_query, select_plan
+    from app.clients.gemini_llm_client import GeminiLLMClient
+    c, _ = turn(env, W.create(env.tutor), "Ele está diferente")
+    c, _ = turn(env, c, "Não sei")
+    c["followup"]["options"].append("Comeu a quantidade habitual")
+    env.db.poc_conversations.replace_one({"id": c["id"]}, c)
+    copies = []
+    for origin in ("text", "form"):
+        clone = copy.deepcopy(c)
+        clone["id"] = str(uuid4())
+        env.db.poc_conversations.insert_one(clone)
+        data = TurnInput(content=content, request_id=str(uuid4()), origin=origin,
+            question_id=c["followup"]["question_id"] if origin == "form" else None,
+            selected_option=content.split(" — ")[0] if origin == "form" else None)
+        submitted, _ = W.submit(env.tutor, clone["id"], data)
+        copies.append(submitted)
+    assert transcript(copies[0]) == transcript(copies[1])
+    assert clinical_query(copies[0]) == clinical_query(copies[1])
+    inputs = []
+    def classify(self, messages, output_model, **kwargs):
+        inputs.append(messages)
+        return SimpleNamespace(output=FollowupSelection(answer_status="unknown", evidence="",
+            relevant_new_information=False, missing_key="appetite", selection_reason="clarify_report"))
+    monkeypatch.setattr(GeminiLLMClient, "classify", classify)
+    for doc in copies:
+        doc["attendant_provider"] = "gemini"
+        select_plan(doc, Pipeline().execute(""))
+    assert inputs[0] == inputs[1]
+
+
+def test_unknown_option_with_factual_complement_counts_progress_equally():
+    from app.services.followup_service import advance
+    text = "Não observei — está chorando de dor"
+    decision = plan("duracao", "Isso começou hoje?", "reported", "está chorando de dor", True)
+    states = []
+    for origin in ("text", "form"):
+        doc = {"followup": {"state": "asking", "missing_key": "dor", "no_progress": 1},
+               "messages": [{"role": "tutor", "content": text, "origin": origin,
+                             "selected_option": "Não observei" if origin == "form" else None}]}
+        states.append(advance(doc, Pipeline().execute(""), lambda *_: decision))
+    for state in states:
+        assert state["no_progress"] == 0
+        assert state["answered_keys"] == ["dor"]
+
+
+@pytest.mark.parametrize("key", ["appetite", "vomiting_frequency", "breathing_effort"])
+def test_selected_question_is_atomic_stable_and_has_normal_and_other_answers(monkeypatch, key):
+    from app.clients.gemini_llm_client import GeminiLLMClient
+    from app.services.followup_questions import QUESTIONS, OTHER_OPTION
+    selection = FollowupSelection(answer_status="unknown", evidence="", relevant_new_information=False,
+        missing_key=key, selection_reason="clarify_report")
+    monkeypatch.setattr(GeminiLLMClient, "classify", lambda *a, **kw: SimpleNamespace(output=selection))
+    doc = {"attendant_provider": "gemini", "messages": [{"role": "tutor", "content": "Não sei"}],
+           "followup": {"state": "asking", "asked": [key], "missing_key": key}}
+    state = advance(doc, Pipeline().execute(""))
+    assert state["state"] == "form"
+    assert state["question"] == QUESTIONS[key][1]
+    assert state["options"][0] == QUESTIONS[key][2][0]
+    assert OTHER_OPTION in state["options"]
+    assert "vômito" not in QUESTIONS["appetite"][1]
+    assert "comida" not in QUESTIONS["vomiting_frequency"][1]
+
+
+def test_unsupported_discriminator_stops_without_inventing_question(monkeypatch):
+    from app.clients.gemini_llm_client import GeminiLLMClient
+    selection = FollowupSelection(answer_status="unknown", evidence="", relevant_new_information=False,
+        missing_key="none", selection_reason="clarify_report")
+    monkeypatch.setattr(GeminiLLMClient, "classify", lambda *a, **kw: SimpleNamespace(output=selection))
+    state = advance({"attendant_provider": "gemini", "messages": [{"role": "tutor", "content": "Não sei"}]}, Pipeline().execute(""))
+    assert state["state"] == "insufficient"
+    assert state["reason"] == "no_supported_discriminator"
+    assert state["question"] is None

@@ -1,0 +1,37 @@
+........................................................................ [ 21%]
+........................................................................ [ 42%]
+........................................................................ [ 63%]
+........................................................................ [ 84%]
+....................................................                     [100%]
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/starlette/testclient.py:51
+  /Users/vinicius/Documents/tcc/.venv/lib/python3.12/site-packages/starlette/testclient.py:51: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+.venv/lib/python3.12/site-packages/supabase/__init__.py:1
+  /Users/vinicius/Documents/tcc/.venv/lib/python3.12/site-packages/supabase/__init__.py:1: DeprecationWarning: The `gotrue` package is deprecated, is not going to receive updates in the future. Please, use `supabase_auth` instead.
+    from gotrue.errors import (
+
+tests/test_chroma_ingestion_integration.py: 12 warnings
+tests/test_fichas_ingestion.py: 1 warning
+  /Users/vinicius/Documents/tcc/.venv/lib/python3.12/site-packages/chromadb/api/collection_configuration.py:327: DeprecationWarning: legacy embedding function config: 'DeterministicEmbedding' object has no attribute 'is_legacy'
+    return json.dumps(create_collection_configuration_to_json(config, metadata))
+
+tests/test_document_processing.py::test_pdf_real_exclui_ruido_e_preserva_secoes_clinicas
+tests/test_document_processing.py::test_pdf_real_exclui_ruido_e_preserva_secoes_clinicas
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+tests/test_document_processing.py::test_pdf_real_exclui_ruido_e_preserva_secoes_clinicas
+tests/test_document_processing.py::test_pdf_real_exclui_ruido_e_preserva_secoes_clinicas
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+tests/test_document_processing.py::test_pdf_real_exclui_ruido_e_preserva_secoes_clinicas
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+
+tests/test_followup.py: 3 warnings
+tests/test_workspace.py: 49 warnings
+  /Users/vinicius/Documents/tcc/.venv/lib/python3.12/site-packages/mongomock/helpers.py:73: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    return datetime.utcnow()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute

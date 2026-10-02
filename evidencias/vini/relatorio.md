@@ -1845,3 +1845,22 @@ inicial não isola seu efeito. A ablação apontou interferência de instruçõe
 na recuperação; opções incompletas e sensibilidade à origem da resposta também
 continuam pendentes. Não houve correção silenciosa para mudar os números antes
 da publicação. Decisão completa na [rodada 19](2026-10-02-19-publicacao-estado-atual.md).
+
+## Correção das regressões e panorama histórico — 02/10/2026
+
+O usuário pediu correções e nova comparação antes de aprovar o PR #16. A consulta
+de recuperação passou a receber somente relatos do tutor, a origem do envio saiu
+das entradas de modelo, o progresso passou a considerar o complemento nos dois
+canais e as perguntas ganharam chaves/opções estáveis de um único assunto.
+
+Uma primeira execução recuperou 94,4% e recall emergencial de 100%, mas encontrou
+instabilidade no histórico antigo de um caso grave. O resultado negativo foi
+preservado e motivou a segunda execução com histórico clínico textual, mantendo
+o relato atual separado dos anteriores. Não alteramos casos, fichas, rótulos ou
+coleção para obter os resultados. O conjunto de 18 casos continua sendo calibração,
+com rótulos provisórios, e não prova clínica independente.
+
+Dados, decisões, comparação das duas tentativas e testes:
+[rodada 20](2026-10-02-20-correcao-regressoes-conversacionais.md).
+Comparação histórica, estado funcional e próximos passos:
+[rodada 21](2026-10-02-21-panorama-historico-e-etapa-atual.md).

@@ -15,6 +15,8 @@ e re-ranking.
 
 ## Rodadas
 
+- [Rodada 21 — panorama histórico e etapa atual (02/10)](2026-10-02-21-panorama-historico-e-etapa-atual.md): comparação dos conjuntos/métricas do projeto, estágio da POC e próximos passos.
+- [Rodada 20 — correção e repetição congelada (02/10)](2026-10-02-20-correcao-regressoes-conversacionais.md): causas das regressões, duas tentativas preservadas, comparação e limites.
 - [Rodada 19 — disponibilização do estado atual (02/10)](2026-10-02-19-publicacao-estado-atual.md): decisão de commit/PR, interpretação dos resultados e limitações conhecidas preservadas.
 
 - [Rodada 18 — fechamento e conferência da avaliação (01/10)](2026-10-01-18-fechamento-avaliacao-conversacional.md): hashes conferidos, métricas regeneradas e quatro testes de agregação repetidos.
