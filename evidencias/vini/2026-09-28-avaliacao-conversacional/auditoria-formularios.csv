@@ -1,0 +1,9 @@
+case_id,alinhamento_relato_inicial,preset_compativel_fato_congelado,mudanca_semantica_mesma_chave,opcao_factual_ausente,nota
+c01,sim,sim,não,não,"Pergunta sobre saída de urina, alinhada ao relato. Preset expressa parte do sinal; complemento inclui esforço/duração."
+c02,sim,não,sim,não,"Mudou de boca aberta/esforço para cor da mucosa, conservando a chave resp_effort_mouth_open. Fato grave entrou apenas pelo complemento."
+c03,indeterminado,não,não,não,Relato inicial inespecífico; pergunta de apetite não alcança o fato final de ausência de resposta. Primeiro texto contém erro lexical: cometeu menos.
+c04,sim,sim,não,não,Opção de urinar normalmente existe; complemento adiciona somente fatos já congelados.
+c05,sim,não,não,sim,Pergunta pressupõe alteração alimentar e não oferece alimentação normal. Teste recusou inventar negativa/desconhecimento; usou texto livre.
+c06,parcial,sim,não,não,"Pergunta combina alimentação e vômito, duas informações em um só item; opção referente a hoje é compatível, com temporalidade esclarecida no complemento."
+c07,indeterminado,não se aplica,não,não,Relato inespecífico e observações desconhecidas. Formulário não cria informação.
+c08,indeterminado,não se aplica,não,não,Relato inespecífico e observações desconhecidas. Formulário não cria informação.

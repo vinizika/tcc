@@ -2037,3 +2037,10 @@ small,
     scroll-behavior: auto !important;
   }
 }
+
+.followup-form { margin: 1rem 0; }
+.followup-form fieldset { border: 1px solid var(--border, #d7dfdc); border-radius: 12px; padding: 1rem; }
+.followup-form legend, .followup-question { font-weight: 600; }
+.followup-form label { display: block; margin: .7rem 0; }
+.followup-form input[type="radio"] { width: auto; margin-right: .5rem; }
+.followup-form textarea { display: block; width: 100%; margin-top: .5rem; }

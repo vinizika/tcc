@@ -192,3 +192,11 @@ gestão de segredos, backups/restauração, retenção/exclusão de dados, auten
 endurecida, proteção de abuso, monitoramento, consentimentos/revisão LGPD,
 validação clínica e avaliação IHC com participantes. Nenhum desses resultados é
 presumido nesta entrega.
+
+## Acompanhamento de INCERTO
+
+O workspace agora usa [pré-triagem conversacional v2](pre-triagem-conversacional.md):
+pergunta objetiva, formulário quando não há progresso e encerramento explícito
+em INCERTO quando ainda faltam informações. O documento descreve configurações,
+contratos, recuperação de falhas e comandos de teste. O novo `followup.spec.ts`
+usa fixtures HTTP; os testes anteriores em `workspace.spec.ts` continuam reais.

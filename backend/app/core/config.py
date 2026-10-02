@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from app.constants.pipeline import DEFAULT_CONTEXT_MIN_SCORE
@@ -15,6 +16,10 @@ class Settings(BaseSettings):
     # ==========================
     # Informações da API
     # ==========================
+    FOLLOWUP_NO_PROGRESS_LIMIT: int = Field(default=2, ge=1, le=5)
+    WORKSPACE_NUM_CTX: int = Field(default=32768, ge=4096, le=131072)
+    FOLLOWUP_MAX_QUESTIONS: int = Field(default=4, ge=1, le=10)
+
     API_NAME: str = "TCC Pré-Triagem Veterinária"
     API_VERSION: str = "1.0.0"
     DEBUG: bool = True

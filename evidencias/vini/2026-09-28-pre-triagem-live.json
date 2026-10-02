@@ -1,0 +1,1073 @@
+[
+  {
+    "scenario": "immediate",
+    "provider_requested": "gemini",
+    "conversation_id": "c1b10f5a-80d9-48d8-9691-43525ac8ee99",
+    "status": "idle",
+    "error": null,
+    "followup": {
+      "version": "conversational_v1",
+      "state": "completed",
+      "question": null,
+      "options": [],
+      "attempts": 0,
+      "no_progress": 0,
+      "asked": [],
+      "answered_keys": [],
+      "reason": "classification_available"
+    },
+    "messages": [
+      {
+        "id": "06e3c344-e087-45c4-8922-5dead87e1dca",
+        "role": "tutor",
+        "content": "Meu gato está respirando com a boca aberta e faz muita força para respirar mesmo parado.",
+        "created_at": "2026-09-28T03:33:03.407688+00:00",
+        "origin": "text",
+        "selected_option": null,
+        "question_id": null,
+        "answer_to": null
+      },
+      {
+        "id": "d0cca4e6-d550-4a6b-82c8-f2c6948c4f9b",
+        "role": "assistant",
+        "content": "O gato apresenta dificuldade respiratoria grave com esforco e boca aberta, indicando risco imediato.\nProcure um veterinário agora, sem esperar.",
+        "created_at": "2026-09-28T03:33:29.777321+00:00",
+        "triage": {
+          "classificacao": "EMERGENCIA",
+          "justificativa": "O gato apresenta dificuldade respiratoria grave com esforco e boca aberta, indicando risco imediato.",
+          "sinais_de_alerta": [
+            "respirando com a boca aberta",
+            "faz muita força para respirar"
+          ],
+          "recomendacao": "Procure um veterinário agora, sem esperar.",
+          "fontes": [
+            {
+              "index": 1,
+              "chunk_id": "ficha__respiratory_distress",
+              "title": "Ficha de triagem: Dificuldade respiratoria",
+              "source": "Ficha de triagem do time (mapa de assuntos)",
+              "display_title": "Dificuldade respiratória",
+              "references": [
+                {
+                  "title": "Diagnostic performance of lung ultrasound compared to thoracic radiography in non-traumatized dogs and cats with respiratory distress in an emergency setting",
+                  "journal": "Frontiers in Veterinary Science",
+                  "year": 2026,
+                  "doi": "10.3389/fvets.2026.1790755",
+                  "url": "https://doi.org/10.3389/fvets.2026.1790755"
+                }
+              ]
+            }
+          ],
+          "json_parsed": true,
+          "schema_valid": true,
+          "attempts": 1,
+          "done_reason": "stop",
+          "invalid_source_indices": []
+        },
+        "followup": {
+          "version": "conversational_v1",
+          "state": "completed",
+          "question": null,
+          "options": [],
+          "attempts": 0,
+          "no_progress": 0,
+          "asked": [],
+          "answered_keys": [],
+          "reason": "classification_available"
+        },
+        "retrieval": {
+          "returned_count": 50,
+          "used_count": 3,
+          "above_threshold_count": 0,
+          "max_score": 0.6947389841079712,
+          "max_ranking_score": 0.6947389841079712,
+          "threshold": 0.7,
+          "context_min_score": 0.0,
+          "used_below_min_score": false
+        },
+        "sources": [
+          {
+            "title": "Ficha de triagem: Dificuldade respiratoria",
+            "display_title": "Dificuldade respiratória",
+            "topic": "respiratory_distress",
+            "references": [
+              {
+                "document": "respiratory_distress__frontiers_2026_lung_ultrasound.pdf",
+                "title": "Diagnostic performance of lung ultrasound compared to thoracic radiography in non-traumatized dogs and cats with respiratory distress in an emergency setting",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2026,
+                "doi": "10.3389/fvets.2026.1790755",
+                "url": "https://doi.org/10.3389/fvets.2026.1790755",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": true
+          },
+          {
+            "title": "Ficha de triagem: Comendo menos, sem outros sinais",
+            "display_title": "Comendo menos, sem outros sinais",
+            "topic": "reduced_appetite_no_other_signs",
+            "references": [
+              {
+                "document": "reduced_appetite_no_other_signs__animals_2025_feline_inappetence.pdf",
+                "title": "Owner’s Perspective About the Use of Mirtazapine Transdermal Ointment in Cats—A Survey-Based Study",
+                "journal": "Animals (MDPI)",
+                "year": 2025,
+                "doi": "10.3390/ani15203054",
+                "url": "https://doi.org/10.3390/ani15203054",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Trauma, atropelamento e hemorragia",
+            "display_title": "Trauma, atropelamento e hemorragia",
+            "topic": "trauma_and_bleeding",
+            "references": [
+              {
+                "document": "trauma_and_bleeding__frontiers_2021_hemorrhage.pdf",
+                "title": "Volume Resuscitation in the Acutely Hemorrhaging Patient: Historic Use to Current Applications",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2021,
+                "doi": "10.3389/fvets.2021.638104",
+                "url": "https://doi.org/10.3389/fvets.2021.638104",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          }
+        ],
+        "provenance": {
+          "attendant": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "model_version": "gemini-3.5-flash-lite",
+            "thinking": null,
+            "fallback_from": null
+          },
+          "query_stage": {
+            "rewriting": false,
+            "multi_query": false,
+            "hyde": false,
+            "calls": []
+          }
+        },
+        "config": {
+          "query_rewriting_enabled": false,
+          "multi_query_enabled": false,
+          "hyde_enabled": false,
+          "retrieval_enabled": true,
+          "retrieval_mode": "vector",
+          "context_top_k": 3,
+          "context_min_score": 0.0,
+          "rewritten_hint_enabled": false,
+          "cot_enabled": false,
+          "cot_position": "first",
+          "self_refine_enabled": false,
+          "prompt_version": "v1_grounded",
+          "structured_output_mode": "schema",
+          "model": "gemini-3.5-flash-lite",
+          "temperature": 0.0,
+          "seed": 42,
+          "num_ctx": 32768,
+          "num_predict": 600,
+          "think": false,
+          "attendant_provider": "gemini",
+          "attendant_fallback": "none"
+        },
+        "timings": {
+          "query_s": 0.0,
+          "retrieval_s": 23.315,
+          "generation_s": 2.905,
+          "total_s": 26.221,
+          "prompt_tokens": 1058,
+          "completion_tokens": 109,
+          "tokens_per_s": 37.8,
+          "load_duration_s": null
+        },
+        "rag_collection": "veterinary_documents__20260925T061349534255Z__280baf13"
+      }
+    ]
+  },
+  {
+    "scenario": "resolved",
+    "provider_requested": "gemini",
+    "conversation_id": "ef9a451c-9cfe-4f0d-a713-10c06efc18da",
+    "status": "idle",
+    "error": null,
+    "followup": {
+      "version": "conversational_v1",
+      "state": "completed",
+      "question": null,
+      "options": [],
+      "attempts": 1,
+      "no_progress": 0,
+      "asked": [
+        "urination_difficulty"
+      ],
+      "answered_keys": [],
+      "reason": "classification_available"
+    },
+    "messages": [
+      {
+        "id": "d7a1b270-8808-421a-8b3d-c802fbc58b56",
+        "role": "tutor",
+        "content": "Meu gato está estranho, entra na caixa de areia muitas vezes. Não vi o que acontece lá.",
+        "created_at": "2026-09-28T03:33:31.483567+00:00",
+        "origin": "text",
+        "selected_option": null,
+        "question_id": null,
+        "answer_to": null
+      },
+      {
+        "id": "a62363c5-4f0a-4a9d-8d49-1152e74f81f6",
+        "role": "assistant",
+        "content": "O relato não traz informação suficiente para decidir sobre a urgência.\nProcure atendimento veterinário na dúvida.\nQuando ele entra na caixa de areia, você percebe se ele consegue urinar ou se sai apenas algumas gotas ou nada?",
+        "created_at": "2026-09-28T03:33:35.682869+00:00",
+        "triage": {
+          "classificacao": "INCERTO",
+          "justificativa": "O relato não traz informação suficiente para decidir sobre a urgência.",
+          "sinais_de_alerta": [],
+          "recomendacao": "Procure atendimento veterinário na dúvida.",
+          "fontes": [],
+          "json_parsed": true,
+          "schema_valid": true,
+          "attempts": 1,
+          "done_reason": "stop",
+          "invalid_source_indices": []
+        },
+        "followup": {
+          "version": "conversational_v1",
+          "state": "asking",
+          "question": "Quando ele entra na caixa de areia, você percebe se ele consegue urinar ou se sai apenas algumas gotas ou nada?",
+          "options": [],
+          "attempts": 1,
+          "no_progress": 0,
+          "asked": [
+            "urination_difficulty"
+          ],
+          "answered_keys": [],
+          "reason": "discriminator",
+          "answer_status": "unanswered",
+          "evidence": "",
+          "selection_reason": "urgency_discriminator",
+          "question_id": "4a9a2e91-bfd5-4bb0-a8e1-8ecb17e68e6b",
+          "missing_key": "urination_difficulty",
+          "missing_information": "O gato consegue urinar ou apenas faz força sem sair urina?"
+        },
+        "retrieval": {
+          "returned_count": 50,
+          "used_count": 3,
+          "above_threshold_count": 0,
+          "max_score": 0.6642900109291077,
+          "max_ranking_score": 0.6642900109291077,
+          "threshold": 0.7,
+          "context_min_score": 0.0,
+          "used_below_min_score": false
+        },
+        "sources": [
+          {
+            "title": "Ficha de triagem: Comendo menos, sem outros sinais",
+            "display_title": "Comendo menos, sem outros sinais",
+            "topic": "reduced_appetite_no_other_signs",
+            "references": [
+              {
+                "document": "reduced_appetite_no_other_signs__animals_2025_feline_inappetence.pdf",
+                "title": "Owner’s Perspective About the Use of Mirtazapine Transdermal Ointment in Cats—A Survey-Based Study",
+                "journal": "Animals (MDPI)",
+                "year": 2025,
+                "doi": "10.3390/ani15203054",
+                "url": "https://doi.org/10.3390/ani15203054",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Convulsao",
+            "display_title": "Convulsão",
+            "topic": "seizures",
+            "references": [
+              {
+                "document": "seizures__vetsci_2024_emergency_seizures.pdf",
+                "title": "Emergency Approach to Acute Seizures in Dogs and Cats",
+                "journal": "Veterinary Sciences",
+                "year": 2024,
+                "doi": "10.3390/vetsci11060277",
+                "url": "https://doi.org/10.3390/vetsci11060277",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Tremor sem convulsao",
+            "display_title": "Tremor sem convulsão",
+            "topic": "tremors_without_seizure",
+            "references": [
+              {
+                "document": "tremors_without_seizure__frontiers_2024_dyskinesia.pdf",
+                "title": "Canine paroxysmal dyskinesia—a review",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2024,
+                "doi": "10.3389/fvets.2024.1441332",
+                "url": "https://doi.org/10.3389/fvets.2024.1441332",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          }
+        ],
+        "provenance": {
+          "attendant": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "model_version": "gemini-3.5-flash-lite",
+            "thinking": null,
+            "fallback_from": null
+          },
+          "query_stage": {
+            "rewriting": false,
+            "multi_query": false,
+            "hyde": false,
+            "calls": []
+          }
+        },
+        "config": {
+          "query_rewriting_enabled": false,
+          "multi_query_enabled": false,
+          "hyde_enabled": false,
+          "retrieval_enabled": true,
+          "retrieval_mode": "vector",
+          "context_top_k": 3,
+          "context_min_score": 0.0,
+          "rewritten_hint_enabled": false,
+          "cot_enabled": false,
+          "cot_position": "first",
+          "self_refine_enabled": false,
+          "prompt_version": "v1_grounded",
+          "structured_output_mode": "schema",
+          "model": "gemini-3.5-flash-lite",
+          "temperature": 0.0,
+          "seed": 42,
+          "num_ctx": 32768,
+          "num_predict": 600,
+          "think": false,
+          "attendant_provider": "gemini",
+          "attendant_fallback": "none"
+        },
+        "timings": {
+          "query_s": 0.0,
+          "retrieval_s": 1.566,
+          "generation_s": 1.11,
+          "total_s": 2.677,
+          "prompt_tokens": 1047,
+          "completion_tokens": 70,
+          "tokens_per_s": 63.3,
+          "load_duration_s": null
+        },
+        "rag_collection": "veterinary_documents__20260925T061349534255Z__280baf13"
+      },
+      {
+        "id": "0cc69200-8491-4375-bc13-bdd72d087d22",
+        "role": "tutor",
+        "content": "Ele tenta fazer xixi várias vezes e não sai nenhuma gota de urina.",
+        "created_at": "2026-09-28T03:33:37.621743+00:00",
+        "origin": "text",
+        "selected_option": null,
+        "question_id": "4a9a2e91-bfd5-4bb0-a8e1-8ecb17e68e6b",
+        "answer_to": "Quando ele entra na caixa de areia, você percebe se ele consegue urinar ou se sai apenas algumas gotas ou nada?"
+      },
+      {
+        "id": "76be62f5-3dd6-44fc-ada7-6473580d2403",
+        "role": "assistant",
+        "content": "A incapacidade de urinar indica obstrução urinária, que é uma urgência veterinária grave.\nProcure atendimento veterinário imediatamente sem esperar.",
+        "created_at": "2026-09-28T03:33:40.319195+00:00",
+        "triage": {
+          "classificacao": "EMERGENCIA",
+          "justificativa": "A incapacidade de urinar indica obstrução urinária, que é uma urgência veterinária grave.",
+          "sinais_de_alerta": [
+            "entra na caixa de areia muitas vezes",
+            "tentou fazer xixi várias vezes",
+            "não sai nenhuma gota de urina"
+          ],
+          "recomendacao": "Procure atendimento veterinário imediatamente sem esperar.",
+          "fontes": [
+            {
+              "index": 3,
+              "chunk_id": "ficha__inappropriate_urination_or_cystitis",
+              "title": "Ficha de triagem: Xixi fora do lugar e cistite",
+              "source": "Ficha de triagem do time (mapa de assuntos)",
+              "display_title": "Xixi fora do lugar e cistite",
+              "references": [
+                {
+                  "title": "Prevalence, Risk Factors, Pathophysiology, Potential Biomarkers and Management of Feline Idiopathic Cystitis: An Update Review",
+                  "journal": "Frontiers in Veterinary Science",
+                  "year": 2022,
+                  "doi": "10.3389/fvets.2022.900847",
+                  "url": "https://doi.org/10.3389/fvets.2022.900847"
+                }
+              ]
+            }
+          ],
+          "json_parsed": true,
+          "schema_valid": true,
+          "attempts": 1,
+          "done_reason": "stop",
+          "invalid_source_indices": []
+        },
+        "followup": {
+          "version": "conversational_v1",
+          "state": "completed",
+          "question": null,
+          "options": [],
+          "attempts": 1,
+          "no_progress": 0,
+          "asked": [
+            "urination_difficulty"
+          ],
+          "answered_keys": [],
+          "reason": "classification_available"
+        },
+        "retrieval": {
+          "returned_count": 50,
+          "used_count": 3,
+          "above_threshold_count": 0,
+          "max_score": 0.6721525192260742,
+          "max_ranking_score": 0.6721525192260742,
+          "threshold": 0.7,
+          "context_min_score": 0.0,
+          "used_below_min_score": false
+        },
+        "sources": [
+          {
+            "title": "Ficha de triagem: Comendo menos, sem outros sinais",
+            "display_title": "Comendo menos, sem outros sinais",
+            "topic": "reduced_appetite_no_other_signs",
+            "references": [
+              {
+                "document": "reduced_appetite_no_other_signs__animals_2025_feline_inappetence.pdf",
+                "title": "Owner’s Perspective About the Use of Mirtazapine Transdermal Ointment in Cats—A Survey-Based Study",
+                "journal": "Animals (MDPI)",
+                "year": 2025,
+                "doi": "10.3390/ani15203054",
+                "url": "https://doi.org/10.3390/ani15203054",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Convulsao",
+            "display_title": "Convulsão",
+            "topic": "seizures",
+            "references": [
+              {
+                "document": "seizures__vetsci_2024_emergency_seizures.pdf",
+                "title": "Emergency Approach to Acute Seizures in Dogs and Cats",
+                "journal": "Veterinary Sciences",
+                "year": 2024,
+                "doi": "10.3390/vetsci11060277",
+                "url": "https://doi.org/10.3390/vetsci11060277",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Xixi fora do lugar e cistite",
+            "display_title": "Xixi fora do lugar e cistite",
+            "topic": "inappropriate_urination_or_cystitis",
+            "references": [
+              {
+                "document": "inappropriate_urination_or_cystitis__frontiers_2022_feline_cystitis.pdf",
+                "title": "Prevalence, Risk Factors, Pathophysiology, Potential Biomarkers and Management of Feline Idiopathic Cystitis: An Update Review",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2022,
+                "doi": "10.3389/fvets.2022.900847",
+                "url": "https://doi.org/10.3389/fvets.2022.900847",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": true
+          }
+        ],
+        "provenance": {
+          "attendant": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "model_version": "gemini-3.5-flash-lite",
+            "thinking": null,
+            "fallback_from": null
+          },
+          "query_stage": {
+            "rewriting": false,
+            "multi_query": false,
+            "hyde": false,
+            "calls": []
+          }
+        },
+        "config": {
+          "query_rewriting_enabled": false,
+          "multi_query_enabled": false,
+          "hyde_enabled": false,
+          "retrieval_enabled": true,
+          "retrieval_mode": "vector",
+          "context_top_k": 3,
+          "context_min_score": 0.0,
+          "rewritten_hint_enabled": false,
+          "cot_enabled": false,
+          "cot_position": "first",
+          "self_refine_enabled": false,
+          "prompt_version": "v1_grounded",
+          "structured_output_mode": "schema",
+          "model": "gemini-3.5-flash-lite",
+          "temperature": 0.0,
+          "seed": 42,
+          "num_ctx": 32768,
+          "num_predict": 600,
+          "think": false,
+          "attendant_provider": "gemini",
+          "attendant_fallback": "none"
+        },
+        "timings": {
+          "query_s": 0.0,
+          "retrieval_s": 1.518,
+          "generation_s": 1.164,
+          "total_s": 2.683,
+          "prompt_tokens": 1161,
+          "completion_tokens": 122,
+          "tokens_per_s": 105.1,
+          "load_duration_s": null
+        },
+        "rag_collection": "veterinary_documents__20260925T061349534255Z__280baf13"
+      }
+    ]
+  },
+  {
+    "scenario": "form",
+    "provider_requested": "gemini",
+    "conversation_id": "f0fa5081-adc1-485f-b43b-602a20a20a93",
+    "status": "idle",
+    "error": null,
+    "followup": {
+      "version": "conversational_v1",
+      "state": "insufficient",
+      "question": null,
+      "options": [],
+      "attempts": 2,
+      "no_progress": 2,
+      "asked": [
+        "appetite_status"
+      ],
+      "answered_keys": [],
+      "reason": "form_exhausted",
+      "answer_status": "unknown",
+      "evidence": "",
+      "selection_reason": "urgency_discriminator",
+      "guidance": "Ainda não há informação suficiente para determinar a urgência. Entre em contato com uma clínica; se houver piora, procure atendimento agora. Você pode enviar novas observações."
+    },
+    "messages": [
+      {
+        "id": "db1424e2-583a-43b1-9ef8-6fba7b65e54a",
+        "role": "tutor",
+        "content": "Meu gato está diferente hoje. Não consigo explicar o que mudou.",
+        "created_at": "2026-09-28T03:33:41.742115+00:00",
+        "origin": "text",
+        "selected_option": null,
+        "question_id": null,
+        "answer_to": null
+      },
+      {
+        "id": "16296b69-3da5-4ab4-931b-b7775dadd99a",
+        "role": "assistant",
+        "content": "O relato não traz informações suficientes sobre os sintomas do animal para permitir uma decisão segura.\nProcure atendimento veterinário na dúvida.\nO seu gato comeu a racao normalmente hoje?",
+        "created_at": "2026-09-28T03:33:45.854234+00:00",
+        "triage": {
+          "classificacao": "INCERTO",
+          "justificativa": "O relato não traz informações suficientes sobre os sintomas do animal para permitir uma decisão segura.",
+          "sinais_de_alerta": [],
+          "recomendacao": "Procure atendimento veterinário na dúvida.",
+          "fontes": [],
+          "json_parsed": true,
+          "schema_valid": true,
+          "attempts": 1,
+          "done_reason": "stop",
+          "invalid_source_indices": []
+        },
+        "followup": {
+          "version": "conversational_v1",
+          "state": "asking",
+          "question": "O seu gato comeu a racao normalmente hoje?",
+          "options": [],
+          "attempts": 1,
+          "no_progress": 0,
+          "asked": [
+            "appetite_status"
+          ],
+          "answered_keys": [],
+          "reason": "discriminator",
+          "answer_status": "unanswered",
+          "evidence": "",
+          "selection_reason": "urgency_discriminator",
+          "question_id": "661a594d-9dda-4f69-a5ea-1bd7bda8cf62",
+          "missing_key": "appetite_status",
+          "missing_information": "Saber se o gato comeu normalmente nas ultimas horas."
+        },
+        "retrieval": {
+          "returned_count": 50,
+          "used_count": 3,
+          "above_threshold_count": 0,
+          "max_score": 0.6661152243614197,
+          "max_ranking_score": 0.6661152243614197,
+          "threshold": 0.7,
+          "context_min_score": 0.0,
+          "used_below_min_score": false
+        },
+        "sources": [
+          {
+            "title": "Ficha de triagem: Comendo menos, sem outros sinais",
+            "display_title": "Comendo menos, sem outros sinais",
+            "topic": "reduced_appetite_no_other_signs",
+            "references": [
+              {
+                "document": "reduced_appetite_no_other_signs__animals_2025_feline_inappetence.pdf",
+                "title": "Owner’s Perspective About the Use of Mirtazapine Transdermal Ointment in Cats—A Survey-Based Study",
+                "journal": "Animals (MDPI)",
+                "year": 2025,
+                "doi": "10.3390/ani15203054",
+                "url": "https://doi.org/10.3390/ani15203054",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Tremor sem convulsao",
+            "display_title": "Tremor sem convulsão",
+            "topic": "tremors_without_seizure",
+            "references": [
+              {
+                "document": "tremors_without_seizure__frontiers_2024_dyskinesia.pdf",
+                "title": "Canine paroxysmal dyskinesia—a review",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2024,
+                "doi": "10.3389/fvets.2024.1441332",
+                "url": "https://doi.org/10.3389/fvets.2024.1441332",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Trauma, atropelamento e hemorragia",
+            "display_title": "Trauma, atropelamento e hemorragia",
+            "topic": "trauma_and_bleeding",
+            "references": [
+              {
+                "document": "trauma_and_bleeding__frontiers_2021_hemorrhage.pdf",
+                "title": "Volume Resuscitation in the Acutely Hemorrhaging Patient: Historic Use to Current Applications",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2021,
+                "doi": "10.3389/fvets.2021.638104",
+                "url": "https://doi.org/10.3389/fvets.2021.638104",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          }
+        ],
+        "provenance": {
+          "attendant": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "model_version": "gemini-3.5-flash-lite",
+            "thinking": null,
+            "fallback_from": null
+          },
+          "query_stage": {
+            "rewriting": false,
+            "multi_query": false,
+            "hyde": false,
+            "calls": []
+          }
+        },
+        "config": {
+          "query_rewriting_enabled": false,
+          "multi_query_enabled": false,
+          "hyde_enabled": false,
+          "retrieval_enabled": true,
+          "retrieval_mode": "vector",
+          "context_top_k": 3,
+          "context_min_score": 0.0,
+          "rewritten_hint_enabled": false,
+          "cot_enabled": false,
+          "cot_position": "first",
+          "self_refine_enabled": false,
+          "prompt_version": "v1_grounded",
+          "structured_output_mode": "schema",
+          "model": "gemini-3.5-flash-lite",
+          "temperature": 0.0,
+          "seed": 42,
+          "num_ctx": 32768,
+          "num_predict": 600,
+          "think": false,
+          "attendant_provider": "gemini",
+          "attendant_fallback": "none"
+        },
+        "timings": {
+          "query_s": 0.0,
+          "retrieval_s": 1.456,
+          "generation_s": 1.232,
+          "total_s": 2.689,
+          "prompt_tokens": 1051,
+          "completion_tokens": 74,
+          "tokens_per_s": 60.3,
+          "load_duration_s": null
+        },
+        "rag_collection": "veterinary_documents__20260925T061349534255Z__280baf13"
+      },
+      {
+        "id": "411e4de7-5269-4ada-aa35-cb3570e28121",
+        "role": "tutor",
+        "content": "Não sei dizer",
+        "created_at": "2026-09-28T03:33:47.866512+00:00",
+        "origin": "text",
+        "selected_option": null,
+        "question_id": "661a594d-9dda-4f69-a5ea-1bd7bda8cf62",
+        "answer_to": "O seu gato comeu a racao normalmente hoje?"
+      },
+      {
+        "id": "2d739291-462b-49e7-a1f2-5f9bb7f1a704",
+        "role": "assistant",
+        "content": "O relato não traz informações suficientes sobre os sintomas do animal para definir a gravidade do caso.\nNa dúvida, procure atendimento veterinário para uma avaliação completa do seu pet.\nO seu gato comeu alguma quantidade de comida hoje?",
+        "created_at": "2026-09-28T03:33:53.195274+00:00",
+        "triage": {
+          "classificacao": "INCERTO",
+          "justificativa": "O relato não traz informações suficientes sobre os sintomas do animal para definir a gravidade do caso.",
+          "sinais_de_alerta": [],
+          "recomendacao": "Na dúvida, procure atendimento veterinário para uma avaliação completa do seu pet.",
+          "fontes": [],
+          "json_parsed": true,
+          "schema_valid": true,
+          "attempts": 1,
+          "done_reason": "stop",
+          "invalid_source_indices": []
+        },
+        "followup": {
+          "version": "conversational_v1",
+          "state": "form",
+          "question": "O seu gato comeu alguma quantidade de comida hoje?",
+          "options": [
+            "Sim, comeu normalmente",
+            "Comeu menos do que o habitual",
+            "Recusou completamente a comida",
+            "Não observei",
+            "Não sei dizer"
+          ],
+          "attempts": 2,
+          "no_progress": 1,
+          "asked": [
+            "appetite_status"
+          ],
+          "answered_keys": [],
+          "reason": "repeated_question",
+          "answer_status": "unknown",
+          "evidence": "Não sei dizer",
+          "selection_reason": "urgency_discriminator",
+          "question_id": "5dc142be-2864-4ce3-b555-ee559fd6a275",
+          "missing_key": "appetite_status",
+          "missing_information": "Saber se o gato comeu a racao normalmente hoje."
+        },
+        "retrieval": {
+          "returned_count": 50,
+          "used_count": 3,
+          "above_threshold_count": 0,
+          "max_score": 0.6972472667694092,
+          "max_ranking_score": 0.6972472667694092,
+          "threshold": 0.7,
+          "context_min_score": 0.0,
+          "used_below_min_score": false
+        },
+        "sources": [
+          {
+            "title": "Ficha de triagem: Comendo menos, sem outros sinais",
+            "display_title": "Comendo menos, sem outros sinais",
+            "topic": "reduced_appetite_no_other_signs",
+            "references": [
+              {
+                "document": "reduced_appetite_no_other_signs__animals_2025_feline_inappetence.pdf",
+                "title": "Owner’s Perspective About the Use of Mirtazapine Transdermal Ointment in Cats—A Survey-Based Study",
+                "journal": "Animals (MDPI)",
+                "year": 2025,
+                "doi": "10.3390/ani15203054",
+                "url": "https://doi.org/10.3390/ani15203054",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Convulsao",
+            "display_title": "Convulsão",
+            "topic": "seizures",
+            "references": [
+              {
+                "document": "seizures__vetsci_2024_emergency_seizures.pdf",
+                "title": "Emergency Approach to Acute Seizures in Dogs and Cats",
+                "journal": "Veterinary Sciences",
+                "year": 2024,
+                "doi": "10.3390/vetsci11060277",
+                "url": "https://doi.org/10.3390/vetsci11060277",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Trauma, atropelamento e hemorragia",
+            "display_title": "Trauma, atropelamento e hemorragia",
+            "topic": "trauma_and_bleeding",
+            "references": [
+              {
+                "document": "trauma_and_bleeding__frontiers_2021_hemorrhage.pdf",
+                "title": "Volume Resuscitation in the Acutely Hemorrhaging Patient: Historic Use to Current Applications",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2021,
+                "doi": "10.3389/fvets.2021.638104",
+                "url": "https://doi.org/10.3389/fvets.2021.638104",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          }
+        ],
+        "provenance": {
+          "attendant": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "model_version": "gemini-3.5-flash-lite",
+            "thinking": null,
+            "fallback_from": null
+          },
+          "query_stage": {
+            "rewriting": false,
+            "multi_query": false,
+            "hyde": false,
+            "calls": []
+          }
+        },
+        "config": {
+          "query_rewriting_enabled": false,
+          "multi_query_enabled": false,
+          "hyde_enabled": false,
+          "retrieval_enabled": true,
+          "retrieval_mode": "vector",
+          "context_top_k": 3,
+          "context_min_score": 0.0,
+          "rewritten_hint_enabled": false,
+          "cot_enabled": false,
+          "cot_position": "first",
+          "self_refine_enabled": false,
+          "prompt_version": "v1_grounded",
+          "structured_output_mode": "schema",
+          "model": "gemini-3.5-flash-lite",
+          "temperature": 0.0,
+          "seed": 42,
+          "num_ctx": 32768,
+          "num_predict": 600,
+          "think": false,
+          "attendant_provider": "gemini",
+          "attendant_fallback": "none"
+        },
+        "timings": {
+          "query_s": 0.0,
+          "retrieval_s": 2.327,
+          "generation_s": 1.078,
+          "total_s": 3.405,
+          "prompt_tokens": 1073,
+          "completion_tokens": 83,
+          "tokens_per_s": 77.3,
+          "load_duration_s": null
+        },
+        "rag_collection": "veterinary_documents__20260925T061349534255Z__280baf13"
+      },
+      {
+        "id": "8696622c-d251-41df-96db-9c61d46988f6",
+        "role": "tutor",
+        "content": "Não observei",
+        "created_at": "2026-09-28T03:33:54.017264+00:00",
+        "origin": "form",
+        "selected_option": "Não observei",
+        "question_id": "5dc142be-2864-4ce3-b555-ee559fd6a275",
+        "answer_to": "O seu gato comeu alguma quantidade de comida hoje?"
+      },
+      {
+        "id": "0d41f4f5-a57f-4951-96b3-b61cb2f7fa5a",
+        "role": "assistant",
+        "content": "O relato não traz informações suficientes sobre os sintomas do animal para decidir a gravidade.\nProcure atendimento veterinário na dúvida.\nAinda não há informação suficiente para determinar a urgência. Entre em contato com uma clínica; se houver piora, procure atendimento agora. Você pode enviar novas observações.",
+        "created_at": "2026-09-28T03:33:57.721691+00:00",
+        "triage": {
+          "classificacao": "INCERTO",
+          "justificativa": "O relato não traz informações suficientes sobre os sintomas do animal para decidir a gravidade.",
+          "sinais_de_alerta": [],
+          "recomendacao": "Procure atendimento veterinário na dúvida.",
+          "fontes": [],
+          "json_parsed": true,
+          "schema_valid": true,
+          "attempts": 1,
+          "done_reason": "stop",
+          "invalid_source_indices": []
+        },
+        "followup": {
+          "version": "conversational_v1",
+          "state": "insufficient",
+          "question": null,
+          "options": [],
+          "attempts": 2,
+          "no_progress": 2,
+          "asked": [
+            "appetite_status"
+          ],
+          "answered_keys": [],
+          "reason": "form_exhausted",
+          "answer_status": "unknown",
+          "evidence": "",
+          "selection_reason": "urgency_discriminator",
+          "guidance": "Ainda não há informação suficiente para determinar a urgência. Entre em contato com uma clínica; se houver piora, procure atendimento agora. Você pode enviar novas observações."
+        },
+        "retrieval": {
+          "returned_count": 50,
+          "used_count": 3,
+          "above_threshold_count": 1,
+          "max_score": 0.7033651471138,
+          "max_ranking_score": 0.7033651471138,
+          "threshold": 0.7,
+          "context_min_score": 0.0,
+          "used_below_min_score": false
+        },
+        "sources": [
+          {
+            "title": "Ficha de triagem: Comendo menos, sem outros sinais",
+            "display_title": "Comendo menos, sem outros sinais",
+            "topic": "reduced_appetite_no_other_signs",
+            "references": [
+              {
+                "document": "reduced_appetite_no_other_signs__animals_2025_feline_inappetence.pdf",
+                "title": "Owner’s Perspective About the Use of Mirtazapine Transdermal Ointment in Cats—A Survey-Based Study",
+                "journal": "Animals (MDPI)",
+                "year": 2025,
+                "doi": "10.3390/ani15203054",
+                "url": "https://doi.org/10.3390/ani15203054",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Trauma, atropelamento e hemorragia",
+            "display_title": "Trauma, atropelamento e hemorragia",
+            "topic": "trauma_and_bleeding",
+            "references": [
+              {
+                "document": "trauma_and_bleeding__frontiers_2021_hemorrhage.pdf",
+                "title": "Volume Resuscitation in the Acutely Hemorrhaging Patient: Historic Use to Current Applications",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2021,
+                "doi": "10.3389/fvets.2021.638104",
+                "url": "https://doi.org/10.3389/fvets.2021.638104",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Convulsao",
+            "display_title": "Convulsão",
+            "topic": "seizures",
+            "references": [
+              {
+                "document": "seizures__vetsci_2024_emergency_seizures.pdf",
+                "title": "Emergency Approach to Acute Seizures in Dogs and Cats",
+                "journal": "Veterinary Sciences",
+                "year": 2024,
+                "doi": "10.3390/vetsci11060277",
+                "url": "https://doi.org/10.3390/vetsci11060277",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          }
+        ],
+        "provenance": {
+          "attendant": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "model_version": "gemini-3.5-flash-lite",
+            "thinking": null,
+            "fallback_from": null
+          },
+          "query_stage": {
+            "rewriting": false,
+            "multi_query": false,
+            "hyde": false,
+            "calls": []
+          }
+        },
+        "config": {
+          "query_rewriting_enabled": false,
+          "multi_query_enabled": false,
+          "hyde_enabled": false,
+          "retrieval_enabled": true,
+          "retrieval_mode": "vector",
+          "context_top_k": 3,
+          "context_min_score": 0.0,
+          "rewritten_hint_enabled": false,
+          "cot_enabled": false,
+          "cot_position": "first",
+          "self_refine_enabled": false,
+          "prompt_version": "v1_grounded",
+          "structured_output_mode": "schema",
+          "model": "gemini-3.5-flash-lite",
+          "temperature": 0.0,
+          "seed": 42,
+          "num_ctx": 32768,
+          "num_predict": 600,
+          "think": false,
+          "attendant_provider": "gemini",
+          "attendant_fallback": "none"
+        },
+        "timings": {
+          "query_s": 0.0,
+          "retrieval_s": 1.394,
+          "generation_s": 1.012,
+          "total_s": 2.406,
+          "prompt_tokens": 1112,
+          "completion_tokens": 74,
+          "tokens_per_s": 73.3,
+          "load_duration_s": null
+        },
+        "rag_collection": "veterinary_documents__20260925T061349534255Z__280baf13"
+      }
+    ]
+  }
+]

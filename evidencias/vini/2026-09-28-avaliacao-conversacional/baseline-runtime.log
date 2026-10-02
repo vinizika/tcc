@@ -1,0 +1,851 @@
+  File "<string>", line 164
+    source = Path(__file__).read_text().split('
+                                              ^
+SyntaxError: unterminated string literal (detected at line 164)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 20603.71it/s]
+Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+[2026-09-28 03:42:40,500] INFO - ChatPipeline - Pergunta recebida: Meu gato não consegue respirar, está com a boca aberta e faz força para respirar.
+[2026-09-28 03:42:40,500] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:42:40,500] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:42:40,500] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:42:40,500] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:42:56,627] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:42:56,634] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:42:58,933] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:42:58,934] INFO - ChatPipeline - Pipeline finalizado em 18.44s
+[2026-09-28 03:42:59,001] INFO - ChatPipeline - Pergunta recebida: Meu cachorro achou uma isca perto do muro do quintal ontem à noite, e hoje de manhã ele começou a babar muito, tremer o corpo inteiro e teve uma convulsão agora há pouco.
+[2026-09-28 03:42:59,002] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:42:59,003] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:42:59,004] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:42:59,004] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:43:00,393] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:43:00,394] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:43:02,565] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:43:02,565] INFO - ChatPipeline - Pipeline finalizado em 3.57s
+[2026-09-28 03:43:02,592] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu cachorro achou uma isca perto do muro do quintal ontem à noite, e hoje de manhã ele começou a babar muito, tremer o corpo inteiro e teve uma convulsão agora há pouco.", "origem": "text"}]
+[2026-09-28 03:43:02,592] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:43:02,592] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:43:02,592] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:43:02,592] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:43:03,863] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:43:03,864] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:43:05,115] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:43:05,115] INFO - ChatPipeline - Pipeline finalizado em 2.52s
+[2026-09-28 03:43:05,141] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu cachorro fica balançando a cabeça e coçando a orelha esquerda há uns dois dias, sem perder o equilíbrio nem cair pro lado, e está comendo e brincando normal.", "origem": "text"}]
+[2026-09-28 03:43:05,141] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:43:05,141] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:43:05,141] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:43:05,142] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:43:05,969] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:43:05,969] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:43:09,045] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:43:09,046] INFO - ChatPipeline - Pipeline finalizado em 3.90s
+[2026-09-28 03:43:09,065] INFO - ChatPipeline - Pergunta recebida: Meu cachorro fica balançando a cabeça e coçando a orelha esquerda há uns dois dias, sem perder o equilíbrio nem cair pro lado, e está comendo e brincando normal.
+[2026-09-28 03:43:09,065] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:43:09,065] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:43:09,065] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:43:09,065] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:43:09,614] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:43:09,614] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:43:10,973] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:43:10,974] INFO - ChatPipeline - Pipeline finalizado em 1.91s
+[2026-09-28 03:43:10,997] INFO - ChatPipeline - Pergunta recebida: De repente a cabeça do meu cachorro ficou torta pro lado, ele não consegue andar direito, fica cambaleando, e os olhos dele estão tremendo sem parar.
+[2026-09-28 03:43:10,998] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:43:10,998] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:43:10,998] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:43:10,998] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:43:12,171] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:43:12,171] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:43:14,623] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:43:14,624] INFO - ChatPipeline - Pipeline finalizado em 3.63s
+[2026-09-28 03:43:14,653] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "De repente a cabeça do meu cachorro ficou torta pro lado, ele não consegue andar direito, fica cambaleando, e os olhos dele estão tremendo sem parar.", "origem": "text"}]
+[2026-09-28 03:43:14,654] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:43:14,654] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:43:14,654] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:43:14,654] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:43:16,347] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:43:16,348] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:43:17,422] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:43:17,422] INFO - ChatPipeline - Pipeline finalizado em 2.77s
+[2026-09-28 03:43:17,446] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu cachorro comeu um pedacinho de bolo de aniversário ontem à tarde sem eu ver, mas hoje ele está do jeito normal dele, comendo a ração e brincando o dia inteiro.", "origem": "text"}]
+[2026-09-28 03:43:17,446] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:43:17,446] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:43:17,446] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:43:17,446] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:43:18,127] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:43:18,127] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:43:21,442] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (0 fonte(s) citada(s))
+[2026-09-28 03:43:21,444] INFO - ChatPipeline - Pipeline finalizado em 4.00s
+[2026-09-28 03:43:21,464] INFO - ChatPipeline - Pergunta recebida: Meu cachorro comeu um pedacinho de bolo de aniversário ontem à tarde sem eu ver, mas hoje ele está do jeito normal dele, comendo a ração e brincando o dia inteiro.
+[2026-09-28 03:43:21,464] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:43:21,464] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:43:21,464] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:43:21,464] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:43:22,063] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:43:22,063] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:43:24,024] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:43:24,024] INFO - ChatPipeline - Pipeline finalizado em 2.56s
+[2026-09-28 03:43:24,044] INFO - ChatPipeline - Pergunta recebida: Minha esposa deu meio comprimido de dipirona pro meu gato porque achou que ele estava com dor, e agora, um tempo depois, ele está vomitando e a gengiva dele parece meio arroxeada.
+[2026-09-28 03:43:24,044] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:43:24,044] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:43:24,044] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:43:24,044] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:43:24,412] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:43:24,412] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:43:27,078] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:43:27,078] INFO - ChatPipeline - Pipeline finalizado em 3.03s
+[2026-09-28 03:43:27,099] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Minha esposa deu meio comprimido de dipirona pro meu gato porque achou que ele estava com dor, e agora, um tempo depois, ele está vomitando e a gengiva dele parece meio arroxeada.", "origem": "text"}]
+[2026-09-28 03:43:27,099] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:43:27,099] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:43:27,099] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:43:27,099] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:43:28,161] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:43:28,161] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:43:30,908] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:43:30,908] INFO - ChatPipeline - Pipeline finalizado em 3.81s
+[2026-09-28 03:43:30,921] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu gato vomitou uma bola de pelo hoje de manhã, foi só uma vez, e ele já voltou a comer normalmente e está brincando.", "origem": "text"}]
+[2026-09-28 03:43:30,921] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:43:30,921] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:43:30,921] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:43:30,922] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:43:31,670] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:43:31,671] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:43:33,153] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:43:33,153] INFO - ChatPipeline - Pipeline finalizado em 2.23s
+[2026-09-28 03:43:33,175] INFO - ChatPipeline - Pergunta recebida: Meu gato vomitou uma bola de pelo hoje de manhã, foi só uma vez, e ele já voltou a comer normalmente e está brincando.
+[2026-09-28 03:43:33,175] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:43:33,175] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:43:33,175] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:43:33,175] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:43:33,483] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:43:33,483] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:43:35,756] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:43:35,756] INFO - ChatPipeline - Pipeline finalizado em 2.58s
+[2026-09-28 03:43:35,775] INFO - ChatPipeline - Pergunta recebida: Meu cachorro está bem paradinho, sem fazer escândalo, só que ele tentou vomitar várias vezes e não sai nada, e a barriga dele parece mais estufada do que o normal.
+[2026-09-28 03:43:35,775] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:43:35,775] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:43:35,775] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:43:35,775] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:43:36,318] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:43:36,318] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:43:38,480] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:43:38,481] INFO - ChatPipeline - Pipeline finalizado em 2.71s
+[2026-09-28 03:43:38,507] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu cachorro está bem paradinho, sem fazer escândalo, só que ele tentou vomitar várias vezes e não sai nada, e a barriga dele parece mais estufada do que o normal.", "origem": "text"}]
+[2026-09-28 03:43:38,507] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:43:38,508] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:43:38,508] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:43:38,508] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:43:39,634] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:43:39,635] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:43:40,726] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:43:40,726] INFO - ChatPipeline - Pipeline finalizado em 2.22s
+[2026-09-28 03:43:40,741] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu gato fica indo na caixinha de areia toda hora, fica um tempão fazendo força lá dentro e só sai bem pouquinho de xixi, e ele mia enquanto tenta.", "origem": "text"}]
+[2026-09-28 03:43:40,741] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:43:40,741] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:43:40,741] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:43:40,741] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:43:42,057] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:43:42,058] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:43:44,744] INFO - ChatPipeline - Classificação: EMERGENCIA (0 fonte(s) citada(s))
+[2026-09-28 03:43:44,744] INFO - ChatPipeline - Pipeline finalizado em 4.00s
+[2026-09-28 03:43:44,767] INFO - ChatPipeline - Pergunta recebida: Meu gato fica indo na caixinha de areia toda hora, fica um tempão fazendo força lá dentro e só sai bem pouquinho de xixi, e ele mia enquanto tenta.
+[2026-09-28 03:43:44,767] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:43:44,767] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:43:44,767] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:43:44,767] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:43:45,712] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:43:45,713] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:43:47,055] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:43:47,056] INFO - ChatPipeline - Pipeline finalizado em 2.29s
+[2026-09-28 03:43:47,079] INFO - ChatPipeline - Pergunta recebida: Meu gato está indo na caixinha de areia mais vezes que o normal nos últimos dois dias, mas sai bastante xixi de cada vez e ele não parece sentir dor nem fazer força.
+[2026-09-28 03:43:47,080] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:43:47,080] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:43:47,080] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:43:47,080] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:43:47,404] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:43:47,404] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:43:50,708] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:43:50,709] INFO - ChatPipeline - Pipeline finalizado em 3.63s
+[2026-09-28 03:43:50,729] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu gato está indo na caixinha de areia mais vezes que o normal nos últimos dois dias, mas sai bastante xixi de cada vez e ele não parece sentir dor nem fazer força.", "origem": "text"}]
+[2026-09-28 03:43:50,729] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:43:50,729] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:43:50,729] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:43:50,730] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:43:51,633] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:43:51,633] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:43:53,752] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:43:53,752] INFO - ChatPipeline - Pipeline finalizado em 3.02s
+[2026-09-28 03:43:53,771] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Minha cadela não é castrada, teve o cio faz umas cinco semanas, e hoje percebi um corrimento com pus saindo pela vulva dela; ela está bebendo bastante água e sem ânimo nenhum.", "origem": "text"}]
+[2026-09-28 03:43:53,772] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:43:53,772] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:43:53,772] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:43:53,772] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:43:54,486] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:43:54,486] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:43:56,691] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:43:56,691] INFO - ChatPipeline - Pipeline finalizado em 2.92s
+[2026-09-28 03:43:56,711] INFO - ChatPipeline - Pergunta recebida: Minha cadela não é castrada, teve o cio faz umas cinco semanas, e hoje percebi um corrimento com pus saindo pela vulva dela; ela está bebendo bastante água e sem ânimo nenhum.
+[2026-09-28 03:43:56,711] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:43:56,711] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:43:56,711] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:43:56,711] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:43:57,100] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:43:57,100] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:43:58,237] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:43:58,238] INFO - ChatPipeline - Pipeline finalizado em 1.53s
+[2026-09-28 03:43:58,258] INFO - ChatPipeline - Pergunta recebida: Minha cadela não castrada está com um sangramento pequeno pela vulva há dois dias, a vulva está um pouco inchada, mas ela continua ativa, comendo bem e brincando igual sempre.
+[2026-09-28 03:43:58,258] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:43:58,258] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:43:58,258] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:43:58,258] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:43:58,746] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:43:58,746] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:44:02,238] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:44:02,251] INFO - ChatPipeline - Pipeline finalizado em 3.99s
+[2026-09-28 03:44:02,393] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Minha cadela não castrada está com um sangramento pequeno pela vulva há dois dias, a vulva está um pouco inchada, mas ela continua ativa, comendo bem e brincando igual sempre.", "origem": "text"}]
+[2026-09-28 03:44:02,393] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:44:02,393] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:44:02,393] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:44:02,393] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:44:03,348] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:44:03,349] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:44:04,449] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:44:04,450] INFO - ChatPipeline - Pipeline finalizado em 2.06s
+[2026-09-28 03:44:06,121] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu gato de repente não consegue mais mexer as patas de trás, está gritando de dor e a respiração dele está bem acelerada.", "origem": "text"}]
+[2026-09-28 03:44:06,122] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:44:06,122] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:44:06,122] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:44:06,122] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:44:06,810] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:44:06,810] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:44:08,414] INFO - ChatPipeline - Classificação: EMERGENCIA (0 fonte(s) citada(s))
+[2026-09-28 03:44:08,415] INFO - ChatPipeline - Pipeline finalizado em 2.29s
+[2026-09-28 03:44:08,436] INFO - ChatPipeline - Pergunta recebida: Meu gato de repente não consegue mais mexer as patas de trás, está gritando de dor e a respiração dele está bem acelerada.
+[2026-09-28 03:44:08,436] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:44:08,436] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:44:08,436] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:44:08,436] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:44:08,716] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:44:08,716] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:44:09,696] INFO - ChatPipeline - Classificação: EMERGENCIA (2 fonte(s) citada(s))
+[2026-09-28 03:44:09,697] INFO - ChatPipeline - Pipeline finalizado em 1.26s
+[2026-09-28 03:44:09,718] INFO - ChatPipeline - Pergunta recebida: Meu cachorro idoso está com dificuldade para levantar já faz uns meses, mas depois que ele começa a andar parece melhorar, e ainda sobe a escadinha de casa devagarinho.
+[2026-09-28 03:44:09,718] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:44:09,718] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:44:09,718] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:44:09,718] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:44:10,864] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:44:10,865] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:44:12,937] WARNING - GeminiLLMClient - Gemini 429 (por minuto); esperando 5s
+[2026-09-28 03:44:18,292] WARNING - GeminiLLMClient - Gemini 429 (por minuto); esperando 10s
+[2026-09-28 03:44:29,334] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:44:29,335] INFO - ChatPipeline - Pipeline finalizado em 19.62s
+[2026-09-28 03:44:29,361] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu cachorro idoso está com dificuldade para levantar já faz uns meses, mas depois que ele começa a andar parece melhorar, e ainda sobe a escadinha de casa devagarinho.", "origem": "text"}]
+[2026-09-28 03:44:29,361] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:44:29,361] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:44:29,361] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:44:29,361] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:44:30,903] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:44:30,904] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:44:31,917] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (0 fonte(s) citada(s))
+[2026-09-28 03:44:31,917] INFO - ChatPipeline - Pipeline finalizado em 2.56s
+[2026-09-28 03:44:31,940] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu cachorro estava farejando perto de um matagal no quintal e ficou latindo muito de repente; quando voltou, a pata da frente estava mancando e começou a inchar bem rápido.", "origem": "text"}]
+[2026-09-28 03:44:31,940] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:44:31,940] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:44:31,940] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:44:31,940] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:44:32,543] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:44:32,544] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:44:36,242] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:44:36,243] INFO - ChatPipeline - Pipeline finalizado em 4.30s
+[2026-09-28 03:44:38,185] INFO - ChatPipeline - Pergunta recebida: Meu cachorro estava farejando perto de um matagal no quintal e ficou latindo muito de repente; quando voltou, a pata da frente estava mancando e começou a inchar bem rápido.
+[2026-09-28 03:44:38,185] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:44:38,185] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:44:38,185] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:44:38,185] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:44:38,866] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:44:38,866] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:44:39,139] WARNING - GeminiLLMClient - Gemini 503; esperando 20s
+[2026-09-28 03:45:00,438] INFO - ChatPipeline - Classificação: EMERGENCIA (2 fonte(s) citada(s))
+[2026-09-28 03:45:00,439] INFO - ChatPipeline - Pipeline finalizado em 22.25s
+[2026-09-28 03:45:00,466] INFO - ChatPipeline - Pergunta recebida: Meu gato não está muito legal hoje, acho que ele está meio estranho.
+[2026-09-28 03:45:00,466] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:45:00,466] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:45:00,466] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:45:00,466] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:45:01,244] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:45:01,244] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:45:04,064] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:45:04,065] INFO - ChatPipeline - Pipeline finalizado em 3.60s
+[2026-09-28 03:45:04,087] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu gato não está muito legal hoje, acho que ele está meio estranho.", "origem": "text"}]
+[2026-09-28 03:45:04,087] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:45:04,087] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:45:04,087] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:45:04,087] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:45:04,662] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:45:04,662] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:45:05,676] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:45:05,676] INFO - ChatPipeline - Pipeline finalizado em 1.59s
+[2026-09-28 03:45:06,832] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu cachorro vive destruindo os sapatos de casa e late muito toda vez que eu saio pra trabalhar, isso é normal ou eu deveria me preocupar?", "origem": "text"}]
+[2026-09-28 03:45:06,833] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:45:06,833] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:45:06,833] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:45:06,833] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:45:07,459] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:45:07,460] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:45:09,676] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:45:09,676] INFO - ChatPipeline - Pipeline finalizado em 2.84s
+[2026-09-28 03:45:11,260] INFO - ChatPipeline - Pergunta recebida: Meu cachorro vive destruindo os sapatos de casa e late muito toda vez que eu saio pra trabalhar, isso é normal ou eu deveria me preocupar?
+[2026-09-28 03:45:11,261] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:45:11,261] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:45:11,261] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:45:11,261] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:45:11,992] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:45:11,992] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:45:13,749] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:45:13,749] INFO - ChatPipeline - Pipeline finalizado em 2.49s
+[2026-09-28 03:45:13,770] INFO - ChatPipeline - Pergunta recebida: O olho do meu cachorro saltou pra fora depois que ele brigou com outro cachorro agora à tarde, está bem inchado ao redor e ele não consegue fechar a pálpebra.
+[2026-09-28 03:45:13,771] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:45:13,771] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:45:13,771] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:45:13,771] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:45:14,139] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:45:14,139] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:45:17,118] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:45:17,119] INFO - ChatPipeline - Pipeline finalizado em 3.35s
+[2026-09-28 03:45:17,137] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "O olho do meu cachorro saltou pra fora depois que ele brigou com outro cachorro agora à tarde, está bem inchado ao redor e ele não consegue fechar a pálpebra.", "origem": "text"}]
+[2026-09-28 03:45:17,137] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:45:17,137] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:45:17,137] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:45:17,137] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:45:17,995] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:45:17,996] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:45:19,173] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:45:19,174] INFO - ChatPipeline - Pipeline finalizado em 2.04s
+[2026-09-28 03:45:19,197] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu gato está com o olho bem vermelho e uma remela amarelada há um dia, mas o olho abre normal, ele não parece sentir dor nenhuma e continua comendo e brincando igual sempre.", "origem": "text"}]
+[2026-09-28 03:45:19,197] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:45:19,197] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:45:19,197] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:45:19,197] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:45:19,813] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:45:19,813] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:45:23,301] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:45:23,301] INFO - ChatPipeline - Pipeline finalizado em 4.10s
+[2026-09-28 03:45:23,322] INFO - ChatPipeline - Pergunta recebida: Meu gato está com o olho bem vermelho e uma remela amarelada há um dia, mas o olho abre normal, ele não parece sentir dor nenhuma e continua comendo e brincando igual sempre.
+[2026-09-28 03:45:23,323] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:45:23,323] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:45:23,323] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:45:23,323] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:45:23,937] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:45:23,937] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:45:25,076] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:45:25,076] INFO - ChatPipeline - Pipeline finalizado em 1.75s
+[2026-09-28 03:45:25,103] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu cachorro achou uma isca perto do muro do quintal ontem à noite, e hoje de manhã ele começou a babar muito, tremer o corpo inteiro e teve uma convulsão agora há pouco.", "origem": "text"}]
+[2026-09-28 03:45:25,103] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:45:25,103] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:45:25,103] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:45:25,103] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:45:25,702] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:45:25,703] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:45:27,107] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:45:27,107] INFO - ChatPipeline - Pipeline finalizado em 2.00s
+[2026-09-28 03:45:27,128] INFO - ChatPipeline - Pergunta recebida: Meu cachorro achou uma isca perto do muro do quintal ontem à noite, e hoje de manhã ele começou a babar muito, tremer o corpo inteiro e teve uma convulsão agora há pouco.
+[2026-09-28 03:45:27,128] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:45:27,128] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:45:27,128] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:45:27,129] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:45:27,414] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:45:27,414] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:45:29,234] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:45:29,234] INFO - ChatPipeline - Pipeline finalizado em 2.11s
+[2026-09-28 03:45:29,253] INFO - ChatPipeline - Pergunta recebida: Meu cachorro fica balançando a cabeça e coçando a orelha esquerda há uns dois dias, sem perder o equilíbrio nem cair pro lado, e está comendo e brincando normal.
+[2026-09-28 03:45:29,253] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:45:29,253] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:45:29,253] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:45:29,253] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:45:29,535] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:45:29,535] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:45:33,102] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:45:33,103] INFO - ChatPipeline - Pipeline finalizado em 3.85s
+[2026-09-28 03:45:33,125] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu cachorro fica balançando a cabeça e coçando a orelha esquerda há uns dois dias, sem perder o equilíbrio nem cair pro lado, e está comendo e brincando normal.", "origem": "text"}]
+[2026-09-28 03:45:33,125] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:45:33,125] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:45:33,125] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:45:33,125] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:45:34,040] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:45:34,040] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:45:35,380] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:45:35,380] INFO - ChatPipeline - Pipeline finalizado em 2.26s
+[2026-09-28 03:45:35,399] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "De repente a cabeça do meu cachorro ficou torta pro lado, ele não consegue andar direito, fica cambaleando, e os olhos dele estão tremendo sem parar.", "origem": "text"}]
+[2026-09-28 03:45:35,399] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:45:35,399] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:45:35,399] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:45:35,399] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:45:35,985] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:45:35,985] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:45:39,169] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:45:39,169] INFO - ChatPipeline - Pipeline finalizado em 3.77s
+[2026-09-28 03:45:39,192] INFO - ChatPipeline - Pergunta recebida: De repente a cabeça do meu cachorro ficou torta pro lado, ele não consegue andar direito, fica cambaleando, e os olhos dele estão tremendo sem parar.
+[2026-09-28 03:45:39,192] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:45:39,193] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:45:39,193] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:45:39,193] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:45:39,530] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:45:39,530] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:45:40,703] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:45:40,704] INFO - ChatPipeline - Pipeline finalizado em 1.51s
+[2026-09-28 03:45:40,733] INFO - ChatPipeline - Pergunta recebida: Meu cachorro comeu um pedacinho de bolo de aniversário ontem à tarde sem eu ver, mas hoje ele está do jeito normal dele, comendo a ração e brincando o dia inteiro.
+[2026-09-28 03:45:40,733] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:45:40,733] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:45:40,734] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:45:40,734] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:45:41,520] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:45:41,521] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:45:44,598] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:45:44,599] INFO - ChatPipeline - Pipeline finalizado em 3.87s
+[2026-09-28 03:45:44,639] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu cachorro comeu um pedacinho de bolo de aniversário ontem à tarde sem eu ver, mas hoje ele está do jeito normal dele, comendo a ração e brincando o dia inteiro.", "origem": "text"}]
+[2026-09-28 03:45:44,639] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:45:44,639] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:45:44,639] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:45:44,639] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:45:45,632] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:45:45,632] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:45:46,624] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (0 fonte(s) citada(s))
+[2026-09-28 03:45:46,624] INFO - ChatPipeline - Pipeline finalizado em 1.99s
+[2026-09-28 03:45:46,646] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Minha esposa deu meio comprimido de dipirona pro meu gato porque achou que ele estava com dor, e agora, um tempo depois, ele está vomitando e a gengiva dele parece meio arroxeada.", "origem": "text"}]
+[2026-09-28 03:45:46,646] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:45:46,646] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:45:46,646] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:45:46,646] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:45:47,262] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:45:47,262] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:45:50,688] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:45:50,688] INFO - ChatPipeline - Pipeline finalizado em 4.04s
+[2026-09-28 03:45:50,724] INFO - ChatPipeline - Pergunta recebida: Minha esposa deu meio comprimido de dipirona pro meu gato porque achou que ele estava com dor, e agora, um tempo depois, ele está vomitando e a gengiva dele parece meio arroxeada.
+[2026-09-28 03:45:50,724] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:45:50,724] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:45:50,725] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:45:50,725] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:45:51,244] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:45:51,245] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:45:52,495] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:45:52,495] INFO - ChatPipeline - Pipeline finalizado em 1.77s
+[2026-09-28 03:45:52,520] INFO - ChatPipeline - Pergunta recebida: Meu gato vomitou uma bola de pelo hoje de manhã, foi só uma vez, e ele já voltou a comer normalmente e está brincando.
+[2026-09-28 03:45:52,520] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:45:52,520] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:45:52,520] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:45:52,520] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:45:52,978] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:45:52,978] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:45:56,270] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:45:56,272] INFO - ChatPipeline - Pipeline finalizado em 3.75s
+[2026-09-28 03:45:56,295] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu gato vomitou uma bola de pelo hoje de manhã, foi só uma vez, e ele já voltou a comer normalmente e está brincando.", "origem": "text"}]
+[2026-09-28 03:45:56,295] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:45:56,295] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:45:56,295] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:45:56,295] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:45:57,253] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:45:57,253] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:45:58,487] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:45:58,488] INFO - ChatPipeline - Pipeline finalizado em 2.19s
+[2026-09-28 03:45:58,507] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu cachorro está bem paradinho, sem fazer escândalo, só que ele tentou vomitar várias vezes e não sai nada, e a barriga dele parece mais estufada do que o normal.", "origem": "text"}]
+[2026-09-28 03:45:58,507] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:45:58,507] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:45:58,507] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:45:58,507] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:45:59,092] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:45:59,093] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:46:04,723] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:46:04,723] INFO - ChatPipeline - Pipeline finalizado em 6.22s
+[2026-09-28 03:46:04,742] INFO - ChatPipeline - Pergunta recebida: Meu cachorro está bem paradinho, sem fazer escândalo, só que ele tentou vomitar várias vezes e não sai nada, e a barriga dele parece mais estufada do que o normal.
+[2026-09-28 03:46:04,742] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:46:04,742] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:46:04,743] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:46:04,743] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:46:05,397] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:46:05,397] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:46:06,616] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:46:06,617] INFO - ChatPipeline - Pipeline finalizado em 1.87s
+[2026-09-28 03:46:06,641] INFO - ChatPipeline - Pergunta recebida: Meu gato fica indo na caixinha de areia toda hora, fica um tempão fazendo força lá dentro e só sai bem pouquinho de xixi, e ele mia enquanto tenta.
+[2026-09-28 03:46:06,641] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:46:06,641] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:46:06,641] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:46:06,641] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:46:06,940] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:46:06,940] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:46:09,608] WARNING - GeminiLLMClient - Gemini 503; esperando 20s
+[2026-09-28 03:46:30,855] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:46:30,855] INFO - ChatPipeline - Pipeline finalizado em 24.22s
+[2026-09-28 03:46:30,876] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu gato fica indo na caixinha de areia toda hora, fica um tempão fazendo força lá dentro e só sai bem pouquinho de xixi, e ele mia enquanto tenta.", "origem": "text"}]
+[2026-09-28 03:46:30,876] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:46:30,876] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:46:30,876] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:46:30,876] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:46:31,816] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:46:31,817] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:46:33,554] INFO - ChatPipeline - Classificação: EMERGENCIA (0 fonte(s) citada(s))
+[2026-09-28 03:46:33,555] INFO - ChatPipeline - Pipeline finalizado em 2.68s
+[2026-09-28 03:46:33,576] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu gato está indo na caixinha de areia mais vezes que o normal nos últimos dois dias, mas sai bastante xixi de cada vez e ele não parece sentir dor nem fazer força.", "origem": "text"}]
+[2026-09-28 03:46:33,576] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:46:33,576] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:46:33,576] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:46:33,576] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:46:34,483] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:46:34,484] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:46:37,145] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:46:37,146] INFO - ChatPipeline - Pipeline finalizado em 3.57s
+[2026-09-28 03:46:37,169] INFO - ChatPipeline - Pergunta recebida: Meu gato está indo na caixinha de areia mais vezes que o normal nos últimos dois dias, mas sai bastante xixi de cada vez e ele não parece sentir dor nem fazer força.
+[2026-09-28 03:46:37,169] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:46:37,169] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:46:37,169] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:46:37,169] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:46:37,422] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:46:37,422] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:46:38,449] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:46:38,449] INFO - ChatPipeline - Pipeline finalizado em 1.28s
+[2026-09-28 03:46:38,463] INFO - ChatPipeline - Pergunta recebida: Minha cadela não é castrada, teve o cio faz umas cinco semanas, e hoje percebi um corrimento com pus saindo pela vulva dela; ela está bebendo bastante água e sem ânimo nenhum.
+[2026-09-28 03:46:38,463] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:46:38,463] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:46:38,463] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:46:38,463] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:46:38,785] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:46:38,785] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:46:42,454] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:46:42,454] INFO - ChatPipeline - Pipeline finalizado em 3.99s
+[2026-09-28 03:46:42,469] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Minha cadela não é castrada, teve o cio faz umas cinco semanas, e hoje percebi um corrimento com pus saindo pela vulva dela; ela está bebendo bastante água e sem ânimo nenhum.", "origem": "text"}]
+[2026-09-28 03:46:42,470] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:46:42,470] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:46:42,470] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:46:42,470] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:46:43,364] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:46:43,364] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:46:44,399] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:46:44,400] INFO - ChatPipeline - Pipeline finalizado em 1.93s
+[2026-09-28 03:46:44,419] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Minha cadela não castrada está com um sangramento pequeno pela vulva há dois dias, a vulva está um pouco inchada, mas ela continua ativa, comendo bem e brincando igual sempre.", "origem": "text"}]
+[2026-09-28 03:46:44,419] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:46:44,419] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:46:44,419] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:46:44,419] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:46:45,019] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:46:45,019] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:46:48,391] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:46:48,391] INFO - ChatPipeline - Pipeline finalizado em 3.97s
+[2026-09-28 03:46:50,155] INFO - ChatPipeline - Pergunta recebida: Minha cadela não castrada está com um sangramento pequeno pela vulva há dois dias, a vulva está um pouco inchada, mas ela continua ativa, comendo bem e brincando igual sempre.
+[2026-09-28 03:46:50,155] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:46:50,156] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:46:50,156] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:46:50,156] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:46:50,520] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:46:50,520] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:46:51,770] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:46:51,771] INFO - ChatPipeline - Pipeline finalizado em 1.61s
+[2026-09-28 03:46:51,788] INFO - ChatPipeline - Pergunta recebida: Meu gato de repente não consegue mais mexer as patas de trás, está gritando de dor e a respiração dele está bem acelerada.
+[2026-09-28 03:46:51,789] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:46:51,789] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:46:51,789] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:46:51,789] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:46:52,146] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:46:52,146] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:46:55,665] INFO - ChatPipeline - Classificação: EMERGENCIA (2 fonte(s) citada(s))
+[2026-09-28 03:46:55,665] INFO - ChatPipeline - Pipeline finalizado em 3.88s
+[2026-09-28 03:46:55,688] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu gato de repente não consegue mais mexer as patas de trás, está gritando de dor e a respiração dele está bem acelerada.", "origem": "text"}]
+[2026-09-28 03:46:55,688] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:46:55,688] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:46:55,689] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:46:55,689] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:46:56,391] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:46:56,392] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:46:57,713] INFO - ChatPipeline - Classificação: EMERGENCIA (0 fonte(s) citada(s))
+[2026-09-28 03:46:57,713] INFO - ChatPipeline - Pipeline finalizado em 2.02s
+[2026-09-28 03:46:57,734] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu cachorro idoso está com dificuldade para levantar já faz uns meses, mas depois que ele começa a andar parece melhorar, e ainda sobe a escadinha de casa devagarinho.", "origem": "text"}]
+[2026-09-28 03:46:57,734] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:46:57,734] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:46:57,734] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:46:57,734] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:46:58,410] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:46:58,410] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:47:01,400] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (0 fonte(s) citada(s))
+[2026-09-28 03:47:01,401] INFO - ChatPipeline - Pipeline finalizado em 3.67s
+[2026-09-28 03:47:01,415] INFO - ChatPipeline - Pergunta recebida: Meu cachorro idoso está com dificuldade para levantar já faz uns meses, mas depois que ele começa a andar parece melhorar, e ainda sobe a escadinha de casa devagarinho.
+[2026-09-28 03:47:01,415] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:47:01,415] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:47:01,415] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:47:01,415] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:47:02,084] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:47:02,085] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:47:03,116] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:47:03,117] INFO - ChatPipeline - Pipeline finalizado em 1.70s
+[2026-09-28 03:47:03,141] INFO - ChatPipeline - Pergunta recebida: Meu cachorro estava farejando perto de um matagal no quintal e ficou latindo muito de repente; quando voltou, a pata da frente estava mancando e começou a inchar bem rápido.
+[2026-09-28 03:47:03,141] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:47:03,141] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:47:03,141] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:47:03,141] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:47:03,426] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:47:03,426] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:47:07,199] INFO - ChatPipeline - Classificação: EMERGENCIA (2 fonte(s) citada(s))
+[2026-09-28 03:47:07,200] INFO - ChatPipeline - Pipeline finalizado em 4.06s
+[2026-09-28 03:47:07,219] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu cachorro estava farejando perto de um matagal no quintal e ficou latindo muito de repente; quando voltou, a pata da frente estava mancando e começou a inchar bem rápido.", "origem": "text"}]
+[2026-09-28 03:47:07,219] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:47:07,219] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:47:07,219] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:47:07,219] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:47:08,108] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:47:08,108] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:47:09,285] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:47:09,285] INFO - ChatPipeline - Pipeline finalizado em 2.07s
+[2026-09-28 03:47:10,730] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu gato não está muito legal hoje, acho que ele está meio estranho.", "origem": "text"}]
+[2026-09-28 03:47:10,731] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:47:10,731] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:47:10,731] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:47:10,731] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:47:11,322] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:47:11,323] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:47:12,330] WARNING - GeminiLLMClient - Gemini 429 (por minuto); esperando 5s
+[2026-09-28 03:47:17,679] WARNING - GeminiLLMClient - Gemini 429 (por minuto); esperando 10s
+[2026-09-28 03:47:28,123] WARNING - GeminiLLMClient - Gemini 503; esperando 20s
+[2026-09-28 03:47:52,074] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:47:52,076] INFO - ChatPipeline - Pipeline finalizado em 41.35s
+[2026-09-28 03:47:53,310] INFO - ChatPipeline - Pergunta recebida: Meu gato não está muito legal hoje, acho que ele está meio estranho.
+[2026-09-28 03:47:53,310] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:47:53,310] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:47:53,310] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:47:53,311] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:47:54,129] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:47:54,129] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:47:55,469] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:47:55,469] INFO - ChatPipeline - Pipeline finalizado em 2.16s
+[2026-09-28 03:47:55,486] INFO - ChatPipeline - Pergunta recebida: Meu cachorro vive destruindo os sapatos de casa e late muito toda vez que eu saio pra trabalhar, isso é normal ou eu deveria me preocupar?
+[2026-09-28 03:47:55,486] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:47:55,486] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:47:55,486] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:47:55,486] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:47:55,711] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:47:55,711] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:47:59,665] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:47:59,665] INFO - ChatPipeline - Pipeline finalizado em 4.18s
+[2026-09-28 03:47:59,686] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu cachorro vive destruindo os sapatos de casa e late muito toda vez que eu saio pra trabalhar, isso é normal ou eu deveria me preocupar?", "origem": "text"}]
+[2026-09-28 03:47:59,687] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:47:59,687] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:47:59,687] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:47:59,687] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:48:00,254] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:48:00,254] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:48:01,411] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:48:01,412] INFO - ChatPipeline - Pipeline finalizado em 1.73s
+[2026-09-28 03:48:02,853] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "O olho do meu cachorro saltou pra fora depois que ele brigou com outro cachorro agora à tarde, está bem inchado ao redor e ele não consegue fechar a pálpebra.", "origem": "text"}]
+[2026-09-28 03:48:02,853] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:48:02,853] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:48:02,853] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:48:02,853] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:48:03,845] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:48:03,845] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:48:05,400] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:48:05,401] INFO - ChatPipeline - Pipeline finalizado em 2.55s
+[2026-09-28 03:48:05,420] INFO - ChatPipeline - Pergunta recebida: O olho do meu cachorro saltou pra fora depois que ele brigou com outro cachorro agora à tarde, está bem inchado ao redor e ele não consegue fechar a pálpebra.
+[2026-09-28 03:48:05,420] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:48:05,420] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:48:05,420] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:48:05,420] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:48:05,730] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:48:05,730] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:48:07,035] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:48:07,035] INFO - ChatPipeline - Pipeline finalizado em 1.61s
+[2026-09-28 03:48:07,054] INFO - ChatPipeline - Pergunta recebida: Meu gato está com o olho bem vermelho e uma remela amarelada há um dia, mas o olho abre normal, ele não parece sentir dor nenhuma e continua comendo e brincando igual sempre.
+[2026-09-28 03:48:07,054] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:48:07,054] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:48:07,054] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:48:07,054] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:48:07,340] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:48:07,340] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:48:10,723] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:48:10,723] INFO - ChatPipeline - Pipeline finalizado em 3.67s
+[2026-09-28 03:48:10,742] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu gato está com o olho bem vermelho e uma remela amarelada há um dia, mas o olho abre normal, ele não parece sentir dor nenhuma e continua comendo e brincando igual sempre.", "origem": "text"}]
+[2026-09-28 03:48:10,742] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:48:10,742] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:48:10,742] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:48:10,742] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:48:11,388] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:48:11,388] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:48:12,598] INFO - ChatPipeline - Classificação: NAO_EMERGENCIA (1 fonte(s) citada(s))
+[2026-09-28 03:48:12,598] INFO - ChatPipeline - Pipeline finalizado em 1.86s

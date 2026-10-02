@@ -1,0 +1,114 @@
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 21886.73it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+[2026-10-02 03:53:06,060] INFO - ChatPipeline - Pergunta recebida: Meu gato tem muita dificuldade para respirar de boca aberta.
+[2026-10-02 03:53:06,060] INFO - ChatPipeline - Query Rewriting desativado
+[2026-10-02 03:53:06,060] INFO - ChatPipeline - Multi-Query desativado
+[2026-10-02 03:53:06,060] INFO - ChatPipeline - HyDE desativado
+[2026-10-02 03:53:06,060] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-10-02 03:53:18,965] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-10-02 03:53:18,966] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-10-02 03:53:20,419] INFO - ChatPipeline - Classificação: EMERGENCIA (1 fonte(s) citada(s))
+[2026-10-02 03:53:20,419] INFO - ChatPipeline - Pipeline finalizado em 14.36s
+[2026-10-02 03:53:20,444] INFO - ChatPipeline - Pergunta recebida: Relatos anteriores do tutor:
+Resposta do tutor: Meu cachorro está agindo de um jeito diferente hoje. Não consegui observar o que mudou.
+
+Pergunta do assistente (não é observação do tutor): Como ele reage quando você o chama?
+Resposta do tutor: Não sei dizer
+
+Relato atual do tutor:
+Pergunta do assistente (não é observação do tutor): Como ele reage quando você o chama?
+Resposta do tutor: Não reage ao chamado — Agora ele está caído, não consegue levantar e não reage quando eu o chamo e toco nele.
+[2026-10-02 03:53:20,444] INFO - ChatPipeline - Query Rewriting desativado
+[2026-10-02 03:53:20,444] INFO - ChatPipeline - Multi-Query desativado
+[2026-10-02 03:53:20,444] INFO - ChatPipeline - HyDE desativado
+[2026-10-02 03:53:20,444] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-10-02 03:53:20,866] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-10-02 03:53:20,866] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-10-02 03:53:47,589] INFO - ChatPipeline - Classificação: EMERGENCIA (0 fonte(s) citada(s))
+[2026-10-02 03:53:47,591] INFO - ChatPipeline - Pipeline finalizado em 27.15s
+[2026-10-02 03:53:47,641] INFO - ChatPipeline - Pergunta recebida: Relatos anteriores do tutor:
+Resposta do tutor: Meu cachorro está agindo de um jeito diferente hoje. Não consegui observar o que mudou.
+
+Pergunta do assistente (não é observação do tutor): Como ele reage quando você o chama?
+Resposta do tutor: Não sei dizer
+
+Relato atual do tutor:
+Pergunta do assistente (não é observação do tutor): Como ele reage quando você o chama?
+Resposta do tutor: Não reage ao chamado — Agora ele está caído, não consegue levantar e não reage quando eu o chamo e toco nele.
+[2026-10-02 03:53:47,641] INFO - ChatPipeline - Query Rewriting desativado
+[2026-10-02 03:53:47,641] INFO - ChatPipeline - Multi-Query desativado
+[2026-10-02 03:53:47,641] INFO - ChatPipeline - HyDE desativado
+[2026-10-02 03:53:47,641] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-10-02 03:53:48,878] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-10-02 03:53:48,879] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-10-02 03:53:49,960] INFO - ChatPipeline - Classificação: EMERGENCIA (0 fonte(s) citada(s))
+[2026-10-02 03:53:49,960] INFO - ChatPipeline - Pipeline finalizado em 2.32s
+[2026-10-02 03:53:49,984] INFO - ChatPipeline - Pergunta recebida: Relatos anteriores do tutor:
+Resposta do tutor: Meu cachorro está agindo de um jeito diferente hoje. Não consegui observar o que mudou.
+
+Pergunta do assistente (não é observação do tutor): Como ele reage quando você o chama?
+Resposta do tutor: Não sei dizer
+
+Relato atual do tutor:
+Pergunta do assistente (não é observação do tutor): Como ele reage quando você o chama?
+Resposta do tutor: Não reage ao chamado — Agora ele está caído, não consegue levantar e não reage quando eu o chamo e toco nele.
+[2026-10-02 03:53:49,984] INFO - ChatPipeline - Query Rewriting desativado
+[2026-10-02 03:53:49,984] INFO - ChatPipeline - Multi-Query desativado
+[2026-10-02 03:53:49,984] INFO - ChatPipeline - HyDE desativado
+[2026-10-02 03:53:49,984] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-10-02 03:53:50,267] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-10-02 03:53:50,267] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-10-02 03:53:54,595] INFO - ChatPipeline - Classificação: EMERGENCIA (0 fonte(s) citada(s))
+[2026-10-02 03:53:54,595] INFO - ChatPipeline - Pipeline finalizado em 4.61s
+[2026-10-02 03:53:54,612] INFO - ChatPipeline - Pergunta recebida: Relatos anteriores do tutor:
+Resposta do tutor: Meu cachorro está agindo de um jeito diferente hoje. Não consegui observar o que mudou.
+
+Pergunta do assistente (não é observação do tutor): Como ele reage quando você o chama?
+Resposta do tutor: Não sei dizer
+
+Relato atual do tutor:
+Pergunta do assistente (não é observação do tutor): Como ele reage quando você o chama?
+Resposta do tutor: Não reage ao chamado — Agora ele está caído, não consegue levantar e não reage quando eu o chamo e toco nele.
+[2026-10-02 03:53:54,612] INFO - ChatPipeline - Query Rewriting desativado
+[2026-10-02 03:53:54,612] INFO - ChatPipeline - Multi-Query desativado
+[2026-10-02 03:53:54,612] INFO - ChatPipeline - HyDE desativado
+[2026-10-02 03:53:54,612] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-10-02 03:53:54,922] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-10-02 03:53:54,922] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-10-02 03:53:57,841] INFO - ChatPipeline - Classificação: EMERGENCIA (0 fonte(s) citada(s))
+[2026-10-02 03:53:57,841] INFO - ChatPipeline - Pipeline finalizado em 3.23s
+[2026-10-02 03:53:57,862] INFO - ChatPipeline - Pergunta recebida: Relatos anteriores do tutor:
+Resposta do tutor: Meu cachorro está agindo de um jeito diferente hoje. Não consegui observar o que mudou.
+
+Pergunta do assistente (não é observação do tutor): Como ele reage quando você o chama?
+Resposta do tutor: Não sei dizer
+
+Relato atual do tutor:
+Pergunta do assistente (não é observação do tutor): Como ele reage quando você o chama?
+Resposta do tutor: Não reage ao chamado — Agora ele está caído, não consegue levantar e não reage quando eu o chamo e toco nele.
+[2026-10-02 03:53:57,862] INFO - ChatPipeline - Query Rewriting desativado
+[2026-10-02 03:53:57,862] INFO - ChatPipeline - Multi-Query desativado
+[2026-10-02 03:53:57,862] INFO - ChatPipeline - HyDE desativado
+[2026-10-02 03:53:57,863] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-10-02 03:53:58,264] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-10-02 03:53:58,264] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-10-02 03:54:22,695] INFO - ChatPipeline - Classificação: EMERGENCIA (0 fonte(s) citada(s))
+[2026-10-02 03:54:22,697] INFO - ChatPipeline - Pipeline finalizado em 24.83s
+[2026-10-02 03:54:22,729] INFO - ChatPipeline - Pergunta recebida: Relatos anteriores do tutor:
+Resposta do tutor: Meu cachorro está agindo de um jeito diferente hoje. Não consegui observar o que mudou.
+
+Pergunta do assistente (não é observação do tutor): Como ele reage quando você o chama?
+Resposta do tutor: Não sei dizer
+
+Relato atual do tutor:
+Pergunta do assistente (não é observação do tutor): Como ele reage quando você o chama?
+Resposta do tutor: Não reage ao chamado — Agora ele está caído, não consegue levantar e não reage quando eu o chamo e toco nele.
+[2026-10-02 03:54:22,729] INFO - ChatPipeline - Query Rewriting desativado
+[2026-10-02 03:54:22,729] INFO - ChatPipeline - Multi-Query desativado
+[2026-10-02 03:54:22,729] INFO - ChatPipeline - HyDE desativado
+[2026-10-02 03:54:22,729] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-10-02 03:54:23,565] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-10-02 03:54:23,565] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-10-02 03:54:24,618] INFO - ChatPipeline - Classificação: EMERGENCIA (0 fonte(s) citada(s))
+[2026-10-02 03:54:24,618] INFO - ChatPipeline - Pipeline finalizado em 1.89s

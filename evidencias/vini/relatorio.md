@@ -1810,3 +1810,57 @@ O núcleo técnico havia atingido um estado forte nos testes locais, com **373 t
 A conclusão mais importante deve ser preservada:
 
 > O pipeline estava tecnicamente preparado para receber mais documentos, mas a base curada ainda não estava pronta, pois não havia nenhum documento completamente aprovado. A próxima evolução deveria priorizar curadoria e equilíbrio temático, não somente aumento da quantidade de chunks.
+
+
+---
+
+## Rodada 17 — avaliação do sistema conversacional
+
+Foi solicitada uma nova rodada com performance, acurácia, comparação antes/depois
+e verificação da utilidade do formulário. O relatório completo e os dados estão
+em [2026-09-28-17-avaliacao-pre-triagem-conversacional.md](2026-09-28-17-avaliacao-pre-triagem-conversacional.md).
+
+Resultados: 145 turnos reais e 185 chamadas lógicas ao Gemini. Nos 18 casos de
+calibração repetidos duas vezes por versão, concordância caiu de 94,4% para 83,3%
+(34/36 para 30/36), com +36,0% de tokens. A ablação da consulta vetorial recuperou
+os dois casos que regrediram, sem alterar o código de produção.
+
+Nos oito casos conversacionais, sete formulários puderam ser respondidos
+verdadeiramente e terminaram conforme a expectativa; um omitia a opção normal.
+Oito controles sem dados ficaram INCERTO. Mesmos fatos em texto/formulário
+divergiram no caso c03, inclusive nas três rechecagens: fragilidade de consistência.
+Não há evidência de eficácia humana, nem melhora global de acurácia nesta rodada.
+
+Foram repetidos 330 testes backend, 221 de scripts e sete de navegador, além do
+build React; todos passaram. Isso verifica contratos/fluxos, não substitui a
+avaliação clínica. Correções prioritárias: separar metadados da busca, tornar a
+urgência invariável à origem e oferecer opções completas. Não houve mudança de
+fichas, rótulos, prova ou coleção ativa, nem commit/push.
+
+## Publicação do estado atual — 02/10/2026
+
+A equipe receberá o estado avaliado via commit/PR, por solicitação do usuário.
+Mantemos a proposta do formulário e documentamos que a regressão da classificação
+inicial não isola seu efeito. A ablação apontou interferência de instruções/JSON
+na recuperação; opções incompletas e sensibilidade à origem da resposta também
+continuam pendentes. Não houve correção silenciosa para mudar os números antes
+da publicação. Decisão completa na [rodada 19](2026-10-02-19-publicacao-estado-atual.md).
+
+## Correção das regressões e panorama histórico — 02/10/2026
+
+O usuário pediu correções e nova comparação antes de aprovar o PR #16. A consulta
+de recuperação passou a receber somente relatos do tutor, a origem do envio saiu
+das entradas de modelo, o progresso passou a considerar o complemento nos dois
+canais e as perguntas ganharam chaves/opções estáveis de um único assunto.
+
+Uma primeira execução recuperou 94,4% e recall emergencial de 100%, mas encontrou
+instabilidade no histórico antigo de um caso grave. O resultado negativo foi
+preservado e motivou a segunda execução com histórico clínico textual, mantendo
+o relato atual separado dos anteriores. Não alteramos casos, fichas, rótulos ou
+coleção para obter os resultados. O conjunto de 18 casos continua sendo calibração,
+com rótulos provisórios, e não prova clínica independente.
+
+Dados, decisões, comparação das duas tentativas e testes:
+[rodada 20](2026-10-02-20-correcao-regressoes-conversacionais.md).
+Comparação histórica, estado funcional e próximos passos:
+[rodada 21](2026-10-02-21-panorama-historico-e-etapa-atual.md).

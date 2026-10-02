@@ -475,6 +475,8 @@ class ChatPipeline:
         question: str,
         options: PipelineOptions | None = None,
         animal_context: str | None = None,
+        *,
+        retrieval_question: str | None = None,
     ) -> PipelineResult:
 
         start = time.perf_counter()
@@ -484,6 +486,7 @@ class ChatPipeline:
         logger.info(f"Pergunta recebida: {question}")
 
         question = question.strip()
+        search_question = question if retrieval_question is None else retrieval_question.strip()
 
         plan = QueryPlan(rewritten=question)
         ranked: list[RetrievedDocument] = []
@@ -501,7 +504,7 @@ class ChatPipeline:
                 query_start = time.perf_counter()
                 token = QUERY_TRACE.set(query_trace)
                 try:
-                    plan = self._build_queries(question, config)
+                    plan = self._build_queries(search_question, config)
                 finally:
                     QUERY_TRACE.reset(token)
                 query_seconds = time.perf_counter() - query_start
@@ -510,7 +513,7 @@ class ChatPipeline:
                 ranked, for_context, retrieval_info = self._retrieve(
                     plan.queries,
                     config,
-                    question,
+                    search_question,
                 )
                 retrieval_seconds = time.perf_counter() - retrieval_start
 
