@@ -1,0 +1,304 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 19625.82it/s]
+Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+[2026-09-28 03:48:27,200] INFO - ChatPipeline - Pergunta recebida: Meu gato está diferente quando vai à caixa de areia. Não consegui ver o que aconteceu.
+[2026-09-28 03:48:27,200] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:48:27,200] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:48:27,200] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:48:27,200] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:48:43,205] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:48:43,207] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:48:45,488] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:48:45,489] INFO - ChatPipeline - Pipeline finalizado em 18.29s
+[2026-09-28 03:48:45,514] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu gato está diferente quando vai à caixa de areia. Não consegui ver o que aconteceu.", "origem": "text"}]
+[2026-09-28 03:48:45,514] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:48:45,514] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:48:45,514] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:48:45,514] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:48:46,755] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:48:46,756] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:48:47,740] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:48:47,740] INFO - ChatPipeline - Pipeline finalizado em 2.23s
+[2026-09-28 03:48:49,116] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu gato está diferente quando vai à caixa de areia. Não consegui ver o que aconteceu.", "origem": "text"}, {"pergunta_respondida": "O gato esta conseguindo urinar normalmente quando vai a caixa de areia?", "resposta_do_tutor": "Não sei dizer", "origem": "text"}]
+[2026-09-28 03:48:49,116] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:48:49,116] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:48:49,116] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:48:49,116] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:48:49,902] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:48:49,902] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:48:51,761] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:48:51,761] INFO - ChatPipeline - Pipeline finalizado em 2.64s
+[2026-09-28 03:48:53,117] INFO - ChatPipeline - Pergunta recebida: Meu gato está com um jeito diferente de respirar, mas não consegui observar como está.
+[2026-09-28 03:48:53,117] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:48:53,117] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:48:53,117] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:48:53,118] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:48:53,672] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:48:53,672] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:48:54,853] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:48:54,854] INFO - ChatPipeline - Pipeline finalizado em 1.74s
+[2026-09-28 03:48:54,869] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu gato está com um jeito diferente de respirar, mas não consegui observar como está.", "origem": "text"}]
+[2026-09-28 03:48:54,869] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:48:54,869] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:48:54,869] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:48:54,869] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:48:55,427] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:48:55,427] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:48:56,381] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:48:56,382] INFO - ChatPipeline - Pipeline finalizado em 1.51s
+[2026-09-28 03:48:57,972] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu gato está com um jeito diferente de respirar, mas não consegui observar como está.", "origem": "text"}, {"pergunta_respondida": "O gato esta respirando de boca aberta ou fazendo esforco visivel com a barriga?", "resposta_do_tutor": "Não sei dizer", "origem": "text"}]
+[2026-09-28 03:48:57,972] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:48:57,973] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:48:57,973] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:48:57,973] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:48:58,745] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:48:58,745] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:49:00,515] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:49:00,515] INFO - ChatPipeline - Pipeline finalizado em 2.54s
+[2026-09-28 03:49:01,884] INFO - ChatPipeline - Pergunta recebida: Meu cachorro está agindo de um jeito diferente hoje. Não consegui observar o que mudou.
+[2026-09-28 03:49:01,885] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:49:01,885] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:49:01,885] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:49:01,885] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:49:02,497] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:49:02,497] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:49:03,637] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:49:03,638] INFO - ChatPipeline - Pipeline finalizado em 1.75s
+[2026-09-28 03:49:03,662] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu cachorro está agindo de um jeito diferente hoje. Não consegui observar o que mudou.", "origem": "text"}]
+[2026-09-28 03:49:03,662] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:49:03,662] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:49:03,662] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:49:03,662] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:49:04,230] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:49:04,231] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:49:05,208] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:49:05,208] INFO - ChatPipeline - Pipeline finalizado em 1.55s
+[2026-09-28 03:49:06,759] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu cachorro está agindo de um jeito diferente hoje. Não consegui observar o que mudou.", "origem": "text"}, {"pergunta_respondida": "Ele recusou alguma refeicao ou cometeu menos do que o habitual?", "resposta_do_tutor": "Não sei dizer", "origem": "text"}]
+[2026-09-28 03:49:06,759] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:49:06,759] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:49:06,759] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:49:06,759] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:49:07,965] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:49:07,965] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:49:09,305] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:49:09,306] INFO - ChatPipeline - Pipeline finalizado em 2.55s
+[2026-09-28 03:49:10,612] INFO - ChatPipeline - Pergunta recebida: Meu gato está diferente quando entra na caixa de areia. Não consegui observar direito.
+[2026-09-28 03:49:10,615] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:49:10,616] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:49:10,616] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:49:10,617] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:49:11,531] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:49:11,532] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:49:12,575] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:49:12,576] INFO - ChatPipeline - Pipeline finalizado em 1.96s
+[2026-09-28 03:49:12,600] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu gato está diferente quando entra na caixa de areia. Não consegui observar direito.", "origem": "text"}]
+[2026-09-28 03:49:12,601] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:49:12,601] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:49:12,601] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:49:12,601] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:49:13,197] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:49:13,197] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:49:13,414] WARNING - GeminiLLMClient - Gemini 429 (por minuto); esperando 5s
+[2026-09-28 03:49:18,744] WARNING - GeminiLLMClient - Gemini 429 (por minuto); esperando 10s
+[2026-09-28 03:49:30,188] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:49:30,189] INFO - ChatPipeline - Pipeline finalizado em 17.59s
+[2026-09-28 03:49:31,866] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu gato está diferente quando entra na caixa de areia. Não consegui observar direito.", "origem": "text"}, {"pergunta_respondida": "O gato consegue urinar na caixa de areia ou apenas faz esforço sem sair urina?", "resposta_do_tutor": "Não sei dizer", "origem": "text"}]
+[2026-09-28 03:49:31,866] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:49:31,866] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:49:31,866] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:49:31,867] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:49:33,775] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:49:33,775] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:49:34,700] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:49:34,700] INFO - ChatPipeline - Pipeline finalizado em 2.83s
+[2026-09-28 03:49:36,150] INFO - ChatPipeline - Pergunta recebida: Meu cachorro parece diferente perto da comida. Não consegui observar o que mudou.
+[2026-09-28 03:49:36,150] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:49:36,151] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:49:36,151] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:49:36,151] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:49:36,872] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:49:36,872] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:49:37,868] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:49:37,869] INFO - ChatPipeline - Pipeline finalizado em 1.72s
+[2026-09-28 03:49:37,890] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu cachorro parece diferente perto da comida. Não consegui observar o que mudou.", "origem": "text"}]
+[2026-09-28 03:49:37,890] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:49:37,890] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:49:37,890] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:49:37,890] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:49:38,424] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:49:38,424] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:49:39,699] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:49:39,700] INFO - ChatPipeline - Pipeline finalizado em 1.81s
+[2026-09-28 03:49:40,955] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu cachorro parece diferente perto da comida. Não consegui observar o que mudou.", "origem": "text"}, {"pergunta_respondida": "O cão recusou completamente a refeição ou apenas comeu menos?", "resposta_do_tutor": "Não sei dizer", "origem": "text"}]
+[2026-09-28 03:49:40,955] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:49:40,955] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:49:40,955] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:49:40,955] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:49:41,642] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:49:41,642] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:49:43,392] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:49:43,392] INFO - ChatPipeline - Pipeline finalizado em 2.44s
+[2026-09-28 03:49:44,537] INFO - ChatPipeline - Pergunta recebida: Meu cachorro está estranho, acho que alguma coisa mudou na barriga, mas não observei direito.
+[2026-09-28 03:49:44,538] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:49:44,538] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:49:44,538] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:49:44,538] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:49:45,108] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:49:45,108] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:49:46,159] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:49:46,160] INFO - ChatPipeline - Pipeline finalizado em 1.62s
+[2026-09-28 03:49:46,180] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu cachorro está estranho, acho que alguma coisa mudou na barriga, mas não observei direito.", "origem": "text"}]
+[2026-09-28 03:49:46,180] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:49:46,180] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:49:46,180] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:49:46,180] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:49:46,950] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:49:46,950] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:49:47,897] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:49:47,897] INFO - ChatPipeline - Pipeline finalizado em 1.72s
+[2026-09-28 03:49:50,062] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu cachorro está estranho, acho que alguma coisa mudou na barriga, mas não observei direito.", "origem": "text"}, {"pergunta_respondida": "Ele recusou alguma refeicao ou apresentou vomito?", "resposta_do_tutor": "Não sei dizer", "origem": "text"}]
+[2026-09-28 03:49:50,063] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:49:50,063] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:49:50,063] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:49:50,063] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:49:50,857] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:49:50,857] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:49:52,004] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:49:52,004] INFO - ChatPipeline - Pipeline finalizado em 1.94s
+[2026-09-28 03:49:53,352] INFO - ChatPipeline - Pergunta recebida: Meu gato está estranho hoje. Não consigo explicar o que mudou.
+[2026-09-28 03:49:53,352] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:49:53,352] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:49:53,352] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:49:53,352] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:49:53,841] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:49:53,842] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:49:55,020] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:49:55,020] INFO - ChatPipeline - Pipeline finalizado em 1.67s
+[2026-09-28 03:49:55,040] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu gato está estranho hoje. Não consigo explicar o que mudou.", "origem": "text"}]
+[2026-09-28 03:49:55,040] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:49:55,040] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:49:55,040] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:49:55,040] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:49:55,595] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:49:55,595] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:49:56,507] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:49:56,508] INFO - ChatPipeline - Pipeline finalizado em 1.47s
+[2026-09-28 03:49:56,841] WARNING - GeminiLLMClient - Gemini 429 (por minuto); esperando 5s
+[2026-09-28 03:50:02,125] WARNING - GeminiLLMClient - Gemini 429 (por minuto); esperando 10s
+[2026-09-28 03:50:12,449] WARNING - GeminiLLMClient - Gemini 429 (por minuto); esperando 20s
+[2026-09-28 03:50:33,721] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu gato está estranho hoje. Não consigo explicar o que mudou.", "origem": "text"}, {"pergunta_respondida": "Ele recusou alguma refeição ou está comendo menos que o habitual?", "resposta_do_tutor": "Não sei dizer", "origem": "text"}]
+[2026-09-28 03:50:33,722] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:50:33,722] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:50:33,722] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:50:33,722] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:50:35,010] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:50:35,011] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:50:36,168] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:50:36,169] INFO - ChatPipeline - Pipeline finalizado em 2.45s
+[2026-09-28 03:50:37,504] INFO - ChatPipeline - Pergunta recebida: Meu cachorro não parece ele mesmo hoje, mas não observei nenhum detalhe.
+[2026-09-28 03:50:37,504] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:50:37,504] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:50:37,504] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:50:37,504] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:50:37,743] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:50:37,744] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:50:38,638] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:50:38,638] INFO - ChatPipeline - Pipeline finalizado em 1.13s
+[2026-09-28 03:50:38,658] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu cachorro não parece ele mesmo hoje, mas não observei nenhum detalhe.", "origem": "text"}]
+[2026-09-28 03:50:38,658] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:50:38,658] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:50:38,658] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:50:38,658] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:50:39,191] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:50:39,191] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:50:40,271] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:50:40,271] INFO - ChatPipeline - Pipeline finalizado em 1.61s
+[2026-09-28 03:50:41,511] INFO - ChatPipeline - Pergunta recebida: Pré-triagem conversacional v1. Use somente relatos do tutor abaixo.
+As perguntas identificam o assunto da resposta, não afirmam presença de sintomas.
+Não perguntado, não sei e não observei são desconhecidos, nunca ausência.
+Não complete espécie, duração, intensidade ou histórico. Não conte sintomas:
+um único sinal grave pode bastar; vários vagos podem permanecer INCERTO.
+[{"pergunta_respondida": null, "resposta_do_tutor": "Meu cachorro não parece ele mesmo hoje, mas não observei nenhum detalhe.", "origem": "text"}, {"pergunta_respondida": "Ele comeu normalmente hoje ou recusou alguma refeicao?", "resposta_do_tutor": "Não sei dizer", "origem": "text"}]
+[2026-09-28 03:50:41,511] INFO - ChatPipeline - Query Rewriting desativado
+[2026-09-28 03:50:41,511] INFO - ChatPipeline - Multi-Query desativado
+[2026-09-28 03:50:41,511] INFO - ChatPipeline - HyDE desativado
+[2026-09-28 03:50:41,511] INFO - RetrievalClient - Consultando o ChromaDB
+[2026-09-28 03:50:42,686] INFO - RetrievalClient - 50 candidatos recuperados
+[2026-09-28 03:50:42,686] INFO - ChatPipeline - 50 documentos recuperados (vetor)
+[2026-09-28 03:50:44,245] INFO - ChatPipeline - Classificação: INCERTO (0 fonte(s) citada(s))
+[2026-09-28 03:50:44,245] INFO - ChatPipeline - Pipeline finalizado em 2.73s

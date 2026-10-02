@@ -162,7 +162,7 @@ def resolve(
             settings.LLM_TEMPERATURE,
         ),
         seed=_pick(options.seed, settings.LLM_SEED),
-        num_ctx=settings.LLM_NUM_CTX,
+        num_ctx=_pick(options.num_ctx, settings.LLM_NUM_CTX),
         num_predict=num_predict,
         think=_pick(options.think, settings.LLM_THINK),
     )

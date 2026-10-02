@@ -6,6 +6,7 @@ import { PetForm } from "../components/PetForm";
 import { ClinicFinder } from "../components/ClinicFinder";
 import { ShareReview } from "../components/ShareReview";
 import { CaseView } from "../components/CaseView";
+import { FollowupCard } from "../components/FollowupCard";
 import { VoiceInput } from "../components/VoiceInput";
 
 export function TutorFlow({
@@ -41,6 +42,7 @@ export function TutorFlow({
   const [end, setEnd] = useState(true);
   const [moreBusy, setMoreBusy] = useState(false);
   const bottom = useRef<HTMLDivElement>(null);
+  const sending = useRef(false);
   const pending = useRef<{ content: string; id: string } | null>(null);
   async function refresh() {
     try {
@@ -126,9 +128,22 @@ export function TutorFlow({
     pending.current = null;
     navigate("chat");
   }
-  async function send(content = draft) {
-    if (!content.trim() || busy || conversation?.status === "processing")
+  async function send(
+    content = draft,
+    answer: {
+      origin?: "text" | "form";
+      question_id?: string;
+      selected_option?: string;
+    } = {},
+  ) {
+    if (
+      !content.trim() ||
+      sending.current ||
+      busy ||
+      conversation?.status === "processing"
+    )
       return;
+    sending.current = true;
     setBusy(true);
     setError("");
     try {
@@ -143,6 +158,7 @@ export function TutorFlow({
         pending.current.id,
         token,
         provider,
+        answer,
       );
       setConversation(updated);
       setDraft("");
@@ -151,6 +167,7 @@ export function TutorFlow({
     } catch (e) {
       setError(errorText(e));
     } finally {
+      sending.current = false;
       setBusy(false);
     }
   }
@@ -350,6 +367,28 @@ export function TutorFlow({
                     <div className="message-content">
                       {m.triage ? m.triage.justificativa : m.content}
                     </div>
+                    {m.origin === "form" && (
+                      <small>Resposta enviada pelo formulário</small>
+                    )}
+                    {m.followup && (
+                      <FollowupCard
+                        key={m.followup.question_id || m.id}
+                        followup={m.followup}
+                        disabled={
+                          busy ||
+                          processing ||
+                          conversation.status === "failed" ||
+                          m.id !== conversation.messages.at(-1)?.id
+                        }
+                        onSend={(content, option) =>
+                          send(content, {
+                            origin: "form",
+                            question_id: m.followup?.question_id,
+                            selected_option: option,
+                          })
+                        }
+                      />
+                    )}
                     {m.triage && (
                       <div
                         className={

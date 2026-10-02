@@ -111,10 +111,15 @@ export const api = {
     request_id: string,
     token: string,
     attendant_provider: "gemini" | "ollama" = "gemini",
+    answer: {
+      origin?: "text" | "form";
+      question_id?: string;
+      selected_option?: string;
+    } = {},
   ) =>
     request<Conversation>(
       "/workspace/conversations/" + id + "/messages",
-      body({ content, request_id, attendant_provider }),
+      body({ content, request_id, attendant_provider, ...answer }),
       token,
     ),
   voice: (file: Blob) => {

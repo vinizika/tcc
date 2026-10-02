@@ -20,6 +20,9 @@ class TurnInput(BaseModel):
     model_config = ConfigDict(str_strip_whitespace=True)
     content: str = Field(min_length=1, max_length=4000)
     request_id: str = Field(min_length=8, max_length=100)
+    origin: Literal["text", "form"] = "text"
+    question_id: str | None = None
+    selected_option: str | None = Field(default=None, max_length=150)
     attendant_provider: Literal["gemini", "ollama"] | None = None
 
 

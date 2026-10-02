@@ -1396,3 +1396,44 @@ Não recomendo adicionar novos documentos ainda. Primeiro devem ser resolvidos:
 5. validação do mapa e dos casos de recuperação.
 
 A implementação técnica estava avançada e testada, mas nunca chegou ao GitHub remoto.
+
+
+---
+
+## Registro de 28/09/2026 — nova rodada de testes solicitada
+
+Foi solicitada uma nova rodada com performance, acurácia, comparação antes/depois
+e verificação da utilidade do formulário. O relatório completo e os dados estão
+em [2026-09-28-17-avaliacao-pre-triagem-conversacional.md](2026-09-28-17-avaliacao-pre-triagem-conversacional.md).
+
+Resultados: 145 turnos reais e 185 chamadas lógicas ao Gemini. Nos 18 casos de
+calibração repetidos duas vezes por versão, concordância caiu de 94,4% para 83,3%
+(34/36 para 30/36), com +36,0% de tokens. A ablação da consulta vetorial recuperou
+os dois casos que regrediram, sem alterar o código de produção.
+
+Nos oito casos conversacionais, sete formulários puderam ser respondidos
+verdadeiramente e terminaram conforme a expectativa; um omitia a opção normal.
+Oito controles sem dados ficaram INCERTO. Mesmos fatos em texto/formulário
+divergiram no caso c03, inclusive nas três rechecagens: fragilidade de consistência.
+Não há evidência de eficácia humana, nem melhora global de acurácia nesta rodada.
+
+Foram repetidos 330 testes backend, 221 de scripts e sete de navegador, além do
+build React; todos passaram. Isso verifica contratos/fluxos, não substitui a
+avaliação clínica. Correções prioritárias: separar metadados da busca, tornar a
+urgência invariável à origem e oferecer opções completas. Não houve mudança de
+fichas, rótulos, prova ou coleção ativa, nem commit/push.
+
+### Retomada de 01/10/2026
+
+A pedido do usuário, foi retomado o fechamento da avaliação. A coleta já estava
+completa: hashes conferidos, resumo regenerado identicamente e quatro testes de
+métricas repetidos com sucesso. Nenhuma nova medição com Gemini foi apresentada
+como se tivesse sido feita hoje. Ver [rodada 18](2026-10-01-18-fechamento-avaliacao-conversacional.md).
+
+### Decisão de publicação — 02/10/2026
+
+O usuário solicitou documentar a interpretação dos resultados e commitar o
+sistema como está, abrindo PR para a equipe. A queda medida pertence ao conjunto
+das mudanças na classificação inicial, não é prova de que o formulário isolado
+piorou o sistema. Busca, opções e consistência seguem como pendências explícitas.
+O frontend anterior já está na main pelo PR #15. Ver [rodada 19](2026-10-02-19-publicacao-estado-atual.md).

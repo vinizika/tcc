@@ -1,0 +1,119 @@
+{
+  "c01": {
+    "conversation_id": "7df38d7b-5f62-4109-88ec-6465476712c7",
+    "question": "Você consegue notar se sai alguma quantidade de urina ou se ele passa muito tempo na caixa sem urinar?",
+    "options": [
+      "Sai apenas algumas gotas",
+      "Não sai nada de urina",
+      "Parece urinar normalmente",
+      "Não observei",
+      "Não sei dizer"
+    ],
+    "option": "Não sai nada de urina",
+    "complement": "Ele tenta fazer xixi repetidamente há oito horas, faz força e não sai nenhuma gota de urina.",
+    "note": "Preset compatível com ausência de urina; complemento preserva esforço e duração congelados.",
+    "direct_preset_matches_fact": true
+  },
+  "c02": {
+    "conversation_id": "d7103481-98b0-43e6-a8b2-a8817db27431",
+    "question": "O gato esta com a lingua ou gengiva roxa ou azulada?",
+    "options": [
+      "Sim, lingua ou gengiva roxa ou azulada",
+      "Nao, coloracao normal",
+      "Não observei",
+      "Não sei dizer"
+    ],
+    "option": "Não observei",
+    "complement": "Ele respira com a boca aberta, faz muita força e não consegue se deitar de tanto esforço para respirar.",
+    "note": "Cor da mucosa não foi fornecida; complemento descreve apenas esforço respiratório já congelado.",
+    "direct_preset_matches_fact": false
+  },
+  "c03": {
+    "conversation_id": "2c940f2b-939a-4137-b3e8-b88ad3e51013",
+    "question": "Ele recusou a ultima refeicao oferecida?",
+    "options": [
+      "Sim, recusou",
+      "Comeu tudo normalmente",
+      "Comeu apenas uma pequena quantidade",
+      "Não observei",
+      "Não sei dizer"
+    ],
+    "option": "Não observei",
+    "complement": "Agora ele está caído, não consegue levantar e não reage quando eu o chamo e toco nele.",
+    "note": "Ingestão alimentar não foi fornecida; complemento descreve apenas prostração/ausência de resposta já congeladas.",
+    "direct_preset_matches_fact": false
+  },
+  "c04": {
+    "conversation_id": "f9e90610-7114-4b5d-8481-ca3245792ce5",
+    "question": "Você consegue notar se sai urina quando ele vai à caixa de areia?",
+    "options": [
+      "Sim, sai urina normalmente",
+      "Sim, sai apenas algumas gotas com esforço",
+      "Não sai nada de urina",
+      "Não observei",
+      "Não sei dizer"
+    ],
+    "option": "Sim, sai urina normalmente",
+    "complement": "Eu observei agora: ele urina uma quantidade normal, sem fazer força nem chorar. Está comendo e brincando normalmente, sem vômitos ou mudança na respiração.",
+    "note": "Opção compatível com fato congelado; complemento preserva negativas e atividade normais.",
+    "direct_preset_matches_fact": true
+  },
+  "c05": {
+    "conversation_id": "1771e24e-5b9c-42de-98f3-08ae191d8222",
+    "question": "O cão recusou completamente a refeição ou apenas comeu menos?",
+    "options": [
+      "Recusou completamente",
+      "Comeu menos que o habitual",
+      "Não observei",
+      "Não sei dizer"
+    ],
+    "option": null,
+    "complement": "Observei agora que ele comeu a porção habitual inteira e bebeu água normalmente. Está ativo, brincando, sem vômitos, diarreia, dor ou dificuldade para respirar.",
+    "note": "Nenhuma opção permite responder que comeu normalmente. Não selecionar desconhecimento ou alteração falsos; usar texto livre com o fato congelado.",
+    "direct_preset_matches_fact": false
+  },
+  "c06": {
+    "conversation_id": "b3d92b60-3f23-4ced-baba-3e1229df0983",
+    "question": "O cachorro comeu normalmente hoje ou apresentou algum episódio de vômito?",
+    "options": [
+      "Comeu tudo normalmente sem vômito",
+      "Comeu menos que o habitual",
+      "Recusou a refeição e vomitou",
+      "Não observei",
+      "Não sei dizer"
+    ],
+    "option": "Comeu tudo normalmente sem vômito",
+    "complement": "Ele vomitou uma única vez ontem depois de comer depressa. Desde então come e bebe normalmente, está ativo, não tem dor, não vomitou mais e não teve diarreia.",
+    "note": "A pergunta se refere a hoje; hoje está comendo normalmente e não houve novos vômitos. O complemento preserva o vômito isolado de ontem.",
+    "direct_preset_matches_fact": true
+  },
+  "c07": {
+    "conversation_id": "9cc170f4-3fb5-4c2c-999d-5bc8aa885284",
+    "question": "Ele recusou alguma refeicao ou esta comendo menos que o habitual?",
+    "options": [
+      "Comeu tudo normalmente",
+      "Recusou refeicoes",
+      "Comeu menos que o habitual",
+      "Não observei",
+      "Não sei dizer"
+    ],
+    "option": "Não observei",
+    "complement": "",
+    "note": "Não há observações adicionais; permanecer desconhecido.",
+    "direct_preset_matches_fact": false
+  },
+  "c08": {
+    "conversation_id": "84de8145-5a59-4779-ba17-ce06f8951977",
+    "question": "Ele recusou alguma refeicao hoje?",
+    "options": [
+      "Sim, recusou",
+      "Comeu normalmente",
+      "Não observei",
+      "Não sei dizer"
+    ],
+    "option": "Não observei",
+    "complement": "",
+    "note": "Não há observações adicionais; permanecer desconhecido.",
+    "direct_preset_matches_fact": false
+  }
+}

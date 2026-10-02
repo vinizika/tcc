@@ -15,6 +15,15 @@ e re-ranking.
 
 ## Rodadas
 
+- [Rodada 19 — disponibilização do estado atual (02/10)](2026-10-02-19-publicacao-estado-atual.md): decisão de commit/PR, interpretação dos resultados e limitações conhecidas preservadas.
+
+- [Rodada 18 — fechamento e conferência da avaliação (01/10)](2026-10-01-18-fechamento-avaliacao-conversacional.md): hashes conferidos, métricas regeneradas e quatro testes de agregação repetidos.
+
+- [Rodada 17 — avaliação antes/depois da pré-triagem conversacional (28/09)](2026-09-28-17-avaliacao-pre-triagem-conversacional.md):
+  145 turnos reais, 185 chamadas Gemini, regressão de concordância de 94,4% para
+  83,3%, auditoria do formulário, ablação de recuperação e testes de consistência.
+  [Dados, métricas e transcrições](2026-09-28-avaliacao-conversacional/README.md).
+
 - [Integração React + backend do João em e365f3e (27/09)](2026-09-27-16-integracao-react-backend-joao.md):
   conflitos resolvidos, fichas/Gemini reais, 315 testes backend, 217 scripts
   e cinco fluxos de navegador validados.

@@ -58,7 +58,7 @@ class ReferralService:
             from app.services.workspace_service import WorkspaceService
             conversation = WorkspaceService.get(principal, data.conversation_id)
             responses = [m for m in conversation["messages"] if m.get("triage")]
-            if not responses or conversation["status"] == "processing":
+            if not responses or conversation["status"] != "idle":
                 raise HTTPException(409, "Aguarde uma resposta de pré-triagem antes de compartilhar.")
             # Automatic content comes from the stored answer, never a client claim.
             latest = responses[-1]["triage"]
@@ -68,7 +68,7 @@ class ReferralService:
             data.triage.recommendation = latest["recomendacao"]
             data.triage.original_report = next(m["content"] for m in conversation["messages"] if m["role"] == "tutor")
             if data.share_full_conversation:
-                shared_conversation = [{k: m[k] for k in ("id", "role", "content", "created_at", "triage") if k in m}
+                shared_conversation = [{k: m[k] for k in ("id", "role", "content", "created_at", "triage", "answer_to", "origin", "selected_option") if k in m}
                                        for m in conversation["messages"]]
         elif data.share_full_conversation:
             raise HTTPException(422, "Selecione a conversa que deseja compartilhar.")

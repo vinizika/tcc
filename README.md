@@ -357,3 +357,10 @@ uma dinâmica combinada. O mapa completo está em
 
 Detalhes, fronteiras e acordos em
 [`docs/divisao-de-trabalho.md`](docs/divisao-de-trabalho.md).
+
+### Pré-triagem conversacional
+
+Casos `INCERTO` no workspace agora podem receber uma pergunta objetiva e,
+quando necessário, um formulário curto persistente. Veja a
+[operação e máquina de estados](docs/pre-triagem-conversacional.md) e a
+[evidência da rodada](evidencias/vini/2026-09-28-pre-triagem-conversacional.md).

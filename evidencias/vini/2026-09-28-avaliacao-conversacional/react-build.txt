@@ -1,0 +1,16 @@
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 45 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                              0.73 kB │ gzip:  0.44 kB
+dist/assets/manrope-vietnamese-wght-normal-usUDDRr7.woff2    8.52 kB
+dist/assets/manrope-greek-wght-normal-DL7QRZyv.woff2         9.44 kB
+dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2     14.50 kB
+dist/assets/manrope-latin-ext-wght-normal-Ch3YOpNY.woff2    15.12 kB
+dist/assets/dm-sans-latin-ext-wght-normal-BOFOeGcA.woff2    18.23 kB
+dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2        24.84 kB
+dist/assets/dm-sans-latin-wght-normal-Xz1IZZA0.woff2        36.93 kB
+dist/assets/index--uQ6ReXc.css                              33.42 kB │ gzip: 10.48 kB
+dist/assets/index-CDQ6cel7.js                              246.42 kB │ gzip: 76.42 kB
+✓ built in 2.06s

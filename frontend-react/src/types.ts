@@ -31,7 +31,18 @@ export type Pet = {
   breed?: string | null;
   relevant_history?: string | null;
 };
+export type Followup = {
+  state: "asking" | "form" | "completed" | "insufficient";
+  question_id?: string;
+  question?: string | null;
+  options: string[];
+  guidance?: string;
+};
 export type ChatMessage = {
+  followup?: Followup;
+  origin?: "text" | "form";
+  question_id?: string;
+  selected_option?: string;
   id: string;
   role: "tutor" | "assistant";
   content: string;
@@ -59,6 +70,7 @@ export type ChatMessage = {
   } | null;
 };
 export type Conversation = {
+  followup?: Followup;
   id: string;
   title: string;
   pet_id: string | null;

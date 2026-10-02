@@ -1,0 +1,43 @@
+{
+  "application_and_research_data_unchanged": true,
+  "checked_application_and_data_files": 97,
+  "frozen_inputs_unchanged": {
+    "cases.json": true,
+    "baseline_workspace.py": true
+  },
+  "collection_names": [
+    "veterinary_documents__20260925T061349534255Z__280baf13"
+  ],
+  "completed_real_turns": 145,
+  "logical_llm_calls": 185,
+  "secret_scan_matches": [],
+  "final_tools_sha256": {
+    "scripts/run_conversation_eval.py": "890632415a71e55e7ae829f241328a3c4a08bf82618bad87cee70d678269601e",
+    "scripts/report_conversation_eval.py": "5493421cf3965916559afc827cbbb02abcf8aabac2a576b17cd98cca595aa71b",
+    "scripts/tests/test_report_conversation_eval.py": "4dd593016811c49c8e42ed656c90a68a00e81c86d2f30cd540ec57b3ad5f0802"
+  },
+  "artifacts_sha256": {
+    "finish-runtime.log": "807c81a409d1c9e4f3c5ed4666b8ecfab450e7c5c98a201af6693e7d9e957bbc",
+    "summary.json": "9d812b70dfbda1baad9deeaa830bc56262d2932bb073d09ceaf91e8368619685",
+    "auditoria-formularios.csv": "cac381c250555e8e80d994a77ed337af5187118502b764fee915dda9971c512a",
+    "runtime-versions.json": "3b4689644d9f37f96a2db99679e9a2d7601d67f5174d89222b11967fe8128ece",
+    "prepare-runtime.log": "ecb604b0f900fac4cb13b4a91e27d9dd46b059f60194632ddfa9f700f1a4b98f",
+    "baseline-runtime.log": "1d67f51c7b35b02f546391c1ddbe371aafbd649ffdd81ba4f44739717e0fd450",
+    "recheck-runtime.log": "2b0eefb2590d5b2d3661f7c528428cc275a67dcc31dbf7db07ce33e0bf24dd0c",
+    "browser-tests.txt": "71ee6aee8933461dd21ffb6796a013ea1c304176778b4592964e1352b5de3f9d",
+    "turns.csv": "fd751431b02ec55b8a971cf507ac04513cecbb2fa8bff2a4797771474f1136e2",
+    "README.md": "bb18b06bc9b9d1e470aca249f22f6c7ca2da2518ed0c1b81b81f9b4f7999d13f",
+    "scripts-tests.txt": "afd62a2223581db9c05e61ce5aad9b142b00a1a3566c97bfed90569cb63e1a1d",
+    "react-build.txt": "3ba85fe8ad55bcf9d9c6edd72cf2034796293b4023cf4bc7335fba0e70a9a40b",
+    "conversas.md": "749f3e430f33738574363c0da0fb0d6dd26a6cadc43ba4c294f9607098434b2e",
+    "cases.json": "e4d4abb1acb37bb9b469ee4cc8101a3e4516fa82542f8e3d8de42b72ba62113b",
+    "code-and-data-fingerprint.json": "34c497bd600011e849cb8d4a812819c55a8f6ac4e0713b5aeff87a3690c74daf",
+    "ablation-runtime.log": "35a0c0f960e27986511e14eea995edb6ccfed3c4b2841e3937d32d8510be5b77",
+    "actions.json": "56e83ac7f685016a8672b0db991e4d0f8ccf000a824c1042bce736df003f9b24",
+    "freeze.json": "ef055d7cd8e3cb6091cd920fc7639859535df9849f34903dd5ce1562c2fb112f",
+    "protocolo.md": "2b4835d63129475d3c410967a9ec2874bedac88d592cd84eee162b8f3aa720e2",
+    "baseline_workspace.py": "fc09d79e7ff8cddf23614e548ab1ac52daaf6b35598155f500c5b748dfab0e62",
+    "raw.jsonl": "6830758b3cc0648749e43951d3e47ce9db99cd1211b58e7ebd699b31224bc442",
+    "backend-tests.txt": "06bc1507ca0b1235dbd32d161827c9a11c5cde33719296e356026dbcbada9c74"
+  }
+}

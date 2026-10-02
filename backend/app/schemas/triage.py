@@ -69,6 +69,7 @@ class PipelineOptions(BaseModel):
     think: Optional[bool] = None
     temperature: Optional[float] = Field(default=None, ge=0.0, le=2.0)
     seed: Optional[int] = None
+    num_ctx: Optional[int] = Field(default=None, ge=4096, le=131072)
     num_predict: Optional[int] = Field(default=None, ge=-1)
 
     include_debug: bool = False

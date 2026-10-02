@@ -1,0 +1,14 @@
+{
+  "python": "3.12.14",
+  "system": "Linux",
+  "machine": "aarch64",
+  "cpu_visible": 8,
+  "packages": {
+    "google-genai": "2.24.0",
+    "chromadb": "1.5.9",
+    "pymongo": "4.15.3",
+    "pydantic": "2.13.5",
+    "sentence-transformers": "6.0.1",
+    "torch": "2.14.0+cpu"
+  }
+}

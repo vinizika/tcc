@@ -1,0 +1,25 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.0, pytest-9.1.1, pluggy-1.6.0
+rootdir: /Users/vinicius/Documents/tcc
+plugins: anyio-4.15.1
+collected 221 items
+
+scripts/tests/test_capturar_fonte.py ................................    [ 14%]
+scripts/tests/test_evaluation_metrics.py ..................              [ 22%]
+scripts/tests/test_mapa_de_assuntos.py ..................                [ 30%]
+scripts/tests/test_prova2_pedidos.py ......                              [ 33%]
+scripts/tests/test_prova_baselines.py .....                              [ 35%]
+scripts/tests/test_prova_freeze.py .....                                 [ 38%]
+scripts/tests/test_report_conversation_eval.py ....                      [ 39%]
+scripts/tests/test_report_evaluation.py ..............                   [ 46%]
+scripts/tests/test_retrieval_compare.py ..........................       [ 57%]
+scripts/tests/test_retrieval_metrics.py .................                [ 65%]
+scripts/tests/test_run_evaluation.py ................................... [ 81%]
+                                                                         [ 81%]
+scripts/tests/test_run_evaluation_cases.py ......                        [ 84%]
+scripts/tests/test_run_ingestion_cycle.py .....                          [ 86%]
+scripts/tests/test_sync_fichas.py ........                               [ 90%]
+scripts/tests/test_vector_consensus.py .............                     [ 95%]
+scripts/tests/test_wer_metrics.py .........                              [100%]
+
+============================= 221 passed in 2.66s ==============================
