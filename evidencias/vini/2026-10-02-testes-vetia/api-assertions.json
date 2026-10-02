@@ -1,0 +1,38 @@
+[
+  {
+    "scenario": "immediate",
+    "expected": "EMERGENCIA",
+    "status": "idle",
+    "classification": "EMERGENCIA",
+    "state": "completed",
+    "last_tutor_origin": "text",
+    "last_tutor_content": "Meu gato está respirando com a boca aberta e faz muita força para respirar mesmo parado."
+  },
+  {
+    "scenario": "resolved",
+    "expected": "EMERGENCIA",
+    "status": "idle",
+    "classification": "EMERGENCIA",
+    "state": "completed",
+    "last_tutor_origin": "text",
+    "last_tutor_content": "Ele tenta fazer xixi várias vezes e não sai nenhuma gota de urina."
+  },
+  {
+    "scenario": "form",
+    "expected": "INCERTO",
+    "status": "idle",
+    "classification": "INCERTO",
+    "state": "insufficient",
+    "last_tutor_origin": "form",
+    "last_tutor_content": "Não observei"
+  },
+  {
+    "scenario": "form_severe",
+    "expected": "EMERGENCIA",
+    "status": "idle",
+    "classification": "EMERGENCIA",
+    "state": "completed",
+    "last_tutor_origin": "form",
+    "last_tutor_content": "Não sai nenhum xixi"
+  }
+]

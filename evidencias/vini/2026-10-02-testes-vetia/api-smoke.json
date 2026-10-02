@@ -1,0 +1,1654 @@
+[
+  {
+    "scenario": "immediate",
+    "provider_requested": "gemini",
+    "conversation_id": "be5d2a51-930e-4113-94be-da9c7bb309c9",
+    "status": "idle",
+    "error": null,
+    "followup": {
+      "version": "conversational_v2",
+      "state": "completed",
+      "question": null,
+      "options": [],
+      "attempts": 0,
+      "no_progress": 0,
+      "asked": [],
+      "answered_keys": [],
+      "reason": "classification_available"
+    },
+    "messages": [
+      {
+        "id": "76c10d3a-376e-4073-b969-1610d107f700",
+        "role": "tutor",
+        "content": "Meu gato está respirando com a boca aberta e faz muita força para respirar mesmo parado.",
+        "created_at": "2026-10-02T12:20:39.798351+00:00",
+        "origin": "text",
+        "selected_option": null,
+        "question_id": null,
+        "answer_to": null
+      },
+      {
+        "id": "88d18f3d-a080-4451-adf7-94332af75576",
+        "role": "assistant",
+        "content": "Respirar com a boca aberta e fazer esfor'o s'o sinais graves de dificuldade respirat'ria que exigem atendimento imediato.\nProcure um veterin'rio imediatamente.",
+        "created_at": "2026-10-02T12:20:48.141932+00:00",
+        "triage": {
+          "classificacao": "EMERGENCIA",
+          "justificativa": "Respirar com a boca aberta e fazer esfor'o s'o sinais graves de dificuldade respirat'ria que exigem atendimento imediato.",
+          "sinais_de_alerta": [
+            "respirando com a boca aberta",
+            "muita força para respirar"
+          ],
+          "recomendacao": "Procure um veterin'rio imediatamente.",
+          "fontes": [
+            {
+              "index": 1,
+              "chunk_id": "ficha__respiratory_distress",
+              "title": "Ficha de triagem: Dificuldade respiratoria",
+              "source": "Ficha de triagem do time (mapa de assuntos)",
+              "display_title": "Dificuldade respiratória",
+              "references": [
+                {
+                  "title": "Diagnostic performance of lung ultrasound compared to thoracic radiography in non-traumatized dogs and cats with respiratory distress in an emergency setting",
+                  "journal": "Frontiers in Veterinary Science",
+                  "year": 2026,
+                  "doi": "10.3389/fvets.2026.1790755",
+                  "url": "https://doi.org/10.3389/fvets.2026.1790755"
+                }
+              ]
+            }
+          ],
+          "json_parsed": true,
+          "schema_valid": true,
+          "attempts": 1,
+          "done_reason": "stop",
+          "invalid_source_indices": []
+        },
+        "followup": {
+          "version": "conversational_v2",
+          "state": "completed",
+          "question": null,
+          "options": [],
+          "attempts": 0,
+          "no_progress": 0,
+          "asked": [],
+          "answered_keys": [],
+          "reason": "classification_available"
+        },
+        "retrieval": {
+          "returned_count": 50,
+          "used_count": 3,
+          "above_threshold_count": 0,
+          "max_score": 0.6915135383605957,
+          "max_ranking_score": 0.6915135383605957,
+          "threshold": 0.7,
+          "context_min_score": 0.0,
+          "used_below_min_score": false
+        },
+        "sources": [
+          {
+            "title": "Ficha de triagem: Dificuldade respiratoria",
+            "display_title": "Dificuldade respiratória",
+            "topic": "respiratory_distress",
+            "references": [
+              {
+                "document": "respiratory_distress__frontiers_2026_lung_ultrasound.pdf",
+                "title": "Diagnostic performance of lung ultrasound compared to thoracic radiography in non-traumatized dogs and cats with respiratory distress in an emergency setting",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2026,
+                "doi": "10.3389/fvets.2026.1790755",
+                "url": "https://doi.org/10.3389/fvets.2026.1790755",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": true
+          },
+          {
+            "title": "Ficha de triagem: Engasgo com obstrucao de via aerea",
+            "display_title": "Engasgo com obstrução de via aérea",
+            "topic": "airway_foreign_body_choking",
+            "references": [
+              {
+                "document": "airway_foreign_body_choking__cab_2010_tracheal_obstruction.txt",
+                "title": "Obstrução parcial da traqueia em canino – relato de caso",
+                "journal": "Ciência Animal Brasileira",
+                "year": 2010,
+                "doi": "10.5216/cab.v11i1.1561",
+                "url": "https://doi.org/10.5216/cab.v11i1.1561",
+                "language": "pt"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Espirro e coriza leves",
+            "display_title": "Espirro e coriza leves",
+            "topic": "mild_upper_respiratory_signs",
+            "references": [
+              {
+                "document": "mild_upper_respiratory_signs__vetsci_2024_feline_uri.pdf",
+                "title": "A Scoping Review of the Evidence on Prevalence of Feline Upper Respiratory Tract Infections and Associated Risk Factors",
+                "journal": "Veterinary Sciences (MDPI)",
+                "year": 2024,
+                "doi": "10.3390/vetsci11060232",
+                "url": "https://doi.org/10.3390/vetsci11060232",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          }
+        ],
+        "provenance": {
+          "attendant": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "model_version": "gemini-3.5-flash-lite",
+            "thinking": null,
+            "fallback_from": null
+          },
+          "query_stage": {
+            "rewriting": false,
+            "multi_query": false,
+            "hyde": false,
+            "calls": []
+          }
+        },
+        "config": {
+          "query_rewriting_enabled": false,
+          "multi_query_enabled": false,
+          "hyde_enabled": false,
+          "retrieval_enabled": true,
+          "retrieval_mode": "vector",
+          "context_top_k": 3,
+          "context_min_score": 0.0,
+          "rewritten_hint_enabled": false,
+          "cot_enabled": false,
+          "cot_position": "first",
+          "self_refine_enabled": false,
+          "prompt_version": "v1_grounded",
+          "structured_output_mode": "schema",
+          "model": "gemini-3.5-flash-lite",
+          "temperature": 0.0,
+          "seed": 42,
+          "num_ctx": 32768,
+          "num_predict": 600,
+          "think": false,
+          "attendant_provider": "gemini",
+          "attendant_fallback": "none"
+        },
+        "timings": {
+          "query_s": 0.0,
+          "retrieval_s": 1.308,
+          "generation_s": 7.019,
+          "total_s": 8.327,
+          "prompt_tokens": 875,
+          "completion_tokens": 112,
+          "tokens_per_s": 16.0,
+          "load_duration_s": null
+        },
+        "rag_collection": "veterinary_documents__20260925T061349534255Z__280baf13"
+      }
+    ]
+  },
+  {
+    "scenario": "resolved",
+    "provider_requested": "gemini",
+    "conversation_id": "6db1f327-3457-4876-9c42-c79e0b0256ea",
+    "status": "idle",
+    "error": null,
+    "followup": {
+      "version": "conversational_v2",
+      "state": "completed",
+      "question": null,
+      "options": [],
+      "attempts": 1,
+      "no_progress": 0,
+      "asked": [
+        "urine_output"
+      ],
+      "answered_keys": [],
+      "reason": "classification_available"
+    },
+    "messages": [
+      {
+        "id": "330a828c-3447-48f9-a964-34bc9f5df495",
+        "role": "tutor",
+        "content": "Meu gato está estranho, entra na caixa de areia muitas vezes. Não vi o que acontece lá.",
+        "created_at": "2026-10-02T12:20:50.006787+00:00",
+        "origin": "text",
+        "selected_option": null,
+        "question_id": null,
+        "answer_to": null
+      },
+      {
+        "id": "050070e6-9404-4bd1-b6f3-b608b4fe0711",
+        "role": "assistant",
+        "content": "O relato não traz informação suficiente para decidir.\nProcure atendimento veterinário na dúvida.\nQuanto xixi você observou sair?",
+        "created_at": "2026-10-02T12:20:55.805453+00:00",
+        "triage": {
+          "classificacao": "INCERTO",
+          "justificativa": "O relato não traz informação suficiente para decidir.",
+          "sinais_de_alerta": [
+            "entra na caixa de areia muitas vezes"
+          ],
+          "recomendacao": "Procure atendimento veterinário na dúvida.",
+          "fontes": [],
+          "json_parsed": true,
+          "schema_valid": true,
+          "attempts": 1,
+          "done_reason": "stop",
+          "invalid_source_indices": []
+        },
+        "followup": {
+          "version": "conversational_v2",
+          "state": "asking",
+          "question": "Quanto xixi você observou sair?",
+          "options": [],
+          "attempts": 1,
+          "no_progress": 0,
+          "asked": [
+            "urine_output"
+          ],
+          "answered_keys": [],
+          "reason": "discriminator",
+          "answer_status": "unanswered",
+          "evidence": "",
+          "selection_reason": "urgency_discriminator",
+          "question_id": "bfc91ff7-c87e-48a4-87a3-fd2331764c0e",
+          "missing_key": "urine_output",
+          "missing_information": "Quantidade de urina"
+        },
+        "retrieval": {
+          "returned_count": 50,
+          "used_count": 3,
+          "above_threshold_count": 0,
+          "max_score": 0.5877290964126587,
+          "max_ranking_score": 0.5877290964126587,
+          "threshold": 0.7,
+          "context_min_score": 0.0,
+          "used_below_min_score": false
+        },
+        "sources": [
+          {
+            "title": "Ficha de triagem: Xixi fora do lugar e cistite",
+            "display_title": "Xixi fora do lugar e cistite",
+            "topic": "inappropriate_urination_or_cystitis",
+            "references": [
+              {
+                "document": "inappropriate_urination_or_cystitis__frontiers_2022_feline_cystitis.pdf",
+                "title": "Prevalence, Risk Factors, Pathophysiology, Potential Biomarkers and Management of Feline Idiopathic Cystitis: An Update Review",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2022,
+                "doi": "10.3389/fvets.2022.900847",
+                "url": "https://doi.org/10.3389/fvets.2022.900847",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Corpo estranho no tubo digestivo",
+            "display_title": "Corpo estranho no tubo digestivo",
+            "topic": "gastrointestinal_foreign_body",
+            "references": [
+              {
+                "document": "gastrointestinal_foreign_body__frontiers_2025_imaging.pdf",
+                "title": "Comparison of pre- and intraoperative findings in 35 cats and 60 dogs presenting with gastrointestinal signs",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2025,
+                "doi": "10.3389/fvets.2025.1562792",
+                "url": "https://doi.org/10.3389/fvets.2025.1562792",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Obstrucao uretral",
+            "display_title": "Obstrução uretral",
+            "topic": "urethral_obstruction",
+            "references": [
+              {
+                "document": "urethral_obstruction__frontiers_2023_canine_obstruction.pdf",
+                "title": "Case report: Utility, complications, and short-term outcomes in three dogs managed with percutaneous pigtail cystostomy catheters for urethral obstruction",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2023,
+                "doi": "10.3389/fvets.2023.1200406",
+                "url": "https://doi.org/10.3389/fvets.2023.1200406",
+                "language": "en"
+              },
+              {
+                "document": "urethral_obstruction__icatcare_2025_lower_urinary.pdf",
+                "title": "2025 iCatCare consensus guidelines on the diagnosis and management of lower urinary tract diseases in cats",
+                "journal": "Journal of Feline Medicine and Surgery",
+                "year": 2025,
+                "doi": "10.1177/1098612X241309176",
+                "url": "https://doi.org/10.1177/1098612X241309176",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          }
+        ],
+        "provenance": {
+          "attendant": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "model_version": "gemini-3.5-flash-lite",
+            "thinking": null,
+            "fallback_from": null
+          },
+          "query_stage": {
+            "rewriting": false,
+            "multi_query": false,
+            "hyde": false,
+            "calls": []
+          }
+        },
+        "config": {
+          "query_rewriting_enabled": false,
+          "multi_query_enabled": false,
+          "hyde_enabled": false,
+          "retrieval_enabled": true,
+          "retrieval_mode": "vector",
+          "context_top_k": 3,
+          "context_min_score": 0.0,
+          "rewritten_hint_enabled": false,
+          "cot_enabled": false,
+          "cot_position": "first",
+          "self_refine_enabled": false,
+          "prompt_version": "v1_grounded",
+          "structured_output_mode": "schema",
+          "model": "gemini-3.5-flash-lite",
+          "temperature": 0.0,
+          "seed": 42,
+          "num_ctx": 32768,
+          "num_predict": 600,
+          "think": false,
+          "attendant_provider": "gemini",
+          "attendant_fallback": "none"
+        },
+        "timings": {
+          "query_s": 0.0,
+          "retrieval_s": 1.022,
+          "generation_s": 1.083,
+          "total_s": 2.105,
+          "prompt_tokens": 935,
+          "completion_tokens": 81,
+          "tokens_per_s": 75.0,
+          "load_duration_s": null
+        },
+        "rag_collection": "veterinary_documents__20260925T061349534255Z__280baf13"
+      },
+      {
+        "id": "b65df056-5a82-4ee4-81fa-3635a0f931d5",
+        "role": "tutor",
+        "content": "Ele tenta fazer xixi várias vezes e não sai nenhuma gota de urina.",
+        "created_at": "2026-10-02T12:20:56.103468+00:00",
+        "origin": "text",
+        "selected_option": null,
+        "question_id": "bfc91ff7-c87e-48a4-87a3-fd2331764c0e",
+        "answer_to": "Quanto xixi você observou sair?"
+      },
+      {
+        "id": "ead48092-014c-4e67-a9d8-9af285b9cbb2",
+        "role": "assistant",
+        "content": "O gato faz força para urinar e não sai nenhuma gota, indicando risco grave à vida.\nProcure um veterinário agora mesmo.",
+        "created_at": "2026-10-02T12:20:58.042053+00:00",
+        "triage": {
+          "classificacao": "EMERGENCIA",
+          "justificativa": "O gato faz força para urinar e não sai nenhuma gota, indicando risco grave à vida.",
+          "sinais_de_alerta": [
+            "tenta fazer xixi várias vezes",
+            "não sai nenhuma gota de urina"
+          ],
+          "recomendacao": "Procure um veterinário agora mesmo.",
+          "fontes": [
+            {
+              "index": 1,
+              "chunk_id": "ficha__urethral_obstruction",
+              "title": "Ficha de triagem: Obstrucao uretral",
+              "source": "Ficha de triagem do time (mapa de assuntos)",
+              "display_title": "Obstrução uretral",
+              "references": [
+                {
+                  "title": "Case report: Utility, complications, and short-term outcomes in three dogs managed with percutaneous pigtail cystostomy catheters for urethral obstruction",
+                  "journal": "Frontiers in Veterinary Science",
+                  "year": 2023,
+                  "doi": "10.3389/fvets.2023.1200406",
+                  "url": "https://doi.org/10.3389/fvets.2023.1200406"
+                },
+                {
+                  "title": "2025 iCatCare consensus guidelines on the diagnosis and management of lower urinary tract diseases in cats",
+                  "journal": "Journal of Feline Medicine and Surgery",
+                  "year": 2025,
+                  "doi": "10.1177/1098612X241309176",
+                  "url": "https://doi.org/10.1177/1098612X241309176"
+                }
+              ]
+            }
+          ],
+          "json_parsed": true,
+          "schema_valid": true,
+          "attempts": 1,
+          "done_reason": "stop",
+          "invalid_source_indices": []
+        },
+        "followup": {
+          "version": "conversational_v2",
+          "state": "completed",
+          "question": null,
+          "options": [],
+          "attempts": 1,
+          "no_progress": 0,
+          "asked": [
+            "urine_output"
+          ],
+          "answered_keys": [],
+          "reason": "classification_available"
+        },
+        "retrieval": {
+          "returned_count": 50,
+          "used_count": 3,
+          "above_threshold_count": 0,
+          "max_score": 0.6593588590621948,
+          "max_ranking_score": 0.6593588590621948,
+          "threshold": 0.7,
+          "context_min_score": 0.0,
+          "used_below_min_score": false
+        },
+        "sources": [
+          {
+            "title": "Ficha de triagem: Obstrucao uretral",
+            "display_title": "Obstrução uretral",
+            "topic": "urethral_obstruction",
+            "references": [
+              {
+                "document": "urethral_obstruction__frontiers_2023_canine_obstruction.pdf",
+                "title": "Case report: Utility, complications, and short-term outcomes in three dogs managed with percutaneous pigtail cystostomy catheters for urethral obstruction",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2023,
+                "doi": "10.3389/fvets.2023.1200406",
+                "url": "https://doi.org/10.3389/fvets.2023.1200406",
+                "language": "en"
+              },
+              {
+                "document": "urethral_obstruction__icatcare_2025_lower_urinary.pdf",
+                "title": "2025 iCatCare consensus guidelines on the diagnosis and management of lower urinary tract diseases in cats",
+                "journal": "Journal of Feline Medicine and Surgery",
+                "year": 2025,
+                "doi": "10.1177/1098612X241309176",
+                "url": "https://doi.org/10.1177/1098612X241309176",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": true
+          },
+          {
+            "title": "Ficha de triagem: Xixi fora do lugar e cistite",
+            "display_title": "Xixi fora do lugar e cistite",
+            "topic": "inappropriate_urination_or_cystitis",
+            "references": [
+              {
+                "document": "inappropriate_urination_or_cystitis__frontiers_2022_feline_cystitis.pdf",
+                "title": "Prevalence, Risk Factors, Pathophysiology, Potential Biomarkers and Management of Feline Idiopathic Cystitis: An Update Review",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2022,
+                "doi": "10.3389/fvets.2022.900847",
+                "url": "https://doi.org/10.3389/fvets.2022.900847",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Corpo estranho no tubo digestivo",
+            "display_title": "Corpo estranho no tubo digestivo",
+            "topic": "gastrointestinal_foreign_body",
+            "references": [
+              {
+                "document": "gastrointestinal_foreign_body__frontiers_2025_imaging.pdf",
+                "title": "Comparison of pre- and intraoperative findings in 35 cats and 60 dogs presenting with gastrointestinal signs",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2025,
+                "doi": "10.3389/fvets.2025.1562792",
+                "url": "https://doi.org/10.3389/fvets.2025.1562792",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          }
+        ],
+        "provenance": {
+          "attendant": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "model_version": "gemini-3.5-flash-lite",
+            "thinking": null,
+            "fallback_from": null
+          },
+          "query_stage": {
+            "rewriting": false,
+            "multi_query": false,
+            "hyde": false,
+            "calls": []
+          }
+        },
+        "config": {
+          "query_rewriting_enabled": false,
+          "multi_query_enabled": false,
+          "hyde_enabled": false,
+          "retrieval_enabled": true,
+          "retrieval_mode": "vector",
+          "context_top_k": 3,
+          "context_min_score": 0.0,
+          "rewritten_hint_enabled": false,
+          "cot_enabled": false,
+          "cot_position": "first",
+          "self_refine_enabled": false,
+          "prompt_version": "v1_grounded",
+          "structured_output_mode": "schema",
+          "model": "gemini-3.5-flash-lite",
+          "temperature": 0.0,
+          "seed": 42,
+          "num_ctx": 32768,
+          "num_predict": 600,
+          "think": false,
+          "attendant_provider": "gemini",
+          "attendant_fallback": "none"
+        },
+        "timings": {
+          "query_s": 0.0,
+          "retrieval_s": 0.722,
+          "generation_s": 1.202,
+          "total_s": 1.924,
+          "prompt_tokens": 995,
+          "completion_tokens": 108,
+          "tokens_per_s": 90.0,
+          "load_duration_s": null
+        },
+        "rag_collection": "veterinary_documents__20260925T061349534255Z__280baf13"
+      }
+    ]
+  },
+  {
+    "scenario": "form",
+    "provider_requested": "gemini",
+    "conversation_id": "53fae7d0-1ac0-4655-b77d-e215b1815d4a",
+    "status": "idle",
+    "error": null,
+    "followup": {
+      "version": "conversational_v2",
+      "state": "insufficient",
+      "question": null,
+      "options": [],
+      "attempts": 2,
+      "no_progress": 2,
+      "asked": [
+        "onset"
+      ],
+      "answered_keys": [],
+      "reason": "form_exhausted",
+      "answer_status": "unknown",
+      "evidence": "Não observei",
+      "selection_reason": "urgency_discriminator",
+      "guidance": "Ainda não há informação suficiente para determinar a urgência. Entre em contato com uma clínica; se houver piora, procure atendimento agora. Você pode enviar novas observações."
+    },
+    "messages": [
+      {
+        "id": "8242875d-f87d-498a-89c3-236872d926ea",
+        "role": "tutor",
+        "content": "Meu gato está diferente hoje. Não consigo explicar o que mudou.",
+        "created_at": "2026-10-02T12:20:58.180184+00:00",
+        "origin": "text",
+        "selected_option": null,
+        "question_id": null,
+        "answer_to": null
+      },
+      {
+        "id": "0b663d8f-9afb-4b36-a37c-ae27106f90ed",
+        "role": "assistant",
+        "content": "O relato não traz informações suficientes sobre os sintomas do animal para definir a gravidade.\nProcure atendimento veterinário se tiver dúvidas sobre a saúde do pet.\nQuando você percebeu essa mudança pela primeira vez?",
+        "created_at": "2026-10-02T12:21:02.978800+00:00",
+        "triage": {
+          "classificacao": "INCERTO",
+          "justificativa": "O relato não traz informações suficientes sobre os sintomas do animal para definir a gravidade.",
+          "sinais_de_alerta": [],
+          "recomendacao": "Procure atendimento veterinário se tiver dúvidas sobre a saúde do pet.",
+          "fontes": [],
+          "json_parsed": true,
+          "schema_valid": true,
+          "attempts": 1,
+          "done_reason": "stop",
+          "invalid_source_indices": []
+        },
+        "followup": {
+          "version": "conversational_v2",
+          "state": "asking",
+          "question": "Quando você percebeu essa mudança pela primeira vez?",
+          "options": [],
+          "attempts": 1,
+          "no_progress": 0,
+          "asked": [
+            "onset"
+          ],
+          "answered_keys": [],
+          "reason": "discriminator",
+          "answer_status": "unanswered",
+          "evidence": "",
+          "selection_reason": "urgency_discriminator",
+          "question_id": "eb9e42fb-65aa-4d92-8f78-8ec2c3f3359e",
+          "missing_key": "onset",
+          "missing_information": "Início da mudança"
+        },
+        "retrieval": {
+          "returned_count": 50,
+          "used_count": 3,
+          "above_threshold_count": 0,
+          "max_score": 0.5719830393791199,
+          "max_ranking_score": 0.5719830393791199,
+          "threshold": 0.7,
+          "context_min_score": 0.0,
+          "used_below_min_score": false
+        },
+        "sources": [
+          {
+            "title": "Ficha de triagem: Queda de altura em gato",
+            "display_title": "Queda de altura em gato",
+            "topic": "high_rise_syndrome_cats",
+            "references": [
+              {
+                "document": "high_rise_syndrome_cats__animals_2026_trauma_shock.pdf",
+                "title": "Prognostic Performance of Shock Index, Whole-Blood Lactate Concentration, Rectal–Interdigital Temperature Gradient, and ATT Score in Cats with Trauma-Induced Shock",
+                "journal": "Animals",
+                "year": 2026,
+                "doi": "10.3390/ani16152410",
+                "url": "https://doi.org/10.3390/ani16152410",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Corpo estranho no tubo digestivo",
+            "display_title": "Corpo estranho no tubo digestivo",
+            "topic": "gastrointestinal_foreign_body",
+            "references": [
+              {
+                "document": "gastrointestinal_foreign_body__frontiers_2025_imaging.pdf",
+                "title": "Comparison of pre- and intraoperative findings in 35 cats and 60 dogs presenting with gastrointestinal signs",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2025,
+                "doi": "10.3389/fvets.2025.1562792",
+                "url": "https://doi.org/10.3389/fvets.2025.1562792",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Rigidez de artrose em idoso",
+            "display_title": "Rigidez de artrose em idoso",
+            "topic": "osteoarthritis_stiffness",
+            "references": [
+              {
+                "document": "osteoarthritis_stiffness__frontiers_2022_canine_oa.pdf",
+                "title": "Proposed Canadian Consensus Guidelines on Osteoarthritis Treatment Based on OA-COAST Stages 1–4",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2022,
+                "doi": "10.3389/fvets.2022.830098",
+                "url": "https://doi.org/10.3389/fvets.2022.830098",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          }
+        ],
+        "provenance": {
+          "attendant": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "model_version": "gemini-3.5-flash-lite",
+            "thinking": null,
+            "fallback_from": null
+          },
+          "query_stage": {
+            "rewriting": false,
+            "multi_query": false,
+            "hyde": false,
+            "calls": []
+          }
+        },
+        "config": {
+          "query_rewriting_enabled": false,
+          "multi_query_enabled": false,
+          "hyde_enabled": false,
+          "retrieval_enabled": true,
+          "retrieval_mode": "vector",
+          "context_top_k": 3,
+          "context_min_score": 0.0,
+          "rewritten_hint_enabled": false,
+          "cot_enabled": false,
+          "cot_position": "first",
+          "self_refine_enabled": false,
+          "prompt_version": "v1_grounded",
+          "structured_output_mode": "schema",
+          "model": "gemini-3.5-flash-lite",
+          "temperature": 0.0,
+          "seed": 42,
+          "num_ctx": 32768,
+          "num_predict": 600,
+          "think": false,
+          "attendant_provider": "gemini",
+          "attendant_fallback": "none"
+        },
+        "timings": {
+          "query_s": 0.0,
+          "retrieval_s": 0.303,
+          "generation_s": 3.45,
+          "total_s": 3.754,
+          "prompt_tokens": 826,
+          "completion_tokens": 80,
+          "tokens_per_s": 23.2,
+          "load_duration_s": null
+        },
+        "rag_collection": "veterinary_documents__20260925T061349534255Z__280baf13"
+      },
+      {
+        "id": "6b0783a7-ad3a-412b-b410-4641bbddba6a",
+        "role": "tutor",
+        "content": "Não sei dizer",
+        "created_at": "2026-10-02T12:21:04.301093+00:00",
+        "origin": "text",
+        "selected_option": null,
+        "question_id": "eb9e42fb-65aa-4d92-8f78-8ec2c3f3359e",
+        "answer_to": "Quando você percebeu essa mudança pela primeira vez?"
+      },
+      {
+        "id": "88e99c86-7fc3-41d6-96b3-67cb2f7a9ac0",
+        "role": "assistant",
+        "content": "O relato não traz informações suficientes sobre os sintomas do animal para definir a gravidade do caso.\nProcure atendimento veterinário na dúvida.\nQuando você percebeu essa mudança pela primeira vez?",
+        "created_at": "2026-10-02T12:21:10.052228+00:00",
+        "triage": {
+          "classificacao": "INCERTO",
+          "justificativa": "O relato não traz informações suficientes sobre os sintomas do animal para definir a gravidade do caso.",
+          "sinais_de_alerta": [],
+          "recomendacao": "Procure atendimento veterinário na dúvida.",
+          "fontes": [],
+          "json_parsed": true,
+          "schema_valid": true,
+          "attempts": 1,
+          "done_reason": "stop",
+          "invalid_source_indices": []
+        },
+        "followup": {
+          "version": "conversational_v2",
+          "state": "form",
+          "question": "Quando você percebeu essa mudança pela primeira vez?",
+          "options": [
+            "Não percebo mais essa mudança",
+            "Percebi a mudança hoje",
+            "Percebi a mudança há alguns dias",
+            "Percebi a mudança há semanas ou meses",
+            "Nenhuma dessas opções descreve o que observei",
+            "Não observei",
+            "Não sei dizer"
+          ],
+          "attempts": 2,
+          "no_progress": 1,
+          "asked": [
+            "onset"
+          ],
+          "answered_keys": [],
+          "reason": "repeated_question",
+          "answer_status": "unknown",
+          "evidence": "Não sei dizer",
+          "selection_reason": "urgency_discriminator",
+          "question_id": "21dd182c-a02f-479e-a491-4318479f104e",
+          "missing_key": "onset",
+          "missing_information": "Início da mudança"
+        },
+        "retrieval": {
+          "returned_count": 50,
+          "used_count": 3,
+          "above_threshold_count": 0,
+          "max_score": 0.5752013921737671,
+          "max_ranking_score": 0.5752013921737671,
+          "threshold": 0.7,
+          "context_min_score": 0.0,
+          "used_below_min_score": false
+        },
+        "sources": [
+          {
+            "title": "Ficha de triagem: Queda de altura em gato",
+            "display_title": "Queda de altura em gato",
+            "topic": "high_rise_syndrome_cats",
+            "references": [
+              {
+                "document": "high_rise_syndrome_cats__animals_2026_trauma_shock.pdf",
+                "title": "Prognostic Performance of Shock Index, Whole-Blood Lactate Concentration, Rectal–Interdigital Temperature Gradient, and ATT Score in Cats with Trauma-Induced Shock",
+                "journal": "Animals",
+                "year": 2026,
+                "doi": "10.3390/ani16152410",
+                "url": "https://doi.org/10.3390/ani16152410",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Rigidez de artrose em idoso",
+            "display_title": "Rigidez de artrose em idoso",
+            "topic": "osteoarthritis_stiffness",
+            "references": [
+              {
+                "document": "osteoarthritis_stiffness__frontiers_2022_canine_oa.pdf",
+                "title": "Proposed Canadian Consensus Guidelines on Osteoarthritis Treatment Based on OA-COAST Stages 1–4",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2022,
+                "doi": "10.3389/fvets.2022.830098",
+                "url": "https://doi.org/10.3389/fvets.2022.830098",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Corpo estranho no tubo digestivo",
+            "display_title": "Corpo estranho no tubo digestivo",
+            "topic": "gastrointestinal_foreign_body",
+            "references": [
+              {
+                "document": "gastrointestinal_foreign_body__frontiers_2025_imaging.pdf",
+                "title": "Comparison of pre- and intraoperative findings in 35 cats and 60 dogs presenting with gastrointestinal signs",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2025,
+                "doi": "10.3389/fvets.2025.1562792",
+                "url": "https://doi.org/10.3389/fvets.2025.1562792",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          }
+        ],
+        "provenance": {
+          "attendant": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "model_version": "gemini-3.5-flash-lite",
+            "thinking": null,
+            "fallback_from": null
+          },
+          "query_stage": {
+            "rewriting": false,
+            "multi_query": false,
+            "hyde": false,
+            "calls": []
+          }
+        },
+        "config": {
+          "query_rewriting_enabled": false,
+          "multi_query_enabled": false,
+          "hyde_enabled": false,
+          "retrieval_enabled": true,
+          "retrieval_mode": "vector",
+          "context_top_k": 3,
+          "context_min_score": 0.0,
+          "rewritten_hint_enabled": false,
+          "cot_enabled": false,
+          "cot_position": "first",
+          "self_refine_enabled": false,
+          "prompt_version": "v1_grounded",
+          "structured_output_mode": "schema",
+          "model": "gemini-3.5-flash-lite",
+          "temperature": 0.0,
+          "seed": 42,
+          "num_ctx": 32768,
+          "num_predict": 600,
+          "think": false,
+          "attendant_provider": "gemini",
+          "attendant_fallback": "none"
+        },
+        "timings": {
+          "query_s": 0.0,
+          "retrieval_s": 0.746,
+          "generation_s": 0.978,
+          "total_s": 1.724,
+          "prompt_tokens": 876,
+          "completion_tokens": 76,
+          "tokens_per_s": 77.9,
+          "load_duration_s": null
+        },
+        "rag_collection": "veterinary_documents__20260925T061349534255Z__280baf13"
+      },
+      {
+        "id": "ff339763-dee9-48dc-8836-2851f149de8b",
+        "role": "tutor",
+        "content": "Não observei",
+        "created_at": "2026-10-02T12:21:10.420030+00:00",
+        "origin": "form",
+        "selected_option": "Não observei",
+        "question_id": "21dd182c-a02f-479e-a491-4318479f104e",
+        "answer_to": "Quando você percebeu essa mudança pela primeira vez?"
+      },
+      {
+        "id": "1c9b664e-de9a-4c03-aa5d-e5a8bbf0f534",
+        "role": "assistant",
+        "content": "O relato não traz informações suficientes sobre os sintomas do animal para definir a gravidade.\nProcure atendimento veterinário para uma avaliação segura.\nAinda não há informação suficiente para determinar a urgência. Entre em contato com uma clínica; se houver piora, procure atendimento agora. Você pode enviar novas observações.",
+        "created_at": "2026-10-02T12:21:12.827535+00:00",
+        "triage": {
+          "classificacao": "INCERTO",
+          "justificativa": "O relato não traz informações suficientes sobre os sintomas do animal para definir a gravidade.",
+          "sinais_de_alerta": [],
+          "recomendacao": "Procure atendimento veterinário para uma avaliação segura.",
+          "fontes": [],
+          "json_parsed": true,
+          "schema_valid": true,
+          "attempts": 1,
+          "done_reason": "stop",
+          "invalid_source_indices": []
+        },
+        "followup": {
+          "version": "conversational_v2",
+          "state": "insufficient",
+          "question": null,
+          "options": [],
+          "attempts": 2,
+          "no_progress": 2,
+          "asked": [
+            "onset"
+          ],
+          "answered_keys": [],
+          "reason": "form_exhausted",
+          "answer_status": "unknown",
+          "evidence": "Não observei",
+          "selection_reason": "urgency_discriminator",
+          "guidance": "Ainda não há informação suficiente para determinar a urgência. Entre em contato com uma clínica; se houver piora, procure atendimento agora. Você pode enviar novas observações."
+        },
+        "retrieval": {
+          "returned_count": 50,
+          "used_count": 3,
+          "above_threshold_count": 0,
+          "max_score": 0.5984914302825928,
+          "max_ranking_score": 0.5984914302825928,
+          "threshold": 0.7,
+          "context_min_score": 0.0,
+          "used_below_min_score": false
+        },
+        "sources": [
+          {
+            "title": "Ficha de triagem: Corpo estranho no tubo digestivo",
+            "display_title": "Corpo estranho no tubo digestivo",
+            "topic": "gastrointestinal_foreign_body",
+            "references": [
+              {
+                "document": "gastrointestinal_foreign_body__frontiers_2025_imaging.pdf",
+                "title": "Comparison of pre- and intraoperative findings in 35 cats and 60 dogs presenting with gastrointestinal signs",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2025,
+                "doi": "10.3389/fvets.2025.1562792",
+                "url": "https://doi.org/10.3389/fvets.2025.1562792",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Queda de altura em gato",
+            "display_title": "Queda de altura em gato",
+            "topic": "high_rise_syndrome_cats",
+            "references": [
+              {
+                "document": "high_rise_syndrome_cats__animals_2026_trauma_shock.pdf",
+                "title": "Prognostic Performance of Shock Index, Whole-Blood Lactate Concentration, Rectal–Interdigital Temperature Gradient, and ATT Score in Cats with Trauma-Induced Shock",
+                "journal": "Animals",
+                "year": 2026,
+                "doi": "10.3390/ani16152410",
+                "url": "https://doi.org/10.3390/ani16152410",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Rigidez de artrose em idoso",
+            "display_title": "Rigidez de artrose em idoso",
+            "topic": "osteoarthritis_stiffness",
+            "references": [
+              {
+                "document": "osteoarthritis_stiffness__frontiers_2022_canine_oa.pdf",
+                "title": "Proposed Canadian Consensus Guidelines on Osteoarthritis Treatment Based on OA-COAST Stages 1–4",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2022,
+                "doi": "10.3389/fvets.2022.830098",
+                "url": "https://doi.org/10.3389/fvets.2022.830098",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          }
+        ],
+        "provenance": {
+          "attendant": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "model_version": "gemini-3.5-flash-lite",
+            "thinking": null,
+            "fallback_from": null
+          },
+          "query_stage": {
+            "rewriting": false,
+            "multi_query": false,
+            "hyde": false,
+            "calls": []
+          }
+        },
+        "config": {
+          "query_rewriting_enabled": false,
+          "multi_query_enabled": false,
+          "hyde_enabled": false,
+          "retrieval_enabled": true,
+          "retrieval_mode": "vector",
+          "context_top_k": 3,
+          "context_min_score": 0.0,
+          "rewritten_hint_enabled": false,
+          "cot_enabled": false,
+          "cot_position": "first",
+          "self_refine_enabled": false,
+          "prompt_version": "v1_grounded",
+          "structured_output_mode": "schema",
+          "model": "gemini-3.5-flash-lite",
+          "temperature": 0.0,
+          "seed": 42,
+          "num_ctx": 32768,
+          "num_predict": 600,
+          "think": false,
+          "attendant_provider": "gemini",
+          "attendant_fallback": "none"
+        },
+        "timings": {
+          "query_s": 0.0,
+          "retrieval_s": 0.26,
+          "generation_s": 1.004,
+          "total_s": 1.264,
+          "prompt_tokens": 908,
+          "completion_tokens": 76,
+          "tokens_per_s": 75.8,
+          "load_duration_s": null
+        },
+        "rag_collection": "veterinary_documents__20260925T061349534255Z__280baf13"
+      }
+    ]
+  },
+  {
+    "scenario": "form_severe",
+    "provider_requested": "gemini",
+    "conversation_id": "f589c1bb-8b9c-4485-b72e-a14d4cd481d3",
+    "status": "idle",
+    "error": null,
+    "followup": {
+      "version": "conversational_v2",
+      "state": "completed",
+      "question": null,
+      "options": [],
+      "attempts": 2,
+      "no_progress": 0,
+      "asked": [
+        "urine_output"
+      ],
+      "answered_keys": [],
+      "reason": "classification_available"
+    },
+    "messages": [
+      {
+        "id": "07c512a5-b1df-4b12-ad0a-e0e06abdc02d",
+        "role": "tutor",
+        "content": "Meu gato está diferente quando vai à caixa de areia. Não consegui ver o que aconteceu.",
+        "created_at": "2026-10-02T12:21:14.519523+00:00",
+        "origin": "text",
+        "selected_option": null,
+        "question_id": null,
+        "answer_to": null
+      },
+      {
+        "id": "3254c78d-8023-4b5e-813c-394b86f4142c",
+        "role": "assistant",
+        "content": "O relato não traz informações suficientes sobre os sintomas do gato.\nProcure atendimento veterinário na dúvida.\nQuanto xixi você observou sair?",
+        "created_at": "2026-10-02T12:21:17.420114+00:00",
+        "triage": {
+          "classificacao": "INCERTO",
+          "justificativa": "O relato não traz informações suficientes sobre os sintomas do gato.",
+          "sinais_de_alerta": [],
+          "recomendacao": "Procure atendimento veterinário na dúvida.",
+          "fontes": [],
+          "json_parsed": true,
+          "schema_valid": true,
+          "attempts": 1,
+          "done_reason": "stop",
+          "invalid_source_indices": []
+        },
+        "followup": {
+          "version": "conversational_v2",
+          "state": "asking",
+          "question": "Quanto xixi você observou sair?",
+          "options": [],
+          "attempts": 1,
+          "no_progress": 0,
+          "asked": [
+            "urine_output"
+          ],
+          "answered_keys": [],
+          "reason": "discriminator",
+          "answer_status": "unanswered",
+          "evidence": "",
+          "selection_reason": "urgency_discriminator",
+          "question_id": "dd328c85-022f-4c1f-88b5-89934d7d249b",
+          "missing_key": "urine_output",
+          "missing_information": "Quantidade de urina"
+        },
+        "retrieval": {
+          "returned_count": 50,
+          "used_count": 3,
+          "above_threshold_count": 0,
+          "max_score": 0.5932784676551819,
+          "max_ranking_score": 0.5932784676551819,
+          "threshold": 0.7,
+          "context_min_score": 0.0,
+          "used_below_min_score": false
+        },
+        "sources": [
+          {
+            "title": "Ficha de triagem: Xixi fora do lugar e cistite",
+            "display_title": "Xixi fora do lugar e cistite",
+            "topic": "inappropriate_urination_or_cystitis",
+            "references": [
+              {
+                "document": "inappropriate_urination_or_cystitis__frontiers_2022_feline_cystitis.pdf",
+                "title": "Prevalence, Risk Factors, Pathophysiology, Potential Biomarkers and Management of Feline Idiopathic Cystitis: An Update Review",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2022,
+                "doi": "10.3389/fvets.2022.900847",
+                "url": "https://doi.org/10.3389/fvets.2022.900847",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Queda de altura em gato",
+            "display_title": "Queda de altura em gato",
+            "topic": "high_rise_syndrome_cats",
+            "references": [
+              {
+                "document": "high_rise_syndrome_cats__animals_2026_trauma_shock.pdf",
+                "title": "Prognostic Performance of Shock Index, Whole-Blood Lactate Concentration, Rectal–Interdigital Temperature Gradient, and ATT Score in Cats with Trauma-Induced Shock",
+                "journal": "Animals",
+                "year": 2026,
+                "doi": "10.3390/ani16152410",
+                "url": "https://doi.org/10.3390/ani16152410",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Obstrucao uretral",
+            "display_title": "Obstrução uretral",
+            "topic": "urethral_obstruction",
+            "references": [
+              {
+                "document": "urethral_obstruction__frontiers_2023_canine_obstruction.pdf",
+                "title": "Case report: Utility, complications, and short-term outcomes in three dogs managed with percutaneous pigtail cystostomy catheters for urethral obstruction",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2023,
+                "doi": "10.3389/fvets.2023.1200406",
+                "url": "https://doi.org/10.3389/fvets.2023.1200406",
+                "language": "en"
+              },
+              {
+                "document": "urethral_obstruction__icatcare_2025_lower_urinary.pdf",
+                "title": "2025 iCatCare consensus guidelines on the diagnosis and management of lower urinary tract diseases in cats",
+                "journal": "Journal of Feline Medicine and Surgery",
+                "year": 2025,
+                "doi": "10.1177/1098612X241309176",
+                "url": "https://doi.org/10.1177/1098612X241309176",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          }
+        ],
+        "provenance": {
+          "attendant": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "model_version": "gemini-3.5-flash-lite",
+            "thinking": null,
+            "fallback_from": null
+          },
+          "query_stage": {
+            "rewriting": false,
+            "multi_query": false,
+            "hyde": false,
+            "calls": []
+          }
+        },
+        "config": {
+          "query_rewriting_enabled": false,
+          "multi_query_enabled": false,
+          "hyde_enabled": false,
+          "retrieval_enabled": true,
+          "retrieval_mode": "vector",
+          "context_top_k": 3,
+          "context_min_score": 0.0,
+          "rewritten_hint_enabled": false,
+          "cot_enabled": false,
+          "cot_position": "first",
+          "self_refine_enabled": false,
+          "prompt_version": "v1_grounded",
+          "structured_output_mode": "schema",
+          "model": "gemini-3.5-flash-lite",
+          "temperature": 0.0,
+          "seed": 42,
+          "num_ctx": 32768,
+          "num_predict": 600,
+          "think": false,
+          "attendant_provider": "gemini",
+          "attendant_fallback": "none"
+        },
+        "timings": {
+          "query_s": 0.001,
+          "retrieval_s": 0.656,
+          "generation_s": 1.003,
+          "total_s": 1.66,
+          "prompt_tokens": 928,
+          "completion_tokens": 69,
+          "tokens_per_s": 69.0,
+          "load_duration_s": null
+        },
+        "rag_collection": "veterinary_documents__20260925T061349534255Z__280baf13"
+      },
+      {
+        "id": "8f4b0aae-0b64-46ba-8191-8c0f2d153f08",
+        "role": "tutor",
+        "content": "Não sei dizer",
+        "created_at": "2026-10-02T12:21:18.572422+00:00",
+        "origin": "text",
+        "selected_option": null,
+        "question_id": "dd328c85-022f-4c1f-88b5-89934d7d249b",
+        "answer_to": "Quanto xixi você observou sair?"
+      },
+      {
+        "id": "afca97a3-4acc-4d07-96b7-d430fd4b3630",
+        "role": "assistant",
+        "content": "O relato não traz informações suficientes sobre a urina e o comportamento para decidir.\nProcure um atendimento veterinário na dúvida.\nQuanto xixi você observou sair?",
+        "created_at": "2026-10-02T12:21:24.449430+00:00",
+        "triage": {
+          "classificacao": "INCERTO",
+          "justificativa": "O relato não traz informações suficientes sobre a urina e o comportamento para decidir.",
+          "sinais_de_alerta": [],
+          "recomendacao": "Procure um atendimento veterinário na dúvida.",
+          "fontes": [],
+          "json_parsed": true,
+          "schema_valid": true,
+          "attempts": 1,
+          "done_reason": "stop",
+          "invalid_source_indices": []
+        },
+        "followup": {
+          "version": "conversational_v2",
+          "state": "form",
+          "question": "Quanto xixi você observou sair?",
+          "options": [
+            "Sai uma quantidade normal de xixi",
+            "Sai pouco xixi",
+            "Não sai nenhum xixi",
+            "Nenhuma dessas opções descreve o que observei",
+            "Não observei",
+            "Não sei dizer"
+          ],
+          "attempts": 2,
+          "no_progress": 1,
+          "asked": [
+            "urine_output"
+          ],
+          "answered_keys": [],
+          "reason": "repeated_question",
+          "answer_status": "unknown",
+          "evidence": "Não sei dizer",
+          "selection_reason": "urgency_discriminator",
+          "question_id": "017ebc09-bca6-46c6-bebd-5a5bec960997",
+          "missing_key": "urine_output",
+          "missing_information": "Quantidade de urina"
+        },
+        "retrieval": {
+          "returned_count": 50,
+          "used_count": 3,
+          "above_threshold_count": 0,
+          "max_score": 0.5882775187492371,
+          "max_ranking_score": 0.5882775187492371,
+          "threshold": 0.7,
+          "context_min_score": 0.0,
+          "used_below_min_score": false
+        },
+        "sources": [
+          {
+            "title": "Ficha de triagem: Xixi fora do lugar e cistite",
+            "display_title": "Xixi fora do lugar e cistite",
+            "topic": "inappropriate_urination_or_cystitis",
+            "references": [
+              {
+                "document": "inappropriate_urination_or_cystitis__frontiers_2022_feline_cystitis.pdf",
+                "title": "Prevalence, Risk Factors, Pathophysiology, Potential Biomarkers and Management of Feline Idiopathic Cystitis: An Update Review",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2022,
+                "doi": "10.3389/fvets.2022.900847",
+                "url": "https://doi.org/10.3389/fvets.2022.900847",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Queda de altura em gato",
+            "display_title": "Queda de altura em gato",
+            "topic": "high_rise_syndrome_cats",
+            "references": [
+              {
+                "document": "high_rise_syndrome_cats__animals_2026_trauma_shock.pdf",
+                "title": "Prognostic Performance of Shock Index, Whole-Blood Lactate Concentration, Rectal–Interdigital Temperature Gradient, and ATT Score in Cats with Trauma-Induced Shock",
+                "journal": "Animals",
+                "year": 2026,
+                "doi": "10.3390/ani16152410",
+                "url": "https://doi.org/10.3390/ani16152410",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Corpo estranho no tubo digestivo",
+            "display_title": "Corpo estranho no tubo digestivo",
+            "topic": "gastrointestinal_foreign_body",
+            "references": [
+              {
+                "document": "gastrointestinal_foreign_body__frontiers_2025_imaging.pdf",
+                "title": "Comparison of pre- and intraoperative findings in 35 cats and 60 dogs presenting with gastrointestinal signs",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2025,
+                "doi": "10.3389/fvets.2025.1562792",
+                "url": "https://doi.org/10.3389/fvets.2025.1562792",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          }
+        ],
+        "provenance": {
+          "attendant": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "model_version": "gemini-3.5-flash-lite",
+            "thinking": null,
+            "fallback_from": null
+          },
+          "query_stage": {
+            "rewriting": false,
+            "multi_query": false,
+            "hyde": false,
+            "calls": []
+          }
+        },
+        "config": {
+          "query_rewriting_enabled": false,
+          "multi_query_enabled": false,
+          "hyde_enabled": false,
+          "retrieval_enabled": true,
+          "retrieval_mode": "vector",
+          "context_top_k": 3,
+          "context_min_score": 0.0,
+          "rewritten_hint_enabled": false,
+          "cot_enabled": false,
+          "cot_position": "first",
+          "self_refine_enabled": false,
+          "prompt_version": "v1_grounded",
+          "structured_output_mode": "schema",
+          "model": "gemini-3.5-flash-lite",
+          "temperature": 0.0,
+          "seed": 42,
+          "num_ctx": 32768,
+          "num_predict": 600,
+          "think": false,
+          "attendant_provider": "gemini",
+          "attendant_fallback": "none"
+        },
+        "timings": {
+          "query_s": 0.0,
+          "retrieval_s": 0.304,
+          "generation_s": 3.949,
+          "total_s": 4.254,
+          "prompt_tokens": 903,
+          "completion_tokens": 74,
+          "tokens_per_s": 18.7,
+          "load_duration_s": null
+        },
+        "rag_collection": "veterinary_documents__20260925T061349534255Z__280baf13"
+      },
+      {
+        "id": "55a4571f-2118-482e-8f10-49d4a8bf0a72",
+        "role": "tutor",
+        "content": "Não sai nenhum xixi",
+        "created_at": "2026-10-02T12:21:24.671720+00:00",
+        "origin": "form",
+        "selected_option": "Não sai nenhum xixi",
+        "question_id": "017ebc09-bca6-46c6-bebd-5a5bec960997",
+        "answer_to": "Quanto xixi você observou sair?"
+      },
+      {
+        "id": "85d6f4ad-6671-447e-b615-0a9fde4cc579",
+        "role": "assistant",
+        "content": "Seu gato está fazendo força na caixa de areia sem conseguir urinar, o que indica uma emergência médica.\nProcure um veterinário agora, sem esperar.",
+        "created_at": "2026-10-02T12:21:26.148827+00:00",
+        "triage": {
+          "classificacao": "EMERGENCIA",
+          "justificativa": "Seu gato está fazendo força na caixa de areia sem conseguir urinar, o que indica uma emergência médica.",
+          "sinais_de_alerta": [
+            "Não sai nenhum xixi"
+          ],
+          "recomendacao": "Procure um veterinário agora, sem esperar.",
+          "fontes": [
+            {
+              "index": 1,
+              "chunk_id": "ficha__urethral_obstruction",
+              "title": "Ficha de triagem: Obstrucao uretral",
+              "source": "Ficha de triagem do time (mapa de assuntos)",
+              "display_title": "Obstrução uretral",
+              "references": [
+                {
+                  "title": "Case report: Utility, complications, and short-term outcomes in three dogs managed with percutaneous pigtail cystostomy catheters for urethral obstruction",
+                  "journal": "Frontiers in Veterinary Science",
+                  "year": 2023,
+                  "doi": "10.3389/fvets.2023.1200406",
+                  "url": "https://doi.org/10.3389/fvets.2023.1200406"
+                },
+                {
+                  "title": "2025 iCatCare consensus guidelines on the diagnosis and management of lower urinary tract diseases in cats",
+                  "journal": "Journal of Feline Medicine and Surgery",
+                  "year": 2025,
+                  "doi": "10.1177/1098612X241309176",
+                  "url": "https://doi.org/10.1177/1098612X241309176"
+                }
+              ]
+            }
+          ],
+          "json_parsed": true,
+          "schema_valid": true,
+          "attempts": 1,
+          "done_reason": "stop",
+          "invalid_source_indices": []
+        },
+        "followup": {
+          "version": "conversational_v2",
+          "state": "completed",
+          "question": null,
+          "options": [],
+          "attempts": 2,
+          "no_progress": 0,
+          "asked": [
+            "urine_output"
+          ],
+          "answered_keys": [],
+          "reason": "classification_available"
+        },
+        "retrieval": {
+          "returned_count": 50,
+          "used_count": 3,
+          "above_threshold_count": 0,
+          "max_score": 0.6446380615234375,
+          "max_ranking_score": 0.6446380615234375,
+          "threshold": 0.7,
+          "context_min_score": 0.0,
+          "used_below_min_score": false
+        },
+        "sources": [
+          {
+            "title": "Ficha de triagem: Obstrucao uretral",
+            "display_title": "Obstrução uretral",
+            "topic": "urethral_obstruction",
+            "references": [
+              {
+                "document": "urethral_obstruction__frontiers_2023_canine_obstruction.pdf",
+                "title": "Case report: Utility, complications, and short-term outcomes in three dogs managed with percutaneous pigtail cystostomy catheters for urethral obstruction",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2023,
+                "doi": "10.3389/fvets.2023.1200406",
+                "url": "https://doi.org/10.3389/fvets.2023.1200406",
+                "language": "en"
+              },
+              {
+                "document": "urethral_obstruction__icatcare_2025_lower_urinary.pdf",
+                "title": "2025 iCatCare consensus guidelines on the diagnosis and management of lower urinary tract diseases in cats",
+                "journal": "Journal of Feline Medicine and Surgery",
+                "year": 2025,
+                "doi": "10.1177/1098612X241309176",
+                "url": "https://doi.org/10.1177/1098612X241309176",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": true
+          },
+          {
+            "title": "Ficha de triagem: Xixi fora do lugar e cistite",
+            "display_title": "Xixi fora do lugar e cistite",
+            "topic": "inappropriate_urination_or_cystitis",
+            "references": [
+              {
+                "document": "inappropriate_urination_or_cystitis__frontiers_2022_feline_cystitis.pdf",
+                "title": "Prevalence, Risk Factors, Pathophysiology, Potential Biomarkers and Management of Feline Idiopathic Cystitis: An Update Review",
+                "journal": "Frontiers in Veterinary Science",
+                "year": 2022,
+                "doi": "10.3389/fvets.2022.900847",
+                "url": "https://doi.org/10.3389/fvets.2022.900847",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          },
+          {
+            "title": "Ficha de triagem: Queda de altura em gato",
+            "display_title": "Queda de altura em gato",
+            "topic": "high_rise_syndrome_cats",
+            "references": [
+              {
+                "document": "high_rise_syndrome_cats__animals_2026_trauma_shock.pdf",
+                "title": "Prognostic Performance of Shock Index, Whole-Blood Lactate Concentration, Rectal–Interdigital Temperature Gradient, and ATT Score in Cats with Trauma-Induced Shock",
+                "journal": "Animals",
+                "year": 2026,
+                "doi": "10.3390/ani16152410",
+                "url": "https://doi.org/10.3390/ani16152410",
+                "language": "en"
+              }
+            ],
+            "source": "Ficha de triagem do time (mapa de assuntos)",
+            "cited": false
+          }
+        ],
+        "provenance": {
+          "attendant": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "model_version": "gemini-3.5-flash-lite",
+            "thinking": null,
+            "fallback_from": null
+          },
+          "query_stage": {
+            "rewriting": false,
+            "multi_query": false,
+            "hyde": false,
+            "calls": []
+          }
+        },
+        "config": {
+          "query_rewriting_enabled": false,
+          "multi_query_enabled": false,
+          "hyde_enabled": false,
+          "retrieval_enabled": true,
+          "retrieval_mode": "vector",
+          "context_top_k": 3,
+          "context_min_score": 0.0,
+          "rewritten_hint_enabled": false,
+          "cot_enabled": false,
+          "cot_position": "first",
+          "self_refine_enabled": false,
+          "prompt_version": "v1_grounded",
+          "structured_output_mode": "schema",
+          "model": "gemini-3.5-flash-lite",
+          "temperature": 0.0,
+          "seed": 42,
+          "num_ctx": 32768,
+          "num_predict": 600,
+          "think": false,
+          "attendant_provider": "gemini",
+          "attendant_fallback": "none"
+        },
+        "timings": {
+          "query_s": 0.0,
+          "retrieval_s": 0.444,
+          "generation_s": 1.012,
+          "total_s": 1.456,
+          "prompt_tokens": 1006,
+          "completion_tokens": 102,
+          "tokens_per_s": 101.0,
+          "load_duration_s": null
+        },
+        "rag_collection": "veterinary_documents__20260925T061349534255Z__280baf13"
+      }
+    ]
+  }
+]

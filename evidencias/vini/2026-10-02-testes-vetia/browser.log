@@ -1,0 +1,19 @@
+
+Running 12 tests using 1 worker
+
+(node:53595) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/followup.spec.ts:6:3 › form reload and single submission: Não observei (1.2s)
+  ✓   2 tests/followup.spec.ts:6:3 › form reload and single submission: Não comeu nada (646ms)
+  ✓   3 tests/followup.spec.ts:6:3 › form reload and single submission: Comeu a quantidade habitual (654ms)
+  ✓   4 tests/followup.spec.ts:6:3 › form reload and single submission: Nenhuma dessas opções descreve o que observei (674ms)
+  ✓   5 tests/triage-guidance.spec.ts:6:3 › supportive guidance preserves EMERGENCIA and original evidence (440ms)
+  ✓   6 tests/triage-guidance.spec.ts:6:3 › supportive guidance preserves INCERTO and original evidence (441ms)
+  ✓   7 tests/triage-guidance.spec.ts:6:3 › supportive guidance preserves NAO_EMERGENCIA and original evidence (438ms)
+  ✓   8 tests/workspace.spec.ts:5:1 › entry, tutor chat, draft restoration and pet persistence (1.2s)
+  ✓   9 tests/workspace.spec.ts:64:1 › own tutor signup with optional animal persists and logs in again (1.5s)
+  ✓  10 tests/workspace.spec.ts:105:1 › mobile navigation has no horizontal overflow and keeps emergency search accessible (2.9s)
+  ✓  11 tests/workspace.spec.ts:151:1 › real stored triage to academic clinic, consent and two-party chat (49.3s)
+  ✓  12 tests/workspace.spec.ts:253:1 › own clinic registration remains pending without exposing patient data (652ms)
+
+  12 passed (1.0m)

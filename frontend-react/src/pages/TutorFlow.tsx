@@ -8,6 +8,7 @@ import { ShareReview } from "../components/ShareReview";
 import { CaseView } from "../components/CaseView";
 import { FollowupCard } from "../components/FollowupCard";
 import { VoiceInput } from "../components/VoiceInput";
+import { TriageGuidance } from "../components/TriageGuidance";
 
 export function TutorFlow({
   session,
@@ -355,7 +356,7 @@ export function TutorFlow({
                           <span className="mini-brand">
                             <Icon name="paw" size={15} />
                           </span>
-                          VetAI{" "}
+                          VetIA{" "}
                           <span className="tiny">· Orientação automática</span>
                         </>
                       ) : (
@@ -364,9 +365,14 @@ export function TutorFlow({
                         </>
                       )}
                     </div>
-                    <div className="message-content">
-                      {m.triage ? m.triage.justificativa : m.content}
-                    </div>
+                    {m.triage ? (
+                      <TriageGuidance
+                        triage={m.triage}
+                        onFindCare={() => navigate("map")}
+                      />
+                    ) : (
+                      <div className="message-content">{m.content}</div>
+                    )}
                     {m.origin === "form" && (
                       <small>Resposta enviada pelo formulário</small>
                     )}
@@ -388,41 +394,6 @@ export function TutorFlow({
                           })
                         }
                       />
-                    )}
-                    {m.triage && (
-                      <div
-                        className={
-                          "triage-card " + m.triage.classificacao.toLowerCase()
-                        }
-                      >
-                        <strong>
-                          {m.triage.classificacao === "EMERGENCIA"
-                            ? "Procure atendimento agora"
-                            : m.triage.classificacao === "INCERTO"
-                              ? "Não foi possível determinar a urgência"
-                              : "Orientação inicial"}
-                        </strong>
-                        <p>{m.triage.recomendacao}</p>
-                        {m.triage.sinais_de_alerta.length > 0 && (
-                          <details>
-                            <summary>Sinais que merecem atenção</summary>
-                            <ul>
-                              {m.triage.sinais_de_alerta.map((s, i) => (
-                                <li key={i}>{s}</li>
-                              ))}
-                            </ul>
-                          </details>
-                        )}
-                        {m.triage.classificacao === "EMERGENCIA" && (
-                          <button
-                            className="primary"
-                            onClick={() => navigate("map")}
-                          >
-                            Encontrar atendimento
-                            <Icon name="arrow" />
-                          </button>
-                        )}
-                      </div>
                     )}
                     {m.retrieval && (
                       <details className="sources">

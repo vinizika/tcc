@@ -15,6 +15,9 @@ e re-ranking.
 
 ## Rodadas
 
+- [Rodada 24 — nova rodada de testes VetIA (02/10)](2026-10-02-24-nova-rodada-vetia.md): 94 turnos reais, comparação congelada, reprodução do caso manual, 12 testes de navegador e diagnóstico de esperas por 503.
+- [Rodada 23 — comunicação acolhedora e VetIA (02/10)](2026-10-02-23-comunicacao-acolhedora-vetia.md): feedback manual, contexto e próximos passos na interface, marca e regressão de navegador.
+- [Rodada 22 — revisão geral e prioridades (02/10)](2026-10-02-22-revisao-geral-e-prioridades.md): maturidade, lacunas e próximos passos ordenados.
 - [Rodada 21 — panorama histórico e etapa atual (02/10)](2026-10-02-21-panorama-historico-e-etapa-atual.md): comparação dos conjuntos/métricas do projeto, estágio da POC e próximos passos.
 - [Rodada 20 — correção e repetição congelada (02/10)](2026-10-02-20-correcao-regressoes-conversacionais.md): causas das regressões, duas tentativas preservadas, comparação e limites.
 - [Rodada 19 — disponibilização do estado atual (02/10)](2026-10-02-19-publicacao-estado-atual.md): decisão de commit/PR, interpretação dos resultados e limitações conhecidas preservadas.

@@ -1,11 +1,11 @@
-# VetAI — sistema de marca e interface da POC
+# VetIA — sistema de marca e interface da POC
 
-Versão 1 · 24/09/2026 · proposta aplicada, ainda não validada com participantes.
+Versão 2 · 02/10/2026 · nome atualizado a pedido do usuário; proposta ainda não validada com participantes.
 
 ## Intenção
 
 Clareza quando o tutor está preocupado. Acolhimento sem infantilizar; competência
-sem parecer um diagnóstico. VetAI mantém o nome já usado pelo projeto. Esta
+sem parecer um diagnóstico. VetIA é o nome visível da aplicação desde 02/10. Esta
 proposta não declara registro de marca nem aprovação clínica.
 
 **Promessa de interface:** “O próximo passo, com mais clareza.”
@@ -30,7 +30,7 @@ validada. H03, H05 e H08–H11 continuam hipóteses, não resultados de usabilid
 
 ## Marca
 
-Logotipo tipográfico “vetai.” acompanhado de uma pata em um quadrado arredondado.
+Logotipo tipográfico “vetia.” acompanhado de uma pata em um quadrado arredondado.
 A pata indica o contexto animal; não usar cruz médica, selo ou escudo como
 certificação. O ponto ocre dá calor, sem competir com alertas.
 

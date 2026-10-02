@@ -1,0 +1,9 @@
+{
+  "label_status": "exploratory; no new expert-certified gold labels",
+  "repetitions": 3,
+  "cases": [
+    {"id": "manual", "turns": ["Minha gata está muito cansada e ela não está conseguindo ficar de pé, está sempre de boca aberta.", "ela parece que está tendo dificuldade para respirar"]},
+    {"id": "explicit", "turns": ["Minha gata está muito cansada, não está conseguindo ficar de pé e está respirando de boca aberta com dificuldade para respirar."]},
+    {"id": "negative_control", "turns": ["Minha gata está deitada descansando, mas levanta e anda normalmente quando eu chamo. Está respirando sem esforço e com a boca fechada. Comeu e bebeu normalmente."]}
+  ]
+}
