@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-10-02T14:07:35.624246+00:00",
+  "checks": {
+    "bge": {
+      "calls": 1506,
+      "paired_equal": 753,
+      "ranks_stable": true,
+      "all_rows_have_50_candidates": true
+    },
+    "minilm": {
+      "calls": 1506,
+      "paired_equal": 753,
+      "ranks_stable": true,
+      "all_rows_have_50_candidates": true
+    }
+  },
+  "aggregate_rebuild_identical": true,
+  "python_ast_parse": "passed",
+  "frozen_input_runner_protocol_hashes": "passed",
+  "git_diff_check": "passed",
+  "llm_calls": 0,
+  "measured_queries": 3012,
+  "warmup_queries": 4
+}

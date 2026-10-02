@@ -1884,3 +1884,14 @@ INCERTO em 3/3, passando a EMERGENCIA após o complemento. As esperas por HTTP 5
 explicaram 300 s do turno máximo de 326,50 s. Backend/build e 12 testes de browser
 passaram. Limites, dados completos e prioridades na
 [rodada 24](2026-10-02-24-nova-rodada-vetia.md).
+
+## Rodada 25 — SBERT e LangChain
+
+Comparação isolada de BGE-M3/MiniLM e acesso direto/LangChain: 3.012 consultas,
+sem chamadas ao Gemini ou mudanças no produto. BGE manteve os resultados
+históricos: top 3 de 123/129 em dev + calibração + régua, e 94/122 nos
+independentes. MiniLM alcançou 73/129 e 60/122, embora 7,43× mais rápido na
+mediana global. LangChain preservou documentos, scores e prompts em 1.506/1.506
+pares. Manter BGE e avaliar otimização de inferência antes de trocar bibliotecas.
+Memória, indexação, truncamento, casos individuais e metodologia na
+[rodada 25](2026-10-02-25-sbert-langchain.md).

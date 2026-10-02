@@ -1,0 +1,19 @@
+{
+  "base_commit": "454bdcf95b1fd3d2ae92a1c3c8862cb47aab7489",
+  "recorded_at": "2026-10-02T13:45:42.834253+00:00",
+  "docker": {
+    "architecture": "aarch64",
+    "cpus": 8,
+    "memory_bytes": 4106604544
+  },
+  "files": {
+    "benchmark.py": "93d8607b122308be4cda00541d35f29fa22e62565aaff4af480c61ec63ad4821",
+    "inputs.json": "6ddf467b90719d8ce1487e53477360dc36c574b445170adba64889e27b94fa23",
+    "protocolo.md": "c6afeaccafd8e97b5fa8fddc43a6bf4fb29d2509d74525c02da6c3e46ac56fcd"
+  },
+  "execution_order": [
+    "minilm",
+    "bge"
+  ],
+  "production_changes": false
+}
