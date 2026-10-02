@@ -1,0 +1,5 @@
+{
+  "source": "/Users/vinicius/Documents/tcc/evidencias/vini/2026-10-02-validacao-final/api-smoke.json",
+  "conversation_id": "02d570e1-34b7-48f3-aa56-f0a5cc3737dc",
+  "note": "Existing real API conversation; no clinical HTTP fixtures in workspace tests"
+}

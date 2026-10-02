@@ -1,4 +1,4 @@
-/* VetAI — calm, legible, intentional. See docs/brand-book.md. */
+/* VetIA — calm, legible, intentional. See docs/brand-book.md. */
 :root {
   font-family: "DM Sans Variable", system-ui, sans-serif;
   color: #233d38;
@@ -988,6 +988,25 @@ small,
 }
 .triage-card .primary {
   margin-top: 16px;
+}
+.reported-signs {
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.care-steps {
+  padding-left: 20px;
+  margin: 12px 0 0;
+}
+.care-steps li + li {
+  margin-top: 8px;
+}
+.analysis-explanation {
+  font-size: 13px;
+  margin: 12px 0;
+}
+.analysis-explanation summary {
+  cursor: pointer;
 }
 .sources {
   font-size: 11px;

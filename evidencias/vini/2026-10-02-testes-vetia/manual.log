@@ -1,0 +1,12 @@
+manual 0 1 idle INCERTO
+manual 0 2 idle EMERGENCIA
+explicit 0 1 idle EMERGENCIA
+negative_control 0 1 idle NAO_EMERGENCIA
+manual 1 1 idle INCERTO
+manual 1 2 idle EMERGENCIA
+explicit 1 1 idle EMERGENCIA
+negative_control 1 1 idle NAO_EMERGENCIA
+manual 2 1 idle INCERTO
+manual 2 2 idle EMERGENCIA
+explicit 2 1 idle EMERGENCIA
+negative_control 2 1 idle NAO_EMERGENCIA

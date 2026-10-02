@@ -1,0 +1,697 @@
+{
+  "calibration": {
+    "before": {
+      "n": 36,
+      "correct": 34,
+      "accuracy": 0.9444444444444444,
+      "macro_f1": 0.8666666666666667,
+      "balanced_accuracy": 0.9583333333333334,
+      "recall": {
+        "EMERGENCIA": 1.0,
+        "NAO_EMERGENCIA": 0.875,
+        "INCERTO": 1.0
+      },
+      "f1": {
+        "EMERGENCIA": 1.0,
+        "NAO_EMERGENCIA": 0.9333333333333333,
+        "INCERTO": 0.6666666666666666
+      },
+      "confusion_matrix": {
+        "EMERGENCIA": {
+          "EMERGENCIA": 18,
+          "NAO_EMERGENCIA": 0,
+          "INCERTO": 0,
+          "ERROR": 0
+        },
+        "NAO_EMERGENCIA": {
+          "EMERGENCIA": 0,
+          "NAO_EMERGENCIA": 14,
+          "INCERTO": 2,
+          "ERROR": 0
+        },
+        "INCERTO": {
+          "EMERGENCIA": 0,
+          "NAO_EMERGENCIA": 0,
+          "INCERTO": 2,
+          "ERROR": 0
+        }
+      },
+      "emergency_to_non_emergency": 0,
+      "emergency_to_uncertain": 0,
+      "binary_coverage": 0.8888888888888888,
+      "errors": 0,
+      "latency_s": {
+        "n": 36,
+        "mean": 5.644781529193602,
+        "median": 3.706946584992693,
+        "p95": 17.59935763325484,
+        "min": 1.4229356669820845,
+        "max": 28.646572639001533
+      },
+      "calls_per_turn": {
+        "n": 36,
+        "mean": 1,
+        "median": 1.0,
+        "p95": 1.0,
+        "min": 1,
+        "max": 1
+      },
+      "prompt_tokens_total": 32696,
+      "completion_tokens_total": 3836,
+      "invalid_schema_calls": 0,
+      "llm_attempts": 36
+    },
+    "after": {
+      "n": 36,
+      "correct": 34,
+      "accuracy": 0.9444444444444444,
+      "macro_f1": 0.8666666666666667,
+      "balanced_accuracy": 0.9583333333333334,
+      "recall": {
+        "EMERGENCIA": 1.0,
+        "NAO_EMERGENCIA": 0.875,
+        "INCERTO": 1.0
+      },
+      "f1": {
+        "EMERGENCIA": 1.0,
+        "NAO_EMERGENCIA": 0.9333333333333333,
+        "INCERTO": 0.6666666666666666
+      },
+      "confusion_matrix": {
+        "EMERGENCIA": {
+          "EMERGENCIA": 18,
+          "NAO_EMERGENCIA": 0,
+          "INCERTO": 0,
+          "ERROR": 0
+        },
+        "NAO_EMERGENCIA": {
+          "EMERGENCIA": 0,
+          "NAO_EMERGENCIA": 14,
+          "INCERTO": 2,
+          "ERROR": 0
+        },
+        "INCERTO": {
+          "EMERGENCIA": 0,
+          "NAO_EMERGENCIA": 0,
+          "INCERTO": 2,
+          "ERROR": 0
+        }
+      },
+      "emergency_to_non_emergency": 0,
+      "emergency_to_uncertain": 0,
+      "binary_coverage": 0.8888888888888888,
+      "errors": 0,
+      "latency_s": {
+        "n": 36,
+        "mean": 16.632922300306543,
+        "median": 3.741034855993348,
+        "p95": 47.25457281299896,
+        "min": 1.4183303749887273,
+        "max": 326.49767465001787
+      },
+      "calls_per_turn": {
+        "n": 36,
+        "mean": 1.1111111111111112,
+        "median": 1.0,
+        "p95": 2.0,
+        "min": 1,
+        "max": 2
+      },
+      "prompt_tokens_total": 37226,
+      "completion_tokens_total": 4008,
+      "invalid_schema_calls": 0,
+      "llm_attempts": 40
+    }
+  },
+  "calibration_paired": {
+    "paired_predictions": 36,
+    "independent_case_clusters": 18,
+    "accuracy_delta": 0,
+    "cluster_bootstrap_ci95": [
+      0.0,
+      0.0
+    ],
+    "latency_delta_s": {
+      "n": 36,
+      "mean": 10.988140771112942,
+      "median": 0.40629197903035674,
+      "p95": 40.581342768004106,
+      "min": -26.96665151399793,
+      "max": 323.7435621909972
+    },
+    "retrieval_source_jaccard": {
+      "n": 36,
+      "mean": 1.0,
+      "median": 1.0,
+      "p95": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "regressions": [],
+    "gains": [],
+    "changed_predictions": []
+  },
+  "per_repetition": {
+    "0": {
+      "before": {
+        "n": 18,
+        "correct": 17,
+        "accuracy": 0.9444444444444444,
+        "macro_f1": 0.8666666666666667,
+        "balanced_accuracy": 0.9583333333333334,
+        "recall": {
+          "EMERGENCIA": 1.0,
+          "NAO_EMERGENCIA": 0.875,
+          "INCERTO": 1.0
+        },
+        "f1": {
+          "EMERGENCIA": 1.0,
+          "NAO_EMERGENCIA": 0.9333333333333333,
+          "INCERTO": 0.6666666666666666
+        },
+        "confusion_matrix": {
+          "EMERGENCIA": {
+            "EMERGENCIA": 9,
+            "NAO_EMERGENCIA": 0,
+            "INCERTO": 0,
+            "ERROR": 0
+          },
+          "NAO_EMERGENCIA": {
+            "EMERGENCIA": 0,
+            "NAO_EMERGENCIA": 7,
+            "INCERTO": 1,
+            "ERROR": 0
+          },
+          "INCERTO": {
+            "EMERGENCIA": 0,
+            "NAO_EMERGENCIA": 0,
+            "INCERTO": 1,
+            "ERROR": 0
+          }
+        },
+        "emergency_to_non_emergency": 0,
+        "emergency_to_uncertain": 0,
+        "binary_coverage": 0.8888888888888888,
+        "errors": 0,
+        "latency_s": {
+          "n": 18,
+          "mean": 7.422668693166795,
+          "median": 4.233129918487975,
+          "p95": 28.240634100639728,
+          "min": 1.4899465420166962,
+          "max": 28.646572639001533
+        },
+        "calls_per_turn": {
+          "n": 18,
+          "mean": 1,
+          "median": 1.0,
+          "p95": 1.0,
+          "min": 1,
+          "max": 1
+        },
+        "prompt_tokens_total": 16348,
+        "completion_tokens_total": 1918,
+        "invalid_schema_calls": 0,
+        "llm_attempts": 18
+      },
+      "after": {
+        "n": 18,
+        "correct": 17,
+        "accuracy": 0.9444444444444444,
+        "macro_f1": 0.8666666666666667,
+        "balanced_accuracy": 0.9583333333333334,
+        "recall": {
+          "EMERGENCIA": 1.0,
+          "NAO_EMERGENCIA": 0.875,
+          "INCERTO": 1.0
+        },
+        "f1": {
+          "EMERGENCIA": 1.0,
+          "NAO_EMERGENCIA": 0.9333333333333333,
+          "INCERTO": 0.6666666666666666
+        },
+        "confusion_matrix": {
+          "EMERGENCIA": {
+            "EMERGENCIA": 9,
+            "NAO_EMERGENCIA": 0,
+            "INCERTO": 0,
+            "ERROR": 0
+          },
+          "NAO_EMERGENCIA": {
+            "EMERGENCIA": 0,
+            "NAO_EMERGENCIA": 7,
+            "INCERTO": 1,
+            "ERROR": 0
+          },
+          "INCERTO": {
+            "EMERGENCIA": 0,
+            "NAO_EMERGENCIA": 0,
+            "INCERTO": 1,
+            "ERROR": 0
+          }
+        },
+        "emergency_to_non_emergency": 0,
+        "emergency_to_uncertain": 0,
+        "binary_coverage": 0.8888888888888888,
+        "errors": 0,
+        "latency_s": {
+          "n": 18,
+          "mean": 28.52284726061205,
+          "median": 4.476767001993721,
+          "p95": 120.7329094771598,
+          "min": 1.4183303749887273,
+          "max": 326.49767465001787
+        },
+        "calls_per_turn": {
+          "n": 18,
+          "mean": 1.1111111111111112,
+          "median": 1.0,
+          "p95": 2.0,
+          "min": 1,
+          "max": 2
+        },
+        "prompt_tokens_total": 18613,
+        "completion_tokens_total": 2004,
+        "invalid_schema_calls": 0,
+        "llm_attempts": 20
+      }
+    },
+    "1": {
+      "before": {
+        "n": 18,
+        "correct": 17,
+        "accuracy": 0.9444444444444444,
+        "macro_f1": 0.8666666666666667,
+        "balanced_accuracy": 0.9583333333333334,
+        "recall": {
+          "EMERGENCIA": 1.0,
+          "NAO_EMERGENCIA": 0.875,
+          "INCERTO": 1.0
+        },
+        "f1": {
+          "EMERGENCIA": 1.0,
+          "NAO_EMERGENCIA": 0.9333333333333333,
+          "INCERTO": 0.6666666666666666
+        },
+        "confusion_matrix": {
+          "EMERGENCIA": {
+            "EMERGENCIA": 9,
+            "NAO_EMERGENCIA": 0,
+            "INCERTO": 0,
+            "ERROR": 0
+          },
+          "NAO_EMERGENCIA": {
+            "EMERGENCIA": 0,
+            "NAO_EMERGENCIA": 7,
+            "INCERTO": 1,
+            "ERROR": 0
+          },
+          "INCERTO": {
+            "EMERGENCIA": 0,
+            "NAO_EMERGENCIA": 0,
+            "INCERTO": 1,
+            "ERROR": 0
+          }
+        },
+        "emergency_to_non_emergency": 0,
+        "emergency_to_uncertain": 0,
+        "binary_coverage": 0.8888888888888888,
+        "errors": 0,
+        "latency_s": {
+          "n": 18,
+          "mean": 3.8668943652204084,
+          "median": 3.0883879600005457,
+          "p95": 9.59974947494192,
+          "min": 1.4229356669820845,
+          "max": 14.076144215010572
+        },
+        "calls_per_turn": {
+          "n": 18,
+          "mean": 1,
+          "median": 1.0,
+          "p95": 1.0,
+          "min": 1,
+          "max": 1
+        },
+        "prompt_tokens_total": 16348,
+        "completion_tokens_total": 1918,
+        "invalid_schema_calls": 0,
+        "llm_attempts": 18
+      },
+      "after": {
+        "n": 18,
+        "correct": 17,
+        "accuracy": 0.9444444444444444,
+        "macro_f1": 0.8666666666666667,
+        "balanced_accuracy": 0.9583333333333334,
+        "recall": {
+          "EMERGENCIA": 1.0,
+          "NAO_EMERGENCIA": 0.875,
+          "INCERTO": 1.0
+        },
+        "f1": {
+          "EMERGENCIA": 1.0,
+          "NAO_EMERGENCIA": 0.9333333333333333,
+          "INCERTO": 0.6666666666666666
+        },
+        "confusion_matrix": {
+          "EMERGENCIA": {
+            "EMERGENCIA": 9,
+            "NAO_EMERGENCIA": 0,
+            "INCERTO": 0,
+            "ERROR": 0
+          },
+          "NAO_EMERGENCIA": {
+            "EMERGENCIA": 0,
+            "NAO_EMERGENCIA": 7,
+            "INCERTO": 1,
+            "ERROR": 0
+          },
+          "INCERTO": {
+            "EMERGENCIA": 0,
+            "NAO_EMERGENCIA": 0,
+            "INCERTO": 1,
+            "ERROR": 0
+          }
+        },
+        "emergency_to_non_emergency": 0,
+        "emergency_to_uncertain": 0,
+        "binary_coverage": 0.8888888888888888,
+        "errors": 0,
+        "latency_s": {
+          "n": 18,
+          "mean": 4.742997340001036,
+          "median": 2.837114897018182,
+          "p95": 12.763539897053832,
+          "min": 1.524050833977526,
+          "max": 25.29339117798372
+        },
+        "calls_per_turn": {
+          "n": 18,
+          "mean": 1.1111111111111112,
+          "median": 1.0,
+          "p95": 2.0,
+          "min": 1,
+          "max": 2
+        },
+        "prompt_tokens_total": 18613,
+        "completion_tokens_total": 2004,
+        "invalid_schema_calls": 0,
+        "llm_attempts": 20
+      }
+    }
+  },
+  "dialogs": {},
+  "prepared_cases": 0,
+  "form_reached": 0,
+  "form_reasons": {},
+  "turns_to_form": {
+    "n": 0,
+    "mean": null,
+    "median": null,
+    "p95": null,
+    "min": null,
+    "max": null
+  },
+  "form_vs_identical_text": {
+    "paired_predictions": 0,
+    "independent_case_clusters": 0,
+    "accuracy_delta": null,
+    "cluster_bootstrap_ci95": [
+      null,
+      null
+    ],
+    "latency_delta_s": {
+      "n": 0,
+      "mean": null,
+      "median": null,
+      "p95": null,
+      "min": null,
+      "max": null
+    },
+    "retrieval_source_jaccard": {
+      "n": 0,
+      "mean": null,
+      "median": null,
+      "p95": null,
+      "min": null,
+      "max": null
+    },
+    "regressions": [],
+    "gains": [],
+    "changed_predictions": []
+  },
+  "old_vs_new_with_identical_data": {
+    "paired_predictions": 0,
+    "independent_case_clusters": 0,
+    "accuracy_delta": null,
+    "cluster_bootstrap_ci95": [
+      null,
+      null
+    ],
+    "latency_delta_s": {
+      "n": 0,
+      "mean": null,
+      "median": null,
+      "p95": null,
+      "min": null,
+      "max": null
+    },
+    "retrieval_source_jaccard": {
+      "n": 0,
+      "mean": null,
+      "median": null,
+      "p95": null,
+      "min": null,
+      "max": null
+    },
+    "regressions": [],
+    "gains": [],
+    "changed_predictions": []
+  },
+  "total_turns": 73,
+  "total_llm_calls": 77,
+  "warmup": [
+    28.197347512992565
+  ],
+  "stage_metrics": {
+    "classification": {
+      "latency_s": {
+        "n": 73,
+        "mean": 10.240471824371314,
+        "median": 3.22717629300314,
+        "p95": 27.53590608020312,
+        "min": 0.9684634580044076,
+        "max": 325.1512386070099
+      },
+      "prompt_tokens": 66267,
+      "completion_tokens": 7783
+    },
+    "followup": {
+      "latency_s": {
+        "n": 4,
+        "mean": 2.632241646759212,
+        "median": 1.3644141670083627,
+        "p95": 6.045384910653227,
+        "min": 0.9343994170194492,
+        "max": 6.8657388360006735
+      },
+      "prompt_tokens": 4530,
+      "completion_tokens": 172
+    }
+  },
+  "exploratory_ablation": {
+    "n": 0,
+    "correct": 0,
+    "accuracy": null,
+    "macro_f1": null,
+    "balanced_accuracy": null,
+    "recall": {
+      "EMERGENCIA": null,
+      "NAO_EMERGENCIA": null,
+      "INCERTO": null
+    },
+    "f1": {
+      "EMERGENCIA": null,
+      "NAO_EMERGENCIA": null,
+      "INCERTO": null
+    },
+    "confusion_matrix": {
+      "EMERGENCIA": {
+        "EMERGENCIA": 0,
+        "NAO_EMERGENCIA": 0,
+        "INCERTO": 0,
+        "ERROR": 0
+      },
+      "NAO_EMERGENCIA": {
+        "EMERGENCIA": 0,
+        "NAO_EMERGENCIA": 0,
+        "INCERTO": 0,
+        "ERROR": 0
+      },
+      "INCERTO": {
+        "EMERGENCIA": 0,
+        "NAO_EMERGENCIA": 0,
+        "INCERTO": 0,
+        "ERROR": 0
+      }
+    },
+    "emergency_to_non_emergency": 0,
+    "emergency_to_uncertain": 0,
+    "binary_coverage": null,
+    "errors": 0,
+    "latency_s": {
+      "n": 0,
+      "mean": null,
+      "median": null,
+      "p95": null,
+      "min": null,
+      "max": null
+    },
+    "calls_per_turn": {
+      "n": 0,
+      "mean": null,
+      "median": null,
+      "p95": null,
+      "min": null,
+      "max": null
+    },
+    "prompt_tokens_total": 0,
+    "completion_tokens_total": 0,
+    "invalid_schema_calls": 0,
+    "llm_attempts": 0
+  },
+  "exploratory_recheck": {
+    "after_form": {
+      "n": 0,
+      "correct": 0,
+      "accuracy": null,
+      "macro_f1": null,
+      "balanced_accuracy": null,
+      "recall": {
+        "EMERGENCIA": null,
+        "NAO_EMERGENCIA": null,
+        "INCERTO": null
+      },
+      "f1": {
+        "EMERGENCIA": null,
+        "NAO_EMERGENCIA": null,
+        "INCERTO": null
+      },
+      "confusion_matrix": {
+        "EMERGENCIA": {
+          "EMERGENCIA": 0,
+          "NAO_EMERGENCIA": 0,
+          "INCERTO": 0,
+          "ERROR": 0
+        },
+        "NAO_EMERGENCIA": {
+          "EMERGENCIA": 0,
+          "NAO_EMERGENCIA": 0,
+          "INCERTO": 0,
+          "ERROR": 0
+        },
+        "INCERTO": {
+          "EMERGENCIA": 0,
+          "NAO_EMERGENCIA": 0,
+          "INCERTO": 0,
+          "ERROR": 0
+        }
+      },
+      "emergency_to_non_emergency": 0,
+      "emergency_to_uncertain": 0,
+      "binary_coverage": null,
+      "errors": 0,
+      "latency_s": {
+        "n": 0,
+        "mean": null,
+        "median": null,
+        "p95": null,
+        "min": null,
+        "max": null
+      },
+      "calls_per_turn": {
+        "n": 0,
+        "mean": null,
+        "median": null,
+        "p95": null,
+        "min": null,
+        "max": null
+      },
+      "prompt_tokens_total": 0,
+      "completion_tokens_total": 0,
+      "invalid_schema_calls": 0,
+      "llm_attempts": 0
+    },
+    "after_same_text": {
+      "n": 0,
+      "correct": 0,
+      "accuracy": null,
+      "macro_f1": null,
+      "balanced_accuracy": null,
+      "recall": {
+        "EMERGENCIA": null,
+        "NAO_EMERGENCIA": null,
+        "INCERTO": null
+      },
+      "f1": {
+        "EMERGENCIA": null,
+        "NAO_EMERGENCIA": null,
+        "INCERTO": null
+      },
+      "confusion_matrix": {
+        "EMERGENCIA": {
+          "EMERGENCIA": 0,
+          "NAO_EMERGENCIA": 0,
+          "INCERTO": 0,
+          "ERROR": 0
+        },
+        "NAO_EMERGENCIA": {
+          "EMERGENCIA": 0,
+          "NAO_EMERGENCIA": 0,
+          "INCERTO": 0,
+          "ERROR": 0
+        },
+        "INCERTO": {
+          "EMERGENCIA": 0,
+          "NAO_EMERGENCIA": 0,
+          "INCERTO": 0,
+          "ERROR": 0
+        }
+      },
+      "emergency_to_non_emergency": 0,
+      "emergency_to_uncertain": 0,
+      "binary_coverage": null,
+      "errors": 0,
+      "latency_s": {
+        "n": 0,
+        "mean": null,
+        "median": null,
+        "p95": null,
+        "min": null,
+        "max": null
+      },
+      "calls_per_turn": {
+        "n": 0,
+        "mean": null,
+        "median": null,
+        "p95": null,
+        "min": null,
+        "max": null
+      },
+      "prompt_tokens_total": 0,
+      "completion_tokens_total": 0,
+      "invalid_schema_calls": 0,
+      "llm_attempts": 0
+    }
+  },
+  "journeys": [],
+  "provider_backoffs": {
+    "baseline": {
+      "http_429_backoff_events": 2,
+      "http_503_backoff_events": 7
+    }
+  },
+  "logical_llm_calls_note": "classify invocations; HTTP backoff retries are additional, token counts are those reported by the successful/last response.",
+  "all_turns_idle": true
+}

@@ -91,7 +91,7 @@ export function App() {
       </section>
       <section className="entry-access">
         <div className="access-inner">
-          <span className="eyebrow">Bem-vindo ao VetAI</span>
+          <span className="eyebrow">Bem-vindo ao VetIA</span>
           <h2>{own ? "Seu espaço de cuidado" : "Como você quer entrar?"}</h2>
           <p className="muted">
             {own

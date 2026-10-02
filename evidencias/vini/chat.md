@@ -1461,3 +1461,23 @@ o commit original ou confundir as duas avaliações. O [panorama da rodada 21](2
 distingue os 98 casos antigos, os 122 relatos independentes, os 134 de prova/régua
 e os 18 casos atuais de calibração. Não inferimos superioridade clínica comparando
 percentuais de conjuntos diferentes.
+
+## 02/10 — teste manual e comunicação VetIA
+
+O usuário relatou a sequência “gata cansada, não fica de pé, boca aberta” →
+INCERTO; “dificuldade para respirar” → EMERGENCIA. Pediu linguagem menos dura,
+contexto breve, instruções rápidas e o nome VetIA. Conferimos o registro local:
+os sinais existiam e a ficha respiratória só entrou no segundo turno. A interface
+ganhou apresentação acolhedora por classe, sinais visíveis, dois próximos passos
+e justificativa original expansível, sem alterar inferência. Decisões, limites e
+testes na [rodada 23](2026-10-02-23-comunicacao-acolhedora-vetia.md).
+
+## 02/10 — novos testes e comparação histórica após VetIA
+
+Pedido: repetir testes e documentar comparações com versões passadas. Foram
+executados 94 turnos reais (incluindo aquecimento), 340 testes backend, 224 de
+scripts, 10 do mock e 12 de navegador. A calibração manteve 94,44% e recall E de
+100%, sem classes alteradas frente à v2. O caso manual repetiu I→E em 3/3 e a
+cauda de latência chegou a 326,50 s, com quatro 503 e 300 s de backoff. Nenhum
+resultado negativo foi descartado. Relatório e artefatos na
+[rodada 24](2026-10-02-24-nova-rodada-vetia.md).

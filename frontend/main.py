@@ -7,14 +7,14 @@ from app.clients.voice_client import transcribe_audio
 
 
 st.set_page_config(
-    page_title="VetAI",
+    page_title="VetIA",
     page_icon="🐶",
     layout="wide"
 )
 
-st.title("🐶 VetAI")
+st.title("🐶 VetIA")
 
-st.subheader("Converse com a VetAI")
+st.subheader("Converse com a VetIA")
 
 
 voice_prompt = None

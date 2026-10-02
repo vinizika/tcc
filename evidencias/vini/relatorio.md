@@ -1864,3 +1864,23 @@ Dados, decisões, comparação das duas tentativas e testes:
 [rodada 20](2026-10-02-20-correcao-regressoes-conversacionais.md).
 Comparação histórica, estado funcional e próximos passos:
 [rodada 21](2026-10-02-21-panorama-historico-e-etapa-atual.md).
+
+## 02/10 — comunicação e identidade VetIA
+
+Após feedback de uso manual, a apresentação da triagem ganhou contexto acolhedor,
+sinais visíveis e próximos passos gerais, mantendo urgência, recomendação e
+justificativa clínica original consultável. A marca visível passou a VetIA.
+O primeiro INCERTO do caso manual permanece uma limitação registrada; não foi
+mascarado como correção de acurácia. O frontend foi testado e atualizado no Docker
+local. Implementação, verificação e limites na
+[rodada 23](2026-10-02-23-comunicacao-acolhedora-vetia.md).
+
+## 02/10 — reavaliação da versão VetIA
+
+Reexecutada a comparação de 18 casos × duas repetições por braço: 34/36 e 18/18
+emergências nos dois braços, com 36 prompts/classes iguais à v2. Repetidos quatro
+smokes reais e nove conversas exploratórias; o primeiro relato manual permaneceu
+INCERTO em 3/3, passando a EMERGENCIA após o complemento. As esperas por HTTP 503
+explicaram 300 s do turno máximo de 326,50 s. Backend/build e 12 testes de browser
+passaram. Limites, dados completos e prioridades na
+[rodada 24](2026-10-02-24-nova-rodada-vetia.md).
