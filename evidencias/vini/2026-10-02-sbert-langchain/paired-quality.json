@@ -1,0 +1,32 @@
+{
+  "regua": {
+    "n": 66,
+    "minilm_gains": 0,
+    "minilm_losses": 26,
+    "hit3_delta_percentage_points": -39.39393939393939
+  },
+  "dev": {
+    "n": 47,
+    "minilm_gains": 0,
+    "minilm_losses": 17,
+    "hit3_delta_percentage_points": -36.170212765957444
+  },
+  "calibracao": {
+    "n": 16,
+    "minilm_gains": 0,
+    "minilm_losses": 7,
+    "hit3_delta_percentage_points": -43.75
+  },
+  "independentes": {
+    "n": 122,
+    "minilm_gains": 5,
+    "minilm_losses": 39,
+    "hit3_delta_percentage_points": -27.868852459016395
+  },
+  "all": {
+    "n": 251,
+    "minilm_gains": 5,
+    "minilm_losses": 89,
+    "hit3_delta_percentage_points": -33.46613545816733
+  }
+}

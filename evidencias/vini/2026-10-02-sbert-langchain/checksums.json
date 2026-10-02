@@ -1,0 +1,20 @@
+{
+  "README.md": "7f2167773b6199c289985f751fd89122c2952ab7d5994319e08c7d09e2de39b6",
+  "benchmark.py": "93d8607b122308be4cda00541d35f29fa22e62565aaff4af480c61ec63ad4821",
+  "bge/metadata.json": "ad2fbd8d6c61e1ac1396469bbbebeac0fe730285c75f2929bbb06534f5b7c705",
+  "bge/queries.jsonl": "db988699d468ca060fac449d07500a28765b5bacaef5713fe986eff41adba152",
+  "case-comparison.json": "4886f2349f6bfd2b48db116fdda115606be3baa3dee2019a4132016997e9ba72",
+  "environment.json": "4f3b251e72ea138738e142ba46507c035851468cff2a15adaf8a0e8993474b33",
+  "inputs.json": "6ddf467b90719d8ce1487e53477360dc36c574b445170adba64889e27b94fa23",
+  "manifest.json": "60304c0017f76de20bd25b80fe22b9e63724120737b7147fd81dc27a57ef1c39",
+  "minilm/metadata.json": "645c0079201f97c0504e22793d3ff944d0dab78f9b0a6005fd3977bb53b6d4ef",
+  "minilm/queries.jsonl": "77def25fd8dcf49248cba0e3d35fb674e8ba52855ccb3d5dfdc12f2d66835abb",
+  "paired-quality.json": "dd12f4a3bd1ca5ab668d1c23c7ad7563fa497cfa5a28a3b2936dc2c8726e5af7",
+  "protocolo.md": "c6afeaccafd8e97b5fa8fddc43a6bf4fb29d2509d74525c02da6c3e46ac56fcd",
+  "resource-observations.json": "6ef311f1d5f6e0aab667463fe02398afa63d025ef0b8874ba094b75868698b2d",
+  "summarize.py": "1ac2fed098d926464c57d041a0458e05a44b4d2c33051847926c34f4ec4dca5a",
+  "summary.json": "3b119671e1ff356e45cfc50ac7fae89b005c932984f43f2aa64dc94c794bf7d5",
+  "token-lengths.json": "3b14dd0add3ebc61163cfebc3c630847f433cf63e5d330bd32febeab89dbcae5",
+  "token_lengths.py": "974a6bc1f8452b2345afd2c775e954532d90b3826a42099a3660fce02f42d29a",
+  "validation.json": "f662916528f7b237b04c572671df0e48ebec82721f3da3c99c46c476aa21b6c6"
+}

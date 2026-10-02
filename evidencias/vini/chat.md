@@ -1481,3 +1481,13 @@ scripts, 10 do mock e 12 de navegador. A calibração manteve 94,44% e recall E 
 cauda de latência chegou a 326,50 s, com quatro 503 e 300 s de backoff. Nenhum
 resultado negativo foi descartado. Relatório e artefatos na
 [rodada 24](2026-10-02-24-nova-rodada-vetia.md).
+
+## 02/10 — comparação SBERT e LangChain
+
+Pedido: medir se vale adotar SBERT e/ou LangChain. Confirmado que o projeto já
+usa Sentence Transformers com BGE-M3. Foram executadas 3.012 consultas locais
+(251 casos × três repetições × quatro braços). MiniLM perdeu 33,47 p.p. de hit@3
+em troca de mediana 7,43× menor. LangChain preservou todos os 1.506 pares de
+ranks/prompts, sem ganho de recuperação. Decisão: manter a receita atual e não
+migrar de framework por expectativa de desempenho. Resultados, dados brutos,
+recursos, limites e histórico na [rodada 25](2026-10-02-25-sbert-langchain.md).

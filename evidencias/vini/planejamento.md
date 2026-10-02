@@ -9,6 +9,14 @@ busca vetorial e re-ranking. O histórico detalhado está nas
 
 ## Objetivo do trilho
 
+**Atualização de 02/10 — rodada 25:** comparação de embeddings concluída na
+receita atual de 61 fichas. Manter BGE-M3 com Sentence Transformers; MiniLM
+direto foi 7,43× mais rápido, mas perdeu 33,47 p.p. de hit@3. LangChain equivalente
+não mudou ranks/prompts. Próximo experimento de custo: otimização do próprio BGE
+com a mesma régua, sem migração de framework por promessa de desempenho.
+Dados e critérios na [rodada 25](2026-10-02-25-sbert-langchain.md). A tabela de
+98 relatos e os planos iniciais abaixo preservam o histórico, não o estado atual.
+
 Dado um relato de tutor, recuperar nas primeiras posições os trechos do
 protocolo correto — ou não fornecer contexto quando a base não cobre o assunto
 — com resultado medido por uma régua própria de recuperação.

@@ -1,0 +1,19 @@
+{
+  "source": "Transcricao dos comandos de monitoramento desta execucao; amostras pontuais, nao serie temporal",
+  "bge_process_sample": {
+    "vm_rss_kib": 2078040,
+    "vm_swap_kib": 136,
+    "threads": 33
+  },
+  "vm_sample": {
+    "mem_total_kib": 4010356,
+    "mem_available_kib": 2161740,
+    "swap_total_kib": 1048572,
+    "swap_free_kib": 56
+  },
+  "bge_io_sample": {
+    "process_elapsed_s": 211.3,
+    "read_bytes": 7981096960,
+    "write_bytes": 2621440
+  }
+}

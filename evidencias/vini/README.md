@@ -15,6 +15,7 @@ e re-ranking.
 
 ## Rodadas
 
+- [Rodada 25 — SBERT e LangChain (02/10)](2026-10-02-25-sbert-langchain.md): 3.012 consultas; BGE top 3 de 86,45% versus 52,99% do MiniLM; LangChain preservou 1.506 pares de prompts, sem ganho de recuperação.
 - [Rodada 24 — nova rodada de testes VetIA (02/10)](2026-10-02-24-nova-rodada-vetia.md): 94 turnos reais, comparação congelada, reprodução do caso manual, 12 testes de navegador e diagnóstico de esperas por 503.
 - [Rodada 23 — comunicação acolhedora e VetIA (02/10)](2026-10-02-23-comunicacao-acolhedora-vetia.md): feedback manual, contexto e próximos passos na interface, marca e regressão de navegador.
 - [Rodada 22 — revisão geral e prioridades (02/10)](2026-10-02-22-revisao-geral-e-prioridades.md): maturidade, lacunas e próximos passos ordenados.

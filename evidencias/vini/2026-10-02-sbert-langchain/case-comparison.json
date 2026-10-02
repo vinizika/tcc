@@ -1,0 +1,4771 @@
+[
+  {
+    "dataset": "regua",
+    "id": "b01",
+    "expected": [
+      "chocolate_toxicosis"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "chocolate_toxicosis",
+      "dietary_indiscretion_mild",
+      "gastric_dilatation_volvulus"
+    ],
+    "minilm_top3": [
+      "chocolate_toxicosis",
+      "toad_bufotoxin_poisoning",
+      "kennel_cough_mild"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b02",
+    "expected": [
+      "urethral_obstruction"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 4,
+    "bge_top3": [
+      "urethral_obstruction",
+      "inappropriate_urination_or_cystitis",
+      "acute_hindlimb_paralysis"
+    ],
+    "minilm_top3": [
+      "cat_bite_abscess",
+      "feline_aortic_thromboembolism",
+      "lily_toxicosis_cats"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b03",
+    "expected": [
+      "respiratory_distress"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 6,
+    "bge_top3": [
+      "respiratory_distress",
+      "airway_foreign_body_choking",
+      "mild_upper_respiratory_signs"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning",
+      "eclampsia"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b04",
+    "expected": [
+      "seizures"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 29,
+    "bge_top3": [
+      "seizures",
+      "snake_and_scorpion_envenomation",
+      "urethral_obstruction"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "gastric_dilatation_volvulus",
+      "eclampsia"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b05",
+    "expected": [
+      "mild_upper_respiratory_signs"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 5,
+    "bge_top3": [
+      "mild_upper_respiratory_signs",
+      "gastrointestinal_foreign_body",
+      "single_vomiting_or_mild_diarrhea"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "feline_aortic_thromboembolism",
+      "permethrin_toxicosis_cats"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b06",
+    "expected": [
+      "trauma_and_bleeding"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "trauma_and_bleeding",
+      "mild_lameness",
+      "minor_wound"
+    ],
+    "minilm_top3": [
+      "trauma_and_bleeding",
+      "toad_bufotoxin_poisoning",
+      "congestive_heart_failure"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b07",
+    "expected": [
+      "vomiting_and_diarrhea"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "vomiting_and_diarrhea",
+      "single_vomiting_or_mild_diarrhea",
+      "parvovirus_panleukopenia"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "vomiting_and_diarrhea",
+      "toad_bufotoxin_poisoning"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b08",
+    "expected": [
+      "allium_toxicosis"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "allium_toxicosis",
+      "collapse_and_pale_gums",
+      "dietary_indiscretion_mild"
+    ],
+    "minilm_top3": [
+      "allium_toxicosis",
+      "grape_xylitol_toxicosis",
+      "dietary_indiscretion_mild"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b09",
+    "expected": [
+      "flea_dermatitis_pruritus"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 4,
+    "bge_top3": [
+      "flea_dermatitis_pruritus",
+      "otitis_externa_mild",
+      "slow_growing_lump"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning",
+      "otitis_externa_mild"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b10",
+    "expected": [
+      "mild_lameness"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 5,
+    "bge_top3": [
+      "mild_lameness",
+      "high_rise_syndrome_cats",
+      "osteoarthritis_stiffness"
+    ],
+    "minilm_top3": [
+      "exertional_panting_mild",
+      "normal_whelping",
+      "inappropriate_urination_or_cystitis"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b11",
+    "expected": [
+      "mild_conjunctivitis"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 5,
+    "bge_top3": [
+      "mild_conjunctivitis",
+      "ocular_emergency",
+      "anticoagulant_rodenticide_poisoning"
+    ],
+    "minilm_top3": [
+      "cat_bite_abscess",
+      "lily_toxicosis_cats",
+      "feline_aortic_thromboembolism"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b12",
+    "expected": [
+      "gastric_dilatation_volvulus"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 4,
+    "bge_top3": [
+      "gastric_dilatation_volvulus",
+      "urethral_obstruction",
+      "vomiting_and_diarrhea"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning",
+      "eclampsia"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b13",
+    "expected": [
+      "trauma_and_bleeding"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "trauma_and_bleeding",
+      "minor_wound",
+      "anticoagulant_rodenticide_poisoning"
+    ],
+    "minilm_top3": [
+      "trauma_and_bleeding",
+      "toad_bufotoxin_poisoning",
+      "minor_wound"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b14",
+    "expected": [
+      "fading_neonate"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "fading_neonate",
+      "hypoglycemia_toy_puppy",
+      "gastric_dilatation_volvulus"
+    ],
+    "minilm_top3": [
+      "hypoglycemia_toy_puppy",
+      "fading_neonate",
+      "parvovirus_panleukopenia"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b15",
+    "expected": [
+      "urethral_obstruction"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 19,
+    "bge_top3": [
+      "urethral_obstruction",
+      "inappropriate_urination_or_cystitis",
+      "vomiting_and_diarrhea"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning",
+      "eclampsia"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b16",
+    "expected": [
+      "anaphylaxis_facial_swelling"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 9,
+    "bge_top3": [
+      "insect_sting_local_reaction",
+      "anaphylaxis_facial_swelling",
+      "flea_dermatitis_pruritus"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "insect_sting_local_reaction",
+      "gastric_dilatation_volvulus"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b17",
+    "expected": [
+      "acute_hindlimb_paralysis"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 10,
+    "bge_top3": [
+      "acute_hindlimb_paralysis",
+      "osteoarthritis_stiffness",
+      "eclampsia"
+    ],
+    "minilm_top3": [
+      "eclampsia",
+      "normal_whelping",
+      "osteoarthritis_stiffness"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b18",
+    "expected": [
+      "mild_upper_respiratory_signs"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "mild_upper_respiratory_signs",
+      "respiratory_distress",
+      "otitis_externa_mild"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "mild_upper_respiratory_signs",
+      "anaphylaxis_facial_swelling"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b19",
+    "expected": [
+      "human_medication_poisoning"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 5,
+    "bge_top3": [
+      "human_medication_poisoning",
+      "permethrin_toxicosis_cats",
+      "lily_toxicosis_cats"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "permethrin_toxicosis_cats",
+      "cat_bite_abscess"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b20",
+    "expected": [
+      "carbamate_organophosphate_poisoning"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 17,
+    "bge_top3": [
+      "carbamate_organophosphate_poisoning",
+      "hypoglycemia_toy_puppy",
+      "seizures"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "eclampsia",
+      "normal_whelping"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b21",
+    "expected": [
+      "permethrin_toxicosis_cats"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 12,
+    "bge_top3": [
+      "permethrin_toxicosis_cats",
+      "seizures",
+      "feline_aortic_thromboembolism"
+    ],
+    "minilm_top3": [
+      "normal_whelping",
+      "toad_bufotoxin_poisoning",
+      "eclampsia"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b22",
+    "expected": [
+      "anticoagulant_rodenticide_poisoning"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "anticoagulant_rodenticide_poisoning",
+      "snake_and_scorpion_envenomation",
+      "toad_bufotoxin_poisoning"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "anticoagulant_rodenticide_poisoning",
+      "flea_dermatitis_pruritus"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b23",
+    "expected": [
+      "parvovirus_panleukopenia"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "vomiting_and_diarrhea",
+      "parvovirus_panleukopenia",
+      "anticoagulant_rodenticide_poisoning"
+    ],
+    "minilm_top3": [
+      "parvovirus_panleukopenia",
+      "lily_toxicosis_cats",
+      "vomiting_and_diarrhea"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b24",
+    "expected": [
+      "pyometra"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 14,
+    "bge_top3": [
+      "pyometra",
+      "normal_estrus",
+      "polyuria_polydipsia_investigate"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "normal_whelping",
+      "eclampsia"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b25",
+    "expected": [
+      "dietary_indiscretion_mild"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "dietary_indiscretion_mild",
+      "grape_xylitol_toxicosis",
+      "gastric_dilatation_volvulus"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "dietary_indiscretion_mild",
+      "grape_xylitol_toxicosis"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b26",
+    "expected": [
+      "inappropriate_urination_or_cystitis"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 4,
+    "bge_top3": [
+      "urethral_obstruction",
+      "inappropriate_urination_or_cystitis",
+      "polyuria_polydipsia_investigate"
+    ],
+    "minilm_top3": [
+      "feline_aortic_thromboembolism",
+      "cat_bite_abscess",
+      "high_rise_syndrome_cats"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b27",
+    "expected": [
+      "collapse_and_pale_gums"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "collapse_and_pale_gums",
+      "high_rise_syndrome_cats",
+      "hypoglycemia_toy_puppy"
+    ],
+    "minilm_top3": [
+      "collapse_and_pale_gums",
+      "eclampsia",
+      "toad_bufotoxin_poisoning"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b28",
+    "expected": [
+      "osteoarthritis_stiffness"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 6,
+    "bge_top3": [
+      "osteoarthritis_stiffness",
+      "acute_hindlimb_paralysis",
+      "gastric_dilatation_volvulus"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "normal_whelping",
+      "reduced_appetite_no_other_signs"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b29",
+    "expected": [
+      "reduced_appetite_no_other_signs"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "reduced_appetite_no_other_signs",
+      "vomiting_and_diarrhea",
+      "diabetic_ketoacidosis"
+    ],
+    "minilm_top3": [
+      "reduced_appetite_no_other_signs",
+      "dietary_indiscretion_mild",
+      "lily_toxicosis_cats"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b30",
+    "expected": [
+      "gastrointestinal_foreign_body"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 6,
+    "bge_top3": [
+      "gastrointestinal_foreign_body",
+      "gastric_dilatation_volvulus",
+      "lily_toxicosis_cats"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "cat_bite_abscess",
+      "single_vomiting_or_mild_diarrhea"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b31",
+    "expected": [
+      "cat_bite_abscess"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "cat_bite_abscess",
+      "rabies_exposure_wild_animal_bite",
+      "anaphylaxis_facial_swelling"
+    ],
+    "minilm_top3": [
+      "cat_bite_abscess",
+      "lily_toxicosis_cats",
+      "feline_aortic_thromboembolism"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b32",
+    "expected": [
+      "congestive_heart_failure"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "congestive_heart_failure",
+      "respiratory_distress",
+      "kennel_cough_mild"
+    ],
+    "minilm_top3": [
+      "congestive_heart_failure",
+      "kennel_cough_mild",
+      "respiratory_distress"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b33",
+    "expected": [
+      "diabetic_ketoacidosis"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "diabetic_ketoacidosis",
+      "gastric_dilatation_volvulus",
+      "vomiting_and_diarrhea"
+    ],
+    "minilm_top3": [
+      "diabetic_ketoacidosis",
+      "congestive_heart_failure",
+      "vomiting_and_diarrhea"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b34",
+    "expected": [
+      "distemper_neurological"
+    ],
+    "bge_rank": 7,
+    "minilm_rank": 10,
+    "bge_top3": [
+      "parvovirus_panleukopenia",
+      "snake_and_scorpion_envenomation",
+      "gastric_dilatation_volvulus"
+    ],
+    "minilm_top3": [
+      "parvovirus_panleukopenia",
+      "anaphylaxis_facial_swelling",
+      "toad_bufotoxin_poisoning"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b35",
+    "expected": [
+      "dystocia"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "normal_whelping",
+      "dystocia",
+      "eclampsia"
+    ],
+    "minilm_top3": [
+      "normal_whelping",
+      "dystocia",
+      "eclampsia"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b36",
+    "expected": [
+      "feline_aortic_thromboembolism"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "feline_aortic_thromboembolism",
+      "acute_hindlimb_paralysis",
+      "seizures"
+    ],
+    "minilm_top3": [
+      "feline_aortic_thromboembolism",
+      "high_rise_syndrome_cats",
+      "cat_bite_abscess"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b37",
+    "expected": [
+      "leptospirosis_acute"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 3,
+    "bge_top3": [
+      "ocular_emergency",
+      "leptospirosis_acute",
+      "mild_conjunctivitis"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "kennel_cough_mild",
+      "leptospirosis_acute"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b38",
+    "expected": [
+      "lily_toxicosis_cats"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "lily_toxicosis_cats",
+      "gastrointestinal_foreign_body",
+      "rabies_exposure_wild_animal_bite"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "cat_bite_abscess",
+      "permethrin_toxicosis_cats"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b39",
+    "expected": [
+      "toad_bufotoxin_poisoning"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "toad_bufotoxin_poisoning",
+      "snake_and_scorpion_envenomation",
+      "periodontal_disease_mild"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "kennel_cough_mild",
+      "grape_xylitol_toxicosis"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b40",
+    "expected": [
+      "tremors_without_seizure"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "tremors_without_seizure",
+      "seizures",
+      "eclampsia"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "tremors_without_seizure",
+      "eclampsia"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b41",
+    "expected": [
+      "normal_estrus"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 8,
+    "bge_top3": [
+      "pyometra",
+      "normal_estrus",
+      "eclampsia"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "kennel_cough_mild",
+      "normal_whelping"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b42",
+    "expected": [
+      "collapse_and_pale_gums"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "collapse_and_pale_gums",
+      "high_rise_syndrome_cats",
+      "tick_borne_disease_anemia"
+    ],
+    "minilm_top3": [
+      "collapse_and_pale_gums",
+      "lily_toxicosis_cats",
+      "cat_bite_abscess"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b43",
+    "expected": [
+      "ocular_emergency"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "ocular_emergency",
+      "snake_and_scorpion_envenomation",
+      "minor_wound"
+    ],
+    "minilm_top3": [
+      "ocular_emergency",
+      "leptospirosis_acute",
+      "mild_conjunctivitis"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b44",
+    "expected": [
+      "airway_foreign_body_choking"
+    ],
+    "bge_rank": 3,
+    "minilm_rank": 11,
+    "bge_top3": [
+      "gastrointestinal_foreign_body",
+      "respiratory_distress",
+      "airway_foreign_body_choking"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "cat_bite_abscess",
+      "feline_aortic_thromboembolism"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b45",
+    "expected": [
+      "snake_and_scorpion_envenomation"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "snake_and_scorpion_envenomation",
+      "insect_sting_local_reaction",
+      "anaphylaxis_facial_swelling"
+    ],
+    "minilm_top3": [
+      "snake_and_scorpion_envenomation",
+      "toad_bufotoxin_poisoning",
+      "slow_growing_lump"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b46",
+    "expected": [
+      "tick_borne_disease_anemia"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 8,
+    "bge_top3": [
+      "tick_borne_disease_anemia",
+      "ticks_found_no_signs",
+      "leptospirosis_acute"
+    ],
+    "minilm_top3": [
+      "flea_dermatitis_pruritus",
+      "toad_bufotoxin_poisoning",
+      "kennel_cough_mild"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b47",
+    "expected": [
+      "hypoglycemia_toy_puppy"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "hypoglycemia_toy_puppy",
+      "gastric_dilatation_volvulus",
+      "fading_neonate"
+    ],
+    "minilm_top3": [
+      "hypoglycemia_toy_puppy",
+      "reduced_appetite_no_other_signs",
+      "dietary_indiscretion_mild"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b48",
+    "expected": [
+      "vestibular_syndrome_otitis_interna"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 5,
+    "bge_top3": [
+      "vestibular_syndrome_otitis_interna",
+      "ocular_emergency",
+      "seizures"
+    ],
+    "minilm_top3": [
+      "gastric_dilatation_volvulus",
+      "distemper_neurological",
+      "eclampsia"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b49",
+    "expected": [
+      "high_rise_syndrome_cats"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "high_rise_syndrome_cats",
+      "respiratory_distress",
+      "mild_upper_respiratory_signs"
+    ],
+    "minilm_top3": [
+      "high_rise_syndrome_cats",
+      "feline_aortic_thromboembolism",
+      "cat_bite_abscess"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b50",
+    "expected": [
+      "burns_and_electrical_injury"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "burns_and_electrical_injury",
+      "toad_bufotoxin_poisoning",
+      "snake_and_scorpion_envenomation"
+    ],
+    "minilm_top3": [
+      "burns_and_electrical_injury",
+      "anaphylaxis_facial_swelling",
+      "congestive_heart_failure"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b51",
+    "expected": [
+      "eclampsia"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "eclampsia",
+      "acute_hindlimb_paralysis",
+      "osteoarthritis_stiffness"
+    ],
+    "minilm_top3": [
+      "eclampsia",
+      "tremors_without_seizure",
+      "toad_bufotoxin_poisoning"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b52",
+    "expected": [
+      "grape_xylitol_toxicosis"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "grape_xylitol_toxicosis",
+      "dietary_indiscretion_mild",
+      "reduced_appetite_no_other_signs"
+    ],
+    "minilm_top3": [
+      "grape_xylitol_toxicosis",
+      "allium_toxicosis",
+      "chocolate_toxicosis"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b53",
+    "expected": [
+      "normal_whelping"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "normal_whelping",
+      "dystocia",
+      "eclampsia"
+    ],
+    "minilm_top3": [
+      "normal_whelping",
+      "dystocia",
+      "eclampsia"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b54",
+    "expected": [
+      "insect_sting_local_reaction"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "insect_sting_local_reaction",
+      "anaphylaxis_facial_swelling",
+      "minor_wound"
+    ],
+    "minilm_top3": [
+      "insect_sting_local_reaction",
+      "slow_growing_lump",
+      "cat_bite_abscess"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b55",
+    "expected": [
+      "kennel_cough_mild"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "kennel_cough_mild",
+      "congestive_heart_failure",
+      "mild_upper_respiratory_signs"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning",
+      "eclampsia"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b56",
+    "expected": [
+      "polyuria_polydipsia_investigate"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "polyuria_polydipsia_investigate",
+      "vomiting_and_diarrhea",
+      "single_vomiting_or_mild_diarrhea"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "polyuria_polydipsia_investigate",
+      "feline_aortic_thromboembolism"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b57",
+    "expected": [
+      "otitis_externa_mild"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "otitis_externa_mild",
+      "flea_dermatitis_pruritus",
+      "periodontal_disease_mild"
+    ],
+    "minilm_top3": [
+      "otitis_externa_mild",
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b58",
+    "expected": [
+      "minor_wound"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "minor_wound",
+      "trauma_and_bleeding",
+      "cat_bite_abscess"
+    ],
+    "minilm_top3": [
+      "cat_bite_abscess",
+      "minor_wound",
+      "lily_toxicosis_cats"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b59",
+    "expected": [
+      "periodontal_disease_mild"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 28,
+    "bge_top3": [
+      "periodontal_disease_mild",
+      "grape_xylitol_toxicosis",
+      "gastric_dilatation_volvulus"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "eclampsia",
+      "toad_bufotoxin_poisoning"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b60",
+    "expected": [
+      "slow_growing_lump"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 3,
+    "bge_top3": [
+      "slow_growing_lump",
+      "minor_wound",
+      "ticks_found_no_signs"
+    ],
+    "minilm_top3": [
+      "normal_whelping",
+      "eclampsia",
+      "slow_growing_lump"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b61",
+    "expected": [
+      "exertional_panting_mild"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "exertional_panting_mild",
+      "canine_heatstroke",
+      "congestive_heart_failure"
+    ],
+    "minilm_top3": [
+      "exertional_panting_mild",
+      "normal_whelping",
+      "kennel_cough_mild"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b62",
+    "expected": [
+      "rabies_exposure_wild_animal_bite"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "rabies_exposure_wild_animal_bite",
+      "cat_bite_abscess",
+      "lily_toxicosis_cats"
+    ],
+    "minilm_top3": [
+      "cat_bite_abscess",
+      "rabies_exposure_wild_animal_bite",
+      "lily_toxicosis_cats"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b63",
+    "expected": [
+      "ticks_found_no_signs"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 9,
+    "bge_top3": [
+      "ticks_found_no_signs",
+      "tick_borne_disease_anemia",
+      "slow_growing_lump"
+    ],
+    "minilm_top3": [
+      "grape_xylitol_toxicosis",
+      "toad_bufotoxin_poisoning",
+      "flea_dermatitis_pruritus"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b64",
+    "expected": [
+      "single_vomiting_or_mild_diarrhea"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 4,
+    "bge_top3": [
+      "single_vomiting_or_mild_diarrhea",
+      "vomiting_and_diarrhea",
+      "gastric_dilatation_volvulus"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning",
+      "vomiting_and_diarrhea"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b65",
+    "expected": [
+      "single_vomiting_or_mild_diarrhea"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 3,
+    "bge_top3": [
+      "single_vomiting_or_mild_diarrhea",
+      "gastrointestinal_foreign_body",
+      "rabies_exposure_wild_animal_bite"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "cat_bite_abscess",
+      "single_vomiting_or_mild_diarrhea"
+    ]
+  },
+  {
+    "dataset": "regua",
+    "id": "b66",
+    "expected": [
+      "single_vomiting_or_mild_diarrhea"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 6,
+    "bge_top3": [
+      "single_vomiting_or_mild_diarrhea",
+      "vomiting_and_diarrhea",
+      "gastric_dilatation_volvulus"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning",
+      "grape_xylitol_toxicosis"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p19",
+    "expected": [
+      "chocolate_toxicosis"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "chocolate_toxicosis",
+      "snake_and_scorpion_envenomation",
+      "dietary_indiscretion_mild"
+    ],
+    "minilm_top3": [
+      "chocolate_toxicosis",
+      "toad_bufotoxin_poisoning",
+      "grape_xylitol_toxicosis"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p20",
+    "expected": [
+      "allium_toxicosis"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 7,
+    "bge_top3": [
+      "allium_toxicosis",
+      "collapse_and_pale_gums",
+      "anticoagulant_rodenticide_poisoning"
+    ],
+    "minilm_top3": [
+      "cat_bite_abscess",
+      "lily_toxicosis_cats",
+      "feline_aortic_thromboembolism"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p21",
+    "expected": [
+      "respiratory_distress"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 3,
+    "bge_top3": [
+      "respiratory_distress",
+      "high_rise_syndrome_cats",
+      "mild_upper_respiratory_signs"
+    ],
+    "minilm_top3": [
+      "feline_aortic_thromboembolism",
+      "high_rise_syndrome_cats",
+      "respiratory_distress"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p22",
+    "expected": [
+      "seizures"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 30,
+    "bge_top3": [
+      "seizures",
+      "urethral_obstruction",
+      "high_rise_syndrome_cats"
+    ],
+    "minilm_top3": [
+      "normal_whelping",
+      "gastric_dilatation_volvulus",
+      "toad_bufotoxin_poisoning"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p23",
+    "expected": [
+      "trauma_and_bleeding"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "trauma_and_bleeding",
+      "minor_wound",
+      "toad_bufotoxin_poisoning"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "trauma_and_bleeding",
+      "minor_wound"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p24",
+    "expected": [
+      "urethral_obstruction"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 9,
+    "bge_top3": [
+      "urethral_obstruction",
+      "gastric_dilatation_volvulus",
+      "vomiting_and_diarrhea"
+    ],
+    "minilm_top3": [
+      "gastric_dilatation_volvulus",
+      "eclampsia",
+      "normal_whelping"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p25",
+    "expected": [
+      "vomiting_and_diarrhea"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "vomiting_and_diarrhea",
+      "single_vomiting_or_mild_diarrhea",
+      "gastric_dilatation_volvulus"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "vomiting_and_diarrhea",
+      "feline_aortic_thromboembolism"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p26",
+    "expected": [
+      "canine_heatstroke"
+    ],
+    "bge_rank": 4,
+    "minilm_rank": 17,
+    "bge_top3": [
+      "airway_foreign_body_choking",
+      "gastric_dilatation_volvulus",
+      "exertional_panting_mild"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "gastric_dilatation_volvulus",
+      "seizures"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p27",
+    "expected": [
+      "gastric_dilatation_volvulus"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 6,
+    "bge_top3": [
+      "gastric_dilatation_volvulus",
+      "urethral_obstruction",
+      "vomiting_and_diarrhea"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning",
+      "vomiting_and_diarrhea"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p28",
+    "expected": [
+      "fading_neonate"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 3,
+    "bge_top3": [
+      "fading_neonate",
+      "normal_whelping",
+      "dystocia"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "slow_growing_lump",
+      "fading_neonate"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p29",
+    "expected": [
+      "acute_hindlimb_paralysis"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 7,
+    "bge_top3": [
+      "osteoarthritis_stiffness",
+      "acute_hindlimb_paralysis",
+      "feline_aortic_thromboembolism"
+    ],
+    "minilm_top3": [
+      "eclampsia",
+      "gastric_dilatation_volvulus",
+      "congestive_heart_failure"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p30",
+    "expected": [
+      "anticoagulant_rodenticide_poisoning"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "anticoagulant_rodenticide_poisoning",
+      "toad_bufotoxin_poisoning",
+      "lily_toxicosis_cats"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "anticoagulant_rodenticide_poisoning",
+      "anaphylaxis_facial_swelling"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p31",
+    "expected": [
+      "human_medication_poisoning"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 5,
+    "bge_top3": [
+      "human_medication_poisoning",
+      "permethrin_toxicosis_cats",
+      "anticoagulant_rodenticide_poisoning"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "cat_bite_abscess",
+      "permethrin_toxicosis_cats"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p32",
+    "expected": [
+      "anaphylaxis_facial_swelling"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 3,
+    "bge_top3": [
+      "insect_sting_local_reaction",
+      "anaphylaxis_facial_swelling",
+      "snake_and_scorpion_envenomation"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "insect_sting_local_reaction",
+      "anaphylaxis_facial_swelling"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p33",
+    "expected": [
+      "congestive_heart_failure"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 5,
+    "bge_top3": [
+      "congestive_heart_failure",
+      "gastric_dilatation_volvulus",
+      "toad_bufotoxin_poisoning"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning",
+      "gastric_dilatation_volvulus"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p34",
+    "expected": [
+      "collapse_and_pale_gums"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 4,
+    "bge_top3": [
+      "collapse_and_pale_gums",
+      "high_rise_syndrome_cats",
+      "periodontal_disease_mild"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "cat_bite_abscess",
+      "feline_aortic_thromboembolism"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p35",
+    "expected": [
+      "parvovirus_panleukopenia"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "parvovirus_panleukopenia",
+      "vomiting_and_diarrhea",
+      "periodontal_disease_mild"
+    ],
+    "minilm_top3": [
+      "parvovirus_panleukopenia",
+      "vomiting_and_diarrhea",
+      "anaphylaxis_facial_swelling"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p36",
+    "expected": [
+      "ocular_emergency"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "ocular_emergency",
+      "snake_and_scorpion_envenomation",
+      "burns_and_electrical_injury"
+    ],
+    "minilm_top3": [
+      "ocular_emergency",
+      "mild_conjunctivitis",
+      "leptospirosis_acute"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p37",
+    "expected": [
+      "permethrin_toxicosis_cats"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "permethrin_toxicosis_cats",
+      "carbamate_organophosphate_poisoning",
+      "seizures"
+    ],
+    "minilm_top3": [
+      "permethrin_toxicosis_cats",
+      "cat_bite_abscess",
+      "feline_aortic_thromboembolism"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p38",
+    "expected": [
+      "gastrointestinal_foreign_body"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 10,
+    "bge_top3": [
+      "gastrointestinal_foreign_body",
+      "lily_toxicosis_cats",
+      "anticoagulant_rodenticide_poisoning"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "dietary_indiscretion_mild",
+      "single_vomiting_or_mild_diarrhea"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p39",
+    "expected": [
+      "airway_foreign_body_choking"
+    ],
+    "bge_rank": 6,
+    "minilm_rank": 6,
+    "bge_top3": [
+      "gastrointestinal_foreign_body",
+      "periodontal_disease_mild",
+      "respiratory_distress"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "kennel_cough_mild",
+      "gastric_dilatation_volvulus"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p40",
+    "expected": [
+      "dystocia"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "dystocia",
+      "normal_whelping",
+      "urethral_obstruction"
+    ],
+    "minilm_top3": [
+      "normal_whelping",
+      "dystocia",
+      "eclampsia"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p41",
+    "expected": [
+      "distemper_neurological"
+    ],
+    "bge_rank": 30,
+    "minilm_rank": 23,
+    "bge_top3": [
+      "parvovirus_panleukopenia",
+      "periodontal_disease_mild",
+      "fading_neonate"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "parvovirus_panleukopenia",
+      "toad_bufotoxin_poisoning"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p42",
+    "expected": [
+      "hypoglycemia_toy_puppy"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "hypoglycemia_toy_puppy",
+      "fading_neonate",
+      "eclampsia"
+    ],
+    "minilm_top3": [
+      "hypoglycemia_toy_puppy",
+      "dietary_indiscretion_mild",
+      "reduced_appetite_no_other_signs"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p43",
+    "expected": [
+      "eclampsia"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "eclampsia",
+      "dystocia",
+      "normal_whelping"
+    ],
+    "minilm_top3": [
+      "eclampsia",
+      "normal_whelping",
+      "dystocia"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p44",
+    "expected": [
+      "dietary_indiscretion_mild"
+    ],
+    "bge_rank": 7,
+    "minilm_rank": 4,
+    "bge_top3": [
+      "allium_toxicosis",
+      "high_rise_syndrome_cats",
+      "rabies_exposure_wild_animal_bite"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "cat_bite_abscess",
+      "feline_aortic_thromboembolism"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p45",
+    "expected": [
+      "mild_upper_respiratory_signs"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 8,
+    "bge_top3": [
+      "mild_upper_respiratory_signs",
+      "lily_toxicosis_cats",
+      "gastrointestinal_foreign_body"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "feline_aortic_thromboembolism",
+      "cat_bite_abscess"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p46",
+    "expected": [
+      "inappropriate_urination_or_cystitis"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 7,
+    "bge_top3": [
+      "urethral_obstruction",
+      "inappropriate_urination_or_cystitis",
+      "polyuria_polydipsia_investigate"
+    ],
+    "minilm_top3": [
+      "feline_aortic_thromboembolism",
+      "lily_toxicosis_cats",
+      "cat_bite_abscess"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p47",
+    "expected": [
+      "otitis_externa_mild"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "otitis_externa_mild",
+      "gastric_dilatation_volvulus",
+      "vestibular_syndrome_otitis_interna"
+    ],
+    "minilm_top3": [
+      "otitis_externa_mild",
+      "eclampsia",
+      "kennel_cough_mild"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p48",
+    "expected": [
+      "single_vomiting_or_mild_diarrhea"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 7,
+    "bge_top3": [
+      "single_vomiting_or_mild_diarrhea",
+      "gastric_dilatation_volvulus",
+      "vomiting_and_diarrhea"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning",
+      "grape_xylitol_toxicosis"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p49",
+    "expected": [
+      "osteoarthritis_stiffness"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "osteoarthritis_stiffness",
+      "acute_hindlimb_paralysis",
+      "gastric_dilatation_volvulus"
+    ],
+    "minilm_top3": [
+      "exertional_panting_mild",
+      "osteoarthritis_stiffness",
+      "normal_whelping"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p50",
+    "expected": [
+      "insect_sting_local_reaction"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "insect_sting_local_reaction",
+      "snake_and_scorpion_envenomation",
+      "minor_wound"
+    ],
+    "minilm_top3": [
+      "insect_sting_local_reaction",
+      "toad_bufotoxin_poisoning",
+      "slow_growing_lump"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p51",
+    "expected": [
+      "kennel_cough_mild"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "kennel_cough_mild",
+      "congestive_heart_failure",
+      "airway_foreign_body_choking"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "eclampsia",
+      "toad_bufotoxin_poisoning"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p52",
+    "expected": [
+      "mild_conjunctivitis"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "mild_conjunctivitis",
+      "ocular_emergency",
+      "leptospirosis_acute"
+    ],
+    "minilm_top3": [
+      "mild_conjunctivitis",
+      "ocular_emergency",
+      "cat_bite_abscess"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p53",
+    "expected": [
+      "normal_whelping"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "normal_whelping",
+      "dystocia",
+      "eclampsia"
+    ],
+    "minilm_top3": [
+      "normal_whelping",
+      "dystocia",
+      "hypoglycemia_toy_puppy"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p54",
+    "expected": [
+      "tremors_without_seizure"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 8,
+    "bge_top3": [
+      "seizures",
+      "tremors_without_seizure",
+      "gastric_dilatation_volvulus"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning",
+      "exertional_panting_mild"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p55",
+    "expected": [
+      "mild_lameness"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 5,
+    "bge_top3": [
+      "mild_lameness",
+      "minor_wound",
+      "trauma_and_bleeding"
+    ],
+    "minilm_top3": [
+      "exertional_panting_mild",
+      "normal_whelping",
+      "inappropriate_urination_or_cystitis"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p56",
+    "expected": [
+      "flea_dermatitis_pruritus"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 4,
+    "bge_top3": [
+      "flea_dermatitis_pruritus",
+      "anticoagulant_rodenticide_poisoning",
+      "slow_growing_lump"
+    ],
+    "minilm_top3": [
+      "cat_bite_abscess",
+      "lily_toxicosis_cats",
+      "feline_aortic_thromboembolism"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p57",
+    "expected": [
+      "reduced_appetite_no_other_signs"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 3,
+    "bge_top3": [
+      "reduced_appetite_no_other_signs",
+      "vomiting_and_diarrhea",
+      "grape_xylitol_toxicosis"
+    ],
+    "minilm_top3": [
+      "grape_xylitol_toxicosis",
+      "dietary_indiscretion_mild",
+      "reduced_appetite_no_other_signs"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p58",
+    "expected": [
+      "cat_bite_abscess"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "cat_bite_abscess",
+      "rabies_exposure_wild_animal_bite",
+      "minor_wound"
+    ],
+    "minilm_top3": [
+      "cat_bite_abscess",
+      "lily_toxicosis_cats",
+      "permethrin_toxicosis_cats"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p59",
+    "expected": [
+      "polyuria_polydipsia_investigate"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "polyuria_polydipsia_investigate",
+      "diabetic_ketoacidosis",
+      "reduced_appetite_no_other_signs"
+    ],
+    "minilm_top3": [
+      "polyuria_polydipsia_investigate",
+      "lily_toxicosis_cats",
+      "congestive_heart_failure"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p60",
+    "expected": [
+      "minor_wound"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 4,
+    "bge_top3": [
+      "minor_wound",
+      "trauma_and_bleeding",
+      "snake_and_scorpion_envenomation"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "trauma_and_bleeding",
+      "normal_whelping"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p61",
+    "expected": [
+      "periodontal_disease_mild"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 4,
+    "bge_top3": [
+      "periodontal_disease_mild",
+      "osteoarthritis_stiffness",
+      "gastrointestinal_foreign_body"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "cat_bite_abscess",
+      "feline_aortic_thromboembolism"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p62",
+    "expected": [
+      "slow_growing_lump"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "slow_growing_lump",
+      "ticks_found_no_signs",
+      "gastric_dilatation_volvulus"
+    ],
+    "minilm_top3": [
+      "normal_whelping",
+      "slow_growing_lump",
+      "kennel_cough_mild"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p63",
+    "expected": [
+      "rabies_exposure_wild_animal_bite"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "rabies_exposure_wild_animal_bite",
+      "toad_bufotoxin_poisoning",
+      "snake_and_scorpion_envenomation"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "rabies_exposure_wild_animal_bite",
+      "kennel_cough_mild"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p64",
+    "expected": [
+      "ticks_found_no_signs"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 3,
+    "bge_top3": [
+      "ticks_found_no_signs",
+      "permethrin_toxicosis_cats",
+      "rabies_exposure_wild_animal_bite"
+    ],
+    "minilm_top3": [
+      "cat_bite_abscess",
+      "feline_aortic_thromboembolism",
+      "ticks_found_no_signs"
+    ]
+  },
+  {
+    "dataset": "dev",
+    "id": "p65",
+    "expected": [
+      "exertional_panting_mild"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "exertional_panting_mild",
+      "canine_heatstroke",
+      "congestive_heart_failure"
+    ],
+    "minilm_top3": [
+      "exertional_panting_mild",
+      "kennel_cough_mild",
+      "normal_whelping"
+    ]
+  },
+  {
+    "dataset": "calibracao",
+    "id": "p01",
+    "expected": [
+      "carbamate_organophosphate_poisoning"
+    ],
+    "bge_rank": 6,
+    "minilm_rank": 10,
+    "bge_top3": [
+      "seizures",
+      "snake_and_scorpion_envenomation",
+      "permethrin_toxicosis_cats"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "kennel_cough_mild",
+      "eclampsia"
+    ]
+  },
+  {
+    "dataset": "calibracao",
+    "id": "p02",
+    "expected": [
+      "otitis_externa_mild"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "otitis_externa_mild",
+      "gastric_dilatation_volvulus",
+      "seizures"
+    ],
+    "minilm_top3": [
+      "otitis_externa_mild",
+      "kennel_cough_mild",
+      "eclampsia"
+    ]
+  },
+  {
+    "dataset": "calibracao",
+    "id": "p03",
+    "expected": [
+      "vestibular_syndrome_otitis_interna"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 5,
+    "bge_top3": [
+      "vestibular_syndrome_otitis_interna",
+      "seizures",
+      "ocular_emergency"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "gastric_dilatation_volvulus",
+      "ocular_emergency"
+    ]
+  },
+  {
+    "dataset": "calibracao",
+    "id": "p04",
+    "expected": [
+      "dietary_indiscretion_mild"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "chocolate_toxicosis",
+      "dietary_indiscretion_mild",
+      "grape_xylitol_toxicosis"
+    ],
+    "minilm_top3": [
+      "chocolate_toxicosis",
+      "dietary_indiscretion_mild",
+      "grape_xylitol_toxicosis"
+    ]
+  },
+  {
+    "dataset": "calibracao",
+    "id": "p05",
+    "expected": [
+      "human_medication_poisoning"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 4,
+    "bge_top3": [
+      "human_medication_poisoning",
+      "permethrin_toxicosis_cats",
+      "lily_toxicosis_cats"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "cat_bite_abscess",
+      "permethrin_toxicosis_cats"
+    ]
+  },
+  {
+    "dataset": "calibracao",
+    "id": "p06",
+    "expected": [
+      "single_vomiting_or_mild_diarrhea"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 3,
+    "bge_top3": [
+      "single_vomiting_or_mild_diarrhea",
+      "lily_toxicosis_cats",
+      "gastrointestinal_foreign_body"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "cat_bite_abscess",
+      "single_vomiting_or_mild_diarrhea"
+    ]
+  },
+  {
+    "dataset": "calibracao",
+    "id": "p07",
+    "expected": [
+      "gastric_dilatation_volvulus"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 4,
+    "bge_top3": [
+      "gastric_dilatation_volvulus",
+      "urethral_obstruction",
+      "vomiting_and_diarrhea"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning",
+      "vomiting_and_diarrhea"
+    ]
+  },
+  {
+    "dataset": "calibracao",
+    "id": "p08",
+    "expected": [
+      "urethral_obstruction"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 12,
+    "bge_top3": [
+      "urethral_obstruction",
+      "inappropriate_urination_or_cystitis",
+      "gastric_dilatation_volvulus"
+    ],
+    "minilm_top3": [
+      "feline_aortic_thromboembolism",
+      "cat_bite_abscess",
+      "lily_toxicosis_cats"
+    ]
+  },
+  {
+    "dataset": "calibracao",
+    "id": "p09",
+    "expected": [
+      "inappropriate_urination_or_cystitis"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 3,
+    "bge_top3": [
+      "urethral_obstruction",
+      "inappropriate_urination_or_cystitis",
+      "polyuria_polydipsia_investigate"
+    ],
+    "minilm_top3": [
+      "feline_aortic_thromboembolism",
+      "cat_bite_abscess",
+      "inappropriate_urination_or_cystitis"
+    ]
+  },
+  {
+    "dataset": "calibracao",
+    "id": "p10",
+    "expected": [
+      "pyometra"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 12,
+    "bge_top3": [
+      "normal_estrus",
+      "pyometra",
+      "polyuria_polydipsia_investigate"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "normal_whelping",
+      "normal_estrus"
+    ]
+  },
+  {
+    "dataset": "calibracao",
+    "id": "p11",
+    "expected": [
+      "normal_estrus"
+    ],
+    "bge_rank": 3,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "pyometra",
+      "minor_wound",
+      "normal_estrus"
+    ],
+    "minilm_top3": [
+      "normal_whelping",
+      "normal_estrus",
+      "toad_bufotoxin_poisoning"
+    ]
+  },
+  {
+    "dataset": "calibracao",
+    "id": "p12",
+    "expected": [
+      "acute_hindlimb_paralysis"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 4,
+    "bge_top3": [
+      "feline_aortic_thromboembolism",
+      "acute_hindlimb_paralysis",
+      "osteoarthritis_stiffness"
+    ],
+    "minilm_top3": [
+      "feline_aortic_thromboembolism",
+      "cat_bite_abscess",
+      "high_rise_syndrome_cats"
+    ]
+  },
+  {
+    "dataset": "calibracao",
+    "id": "p13",
+    "expected": [
+      "osteoarthritis_stiffness"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "osteoarthritis_stiffness",
+      "acute_hindlimb_paralysis",
+      "gastric_dilatation_volvulus"
+    ],
+    "minilm_top3": [
+      "osteoarthritis_stiffness",
+      "normal_whelping",
+      "exertional_panting_mild"
+    ]
+  },
+  {
+    "dataset": "calibracao",
+    "id": "p14",
+    "expected": [
+      "snake_and_scorpion_envenomation"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 14,
+    "bge_top3": [
+      "snake_and_scorpion_envenomation",
+      "mild_lameness",
+      "anaphylaxis_facial_swelling"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "normal_whelping",
+      "gastric_dilatation_volvulus"
+    ]
+  },
+  {
+    "dataset": "calibracao",
+    "id": "p17",
+    "expected": [
+      "ocular_emergency"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "ocular_emergency",
+      "mild_conjunctivitis",
+      "vestibular_syndrome_otitis_interna"
+    ],
+    "minilm_top3": [
+      "ocular_emergency",
+      "mild_conjunctivitis",
+      "toad_bufotoxin_poisoning"
+    ]
+  },
+  {
+    "dataset": "calibracao",
+    "id": "p18",
+    "expected": [
+      "mild_conjunctivitis"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "mild_conjunctivitis",
+      "anticoagulant_rodenticide_poisoning",
+      "ocular_emergency"
+    ],
+    "minilm_top3": [
+      "mild_conjunctivitis",
+      "ocular_emergency",
+      "cat_bite_abscess"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i01",
+    "expected": [
+      "toad_bufotoxin_poisoning"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "toad_bufotoxin_poisoning",
+      "rabies_exposure_wild_animal_bite",
+      "periodontal_disease_mild"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "kennel_cough_mild",
+      "eclampsia"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i02",
+    "expected": [
+      "pyometra"
+    ],
+    "bge_rank": 18,
+    "minilm_rank": 25,
+    "bge_top3": [
+      "urethral_obstruction",
+      "toad_bufotoxin_poisoning",
+      "tick_borne_disease_anemia"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "high_rise_syndrome_cats",
+      "feline_aortic_thromboembolism"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i03",
+    "expected": [
+      "ocular_emergency"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "ocular_emergency",
+      "insect_sting_local_reaction",
+      "vestibular_syndrome_otitis_interna"
+    ],
+    "minilm_top3": [
+      "cat_bite_abscess",
+      "ocular_emergency",
+      "high_rise_syndrome_cats"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i04",
+    "expected": [
+      "grape_xylitol_toxicosis"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "grape_xylitol_toxicosis",
+      "toad_bufotoxin_poisoning",
+      "chocolate_toxicosis"
+    ],
+    "minilm_top3": [
+      "grape_xylitol_toxicosis",
+      "chocolate_toxicosis",
+      "kennel_cough_mild"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i05",
+    "expected": [
+      "leptospirosis_acute"
+    ],
+    "bge_rank": 18,
+    "minilm_rank": 14,
+    "bge_top3": [
+      "canine_heatstroke",
+      "exertional_panting_mild",
+      "parvovirus_panleukopenia"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning",
+      "gastric_dilatation_volvulus"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i06",
+    "expected": [
+      "dystocia"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "normal_whelping",
+      "dystocia",
+      "eclampsia"
+    ],
+    "minilm_top3": [
+      "dystocia",
+      "gastric_dilatation_volvulus",
+      "normal_estrus"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i07",
+    "expected": [
+      "vestibular_syndrome_otitis_interna"
+    ],
+    "bge_rank": 3,
+    "minilm_rank": 15,
+    "bge_top3": [
+      "ocular_emergency",
+      "osteoarthritis_stiffness",
+      "vestibular_syndrome_otitis_interna"
+    ],
+    "minilm_top3": [
+      "feline_aortic_thromboembolism",
+      "cat_bite_abscess",
+      "lily_toxicosis_cats"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i08",
+    "expected": [
+      "burns_and_electrical_injury"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 10,
+    "bge_top3": [
+      "burns_and_electrical_injury",
+      "toad_bufotoxin_poisoning",
+      "snake_and_scorpion_envenomation"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "kennel_cough_mild",
+      "gastric_dilatation_volvulus"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i09",
+    "expected": [
+      "trauma_and_bleeding"
+    ],
+    "bge_rank": 4,
+    "minilm_rank": 30,
+    "bge_top3": [
+      "collapse_and_pale_gums",
+      "snake_and_scorpion_envenomation",
+      "ocular_emergency"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning",
+      "normal_whelping"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i10",
+    "expected": [
+      "collapse_and_pale_gums"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 8,
+    "bge_top3": [
+      "collapse_and_pale_gums",
+      "toad_bufotoxin_poisoning",
+      "airway_foreign_body_choking"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "kennel_cough_mild",
+      "gastric_dilatation_volvulus"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i11",
+    "expected": [
+      "human_medication_poisoning"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 17,
+    "bge_top3": [
+      "permethrin_toxicosis_cats",
+      "human_medication_poisoning",
+      "dietary_indiscretion_mild"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "permethrin_toxicosis_cats",
+      "cat_bite_abscess"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i12",
+    "expected": [
+      "airway_foreign_body_choking"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 13,
+    "bge_top3": [
+      "airway_foreign_body_choking",
+      "gastrointestinal_foreign_body",
+      "respiratory_distress"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "cat_bite_abscess",
+      "feline_aortic_thromboembolism"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i13",
+    "expected": [
+      "anticoagulant_rodenticide_poisoning"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 3,
+    "bge_top3": [
+      "anticoagulant_rodenticide_poisoning",
+      "rabies_exposure_wild_animal_bite",
+      "toad_bufotoxin_poisoning"
+    ],
+    "minilm_top3": [
+      "minor_wound",
+      "cat_bite_abscess",
+      "anticoagulant_rodenticide_poisoning"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i14",
+    "expected": [
+      "urethral_obstruction"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 7,
+    "bge_top3": [
+      "urethral_obstruction",
+      "inappropriate_urination_or_cystitis",
+      "seizures"
+    ],
+    "minilm_top3": [
+      "cat_bite_abscess",
+      "feline_aortic_thromboembolism",
+      "lily_toxicosis_cats"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i15",
+    "expected": [
+      "lily_toxicosis_cats"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "lily_toxicosis_cats",
+      "toad_bufotoxin_poisoning",
+      "high_rise_syndrome_cats"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "permethrin_toxicosis_cats",
+      "cat_bite_abscess"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i16",
+    "expected": [
+      "respiratory_distress"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "respiratory_distress",
+      "gastric_dilatation_volvulus",
+      "urethral_obstruction"
+    ],
+    "minilm_top3": [
+      "respiratory_distress",
+      "mild_upper_respiratory_signs",
+      "congestive_heart_failure"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i17",
+    "expected": [
+      "diabetic_ketoacidosis"
+    ],
+    "bge_rank": 3,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "periodontal_disease_mild",
+      "gastrointestinal_foreign_body",
+      "diabetic_ketoacidosis"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "diabetic_ketoacidosis",
+      "dietary_indiscretion_mild"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i18",
+    "expected": [
+      "permethrin_toxicosis_cats"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "permethrin_toxicosis_cats",
+      "human_medication_poisoning",
+      "seizures"
+    ],
+    "minilm_top3": [
+      "permethrin_toxicosis_cats",
+      "toad_bufotoxin_poisoning",
+      "parvovirus_panleukopenia"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i19",
+    "expected": [
+      "vomiting_and_diarrhea"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 27,
+    "bge_top3": [
+      "single_vomiting_or_mild_diarrhea",
+      "vomiting_and_diarrhea",
+      "gastrointestinal_foreign_body"
+    ],
+    "minilm_top3": [
+      "minor_wound",
+      "kennel_cough_mild",
+      "cat_bite_abscess"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i20",
+    "expected": [
+      "gastric_dilatation_volvulus"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "gastric_dilatation_volvulus",
+      "urethral_obstruction",
+      "vomiting_and_diarrhea"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "gastric_dilatation_volvulus",
+      "eclampsia"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i21",
+    "expected": [
+      "allium_toxicosis"
+    ],
+    "bge_rank": 4,
+    "minilm_rank": 15,
+    "bge_top3": [
+      "collapse_and_pale_gums",
+      "periodontal_disease_mild",
+      "reduced_appetite_no_other_signs"
+    ],
+    "minilm_top3": [
+      "dietary_indiscretion_mild",
+      "collapse_and_pale_gums",
+      "reduced_appetite_no_other_signs"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i22",
+    "expected": [
+      "canine_heatstroke"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 6,
+    "bge_top3": [
+      "canine_heatstroke",
+      "airway_foreign_body_choking",
+      "exertional_panting_mild"
+    ],
+    "minilm_top3": [
+      "seizures",
+      "dietary_indiscretion_mild",
+      "collapse_and_pale_gums"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i23",
+    "expected": [
+      "tick_borne_disease_anemia"
+    ],
+    "bge_rank": 5,
+    "minilm_rank": 11,
+    "bge_top3": [
+      "collapse_and_pale_gums",
+      "reduced_appetite_no_other_signs",
+      "periodontal_disease_mild"
+    ],
+    "minilm_top3": [
+      "reduced_appetite_no_other_signs",
+      "dietary_indiscretion_mild",
+      "congestive_heart_failure"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i24",
+    "expected": [
+      "hypoglycemia_toy_puppy"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "hypoglycemia_toy_puppy",
+      "eclampsia",
+      "fading_neonate"
+    ],
+    "minilm_top3": [
+      "tremors_without_seizure",
+      "hypoglycemia_toy_puppy",
+      "reduced_appetite_no_other_signs"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i25",
+    "expected": [
+      "carbamate_organophosphate_poisoning"
+    ],
+    "bge_rank": 5,
+    "minilm_rank": 11,
+    "bge_top3": [
+      "seizures",
+      "tremors_without_seizure",
+      "permethrin_toxicosis_cats"
+    ],
+    "minilm_top3": [
+      "tremors_without_seizure",
+      "dietary_indiscretion_mild",
+      "seizures"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i26",
+    "expected": [
+      "acute_hindlimb_paralysis"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 4,
+    "bge_top3": [
+      "acute_hindlimb_paralysis",
+      "osteoarthritis_stiffness",
+      "mild_lameness"
+    ],
+    "minilm_top3": [
+      "seizures",
+      "tremors_without_seizure",
+      "dietary_indiscretion_mild"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i27",
+    "expected": [
+      "high_rise_syndrome_cats"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "high_rise_syndrome_cats",
+      "respiratory_distress",
+      "mild_upper_respiratory_signs"
+    ],
+    "minilm_top3": [
+      "high_rise_syndrome_cats",
+      "cat_bite_abscess",
+      "lily_toxicosis_cats"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i28",
+    "expected": [
+      "feline_aortic_thromboembolism"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "feline_aortic_thromboembolism",
+      "acute_hindlimb_paralysis",
+      "high_rise_syndrome_cats"
+    ],
+    "minilm_top3": [
+      "feline_aortic_thromboembolism",
+      "cat_bite_abscess",
+      "high_rise_syndrome_cats"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i29",
+    "expected": [
+      "anaphylaxis_facial_swelling"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "anaphylaxis_facial_swelling",
+      "insect_sting_local_reaction",
+      "flea_dermatitis_pruritus"
+    ],
+    "minilm_top3": [
+      "anaphylaxis_facial_swelling",
+      "dietary_indiscretion_mild",
+      "single_vomiting_or_mild_diarrhea"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i30",
+    "expected": [
+      "gastrointestinal_foreign_body"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 14,
+    "bge_top3": [
+      "lily_toxicosis_cats",
+      "gastrointestinal_foreign_body",
+      "anticoagulant_rodenticide_poisoning"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "high_rise_syndrome_cats",
+      "cat_bite_abscess"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i31",
+    "expected": [
+      "distemper_neurological"
+    ],
+    "bge_rank": 5,
+    "minilm_rank": 11,
+    "bge_top3": [
+      "tremors_without_seizure",
+      "hypoglycemia_toy_puppy",
+      "seizures"
+    ],
+    "minilm_top3": [
+      "tremors_without_seizure",
+      "kennel_cough_mild",
+      "slow_growing_lump"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i32",
+    "expected": [
+      "snake_and_scorpion_envenomation"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 14,
+    "bge_top3": [
+      "snake_and_scorpion_envenomation",
+      "anaphylaxis_facial_swelling",
+      "high_rise_syndrome_cats"
+    ],
+    "minilm_top3": [
+      "cat_bite_abscess",
+      "feline_aortic_thromboembolism",
+      "lily_toxicosis_cats"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i33",
+    "expected": [
+      "parvovirus_panleukopenia"
+    ],
+    "bge_rank": 5,
+    "minilm_rank": 4,
+    "bge_top3": [
+      "anticoagulant_rodenticide_poisoning",
+      "vomiting_and_diarrhea",
+      "single_vomiting_or_mild_diarrhea"
+    ],
+    "minilm_top3": [
+      "hypoglycemia_toy_puppy",
+      "reduced_appetite_no_other_signs",
+      "dietary_indiscretion_mild"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i34",
+    "expected": [
+      "congestive_heart_failure"
+    ],
+    "bge_rank": 13,
+    "minilm_rank": 5,
+    "bge_top3": [
+      "airway_foreign_body_choking",
+      "respiratory_distress",
+      "urethral_obstruction"
+    ],
+    "minilm_top3": [
+      "gastric_dilatation_volvulus",
+      "airway_foreign_body_choking",
+      "respiratory_distress"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i35",
+    "expected": [
+      "seizures"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 12,
+    "bge_top3": [
+      "seizures",
+      "tremors_without_seizure",
+      "trauma_and_bleeding"
+    ],
+    "minilm_top3": [
+      "gastric_dilatation_volvulus",
+      "toad_bufotoxin_poisoning",
+      "kennel_cough_mild"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i36",
+    "expected": [
+      "fading_neonate"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "fading_neonate",
+      "dystocia",
+      "normal_whelping"
+    ],
+    "minilm_top3": [
+      "fading_neonate",
+      "reduced_appetite_no_other_signs",
+      "single_vomiting_or_mild_diarrhea"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i37",
+    "expected": [
+      "eclampsia"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "eclampsia",
+      "dystocia",
+      "osteoarthritis_stiffness"
+    ],
+    "minilm_top3": [
+      "eclampsia",
+      "normal_whelping",
+      "dystocia"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i38",
+    "expected": [
+      "chocolate_toxicosis"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "chocolate_toxicosis",
+      "gastric_dilatation_volvulus",
+      "dietary_indiscretion_mild"
+    ],
+    "minilm_top3": [
+      "dietary_indiscretion_mild",
+      "chocolate_toxicosis",
+      "reduced_appetite_no_other_signs"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i39",
+    "expected": [
+      "cat_bite_abscess"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "cat_bite_abscess",
+      "burns_and_electrical_injury",
+      "anticoagulant_rodenticide_poisoning"
+    ],
+    "minilm_top3": [
+      "cat_bite_abscess",
+      "feline_aortic_thromboembolism",
+      "burns_and_electrical_injury"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i40",
+    "expected": [
+      "rabies_exposure_wild_animal_bite"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "rabies_exposure_wild_animal_bite",
+      "high_rise_syndrome_cats",
+      "cat_bite_abscess"
+    ],
+    "minilm_top3": [
+      "rabies_exposure_wild_animal_bite",
+      "cat_bite_abscess",
+      "insect_sting_local_reaction"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i41",
+    "expected": [
+      "otitis_externa_mild"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "otitis_externa_mild",
+      "respiratory_distress",
+      "flea_dermatitis_pruritus"
+    ],
+    "minilm_top3": [
+      "otitis_externa_mild",
+      "lily_toxicosis_cats",
+      "cat_bite_abscess"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i42",
+    "expected": [
+      "reduced_appetite_no_other_signs"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "reduced_appetite_no_other_signs",
+      "dietary_indiscretion_mild",
+      "polyuria_polydipsia_investigate"
+    ],
+    "minilm_top3": [
+      "dietary_indiscretion_mild",
+      "reduced_appetite_no_other_signs",
+      "single_vomiting_or_mild_diarrhea"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i43",
+    "expected": [
+      "periodontal_disease_mild"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 16,
+    "bge_top3": [
+      "periodontal_disease_mild",
+      "toad_bufotoxin_poisoning",
+      "allium_toxicosis"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "kennel_cough_mild",
+      "chocolate_toxicosis"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i44",
+    "expected": [
+      "single_vomiting_or_mild_diarrhea"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 4,
+    "bge_top3": [
+      "single_vomiting_or_mild_diarrhea",
+      "vomiting_and_diarrhea",
+      "gastric_dilatation_volvulus"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning",
+      "gastric_dilatation_volvulus"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i45",
+    "expected": [
+      "mild_conjunctivitis"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 4,
+    "bge_top3": [
+      "mild_conjunctivitis",
+      "ocular_emergency",
+      "leptospirosis_acute"
+    ],
+    "minilm_top3": [
+      "anaphylaxis_facial_swelling",
+      "ocular_emergency",
+      "lily_toxicosis_cats"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i46",
+    "expected": [
+      "tremors_without_seizure"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "tremors_without_seizure",
+      "chocolate_toxicosis",
+      "hypoglycemia_toy_puppy"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "tremors_without_seizure",
+      "eclampsia"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i47",
+    "expected": [
+      "osteoarthritis_stiffness"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "osteoarthritis_stiffness",
+      "acute_hindlimb_paralysis",
+      "gastric_dilatation_volvulus"
+    ],
+    "minilm_top3": [
+      "osteoarthritis_stiffness",
+      "urethral_obstruction",
+      "seizures"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i48",
+    "expected": [
+      "polyuria_polydipsia_investigate"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "polyuria_polydipsia_investigate",
+      "diabetic_ketoacidosis",
+      "lily_toxicosis_cats"
+    ],
+    "minilm_top3": [
+      "polyuria_polydipsia_investigate",
+      "lily_toxicosis_cats",
+      "diabetic_ketoacidosis"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i49",
+    "expected": [
+      "flea_dermatitis_pruritus"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 4,
+    "bge_top3": [
+      "flea_dermatitis_pruritus",
+      "anaphylaxis_facial_swelling",
+      "snake_and_scorpion_envenomation"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "eclampsia",
+      "kennel_cough_mild"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i50",
+    "expected": [
+      "mild_upper_respiratory_signs"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 3,
+    "bge_top3": [
+      "mild_upper_respiratory_signs",
+      "respiratory_distress",
+      "vomiting_and_diarrhea"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning",
+      "mild_upper_respiratory_signs"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i51",
+    "expected": [
+      "mild_lameness"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 4,
+    "bge_top3": [
+      "mild_lameness",
+      "snake_and_scorpion_envenomation",
+      "acute_hindlimb_paralysis"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "eclampsia",
+      "gastric_dilatation_volvulus"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i52",
+    "expected": [
+      "exertional_panting_mild"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "exertional_panting_mild",
+      "canine_heatstroke",
+      "otitis_externa_mild"
+    ],
+    "minilm_top3": [
+      "exertional_panting_mild",
+      "normal_whelping",
+      "kennel_cough_mild"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i53",
+    "expected": [
+      "slow_growing_lump"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "slow_growing_lump",
+      "snake_and_scorpion_envenomation",
+      "ticks_found_no_signs"
+    ],
+    "minilm_top3": [
+      "slow_growing_lump",
+      "parvovirus_panleukopenia",
+      "toad_bufotoxin_poisoning"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i54",
+    "expected": [
+      "ticks_found_no_signs"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 20,
+    "bge_top3": [
+      "ticks_found_no_signs",
+      "tick_borne_disease_anemia",
+      "permethrin_toxicosis_cats"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning",
+      "eclampsia"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i55",
+    "expected": [
+      "normal_whelping"
+    ],
+    "bge_rank": null,
+    "minilm_rank": 8,
+    "bge_top3": [
+      "respiratory_distress",
+      "high_rise_syndrome_cats",
+      "gastrointestinal_foreign_body"
+    ],
+    "minilm_top3": [
+      "feline_aortic_thromboembolism",
+      "high_rise_syndrome_cats",
+      "cat_bite_abscess"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i56",
+    "expected": [
+      "inappropriate_urination_or_cystitis"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 6,
+    "bge_top3": [
+      "inappropriate_urination_or_cystitis",
+      "urethral_obstruction",
+      "polyuria_polydipsia_investigate"
+    ],
+    "minilm_top3": [
+      "cat_bite_abscess",
+      "feline_aortic_thromboembolism",
+      "lily_toxicosis_cats"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i57",
+    "expected": [
+      "minor_wound"
+    ],
+    "bge_rank": 9,
+    "minilm_rank": 9,
+    "bge_top3": [
+      "snake_and_scorpion_envenomation",
+      "trauma_and_bleeding",
+      "toad_bufotoxin_poisoning"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "trauma_and_bleeding",
+      "parvovirus_panleukopenia"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i58",
+    "expected": [
+      "dietary_indiscretion_mild"
+    ],
+    "bge_rank": 4,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "toad_bufotoxin_poisoning",
+      "chocolate_toxicosis",
+      "grape_xylitol_toxicosis"
+    ],
+    "minilm_top3": [
+      "dietary_indiscretion_mild",
+      "chocolate_toxicosis",
+      "kennel_cough_mild"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i59",
+    "expected": [
+      "normal_estrus"
+    ],
+    "bge_rank": 34,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "trauma_and_bleeding",
+      "eclampsia",
+      "canine_heatstroke"
+    ],
+    "minilm_top3": [
+      "normal_estrus",
+      "trauma_and_bleeding",
+      "gastric_dilatation_volvulus"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i60",
+    "expected": [
+      "kennel_cough_mild"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "kennel_cough_mild",
+      "mild_upper_respiratory_signs",
+      "airway_foreign_body_choking"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning",
+      "eclampsia"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "i61",
+    "expected": [
+      "insect_sting_local_reaction"
+    ],
+    "bge_rank": 7,
+    "minilm_rank": 38,
+    "bge_top3": [
+      "snake_and_scorpion_envenomation",
+      "anaphylaxis_facial_swelling",
+      "feline_aortic_thromboembolism"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "kennel_cough_mild",
+      "tick_borne_disease_anemia"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j01",
+    "expected": [
+      "diabetic_ketoacidosis"
+    ],
+    "bge_rank": 8,
+    "minilm_rank": 19,
+    "bge_top3": [
+      "polyuria_polydipsia_investigate",
+      "congestive_heart_failure",
+      "exertional_panting_mild"
+    ],
+    "minilm_top3": [
+      "congestive_heart_failure",
+      "kennel_cough_mild",
+      "exertional_panting_mild"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j02",
+    "expected": [
+      "parvovirus_panleukopenia"
+    ],
+    "bge_rank": 11,
+    "minilm_rank": 14,
+    "bge_top3": [
+      "vomiting_and_diarrhea",
+      "toad_bufotoxin_poisoning",
+      "urethral_obstruction"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "congestive_heart_failure",
+      "vomiting_and_diarrhea"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j03",
+    "expected": [
+      "carbamate_organophosphate_poisoning"
+    ],
+    "bge_rank": 3,
+    "minilm_rank": 31,
+    "bge_top3": [
+      "chocolate_toxicosis",
+      "toad_bufotoxin_poisoning",
+      "carbamate_organophosphate_poisoning"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning",
+      "normal_whelping"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j04",
+    "expected": [
+      "human_medication_poisoning"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 10,
+    "bge_top3": [
+      "human_medication_poisoning",
+      "permethrin_toxicosis_cats",
+      "seizures"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "permethrin_toxicosis_cats",
+      "cat_bite_abscess"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j05",
+    "expected": [
+      "gastrointestinal_foreign_body"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 6,
+    "bge_top3": [
+      "gastrointestinal_foreign_body",
+      "gastric_dilatation_volvulus",
+      "single_vomiting_or_mild_diarrhea"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "cat_bite_abscess",
+      "feline_aortic_thromboembolism"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j06",
+    "expected": [
+      "allium_toxicosis"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 28,
+    "bge_top3": [
+      "collapse_and_pale_gums",
+      "allium_toxicosis",
+      "chocolate_toxicosis"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "eclampsia",
+      "kennel_cough_mild"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j07",
+    "expected": [
+      "snake_and_scorpion_envenomation"
+    ],
+    "bge_rank": 5,
+    "minilm_rank": 21,
+    "bge_top3": [
+      "insect_sting_local_reaction",
+      "anaphylaxis_facial_swelling",
+      "cat_bite_abscess"
+    ],
+    "minilm_top3": [
+      "cat_bite_abscess",
+      "lily_toxicosis_cats",
+      "feline_aortic_thromboembolism"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j08",
+    "expected": [
+      "ocular_emergency"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "ocular_emergency",
+      "osteoarthritis_stiffness",
+      "feline_aortic_thromboembolism"
+    ],
+    "minilm_top3": [
+      "ocular_emergency",
+      "cat_bite_abscess",
+      "feline_aortic_thromboembolism"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j09",
+    "expected": [
+      "hypoglycemia_toy_puppy"
+    ],
+    "bge_rank": 7,
+    "minilm_rank": 6,
+    "bge_top3": [
+      "fading_neonate",
+      "vomiting_and_diarrhea",
+      "single_vomiting_or_mild_diarrhea"
+    ],
+    "minilm_top3": [
+      "fading_neonate",
+      "reduced_appetite_no_other_signs",
+      "tremors_without_seizure"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j10",
+    "expected": [
+      "urethral_obstruction"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 28,
+    "bge_top3": [
+      "urethral_obstruction",
+      "snake_and_scorpion_envenomation",
+      "toad_bufotoxin_poisoning"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "congestive_heart_failure",
+      "eclampsia"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j11",
+    "expected": [
+      "lily_toxicosis_cats"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "lily_toxicosis_cats",
+      "rabies_exposure_wild_animal_bite",
+      "anticoagulant_rodenticide_poisoning"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "cat_bite_abscess",
+      "permethrin_toxicosis_cats"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j12",
+    "expected": [
+      "leptospirosis_acute"
+    ],
+    "bge_rank": 6,
+    "minilm_rank": 5,
+    "bge_top3": [
+      "gastric_dilatation_volvulus",
+      "urethral_obstruction",
+      "parvovirus_panleukopenia"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "polyuria_polydipsia_investigate",
+      "kennel_cough_mild"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j13",
+    "expected": [
+      "feline_aortic_thromboembolism"
+    ],
+    "bge_rank": 4,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "high_rise_syndrome_cats",
+      "acute_hindlimb_paralysis",
+      "osteoarthritis_stiffness"
+    ],
+    "minilm_top3": [
+      "feline_aortic_thromboembolism",
+      "high_rise_syndrome_cats",
+      "cat_bite_abscess"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j14",
+    "expected": [
+      "trauma_and_bleeding"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 6,
+    "bge_top3": [
+      "trauma_and_bleeding",
+      "toad_bufotoxin_poisoning",
+      "anticoagulant_rodenticide_poisoning"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "cat_bite_abscess",
+      "high_rise_syndrome_cats"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j15",
+    "expected": [
+      "burns_and_electrical_injury"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 12,
+    "bge_top3": [
+      "burns_and_electrical_injury",
+      "toad_bufotoxin_poisoning",
+      "snake_and_scorpion_envenomation"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "kennel_cough_mild",
+      "gastric_dilatation_volvulus"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j16",
+    "expected": [
+      "vomiting_and_diarrhea"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "vomiting_and_diarrhea",
+      "diabetic_ketoacidosis",
+      "gastric_dilatation_volvulus"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "vomiting_and_diarrhea",
+      "feline_aortic_thromboembolism"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j17",
+    "expected": [
+      "seizures"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "seizures",
+      "tremors_without_seizure",
+      "minor_wound"
+    ],
+    "minilm_top3": [
+      "seizures",
+      "tremors_without_seizure",
+      "cat_bite_abscess"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j18",
+    "expected": [
+      "distemper_neurological"
+    ],
+    "bge_rank": 3,
+    "minilm_rank": 7,
+    "bge_top3": [
+      "eclampsia",
+      "seizures",
+      "distemper_neurological"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "gastric_dilatation_volvulus",
+      "trauma_and_bleeding"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j19",
+    "expected": [
+      "anaphylaxis_facial_swelling"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 3,
+    "bge_top3": [
+      "insect_sting_local_reaction",
+      "anaphylaxis_facial_swelling",
+      "flea_dermatitis_pruritus"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "cat_bite_abscess",
+      "anaphylaxis_facial_swelling"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j20",
+    "expected": [
+      "dystocia"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "dystocia",
+      "normal_whelping",
+      "urethral_obstruction"
+    ],
+    "minilm_top3": [
+      "dystocia",
+      "osteoarthritis_stiffness",
+      "congestive_heart_failure"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j21",
+    "expected": [
+      "toad_bufotoxin_poisoning"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "toad_bufotoxin_poisoning",
+      "periodontal_disease_mild",
+      "carbamate_organophosphate_poisoning"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "kennel_cough_mild",
+      "grape_xylitol_toxicosis"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j22",
+    "expected": [
+      "permethrin_toxicosis_cats"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "permethrin_toxicosis_cats",
+      "seizures",
+      "human_medication_poisoning"
+    ],
+    "minilm_top3": [
+      "permethrin_toxicosis_cats",
+      "lily_toxicosis_cats",
+      "feline_aortic_thromboembolism"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j23",
+    "expected": [
+      "eclampsia"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 6,
+    "bge_top3": [
+      "dystocia",
+      "eclampsia",
+      "osteoarthritis_stiffness"
+    ],
+    "minilm_top3": [
+      "hypoglycemia_toy_puppy",
+      "osteoarthritis_stiffness",
+      "normal_whelping"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j24",
+    "expected": [
+      "acute_hindlimb_paralysis"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "feline_aortic_thromboembolism",
+      "acute_hindlimb_paralysis",
+      "osteoarthritis_stiffness"
+    ],
+    "minilm_top3": [
+      "feline_aortic_thromboembolism",
+      "acute_hindlimb_paralysis",
+      "high_rise_syndrome_cats"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j25",
+    "expected": [
+      "tick_borne_disease_anemia"
+    ],
+    "bge_rank": 4,
+    "minilm_rank": 22,
+    "bge_top3": [
+      "collapse_and_pale_gums",
+      "reduced_appetite_no_other_signs",
+      "slow_growing_lump"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "collapse_and_pale_gums",
+      "eclampsia"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j26",
+    "expected": [
+      "fading_neonate"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 3,
+    "bge_top3": [
+      "fading_neonate",
+      "collapse_and_pale_gums",
+      "high_rise_syndrome_cats"
+    ],
+    "minilm_top3": [
+      "feline_aortic_thromboembolism",
+      "high_rise_syndrome_cats",
+      "fading_neonate"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j27",
+    "expected": [
+      "chocolate_toxicosis"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "chocolate_toxicosis",
+      "dietary_indiscretion_mild",
+      "grape_xylitol_toxicosis"
+    ],
+    "minilm_top3": [
+      "chocolate_toxicosis",
+      "grape_xylitol_toxicosis",
+      "toad_bufotoxin_poisoning"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j28",
+    "expected": [
+      "grape_xylitol_toxicosis"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "grape_xylitol_toxicosis",
+      "toad_bufotoxin_poisoning",
+      "gastric_dilatation_volvulus"
+    ],
+    "minilm_top3": [
+      "grape_xylitol_toxicosis",
+      "dietary_indiscretion_mild",
+      "toad_bufotoxin_poisoning"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j29",
+    "expected": [
+      "collapse_and_pale_gums"
+    ],
+    "bge_rank": 10,
+    "minilm_rank": 7,
+    "bge_top3": [
+      "high_rise_syndrome_cats",
+      "respiratory_distress",
+      "mild_upper_respiratory_signs"
+    ],
+    "minilm_top3": [
+      "cat_bite_abscess",
+      "lily_toxicosis_cats",
+      "feline_aortic_thromboembolism"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j30",
+    "expected": [
+      "respiratory_distress"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 5,
+    "bge_top3": [
+      "respiratory_distress",
+      "airway_foreign_body_choking",
+      "mild_upper_respiratory_signs"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "high_rise_syndrome_cats",
+      "feline_aortic_thromboembolism"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j31",
+    "expected": [
+      "anticoagulant_rodenticide_poisoning"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "anticoagulant_rodenticide_poisoning",
+      "toad_bufotoxin_poisoning",
+      "lily_toxicosis_cats"
+    ],
+    "minilm_top3": [
+      "anticoagulant_rodenticide_poisoning",
+      "anaphylaxis_facial_swelling",
+      "insect_sting_local_reaction"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j32",
+    "expected": [
+      "vestibular_syndrome_otitis_interna"
+    ],
+    "bge_rank": 3,
+    "minilm_rank": 3,
+    "bge_top3": [
+      "ocular_emergency",
+      "osteoarthritis_stiffness",
+      "vestibular_syndrome_otitis_interna"
+    ],
+    "minilm_top3": [
+      "normal_whelping",
+      "gastric_dilatation_volvulus",
+      "vestibular_syndrome_otitis_interna"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j33",
+    "expected": [
+      "pyometra"
+    ],
+    "bge_rank": 9,
+    "minilm_rank": 26,
+    "bge_top3": [
+      "cat_bite_abscess",
+      "inappropriate_urination_or_cystitis",
+      "mild_upper_respiratory_signs"
+    ],
+    "minilm_top3": [
+      "cat_bite_abscess",
+      "high_rise_syndrome_cats",
+      "lily_toxicosis_cats"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j34",
+    "expected": [
+      "congestive_heart_failure"
+    ],
+    "bge_rank": 7,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "seizures",
+      "burns_and_electrical_injury",
+      "high_rise_syndrome_cats"
+    ],
+    "minilm_top3": [
+      "feline_aortic_thromboembolism",
+      "congestive_heart_failure",
+      "high_rise_syndrome_cats"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j35",
+    "expected": [
+      "canine_heatstroke"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 10,
+    "bge_top3": [
+      "exertional_panting_mild",
+      "canine_heatstroke",
+      "gastric_dilatation_volvulus"
+    ],
+    "minilm_top3": [
+      "congestive_heart_failure",
+      "dietary_indiscretion_mild",
+      "reduced_appetite_no_other_signs"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j36",
+    "expected": [
+      "high_rise_syndrome_cats"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "high_rise_syndrome_cats",
+      "osteoarthritis_stiffness",
+      "acute_hindlimb_paralysis"
+    ],
+    "minilm_top3": [
+      "feline_aortic_thromboembolism",
+      "high_rise_syndrome_cats",
+      "cat_bite_abscess"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j37",
+    "expected": [
+      "gastric_dilatation_volvulus"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 3,
+    "bge_top3": [
+      "gastric_dilatation_volvulus",
+      "gastrointestinal_foreign_body",
+      "periodontal_disease_mild"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "single_vomiting_or_mild_diarrhea",
+      "gastric_dilatation_volvulus"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j38",
+    "expected": [
+      "airway_foreign_body_choking"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 8,
+    "bge_top3": [
+      "airway_foreign_body_choking",
+      "toad_bufotoxin_poisoning",
+      "respiratory_distress"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "kennel_cough_mild",
+      "eclampsia"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j39",
+    "expected": [
+      "dietary_indiscretion_mild"
+    ],
+    "bge_rank": 4,
+    "minilm_rank": 4,
+    "bge_top3": [
+      "chocolate_toxicosis",
+      "hypoglycemia_toy_puppy",
+      "burns_and_electrical_injury"
+    ],
+    "minilm_top3": [
+      "chocolate_toxicosis",
+      "toad_bufotoxin_poisoning",
+      "kennel_cough_mild"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j40",
+    "expected": [
+      "normal_whelping"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "normal_whelping",
+      "fading_neonate",
+      "dystocia"
+    ],
+    "minilm_top3": [
+      "normal_whelping",
+      "lily_toxicosis_cats",
+      "dystocia"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j41",
+    "expected": [
+      "tremors_without_seizure"
+    ],
+    "bge_rank": 7,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "acute_hindlimb_paralysis",
+      "feline_aortic_thromboembolism",
+      "seizures"
+    ],
+    "minilm_top3": [
+      "feline_aortic_thromboembolism",
+      "tremors_without_seizure",
+      "cat_bite_abscess"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j42",
+    "expected": [
+      "single_vomiting_or_mild_diarrhea"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 5,
+    "bge_top3": [
+      "single_vomiting_or_mild_diarrhea",
+      "vomiting_and_diarrhea",
+      "gastric_dilatation_volvulus"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning",
+      "dietary_indiscretion_mild"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j43",
+    "expected": [
+      "minor_wound"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 27,
+    "bge_top3": [
+      "minor_wound",
+      "snake_and_scorpion_envenomation",
+      "cat_bite_abscess"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "kennel_cough_mild",
+      "parvovirus_panleukopenia"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j44",
+    "expected": [
+      "periodontal_disease_mild"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "periodontal_disease_mild",
+      "feline_aortic_thromboembolism",
+      "osteoarthritis_stiffness"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "periodontal_disease_mild",
+      "toad_bufotoxin_poisoning"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j45",
+    "expected": [
+      "reduced_appetite_no_other_signs"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "anticoagulant_rodenticide_poisoning",
+      "reduced_appetite_no_other_signs",
+      "vomiting_and_diarrhea"
+    ],
+    "minilm_top3": [
+      "lily_toxicosis_cats",
+      "reduced_appetite_no_other_signs",
+      "dietary_indiscretion_mild"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j46",
+    "expected": [
+      "flea_dermatitis_pruritus"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 22,
+    "bge_top3": [
+      "flea_dermatitis_pruritus",
+      "anaphylaxis_facial_swelling",
+      "slow_growing_lump"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning",
+      "polyuria_polydipsia_investigate"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j47",
+    "expected": [
+      "insect_sting_local_reaction"
+    ],
+    "bge_rank": 3,
+    "minilm_rank": 33,
+    "bge_top3": [
+      "snake_and_scorpion_envenomation",
+      "anaphylaxis_facial_swelling",
+      "insect_sting_local_reaction"
+    ],
+    "minilm_top3": [
+      "toad_bufotoxin_poisoning",
+      "kennel_cough_mild",
+      "gastric_dilatation_volvulus"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j48",
+    "expected": [
+      "normal_estrus"
+    ],
+    "bge_rank": 5,
+    "minilm_rank": 9,
+    "bge_top3": [
+      "minor_wound",
+      "insect_sting_local_reaction",
+      "snake_and_scorpion_envenomation"
+    ],
+    "minilm_top3": [
+      "normal_whelping",
+      "toad_bufotoxin_poisoning",
+      "eclampsia"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j49",
+    "expected": [
+      "cat_bite_abscess"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "cat_bite_abscess",
+      "snake_and_scorpion_envenomation",
+      "rabies_exposure_wild_animal_bite"
+    ],
+    "minilm_top3": [
+      "cat_bite_abscess",
+      "feline_aortic_thromboembolism",
+      "high_rise_syndrome_cats"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j50",
+    "expected": [
+      "polyuria_polydipsia_investigate"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "polyuria_polydipsia_investigate",
+      "diabetic_ketoacidosis",
+      "inappropriate_urination_or_cystitis"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "polyuria_polydipsia_investigate",
+      "vomiting_and_diarrhea"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j51",
+    "expected": [
+      "rabies_exposure_wild_animal_bite"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "rabies_exposure_wild_animal_bite",
+      "toad_bufotoxin_poisoning",
+      "burns_and_electrical_injury"
+    ],
+    "minilm_top3": [
+      "rabies_exposure_wild_animal_bite",
+      "anaphylaxis_facial_swelling",
+      "cat_bite_abscess"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j52",
+    "expected": [
+      "otitis_externa_mild"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "periodontal_disease_mild",
+      "otitis_externa_mild",
+      "minor_wound"
+    ],
+    "minilm_top3": [
+      "otitis_externa_mild",
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j53",
+    "expected": [
+      "osteoarthritis_stiffness"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 2,
+    "bge_top3": [
+      "acute_hindlimb_paralysis",
+      "osteoarthritis_stiffness",
+      "high_rise_syndrome_cats"
+    ],
+    "minilm_top3": [
+      "feline_aortic_thromboembolism",
+      "osteoarthritis_stiffness",
+      "cat_bite_abscess"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j54",
+    "expected": [
+      "slow_growing_lump"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "slow_growing_lump",
+      "insect_sting_local_reaction",
+      "minor_wound"
+    ],
+    "minilm_top3": [
+      "slow_growing_lump",
+      "normal_whelping",
+      "flea_dermatitis_pruritus"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j55",
+    "expected": [
+      "inappropriate_urination_or_cystitis"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "urethral_obstruction",
+      "inappropriate_urination_or_cystitis",
+      "gastric_dilatation_volvulus"
+    ],
+    "minilm_top3": [
+      "inappropriate_urination_or_cystitis",
+      "kennel_cough_mild",
+      "normal_whelping"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j56",
+    "expected": [
+      "exertional_panting_mild"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 5,
+    "bge_top3": [
+      "exertional_panting_mild",
+      "respiratory_distress",
+      "canine_heatstroke"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning",
+      "normal_whelping"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j57",
+    "expected": [
+      "mild_lameness"
+    ],
+    "bge_rank": 5,
+    "minilm_rank": 9,
+    "bge_top3": [
+      "acute_hindlimb_paralysis",
+      "high_rise_syndrome_cats",
+      "feline_aortic_thromboembolism"
+    ],
+    "minilm_top3": [
+      "feline_aortic_thromboembolism",
+      "cat_bite_abscess",
+      "acute_hindlimb_paralysis"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j58",
+    "expected": [
+      "kennel_cough_mild"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 1,
+    "bge_top3": [
+      "kennel_cough_mild",
+      "vomiting_and_diarrhea",
+      "single_vomiting_or_mild_diarrhea"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning",
+      "vomiting_and_diarrhea"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j59",
+    "expected": [
+      "mild_conjunctivitis"
+    ],
+    "bge_rank": 2,
+    "minilm_rank": 5,
+    "bge_top3": [
+      "ocular_emergency",
+      "mild_conjunctivitis",
+      "burns_and_electrical_injury"
+    ],
+    "minilm_top3": [
+      "ocular_emergency",
+      "feline_aortic_thromboembolism",
+      "cat_bite_abscess"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j60",
+    "expected": [
+      "ticks_found_no_signs"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 20,
+    "bge_top3": [
+      "ticks_found_no_signs",
+      "tick_borne_disease_anemia",
+      "rabies_exposure_wild_animal_bite"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "eclampsia",
+      "exertional_panting_mild"
+    ]
+  },
+  {
+    "dataset": "independentes",
+    "id": "j61",
+    "expected": [
+      "mild_upper_respiratory_signs"
+    ],
+    "bge_rank": 1,
+    "minilm_rank": 7,
+    "bge_top3": [
+      "mild_upper_respiratory_signs",
+      "respiratory_distress",
+      "urethral_obstruction"
+    ],
+    "minilm_top3": [
+      "kennel_cough_mild",
+      "toad_bufotoxin_poisoning",
+      "congestive_heart_failure"
+    ]
+  }
+]
