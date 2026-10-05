@@ -124,6 +124,10 @@ aqui.
 | [B-74](#b-74) | "Respondido por" na tela, e o erro do atendente tratado no frontend | A definir | Média | Aberto |
 | [B-75](#b-75) | Decidir os direitos das capturas da VCA e das páginas com todos os direitos reservados | A definir | Média | Aberto |
 | [B-76](#b-76) | O manifesto da coleção de fichas identifica o arquivo inteiro, e não só o que foi indexado | A definir | Baixa | Aberto |
+| [B-77](#b-77) | O Gemini muda de decisão entre dias com a mesma entrada | A definir | Média | Aberto |
+| [B-78](#b-78) | Exposição antes de hospedar: rotas sem identidade, portas publicadas, sem limites | A definir | Média | Aberto |
+| [B-79](#b-79) | O catálogo de perguntas do fluxo conversacional não passou por veterinário nem foi medido em casos não vistos | A definir | Média | Aberto |
+| [B-80](#b-80) | Dívida da segunda etapa: documentação divergente, coleção da POC sem receita, código morto | A definir | Baixa | Aberto |
 
 ---
 
@@ -2567,6 +2571,17 @@ discriminador) e a coluna `por_que_importa`, o que tira as notas internas das 11
 fichas. Isso muda o texto que o atendente lê, então é rodada medida contra a
 réplica da [rodada 26](joao/2026-09-25-27-atendente-gemini-e-replica.md).
 
+**Atualização 05/10 ([rodada 31](joao/2026-10-05-32-autopsia-3-estado-atual.md)).** Nada mudou desde 26/09: as 60 células
+da etapa 2 (30 linhas) e a coluna `por_que_importa` (61) seguem vazias no mapa, e
+11 fichas de leitura ainda mostram notas internas. O conteúdo existe nos rascunhos
+certificados: `por_que_importa` nas 61; na etapa 2, de 7 a 12 frases de "como o
+tutor conta", 2 a 5 sinais de alarme e 0 a 2 frases de "como diferenciar" por
+ficha (a coluna do mapa na etapa 1 tem de 4 a 8 frases curtas). É a rodada 32:
+regra de transposição proposta (até 6 sinais curtos; discriminador de "como
+diferenciar"; `por_que_importa` do rascunho), fichas e coleção regeradas, busca e
+classificação medidas nos lotes da réplica. Risco conhecido: a ficha longa piora
+o qwen ([rodada 19](joao/2026-09-24-20-fichas-em-duas-camadas.md)).
+
 ### B-62
 
 **Fonte escrita para tutor nos quadros em que o documento não descreve o que o tutor vê**
@@ -2653,6 +2668,15 @@ independentes (61% · 77%) e longe da prova 1 + régua (83% · 95%). Faltam: o r
 da conferência (Naive Bayes entre lotes, o "mesmo autor"), a divisão por assunto
 (66/264) e o congelamento.
 
+**Atualização 05/10 ([rodada 31](joao/2026-10-05-32-autopsia-3-estado-atual.md)).** Nada andou. Duas coisas entram no
+protocolo da avaliação final: **repetições em dias diferentes e intervalo de
+confiança**, porque o Gemini mudou 5 decisões em 172 casos entre 25/09 e 05/10
+com entrada idêntica ([B-77](#b-77)); e o fluxo conversacional como braço
+**declarado**, se o time quiser medi-lo. Conferência pontual de rótulo: o i58 dos
+relatos independentes ("pão com passas") está leve pelo mapa; passas são tóxicas
+para cães. A tolerância a E→N e a E→I fica decidida com os especialistas antes de
+olhar o resultado.
+
 ### B-64
 
 **LGPD com o Gemini como atendente padrão: o relato do tutor sai da máquina**
@@ -2672,6 +2696,16 @@ no texto; uma opção "só local" (o qwen) documentada; o relato fora do
 `logger.info`; o README corrigido; e, se possível, a conta paga (onde o conteúdo
 não é usado para treinar). Critério: o fluxo com o Gemini só envia o relato
 depois do aviso, e o modo local funciona sem rede.
+
+**Atualização 05/10 ([rodada 31](joao/2026-10-05-32-autopsia-3-estado-atual.md)).** O frontend React tem o seletor
+Gemini / modelo local, um aviso informativo de envio ao Google quando o provedor
+é Gemini, sem consentimento, com Gemini como padrão e a escolha voltando ao padrão
+a cada recarga; o servidor aceita o provedor que o cliente mandar a cada turno;
+"LGPD" não aparece no código. **Decisão do João (05/10):** o seletor oferece a
+escolha da IA sem texto comparando velocidade e privacidade. O que segue aberto:
+consentimento antes do primeiro envio, a escolha persistir por conta e o servidor
+respeitá-la, e o texto mínimo (o que sai, para onde, por quanto tempo, como
+apagar).
 
 ### B-65
 
@@ -2700,6 +2734,16 @@ quase todo o espaçamento de 4 s entre chamadas (`GEMINI_MIN_INTERVAL_S`), que
 existe para a rodada não esbarrar no limite por minuto da conta gratuita; o p95
 ficou entre 5 e 10 s por lote. Numa demonstração com uma pergunta por vez, o espaçamento não
 pesa, mas o limite por minuto e a cota diária (500 chamadas por conta) sim.
+
+**Atualização 05/10 ([rodada 31](joao/2026-10-05-32-autopsia-3-estado-atual.md)).** Medido: no `dev` pela API, mediana
+4,0 s e **p95 45 s, máximo 83 s**, com o Google devolvendo 504 e o cliente
+esperando 20 s por vez; o Vinicius observou **326 s** num caso (rodada 24 dele,
+`diagnostico-espera.md`). Por construção, o cliente não tem prazo total: 60 s por
+tentativa e esperas de 20 s dobrando até 300 s, seis vezes — ~900 s no pior caso.
+**Conserto proposto:** um prazo por pedido do tutor (ex.: 30 s), teto de
+tentativas, estouro vira 503 com motivo `timeout`, e o produto oferece o modo
+local; o runner mantém esperas longas por preset; tentativas e espera registradas
+na procedência.
 
 ### B-66
 
@@ -2936,6 +2980,14 @@ mensagem que diga para procurar o veterinário.
 `provenance.attendant`, e uma mensagem de indisponibilidade no 503. Junto com a
 [B-64](#b-64) (LGPD: aviso de que o relato vai a um serviço externo).
 
+**Atualização 05/10 ([rodada 31](joao/2026-10-05-32-autopsia-3-estado-atual.md)).** No frontend React: o autor visível é
+"VetIA · Orientação automática"; "Modelo: provedor · modelo" (e "substituiu X" na
+troca) fica dentro de um bloco recolhido de referências, em 11 px; o aviso em
+texto da troca não chega ao workspace porque o `content` é montado sem
+`result.answer`; o 503 vira `status: failed` com mensagem clara e "tentar de
+novo", mas o `error_code` (cota × indisponível) é ignorado e nada sugere o modo
+local. O item continua valendo tal como escrito.
+
 ### B-75
 
 **Decidir os direitos das capturas da VCA e das páginas com todos os direitos reservados**
@@ -2977,6 +3029,113 @@ uma diferença que não é de conteúdo.
 **O que resolveria.** A identidade da fonte no manifesto das fichas passar a ser
 o hash dos registros indexados (texto de busca, leitura, metadados), e não do
 arquivo. Critério: mudar só a curadoria não muda a identidade da coleção.
+
+### B-77
+
+**O Gemini muda de decisão entre dias com a mesma entrada**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 31](joao/2026-10-05-32-autopsia-3-estado-atual.md), 05/10 · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** Replicando pela API, na `main` de 05/10, as rodadas citadas de
+25/09 com o Gemini (`gemini-3.5-flash-lite`): no `dev`, 49/50 iguais (p44, leve →
+alarme); nos 122 relatos independentes, 118/122 (i40 N→E, i58 I→E, j59 N→E e
+**j12 E→I**, uma leptospirose com icterícia). As 3 fichas foram as mesmas em 172
+de 172 casos, o `model_version` devolvido é o mesmo e não houve nova tentativa:
+só a decisão mudou. 6 · 3 virou 7 · 6 nos independentes. Na noite de 25/09, a
+repetição 50 minutos depois tinha dado 50/50; o qwen local deu 100% duas vezes
+em 05/10.
+
+**Por que importa.** O braço padrão do sistema varia cerca de 3% entre dias, numa
+direção que mexe nas métricas, e a procedência não detecta isso. Uma medição
+única na prova 2 não separa o sistema do dia do provedor.
+
+**O que resolveria.** No protocolo da avaliação final: repetições em pelo menos
+três dias diferentes, intervalo de confiança por caso e o braço local (qwen) como
+referência de estabilidade. Antes de cada medição, um conjunto-sentinela de 10 a
+20 casos com resposta conhecida; se mais de um mudar, a medição espera. Registrar
+no manifesto o resultado do sentinela. Critério: a variação entre dias estimada e
+declarada junto com o número final.
+
+### B-78
+
+**Exposição antes de hospedar: rotas sem identidade, portas publicadas, sem limites**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 31](joao/2026-10-05-32-autopsia-3-estado-atual.md), 05/10 (e a rodada 22 do Vinicius, prioridade 6) · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** `/chat/`, `/search/`, `/voice/`, `/clinics/search` e
+`/clinics/geocode` não exigem identidade nem têm limite de taxa; o Compose publica
+o backend (8000) e o Ollama (11434) em todas as interfaces (o Mongo já está em
+loopback); `/chat/` aceita `num_ctx` até 131.072 vindo do cliente; o relato inteiro
+vai ao log em INFO; o Nginx não declara `client_max_body_size` (padrão 1 MB) para
+um `/voice/` que aceita 25 MB; cada busca de clínica consome a chave paga do Maps;
+CNPJ e documento do responsável da clínica ficam em claro no Mongo; não há rota de
+exclusão.
+
+**Por que importa.** Nada disso morde enquanto o sistema roda numa máquina só. No
+dia em que a porta 3000 for exposta — hospedagem ou demonstração remota —, a cota
+do Gemini e a chave do Maps podem ser gastas por qualquer um, o Ollama pode ser
+derrubado por memória, e há dado pessoal em log.
+
+**O que resolveria.** Identidade ou limite de taxa nas rotas públicas; backend e
+Ollama só em loopback (o Nginx já faz o proxy); teto de `num_ctx` no servidor;
+`client_max_body_size` compatível com o áudio; relato fora do log em INFO;
+retenção e exclusão. Critério: um clone limpo subindo pelo Compose não expõe
+nada além da porta 3000, e nenhuma rota consome chave paga sem identidade.
+
+### B-79
+
+**O catálogo de perguntas do fluxo conversacional não passou por veterinário nem foi medido em casos não vistos**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 31](joao/2026-10-05-32-autopsia-3-estado-atual.md), 05/10 · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** Quando a classificação é INCERTO, o workspace faz uma segunda
+chamada ao atendente para escolher uma pergunta num catálogo fixo de 16 chaves
+(`backend/app/services/followup_questions.py`), com opções de resposta. O catálogo
+e as opções foram escritos por um agente de IA; a avaliação (rodadas 17, 20 e 24
+do Vinicius) usou os 18 casos de calibração — nos quais, depois da correção, a
+entrada do classificador é a mesma do sistema sem conversa — e 8 diálogos
+sintéticos escritos e respondidos pelo próprio agente, com rótulos "de
+engenharia, não validados por clínico".
+
+**Por que importa.** As perguntas que o sistema faz ao tutor são conteúdo clínico,
+como as fichas; e o que foi mostrado até aqui é que o fluxo não interfere na
+primeira resposta, não que ajude.
+
+**O que resolveria.** A folha de certificação das 16 perguntas e opções pelos
+especialistas, como a das fichas; e a medição do fluxo em casos que ele não viu
+(os 122 relatos independentes e o piloto, com um tutor roteirizado e cego às
+fichas), comparando primeira resposta e resposta depois das perguntas, na mesma
+semântica de métrica do runner. Critério: catálogo certificado e um número, com
+intervalo, do que o fluxo muda.
+
+### B-80
+
+**Dívida da segunda etapa: documentação divergente, coleção da POC sem receita, código morto**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 31](joao/2026-10-05-32-autopsia-3-estado-atual.md), 05/10 · **Responsável:** A definir · **Prioridade:** Baixa · **Status:** Aberto
+
+**O que observamos.** `POC_RAG_COLLECTION`, se preenchido, abre outra coleção
+Chroma sem ler a receita de embedding do manifesto (`workspace_service.py`,
+`_get_strict_collection` sem `recipe=`), o que a consultaria com o MiniLM; por
+padrão está vazio e sem teste. `docs/poc-utilizavel.md` fala em "até 1.800
+caracteres" de relatos anteriores, que o código não limita; `docs/segunda-etapa.md`
+diz que o sistema não chama o Routes (chama), que a chave web é argumento de build
+(é servida em runtime) e que o modo real nunca mostra clínicas fictícias
+(`MAPS_PROVIDER=fixtures` vale em qualquer modo); `config.py` e `CONTRATOS.md` dizem
+que `real` exige Supabase, e o código aceita `AUTH_PROVIDER=local`. Código morto:
+`RULES` em `followup_service.py`, `PocChroma._embedding_function`, importações
+sem uso em `referral_service.py`; o catálogo de chaves está em dois arquivos; o
+prompt do planejador pede "uma pergunta apenas" para um modelo que não gera mais
+a pergunta. `frontend/main.py` e o React têm o nome antigo `vetai` em
+identificadores.
+
+**Por que importa.** Pouco, hoje: nada disso muda número nem uso local. É o tipo
+de divergência que faz quem for operar o sistema seguir a doc e errar.
+
+**O que resolveria.** Receita do manifesto na coleção da POC (ou remover a opção);
+corrigir as quatro frases da documentação; apagar o código morto; um lugar só
+para o catálogo. Critério: `docs/` e `.env.example` sem afirmação que o código
+contradiga.
 
 ---
 

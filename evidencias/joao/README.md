@@ -47,21 +47,28 @@ Self-Refine, e a régua de avaliação do sistema (runner de métricas).
 | 28 | 25/09 | [Prova 2: a geração](2026-09-25-29-prova-2-geracao.md) | Nove agentes isolados escreveram os **330 relatos, com a composição exata** (190 emergências e 115 leves de 61 quadros, mais 25 especiais), "mas" em 40% de cada classe e nenhum texto repetido. Rótulos provisórios; a validação dos veterinários, a divisão e o congelamento vêm depois. A pesquisa foi mais fraca que a do piloto: a busca na web acabou cedo |
 | 29 | 25/09 | [Fechamento da implementação](2026-09-25-30-fechamento-da-rodada-noturna.md) | Documentação, sem código de sistema: README, `.env.example`, contratos e estado atual descrevem o sistema que o código roda; a interface antiga sai; o backlog ganha B-74 a B-76 e registra o que as rodadas 22 a 28 deixaram para depois |
 | 30 | 26/09 | [A validação dos especialistas, registrada](2026-09-26-31-validacao-dos-especialistas.md) | Registro, sem mudar o sistema: a ASAVET aceitou os 513 itens da folha das fichas, as 47 fontes que esperavam especialista e os seis documentos de outro assunto como estão, e validou **os 330 rótulos da prova 2, sem nenhuma mudança**. Os textos que o sistema lê ficaram iguais (61 de 61). Levar o conteúdo certificado à ficha de leitura é a próxima rodada, medida |
+| 31 | 05/10 | [Autópsia 3: o estado depois da segunda etapa](2026-10-05-32-autopsia-3-estado-atual.md) | Leitura e réplica, sem mudar o sistema. Na `main` de hoje, com o frontend React e a segunda etapa do Vinicius em volta, **o sistema medido responde igual**: busca 296/296, qwen 50/50 duas vezes. **O Gemini mudou entre dias** com entrada idêntica: 5 decisões em 172 (p44, i40, i58, j59 para alarme; j12, uma leptospirose, para INCERTO), 6 · 3 → 7 · 6 nos independentes; a prova 2 passa a exigir repetições em dias diferentes. O produto ainda não mostra quem respondeu nem pede consentimento. Backlog triado: B-77 a B-80 |
 
 ## Estado atual
 
-**26/09 — a arquitetura da autópsia 2 está no código, replicada e validada
-pelo João** (rodadas 22 a 29), e a validação dos especialistas está registrada
-(rodada 30). O relato cru vai à
+**05/10 — o sistema medido continua o mesmo; o produto cresceu em volta dele.**
+A autópsia 3 (rodada 31) replicou na `main` de hoje a arquitetura da autópsia 2:
+busca 296/296, qwen 50/50; o Gemini variou 5 decisões em 172 com entrada idêntica,
+o que muda o protocolo da prova 2. Entre 27/09 e 02/10 entraram o frontend React,
+a segunda etapa (login, clínicas, encaminhamento) e o fluxo conversacional, sem
+tocar dados, fichas ou prompts. O relato cru vai à
 busca vetorial (bge-m3) nas 61 fichas de busca; as 3 mais próximas entram no
 prompt como fichas de leitura; o Gemini responde por padrão, sem troca
 silenciosa de modelo, e o qwen e o llama ficam como opções. O runner do time,
-pela API, reproduz a autópsia caso a caso. Suíte: backend 285, scripts 217.
+pela API, reproduz a autópsia caso a caso. Suíte na `main`: backend 340,
+scripts 224, mock 10.
 
-A próxima entrega: levar o conteúdo certificado das fichas à ficha de leitura,
-medido contra a réplica ([B-61](../backlog.md#b-61)), e **a prova 2 até o uso**
-— o resto da conferência, a divisão e o congelamento
-([B-63](../backlog.md#b-63)). A ablação completa fica para quando o projeto
+A próxima entrega, nesta ordem: **a rodada 32** — o conteúdo certificado das
+fichas na ficha de leitura, medido contra a réplica ([B-61](../backlog.md#b-61));
+**a prova 2 até o uso**, com repetições em dias diferentes
+([B-63](../backlog.md#b-63), [B-77](../backlog.md#b-77)); e o produto honrando
+as condições da decisão pelo Gemini ([B-74](../backlog.md#b-74),
+[B-64](../backlog.md#b-64)). A ablação completa fica para quando o projeto
 estiver completo ([B-66](../backlog.md#b-66)).
 
 O roteiro completo, com marcos e os sete bloqueios abertos, está em

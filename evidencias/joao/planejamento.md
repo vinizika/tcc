@@ -56,6 +56,13 @@ mecanismo identificado.
 
 ## Próxima entrega: as ferramentas que destravam a base e a prova
 
+**Atualização 05/10 — autópsia 3** ([rodada 31](2026-10-05-32-autopsia-3-estado-atual.md)):
+o sistema de 25/09 responde igual na `main` de hoje (busca 296/296; qwen 50/50),
+com o frontend React e a segunda etapa em volta; o Gemini variou entre dias
+(bloqueio 19). Os dois próximos passos de 26/09 não andaram e continuam sendo os
+próximos: a rodada 32 (conteúdo certificado na ficha de leitura, medido) e a
+prova 2 até o uso. Depois, o produto honrando as condições do Gemini.
+
 **Atualização 26/09 — a validação dos especialistas veio**
 ([rodada 30](2026-09-26-31-validacao-dos-especialistas.md)): a ASAVET certificou
 as fichas e validou as fontes novas e os 330 rótulos da prova 2, sem correções. A
@@ -158,6 +165,7 @@ dados, o que resolveria e o status — mora no
 | 16 | **O número final do TCC não pode sair da prova 1.** Ela entrega a classe pelas palavras e foi escrita com o vocabulário do mapa; na prova, a porta de confiança empata com as 3 fichas, e nos relatos de quem não viu o mapa perde por 15 × 1 | A definir (prova 2) + especialistas (rótulos) | Rodada 20 (24/09) | Sem a prova 2, qualquer número com fichas é otimista, e não há poder para comparar atendentes bons entre si | [B-63](../backlog.md#b-63) |
 | 17 | **O texto que o atendente lê não está todo validado.** A ficha de leitura sai do mapa: a etapa 2 não tem sinais nem discriminador, 11 linhas mostram notas internas no "por que importa" e 5 têm conflito com o documento | Especialistas (validação clínica) | Rodadas 15 e 19 (24/09) | Na etapa 2, a ficha de leitura é magra; e qualquer mudança nesse texto muda o número do sistema, então cada uma vira rodada medida | [B-61](../backlog.md#b-61) |
 | 18 | **Com o Gemini como atendente padrão, o relato do tutor sai da máquina.** A API manda o relato a um serviço externo, e nada na tela avisa isso nem diz quem respondeu | Time (decisão) + frontend | Rodada 26 (25/09) | Nenhum efeito na medição; impede o uso com tutores de verdade até o aviso, a opção "só local" e o "Respondido por" existirem | [B-64](../backlog.md#b-64), [B-74](../backlog.md#b-74) |
+| 19 | **O Gemini muda de decisão entre dias com a mesma entrada.** 5 em 172 casos entre 25/09 e 05/10, mesmas fichas, mesmo `model_version`; uma leptospirose virou INCERTO | Protocolo da prova 2 (time) | Rodada 31 (05/10) | 6 · 3 → 7 · 6 nos independentes; a procedência não detecta | [B-77](../backlog.md#b-77) |
 
 ### Resolvidos
 
