@@ -3143,6 +3143,15 @@ fichas), comparando primeira resposta e resposta depois das perguntas, na mesma
 semântica de métrica do runner. Critério: catálogo certificado e um número, com
 intervalo, do que o fluxo muda.
 
+**Atualização 06/10 ([rodada 21 do Ryu](ryu/2026-10-06-21-as-perguntas-extras-funcionam.md)).** Medido com um
+tutor simulado contra o workspace real, em 18 casos da calibração da prova 2:
+quando o sistema pergunta, as emergências chegam à classe certa (3 de 3, com 1 ou
+2 perguntas). Dois leves terminaram em "informação insuficiente" porque o
+catálogo não tem a pergunta que decide: inchaço só no local da picada (q153) e
+andamento de um parto (q269). E um achado do lado da decisão: "meu cachorro tá
+vomitando", sem mais nada, foi classificado NAO_EMERGENCIA no primeiro turno, sem
+pergunta — era um corpo estranho (q180).
+
 ### B-80
 
 **Dívida da segunda etapa: documentação divergente, coleção da POC sem receita, código morto**

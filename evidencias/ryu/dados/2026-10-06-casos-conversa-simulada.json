@@ -1,0 +1,128 @@
+[
+ {
+  "id": "q095",
+  "relato": "acho que meu cachorro fred ta com infecção de xixi igual minha vo teve, ele fica fazendo força pra fazer xixi toda hora no quintal. so que desde ontem de manha nao sai nada mesmo, nem uma gota, e a barriga dele ficou dura e grande. hoje ele vomitou e ta deitado gemendo. mainha disse que é so infecção mas ele ta muito quieto",
+  "esperado": "EMERGENCIA",
+  "topic": "urethral_obstruction",
+  "tone": "gemea"
+ },
+ {
+  "id": "q245",
+  "relato": "égua maninho acho q a Pandora entrou no cio de novo, ela saiu do cio tem tipo um mês e agora ta saindo outra vez uma coisa pela periquita dela, só q dessa vez é meio marrom amarelado, grosso, e fede muito, a casa ta toda fedendo. ela ta bebendo agua toda hora, deitada o dia inteiro sem vontade de nada, vomitou hoje cedo e a barriga ta estufada. no outro cio ela ficava toda assanhada e agora nem liga pro cachorro do vizinho. cio é assim mesmo as vez?",
+  "esperado": "EMERGENCIA",
+  "topic": "pyometra",
+  "tone": "gemea"
+ },
+ {
+  "id": "q209",
+  "relato": "Minha filha botou no gato o remédio de pulga da cadela, aquele de tubinho que bota no cangote, ontem de tardezinha. De madrugada o gato começou a se tremer todo, umas tremidas que puxam o couro, e a baba escorrendo pela boca. Hoje de manhã ele tá andando de perna aberta, se batendo nas coisas, e qualquer barulhinho ele se espanta, visse. Esse gato é o xodó da casa, dorme no pé da cama da minha mulher.",
+  "esperado": "EMERGENCIA",
+  "topic": "permethrin_toxicosis_cats",
+  "tone": "neutro"
+ },
+ {
+  "id": "q122",
+  "relato": "mano meu cachorro comeu uns graozinho verde de veneno de rato q meu tio espalhou no quintal, isso foi segunda eu acho kkk. hj reparei q a gengiva dele ta meio branquinha e ele espirrou e saiu sangue do nariz, mas de rocha ele ta de boa, abanando o rabo qnd eu chego da facul e pedindo carinho",
+  "esperado": "EMERGENCIA",
+  "topic": "anticoagulant_rodenticide_poisoning",
+  "tone": "calmo"
+ },
+ {
+  "id": "q290",
+  "relato": "Gente, meu filhote de spitz tá tremendo, acho que é frio do ar-condicionado, esse bichinho é friorento demais kkk. Enrolei ele na minha blusa, mas ele continua tremendo e tá todo molinho, nem abre direito o olho quando eu chamo e a cabecinha fica caindo pro lado. Ele tem 2 meses e pesa tipo 600 g. Deixo ele no quentinho que passa?",
+  "esperado": "EMERGENCIA",
+  "topic": "hypoglycemia_toy_puppy",
+  "tone": "gemea"
+ },
+ {
+  "id": "q253",
+  "relato": "SOCORRO o Miojo, o gato da república, caiu da janela do terceiro andar agora pouco!!! a gente desceu correndo e ele tava deitado na calçada, tá sangrando pelo nariz, respirando muito esquisito, fazendo força com a barriga pra respirar, e as perninhas de trás não seguram ele, ele tenta levantar e cai de novo. tá miando baixinho de um jeito que eu nunca ouvi e com o olho arregalado. bah não sei nem se posso pegar ele no colo",
+  "esperado": "EMERGENCIA",
+  "topic": "high_rise_syndrome_cats",
+  "tone": "aflito"
+ },
+ {
+  "id": "q180",
+  "relato": "Beagle, 2 anos. Situação: - ontem de manhã vomitou, pensei que era a ração nova - desde ontem vomitou mais umas 6 vezes, hoje até água - não faz cocô há 2 dias, fica agachado fazendo força e não sai - fica com o peito no chão e o bumbum pra cima, parece que tá se espreguiçando, e recusou o petisco favorito Sumiu uma meia do cesto de roupa essa semana, não sei se tem a ver; acho que é só estômago virado, dá pra esperar até amanhã?",
+  "esperado": "EMERGENCIA",
+  "topic": "gastrointestinal_foreign_body",
+  "tone": "gemea"
+ },
+ {
+  "id": "q135",
+  "relato": "Olá! Acho que meu gato só está com um desarranjo leve, tipo uma gastrite passageira da troca de ração. Ele vomitou ontem à tarde e as fezes ficaram pastosas. Desde então vomitou mais umas seis vezes, até água, e a diarreia continua, agora bem líquida. Hoje está mais quietinho, escondido atrás do sofá, e quando puxei a pele da nuca ela demorou pra voltar, deve ser o turgor normal de gato idoso. Ele tem 13 anos.",
+  "esperado": "EMERGENCIA",
+  "topic": "vomiting_and_diarrhea",
+  "tone": "gemea"
+ },
+ {
+  "id": "q263",
+  "relato": "O Bolinha, cachorro aqui da república, tá comendo menos faz uns dois dias. Ele cheira a ração, come um pouco e deixa mais da metade no pote, coisa que antes ele limpava. Aceita petisco e pedaço de cenoura normal. Continua indo latir no portão, fez cocô e xixi como sempre e bebe água. Tem 4 anos, é vira-lata de porte médio.",
+  "esperado": "NAO_EMERGENCIA",
+  "topic": "reduced_appetite_no_other_signs",
+  "tone": "neutro"
+ },
+ {
+  "id": "q037",
+  "relato": "gente to surtando, meu gato tá com um bafo de peixe podre horrível e hj quando ele bocejou eu vi os dentes de trás todos amarelados com uma casca marrom!!! a gengiva tá vermelha em cima do dente. ele tem 7 anos e eu nunca escovei nada, sou a pior mãe de gato do mundo. ele come sachê e ração normal, brinca, mas o cheiro tá fortíssimo. ele vai perder os dentes???",
+  "esperado": "NAO_EMERGENCIA",
+  "topic": "periodontal_disease_mild",
+  "tone": "aflito"
+ },
+ {
+  "id": "q199",
+  "relato": "Boa noite. Gata SRD, 5 anos, 4,8 kg, sai para o quintal todos os dias. Hoje encontrei 2 carrapatos: um de uns 5 mm no pescoço e outro menor entre os dedos da pata dianteira esquerda. Retirei os dois com pinça; no pescoço ficou um carocinho de uns 3 mm, um pouco avermelhado. Ela comeu as 2 refeições normais, usou a caixa de areia e está brincando, mas quero saber se preciso levar para avaliação e em quanto tempo.",
+  "esperado": "NAO_EMERGENCIA",
+  "topic": "ticks_found_no_signs",
+  "tone": "neutro"
+ },
+ {
+  "id": "q153",
+  "relato": "boa noite, o meu gato caçou uma vespa na janela e foi picado na almofadinha da pata de trás, ficou inchadinho inchadinho só ali, tipo uma bolinha, faz umas duas horas. ele tá respirando normal, comeu e tá deitado no sofá, de vez em quando lambe a pata",
+  "esperado": "NAO_EMERGENCIA",
+  "topic": "insect_sting_local_reaction",
+  "tone": "neutro"
+ },
+ {
+  "id": "q258",
+  "relato": "Ontem teve churrasco aqui na república e hoje de manhã a gente viu que o Negão, cachorro da casa, derrubou a bacia de sobras que ficou em cima da pia: tinha pedaço de gordura de picanha, linguiça e pão de alho. Não sei direito quanto ele comeu, mas a bacia estava cheia e ficou pela metade. Ele está brincando, comeu a ração de manhã e fez cocô normal. É um vira-lata grande, de uns 25 kg.",
+  "esperado": "NAO_EMERGENCIA",
+  "topic": "dietary_indiscretion_mild",
+  "tone": "neutro"
+ },
+ {
+  "id": "q269",
+  "relato": "Gata SRD, 2 anos, primeira cria. Começou a parir às 5h dentro de uma caixa de papelão. Nasceram dois filhotes até agora, com uns 40 minutos de diferença. Ela lambe, come a placenta e os dois estão mamando. Está deitada e ronronando. Dá pra sentir mais filhote na barriga, mas ela não está fazendo força no momento.",
+  "esperado": "NAO_EMERGENCIA",
+  "topic": "normal_whelping",
+  "tone": "neutro"
+ },
+ {
+  "id": "q294",
+  "relato": "Faz umas três semanas que o Pingo, um dos cachorros da fazenda, vai pro campo comigo e toda parada fica se coçando. Coça o lombo e o pé do rabo até avermelhar, já caiu o pelo ali e tem umas cascas. Achei pulga nele e nos outros cachorros também.",
+  "esperado": "NAO_EMERGENCIA",
+  "topic": "flea_dermatitis_pruritus",
+  "tone": "neutro"
+ },
+ {
+  "id": "q156",
+  "relato": "mermão tô nervoso demais passando a mão na barriga do meu gato achei um caroço tipo uma bolinha de gude molinho debaixo da pele minha mulher falou que já tinha sentido ele menorzinho uns meses atrás ele mexe quando eu aperto e o gato nem liga come brinca normal e eu aqui já pensando o pior pô não dormi essa noite",
+  "esperado": "NAO_EMERGENCIA",
+  "topic": "slow_growing_lump",
+  "tone": "aflito"
+ },
+ {
+  "id": "q306",
+  "relato": "oi, meu gato ta estranho hj. tipo so estranho msm, n sei explicar direito, ele n ta do jeito normal dele. vcs acham q precisa levar no vet ou da pra esperar?",
+  "esperado": "INCERTO",
+  "topic": "",
+  "tone": "neutro"
+ },
+ {
+  "id": "q307",
+  "relato": "Bah, boa tarde. Estou tri preocupada com o meu cachorro, o Biscoito. Ele não está legal, sabe? Não consigo dizer o que é, mas eu conheço esse cachorro e sei que tem alguma coisa. Isso pode ser grave? Estou com o coração na mão aqui, pelo amor de Deus me digam alguma coisa.",
+  "esperado": "INCERTO",
+  "topic": "",
+  "tone": "aflito"
+ }
+]

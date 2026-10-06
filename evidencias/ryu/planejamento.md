@@ -46,7 +46,9 @@ benchmark de voz.
 | 13 | **Prova 2 — divisão, conferência e congelamento (B-63)** | ✅ 05/10 | Assumido pelo B1 (o item estava sem dono). 66 de calibração / 264 de teste pela regra da rodada 20 do João; vazamento dentro dos critérios; os dois lotes congelados. Desde 25/09 o tradutor está desligado por padrão (rodadas 17 e 24 do João), e a frente prova passa a ser a principal do trilho |
 | 14 | **Medir a calibração da prova 2** (66) | ✅ 05/10 | Produção 0 emergências perdidas e 1 falso alarme; Gemini sem busca 0 erros; llama 3 e 9, pelo tom ([rodada 18](2026-10-05-18-calibracao-da-prova-2.md)). Falta o braço qwen (modelo não baixado) |
 | 16 | **Tradutor só na dúvida da busca (B-69)** | ✅ 06/10 — negativo | Gatilho fraco e tradutor sem ganho na busca ([rodada 19](2026-10-06-19-tradutor-inteligente.md)); proposta de fechar o B-69. Fecha a pergunta do tradutor na arquitetura das fichas |
-| 17 | **O cadastro do pet melhora a decisão?** | ⏳ próximo | Pares de casos em que o cadastro deveria mudar a resposta, com e sem o cadastro |
+| 17 | **O cadastro do pet melhora a decisão?** | ✅ 06/10 | Melhora a segurança, mas só resolve 2–3 de 8 pares; a busca não vê o cadastro ([rodada 20](2026-10-06-20-o-cadastro-do-pet-ajuda.md)) |
+| 18 | **As perguntas extras funcionam?** | ✅ 06/10 | Funcionam quando acontecem; o problema é decidir sem perguntar (q180) e o catálogo limitado ([rodada 21](2026-10-06-21-as-perguntas-extras-funcionam.md)) |
+| 19 | **Consulta enriquecida com o cadastro** | ⏳ proposta | Mandar à busca o relato mais os fatos clínicos do cadastro; medir só na busca, com os pares da rodada 20 |
 | 15 | **Protocolo da medição final** (B-77, B-66) | ⏳ próximo | Repetir os braços do Gemini em outro dia, conjunto-sentinela, McNemar e IC declarados antes, tolerância com os especialistas |
 
 ## Próxima entrega: lote oficial da prova (~150 casos)

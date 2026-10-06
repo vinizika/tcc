@@ -1,0 +1,21 @@
+id,par,relato,name,species,age,weight_kg,breed,relevant_history,expected_class,topic
+p1a,p1,"Desde hoje cedo vai toda hora na caixinha de areia, fica um tempão agachado fazendo força e sai bem pouquinho, às vezes nada. Está comendo.",Mel,gato,4 anos,5.0,SRD,"Macho, castrado. Come ração seca.",EMERGENCIA,urethral_obstruction
+p1b,p1,"Desde hoje cedo vai toda hora na caixinha de areia, fica um tempão agachado fazendo força e sai bem pouquinho, às vezes nada. Está comendo.",Mel,gato,4 anos,4.0,SRD,"Fêmea, castrada. Come ração seca.",NAO_EMERGENCIA,inappropriate_urination_or_cystitis
+p2a,p2,"Hoje de manhã passei no Tico o antipulgas de pingar que eu uso no cachorro grande aqui de casa (é o de cachorro de 20 a 40 kg). Por enquanto parece normal.",Tico,gato,3 anos,4.5,SRD,,EMERGENCIA,permethrin_toxicosis_cats
+p2b,p2,"Hoje de manhã passei no Tico o antipulgas de pingar que eu uso no cachorro grande aqui de casa (é o de cachorro de 20 a 40 kg). Por enquanto parece normal.",Tico,cao,3 anos,30.0,Labrador,,NAO_EMERGENCIA,
+p3a,p3,"A Nina mordiscou umas folhas e uma flor do lírio que eu ganhei, faz uns 20 minutos. Por enquanto está normal, brincando.",Nina,gato,2 anos,3.8,SRD,,EMERGENCIA,lily_toxicosis_cats
+p3b,p3,"A Nina mordiscou umas folhas e uma flor do lírio que eu ganhei, faz uns 20 minutos. Por enquanto está normal, brincando.",Nina,cao,2 anos,25.0,SRD,,NAO_EMERGENCIA,dietary_indiscretion_mild
+p4a,p4,"O Bidu não quis comer hoje de manhã e está mais quietinho que o normal, dormindo bastante.",Bidu,cao,2 meses,0.8,Yorkshire,Filhote recém-chegado em casa.,EMERGENCIA,hypoglycemia_toy_puppy
+p4b,p4,"O Bidu não quis comer hoje de manhã e está mais quietinho que o normal, dormindo bastante.",Bidu,cao,6 anos,12.0,SRD,Sem doenças conhecidas.,NAO_EMERGENCIA,reduced_appetite_no_other_signs
+p5a,p5,"A Luna vomitou uma vez hoje e não quis comer, está mais parada.",Luna,gato,11 anos,5.5,SRD,"Diabética, toma insulina duas vezes por dia.",EMERGENCIA,diabetic_ketoacidosis
+p5b,p5,"A Luna vomitou uma vez hoje e não quis comer, está mais parada.",Luna,gato,3 anos,4.0,SRD,Sem doenças conhecidas.,NAO_EMERGENCIA,single_vomiting_or_mild_diarrhea
+p6a,p6,"O Thor começou a tossir hoje, uma tosse seca, e à noite me pareceu que respirava um pouco mais rápido dormindo. Está comendo.",Thor,cao,12 anos,9.0,Poodle,"Cardiopata (sopro no coração), toma remédio para o coração.",EMERGENCIA,congestive_heart_failure
+p6b,p6,"O Thor começou a tossir hoje, uma tosse seca, e à noite me pareceu que respirava um pouco mais rápido dormindo. Está comendo.",Thor,cao,1 ano,9.0,Poodle,"Saudável, vacinas em dia. Voltou do hotelzinho há 5 dias.",NAO_EMERGENCIA,kennel_cough_mild
+p7a,p7,"A Mel está tremendo um pouco e muito agitada desde a tarde, andando de um lado para o outro e ofegante.",Mel,cao,3 anos,4.0,Pinscher,Teve filhotes há 2 semanas e está amamentando 5 filhotes.,EMERGENCIA,eclampsia
+p7b,p7,"A Mel está tremendo um pouco e muito agitada desde a tarde, andando de um lado para o outro e ofegante.",Mel,cao,3 anos,4.0,Pinscher,"Castrada, sem doenças conhecidas.",NAO_EMERGENCIA,tremors_without_seizure
+p8a,p8,"A Bela está bebendo muito mais água que o normal desde ontem, está mais quietinha e comendo menos.",Bela,cao,8 anos,20.0,SRD,Não castrada. Teve o último cio há 5 semanas.,EMERGENCIA,pyometra
+p8b,p8,"A Bela está bebendo muito mais água que o normal desde ontem, está mais quietinha e comendo menos.",Bela,cao,8 anos,20.0,SRD,Castrada há 6 anos.,NAO_EMERGENCIA,polyuria_polydipsia_investigate
+c1,controle,"Ele foi atropelado agora há pouco, está sangrando pela boca e não consegue levantar.",Rex,cao,3 anos,15.0,SRD,,EMERGENCIA,trauma_and_bleeding
+c2,controle,"Espirrou umas vezes hoje e tem um pouco de coriza clarinha, mas está comendo e brincando normal.",Mimi,gato,2 anos,3.5,SRD,,NAO_EMERGENCIA,mild_upper_respiratory_signs
+c3,controle,"Comeu o miolo do pão do meu lanche agora há pouco. Está normal, brincando.",Pipoca,cao,5 anos,10.0,SRD,,NAO_EMERGENCIA,dietary_indiscretion_mild
+c4,controle,"Ele teve uma convulsão agora, durou uns 2 minutos, é a primeira vez. Ainda está meio perdido.",Max,cao,5 anos,22.0,SRD,,EMERGENCIA,seizures
