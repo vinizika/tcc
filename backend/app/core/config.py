@@ -1,4 +1,5 @@
 from pathlib import Path
+from typing import Literal
 
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -18,6 +19,10 @@ class Settings(BaseSettings):
     # ==========================
     FOLLOWUP_NO_PROGRESS_LIMIT: int = Field(default=2, ge=1, le=5)
     WORKSPACE_NUM_CTX: int = Field(default=32768, ge=4096, le=131072)
+    # Prompt de triagem do app (workspace). "v2_suficiencia" acrescenta a
+    # regra contra decidir a partir de frase vaga (rodada 23 do Ryu); fica no
+    # v1_grounded até ser medido e aceito pelo trilho B2.
+    WORKSPACE_PROMPT_VERSION: Literal["v1_grounded", "v2_suficiencia"] = "v1_grounded"
     FOLLOWUP_MAX_QUESTIONS: int = Field(default=4, ge=1, le=10)
 
     API_NAME: str = "TCC Pré-Triagem Veterinária"
@@ -104,12 +109,11 @@ class Settings(BaseSettings):
     STRUCTURED_OUTPUT_MODE: str = "schema"
 
     # ==========================
-    # Persistência: tutores, pets e histórico de conversa
+    # Persistência: contas do modo real e histórico de conversa
     # ==========================
-    # Supabase (Postgres) guarda tutores e pets — dados estruturados, com
-    # relação clara entre as duas tabelas. Vazio por padrão: em
-    # desenvolvimento, sem um projeto criado ainda, as rotas de tutor/pet
-    # devolvem 503 em vez de derrubar o resto da API.
+    # Supabase (Postgres) guarda só os perfis de login do modo real
+    # (supabase_schema.sql). O cadastro de tutor/pet que morava aqui saiu em
+    # 06/10 (rodada 25 do Ryu): pets e conversas ficam no MongoDB do app.
     SUPABASE_URL: str = ""
     SUPABASE_KEY: str = ""
 

@@ -30,6 +30,9 @@ export type Pet = {
   weight_kg?: number | null;
   breed?: string | null;
   relevant_history?: string | null;
+  sex?: "macho" | "femea" | null;
+  neutered?: boolean | null;
+  reproductive_status?: "prenhe" | "amamentando" | null;
 };
 export type Followup = {
   state: "asking" | "form" | "completed" | "insufficient";

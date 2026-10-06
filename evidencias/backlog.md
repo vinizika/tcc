@@ -102,7 +102,7 @@ aqui.
 | [B-54](#b-54) | Baixar à mão o Caderno Técnico nº 87 da UFMG, a melhor fonte brasileira que temos | Time | Média | Aberto |
 | [B-55](#b-55) | O único documento real da base nunca é recuperado | Trilho A | Média | Aberto |
 | [B-51](#b-51) | Ciclo de ingestão num comando, e a régua dizendo o que mudou entre duas rodadas | Trilho B2 | Média | Em andamento — compare feito em 12/09; falta o passo 0 |
-| [B-56](#b-56) | Cadastro de tutor/pet sem autenticação real e com política aberta no Supabase | Trilho B1 | Média | Aberto |
+| [B-56](#b-56) | Cadastro de tutor/pet sem autenticação real e com política aberta no Supabase | Trilho B1 | Média | Obsoleto em 06/10 — o cadastro no Supabase foi removido |
 | [B-57](#b-57) | O snapshot versionado do ChromaDB não é o caminho que o backend real lê | Trilho A | Alta | Aberto |
 | [B-52](#b-52) | Fonte de terceiro versionada em repositório público | Time | Alta | Aberto |
 | [B-58](#b-58) | A tag `tcc-backend:latest` local pode estar desatualizada e derrubar o backend num restart | Time | Média | Aberto |
@@ -2395,6 +2395,11 @@ Critério: um tutor autenticado não consegue ler nem escrever pet de outro
 tutor.
 
 ---
+
+**Atualização 06/10 — obsoleto ([rodada 25 do Ryu](ryu/2026-10-06-25-remove-cadastro-antigo-do-supabase.md)).** As rotas
+`/tutors` e `/pets` e o cadastro no Supabase foram removidos: o app usa o cadastro
+do workspace, no MongoDB, com sessão e titularidade desde a segunda etapa do
+Vinicius. O Supabase ficou só como login do modo real.
 
 ### B-57
 

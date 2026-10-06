@@ -48,7 +48,10 @@ benchmark de voz.
 | 16 | **Tradutor só na dúvida da busca (B-69)** | ✅ 06/10 — negativo | Gatilho fraco e tradutor sem ganho na busca ([rodada 19](2026-10-06-19-tradutor-inteligente.md)); proposta de fechar o B-69. Fecha a pergunta do tradutor na arquitetura das fichas |
 | 17 | **O cadastro do pet melhora a decisão?** | ✅ 06/10 | Melhora a segurança, mas só resolve 2–3 de 8 pares; a busca não vê o cadastro ([rodada 20](2026-10-06-20-o-cadastro-do-pet-ajuda.md)) |
 | 18 | **As perguntas extras funcionam?** | ✅ 06/10 | Funcionam quando acontecem; o problema é decidir sem perguntar (q180) e o catálogo limitado ([rodada 21](2026-10-06-21-as-perguntas-extras-funcionam.md)) |
-| 19 | **Consulta enriquecida com o cadastro** | ⏳ proposta | Mandar à busca o relato mais os fatos clínicos do cadastro; medir só na busca, com os pares da rodada 20 |
+| 19 | **Consulta enriquecida com o cadastro** | ✅ 06/10 — negativo | Melhora a busca, piora a decisão; não vira padrão ([rodada 22](2026-10-06-22-busca-com-o-cadastro.md)) |
+| 20 | **Frase vaga pede mais informação** | 🔶 implementado, medir 07/10 | Prompt `v2_suficiencia` desligado, bateria de 22 aberturas ([rodada 23](2026-10-06-23-frase-vaga-pede-mais-informacao.md)) |
+| 21 | **Sexo, castração e gestação no cadastro** | ✅ 06/10 | No app, na IA e no resumo à clínica ([rodada 24](2026-10-06-24-sexo-castracao-e-gestacao-no-cadastro.md)) |
+| 22 | **Cadastro antigo do Supabase removido** | ✅ 06/10 | B-56 obsoleto ([rodada 25](2026-10-06-25-remove-cadastro-antigo-do-supabase.md)) |
 | 15 | **Protocolo da medição final** (B-77, B-66) | ⏳ próximo | Repetir os braços do Gemini em outro dia, conjunto-sentinela, McNemar e IC declarados antes, tolerância com os especialistas |
 
 ## Próxima entrega: lote oficial da prova (~150 casos)

@@ -9,7 +9,32 @@ export const emptyPet: Pet = {
   weight_kg: null,
   breed: "",
   relevant_history: "",
+  sex: null,
+  neutered: null,
+  reproductive_status: null,
 };
+
+// Sexo, castração e gestação (rodada 24 do Ryu): decidem a urgência em
+// vários quadros (obstrução urinária no macho, piometra na fêmea não
+// castrada, eclâmpsia na fêmea amamentando).
+export function describeSexAndStatus(pet: Pet): string {
+  const femea = pet.sex === "femea";
+  return [
+    pet.sex ? (femea ? "Fêmea" : "Macho") : null,
+    pet.neutered === true
+      ? femea ? "castrada" : "castrado"
+      : pet.neutered === false
+        ? femea ? "não castrada" : "não castrado"
+        : null,
+    pet.reproductive_status === "prenhe"
+      ? "prenhe"
+      : pet.reproductive_status === "amamentando"
+        ? "amamentando"
+        : null,
+  ]
+    .filter(Boolean)
+    .join(" · ");
+}
 export function PetFields({
   value,
   onChange,
@@ -67,6 +92,67 @@ export function PetFields({
           placeholder="Ex.: 8,5"
         />
       </label>
+      <label>
+        Sexo <small>opcional</small>
+        <select
+          value={value.sex || ""}
+          onChange={(e) => {
+            const sex = (e.target.value || null) as Pet["sex"];
+            onChange({
+              ...value,
+              sex,
+              reproductive_status:
+                sex === "femea" ? value.reproductive_status : null,
+            });
+          }}
+        >
+          <option value="">Não informar</option>
+          <option value="macho">Macho</option>
+          <option value="femea">Fêmea</option>
+        </select>
+      </label>
+      <label>
+        Castrado(a)? <small>opcional</small>
+        <select
+          value={
+            value.neutered === true ? "sim" : value.neutered === false ? "nao" : ""
+          }
+          onChange={(e) =>
+            onChange({
+              ...value,
+              neutered:
+                e.target.value === "sim"
+                  ? true
+                  : e.target.value === "nao"
+                    ? false
+                    : null,
+            })
+          }
+        >
+          <option value="">Não sei</option>
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select>
+      </label>
+      {value.sex === "femea" && (
+        <label className="span-2">
+          Está prenhe ou amamentando? <small>opcional</small>
+          <select
+            value={value.reproductive_status || ""}
+            onChange={(e) =>
+              onChange({
+                ...value,
+                reproductive_status: (e.target.value ||
+                  null) as Pet["reproductive_status"],
+              })
+            }
+          >
+            <option value="">Não</option>
+            <option value="prenhe">Prenhe</option>
+            <option value="amamentando">Amamentando filhotes</option>
+          </select>
+        </label>
+      )}
       <label className="span-2">
         Raça <small>opcional</small>
         <input

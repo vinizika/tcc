@@ -374,6 +374,9 @@ class FingerprintService:
                 "v1_grounded_cot_posthoc_sha256": _sha256(
                     triage.SISTEMA_ANCORADO_COT_POSTHOC
                 ),
+                "v2_suficiencia_sha256": _sha256(
+                    triage.com_regra_de_suficiencia(triage.SISTEMA_ANCORADO)
+                ),
                 # O formato do bloco de contexto (cabeçalho, numeração, título
                 # + texto, marcador de encaminhamento, teto de caracteres),
                 # medido num documento fixo: muda se o molde mudar.

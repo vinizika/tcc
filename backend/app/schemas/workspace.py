@@ -1,5 +1,11 @@
 from typing import Literal
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import BaseModel, Field, ConfigDict, model_validator
+
+# O que do cadastro vai à IA (decisão e seleção de pergunta), nesta ordem. Sexo,
+# castração e gestação entraram na rodada 24 do Ryu: na rodada 20 dele,
+# decidiram 4 de 8 pares de casos e não tinham campo no cadastro.
+ANIMAL_CONTEXT_FIELDS = ("name", "species", "age", "weight_kg", "breed", "relevant_history",
+                         "sex", "neutered", "reproductive_status")
 
 
 class AnimalInput(BaseModel):
@@ -10,6 +16,15 @@ class AnimalInput(BaseModel):
     weight_kg: float | None = Field(default=None, gt=0, le=150)
     breed: str | None = Field(default=None, max_length=100)
     relevant_history: str | None = Field(default=None, max_length=1000)
+    sex: Literal["macho", "femea"] | None = None
+    neutered: bool | None = None
+    reproductive_status: Literal["prenhe", "amamentando"] | None = None
+
+    @model_validator(mode="after")
+    def gestacao_so_em_femea(self):
+        if self.reproductive_status and self.sex == "macho":
+            raise ValueError("Gestação ou amamentação só se aplica a fêmeas.")
+        return self
 
 
 class ConversationInput(BaseModel):

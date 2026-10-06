@@ -48,7 +48,7 @@ informações do pet". A segunda metade dessa frase nunca foi medida.
 |---|---|---|
 | 1 | Pares gêmeos, com o relato idêntico | Sem cadastro, a IA recebe exatamente o mesmo texto nos dois casos do par e, no máximo, acerta um. Só o cadastro pode resolver o par: o efeito fica isolado |
 | 2 | Rótulo pela urgência do mapa de assuntos (`imediato` → EMERGENCIA; `ate_24h`/`rotina` → NAO_EMERGENCIA) | É a referência do projeto. **Não foram validados por veterinário**: o experimento é de desenvolvimento, não dá número para o TCC |
-| 3 | Sexo, castração, gestação e doenças vão no campo **histórico** | O cadastro do app **não tem** campos de sexo, castração nem gestação, e eles decidem 4 dos 8 pares |
+| 3 | Sexo, castração, gestação e doenças vão no campo **histórico** | O cadastro do app **não tem** campos de sexo, castração nem gestação, e eles decidem 3 dos 8 pares |
 | 4 | Fora da prova 2 | É uma pergunta diferente, e a prova 2 não tem cadastro |
 
 **Muralha, por honestidade:** os casos foram escritos por mim, a partir do mapa
@@ -135,7 +135,7 @@ funciona pela metade:
    texto do tutor; quando o fato decisivo está no cadastro (diabetes,
    gestação, idade de filhote), a ficha certa não vem. **Isso é etapa de
    consulta — trilho B1.**
-3. **Faltam campos no cadastro.** Sexo, castração e gestação decidem 4 dos 8
+3. **Faltam campos no cadastro.** Sexo, castração e gestação decidem 3 dos 8
    pares e não existem como campo: aqui foram escritos no histórico livre, o que
    um tutor real pode não fazer.
 

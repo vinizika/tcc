@@ -139,6 +139,7 @@ def test_reload_reads_persisted_referral_and_messages(client):
 def test_real_mode_requires_session_for_legacy_personal_resources(client, monkeypatch):
     monkeypatch.setattr(settings, "WORKFLOW_MODE", "real")
 
-    assert client.get("/tutors/known-id").status_code == 401
-    assert client.get("/pets/known-id").status_code == 401
     assert client.get("/conversations/known-id").status_code == 401
+    # O cadastro de tutor/pet no Supabase saiu na rodada 25 do Ryu.
+    assert client.get("/tutors/known-id").status_code == 404
+    assert client.get("/pets/known-id").status_code == 404

@@ -1,8 +1,7 @@
 """
 Histórico de conversa, em MongoDB.
 
-Diferente de tutor/pet (Supabase, dado estruturado), o histórico é
-acessório à triagem: se o Mongo não estiver configurado ou fora do ar,
+O histórico é acessório à triagem: se o Mongo não estiver configurado ou fora do ar,
 `/chat/` precisa continuar respondendo — só sem gravar o turno. É por isso
 que `append_turn` engole a falha e loga, em vez de propagar como as outras
 exceções de persistência do módulo.
@@ -20,7 +19,6 @@ from app.exceptions.conversation_exception import ConversationNotFoundException
 from app.exceptions.persistence_exception import MongoNotConfiguredException
 from app.schemas.conversation import ConversationMessage, ConversationResponse
 from app.schemas.triage_output import TriageResult
-from app.services.tutor_service import TutorService
 
 logger = setup_logger("ConversationService")
 
@@ -35,8 +33,6 @@ class ConversationService:
         assistant_message: str,
         triage: Optional[TriageResult] = None,
         conversation_id: Optional[str] = None,
-        tutor_id: Optional[str] = None,
-        pet_id: Optional[str] = None,
     ) -> Optional[str]:
         """
         Grava o par pergunta/resposta e devolve o id da conversa.
@@ -59,8 +55,6 @@ class ConversationService:
                 database[COLLECTION].insert_one(
                     {
                         "_id": conversation_id,
-                        "tutor_id": tutor_id,
-                        "pet_id": pet_id,
                         "created_at": agora,
                         "updated_at": agora,
                         "messages": [],
@@ -114,8 +108,6 @@ class ConversationService:
 
         return ConversationResponse(
             id=documento["_id"],
-            tutor_id=documento.get("tutor_id"),
-            pet_id=documento.get("pet_id"),
             created_at=documento["created_at"],
             updated_at=documento["updated_at"],
             messages=[
@@ -126,8 +118,9 @@ class ConversationService:
 
     @staticmethod
     def get_owned(conversation_id: str, user_id: str) -> ConversationResponse:
-        conversation = ConversationService.get(conversation_id)
-        if not conversation.tutor_id:
-            raise ConversationNotFoundException(conversation_id)
-        TutorService.get_owned(conversation.tutor_id, user_id)
-        return conversation
+        # O histórico da API antiga não tem dono desde que o cadastro de
+        # tutor no Supabase saiu (rodada 25 do Ryu). Fora do modo demo,
+        # ninguém prova ser o dono: a conversa fica inacessível, como antes
+        # ficavam as conversas sem tutor.
+        ConversationService.get(conversation_id)
+        raise ConversationNotFoundException(conversation_id)

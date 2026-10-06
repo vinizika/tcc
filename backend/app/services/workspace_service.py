@@ -9,7 +9,7 @@ from app.clients.mongo_client import get_mongo_database
 from app.core.config import settings
 from app.services.followup_service import WorkspaceAttendant, advance, transcript, clinical_query
 from app.schemas.auth import Principal
-from app.schemas.workspace import AnimalInput, TurnInput
+from app.schemas.workspace import ANIMAL_CONTEXT_FIELDS, AnimalInput, TurnInput
 from app.exceptions.attendant_exception import AttendantUnavailableException, QuotaExhaustedException
 
 
@@ -146,10 +146,10 @@ class WorkspaceService:
             context = None
             if pet:
                 context = "; ".join(f"{key}: {value}" for key, value in pet.items()
-                                    if key in {"name", "species", "age", "weight_kg", "breed", "relevant_history"} and value is not None)
+                                    if key in ANIMAL_CONTEXT_FIELDS and value is not None)
             from app.schemas.triage import PipelineOptions
             result = (pipeline or poc_pipeline()).execute(question, PipelineOptions(
-                num_ctx=settings.WORKSPACE_NUM_CTX, retrieval_enabled=True, prompt_version="v1_grounded", cot_enabled=False, query_rewriting_enabled=False, multi_query_enabled=False, hyde_enabled=False,
+                num_ctx=settings.WORKSPACE_NUM_CTX, retrieval_enabled=True, prompt_version=settings.WORKSPACE_PROMPT_VERSION, cot_enabled=False, query_rewriting_enabled=False, multi_query_enabled=False, hyde_enabled=False,
                 attendant_provider=doc.get("attendant_provider", settings.ATTENDANT_PROVIDER)), animal_context=context,
                 retrieval_question=clinical_query(doc))
             checkpoint = db.poc_conversations.update_one(selector, {"$set": {

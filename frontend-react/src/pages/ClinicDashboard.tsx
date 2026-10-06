@@ -1,6 +1,7 @@
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { api, errorText } from "../api";
 import { Brand, ErrorNotice, Icon, Status, time } from "../components/ui";
+import { describeSexAndStatus } from "../components/PetForm";
 import { ReferralChat } from "../components/ReferralChat";
 import { MessageText } from "../components/MessageText";
 import type { Dashboard, Referral, Session } from "../types";
@@ -329,6 +330,7 @@ export function ClinicDashboard({
                                         ? selected.pet.weight_kg + " kg"
                                         : null,
                                       selected.pet.breed,
+                                      describeSexAndStatus(selected.pet),
                                     ]
                                       .filter(Boolean)
                                       .join(" · ")

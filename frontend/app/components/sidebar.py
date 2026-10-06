@@ -1,17 +1,11 @@
 import streamlit as st
 
-from app.components.pet_form import render_tutor_and_pet
-
 
 def render_sidebar():
 
     with st.sidebar:
 
         st.title("VetIA")
-
-        st.markdown("---")
-
-        render_tutor_and_pet()
 
         st.markdown("---")
 

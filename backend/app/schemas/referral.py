@@ -19,6 +19,10 @@ class PetSnapshot(BaseModel):
     weight_kg: Optional[float] = Field(default=None, gt=0, le=150)
     breed: Optional[str] = Field(default=None, max_length=100)
     relevant_history: Optional[str] = Field(default=None, max_length=1000)
+    # Rodada 24 do Ryu: a clínica recebe o que o tutor cadastrou.
+    sex: Optional[Literal["macho", "femea"]] = None
+    neutered: Optional[bool] = None
+    reproductive_status: Optional[Literal["prenhe", "amamentando"]] = None
 
 
 class ContactSnapshot(BaseModel):

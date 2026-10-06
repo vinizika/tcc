@@ -1,0 +1,23 @@
+id,text,species,expected_class,difficulty_tag,note
+v01,"Oi, meu cachorro tá vomitando e eu tô preocupado.",cao,INCERTO,vaga,"Um sintoma sem frequência, duração nem estado do animal (q180 da rodada 21 do Ryu)"
+v02,Meu gato está estranho hoje.,gato,INCERTO,vaga,Nenhum sinal concreto
+v03,Minha cachorra está mancando.,cao,INCERTO,vaga,Um sintoma sem intensidade nem duração
+v04,Meu gato não quer comer.,gato,INCERTO,vaga,Sem há quanto tempo nem estado geral
+v05,O meu cachorro está com diarreia.,cao,INCERTO,vaga,"Sem frequência, sangue ou estado geral"
+v06,Minha gata está tossindo.,gato,INCERTO,vaga,Sem respiração nem duração
+v07,Meu cachorro está meio quietinho.,cao,INCERTO,vaga,Mudança de comportamento sem detalhe
+v08,A minha gata está se lambendo muito.,gato,INCERTO,vaga,Sem local nem lesão descrita
+v09,Meu cachorro está com a barriga diferente.,cao,INCERTO,vaga,"Sem tamanho, dor nem tempo"
+v10,Meu gato está fazendo xixi diferente.,gato,INCERTO,vaga,Sem quantidade nem esforço
+v11,Minha cachorra está tremendo.,cao,INCERTO,vaga,"Sem causa, duração nem consciência"
+v12,Meu gato está com o olho estranho.,gato,INCERTO,vaga,Sem descrição do olho
+v13,Meu cachorro comeu uma coisa que achou na rua.,cao,INCERTO,vaga,Sem o que comeu nem sinais
+v14,Minha gata está respirando diferente.,gato,INCERTO,vaga,Sem esforço nem boca aberta
+v15,Meu cachorro está com a gengiva roxa e não consegue respirar direito.,cao,EMERGENCIA,curta_grave,Controle: um sinal grave basta
+v16,Meu gato está tendo uma convulsão agora.,gato,EMERGENCIA,curta_grave,Controle: um sinal grave basta
+v17,Meu cachorro foi atropelado e está sangrando muito.,cao,EMERGENCIA,curta_grave,Controle: um sinal grave basta
+v18,Minha gata fica tentando fazer xixi e não sai nada desde ontem.,gato,EMERGENCIA,curta_grave,Controle: um sinal grave basta
+v19,"Ele espirrou umas três vezes hoje, mas está comendo, brincando e respirando normal.",gato,NAO_EMERGENCIA,curta_leve,Controle: leve com o estado do animal descrito
+v20,Achei um carrapato nele hoje. Está comendo e brincando como sempre.,cao,NAO_EMERGENCIA,curta_leve,Controle: leve com o estado do animal descrito
+v21,Vomitou uma vez depois de comer grama e agora já está brincando e comendo normal.,cao,NAO_EMERGENCIA,curta_leve,Controle: leve com o estado do animal descrito
+v22,Está com um pouco de tártaro e mau hálito há meses; come e brinca normal.,gato,NAO_EMERGENCIA,curta_leve,Controle: leve com o estado do animal descrito

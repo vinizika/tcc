@@ -37,12 +37,10 @@ def process_message(prompt: str):
 
         with st.spinner("Consultando IA..."):
 
-            # tutor_id/pet_id vêm do cadastro na sidebar (pet_form.py); sem
-            # cadastro, os três ficam None e o /chat/ roda como sempre rodou.
+            # O histórico fica no backend; o id volta na primeira resposta e
+            # continua a mesma conversa nos próximos turnos.
             response = send_chat(
                 prompt,
-                tutor_id=st.session_state.get("tutor_id"),
-                pet_id=st.session_state.get("active_pet_id"),
                 conversation_id=st.session_state.get("conversation_id"),
             )
 
@@ -50,9 +48,9 @@ def process_message(prompt: str):
 
             st.markdown(answer)
 
-    # O backend devolve o id da conversa quando grava no histórico (tutor,
-    # pet ou conversation_id presentes); guardamos para os próximos turnos
-    # continuarem a mesma conversa em vez de abrir uma nova a cada mensagem.
+    # O backend devolve o id da conversa quando grava no histórico; guardamos
+    # para os próximos turnos continuarem a mesma conversa em vez de abrir
+    # uma nova a cada mensagem.
     st.session_state.conversation_id = response.get("conversation_id")
 
     # Adiciona resposta ao histórico

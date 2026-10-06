@@ -18,8 +18,6 @@ class ConversationMessage(BaseModel):
 class ConversationResponse(BaseModel):
 
     id: str
-    tutor_id: Optional[str] = None
-    pet_id: Optional[str] = None
     created_at: str
     updated_at: str
     messages: list[ConversationMessage]

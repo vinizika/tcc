@@ -34,11 +34,24 @@ def contexto_do_animal(caso: dict) -> str:
     return "; ".join(partes)
 
 
+def consulta_com_cadastro(caso: dict) -> str:
+    """V1 da rodada 22: espécie, idade e histórico na frente do relato."""
+    primeira = {"cao": "Cão", "gato": "Gato"}[caso["species"]]
+    if caso.get("age"):
+        primeira += f", {caso['age']}"
+    partes = [primeira + "."]
+    if caso.get("relevant_history"):
+        partes.append(caso["relevant_history"].strip())
+    return " ".join(partes) + "\n" + caso["relato"]
+
+
 def main(argv=None) -> None:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[1])
     parser.add_argument("--casos", required=True)
     parser.add_argument("--saida", required=True)
     parser.add_argument("--repeticoes", type=int, default=2)
+    parser.add_argument("--bracos", default="sem_cadastro,com_cadastro",
+                        help="Rodada 22: com_cadastro_e_busca põe o cadastro também na busca")
     args = parser.parse_args(argv)
 
     from app.core.config import settings
@@ -54,10 +67,11 @@ def main(argv=None) -> None:
     with open(args.saida, "a", encoding="utf-8", newline="\n") as saida:
         for repeticao in range(args.repeticoes):
             for caso in casos:
-                for braco in ("sem_cadastro", "com_cadastro"):
+                for braco in args.bracos.split(","):
                     if (caso["id"], braco, repeticao) in feitos:
                         continue
-                    contexto = contexto_do_animal(caso) if braco == "com_cadastro" else None
+                    contexto = contexto_do_animal(caso) if braco != "sem_cadastro" else None
+                    busca = consulta_com_cadastro(caso) if braco == "com_cadastro_e_busca" else caso["relato"]
                     opcoes = PipelineOptions(
                         num_ctx=settings.WORKSPACE_NUM_CTX, retrieval_enabled=True,
                         prompt_version="v1_grounded", cot_enabled=False,
@@ -65,7 +79,7 @@ def main(argv=None) -> None:
                         hyde_enabled=False, attendant_provider=settings.ATTENDANT_PROVIDER,
                     )
                     resultado = pipeline.execute(caso["relato"], opcoes, animal_context=contexto,
-                                                 retrieval_question=caso["relato"])
+                                                 retrieval_question=busca)
                     saida.write(json.dumps({
                         "id": caso["id"], "par": caso["par"], "braco": braco, "repeticao": repeticao,
                         "esperado": caso["expected_class"], "previsto": resultado.triage.classificacao,

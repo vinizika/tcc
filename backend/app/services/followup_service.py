@@ -6,6 +6,7 @@ from uuid import uuid4
 from app.core.config import settings
 from app.schemas.followup import FollowupPlan
 from app.schemas.followup_selection import FollowupSelection
+from app.schemas.workspace import ANIMAL_CONTEXT_FIELDS
 from app.services.followup_questions import QUESTIONS, OTHER_OPTION, UNKNOWN_OPTIONS
 
 SYSTEM = """Você seleciona uma única pergunta de pré-triagem veterinária em linguagem leiga.
@@ -86,7 +87,7 @@ def select_plan(doc, result):
                 else doc.get("attendant_provider", settings.ATTENDANT_PROVIDER))
     client = GeminiLLMClient() if provider == "gemini" else LLMClient()
     pet = {k: v for k, v in (doc.get("pet") or {}).items()
-           if k in {"name", "species", "age", "weight_kg", "breed", "relevant_history"} and v is not None}
+           if k in ANIMAL_CONTEXT_FIELDS and v is not None}
     old = doc.get("followup") or {}
     previous = {k: old[k] for k in ("state", "missing_key", "question", "asked", "answered_keys") if k in old}
     payload = {"conversation": transcript(doc), "pet_reported_by_tutor": pet, "previous": previous,

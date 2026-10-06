@@ -141,7 +141,7 @@ ocorre após contagem, manifesto e hashes serem validados. Consulte o
 
 **5. Persistência e identidade.** O compose já sobe o MongoDB usado pelo
 histórico, encaminhamentos, eventos e mensagens. No modo demonstrativo isso é
-suficiente. Contas e dados reais de tutor/pet usam Supabase: crie um projeto em
+suficiente. As contas do modo real (login) usam Supabase: crie um projeto em
 [supabase.com](https://supabase.com), rode
 [`backend/supabase_schema.sql`](backend/supabase_schema.sql) no SQL Editor
 dele, preencha `SUPABASE_URL`/`SUPABASE_KEY` e mude `WORKFLOW_MODE=real`.
@@ -211,20 +211,14 @@ atendente na requisição: `"options": {"attendant_provider": "ollama",
 Outras rotas: `POST /search/` (só a busca), `POST /voice/` (transcrição de
 áudio), `GET /health/`, `GET /health/fingerprint`.
 
-**API de tutor, pet e histórico de pré-triagem** (precisa do Supabase
-configurado — passo 5 acima; o histórico usa só o Mongo, que já vem no
-compose). No modo real, envie `Authorization: Bearer <token>` em todas estas
-operações; os exemplos curtos abaixo destinam-se ao modo demonstrativo legado:
+**Histórico de pré-triagem na API antiga** (usa só o Mongo, que já vem no
+compose). O cadastro do pet fica no app (`/workspace/pets`); as rotas antigas
+`/tutors` e `/pets`, do Supabase, saíram em 06/10 (rodada 25 do Ryu):
 
 ```bash
-# cadastra o tutor e o pet
-tutor_id=$(curl -s -X POST localhost:8000/tutors/ -d '{"name": "Ana"}' | jq -r .id)
-pet_id=$(curl -s -X POST localhost:8000/pets/ \
-  -d "{\"tutor_id\": \"$tutor_id\", \"name\": \"Bidu\", \"species\": \"cao\"}" | jq -r .id)
-
-# o pet_id enriquece o prompt com o cadastro; qualquer um dos três ids grava histórico
+# save_history grava o turno e devolve o id da conversa
 curl -s -X POST localhost:8000/chat/ \
-  -d "{\"question\": \"o Bidu vomitou uma vez hoje\", \"pet_id\": \"$pet_id\"}"
+  -d '{"question": "o Bidu vomitou uma vez hoje", "save_history": true}'
 ```
 
 A resposta traz `conversation_id` — mande de volta no próximo turno para
@@ -288,15 +282,15 @@ veterinários.
 ```
 backend/
   app/
-    api/          rotas HTTP (chat, search, voice, health, tutors, pets, conversations)
-    services/     tradução entre a API e o pipeline; tutor/pet/conversation (Supabase e Mongo)
+    api/          rotas HTTP (chat, search, voice, health, conversations, workspace, auth, clinics, referrals)
+    services/     tradução entre a API e o pipeline; workspace, conversa e encaminhamento (Mongo)
     pipeline/     orquestração da triagem, chaves de liga/desliga, renderização
     clients/      etapa de consulta (B1), busca (A), classificação (B2), supabase/mongo (B1)
-    prompts/      os prompts, versionados (v0_legacy, v1_grounded)
+    prompts/      os prompts, versionados (v0_legacy, v1_grounded, v2_suficiencia)
     schemas/      contratos de entrada e saída (Pydantic)
     core/         configuração, cliente Ollama, logger
     database/     ChromaDB e ingestão dos documentos (A)
-  supabase_schema.sql  DDL de tutors/pets — rodar uma vez no projeto Supabase
+  supabase_schema.sql  DDL dos perfis do modo real — rodar uma vez no projeto Supabase
   data/documents/ os documentos aprovados: PDFs/TXT + metadados em JSON (com o título real)
   data/fichas.json as 61 fichas de triagem (busca + leitura), geradas por scripts/sync_fichas.py
   chroma_db/      a coleção ativa (as fichas no bge-m3), versionada, com o ponteiro

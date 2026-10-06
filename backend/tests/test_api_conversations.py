@@ -16,8 +16,6 @@ def test_buscar_conversa(client, monkeypatch):
 
     conversa = ConversationResponse(
         id="conv-1",
-        tutor_id="tutor-1",
-        pet_id=None,
         created_at="2026-01-01T00:00:00Z",
         updated_at="2026-01-01T00:00:00Z",
         messages=[

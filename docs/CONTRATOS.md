@@ -188,9 +188,8 @@ Duas regras de comportamento:
 | `POST /voice/` | B1 | Transcrição de áudio. Campo `audio` (multipart). Recusa o que não é áudio (415) e acima de `MAX_AUDIO_UPLOAD_MB` (413); o arquivo é gravado com nome gerado no servidor e apagado após a resposta |
 | `GET /health/` | — | Verificação de saúde |
 | `GET /health/fingerprint` | B2 | Identidade da versão que respondeu: modelo com digest, hash dos prompts e do molde do bloco de contexto, o atendente (provedor, troca permitida, modelos, se a chave do Gemini está configurada — nunca a chave), os padrões (incluindo `retrieval_mode`, `think` e as flags do tradutor), os nomes das configurações vindas do ambiente e, da base vetorial, a contagem, o hash dos ids (**recorte**), o hash do conteúdo (**texto e metadados**), a **receita** do embedding lida do manifesto da coleção ativa e os parâmetros de chunking. O runner grava no manifesto de cada rodada e o `compare` avisa quando algo difere |
-| `POST /tutors/`, `GET /tutors/{id}`, `GET /tutors/{id}/pets` | B1 | Cadastro do tutor (Supabase). Em `real`, exige sessão tutor e vínculo `tutors.user_id`; em `demo`, preserva a compatibilidade legada |
-| `POST /pets/`, `GET /pets/{id}`, `PATCH /pets/{id}` | B1 | Cadastro do pet (Supabase). Em `real`, valida o titular pelo tutor vinculado. `pet_id` em `POST /chat/` injeta o cadastro no prompt |
-| `GET /conversations/{id}` | B1 | Histórico no MongoDB; em `real`, somente o tutor titular |
+| ~~`/tutors/`, `/pets/`~~ | B1 | **Removidas em 06/10** (rodada 25 do Ryu). Eram o cadastro antigo no Supabase; o cadastro do pet é o do app (`/workspace/pets`) |
+| `GET /conversations/{id}` | B1 | Histórico da API antiga no MongoDB. Sem dono desde 06/10: fora do modo `demo`, fica inacessível |
 | ~~`POST /triagem`~~ | — | **Removida.** Era o classificador antigo, sem RAG |
 
 ### Segunda etapa (contrato v1)
@@ -219,18 +218,15 @@ recomendação, resumo revisado, pet e somente o contato consentido. A resposta
 de descoberta informa `source`, `participant`, `verified` e
 `digital_referral_enabled`; somente o último habilita envio.
 
-**Sobre `POST /chat/`:** três campos opcionais e independentes —
-`tutor_id`, `pet_id`, `conversation_id`. `pet_id` busca o cadastro do pet e
-acrescenta um bloco "Dados cadastrais do animal" ao prompt, separado do
-relato do tutor. Qualquer um dos três presentes já grava o turno no
-histórico de conversa e a resposta devolve `conversation_id` para o
-próximo turno reaproveitar. Sem nenhum dos três (o caso do runner de
-avaliação), nada disso roda — comportamento idêntico a antes desta
-extensão existir. Em modo `real`, usar qualquer um desses identificadores
-exige Bearer de tutor e prova de titularidade; a pré-triagem anônima sem IDs
-continua pública. Sem Supabase configurado, `pet_id` devolve 503; sem
-MongoDB, o histórico simplesmente não é gravado (`conversation_id` volta
-`null`), sem quebrar a triagem.
+**Sobre `POST /chat/`:** dois campos opcionais para o histórico de conversa
+da API antiga — `save_history` (grava o turno e devolve `conversation_id`) e
+`conversation_id` (continua uma conversa). Sem nenhum dos dois (o caso do
+runner de avaliação), nada disso roda. Em modo `real`, usar qualquer um deles
+exige Bearer de tutor; a pré-triagem anônima continua pública. Sem MongoDB, o
+histórico simplesmente não é gravado (`conversation_id` volta `null`), sem
+quebrar a triagem. Até 06/10 o endpoint aceitava também `tutor_id` e `pet_id`,
+do cadastro antigo no Supabase (rodada 25 do Ryu); hoje eles são ignorados. O
+cadastro do pet só chega à triagem pelo app (workspace).
 
 ---
 

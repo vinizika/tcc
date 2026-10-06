@@ -7,6 +7,8 @@ Duas versões convivem de propósito:
   acurácia). Existe para que a comparação "antes e depois do RAG" meça a
   mesma coisa; não deve ser alterado.
 - `v1_grounded` é o prompt em uso, que recebe os trechos recuperados.
+- `v2_suficiencia` é o `v1_grounded` com a regra de suficiência (abaixo):
+  proposta, fora do padrão até ser medida e aceita pelo trilho B2.
 
 Sobre o formato: o Ollama não mostra o schema ao modelo, apenas restringe a
 decodificação. Então cada campo esperado precisa estar descrito aqui, mesmo
@@ -277,10 +279,48 @@ SISTEMA_ANCORADO_COT_POSTHOC_SEM_CONTEXTO = _com_cot(
 )
 
 
+# `v2_suficiencia` (rodada 23 do Ryu; proposta ao trilho B2, desligada por
+# padrão): o `v1_grounded` com uma regra a mais. A rodada 21 do Ryu mostrou
+# "meu cachorro tá vomitando", sem mais nada, virar NAO_EMERGENCIA no
+# primeiro turno, sem pergunta — era um corpo estranho. A regra só pede o
+# mínimo para afastar um quadro grave antes de chamar o caso de leve; a regra
+# do sinal grave, que basta para EMERGENCIA, continua valendo.
+_REGRA_INCERTO = (
+    "- Se o relato não trouxer informação suficiente para decidir, responda "
+    "INCERTO."
+)
+
+REGRA_SUFICIENCIA = """\
+- Para responder NAO_EMERGENCIA, o relato precisa dizer como o animal está \
+agora (por exemplo, se come, se está ativo, se respira normal) ou quantas \
+vezes e desde quando o sinal aparece. Se o tutor citar só um sintoma, sem \
+nada disso (por exemplo: "está vomitando", "está mancando", "está \
+estranho"), responda INCERTO."""
+
+
+def com_regra_de_suficiencia(sistema: str) -> str:
+    """Acrescenta a REGRA_SUFICIENCIA logo depois da regra do INCERTO."""
+
+    if sistema.count(_REGRA_INCERTO) != 1:
+        raise ValueError("O prompt não tem a regra do INCERTO em que a regra de suficiência se apoia.")
+
+    return sistema.replace(_REGRA_INCERTO, f"{_REGRA_INCERTO}\n{REGRA_SUFICIENCIA}")
+
+
 def _sistema_para(config: EffectiveConfig, com_documentos: bool) -> str:
     """
     Escolhe o prompt de sistema pelo braço que está rodando.
     """
+
+    sistema = _sistema_v1_para(config, com_documentos)
+
+    if config.prompt_version == "v2_suficiencia":
+        return com_regra_de_suficiencia(sistema)
+
+    return sistema
+
+
+def _sistema_v1_para(config: EffectiveConfig, com_documentos: bool) -> str:
 
     if not config.cot_enabled:
         return (
@@ -402,7 +442,7 @@ def build_triage_messages(
         partes.append("Trechos de protocolos veterinários:")
         partes.append(montar_bloco_de_contexto(documents))
 
-    # Vem do cadastro do pet (app/schemas/pet.py), não do relato — por isso
+    # Vem do cadastro do pet (app/schemas/workspace.py), não do relato — por isso
     # fica separado, como "dado de cadastro" e não como sinal clínico do
     # tutor. Um pet sem cadastro simplesmente não gera este bloco.
     if animal_context:

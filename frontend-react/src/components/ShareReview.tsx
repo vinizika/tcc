@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { api, errorText } from "../api";
 import type { Clinic, Conversation, Pet, Referral, Session } from "../types";
 import { ErrorNotice, Icon } from "./ui";
+import { describeSexAndStatus } from "./PetForm";
 export function ShareReview({
   clinic,
   conversation,
@@ -115,6 +116,9 @@ export function ShareReview({
                   {pet.species === "cao" ? "Cachorro" : "Gato"}
                   {pet.age ? " · " + pet.age : ""}
                   {pet.weight_kg ? " · " + pet.weight_kg + " kg" : ""}
+                  {describeSexAndStatus(pet)
+                    ? " · " + describeSexAndStatus(pet)
+                    : ""}
                 </p>
               </div>
               <button className="text-button" onClick={() => setPet(null)}>

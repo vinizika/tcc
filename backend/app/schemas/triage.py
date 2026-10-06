@@ -12,7 +12,7 @@ from typing import Literal, Optional
 from pydantic import BaseModel, ConfigDict, Field
 
 
-PromptVersion = Literal["v0_legacy", "v1_grounded"]
+PromptVersion = Literal["v0_legacy", "v1_grounded", "v2_suficiencia"]
 
 StructuredOutputMode = Literal["schema", "json"]
 
