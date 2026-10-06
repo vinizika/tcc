@@ -116,7 +116,7 @@ aqui.
 | [B-66](#b-66) | Ablação final na arquitetura da autópsia 2 | A definir | Média | Aberto |
 | [B-67](#b-67) | A régua de recuperação nas fichas como instrumento oficial | A definir | Média | Aberto |
 | [B-68](#b-68) | Uma lista de sinais de alarme gerais, escrita e validada pelos especialistas | A definir | Baixa | Aberto |
-| [B-69](#b-69) | Tradutor só quando a busca estiver insegura (ideia não testada) | A definir | Baixa | Aberto |
+| [B-69](#b-69) | Tradutor só quando a busca estiver insegura | Trilho B1 (desde 06/10) | Baixa | Testado em 06/10: não funciona — proposta de fechar |
 | [B-70](#b-70) | Self-Refine como checagem de que o contexto é do assunto do relato | A definir | Baixa | Em espera — CoT e Self-Refine voltam depois do RAG consolidado |
 | [B-71](#b-71) | Checagens por hash de arquivo falham num clone no Windows (CRLF) | A definir | Baixa | Aberto |
 | [B-72](#b-72) | Documentos aprovados que tratam de outro assunto, e autoria errada em sidecars | A definir | Média | Aberto — os seis mantidos pela ASAVET (26/09); falta corrigir a autoria |
@@ -2875,6 +2875,18 @@ desligado, com o limiar calibrado só na calibração. Critério: subir o "entre
 `think` configurável chegou só ao atendente. Se a etapa de consulta voltar a rodar
 com o qwen, ela precisa do mesmo `think=False`, senão o qwen pensa antes de cada
 consulta (mais lento e com a saída diferente).
+
+**Atualização 06/10 — testado, não funciona ([rodada 19 do Ryu](ryu/2026-10-06-19-tradutor-inteligente.md)).**
+Critérios escritos antes. O gatilho existe, mas é fraco: a distância entre a 1ª e
+a 2ª ficha separa acerto de erro com chance de 0,75, e o melhor limiar pega 71% dos
+erros no calibrar e 58% no conferir (pedia ≥ 60% e queda ≤ 10 pontos). Mesmo
+assim, o tradutor rodou nos 112 relatos marcados, com paráfrases do Gemini
+proibidas de diagnosticar (fiéis: 4 de 334 com palavra suspeita, todas do
+próprio tutor): "entre as 3" de 77,0% para 76,2% nos independentes inteiros
+(pedia +3 pontos), e no calibrar perde 4 para cada 1 que ganha. Nos INCERTO
+falsos por ficha errada, a ficha certa se afastou em 5 de 6. Proposta: fechar
+como resultado negativo, mantendo o tradutor só como braço da ablação. O que
+sobra para o INCERTO falso é o [B-70](#b-70) e a ordenação da busca (trilho A).
 
 ### B-70
 

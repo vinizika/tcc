@@ -146,8 +146,12 @@ chave do Gemini.
 
 ## Deixado para depois
 
-- **Braço local (`local_qwen`)**: exige baixar o `qwen3:8b` (~5 GB) e ~40 min de
-  CPU nos 66 casos.
+- **Braço local (`local_qwen`)**: o `qwen3:8b` foi baixado em 06/10 (digest
+  `500a1f06`, o mesmo da rodada 25 do João), mas **não roda nesta máquina**: o
+  Ollama morreu por falta de memória já no aquecimento ("llama-server process
+  has terminated: signal: killed"). A máquina tem 7,7 GB de RAM e o Docker
+  recebe 3,7 GB; o qwen sozinho pede ~5,5 GB, além do bge-m3 no backend (~2 GB).
+  Fica para quem tem placa de vídeo (o João mediu o qwen numa).
 - **Repetir os dois braços do Gemini em outro dia**, no mesmo lote, como pede o
   [B-77](../backlog.md#b-77): mede quanto ele varia aqui.
 - **Os independentes sem busca, hoje** (observação 2).
