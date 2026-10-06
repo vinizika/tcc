@@ -110,7 +110,7 @@ aqui.
 | [B-60](#b-60) | Os runners contam INCERTO de jeitos diferentes: falta uma semântica só de métrica | A definir | Média | Aberto |
 | [B-61](#b-61) | Validação clínica das fichas de leitura e de busca | A definir | Alta | Em andamento — certificado pela ASAVET em 26/09; falta levar ao mapa (rodada medida) |
 | [B-62](#b-62) | Fonte escrita para tutor nos quadros em que o documento não descreve o que o tutor vê | A definir | Média | Em andamento — 7 de 8 quadros com fonte validada (26/09); faltam o caroço, os ids `R..` e a decisão de direitos |
-| [B-63](#b-63) | Prova 2: da geração ao congelamento | A definir | Alta | Em andamento — gerada (25/09) e rótulos validados (26/09); faltam conferência, divisão e congelamento |
+| [B-63](#b-63) | Prova 2: da geração ao congelamento | Trilho B1 (desde 05/10) | Alta | Em andamento — dividida, conferida e congelada (05/10); falta o protocolo da medição final (repetições, sentinela, tolerância) |
 | [B-64](#b-64) | LGPD com o Gemini como atendente padrão: o relato do tutor sai da máquina | A definir | Média | Aberto |
 | [B-65](#b-65) | Latência na demonstração: a cauda do Gemini e o qwen sem placa de vídeo | A definir | Média | Aberto |
 | [B-66](#b-66) | Ablação final na arquitetura da autópsia 2 | A definir | Média | Aberto |
@@ -2677,6 +2677,25 @@ relatos independentes ("pão com passas") está leve pelo mapa; passas são tóx
 para cães. A tolerância a E→N e a E→I fica decidida com os especialistas antes de
 olhar o resultado.
 
+**Atualização 05/10 — dividida, conferida e congelada ([rodada 17 do Ryu](ryu/2026-10-05-17-prova-2-divisao-e-congelamento.md)).**
+O trilho B1 assumiu o item. Divisão pela regra da rodada 20: 1 relato de cada
+quadro na `calibracao` e 2 + 2 + 1 dos especiais (66: 40 · 24 · 2); o resto no
+`teste` (264: 154 · 102 · 8), por sorteio com semente fixada antes de medir.
+Rótulos intactos (só `marked_by` e `split` mudaram desde o arquivo validado).
+Vazamento pelas palavras, critérios escritos antes: por assunto 0,769 (≤ 0,79),
+treinado na prova 1 0,781 (≤ 0,80), regra do "mas" 0,519 (chute 0,606) — os três
+passam; com o mesmo instrumento a prova 1 dá 0,744 por assunto, mas, descontado
+o chute, as palavras ganham 16 pontos na prova 2 e 22 na prova 1. Congelados os
+dois lotes (`teste` `b21b4648…`, `calibracao` `44fa0edd…`); contador de uso do
+`teste`: 0. Falta o que a autópsia 3 pediu para a medição final: repetições em
+dias diferentes, conjunto-sentinela e a tolerância decidida com os especialistas.
+
+**Atualização 05/10 — primeira medição, só na calibração ([rodada 18 do Ryu](ryu/2026-10-05-18-calibracao-da-prova-2.md)).**
+Produção 0 de 40 emergências perdidas e 1 de 24 falsos alarmes; Gemini sem busca
+0 e 0; llama 3 e 9 (pelo tom). O teste continua com contador 0. A calibração não
+tem poder para separar os braços do Gemini: a comparação final precisa de McNemar e
+IC declarados antes ([B-66](#b-66)).
+
 ### B-64
 
 **LGPD com o Gemini como atendente padrão: o relato do tutor sai da máquina**
@@ -2876,6 +2895,10 @@ errado; um que confere o contexto trata o certo.
 problema do relato? a justificativa só usa sinais do relato?", medida como braço
 na prova 2. Critério: menos INCERTO por contexto errado, sem subir as
 emergências perdidas.
+
+**Atualização 05/10 ([rodada 18 do Ryu](ryu/2026-10-05-18-calibracao-da-prova-2.md)).** Mais um caso, agora na
+prova 2: q186 (primeiro cio, tutora aflita) recebeu 3 fichas de outro assunto e o
+Gemini respondeu INCERTO; sem busca, acertou.
 
 ### B-71
 

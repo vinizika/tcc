@@ -1,0 +1,153 @@
+{
+  "rows_evaluated": 66,
+  "rows_with_error": 0,
+  "classification": {
+    "n": 66,
+    "balanced_accuracy": 0.775,
+    "accuracy_strict": 0.7878787878787878,
+    "accuracy_strict_ci95": [
+      0.6749,
+      0.8692
+    ],
+    "coverage": 1.0,
+    "accuracy_decided": 0.7878787878787878,
+    "macro_f1": 0.7775974025974026,
+    "per_class": {
+      "EMERGENCIA": {
+        "support": 40,
+        "true_positive": 37,
+        "false_positive": 11,
+        "false_negative": 3,
+        "precision": 0.7708333333333334,
+        "recall": 0.925,
+        "recall_ci95": [
+          0.8014,
+          0.9742
+        ],
+        "f1": 0.840909090909091
+      },
+      "NAO_EMERGENCIA": {
+        "support": 24,
+        "true_positive": 15,
+        "false_positive": 3,
+        "false_negative": 9,
+        "precision": 0.8333333333333334,
+        "recall": 0.625,
+        "recall_ci95": [
+          0.4271,
+          0.7884
+        ],
+        "f1": 0.7142857142857143
+      }
+    },
+    "confusion_matrix": {
+      "EMERGENCIA": {
+        "EMERGENCIA": 37,
+        "NAO_EMERGENCIA": 3,
+        "INCERTO": 0,
+        "INVALID_JSON": 0,
+        "OTHER": 0
+      },
+      "NAO_EMERGENCIA": {
+        "EMERGENCIA": 9,
+        "NAO_EMERGENCIA": 15,
+        "INCERTO": 0,
+        "INVALID_JSON": 0,
+        "OTHER": 0
+      }
+    },
+    "false_non_urgent": 3,
+    "false_non_urgent_rate": 0.075,
+    "false_urgent": 9,
+    "false_urgent_rate": 0.375,
+    "incerto_rate": 0.0,
+    "emergencia_para_incerto": 0,
+    "nao_emergencia_para_incerto": 0,
+    "invalid_rate": 0.0,
+    "other_rate": 0.0,
+    "accuracy_single_attempt": 0.7878787878787878
+  },
+  "baselines": {
+    "always_emergencia": 0.6060606060606061,
+    "rule_few_symptoms": null,
+    "rule_only_mild_symptoms": null
+  },
+  "strata": {},
+  "latency": {
+    "rows_with_model_load": 11,
+    "query_s": {
+      "mean": 0.0,
+      "median": 0.0,
+      "p95": 0.001
+    },
+    "retrieval_s": {
+      "mean": 4.045,
+      "median": 2.531,
+      "p95": 10.138
+    },
+    "generation_s": {
+      "mean": 32.145,
+      "median": 28.726,
+      "p95": 44.979
+    },
+    "total_s": {
+      "mean": 36.191,
+      "median": 32.321,
+      "p95": 54.922
+    },
+    "client_s": {
+      "mean": 40.996,
+      "median": 32.344,
+      "p95": 92.302
+    },
+    "prompt_tokens_mean": 1099.7,
+    "completion_tokens_mean": 114.1,
+    "completion_tokens_p95": 154,
+    "completion_tokens_max": 158
+  },
+  "grounding": {
+    "mean_cited_sources": 0.67,
+    "share_rows_with_citation": 0.6212121212121212,
+    "share_rows_invalid_citation": 0.0,
+    "share_rows_max_score_below_0_70": 0.9090909090909091,
+    "mean_max_score": 0.6403,
+    "share_rows_with_context": 1.0,
+    "share_rows_rag_silent": 0.0,
+    "rows_used_below_min_score": 0,
+    "citations_per_chunk": {
+      "ficha__high_rise_syndrome_cats": 4,
+      "ficha__respiratory_distress": 4,
+      "ficha__toad_bufotoxin_poisoning": 3,
+      "ficha__seizures": 2,
+      "ficha__anaphylaxis_facial_swelling": 2,
+      "ficha__anticoagulant_rodenticide_poisoning": 2,
+      "ficha__airway_foreign_body_choking": 2,
+      "ficha__fading_neonate": 1,
+      "ficha__leptospirosis_acute": 1,
+      "ficha__periodontal_disease_mild": 1,
+      "ficha__human_medication_poisoning": 1,
+      "ficha__urethral_obstruction": 1,
+      "ficha__eclampsia": 1,
+      "ficha__trauma_and_bleeding": 1,
+      "ficha__ocular_emergency": 1,
+      "ficha__acute_hindlimb_paralysis": 1,
+      "ficha__tick_borne_disease_anemia": 1,
+      "ficha__lily_toxicosis_cats": 1,
+      "ficha__congestive_heart_failure": 1,
+      "ficha__ticks_found_no_signs": 1,
+      "ficha__permethrin_toxicosis_cats": 1,
+      "ficha__burns_and_electrical_injury": 1,
+      "ficha__gastric_dilatation_volvulus": 1,
+      "ficha__vestibular_syndrome_otitis_interna": 1,
+      "ficha__chocolate_toxicosis": 1,
+      "ficha__pyometra": 1,
+      "ficha__collapse_and_pale_gums": 1,
+      "ficha__diabetic_ketoacidosis": 1,
+      "ficha__hypoglycemia_toy_puppy": 1,
+      "ficha__otitis_externa_mild": 1,
+      "ficha__gastrointestinal_foreign_body": 1,
+      "ficha__dystocia": 1
+    }
+  },
+  "repeats": null
+}

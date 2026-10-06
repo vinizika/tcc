@@ -77,7 +77,9 @@ def main(argv: list[str] | None = None) -> None:
     if argumentos.freeze:
 
         manifesto = {
-            "cases_file": str(argumentos.cases),
+            # Barra normal também no Windows (str(Path) sai com barra
+            # invertida, e o manifesto é lido em qualquer máquina).
+            "cases_file": argumentos.cases.as_posix(),
             "split": argumentos.split,
             "row_count": len(linhas),
             "sha256": hash_atual,
@@ -87,6 +89,7 @@ def main(argv: list[str] | None = None) -> None:
         manifesto_path.write_text(
             json.dumps(manifesto, ensure_ascii=False, indent=2) + "\n",
             encoding="utf-8",
+            newline="\n",  # LF também no Windows (B-71)
         )
 
         print(f"Congelado: {len(linhas)} linhas, sha256={hash_atual}")

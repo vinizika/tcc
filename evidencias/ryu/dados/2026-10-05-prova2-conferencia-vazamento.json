@@ -1,0 +1,70 @@
+{
+ "a_cv_por_assunto": {
+  "nome": "naive_bayes_cv_por_topic",
+  "acuracia": 0.7691,
+  "faixa": [
+   0.7469,
+   0.7937
+  ],
+  "n": 320,
+  "k_dobras": 5,
+  "repeticoes": 20
+ },
+ "b_treino_prova1_teste_prova2": {
+  "nome": "naive_bayes_treino_teste",
+  "acuracia": 0.7812,
+  "n": 320
+ },
+ "c_regra_mas": {
+  "nome": "regra_mas",
+  "acuracia": 0.5188,
+  "chute_classe_mais_comum": 0.6062,
+  "n": 320
+ },
+ "d_treino_calibracao_teste_teste": {
+  "nome": "naive_bayes_treino_teste",
+  "acuracia": 0.7969,
+  "n": 256
+ },
+ "e_cv_aleatoria": {
+  "nome": "naive_bayes_cv_aleatoria",
+  "acuracia": 0.8673,
+  "faixa": [
+   0.8375,
+   0.8875
+  ],
+  "n": 320,
+  "k_dobras": 5,
+  "repeticoes": 20
+ },
+ "referencia_prova1": {
+  "cv_por_assunto": {
+   "nome": "naive_bayes_cv_por_topic",
+   "acuracia": 0.7439,
+   "faixa": [
+    0.6951,
+    0.7805
+   ],
+   "n": 164,
+   "k_dobras": 5,
+   "repeticoes": 20
+  },
+  "cv_aleatoria": {
+   "nome": "naive_bayes_cv_aleatoria",
+   "acuracia": 0.9037,
+   "faixa": [
+    0.878,
+    0.9268
+   ],
+   "n": 164,
+   "k_dobras": 5,
+   "repeticoes": 20
+  },
+  "regra_mas": {
+   "nome": "regra_mas",
+   "acuracia": 0.7683,
+   "chute_classe_mais_comum": 0.5244,
+   "n": 164
+  }
+ }
+}

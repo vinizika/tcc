@@ -94,3 +94,55 @@ def test_compute_baselines_devolve_os_tres():
     }
     for baseline in resultado.values():
         assert baseline["n"] == 4
+
+
+def test_cv_por_assunto_tira_o_acerto_que_vem_de_assunto_repetido():
+    """
+    Cada assunto tem uma palavra própria e uma classe só: com o assunto
+    repetido entre treino e teste, a palavra entrega a classe; separando
+    por assunto, o modelo nunca viu a palavra e só resta o chute.
+    """
+    from prova_baselines import naive_bayes_cv_repetido
+
+    casos = []
+    for indice in range(10):
+        classe = "EMERGENCIA" if indice % 2 == 0 else "NAO_EMERGENCIA"
+        for repeticao in range(4):
+            casos.append({"id": f"t{indice}r{repeticao}", "text": f"palavra{indice} relato",
+                          "expected_class": classe, "topic": f"t{indice}"})
+
+    aleatoria = naive_bayes_cv_repetido(casos, k=4, repeticoes=3)
+    por_assunto = naive_bayes_cv_repetido(casos, chave_grupo="topic", k=5, repeticoes=3)
+
+    assert aleatoria["acuracia"] == 1.0
+    assert por_assunto["acuracia"] <= 0.6
+    assert por_assunto["n"] == 40
+
+
+def test_treino_teste_mede_so_no_conjunto_de_teste():
+    from prova_baselines import naive_bayes_treino_teste
+
+    treino = [caso("e1", "sangue convulsao", "EMERGENCIA"), caso("n1", "brincando comendo", "NAO_EMERGENCIA")]
+    teste = [caso("e2", "convulsao forte", "EMERGENCIA"), caso("n2", "comendo bem", "NAO_EMERGENCIA"),
+             {"id": "i1", "text": "nao sei", "expected_class": "INCERTO"}]
+
+    resultado = naive_bayes_treino_teste(treino, teste)
+
+    assert resultado == {"nome": "naive_bayes_treino_teste", "acuracia": 1.0, "n": 2}
+
+
+def test_regra_mas_conta_a_palavra_inteira_e_o_chute():
+    from prova_baselines import regra_mas
+
+    casos = [
+        caso("e1", "ele caiu mas levantou", "EMERGENCIA"),
+        caso("e2", "ele desmaiou", "EMERGENCIA"),
+        caso("e3", "ele esta mastigando pedra", "EMERGENCIA"),
+        caso("n1", "espirrou mas esta bem", "NAO_EMERGENCIA"),
+    ]
+
+    resultado = regra_mas(casos)
+
+    # e2 e e3 (sem "mas": "mastigando" não conta) e n1 acertam; e1 erra.
+    assert resultado["acuracia"] == 0.75
+    assert resultado["chute_classe_mais_comum"] == 0.75

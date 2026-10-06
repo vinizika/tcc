@@ -1,0 +1,7 @@
+{
+  "cases_file": "data/prova2/casos.csv",
+  "split": "calibracao",
+  "row_count": 66,
+  "sha256": "44fa0edd515afdbaae4c73149c1b0fdf32c7a106f326de3ea411f3bad5cfd0f8",
+  "frozen_at": "2026-10-05T22:10:29.467808-03:00"
+}
