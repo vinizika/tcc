@@ -43,6 +43,16 @@ benchmark de voz.
 | 10 | Paralelizar Multi-Query e HyDE (B-07) | 🔶 em andamento, 21/09 | Paralelas desde 17/09; medido em 21/09 contra a coleção real (3.481 chunks) — economiza 13-39%, nunca piora. Falta GPU disponível para confirmar o número absoluto (`query_s` < 1,5s); ambiente atual roda 100% CPU |
 | 11 | Benchmark de WER com áudio real | ⏳ | Substitui o número otimista da fala sintética (B-13) |
 | 12 | **Gemini na etapa de consulta, com fallback para Ollama** | ✅ 23/09 | 25 casos revisados (rodadas 14-15): Ollama cometeu 5 erros factuais claros, Gemini nenhum. `HybridQueryClient` integrado como cliente padrão do `ChatPipeline`; `HYDE_ENABLED` voltou a `True` (só roda via Gemini — se falhar, não cai para o Ollama nesta técnica). Confirmado ao vivo: etapa de consulta em 3,3s, contra dezenas de segundos no Ollama |
+| 13 | **Prova 2 — divisão, conferência e congelamento (B-63)** | ✅ 05/10 | Assumido pelo B1 (o item estava sem dono). 66 de calibração / 264 de teste pela regra da rodada 20 do João; vazamento dentro dos critérios; os dois lotes congelados. Desde 25/09 o tradutor está desligado por padrão (rodadas 17 e 24 do João), e a frente prova passa a ser a principal do trilho |
+| 14 | **Medir a calibração da prova 2** (66) | ✅ 05/10 | Produção 0 emergências perdidas e 1 falso alarme; Gemini sem busca 0 erros; llama 3 e 9, pelo tom ([rodada 18](2026-10-05-18-calibracao-da-prova-2.md)). Falta o braço qwen (modelo não baixado) |
+| 16 | **Tradutor só na dúvida da busca (B-69)** | ✅ 06/10 — negativo | Gatilho fraco e tradutor sem ganho na busca ([rodada 19](2026-10-06-19-tradutor-inteligente.md)); proposta de fechar o B-69. Fecha a pergunta do tradutor na arquitetura das fichas |
+| 17 | **O cadastro do pet melhora a decisão?** | ✅ 06/10 | Melhora a segurança, mas só resolve 2–3 de 8 pares; a busca não vê o cadastro ([rodada 20](2026-10-06-20-o-cadastro-do-pet-ajuda.md)) |
+| 18 | **As perguntas extras funcionam?** | ✅ 06/10 | Funcionam quando acontecem; o problema é decidir sem perguntar (q180) e o catálogo limitado ([rodada 21](2026-10-06-21-as-perguntas-extras-funcionam.md)) |
+| 19 | **Consulta enriquecida com o cadastro** | ✅ 06/10 — negativo | Melhora a busca, piora a decisão; não vira padrão ([rodada 22](2026-10-06-22-busca-com-o-cadastro.md)) |
+| 20 | **Frase vaga pede mais informação** | 🔶 implementado, medir 07/10 | Prompt `v2_suficiencia` desligado, bateria de 22 aberturas ([rodada 23](2026-10-06-23-frase-vaga-pede-mais-informacao.md)) |
+| 21 | **Sexo, castração e gestação no cadastro** | ✅ 06/10 | No app, na IA e no resumo à clínica ([rodada 24](2026-10-06-24-sexo-castracao-e-gestacao-no-cadastro.md)) |
+| 22 | **Cadastro antigo do Supabase removido** | ✅ 06/10 | B-56 obsoleto ([rodada 25](2026-10-06-25-remove-cadastro-antigo-do-supabase.md)) |
+| 15 | **Protocolo da medição final** (B-77, B-66) | ⏳ próximo | Repetir os braços do Gemini em outro dia, conjunto-sentinela, McNemar e IC declarados antes, tolerância com os especialistas |
 
 ## Próxima entrega: lote oficial da prova (~150 casos)
 

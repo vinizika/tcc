@@ -82,7 +82,18 @@ export const api = {
     request<Pet[]>("/workspace/pets?limit=100&offset=" + offset, {}, token),
   savePet: (pet: Pet, token: string) => {
     const { id, name, species, age, weight_kg, breed, relevant_history } = pet;
-    const data = { name, species, age, weight_kg, breed, relevant_history };
+    const { sex, neutered, reproductive_status } = pet;
+    const data = {
+      name,
+      species,
+      age,
+      weight_kg,
+      breed,
+      relevant_history,
+      sex: sex || null,
+      neutered: neutered ?? null,
+      reproductive_status: sex === "femea" ? reproductive_status || null : null,
+    };
     return request<Pet>(
       "/workspace/pets" + (id ? "/" + id : ""),
       { method: id ? "PUT" : "POST", body: JSON.stringify(data) },

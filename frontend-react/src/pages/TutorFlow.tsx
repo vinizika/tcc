@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { api, errorText } from "../api";
 import type { Clinic, Conversation, Pet, Referral, Session } from "../types";
 import { Brand, ErrorNotice, Icon, Status, time } from "../components/ui";
-import { PetForm } from "../components/PetForm";
+import { PetForm, describeSexAndStatus } from "../components/PetForm";
 import { ClinicFinder } from "../components/ClinicFinder";
 import { ShareReview } from "../components/ShareReview";
 import { CaseView } from "../components/CaseView";
@@ -608,6 +608,9 @@ export function TutorFlow({
                         {p.species === "cao" ? "Cachorro" : "Gato"}
                         {p.age ? " · " + p.age : ""}
                         {p.weight_kg ? " · " + p.weight_kg + " kg" : ""}
+                        {describeSexAndStatus(p)
+                          ? " · " + describeSexAndStatus(p)
+                          : ""}
                       </p>
                       <p className="muted">{p.breed || "Raça não informada"}</p>
                       <button onClick={() => setEditPet(p)}>

@@ -14,16 +14,23 @@ depois da validação dos veterinários, registrada em `data/prova2/validacao.js
 (rodada 30): com o registro, o `marked_by` diz quem validou e quando; sem ele,
 que o rótulo é provisório.
 
+A coluna `split` sai da divisão por assunto da rodada 20 do João (decisão 4),
+feita na rodada 17 do Ryu: um relato de cada quadro na `calibracao`, os outros
+quatro no `teste`; dos especiais, 2 + 2 + 1 na `calibracao`. Qual relato vai é
+sorteio determinístico pela `SEMENTE_DIVISAO`, fixada antes de qualquer
+medição — mudar a semente muda a prova e exige recongelar.
+
     python scripts/prova2_montar.py            # grava o casos.csv
     python scripts/prova2_montar.py --check    # confere que está em dia
 """
 
 import argparse
 import csv
+import hashlib
 import io
 import json
 import re
-from collections import Counter
+from collections import Counter, defaultdict
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[1]
@@ -40,6 +47,16 @@ COLUNAS = [
 ESPECIE = {"cão": "cao", "cadela": "cao", "gato": "gato", "gata": "gato"}
 MAS = re.compile(r"\bmas\b", re.IGNORECASE)
 
+SEMENTE_DIVISAO = "prova2-divisao-2026-10-05"
+# Quantos relatos de cada grupo vão para a calibração: 1 por quadro do mapa e,
+# dos 25 especiais, 5 na proporção de cada tipo (10 : 8 : 7).
+CALIBRACAO_POR_QUADRO = 1
+CALIBRACAO_ESPECIAIS = {
+    "informacao_insuficiente": 2,
+    "fora_do_mapa_clinico": 2,
+    "nao_clinico": 1,
+}
+
 
 def _ler_json(caminho: Path):
     return json.loads(caminho.read_text(encoding="utf-8"))
@@ -51,6 +68,23 @@ def marcado_por(lote: int, validacao: dict | None) -> str:
         ano, mes, dia = validacao["data"].split("-")
         return f"{autor} - rotulo validado por especialista ({validacao['por']}, {dia}/{mes}/{ano})"
     return f"{autor} - provisorio, aguardando validacao de especialista"
+
+
+def dividir(linhas: list[dict], semente: str = SEMENTE_DIVISAO) -> None:
+    """Preenche `split` em cada linha: `calibracao` ou `teste`."""
+    grupos = defaultdict(list)
+    for linha in linhas:
+        grupos[linha["topic"] or linha["difficulty_tag"]].append(linha)
+    for chave, membros in grupos.items():
+        quantos = (CALIBRACAO_POR_QUADRO if membros[0]["topic"]
+                   else CALIBRACAO_ESPECIAIS[chave])
+        sorteio = sorted(
+            membros,
+            key=lambda l: hashlib.sha256(f"{semente}:{l['id']}".encode("utf-8")).hexdigest(),
+        )
+        escolhidos = {l["id"] for l in sorteio[:quantos]}
+        for linha in membros:
+            linha["split"] = "calibracao" if linha["id"] in escolhidos else "teste"
 
 
 def montar() -> tuple[str, dict]:
@@ -92,6 +126,7 @@ def montar() -> tuple[str, dict]:
                 "split": "",
             })
 
+    dividir(linhas)
     textos = Counter(linha["text"] for linha in linhas)
     conferencia = {
         "n": len(linhas),
@@ -105,6 +140,10 @@ def montar() -> tuple[str, dict]:
             classe: f"{sum(1 for l in linhas if l['expected_class'] == classe and MAS.search(l['text']))}/"
                     f"{sum(1 for l in linhas if l['expected_class'] == classe)}"
             for classe in ("EMERGENCIA", "NAO_EMERGENCIA", "INCERTO")
+        },
+        "por_split": {
+            split: dict(Counter(l["expected_class"] for l in linhas if l["split"] == split))
+            for split in ("calibracao", "teste")
         },
         "problemas": problemas,
     }

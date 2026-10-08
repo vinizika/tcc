@@ -237,9 +237,59 @@ def test_demo_key_does_not_request_user_generated_content(env, monkeypatch):
 
 
 def test_poc_protects_legacy_resources(env):
-    assert env.client.get("/tutors/known").status_code == 401
-    assert env.client.get("/pets/known").status_code == 401
     assert env.client.get("/conversations/known").status_code == 401
+
+
+def test_pet_sex_neutered_and_reproductive_status(env):
+    """Rodada 24 do Ryu: os três campos novos do cadastro, opcionais."""
+    c = env.client; a = headers(c)
+    pet = c.post("/workspace/pets", json={"name": "Mel", "species": "cao", "sex": "femea",
+                                          "neutered": False, "reproductive_status": "amamentando"}, headers=a).json()
+    assert (pet["sex"], pet["neutered"], pet["reproductive_status"]) == ("femea", False, "amamentando")
+    assert c.post("/workspace/pets", json={"name": "Rex", "species": "cao", "sex": "macho",
+                                           "reproductive_status": "prenhe"}, headers=a).status_code == 422
+    assert c.post("/workspace/pets", json={"name": "Rex", "species": "cao", "sex": "outro"}, headers=a).status_code == 422
+
+
+def test_worker_sends_the_new_pet_fields_to_the_classifier(env):
+    """Sexo, castração e gestação chegam à IA; um pet sem eles gera o mesmo texto de antes."""
+    from app.pipeline.chat_pipeline import ChatPipeline
+    from conftest import LLMClientFalso, RetrievalClientFalso, RerankerFalso, QueryClientFalso, documento
+    pet = Workspace.save_pet(env.tutor, AnimalInput(name="Mel", species="cao", age="3 anos", sex="femea",
+                                                    neutered=False, reproductive_status="amamentando"))
+    c = Workspace.create(env.tutor, pet["id"])
+    Workspace.submit(env.tutor, c["id"], TurnInput(content="Ela está tremendo e ofegante.", request_id="pet-fields-123"))
+    llm = LLMClientFalso()
+    pipeline = ChatPipeline(query_client=QueryClientFalso(), retrieval_client=RetrievalClientFalso([documento()]), reranker=RerankerFalso, llm_client=llm)
+    Workspace.process(env.tutor, c["id"], "pet-fields-123", pipeline=pipeline)
+    prompt = str(llm.chamadas[0]["messages"])
+    assert "name: Mel; species: cao; age: 3 anos; sex: femea; neutered: False; reproductive_status: amamentando" in prompt
+
+    antigo = Workspace.save_pet(env.tutor, AnimalInput(name="Lua", species="gato", age="2 anos"))
+    c2 = Workspace.create(env.tutor, antigo["id"])
+    Workspace.submit(env.tutor, c2["id"], TurnInput(content="Espirrou duas vezes.", request_id="pet-fields-456"))
+    llm2 = LLMClientFalso()
+    pipeline2 = ChatPipeline(query_client=QueryClientFalso(), retrieval_client=RetrievalClientFalso([documento()]), reranker=RerankerFalso, llm_client=llm2)
+    Workspace.process(env.tutor, c2["id"], "pet-fields-456", pipeline=pipeline2)
+    contexto = llm2.chamadas[0]["messages"][-1]["content"]
+    assert "name: Lua; species: gato; age: 2 anos\n" in contexto
+    assert "sex:" not in contexto
+
+
+def test_worker_uses_the_configured_prompt_version(env, monkeypatch):
+    """Rodada 23 do Ryu: o prompt do app vem de WORKSPACE_PROMPT_VERSION."""
+    from app.pipeline.chat_pipeline import ChatPipeline
+    from app.prompts.triage import REGRA_SUFICIENCIA
+    from conftest import LLMClientFalso, RetrievalClientFalso, RerankerFalso, QueryClientFalso, documento
+    monkeypatch.setattr(settings, "WORKSPACE_PROMPT_VERSION", "v2_suficiencia")
+    c = Workspace.create(env.tutor)
+    Workspace.submit(env.tutor, c["id"], TurnInput(content="Meu cachorro tá vomitando.", request_id="prompt-version-123"))
+    llm = LLMClientFalso()
+    pipeline = ChatPipeline(query_client=QueryClientFalso(), retrieval_client=RetrievalClientFalso([documento()]), reranker=RerankerFalso, llm_client=llm)
+    Workspace.process(env.tutor, c["id"], "prompt-version-123", pipeline=pipeline)
+    result = Workspace.get(env.tutor, c["id"])
+    assert result["messages"][-1]["config"]["prompt_version"] == "v2_suficiencia"
+    assert REGRA_SUFICIENCIA in llm.chamadas[0]["messages"][0]["content"]
 
 
 def test_worker_uses_current_report_without_truncation_and_records_real_metadata(env):

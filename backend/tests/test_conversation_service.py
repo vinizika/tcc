@@ -82,21 +82,6 @@ def test_append_turn_grava_a_triagem_no_turno_do_assistente():
     assert conversa.messages[0].triage is None
 
 
-def test_append_turn_guarda_tutor_id_e_pet_id():
-
-    conversation_id = ConversationService.append_turn(
-        tutor_message="oi",
-        assistant_message="olá",
-        tutor_id="tutor-1",
-        pet_id="pet-1",
-    )
-
-    conversa = ConversationService.get(conversation_id)
-
-    assert conversa.tutor_id == "tutor-1"
-    assert conversa.pet_id == "pet-1"
-
-
 def test_get_de_conversa_inexistente_leva_a_404():
 
     with pytest.raises(ConversationNotFoundException):

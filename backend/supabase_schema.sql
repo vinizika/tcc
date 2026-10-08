@@ -1,58 +1,14 @@
--- Schema do Supabase (Postgres) para tutores e pets.
+-- Schema do Supabase (Postgres): identidade do modo real.
 --
 -- Rode isto uma vez, no SQL Editor do projeto Supabase, depois de criá-lo.
--- Corresponde a app/schemas/tutor.py e app/schemas/pet.py — mudar um lado
--- sem o outro quebra TutorService/PetService (app/services/).
-
-create extension if not exists "pgcrypto";
-
-create table if not exists tutors (
-    id uuid primary key default gen_random_uuid(),
-    name text not null,
-    phone text,
-    email text,
-    created_at timestamptz not null default now()
-);
-
--- Migração segura: registros antigos permanecem preservados, mas não são
--- associados a uma conta por semelhança de nome/e-mail. Um administrador só
--- preenche user_id depois de verificar a identidade do titular.
-alter table tutors add column if not exists user_id uuid unique references auth.users(id) on delete set null;
-
-create table if not exists pets (
-    id uuid primary key default gen_random_uuid(),
-    tutor_id uuid not null references tutors(id) on delete cascade,
-    name text not null,
-    species text not null check (species in ('cao', 'gato')),
-    breed text,
-    sex text check (sex in ('macho', 'femea')),
-    neutered boolean,
-    birth_date date,
-    weight_kg numeric(5, 2) check (weight_kg > 0 and weight_kg <= 150),
-    vaccination_up_to_date boolean,
-    last_vaccination_date date,
-    chronic_conditions text,
-    notes text,
-    created_at timestamptz not null default now(),
-    updated_at timestamptz not null default now()
-);
-
-create index if not exists pets_tutor_id_idx on pets (tutor_id);
-
--- updated_at muda sozinho a cada UPDATE; PetService nunca escreve nele.
-create or replace function set_updated_at()
-returns trigger as $$
-begin
-    new.updated_at = now();
-    return new;
-end;
-$$ language plpgsql;
-
-drop trigger if exists pets_set_updated_at on pets;
-
-create trigger pets_set_updated_at
-before update on pets
-for each row execute function set_updated_at();
+-- O Supabase guarda só os perfis de quem faz login no modo real
+-- (WORKFLOW_MODE=real, AUTH_PROVIDER=supabase). Pets, conversas e
+-- encaminhamentos ficam no MongoDB do app (workspace).
+--
+-- Até 06/10/2026 este arquivo também criava as tabelas `tutors` e `pets`, do
+-- cadastro antigo da API (rotas /tutors e /pets). O cadastro saiu na rodada
+-- 25 do Ryu; este script não as cria mais e também não as apaga: num projeto
+-- que já as tenha, removê-las é decisão manual de quem administra o projeto.
 
 -- Identidade da segunda etapa. O perfil nasce tutor por padrão. Solicitar o
 -- papel clínica não concede verificação nem acesso operacional: clinic_id e
@@ -85,25 +41,9 @@ create trigger auth_user_created_profile
 after insert on auth.users
 for each row execute function create_profile_for_auth_user();
 
-alter table tutors enable row level security;
-alter table pets enable row level security;
 alter table profiles enable row level security;
 
-drop policy if exists "dev: acesso total a tutors" on tutors;
-drop policy if exists "dev: acesso total a pets" on pets;
-drop policy if exists "tutor gerencia o proprio cadastro" on tutors;
-drop policy if exists "tutor gerencia os proprios pets" on pets;
 drop policy if exists "usuario le o proprio perfil" on profiles;
-
-create policy "tutor gerencia o proprio cadastro"
-on tutors for all to authenticated
-using (user_id = auth.uid())
-with check (user_id = auth.uid());
-
-create policy "tutor gerencia os proprios pets"
-on pets for all to authenticated
-using (exists (select 1 from tutors where tutors.id = pets.tutor_id and tutors.user_id = auth.uid()))
-with check (exists (select 1 from tutors where tutors.id = pets.tutor_id and tutors.user_id = auth.uid()));
 
 create policy "usuario le o proprio perfil"
 on profiles for select to authenticated

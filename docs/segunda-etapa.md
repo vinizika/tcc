@@ -96,8 +96,8 @@ As rotas anteriores de tutor, pet e conversa continuam sem sessão apenas em
 `WORKFLOW_MODE=demo`, para preservar o runner e a demonstração. Em `real`, elas
 exigem Bearer de tutor e consultam o recurso junto com `user_id`; um ID conhecido
 não concede acesso. A pré-triagem continua pública quando não recebe IDs
-pessoais. Se `tutor_id`, `pet_id` ou `conversation_id` for enviado, a sessão e
-a titularidade passam a ser obrigatórias.
+pessoais. Se `save_history` ou `conversation_id` for enviado, a sessão passa a
+ser obrigatória (`tutor_id` e `pet_id` saíram com o cadastro antigo em 06/10).
 
 No cadastro de clínica, CNPJ/documento, responsável, endereço e eventual
 `google_place_id` criam uma unidade `pending_manual_verification`. Selecionar

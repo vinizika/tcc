@@ -13,6 +13,18 @@
     "attendant_provider": "gemini"
   },
 
+  "producao_suficiencia": {
+    "_descricao": "Proposta da rodada 23 do Ryu: a produção com o prompt v2_suficiencia, que pede mais informação (INCERTO) quando o relato é uma frase vaga, sem frequência, duração nem estado do animal. Medir na bateria data/diagnostico/aberturas_vagas.csv e conferir que nada piora na calibração da prova 2.",
+    "retrieval_enabled": true,
+    "retrieval_mode": "vector",
+    "context_min_score": 0.0,
+    "query_rewriting_enabled": false,
+    "multi_query_enabled": false,
+    "hyde_enabled": false,
+    "prompt_version": "v2_suficiencia",
+    "attendant_provider": "gemini"
+  },
+
   "local_qwen": {
     "_descricao": "A mesma arquitetura com o atendente local qwen3:8b, sem pensar. Precisa de GPU (sem ela, ~34 s por caso).",
     "retrieval_enabled": true,

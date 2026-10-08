@@ -37,14 +37,40 @@ gêmea leve; leve = 2 aflitos, 2 neutros, 1 parecido com a gêmea grave. A
 palavra "mas" aparece em 40% de cada classe (78 de 194, 50 de 126), como os
 pedidos marcaram.
 
-## O que falta antes de usar
+## O que faltava antes de usar
 
-1. A conferência completa: palavras em comum com as fichas, Naive Bayes entre
-   lotes, o "mesmo autor" no top 3 contra os relatos independentes.
+1. ~~A conferência completa~~: o vazamento pelas palavras medido em 05/10
+   ([rodada 17 do Ryu](../../evidencias/ryu/2026-10-05-17-prova-2-divisao-e-congelamento.md),
+   `python scripts/prova2_conferir.py`); o "mesmo autor" no top 3 tinha sido
+   medido na rodada 30 do João (79% contra 77% dos relatos independentes).
 2. ~~A validação dos rótulos pelos veterinários, sem ver o rótulo~~: feita em
    26/09, sem nenhuma discordância do mapa
    ([rodada 30](../../evidencias/joao/2026-09-26-31-validacao-dos-especialistas.md)).
-3. A divisão por assunto (66 de calibração, 264 de teste) e o congelamento com
-   `scripts/prova_freeze.py`.
+3. ~~A divisão por assunto e o congelamento~~: feitos em 05/10 (seção abaixo).
+
+## Divisão e congelamento (05/10)
+
+Pela regra da rodada 20 do João (decisão 4), na
+[rodada 17 do Ryu](../../evidencias/ryu/2026-10-05-17-prova-2-divisao-e-congelamento.md):
+um relato de cada um dos 61 quadros na `calibracao` e os outros quatro no
+`teste`; dos especiais, 2 de informação insuficiente, 2 fora do mapa e 1 não
+clínico na `calibracao`. Qual relato vai é sorteio reproduzível pela semente
+`prova2-divisao-2026-10-05` do `prova2_montar.py`, fixada antes de qualquer
+medição. Os rótulos não mudaram: em relação ao arquivo validado
+(`validacao.json`), só mudaram as colunas `marked_by` (rodada 30) e `split`.
+
+| Lote | Linhas | Classes (E · N · I) | sha256 (linhas inteiras) | Uso |
+|---|---|---|---|---|
+| `calibracao` | 66 | 40 · 24 · 2 | `44fa0edd515afdbaae4c73149c1b0fdf32c7a106f326de3ea411f3bad5cfd0f8` | à vontade, para desenvolver e conferir |
+| `teste` | 264 | 154 · 102 · 8 | `b21b4648c9205dac8df9b29a58bcdd2b2c2fad1faed71533fb79c92da08c5e93` | **uma vez, pela configuração final** |
+
+Conferir: `python scripts/prova_freeze.py --cases data/prova2/casos.csv --split teste`
+(e `--split calibracao`). O runner (`run_evaluation.py --cases … --split …`)
+recusa rodar se o hash não bater.
+
+**Vezes que o lote `teste` foi usado numa medição: 0.** Quem rodar uma
+medição nele soma 1 aqui, no mesmo commit, com o link da rodada. Pelo
+[B-77](../../evidencias/backlog.md#b-77), a medição final com o Gemini repete
+em dias diferentes e declara a variação entre dias.
 
 O acompanhamento está no [B-63](../../evidencias/backlog.md#b-63).

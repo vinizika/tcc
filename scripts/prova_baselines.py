@@ -28,6 +28,7 @@ uma regra de saco de palavras.
 """
 
 import math
+import random
 import re
 from collections import Counter
 from typing import Any
@@ -246,6 +247,81 @@ def baseline_saco_de_palavras_cv(casos: list[dict], k: int = 5) -> dict[str, Any
         "acuracia": round(acertos_totais / total, 4) if total else None,
         "n": total,
         "k_dobras": k,
+    }
+
+
+def naive_bayes_cv_repetido(
+    casos: list[dict], chave_grupo: str | None = None, k: int = 5, repeticoes: int = 20
+) -> dict[str, Any]:
+    """
+    Naive Bayes por validação cruzada k × repetições, como a rodada 20 do
+    João mediu a prova 1. Com `chave_grupo` (ex.: "topic"), casos do mesmo
+    grupo nunca ficam um no treino e outro no teste: é a "divisão por
+    assunto", que tira o acerto que vem de assunto repetido. Caso sem valor
+    na chave vira grupo próprio. Sorteio com semente = número da repetição.
+    """
+
+    binarios = _casos_binarios(casos)
+    grupos: dict[str, list[dict]] = {}
+    for caso in binarios:
+        grupo = (caso.get(chave_grupo) if chave_grupo else None) or f"id:{caso['id']}"
+        grupos.setdefault(grupo, []).append(caso)
+
+    acuracias = []
+    for repeticao in range(repeticoes):
+        nomes = sorted(grupos)
+        random.Random(repeticao).shuffle(nomes)
+        acertos = 0
+        for indice_teste in range(k):
+            teste = [c for i, g in enumerate(nomes) if i % k == indice_teste for c in grupos[g]]
+            treino = [c for i, g in enumerate(nomes) if i % k != indice_teste for c in grupos[g]]
+            modelo = _treinar_saco_de_palavras(treino)
+            acertos += sum(
+                _prever_saco_de_palavras(c["text"], *modelo) == c["expected_class"] for c in teste
+            )
+        acuracias.append(acertos / len(binarios))
+
+    acuracias.sort()
+    return {
+        "nome": f"naive_bayes_cv_{'por_' + chave_grupo if chave_grupo else 'aleatoria'}",
+        "acuracia": round(sum(acuracias) / len(acuracias), 4),
+        "faixa": [round(acuracias[0], 4), round(acuracias[-1], 4)],
+        "n": len(binarios),
+        "k_dobras": k,
+        "repeticoes": repeticoes,
+    }
+
+
+def naive_bayes_treino_teste(treino: list[dict], teste: list[dict]) -> dict[str, Any]:
+    """Treina num conjunto e mede no outro (ex.: prova 1 → prova 2)."""
+
+    modelo = _treinar_saco_de_palavras(_casos_binarios(treino))
+    binarios = _casos_binarios(teste)
+    acertos = sum(
+        _prever_saco_de_palavras(c["text"], *modelo) == c["expected_class"] for c in binarios
+    )
+    return {
+        "nome": "naive_bayes_treino_teste",
+        "acuracia": round(acertos / len(binarios), 4) if binarios else None,
+        "n": len(binarios),
+    }
+
+
+def regra_mas(casos: list[dict]) -> dict[str, Any]:
+    """'Tem "mas" ⇒ NAO_EMERGENCIA; senão EMERGENCIA' — a pista de estilo do piloto."""
+
+    binarios = _casos_binarios(casos)
+    acertos = sum(
+        ("NAO_EMERGENCIA" if re.search(r"\bmas\b", c["text"], re.IGNORECASE) else "EMERGENCIA")
+        == c["expected_class"]
+        for c in binarios
+    )
+    maioria = Counter(c["expected_class"] for c in binarios).most_common(1)[0][1] if binarios else 0
+    return {
+        "nome": "regra_mas",
+        "acuracia": round(acertos / len(binarios), 4) if binarios else None,
+        "chute_classe_mais_comum": round(maioria / len(binarios), 4) if binarios else None,
+        "n": len(binarios),
     }
 
 

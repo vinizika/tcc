@@ -58,8 +58,9 @@ Coleções Mongo:
 - `poc_pets`, `poc_conversations`: workspace privado por usuário;
 - `workflow_clinics`, `referrals`: unidades, encaminhamentos, mensagens e eventos.
 
-As rotas legadas `/tutors` e `/pets` continuam usando Supabase. Os registros
-antigos não são migrados ou mesclados automaticamente com o workspace novo.
+As rotas legadas `/tutors` e `/pets` (cadastro no Supabase) saíram em 06/10
+(rodada 25 do Ryu); o cadastro do pet é só o do workspace. Os registros
+antigos de um projeto Supabase não foram migrados nem apagados.
 Supabase permanece opção de autenticação com `AUTH_PROVIDER=supabase`.
 Trocar o provedor não migra contas locais.
 

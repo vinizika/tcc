@@ -45,3 +45,24 @@ em 20 quadros do mapa: 24 emergências e 16 não emergências.
 
 O desenho, os critérios e as medidas do piloto estão na
 [rodada 20](../../evidencias/joao/2026-09-24-21-prova-2-desenho-e-piloto.md).
+
+## `aberturas_vagas.csv` — 22 mensagens curtas (rodada 23 do Ryu)
+
+Escritas pelo Ryu (B1) em 06/10, depois de a rodada 21 dele mostrar que "meu
+cachorro tá vomitando", sem mais nada, foi classificado NAO_EMERGENCIA no
+primeiro turno, sem pergunta nenhuma.
+
+- **14 vagas** (`difficulty_tag=vaga`): um sintoma sem frequência, duração nem
+  estado do animal ("minha cachorra está mancando", "meu gato não quer comer").
+  Rótulo esperado: **INCERTO** — o sistema deve pedir mais informação.
+- **4 curtas graves** (`curta_grave`): um sinal grave basta ("gengiva roxa e não
+  consegue respirar"). Rótulo: EMERGENCIA. Controle de que a regra contra
+  frases vagas não esconde emergências.
+- **4 curtas leves** (`curta_leve`): leves, com o estado do animal descrito
+  ("espirrou três vezes, mas está comendo, brincando e respirando normal").
+  Rótulo: NAO_EMERGENCIA. Controle de que a regra não transforma tudo em
+  INCERTO.
+
+**Não foram validadas por veterinário.** Servem de teste de regressão do
+comportamento "pedir mais informação quando falta informação", não para dar
+número ao TCC. Formato compatível com `run_evaluation.py --cases`.

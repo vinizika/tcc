@@ -22,13 +22,13 @@ class ChatRequest(BaseModel):
     # o backend.
     options: Optional[PipelineOptions] = None
 
-    # Opcionais e independentes entre si. `pet_id` enriquece o prompt com o
-    # cadastro do animal (app/schemas/pet.py); qualquer um dos três presente
-    # já é suficiente para o turno ser gravado no histórico de conversa —
-    # ver ChatService.process. Nenhum dos três muda o comportamento do
-    # runner de avaliação, que nunca os envia.
-    tutor_id: Optional[str] = None
-    pet_id: Optional[str] = None
+    # Histórico de conversa da API antiga (ver ChatService.process): com
+    # `save_history`, o turno é gravado e o id volta na resposta; com
+    # `conversation_id`, continua uma conversa. O runner de avaliação não
+    # envia nenhum dos dois. Até 06/10, o histórico começava por `tutor_id`/
+    # `pet_id`, do cadastro no Supabase, que saiu na rodada 25 do Ryu: o app
+    # usa o cadastro do workspace, no MongoDB.
+    save_history: bool = False
     conversation_id: Optional[str] = None
 
     @field_validator("question")
@@ -84,7 +84,7 @@ class ChatResponse(BaseModel):
     provenance: Optional[Provenance] = None
 
     # Preenchido quando o turno foi gravado no histórico de conversa (Mongo
-    # configurado e algum de tutor_id/pet_id/conversation_id informado).
+    # configurado e `save_history` ou `conversation_id` informado).
     # O tutor manda de volta no próximo turno para continuar a mesma
     # conversa; `None` não é erro — só significa que não há histórico.
     conversation_id: Optional[str] = None

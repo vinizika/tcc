@@ -102,7 +102,7 @@ aqui.
 | [B-54](#b-54) | Baixar à mão o Caderno Técnico nº 87 da UFMG, a melhor fonte brasileira que temos | Time | Média | Aberto |
 | [B-55](#b-55) | O único documento real da base nunca é recuperado | Trilho A | Média | Aberto |
 | [B-51](#b-51) | Ciclo de ingestão num comando, e a régua dizendo o que mudou entre duas rodadas | Trilho B2 | Média | Em andamento — compare feito em 12/09; falta o passo 0 |
-| [B-56](#b-56) | Cadastro de tutor/pet sem autenticação real e com política aberta no Supabase | Trilho B1 | Média | Aberto |
+| [B-56](#b-56) | Cadastro de tutor/pet sem autenticação real e com política aberta no Supabase | Trilho B1 | Média | Obsoleto em 06/10 — o cadastro no Supabase foi removido |
 | [B-57](#b-57) | O snapshot versionado do ChromaDB não é o caminho que o backend real lê | Trilho A | Alta | Aberto |
 | [B-52](#b-52) | Fonte de terceiro versionada em repositório público | Time | Alta | Aberto |
 | [B-58](#b-58) | A tag `tcc-backend:latest` local pode estar desatualizada e derrubar o backend num restart | Time | Média | Aberto |
@@ -110,13 +110,13 @@ aqui.
 | [B-60](#b-60) | Os runners contam INCERTO de jeitos diferentes: falta uma semântica só de métrica | A definir | Média | Aberto |
 | [B-61](#b-61) | Validação clínica das fichas de leitura e de busca | A definir | Alta | Em andamento — certificado pela ASAVET em 26/09; falta levar ao mapa (rodada medida) |
 | [B-62](#b-62) | Fonte escrita para tutor nos quadros em que o documento não descreve o que o tutor vê | A definir | Média | Em andamento — 7 de 8 quadros com fonte validada (26/09); faltam o caroço, os ids `R..` e a decisão de direitos |
-| [B-63](#b-63) | Prova 2: da geração ao congelamento | A definir | Alta | Em andamento — gerada (25/09) e rótulos validados (26/09); faltam conferência, divisão e congelamento |
+| [B-63](#b-63) | Prova 2: da geração ao congelamento | Trilho B1 (desde 05/10) | Alta | Em andamento — dividida, conferida e congelada (05/10); falta o protocolo da medição final (repetições, sentinela, tolerância) |
 | [B-64](#b-64) | LGPD com o Gemini como atendente padrão: o relato do tutor sai da máquina | A definir | Média | Aberto |
 | [B-65](#b-65) | Latência na demonstração: a cauda do Gemini e o qwen sem placa de vídeo | A definir | Média | Aberto |
 | [B-66](#b-66) | Ablação final na arquitetura da autópsia 2 | A definir | Média | Aberto |
 | [B-67](#b-67) | A régua de recuperação nas fichas como instrumento oficial | A definir | Média | Aberto |
 | [B-68](#b-68) | Uma lista de sinais de alarme gerais, escrita e validada pelos especialistas | A definir | Baixa | Aberto |
-| [B-69](#b-69) | Tradutor só quando a busca estiver insegura (ideia não testada) | A definir | Baixa | Aberto |
+| [B-69](#b-69) | Tradutor só quando a busca estiver insegura | Trilho B1 (desde 06/10) | Baixa | Testado em 06/10: não funciona — proposta de fechar |
 | [B-70](#b-70) | Self-Refine como checagem de que o contexto é do assunto do relato | A definir | Baixa | Em espera — CoT e Self-Refine voltam depois do RAG consolidado |
 | [B-71](#b-71) | Checagens por hash de arquivo falham num clone no Windows (CRLF) | A definir | Baixa | Aberto |
 | [B-72](#b-72) | Documentos aprovados que tratam de outro assunto, e autoria errada em sidecars | A definir | Média | Aberto — os seis mantidos pela ASAVET (26/09); falta corrigir a autoria |
@@ -2396,6 +2396,11 @@ tutor.
 
 ---
 
+**Atualização 06/10 — obsoleto ([rodada 25 do Ryu](ryu/2026-10-06-25-remove-cadastro-antigo-do-supabase.md)).** As rotas
+`/tutors` e `/pets` e o cadastro no Supabase foram removidos: o app usa o cadastro
+do workspace, no MongoDB, com sessão e titularidade desde a segunda etapa do
+Vinicius. O Supabase ficou só como login do modo real.
+
 ### B-57
 
 **O snapshot versionado do ChromaDB não é o caminho que o backend real lê**
@@ -2677,6 +2682,25 @@ relatos independentes ("pão com passas") está leve pelo mapa; passas são tóx
 para cães. A tolerância a E→N e a E→I fica decidida com os especialistas antes de
 olhar o resultado.
 
+**Atualização 05/10 — dividida, conferida e congelada ([rodada 17 do Ryu](ryu/2026-10-05-17-prova-2-divisao-e-congelamento.md)).**
+O trilho B1 assumiu o item. Divisão pela regra da rodada 20: 1 relato de cada
+quadro na `calibracao` e 2 + 2 + 1 dos especiais (66: 40 · 24 · 2); o resto no
+`teste` (264: 154 · 102 · 8), por sorteio com semente fixada antes de medir.
+Rótulos intactos (só `marked_by` e `split` mudaram desde o arquivo validado).
+Vazamento pelas palavras, critérios escritos antes: por assunto 0,769 (≤ 0,79),
+treinado na prova 1 0,781 (≤ 0,80), regra do "mas" 0,519 (chute 0,606) — os três
+passam; com o mesmo instrumento a prova 1 dá 0,744 por assunto, mas, descontado
+o chute, as palavras ganham 16 pontos na prova 2 e 22 na prova 1. Congelados os
+dois lotes (`teste` `b21b4648…`, `calibracao` `44fa0edd…`); contador de uso do
+`teste`: 0. Falta o que a autópsia 3 pediu para a medição final: repetições em
+dias diferentes, conjunto-sentinela e a tolerância decidida com os especialistas.
+
+**Atualização 05/10 — primeira medição, só na calibração ([rodada 18 do Ryu](ryu/2026-10-05-18-calibracao-da-prova-2.md)).**
+Produção 0 de 40 emergências perdidas e 1 de 24 falsos alarmes; Gemini sem busca
+0 e 0; llama 3 e 9 (pelo tom). O teste continua com contador 0. A calibração não
+tem poder para separar os braços do Gemini: a comparação final precisa de McNemar e
+IC declarados antes ([B-66](#b-66)).
+
 ### B-64
 
 **LGPD com o Gemini como atendente padrão: o relato do tutor sai da máquina**
@@ -2857,6 +2881,18 @@ desligado, com o limiar calibrado só na calibração. Critério: subir o "entre
 com o qwen, ela precisa do mesmo `think=False`, senão o qwen pensa antes de cada
 consulta (mais lento e com a saída diferente).
 
+**Atualização 06/10 — testado, não funciona ([rodada 19 do Ryu](ryu/2026-10-06-19-tradutor-inteligente.md)).**
+Critérios escritos antes. O gatilho existe, mas é fraco: a distância entre a 1ª e
+a 2ª ficha separa acerto de erro com chance de 0,75, e o melhor limiar pega 71% dos
+erros no calibrar e 58% no conferir (pedia ≥ 60% e queda ≤ 10 pontos). Mesmo
+assim, o tradutor rodou nos 112 relatos marcados, com paráfrases do Gemini
+proibidas de diagnosticar (fiéis: 4 de 334 com palavra suspeita, todas do
+próprio tutor): "entre as 3" de 77,0% para 76,2% nos independentes inteiros
+(pedia +3 pontos), e no calibrar perde 4 para cada 1 que ganha. Nos INCERTO
+falsos por ficha errada, a ficha certa se afastou em 5 de 6. Proposta: fechar
+como resultado negativo, mantendo o tradutor só como braço da ablação. O que
+sobra para o INCERTO falso é o [B-70](#b-70) e a ordenação da busca (trilho A).
+
 ### B-70
 
 **Self-Refine como checagem de que o contexto é do assunto do relato**
@@ -2876,6 +2912,10 @@ errado; um que confere o contexto trata o certo.
 problema do relato? a justificativa só usa sinais do relato?", medida como braço
 na prova 2. Critério: menos INCERTO por contexto errado, sem subir as
 emergências perdidas.
+
+**Atualização 05/10 ([rodada 18 do Ryu](ryu/2026-10-05-18-calibracao-da-prova-2.md)).** Mais um caso, agora na
+prova 2: q186 (primeiro cio, tutora aflita) recebeu 3 fichas de outro assunto e o
+Gemini respondeu INCERTO; sem busca, acertou.
 
 ### B-71
 
@@ -3107,6 +3147,15 @@ especialistas, como a das fichas; e a medição do fluxo em casos que ele não v
 fichas), comparando primeira resposta e resposta depois das perguntas, na mesma
 semântica de métrica do runner. Critério: catálogo certificado e um número, com
 intervalo, do que o fluxo muda.
+
+**Atualização 06/10 ([rodada 21 do Ryu](ryu/2026-10-06-21-as-perguntas-extras-funcionam.md)).** Medido com um
+tutor simulado contra o workspace real, em 18 casos da calibração da prova 2:
+quando o sistema pergunta, as emergências chegam à classe certa (3 de 3, com 1 ou
+2 perguntas). Dois leves terminaram em "informação insuficiente" porque o
+catálogo não tem a pergunta que decide: inchaço só no local da picada (q153) e
+andamento de um parto (q269). E um achado do lado da decisão: "meu cachorro tá
+vomitando", sem mais nada, foi classificado NAO_EMERGENCIA no primeiro turno, sem
+pergunta — era um corpo estranho (q180).
 
 ### B-80
 

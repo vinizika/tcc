@@ -1,9 +1,11 @@
 """
-`/chat/` com tutor_id/pet_id/conversation_id.
+`/chat/` com histórico de conversa (`save_history`, `conversation_id`).
 
-Cobre o que test_api_chat.py não cobre: sem nenhum dos três campos, nada
-deste arquivo deveria rodar (comportamento idêntico a antes desta extensão
-existir) — é o que o primeiro teste trava.
+Cobre o que test_api_chat.py não cobre: sem nenhum dos dois campos, nada
+deste arquivo deveria rodar (comportamento idêntico ao do runner de
+avaliação) — é o que o primeiro teste trava. Até 06/10 o histórico também
+começava por `tutor_id`/`pet_id` (cadastro no Supabase), que saiu na
+rodada 25 do Ryu.
 """
 
 from conftest import (
@@ -17,10 +19,8 @@ import pytest
 from fastapi.testclient import TestClient
 
 from app.api.deps import get_chat_pipeline
-from app.exceptions.pet_exception import PetNotFoundException
 from app.main import app
 from app.pipeline.chat_pipeline import ChatPipeline
-from app.schemas.pet import PetResponse, Sex, Species
 from app.services import chat_service
 
 
@@ -48,29 +48,11 @@ def client(llm):
     app.dependency_overrides.clear()
 
 
-def _pet(**overrides) -> PetResponse:
-
-    dados = {
-        "id": "pet-1",
-        "tutor_id": "tutor-1",
-        "name": "Bidu",
-        "species": Species.CAO,
-        "sex": Sex.MACHO,
-        "neutered": True,
-        "created_at": "2026-01-01T00:00:00Z",
-        "updated_at": "2026-01-01T00:00:00Z",
-    }
-    dados.update(overrides)
-
-    return PetResponse(**dados)
-
-
-def test_sem_nenhum_id_nao_toca_pet_nem_historico(client, monkeypatch):
+def test_sem_historico_pedido_nao_grava_nada(client, monkeypatch):
 
     def explode(*args, **kwargs):
-        raise AssertionError("não deveria ser chamado sem tutor/pet/conversation_id")
+        raise AssertionError("não deveria gravar sem save_history nem conversation_id")
 
-    monkeypatch.setattr(chat_service.PetService, "get", explode)
     monkeypatch.setattr(chat_service.ConversationService, "append_turn", explode)
 
     resposta = client.post("/chat/", json={"question": "meu cão vomitou"})
@@ -79,44 +61,24 @@ def test_sem_nenhum_id_nao_toca_pet_nem_historico(client, monkeypatch):
     assert resposta.json()["conversation_id"] is None
 
 
-def test_pet_id_acrescenta_o_cadastro_ao_prompt(client, llm, monkeypatch):
+def test_campos_do_cadastro_antigo_sao_ignorados(client, llm, monkeypatch):
+    """Quem ainda mandar tutor_id/pet_id recebe a triagem, sem cadastro nem histórico."""
 
-    monkeypatch.setattr(chat_service.PetService, "get", lambda pet_id: _pet(id=pet_id))
-    monkeypatch.setattr(
-        chat_service.ConversationService, "append_turn", lambda **kwargs: None
-    )
+    def explode(*args, **kwargs):
+        raise AssertionError("tutor_id/pet_id não abrem mais histórico")
+
+    monkeypatch.setattr(chat_service.ConversationService, "append_turn", explode)
 
     resposta = client.post(
         "/chat/",
-        json={"question": "ele vomitou hoje", "pet_id": "pet-1"},
+        json={"question": "ele vomitou hoje", "tutor_id": "t-1", "pet_id": "p-1"},
     )
 
     assert resposta.status_code == 200
-
-    mensagens = llm.chamadas[-1]["messages"]
-    conteudo_usuario = mensagens[-1]["content"]
-
-    assert "Dados cadastrais do animal" in conteudo_usuario
-    assert "Espécie: cão" in conteudo_usuario
-    assert "castrado" in conteudo_usuario
+    assert "Dados cadastrais do animal" not in llm.chamadas[-1]["messages"][-1]["content"]
 
 
-def test_pet_id_inexistente_propaga_404_e_nao_grava_historico(client, monkeypatch):
-
-    def nao_encontrado(pet_id):
-        raise PetNotFoundException(pet_id)
-
-    monkeypatch.setattr(chat_service.PetService, "get", nao_encontrado)
-
-    resposta = client.post(
-        "/chat/",
-        json={"question": "meu cão vomitou", "pet_id": "nao-existe"},
-    )
-
-    assert resposta.status_code == 404
-
-
-def test_tutor_id_grava_historico_e_devolve_conversation_id(client, monkeypatch):
+def test_save_history_grava_e_devolve_conversation_id(client, monkeypatch):
 
     chamadas = []
 
@@ -128,12 +90,11 @@ def test_tutor_id_grava_historico_e_devolve_conversation_id(client, monkeypatch)
 
     resposta = client.post(
         "/chat/",
-        json={"question": "meu cão vomitou", "tutor_id": "tutor-1"},
+        json={"question": "meu cão vomitou", "save_history": True},
     )
 
     assert resposta.status_code == 200
     assert resposta.json()["conversation_id"] == "conv-123"
-    assert chamadas[0]["tutor_id"] == "tutor-1"
     assert chamadas[0]["conversation_id"] is None
 
 
@@ -170,7 +131,7 @@ def test_historico_indisponivel_nao_derruba_a_triagem(client, monkeypatch):
 
     resposta = client.post(
         "/chat/",
-        json={"question": "meu cão vomitou", "tutor_id": "tutor-1"},
+        json={"question": "meu cão vomitou", "save_history": True},
     )
 
     assert resposta.status_code == 200

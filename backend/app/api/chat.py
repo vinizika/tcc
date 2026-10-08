@@ -22,7 +22,7 @@ def chat(
     authorization: Annotated[str | None, Header()] = None,
 ):
     principal_user_id = None
-    has_personal_reference = bool(request.tutor_id or request.pet_id or request.conversation_id)
+    has_personal_reference = bool(request.conversation_id or request.save_history)
     if settings.WORKFLOW_MODE != "demo" and has_personal_reference:
         principal = get_current_principal(authorization)
         if principal.role != "tutor":
