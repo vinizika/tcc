@@ -49,7 +49,7 @@ benchmark de voz.
 | 17 | **O cadastro do pet melhora a decisão?** | ✅ 06/10 | Melhora a segurança, mas só resolve 2–3 de 8 pares; a busca não vê o cadastro ([rodada 20](2026-10-06-20-o-cadastro-do-pet-ajuda.md)) |
 | 18 | **As perguntas extras funcionam?** | ✅ 06/10 | Funcionam quando acontecem; o problema é decidir sem perguntar (q180) e o catálogo limitado ([rodada 21](2026-10-06-21-as-perguntas-extras-funcionam.md)) |
 | 19 | **Consulta enriquecida com o cadastro** | ✅ 06/10 — negativo | Melhora a busca, piora a decisão; não vira padrão ([rodada 22](2026-10-06-22-busca-com-o-cadastro.md)) |
-| 20 | **Frase vaga pede mais informação** | 🔶 implementado, medir 07/10 | Prompt `v2_suficiencia` desligado, bateria de 22 aberturas ([rodada 23](2026-10-06-23-frase-vaga-pede-mais-informacao.md)) |
+| 20 | **Frase vaga pede mais informação** | ✅ 07/10 — passa | Vagas → INCERTO 14/14 nas duas repetições, nada piora na calibração; recomendado ao João ligar no app ([rodada 23](2026-10-06-23-frase-vaga-pede-mais-informacao.md)) |
 | 21 | **Sexo, castração e gestação no cadastro** | ✅ 06/10 | No app, na IA e no resumo à clínica ([rodada 24](2026-10-06-24-sexo-castracao-e-gestacao-no-cadastro.md)) |
 | 22 | **Cadastro antigo do Supabase removido** | ✅ 06/10 | B-56 obsoleto ([rodada 25](2026-10-06-25-remove-cadastro-antigo-do-supabase.md)) |
 | 15 | **Protocolo da medição final** (B-77, B-66) | ⏳ próximo | Repetir os braços do Gemini em outro dia, conjunto-sentinela, McNemar e IC declarados antes, tolerância com os especialistas |

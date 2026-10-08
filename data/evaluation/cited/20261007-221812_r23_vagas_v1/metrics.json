@@ -1,0 +1,131 @@
+{
+  "rows_evaluated": 22,
+  "rows_with_error": 0,
+  "classification": {
+    "n": 22,
+    "balanced_accuracy": 1.0,
+    "accuracy_strict": 0.9090909090909091,
+    "accuracy_strict_ci95": [
+      0.7218,
+      0.9747
+    ],
+    "coverage": 0.45454545454545453,
+    "accuracy_decided": 0.8,
+    "macro_f1": 0.9,
+    "per_class": {
+      "EMERGENCIA": {
+        "support": 4,
+        "true_positive": 4,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "recall_ci95": [
+          0.5101,
+          1.0
+        ],
+        "f1": 1.0
+      },
+      "NAO_EMERGENCIA": {
+        "support": 4,
+        "true_positive": 4,
+        "false_positive": 2,
+        "false_negative": 0,
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "recall_ci95": [
+          0.5101,
+          1.0
+        ],
+        "f1": 0.8
+      }
+    },
+    "confusion_matrix": {
+      "EMERGENCIA": {
+        "EMERGENCIA": 4,
+        "NAO_EMERGENCIA": 0,
+        "INCERTO": 0,
+        "INVALID_JSON": 0,
+        "OTHER": 0
+      },
+      "NAO_EMERGENCIA": {
+        "EMERGENCIA": 0,
+        "NAO_EMERGENCIA": 4,
+        "INCERTO": 0,
+        "INVALID_JSON": 0,
+        "OTHER": 0
+      }
+    },
+    "false_non_urgent": 0,
+    "false_non_urgent_rate": 0.0,
+    "false_urgent": 0,
+    "false_urgent_rate": 0.0,
+    "incerto_rate": 0.5454545454545454,
+    "emergencia_para_incerto": 0,
+    "nao_emergencia_para_incerto": 0,
+    "invalid_rate": 0.0,
+    "other_rate": 0.0,
+    "accuracy_single_attempt": 0.9090909090909091
+  },
+  "baselines": {
+    "always_emergencia": 0.18181818181818182,
+    "rule_few_symptoms": null,
+    "rule_only_mild_symptoms": null
+  },
+  "strata": {},
+  "latency": {
+    "rows_with_model_load": 0,
+    "query_s": {
+      "mean": 0.0,
+      "median": 0.0,
+      "p95": 0.001
+    },
+    "retrieval_s": {
+      "mean": 1.542,
+      "median": 0.637,
+      "p95": 5.246
+    },
+    "generation_s": {
+      "mean": 2.937,
+      "median": 3.123,
+      "p95": 5.112
+    },
+    "total_s": {
+      "mean": 4.479,
+      "median": 3.95,
+      "p95": 6.75
+    },
+    "client_s": {
+      "mean": 4.569,
+      "median": 4.056,
+      "p95": 6.767
+    },
+    "prompt_tokens_mean": 869.1,
+    "completion_tokens_mean": 87.1,
+    "completion_tokens_p95": 106,
+    "completion_tokens_max": 112
+  },
+  "grounding": {
+    "mean_cited_sources": 0.45,
+    "share_rows_with_citation": 0.45454545454545453,
+    "share_rows_invalid_citation": 0.0,
+    "share_rows_max_score_below_0_70": 0.9090909090909091,
+    "mean_max_score": 0.6304,
+    "share_rows_with_context": 1.0,
+    "share_rows_rag_silent": 0.0,
+    "rows_used_below_min_score": 0,
+    "citations_per_chunk": {
+      "ficha__reduced_appetite_no_other_signs": 1,
+      "ficha__dietary_indiscretion_mild": 1,
+      "ficha__respiratory_distress": 1,
+      "ficha__seizures": 1,
+      "ficha__trauma_and_bleeding": 1,
+      "ficha__urethral_obstruction": 1,
+      "ficha__mild_upper_respiratory_signs": 1,
+      "ficha__ticks_found_no_signs": 1,
+      "ficha__single_vomiting_or_mild_diarrhea": 1,
+      "ficha__periodontal_disease_mild": 1
+    }
+  },
+  "repeats": null
+}

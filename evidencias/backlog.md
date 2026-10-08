@@ -3157,6 +3157,13 @@ andamento de um parto (q269). E um achado do lado da decisão: "meu cachorro tá
 vomitando", sem mais nada, foi classificado NAO_EMERGENCIA no primeiro turno, sem
 pergunta — era um corpo estranho (q180).
 
+**Atualização 07/10 — a outra metade do problema ([rodada 23 do Ryu](ryu/2026-10-06-23-frase-vaga-pede-mais-informacao.md)).**
+O q180 ("tá vomitando" → NAO_EMERGENCIA sem pergunta) era da decisão, não do
+catálogo. O prompt `v2_suficiencia` (proposta ao B2, desligado por padrão) fez as
+14 frases vagas de `data/diagnostico/aberturas_vagas.csv` virarem INCERTO nas duas
+repetições (o v1: 12 e 13), sem mudar os controles e sem piorar a calibração.
+Ligá-lo no app (`WORKSPACE_PROMPT_VERSION`) é decisão do João.
+
 ### B-80
 
 **Dívida da segunda etapa: documentação divergente, coleção da POC sem receita, código morto**
