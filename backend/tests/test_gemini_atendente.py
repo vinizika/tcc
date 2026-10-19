@@ -132,11 +132,88 @@ def test_servidor_sem_capacidade_desiste_depois_do_teto(monkeypatch):
 
 def test_sem_chave_falha_explicando_como_rodar_local(monkeypatch):
     monkeypatch.setattr(settings, "GEMINI_API_KEY", "")
+    monkeypatch.setattr(settings, "GEMINI_API_KEYS", "")
 
     with pytest.raises(AttendantUnavailableException) as falha:
         GeminiLLMClient().classify(MENSAGENS, TriageLLMOutput)
     assert falha.value.details["reason"] == "missing_api_key"
     assert "ATTENDANT_PROVIDER=ollama" in falha.value.message
+
+
+# ----------------------------------------------------------------------
+# Várias chaves: a cota do dia de uma acaba, passa para a próxima (19/10)
+# ----------------------------------------------------------------------
+
+
+@pytest.fixture
+def chaves(monkeypatch):
+    from app.clients.gemini_common import ChavesGemini
+
+    ChavesGemini.esquecer()
+    monkeypatch.setattr(settings, "GEMINI_MIN_INTERVAL_S", 0.0)
+    monkeypatch.setattr(settings, "GEMINI_API_KEY", "chave-um")
+    monkeypatch.setattr(settings, "GEMINI_API_KEYS", "chave-dois, chave-tres,,chave-um")
+    yield ChavesGemini
+    ChavesGemini.esquecer()
+
+
+def _fabrica(roteiros):
+    criadas = []
+
+    def fabrica(chave, timeout_s):
+        criadas.append(chave)
+        return GenaiClientFalso(roteiros[chave])
+
+    return fabrica, criadas
+
+
+def test_lista_de_chaves_sem_vazias_nem_repetidas(chaves):
+    assert chaves.lista("a", " b, ,c,a ") == ["a", "b", "c"]
+    assert chaves.lista("", "") == []
+
+
+def test_cota_do_dia_passa_para_a_proxima_chave_sem_esperar(chaves):
+    fabrica, criadas = _fabrica({"chave-um": [_erro_429(por_dia=True)], "chave-dois": [JSON_OK]})
+    esperas = []
+    cliente = GeminiLLMClient(fabrica=fabrica, dormir=esperas.append)
+
+    resultado = cliente.classify(MENSAGENS, TriageLLMOutput)
+
+    assert resultado.output.classificacao == "EMERGENCIA"
+    assert (resultado.provider, resultado.model) == ("gemini", "gemini-3.5-flash-lite")
+    assert criadas == ["chave-um", "chave-dois"]
+    assert esperas == []
+
+
+def test_a_chave_esgotada_fica_de_fora_para_os_clientes_seguintes(chaves):
+    fabrica, criadas = _fabrica({"chave-um": [_erro_429(por_dia=True)], "chave-dois": [JSON_OK, JSON_OK]})
+    GeminiLLMClient(fabrica=fabrica, dormir=lambda s: None).classify(MENSAGENS, TriageLLMOutput)
+
+    outro = GeminiLLMClient(fabrica=fabrica, dormir=lambda s: None)
+    outro.classify(MENSAGENS, TriageLLMOutput)
+
+    assert criadas == ["chave-um", "chave-dois", "chave-dois"]
+
+
+def test_todas_as_chaves_sem_cota_vira_cota_esgotada(chaves):
+    dia = _erro_429(por_dia=True)
+    fabrica, criadas = _fabrica({"chave-um": [dia], "chave-dois": [dia], "chave-tres": [dia]})
+
+    with pytest.raises(QuotaExhaustedException) as falha:
+        GeminiLLMClient(fabrica=fabrica, dormir=lambda s: None).classify(MENSAGENS, TriageLLMOutput)
+    assert falha.value.details["reason"] == "daily_quota"
+    assert "todas as chaves" in falha.value.message
+    assert criadas == ["chave-um", "chave-dois", "chave-tres"]
+
+
+def test_a_chave_volta_na_virada_da_cota(chaves):
+    agora = 1_700_000_000.0  # 14/11/2023 22:13 UTC
+    chaves.marcar_esgotada(0, agora)
+
+    assert not chaves.disponivel(0, agora + 3600)
+    virada = chaves.proxima_virada(agora)
+    assert virada > agora and (virada % 86400) == 8 * 3600
+    assert chaves.disponivel(0, virada)
 
 
 def test_a_chave_nunca_aparece_na_mensagem_de_erro():

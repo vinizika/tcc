@@ -92,6 +92,10 @@ class Settings(BaseSettings):
     # ligada (HybridQueryClient). A chave vem só do ambiente (.env local,
     # nunca o .env.example) e nunca é registrada em log nem no retrato.
     GEMINI_API_KEY: str = ""
+    # Chaves de reserva, separadas por vírgula (deploy de 19/10): quando a
+    # cota do dia de uma acaba, o atendente passa para a próxima, com o mesmo
+    # modelo. Nunca versionar; só no .env do servidor.
+    GEMINI_API_KEYS: str = ""
     GEMINI_MODEL: str = "gemini-3.5-flash-lite"
     GEMINI_TIMEOUT_S: float = 60.0
     # Espaço mínimo entre chamadas: a cota gratuita tem limite por minuto.

@@ -49,6 +49,61 @@ class Ritmo:
             self._ultimo = time.monotonic()
 
 
+class ChavesGemini:
+    """
+    As chaves do Gemini e quais estão com a cota do dia esgotada (deploy de
+    19/10). A primeira é `GEMINI_API_KEY`; as seguintes, `GEMINI_API_KEYS`
+    (separadas por vírgula). Uma chave marcada como esgotada volta a valer na
+    virada da cota do Google, à meia-noite do Pacífico: 08:00 UTC no horário
+    padrão e 07:00 no de verão — usamos 08:00, que serve aos dois, ao custo de
+    esperar uma hora a mais no verão. O registro é do processo inteiro, para
+    valer também para os clientes criados a cada chamada.
+
+    Trocar de chave não troca de modelo: o modelo e o provedor continuam os
+    mesmos, e a procedência da resposta não muda.
+    """
+
+    _esgotadas: dict[int, float] = {}
+    _trava = threading.Lock()
+
+    @staticmethod
+    def lista(principal: str, extras: str) -> list[str]:
+        chaves = [principal] + (extras or "").split(",")
+        vistas, saida = set(), []
+        for chave in (c.strip() for c in chaves):
+            if chave and chave not in vistas:
+                vistas.add(chave)
+                saida.append(chave)
+        return saida
+
+    @staticmethod
+    def proxima_virada(agora: float) -> float:
+        dia = 86400
+        virada = agora - (agora % dia) + 8 * 3600
+        return virada if virada > agora else virada + dia
+
+    @classmethod
+    def marcar_esgotada(cls, indice: int, agora: float | None = None) -> None:
+        agora = time.time() if agora is None else agora
+        with cls._trava:
+            cls._esgotadas[indice] = cls.proxima_virada(agora)
+
+    @classmethod
+    def disponivel(cls, indice: int, agora: float | None = None) -> bool:
+        agora = time.time() if agora is None else agora
+        with cls._trava:
+            ate = cls._esgotadas.get(indice)
+            if ate is not None and agora >= ate:
+                del cls._esgotadas[indice]
+                return True
+            return ate is None
+
+    @classmethod
+    def esquecer(cls) -> None:
+        with cls._trava:
+            cls._esgotadas.clear()
+
+
 def criar_cliente(api_key: str, timeout_s: float):
     from google import genai
     from google.genai import types

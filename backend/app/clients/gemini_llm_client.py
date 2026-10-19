@@ -11,8 +11,10 @@ tokens e a procedência. Porte do cliente usado na autópsia 2
    é o pipeline, pela configuração, e a troca fica registrada.
 2. **Limite por minuto (429) e falta de capacidade (503)**: espera e tenta de
    novo, com recuo crescente, até um teto.
-3. **Cota do dia esgotada**: `QuotaExhaustedException`, na hora, sem gastar
-   tentativas.
+3. **Cota do dia esgotada**: passa na hora para a próxima chave configurada
+   (`GEMINI_API_KEYS`, deploy de 19/10); quando não sobra nenhuma,
+   `QuotaExhaustedException`, sem gastar tentativas. Trocar de chave não troca
+   de modelo.
 
 Saída inválida duas vezes (JSON quebrado ou fora do formato, inclusive
 resposta vazia) devolve `output=None`, e o pipeline responde INCERTO, como
@@ -25,7 +27,7 @@ from typing import Any, Optional, Type
 
 from pydantic import BaseModel, ValidationError
 
-from app.clients.gemini_common import Ritmo, criar_cliente, eh_cota_diaria, sem_chave
+from app.clients.gemini_common import ChavesGemini, Ritmo, criar_cliente, eh_cota_diaria, sem_chave
 from app.clients.llm_client import LLMCallResult
 from app.core.config import settings
 from app.core.logger import setup_logger
@@ -47,27 +49,58 @@ class GeminiLLMClient:
 
     provider = "gemini"
 
-    def __init__(self, client=None, model: Optional[str] = None, dormir=time.sleep):
+    def __init__(
+        self,
+        client=None,
+        model: Optional[str] = None,
+        dormir=time.sleep,
+        fabrica=criar_cliente,
+    ):
+        # `client` fixo (testes) desliga a troca de chave; sem ele, um cliente
+        # por chave, criado pela `fabrica` quando a chave é usada pela 1ª vez.
         self._client = client
+        self._clientes: dict[int, Any] = {}
+        self._fabrica = fabrica
         self.model = model or settings.GEMINI_MODEL
         self._ritmo = Ritmo(settings.GEMINI_MIN_INTERVAL_S)
         self._dormir = dormir
 
-    def _cliente(self):
-        if self._client is None:
-            if not settings.GEMINI_API_KEY:
-                raise AttendantUnavailableException(
-                    "GEMINI_API_KEY não configurada: o atendente padrão é o "
-                    "Gemini. Defina a chave no .env ou escolha o atendente "
-                    "local (ATTENDANT_PROVIDER=ollama ou o preset local_qwen).",
-                    provider=self.provider,
-                    model=self.model,
-                    reason="missing_api_key",
-                )
-            self._client = criar_cliente(
-                settings.GEMINI_API_KEY, settings.GEMINI_TIMEOUT_S
+    def _chaves(self) -> list[str]:
+        return ChavesGemini.lista(settings.GEMINI_API_KEY, settings.GEMINI_API_KEYS)
+
+    def _cliente(self, indice: int):
+        if self._client is not None:
+            return self._client
+        if indice not in self._clientes:
+            self._clientes[indice] = self._fabrica(
+                self._chaves()[indice], settings.GEMINI_TIMEOUT_S
             )
-        return self._client
+        return self._clientes[indice]
+
+    def _escolher(self) -> int:
+        """A primeira chave com cota no dia."""
+
+        if self._client is not None:
+            return 0
+        chaves = self._chaves()
+        if not chaves:
+            raise AttendantUnavailableException(
+                "GEMINI_API_KEY não configurada: o atendente padrão é o "
+                "Gemini. Defina a chave no .env ou escolha o atendente "
+                "local (ATTENDANT_PROVIDER=ollama ou o preset local_qwen).",
+                provider=self.provider,
+                model=self.model,
+                reason="missing_api_key",
+            )
+        for indice in range(len(chaves)):
+            if ChavesGemini.disponivel(indice):
+                return indice
+        raise QuotaExhaustedException(
+            "A cota diária do Gemini acabou em todas as chaves configuradas.",
+            provider=self.provider,
+            model=self.model,
+            reason="daily_quota",
+        )
 
     def _gerar(self, sistema, usuario, schema, temperatura, seed, max_tokens):
         """Uma chamada, com as esperas do 429 por minuto e do 503."""
@@ -89,9 +122,10 @@ class GeminiLLMClient:
         espera_429, espera_503 = 5.0, 20.0
         n_429 = n_503 = 0
         while True:
+            indice = self._escolher()
             self._ritmo.esperar()
             try:
-                return self._cliente().models.generate_content(
+                return self._cliente(indice).models.generate_content(
                     model=self.model,
                     contents=usuario,
                     config=types.GenerateContentConfig(**config),
@@ -105,12 +139,21 @@ class GeminiLLMClient:
                         reason=f"http_{getattr(erro, 'code', 'erro')}",
                     ) from erro
                 if eh_cota_diaria(erro):
-                    raise QuotaExhaustedException(
-                        "A cota diária do Gemini acabou para esta chave.",
-                        provider=self.provider,
-                        model=self.model,
-                        reason="daily_quota",
-                    ) from erro
+                    if self._client is not None:
+                        raise QuotaExhaustedException(
+                            "A cota diária do Gemini acabou para esta chave.",
+                            provider=self.provider,
+                            model=self.model,
+                            reason="daily_quota",
+                        ) from erro
+                    # Passa para a próxima chave na hora; se não houver,
+                    # `_escolher` levanta a cota esgotada na volta seguinte.
+                    ChavesGemini.marcar_esgotada(indice)
+                    logger.warning(
+                        f"Gemini: cota do dia esgotada na chave {indice + 1} de "
+                        f"{len(self._chaves())}; passando para a seguinte"
+                    )
+                    continue
                 n_429 += 1
                 if n_429 > settings.GEMINI_MAX_RETRIES_429:
                     raise AttendantUnavailableException(
