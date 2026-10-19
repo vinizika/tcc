@@ -67,6 +67,21 @@ de 04/09 (o RAG com a base antiga piorava o resultado em 20 pontos), na
 
 ---
 
+## Versão online
+
+**<https://vetia.chilecentral.cloudapp.azure.com>** — o sistema completo
+(tela, login, triagem por texto e voz, clínicas e encaminhamento) numa máquina
+do Azure for Students.
+
+A máquina **fica desligada quando ninguém está usando**, para não gastar
+crédito: se o endereço não abrir, ela está desligada. Para ligar, entrar em
+<https://portal.azure.com> com a conta da FEI, abrir **vetia-01** e clicar em
+**Iniciar**; em ~2 minutos o site responde. Para desligar, **Parar** no mesmo
+lugar. Ela também se desliga sozinha às 23h. Passo a passo (portal, celular,
+terminal), quem tem acesso e cuidados: [`deploy/README.md`](deploy/README.md#ligar-e-desligar-a-hospedagem).
+
+---
+
 ## Subindo o sistema
 
 Padrão do time: Docker Compose sobe backend, frontend e Ollama juntos, com a

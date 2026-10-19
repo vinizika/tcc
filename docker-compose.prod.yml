@@ -1,0 +1,64 @@
+# Produção (um servidor na internet), por cima do docker-compose.yml:
+#
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+#
+# O que muda em relação ao desenvolvimento:
+# - só o Caddy publica portas (80/443) e emite o certificado HTTPS do DOMAIN;
+#   backend, frontend e Mongo ficam na rede interna do Compose;
+# - o backend roda a imagem (sem bind mount do código) e sem --reload;
+# - o Nginx do frontend usa deploy/nginx.prod.conf (limites de taxa, tamanho
+#   do áudio, cabeçalhos);
+# - o Ollama não sobe por padrão (sem GPU no servidor, o modelo local não
+#   serve; --profile local liga se um dia houver GPU);
+# - o Streamlit legado continua fora (perfil legacy).
+#
+# Variáveis: um único .env na raiz do servidor (copiado de deploy/env.prod.example),
+# que o Compose usa para interpolar DOMAIN e o backend lê como env_file.
+
+services:
+
+  backend:
+    ports: !override []
+    volumes: !override
+      - hf_cache:/root/.cache/huggingface
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+      MONGODB_URI: mongodb://mongo:27017
+      HF_HOME: /root/.cache/huggingface
+      DEBUG: "false"
+      ENVIRONMENT: production
+
+  frontend:
+    ports: !override []
+    volumes:
+      - ./deploy/nginx.prod.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./deploy/proxy-comum.inc:/etc/nginx/conf.d/proxy-comum.inc:ro
+
+  ollama:
+    profiles: ["local"]
+    ports: !override []
+
+  mongo:
+    ports: !override []
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: caddy
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      DOMAIN: "${DOMAIN:?defina DOMAIN no .env, por exemplo 20.1.2.3.sslip.io}"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - frontend
+    restart: unless-stopped
+
+volumes:
+  caddy_data:
+  caddy_config:

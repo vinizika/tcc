@@ -1,0 +1,12 @@
+# Caddy: HTTPS automático (Let's Encrypt) para o DOMAIN e proxy para o Nginx do
+# frontend, que serve o React e repassa /api/ ao backend com os limites de
+# deploy/nginx.prod.conf. O redirecionamento HTTP -> HTTPS é automático.
+{$DOMAIN} {
+	encode zstd gzip
+	reverse_proxy frontend:80 {
+		# A pré-triagem pode esperar o Gemini por mais de um minuto.
+		transport http {
+			read_timeout 660s
+		}
+	}
+}

@@ -125,9 +125,10 @@ aqui.
 | [B-75](#b-75) | Decidir os direitos das capturas da VCA e das páginas com todos os direitos reservados | A definir | Média | Aberto |
 | [B-76](#b-76) | O manifesto da coleção de fichas identifica o arquivo inteiro, e não só o que foi indexado | A definir | Baixa | Aberto |
 | [B-77](#b-77) | O Gemini muda de decisão entre dias com a mesma entrada | A definir | Média | Aberto |
-| [B-78](#b-78) | Exposição antes de hospedar: rotas sem identidade, portas publicadas, sem limites | A definir | Média | Aberto |
+| [B-78](#b-78) | Exposição antes de hospedar: rotas sem identidade, portas publicadas, sem limites | A definir | Média | Em andamento — no deploy de 19/10 só 80/443 ficam expostas e há limite por IP; identidade, `num_ctx` e log seguem |
 | [B-79](#b-79) | O catálogo de perguntas do fluxo conversacional não passou por veterinário nem foi medido em casos não vistos | A definir | Média | Aberto |
 | [B-80](#b-80) | Dívida da segunda etapa: documentação divergente, coleção da POC sem receita, código morto | A definir | Baixa | Aberto |
+| [B-81](#b-81) | Num servidor sem GPU, escolher o modelo local dá erro genérico na tela e 500 no `/chat/` | A definir | Baixa | Aberto |
 
 ---
 
@@ -3122,6 +3123,17 @@ Ollama só em loopback (o Nginx já faz o proxy); teto de `num_ctx` no servidor;
 retenção e exclusão. Critério: um clone limpo subindo pelo Compose não expõe
 nada além da porta 3000, e nenhuma rota consome chave paga sem identidade.
 
+**Atualização 19/10 — deploy na internet ([rodada 32 do João](joao/2026-10-19-33-deploy-na-internet.md)).** O
+`docker-compose.prod.yml` resolve a parte de rede no servidor: só o Caddy
+publica portas (80/443); backend, Mongo e Ollama ficam fechados; o Nginx de
+produção limita `/chat/`, `/voice/` e `/clinics/` a 12 pedidos por minuto por IP
+e o resto da API a 120, com `client_max_body_size 25m`. Continua aberto: as
+rotas acima seguem sem identidade (a triagem avulsa do `/chat/` gasta cota do
+Gemini de quem tiver o link), o teto de `num_ctx`, o relato no log em INFO, o
+CNPJ em claro e a exclusão. Os acessos rápidos, ligados no deploy como na POC
+local, são contas compartilhadas: quem entra por eles vê o que os outros
+fizeram por eles.
+
 ### B-79
 
 **O catálogo de perguntas do fluxo conversacional não passou por veterinário nem foi medido em casos não vistos**
@@ -3185,6 +3197,27 @@ de divergência que faz quem for operar o sistema seguir a doc e errar.
 corrigir as quatro frases da documentação; apagar o código morto; um lugar só
 para o catálogo. Critério: `docs/` e `.env.example` sem afirmação que o código
 contradiga.
+
+### B-81
+
+**Num servidor sem GPU, escolher o modelo local dá erro genérico na tela e 500 no `/chat/`**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 32](joao/2026-10-19-33-deploy-na-internet.md), 19/10 · **Responsável:** A definir · **Prioridade:** Baixa · **Status:** Aberto
+
+**O que observamos.** No deploy o Ollama não sobe (não há GPU), mas a tela
+continua oferecendo o modelo local. Escolhido, o cliente do Ollama levanta
+`ConnectionError`, que não vira `AttendantUnavailableException`: no workspace a
+conversa falha com "Não conseguimos concluir a análise. Seu relato está salvo."
+(o aviso genérico, não o de serviço indisponível) e o `/chat/` responde 500 com
+"Erro interno do servidor". Nada se perde e nada troca de modelo em silêncio.
+
+**Por que importa.** Pouco: o padrão é o Gemini. Mas quem testar o seletor de
+IA na versão online vê um erro que parece defeito, não indisponibilidade.
+
+**O que resolveria.** Tratar a falha de conexão com o Ollama como atendente
+indisponível (motivo próprio) ou esconder a opção quando o Ollama não responde.
+Critério: na versão online, escolher o modelo local mostra a mensagem de serviço
+indisponível, e o `/chat/` responde 503 `attendant_unavailable`.
 
 ---
 
