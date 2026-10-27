@@ -75,7 +75,69 @@ Se passar, a recomendação ao João é tornar `v2_suficiencia` o padrão do app
 
 ## Resultado obtido
 
-_A medir em 07/10._
+Medido em 07/10, pela API, com o Gemini (`gemini-3.5-flash-lite`), todas as
+linhas com status `ok`. Depois dos três comandos previstos, rodei **dois
+controles** que o plano não tinha, para separar o efeito da regra da variação do
+Gemini entre dias ([B-77](../backlog.md#b-77)): o `v1_grounded` na calibração
+**no mesmo dia** (a comparação prevista era com a rodada 18, de 05/10) e uma
+**segunda repetição** da bateria com as duas versões.
+
+### A bateria de frases vagas
+
+| Grupo | `v1_grounded` (1ª · 2ª repetição) | `v2_suficiencia` (1ª · 2ª) | Critério do v2 |
+|---|---|---|---|
+| 14 vagas → INCERTO | 12 · 13 | **14 · 14** | ≥ 12 ✅ |
+| 4 curtas graves → EMERGENCIA | 4 · 4 | **4 · 4** | 4 ✅ |
+| 4 curtas leves → NAO_EMERGENCIA | 4 · 4 | **4 · 4** | ≥ 3 ✅ |
+
+Os erros do `v1_grounded`, todos para NAO_EMERGENCIA sem pergunta: **v01 "Oi, meu
+cachorro tá vomitando e eu tô preocupado"** (o q180 da rodada 21) nas duas
+repetições, e v13 "Meu cachorro comeu uma coisa que achou na rua" na primeira.
+
+**O resultado esperado do v1 estava errado, para melhor:** eu esperava "poucas"
+vagas viradas INCERTO, e o v1 já acerta 12 a 13 das 14. O problema é mais
+estreito do que a rodada 21 sugeria: está concentrado em vômito e "comeu algo",
+justamente onde um NAO_EMERGENCIA errado pode esconder um corpo estranho ou
+uma intoxicação.
+
+### A calibração da prova 2 (66), no mesmo dia
+
+| Versão | Emergências perdidas | Falsos alarmes | INCERTO falsos |
+|---|---|---|---|
+| `v1_grounded` (07/10) | 0 de 40 | 1 de 24 | 1 |
+| **`v2_suficiencia`** (07/10) | **0 de 40** | **0 de 24** | **1** |
+
+Critério: 0 emergências perdidas ✅ e no máximo 2 INCERTO falsos a mais ✅
+(nenhum a mais). Mudaram 2 casos, os mesmos dois erros da rodada 18:
+
+- **q186 (primeiro cio, tutora aflita):** INCERTO → **NAO_EMERGENCIA**, certo;
+- **q118 (mordida de gambá, vacina vencida):** EMERGENCIA → INCERTO. Continua
+  errado (é leve), mas passou de falso alarme a pedido de mais informação.
+
+Rodadas citadas:
+[`20261007-221812_r23_vagas_v1`](../../data/evaluation/cited/20261007-221812_r23_vagas_v1/report.md) ·
+[`20261007-222005_r23_vagas_v2`](../../data/evaluation/cited/20261007-222005_r23_vagas_v2/report.md) ·
+[`20261007-224327_r23_vagas_v1_rep2`](../../data/evaluation/cited/20261007-224327_r23_vagas_v1_rep2/report.md) ·
+[`20261007-224646_r23_vagas_v2_rep2`](../../data/evaluation/cited/20261007-224646_r23_vagas_v2_rep2/report.md) ·
+[`20261007-223852_r23_calib_v1`](../../data/evaluation/cited/20261007-223852_r23_calib_v1/report.md) ·
+[`20261007-222308_r23_calib_v2`](../../data/evaluation/cited/20261007-222308_r23_calib_v2/report.md)
+(conferido: a chave do Gemini não aparece em nenhum arquivo).
+
+## Conclusão
+
+**O `v2_suficiencia` passa em todos os critérios escritos antes**, nas duas
+repetições: as frases vagas passam a pedir mais informação, os controles graves
+e leves não mudam, e na calibração nada piora (2 erros do v1 viram 1).
+
+**Recomendação ao João (dono do prompt de triagem):** tornar o `v2_suficiencia`
+o padrão do app, com uma linha no `.env` (`WORKSPACE_PROMPT_VERSION=v2_suficiencia`)
+ou mudando o padrão da setting. O padrão do runner (`TRIAGE_PROMPT_VERSION`)
+pode continuar no `v1_grounded` até a matriz final, para não misturar com as
+rodadas citadas.
+
+**Limites:** a bateria tem 22 frases escritas por mim e não validadas por
+veterinário; a calibração tem 66 casos, poucos para ver diferenças pequenas; o
+teste lacrado da prova 2 não foi usado.
 
 ## O que mudou no repositório
 
@@ -97,4 +159,4 @@ ainda tem os valores antigos (llama e tradutor ligado); com as variáveis do
 
 ## Próximo passo
 
-Medir em 07/10 com os comandos acima e levar o resultado ao João.
+Levar o resultado ao João, com a recomendação de ligar o `v2_suficiencia` no app.
