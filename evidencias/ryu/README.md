@@ -40,6 +40,7 @@ Rewriting, Multi-Query, HyDE e a transcrição de voz (Whisper).
 | 23 | 06/10 | [Frase vaga pede mais informação](2026-10-06-23-frase-vaga-pede-mais-informacao.md) | Prompt `v2_suficiencia` (proposta ao B2, desligado), app lendo a versão de `WORKSPACE_PROMPT_VERSION`, preset `producao_suficiencia` e a bateria `aberturas_vagas.csv` (14 vagas + 8 controles). **Medido em 07/10: passa em tudo**, nas duas repetições — vagas → INCERTO 14/14 (v1: 12–13), controles graves e leves intactos, calibração com 0 perdidas e 1 erro a menos. Recomendado ao João ligar no app. Backend em 344 |
 | 24 | 06/10 | [Sexo, castração e gestação no cadastro](2026-10-06-24-sexo-castracao-e-gestacao-no-cadastro.md) | Três campos opcionais no app, que vão à IA, à seleção de pergunta e ao resumo enviado à clínica; pets antigos geram o mesmo texto. Conferido no navegador. Backend em 346 |
 | 25 | 06/10 | [Remove o cadastro antigo do Supabase](2026-10-06-25-remove-cadastro-antigo-do-supabase.md) | `/tutors` e `/pets` saem; `tutor_id`/`pet_id` do `/chat/` viram `save_history`; o Supabase fica só como login do modo real. B-56 obsoleto. Backend em 313 |
+| 26 | 26/10 | [Métricas de classificação para o relatório](2026-10-26-26-metricas-de-classificacao.md) | A pedido do orientador: acurácia, acurácia balanceada, sensibilidade, especificidade, precisão e F1, calculadas das previsões já registradas (sem chamada nova). Sistema (fichas + Gemini) nos relatos independentes: acurácia balanceada 0,928, sensibilidade 0,921, F1 0,940. Lote teste da prova 2 não usado |
 
 ## Estado atual
 
