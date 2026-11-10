@@ -377,6 +377,12 @@ class FingerprintService:
                 "v2_suficiencia_sha256": _sha256(
                     triage.com_regra_de_suficiencia(triage.SISTEMA_ANCORADO)
                 ),
+                # Só vale quando o app manda documentos ou conversas
+                # anteriores do animal (rodada 34 do João); os hashes acima
+                # não mudam com ela.
+                "v1_grounded_com_historico_sha256": _sha256(
+                    triage.com_regra_de_historico(triage.SISTEMA_ANCORADO)
+                ),
                 # O formato do bloco de contexto (cabeçalho, numeração, título
                 # + texto, marcador de encaminhamento, teto de caracteres),
                 # medido num documento fixo: muda se o molde mudar.

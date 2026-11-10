@@ -330,6 +330,7 @@ class ChatPipeline:
         config: EffectiveConfig,
         rewritten: str | None = None,
         animal_context: str | None = None,
+        animal_records: str | None = None,
     ):
         """
         Classifica a urgência do caso a partir do relato e dos trechos.
@@ -351,6 +352,7 @@ class ChatPipeline:
             config,
             rewritten,
             animal_context,
+            animal_records,
         )
 
         chamada = dict(
@@ -477,6 +479,7 @@ class ChatPipeline:
         animal_context: str | None = None,
         *,
         retrieval_question: str | None = None,
+        animal_records: str | None = None,
     ) -> PipelineResult:
 
         start = time.perf_counter()
@@ -535,6 +538,7 @@ class ChatPipeline:
                 config,
                 plan.rewritten,
                 animal_context,
+                animal_records,
             )
 
             answer = render(triage)
