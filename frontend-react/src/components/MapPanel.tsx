@@ -140,7 +140,7 @@ export function MapPanel({
       </div>
     );
   return (
-    <div className="map-wrap">
+    <div className={"map-wrap" + (error ? " failed" : "")}>
       <div
         className="map"
         ref={ref}

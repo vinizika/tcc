@@ -61,6 +61,25 @@ export function ClinicFinder({
       setBusy(false);
     }
   }
+  // Um toque no mapa mostra o cartão da clínica: no celular a lista fica
+  // embaixo do mapa, e a seleção acontecia fora da tela.
+  function selectFromMap(id: string) {
+    setSelected(id);
+    const reduce = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    requestAnimationFrame(() =>
+      document.getElementById("place-" + id)?.scrollIntoView({
+        behavior: reduce ? "auto" : "smooth",
+        block: "center",
+      }),
+    );
+  }
+  function goToParticipants() {
+    document
+      .getElementById("unidades-participantes")
+      ?.scrollIntoView({ block: "start" });
+  }
   function locate() {
     if (!navigator.geolocation) {
       setError("Localização indisponível. Use CEP, endereço ou referência.");
@@ -140,6 +159,13 @@ export function ClinicFinder({
           </label>
         </div>
       )}
+      {result && participants.length > 0 && (
+        <button className="text-button jump-link" onClick={goToParticipants}>
+          {session.principal.demo
+            ? "Ir para as unidades fictícias que recebem o caso ↓"
+            : "Ir para as unidades participantes ↓"}
+        </button>
+      )}
       {result && center ? (
         <>
           <div className="finder-grid">
@@ -168,7 +194,7 @@ export function ClinicFinder({
               clinics={result.clinics}
               center={center}
               selected={selected}
-              onSelect={setSelected}
+              onSelect={selectFromMap}
               mode={result.mode}
             />
           </div>
@@ -188,7 +214,7 @@ export function ClinicFinder({
         )
       )}
       {participants.length > 0 && (
-        <section className="academic-units">
+        <section className="academic-units" id="unidades-participantes">
           <p className="eyebrow">
             {session.principal.demo
               ? "Ambiente acadêmico separado"
@@ -247,7 +273,10 @@ function ClinicCard({
   canShare: boolean;
 }) {
   return (
-    <article className={"place-card " + (selected ? "selected" : "")}>
+    <article
+      id={"place-" + c.id}
+      className={"place-card " + (selected ? "selected" : "")}
+    >
       <button className="place-select" onClick={onSelect}>
         <span className="place-number">{number}</span>
         <span>

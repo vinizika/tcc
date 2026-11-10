@@ -22,6 +22,20 @@ export function ClinicDashboard({
   const [tab, setTab] = useState("summary");
   const selectedId = useRef<string | null>(null);
   selectedId.current = selected?.id || null;
+  const detail = useRef<HTMLElement>(null);
+  const [opened, setOpened] = useState(0);
+  useEffect(() => {
+    // Numa coluna só (celular), o detalhe fica abaixo da fila inteira: ao
+    // escolher um caso, a tela desce até ele. A atualização a cada 8 s não rola.
+    if (!opened || !window.matchMedia("(max-width: 760px)").matches) return;
+    const reduce = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    detail.current?.scrollIntoView({
+      behavior: reduce ? "auto" : "smooth",
+      block: "start",
+    });
+  }, [opened]);
   const allowed = session.principal.clinic_verified;
   const token = session.access_token;
   async function load() {
@@ -202,6 +216,7 @@ export function ClinicDashboard({
                           try {
                             setSelected(await api.referral(r.id, token));
                             setTab("summary");
+                            setOpened((n) => n + 1);
                           } catch (e) {
                             setError(errorText(e));
                           }
@@ -250,7 +265,7 @@ export function ClinicDashboard({
                     )}
                   </div>
                 </section>
-                <section className="case-workspace">
+                <section className="case-workspace" ref={detail}>
                   {!selected ? (
                     <div className="detail-empty empty-state">
                       <Icon name="clinic" size={44} />

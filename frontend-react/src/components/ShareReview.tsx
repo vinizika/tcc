@@ -96,7 +96,13 @@ export function ShareReview({
           </label>
           <div className="auto-summary">
             <p className="eyebrow">Pré-triagem automática</p>
-            <strong>{triage.classificacao.replaceAll("_", " ")}</strong>
+            <strong>
+              {triage.classificacao === "EMERGENCIA"
+                ? "Sinalizado como emergência"
+                : triage.classificacao === "INCERTO"
+                  ? "Avaliação incerta"
+                  : "Orientação inicial"}
+            </strong>
             <p>{triage.justificativa}</p>
           </div>
           <p className="tiny">

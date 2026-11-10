@@ -129,6 +129,8 @@ aqui.
 | [B-79](#b-79) | O catálogo de perguntas do fluxo conversacional não passou por veterinário nem foi medido em casos não vistos | A definir | Média | Aberto |
 | [B-80](#b-80) | Dívida da segunda etapa: documentação divergente, coleção da POC sem receita, código morto | A definir | Baixa | Aberto |
 | [B-81](#b-81) | Num servidor sem GPU, escolher o modelo local dá erro genérico na tela e 500 no `/chat/` | A definir | Baixa | Aberto |
+| [B-82](#b-82) | As respostas saem sem acento porque a ficha de leitura vem sem acento do mapa | A definir | Baixa | Aberto |
+| [B-83](#b-83) | Responsividade: teclado virtual em aparelho real não conferido; varredura fora do repositório | A definir | Baixa | Aberto |
 
 ---
 
@@ -3225,6 +3227,48 @@ IA na versão online vê um erro que parece defeito, não indisponibilidade.
 indisponível (motivo próprio) ou esconder a opção quando o Ollama não responde.
 Critério: na versão online, escolher o modelo local mostra a mensagem de serviço
 indisponível, e o `/chat/` responde 503 `attendant_unavailable`.
+
+### B-82
+
+**As respostas saem sem acento porque a ficha de leitura vem sem acento do mapa**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 33](joao/2026-11-09-34-pente-fino-de-responsividade.md), 09/11 · **Responsável:** A definir · **Prioridade:** Baixa · **Status:** Aberto
+
+**O que observamos.** Na tela, a orientação aparece como "Procure um veterinario
+imediatamente", "coracao acelerado", "ingestao de chocolate amargo com agitacao".
+O modelo espelha o que lê: em `backend/data/fichas.json`, o `reading_title` e o
+`reading_text` (a ficha de leitura, gerada do mapa de assuntos) estão sem
+acento, e só o `search_text` tem acento.
+
+**Por que importa.** Não muda a decisão, mas é o texto que o tutor e a banca
+leem. Português sem acento numa orientação de saúde passa descuido.
+
+**O que resolveria.** Acentuar a ficha de leitura na origem (o mapa), na mesma
+rodada que levar o conteúdo certificado para ele ([B-61](#b-61)): muda o texto
+que o modelo lê, então é rodada medida contra a réplica. Critério: nenhuma
+palavra sem acento nas respostas dos lotes de desenvolvimento, com as decisões
+iguais às de hoje dentro da variação do Gemini.
+
+### B-83
+
+**Responsividade: teclado virtual em aparelho real não conferido; varredura fora do repositório**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 33](joao/2026-11-09-34-pente-fino-de-responsividade.md), 09/11 · **Responsável:** A definir · **Prioridade:** Baixa · **Status:** Aberto
+
+**O que observamos.** A varredura da rodada 33 cobre 37 telas em 26 tamanhos e
+três motores, mas roda em emulação: o teclado virtual do iPhone e do Android não
+existe nela (foi simulada só a tela encolhendo 300 px). O script, os dados de
+teste e as folhas de contato estão nas notas do João, fora do repositório.
+
+**Por que importa.** A caixa de envio presa embaixo é a peça que mais depende do
+teclado real. E sem a varredura no repositório, a próxima mudança de layout não
+tem como ser conferida do mesmo jeito por outra pessoa.
+
+**O que resolveria.** Dois minutos na versão online, num iPhone e num Android:
+abrir uma conversa, tocar no campo, digitar três linhas e enviar. E, se o dono do
+frontend quiser, trazer a varredura para `frontend-react/tests` como teste
+opcional. Critério: o campo e o botão de enviar visíveis com o teclado aberto nos
+dois aparelhos.
 
 ---
 

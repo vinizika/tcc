@@ -242,8 +242,19 @@ small,
 }
 .form-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
+}
+/* Sem isto, um campo largo empurra a grade para fora da tela no Safari e no
+   Firefox (rolagem horizontal no cadastro e na revisão do envio). */
+.form-grid > *,
+.review-columns > *,
+.case-columns > *,
+.finder-grid > *,
+.dashboard-grid > *,
+.metrics > *,
+.pet-grid > * {
+  min-width: 0;
 }
 .span-2 {
   grid-column: 1/-1;
@@ -351,6 +362,16 @@ small,
   flex-direction: column;
   overflow: hidden;
   position: relative;
+}
+/* Com um formulário longo à direita (criar conta), a apresentação fica na
+   tela em vez de descer junto. Só em duas colunas e com altura para caber. */
+@media (min-width: 761px) and (min-height: 720px) {
+  .entry-story {
+    position: sticky;
+    top: 0;
+    height: 100dvh;
+    align-self: start;
+  }
 }
 .entry-copy {
   margin: auto 0;
@@ -536,6 +557,11 @@ small,
   padding: 18px;
   background: var(--sage);
   border-radius: 12px;
+  /* O painel de entrada é sempre estreito: uma coluna só. */
+  grid-template-columns: minmax(0, 1fr);
+}
+.auth-form .form-grid .span-2 {
+  grid-column: auto;
 }
 .auth-form .error {
   margin: 0;
@@ -556,6 +582,8 @@ small,
   top: 0;
   display: flex;
   flex-direction: column;
+  /* Em janelas baixas (celular deitado), o "Sair" ficava fora de alcance. */
+  overflow-y: auto;
 }
 .sidebar > .brand {
   margin: 0 10px 36px;
@@ -573,6 +601,7 @@ small,
 }
 .sidebar nav button {
   justify-content: flex-start;
+  text-align: left;
   border: 0;
   background: transparent;
   color: #53664f;
@@ -587,7 +616,7 @@ small,
   background: #e5ecdf;
 }
 .history-label {
-  font-size: 10px;
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.11em;
   color: #74826e;
@@ -622,7 +651,7 @@ small,
   font-weight: 450;
 }
 .history-list button small {
-  font-size: 10px;
+  font-size: 11px;
 }
 .history-list button:hover,
 .history-list button.active {
@@ -659,7 +688,7 @@ small,
 }
 .sidebar-profile small {
   display: block;
-  font-size: 10px;
+  font-size: 11px;
 }
 .sidebar-profile .icon-button {
   width: 34px;
@@ -703,7 +732,8 @@ small,
   font-size: 12px;
   max-width: 240px;
 }
-.mobile-menu {
+.mobile-menu,
+.drawer-backdrop {
   display: none;
 }
 .workspace-main > .error {
@@ -819,7 +849,7 @@ small,
   transform: rotate(6deg);
 }
 .chat-welcome .eyebrow {
-  font-size: 10px;
+  font-size: 11px;
 }
 .chat-welcome h1 {
   font-size: 40px;
@@ -846,13 +876,47 @@ small,
   border-radius: 30px;
   background: #fffefa;
 }
-.composer-wrap {
+.composer-settings {
   margin-top: auto;
-  padding: 20px 0 24px;
+  padding-top: 20px;
+  /* Espaço do esmaecimento da caixa de envio, para não cobrir o aviso. */
+  padding-bottom: 18px;
+}
+/* "Análise por" e o seletor na mesma linha: menos altura entre a última
+   resposta e a caixa de envio. */
+.composer-settings label {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+.composer-settings select {
+  flex: 1;
+  min-width: 0;
+  padding: 9px 12px;
+}
+.composer-settings > p {
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 10px 0 0;
+}
+.composer-wrap {
+  padding: 14px 0 24px;
   background: #fafbf8;
   position: sticky;
   bottom: 0;
   z-index: 2;
+}
+/* O texto que passa por baixo da caixa some aos poucos, sem corte seco. */
+.composer-wrap::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -18px;
+  height: 18px;
+  background: linear-gradient(#fafbf800, #fafbf8);
+  pointer-events: none;
 }
 .composer {
   padding: 14px 18px 10px;
@@ -871,12 +935,16 @@ small,
     0 7px 28px #254b3310;
 }
 .composer textarea {
+  display: block;
   width: 100%;
   border: 0;
   padding: 4px 0;
-  resize: vertical;
+  /* A altura acompanha o texto (TutorFlow); passou do teto, rola por dentro. */
+  resize: none;
+  overflow-y: auto;
   min-height: 64px;
-  max-height: 240px;
+  /* Teto em linhas inteiras, para a última linha visível não sair cortada. */
+  max-height: calc(1.65em * 9 + 8px);
   font-size: 15px;
   background: none;
 }
@@ -911,16 +979,18 @@ small,
   opacity: 1;
 }
 .chat-disclaimer {
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.8;
   text-align: center;
   color: #788275;
   margin: 13px 0 0;
 }
 .chat-disclaimer .text-button {
-  font-size: 10px;
+  font-size: 11px;
   min-height: 20px;
-  padding: 0;
+  /* Área de toque maior sem mudar a altura da linha. */
+  padding: 11px 6px;
+  margin: -11px -6px;
 }
 .chat-messages {
   padding-top: 32px;
@@ -929,6 +999,8 @@ small,
 .chat-message {
   margin: 0 0 30px;
   animation: page-enter 0.22s ease-out;
+  /* Folga ao rolar até o começo de uma resposta (TutorFlow). */
+  scroll-margin-top: 16px;
 }
 .chat-message.tutor {
   max-width: 85%;
@@ -946,7 +1018,7 @@ small,
   margin-bottom: 10px;
 }
 .message-author time {
-  font-size: 10px;
+  font-size: 11px;
   color: var(--muted);
   font-weight: 400;
   margin-left: auto;
@@ -1092,6 +1164,11 @@ small,
   font-size: 12px;
   white-space: nowrap;
 }
+.jump-link {
+  margin: -4px 0 12px;
+  font-size: 13px;
+  text-align: left;
+}
 .finder-grid {
   display: grid;
   grid-template-columns: minmax(290px, 0.9fr) 1.15fr;
@@ -1211,6 +1288,8 @@ small,
   border-top: 1px solid var(--line);
   margin-top: 40px;
   padding-top: 32px;
+  /* O atalho para cá não pode parar embaixo do cabeçalho fixo do celular. */
+  scroll-margin-top: 80px;
 }
 .academic-units h2 {
   font-size: 23px;
@@ -1333,6 +1412,9 @@ small,
   font-size: 11px;
   color: var(--muted);
 }
+.referral-chat .section-heading {
+  flex-wrap: nowrap;
+}
 .referral-chat .section-heading h2 {
   font-size: 21px;
 }
@@ -1371,7 +1453,7 @@ small,
   margin: 6px 0;
 }
 .human-message time {
-  font-size: 10px;
+  font-size: 11px;
   color: var(--muted);
 }
 .human-composer {
@@ -1401,6 +1483,16 @@ small,
   height: 100%;
   width: 100%;
 }
+/* Mapa que não carregou: só o aviso, sem empurrar a lista para baixo. */
+.map-wrap.failed {
+  height: 96px;
+  min-height: 0;
+  position: relative;
+  top: auto;
+}
+.map-wrap.failed .map-overlay {
+  padding: 12px 20px;
+}
 .map-overlay {
   position: absolute;
   inset: 0;
@@ -1422,7 +1514,11 @@ small,
 @media (max-width: 1100px) {
   .map-wrap {
     height: 340px;
-    position: static;
+    /* "relative", não "static": o aviso do mapa (.map-overlay, absoluto) tem
+       de ficar dentro do mapa. Com "static" ele cobria a página inteira
+       enquanto o mapa carregava, e para sempre quando o mapa falhava. */
+    position: relative;
+    top: auto;
     grid-row: 1;
   }
 }
@@ -1445,7 +1541,7 @@ small,
 }
 .clinic-profile small {
   display: block;
-  font-size: 10px;
+  font-size: 11px;
 }
 .dashboard-shell {
   padding: 34px 4% 60px;
@@ -1535,7 +1631,7 @@ small,
   margin-bottom: 14px;
 }
 .queue-item time {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 400;
   color: var(--muted);
 }
@@ -1551,7 +1647,7 @@ small,
 }
 .triage-label {
   display: inline-block;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
   color: var(--muted);
 }
@@ -1566,7 +1662,7 @@ small,
   border-radius: 20px;
   background: #eff2ed;
   color: #5c6d55;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 550;
   white-space: nowrap;
 }
@@ -1675,7 +1771,7 @@ small,
   margin: 8px 0;
 }
 .transcript-message time {
-  font-size: 10px;
+  font-size: 11px;
   color: var(--muted);
 }
 .transcript-message.assistant strong {
@@ -1761,7 +1857,7 @@ small,
   }
   .floating-tag {
     padding: 10px;
-    font-size: 10px;
+    font-size: 11px;
   }
   .tag-one {
     left: -15px;
@@ -1776,7 +1872,8 @@ small,
     flex-basis: 100%;
   }
 }
-@media (max-width: 760px) {
+/* Celular, em pé ou deitado (deitado: baixo e até 1100 px de largura). */
+@media (max-width: 760px), (max-height: 520px) and (max-width: 1100px) {
   .entry {
     grid-template-columns: 1fr;
   }
@@ -1825,11 +1922,33 @@ small,
     height: calc(100dvh - 72px);
     width: 280px;
     transform: translateX(-100%);
-    transition: transform 0.2s ease;
+    /* Fechada, sai também da ordem do teclado e do leitor de tela. */
+    visibility: hidden;
+    transition:
+      transform 0.2s ease,
+      visibility 0s linear 0.2s;
     box-shadow: 8px 0 40px #193b2a14;
   }
   .sidebar.mobile-open {
     transform: translateX(0);
+    visibility: visible;
+    transition: transform 0.2s ease;
+  }
+  .drawer-backdrop {
+    display: block;
+    position: fixed;
+    inset: 72px 0 0 0;
+    z-index: 19;
+    width: auto;
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: #17332a3d;
+    cursor: default;
+  }
+  .drawer-backdrop:hover {
+    background: #17332a3d;
   }
   .sidebar > .brand {
     display: none;
@@ -1844,7 +1963,7 @@ small,
   }
   .mobile-menu {
     display: inline-flex;
-    width: 36px;
+    width: 44px;
   }
   .header-context {
     font-size: 11px;
@@ -1857,9 +1976,12 @@ small,
     padding-left: 9px;
     gap: 3px;
   }
+  .pet-switch {
+    min-width: 0;
+  }
   .pet-switch select {
-    max-width: 170px;
-    font-size: 10px;
+    max-width: 190px;
+    font-size: 16px;
     padding: 9px 0;
   }
   .pet-switch > svg {
@@ -1884,21 +2006,42 @@ small,
     gap: 7px;
   }
   .chat-prompts button {
-    font-size: 10px;
+    font-size: 12px;
   }
   .welcome-symbol {
     width: 55px;
     height: 55px;
     margin-bottom: 19px;
   }
+  .composer-settings {
+    padding-top: 16px;
+  }
   .composer-wrap {
-    padding: 12px 0 16px;
+    padding: 8px 0 10px;
+  }
+  .composer {
+    padding: 10px 12px 6px;
+    border-radius: 16px;
   }
   .composer textarea {
-    font-size: 14px;
+    font-size: 16px;
+    min-height: 48px;
+    max-height: calc(1.65em * 6 + 8px);
+  }
+  .chat-message {
+    scroll-margin-top: 84px;
+  }
+  .composer-settings > p {
+    font-size: 12px;
+    line-height: 1.5;
   }
   .chat-disclaimer {
-    font-size: 9px;
+    font-size: 11px;
+    line-height: 1.5;
+    margin-top: 8px;
+  }
+  .chat-disclaimer .text-button {
+    font-size: 11px;
   }
   .content-page,
   .finder,
@@ -1928,7 +2071,7 @@ small,
     padding-left: 12px;
   }
   .location-search input {
-    font-size: 12px;
+    font-size: 16px;
   }
   .finder-caption {
     flex-direction: column;
@@ -1972,7 +2115,7 @@ small,
     gap: 7px;
   }
   .clinic-profile small {
-    font-size: 9px;
+    font-size: 11px;
   }
   .dashboard-shell {
     padding: 24px 20px;
@@ -1988,13 +2131,18 @@ small,
     gap: 10px;
   }
   .metrics article {
-    padding: 17px;
+    padding: 14px 16px;
+  }
+  .metrics article p {
+    font-size: 12px;
+    margin-bottom: 6px;
   }
   .metrics article strong {
-    font-size: 32px;
+    font-size: 26px;
+    margin-bottom: 4px;
   }
   .metrics article small {
-    font-size: 10px;
+    font-size: 11px;
   }
   .dashboard-grid {
     grid-template-columns: 1fr;
@@ -2036,6 +2184,7 @@ small,
   .human-composer input {
     flex: 1;
     min-width: 150px;
+    font-size: 16px;
   }
   .source-block {
     font-size: 13px;
@@ -2045,6 +2194,121 @@ small,
   }
   .message-content {
     font-size: 14px;
+  }
+}
+/* Celular deitado: a caixa de envio deixa de ficar presa, para sobrar tela
+   para ler; o cabeçalho fica mais baixo. */
+@media (max-height: 520px) and (max-width: 1100px) {
+  .workspace-header {
+    height: 56px;
+  }
+  .sidebar {
+    top: 56px;
+    height: calc(100dvh - 56px);
+  }
+  .drawer-backdrop {
+    inset: 56px 0 0 0;
+  }
+  .chat-page {
+    min-height: calc(100dvh - 56px);
+  }
+  .composer-wrap {
+    position: relative;
+  }
+  .composer-wrap::before {
+    display: none;
+  }
+  .chat-message {
+    scroll-margin-top: 68px;
+  }
+  .chat-welcome {
+    min-height: 0;
+    padding: 16px 0 4px;
+  }
+  .chat-welcome .welcome-symbol,
+  .chat-welcome > p:not(.eyebrow) {
+    display: none;
+  }
+  .chat-welcome h1 {
+    margin-bottom: 8px;
+  }
+}
+/* Tela inicial em telas baixas (notebook, celular pequeno): o que é enfeite
+   ou atalho sai aos poucos, para o título, o seletor de IA com o aviso e o
+   campo de texto caberem na primeira tela, sem nada atrás da caixa presa. */
+@media (max-height: 800px) {
+  .chat-welcome {
+    min-height: 0;
+    padding: 12px 0 8px;
+  }
+  .chat-welcome .welcome-symbol {
+    display: none;
+  }
+}
+@media (max-height: 700px) {
+  .chat-prompts {
+    display: none;
+  }
+}
+@media (max-height: 600px) {
+  .chat-welcome {
+    padding: 8px 0 2px;
+  }
+  .chat-welcome > p:not(.eyebrow) {
+    display: none;
+  }
+  .chat-welcome h1 {
+    margin-bottom: 8px;
+  }
+}
+@media (max-height: 520px) {
+  .chat-welcome .eyebrow {
+    display: none;
+  }
+}
+/* Telas baixas: o campo de texto cresce menos, para sobrar conversa. */
+@media (max-height: 700px) {
+  .composer textarea {
+    max-height: calc(1.65em * 5 + 8px);
+  }
+}
+@media (max-height: 600px) {
+  .composer textarea {
+    max-height: calc(1.65em * 4 + 8px);
+  }
+}
+@media (max-height: 520px) {
+  .composer textarea {
+    max-height: calc(1.65em * 3 + 8px);
+  }
+}
+@media (max-width: 480px) {
+  .workspace-header .header-context {
+    display: none;
+  }
+  /* Sem o "+", duas sugestões cabem por linha. */
+  .chat-prompts button svg {
+    display: none;
+  }
+}
+/* Telas de toque de qualquer largura (celular e tablet). */
+@media (pointer: coarse), (max-width: 760px) {
+  /* Campos com menos de 16 px fazem o Safari do iPhone dar zoom ao tocar. */
+  input:not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea,
+  .composer textarea,
+  .location-search input,
+  .human-composer input,
+  .pet-switch select {
+    font-size: 16px;
+  }
+  summary {
+    padding: 10px 0;
+  }
+  .sidebar-profile .icon-button {
+    width: 44px;
+    padding: 10px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

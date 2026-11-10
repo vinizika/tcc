@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { api, errorText } from "../api";
 import type { Clinic, Conversation, Pet, Referral, Session } from "../types";
 import { Brand, ErrorNotice, Icon, Status, time } from "../components/ui";
@@ -43,6 +43,7 @@ export function TutorFlow({
   const [end, setEnd] = useState(true);
   const [moreBusy, setMoreBusy] = useState(false);
   const bottom = useRef<HTMLDivElement>(null);
+  const report = useRef<HTMLTextAreaElement>(null);
   const sending = useRef(false);
   const pending = useRef<{ content: string; id: string } | null>(null);
   async function refresh() {
@@ -103,12 +104,69 @@ export function TutorFlow({
     };
   }, [conversation?.id, conversation?.status, token]);
   useEffect(() => {
-    bottom.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+    if (view !== "chat" || !bottom.current) return;
+    const behavior = window.matchMedia("(prefers-reduced-motion: reduce)")
+      .matches
+      ? "auto"
+      : "smooth";
+    const messages = document.querySelectorAll<HTMLElement>(
+      ".chat-messages > .chat-message",
+    );
+    const last = messages[messages.length - 1];
+    if (
+      conversation?.status !== "processing" &&
+      last?.classList.contains("assistant")
+    ) {
+      // A resposta nova aparece desde o começo: é lá que fica a classificação
+      // ("Procure atendimento agora"). Parando no fim da página, um celular
+      // pequeno mostrava só o seletor de IA. Se tudo cabe, o navegador para
+      // no fim da página do mesmo jeito.
+      last.scrollIntoView({ behavior, block: "start" });
+    } else {
+      // Relato enviado, analisando ou com erro: o fim da página, e não só o
+      // fim das mensagens, porque a caixa de envio fica presa embaixo.
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior,
+      });
+    }
   }, [conversation?.messages.length, conversation?.status, view]);
+  useLayoutEffect(() => {
+    // O campo cresce com o texto (até o teto do CSS), para o tutor ver o que
+    // escreveu: no celular não há alça de redimensionar e só cabiam 2 linhas.
+    const fit = () => {
+      const el = report.current;
+      if (!el) return;
+      el.style.height = "auto";
+      el.style.height = el.scrollHeight + "px";
+    };
+    // Com o campo em uso, ele e o botão de enviar continuam à vista quando o
+    // texto cresce ou a tela muda de tamanho (teclado virtual que encolhe a
+    // tela, celular girado). "nearest" só rola se for preciso.
+    const resized = () => {
+      fit();
+      const el = report.current;
+      if (el && document.activeElement === el)
+        el.closest(".composer")?.scrollIntoView({ block: "nearest" });
+    };
+    resized();
+    window.addEventListener("resize", resized);
+    return () => window.removeEventListener("resize", resized);
+  }, [draft, view]);
+  useEffect(() => {
+    if (!menu) return;
+    const close = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenu(false);
+    };
+    window.addEventListener("keydown", close);
+    return () => window.removeEventListener("keydown", close);
+  }, [menu]);
   function navigate(v: string) {
     setView(v);
     setMenu(false);
     setError("");
+    // Cada tela nova começa do topo; a conversa rola sozinha até o fim.
+    if (v !== "chat") window.scrollTo({ top: 0 });
     if (v === "cases") refresh();
   }
   async function open(c: Conversation) {
@@ -183,12 +241,23 @@ export function TutorFlow({
       setError(errorText(e));
     }
   }
+  const touch = window.matchMedia("(pointer: coarse)").matches;
   const latest = conversation?.messages.filter((m) => m.triage).at(-1);
   const processing = conversation?.status === "processing";
   const currentPet = pets.find((p) => p.id === petId);
   return (
     <div className="workspace">
-      <aside className={"sidebar " + (menu ? "mobile-open" : "")}>
+      {menu && (
+        <button
+          className="drawer-backdrop"
+          aria-label="Fechar navegação"
+          onClick={() => setMenu(false)}
+        />
+      )}
+      <aside
+        id="tutor-navigation"
+        className={"sidebar " + (menu ? "mobile-open" : "")}
+      >
         <Brand />
         <button className="new-chat primary" onClick={fresh}>
           <Icon name="plus" />
@@ -286,10 +355,12 @@ export function TutorFlow({
         <header className="workspace-header">
           <button
             className="icon-button mobile-menu"
-            aria-label="Abrir navegação"
+            aria-label={menu ? "Fechar navegação" : "Abrir navegação"}
+            aria-expanded={menu}
+            aria-controls="tutor-navigation"
             onClick={() => setMenu(!menu)}
           >
-            <Icon name="menu" />
+            <Icon name={menu ? "close" : "menu"} />
           </button>
           <span className="header-context">
             <Icon name={view === "chat" ? "chat" : "paw"} />
@@ -339,7 +410,15 @@ export function TutorFlow({
                     "Parou de comer",
                     "Algo aconteceu agora",
                   ].map((s) => (
-                    <button key={s} onClick={() => setDraft(s + ". ")}>
+                    <button
+                      key={s}
+                      onClick={() => {
+                        // A sugestão já deixa o cursor no campo, pronto para
+                        // o tutor continuar a frase.
+                        setDraft(s + ". ");
+                        report.current?.focus();
+                      }}
+                    >
                       {s}
                       <Icon name="plus" size={16} />
                     </button>
@@ -483,7 +562,9 @@ export function TutorFlow({
                 <div ref={bottom} />
               </div>
             )}
-            <div className="composer-wrap">
+            {/* Fora da caixa fixa: no celular, a caixa inteira presa embaixo
+                cobria mais da metade da tela. */}
+            <div className="composer-settings">
               <label>
                 Análise por{" "}
                 <select
@@ -503,6 +584,8 @@ export function TutorFlow({
                   ? "Ao enviar, seu relato e os dados do animal são enviados ao Google Gemini para análise. Evite dados pessoais. Para processar no servidor local, escolha Ollama."
                   : "A análise é processada no servidor local com Ollama. O modelo precisa estar instalado e pode levar mais tempo."}
               </p>
+            </div>
+            <div className="composer-wrap">
               <form
                 className="composer"
                 onSubmit={(e) => {
@@ -515,6 +598,7 @@ export function TutorFlow({
                 </label>
                 <textarea
                   id="report"
+                  ref={report}
                   value={draft}
                   maxLength={4000}
                   onChange={(e) => setDraft(e.target.value)}
@@ -524,11 +608,15 @@ export function TutorFlow({
                       : "Descreva com suas palavras…"
                   }
                   rows={2}
+                  enterKeyHint={touch ? "enter" : "send"}
                   onKeyDown={(e) => {
+                    // No teclado virtual o Enter quebra a linha (não há
+                    // Shift+Enter prático); lá o envio é só pelo botão.
                     if (
                       e.key === "Enter" &&
                       !e.shiftKey &&
-                      !e.nativeEvent.isComposing
+                      !e.nativeEvent.isComposing &&
+                      !touch
                     ) {
                       e.preventDefault();
                       send();
