@@ -3136,6 +3136,14 @@ CNPJ em claro e a exclusão. Os acessos rápidos, ligados no deploy como na POC
 local, são contas compartilhadas: quem entra por eles vê o que os outros
 fizeram por eles.
 
+**Atualização 09/11 — o limite por IP só passou a valer por visitante com o IP real.**
+No deploy de 19/10 o Nginx recebia todo pedido com o IP interno do Caddy, então
+os limites de 12 e 120 pedidos por minuto valiam para **todos os visitantes
+somados**. Visto e corrigido no servidor no mesmo dia (`set_real_ip_from` +
+`X-Forwarded-For`, que o Caddy reescreve); a correção entra no repositório
+agora, em `deploy/nginx.prod.conf`. Conferido no log: os pedidos passaram a
+aparecer com o IP de quem acessa.
+
 ### B-79
 
 **O catálogo de perguntas do fluxo conversacional não passou por veterinário nem foi medido em casos não vistos**
