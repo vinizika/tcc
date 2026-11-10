@@ -9,6 +9,12 @@ import { CaseView } from "../components/CaseView";
 import { FollowupCard } from "../components/FollowupCard";
 import { VoiceInput } from "../components/VoiceInput";
 import { TriageGuidance } from "../components/TriageGuidance";
+import {
+  AnimalRecordsPanel,
+  AttachDocumentButton,
+  PetDocuments,
+  useAnimalRecords,
+} from "../components/AnimalRecords";
 
 export function TutorFlow({
   session,
@@ -161,6 +167,31 @@ export function TutorFlow({
     window.addEventListener("keydown", close);
     return () => window.removeEventListener("keydown", close);
   }, [menu]);
+  // Documentos e conversas anteriores do animal, usados como contexto. Ficam
+  // no animal da conversa; sem animal, na própria conversa.
+  const records = useAnimalRecords({
+    token,
+    provider,
+    target: conversation
+      ? {
+          conversationId: conversation.id,
+          petId: conversation.pet_id || undefined,
+        }
+      : petId
+        ? { petId }
+        : null,
+    ensureTarget: async () => {
+      const c = await api.createConversation(null, token);
+      setConversation(c);
+      return { conversationId: c.id };
+    },
+    onError: setError,
+    onChange: refresh,
+  });
+  const hasRecords =
+    !!records.pending ||
+    !!records.draft ||
+    records.context.documents.length + records.context.history.length > 0;
   function navigate(v: string) {
     setView(v);
     setMenu(false);
@@ -388,7 +419,13 @@ export function TutorFlow({
         </header>
         <ErrorNotice message={error} />
         {view === "chat" && (
-          <main className="chat-page page-enter">
+          <main
+            className={
+              "chat-page page-enter" +
+              (hasRecords ? " with-records" : "") +
+              (records.pending || records.draft ? " reviewing" : "")
+            }
+          >
             {!conversation?.messages.length ? (
               <div className="chat-welcome">
                 <span className="welcome-symbol">
@@ -494,6 +531,25 @@ export function TutorFlow({
                               ` · substituiu ${m.provenance.attendant.fallback_from}`}
                           </p>
                         )}
+                        {m.context_used && (
+                          <p>
+                            Histórico do animal considerado:{" "}
+                            {[
+                              m.context_used.documents.length &&
+                                m.context_used.documents.length +
+                                  (m.context_used.documents.length === 1
+                                    ? " documento"
+                                    : " documentos"),
+                              m.context_used.history.length &&
+                                m.context_used.history.length +
+                                  (m.context_used.history.length === 1
+                                    ? " conversa anterior"
+                                    : " conversas anteriores"),
+                            ]
+                              .filter(Boolean)
+                              .join(" e ")}
+                          </p>
+                        )}
                         {m.sources?.map((s, i) => (
                           <div key={i}>
                             <p>
@@ -584,6 +640,10 @@ export function TutorFlow({
                   ? "Ao enviar, seu relato e os dados do animal são enviados ao Google Gemini para análise. Evite dados pessoais. Para processar no servidor local, escolha Ollama."
                   : "A análise é processada no servidor local com Ollama. O modelo precisa estar instalado e pode levar mais tempo."}
               </p>
+              <AnimalRecordsPanel
+                records={records}
+                petName={currentPet?.name}
+              />
             </div>
             <div className="composer-wrap">
               <form
@@ -628,6 +688,11 @@ export function TutorFlow({
                     onError={setError}
                     onText={(text) => setDraft(text)}
                     disabled={busy || processing}
+                  />
+                  <AttachDocumentButton
+                    records={records}
+                    disabled={busy || processing}
+                    compact
                   />
                   <button
                     className="send-button"
@@ -701,6 +766,16 @@ export function TutorFlow({
                           : ""}
                       </p>
                       <p className="muted">{p.breed || "Raça não informada"}</p>
+                      {p.id && (
+                        <PetDocuments
+                          token={token}
+                          provider={provider}
+                          petId={p.id}
+                          petName={p.name}
+                          onError={setError}
+                          onChange={refresh}
+                        />
+                      )}
                       <button onClick={() => setEditPet(p)}>
                         Editar informações
                       </button>

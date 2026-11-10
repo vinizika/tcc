@@ -24,6 +24,13 @@ class Settings(BaseSettings):
     # v1_grounded até ser medido e aceito pelo trilho B2.
     WORKSPACE_PROMPT_VERSION: Literal["v1_grounded", "v2_suficiencia"] = "v1_grounded"
     FOLLOWUP_MAX_QUESTIONS: int = Field(default=4, ge=1, le=10)
+    # Histórico do animal como contexto da decisão no app (rodada 34 do João):
+    # documentos anexados pelo tutor e conversas anteriores do mesmo animal.
+    # Desligado, o app volta a mandar só o relato e o cadastro. Não afeta o
+    # `/chat/` nem o runner: lá o bloco nunca existe.
+    ANIMAL_RECORDS_ENABLED: bool = True
+    # Teto do documento anexado (PDF ou foto). O arquivo é lido e descartado.
+    MAX_DOCUMENT_UPLOAD_MB: int = Field(default=10, ge=1, le=25)
 
     API_NAME: str = "TCC Pré-Triagem Veterinária"
     API_VERSION: str = "1.0.0"

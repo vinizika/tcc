@@ -1,9 +1,11 @@
 import type {
+  AnimalContext,
   ChatResponse,
   Clinic,
   ClinicSearch,
   Conversation,
   Dashboard,
+  DocumentDraft,
   Pet,
   Principal,
   PublicConfig,
@@ -56,6 +58,12 @@ const body = (data: unknown) => ({
   method: "POST",
   body: JSON.stringify(data),
 });
+// Documentos ficam no animal; sem animal associado, na conversa.
+type RecordsTarget = { petId?: string; conversationId?: string };
+const documentsPath = (t: RecordsTarget) =>
+  t.conversationId
+    ? "/workspace/conversations/" + t.conversationId + "/documents"
+    : "/workspace/pets/" + t.petId + "/documents";
 export const api = {
   config: () => request<PublicConfig>("/auth/config"),
   me: (token: string) => request<Principal>("/auth/me", {}, token),
@@ -131,6 +139,38 @@ export const api = {
     request<Conversation>(
       "/workspace/conversations/" + id + "/messages",
       body({ content, request_id, attendant_provider, ...answer }),
+      token,
+    ),
+  readDocument: (
+    file: File,
+    attendant_provider: "gemini" | "ollama",
+    token: string,
+  ) => {
+    const form = new FormData();
+    form.append("file", file, file.name);
+    form.append("attendant_provider", attendant_provider);
+    return request<DocumentDraft>(
+      "/workspace/documents/read",
+      { method: "POST", body: form },
+      token,
+    );
+  },
+  animalContext: (target: RecordsTarget, token: string) => {
+    const query = new URLSearchParams();
+    if (target.petId) query.set("pet_id", target.petId);
+    if (target.conversationId)
+      query.set("conversation_id", target.conversationId);
+    return request<AnimalContext>("/workspace/context?" + query, {}, token);
+  },
+  saveDocument: (
+    target: RecordsTarget,
+    data: Omit<DocumentDraft, "notice">,
+    token: string,
+  ) => request<AnimalContext>(documentsPath(target), body(data), token),
+  removeDocument: (target: RecordsTarget, documentId: string, token: string) =>
+    request<AnimalContext>(
+      documentsPath(target) + "/" + documentId,
+      { method: "DELETE" },
       token,
     ),
   voice: (file: Blob) => {

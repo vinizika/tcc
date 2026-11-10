@@ -105,6 +105,35 @@ automaticamente; após 20 min ela pode ser tentada novamente. Para operação
 multiusuário pública são necessários worker/fila, limite de concorrência,
 rate limiting, observabilidade e uma política de recuperação.
 
+## Histórico do animal: documentos e conversas anteriores
+
+Desde 09/11 (rodada 34 do João). O tutor pode anexar um documento do animal
+(exame, receita, laudo, carteira de vacinação), pelo clipe da caixa de mensagem
+ou em "Meus animais". O arquivo é lido uma vez e descartado; o que fica é um
+resumo de até 1.200 caracteres que o tutor confere antes de guardar. O resumo
+mora no animal e vale para as próximas conversas; sem animal associado, vale só
+para a conversa. Com o Gemini, o próprio modelo lê PDF e foto; com o modelo
+local, só o texto selecionável de um PDF é aproveitado, sem modelo.
+
+As conversas anteriores do mesmo animal também entram: as últimas cinco que
+chegaram a uma classificação, com a data, o primeiro relato e a classificação
+da ocasião. Não há modelo nessa parte; é cópia do banco.
+
+Os dois vão ao modelo num bloco "Histórico do animal", só na etapa de decisão,
+com uma regra a mais no prompt: o histórico é contexto, não relato de hoje;
+serve para aumentar a cautela e nunca para reduzir a urgência de um sinal de
+hoje; e uma emergência nos últimos 7 dias, sem o tutor dizer que o animal foi
+atendido, impede NAO_EMERGENCIA num relato que possa ter relação com ela. A
+busca continua recebendo só o relato. **Sem documento e sem conversa anterior,
+o prompt é o de antes, byte a byte.** `ANIMAL_RECORDS_ENABLED=false` desliga
+tudo.
+
+Limites: os documentos não seguem para a clínica no encaminhamento; as contas
+acadêmicas compartilhadas misturam o histórico de quem as usa; documentos
+trazem dados de pessoas, e a tela pede confirmação antes de enviar o arquivo ao
+Google e orienta a apagá-los do resumo. A regra foi vista em pares de
+desenvolvimento, não num lote validado.
+
 ## Google Maps real
 
 Busca por Places API (New), texto/CEP/referência por Text Search, fallback

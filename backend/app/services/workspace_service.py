@@ -9,7 +9,8 @@ from app.clients.mongo_client import get_mongo_database
 from app.core.config import settings
 from app.services.followup_service import WorkspaceAttendant, advance, transcript, clinical_query
 from app.schemas.auth import Principal
-from app.schemas.workspace import ANIMAL_CONTEXT_FIELDS, AnimalInput, TurnInput
+from app.schemas.workspace import ANIMAL_CONTEXT_FIELDS, AnimalInput, DocumentInput, TurnInput
+from app.services import animal_records_service as records
 from app.exceptions.attendant_exception import AttendantUnavailableException, QuotaExhaustedException
 
 
@@ -25,6 +26,12 @@ def public(document):
 
 def scope(principal: Principal):
     return {"owner_id": principal.user_id}
+
+
+def snapshot(pet):
+    # A conversa guarda uma cópia do cadastro, não dos documentos: eles são
+    # lidos do animal a cada análise, para a cópia não envelhecer.
+    return {k: v for k, v in pet.items() if k != "documents"} if pet else None
 
 
 class WorkspaceService:
@@ -57,7 +64,7 @@ class WorkspaceService:
 
     @staticmethod
     def create(principal, pet_id=None):
-        pet = WorkspaceService.pet(principal, pet_id) if pet_id else None
+        pet = snapshot(WorkspaceService.pet(principal, pet_id)) if pet_id else None
         doc = {"id": str(uuid4()), "owner_id": principal.user_id, "title": "Nova conversa",
                "pet_id": pet_id, "pet": pet, "messages": [], "status": "idle", "error": None,
                "created_at": now(), "updated_at": now(), "request_id": None}
@@ -88,12 +95,78 @@ class WorkspaceService:
         doc = WorkspaceService.get(principal, conversation_id)
         if doc["status"] == "processing":
             raise HTTPException(409, "Aguarde a análise antes de trocar o animal.")
-        pet = WorkspaceService.pet(principal, pet_id) if pet_id else None
+        pet = snapshot(WorkspaceService.pet(principal, pet_id)) if pet_id else None
         result = WorkspaceService.db().poc_conversations.update_one(scope(principal) | {"id": conversation_id, "status": {"$ne": "processing"}},
             {"$set": {"pet_id": pet_id, "pet": pet, "updated_at": now()}})
         if not result.matched_count:
             raise HTTPException(409, "Uma análise começou. Aguarde antes de trocar o animal.")
         return WorkspaceService.get(principal, conversation_id)
+
+    # --- Histórico do animal: documentos e conversas anteriores (rodada 34 do João) ---
+
+    @staticmethod
+    def _owner_of_documents(principal, pet_id=None, conversation_id=None):
+        """Onde os documentos moram: no animal; sem animal, na própria conversa."""
+        conversation = WorkspaceService.get(principal, conversation_id) if conversation_id else None
+        pet_id = pet_id or (conversation or {}).get("pet_id")
+        pet = WorkspaceService.pet(principal, pet_id) if pet_id else None
+        if not pet and not conversation:
+            raise HTTPException(422, "Informe o animal ou a conversa.")
+        return pet, conversation
+
+    @staticmethod
+    def _history(db, principal, pet_id, conversation_id):
+        # Nas contas acadêmicas compartilhadas, as conversas são de quem quer
+        # que tenha usado o acesso rápido: não servem de histórico do animal.
+        if principal.demo:
+            return []
+        return records.history_of(db, principal.user_id, pet_id, conversation_id)
+
+    @staticmethod
+    def _records(db, principal, conversation):
+        if not records.enabled():
+            return None, None
+        pet_id = conversation.get("pet_id")
+        pet = db.poc_pets.find_one(scope(principal) | {"id": pet_id}) if pet_id else None
+        history = WorkspaceService._history(db, principal, pet_id, conversation["id"])
+        return records.records_block(records.documents_of(pet, conversation), history)
+
+    @staticmethod
+    def context(principal, pet_id=None, conversation_id=None):
+        """O que do histórico do animal a próxima análise vai usar."""
+        if not pet_id and not conversation_id:
+            return {"scope": None, "pet_name": None, "documents": [], "history": []}
+        pet, conversation = WorkspaceService._owner_of_documents(principal, pet_id, conversation_id)
+        history = WorkspaceService._history(WorkspaceService.db(), principal, pet["id"] if pet else None,
+                                            conversation["id"] if conversation else None)
+        return {"scope": "pet" if pet else "conversation", "pet_name": pet["name"] if pet else None,
+                "documents": records.documents_of(pet, conversation), "history": history}
+
+    @staticmethod
+    def add_document(principal, data: DocumentInput, pet_id=None, conversation_id=None):
+        pet, conversation = WorkspaceService._owner_of_documents(principal, pet_id, conversation_id)
+        if len(records.documents_of(pet, conversation)) >= records.MAX_DOCUMENTS:
+            raise HTTPException(409, f"O limite é de {records.MAX_DOCUMENTS} documentos. Remova um para anexar outro.")
+        document = {"id": str(uuid4())} | data.model_dump() | {"created_at": now()}
+        db = WorkspaceService.db()
+        if pet:
+            db.poc_pets.update_one(scope(principal) | {"id": pet["id"]}, {"$push": {"documents": document}, "$set": {"updated_at": now()}})
+        else:
+            # Sem mexer em `updated_at`: ele é a trava otimista do envio de mensagem.
+            db.poc_conversations.update_one(scope(principal) | {"id": conversation["id"]}, {"$push": {"documents": document}})
+        return WorkspaceService.context(principal, pet["id"] if pet else None, conversation["id"] if conversation else None)
+
+    @staticmethod
+    def remove_document(principal, document_id, pet_id=None, conversation_id=None):
+        pet, conversation = WorkspaceService._owner_of_documents(principal, pet_id, conversation_id)
+        if not any(d.get("id") == document_id for d in records.documents_of(pet, conversation)):
+            raise HTTPException(404, "Documento não encontrado.")
+        db = WorkspaceService.db()
+        if pet:
+            db.poc_pets.update_one(scope(principal) | {"id": pet["id"]}, {"$pull": {"documents": {"id": document_id}}, "$set": {"updated_at": now()}})
+        else:
+            db.poc_conversations.update_one(scope(principal) | {"id": conversation["id"]}, {"$pull": {"documents": {"id": document_id}}})
+        return WorkspaceService.context(principal, pet["id"] if pet else None, conversation["id"] if conversation else None)
 
     @staticmethod
     def submit(principal, conversation_id, data: TurnInput):
@@ -147,11 +220,15 @@ class WorkspaceService:
             if pet:
                 context = "; ".join(f"{key}: {value}" for key, value in pet.items()
                                     if key in ANIMAL_CONTEXT_FIELDS and value is not None)
+            # Documentos e conversas anteriores do animal: só na decisão, nunca
+            # na busca. Sem nenhum dos dois, a chamada é a de sempre.
+            block, context_used = WorkspaceService._records(db, principal, doc)
+            extra = {"animal_records": block} if block else {}
             from app.schemas.triage import PipelineOptions
             result = (pipeline or poc_pipeline()).execute(question, PipelineOptions(
                 num_ctx=settings.WORKSPACE_NUM_CTX, retrieval_enabled=True, prompt_version=settings.WORKSPACE_PROMPT_VERSION, cot_enabled=False, query_rewriting_enabled=False, multi_query_enabled=False, hyde_enabled=False,
                 attendant_provider=doc.get("attendant_provider", settings.ATTENDANT_PROVIDER)), animal_context=context,
-                retrieval_question=clinical_query(doc))
+                retrieval_question=clinical_query(doc), **extra)
             checkpoint = db.poc_conversations.update_one(selector, {"$set": {
                 "latest_triage": result.triage.model_dump(mode="json", exclude={"raciocinio"})}})
             if not checkpoint.matched_count:
@@ -169,6 +246,9 @@ class WorkspaceService:
                        "provenance": result.provenance.model_dump(mode="json") if result.provenance else None,
                        "config": result.config.model_dump(mode="json"), "timings": result.timings.model_dump(mode="json"),
                        "rag_collection": active_collection_name()}
+            if context_used:
+                # O que do histórico do animal entrou nesta análise.
+                message["context_used"] = context_used
             db.poc_conversations.update_one(selector, {"$push": {"messages": message},
                 "$set": {"status": "idle", "error": None, "followup": followup, "updated_at": now()}})
         except AttendantUnavailableException as error:

@@ -41,6 +41,16 @@ class TurnInput(BaseModel):
     attendant_provider: Literal["gemini", "ollama"] | None = None
 
 
+class DocumentInput(BaseModel):
+    """O resumo de um documento, já revisado pelo tutor (rodada 34 do João)."""
+    model_config = ConfigDict(str_strip_whitespace=True, extra="forbid")
+    name: str = Field(min_length=1, max_length=120)
+    kind: str = Field(min_length=1, max_length=80)
+    document_date: str = Field(default="", max_length=40)
+    summary: str = Field(min_length=1, max_length=1200)
+    source: Literal["gemini", "pdf_text"] = "gemini"
+
+
 class LocationInput(BaseModel):
     consent: bool
     latitude: float | None = Field(default=None, ge=-90, le=90)

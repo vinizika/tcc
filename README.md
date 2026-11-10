@@ -367,6 +367,15 @@ uma dinâmica combinada. O mapa completo está em
 Detalhes, fronteiras e acordos em
 [`docs/divisao-de-trabalho.md`](docs/divisao-de-trabalho.md).
 
+### Histórico do animal
+
+O tutor pode anexar um documento do animal (exame, receita, carteira de
+vacinação), e as conversas anteriores do mesmo animal passam a valer como
+contexto da análise. O arquivo é lido uma vez; fica só o resumo que o tutor
+revisa. Sem documento e sem conversa anterior, o prompt é o de antes. Veja a
+[operação](docs/poc-utilizavel.md#histórico-do-animal-documentos-e-conversas-anteriores)
+e a [evidência da rodada](evidencias/joao/2026-11-09-35-historico-do-animal.md).
+
 ### Pré-triagem conversacional
 
 Casos `INCERTO` no workspace agora podem receber uma pergunta objetiva e,

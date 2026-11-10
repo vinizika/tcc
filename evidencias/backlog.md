@@ -131,6 +131,8 @@ aqui.
 | [B-81](#b-81) | Num servidor sem GPU, escolher o modelo local dá erro genérico na tela e 500 no `/chat/` | A definir | Baixa | Aberto |
 | [B-82](#b-82) | As respostas saem sem acento porque a ficha de leitura vem sem acento do mapa | A definir | Baixa | Aberto |
 | [B-83](#b-83) | Responsividade: teclado virtual em aparelho real não conferido; varredura fora do repositório | A definir | Baixa | Aberto |
+| [B-84](#b-84) | A regra do histórico do animal foi vista só em pares de desenvolvimento, sem veterinário | A definir | Média | Aberto |
+| [B-85](#b-85) | Histórico do animal: o que ficou fora da primeira versão | A definir | Baixa | Aberto |
 
 ---
 
@@ -2734,6 +2736,15 @@ consentimento antes do primeiro envio, a escolha persistir por conta e o servido
 respeitá-la, e o texto mínimo (o que sai, para onde, por quanto tempo, como
 apagar).
 
+**Atualização 09/11 — documentos anexados ([rodada 34 do João](joao/2026-11-09-35-historico-do-animal.md)).** O
+tutor passa a poder enviar exame, receita e carteira de vacinação, que trazem
+nome, CPF, telefone e endereço de pessoas. O que a rodada fez: a tela pede
+confirmação antes de enviar o arquivo e diz para onde ele vai (Google ou
+servidor local, conforme o provedor escolhido); o modelo é instruído a não
+copiar dados de pessoas; o arquivo não é guardado; o tutor revisa o resumo
+antes de salvar e pode removê-lo. O que continua faltando é o que o item já
+pedia: texto de consentimento e política de retenção.
+
 ### B-65
 
 **Latência na demonstração: a cauda do Gemini e o qwen sem placa de vídeo**
@@ -3277,6 +3288,53 @@ abrir uma conversa, tocar no campo, digitar três linhas e enviar. E, se o dono 
 frontend quiser, trazer a varredura para `frontend-react/tests` como teste
 opcional. Critério: o campo e o botão de enviar visíveis com o teclado aberto nos
 dois aparelhos.
+
+### B-84
+
+**A regra do histórico do animal foi vista só em pares de desenvolvimento, sem veterinário**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 34](joao/2026-11-09-35-historico-do-animal.md), 09/11 · **Responsável:** A definir · **Prioridade:** Média · **Status:** Aberto
+
+**O que observamos.** A `REGRA_HISTORICO` (documentos e conversas anteriores só
+aumentam a cautela; emergência recente ou doença crônica com sinal de hoje
+possivelmente ligado não sai NAO_EMERGENCIA) passou nos quatro critérios em 30
+pares, duas repetições. Os pares foram escritos por quem escreveu a regra, não
+passaram por veterinário e são poucos: a primeira versão da regra falhou num
+grupo (2 de 5) e foi ajustada olhando para os mesmos pares.
+
+**Por que importa.** É regra de segurança clínica num caminho que o app usa
+sempre que há histórico. Os pares mostram o comportamento; não sustentam uma
+afirmação de acerto. E o ajuste foi feito nos mesmos casos que depois o medem.
+
+**O que resolveria.** Pares novos, escritos por outra pessoa e com o esperado
+validado pela ASAVET (em especial o que conta como "sinal que pode ser piora da
+doença"), rodados uma vez. No texto, o histórico entra como funcionalidade do
+app, fora do número final: a prova 2 não tem documento nem conversa anterior.
+Critério: os quatro critérios da rodada 34 valendo num lote que a regra não viu.
+
+### B-85
+
+**Histórico do animal: o que ficou fora da primeira versão**
+
+**Identificado por:** João (B2) · **Onde:** [rodada 34](joao/2026-11-09-35-historico-do-animal.md), 09/11 · **Responsável:** A definir · **Prioridade:** Baixa · **Status:** Aberto
+
+**O que observamos.** (1) Os documentos não seguem para a clínica no
+encaminhamento: a clínica vê o cadastro e o resumo do caso, não o exame. (2) O
+caso típico da regra pede a pergunta "ele foi atendido depois disso?", que não
+está no catálogo de perguntas do fluxo conversacional; o INCERTO sai com a
+pergunta de sempre. (3) O arquivo original não é guardado, só o resumo: não dá
+para reler nem mostrar. (4) Com o modelo local, foto e PDF digitalizado não são
+lidos. (5) Nas contas acadêmicas compartilhadas as conversas anteriores não
+entram, e os documentos de um animal compartilhado valem para todos que usam a
+conta.
+
+**Por que importa.** Nenhum trava a entrega. O primeiro e o segundo são o que
+uma clínica e um tutor notariam primeiro.
+
+**O que resolveria.** Uma opção de consentimento no envio à clínica ("incluir
+os documentos do animal"); a pergunta de atendimento no catálogo, validada
+junto com ele ([B-79](#b-79)); o resto, só se o uso pedir. Critério: a clínica
+vê, com autorização, o resumo do documento que pesou na triagem.
 
 ---
 

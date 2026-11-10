@@ -884,13 +884,13 @@ small,
 }
 /* "Análise por" e o seletor na mesma linha: menos altura entre a última
    resposta e a caixa de envio. */
-.composer-settings label {
+.composer-settings > label {
   flex-direction: row;
   align-items: center;
   gap: 10px;
   white-space: nowrap;
 }
-.composer-settings select {
+.composer-settings > label > select {
   flex: 1;
   min-width: 0;
   padding: 9px 12px;
@@ -1119,6 +1119,106 @@ small,
 .recording {
   background: #fae3db;
   color: #a14732;
+}
+/* Histórico do animal: documentos e conversas anteriores (rodada 34 do João) */
+.attach-document {
+  gap: 6px;
+  white-space: nowrap;
+}
+.animal-records {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.document-review {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--sage);
+  border: 1px solid #dce6d6;
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 13px;
+  white-space: normal;
+  scroll-margin-top: 16px;
+}
+.document-review > p {
+  margin: 0;
+}
+.document-review label {
+  font-size: 13px;
+}
+.document-review input,
+.document-review textarea {
+  width: 100%;
+  font-size: 14px;
+}
+.document-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 10px;
+}
+.document-review .button-row {
+  margin-top: 2px;
+}
+.document-review .button-row button {
+  font-size: 13px;
+  padding: 9px 14px;
+}
+.records-list {
+  font-size: 12px;
+  color: var(--muted);
+}
+.records-list summary {
+  cursor: pointer;
+}
+.records-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.records-list li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: #f4f6f0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.records-list li > div {
+  min-width: 0;
+}
+.records-list li strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+.records-list li p {
+  margin: 4px 0 0;
+  overflow-wrap: anywhere;
+}
+.records-list .text-button {
+  font-size: 12px;
+  flex-shrink: 0;
+}
+/* Enquanto o tutor lê ou revisa um documento, a caixa de envio não fica
+   presa: o cartão de revisão usa a tela inteira. */
+.reviewing .composer-wrap {
+  position: relative;
+}
+.reviewing .composer-wrap::before {
+  display: none;
+}
+.pet-documents {
+  margin: 14px 0 18px;
+}
+.pet-documents .attach-document {
+  font-size: 13px;
 }
 .recording-label {
   font-size: 11px;
@@ -2028,7 +2128,8 @@ small,
     min-height: 48px;
     max-height: calc(1.65em * 6 + 8px);
   }
-  .chat-message {
+  .chat-message,
+  .document-review {
     scroll-margin-top: 84px;
   }
   .composer-settings > p {
@@ -2245,8 +2346,15 @@ small,
     display: none;
   }
 }
+@media (max-height: 800px) {
+  /* Com histórico do animal na tela, os atalhos cedem o lugar antes. */
+  .with-records .chat-prompts {
+    display: none;
+  }
+}
 @media (max-height: 700px) {
-  .chat-prompts {
+  .chat-prompts,
+  .with-records .chat-welcome > p:not(.eyebrow) {
     display: none;
   }
 }
@@ -2290,6 +2398,18 @@ small,
   .chat-prompts button svg {
     display: none;
   }
+  /* Na caixa de mensagem, o anexo de documento fica só com o ícone. */
+  .attach-document.compact {
+    width: 44px;
+    min-height: 44px;
+    padding: 0;
+  }
+  .attach-document.compact span {
+    display: none;
+  }
+  .document-fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 /* Telas de toque de qualquer largura (celular e tablet). */
 @media (pointer: coarse), (max-width: 760px) {
@@ -2300,7 +2420,9 @@ small,
   .composer textarea,
   .location-search input,
   .human-composer input,
-  .pet-switch select {
+  .pet-switch select,
+  .document-review input,
+  .document-review textarea {
     font-size: 16px;
   }
   summary {

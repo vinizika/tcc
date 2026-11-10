@@ -244,6 +244,10 @@ O contrato científico `POST /chat/` permanece. A interface nova usa:
 | `GET/POST /workspace/conversations` | Lista paginada/criação; `pet_id` opcional |
 | `GET/PATCH /workspace/conversations/{id}` | Histórico/troca de animal do titular |
 | `POST /workspace/conversations/{id}/messages` | `content` + `request_id`; 202, persistência antes da análise |
+| `POST /workspace/documents/read` | Histórico do animal (rodada 34 do João). Multipart: `file` (PDF, JPG, PNG ou WEBP; até `MAX_DOCUMENT_UPLOAD_MB`, 10 páginas) + `attendant_provider`. Devolve a proposta de resumo (`name`, `kind`, `document_date`, `summary`, `source`, `notice`). Não guarda nada. 413/415/422 com o motivo |
+| `GET /workspace/context?pet_id=&conversation_id=` | O que do histórico do animal a próxima análise vai usar: `documents` e `history` (conversas anteriores do mesmo animal) |
+| `POST/DELETE /workspace/pets/{id}/documents[/{document_id}]` | Guarda ou remove o resumo revisado pelo tutor (`DocumentInput`, resumo até 1.200 caracteres; até 10 documentos). Devolve o contexto |
+| `POST/DELETE /workspace/conversations/{id}/documents[/{document_id}]` | O mesmo, a partir de uma conversa: vai para o animal associado; sem animal, fica só na conversa |
 | `GET /clinics/participants` | Unidades habilitadas apropriadas ao tipo de conta |
 | `PUT /referrals/{id}/location` | Tutor proprietário; consentimento; só a caminho |
 

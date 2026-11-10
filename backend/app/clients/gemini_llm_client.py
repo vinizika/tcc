@@ -189,6 +189,35 @@ class GeminiLLMClient:
                     reason=type(erro).__name__,
                 ) from erro
 
+    def read_document(
+        self,
+        data: bytes,
+        mime_type: str,
+        instruction: str,
+        output_model: Type[BaseModel],
+    ) -> Optional[BaseModel]:
+        """
+        Lê um PDF ou uma foto e devolve os fatos no formato pedido (rodada 34
+        do João). Mesmas regras do `classify`: mesmas chaves, mesmas esperas,
+        nenhum outro modelo. Saída inválida duas vezes devolve `None`.
+        """
+
+        from google.genai import types
+
+        arquivo = types.Part.from_bytes(data=data, mime_type=mime_type)
+        schema = output_model.model_json_schema()
+
+        for tentativa in range(1, MAX_ATTEMPTS + 1):
+            pedido = instruction if tentativa == 1 else instruction + LEMBRETE_DE_FORMATO
+            resposta = self._gerar(None, [arquivo, pedido], schema, 0.0, settings.LLM_SEED, 900)
+            bruto = (getattr(resposta, "text", None) or "").strip()
+            try:
+                return output_model.model_validate(json.loads(bruto))
+            except (json.JSONDecodeError, ValidationError):
+                logger.warning(f"Gemini: leitura de documento inválida na tentativa {tentativa}")
+
+        return None
+
     def classify(
         self,
         messages: list[dict],

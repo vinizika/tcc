@@ -50,8 +50,16 @@ Self-Refine, e a régua de avaliação do sistema (runner de métricas).
 | 31 | 05/10 | [Autópsia 3: o estado depois da segunda etapa](2026-10-05-32-autopsia-3-estado-atual.md) | Leitura e réplica, sem mudar o sistema. Na `main` de hoje, com o frontend React e a segunda etapa do Vinicius em volta, **o sistema medido responde igual**: busca 296/296, qwen 50/50 duas vezes. **O Gemini mudou entre dias** com entrada idêntica: 5 decisões em 172 (p44, i40, i58, j59 para alarme; j12, uma leptospirose, para INCERTO), 6 · 3 → 7 · 6 nos independentes; a prova 2 passa a exigir repetições em dias diferentes. O produto ainda não mostra quem respondeu nem pede consentimento. Backlog triado: B-77 a B-80 |
 | 32 | 19/10 | [Deploy na internet](2026-10-19-33-deploy-na-internet.md) | Infraestrutura, sem mudar o caminho medido. O sistema completo no ar em **https://vetia.chilecentral.cloudapp.azure.com** (Azure for Students, Chile Central, 8 GB), com HTTPS, limites por IP e só 80/443 expostas. Liga e desliga pelo portal; desliga sozinho às 23h. Triagem aquecida em ~26 s, quase tudo do Gemini; ~US$ 13/mês com ~40 h ligado. Chaves de reserva do Gemini trocadas na cota do dia. B-81 |
 | 33 | 09/11 | [Pente fino de responsividade](2026-11-09-34-pente-fino-de-responsividade.md) | Interface, sem tocar o caminho medido. Varredura automática de 37 telas em 26 tamanhos e três navegadores (1.330 medições). No celular, a caixa de envio caiu de 59% para 26% da tela, a resposta nova aparece desde o começo e o aviso do mapa deixou de cobrir a página inteira. Rolagem horizontal no Safari e no Firefox corrigida. 12 de 12 testes de ponta a ponta. B-82, B-83 |
+| 34 | 09/11 | [Histórico do animal](2026-11-09-35-historico-do-animal.md) | O tutor anexa um documento do animal e o app passa a lembrar das conversas anteriores do mesmo animal; os dois entram só na decisão, com uma regra a mais. **Sem histórico o prompt é o de antes, byte a byte.** Em 30 pares de desenvolvimento, duas repetições: nenhum rebaixamento (4 de 4), nenhum alarme novo (0 de 6), e os relatos leves depois de emergência recente ou com doença crônica documentada deixam de sair NAO_EMERGENCIA (10 de 10). A primeira versão da regra falhou na doença crônica (2 de 5) e foi ajustada. B-84, B-85 |
 
 ## Estado atual
+
+**09/11 — o produto ganhou memória do animal; o caminho medido segue igual.**
+Três rodadas desde 05/10: o deploy na internet (32), o pente fino de
+responsividade (33) e o histórico do animal (34), em que documentos anexados e
+conversas anteriores entram na decisão do app. Nada disso muda o que foi medido:
+sem histórico, as mensagens ao modelo têm o mesmo hash de antes. O que falta é o
+número final (lote teste da prova 2, ainda sem uso) e a ablação.
 
 **05/10 — o sistema medido continua o mesmo; o produto cresceu em volta dele.**
 A autópsia 3 (rodada 31) replicou na `main` de hoje a arquitetura da autópsia 2:

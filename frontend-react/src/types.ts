@@ -33,6 +33,33 @@ export type Pet = {
   sex?: "macho" | "femea" | null;
   neutered?: boolean | null;
   reproductive_status?: "prenhe" | "amamentando" | null;
+  documents?: AnimalDocument[];
+};
+// Histórico do animal como contexto da análise (rodada 34 do João).
+export type AnimalDocument = {
+  id: string;
+  name: string;
+  kind: string;
+  document_date: string;
+  summary: string;
+  source: "gemini" | "pdf_text";
+  created_at: string;
+};
+export type DocumentDraft = Omit<AnimalDocument, "id" | "created_at"> & {
+  notice: string;
+};
+export type AnimalHistoryItem = {
+  conversation_id: string;
+  date: string;
+  ago: string;
+  report: string;
+  classification: "EMERGENCIA" | "NAO_EMERGENCIA" | "INCERTO";
+};
+export type AnimalContext = {
+  scope: "pet" | "conversation" | null;
+  pet_name: string | null;
+  documents: AnimalDocument[];
+  history: AnimalHistoryItem[];
 };
 export type Followup = {
   state: "asking" | "form" | "completed" | "insufficient";
@@ -71,6 +98,15 @@ export type ChatMessage = {
       fallback_from?: string | null;
     };
   } | null;
+  // O que do histórico do animal entrou nesta análise.
+  context_used?: {
+    documents: { id: string; kind: string; document_date: string }[];
+    history: {
+      conversation_id: string;
+      date: string;
+      classification: string;
+    }[];
+  };
 };
 export type Conversation = {
   followup?: Followup;
@@ -83,6 +119,7 @@ export type Conversation = {
   error: string | null;
   updated_at: string;
   request_id?: string;
+  documents?: AnimalDocument[];
 };
 export type ChatResponse = {
   answer: string;
