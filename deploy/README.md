@@ -3,9 +3,11 @@
 **Endereço:** <https://vetia.chilecentral.cloudapp.azure.com>
 (reserva, mesmo servidor: <https://57.156.57.72.sslip.io>)
 
-O sistema completo — tela React, login próprio e acessos rápidos de tutor e
-clínica, triagem por texto e voz com o Gemini, clínicas e encaminhamento —
+A aplicação **Bia** — tela React, login próprio e acessos rápidos de tutor e
+clínica, triagem por texto e voz com o Gemini, clínicas e encaminhamento — está
 numa máquina virtual do Azure for Students, com HTTPS. No ar desde 19/10/2026.
+O domínio e os nomes de recursos Azure abaixo continuam como identificadores
+técnicos da infraestrutura.
 
 **O que este deploy é:** a POC acadêmica acessível para a banca e para
 testadores convidados. **O que não é:** um serviço veterinário público. Antes

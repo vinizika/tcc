@@ -5,7 +5,7 @@ def render_sidebar():
 
     with st.sidebar:
 
-        st.title("VetIA")
+        st.title("Bia")
 
         st.markdown("---")
 

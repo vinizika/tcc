@@ -389,7 +389,7 @@ export function ClinicDashboard({
                                   <strong>
                                     {m.role === "tutor"
                                       ? "Tutor"
-                                      : "VetIA · automático"}
+                                      : "Bia · automático"}
                                   </strong>
                                   <MessageText text={m.content} />
                                   <time>{time(m.created_at)}</time>

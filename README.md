@@ -69,9 +69,11 @@ de 04/09 (o RAG com a base antiga piorava o resultado em 20 pontos), na
 
 ## Versão online
 
-**<https://vetia.chilecentral.cloudapp.azure.com>** — o sistema completo
+**<https://vetia.chilecentral.cloudapp.azure.com>** — aplicação com a marca **Bia**:
+sistema completo
 (tela, login, triagem por texto e voz, clínicas e encaminhamento) numa máquina
-do Azure for Students.
+do Azure for Students. O endereço e os identificadores técnicos da hospedagem
+ainda usam o nome antigo.
 
 A máquina **fica desligada quando ninguém está usando**, para não gastar
 crédito: se o endereço não abrir, ela está desligada. Para ligar, entrar em

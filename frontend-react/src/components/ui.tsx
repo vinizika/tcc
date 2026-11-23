@@ -81,7 +81,7 @@ export function Brand() {
       <span className="brand-mark">
         <Icon name="paw" size={23} />
       </span>
-      vet<span className="brand-light">ia</span>
+      Bia
       <span className="brand-dot">.</span>
     </span>
   );

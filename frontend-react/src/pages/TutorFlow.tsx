@@ -472,7 +472,7 @@ export function TutorFlow({
                           <span className="mini-brand">
                             <Icon name="paw" size={15} />
                           </span>
-                          VetIA{" "}
+                          Bia{" "}
                           <span className="tiny">· Orientação automática</span>
                         </>
                       ) : (

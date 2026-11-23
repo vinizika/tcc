@@ -34,9 +34,9 @@ for (const classification of ["EMERGENCIA", "INCERTO", "NAO_EMERGENCIA"] as cons
       await route.fulfill({ json: body });
     });
     await page.goto("/");
-    await expect(page).toHaveTitle(/VetIA/);
-    await expect(page.locator(".brand").first()).toContainText("vetia");
-    await expect(page.locator(".message-author")).toContainText("VetIA");
+    await expect(page).toHaveTitle(/Bia/);
+    await expect(page.locator(".brand").first()).toContainText("Bia");
+    await expect(page.locator(".message-author")).toContainText("Bia");
     await expect(page.getByText(triage.recomendacao, { exact: true })).toBeVisible();
     await expect(page.locator(".care-steps li")).toHaveCount(2);
     await expect(page.getByText(triage.justificativa, { exact: true })).not.toBeVisible();
